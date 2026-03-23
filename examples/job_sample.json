@@ -1,0 +1,49 @@
+{
+  "job_id": "mikage_20260322_0001",
+  "created_at": "2026-03-22T12:00:00+07:00",
+  "source": "notion",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "character_id": "mikage_core",
+    "persona": "controlled poetic visual entity",
+    "identity_version": "v1.0"
+  },
+  "narrative": {
+    "arc_id": "arc_001",
+    "chapter": "fragment_03",
+    "continuity_notes": [
+      "must feel restrained, not loud",
+      "must preserve melancholy distance",
+      "must avoid commercial glamour drift"
+    ]
+  },
+  "strategy": {
+    "objective": "identity_consistency",
+    "secondary_objective": "aesthetic_integrity",
+    "campaign_tag": "core_visual_language"
+  },
+  "art_direction": {
+    "mood": ["melancholic", "restrained", "sacred stillness"],
+    "material": ["weathered ceramic", "charred wood", "heat-warped carbon fiber"],
+    "style": ["wabi-sabi", "editorial cinematic"],
+    "composition": {
+      "negative_space_min": 0.4,
+      "broken_symmetry_required": true,
+      "imperfection_required": true,
+      "texture_variation_required": true
+    },
+    "forbidden": [
+      "perfect skin",
+      "plastic look",
+      "over-smooth surfaces",
+      "luxury glam polish",
+      "hyper-symmetry",
+      "generic AI beauty"
+    ]
+  },
+  "render": {
+    "engine": "fooocus",
+    "seed": null,
+    "max_iteration": 3
+  }
+}

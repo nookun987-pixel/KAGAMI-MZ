@@ -1,0 +1,53 @@
+{
+  "job_id": "mikage_test_20260323_0001",
+  "created_at": "2026-03-23T12:00:00+07:00",
+  "source": "notion",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "character_id": "mikage_core",
+    "persona": "controlled poetic visual entity",
+    "identity_version": "v1.0"
+  },
+  "narrative": {
+    "arc_id": "arc_test",
+    "chapter": "fragment_test_01",
+    "continuity_notes": [
+      "minimal concrete wall backdrop",
+      "clean product zone with garment clarity preserved",
+      "controlled distortion only on right side",
+      "premium editorial tone throughout",
+      "no cheap glitch effects",
+      "must preserve melancholy distance"
+    ]
+  },
+  "strategy": {
+    "objective": "identity_consistency",
+    "secondary_objective": "aesthetic_integrity",
+    "campaign_tag": "mikage_pipeline_test"
+  },
+  "art_direction": {
+    "mood": ["melancholic", "restrained", "editorial stillness"],
+    "material": ["raw concrete", "matte carbon fiber", "weathered ceramic"],
+    "style": ["wabi-sabi", "premium editorial"],
+    "composition": {
+      "negative_space_min": 0.4,
+      "broken_symmetry_required": true,
+      "imperfection_required": true,
+      "texture_variation_required": true
+    },
+    "forbidden": [
+      "perfect skin",
+      "plastic look",
+      "over-smooth surfaces",
+      "cheap glitch",
+      "hyper-symmetry",
+      "generic AI beauty",
+      "luxury glam polish"
+    ]
+  },
+  "render": {
+    "engine": "fooocus",
+    "seed": null,
+    "max_iteration": 3
+  }
+}
