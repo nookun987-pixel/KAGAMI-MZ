@@ -1,0 +1,2 @@
+
+✗ REJECTED: Carousel item 1 (topic: Hướng dẫn Thích nghi với AI) has 6 slides, but the schema requires 7 slides for a carousel.

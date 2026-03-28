@@ -1,0 +1,18 @@
+{
+  "tasks": [],
+  "services": {
+    "ollama": {
+      "name": "ollama",
+      "status": "ALIVE",
+      "last_checked_at": "2026-03-28T19:29:57.931Z",
+      "health_target": "http://127.0.0.1:11434/api/tags",
+      "detail": "HTTP 200"
+    }
+  },
+  "runs": [],
+  "artifacts": [],
+  "costs": [],
+  "alerts": [],
+  "fooocusPid": 14028,
+  "ollamaPid": 16468
+}

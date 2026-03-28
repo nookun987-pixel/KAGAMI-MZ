@@ -1,0 +1,11 @@
+{
+  "job_id": "test_orchestrator_e2e_1774680383789",
+  "user_idea": "Single manufactured ceramic respirator shell, matte B4C technical ceramic, macro product shot",
+  "job_type": "test",
+  "priority": "normal",
+  "mode": "debug",
+  "requested_outputs": [
+    "png",
+    "json"
+  ]
+}

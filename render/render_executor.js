@@ -436,8 +436,21 @@ function _fallbackCapture(startMs, outputRoot) {
 
 async function _waitForCapturedOutput(startMs, outputRoot, maxWaitMs, pollIntervalMs) {
   const deadline = Date.now() + maxWaitMs;
+  let pollCount = 0;
 
   while (Date.now() < deadline) {
+    pollCount++;
+    console.log(`[RENDER_EXECUTOR] Poll cycle ${pollCount}: ${new Date().toISOString()}`);
+    
+    // Log newest PNGs during polling
+    const fooocusOutputBase = _getFooocusOutputBase();
+    const newestFiles = _getNewestPNGs(fooocusOutputBase, 5);
+    console.log(`[RENDER_EXECUTOR] Newest 5 PNGs:`);
+    newestFiles.forEach((file, i) => {
+      const isNewer = file.mtimeMs > startMs;
+      console.log(`[RENDER_EXECUTOR]   ${i+1}. ${path.basename(file.path)} - ${file.mtime} (${isNewer ? 'NEWER' : 'OLDER'})`);
+    });
+    
     const captured = _fallbackCapture(startMs, outputRoot);
     if (captured) {
       console.log(`[RENDER_EXECUTOR] Final saved file path: ${captured}`);
@@ -447,6 +460,42 @@ async function _waitForCapturedOutput(startMs, outputRoot, maxWaitMs, pollInterv
   }
 
   return null;
+}
+
+function _getNewestPNGs(baseDir, count) {
+  if (!fs.existsSync(baseDir)) return [];
+
+  const files = [];
+  
+  const scan = (dir) => {
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch (_) {
+      return;
+    }
+
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        scan(full);
+      } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".png")) {
+        try {
+          const stat = fs.statSync(full);
+          files.push({
+            path: full,
+            mtimeMs: stat.mtimeMs,
+            mtime: stat.mtime
+          });
+        } catch (_) {
+          // skip unreadable file
+        }
+      }
+    }
+  };
+
+  scan(baseDir);
+  return files.sort((a, b) => b.mtimeMs - a.mtimeMs).slice(0, count);
 }
 
 async function _clearFooocusQueue() {
@@ -566,6 +615,8 @@ async function _submitRenderViaHttp(renderPacket, outputRoot, startMs) {
   console.log(`[RENDER_EXECUTOR] Output dir: ${outputRoot}`);
   console.log(`[RENDER_EXECUTOR] HTTP timeout: ${timeoutMs}ms`);
   console.log(`[RENDER_EXECUTOR] Capture timeout: ${captureTimeoutMs}ms`);
+  console.log(`[RENDER_EXECUTOR] Request sent at: ${new Date(startMs).toISOString()} (${startMs})`);
+  console.log(`[RENDER_EXECUTOR] Payload size: ${JSON.stringify(bodyObject).length} bytes`);
 
   let responseSeed = null;
   let responseTelemetry = null;
@@ -591,11 +642,15 @@ async function _submitRenderViaHttp(renderPacket, outputRoot, startMs) {
         });
         res.on("end", () => {
           console.log(`[RENDER_EXECUTOR] HTTP ${res.statusCode}, response ${data.length} bytes`);
+          console.log(`[RENDER_EXECUTOR] Response received at: ${new Date().toISOString()}`);
+          console.log(`[RENDER_EXECUTOR] Response preview: ${data.slice(0, 200)}${data.length > 200 ? "..." : ""}`);
 
           if (res.statusCode >= 400) {
+            console.log(`[RENDER_EXECUTOR] HTTP ERROR: ${res.statusCode} - ${data.slice(0, 500)}`);
             resolve({
               kind: "error",
               error: new Error(`HTTP ${res.statusCode}: ${data.slice(0, 500)}`),
+              renderStartMs: startMs
             });
             return;
           }
@@ -623,10 +678,19 @@ async function _submitRenderViaHttp(renderPacket, outputRoot, startMs) {
       req.destroy(new Error(`Render timeout after ${timeoutMs}ms`));
     });
 
+    req.on("timeout", () => {
+      resolve({
+        kind: "error",
+        error: new Error(`Render timeout after ${timeoutMs}ms`),
+        renderStartMs: startMs
+      });
+    });
+
     req.on("error", (err) => {
       resolve({
         kind: "error",
         error: new Error(`Connection error: ${err.message}`),
+        renderStartMs: startMs
       });
     });
 

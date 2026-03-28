@@ -2305,6 +2305,344 @@ setInterval(refreshAll, 8000);
 </html>`;
 }
 
+function commanderPageHtml() {
+  return `<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Commander Proof Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --bg:#050505;--bg2:#0a0a0a;--panel:#0d0d0d;--panel2:#111111;
+      --line:#333333;--text:#f2f2f2;--muted:#8b8b8b;
+      --red:#e60000;--green:#00c853;--yellow:#ffc107;
+      --pass:#00c853;--fail:#ff1744;--wait:#ffc107;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Consolas,"Courier New",monospace;color:var(--text);background:var(--bg)}
+    .wrap{max-width:1600px;margin:0 auto;padding:20px}
+    header{border-bottom:2px solid var(--line);padding-bottom:15px;margin-bottom:20px}
+    h1{font-size:24px;letter-spacing:1px;text-transform:uppercase}
+    .subtitle{color:var(--muted);font-size:12px;margin-top:5px}
+    .timestamp{color:var(--muted);font-size:11px;margin-top:10px}
+    
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    @media(max-width:1200px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}}
+    
+    .panel{background:var(--panel);border:1px solid var(--line);padding:15px}
+    .panel-header{border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:15px}
+    .panel-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+    
+    .row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #222}
+    .row:last-child{border-bottom:none}
+    .label{font-size:11px;color:var(--muted);text-transform:uppercase}
+    .value{font-size:13px;font-weight:600}
+    
+    .status{font-weight:700;text-transform:uppercase}
+    .alive{color:var(--green)}
+    .dead{color:var(--red)}
+    .present{color:var(--green)}
+    .missing{color:var(--red)}
+    .pass{color:var(--pass)}
+    .fail{color:var(--fail)}
+    .locked{color:var(--green);font-size:16px;font-weight:700}
+    .not-locked{color:var(--fail);font-size:16px;font-weight:700}
+    .mono{font-family:Consolas,monospace;font-size:11px}
+    
+    .verdict-box{border:2px solid var(--line);padding:15px;text-align:center;margin-top:15px}
+    .verdict-text{font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+    
+    .artifact-list{list-style:none}
+    .artifact-list li{padding:5px 0;font-size:11px;border-bottom:1px solid #1a1a1a}
+    .artifact-list li:before{content:"› ";color:var(--muted)}
+    
+    .fail-reason{color:var(--fail);font-size:11px;margin-top:10px;padding:10px;background:#1a0505;border-left:3px solid var(--fail)}
+    .refresh-bar{text-align:center;padding:15px;border-top:2px solid var(--line);margin-top:20px}
+    .refresh-btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:10px 30px;cursor:pointer;font-family:inherit;font-size:12px;text-transform:uppercase}
+    .refresh-btn:hover{background:var(--line)}
+    
+    .json-view{background:#0a0a0a;border:1px solid #222;padding:10px;font-size:10px;max-height:150px;overflow:auto;margin-top:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Commander Proof Board</h1>
+      <div class="subtitle">Real-time system verification dashboard</div>
+      <div class="timestamp" id="timestamp">Loading...</div>
+    </header>
+    
+    <div class="grid">
+      <!-- PANEL 1: System Proof -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">1. System Proof</div>
+        </div>
+        <div class="row">
+          <span class="label">Fooocus</span>
+          <span class="value status" id="sys-fooocus">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Ollama</span>
+          <span class="value status" id="sys-ollama">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Telegram Bot</span>
+          <span class="value status" id="sys-telegram">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Gemini Key</span>
+          <span class="value status" id="sys-gemini">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Vision Validator</span>
+          <span class="value status" id="sys-vision">-</span>
+        </div>
+      </div>
+      
+      <!-- PANEL 2: Image Lane Proof -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">2. Image Lane Proof</div>
+        </div>
+        <div class="row">
+          <span class="label">Latest Run</span>
+          <span class="value mono" id="lane-path">-</span>
+        </div>
+        <div class="row">
+          <span class="label">output.png</span>
+          <span class="value status" id="lane-output">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Post Validation</span>
+          <span class="value status" id="lane-post">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Gemini Validation</span>
+          <span class="value status" id="lane-gemini">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Final Decision</span>
+          <span class="value status" id="lane-decision">-</span>
+        </div>
+        <div class="verdict-box">
+          <div class="verdict-text" id="lane-verdict">CHECKING...</div>
+        </div>
+      </div>
+      
+      <!-- PANEL 3: Latest Run Proof -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">3. Latest Run Proof</div>
+        </div>
+        <div class="row">
+          <span class="label">Run Folder</span>
+          <span class="value mono" id="run-folder">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Created</span>
+          <span class="value" id="run-created">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Job ID</span>
+          <span class="value" id="run-jobid">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Status</span>
+          <span class="value" id="run-status">-</span>
+        </div>
+        <div style="margin-top:10px">
+          <div class="label">Artifacts Present</div>
+          <ul class="artifact-list" id="run-artifacts"></ul>
+        </div>
+      </div>
+      
+      <!-- PANEL 4: Task/Queue Proof -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">4. Task/Queue Proof</div>
+        </div>
+        <div class="row">
+          <span class="label">Pending</span>
+          <span class="value" id="task-pending">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Running</span>
+          <span class="value" id="task-running">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Failed</span>
+          <span class="value" id="task-failed">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Done</span>
+          <span class="value" id="task-done">-</span>
+        </div>
+        <div style="margin-top:15px;padding-top:15px;border-top:1px solid #222">
+          <div class="label">Latest Task</div>
+          <div class="value mono" id="task-latest" style="margin-top:5px">-</div>
+        </div>
+      </div>
+      
+      <!-- PANEL 5: Failure Center -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">5. Failure Center</div>
+        </div>
+        <div class="row">
+          <span class="label">Latest Reject Reason</span>
+        </div>
+        <div class="fail-reason" id="fail-reason">-</div>
+        <div class="row" style="margin-top:15px">
+          <span class="label">Failed Rules</span>
+        </div>
+        <div id="fail-rules" class="mono" style="padding:10px;background:#0a0a0a;font-size:10px">-</div>
+        <div class="row" style="margin-top:15px">
+          <span class="label">Validator Source</span>
+          <span class="value" id="fail-validator">-</span>
+        </div>
+        <div class="row">
+          <span class="label">No-Image Fail</span>
+          <span class="value" id="fail-noimage">-</span>
+        </div>
+      </div>
+      
+      <!-- PANEL 6: Cost/Runtime Proof -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">6. Cost/Runtime Proof</div>
+        </div>
+        <div class="row">
+          <span class="label">Total Runs</span>
+          <span class="value" id="cost-runs">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Latest Duration</span>
+          <span class="value" id="cost-latest">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Average Duration</span>
+          <span class="value" id="cost-avg">-</span>
+        </div>
+        <div class="row">
+          <span class="label">Total Cost</span>
+          <span class="value" id="cost-total">-</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="refresh-bar">
+      <button class="refresh-btn" onclick="loadProof()">Refresh Proof Board</button>
+    </div>
+  </div>
+
+<script>
+async function safeFetch(url) {
+  try {
+    const r = await fetch(url);
+    const text = await r.text();
+    try { return JSON.parse(text); }
+    catch(_) { return { error: 'Invalid JSON' }; }
+  } catch(e) { return { error: String(e) }; }
+}
+
+function setStatus(id, value, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = value;
+  el.className = 'value status';
+  if (type) el.classList.add(type);
+}
+
+async function loadProof() {
+  const data = await safeFetch('/api/commander-proof');
+  if (data.error) {
+    document.getElementById('timestamp').textContent = 'Error: ' + data.error;
+    return;
+  }
+  
+  document.getElementById('timestamp').textContent = 'Updated: ' + data.timestamp;
+  
+  // System Proof
+  const sys = data.system_proof;
+  setStatus('sys-fooocus', sys.fooocus, sys.fooocus === 'ALIVE' ? 'alive' : 'dead');
+  setStatus('sys-ollama', sys.ollama, sys.ollama === 'ALIVE' ? 'alive' : 'dead');
+  setStatus('sys-telegram', sys.telegram_bot, sys.telegram_bot === 'ALIVE' ? 'alive' : 'dead');
+  setStatus('sys-gemini', sys.gemini_key, sys.gemini_key === 'PRESENT' ? 'present' : 'missing');
+  setStatus('sys-vision', sys.use_vision_validator);
+  
+  // Image Lane Proof
+  const lane = data.image_lane_proof;
+  document.getElementById('lane-path').textContent = lane.latest_run_path.split('/').pop() || '-';
+  setStatus('lane-output', lane.output_png, lane.output_png === 'PRESENT' ? 'pass' : 'fail');
+  setStatus('lane-post', lane.post_validation, lane.post_validation === 'PASS' ? 'pass' : (lane.post_validation === 'FAIL' ? 'fail' : ''));
+  setStatus('lane-gemini', lane.gemini_validation, lane.gemini_validation === 'PASS' ? 'pass' : (lane.gemini_validation === 'FAIL' ? 'fail' : ''));
+  setStatus('lane-decision', lane.final_decision, lane.final_decision === 'ALLOW' ? 'pass' : (lane.final_decision === 'REJECT' ? 'fail' : ''));
+  
+  const verdictEl = document.getElementById('lane-verdict');
+  if (lane.verdict === 'IMAGE LANE LOCKED') {
+    verdictEl.textContent = 'IMAGE LANE LOCKED';
+    verdictEl.className = 'verdict-text locked';
+  } else {
+    verdictEl.textContent = 'IMAGE LANE NOT LOCKED';
+    verdictEl.className = 'verdict-text not-locked';
+  }
+  
+  // Latest Run Proof
+  const run = data.latest_run_proof;
+  document.getElementById('run-folder').textContent = run.run_folder;
+  document.getElementById('run-created').textContent = run.created_at ? new Date(run.created_at).toLocaleString() : '-';
+  document.getElementById('run-jobid').textContent = run.summary.job_id || '-';
+  document.getElementById('run-status').textContent = run.summary.status || '-';
+  
+  const artList = document.getElementById('run-artifacts');
+  artList.innerHTML = '';
+  if (run.artifacts && run.artifacts.length) {
+    run.artifacts.forEach(a => {
+      const li = document.createElement('li');
+      li.textContent = a.name + ' (' + (a.size/1024).toFixed(1) + 'KB)';
+      artList.appendChild(li);
+    });
+  } else {
+    artList.innerHTML = '<li>No artifacts</li>';
+  }
+  
+  // Task Queue Proof
+  const task = data.task_queue_proof;
+  document.getElementById('task-pending').textContent = task.pending;
+  document.getElementById('task-running').textContent = task.running;
+  document.getElementById('task-failed').textContent = task.failed;
+  document.getElementById('task-done').textContent = task.done;
+  if (task.latest_task) {
+    document.getElementById('task-latest').textContent = task.latest_task.task_id + ' | ' + task.latest_task.status;
+  } else {
+    document.getElementById('task-latest').textContent = 'No tasks';
+  }
+  
+  // Failure Center
+  const fail = data.failure_center;
+  document.getElementById('fail-reason').textContent = fail.latest_reject_reason || 'None';
+  document.getElementById('fail-rules').textContent = fail.failed_rules && fail.failed_rules.length ? fail.failed_rules.join(' | ') : 'None';
+  document.getElementById('fail-validator').textContent = fail.validator_fail_source;
+  document.getElementById('fail-noimage').textContent = fail.no_image_fail ? 'YES' : 'NO';
+  
+  // Cost Runtime Proof
+  const cost = data.cost_runtime_proof;
+  document.getElementById('cost-runs').textContent = cost.total_runs;
+  document.getElementById('cost-latest').textContent = cost.latest_duration;
+  document.getElementById('cost-avg').textContent = cost.average_duration;
+  document.getElementById('cost-total').textContent = '$' + cost.total_cost.toFixed(2);
+}
+
+loadProof();
+setInterval(loadProof, 10000);
+</script>
+</body>
+</html>`;
+}
+
 // ── HTTP server ──────────────────────────────────────────────────────
 
 const server = http.createServer(async (req, res) => {
@@ -2321,6 +2659,12 @@ const server = http.createServer(async (req, res) => {
 
   try {
     const parsed = new URL(req.url, `http://${req.headers.host}`);
+
+    // ── GET /commander ─── Commander Proof Board
+    if (req.method === "GET" && parsed.pathname === "/commander") {
+      const html = commanderPageHtml();
+      return sendHtml(res, html);
+    }
 
     // ── GET / ─── serve UI
     if (req.method === "GET" && parsed.pathname === "/") {
@@ -2361,6 +2705,37 @@ const server = http.createServer(async (req, res) => {
       const file = parsed.searchParams.get("file");
       if (!file) return sendJson(res, 400, { error: "Missing file parameter" });
       return sendJson(res, 200, readArtifactContent(jobId, file));
+    }
+
+    // ── GET /api/system ─── system report
+    if (req.method === "GET" && parsed.pathname === "/api/commander-proof") {
+      const proofReader = require('./mikage-operator/lib/proof_reader');
+      const proof = await proofReader.generateCommanderProof();
+      return sendJson(res, 200, proof);
+    }
+
+    // ── GET /api/system ─── system report
+    if (req.method === "GET" && parsed.pathname === "/api/system") {
+      const report = generateSystemReport();
+      return sendJson(res, 200, report);
+    }
+
+    // ── GET /api/project ─── project report
+    if (req.method === "GET" && parsed.pathname === "/api/project") {
+      const report = generateProjectReport();
+      return sendJson(res, 200, report);
+    }
+
+    // ── GET /api/cost ─── cost report
+    if (req.method === "GET" && parsed.pathname === "/api/cost") {
+      const report = generateCostReport();
+      return sendJson(res, 200, report);
+    }
+
+    // ── GET /api/artifacts ─── latest artifacts
+    if (req.method === "GET" && parsed.pathname === "/api/artifacts-latest") {
+      const artifacts = getLatestArtifacts();
+      return sendJson(res, 200, artifacts);
     }
 
     // ── GET /artifact-file ─── serve raw artifact file (png, json, etc)
@@ -2489,6 +2864,57 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, result.ok ? 200 : 500, result);
     }
 
+    // ── MASTER CONTROL API routes ──────────────────────────────────────────
+    
+    // POST /api/master/boot
+    if (req.method === "POST" && parsed.pathname === "/api/master/boot") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.boot();
+      return sendJson(res, result.success ? 200 : 500, result);
+    }
+
+    // POST /api/master/heal
+    if (req.method === "POST" && parsed.pathname === "/api/master/heal") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.heal();
+      return sendJson(res, result.success ? 200 : 500, result);
+    }
+
+    // GET /api/master/proof
+    if (req.method === "GET" && parsed.pathname === "/api/master/proof") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.proof();
+      return sendJson(res, 200, result);
+    }
+
+    // GET /api/master/status
+    if (req.method === "GET" && parsed.pathname === "/api/master/status") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.masterStatus();
+      return sendJson(res, 200, result);
+    }
+
+    // POST /api/master/start-all
+    if (req.method === "POST" && parsed.pathname === "/api/master/start-all") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.startAll();
+      return sendJson(res, result.success ? 200 : 500, result);
+    }
+
+    // POST /api/master/stop-all
+    if (req.method === "POST" && parsed.pathname === "/api/master/stop-all") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.stopAll();
+      return sendJson(res, result.success ? 200 : 500, result);
+    }
+
+    // POST /api/master/restart-all
+    if (req.method === "POST" && parsed.pathname === "/api/master/restart-all") {
+      const masterControl = require('./lib/master_control');
+      const result = await masterControl.restartAll();
+      return sendJson(res, result.success ? 200 : 500, result);
+    }
+
     // ── GET /output.png ─── legacy compat
     if (req.method === "GET" && parsed.pathname === "/output.png") {
       const jobId = parsed.searchParams.get("job_id") || readState().selectedJobId || DEFAULT_JOB_ID;
@@ -2511,6 +2937,107 @@ const server = http.createServer(async (req, res) => {
     }
   }
 });
+
+function generateSystemReport() {
+  const state = readState();
+  const services = {
+    fooocus: { status: state.fooocusPid ? 'running' : 'stopped', pid: state.fooocusPid },
+    ollama: { status: state.runtimePid ? 'running' : 'stopped', pid: state.runtimePid },
+    command_center: { status: 'running', pid: process.pid }
+  };
+  const tasks = readJsonSafe(path.join(ROOT, 'data', 'tasks.json')) || [];
+  const runs = readJsonSafe(path.join(ROOT, 'data', 'runs.json')) || [];
+  const alerts = readJsonSafe(path.join(ROOT, 'data', 'alerts.json')) || [];
+
+  return {
+    timestamp: nowIso(),
+    services: services,
+    task_summary: {
+      total: tasks.length,
+      pending: tasks.filter(t => t.status === 'pending').length,
+      running: tasks.filter(t => t.status === 'running').length,
+      completed: tasks.filter(t => t.status === 'completed').length,
+      failed: tasks.filter(t => t.status === 'failed').length
+    },
+    recent_runs: runs.slice(-5),
+    active_alerts: alerts.filter(a => !a.resolved).slice(-5)
+  };
+}
+
+function generateProjectReport() {
+  const projectRoot = ROOT;
+  const files = getProjectFiles(projectRoot);
+  const tasks = readJsonSafe(path.join(ROOT, 'data', 'tasks.json')) || [];
+  const fileCount = countFilesByType(files);
+
+  return {
+    timestamp: nowIso(),
+    project_root: projectRoot,
+    file_count: files.length,
+    file_types: fileCount,
+    recent_tasks: tasks.slice(-10).map(t => ({
+      id: t.task_id,
+      command: t.raw_command,
+      status: t.status,
+      created: t.created_at
+    }))
+  };
+}
+
+function generateCostReport() {
+  const costs = readJsonSafe(path.join(ROOT, 'data', 'costs.json')) || [];
+  const tasks = readJsonSafe(path.join(ROOT, 'data', 'tasks.json')) || [];
+  const totalTasks = tasks.length;
+  const completedTasks = tasks.filter(t => t.status === 'completed').length;
+  const failedTasks = tasks.filter(t => t.status === 'failed').length;
+
+  const estimatedCost = totalTasks * 0.10;
+  const actualCost = costs.reduce((sum, cost) => sum + (cost.amount || 0), 0);
+
+  return {
+    timestamp: nowIso(),
+    total_tasks: totalTasks,
+    completed_tasks: completedTasks,
+    failed_tasks: failedTasks,
+    estimated_cost: estimatedCost,
+    actual_cost: actualCost,
+    cost_breakdown: costs.slice(-10)
+  };
+}
+
+function getLatestArtifacts() {
+  const artifacts = readJsonSafe(path.join(ROOT, 'data', 'artifacts.json')) || [];
+  return artifacts.slice(0, 10);
+}
+
+function getProjectFiles(dir, maxDepth = 3, currentDepth = 0) {
+  if (currentDepth > maxDepth) return [];
+  let files = [];
+  try {
+    const items = fs.readdirSync(dir);
+    for (const item of items) {
+      const fullPath = path.join(dir, item);
+      const stat = fs.statSync(fullPath);
+      if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+        files = files.concat(getProjectFiles(fullPath, maxDepth, currentDepth + 1));
+      } else if (stat.isFile()) {
+        files.push(fullPath);
+      }
+    }
+  } catch (error) {
+    // Ignore errors
+  }
+  return files;
+}
+
+function countFilesByType(files) {
+  const counts = {};
+  files.forEach(file => {
+    const ext = path.extname(file);
+    counts[ext] = (counts[ext] || 0) + 1;
+  });
+  return counts;
+}
 
 server.listen(PORT, "127.0.0.1", () => {
   console.log(

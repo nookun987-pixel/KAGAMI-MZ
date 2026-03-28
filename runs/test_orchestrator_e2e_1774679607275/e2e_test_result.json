@@ -1,0 +1,99 @@
+{
+  "job_id": "test_orchestrator_e2e_1774679607275",
+  "success": false,
+  "orchestrator_result": {
+    "exitCode": 1,
+    "stdout": "[dotenv@17.3.1] injecting env (14) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild\n[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }\n",
+    "stderr": "Error: [CANON_V2] Missing canonMarkdown file: C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md\n    at loadCanonV2 (D:\\KAGAMI-MZ\\control\\canon_v2_control.js:218:13)\n    at orchestrateAutoLoop (D:\\KAGAMI-MZ\\orchestrator.js:2941:17)\n    at orchestrate (D:\\KAGAMI-MZ\\orchestrator.js:3351:12)\n    at main (D:\\KAGAMI-MZ\\orchestrator.js:3376:27)\n    at Object.<anonymous> (D:\\KAGAMI-MZ\\orchestrator.js:3445:3)\n    at Module._compile (node:internal/modules/cjs/loader:1804:14)\n    at Object..js (node:internal/modules/cjs/loader:1936:10)\n    at Module.load (node:internal/modules/cjs/loader:1525:32)\n    at Module._load (node:internal/modules/cjs/loader:1327:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n"
+  },
+  "check_results": {
+    "output_png": false,
+    "output_png_path": null,
+    "output_png_size": 0,
+    "final_decision": true,
+    "final_decision_path": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\final_decision.json",
+    "validator_executed": false,
+    "artifacts": [
+      {
+        "name": "final_decision.json",
+        "size": 3101,
+        "modified": "2026-03-28T06:33:27.682Z",
+        "type": "file"
+      },
+      {
+        "name": "final_payload.json",
+        "size": 158,
+        "modified": "2026-03-28T06:33:27.679Z",
+        "type": "file"
+      },
+      {
+        "name": "job_summary.json",
+        "size": 2805,
+        "modified": "2026-03-28T06:33:27.682Z",
+        "type": "file"
+      },
+      {
+        "name": "post_validation.json",
+        "size": 309,
+        "modified": "2026-03-28T06:33:27.681Z",
+        "type": "file"
+      },
+      {
+        "name": "pre_validation.json",
+        "size": 363,
+        "modified": "2026-03-28T06:33:27.680Z",
+        "type": "file"
+      }
+    ],
+    "final_decision_content": {
+      "job_id": "test_orchestrator_e2e_1774679607275",
+      "status": "FAIL",
+      "decision": "REJECT",
+      "decision_reason": "[CANON_V2] Missing canonMarkdown file: C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "canon_version": "v2",
+      "output_files": [],
+      "failed_rules": [],
+      "blocking_unknown_rules": [],
+      "critical_failures": [
+        "[CANON_V2] Missing canonMarkdown file: C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md"
+      ],
+      "forbidden_hits": [],
+      "analyzer_summary": {},
+      "scores": {
+        "identity_score": null,
+        "narrative_score": null,
+        "aesthetic_integrity_score": null,
+        "anti_polish_score": null
+      },
+      "drift_flags": [],
+      "artifact_paths": {
+        "run_dir": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275",
+        "intake_request": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\intake_request.json",
+        "gemini_intake": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\gemini_intake.json",
+        "gemini_precheck": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\gemini_precheck.json",
+        "prompt_package": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\prompt_package.json",
+        "prompt_before": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\prompt_before.json",
+        "prompt_after": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\prompt_after.json",
+        "output_png": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\output.png",
+        "validation": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\validation.json",
+        "gemini_validation": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\gemini_validation.json",
+        "fix_brief": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\fix_brief.json",
+        "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\corrected_prompt_package.json",
+        "correction_diff": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\correction_diff.json",
+        "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\gemini_runtime_check.json",
+        "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\gemini_runtime_probe.json",
+        "merged_decision": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\merged_decision.json",
+        "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\run_loop_trace.json",
+        "summary_txt": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\summary.txt",
+        "final_payload": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\final_payload.json",
+        "pre_validation": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\pre_validation.json",
+        "post_validation": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\post_validation.json",
+        "final_decision": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\final_decision.json",
+        "job_summary": "D:\\KAGAMI-MZ\\runs\\test_orchestrator_e2e_1774679607275\\job_summary.json"
+      },
+      "timestamps": {
+        "decided_at": "2026-03-28T06:33:27.680Z"
+      }
+    }
+  }
+}

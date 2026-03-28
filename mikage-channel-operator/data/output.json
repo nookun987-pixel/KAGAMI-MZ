@@ -1,0 +1,1312 @@
+{
+  "runs": [
+    {
+      "timestamp": "2026-03-28T08:21:40.756Z",
+      "status": "ready",
+      "contents": [
+        {
+          "type": "short_post",
+          "hook": "AI thay thế con người, nhưng không phải vì nó giỏi hơn.",
+          "body": "Nhiều người nghĩ AI thay thế vì năng lực vượt trội, nhưng thực tế không phải vậy. Các yếu tố như tốc độ xử lý, chi phí vận hành thấp và khả năng làm việc không ngừng nghỉ mới là động lực chính. AI có thể lặp lại công việc ở quy mô lớn, vượt xa khả năng của con người. Đây là những lý do cốt lõi khiến AI đang chiếm lĩnh nhiều vị trí.",
+          "cta": "Tìm hiểu thêm về các yếu tố này để chuẩn bị cho tương lai công việc của bạn!",
+          "status": "ready"
+        },
+        {
+          "type": "short_post",
+          "hook": "Bạn có biết doanh nghiệp đang ngừng hỏi câu hỏi nào về AI không?",
+          "body": "Trước đây, câu hỏi phổ biến là 'AI có làm được việc này không?'. Nhưng giờ đây, tư duy của doanh nghiệp đã thay đổi đáng kể. Câu hỏi đó đã trở nên lỗi thời. Trọng tâm mới là 'lý do duy trì vai trò của con người' trong từng khâu công việc.",
+          "cta": "Khám phá cách thích nghi với tư duy mới của doanh nghiệp!",
+          "status": "ready"
+        },
+        {
+          "type": "short_post",
+          "hook": "Tương lai của công việc: Khi con người phải giải thích lý do tồn tại.",
+          "body": "Khi AI có thể thực hiện nhiều tác vụ nhanh hơn, rẻ hơn và hiệu quả hơn, con người sẽ phải chứng minh giá trị độc đáo của mình. Điều này không chỉ dựa vào năng lực, mà còn là những yếu tố mà AI chưa thể thay thế. Bạn cần chỉ ra tại sao vai trò của mình là không thể thiếu. Đây là thách thức mới trong kỷ nguyên AI.",
+          "cta": "Tìm hiểu cách chứng minh giá trị độc đáo của bạn ngay hôm nay!",
+          "status": "ready"
+        },
+        {
+          "type": "carousel",
+          "slides": [
+            "AI thay thế: Không phải vì giỏi hơn, mà vì...",
+            "Slide 1: Tốc độ vượt trội. AI làm việc nhanh hơn con người.",
+            "Slide 2: Chi phí thấp hơn. AI vận hành với ngân sách tối ưu.",
+            "Slide 3: Không mệt mỏi. AI duy trì hiệu suất liên tục, không nghỉ ngơi.",
+            "Slide 4: Quy mô lớn. AI có thể lặp lại công việc không giới hạn.",
+            "Slide 5: Đây là các yếu tố phi năng lực đang định hình lại thị trường lao động.",
+            "Slide 6: Hiểu rõ điều này để chuẩn bị cho tương lai công việc của bạn."
+          ],
+          "status": "ready"
+        },
+        {
+          "type": "carousel",
+          "slides": [
+            "Tư duy doanh nghiệp về AI đã thay đổi thế nào?",
+            "Slide 1: Trước đây, câu hỏi là: 'AI có làm được việc này không?'",
+            "Slide 2: Giờ đây, câu hỏi đó đã trở nên lỗi thời đối với doanh nghiệp.",
+            "Slide 3: Trọng tâm mới là: 'Vì sao vẫn cần con người ở khâu này?'",
+            "Slide 4: Con người sẽ phải chứng minh giá trị độc đáo của mình.",
+            "Slide 5: Giá trị đó không chỉ là năng lực, mà là sự khác biệt.",
+            "Slide 6: Hãy thích nghi để không bị thay thế. Tìm hiểu thêm!"
+          ],
+          "status": "ready"
+        },
+        {
+          "type": "caption",
+          "hook": "Đừng nghĩ AI thay thế vì giỏi hơn, lý do thật sự nằm ở đâu?",
+          "pain": "Bạn lo lắng bị AI thay thế vì nghĩ mình không đủ giỏi, không thể cạnh tranh về năng lực.",
+          "insight": "AI được ưu tiên thay thế con người không chỉ dựa vào năng lực vượt trội, mà còn vì tốc độ, chi phí thấp, khả năng làm việc không mệt mỏi và quy mô lớn. Các yếu tố phi năng lực này là động lực chính.",
+          "cta": "Khám phá các yếu tố này để hiểu rõ hơn về tương lai công việc của bạn!",
+          "status": "ready"
+        },
+        {
+          "type": "caption",
+          "hook": "Sắp tới, câu hỏi quan trọng nhất trong kinh doanh sẽ là gì?",
+          "pain": "Bạn cảm thấy mơ hồ về vai trò của mình trong kỷ nguyên AI, không biết làm sao để giữ vững vị trí và chứng minh giá trị bản thân.",
+          "insight": "Doanh nghiệp không còn hỏi 'AI có làm được không' mà tập trung vào 'lý do duy trì vai trò của con người'. Con người sẽ phải chứng minh giá trị độc đáo của mình trong từng khâu công việc.",
+          "cta": "Tìm hiểu cách chứng minh giá trị độc đáo của bạn ngay hôm nay để không bị bỏ lại phía sau!",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T08:26:37.716Z",
+      "status": "ready",
+      "contents": [
+        {
+          "type": "short_post",
+          "hook": "Test",
+          "body": "Test body",
+          "cta": "Test CTA",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T08:26:45.756Z",
+      "status": "ready",
+      "contents": [
+        {
+          "type": "short_post",
+          "hook": "Test",
+          "body": "Test body",
+          "cta": "Test CTA",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T08:27:39.945Z",
+      "status": "ready",
+      "contents": [
+        {
+          "type": "short_post",
+          "hook": "Test",
+          "body": "Test body",
+          "cta": "Test CTA",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T08:27:48.292Z",
+      "status": "ready",
+      "contents": [
+        {
+          "type": "short_post",
+          "hook": "Test",
+          "body": "Test body",
+          "cta": "Test CTA",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T08:49:46.950Z",
+      "status": "rejected",
+      "reason": "Cấu trúc carousel không đạt chuẩn: Mỗi carousel phải có đúng 7 slides. Tuy nhiên, carousel thứ nhất (item 4) có 6 slides và carousel thứ hai (item 5) cũng có 6 slides.",
+      "extracted": {
+        "insights": [
+          "AI không thay thế con người chỉ vì nó giỏi hơn.",
+          "Lý do chính AI thay thế con người là các yếu tố thực tiễn như tốc độ, chi phí và khả năng làm việc không ngừng nghỉ.",
+          "AI có thể lặp lại công việc ở quy mô lớn, điều mà con người khó đạt được.",
+          "Doanh nghiệp đã chuyển từ nghi ngờ khả năng của AI sang chấp nhận nó.",
+          "Câu hỏi cốt lõi của doanh nghiệp giờ đây là về sự cần thiết của con người trong quy trình làm việc có AI.",
+          "Sự thay thế của AI dựa trên hiệu quả vận hành vượt trội, không chỉ là trí tuệ.",
+          "Khả năng làm việc không mệt mỏi là một lợi thế cạnh tranh lớn của AI.",
+          "AI mang lại lợi ích về chi phí và tốc độ mà con người khó có thể sánh kịp.",
+          "Vai trò của con người trong doanh nghiệp đang bị đặt dấu hỏi nghiêm túc trước sự phát triển của AI.",
+          "Các yếu tố như 'rẻ hơn' và 'nhanh hơn' là động lực chính thúc đẩy việc áp dụng AI."
+        ],
+        "hooks": [
+          "Tại sao AI không thay thế con người chỉ vì nó thông minh hơn?",
+          "Điều gì thực sự khiến AI trở thành mối đe dọa lớn nhất cho công việc của bạn?",
+          "AI có những lợi thế nào mà con người không thể cạnh tranh được trong công việc?",
+          "Doanh nghiệp đang thay đổi cách nhìn về AI và nguồn nhân lực như thế nào?",
+          "Câu hỏi nào đang ám ảnh các nhà lãnh đạo doanh nghiệp về tương lai công việc của con người?",
+          "Sự xuất hiện của AI đã thay đổi hoàn toàn câu hỏi cốt lõi trong tuyển dụng. Đó là gì?",
+          "Bạn có biết lý do thực sự đằng sau việc AI thay thế con người không?",
+          "AI có thể làm việc không mệt mỏi và ở quy mô lớn. Điều này có ý nghĩa gì với tương lai của bạn?",
+          "Khi AI đã chứng minh năng lực, câu hỏi tiếp theo dành cho con người là gì?",
+          "Tốc độ, chi phí, và khả năng lặp lại: Đây có phải là tương lai của mọi ngành nghề?"
+        ],
+        "proofs": [
+          "AI không thay thế con người chỉ vì nó giỏi hơn.",
+          "Nó thay thế vì nhanh hơn, rẻ hơn, không mệt.",
+          "và có thể lặp lại ở quy mô lớn.",
+          "Doanh nghiệp không còn hỏi AI có làm được không.",
+          "Họ sẽ hỏi vì sao vẫn cần con người ở khâu này.",
+          "AI thay thế con người không phải vì giỏi hơn, mà vì nhanh hơn và rẻ hơn.",
+          "AI có khả năng làm việc không mệt và lặp lại ở quy mô lớn.",
+          "Thái độ của doanh nghiệp đã thay đổi: không còn hỏi AI có làm được không.",
+          "Câu hỏi mới của doanh nghiệp là vì sao vẫn cần con người ở khâu này.",
+          "Các yếu tố thay thế chính của AI bao gồm nhanh hơn, rẻ hơn, không mệt, và có thể lặp lại ở quy mô lớn."
+        ]
+      },
+      "formatted": {
+        "contents": [
+          {
+            "content_type": "short_post",
+            "content_text": "AI không hoàn toàn thay thế công việc của con người, mà đang tái định hình chúng. Thay vì lo sợ, hãy tập trung phát triển các kỹ năng bổ trợ AI để biến thách thức thành cơ hội. Đây là lúc để học hỏi và thích nghi!",
+            "topic": "AI và Tương lai Công việc",
+            "angle": "Thực tế về AI thay thế con người",
+            "hook_type": "question",
+            "hook_used": "AI có thực sự đang thay thế hoàn toàn công việc của bạn?",
+            "status": "ready",
+            "cta": "Khám phá cách thích nghi với kỷ nguyên AI ngay hôm nay!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Bạn có biết tự động hóa có thể giải phóng bạn khỏi hàng giờ công việc lặp lại? Áp dụng tự động hóa giúp doanh nghiệp tối ưu quy trình, giảm thiểu lỗi và cho phép nhân viên tập trung vào các nhiệm vụ sáng tạo, chiến lược hơn. Đã đến lúc nâng cao năng suất!",
+            "topic": "Lợi ích của Tự động hóa",
+            "angle": "Tăng hiệu suất và sáng tạo",
+            "hook_type": "curiosity",
+            "hook_used": "Bạn có muốn giải phóng bản thân khỏi công việc lặp lại nhàm chán?",
+            "status": "ready",
+            "cta": "Tìm hiểu cách áp dụng tự động hóa cho doanh nghiệp của bạn!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Sự thật bất ngờ: Trong kỷ nguyên AI, các kỹ năng mềm như tư duy phản biện, sáng tạo, trí tuệ cảm xúc (EQ) và khả năng giải quyết vấn đề sẽ 'đắt giá' hơn bao giờ hết. AI có thể xử lý dữ liệu, nhưng không thể thay thế sự tinh tế của con người.",
+            "topic": "Kỹ năng cần thiết trong kỷ nguyên AI",
+            "angle": "Phát triển bản thân để dẫn đầu",
+            "hook_type": "shock",
+            "hook_used": "Kỹ năng nào sẽ giúp bạn 'sống sót' và phát triển trong thế giới AI?",
+            "status": "ready",
+            "cta": "Nâng cao kỹ năng mềm của bạn ngay hôm nay để dẫn đầu!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Tổng quan về 5 lầm tưởng phổ biến nhất về AI và tác động của nó đến công việc. Đừng để những định kiến này cản trở bạn khai thác tiềm năng của AI!",
+            "topic": "5 Lầm tưởng về AI và Công việc",
+            "angle": "Phá bỏ định kiến",
+            "hook_type": "curiosity",
+            "hook_used": "Những điều bạn nghĩ về AI thay thế công việc có thể không đúng!",
+            "status": "ready",
+            "slides": [
+              "Slide 1: Tiêu đề\n5 Lầm Tưởng Phổ Biến Nhất Về AI & Tương Lai Công Việc\n*Đừng để chúng cản trở sự phát triển của bạn!*",
+              "Slide 2: Lầm tưởng 1\n\"AI sẽ cướp hết việc làm của con người.\"\n*Thực tế: AI tạo ra nhiều việc làm mới và yêu cầu kỹ năng bổ sung.*",
+              "Slide 3: Lầm tưởng 2\n\"Chỉ những ngành công nghệ cao mới bị ảnh hưởng bởi AI.\"\n*Thực tế: AI đang thay đổi mọi lĩnh vực, từ y tế đến nông nghiệp.*",
+              "Slide 4: Lầm tưởng 3\n\"Bạn cần là chuyên gia công nghệ để làm việc với AI.\"\n*Thực tế: Kỹ năng mềm và khả năng thích ứng quan trọng không kém.*",
+              "Slide 5: Lầm tưởng 4\n\"AI chỉ làm được những việc đơn giản, lặp đi lặp lại.\"\n*Thực tế: AI ngày càng tinh vi, có thể thực hiện các tác vụ phức tạp và sáng tạo.*",
+              "Slide 6: Kết luận & CTA\nĐừng sợ hãi, hãy chuẩn bị!\nHọc cách khai thác sức mạnh của AI để phát triển sự nghiệp.\n*Tìm hiểu thêm về các khóa học AI tại [Tên Tổ Chức/Link]!*"
+            ]
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Một hướng dẫn toàn diện từng bước để bạn có thể thích nghi và phát triển trong kỷ nguyên AI, biến công nghệ thành đồng minh của mình.",
+            "topic": "Hướng dẫn Thích nghi với Kỷ nguyên AI",
+            "angle": "Cung cấp giải pháp, lộ trình",
+            "hook_type": "question",
+            "hook_used": "Làm thế nào để bạn không bị bỏ lại phía sau trong kỷ nguyên AI?",
+            "status": "ready",
+            "slides": [
+              "Slide 1: Tiêu đề\nKỷ Nguyên AI Đến Rồi:\nBạn Cần Làm Gì Để Không Bị Bỏ Lại Phía Sau?\n*Hướng dẫn toàn diện để thích nghi & phát triển.*",
+              "Slide 2: Bước 1\nHiểu Rõ AI Không Phải Là Kẻ Thù\n*Mà là công cụ mạnh mẽ giúp bạn làm việc hiệu quả hơn và giải phóng thời gian.*",
+              "Slide 3: Bước 2\nPhát Triển Kỹ Năng Mềm Quan Trọng\n*Tư duy phản biện, sáng tạo, giải quyết vấn đề, EQ - những thứ AI khó thay thế.*",
+              "Slide 4: Bước 3\nHọc Các Kỹ Năng Bổ Trợ AI\n*Phân tích dữ liệu, prompt engineering, quản lý dự án AI, đạo đức AI.*",
+              "Slide 5: Bước 4\nLuôn Cập Nhật & Học Hỏi Liên Tục\n*Thế giới AI thay đổi nhanh chóng, hãy giữ mình luôn linh hoạt và mở lòng với cái mới.*",
+              "Slide 6: Kết luận & CTA\nTương lai thuộc về những người sẵn sàng học hỏi.\nBắt đầu hành trình thích nghi của bạn ngay hôm nay!\n*Đăng ký nhận bản tin về xu hướng AI mới nhất!*"
+            ]
+          },
+          {
+            "content_type": "caption",
+            "content_text": "AI không chỉ là thách thức mà còn là nguồn cảm hứng cho những ngành nghề mới và cách làm việc đột phá. Hãy nhìn vào tiềm năng sáng tạo và phát triển mà nó mang lại, từ việc tối ưu hóa quy trình đến tạo ra các giải pháp chưa từng có.",
+            "topic": "Cơ hội từ AI",
+            "angle": "Khai thác tiềm năng",
+            "hook_type": "curiosity",
+            "hook_used": "Bạn có thấy những cánh cửa mới mà AI đang mở ra cho sự nghiệp của mình không?",
+            "status": "ready",
+            "pain": "Nỗi lo bị AI thay thế, không biết bắt đầu từ đâu để tận dụng công nghệ này.",
+            "insight": "AI không phải là dấu chấm hết cho nhiều công việc, mà là khởi đầu cho một kỷ nguyên làm việc thông minh hơn, đòi hỏi sự linh hoạt và kỹ năng mới để khai phá tiềm năng vô tận.",
+            "cta": "Chia sẻ suy nghĩ của bạn về cơ hội AI mang lại cho bạn!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Bạn đang tương tác với AI mỗi ngày mà không hề hay biết! Từ gợi ý sản phẩm trên các sàn thương mại điện tử đến trợ lý ảo trên điện thoại, AI đã âm thầm len lỏi vào cuộc sống, giúp chúng ta tiện lợi và hiệu quả hơn. Hiểu cách nó hoạt động giúp bạn khai thác tối đa lợi ích.",
+            "topic": "AI trong cuộc sống hàng ngày",
+            "angle": "Ứng dụng thực tế",
+            "hook_type": "shock",
+            "hook_used": "Bạn có biết mình đang tương tác với AI mỗi ngày?",
+            "status": "ready",
+            "pain": "Cảm thấy AI là một công nghệ quá phức tạp hoặc xa vời, chỉ dành cho các chuyên gia.",
+            "insight": "AI không chỉ dành cho các nhà khoa học hay kỹ sư; nó là công nghệ gần gũi và hữu ích, hiện diện trong nhiều khía cạnh của cuộc sống hàng ngày, giúp mọi người dễ dàng hơn.",
+            "cta": "Kể tên một ứng dụng AI bạn dùng hàng ngày mà bạn yêu thích!"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-28T08:51:50.741Z",
+      "status": "rejected",
+      "reason": "Carousel content item at index 4 (the second carousel) has only 6 slides, but the schema requires 7 slides.",
+      "extracted": {
+        "insights": [
+          "AI thay thế con người không chỉ dựa vào năng lực vượt trội.",
+          "Hiệu quả vận hành là động lực chính cho sự thay thế của AI.",
+          "Tốc độ và chi phí thấp là lợi thế cạnh tranh cốt lõi của AI.",
+          "AI có khả năng làm việc không ngừng nghỉ và lặp lại ở quy mô lớn.",
+          "Doanh nghiệp đã chấp nhận khả năng thực hiện công việc của AI.",
+          "Trọng tâm câu hỏi của doanh nghiệp đã dịch chuyển sang giá trị của con người.",
+          "Sự mệt mỏi là một hạn chế của con người mà AI không gặp phải.",
+          "Khả năng nhân rộng quy mô là một yếu tố then chốt giúp AI thay thế.",
+          "Doanh nghiệp không còn nghi ngờ liệu AI có thể làm được việc.",
+          "Con người cần chứng minh giá trị riêng biệt của mình trong kỷ nguyên AI."
+        ],
+        "hooks": [
+          "Lý do thực sự khiến AI thay thế con người không phải vì nó giỏi hơn?",
+          "Điều gì khiến AI trở thành lựa chọn ưu việt hơn con người trong công việc?",
+          "Tại sao doanh nghiệp không còn bận tâm đến khả năng của AI?",
+          "Câu hỏi nào đang thách thức vai trò của con người trong môi trường kinh doanh hiện đại?",
+          "Sự 'không mệt mỏi' của AI mang lại lợi thế cạnh tranh như thế nào?",
+          "Bạn có biết AI thay thế con người vì nó nhanh hơn và rẻ hơn?",
+          "Khả năng lặp lại ở quy mô lớn của AI có ý nghĩa gì đối với tương lai việc làm?",
+          "Doanh nghiệp sẽ đặt câu hỏi gì khi cân nhắc giữa AI và con người?",
+          "Liệu con người có còn cần thiết khi AI có thể làm mọi thứ?",
+          "Đã đến lúc chúng ta phải trả lời câu hỏi: 'Vì sao vẫn cần con người ở khâu này?'"
+        ],
+        "proofs": [
+          "AI không thay thế con người chỉ vì nó giỏi hơn.",
+          "AI thay thế vì nhanh hơn.",
+          "AI thay thế vì rẻ hơn.",
+          "AI thay thế vì không mệt.",
+          "AI có thể lặp lại ở quy mô lớn.",
+          "Doanh nghiệp không còn hỏi AI có làm được không.",
+          "Họ sẽ hỏi vì sao vẫn cần con người ở khâu này.",
+          "Tốc độ vượt trội là một yếu tố khiến AI thay thế.",
+          "Chi phí thấp là một lợi thế cạnh tranh của AI.",
+          "Khả năng làm việc không ngừng nghỉ là lý do AI thay thế."
+        ]
+      },
+      "formatted": {
+        "contents": [
+          {
+            "content_type": "short_post",
+            "content_text": "AI không phải là mối đe dọa, mà là cơ hội để nâng tầm công việc của bạn. Thay vì lo sợ bị thay thế, hãy học cách biến AI thành trợ lý đắc lực, giải phóng bạn khỏi các tác vụ lặp đi lặp lại để tập trung vào sáng tạo và chiến lược. Tương lai là sự cộng tác giữa con người và AI.",
+            "topic": "AI và Tương lai công việc",
+            "angle": "AI là công cụ hỗ trợ, không phải thay thế",
+            "hook_type": "question",
+            "hook_used": "Bạn có đang nhìn AI như một mối đe dọa hay một cơ hội vàng?",
+            "status": "ready",
+            "cta": "Khám phá các khóa học AI để nâng cao kỹ năng của bạn ngay hôm nay!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Đừng để những tin đồn sai lệch về AI khiến bạn bỏ lỡ cơ hội. AI không phải lúc nào cũng 'thông minh' như bạn nghĩ và cần sự hướng dẫn của con người. Hiểu rõ về khả năng và giới hạn của AI là chìa khóa để khai thác tối đa tiềm năng của nó.",
+            "topic": "Sự thật về AI",
+            "angle": "Phá bỏ lầm tưởng về AI",
+            "hook_type": "shock",
+            "hook_used": "Sự thật bất ngờ về AI mà bạn có thể chưa biết!",
+            "status": "ready",
+            "cta": "Chia sẻ suy nghĩ của bạn về AI trong phần bình luận!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Từ việc tự động hóa các tác vụ đơn giản đến phân tích dữ liệu phức tạp, AI đang mở ra những cánh cửa mới cho năng suất cá nhân và doanh nghiệp. Hãy bắt đầu từ những công cụ AI dễ tiếp cận để tối ưu hóa thời gian và nguồn lực của bạn.",
+            "topic": "Ứng dụng AI thực tế",
+            "angle": "Tăng cường năng suất với AI",
+            "hook_type": "curiosity",
+            "hook_used": "Bạn có muốn hoàn thành công việc nhanh gấp đôi với ít công sức hơn?",
+            "status": "ready",
+            "cta": "Tìm hiểu ngay 5 công cụ AI hàng đầu giúp bạn tăng năng suất!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Để không bị bỏ lại phía sau trong kỷ nguyên AI, việc trang bị những kỹ năng phù hợp là điều tối quan trọng. Carousel này sẽ hướng dẫn bạn 6 bước để phát triển bản thân và làm chủ tương lai cùng AI.",
+            "topic": "Phát triển kỹ năng trong kỷ nguyên AI",
+            "angle": "Hướng dẫn thực tế để thích nghi với AI",
+            "hook_type": "question",
+            "hook_used": "Làm thế nào để bạn không bị AI 'thay thế' mà trở thành 'người dẫn đầu'?",
+            "status": "ready",
+            "slides": [
+              "Slide 1: Tương Lai Không Chờ Đợi: 6 Kỹ Năng Cần Có Để Nổi Bật Cùng AI",
+              "Slide 2: 1. Tư Duy Phân Tích & Giải Quyết Vấn Đề: AI xử lý dữ liệu, bạn giải quyết vấn đề.",
+              "Slide 3: 2. Sáng Tạo & Đổi Mới: AI tối ưu, bạn tạo ra cái mới mẻ, độc đáo.",
+              "Slide 4: 3. Trí Tuệ Cảm Xúc (EQ): Kỹ năng giao tiếp, thấu hiểu con người là vô giá.",
+              "Slide 5: 4. Hiểu Biết Cơ Bản Về AI: Biết cách 'ra lệnh' và làm việc hiệu quả với AI.",
+              "Slide 6: 5. Kỹ Năng Học Hỏi Liên Tục: Công nghệ thay đổi nhanh, bạn cũng cần vậy!",
+              "Slide 7: 6. Tư Duy Phản Biện & Đạo Đức: Đánh giá thông tin, sử dụng AI có trách nhiệm."
+            ]
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "AI không chỉ giới hạn ở chatbot hay xe tự lái. Nó đang cách mạng hóa mọi lĩnh vực từ y tế đến nghệ thuật, mang lại những giải pháp chưa từng có. Hãy khám phá những ứng dụng đáng kinh ngạc của AI mà có thể bạn chưa từng nghĩ đến.",
+            "topic": "Ứng dụng đa dạng của AI",
+            "angle": "Khám phá các lĩnh vực AI đang thay đổi",
+            "hook_type": "shock",
+            "hook_used": "Bạn sẽ sốc khi biết AI đang làm được những gì ngoài sức tưởng tượng của bạn!",
+            "status": "ready",
+            "slides": [
+              "Slide 1: Không Chỉ Chatbot: 5 Lĩnh Vực AI Đang Thay Đổi Thế Giới Một Cách Ngoạn Mục",
+              "Slide 2: 1. Y Tế: Từ chẩn đoán bệnh sớm đến phát triển thuốc mới nhanh chóng.",
+              "Slide 3: 2. Nông Nghiệp Thông Minh: Tối ưu hóa mùa màng, dự báo thời tiết, quản lý trang trại.",
+              "Slide 4: 3. Nghệ Thuật & Sáng Tạo: Sáng tác nhạc, vẽ tranh, viết kịch bản phim chỉ trong tích tắc.",
+              "Slide 5: 4. Bảo Vệ Môi Trường: Phân tích dữ liệu khí hậu, giám sát đa dạng sinh học.",
+              "Slide 6: 5. Tài Chính: Phát hiện gian lận, quản lý rủi ro, tư vấn đầu tư cá nhân hóa."
+            ]
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Bạn có cảm thấy choáng ngợp trước tốc độ phát triển của AI và lo lắng mình sẽ bị tụt hậu? Đừng lo lắng, bạn không hề đơn độc. Nhiều người đang đối mặt với nỗi sợ này.",
+            "topic": "Nỗi lo về AI",
+            "angle": "Đồng cảm và trấn an về nỗi sợ AI",
+            "hook_type": "question",
+            "hook_used": "Bạn có đang cảm thấy 'ngộp thở' trước làn sóng AI?",
+            "status": "ready",
+            "pain": "Cảm giác bị bỏ lại phía sau, lo sợ mất việc, không biết bắt đầu từ đâu.",
+            "insight": "AI là một công cụ mạnh mẽ, nhưng nó vẫn cần sự sáng tạo, cảm xúc và tư duy phản biện của con người. Hãy xem AI như một 'trợ thủ' đắc lực để nâng cao giá trị của bạn, chứ không phải là đối thủ.",
+            "cta": "Hãy chia sẻ cảm nghĩ của bạn về AI và cách bạn đang đối mặt với nó!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Bạn có đang mệt mỏi với những công việc lặp đi lặp lại hàng ngày, chiếm hết thời gian quý báu của bạn? AI có thể là giải pháp bạn đang tìm kiếm để 'giải phóng' bản thân.",
+            "topic": "AI và hiệu quả công việc",
+            "angle": "AI giúp giải phóng thời gian và tăng cường sự sáng tạo",
+            "hook_type": "curiosity",
+            "hook_used": "Điều gì sẽ xảy ra nếu bạn có thêm 2 giờ mỗi ngày để làm những điều mình yêu thích?",
+            "status": "ready",
+            "pain": "Làm việc quá sức, thiếu thời gian cho bản thân và gia đình, công việc lặp đi lặp lại gây nhàm chán.",
+            "insight": "AI có khả năng tự động hóa các tác vụ tốn thời gian, giúp bạn giải phóng khỏi gánh nặng công việc thường ngày. Nhờ đó, bạn có thể dành nhiều năng lượng hơn cho những ý tưởng đột phá, phát triển kỹ năng mới và tận hưởng cuộc sống.",
+            "cta": "Khám phá ngay các công cụ AI giúp tự động hóa công việc của bạn!"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-28T08:57:33.446Z",
+      "status": "rejected",
+      "reason": "Carousel item 1 (topic: Hướng dẫn Thích nghi với AI) has 6 slides, but the schema requires 7 slides for a carousel.",
+      "extracted": {
+        "insights": [
+          "AI không thay thế con người chỉ vì nó giỏi hơn.",
+          "Sự thay thế của AI được thúc đẩy bởi tốc độ và chi phí thấp.",
+          "Khả năng làm việc không mệt mỏi là một lợi thế cạnh tranh của AI.",
+          "AI có thể lặp lại công việc ở quy mô lớn, điều con người khó làm được.",
+          "Doanh nghiệp đã không còn nghi ngờ về khả năng thực hiện công việc của AI.",
+          "Trọng tâm của doanh nghiệp đã chuyển từ khả năng của AI sang sự cần thiết của con người.",
+          "Con người cần chứng minh giá trị và lý do tồn tại của mình trong quy trình có AI.",
+          "Các yếu tố phi năng lực như hiệu quả và quy mô là động lực chính cho sự thay thế của AI.",
+          "Câu hỏi về năng lực AI đã trở nên lỗi thời trong môi trường kinh doanh hiện đại.",
+          "Vai trò của con người đang bị thách thức trực tiếp bởi các đặc tính ưu việt của AI."
+        ],
+        "hooks": [
+          "Bạn nghĩ AI thay thế con người vì nó thông minh hơn? Câu trả lời có thể khiến bạn bất ngờ.",
+          "Điều gì thực sự khiến AI thay thế con người, nếu không phải là sự 'giỏi hơn'?",
+          "Tốc độ, chi phí, và khả năng không mệt mỏi: Đây có phải là tương lai của công việc?",
+          "Bốn yếu tố nào đang đẩy AI trở thành kẻ thay thế không thể tránh khỏi?",
+          "Tại sao doanh nghiệp không còn bận tâm liệu AI có làm được việc hay không?",
+          "Câu hỏi nào về AI đã trở nên lỗi thời trong môi trường kinh doanh hiện đại?",
+          "Trong kỷ nguyên AI, câu hỏi nào đang ám ảnh các doanh nghiệp về vai trò của con người?",
+          "Liệu bạn có thể giải thích tại sao con người vẫn cần thiết trong một quy trình có AI?",
+          "Đã đến lúc chúng ta ngừng hỏi 'AI có làm được không' và bắt đầu hỏi điều gì?",
+          "Khi AI không biết mệt mỏi và làm việc quy mô lớn, vai trò của con người sẽ ở đâu?"
+        ],
+        "proofs": [
+          "AI không thay thế con người chỉ vì nó giỏi hơn.",
+          "Nó thay thế vì nhanh hơn.",
+          "Nó thay thế vì rẻ hơn.",
+          "Nó thay thế vì không mệt.",
+          "Nó có thể lặp lại ở quy mô lớn.",
+          "Doanh nghiệp không còn hỏi AI có làm được không.",
+          "Họ sẽ hỏi vì sao vẫn cần con người ở khâu này.",
+          "Các yếu tố như tốc độ, chi phí, và sự bền bỉ là lý do AI thay thế con người.",
+          "Sự thay đổi trong câu hỏi của doanh nghiệp chứng tỏ AI đã được chấp nhận về năng lực.",
+          "Khả năng nhân rộng quy mô của AI là bằng chứng cho sự thay thế hiệu quả."
+        ]
+      },
+      "formatted": {
+        "contents": [
+          {
+            "content_type": "short_post",
+            "content_text": "AI không phải là kẻ thù, mà là một công cụ mạnh mẽ giúp bạn giải phóng khỏi các tác vụ lặp lại, nhàm chán. Hãy hình dung bạn có nhiều thời gian hơn để tập trung vào sáng tạo, tư duy chiến lược và những công việc đòi hỏi trí tuệ cảm xúc cao – những thứ mà AI chưa thể thay thế. Tương lai công việc là sự kết hợp hài hòa giữa năng lực con người và sức mạnh công nghệ.",
+            "topic": "AI và Năng lực Con người",
+            "angle": "AI là công cụ hỗ trợ, không phải đối thủ",
+            "hook_type": "question",
+            "hook_used": "Bạn có lo lắng về tương lai công việc khi AI ngày càng phát triển?",
+            "status": "ready",
+            "cta": "Chia sẻ suy nghĩ của bạn về sự hợp tác giữa con người và AI!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Trong kỷ nguyên AI, các kỹ năng 'mềm' như tư duy phản biện, sáng tạo, khả năng giải quyết vấn đề phức tạp và trí tuệ cảm xúc sẽ trở nên vô giá. Đồng thời, việc hiểu biết cơ bản về cách AI hoạt động và cách ứng dụng nó vào công việc hàng ngày cũng là một lợi thế lớn. Hãy đầu tư vào những kỹ năng này để đảm bảo vị trí của bạn trong tương lai.",
+            "topic": "Kỹ năng cho Kỷ nguyên AI",
+            "angle": "Phát triển kỹ năng tương lai để thích nghi với AI",
+            "hook_type": "curiosity",
+            "hook_used": "Muốn biết kỹ năng nào sẽ giúp bạn 'bất bại' trong kỷ nguyên AI?",
+            "status": "ready",
+            "cta": "Bạn đang học thêm kỹ năng gì để chuẩn bị cho tương lai?"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Sự kết hợp giữa con người và AI tạo ra một sức mạnh tổng hợp đáng kinh ngạc. Con người mang đến sự sáng tạo, đạo đức, khả năng ra quyết định chiến lược và sự đồng cảm. AI cung cấp khả năng xử lý dữ liệu khổng lồ, tự động hóa và phân tích nhanh chóng. Cùng nhau, chúng ta có thể đạt được những thành tựu mà một mình không thể làm được, mở ra những cơ hội mới chưa từng có.",
+            "topic": "Hợp tác giữa Con người và AI",
+            "angle": "Sức mạnh tổng hợp từ sự kết hợp giữa con người và AI",
+            "hook_type": "curiosity",
+            "hook_used": "Điều gì sẽ xảy ra khi con người và AI cùng hợp tác?",
+            "status": "ready",
+            "cta": "Hãy cùng khám phá tiềm năng không giới hạn của sự hợp tác này!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "AI không phải là mối đe dọa, mà là cơ hội để bạn định hình lại sự nghiệp. Nắm bắt cách AI hoạt động và học cách cộng tác với nó sẽ giúp bạn không chỉ tồn tại mà còn phát triển mạnh mẽ. Từ việc tự động hóa tác vụ đến phân tích dữ liệu, AI mang đến những công cụ mạnh mẽ để nâng cao hiệu suất và giá trị của bạn.",
+            "topic": "Hướng dẫn Thích nghi với AI",
+            "angle": "Chiến lược để dẫn đầu trong kỷ nguyên AI",
+            "hook_type": "question",
+            "hook_used": "AI đang thay đổi công việc của bạn? Đây là cách để dẫn đầu!",
+            "status": "ready",
+            "slides": [
+              "Slide 1: AI đang thay đổi công việc của bạn? Đây là cách để dẫn đầu!",
+              "Slide 2: Đừng sợ hãi, hãy hiểu rõ AI. AI là công cụ, không phải đối thủ.",
+              "Slide 3: Kỹ năng 'mềm' lên ngôi: Tư duy phản biện, sáng tạo, EQ là chìa khóa.",
+              "Slide 4: Học cách 'làm việc' với AI. Hãy xem AI như một trợ lý đắc lực.",
+              "Slide 5: Tập trung vào giá trị cốt lõi của con người: Đạo đức, chiến lược, kết nối.",
+              "Slide 6: Hành động ngay hôm nay! Đầu tư vào bản thân, không ngừng học hỏi để không bị bỏ lại phía sau."
+            ]
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Khám phá 5 lợi ích bất ngờ mà AI có thể mang lại cho sự nghiệp của bạn. Từ việc giải phóng thời gian khỏi những công việc nhàm chán đến việc cung cấp những hiểu biết sâu sắc từ dữ liệu, AI là một người bạn đồng hành mạnh mẽ giúp bạn đạt được hiệu suất cao hơn và mở ra những con đường sáng tạo mới. Hãy sẵn sàng để AI nâng tầm công việc của bạn.",
+            "topic": "Lợi ích của AI trong công việc",
+            "angle": "Khám phá những cơ hội AI mang lại cho sự nghiệp",
+            "hook_type": "curiosity",
+            "hook_used": "Bạn có biết AI có thể nâng tầm sự nghiệp của mình như thế nào không?",
+            "status": "ready",
+            "slides": [
+              "Slide 1: 5 Cách AI sẽ nâng tầm công việc của bạn!",
+              "Slide 2: Tự động hóa tác vụ lặp lại: Giải phóng bạn khỏi công việc nhàm chán, có thêm thời gian cho sáng tạo.",
+              "Slide 3: Phân tích dữ liệu siêu tốc: Giúp bạn đưa ra quyết định thông minh và chính xác hơn.",
+              "Slide 4: Nâng cao năng suất cá nhân: Làm được nhiều hơn, hiệu quả hơn trong ít thời gian hơn.",
+              "Slide 5: Mở ra cơ hội sáng tạo mới: AI hỗ trợ ý tưởng, giúp bạn khám phá những hướng đi độc đáo.",
+              "Slide 6: Cải thiện trải nghiệm khách hàng: Cá nhân hóa dịch vụ, phản hồi nhanh chóng và hiệu quả hơn."
+            ]
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Đừng để nỗi lo về AI làm bạn chùn bước. AI thực sự đang tạo ra những vai trò mới và nâng cao giá trị của các công việc hiện có. Điều quan trọng là chúng ta cần thay đổi tư duy, xem AI là một đồng minh chứ không phải đối thủ. Hãy tập trung vào việc học hỏi, thích nghi và phát triển những kỹ năng độc đáo của con người.",
+            "topic": "Vượt qua Nỗi lo AI",
+            "angle": "Trấn an và định hướng thích nghi với AI",
+            "hook_type": "question",
+            "hook_used": "Cảm thấy bối rối trước làn sóng AI đang thay đổi mọi thứ?",
+            "status": "ready",
+            "pain": "Nỗi sợ bị AI thay thế, cảm giác lạc hậu trước công nghệ mới.",
+            "insight": "AI tạo ra cơ hội mới và nâng cao giá trị con người. Thích nghi và học hỏi là chìa khóa.",
+            "cta": "Tìm hiểu thêm về các khóa học kỹ năng số để sẵn sàng cho tương lai!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Để trở thành một chuyên gia 'chống AI', bạn cần liên tục học hỏi và phát triển khả năng thích ứng. Không có một bộ kỹ năng cố định nào đảm bảo thành công mãi mãi. Thay vào đó, hãy rèn luyện tư duy học hỏi suốt đời, khả năng giải quyết vấn đề linh hoạt và sự sáng tạo không ngừng. Đây chính là tấm khiên vững chắc nhất của bạn.",
+            "topic": "Chuyên gia 'Chống AI'",
+            "angle": "Khuyến khích phát triển bản thân để vững vàng trước AI",
+            "hook_type": "question",
+            "hook_used": "Bạn đã sẵn sàng để trở thành phiên bản 'chống AI' của chính mình chưa?",
+            "status": "ready",
+            "pain": "Lo lắng về sự lỗi thời của kỹ năng và vị trí công việc.",
+            "insight": "Học hỏi liên tục, khả năng thích ứng và tư duy sáng tạo là 'vũ khí' tối thượng.",
+            "cta": "Hãy bắt đầu hành trình học hỏi của bạn ngay hôm nay!"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-28T09:08:29.408Z",
+      "status": "rejected",
+      "reason": "Carousel content item at index 1 (second item in the list) has 8 slides, but the schema requires exactly 7 slides.",
+      "extracted": {
+        "insights": [
+          "AI thay thế con người không phải vì năng lực vượt trội mà vì các yếu tố hiệu suất.",
+          "Tốc độ là một trong những lợi thế chính khiến AI thay thế con người trong công việc.",
+          "Chi phí thấp hơn là động lực quan trọng cho việc AI thay thế các vị trí lao động.",
+          "Khả năng làm việc không ngừng nghỉ của AI vượt trội so với sức bền của con người.",
+          "AI có khả năng lặp lại công việc ở quy mô lớn, điều mà con người khó thực hiện.",
+          "Quan điểm của doanh nghiệp về AI đã chuyển từ khả năng sang sự cần thiết của con người.",
+          "Doanh nghiệp không còn đặt câu hỏi về khả năng thực hiện công việc của AI.",
+          "Câu hỏi trọng tâm của doanh nghiệp đã thay đổi, đặt gánh nặng chứng minh lên con người.",
+          "Con người cần phải chứng minh giá trị và lý do tồn tại của mình trong các khâu làm việc.",
+          "Tương lai công việc đòi hỏi con người phải biện minh cho sự cần thiết của mình trước AI."
+        ],
+        "hooks": [
+          "Bạn có nghĩ AI sẽ thay thế công việc của bạn chỉ vì nó thông minh hơn?",
+          "Điều gì thực sự khiến AI trở thành mối đe dọa lớn cho việc làm của con người?",
+          "Tốc độ và hiệu quả của AI đang thay đổi hoàn toàn thị trường lao động.",
+          "AI có thể làm việc không mệt mỏi và ở quy mô khổng lồ, liệu bạn có theo kịp?",
+          "Doanh nghiệp không còn đặt câu hỏi về khả năng của AI nữa, vậy họ hỏi gì?",
+          "Câu hỏi lớn nhất hiện nay là: tại sao chúng ta vẫn cần con người ở đây?",
+          "Một kỷ nguyên mới nơi con người phải biện minh cho sự tồn tại của mình trong công việc.",
+          "Không phải 'AI có làm được không', mà là 'vì sao vẫn cần con người'?",
+          "Bạn đã sẵn sàng chứng minh giá trị của mình trước sự trỗi dậy của AI chưa?",
+          "Sự thay đổi tư duy của doanh nghiệp về AI sẽ ảnh hưởng đến bạn như thế nào?"
+        ],
+        "proofs": [
+          "\"AI không thay thế con người chỉ vì nó giỏi hơn.\"",
+          "AI thay thế con người vì nó nhanh hơn.",
+          "AI thay thế con người vì nó rẻ hơn.",
+          "AI thay thế con người vì nó không mệt.",
+          "AI thay thế con người vì nó có thể lặp lại.",
+          "AI thay thế con người vì nó có thể lặp lại ở quy mô lớn.",
+          "\"Doanh nghiệp không còn hỏi AI có làm được không.\"",
+          "Doanh nghiệp không còn đặt câu hỏi về khả năng của AI.",
+          "\"Họ sẽ hỏi vì sao vẫn cần con người ở khâu này.\"",
+          "Doanh nghiệp sẽ đặt câu hỏi về sự cần thiết của con người trong quy trình."
+        ]
+      },
+      "formatted": {
+        "contents": [
+          {
+            "content_type": "short_post",
+            "content_text": "Nỗi lo về AI thay thế công việc là có thật, nhưng sự thật phức tạp hơn nhiều. AI không đơn thuần là 'kẻ cướp việc làm' mà là một công cụ mạnh mẽ giúp chúng ta làm việc hiệu quả hơn, tự động hóa các tác vụ lặp lại và mở ra những cơ hội mới. Thay vì sợ hãi, hãy học cách khai thác sức mạnh của AI.",
+            "topic": "AI và Tương lai Công việc",
+            "angle": "AI là công cụ hỗ trợ, không phải mối đe dọa thay thế hoàn toàn",
+            "hook_type": "question",
+            "hook_used": "AI đang lấy đi công việc của bạn? Sự thật có thể khiến bạn bất ngờ!",
+            "status": "ready",
+            "cta": "Tìm hiểu cách thích nghi với kỷ nguyên AI để phát triển sự nghiệp của bạn!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Bạn lo lắng AI sẽ khiến công việc của mình lỗi thời? Đừng lo, AI là công cụ, không phải đối thủ. Hãy cùng khám phá 5 kỹ năng 'bất bại' mà AI khó lòng thay thế được, giúp bạn vững vàng trong mọi sự thay đổi.",
+            "topic": "Kỹ năng trong kỷ nguyên AI",
+            "angle": "Tập trung vào các kỹ năng con người AI không thể thay thế",
+            "hook_type": "question",
+            "hook_used": "Bạn lo lắng AI sẽ khiến công việc của mình lỗi thời?",
+            "status": "ready",
+            "slides": [
+              "Bạn lo lắng AI sẽ khiến công việc của mình lỗi thời?",
+              "Đừng lo, AI là công cụ, không phải đối thủ. Đây là cơ hội để bạn phát triển những năng lực 'độc quyền' của con người.",
+              "Hãy cùng khám phá 5 kỹ năng 'bất bại' mà AI khó lòng thay thế được, giúp bạn vững vàng trong mọi sự thay đổi.",
+              "1. Tư duy phản biện & Giải quyết vấn đề phức tạp: AI xử lý dữ liệu, nhưng con người đặt câu hỏi đúng và tìm giải pháp sáng tạo cho những thách thức phi cấu trúc.",
+              "2. Sáng tạo & Đổi mới: AI có thể tạo ra dựa trên dữ liệu hiện có, nhưng khả năng tưởng tượng, đột phá và tạo ra cái mới hoàn toàn vẫn là lãnh địa của con người.",
+              "3. Trí tuệ cảm xúc & Giao tiếp hiệu quả: Kết nối, thấu hiểu và truyền cảm hứng là những kỹ năng cốt lõi trong mọi môi trường làm việc, điều mà AI còn lâu mới sánh kịp.",
+              "4. Khả năng học hỏi liên tục & Thích nghi: Thế giới thay đổi không ngừng. Khả năng tự học, thích nghi nhanh chóng với công nghệ và yêu cầu mới là chìa khóa để tồn tại và phát triển.",
+              "Hãy đầu tư vào những kỹ năng này để biến AI thành đồng minh, không phải đối thủ. Tương lai công việc nằm trong tay bạn!"
+            ]
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "AI không phải là giải pháp thay thế con người, mà là một 'cộng sự' đắc lực giúp nâng tầm năng lực và giải phóng chúng ta khỏi những công việc lặp lại, nhàm chán. Bằng cách tích hợp AI vào quy trình làm việc, chúng ta có thể tập trung vào những nhiệm vụ sáng tạo, chiến lược và có giá trị cao hơn.",
+            "topic": "AI và Năng suất lao động",
+            "angle": "AI giúp tăng năng suất và hiệu quả, giải phóng con người khỏi công việc lặp lại",
+            "hook_type": "shock",
+            "hook_used": "Sự thật về AI: Không phải thay thế, mà là nâng tầm năng lực con người!",
+            "status": "ready",
+            "cta": "Khám phá tiềm năng AI trong công việc của bạn ngay hôm nay!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Trong kỷ nguyên AI, tương lai của lao động trí óc đang được định hình lại. Liệu công việc của bạn có an toàn trước làn sóng công nghệ này? Nỗi sợ mất việc, không theo kịp sự phát triển là nỗi đau chung của nhiều người. Tuy nhiên, AI sẽ tái định hình, không xóa sổ. Cơ hội nằm ở việc khai thác sức mạnh của nó để nâng cao giá trị bản thân và công việc. Đừng để nỗi sợ hãi làm bạn chùn bước. Hãy chủ động học hỏi và thích nghi.",
+            "topic": "Tương lai của lao động trí óc với AI",
+            "angle": "Thích nghi và học hỏi là chìa khóa để phát triển",
+            "hook_type": "question",
+            "hook_used": "Liệu công việc của bạn có an toàn trước làn sóng AI?",
+            "status": "ready",
+            "pain": "Nỗi sợ mất việc, không theo kịp công nghệ và cảm thấy lạc hậu.",
+            "insight": "AI sẽ tái định hình, không xóa sổ. Cơ hội nằm ở việc khai thác sức mạnh của nó để nâng cao giá trị bản thân.",
+            "cta": "Bắt đầu hành trình học hỏi về AI ngay hôm nay để làm chủ tương lai của bạn!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Làm thế nào để doanh nghiệp của bạn không bị AI bỏ lại phía sau? Kỷ nguyên AI không chỉ là thách thức, mà còn là cơ hội vàng để bứt phá. Hãy cùng tìm hiểu 4 cách mà các doanh nghiệp thông minh đang tận dụng AI để phát triển mạnh mẽ và tạo lợi thế cạnh tranh vượt trội.",
+            "topic": "AI cho Doanh nghiệp",
+            "angle": "Góc nhìn cho doanh nghiệp về việc tích hợp AI để phát triển",
+            "hook_type": "question",
+            "hook_used": "Làm thế nào để doanh nghiệp của bạn không bị AI bỏ lại phía sau?",
+            "status": "ready",
+            "slides": [
+              "Làm thế nào để doanh nghiệp của bạn không bị AI bỏ lại phía sau?",
+              "Kỷ nguyên AI không chỉ là thách thức, mà còn là cơ hội vàng để bứt phá và tạo lợi thế cạnh tranh.",
+              "Đây là 4 cách doanh nghiệp thông minh đang tận dụng AI để phát triển mạnh mẽ.",
+              "1. Tối ưu hóa quy trình & Tự động hóa tác vụ lặp lại: Giảm chi phí, tăng tốc độ và giải phóng nhân lực cho các công việc chiến lược.",
+              "2. Phân tích dữ liệu chuyên sâu để đưa ra quyết định tốt hơn: AI giúp biến núi dữ liệu thành thông tin hữu ích, hỗ trợ ra quyết định kinh doanh chính xác hơn.",
+              "3. Cá nhân hóa trải nghiệm khách hàng & Nâng cao dịch vụ: Hiểu rõ khách hàng hơn, cung cấp trải nghiệm tùy chỉnh, tăng sự hài lòng và lòng trung thành.",
+              "4. Đổi mới sản phẩm/dịch vụ & Mở rộng thị trường: AI giúp phát hiện xu hướng mới, phát triển sản phẩm đột phá và mở rộng sang các lĩnh vực chưa từng có.",
+              "Đừng chần chừ! Hãy biến AI thành lợi thế cạnh tranh của bạn và dẫn đầu thị trường!"
+            ]
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Đã đến lúc chúng ta không còn nhìn AI như một công nghệ xa vời mà là một 'đồng nghiệp' mới. Học cách làm việc cùng AI không chỉ là lợi thế mà còn là kỹ năng thiết yếu. Từ việc sử dụng các công cụ AI đơn giản để hỗ trợ công việc hàng ngày đến việc hiểu cách AI có thể tối ưu hóa quy trình của bạn, hãy bắt đầu hành trình này ngay bây giờ.",
+            "topic": "Học cách làm việc cùng AI",
+            "angle": "Hướng dẫn thực tế để tích hợp AI vào quy trình làm việc cá nhân",
+            "hook_type": "question",
+            "hook_used": "Bạn đã sẵn sàng làm việc cùng 'đồng nghiệp AI' mới của mình?",
+            "status": "ready",
+            "cta": "Khám phá các công cụ AI đơn giản có thể hỗ trợ công việc của bạn ngay hôm nay!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Bạn có đang nhìn AI như một 'kẻ thù' đang đe dọa công việc và tương lai của mình? Đừng để AI trở thành một 'nỗi sợ vô hình' kiểm soát bạn. Cảm giác bị đe dọa, không biết bắt đầu từ đâu là điều dễ hiểu. Nhưng hãy nhớ, AI cũng chỉ là một công nghệ, giống như internet hay máy tính cách đây vài thập kỷ. Người chiến thắng là người biết cách học hỏi, thích nghi và sử dụng nó một cách hiệu quả nhất.",
+            "topic": "Chủ động với AI",
+            "angle": "Chuyển từ lo lắng sang chủ động học hỏi và khai thác AI",
+            "hook_type": "question",
+            "hook_used": "Bạn có đang nhìn AI như một 'kẻ thù' đang đe dọa công việc của mình?",
+            "status": "ready",
+            "pain": "Cảm giác bị đe dọa bởi AI, không biết cách đối phó hoặc bắt đầu từ đâu.",
+            "insight": "AI là một công nghệ, giống như bất kỳ công cụ nào khác. Sức mạnh của nó nằm ở cách chúng ta khai thác và sử dụng nó.",
+            "cta": "Hãy biến AI thành sức mạnh của bạn, không phải điểm yếu! Bắt đầu học hỏi ngay!"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-28T09:10:41.523Z",
+      "status": "ready",
+      "contents": [
+        {
+          "content_type": "short_post",
+          "content_text": "Bạn có đang lo lắng về việc AI sẽ 'cướp' mất công việc của mình? Đừng quá hoang mang! Thực tế, AI đang mở ra kỷ nguyên cộng tác mới, nơi nó đảm nhận các tác vụ lặp đi lặp lại, giúp chúng ta tập trung vào công việc sáng tạo, chiến lược và yêu cầu kỹ năng mềm. Hãy nhìn nhận AI như một công cụ mạnh mẽ giúp bạn nâng cao năng suất và giá trị, chứ không phải một mối đe dọa.",
+          "topic": "AI và Tương lai việc làm",
+          "angle": "AI là công cụ hỗ trợ, không phải mối đe dọa",
+          "hook_type": "question",
+          "hook_used": "Bạn có đang lo lắng về việc AI sẽ 'cướp' mất công việc của mình?",
+          "status": "ready",
+          "cta": "Tìm hiểu cách AI có thể nâng tầm sự nghiệp của bạn!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "Trong kỷ nguyên AI, kỹ năng nào sẽ giúp bạn không bị lạc hậu? Câu trả lời không nằm ở việc cạnh tranh với máy móc, mà là phát triển những gì máy móc không thể làm: tư duy phản biện, giải quyết vấn đề phức tạp, sáng tạo và đặc biệt là trí tuệ cảm xúc. Đây chính là những 'siêu năng lực' giúp bạn làm chủ tương lai việc làm.",
+          "topic": "Kỹ năng trong kỷ nguyên AI",
+          "angle": "Phát triển kỹ năng mềm để làm chủ AI",
+          "hook_type": "question",
+          "hook_used": "Trong kỷ nguyên AI, kỹ năng nào sẽ giúp bạn không bị lạc hậu?",
+          "status": "ready",
+          "cta": "Đầu tư vào kỹ năng mềm ngay hôm nay!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "Tương lai việc làm không còn như cũ. Bạn đã sẵn sàng thích nghi? Sự phát triển của AI đòi hỏi chúng ta phải không ngừng học hỏi và thích nghi. Các doanh nghiệp cần đầu tư vào đào tạo lại nhân viên, trong khi cá nhân cần chủ động nâng cao năng lực. Tương lai thuộc về những ai biết cách làm việc cùng AI và khai thác tối đa tiềm năng của nó.",
+          "topic": "Thích nghi với AI",
+          "angle": "Thích nghi và đào tạo lại là chìa khóa thành công",
+          "hook_type": "curiosity",
+          "hook_used": "Tương lai việc làm không còn như cũ. Bạn đã sẵn sàng thích nghi?",
+          "status": "ready",
+          "cta": "Khám phá các khóa học kỹ năng tương lai!"
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "AI đang đến. Nó là kẻ thù hay người cộng sự đắc lực của bạn? Carousel này sẽ giúp bạn hiểu rõ hơn về tác động của AI đến công việc và cách bạn có thể tận dụng nó để phát triển.",
+          "topic": "AI: Thách thức hay Cơ hội",
+          "angle": "Phân tích hai mặt của AI và cách tận dụng cơ hội",
+          "hook_type": "question",
+          "hook_used": "AI đang đến. Nó là kẻ thù hay người cộng sự đắc lực của bạn?",
+          "status": "ready",
+          "slides": [
+            "Slide 1: AI: Thách Thức Hay Cơ Hội Cho Công Việc Của Bạn?",
+            "Slide 2: Nỗi Sợ Hãi Chung: AI Sẽ Cướp Việc Làm Của Chúng Ta?",
+            "Slide 3: Thực Tế: AI Đảm Nhận Tác Vụ Lặp Lại, Giải Phóng Con Người",
+            "Slide 4: Vai Trò Mới: Con Người Tập Trung Sáng Tạo & Chiến Lược",
+            "Slide 5: Kỹ Năng Cần Có: Tư Duy Phản Biện, Sáng Tạo, EQ",
+            "Slide 6: Doanh Nghiệp Cần Làm Gì? Đào Tạo & Môi Trường Linh Hoạt",
+            "Slide 7: Tương Lai Cộng Tác: AI Nâng Tầm Con Người, Không Thay Thế. #AIViệcLàm"
+          ]
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "Muốn làm chủ cuộc chơi trong kỷ nguyên AI? Đây là 5 kỹ năng bạn cần! Carousel này sẽ chỉ ra những kỹ năng 'vàng' giúp bạn không chỉ tồn tại mà còn bùng nổ trong thế giới có AI.",
+          "topic": "Kỹ năng vàng kỷ nguyên AI",
+          "angle": "Cung cấp giải pháp cụ thể (kỹ năng) để thành công với AI",
+          "hook_type": "curiosity",
+          "hook_used": "Muốn làm chủ cuộc chơi trong kỷ nguyên AI? Đây là 5 kỹ năng bạn cần!",
+          "status": "ready",
+          "slides": [
+            "Slide 1: 5 Kỹ Năng Vàng Để Bùng Nổ Trong Kỷ Nguyên AI",
+            "Slide 2: Vì Sao AI Không Thể Thay Thế Hoàn Toàn Bạn?",
+            "Slide 3: Kỹ Năng 1: Tư Duy Phản Biện & Giải Quyết Vấn Đề Phức Tạp",
+            "Slide 4: Kỹ Năng 2: Sáng Tạo & Đổi Mới Không Ngừng",
+            "Slide 5: Kỹ Năng 3: Trí Tuệ Cảm Xúc (EQ) & Giao Tiếp Hiệu Quả",
+            "Slide 6: Kỹ Năng 4: Khả Năng Học Hỏi & Thích Nghi Nhanh Chóng",
+            "Slide 7: Hãy Bắt Đầu Phát Triển Ngay Hôm Nay! #KỹNăngAI"
+          ]
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Sự thật về AI và công việc của bạn không như bạn nghĩ! Nhiều người sợ hãi bị AI thay thế, nhưng thực ra AI đang mở ra cơ hội để chúng ta tập trung vào những giá trị cốt lõi của con người. Hãy xem AI như một người cộng sự đắc lực, giúp bạn làm việc hiệu quả và sáng tạo hơn.",
+          "topic": "AI và Tương lai việc làm",
+          "angle": "AI không thay thế mà nâng tầm con người",
+          "hook_type": "curiosity",
+          "hook_used": "Sự thật về AI và công việc của bạn không như bạn nghĩ!",
+          "status": "ready",
+          "pain": "Nỗi sợ hãi bị AI thay thế công việc.",
+          "insight": "AI là đối tác, không phải đối thủ, giúp con người tập trung vào công việc sáng tạo và chiến lược.",
+          "cta": "Bạn nghĩ sao về vai trò của AI trong công việc của mình? Chia sẻ bên dưới nhé!"
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Bạn có biết, những kỹ năng 'mềm' đang trở thành 'vũ khí' mạnh nhất trong kỷ nguyên AI? Trong khi AI xuất sắc với dữ liệu và logic, con người lại vượt trội về tư duy phản biện, sáng tạo và trí tuệ cảm xúc. Đây chính là những kỹ năng không thể thiếu để làm việc hiệu quả cùng AI và định hình tương lai.",
+          "topic": "Kỹ năng mềm trong kỷ nguyên AI",
+          "angle": "Kỹ năng mềm là chìa khóa để làm việc hiệu quả với AI",
+          "hook_type": "question",
+          "hook_used": "Bạn có biết, những kỹ năng 'mềm' đang trở thành 'vũ khí' mạnh nhất trong kỷ nguyên AI?",
+          "status": "ready",
+          "pain": "Không biết phải chuẩn bị gì để không bị lạc hậu trong kỷ nguyên AI.",
+          "insight": "Kỹ năng mềm như tư duy phản biện, sáng tạo, EQ là những yếu tố con người không thể bị AI thay thế, mà còn giúp khai thác sức mạnh của AI.",
+          "cta": "Bạn đã trang bị những kỹ năng này chưa? #KỹNăngTươngLai"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T09:30:39.483Z",
+      "status": "ready",
+      "contents": [
+        {
+          "content_type": "short_post",
+          "content_text": "Kỷ nguyên AI không chỉ là thách thức mà còn là cơ hội vàng để định hình lại sự nghiệp. Thay vì lo lắng về việc AI thay thế, hãy tập trung vào những kỹ năng mà AI không thể sao chép: sáng tạo, tư duy phản biện, trí tuệ cảm xúc và khả năng giải quyết vấn đề phức tạp. Những kỹ năng này sẽ giúp bạn không chỉ thích nghi mà còn dẫn đầu trong thị trường lao động tương lai.",
+          "topic": "AI và tương lai công việc",
+          "angle": "Cơ hội và sự chuẩn bị",
+          "hook_type": "question",
+          "hook_used": "Bạn đã sẵn sàng để 'nâng cấp' sự nghiệp trong kỷ nguyên AI?",
+          "status": "ready",
+          "cta": "Tìm hiểu ngay các kỹ năng thiết yếu tại [Link website/blog]!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "AI không phải là kẻ thù, mà là công cụ mạnh mẽ để tăng cường năng lực con người. Tự động hóa các tác vụ lặp đi lặp lại, phân tích dữ liệu khổng lồ, và đưa ra dự đoán chính xác là những gì AI làm tốt nhất. Điều này giải phóng chúng ta để tập trung vào những công việc đòi hỏi sự sáng tạo, đổi mới và tương tác con người. Hãy học cách làm chủ AI để biến nó thành trợ thủ đắc lực của bạn.",
+          "topic": "AI như một công cụ hỗ trợ",
+          "angle": "Tận dụng và làm chủ công nghệ",
+          "hook_type": "shock",
+          "hook_used": "AI không 'cướp' việc của bạn, nó 'trao quyền' cho bạn!",
+          "status": "ready",
+          "cta": "Khám phá cách AI có thể nâng cao hiệu suất công việc của bạn!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "Trong bối cảnh AI phát triển không ngừng, việc học hỏi liên tục (lifelong learning) trở nên quan trọng hơn bao giờ hết. Thị trường lao động sẽ ưu tiên những người có khả năng thích ứng nhanh, sẵn sàng học hỏi kỹ năng mới và không ngừng nâng cao kiến thức. Đừng để mình bị tụt hậu, hãy biến sự thay đổi thành động lực để phát triển bản thân.",
+          "topic": "Học hỏi liên tục trong kỷ nguyên AI",
+          "angle": "Tầm quan trọng của sự thích nghi",
+          "hook_type": "curiosity",
+          "hook_used": "Bí quyết nào giúp bạn không bị AI 'bỏ lại phía sau'?",
+          "status": "ready",
+          "cta": "Bắt đầu hành trình học tập suốt đời của bạn ngay hôm nay!"
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "AI đang định hình lại mọi lĩnh vực, và để phát triển trong kỷ nguyên này, bạn cần trang bị cho mình 7 kỹ năng 'bất tử' mà AI khó lòng thay thế. Đây là những nền tảng vững chắc giúp bạn luôn dẫn đầu và tạo ra giá trị khác biệt.",
+          "topic": "Kỹ năng cần thiết trong kỷ nguyên AI",
+          "angle": "Hướng dẫn phát triển bản thân",
+          "hook_type": "curiosity",
+          "hook_used": "7 kỹ năng 'bất tử' giúp bạn vượt trội trong thế giới AI!",
+          "status": "ready",
+          "slides": [
+            "Slide 1: Kỹ năng 'bất tử' trong kỷ nguyên AI",
+            "Slide 2: Tư duy phản biện & Giải quyết vấn đề phức tạp",
+            "Slide 3: Sáng tạo & Đổi mới",
+            "Slide 4: Trí tuệ cảm xúc & Kỹ năng giao tiếp",
+            "Slide 5: Khả năng thích ứng & Học hỏi liên tục",
+            "Slide 6: Kiến thức cơ bản về AI & Phân tích dữ liệu",
+            "Slide 7: Lãnh đạo & Hợp tác đa văn hóa"
+          ]
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "AI đang thay đổi cách chúng ta làm việc, từ tự động hóa đến tạo ra những ngành nghề hoàn toàn mới. Hiểu rõ 7 cách AI tác động đến thị trường lao động sẽ giúp bạn có cái nhìn toàn diện và chuẩn bị tốt nhất cho tương lai.",
+          "topic": "Tác động của AI đến thị trường lao động",
+          "angle": "Phân tích và dự đoán",
+          "hook_type": "question",
+          "hook_used": "Thị trường lao động của bạn sẽ thay đổi thế nào trong 5 năm tới vì AI?",
+          "status": "ready",
+          "slides": [
+            "Slide 1: AI và Tương lai Công việc",
+            "Slide 2: Tự động hóa công việc lặp đi lặp lại",
+            "Slide 3: Nhu cầu kỹ năng mới tăng cao",
+            "Slide 4: Tạo ra ngành nghề và vai trò mới",
+            "Slide 5: Tăng cường hiệu suất và năng suất",
+            "Slide 6: Cá nhân hóa trải nghiệm làm việc",
+            "Slide 7: Tầm quan trọng của đạo đức và quy định AI"
+          ]
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Nỗi lo về việc AI 'cướp' mất công việc là điều hoàn toàn dễ hiểu trong thời đại công nghệ số. Nhưng hãy nhìn nhận rõ hơn: AI không thay thế con người, mà nó thay đổi những gì chúng ta làm. Thay vì để nỗi sợ hãi kiểm soát, hãy biến nó thành động lực để học hỏi và thích nghi. Tương lai thuộc về những người biết cách cộng tác cùng AI, không phải chống lại nó.",
+          "topic": "Nỗi sợ AI và cách đối phó",
+          "angle": "Đồng cảm và định hướng giải pháp",
+          "hook_type": "question",
+          "hook_used": "Bạn có đang lo lắng về việc AI sẽ lấy đi công việc của mình?",
+          "status": "ready",
+          "pain": "Nỗi sợ bị AI thay thế, mất việc, cảm giác tụt hậu trong kỷ nguyên công nghệ mới.",
+          "insight": "AI thay đổi cách làm việc chứ không hoàn toàn thay thế con người. Chủ động học hỏi và thích nghi là chìa khóa để vượt qua nỗi sợ hãi và phát triển.",
+          "cta": "Hãy cùng thảo luận về cách bạn đang chuẩn bị cho tương lai với AI!"
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Thay vì xem AI là một mối đe dọa, hãy coi nó là một 'người cộng sự' đắc lực. AI có thể xử lý dữ liệu khổng lồ, thực hiện các tác vụ lặp đi lặp lại và cung cấp thông tin chi tiết nhanh chóng, giúp bạn có thêm thời gian và năng lượng để tập trung vào những công việc đòi hỏi sự sáng tạo, tư duy chiến lược và tương tác con người. Hãy khai thác sức mạnh của AI để nâng tầm công việc của bạn!",
+          "topic": "AI như một cộng sự đắc lực",
+          "angle": "Tái định nghĩa vai trò của AI",
+          "hook_type": "shock",
+          "hook_used": "AI không phải đối thủ, nó là 'cánh tay phải' của bạn!",
+          "status": "ready",
+          "pain": "Cảm giác bị AI đe dọa hoặc thấy AI là một công nghệ quá phức tạp để tiếp cận.",
+          "insight": "AI là công cụ hỗ trợ mạnh mẽ, giúp con người tối ưu hóa công việc và tập trung vào giá trị cốt lõi, biến chúng ta thành những người làm việc hiệu quả hơn.",
+          "cta": "Bạn đã sẵn sàng để 'kết bạn' với AI chưa? Chia sẻ suy nghĩ của bạn!"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T09:34:55.265Z",
+      "status": "ready",
+      "contents": [
+        {
+          "content_type": "short_post",
+          "content_text": "Kỷ nguyên AI không chỉ là thách thức mà còn là cơ hội vàng để bạn nâng cấp bản thân. Thay vì lo lắng về việc AI 'lấy đi' công việc, hãy tập trung phát triển những kỹ năng mà AI khó lòng thay thế: sáng tạo, tư duy phản biện, EQ và khả năng giải quyết vấn đề phức tạp. Đây chính là tấm vé giúp bạn vững vàng trong tương lai.",
+          "topic": "Kỹ năng tương lai trong kỷ nguyên AI",
+          "angle": "Cơ hội phát triển bản thân",
+          "hook_type": "curiosity",
+          "hook_used": "Bạn có biết, những kỹ năng nào sẽ giúp bạn 'bất bại' trước kỷ nguyên AI?",
+          "status": "ready",
+          "cta": "Khám phá ngay các khóa học kỹ năng mềm để dẫn đầu xu thế!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "AI không phải là đối thủ, mà là cộng sự đắc lực giúp bạn tối ưu hóa công việc. Học cách tận dụng AI để tự động hóa các tác vụ lặp lại, phân tích dữ liệu nhanh hơn, và đưa ra quyết định thông minh hơn. Khi bạn biết cách 'điều khiển' AI, năng suất và hiệu quả công việc của bạn sẽ tăng vọt.",
+          "topic": "Tận dụng AI để tối ưu hóa công việc",
+          "angle": "AI là công cụ hỗ trợ",
+          "hook_type": "question",
+          "hook_used": "Bạn đã sẵn sàng biến AI thành 'trợ lý' đắc lực của mình chưa?",
+          "status": "ready",
+          "cta": "Tìm hiểu cách tích hợp AI vào quy trình làm việc của bạn!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "Trong thế giới nơi AI có thể tạo ra nội dung, phân tích thông tin và thậm chí 'sáng tác', giá trị cốt lõi của con người nằm ở khả năng tư duy phản biện. Đừng chỉ chấp nhận thông tin, hãy đặt câu hỏi, phân tích sâu sắc và đưa ra góc nhìn độc đáo. Đây là năng lực mà AI còn rất lâu mới có thể sánh kịp.",
+          "topic": "Tầm quan trọng của tư duy phản biện",
+          "angle": "Nâng cao giá trị con người",
+          "hook_type": "shock",
+          "hook_used": "Khi AI làm được mọi thứ, điều gì khiến bạn trở nên không thể thay thế?",
+          "status": "ready",
+          "cta": "Phát triển tư duy phản biện: Khóa học của chúng tôi sẽ giúp bạn!"
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "Kỷ nguyên AI đang định hình lại thị trường lao động. Để không bị tụt lại phía sau, bạn cần trang bị cho mình những kỹ năng 'bất bại'. Carousel này sẽ giúp bạn điểm danh 5 kỹ năng quan trọng nhất để vững vàng trong tương lai.",
+          "topic": "5 Kỹ năng 'bất bại' trong kỷ nguyên AI",
+          "angle": "Chuẩn bị cho tương lai công việc",
+          "hook_type": "curiosity",
+          "hook_used": "AI đang đến. Bạn đã trang bị những kỹ năng nào để 'sống sót' và phát triển?",
+          "status": "ready",
+          "slides": [
+            "Slide 1: AI đang thay đổi mọi thứ! 🚀",
+            "Slide 2: 5 Kỹ năng 'Bất Bại' Bạn Cần Có Ngay",
+            "Slide 3: Kỹ Năng 1: Sáng Tạo & Đổi Mới - AI chỉ tối ưu, con người tạo ra cái mới.",
+            "Slide 4: Kỹ Năng 2: Tư Duy Phản Biện - Đặt câu hỏi, phân tích sâu, không tin tuyệt đối vào AI.",
+            "Slide 5: Kỹ Năng 3: Trí Tuệ Cảm Xúc (EQ) - Giao tiếp, thấu hiểu, lãnh đạo – thế mạnh của con người.",
+            "Slide 6: Kỹ Năng 4: Khả Năng Giải Quyết Vấn Đề Phức Tạp - Vượt ngoài logic AI, cần sự linh hoạt.",
+            "Slide 7: Slide 7: Tương Lai Thuộc Về Bạn! 💡 Nâng cấp bản thân ngay hôm nay!"
+          ]
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "Có rất nhiều lầm tưởng về việc AI sẽ 'cướp' hết việc làm. Carousel này sẽ giúp bạn nhìn nhận vấn đề một cách thực tế hơn, phá bỏ những định kiến sai lầm và thấy được cơ hội mà AI mang lại.",
+          "topic": "Phá bỏ lầm tưởng về AI và việc làm",
+          "angle": "Góc nhìn thực tế, tích cực",
+          "hook_type": "shock",
+          "hook_used": "Sự thật về AI và việc làm: Không phải tất cả đều như bạn nghĩ!",
+          "status": "ready",
+          "slides": [
+            "Slide 1: AI & Việc làm: Những lầm tưởng cần được giải mã!",
+            "Slide 2: Lầm tưởng 1: AI sẽ thay thế hoàn toàn con người. THỰC TẾ: AI bổ trợ, tự động hóa tác vụ lặp.",
+            "Slide 3: Lầm tưởng 2: Chỉ dân IT mới cần quan tâm AI. THỰC TẾ: AI tác động mọi ngành nghề, ai cũng cần hiểu biết cơ bản.",
+            "Slide 4: Lầm tưởng 3: AI làm tăng thất nghiệp. THỰC TẾ: AI tạo ra nhiều việc làm mới, đòi hỏi kỹ năng mới.",
+            "Slide 5: Lầm tưởng 4: Học AI rất khó và mất thời gian. THỰC TẾ: Có nhiều tài nguyên học tập, bắt đầu từ những điều cơ bản.",
+            "Slide 6: Lầm tưởng 5: Không thể cạnh tranh với AI. THỰC TẾ: Hãy hợp tác với AI để tăng cường năng lực của bạn.",
+            "Slide 7: Slide 7: Cơ hội đang chờ đợi! 🌟 Đừng sợ hãi, hãy chuẩn bị!"
+          ]
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Trong một thế giới thay đổi không ngừng bởi AI, việc học hỏi liên tục không còn là một lựa chọn mà là một yếu tố sống còn. Đầu tư vào kiến thức và kỹ năng mới chính là cách bạn xây dựng một tương lai vững chắc, không chỉ cho sự nghiệp mà còn cho sự phát triển cá nhân.",
+          "topic": "Tầm nhìn dài hạn với AI",
+          "angle": "Đầu tư vào bản thân",
+          "hook_type": "curiosity",
+          "hook_used": "AI không chỉ thay đổi công việc, mà còn thay đổi cách chúng ta học hỏi. Bạn đã sẵn sàng thích nghi?",
+          "status": "ready",
+          "pain": "Nỗi lo lắng về việc mất việc, tụt hậu trong kỷ nguyên số.",
+          "insight": "Học hỏi liên tục (lifelong learning) và khả năng thích nghi là chìa khóa để tồn tại và phát triển trong mọi ngành nghề.",
+          "cta": "Bắt đầu hành trình học tập suốt đời của bạn ngay hôm nay!"
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Thay vì nhìn AI như một mối đe dọa, hãy xem nó như một đối tác mạnh mẽ. Sự kết hợp giữa khả năng phân tích dữ liệu siêu việt của AI và trí tuệ cảm xúc, sáng tạo của con người sẽ mở ra những giới hạn mới, tối ưu hóa mọi quy trình và tạo ra giá trị đột phá.",
+          "topic": "AI và sự hợp tác con người-máy móc",
+          "angle": "Tối ưu hóa hiệu suất qua hợp tác",
+          "hook_type": "question",
+          "hook_used": "Làm thế nào để bạn và AI có thể cùng nhau tạo ra những đột phá?",
+          "status": "ready",
+          "pain": "Áp lực phải 'cạnh tranh' với AI và cảm giác bị thay thế.",
+          "insight": "AI là công cụ mạnh mẽ khi được sử dụng để bổ trợ và tăng cường năng lực con người, chứ không phải thay thế hoàn toàn.",
+          "cta": "Khám phá các giải pháp AI để nâng cao năng suất và tạo ra giá trị mới!"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T10:08:39.189Z",
+      "status": "rejected",
+      "reason": "Carousel item 4 contains 8 slides instead of the required 7, and has duplicate slide numbering ('Slide 7'). Carousel item 5 also contains 8 slides instead of the required 7, and has duplicate slide numbering ('Slide 7').",
+      "extracted": {
+        "insights": [
+          "Nội dung này được tạo ra với mục đích kiểm tra.",
+          "Nó được thiết kế riêng cho một thực thể cụ thể là Mikage Channel Operator.",
+          "Đây là một dạng nội dung nguồn, không phải nội dung đã qua xử lý.",
+          "Sự tồn tại của nó gợi ý về một hệ thống hoặc quy trình đang được phát triển/kiểm thử."
+        ],
+        "hooks": [
+          "Bạn có bao giờ tự hỏi nội dung kiểm tra trông như thế nào không?",
+          "Điều gì đặc biệt về Mikage Channel Operator mà cần một \"nguồn kiểm tra\" riêng?",
+          "Một câu nói đơn giản có thể ẩn chứa những thông tin gì?",
+          "Khám phá mục đích thực sự đằng sau nội dung này."
+        ],
+        "proofs": [
+          "Cụm từ \"test source content\" chứng minh đây là nội dung kiểm tra.",
+          "\"for Mikage Channel Operator\" xác định rõ đối tượng sử dụng nội dung này.",
+          "Việc sử dụng từ \"test\" khẳng định tính thử nghiệm của tài liệu.",
+          "Từ \"source\" chỉ ra đây là dữ liệu gốc, chưa qua chỉnh sửa."
+        ]
+      },
+      "formatted": {
+        "contents": [
+          {
+            "content_type": "short_post",
+            "content_text": "Trong bối cảnh AI đang định hình lại thị trường lao động, các kỹ năng mềm như tư duy phản biện, sáng tạo và trí tuệ cảm xúc ngày càng trở nên quan trọng. Đây là những năng lực mà AI khó có thể sao chép, giúp bạn duy trì lợi thế cạnh tranh và phát triển sự nghiệp bền vững.",
+            "topic": "Kỹ năng trong kỷ nguyên AI",
+            "angle": "Nhấn mạnh tầm quan trọng của kỹ năng mềm",
+            "hook_type": "question",
+            "hook_used": "Bạn có đang chuẩn bị cho tương lai công việc của mình trong kỷ nguyên AI?",
+            "status": "ready",
+            "cta": "Tìm hiểu ngay các kỹ năng AI không thể thay thế!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "AI không phải là đối thủ, mà là một công cụ mạnh mẽ có thể nâng cao hiệu suất và mở ra những cơ hội mới. Thay vì lo sợ, hãy học cách tận dụng AI để tự động hóa các tác vụ lặp lại, giải phóng thời gian cho những công việc đòi hỏi sự sáng tạo và chiến lược của con người.",
+            "topic": "AI: Công cụ hay đối thủ?",
+            "angle": "Thay đổi góc nhìn về AI từ mối đe dọa sang cơ hội",
+            "hook_type": "shock",
+            "hook_used": "AI sẽ không 'cướp' việc của bạn... nếu bạn biết cách này!",
+            "status": "ready",
+            "cta": "Khám phá cách AI có thể trở thành đồng minh của bạn!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Thế giới đang chứng kiến sự bùng nổ của AI, tạo ra vô vàn cơ hội mới trong các lĩnh vực như phát triển ứng dụng AI, phân tích dữ liệu chuyên sâu và tích hợp AI vào quy trình kinh doanh. Việc nắm bắt những xu hướng này sẽ giúp bạn định hướng sự nghiệp và đón đầu tương lai.",
+            "topic": "Cơ hội mới từ AI",
+            "angle": "Tập trung vào các lĩnh vực tiềm năng do AI tạo ra",
+            "hook_type": "curiosity",
+            "hook_used": "Bạn có biết 3 lĩnh vực nào sẽ bùng nổ nhờ AI trong thập kỷ tới?",
+            "status": "ready",
+            "cta": "Đừng bỏ lỡ những cơ hội vàng này!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Để không bị AI 'thay thế', bạn cần một lộ trình rõ ràng để phát triển bản thân. Carousel này sẽ hướng dẫn bạn 7 bước thiết yếu để thích nghi và phát triển mạnh mẽ trong kỷ nguyên AI, biến thách thức thành lợi thế.",
+            "topic": "Lộ trình thích nghi với AI",
+            "angle": "Cung cấp giải pháp hành động cụ thể để đối phó với thách thức AI",
+            "hook_type": "question",
+            "hook_used": "Lo lắng AI sẽ 'thay thế' bạn? Đây là 7 bước bạn cần làm ngay!",
+            "status": "ready",
+            "slides": [
+              "Slide 1: AI đang thay đổi mọi thứ! Đừng để bị bỏ lại phía sau.",
+              "Slide 2: Bước 1: Hiểu rõ AI là gì và cách nó hoạt động cơ bản.",
+              "Slide 3: Bước 2: Phát triển kỹ năng mềm: Sáng tạo, EQ, tư duy phản biện.",
+              "Slide 4: Bước 3: Học cách làm việc cùng AI: Sử dụng công cụ AI hỗ trợ công việc.",
+              "Slide 5: Bước 4: Tập trung vào giải quyết vấn đề phức tạp và chiến lược.",
+              "Slide 6: Bước 5: Liên tục học hỏi và cập nhật kiến thức mới về AI.",
+              "Slide 7: Bước 6: Xây dựng mạng lưới và tìm kiếm cơ hội hợp tác.",
+              "Slide 7: Bước 7: Trở thành người kiến tạo, không phải người bị động. Tương lai của bạn do bạn nắm giữ!"
+            ]
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Trong thế giới ngày càng tự động hóa bởi AI, có những kỹ năng 'bất khả xâm phạm' mà chỉ con người mới có thể sở hữu. Khám phá 7 kỹ năng cốt lõi sẽ giúp bạn tạo ra giá trị độc đáo và không thể thay thế.",
+            "topic": "Kỹ năng 'bất khả xâm phạm' trước AI",
+            "angle": "Nhấn mạnh giá trị độc đáo của con người mà AI không thể thay thế",
+            "hook_type": "curiosity",
+            "hook_used": "7 kỹ năng AI không bao giờ 'cướp' được từ bạn là gì?",
+            "status": "ready",
+            "slides": [
+              "Slide 1: AI đang mạnh lên, nhưng có những thứ nó không thể làm được!",
+              "Slide 2: Kỹ năng 1: Tư duy phản biện - Đánh giá thông tin, đưa ra quyết định sáng suốt.",
+              "Slide 3: Kỹ năng 2: Sáng tạo - Tạo ra ý tưởng mới, giải pháp độc đáo.",
+              "Slide 4: Kỹ năng 3: Trí tuệ cảm xúc (EQ) - Hiểu và quản lý cảm xúc của bản thân và người khác.",
+              "Slide 5: Kỹ năng 4: Đạo đức & Luân lý - Đưa ra các quyết định có trách nhiệm.",
+              "Slide 6: Kỹ năng 5: Khả năng lãnh đạo - Truyền cảm hứng, định hướng và quản lý đội nhóm.",
+              "Slide 7: Kỹ năng 6: Giao tiếp phức tạp - Thấu hiểu ngữ cảnh, xây dựng mối quan hệ.",
+              "Slide 7: Kỹ năng 7: Khả năng thích ứng & Học hỏi liên tục - Luôn sẵn sàng thay đổi và phát triển."
+            ]
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Nỗi lo về việc AI sẽ chiếm lĩnh công việc của chúng ta là có thật, nhưng đó không phải là toàn bộ câu chuyện. AI thực chất là một công cụ mở ra kỷ nguyên mới của sự hợp tác giữa người và máy, nơi sự sáng tạo và tư duy chiến lược của con người được nâng tầm.",
+            "topic": "Hợp tác với AI",
+            "angle": "Đồng cảm với nỗi lo và đưa ra giải pháp hợp tác",
+            "hook_type": "question",
+            "hook_used": "Bạn có đang lo lắng về tương lai công việc khi AI ngày càng phát triển?",
+            "status": "ready",
+            "pain": "Sợ hãi bị AI thay thế, không đủ năng lực để theo kịp sự phát triển của công nghệ.",
+            "insight": "AI không phải để thay thế, mà để bổ trợ. Sức mạnh thực sự nằm ở sự kết hợp giữa trí tuệ con người và năng lực xử lý của AI, tạo ra những giá trị vượt trội.",
+            "cta": "Hãy cùng học cách khai thác tối đa tiềm năng của AI để nâng tầm sự nghiệp của bạn!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Tương lai công việc không phải là cuộc chiến giữa người và AI, mà là sự hòa quyện của hai trí tuệ. Những người thành công nhất sẽ là những người biết cách tận dụng AI để khuếch đại khả năng của mình, tập trung vào những gì con người làm tốt nhất: sáng tạo, đổi mới và kết nối.",
+            "topic": "Tương lai công việc: Người và AI",
+            "angle": "Khẳng định giá trị của con người trong kỷ nguyên AI và khuyến khích hợp tác",
+            "hook_type": "curiosity",
+            "hook_used": "Tương lai nào đang chờ đón bạn khi AI trở thành một phần không thể thiếu của công việc?",
+            "status": "ready",
+            "pain": "Cảm thấy bế tắc, không biết phải làm gì để giữ vững vị trí trong thị trường lao động thay đổi nhanh chóng.",
+            "insight": "Sức mạnh của con người nằm ở khả năng tư duy chiến lược, sáng tạo không giới hạn và trí tuệ cảm xúc. Khi kết hợp với hiệu suất của AI, chúng ta có thể đạt được những điều phi thường.",
+            "cta": "Bắt đầu hành trình biến AI thành sức mạnh của bạn ngay hôm nay!"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-03-28T10:58:36.723Z",
+      "status": "ready",
+      "contents": [
+        {
+          "content_type": "short_post",
+          "content_text": "AI không phải là mối đe dọa trực tiếp 'cướp' việc làm của bạn, mà là một công cụ mạnh mẽ để nâng cao hiệu suất và mở ra cơ hội mới. Thay vì lo sợ, hãy học cách tận dụng AI để biến mình thành người lao động có giá trị hơn trong kỷ nguyên số.",
+          "topic": "Tận dụng AI trong công việc",
+          "angle": "AI là công cụ hỗ trợ, không phải đối thủ",
+          "hook_type": "curiosity",
+          "hook_used": "Bạn có đang nhìn AI sai cách?",
+          "status": "ready",
+          "cta": "Khám phá cách AI có thể thay đổi sự nghiệp của bạn!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "Trong thế giới AI đang phát triển nhanh chóng, các kỹ năng mềm như tư duy phản biện, sáng tạo, trí tuệ cảm xúc và khả năng giải quyết vấn đề phức tạp sẽ trở nên vô giá. Đây là những năng lực mà AI khó có thể sao chép, giúp bạn luôn dẫn đầu.",
+          "topic": "Kỹ năng thiết yếu kỷ nguyên AI",
+          "angle": "Nhấn mạnh giá trị của kỹ năng mềm",
+          "hook_type": "question",
+          "hook_used": "Kỹ năng nào sẽ giúp bạn 'bất bại' trước AI?",
+          "status": "ready",
+          "cta": "Đừng bỏ lỡ: Phát triển ngay những kỹ năng này!"
+        },
+        {
+          "content_type": "short_post",
+          "content_text": "Để thực sự phát triển cùng AI, chúng ta cần học cách cộng tác với nó. Hãy xem AI như một trợ lý thông minh, giúp bạn tự động hóa công việc lặp lại, phân tích dữ liệu và đưa ra quyết định nhanh hơn, để bạn có thể tập trung vào những nhiệm vụ chiến lược và sáng tạo.",
+          "topic": "Cộng tác hiệu quả với AI",
+          "angle": "AI là đồng minh, tăng cường năng lực",
+          "hook_type": "curiosity",
+          "hook_used": "Biến AI thành 'siêu trợ lý' của bạn như thế nào?",
+          "status": "ready",
+          "cta": "Bắt đầu hợp tác với AI ngay hôm nay!"
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "Thế giới đang thay đổi nhanh chóng với sự trỗi dậy của AI. Để không bị bỏ lại phía sau, bạn cần trang bị cho mình những kỹ năng 'vàng' mà không một cỗ máy nào có thể thay thế. Hãy cùng khám phá 5 kỹ năng thiết yếu giúp bạn vượt trội trong kỷ nguyên AI!",
+          "topic": "5 Kỹ năng vượt trội trong kỷ nguyên AI",
+          "angle": "Hướng dẫn thực hành, nâng cao năng lực cá nhân",
+          "hook_type": "shock",
+          "hook_used": "Sự thật phũ phàng: AI sẽ thay đổi công việc của bạn!",
+          "status": "ready",
+          "slides": [
+            "Slide 1: TIẾT LỘ 5 KỸ NĂNG 'VÀNG' GIÚP BẠN VƯỢT TRỘI TRONG KỶ NGUYÊN AI",
+            "Slide 2: 1. TƯ DUY PHẢN BIỆN: Không chỉ chấp nhận thông tin, mà còn phân tích, đánh giá để đưa ra quyết định đúng đắn. AI có thể tổng hợp, nhưng bạn mới là người đưa ra phán đoán cuối cùng.",
+            "Slide 3: 2. SÁNG TẠO & ĐỔI MỚI: AI có thể tạo nội dung dựa trên dữ liệu, nhưng chỉ con người mới có khả năng tạo ra ý tưởng đột phá, nghệ thuật độc đáo và giải pháp chưa từng có.",
+            "Slide 4: 3. TRÍ TUỆ CẢM XÚC: Khả năng hiểu và quản lý cảm xúc của bản thân, thấu hiểu người khác. Đây là yếu tố then chốt trong lãnh đạo, đàm phán và xây dựng mối quan hệ.",
+            "Slide 5: 4. GIẢI QUYẾT VẤN ĐỀ PHỨC TẠP: AI hỗ trợ phân tích dữ liệu để tìm giải pháp, nhưng con người mới là người định hình vấn đề, đặt câu hỏi đúng và thiết kế chiến lược tổng thể.",
+            "Slide 6: 5. HỌC HỎI LIÊN TỤC: Thế giới thay đổi không ngừng. Khả năng tự học, thích nghi và tiếp thu kiến thức mới là chìa khóa để bạn luôn giữ vững vị thế.",
+            "Slide 7: Đừng chờ đợi! Bắt đầu phát triển những kỹ năng này ngay hôm nay để làm chủ tương lai của bạn. #KỷNguyênAI #KỹNăngTươngLai"
+          ]
+        },
+        {
+          "content_type": "carousel",
+          "content_text": "Nỗi lo về AI thay thế con người luôn hiện hữu, nhưng liệu đó có phải là toàn bộ sự thật? Hãy cùng chúng tôi làm rõ những lầm tưởng phổ biến nhất về AI và tác động của nó đến thị trường lao động, để bạn có cái nhìn đúng đắn và chuẩn bị tốt hơn cho tương lai.",
+          "topic": "Gỡ bỏ hiểu lầm về AI và việc làm",
+          "angle": "Giáo dục, làm rõ sự thật về AI",
+          "hook_type": "curiosity",
+          "hook_used": "AI sẽ 'cướp' việc của bạn? Sự thật không như bạn nghĩ!",
+          "status": "ready",
+          "slides": [
+            "Slide 1: AI SẼ 'CƯỚP' VIỆC CỦA BẠN? GỠ BỎ 3 LẦM TƯỞNG VỀ AI & VIỆC LÀM",
+            "Slide 2: Lầm tưởng 1: AI sẽ thay thế hoàn toàn con người trong mọi công việc.",
+            "Slide 3: Sự thật: AI tự động hóa các tác vụ lặp lại, nhưng lại tạo ra nhu cầu cho các vai trò mới cần kỹ năng giám sát, phát triển và quản lý AI. Con người và AI sẽ cộng tác.",
+            "Slide 4: Lầm tưởng 2: Chỉ những người làm công nghệ mới cần quan tâm đến AI.",
+            "Slide 5: Sự thật: AI đang tác động đến mọi ngành nghề, từ y tế, giáo dục đến marketing và tài chính. Hiểu biết về AI sẽ là lợi thế cạnh tranh cho bất kỳ ai.",
+            "Slide 6: Lầm tưởng 3: Không thể cạnh tranh với AI vì nó nhanh hơn, thông minh hơn.",
+            "Slide 7: Sự thật: AI thiếu trí tuệ cảm xúc, khả năng tư duy sáng tạo độc lập và đạo đức. Đây là những 'siêu năng lực' của con người. Hãy tập trung phát triển chúng và nắm bắt cơ hội từ AI! #AIvsHuman #TươngLaiViệcLàm"
+          ]
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Trong thế giới nơi AI có thể tạo ra nội dung, phân tích dữ liệu và thậm chí 'sáng tác', giá trị thực sự của con người nằm ở khả năng tạo ra những điều hoàn toàn mới mẻ, đột phá và mang đậm dấu ấn cá nhân. Sáng tạo không chỉ là nghệ thuật, mà còn là giải pháp cho những vấn đề phức tạp nhất mà AI chưa thể chạm tới.",
+          "topic": "Sức mạnh của sáng tạo trong kỷ nguyên AI",
+          "angle": "Đề cao giá trị độc nhất của sự sáng tạo con người",
+          "hook_type": "question",
+          "hook_used": "Khi AI có thể 'sáng tạo', đâu là giá trị độc nhất của bạn?",
+          "status": "ready",
+          "pain": "Nỗi lo về việc mất đi sự độc đáo, bị AI sao chép hoặc vượt qua trong các lĩnh vực sáng tạo.",
+          "insight": "Sự sáng tạo thực sự, đi kèm với cảm xúc và trải nghiệm cá nhân, là một năng lực độc quyền của con người mà AI không thể sao chép, biến nó thành lợi thế cạnh tranh không thể thay thế.",
+          "cta": "Phát huy tối đa khả năng sáng tạo của bạn ngay hôm nay!"
+        },
+        {
+          "content_type": "caption",
+          "content_text": "Tốc độ phát triển của công nghệ, đặc biệt là AI, khiến nhiều người cảm thấy choáng ngợp và lo sợ mình sẽ bị tụt hậu. Nhưng đây cũng chính là động lực lớn nhất để chúng ta không ngừng học hỏi. Kỹ năng quan trọng nhất trong mọi thời đại, đặc biệt là kỷ nguyên AI, chính là khả năng tự học và thích nghi.",
+          "topic": "Học hỏi liên tục để thích nghi với AI",
+          "angle": "Nhấn mạnh tầm quan trọng của học tập suốt đời",
+          "hook_type": "curiosity",
+          "hook_used": "Làm thế nào để không bị 'lạc hậu' trong thế giới AI?",
+          "status": "ready",
+          "pain": "Cảm giác bị choáng ngợp, sợ hãi trước tốc độ thay đổi của công nghệ và lo lắng về việc không kịp thích nghi.",
+          "insight": "Học hỏi liên tục không chỉ là một lựa chọn mà là một kỹ năng sinh tồn. Bằng cách luôn mở lòng tiếp thu kiến thức mới và thích nghi, bạn sẽ biến thách thức thành cơ hội và luôn dẫn đầu.",
+          "cta": "Bắt đầu hành trình học hỏi không ngừng của bạn!"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-03-28T11:07:27.971Z",
+      "status": "rejected",
+      "reason": "Carousel content item 4 (topic '5 bước định hướng sự nghiệp trong kỷ nguyên AI') states '7 bước' in its content_text and hook_used, but its 'slides' only list 5 steps. Carousel content item 5 (topic 'Kỹ năng 'bất bại' trước AI: Hướng dẫn chi tiết') states '7 kỹ năng' in its content_text and hook_used, but its 'slides' only list 5 skills. This violates the 'Logic rõ ràng, không mâu thuẫn' rule.",
+      "extracted": {
+        "insights": [
+          "Nội dung này được xác định là một tài liệu kiểm tra.",
+          "Mục đích chính của tài liệu là phục vụ cho hoạt động kiểm tra.",
+          "Đối tượng sử dụng hoặc hưởng lợi từ nội dung này là Mikage Channel Operator.",
+          "Đây là một đoạn văn bản mẫu, không phải nội dung thực tế.",
+          "Đoạn văn bản này có vai trò là nguồn dữ liệu.",
+          "Nó được thiết kế để kiểm tra một hệ thống hoặc quy trình nào đó.",
+          "Mikage Channel Operator có thể là một cá nhân, một nhóm hoặc một hệ thống.",
+          "Sự tồn tại của nội dung này gợi ý về một quy trình vận hành kênh.",
+          "Nội dung này mang tính chất thử nghiệm, không phải sản phẩm cuối cùng.",
+          "Nó là một ví dụ điển hình cho việc tạo dữ liệu giả lập."
+        ],
+        "hooks": [
+          "Điều gì khiến một 'nội dung kiểm tra' lại quan trọng đến vậy?",
+          "Mikage Channel Operator là ai và tại sao họ cần nội dung đặc biệt này?",
+          "Bạn có bao giờ tự hỏi các kênh vận hành được kiểm tra như thế nào không?",
+          "Một câu nói đơn giản ẩn chứa mục đích lớn lao: đó là gì?",
+          "Bí mật đằng sau 'nội dung nguồn kiểm tra' là gì?",
+          "Liệu đây có phải là bước đầu tiên của một dự án lớn?",
+          "Ai là người đứng sau việc tạo ra 'nội dung kiểm tra cho Mikage Channel Operator'?",
+          "Chuyện gì sẽ xảy ra sau khi nội dung này được kiểm tra?",
+          "Một dòng chữ ngắn ngủi, nhưng ý nghĩa của nó có thể thay đổi cách bạn nhìn nhận.",
+          "Khám phá mục đích thực sự của 'nội dung nguồn kiểm tra' này."
+        ],
+        "proofs": [
+          "Cụm từ 'This is test source content' chứng minh đây là nội dung kiểm tra.",
+          "Cụm từ 'for Mikage Channel Operator' chỉ rõ đối tượng sử dụng nội dung.",
+          "Toàn bộ câu 'This is test source content for Mikage Channel Operator.' là bằng chứng về bản chất của nó.",
+          "Từ 'test' trong câu khẳng định mục đích kiểm tra của nội dung.",
+          "Từ 'source content' xác định đây là một nguồn nội dung.",
+          "Cụm 'Mikage Channel Operator' là tên của đối tượng được nhắc đến trong nguồn.",
+          "Sự hiện diện của từ 'is' khẳng định tính chất hiện tại của nội dung.",
+          "Đây là một câu khẳng định trực tiếp về tính chất và đối tượng của nội dung.",
+          "Không có thông tin nào khác ngoài câu này được cung cấp trong nguồn.",
+          "Câu văn này là bằng chứng duy nhất và đầy đủ từ nguồn được cung cấp."
+        ]
+      },
+      "formatted": {
+        "contents": [
+          {
+            "content_type": "short_post",
+            "content_text": "AI không phải là mối đe dọa, mà là cơ hội để định hình lại cách chúng ta làm việc. Thay vì lo sợ, hãy tập trung vào việc phát triển những kỹ năng mà AI không thể thay thế: tư duy phản biện, sáng tạo, trí tuệ cảm xúc và khả năng giải quyết vấn đề phức tạp. Đây là chìa khóa để bạn không chỉ tồn tại mà còn thăng hoa trong kỷ nguyên số.",
+            "topic": "Thích nghi với kỷ nguyên AI",
+            "angle": "Khuyến khích sự chủ động, lạc quan",
+            "hook_type": "question",
+            "hook_used": "Tương lai nào cho sự nghiệp của bạn khi AI bùng nổ?",
+            "status": "ready",
+            "cta": "Hãy bắt đầu hành trình nâng cấp kỹ năng ngay hôm nay!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Trong khi AI đang tự động hóa nhiều tác vụ, giá trị của con người lại nằm ở khả năng sáng tạo độc đáo, tư duy chiến lược, kỹ năng giao tiếp và khả năng lãnh đạo. Đầu tư vào những kỹ năng mềm này sẽ giúp bạn tạo ra lợi thế cạnh tranh bền vững, biến AI thành công cụ đắc lực thay vì đối thủ.",
+            "topic": "Kỹ năng vàng trong kỷ nguyên AI",
+            "angle": "Hướng dẫn, chỉ ra giá trị cốt lõi",
+            "hook_type": "curiosity",
+            "hook_used": "Bạn có biết 4 kỹ năng 'bất khả chiến bại' trước AI là gì không?",
+            "status": "ready",
+            "cta": "Khám phá cách trau dồi những kỹ năng này!"
+          },
+          {
+            "content_type": "short_post",
+            "content_text": "Nhiều người lo ngại AI sẽ thay thế con người, nhưng thực tế, AI đang mở ra vô số cơ hội và ngành nghề mới. Từ kỹ sư AI, chuyên gia đạo đức AI đến nhà thiết kế trải nghiệm AI, thị trường lao động đang dịch chuyển. Điều quan trọng là bạn phải sẵn sàng học hỏi và thích nghi để nắm bắt những cơ hội này.",
+            "topic": "AI: Đồng minh hay đối thủ?",
+            "angle": "Phá vỡ định kiến, nhìn nhận AI tích cực",
+            "hook_type": "shock",
+            "hook_used": "Sự thật bất ngờ: AI không 'cướp' việc, mà đang 'tạo' ra việc làm mới!",
+            "status": "ready",
+            "cta": "Tìm hiểu thêm về các ngành nghề mới nổi cùng AI!"
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Bản đồ 7 bước định hướng sự nghiệp trong kỷ nguyên AI giúp bạn vượt qua nỗi lo và nắm bắt cơ hội.",
+            "topic": "5 bước định hướng sự nghiệp trong kỷ nguyên AI",
+            "angle": "Cung cấp lộ trình hành động cụ thể",
+            "hook_type": "question",
+            "hook_used": "Lo lắng về tương lai sự nghiệp với AI? Đây là bản đồ 7 bước dành cho bạn!",
+            "status": "ready",
+            "slides": [
+              "Slide 1: Tiêu đề: Lo lắng về tương lai sự nghiệp với AI? Đây là bản đồ 7 bước dành cho bạn!",
+              "Slide 2: Thực trạng: AI đang thay đổi mọi thứ. Liệu công việc của bạn có an toàn?",
+              "Slide 3: Bước 1: Đánh giá kỹ năng hiện tại: Xác định điểm mạnh và điểm yếu của bạn so với yêu cầu của kỷ nguyên AI.",
+              "Slide 4: Bước 2: Nhận diện kỹ năng tương lai: Tập trung vào tư duy phản biện, sáng tạo, EQ, khả năng hợp tác và giải quyết vấn đề.",
+              "Slide 5: Bước 3: Học hỏi liên tục: Tham gia khóa học, workshop, đọc sách về AI và các kỹ năng liên quan.",
+              "Slide 6: Bước 4: Tích hợp AI vào công việc: Học cách sử dụng AI như một công cụ hỗ trợ, tăng năng suất.",
+              "Slide 7: Bước 5: Xây dựng mạng lưới: Kết nối với các chuyên gia, học hỏi kinh nghiệm và tìm kiếm cơ hội."
+            ]
+          },
+          {
+            "content_type": "carousel",
+            "content_text": "Khám phá 7 kỹ năng cốt lõi giúp bạn không chỉ tồn tại mà còn phát triển mạnh mẽ trong kỷ nguyên AI.",
+            "topic": "Kỹ năng 'bất bại' trước AI: Hướng dẫn chi tiết",
+            "angle": "Cung cấp kiến thức sâu, chi tiết",
+            "hook_type": "curiosity",
+            "hook_used": "Không để AI 'thống trị': 7 kỹ năng giúp bạn luôn dẫn đầu!",
+            "status": "ready",
+            "slides": [
+              "Slide 1: Tiêu đề: Không để AI 'thống trị': 7 kỹ năng giúp bạn luôn dẫn đầu!",
+              "Slide 2: Tại sao cần kỹ năng mới? AI tự động hóa tác vụ lặp, nhưng không thay thế tư duy phức tạp.",
+              "Slide 3: Kỹ năng 1: Tư duy Phản biện & Giải quyết vấn đề: Phân tích sâu, đưa ra giải pháp đột phá.",
+              "Slide 4: Kỹ năng 2: Sáng tạo & Đổi mới: Tạo ra ý tưởng mới mẻ, giá trị độc đáo mà AI chưa thể.",
+              "Slide 5: Kỹ năng 3: Trí tuệ Cảm xúc (EQ): Giao tiếp, lãnh đạo, xây dựng mối quan hệ hiệu quả.",
+              "Slide 6: Kỹ năng 4: Hợp tác & Quản lý dự án: Làm việc nhóm, điều phối công việc phức tạp.",
+              "Slide 7: Kỹ năng 5: Khả năng học hỏi liên tục: Luôn cập nhật kiến thức, thích nghi với sự thay đổi."
+            ]
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Trong cuộc đua với AI, đâu là 'vũ khí bí mật' giúp bạn giữ vững giá trị và phát triển sự nghiệp?",
+            "topic": "Giá trị độc nhất của con người trong kỷ nguyên AI",
+            "angle": "Nhấn mạnh sức mạnh nội tại của con người",
+            "hook_type": "question",
+            "hook_used": "Trong cuộc đua với AI, đâu là 'vũ khí bí mật' của bạn?",
+            "status": "ready",
+            "pain": "Nỗi sợ bị AI vượt mặt, mất đi giá trị nghề nghiệp.",
+            "insight": "AI có thể xử lý dữ liệu, nhưng không thể có sự đồng cảm, khả năng sáng tạo vượt khuôn khổ hay trực giác sâu sắc của con người. Chính những phẩm chất này mới là yếu tố tạo nên sự khác biệt.",
+            "cta": "Khai phá và mài giũa những 'vũ khí' độc đáo của bạn!"
+          },
+          {
+            "content_type": "caption",
+            "content_text": "Bạn đã sẵn sàng biến AI từ 'thách thức' thành 'cơ hội vàng' cho sự nghiệp chưa? Hãy học cách tận dụng AI để nâng tầm công việc của mình.",
+            "topic": "Tận dụng AI để phát triển sự nghiệp",
+            "angle": "Biến thách thức thành cơ hội",
+            "hook_type": "question",
+            "hook_used": "Bạn đã sẵn sàng biến AI từ 'thách thức' thành 'cơ hội vàng' cho sự nghiệp chưa?",
+            "status": "ready",
+            "pain": "Hoang mang không biết cách tích hợp AI vào công việc.",
+            "insight": "AI không phải để thay thế bạn, mà là để giải phóng bạn khỏi các tác vụ lặp lại, cho phép bạn tập trung vào những công việc có giá trị cao hơn, đòi hỏi tư duy chiến lược và sáng tạo. Học cách sử dụng AI là một siêu năng lực mới.",
+            "cta": "Đừng bỏ lỡ cơ hội, hãy học cách làm việc cùng AI ngay hôm nay!"
+          }
+        ]
+      }
+    }
+  ]
+}

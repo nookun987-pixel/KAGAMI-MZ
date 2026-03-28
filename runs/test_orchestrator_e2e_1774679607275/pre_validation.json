@@ -1,0 +1,12 @@
+{
+  "stage": "prompt_package",
+  "verdict": "REJECT",
+  "failed_checks": [
+    "[CANON_V2] Missing canonMarkdown file: C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md"
+  ],
+  "forbidden_hits": [],
+  "critical_failures": [
+    "[CANON_V2] Missing canonMarkdown file: C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md"
+  ],
+  "canon_version": "v2"
+}

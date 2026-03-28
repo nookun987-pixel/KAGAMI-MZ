@@ -1,0 +1,14 @@
+{
+  "name": "mikage-operator-bot",
+  "version": "1.0.0",
+  "description": "Mikage Operator Telegram Bot",
+  "main": "index.js",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "dotenv": "^17.3.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  }
+}

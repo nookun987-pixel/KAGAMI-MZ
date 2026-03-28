@@ -97,6 +97,121 @@
     button.good { background: linear-gradient(180deg, rgba(52,211,153,.16), rgba(52,211,153,.08)), #0f1d19; border-color: rgba(52,211,153,.3); }
     button.warn { background: linear-gradient(180deg, rgba(251,191,36,.16), rgba(251,191,36,.08)), #241e10; border-color: rgba(251,191,36,.3); }
     button:disabled { opacity: .55; cursor: not-allowed; }
+    .status-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 8px 0;
+    }
+    .status-badge.online { background: var(--ok); color: var(--bg); }
+    .status-badge.offline { background: var(--bad); color: var(--text); }
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .service-name { font-weight: 600; }
+    .service-status { font-size: 12px; padding: 2px 8px; border-radius: 12px; }
+    .service-status.good { background: var(--ok); color: var(--bg); }
+    .service-status.bad { background: var(--bad); color: var(--text); }
+    .job-id { font-family: monospace; background: var(--panel-soft); padding: 8px; border-radius: 4px; margin: 4px 0; }
+    .timestamp { font-size: 12px; color: var(--muted); margin: 4px 0; }
+    .decision-badge { 
+      display: inline-block; 
+      padding: 6px 12px; 
+      border-radius: 20px; 
+      font-size: 12px; 
+      font-weight: 600; 
+      margin: 8px 0;
+    }
+    .decision-badge.pass { background: var(--ok); color: var(--bg); }
+    .decision-badge.fail { background: var(--bad); color: var(--text); }
+    .decision-badge.reject { background: var(--warn); color: var(--bg); }
+    .output-status { 
+      display: inline-block; 
+      padding: 4px 8px; 
+      border-radius: 12px; 
+      font-size: 11px; 
+      margin: 4px 0;
+    }
+    .output-status.good { background: var(--ok); color: var(--bg); }
+    .output-status.bad { background: var(--bad); color: var(--text); }
+    .log-entry { 
+      font-family: monospace; 
+      font-size: 11px; 
+      padding: 4px 0; 
+      border-bottom: 1px solid var(--line);
+      white-space: pre-wrap;
+    }
+    .queue-item {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto 100px;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+    .queue-job-id { 
+      font-family: monospace; 
+      font-size: 12px; 
+      background: var(--panel-soft); 
+      padding: 4px 6px; 
+      border-radius: 4px; 
+    }
+    .queue-status { 
+      font-size: 11px; 
+      padding: 2px 6px; 
+      border-radius: 12px; 
+      font-weight: 600;
+    }
+    .queue-status.queued { background: var(--warn); color: var(--bg); }
+    .queue-status.running { background: var(--info); color: var(--bg); }
+    .queue-status.done { background: var(--ok); color: var(--bg); }
+    .queue-status.failed { background: var(--bad); color: var(--text); }
+    .queue-guard { 
+      font-size: 10px; 
+      color: var(--muted); 
+      font-style: italic;
+    }
+    .queue-time { 
+      font-size: 11px; 
+      color: var(--muted); 
+    }
+    .approve-btn {
+      background: var(--ok);
+      color: var(--bg);
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+    .approve-btn:hover { background: #22c55e; }
+    .job-type, .job-priority, .guard-status { 
+      font-size: 11px; 
+      color: var(--muted); 
+      margin: 2px 0;
+    }
+    .queue-details {
+      margin-top: 8px;
+      padding: 8px;
+      background: var(--panel-soft);
+      border-radius: 4px;
+      font-size: 11px;
+      display: grid;
+      gap: 4px;
+    }
+    .queue-detail {
+      color: var(--muted);
+    }
+    .queue-detail.error {
+      color: var(--bad);
+      font-weight: 600;
+    }
     .status-banner {
       border-radius: 14px;
       padding: 14px 16px;
@@ -210,6 +325,51 @@
 
     <div class="layout">
       <div class="col">
+        <section class="panel" data-panel="status">
+          <div class="panel-head">
+            <div class="panel-title">System Monitor</div>
+          </div>
+          <div class="panel-body">
+            <div class="mini">Real-time Mikage system status</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="job">
+          <div class="panel-head">
+            <div class="panel-title">Latest Job</div>
+          </div>
+          <div class="panel-body">
+            <div class="mini">Most recent job information</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="logs">
+          <div class="panel-head">
+            <div class="panel-title">System Logs</div>
+          </div>
+          <div class="panel-body">
+            <div class="mini">Latest system logs</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="run">
+          <div class="panel-head">
+            <div class="panel-title">Latest Run</div>
+          </div>
+          <div class="panel-body">
+            <div class="mini">Most recent run artifacts</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="queue">
+          <div class="panel-head">
+            <div class="panel-title">Job Queue</div>
+          </div>
+          <div class="panel-body">
+            <div class="mini">Queued jobs waiting for approval</div>
+          </div>
+        </section>
+
         <section class="panel">
           <div class="panel-head">
             <div class="panel-title">Create And Run</div>
@@ -231,11 +391,52 @@
               <button id="refreshBtn">Refresh Status</button>
               <button id="viewLatestBtn">View Latest Run</button>
             </div>
+            <div class="btn-grid">
+              <button onclick="pingSystem()">Ping System</button>
+              <button onclick="createJob()">Create Job</button>
+              <button onclick="getLogs()">View Logs</button>
+            </div>
             <div class="focus-actions">
               <button id="viewDecisionBtn">View Final Decision</button>
               <button id="viewPrecheckBtn">View Precheck</button>
               <button id="viewOutputBtn">View Output</button>
             </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="system">
+          <div class="panel-head">
+            <div class="panel-title">SYSTEM</div>
+          </div>
+          <div class="panel-body">
+            <div id="systemReport" class="mini">System status and services</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="project">
+          <div class="panel-head">
+            <div class="panel-title">PROJECT</div>
+          </div>
+          <div class="panel-body">
+            <div id="projectReport" class="mini">Project files and tasks</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="cost">
+          <div class="panel-head">
+            <div class="panel-title">COST</div>
+          </div>
+          <div class="panel-body">
+            <div id="costReport" class="mini">Cost tracking and estimates</div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="artifacts">
+          <div class="panel-head">
+            <div class="panel-title">ARTIFACTS</div>
+          </div>
+          <div class="panel-body">
+            <div id="artifactsList" class="mini">Latest output files</div>
           </div>
         </section>
 
@@ -640,6 +841,60 @@
       renderDecision(runView.final_decision);
       renderOutput(runView.output, runView);
       renderRuns(data.recent_runs || [], currentJobId);
+      // Refresh additional panels
+      refreshAdditionalPanels();
+    }
+
+    async function refreshAdditionalPanels() {
+      try {
+        const [sysData, projData, costData, artData] = await Promise.all([
+          api('/api/system'),
+          api('/api/project'),
+          api('/api/cost'),
+          api('/api/artifacts-latest')
+        ]);
+
+        // Update SYSTEM panel
+        if (sysData && !sysData.error) {
+          let sysHtml = `Services:\n`;
+          for (const [svc, info] of Object.entries(sysData.services)) {
+            sysHtml += `${svc}: ${info.status}\n`;
+          }
+          sysHtml += `\nTasks: ${sysData.task_summary.total} total, ${sysData.task_summary.pending} pending`;
+          $('systemReport').innerHTML = sysHtml.replace(/\n/g, '<br>');
+        }
+
+        // Update PROJECT panel
+        if (projData && !projData.error) {
+          let projHtml = `Files: ${projData.file_count}\n`;
+          for (const [ext, count] of Object.entries(projData.file_types)) {
+            projHtml += `${ext || 'no ext'}: ${count}\n`;
+          }
+          projHtml += `\nRecent tasks: ${projData.recent_tasks.length}`;
+          $('projectReport').innerHTML = projHtml.replace(/\n/g, '<br>');
+        }
+
+        // Update COST panel
+        if (costData && !costData.error) {
+          let costHtml = `Tasks: ${costData.total_tasks}\n`;
+          costHtml += `Completed: ${costData.completed_tasks}\n`;
+          costHtml += `Failed: ${costData.failed_tasks}\n`;
+          costHtml += `Est. Cost: $${costData.estimated_cost.toFixed(2)}\n`;
+          costHtml += `Actual Cost: $${costData.actual_cost.toFixed(2)}`;
+          $('costReport').innerHTML = costHtml.replace(/\n/g, '<br>');
+        }
+
+        // Update ARTIFACTS panel
+        if (artData && !artData.error) {
+          let artHtml = 'Latest artifacts:\n';
+          artData.forEach(art => {
+            artHtml += `${art.name} (${new Date(art.modified).toLocaleString()})\n`;
+          });
+          $('artifactsList').innerHTML = artHtml.replace(/\n/g, '<br>');
+        }
+      } catch (error) {
+        console.error('Error refreshing additional panels:', error);
+      }
     }
 
     async function refreshStatus(jobId) {
@@ -659,14 +914,9 @@
       try {
         let result = null;
         if (action === "create-job") {
-          const payload = {
-            job_id: $("jobIdInput").value.trim(),
-            user_idea: $("ideaInput").value.trim(),
-            phase: "material_study",
-          };
           result = await api("/api/create-job", {
             method: "POST",
-            body: JSON.stringify(payload),
+            body: JSON.stringify({}),
           });
           if (result.job_id) {
             currentJobId = result.job_id;
@@ -699,6 +949,195 @@
       }
     }
 
+    // Add new button functions
+    async function pingSystem() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        
+        // Update status panel
+        const statusEl = document.querySelector('[data-panel="status"]');
+        if (statusEl) {
+          statusEl.innerHTML = `
+            <div class="panel-header">System Status</div>
+            <div class="panel-body">
+              <div class="status-badge ${data.status === 'ONLINE' ? 'online' : 'offline'}">${data.status}</div>
+              <div class="timestamp">${new Date(data.time).toLocaleString()}</div>
+              ${data.services ? Object.entries(data.services).map(([service, info]) => `
+                <div class="service-item">
+                  <span class="service-name">${service}</span>
+                  <span class="service-status ${info.status === 'UP' || info.status === 'KEY_SET' ? 'good' : 'bad'}">${info.status}</span>
+                </div>
+              `).join('') : ''}
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error("Ping failed:", error);
+      }
+    }
+
+    async function createJob() {
+      try {
+        const ideaInput = document.getElementById('ideaInput');
+        const payload = {
+          job_type: 'creative',
+          user_idea: ideaInput ? ideaInput.value.trim() : 'Test job from Command Center',
+          priority: 'normal',
+          requested_outputs: ['png', 'json', 'logs'],
+          mode: 'standard'
+        };
+        
+        const res = await fetch('/api/create-job', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        
+        if (!res.ok) {
+          console.error('Create job failed:', data.error);
+          alert(`Create job failed: ${data.error}`);
+          return;
+        }
+        
+        // Update job panel
+        const jobEl = document.querySelector('[data-panel="job"]');
+        if (jobEl) {
+          jobEl.innerHTML = `
+            <div class="panel-header">Latest Job</div>
+            <div class="panel-body">
+              <div class="job-id">${data.job_id || 'No job created'}</div>
+              <div class="status-badge ${data.status === 'queued' ? 'online' : 'offline'}">${data.status.toUpperCase()}</div>
+              <div class="job-type">Type: ${data.job_type || 'unknown'}</div>
+              <div class="job-priority">Priority: ${data.priority || 'unknown'}</div>
+              <div class="timestamp">${new Date().toLocaleString()}</div>
+              <div class="guard-status">Guard: ${data.execution_guard || 'unknown'}</div>
+            </div>
+          `;
+        }
+        
+        // Clear input
+        if (ideaInput) {
+          ideaInput.value = '';
+        }
+        
+        // Refresh queue
+        await loadQueue();
+        
+      } catch (error) {
+        console.error("Create job failed:", error);
+        alert("Create job failed: " + error.message);
+      }
+    }
+
+    async function loadQueue() {
+      try {
+        const res = await fetch('/api/queue');
+        const data = await res.json();
+        
+        const queueEl = document.querySelector('[data-panel="queue"]');
+        if (queueEl) {
+          queueEl.innerHTML = `
+            <div class="panel-header">Job Queue (${data.count || 0})</div>
+            <div class="panel-body">
+              ${data.jobs && data.jobs.length > 0 ? data.jobs.map(job => `
+                <div class="queue-item">
+                  <div class="queue-job-id">${job.job_id}</div>
+                  <div class="queue-status ${job.status === 'queued' ? 'queued' : job.status === 'running' ? 'running' : job.status === 'done' ? 'done' : 'failed'}">${job.status.toUpperCase()}</div>
+                  <div class="queue-guard">${job.execution_guard}</div>
+                  <div class="queue-time">${new Date(job.created_at).toLocaleString()}</div>
+                  ${job.execution_guard === 'pending_approval' ? `<button onclick="approveJob('${job.job_id}')" class="approve-btn">Approve</button>` : ''}
+                </div>
+                <div class="queue-details">
+                  <div class="queue-detail">Type: ${job.job_type || 'unknown'}</div>
+                  <div class="queue-detail">Priority: ${job.priority || 'unknown'}</div>
+                  <div class="queue-detail">Mode: ${job.mode || 'unknown'}</div>
+                  ${job.approved_at ? `<div class="queue-detail">Approved: ${new Date(job.approved_at).toLocaleString()}</div>` : ''}
+                  ${job.started_at ? `<div class="queue-detail">Started: ${new Date(job.started_at).toLocaleString()}</div>` : ''}
+                  ${job.finished_at ? `<div class="queue-detail">Finished: ${new Date(job.finished_at).toLocaleString()}</div>` : ''}
+                  ${job.error ? `<div class="queue-detail error">Error: ${job.error}</div>` : ''}
+                  ${job.rejection_reason ? `<div class="queue-detail error">Rejected: ${job.rejection_reason}</div>` : ''}
+                </div>
+              `).join('') : '<div class="mini">No queued jobs</div>'}
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error("Load queue failed:", error);
+      }
+    }
+
+    async function approveJob(jobId) {
+      try {
+        const res = await fetch('/api/approve-job', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ job_id: jobId })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          console.log(`Job ${jobId} approved successfully`);
+          await loadQueue(); // Refresh queue display
+        } else {
+          console.error('Failed to approve job:', data.error);
+        }
+        
+      } catch (error) {
+        console.error("Approve job failed:", error);
+      }
+    }
+
+    async function getLogs() {
+      try {
+        const res = await fetch('/api/logs');
+        const data = await res.json();
+        
+        // Update logs panel
+        const logsEl = document.querySelector('[data-panel="logs"]');
+        if (logsEl) {
+          logsEl.innerHTML = `
+            <div class="panel-header">System Logs</div>
+            <div class="panel-body">
+              ${data.logs.map(log => `<div class="log-entry">${log}</div>`).join('')}
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error("Get logs failed:", error);
+      }
+    }
+
+    async function loadLatestRun() {
+      try {
+        const res = await fetch('/api/latest-run');
+        const data = await res.json();
+        
+        // Update run panel
+        const runEl = document.querySelector('[data-panel="run"]');
+        if (runEl) {
+          runEl.innerHTML = `
+            <div class="panel-header">Latest Run</div>
+            <div class="panel-body">
+              <div class="run-id">${data.job_id || 'No runs'}</div>
+              <div class="timestamp">${data.timestamp ? new Date(data.timestamp).toLocaleString() : 'Never'}</div>
+              ${data.final_decision ? `
+                <div class="decision-badge ${data.final_decision.decision?.toLowerCase() || 'unknown'}">
+                  ${data.final_decision.decision || 'Unknown'}
+                </div>
+              ` : ''}
+              ${data.output_exists ? '<div class="output-status">✓ Output exists</div>' : '<div class="output-status">✗ No output</div>'}
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error("Load latest run failed:", error);
+      }
+    }
+
     document.getElementById("createJobBtn").addEventListener("click", () => performAction("create-job"));
     document.getElementById("runJobBtn").addEventListener("click", () => performAction("run-job"));
     document.getElementById("refreshBtn").addEventListener("click", () => refreshStatus());
@@ -727,6 +1166,13 @@
 
     refreshStatus();
     setInterval(() => refreshStatus(), 5000);
+    
+    // Auto-load monitor data
+    pingSystem();
+    createJob();
+    getLogs();
+    loadLatestRun();
+    loadQueue();
   </script>
 </body>
 </html>

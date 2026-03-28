@@ -1,0 +1,7 @@
+{
+  "content": {
+    "command": "node",
+    "args": ["mikage-channel-operator/index.js", "--file=data/test_source.txt"],
+    "cwd": "D:\\KAGAMI-MZ"
+  }
+}

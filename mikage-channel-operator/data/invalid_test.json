@@ -1,0 +1,14 @@
+{
+  "contents": [
+    {
+      "type": "carousel",
+      "status": "ready"
+    },
+    {
+      "type": "short_post",
+      "body": "Test body without hook",
+      "cta": "Test CTA",
+      "status": "ready"
+    }
+  ]
+}

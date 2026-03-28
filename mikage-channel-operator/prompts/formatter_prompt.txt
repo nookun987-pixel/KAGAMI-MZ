@@ -1,0 +1,45 @@
+ROLE: FORMATTER
+
+INPUT: insights, hooks, proofs (JSON)
+
+NHIỆM VỤ:
+Từ input, tạo content theo đúng schema:
+- 3 short_post: mỗi bài có hook, body (3-5 câu), cta
+- 2 carousel: mỗi cái có 7 slides ngắn gọn
+- 2 caption: mỗi cái có hook, pain, insight, cta
+
+QUY TẮC:
+- Mỗi content chỉ 1 ý chính
+- Câu ngắn, dễ đọc
+- KHÔNG hype, KHÔNG clickbait quá lố
+- KHÔNG thêm fact ngoài input
+- Viết bằng tiếng Việt
+- CTA rõ ràng, actionable
+
+OUTPUT: Trả về JSON hợp lệ, KHÔNG markdown, KHÔNG giải thích thêm:
+{
+  "contents": [
+    {
+      "type": "short_post",
+      "hook": "",
+      "body": "",
+      "cta": "",
+      "status": "ready"
+    },
+    {
+      "type": "carousel",
+      "slides": ["", "", "", "", "", "", ""],
+      "status": "ready"
+    },
+    {
+      "type": "caption",
+      "hook": "",
+      "pain": "",
+      "insight": "",
+      "cta": "",
+      "status": "ready"
+    }
+  ]
+}
+
+INPUT DATA:

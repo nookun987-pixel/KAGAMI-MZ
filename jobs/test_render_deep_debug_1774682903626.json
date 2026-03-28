@@ -1,0 +1,11 @@
+{
+  "job_id": "test_render_deep_debug_1774682903626",
+  "user_idea": "Single manufactured ceramic respirator shell, matte B4C technical ceramic, macro product shot",
+  "job_type": "test",
+  "priority": "normal",
+  "mode": "debug",
+  "requested_outputs": [
+    "png",
+    "json"
+  ]
+}

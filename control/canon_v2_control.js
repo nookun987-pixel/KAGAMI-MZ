@@ -4,9 +4,9 @@ const fs = require("fs");
 const path = require("path");
 
 const DEFAULT_CANON_PATHS = Object.freeze({
-  canonMarkdown: process.env.MIKAGE_CANON_V2_MD || "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
-  structuredRules: process.env.MIKAGE_STRUCTURED_RULES_JSON || "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
-  checklistMarkdown: process.env.MIKAGE_PASS_FAIL_CHECKLIST_MD || "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md",
+  canonMarkdown: process.env.MIKAGE_CANON_V2_MD || path.join(__dirname, "..", "MIKAGE_ZENITH_CANON_V2.md"),
+  structuredRules: process.env.MIKAGE_STRUCTURED_RULES_JSON || path.join(__dirname, "..", "MIKAGE_STRUCTURED_RULES.json"),
+  checklistMarkdown: process.env.MIKAGE_PASS_FAIL_CHECKLIST_MD || path.join(__dirname, "..", "MIKAGE_PASS_FAIL_CHECKLIST.md"),
 });
 
 function dedupeList(values) {
