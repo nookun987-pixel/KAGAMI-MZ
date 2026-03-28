@@ -1,0 +1,299 @@
+{
+  "identity": {
+    "name": "Mikage",
+    "project": "Mikage IP Universe",
+    "recovered_identity": "A fictional aesthetic universe centered on a non-human, mechanically disciplined Mikage subject whose form must remain calm, sacred, restrained, and commercially legible.",
+    "core_subject": {
+      "name": "Mikage Zenith",
+      "class": "non-human mechanical humanoid",
+      "mask": "faceless symmetrical mask with void-black eye regions and no visible human facial read",
+      "silhouette": "hard-surface, iconic, disciplined, and readable in under one second",
+      "materials": [
+        "matte porcelain / ceramic shell",
+        "boron carbide / B4C logic",
+        "graphene / carbon internal structure",
+        "dark titanium mechanical structure",
+        "kintsugi repair seams",
+        "ferro-calcium core"
+      ],
+      "energy_logic": "crimson energy is contained and internal, never chaotic or neon-spilled"
+    },
+    "philosophy": [
+      "Truth > Logic > Aesthetic",
+      "Silence instead of spectacle",
+      "Controlled tension instead of generic sci-fi chaos",
+      "Error is controlled, never random",
+      "The visual must preserve hierarchy, premium perception, and commercial clarity"
+    ]
+  },
+  "world_rules": [
+    "The central Mikage subject remains non-human, mask-locked, and free of visible human facial cues.",
+    "The frame follows a Clean -> Controlled Error gradient with a stable 30-40-30 zone logic.",
+    "The Product Safe Zone stays clean: face, garment, weapon, logo, and other protected subject regions cannot receive distortion.",
+    "Hierarchy is fixed: Product/Subject > Silhouette > Distortion > Background.",
+    "Distortion may exist only when it follows geometry, reflection, or grid logic.",
+    "Commercial readability under one second is mandatory.",
+    "The subject silhouette must remain iconic and uninterrupted from the background.",
+    "Porcelain / ceramic outer surfaces must read matte, precise, and material-honest.",
+    "Internal structural regions must read engineered, not soft, organic, or decorative.",
+    "Z-Blue is protected as a controlled brand-color system and cannot be contaminated by grading or distortion.",
+    "Crimson appears only as internal energy or disciplined accent, never as chaotic cyberpunk spill.",
+    "A failing frame is discarded rather than justified by taste or artistic argument."
+  ],
+  "forbidden_rules": [
+    "No anime, chibi, kawaii, cute, waifu, idol, or playful drift.",
+    "No human face, visible human eyes, visible mouth, visible ears, or expressive facial read.",
+    "No random RGB glitch, VHS degrade, cheap pixel noise, or all-glitch frames.",
+    "No warp, melt, stretch, blur, or edge break on garment, silhouette, or protected product zones.",
+    "No plastic, glossy toy, candy-coat, or PVC material read on the shell.",
+    "No fantasy ornament, curved blade, katana curve, decorative filigree, or medieval weapon drift.",
+    "No chaotic neon clutter, HUD spam, lens flare overload, or cyberpunk pollution.",
+    "No Z-Blue shift, cast contamination, or distortion contact inside protected blue regions.",
+    "No background geometry cutting through neck, shoulder, logo, or core silhouette.",
+    "No full-frame distortion without a clean safe zone.",
+    "No hype-marketing, meme, influencer-loud, or aggressive sales language in outward-facing voice."
+  ],
+  "entity_classes": [
+    {
+      "name": "Zenith Core Entity",
+      "status": "strongly recovered",
+      "description": "The primary Mikage being: a non-human mechanical humanoid with a porcelain shell, void-black mask logic, hard-surface anatomy, and controlled internal crimson energy."
+    },
+    {
+      "name": "Mask Shell",
+      "status": "strongly recovered",
+      "description": "A symmetrical faceless mask system whose eye regions remain dark void or carbon weave only; any human read is canon-breaking."
+    },
+    {
+      "name": "Internal Structure",
+      "status": "strongly recovered",
+      "description": "Graphene/carbon/titanium engineered internals visible at seams or joints, never soft, organic, or fabric-like."
+    },
+    {
+      "name": "Energy Core",
+      "status": "partially reconstructed",
+      "description": "A restrained crimson internal energy logic associated with fracture lines, seams, and controlled power, not external spectacle."
+    },
+    {
+      "name": "Environmental Geometry",
+      "status": "strongly recovered",
+      "description": "Architecture and space function almost like a world-class: corridor, wall, glass, concrete, grid, and parking structures discipline the frame and error mapping."
+    }
+  ],
+  "weapon_system": [
+    {
+      "name": "Zenith Blade",
+      "status": "strongly recovered",
+      "type": "massive industrial straight sword",
+      "rules": [
+        "must remain perfectly straight",
+        "must show no fantasy ornamentation",
+        "must remain inside the protected clean zone",
+        "must read engineered, heavy, and industrial rather than mythic or decorative"
+      ],
+      "materials": [
+        "dark rusty titanium scrap metal exterior",
+        "ferro-calcium core",
+        "crimson heated core logic"
+      ]
+    }
+  ],
+  "zones": [
+    {
+      "name": "Context Zone",
+      "ratio": "30%",
+      "position": "left / far",
+      "purpose": "clean geometry, large environment shape, low distortion"
+    },
+    {
+      "name": "Product Safe Zone",
+      "ratio": "40%",
+      "position": "center",
+      "purpose": "100% clean subject / product / garment / weapon / logo readability"
+    },
+    {
+      "name": "Distortion Zone",
+      "ratio": "30%",
+      "position": "right / near / overlay",
+      "purpose": "strongest controlled error, never stronger than the subject"
+    },
+    {
+      "name": "Transition Zone",
+      "ratio": "variable",
+      "position": "between protected and distorted space",
+      "purpose": "light controlled contamination gradient only"
+    },
+    {
+      "name": "Protected Z-Blue Usage Zones",
+      "ratio": "material-specific",
+      "position": "garment base / rim light / emissive accent",
+      "purpose": "brand-color governance with different protection levels"
+    }
+  ],
+  "visual_dna": {
+    "core_direction": [
+      "Clean Void & Geometry",
+      "hyper-real subject against disciplined environment",
+      "quiet introspection",
+      "luxury editorial restraint",
+      "sacred, cold, melancholic, controlled atmosphere"
+    ],
+    "silhouette_rules": [
+      "hard-surface anatomy",
+      "zero organic softness",
+      "iconic uninterrupted outline",
+      "clear shadow readability"
+    ],
+    "material_stack": [
+      "matte porcelain-white ceramic / B4C shell",
+      "graphene or carbon weave internals",
+      "dark titanium mechanics",
+      "gold kintsugi seams",
+      "contained crimson internal energy"
+    ],
+    "geometry_library": {
+      "usable": [
+        "Flat Concrete Surface",
+        "Glass Reflection Surface",
+        "Metal Grid / Fence",
+        "Corridor Line",
+        "Parking Structure",
+        "Wall Segmentation"
+      ],
+      "risky": [
+        "Stair Rhythm",
+        "Shadow Pattern"
+      ],
+      "forbidden": [
+        "background line cutting neck / shoulder / logo",
+        "color conflict overpowering Z-Blue",
+        "background clutter that defeats product hierarchy"
+      ]
+    },
+    "distortion_mapping": [
+      "corridor / grid lines -> scanline shift, perspective drift",
+      "walls / floors / large surfaces -> controlled chromatic split or shadow warp",
+      "reflection surfaces -> reflection misalignment",
+      "negative space / video -> temporal echo"
+    ],
+    "lighting": {
+      "key": "neutral 5600K key with disciplined angle",
+      "rim": "thin Z-Blue edge only",
+      "ambient": "2-3 stops below key",
+      "shadow": "no blue contamination on face or protected product shadows"
+    },
+    "readability": [
+      "subject/product recognized in under one second",
+      "distortion never becomes first read",
+      "thumbnail hierarchy must survive downscale"
+    ]
+  },
+  "color_doctrine": {
+    "primary": [
+      "porcelain white",
+      "bone white",
+      "void black",
+      "graphite black"
+    ],
+    "accent": [
+      "restricted crimson",
+      "kintsugi gold",
+      "protected Z-Blue"
+    ],
+    "protected_z_blue": {
+      "status": "partially recovered",
+      "provisional_hex": "#0000C8",
+      "usage_zones": [
+        "garment_base",
+        "rim_light",
+        "emissive_accent"
+      ],
+      "hard_rules": [
+        "no hue shift",
+        "no saturation drift beyond tolerance",
+        "no distortion contact",
+        "no uncontrolled bloom",
+        "not a primary key light"
+      ],
+      "contradiction_note": "Some sources provide a provisional #0000C8 swatch, while the validation framework says exact final lock still requires Art Director confirmation."
+    },
+    "forbidden_subject_colors": [
+      "green",
+      "orange",
+      "rainbow",
+      "cyan",
+      "teal",
+      "neon pink",
+      "neon orange",
+      "large metallic gold coverage"
+    ],
+    "color_modes_recovered": [
+      "fallen ivory",
+      "neon wound",
+      "cathedral halo",
+      "void regent",
+      "crimson overclock",
+      "royal machine"
+    ]
+  },
+  "language_doctrine": {
+    "external_voice": [
+      "calm",
+      "mysterious",
+      "elegant",
+      "minimal",
+      "thoughtful"
+    ],
+    "internal_system_voice": [
+      "direct",
+      "concise",
+      "decision-first",
+      "truth-first"
+    ],
+    "preferred_language": [
+      "quiet introspection over hype",
+      "controlled tension over spectacle",
+      "material honesty over decorative excess",
+      "discipline over trend-following"
+    ],
+    "forbidden_language": [
+      "hype marketing",
+      "loud influencer tone",
+      "aggressive sales language",
+      "meme speech",
+      "generic anime tropes",
+      "creative drift disguised as praise"
+    ]
+  },
+  "community_doctrine": {
+    "community_shape": [
+      "creators interested in AI art",
+      "people attracted to aesthetic worlds",
+      "visual culture enthusiasts",
+      "digital art collectors",
+      "fans expanding the Mikage universe"
+    ],
+    "goals": [
+      "grow the Mikage universe",
+      "protect the aesthetic identity",
+      "attract creators and fans",
+      "build recognition of Mikage visual canon"
+    ],
+    "behavior": [
+      "preserve identity over trend-chasing",
+      "teach aesthetic philosophy and process",
+      "treat canon as something to protect, not remix casually"
+    ]
+  },
+  "canon_lock": [
+    "Truth > Logic > Aesthetic is the highest recovered doctrine.",
+    "Product / subject integrity is untouchable.",
+    "The Mikage subject is non-human and mask-locked.",
+    "30-40-30 frame logic is a core structural law, not a stylistic option.",
+    "Z-Blue protection is absolute in governed zones, though exact final swatch lock remains partially unresolved.",
+    "Controlled distortion is allowed only outside protected zones and only when it follows geometry.",
+    "Anime/cute drift, plastic surface read, and weapon ornament drift are canon-breaking.",
+    "A failed frame is rejected rather than taste-justified."
+  ],
+  "canon_version": "v1"
+}

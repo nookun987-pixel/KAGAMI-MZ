@@ -1,0 +1,54 @@
+{
+  "job_id": "postgate-test-004",
+  "status": "DONE",
+  "decision": "REJECT",
+  "decision_reason": "post_render_verdict=REJECT; blocking_unknown_rules=I1,I2,I3,I4,I5,I6,C2; critical_failures=T6,T8,T11,T12,C1,C3,human_eyes_detected,face_mesh_visible; forbidden_hits=human_eyes_detected,face_mesh_visible; failed_critical_rules=T6,T8,T11,T12,C1,C3",
+  "canon_version": "v2",
+  "output_files": [
+    "D:\\KAGAMI-MZ\\runs\\postgate-test-004\\output.png"
+  ],
+  "failed_rules": [
+    "T6",
+    "T8",
+    "T11",
+    "T12",
+    "C1",
+    "C3"
+  ],
+  "blocking_unknown_rules": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "C2"
+  ],
+  "critical_failures": [
+    "T6",
+    "T8",
+    "T11",
+    "T12",
+    "C1",
+    "C3",
+    "human_eyes_detected",
+    "face_mesh_visible"
+  ],
+  "forbidden_hits": [
+    "human_eyes_detected",
+    "face_mesh_visible"
+  ],
+  "analyzer_summary": {
+    "use_vision_validator": true,
+    "vlm_backend_ready": false,
+    "vlm_status": "unavailable",
+    "semantic_result": "REJECT",
+    "analyzer_unavailable": [
+      "semantic_analyzer_unavailable"
+    ]
+  },
+  "final_decision_source": "post_render_image",
+  "timestamps": {
+    "decided_at": "2026-03-25T01:11:01.711Z"
+  }
+}

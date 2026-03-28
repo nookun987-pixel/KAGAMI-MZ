@@ -1,0 +1,51 @@
+{
+  "test_case": {
+    "job_id": "bad_case_anime_neon",
+    "source": "verification_test",
+    "mode": "AUTO_DRAFT",
+    "identity": {
+      "name": "Mikage",
+      "archetype": "ethereal guardian",
+      "visual_anchor": "anime character with neon lights"
+    },
+    "narrative": {
+      "theme": "cyberpunk anime adventure",
+      "mood": "energetic",
+      "scene": "standing in neon-lit Tokyo street with vibrant magenta and blue glow"
+    },
+    "strategy": {
+      "style": "anime illustration",
+      "color_palette": "neon pink, electric blue, bright magenta"
+    },
+    "art_direction": {
+      "mood": "high-energy cyberpunk",
+      "material": "glossy plastic",
+      "style": "anime cel-shading with neon effects",
+      "lighting": "vibrant neon glow with magenta spill"
+    },
+    "render": {
+      "width": 1024,
+      "height": 1024,
+      "performance": "Quality",
+      "max_iteration": 1
+    }
+  },
+  "execution": {
+    "exitCode": 0,
+    "signal": null,
+    "stdout": "[dotenv@17.3.1] injecting env (10) from .env -- tip: ⚙️  override existing env vars with { override: true }\n2026-03-24T11:10:03.900Z \u001b[33m[WARN]\u001b[0m VLM backend not configured and USE_VISION_VALIDATOR=false — semantic validation disabled\n2026-03-24T11:10:03.901Z \u001b[36m[INFO]\u001b[0m Fooocus client: http://127.0.0.1:7865\n2026-03-24T11:10:03.901Z \u001b[36m[INFO]\u001b[0m Notion client: DB ddb0999c...\n2026-03-24T11:10:03.903Z \u001b[33m[WARN]\u001b[0m Notion initial write failed: (ad.mood || []).join is not a function — continuing pipeline\n\n============================================================\nFINAL STATE:\n{\n  \"job_id\": \"bad_case_anime_neon\",\n  \"status\": \"DONE\",\n  \"decision\": \"REJECT\",\n  \"attempt_count\": 0,\n  \"identity_score\": 0.7,\n  \"critic_score\": null,\n  \"narrative_score\": 0.9,\n  \"risk_score\": 0.45,\n  \"drift_flags\": [],\n  \"output_files\": [],\n  \"rejected_samples\": [],\n  \"trace_length\": 7\n}\n============================================================\n",
+    "stderr": ""
+  },
+  "job_result": null,
+  "verification": {
+    "decision": "FAIL",
+    "reasons": [
+      "No job result found - orchestrator may have failed silently"
+    ],
+    "output_files": [],
+    "job_decision": null,
+    "exit_code": 0,
+    "signal": null
+  },
+  "timestamp": "2026-03-24T11:10:03.928Z"
+}

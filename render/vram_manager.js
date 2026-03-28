@@ -27,7 +27,7 @@
 
 "use strict";
 
-const { execSync } = require("child_process");
+const { spawn } = require("child_process");
 
 // ===================================================================
 // RESOURCE LOCK — singleton state
@@ -82,22 +82,147 @@ class VRAMPhaseError extends Error {
 // ===================================================================
 
 /**
- * Default shell executor. Runs real commands in production.
+ * Default shell executor. Runs cross-platform commands.
  * Replace via setShellExecutor() for testing.
  */
 let _shellExecutor = {
   /**
-   * Execute a shell command and return stdout.
+   * Execute a cross-platform command and return stdout.
    * @param {string} cmd
    * @returns {string} stdout
    */
   exec(cmd) {
     try {
-      return execSync(cmd, { encoding: "utf-8", timeout: 30000 }).trim();
+      // Handle common cross-platform commands
+      if (cmd.includes("nvidia-smi")) {
+        return this.execNvidiaSmi(cmd);
+      }
+      if (cmd.includes("ollama ps")) {
+        return this.execOllamaPs();
+      }
+      if (cmd.includes("kill -9")) {
+        return this.execKill(cmd);
+      }
+      if (cmd.includes("curl")) {
+        return this.execCurl(cmd);
+      }
+      // Fallback for other commands
+      return this.execCommand(cmd);
     } catch (e) {
       return "";
     }
   },
+
+  /**
+   * Execute nvidia-smi command (Windows/Linux compatible)
+   */
+  execNvidiaSmi(cmd) {
+    try {
+      const result = spawn.sync("nvidia-smi", ["--query-compute-apps=pid,name,used_memory", "--format=csv,noheader"], { 
+        encoding: "utf-8", 
+        timeout: 30000,
+        stdio: ['ignore', 'pipe', 'ignore']
+      });
+      return result.stdout || "";
+    } catch (e) {
+      return "";
+    }
+  },
+
+  /**
+   * Execute ollama ps command
+   */
+  execOllamaPs() {
+    try {
+      const result = spawn.sync("ollama", ["ps"], { 
+        encoding: "utf-8", 
+        timeout: 30000,
+        stdio: ['ignore', 'pipe', 'ignore']
+      });
+      return result.stdout || "";
+    } catch (e) {
+      return "";
+    }
+  },
+
+  /**
+   * Execute kill command (cross-platform)
+   */
+  execKill(cmd) {
+    try {
+      const match = cmd.match(/kill -9 (\d+)/);
+      if (match) {
+        const pid = match[1];
+        if (process.platform === 'win32') {
+          spawn.sync('taskkill', ['/F', '/PID', pid], { stdio: 'ignore' });
+        } else {
+          spawn.sync('kill', ['-9', pid], { stdio: 'ignore' });
+        }
+      }
+      return "";
+    } catch (e) {
+      return "";
+    }
+  },
+
+  /**
+   * Execute curl command using Node.js HTTP request
+   */
+  execCurl(cmd) {
+    try {
+      // Parse curl command for Ollama unload
+      const match = cmd.match(/curl -s (\S+) -d '([^']+)'/);
+      if (match) {
+        const url = match[1];
+        const data = match[2];
+        
+        const http = require('http');
+        const https = require('https');
+        const urlObj = new URL(url);
+        const transport = urlObj.protocol === 'https:' ? https : http;
+        
+        const postData = JSON.stringify(JSON.parse(data));
+        
+        const options = {
+          hostname: urlObj.hostname,
+          port: urlObj.port,
+          path: urlObj.pathname,
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(postData)
+          },
+          timeout: 5000
+        };
+        
+        const req = transport.request(options, () => {});
+        req.on('error', () => {});
+        req.on('timeout', () => req.destroy());
+        req.write(postData);
+        req.end();
+      }
+      return "";
+    } catch (e) {
+      return "";
+    }
+  },
+
+  /**
+   * Generic command execution fallback
+   */
+  execCommand(cmd) {
+    try {
+      const result = spawn.sync(cmd, [], { 
+        encoding: "utf-8", 
+        timeout: 30000,
+        stdio: ['ignore', 'pipe', 'ignore'],
+        shell: true
+      });
+      return result.stdout || "";
+    } catch (e) {
+      return "";
+    }
+  }
 };
 
 /**
@@ -261,7 +386,7 @@ function unloadModel(modelType) {
     // In production: send unload command
     const ollamaHost = process.env.OLLAMA_HOST || "http://localhost:11434";
     const ollamaModel = process.env.OLLAMA_MODEL || "llama3";
-    _shellExecutor.exec(`curl -s ${ollamaHost}/api/generate -d '{"model":"${ollamaModel}","keep_alive":0}' > /dev/null 2>&1 || true`);
+    _shellExecutor.exec(`curl -s ${ollamaHost}/api/generate -d '{"model":"${ollamaModel}","keep_alive":0}'`);
 
     _lock.ollama_active = false;
 
@@ -301,7 +426,7 @@ function clearVRAM(stage) {
   transitionPhase(phaseTarget);
 
   // In production: force GPU memory release
-  _shellExecutor.exec("nvidia-smi --gpu-reset 2>/dev/null || true");
+  _shellExecutor.exec("nvidia-smi --gpu-reset");
 
   _lock.last_cleared_at = new Date().toISOString();
 
@@ -319,8 +444,8 @@ function clearVRAM(stage) {
  * @returns {{ found: boolean, zombies: Object[] }}
  */
 function detectZombies() {
-  const ollamaPs = _shellExecutor.exec("ollama ps 2>/dev/null || echo ''");
-  const nvidiaSmi = _shellExecutor.exec("nvidia-smi --query-compute-apps=pid,name,used_memory --format=csv,noheader 2>/dev/null || echo ''");
+  const ollamaPs = _shellExecutor.exec("ollama ps");
+  const nvidiaSmi = _shellExecutor.exec("nvidia-smi --query-compute-apps=pid,name,used_memory --format=csv,noheader");
 
   // Parse nvidia-smi output
   const gpuProcesses = nvidiaSmi
@@ -376,7 +501,7 @@ function killZombies(zombies) {
   const killed = [];
   for (const z of zombies) {
     if (z.pid) {
-      _shellExecutor.exec(`kill -9 ${z.pid} 2>/dev/null || true`);
+      _shellExecutor.exec(`kill -9 ${z.pid}`);
       killed.push(z.pid);
     }
   }

@@ -1,0 +1,30 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"status\":\"OK\",\"message\":\"Gemini reachable\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 16,
+    "candidatesTokenCount": 11,
+    "totalTokenCount": 58,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 16
+      }
+    ],
+    "thoughtsTokenCount": 31
+  },
+  "modelVersion": "gemini-2.5-flash",
+  "responseId": "ra_DaaXiNoyi1e8P4ZjKyQ8"
+}

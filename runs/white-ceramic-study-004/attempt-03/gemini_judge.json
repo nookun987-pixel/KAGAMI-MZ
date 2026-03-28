@@ -1,0 +1,33 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Image is not porcelain-white #FAFAFA; it is dark purple and blue.",
+    "Image does not convey matte B4C technical ceramic properties.",
+    "Image lacks a dry, dense, engineered read.",
+    "No ultra-controlled eggshell microtexture is present.",
+    "No sparse fine hairline cracking is visible.",
+    "Commercial material readability is absent; the image is an abstract pattern."
+  ],
+  "material_read": "Abstract digital pattern, dark purple and blue.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract pattern",
+    "digital noise",
+    "not a material"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Render a material that is actually porcelain-white (#FAFAFA).",
+    "Ensure the material conveys properties of matte B4C technical ceramic.",
+    "Focus on creating a dry, dense, engineered read.",
+    "Implement an ultra-controlled eggshell microtexture.",
+    "Add sparse fine hairline cracking if appropriate for the material study.",
+    "Remove all current colors and abstract patterns.",
+    "Ensure the image clearly depicts a material, not an abstract pattern."
+  ],
+  "summary": "The image provided is an abstract pattern of dark purple and blue, bearing no resemblance to a white ceramic material study. It fails on all primary pass targets, including color, texture, and material readability. The image does not depict any recognizable material, let alone the specified porcelain-white matte B4C technical ceramic.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

@@ -1,0 +1,75 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "zero glossy/plastic/toy feel"
+  ],
+  "wrong_reads": [
+    "matte B4C technical ceramic",
+    "dry read",
+    "eggshell microtexture",
+    "sparse fine hairline cracking",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish"
+  ],
+  "correct_reads": [
+    "porcelain-white #FAFAFA",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "Highly glazed porcelain or ceramic, smooth and reflective.",
+  "fix_direction": [
+    "Remove all surface gloss and reflectivity to achieve a true matte finish.",
+    "Introduce a subtle, ultra-controlled eggshell microtexture across the surface.",
+    "Ensure the material reads as dry and dense, rather than slick or polished.",
+    "Incorporate sparse, fine hairline cracking as specified for the technical ceramic aesthetic.",
+    "Eliminate any visual cues that suggest a plastic or toy-like quality."
+  ],
+  "summary": "The white ceramic material fails to meet the 'matte B4C technical ceramic' target. It exhibits a distinct glossy, reflective surface, which gives it a plastic or toy-like feel, directly contradicting the 'zero glossy/plastic/toy feel' requirement. The desired matte finish, dry read, eggshell microtexture, and hairline cracking are absent.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "matte B4C technical ceramic",
+      "dry, dense, engineered read",
+      "ultra-controlled eggshell microtexture",
+      "sparse fine hairline cracking",
+      "zero glossy/plastic/toy feel"
+    ],
+    "material_read": "Highly glazed porcelain or ceramic, smooth and reflective.",
+    "correct_reads": [
+      "porcelain-white #FAFAFA",
+      "zero plaster/mineral/carved stone resemblance",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "matte B4C technical ceramic",
+      "dry read",
+      "eggshell microtexture",
+      "sparse fine hairline cracking",
+      "glossy plastic",
+      "PVC sheen",
+      "toy-like finish"
+    ],
+    "severity": "HIGH",
+    "fix_direction": [
+      "Remove all surface gloss and reflectivity to achieve a true matte finish.",
+      "Introduce a subtle, ultra-controlled eggshell microtexture across the surface.",
+      "Ensure the material reads as dry and dense, rather than slick or polished.",
+      "Incorporate sparse, fine hairline cracking as specified for the technical ceramic aesthetic.",
+      "Eliminate any visual cues that suggest a plastic or toy-like quality."
+    ],
+    "summary": "The white ceramic material fails to meet the 'matte B4C technical ceramic' target. It exhibits a distinct glossy, reflective surface, which gives it a plastic or toy-like feel, directly contradicting the 'zero glossy/plastic/toy feel' requirement. The desired matte finish, dry read, eggshell microtexture, and hairline cracking are absent.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

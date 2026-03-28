@@ -1,0 +1,32 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Not porcelain-white #FAFAFA due to pervasive colorful noise and artifacts.",
+    "Does not read as matte B4C technical ceramic; the texture is abstract, pixelated, and chaotic.",
+    "Lacks a dry, dense, engineered read; appears as digital noise or a corrupted image.",
+    "No ultra-controlled eggshell microtexture is present; the surface is a jumble of small, undefined shapes.",
+    "No sparse fine hairline cracking is visible.",
+    "Commercial material readability is not immediate; the material is unreadable.",
+    "The colorful noise directly corrupts material readability, preventing any coherent material interpretation."
+  ],
+  "material_read": "Digital noise, abstract pixelated texture, corrupted image, static",
+  "correct_reads": [],
+  "wrong_reads": [
+    "Rough mosaic",
+    "Heavily compressed image artifact",
+    "Textile weave (abstracted)"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Eliminate all colorful noise and artifacts to achieve a pure porcelain-white base color.",
+    "Develop a clear, consistent, matte surface texture that conveys density and engineering.",
+    "Introduce the specified ultra-controlled eggshell microtexture, ensuring it is subtle and uniform.",
+    "Ensure the material reads as dry and dense, avoiding any appearance of digital corruption or abstraction.",
+    "If desired, add sparse, fine hairline cracking that enhances the ceramic read without overwhelming it."
+  ],
+  "summary": "The material study completely fails to represent a white ceramic. The image is dominated by pervasive colorful noise and an abstract, pixelated texture that makes it unreadable as any material, let alone a matte B4C technical ceramic. It lacks all specified pass targets, including color purity, texture, and engineered feel, resulting in a high-severity failure.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

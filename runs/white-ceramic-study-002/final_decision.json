@@ -1,0 +1,124 @@
+{
+  "job_id": "white-ceramic-study-002",
+  "status": "DONE",
+  "decision": "REJECT",
+  "decision_reason": "REJECT: canon hard fail: T7, T8, T11, T12, C1, C4",
+  "canon_version": "v2",
+  "output_files": [
+    "output.png"
+  ],
+  "output_file_path": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\output.png",
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "gemini_pass_fail": "FAIL",
+  "gemini_error": "GEMINI_VALIDATOR_FAIL",
+  "gemini_fail_rules": [
+    "zero plaster/mineral/carved stone resemblance",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "commercial material readability is immediate"
+  ],
+  "gemini_summary": "The white ceramic material fails significantly as it strongly resembles plaster or gypsum, rather than a matte B4C technical ceramic. It lacks the required ultra-controlled eggshell microtexture and sparse fine hairline cracking, leading to a complete misread of the intended material and preventing immediate commercial readability.",
+  "wrong_reads": [
+    "plaster",
+    "gypsum",
+    "fine concrete",
+    "textured paper",
+    "powdery porous masonry"
+  ],
+  "canon_hard_fail_count": 6,
+  "failed_rules": [
+    "T7",
+    "T8",
+    "T11",
+    "T12",
+    "C1",
+    "C4",
+    "zero plaster/mineral/carved stone resemblance",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "commercial material readability is immediate"
+  ],
+  "blocking_unknown_rules": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "C2"
+  ],
+  "critical_failures": [
+    "T7",
+    "T8",
+    "T11",
+    "T12",
+    "C1",
+    "C4"
+  ],
+  "forbidden_hits": [],
+  "analyzer_summary": {
+    "use_vision_validator": false,
+    "vlm_backend_ready": false,
+    "vlm_status": "unavailable",
+    "semantic_result": "PASS",
+    "analyzer_unavailable": [],
+    "analyzer_status": {
+      "pixel_analyzer": true,
+      "z_blue_detector": true,
+      "safe_zone_mask": true,
+      "silhouette_check": true,
+      "saliency_map": true,
+      "vlm_semantic_analyzer": true
+    }
+  },
+  "scores": {
+    "identity_score": 0.83,
+    "narrative_score": 0.8,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": 0.75
+  },
+  "drift_flags": [],
+  "continuity": {
+    "entity_id": "mikage_material_white_ceramic",
+    "entity_class": "material_study",
+    "zone": "white_monolith",
+    "weapon": null,
+    "status": "material_test",
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_intake.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\job_summary.json"
+  },
+  "timestamps": {
+    "decided_at": "2026-03-26T07:41:47.937Z"
+  },
+  "registry_path": null
+}

@@ -1,0 +1,122 @@
+{
+  "job_id": "white-ceramic-study-001",
+  "status": "FAIL",
+  "decision": "REJECT",
+  "output_files": [],
+  "output_file_path": null,
+  "scores": {
+    "identity_score": null,
+    "narrative_score": null,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": null
+  },
+  "drift_flags": [],
+  "timestamp": "2026-03-25T07:05:52.874Z",
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001\\output.png",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-001\\job_summary.json"
+  },
+  "canon_version": "v2",
+  "validator_executed": false,
+  "failed_rules": [],
+  "final_decision_reason": "REJECT: no real image on disk",
+  "continuity": {
+    "entity_id": "mikage_material_white_ceramic",
+    "entity_class": "material_study",
+    "zone": "white_monolith",
+    "weapon": null,
+    "status": "material_test",
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "pre_validation_result": {
+    "stage": "prompt_package",
+    "verdict": "PASS",
+    "canon_version": "v2",
+    "source_version": "2.0",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "passed_checks": [
+      "identity",
+      "mask",
+      "optics",
+      "hair",
+      "porcelain",
+      "graphene",
+      "weapon",
+      "tone"
+    ],
+    "failed_checks": [],
+    "forbidden_hits": [],
+    "critical_failures": [],
+    "pass_ratio": 1,
+    "negative_lock_count": 23,
+    "job_input_validation": {
+      "stage": "job_input",
+      "verdict": "PASS",
+      "pass_ratio": 1,
+      "passed_checks": [],
+      "failed_checks": [],
+      "forbidden_hits": [],
+      "critical_failures": [],
+      "canon_version": "v2",
+      "source_version": "2.0",
+      "source_files": {
+        "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+        "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+        "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+      }
+    }
+  },
+  "post_validation_result": {
+    "stage": "post_render_image",
+    "verdict": "REJECT",
+    "validator_executed": false,
+    "canon_version": "v2",
+    "failed_checks": [],
+    "critical_failures": [
+      "Connection error: connect ECONNREFUSED 127.0.0.1:7865"
+    ],
+    "forbidden_hits": [],
+    "analyzer_signals": {},
+    "missing_signals": [],
+    "blocking_unknown_rules": [],
+    "analyzer_summary": {
+      "use_vision_validator": false,
+      "vlm_backend_ready": false,
+      "vlm_status": "skipped",
+      "semantic_result": "SKIPPED",
+      "analyzer_unavailable": []
+    },
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "reason": "Connection error: connect ECONNREFUSED 127.0.0.1:7865"
+  },
+  "final_decision_source": "post_render_image",
+  "registry_path": null,
+  "spec_version": "mikage_image_control_v24rules",
+  "z_blue_spec_version": "0.1.0-provisional",
+  "render": {
+    "output_file": null,
+    "seed_used": -1,
+    "render_time_ms": 241428,
+    "status": "RENDER_FAILED",
+    "error": "Connection error: connect ECONNREFUSED 127.0.0.1:7865"
+  }
+}

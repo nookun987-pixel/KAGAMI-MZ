@@ -1,0 +1,128 @@
+[
+  {
+    "failure_type": "garment_warp",
+    "description": "Garment silhouette is stretched, melted, bent, or structurally broken.",
+    "visual_symptom": "Body/garment edge deviates from intended geometry.",
+    "root_cause": "Generation drift, uncontrolled warp, bad mesh read, excessive distortion overlap.",
+    "detection_signal": ["mesh_deformation_delta", "boundary_intersection"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T4", "C2"]
+  },
+  {
+    "failure_type": "safe_zone_contamination",
+    "description": "Protected central product zone contains glitch, warp, or distortion.",
+    "visual_symptom": "Any visible effect inside face/garment/weapon/logo protected zone.",
+    "root_cause": "No exclusion mask, distortion spill, bad compositing.",
+    "detection_signal": ["pixel_displacement", "rgb_glitch_count"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T3"]
+  },
+  {
+    "failure_type": "edge_blur_bleed",
+    "description": "Primary product edge loses crispness or receives effect bleed.",
+    "visual_symptom": "Soft outline, halo, bloom bleed, edge contamination.",
+    "root_cause": "Aggressive denoise/upscale, glow spill, compositing blur.",
+    "detection_signal": ["edge_sharpness_gradient", "pixel_bleed_percentage"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T5"]
+  },
+  {
+    "failure_type": "texture_loss",
+    "description": "Fabric grain, stitching, or surface micro-detail is lost.",
+    "visual_symptom": "Smoothed garment surface, haloing, dead material read.",
+    "root_cause": "Denoise, upscale artifacts, blur, bad relighting.",
+    "detection_signal": ["high_frequency_pixel_density", "blur_radius"],
+    "severity": "CRITICAL",
+    "mapped_rules": ["T6"]
+  },
+  {
+    "failure_type": "z_blue_shift",
+    "description": "Protected Z-Blue deviates from master swatch or gets contaminated.",
+    "visual_symptom": "Hue drift, cast contamination, bloom spill, region shift.",
+    "root_cause": "Grading, spill light, reflection contamination, effect overlap.",
+    "detection_signal": ["delta_e", "color_shift_hsv"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T7", "C4"]
+  },
+  {
+    "failure_type": "hierarchy_collapse",
+    "description": "Distortion or background becomes stronger than subject/product.",
+    "visual_symptom": "Viewer attention goes to effect/background first.",
+    "root_cause": "Bad saliency balance, excessive contrast in wrong zone.",
+    "detection_signal": ["saliency_heat_map_max", "thumbnail_saliency_rank"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T8", "C3", "C1"]
+  },
+  {
+    "failure_type": "cheap_artifact_intrusion",
+    "description": "RGB split, VHS, or random noise appears in frame.",
+    "visual_symptom": "Generic glitch language replaces controlled distortion.",
+    "root_cause": "Preset effects, uncontrolled post-processing, weak prompt logic.",
+    "detection_signal": ["rgb_chromatic_split_noise", "vhs_noise_pattern"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T9"]
+  },
+  {
+    "failure_type": "grid_misalignment",
+    "description": "Distortion no longer follows geometry/grid logic.",
+    "visual_symptom": "Effects float freely instead of snapping to architecture.",
+    "root_cause": "No geometry-aware mapping, random placement.",
+    "detection_signal": ["grid_snap_variance", "line_angle_deviation"],
+    "severity": "HIGH",
+    "mapped_rules": ["T10"]
+  },
+  {
+    "failure_type": "exposure_clipping",
+    "description": "Protected zone loses recoverable detail through clipping.",
+    "visual_symptom": "Blown highlights or crushed shadows on garment/product zone.",
+    "root_cause": "Lighting imbalance, grading excess, bloom contamination.",
+    "detection_signal": ["exposure_value_delta", "histogram_clipping"],
+    "severity": "CRITICAL",
+    "mapped_rules": ["T11"]
+  },
+  {
+    "failure_type": "human_mask_drift",
+    "description": "Mask reveals human facial cues or loses symmetry.",
+    "visual_symptom": "Visible eyes, facial mesh, asymmetry, emotive face read.",
+    "root_cause": "Model drift, prompt weakness, stylization contamination.",
+    "detection_signal": ["geometry_symmetry_ratio", "eye_detection_confidence"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T12", "I1"]
+  },
+  {
+    "failure_type": "weapon_style_drift",
+    "description": "Blade curves or gains fantasy ornamentation.",
+    "visual_symptom": "Katana curve, medieval ornament, decorative fantasy language.",
+    "root_cause": "Prompt contamination, style drift.",
+    "detection_signal": ["line_curvature_degree", "ornament_bounding_box"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["T13"]
+  },
+  {
+    "failure_type": "plastic_surface_read",
+    "description": "Porcelain shell reads as glossy plastic or toy surface.",
+    "visual_symptom": "Candy gloss, PVC reflection, cheap synthetic read.",
+    "root_cause": "Material drift, over-gloss lighting, poor texture definition.",
+    "detection_signal": ["high_gloss_specular", "candy_coat_reflection", "pvc_plastic_read"],
+    "severity": "CRITICAL",
+    "mapped_rules": ["I2"]
+  },
+  {
+    "failure_type": "anime_cute_drift",
+    "description": "Subject drifts into anime/chibi/cute language.",
+    "visual_symptom": "Toon eyes, rounded cheeks, playful body cues, soft stylization.",
+    "root_cause": "Model stylization drift, weak negative locks.",
+    "detection_signal": ["toon_shading", "large_expressive_eyes", "chibi_proportions"],
+    "severity": "ABSOLUTE",
+    "mapped_rules": ["I5"]
+  },
+  {
+    "failure_type": "neon_clutter_overload",
+    "description": "Scene is polluted by generic cyber-neon clutter.",
+    "visual_symptom": "Dense neon colors, flare spam, HUD layers, visual chaos.",
+    "root_cause": "Poster-like cyberpunk drift, poor restraint.",
+    "detection_signal": ["cyan_magenta_overload", "lens_flare_spam", "dense_neon_signs"],
+    "severity": "CRITICAL",
+    "mapped_rules": ["I6"]
+  }
+]

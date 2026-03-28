@@ -1,0 +1,57 @@
+{
+  "job_id": "runway-prep-003",
+  "source": "manual",
+  "mode": "AUTO_DRAFT",
+  "entity_id": "mikage_zenith",
+  "entity_class": "sacred_tech_entity",
+  "zone": "white_monolith",
+  "weapon": "zenith_blade",
+  "status": "hero_frame",
+  "identity": {
+    "name": "Mikage Zenith",
+    "archetype": "sacred brutalist hero entity",
+    "visual_anchor": "front-facing symmetrical kitsune mask, matte ceramic shell, visible oversized straight blade, fracture texture"
+  },
+  "narrative": {
+    "theme": "premium ad opening frame for Runway image-to-video",
+    "mood": "silent, sacred, disciplined, premium, low-key",
+    "scene": "centered hero shot, full figure, frontal symmetry, visible oversized straight blade held down beside body, brutalist monolith hall, darker background, strong negative space, premium commercial readability in one second"
+  },
+  "strategy": {
+    "style": "premium product-fashion hero keyframe, frontal symmetry, full figure, darker low-key lighting, blade clearly visible",
+    "color_palette": "porcelain white, void black, restrained crimson seam accent only"
+  },
+  "art_direction": {
+    "mood": [
+      "melancholic",
+      "restrained",
+      "sacred stillness",
+      "premium ad readability",
+      "front-facing symmetry",
+      "low-key darker background"
+    ],
+    "material": [
+      "matte B4C technical ceramic",
+      "cold dry ceramic read",
+      "eggshell microtexture",
+      "subtle fracture lines visible on shell",
+      "matte black graphene/carbon-fiber internal suit",
+      "dark titanium joints",
+      "oversized straight engineered blade fully visible"
+    ],
+    "style": [
+      "front-facing full figure hero frame",
+      "clean silhouette",
+      "strong negative space",
+      "luxury brutalist",
+      "low-key cinematic lighting",
+      "visible blade silhouette",
+      "darker brutalist monolith background"
+    ]
+  },
+  "render": {
+    "width": 1024,
+    "height": 1536,
+    "performance": "Quality"
+  }
+}

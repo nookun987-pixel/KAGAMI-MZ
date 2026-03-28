@@ -1,0 +1,46 @@
+{
+  "spec_name": "mikage_z_blue_spec",
+  "version": "0.1.0-provisional",
+  "status": "PROVISIONAL",
+  "final_lock_required_from": "Art Director",
+  "master_swatch": {
+    "hex": "#0000C8",
+    "rgb": { "r": 0, "g": 0, "b": 200 },
+    "cie_xy": { "x": 0.15, "y": 0.06 }
+  },
+  "usage_zones": [
+    {
+      "zone": "garment_base",
+      "description": "Base brand color on garment or protected material region",
+      "protection_level": "ABSOLUTE"
+    },
+    {
+      "zone": "rim_light",
+      "description": "Silhouette rim-light only",
+      "protection_level": "CRITICAL"
+    },
+    {
+      "zone": "emissive_accent",
+      "description": "Small controlled accent only, never primary key",
+      "protection_level": "CRITICAL"
+    }
+  ],
+  "tolerance_rules": {
+    "global_hue_shift_max_degrees": 2,
+    "global_saturation_shift_max_percent": 5,
+    "no_shift_on_z_blue_zone": true,
+    "no_distortion_contact_on_z_blue_zone": true,
+    "no_color_cast_from_background_effects": true,
+    "no_reflection_value_shift": true
+  },
+  "lighting_rules": {
+    "no_bloom_into_garment": true,
+    "no_spill_into_face_shadow": true,
+    "not_primary_key_light": true,
+    "requires_crisp_edge": true
+  },
+  "validation_logic": {
+    "pass": "Sampled protected Z-Blue zones match master swatch within configured tolerance and show no contamination",
+    "fail": "Any hue/saturation/value contamination, distortion contact, cast shift, spill, or uncontrolled bloom in protected zones"
+  }
+}

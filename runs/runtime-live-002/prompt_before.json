@@ -1,0 +1,53 @@
+{
+  "job_id": "runtime-live-002",
+  "phase_target": "material_study",
+  "structured_prompt": "SUBJECT\nMacro product photography material study of matte B4C technical ceramic.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Exquisite eggshell microtexture. Highly detailed subtle hairline fractures and micro-cracks. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define form and grain. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nMacro close-up. Clean negative space. Premium commercial readability. Material purity emphasis.\n\nBACKGROUND\nBrutalist minimal concrete surface.\n\nQUALITY\nUltra-detailed 8K resolution. Industrial design aesthetic.",
+  "negative_prompt": "plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry",
+  "render_spec": {
+    "shot_type": "macro_material_study",
+    "lighting": "low_key_grazing",
+    "background": "minimal_brutalist",
+    "priority": "material_readability",
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality"
+  },
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ],
+  "intake_summary": "Focus exclusively on generating a clean matte B4C technical ceramic material read for Mikage. Strictly avoid any visual cues of plaster, gypsum, chalk, concrete, carved stone, mineral banding, or sedimentary drift. Maintain a material-only scope, ensuring no optimization or consideration of mask, identity, weapon, or silhouette.",
+  "locked_prompt_package": {
+    "subject": "Mikage Zenith, matte B4C technical ceramic, porcelain white, silent disciplined material study",
+    "texture": [
+      "Faceless white cybernetic helmet",
+      "Long, straight, heavy black hair flowing naturally",
+      "matte B4C technical ceramic",
+      "porcelain white",
+      "eggshell microtexture",
+      "subtle hairline fractures",
+      "matte black graphene reference",
+      "void black optical sensors",
+      "Zenith Blade"
+    ],
+    "lighting": [
+      "low-key cinematic",
+      "no ambient color wash",
+      "no magenta spill",
+      "no neon"
+    ],
+    "composition_rules": [
+      "macro close-up",
+      "clean negative space",
+      "premium commercial readability",
+      "brutalist minimal concrete surface"
+    ],
+    "prompt": "SUBJECT\nMacro product photography material study of matte B4C technical ceramic.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Exquisite eggshell microtexture. Highly detailed subtle hairline fractures and micro-cracks. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define form and grain. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nMacro close-up. Clean negative space. Premium commercial readability. Material purity emphasis.\n\nBACKGROUND\nBrutalist minimal concrete surface.\n\nQUALITY\nUltra-detailed 8K resolution. Industrial design aesthetic.",
+    "negative_prompt": "plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry"
+  }
+}

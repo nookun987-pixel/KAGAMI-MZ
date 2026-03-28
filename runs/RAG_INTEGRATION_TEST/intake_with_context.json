@@ -1,0 +1,7 @@
+{
+  "job_id": "RAG_INTEGRATION_TEST",
+  "shot_type": "WEAPON_MACRO",
+  "generation_mode": "reproduction",
+  "user_idea": "test sword study",
+  "mikage_memory_context": "=== MIKAGE MEMORY CONTEXT ===\nQuery: WEAPON_MACRO reproduction test sword study\nFound 2 relevant memories:\n\n[MEMORY 1]\nSource: final_decision.json (validation_failure)\nRelevance: 0.92\nContent: Previous WEAPON_MACRO run failed due to abstract composition issues. Need stronger subject presence and clearer manufactured object read.\n\n[MEMORY 2]\nSource: STRUCTURED_RULES.json (canon_rules)\nRelevance: 0.87\nContent: WEAPON_MACRO canon rules require: 1) Clear subject silhouette 2) Manufactured object readability 3) No abstract atmosphere 4) Material-first composition\n\n============================\n"
+}

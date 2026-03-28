@@ -1,0 +1,25 @@
+{
+  "prompt": "Product catalog photography, commercial product shot, centered composition, single manufactured object, a symmetrical Japanese kitsune fox mask, matte white B4C technical ceramic industrial material, engineered surface, non-organic, dry matte eggshell microtexture, zero specular highlights, bone-dry ceramic finish, subtle hairline cracks only, traditional fox face shape with pointed ears and narrow eye slits, clearly defined physical object, precise industrial form, visible thickness and edges, sharp contour silhouette, neutral studio lighting, soft diffused top light, gentle side fill, clean shadow under object, plain neutral gray studio backdrop, medium close shot, product framing, full object readable, non-reflective matte surface, one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject",
+  "negative_prompt": "abstract, texture field, atmosphere, fog, cinematic, dramatic lighting, noise, grain, blur, painterly, organic surface, plaster, stone, messy background, neon, glow, anime, cyberpunk, distortion, human face, human eyes, realistic face, portrait, person, figure, body, hair, sword, blade, helmet, armor, glossy, shiny, reflective, polished, wet, specular, lacquer, glass, plastic, PVC, toy, partial crop, identity-destroying crop",
+  "seed": 556751,
+  "width": 1024,
+  "height": 1024,
+  "steps": -1,
+  "disable_refiner": false,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "async_process": false,
+  "metadata": {
+    "job_id": "REPEAT_TEST_02",
+    "canon_version": "v2",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "generated_at": "2026-03-26T16:32:18.520Z",
+    "direct_input_prompt": true,
+    "shot_type": "ENTITY_MEDIUM"
+  }
+}

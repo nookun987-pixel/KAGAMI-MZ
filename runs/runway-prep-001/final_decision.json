@@ -1,0 +1,82 @@
+{
+  "job_id": "runway-prep-001",
+  "status": "DONE",
+  "decision": "REJECT",
+  "decision_reason": "REJECT: canon hard fail: T5, T6, T12",
+  "canon_version": "v2",
+  "output_files": [
+    "output.png"
+  ],
+  "output_file_path": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\output.png",
+  "validator_executed": true,
+  "canon_hard_fail_count": 3,
+  "failed_rules": [
+    "T5",
+    "T6",
+    "T12"
+  ],
+  "blocking_unknown_rules": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "C2"
+  ],
+  "critical_failures": [
+    "T5",
+    "T6",
+    "T12"
+  ],
+  "forbidden_hits": [],
+  "analyzer_summary": {
+    "use_vision_validator": false,
+    "vlm_backend_ready": false,
+    "vlm_status": "unavailable",
+    "semantic_result": "PASS",
+    "analyzer_unavailable": [],
+    "analyzer_status": {
+      "pixel_analyzer": true,
+      "z_blue_detector": true,
+      "safe_zone_mask": true,
+      "silhouette_check": true,
+      "saliency_map": true,
+      "vlm_semantic_analyzer": true
+    }
+  },
+  "scores": {
+    "identity_score": 0.83,
+    "narrative_score": 0.8,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": 0.75
+  },
+  "drift_flags": [],
+  "continuity": {
+    "entity_id": "mikage_zenith",
+    "entity_class": "sacred_tech_entity",
+    "zone": "white_monolith",
+    "weapon": "zenith_blade",
+    "status": "hero_frame",
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\runway-prep-001",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\output.png",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\runway-prep-001\\job_summary.json"
+  },
+  "timestamps": {
+    "decided_at": "2026-03-25T04:41:26.464Z"
+  },
+  "registry_path": null
+}

@@ -1,0 +1,25 @@
+{
+  "job_id": "quality-improvement-test-002",
+  "source": "api",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "character": "Mikage Zenith"
+  },
+  "narrative": {
+    "mood": ["melancholic"],
+    "energy": "medium"
+  },
+  "strategy": {
+    "composition": "mid",
+    "focus": "subject"
+  },
+  "art_direction": {
+    "mood": ["melancholic"],
+    "material": ["weathered ceramic", "dark titanium", "graphene"],
+    "style": ["porcelain minimalism", "quiet luxury"],
+    "forbidden": ["bright colors", "ornate details"]
+  },
+  "render": {
+    "max_iteration": 2
+  }
+}

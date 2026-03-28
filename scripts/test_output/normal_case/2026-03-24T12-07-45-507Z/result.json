@@ -1,0 +1,53 @@
+{
+  "test_case": {
+    "job_id": "normal_case_valid",
+    "source": "verification_test",
+    "mode": "AUTO_DRAFT",
+    "identity": {
+      "name": "Mikage",
+      "archetype": "ethereal guardian",
+      "visual_anchor": "porcelain armored figure with crimson energy"
+    },
+    "narrative": {
+      "theme": "solitude at twilight",
+      "mood": "contemplative",
+      "scene": "standing alone on a cliff overlooking a calm ocean at sunset"
+    },
+    "strategy": {
+      "style": "cinematic illustration",
+      "color_palette": "deep blue, silver, soft crimson"
+    },
+    "art_direction": {
+      "mood": "melancholic",
+      "material": "matte porcelain",
+      "style": "wabi-sabi with subtle internal glow",
+      "lighting": "natural twilight with controlled crimson energy"
+    },
+    "render": {
+      "width": 1024,
+      "height": 384,
+      "performance": "Quality",
+      "max_iteration": 1
+    }
+  },
+  "execution": {
+    "exitCode": -1,
+    "signal": "TIMEOUT",
+    "stdout": "[dotenv@17.3.1] injecting env (10) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }\n2026-03-24T12:07:45.848Z \u001b[33m[WARN]\u001b[0m VLM backend not configured and USE_VISION_VALIDATOR=false — semantic validation disabled\n2026-03-24T12:07:45.850Z \u001b[36m[INFO]\u001b[0m Fooocus client: http://127.0.0.1:7865\n2026-03-24T12:07:45.850Z \u001b[36m[INFO]\u001b[0m Notion client: DB ddb0999c...\n2026-03-24T12:07:45.854Z \u001b[33m[WARN]\u001b[0m Notion initial write failed: (ad.mood || []).join is not a function — continuing pipeline\n2026-03-24T12:07:45.859Z \u001b[36m[INFO]\u001b[0m Job normal_case_valid — attempt 1/1\n",
+    "stderr": "",
+    "error": "Process timed out after 600000ms"
+  },
+  "job_result": null,
+  "verification": {
+    "decision": "FAIL",
+    "reasons": [
+      "Execution failed: exit=-1, signal=TIMEOUT",
+      "Process timed out after 600000ms"
+    ],
+    "output_files": [],
+    "job_decision": null,
+    "exit_code": -1,
+    "signal": "TIMEOUT"
+  },
+  "timestamp": "2026-03-24T12:17:45.550Z"
+}

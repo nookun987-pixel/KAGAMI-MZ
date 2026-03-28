@@ -1,0 +1,62 @@
+{
+  "job_id": "runway-hero-locked-001",
+  "source": "manual",
+  "mode": "AUTO_DRAFT",
+  "entity_id": "mikage_zenith",
+  "entity_class": "hero_entity",
+  "zone": "white_monolith",
+  "weapon": "zenith_blade",
+  "status": "runway_prep",
+  "identity": {
+    "name": "Mikage Zenith hero entity",
+    "archetype": "emotionless sacred robotic presence",
+    "visual_anchor": "centered symmetrical hero frame"
+  },
+  "narrative": {
+    "theme": "luxury brutalist Japanese sacred tech",
+    "mood": "controlled sacred stillness",
+    "scene": "hero product-fashion ad keyframe"
+  },
+  "strategy": {
+    "style": "industrial science fiction aesthetic",
+    "color_palette": "Porcelain White #FAFAFA, Obsidian Black #0A0A0A, Crimson accent #E60000 restricted to blade core only"
+  },
+  "art_direction": {
+    "material": "matte B4C technical ceramic, porcelain-white eggshell microtexture, subtle hairline fractures",
+    "lighting": "Low-key cinematic. Controlled directional highlights to define form. No glossy shine. No ambient color wash.",
+    "style": "centered symmetrical clean silhouette brutalist minimal concrete environment"
+  },
+  "render": {
+    "width": 1024,
+    "height": 1536,
+    "performance": "Quality"
+  },
+  "locked_prompt_package": {
+    "subject": "Mikage Zenith, Silent, disciplined, tragic",
+    "texture": [
+      "Faceless white cybernetic helmet",
+      "Smooth aerodynamic, subtle fox-like silhouette",
+      "Void black optical sensors",
+      "Long, straight, heavy black hair flowing naturally",
+      "High-precision symmetrical kitsune fox mask",
+      "Outer shell: matte B4C technical ceramic, porcelain-white eggshell microtexture, subtle hairline fractures. Zero specular highlights. Non-plastic, non-glossy.",
+      "Boron Carbide (B4C) porcelain, ultra-hard, pristine white",
+      "Undersuit: matte black hex-grid graphene.",
+      "Matte black graphene hex-grid",
+      "Joints: dark weathered titanium mechanical joints."
+    ],
+    "lighting": [
+      "Low-key cinematic. Controlled directional highlights to define form. No glossy shine. No ambient color wash."
+    ],
+    "composition_rules": [
+      "Medium full shot, centered symmetrical composition, slight low angle.",
+      "Sharp silhouette preserved for motion tracking.",
+      "Brutalist minimal concrete environment. No clutter. No heavy atmospheric particles.",
+      "Zenith Blade",
+      "Massive straight engineered industrial blade",
+      "Silent disciplined tragic presence"
+    ],
+    "prompt": "SUBJECT\nMikage Zenith hero entity. Medium full shot, centered symmetrical composition, slight low angle. Emotionless sacred robotic presence.\n\nHEAD / MASK\nHigh-precision symmetrical kitsune fox mask. No visible eyes. Hollow void-black gaze. No expression.\n\nARMOR / MATERIAL\nOuter shell: matte B4C technical ceramic, porcelain-white eggshell microtexture, subtle hairline fractures. Zero specular highlights. Non-plastic, non-glossy.\nUndersuit: matte black hex-grid graphene.\nJoints: dark weathered titanium mechanical joints.\n\nWEAPON\nMassive straight engineered industrial blade. Deep crimson #E60000 restrained heat core accent only.\n\nCOLOR PALETTE (LOCKED)\nPorcelain White #FAFAFA. Obsidian Black #0A0A0A. Crimson accent #E60000 restricted to blade core only.\n\nLIGHTING\nLow-key cinematic. Controlled directional highlights to define form. No glossy shine. No ambient color wash.\n\nCOMPOSITION\nCentered symmetrical. Clean negative space. Sharp silhouette preserved for motion tracking.\n\nBACKGROUND\nBrutalist minimal concrete environment. No clutter. No heavy atmospheric particles.\n\nQUALITY\nUltra-detailed 8K resolution. High-fashion editorial quality. Industrial science fiction aesthetic.",
+    "negative_prompt": "anime, cyberpunk, plastic, glossy, shiny, PVC, cute, human eyes, toy-like, vibrant colors, neon lights, neon, RGB color spill, magenta spill, generic fantasy, messy background, soft edges, blurry, watermark, low quality, 3D render style, saturated colors, specular highlights, ambient color wash, atmospheric haze, organic skin"
+  }
+}

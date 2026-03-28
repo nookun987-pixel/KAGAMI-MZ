@@ -1,0 +1,83 @@
+[
+  {
+    "rule_id": "T1",
+    "rule_name": "FRAME_SPLIT_30_40_30",
+    "source_doc": "NotebookLM Master Control Table",
+    "current_code_support": "PARTIAL",
+    "related_modules": ["analyzer", "post_control"],
+    "missing_components": ["frame zone detector", "product bounding box evaluator"],
+    "implementation_note": "Needs geometry-based product box localization against horizontal frame ratio."
+  },
+  {
+    "rule_id": "T3",
+    "rule_name": "PRODUCT_SAFE_ZONE_CLEAN",
+    "source_doc": "NotebookLM Master Control Table",
+    "current_code_support": "PARTIAL",
+    "related_modules": ["pixel analyzer", "critic", "drift detector"],
+    "missing_components": ["protected-zone mask evaluator", "glitch intrusion detector"],
+    "implementation_note": "Can build from central zone mask + displacement/glitch detection."
+  },
+  {
+    "rule_id": "T4",
+    "rule_name": "GARMENT_SILHOUETTE_LOCK",
+    "source_doc": "NotebookLM Master Control Table",
+    "current_code_support": "PARTIAL",
+    "related_modules": ["identity analyzer", "pixel analyzer"],
+    "missing_components": ["garment reference geometry compare", "boundary integrity evaluator"],
+    "implementation_note": "Requires segmentation baseline or relative silhouette stability metric."
+  },
+  {
+    "rule_id": "T7",
+    "rule_name": "Z_BLUE_COLOR_LOCK",
+    "source_doc": "NotebookLM Master Control Table + Z-Blue Spec",
+    "current_code_support": "NONE",
+    "related_modules": ["pixel analyzer"],
+    "missing_components": ["Z-Blue protected-zone selector", "deltaE calculator", "cast contamination detector"],
+    "implementation_note": "Blocked only by final AD lock for definitive master swatch; provisional swatch already available."
+  },
+  {
+    "rule_id": "T8",
+    "rule_name": "VISUAL_ANCHOR_PRIORITY",
+    "source_doc": "NotebookLM Master Control Table",
+    "current_code_support": "PARTIAL",
+    "related_modules": ["pixel analyzer", "VLM backend"],
+    "missing_components": ["saliency ranking pass", "thumbnail-downscale hierarchy pass"],
+    "implementation_note": "Can combine saliency heatmap with simple downscale readability heuristic."
+  },
+  {
+    "rule_id": "T12",
+    "rule_name": "KITSUNE_MASK_SYMMETRY",
+    "source_doc": "NotebookLM Master Control Table + Character Spec",
+    "current_code_support": "PARTIAL",
+    "related_modules": ["identity analyzer", "VLM backend"],
+    "missing_components": ["mask geometry mirror-check", "human-eye visibility detector"],
+    "implementation_note": "VLM can help with semantic checks while pixel path handles symmetry."
+  },
+  {
+    "rule_id": "I2",
+    "rule_name": "PORCELAIN_MATTE_SHELL",
+    "source_doc": "Identity Control Table",
+    "current_code_support": "NONE",
+    "related_modules": ["VLM backend", "pixel analyzer"],
+    "missing_components": ["material classification check", "gloss/specular threshold model"],
+    "implementation_note": "Best solved initially with hybrid VLM + highlight ratio metrics."
+  },
+  {
+    "rule_id": "I5",
+    "rule_name": "ANTI_ANIME_CUTE_DRIFT",
+    "source_doc": "Identity Control Table",
+    "current_code_support": "PARTIAL",
+    "related_modules": ["VLM backend"],
+    "missing_components": ["stylization drift classifier"],
+    "implementation_note": "Strong VLM semantic check candidate."
+  },
+  {
+    "rule_id": "C1",
+    "rule_name": "COMMERCIAL_READABILITY_UNDER_1S",
+    "source_doc": "Commercial Control Table",
+    "current_code_support": "NONE",
+    "related_modules": ["VLM backend", "pixel analyzer"],
+    "missing_components": ["recognition-time proxy", "thumbnail readability test"],
+    "implementation_note": "Approximate with saliency + downscale subject clarity scoring."
+  }
+]

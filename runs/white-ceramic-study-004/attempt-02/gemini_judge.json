@@ -1,0 +1,35 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Image does not depict a white ceramic material.",
+    "Image does not show porcelain-white #FAFAFA.",
+    "Image does not show matte B4C technical ceramic.",
+    "Image does not show a dry, dense, engineered read.",
+    "Image does not show ultra-controlled eggshell microtexture.",
+    "Image does not show sparse fine hairline cracking.",
+    "Commercial material readability is not immediate due to lack of material presence."
+  ],
+  "material_read": "Abstract digital noise, dark nebula, static pattern, pixelated texture",
+  "correct_reads": [],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Provide an image that clearly depicts the white ceramic material study.",
+    "Ensure the material is visible and well-lit, allowing for proper evaluation of its surface properties and texture.",
+    "The current image is entirely abstract and does not represent any physical material."
+  ],
+  "summary": "The provided image does not depict any white ceramic material. It is an abstract, dark, and noisy digital pattern, making it impossible to validate against the specified criteria for porcelain-white matte B4C technical ceramic. The core material is entirely absent from the submission.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

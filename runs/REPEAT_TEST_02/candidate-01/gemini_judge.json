@@ -1,0 +1,59 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Missing sparse fine hairline cracking",
+    "Lacks distinct ultra-controlled eggshell microtexture"
+  ],
+  "wrong_reads": [
+    "No sparse fine hairline cracking",
+    "No distinct eggshell microtexture"
+  ],
+  "correct_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "Matte white ceramic, resembling technical porcelain.",
+  "fix_direction": [
+    "Introduce sparse, fine hairline cracking to meet the specified pass target.",
+    "Subtly enhance the ultra-controlled eggshell microtexture to be more discernible without compromising the smooth, matte finish."
+  ],
+  "summary": "The material successfully achieves a clean, matte, and engineered white ceramic appearance, avoiding common fail drifts like plastic or plaster. However, it fails to incorporate the required sparse fine hairline cracking and lacks a clearly discernible ultra-controlled eggshell microtexture, preventing a full pass.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "Missing sparse fine hairline cracking",
+      "Lacks distinct ultra-controlled eggshell microtexture"
+    ],
+    "material_read": "Matte white ceramic, resembling technical porcelain.",
+    "correct_reads": [
+      "porcelain-white #FAFAFA",
+      "matte B4C technical ceramic",
+      "dry, dense, engineered read",
+      "zero glossy/plastic/toy feel",
+      "zero plaster/mineral/carved stone resemblance",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "No sparse fine hairline cracking",
+      "No distinct eggshell microtexture"
+    ],
+    "severity": "MEDIUM",
+    "fix_direction": [
+      "Introduce sparse, fine hairline cracking to meet the specified pass target.",
+      "Subtly enhance the ultra-controlled eggshell microtexture to be more discernible without compromising the smooth, matte finish."
+    ],
+    "summary": "The material successfully achieves a clean, matte, and engineered white ceramic appearance, avoiding common fail drifts like plastic or plaster. However, it fails to incorporate the required sparse fine hairline cracking and lacks a clearly discernible ultra-controlled eggshell microtexture, preventing a full pass.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

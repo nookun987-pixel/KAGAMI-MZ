@@ -1,0 +1,45 @@
+{
+  "attempt": 1,
+  "phase": "weapon_hero_frame",
+  "shot_type": "WEAPON_MACRO",
+  "render_ok": true,
+  "output_exists": true,
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "render_profile": "DEFAULT",
+  "width": 832,
+  "height": 1216,
+  "steps": 24,
+  "requested_steps": 24,
+  "actual_steps_source": "response",
+  "size_truth_source": "png_pixels",
+  "actual_file_size": "832x1216",
+  "telemetry_warnings": [
+    "SIZE_MISMATCH"
+  ],
+  "refiner_enabled": false,
+  "render_duration_seconds": 381.06,
+  "decision": "FAIL",
+  "fail_rules": [
+    "T5",
+    "T6",
+    "T7",
+    "T11",
+    "T12",
+    "C1",
+    "C4",
+    "WEAPON_IDENTITY_MISSING",
+    "SWORD_GEOMETRY_MISSING",
+    "FORBIDDEN_MATERIAL_DRIFT",
+    "ABSTRACT_OBJECT_DRIFT"
+  ],
+  "recovery_tags": [
+    "WEAPON_IDENTITY_MISSING",
+    "SWORD_GEOMETRY_MISSING",
+    "FORBIDDEN_MATERIAL_DRIFT",
+    "ABSTRACT_OBJECT_DRIFT",
+    "ABSTRACT_FRAME"
+  ],
+  "subject_recovery_mode_active": true,
+  "primary_failure": "ceramic"
+}

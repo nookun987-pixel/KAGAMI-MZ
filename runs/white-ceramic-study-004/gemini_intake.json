@@ -1,0 +1,44 @@
+{
+  "objective": "Achieve a clean matte B4C ceramic material read for Mikage.",
+  "subject": "Mikage",
+  "phase_target": "material_study",
+  "core_risks": [
+    "Material reading as plaster",
+    "Material reading as gypsum",
+    "Material reading as chalk",
+    "Material reading as concrete",
+    "Material reading as carved stone",
+    "Material reading as mineral banding",
+    "Material reading as sedimentary drift",
+    "Accidental optimization of mask",
+    "Accidental optimization of identity",
+    "Accidental optimization of weapon",
+    "Accidental optimization of silhouette"
+  ],
+  "likely_drifts": [
+    "Drifting towards plaster-like textures",
+    "Drifting towards gypsum-like textures",
+    "Drifting towards chalk-like textures",
+    "Drifting towards concrete-like textures",
+    "Drifting towards carved stone-like textures",
+    "Drifting towards mineral banding",
+    "Drifting towards sedimentary drift",
+    "Unintended influence on mask",
+    "Unintended influence on identity",
+    "Unintended influence on weapon",
+    "Unintended influence on silhouette"
+  ],
+  "pass_signal": [
+    "Clear and consistent clean matte B4C ceramic material read",
+    "Material-only scope strictly maintained"
+  ],
+  "fail_signal": [
+    "Material reads as plaster, gypsum, chalk, concrete, carved stone, mineral banding, or sedimentary drift",
+    "Any optimization or alteration detected on mask, identity, weapon, or silhouette"
+  ],
+  "direction_summary": "Focus exclusively on rendering a clean matte B4C technical ceramic material for Mikage, strictly suppressing any resemblance to plaster or other natural stone/mineral textures. Maintain a material-only scope, ensuring no changes or optimizations are applied to mask, identity, weapon, or silhouette.",
+  "connector_status": "gemini",
+  "gemini_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash"
+}

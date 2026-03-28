@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "phase": "material_study",
+  "render_ok": true,
+  "output_exists": true,
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "render_profile": "DEFAULT",
+  "width": 1024,
+  "height": 1024,
+  "steps": 16,
+  "requested_steps": -1,
+  "actual_steps_source": "fallback_requested",
+  "size_truth_source": "png_pixels",
+  "actual_file_size": "1024x1024",
+  "telemetry_warnings": [],
+  "refiner_enabled": true,
+  "render_duration_seconds": 595.46,
+  "decision": "FAIL",
+  "fail_rules": [
+    "T3",
+    "T11",
+    "T12",
+    "Missing sparse fine hairline cracking"
+  ],
+  "primary_failure": "plaster"
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIKAGE ZENITH - Command Center</title>
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #0A0A0A;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            margin-top: 0;
+        }
+        .status {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #0A0A0A;
+        }
+        .status.online {
+            color: #00AA00;
+        }
+        button {
+            background-color: #0A0A0A;
+            color: #FAFAFA;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        .pipeline {
+            margin-top: 30px;
+            text-align: left;
+            font-size: 0.9em;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pipeline-item {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MIKAGE ZENITH</h1>
+        <p id="subtitle">Engineered Visual Systems</p>
+        <div class="status" id="status">Checking system status...</div>
+        <button onclick="pingSystem()">Ping System</button>
+        <div class="pipeline" id="pipeline"></div>
+    </div>
+
+    <script>
+        let systemData = null;
+
+        async function fetchStatus() {
+            try {
+                const response = await fetch("/api/status");
+                const data = await response.json();
+                systemData = data;
+                updateUI(data);
+                console.log("MIKAGE STATUS:", data);
+                return data;
+            } catch (error) {
+                console.error("Error fetching status:", error);
+                document.getElementById("status").textContent = "System Status: OFFLINE";
+                document.getElementById("status").classList.remove("online");
+            }
+        }
+
+        function updateUI(data) {
+            const statusEl = document.getElementById("status");
+            if (data.status === "ONLINE") {
+                statusEl.textContent = "System Status: ONLINE";
+                statusEl.classList.add("online");
+            } else {
+                statusEl.textContent = `System Status: ${data.status}`;
+            }
+
+            if (data.pipeline && data.pipeline.length > 0) {
+                const pipelineEl = document.getElementById("pipeline");
+                pipelineEl.innerHTML = "<strong>Pipeline:</strong><br>";
+                data.pipeline.forEach(item => {
+                    pipelineEl.innerHTML += `<div class="pipeline-item">→ ${item}</div>`;
+                });
+            }
+        }
+
+        function pingSystem() {
+            console.log("Pinging system...");
+            fetchStatus().then(data => {
+                if (data) {
+                    alert(`✓ System ${data.system} is ${data.status}`);
+                }
+            });
+        }
+
+        // Fetch status on page load
+        window.addEventListener("load", fetchStatus);
+    </script>
+</body>
+</html>

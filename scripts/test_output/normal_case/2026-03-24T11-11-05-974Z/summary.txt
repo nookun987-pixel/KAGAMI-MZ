@@ -1,0 +1,17 @@
+=== MIKAGE VERIFICATION RESULT ===
+Test Case: normal_case_valid
+Timestamp: 2026-03-24T11:13:06.018Z
+Decision: FAIL
+Job Decision: N/A
+Exit Code: -1
+Signal: TIMEOUT
+Output Files: 0
+
+=== REASONS ===
+- Execution failed: exit=-1, signal=TIMEOUT
+- Process timed out after 120000ms
+
+=== OUTPUT FILES ===
+
+=== VERIFICATION STATUS ===
+❌ FAILED

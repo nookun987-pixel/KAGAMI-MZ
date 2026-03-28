@@ -1,0 +1,43 @@
+{
+  "stage": "prompt_package",
+  "verdict": "REJECT",
+  "canon_version": "v2",
+  "source_version": "2.0",
+  "source_files": {
+    "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+    "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+    "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+  },
+  "passed_checks": [
+    "porcelain"
+  ],
+  "failed_checks": [
+    "identity",
+    "mask",
+    "optics",
+    "hair",
+    "graphene",
+    "weapon",
+    "tone"
+  ],
+  "forbidden_hits": [],
+  "critical_failures": [],
+  "pass_ratio": 0.125,
+  "negative_lock_count": 43,
+  "job_input_validation": {
+    "stage": "job_input",
+    "verdict": "PASS",
+    "pass_ratio": 1,
+    "passed_checks": [],
+    "failed_checks": [],
+    "forbidden_hits": [],
+    "critical_failures": [],
+    "canon_version": "v2",
+    "source_version": "2.0",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    }
+  }
+}

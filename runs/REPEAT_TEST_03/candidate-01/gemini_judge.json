@@ -1,0 +1,63 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "zero glossy/plastic/toy feel",
+    "commercial material readability is immediate"
+  ],
+  "wrong_reads": [
+    "plastic",
+    "toy-like",
+    "smooth molded object"
+  ],
+  "correct_reads": [
+    "porcelain-white",
+    "matte finish"
+  ],
+  "material_read": "The white material presents as a very smooth, uniform, and matte finish. While it avoids a glossy plastic look, its extreme lack of texture and imperfections gives it a strong resemblance to a high-quality, molded plastic or a toy-like finish, rather than a dense, engineered ceramic.",
+  "fix_direction": [
+    "Introduce an ultra-controlled eggshell microtexture to break the perfect smoothness and suggest ceramic density.",
+    "Add sparse, fine hairline cracking to convey the brittle and engineered nature of technical ceramic.",
+    "Adjust subsurface scattering or edge details to enhance the perception of density and weight, moving away from a lightweight plastic feel.",
+    "Ensure the material conveys a dry and dense quality, not just a smooth surface."
+  ],
+  "summary": "The white ceramic material fails to meet the target specifications. Despite being matte and porcelain-white, the absence of microtexture, hairline cracking, and a convincing 'dense, engineered' read causes it to drift significantly into a 'plastic' or 'toy-like' feel, compromising its commercial material readability.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "dry, dense, engineered read",
+      "ultra-controlled eggshell microtexture",
+      "sparse fine hairline cracking",
+      "zero glossy/plastic/toy feel",
+      "commercial material readability is immediate"
+    ],
+    "material_read": "The white material presents as a very smooth, uniform, and matte finish. While it avoids a glossy plastic look, its extreme lack of texture and imperfections gives it a strong resemblance to a high-quality, molded plastic or a toy-like finish, rather than a dense, engineered ceramic.",
+    "correct_reads": [
+      "porcelain-white",
+      "matte finish"
+    ],
+    "wrong_reads": [
+      "plastic",
+      "toy-like",
+      "smooth molded object"
+    ],
+    "severity": "HIGH",
+    "fix_direction": [
+      "Introduce an ultra-controlled eggshell microtexture to break the perfect smoothness and suggest ceramic density.",
+      "Add sparse, fine hairline cracking to convey the brittle and engineered nature of technical ceramic.",
+      "Adjust subsurface scattering or edge details to enhance the perception of density and weight, moving away from a lightweight plastic feel.",
+      "Ensure the material conveys a dry and dense quality, not just a smooth surface."
+    ],
+    "summary": "The white ceramic material fails to meet the target specifications. Despite being matte and porcelain-white, the absence of microtexture, hairline cracking, and a convincing 'dense, engineered' read causes it to drift significantly into a 'plastic' or 'toy-like' feel, compromising its commercial material readability.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

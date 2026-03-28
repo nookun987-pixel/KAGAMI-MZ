@@ -1,0 +1,16 @@
+=== MIKAGE VERIFICATION RESULT ===
+Test Case: bad_case_anime_neon
+Timestamp: 2026-03-24T11:10:32.740Z
+Decision: FAIL
+Job Decision: REJECT
+Exit Code: 0
+Signal: N/A
+Output Files: 0
+
+=== REASONS ===
+- HARD RULE: No output files generated
+
+=== OUTPUT FILES ===
+
+=== VERIFICATION STATUS ===
+❌ FAILED

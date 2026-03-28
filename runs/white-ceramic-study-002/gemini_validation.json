@@ -1,0 +1,71 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "zero plaster/mineral/carved stone resemblance",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "commercial material readability is immediate"
+  ],
+  "wrong_reads": [
+    "plaster",
+    "gypsum",
+    "fine concrete",
+    "textured paper",
+    "powdery porous masonry"
+  ],
+  "correct_reads": [
+    "porcelain-white",
+    "matte",
+    "dry",
+    "zero glossy/plastic/toy feel"
+  ],
+  "material_read": "The white material reads primarily as a fine, smooth plaster, gypsum, or a very light, smooth concrete. The background texture reinforces a powdery, porous masonry or even a textured paper feel. It lacks the hard, dense, and engineered characteristics of a technical ceramic.",
+  "fix_direction": [
+    "Increase the perceived density and hardness of the material to move away from a plaster/gypsum read.",
+    "Introduce the specified ultra-controlled eggshell microtexture, ensuring it feels solid and engineered, not diffuse or powdery.",
+    "Add sparse, fine hairline cracking to enhance the ceramic read and suggest material integrity.",
+    "Eliminate any visual cues that suggest a soft, porous, or easily scuffed surface.",
+    "Ensure the material's identity as a technical ceramic is immediately clear and distinct from common building materials."
+  ],
+  "summary": "The white ceramic material fails significantly as it strongly resembles plaster or gypsum, rather than a matte B4C technical ceramic. It lacks the required ultra-controlled eggshell microtexture and sparse fine hairline cracking, leading to a complete misread of the intended material and preventing immediate commercial readability.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "zero plaster/mineral/carved stone resemblance",
+      "ultra-controlled eggshell microtexture",
+      "sparse fine hairline cracking",
+      "commercial material readability is immediate"
+    ],
+    "material_read": "The white material reads primarily as a fine, smooth plaster, gypsum, or a very light, smooth concrete. The background texture reinforces a powdery, porous masonry or even a textured paper feel. It lacks the hard, dense, and engineered characteristics of a technical ceramic.",
+    "correct_reads": [
+      "porcelain-white",
+      "matte",
+      "dry",
+      "zero glossy/plastic/toy feel"
+    ],
+    "wrong_reads": [
+      "plaster",
+      "gypsum",
+      "fine concrete",
+      "textured paper",
+      "powdery porous masonry"
+    ],
+    "severity": "HIGH",
+    "fix_direction": [
+      "Increase the perceived density and hardness of the material to move away from a plaster/gypsum read.",
+      "Introduce the specified ultra-controlled eggshell microtexture, ensuring it feels solid and engineered, not diffuse or powdery.",
+      "Add sparse, fine hairline cracking to enhance the ceramic read and suggest material integrity.",
+      "Eliminate any visual cues that suggest a soft, porous, or easily scuffed surface.",
+      "Ensure the material's identity as a technical ceramic is immediately clear and distinct from common building materials."
+    ],
+    "summary": "The white ceramic material fails significantly as it strongly resembles plaster or gypsum, rather than a matte B4C technical ceramic. It lacks the required ultra-controlled eggshell microtexture and sparse fine hairline cracking, leading to a complete misread of the intended material and preventing immediate commercial readability.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "post_render_image",
+  "verdict": "REJECT",
+  "failed_checks": [],
+  "critical_failures": [
+    "Job file not found: D:\\KAGAMI-MZ\\--auto"
+  ],
+  "forbidden_hits": [],
+  "analyzer_signals": {},
+  "missing_signals": [],
+  "source_files": {}
+}

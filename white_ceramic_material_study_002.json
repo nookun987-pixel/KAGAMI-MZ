@@ -1,0 +1,62 @@
+{
+  "job_id": "white-ceramic-study-002",
+  "source": "manual",
+  "mode": "AUTO_DRAFT",
+  "entity_id": "mikage_material_white_ceramic",
+  "entity_class": "material_study",
+  "zone": "white_monolith",
+  "weapon": null,
+  "status": "material_test",
+  "identity": {
+    "name": "Mikage Zenith",
+    "archetype": "material study",
+    "visual_anchor": "white ceramic macro"
+  },
+  "narrative": {
+    "theme": "industrial material purity",
+    "mood": "cold restrained stillness",
+    "scene": "macro product photography material study"
+  },
+  "strategy": {
+    "style": "industrial design aesthetic",
+    "color_palette": "Porcelain White #FAFAFA, Obsidian Black #0A0A0A"
+  },
+  "art_direction": {
+    "material": "matte B4C technical ceramic",
+    "lighting": "Low-key cinematic",
+    "style": "macro close-up premium commercial readability"
+  },
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality"
+  },
+  "locked_prompt_package": {
+    "subject": "Mikage Zenith, matte B4C technical ceramic, porcelain white, silent disciplined material study",
+    "texture": [
+      "Faceless white cybernetic helmet",
+      "Long, straight, heavy black hair flowing naturally",
+      "matte B4C technical ceramic",
+      "porcelain white",
+      "eggshell microtexture",
+      "subtle hairline fractures",
+      "matte black graphene reference",
+      "void black optical sensors",
+      "Zenith Blade"
+    ],
+    "lighting": [
+      "low-key cinematic",
+      "no ambient color wash",
+      "no magenta spill",
+      "no neon"
+    ],
+    "composition_rules": [
+      "macro close-up",
+      "clean negative space",
+      "premium commercial readability",
+      "brutalist minimal concrete surface"
+    ],
+    "prompt": "SUBJECT\nMacro product photography material study of matte B4C technical ceramic.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Exquisite eggshell microtexture. Highly detailed subtle hairline fractures and micro-cracks. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define form and grain. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nMacro close-up. Clean negative space. Premium commercial readability. Material purity emphasis.\n\nBACKGROUND\nBrutalist minimal concrete surface.\n\nQUALITY\nUltra-detailed 8K resolution. Industrial design aesthetic.",
+    "negative_prompt": "plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill"
+  }
+}

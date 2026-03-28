@@ -1,0 +1,52 @@
+{
+  "system_id": "MIKAGE_COLOR_CANON_V1",
+  "global_restraint": {
+    "max_chroma": 0.65,
+    "shadow_ratio": 0.7,
+    "material_noise_floor": 0.04
+  },
+  "palette": {
+    "ceramic_off_white": {
+      "anchors": ["#EEE7D7", "#F6F5F6", "#E2C4BE", "#D6D6D6", "#CE9F6F"],
+      "rule": "warm_off_white_only",
+      "forbidden": ["#FFFFFF"]
+    },
+    "charcoal_black": {
+      "anchors": ["#252321", "#111415", "#0C0602", "#424246", "#5F5F5E"],
+      "rule": "temperature_variation_required",
+      "forbidden": ["#000000"]
+    },
+    "restrained_crimson": {
+      "anchors": ["#8E050F", "#8F1D21", "#351E1C", "#9D2933", "#D11033"],
+      "rule": "only_in_seams_and_cores",
+      "forbidden": ["#FF0000", "#FF2D55", "#FF00FF"]
+    },
+    "muted_earth": {
+      "anchors": ["#C8AD87", "#3C2812", "#BE7F51", "#8695A2", "#9F5233"],
+      "rule": "low_saturation_material_support",
+      "forbidden": ["#FFD700", "#FFA500"]
+    }
+  },
+  "tonal_rules": {
+    "saturation": "distance_from_core_decay",
+    "contrast": "70_shadow_30_light",
+    "highlight": "diffuse_not_specular",
+    "shadow": "wet_dense_temperature_shift",
+    "gradient": "bokashi_non_linear",
+    "material_priority": true
+  },
+  "required_anchors": [
+    "shadow_anchor_sumi_iro",
+    "highlight_anchor_gofun",
+    "crimson_seam_if_applicable"
+  ],
+  "forbidden": [
+    "neon_rgb",
+    "oversaturation",
+    "plastic_rgb_clean",
+    "pure_white",
+    "pure_black",
+    "magenta_synthetic",
+    "flat_color_no_texture"
+  ]
+}

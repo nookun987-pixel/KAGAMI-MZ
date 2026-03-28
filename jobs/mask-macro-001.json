@@ -1,0 +1,8 @@
+{
+  "job_id": "mask-macro-001",
+  "type": "render",
+  "input": {
+    "prompt": "Extreme macro product photography of a perfectly symmetrical kitsune mask, ultra-detailed material study, porcelain-white matte B4C technical ceramic, dry eggshell microtexture, sparse ultra-fine hairline fractures, one restrained vertical kintsugi seam with deep internal crimson #E60000 glow, crack embedded beneath ceramic surface, hollow void-black eye sockets, sacred emotionless presence, zero specular highlights, zero gloss, zero plastic feel, cold industrial ceramic readability, brutal chiaroscuro lighting, black minimal background, premium commercial realism, razor-sharp surface definition, 8K, 100mm macro lens, f/2.8",
+    "negative_prompt": "plastic, glossy, shiny, wet, polished porcelain, lacquer, resin, PVC, toy-like, stone, plaster, gypsum, concrete, paper texture, overgrown crack network, lava, magma, neon red, sci-fi glow strips, cyberpunk, anime, ornate fantasy mask, visible face, visible eyes, asymmetry, soft blur, low detail, cluttered background, text, watermark"
+  }
+}

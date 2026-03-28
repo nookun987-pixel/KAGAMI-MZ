@@ -1,0 +1,353 @@
+{
+  "job_id": "shot3_weapon_reproduction_calibration_C",
+  "target_phase": "material_only",
+  "attempt": 1,
+  "escalation_level": "HIGH",
+  "primary_failure": "abstract object",
+  "dominant_fail_reason": "ABSTRACT_FRAME",
+  "repeated_failures": [
+    "T5",
+    "T6",
+    "T7",
+    "T11",
+    "T12",
+    "C4",
+    "WEAPON_IDENTITY_MISSING",
+    "SWORD_GEOMETRY_MISSING",
+    "ABSTRACT_OBJECT_DRIFT",
+    "PURE_BLACK_DRIFT"
+  ],
+  "repeated_canon_hard_fails": [
+    "T5",
+    "T6",
+    "T11",
+    "T12"
+  ],
+  "recovery_tags": [
+    "ABSTRACT_FRAME"
+  ],
+  "subject_recovery_mode": true,
+  "subject_absent_consecutive_count": 0,
+  "wrong_reads": [
+    "abstract object",
+    "digital noise",
+    "dark texture"
+  ],
+  "forbidden_reads_to_eliminate": [
+    "abstract object",
+    "digital noise",
+    "dark texture",
+    "ABSTRACT_OBJECT_DRIFT"
+  ],
+  "required_reads_to_strengthen": [
+    "single clear subject",
+    "full object visibility",
+    "clean silhouette",
+    "commercial readability under 1 second",
+    "controlled geometry with explicit edges",
+    "premium industrial product photo",
+    "plain brutalist background",
+    "no abstract composition",
+    "no decorative noise",
+    "no partial crop"
+  ],
+  "increase_signals": [
+    "single clear subject",
+    "full object visibility",
+    "clean silhouette",
+    "commercial readability under 1 second",
+    "controlled geometry with explicit edges",
+    "premium industrial product photo",
+    "plain brutalist background",
+    "no abstract composition",
+    "no decorative noise",
+    "no partial crop"
+  ],
+  "decrease_signals": [
+    "abstract object",
+    "digital noise",
+    "dark texture",
+    "ABSTRACT_OBJECT_DRIFT"
+  ],
+  "do_not_preserve_from_previous_attempt": [
+    "abstract patterning",
+    "texture-only frame",
+    "fragmented composition",
+    "macro-only crop",
+    "partial crop",
+    "edge loss",
+    "busy composition",
+    "texture-only framing",
+    "painted panel look",
+    "smooth laminate finish",
+    "plaster softness",
+    "plastic sheen",
+    "generic product studio vibe",
+    "fashion-soft mood",
+    "decorative styling noise",
+    "non-canon ambience",
+    "organic face cues",
+    "rounded toy form",
+    "casual asymmetry",
+    "ambiguous identity cues",
+    "abstract composition",
+    "noise field",
+    "experimental composition",
+    "fragmented form"
+  ],
+  "rule_specific_corrections": [
+    {
+      "rule": "T5",
+      "label": "silhouette/readability drift",
+      "increase": [
+        "centered dominant product object",
+        "full object visibility",
+        "explicit outer contour",
+        "clean negative space around silhouette"
+      ],
+      "decrease": [
+        "partial crop",
+        "edge loss",
+        "busy composition",
+        "texture-only framing"
+      ],
+      "operator": "T5: make the object read instantly as one complete manufactured form with hard boundaries and clean surrounding space."
+    },
+    {
+      "rule": "T6",
+      "label": "material fidelity drift",
+      "increase": [
+        "dense matte ceramic shell",
+        "dry non-porous eggshell microtexture",
+        "sparse premium hairline fractures",
+        "engineered ceramic hardness"
+      ],
+      "decrease": [
+        "painted panel look",
+        "smooth laminate finish",
+        "plaster softness",
+        "plastic sheen"
+      ],
+      "operator": "T6: push the shell toward hard engineered ceramic, not painted panel, plaster, laminate, or any soft cosmetic surface."
+    },
+    {
+      "rule": "T11",
+      "label": "Mikage tone drift",
+      "increase": [
+        "sacred brutalist discipline",
+        "cold restrained luxury",
+        "minimal industrial severity",
+        "canon-specific atmosphere"
+      ],
+      "decrease": [
+        "generic product studio vibe",
+        "fashion-soft mood",
+        "decorative styling noise",
+        "non-canon ambience"
+      ],
+      "operator": "T11: restore Mikage sacred-tech austerity and remove generic commercial or decorative styling cues."
+    },
+    {
+      "rule": "T12",
+      "label": "identity/shape drift",
+      "increase": [
+        "controlled Mikage geometry",
+        "precise designed form language",
+        "symmetry and engineered discipline",
+        "non-organic hard-surface read"
+      ],
+      "decrease": [
+        "organic face cues",
+        "rounded toy form",
+        "casual asymmetry",
+        "ambiguous identity cues"
+      ],
+      "operator": "T12: tighten canonical form language so the image feels intentionally designed, symmetrical, and unmistakably Mikage."
+    }
+  ],
+  "operator_guidance": [
+    "T5: make the object read instantly as one complete manufactured form with hard boundaries and clean surrounding space.",
+    "T6: push the shell toward hard engineered ceramic, not painted panel, plaster, laminate, or any soft cosmetic surface.",
+    "T11: restore Mikage sacred-tech austerity and remove generic commercial or decorative styling cues.",
+    "T12: tighten canonical form language so the image feels intentionally designed, symmetrical, and unmistakably Mikage.",
+    "Abstract frame: collapse scene complexity and force explicit product-object readability."
+  ],
+  "must_increase": [
+    "centered dominant product object",
+    "full object visibility",
+    "explicit outer contour",
+    "clean negative space around silhouette",
+    "dense matte ceramic shell",
+    "dry non-porous eggshell microtexture",
+    "sparse premium hairline fractures",
+    "engineered ceramic hardness",
+    "sacred brutalist discipline",
+    "cold restrained luxury",
+    "minimal industrial severity",
+    "canon-specific atmosphere",
+    "controlled Mikage geometry",
+    "precise designed form language",
+    "symmetry and engineered discipline",
+    "non-organic hard-surface read",
+    "full object visibility",
+    "explicit manufactured object boundaries",
+    "plain brutalist background",
+    "clean silhouette"
+  ],
+  "must_decrease": [
+    "partial crop",
+    "edge loss",
+    "busy composition",
+    "texture-only framing",
+    "painted panel look",
+    "smooth laminate finish",
+    "plaster softness",
+    "plastic sheen",
+    "generic product studio vibe",
+    "fashion-soft mood",
+    "decorative styling noise",
+    "non-canon ambience",
+    "organic face cues",
+    "rounded toy form",
+    "casual asymmetry",
+    "ambiguous identity cues",
+    "abstract composition",
+    "noise field",
+    "experimental composition",
+    "fragmented form"
+  ],
+  "corrective_goal": "1-look premium matte B4C ceramic read",
+  "required_shifts": [
+    "increase engineered dense ceramic read",
+    "reduce plaster and carved mineral resemblance",
+    "tighten controlled eggshell microtexture",
+    "keep cracks sparse and hairline only",
+    "single clear subject",
+    "commercial product readability under 1 second",
+    "object silhouette must be explicit",
+    "no texture-only frame",
+    "centered dominant product object",
+    "full object visibility",
+    "explicit outer contour",
+    "clean negative space around silhouette",
+    "dense matte ceramic shell",
+    "dry non-porous eggshell microtexture",
+    "sparse premium hairline fractures",
+    "engineered ceramic hardness",
+    "sacred brutalist discipline",
+    "cold restrained luxury",
+    "minimal industrial severity",
+    "canon-specific atmosphere",
+    "controlled Mikage geometry",
+    "precise designed form language",
+    "symmetry and engineered discipline",
+    "non-organic hard-surface read",
+    "full object visibility",
+    "explicit manufactured object boundaries",
+    "plain brutalist background",
+    "clean silhouette"
+  ],
+  "negative_reinforcements": [
+    "plaster",
+    "gypsum",
+    "chalk",
+    "concrete",
+    "carved stone",
+    "mineral banding",
+    "striated grooves",
+    "powdery porous masonry",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "abstract",
+    "texture study",
+    "material swatch",
+    "stone artifact",
+    "mineral slab",
+    "experimental composition",
+    "extreme close-up",
+    "ambiguous object",
+    "fragmented form",
+    "partial crop",
+    "edge loss",
+    "busy composition",
+    "texture-only framing",
+    "painted panel look",
+    "smooth laminate finish",
+    "plaster softness",
+    "plastic sheen",
+    "generic product studio vibe",
+    "fashion-soft mood",
+    "decorative styling noise",
+    "non-canon ambience",
+    "organic face cues",
+    "rounded toy form",
+    "casual asymmetry",
+    "ambiguous identity cues",
+    "abstract composition",
+    "noise field",
+    "experimental composition",
+    "fragmented form"
+  ],
+  "lighting_adjustments": [
+    "keep low-key directional lighting",
+    "avoid ambient wash",
+    "use shadow to separate grain from grooves"
+  ],
+  "surface_adjustments": [
+    "dry dense non-porous ceramic",
+    "eggshell microtexture only",
+    "no sedimentary layering",
+    "no sculpted carving read"
+  ],
+  "auto_append_material_lock": null,
+  "auto_append_abstract_lock": "full object visibility, centered subject, clean silhouette, plain brutalist background, no partial crop, no macro-only composition",
+  "hard_recovery_prompt_additions": [
+    "single clearly readable manufactured ceramic object",
+    "visible edges, contour, curvature",
+    "product-photo readability",
+    "subject isolated from background",
+    "no abstraction",
+    "no ambiguous surface"
+  ],
+  "hard_recovery_negative_additions": [
+    "abstract composition",
+    "empty scene",
+    "wall texture",
+    "plaster slab",
+    "mineral rock",
+    "marble wall",
+    "blurred atmosphere",
+    "fog-only frame",
+    "noise field",
+    "decorative light bloom",
+    "subject cropped away",
+    "unrecognizable object"
+  ],
+  "escalation_stage": "BASE",
+  "retry_escalation": [
+    "harden negative locks tied to repeated failures",
+    "increase required reads tied to repeated failures",
+    "do not preserve drift traits from previous attempt",
+    "T5: make the object read instantly as one complete manufactured form with hard boundaries and clean surrounding space.",
+    "T6: push the shell toward hard engineered ceramic, not painted panel, plaster, laminate, or any soft cosmetic surface.",
+    "T11: restore Mikage sacred-tech austerity and remove generic commercial or decorative styling cues.",
+    "T12: tighten canonical form language so the image feels intentionally designed, symmetrical, and unmistakably Mikage.",
+    "Abstract frame: collapse scene complexity and force explicit product-object readability."
+  ],
+  "do_not_touch": [
+    "ceramic",
+    "porcelain",
+    "rounded industrial object",
+    "mask-like read",
+    "abstract object read"
+  ],
+  "source_fail_rules": [
+    "T5",
+    "T6",
+    "T7",
+    "T11",
+    "T12",
+    "C4"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "job_id": "GOLDEN_CERAMIC_MACRO",
+  "phase": "material_study",
+  "user_idea": "golden white ceramic material macro for Mikage, manufactured contour visible, no plaster drift",
+  "priority_target": "clean matte B4C technical ceramic read",
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ]
+}

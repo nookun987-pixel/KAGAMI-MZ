@@ -1,0 +1,31 @@
+{
+  "job_id": "bad_case_anime_neon",
+  "source": "verification_test",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "name": "Mikage",
+    "archetype": "ethereal guardian",
+    "visual_anchor": "anime character with neon lights"
+  },
+  "narrative": {
+    "theme": "cyberpunk anime adventure",
+    "mood": "energetic",
+    "scene": "standing in neon-lit Tokyo street with vibrant magenta and blue glow"
+  },
+  "strategy": {
+    "style": "anime illustration",
+    "color_palette": "neon pink, electric blue, bright magenta"
+  },
+  "art_direction": {
+    "mood": "high-energy cyberpunk",
+    "material": "glossy plastic",
+    "style": "anime cel-shading with neon effects",
+    "lighting": "vibrant neon glow with magenta spill"
+  },
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality",
+    "max_iteration": 1
+  }
+}

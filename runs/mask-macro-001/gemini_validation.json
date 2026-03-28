@@ -1,0 +1,63 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Lacks ultra-controlled eggshell microtexture.",
+    "Lacks sparse fine hairline cracking."
+  ],
+  "wrong_reads": [
+    "Too smooth, lacks specific ceramic microtexture.",
+    "Lacks hairline cracking.",
+    "Reads more like a smooth painted wall or composite panel than a technical ceramic with specific textural requirements."
+  ],
+  "correct_reads": [
+    "porcelain-white #FAFAFA",
+    "matte finish",
+    "dry, dense, engineered read",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "Smooth, uniform, matte white paneling, resembling a high-quality painted surface or a very fine composite material.",
+  "fix_direction": [
+    "Introduce subtle, ultra-controlled eggshell microtexture across the surface.",
+    "Add sparse, fine hairline cracking to enhance the 'technical ceramic' read without appearing damaged or rough.",
+    "Ensure added details maintain the dry, dense, and engineered feel without introducing porosity or a sculpted look."
+  ],
+  "summary": "The material achieves a clean, matte porcelain-white finish with an immediate commercial and engineered readability, successfully avoiding common undesirable material drifts like plaster or glossy plastic. However, it fails to incorporate the specified ultra-controlled eggshell microtexture and sparse fine hairline cracking, resulting in a surface that is too smooth and lacks the distinct textural characteristics required for a B4C technical ceramic read.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "Lacks ultra-controlled eggshell microtexture.",
+      "Lacks sparse fine hairline cracking."
+    ],
+    "material_read": "Smooth, uniform, matte white paneling, resembling a high-quality painted surface or a very fine composite material.",
+    "correct_reads": [
+      "porcelain-white #FAFAFA",
+      "matte finish",
+      "dry, dense, engineered read",
+      "zero glossy/plastic/toy feel",
+      "zero plaster/mineral/carved stone resemblance",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "Too smooth, lacks specific ceramic microtexture.",
+      "Lacks hairline cracking.",
+      "Reads more like a smooth painted wall or composite panel than a technical ceramic with specific textural requirements."
+    ],
+    "severity": "MEDIUM",
+    "fix_direction": [
+      "Introduce subtle, ultra-controlled eggshell microtexture across the surface.",
+      "Add sparse, fine hairline cracking to enhance the 'technical ceramic' read without appearing damaged or rough.",
+      "Ensure added details maintain the dry, dense, and engineered feel without introducing porosity or a sculpted look."
+    ],
+    "summary": "The material achieves a clean, matte porcelain-white finish with an immediate commercial and engineered readability, successfully avoiding common undesirable material drifts like plaster or glossy plastic. However, it fails to incorporate the specified ultra-controlled eggshell microtexture and sparse fine hairline cracking, resulting in a surface that is too smooth and lacks the distinct textural characteristics required for a B4C technical ceramic read.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

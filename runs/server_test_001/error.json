@@ -1,0 +1,5 @@
+{
+  "error": "[VRAM_MANAGER] VRAM busy with job server_test_001 in phase FOOOCUS_ACTIVE",
+  "stack": "VRAMConflictError: [VRAM_MANAGER] VRAM busy with job server_test_001 in phase FOOOCUS_ACTIVE\n    at Object.beginOllamaPhase (D:\\KAGAMI-MZ\\render\\vram_manager.js:440:11)\n    at executeRender (D:\\KAGAMI-MZ\\render\\render_executor.js:368:24)\n    at run (D:\\KAGAMI-MZ\\orchestrator.js:750:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async handleRunRequest (D:\\KAGAMI-MZ\\server.js:141:22)\n    at async Server.handleRequest (D:\\KAGAMI-MZ\\server.js:402:5)",
+  "timestamp": "2026-03-24T11:34:19.217Z"
+}

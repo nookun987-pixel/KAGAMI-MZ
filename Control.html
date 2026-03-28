@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mikage Control</title>
+<style>
+body{background:#0a0a0a;color:#fff;font-family:Arial;padding:20px}
+button{padding:15px 20px;margin:10px;font-size:16px;background:#e60000;color:#fff;border:none;border-radius:8px;cursor:pointer}
+#log{margin-top:20px;background:#000;padding:10px;height:300px;overflow:auto}
+</style>
+</head>
+<body>
+
+<h1>MIKAGE CONTROL</h1>
+
+<button onclick="run()">RUN TEST</button>
+
+<div id="log"></div>
+
+<script>
+async function run(){
+  document.getElementById("log").innerText = "Running...";
+
+  const res = await fetch("http://localhost:3000/run", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      job_id: "mask-macro-ui",
+      type: "render",
+      input: {
+        prompt: "Extreme macro product photography of a perfectly symmetrical kitsune mask, porcelain-white matte B4C ceramic, eggshell microtexture, ultra-fine cracks, one vertical kintsugi seam #E60000, void-black eye sockets, zero gloss, cold industrial lighting",
+        negative_prompt: "plastic, glossy, stone, plaster, concrete, anime, neon"
+      }
+    })
+  });
+
+  const data = await res.text();
+  document.getElementById("log").innerText = data;
+}
+</script>
+
+</body>
+</html>

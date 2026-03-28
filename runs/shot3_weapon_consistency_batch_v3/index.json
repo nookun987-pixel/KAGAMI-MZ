@@ -1,0 +1,30 @@
+[
+  {
+    "id": "candidate-01",
+    "seed": 4203501,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_17-19-21_3439.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch_v3\\candidate-01\\output.png",
+    "nuance": "tiny material micro-variation only: slightly denser matte grain on major blade planes, geometry and camera unchanged"
+  },
+  {
+    "id": "candidate-02",
+    "seed": 4203502,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_17-24-05_6323.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch_v3\\candidate-02\\output.png",
+    "nuance": "tiny seam variation only: crimson seam remains ultra-thin and shifts minimally near upper spine junction, geometry and camera unchanged"
+  },
+  {
+    "id": "candidate-03",
+    "seed": 4203503,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_17-28-41_8807.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch_v3\\candidate-03\\output.png",
+    "nuance": "tiny finish nuance only: diffuse finish softens slightly while outline, proportions, and camera stay unchanged"
+  },
+  {
+    "id": "candidate-04",
+    "seed": 4203504,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_17-33-28_7875.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch_v3\\candidate-04\\output.png",
+    "nuance": "tiny surface nuance only: micro texture reads fractionally tighter near the central blade body, geometry and camera unchanged"
+  }
+]

@@ -1,0 +1,187 @@
+{
+  "job_id": "white-ceramic-study-003",
+  "status": "FAIL",
+  "decision": "REJECT",
+  "decision_reason": "REJECT: GEMINI_REQUEST_FAILED",
+  "canon_version": "v2",
+  "output_files": [
+    "output.png"
+  ],
+  "output_file_path": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\output.png",
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "gemini_pass_fail": "FAIL",
+  "gemini_error": "GEMINI_REQUEST_FAILED",
+  "failed_rules": [
+    "T3",
+    "T5",
+    "T6",
+    "T7",
+    "T11",
+    "T12",
+    "C4",
+    "GEMINI_REQUEST_FAILED"
+  ],
+  "wrong_reads": [],
+  "analyzer_summary": {
+    "use_vision_validator": false,
+    "vlm_backend_ready": false,
+    "vlm_status": "unavailable",
+    "semantic_result": "PASS",
+    "analyzer_unavailable": [],
+    "analyzer_status": {
+      "pixel_analyzer": true,
+      "z_blue_detector": true,
+      "safe_zone_mask": true,
+      "silhouette_check": true,
+      "saliency_map": true,
+      "vlm_semantic_analyzer": true
+    }
+  },
+  "continuity": {
+    "entity_id": "mikage_material_white_ceramic",
+    "entity_class": "material_study",
+    "zone": "white_monolith",
+    "weapon": null,
+    "status": "material_test",
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "attempt_count": 3,
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\gemini_intake.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-003\\job_summary.json"
+  },
+  "run_loop_trace": [
+    {
+      "attempt": 1,
+      "phase": "material_study",
+      "render_ok": true,
+      "output_exists": true,
+      "validator_executed": true,
+      "gemini_validation_executed": true,
+      "render_profile": "FAST_TEST",
+      "width": 1024,
+      "height": 1024,
+      "steps": 16,
+      "requested_steps": 16,
+      "actual_steps_source": "response",
+      "size_truth_source": "png_pixels",
+      "actual_file_size": "1024x1024",
+      "telemetry_warnings": [
+        "SIZE_MISMATCH"
+      ],
+      "refiner_enabled": false,
+      "render_duration_seconds": 188.14,
+      "decision": "FAIL",
+      "fail_rules": [
+        "T7",
+        "T12",
+        "C1",
+        "C3",
+        "C4",
+        "zero glossy/plastic/toy feel (violated)",
+        "matte B4C technical ceramic (not achieved)",
+        "dry, dense, engineered read (not achieved)"
+      ],
+      "primary_failure": "glossy plastic"
+    },
+    {
+      "attempt": 2,
+      "phase": "material_study",
+      "render_ok": true,
+      "output_exists": true,
+      "validator_executed": true,
+      "gemini_validation_executed": true,
+      "render_profile": "FAST_TEST",
+      "width": 1024,
+      "height": 1024,
+      "steps": 16,
+      "requested_steps": 16,
+      "actual_steps_source": "response",
+      "size_truth_source": "png_pixels",
+      "actual_file_size": "1024x1024",
+      "telemetry_warnings": [
+        "SIZE_MISMATCH"
+      ],
+      "refiner_enabled": false,
+      "render_duration_seconds": 301.69,
+      "decision": "FAIL",
+      "fail_rules": [
+        "T3",
+        "T5",
+        "T6",
+        "T7",
+        "T8",
+        "T11",
+        "T12",
+        "C3",
+        "C4",
+        "GEMINI_REQUEST_FAILED"
+      ],
+      "primary_failure": "T3"
+    },
+    {
+      "attempt": 3,
+      "phase": "material_study",
+      "render_ok": true,
+      "output_exists": true,
+      "validator_executed": true,
+      "gemini_validation_executed": true,
+      "render_profile": "FAST_TEST",
+      "width": 1024,
+      "height": 1024,
+      "steps": 16,
+      "requested_steps": 16,
+      "actual_steps_source": "response",
+      "size_truth_source": "png_pixels",
+      "actual_file_size": "1024x1024",
+      "telemetry_warnings": [
+        "SIZE_MISMATCH"
+      ],
+      "refiner_enabled": false,
+      "render_duration_seconds": 307.42,
+      "decision": "FAIL",
+      "fail_rules": [
+        "T3",
+        "T5",
+        "T6",
+        "T7",
+        "T11",
+        "T12",
+        "C4",
+        "GEMINI_REQUEST_FAILED"
+      ],
+      "primary_failure": "T3"
+    }
+  ],
+  "timestamps": {
+    "decided_at": "2026-03-26T07:55:49.880Z"
+  },
+  "registry_path": null
+}

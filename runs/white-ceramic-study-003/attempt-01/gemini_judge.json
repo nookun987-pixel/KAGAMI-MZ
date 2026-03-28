@@ -1,0 +1,30 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "zero glossy/plastic/toy feel (violated)",
+    "matte B4C technical ceramic (not achieved)",
+    "dry, dense, engineered read (not achieved)"
+  ],
+  "material_read": "The white material reads as a smooth, glossy white plastic or a highly polished, painted surface. It exhibits a distinct sheen and reflectivity, particularly on curved edges, which gives it a plastic or toy-like appearance.",
+  "correct_reads": [
+    "porcelain-white"
+  ],
+  "wrong_reads": [
+    "glossy plastic",
+    "PVC sheen",
+    "painted metal",
+    "toy-like finish"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Significantly reduce the material's specularity and reflectivity to eliminate any glossy or plastic sheen.",
+    "Apply a uniform, controlled matte finish that conveys dryness and density, characteristic of technical ceramic, without appearing powdery or rough.",
+    "Introduce an ultra-controlled eggshell microtexture, ensuring it does not resemble brush strokes or molded plastic imperfections.",
+    "Ensure the material conveys an engineered, dense, and dry quality, moving away from any soft or painted surface feel."
+  ],
+  "summary": "The white ceramic material fails to meet the target specifications. It presents as a glossy white plastic or painted surface, directly violating the 'zero glossy/plastic/toy feel' requirement. The material lacks the intended matte, dry, dense, and engineered read of a B4C technical ceramic, resulting in a high-severity failure.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

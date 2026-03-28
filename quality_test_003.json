@@ -1,0 +1,25 @@
+{
+  "job_id": "quality-improvement-test-003",
+  "source": "api",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "character": "Mikage Zenith"
+  },
+  "narrative": {
+    "mood": ["cold"],
+    "energy": "low"
+  },
+  "strategy": {
+    "composition": "close",
+    "focus": "mask"
+  },
+  "art_direction": {
+    "mood": ["cold"],
+    "material": ["ceramic", "carbon fiber", "ferro-calcium"],
+    "style": ["brutalism", "emotional porcelain"],
+    "forbidden": ["warm lighting", "soft surfaces"]
+  },
+  "render": {
+    "max_iteration": 2
+  }
+}

@@ -34,7 +34,8 @@ const LOCKED_SUBJECT = "Mikage Zenith, fully mechanical humanoid, strict hard-su
   "load-bearing mechanical systems, long straight heavy black hair flowing naturally, " +
   "Zenith Blade visible — massive heavy industrial straight sword, dark rusty titanium " +
   "scrap metal over ferro-calcium core, thick spine ultra-thin edge, perfectly straight, " +
-  "no curvature no ornament, crimson heated core";
+  "no curvature no ornament, crimson heated core, matte porcelain-white ceramic surface, " +
+  "uneven finish with micro-crack detail, material-honest rendering, no artificial coating";
 
 // ===================================================================
 // MOOD → LIGHTING MAP
@@ -48,6 +49,8 @@ const MOOD_TO_LIGHTING = Object.freeze({
     "deep shadow falloff into graphite black",
     "minimal fill — protect Ma negative space",
     "thin rim light only — accent Shinogi edges",
+    "subject-centered lighting hierarchy — main focus on porcelain armor",
+    "no clipping on ceramic highlights — preserve detail",
   ],
   restrained: [
     "single motivated light source",
@@ -55,6 +58,8 @@ const MOOD_TO_LIGHTING = Object.freeze({
     "restrained highlights — no hot spots",
     "shadow preserves volume without losing form",
     "subsurface scattering on B4C for bone-depth translucency",
+    "subject as visual anchor — strongest focal point in frame",
+    "exposure calibrated for ceramic surface detail",
   ],
   sacred: [
     "overhead directional beam — single ceiling slit source",
@@ -169,12 +174,16 @@ const MATERIAL_TO_TEXTURE = Object.freeze({
     "micro-fractures with gold kintsugi repair seams",
     "faint internal crimson glow through cracks (#E60000)",
     "soft diffusion under key light — rim highlight on edges",
+    "sharp edge definition — zero blur on armor boundaries",
+    "high-frequency surface texture — visible grain at close range",
   ],
   "boron carbide": [
     "matte porcelain-white B4C ceramic surface 33 GPa hardness",
     "clean fracture lines — no deformation, only crack and repair",
     "subsurface scattering like biological bone structure",
     "micro-crack network filled with kintsugi gold",
+    "crisp edge boundaries — no pixel bleed or softening",
+    "surface micro-detail preserved at high resolution",
   ],
   b4c: [
     "matte porcelain-white B4C ceramic surface",
@@ -277,6 +286,8 @@ const STYLE_TO_COMPOSITION = Object.freeze({
     "depth through layered silence",
     "three-axis rule — no surface curves beyond two axes",
     "70/30 ratio — 70% empty to 30% detail",
+    "mask geometry perfectly symmetrical — eye voids aligned",
+    "subject silhouette dominant in frame — immediate recognition",
   ],
   "ukiyo-e restraint": [
     "flowing compositional lines — wave-like movement",
@@ -292,6 +303,8 @@ const STYLE_TO_COMPOSITION = Object.freeze({
     "film grain present — analog texture layer",
     "foreground depth required — mist, rain, or sparks",
     "photorealistic hard sci-fi rendering",
+    "subject as primary visual anchor — strongest contrast point",
+    "thumbnail hierarchy — subject remains dominant when scaled down",
   ],
   "porcelain minimalism": [
     "maximum negative space to enforce isolation",

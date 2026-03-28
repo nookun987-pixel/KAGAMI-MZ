@@ -1,0 +1,25 @@
+{
+  "prompt": "Extreme macro product photography of a perfectly symmetrical kitsune mask, porcelain-white matte B4C technical ceramic shell, dry eggshell microtexture, sparse controlled hairline fractures, hollow void-black eye slits, sacred emotionless presence, visible rim bevel contour, manufactured contour evidence, premium industrial product photo, low-key brutalist lighting, black minimal background\n\nSUBJECT PRESENCE LOCK\none single main subject only\nsubject must occupy clear central frame presence\nobject/entity must be fully readable\nno abstract composition\nno atmospheric-only image\nno empty scene as final subject\ncentered or compositionally dominant subject\nsingle clearly visible subject\nmanufactured object clearly readable\nhard contour evidence\nnot abstract\nmust show mask geometry, eye slit, and facial symmetry cues\nnot allowed to collapse into abstract white texture\nmask geometry must remain readable as designed object",
+  "negative_prompt": "abstract composition, atmospheric-only frame, empty scene, wall texture, plaster slab, mineral rock, marble wall, plastic, glossy, shiny, PVC, toy-like, anime, neon, visible human eyes, asymmetry, cropped subject, decorative bloom, abstract white texture, subject cropped away, facial ambiguity",
+  "seed": 334422,
+  "width": 1152,
+  "height": 1152,
+  "steps": -1,
+  "disable_refiner": false,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "async_process": false,
+  "metadata": {
+    "job_id": "GOLDEN_MASK_MACRO",
+    "canon_version": "v2",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "generated_at": "2026-03-26T14:45:33.880Z",
+    "direct_input_prompt": true,
+    "shot_type": "MASK_MACRO"
+  }
+}

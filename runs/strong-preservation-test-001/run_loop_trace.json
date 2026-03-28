@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "phase": "weapon_macro",
+    "render_ok": false,
+    "output_exists": false,
+    "validator_executed": false,
+    "gemini_validation_executed": false,
+    "render_profile": "DEFAULT",
+    "width": 1280,
+    "height": 768,
+    "steps": 30,
+    "refiner_enabled": false,
+    "render_duration_seconds": 0,
+    "decision": "FAIL",
+    "fail_rules": [],
+    "primary_failure": "missing output.png"
+  }
+]

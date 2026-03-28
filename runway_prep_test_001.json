@@ -1,0 +1,53 @@
+{
+  "job_id": "runway-prep-001",
+  "source": "manual",
+  "mode": "AUTO_DRAFT",
+  "entity_id": "mikage_zenith",
+  "entity_class": "sacred_tech_entity",
+  "zone": "white_monolith",
+  "weapon": "zenith_blade",
+  "status": "hero_frame",
+  "identity": {
+    "name": "Mikage Zenith",
+    "archetype": "sacred luxury brutalist entity",
+    "visual_anchor": "porcelain white B4C ceramic shell, matte black graphene suit, perfect kitsune mask, massive straight engineered blade"
+  },
+  "narrative": {
+    "theme": "luxury brutalist Japanese sacred tech hero frame for premium ad opening shot",
+    "mood": "silent, disciplined, premium, sacred, restrained",
+    "scene": "centered hero shot, medium full, slight low angle, brutalist monolith interior, clean silhouette, strong negative space, premium commercial readability in one second"
+  },
+  "strategy": {
+    "style": "hero product-fashion ad keyframe, centered subject dominant, low-key cinematic, commercial readability first",
+    "color_palette": "porcelain white, void black, restrained deep crimson only"
+  },
+  "art_direction": {
+    "mood": [
+      "melancholic",
+      "restrained",
+      "sacred stillness",
+      "premium commercial readability"
+    ],
+    "material": [
+      "matte B4C technical ceramic",
+      "eggshell microtexture",
+      "subtle fracture lines",
+      "matte black graphene/carbon-fiber internal suit",
+      "dark titanium joints",
+      "cold dry ceramic read"
+    ],
+    "style": [
+      "luxury brutalist",
+      "Japanese sacred tech",
+      "centered hero frame",
+      "clean silhouette",
+      "strong negative space",
+      "low-key cinematic lighting"
+    ]
+  },
+  "render": {
+    "width": 1024,
+    "height": 1536,
+    "performance": "Quality"
+  }
+}

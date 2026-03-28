@@ -1,0 +1,40 @@
+{
+  "attempt": 1,
+  "phase": "material_study",
+  "shot_type": "MATERIAL_MACRO",
+  "render_ok": true,
+  "output_exists": true,
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "render_profile": "DEFAULT",
+  "width": 1024,
+  "height": 1024,
+  "steps": 28,
+  "requested_steps": 28,
+  "actual_steps_source": "response",
+  "size_truth_source": "png_pixels",
+  "actual_file_size": "1024x1024",
+  "telemetry_warnings": [],
+  "refiner_enabled": false,
+  "render_duration_seconds": 381.97,
+  "decision": "FAIL",
+  "fail_rules": [
+    "T3",
+    "T7",
+    "T11",
+    "T12",
+    "C4",
+    "Not porcelain-white #FAFAFA due to pervasive colorful noise and artifacts.",
+    "Does not read as matte B4C technical ceramic; the texture is abstract, pixelated, and chaotic.",
+    "Lacks a dry, dense, engineered read; appears as digital noise or a corrupted image.",
+    "No ultra-controlled eggshell microtexture is present; the surface is a jumble of small, undefined shapes.",
+    "No sparse fine hairline cracking is visible.",
+    "Commercial material readability is not immediate; the material is unreadable.",
+    "The colorful noise directly corrupts material readability, preventing any coherent material interpretation."
+  ],
+  "recovery_tags": [
+    "ABSTRACT_FRAME"
+  ],
+  "subject_recovery_mode_active": true,
+  "primary_failure": "Rough mosaic"
+}

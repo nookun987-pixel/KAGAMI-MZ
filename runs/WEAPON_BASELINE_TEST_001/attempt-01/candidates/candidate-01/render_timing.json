@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-03-27T18:07:45.872Z",
+  "ended_at": "2026-03-27T18:19:45.910Z",
+  "requested_steps": 30,
+  "requested_width": 1280,
+  "requested_height": 768,
+  "disable_refiner": true,
+  "render_profile": "DEFAULT"
+}

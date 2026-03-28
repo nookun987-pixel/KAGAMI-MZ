@@ -1,0 +1,37 @@
+[
+  {
+    "id": "candidate-01",
+    "seed": 4203301,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_16-11-04_7676.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch\\candidate-01\\output.png",
+    "nuance": "subtle surface behavior: slightly denser matte micro-grain on the blade planes, silhouette unchanged"
+  },
+  {
+    "id": "candidate-02",
+    "seed": 4203302,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_16-16-03_9053.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch\\candidate-02\\output.png",
+    "nuance": "minor seam distribution: crimson seam remains ultra-thin but shifts slightly higher near the upper spine junction, silhouette unchanged"
+  },
+  {
+    "id": "candidate-03",
+    "seed": 4203303,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_16-20-48_6376.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch\\candidate-03\\output.png",
+    "nuance": "slight weight balance nuance: lower blade body feels fractionally heavier and more grounded, silhouette unchanged"
+  },
+  {
+    "id": "candidate-04",
+    "seed": 4203304,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_16-25-31_4029.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch\\candidate-04\\output.png",
+    "nuance": "restrained material micro-detail: titanium junctions read a touch more structural, silhouette unchanged"
+  },
+  {
+    "id": "candidate-05",
+    "seed": 4203305,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_16-30-25_7054.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch\\candidate-05\\output.png",
+    "nuance": "tiny finish difference: blade planes stay matte and dry with a slightly finer diffuse finish, silhouette unchanged"
+  }
+]

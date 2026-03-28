@@ -1,0 +1,44 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Missing sparse fine hairline cracking"
+  ],
+  "material_read": "The material reads as a very clean, matte, engineered white surface, resembling a high-quality technical ceramic or a solid surface material. It presents a dry and dense quality with a subtle, ultra-controlled microtexture.",
+  "correct_reads": [
+    "porcelain-white",
+    "matte B4C technical ceramic",
+    "dry",
+    "dense",
+    "engineered read",
+    "ultra-controlled eggshell microtexture",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "wrong_reads": [
+    "plaster",
+    "gypsum",
+    "chalk",
+    "concrete",
+    "carved stone",
+    "mineral banding",
+    "rough rock",
+    "layered erosion",
+    "striated grooves",
+    "sculpted surface",
+    "powdery porous masonry",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish"
+  ],
+  "severity": "MEDIUM",
+  "fix_direction": [
+    "Introduce sparse, fine hairline cracking to the surface to meet the specified microtexture detail.",
+    "Ensure the hairline cracking is subtle and does not detract from the overall dry, dense, and engineered read of the material."
+  ],
+  "summary": "The white ceramic material successfully achieves a matte, engineered, and dense appearance, avoiding common undesirable reads like plastic or plaster. However, it fails to incorporate the required sparse fine hairline cracking, which is a critical detail for a full pass.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

@@ -1,0 +1,67 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "striated grooves",
+    "sculpted surface",
+    "carved stone resemblance"
+  ],
+  "wrong_reads": [
+    "striated grooves",
+    "sculpted surface",
+    "carved stone"
+  ],
+  "correct_reads": [
+    "porcelain-white",
+    "matte",
+    "dry",
+    "dense",
+    "engineered read",
+    "zero glossy/plastic/toy feel"
+  ],
+  "material_read": "The material reads as a matte, dense white ceramic, but with a distinct sculpted or machined surface texture characterized by fine horizontal striations. It lacks the expected uniform microtexture of a technical ceramic.",
+  "fix_direction": [
+    "Remove all sculpted surface textures and striations.",
+    "Implement an ultra-controlled eggshell microtexture.",
+    "Introduce sparse, fine hairline cracking to enhance the technical ceramic read.",
+    "Ensure the surface appears uniformly dense and engineered without any visible tooling marks."
+  ],
+  "summary": "The white ceramic material fails due to prominent striated grooves and a sculpted surface texture, which contradict the target of an ultra-controlled eggshell microtexture for a technical ceramic. It also lacks the specified sparse fine hairline cracking. While the color, matte finish, and overall density are correct, the surface texture strongly evokes a carved or machined material rather than a technical ceramic.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "striated grooves",
+      "sculpted surface",
+      "carved stone resemblance"
+    ],
+    "material_read": "The material reads as a matte, dense white ceramic, but with a distinct sculpted or machined surface texture characterized by fine horizontal striations. It lacks the expected uniform microtexture of a technical ceramic.",
+    "correct_reads": [
+      "porcelain-white",
+      "matte",
+      "dry",
+      "dense",
+      "engineered read",
+      "zero glossy/plastic/toy feel"
+    ],
+    "wrong_reads": [
+      "striated grooves",
+      "sculpted surface",
+      "carved stone"
+    ],
+    "severity": "HIGH",
+    "fix_direction": [
+      "Remove all sculpted surface textures and striations.",
+      "Implement an ultra-controlled eggshell microtexture.",
+      "Introduce sparse, fine hairline cracking to enhance the technical ceramic read.",
+      "Ensure the surface appears uniformly dense and engineered without any visible tooling marks."
+    ],
+    "summary": "The white ceramic material fails due to prominent striated grooves and a sculpted surface texture, which contradict the target of an ultra-controlled eggshell microtexture for a technical ceramic. It also lacks the specified sparse fine hairline cracking. While the color, matte finish, and overall density are correct, the surface texture strongly evokes a carved or machined material rather than a technical ceramic.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

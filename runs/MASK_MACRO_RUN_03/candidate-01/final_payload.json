@@ -1,0 +1,17 @@
+{
+  "prompt": "Extreme macro product photography, premium studio close-up of a symmetrical Japanese kitsune mask with pointed triangular ears and narrow eye slits and small snout and whisker detail lines, matte porcelain-white B4C technical ceramic shell, bone-dry dense engineered ceramic surface, non-reflective matte finish like unglazed bisque porcelain, ultra-controlled eggshell microtexture, visible sparse fine hairline cracks across ceramic surface, void-black hollow eye sockets, clearly manufactured industrial artifact, precise geometric form, visible rim bevel and edge thickness, sharp contour silhouette, premium low-key studio lighting, soft overhead diffused key light, gentle side fill, clean dark neutral background, object readability first, zero specular highlights, single dominant mask object centered in frame, one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject",
+  "negative_prompt": "abstract, texture field, atmosphere, fog, soft fantasy blur, decorative clutter, neon glow, cyberpunk, distortion, organic face, visible human skin, asymmetrical mask, overexposed, cheap render, toy, figurine, plastic gloss, orange accent, orange contamination, blurry crop, atmosphere-only frame, painterly, grain, noise, messy background, glossy, shiny, reflective, polished, wet, specular, lacquer, glazed, PVC, plaster, stone, disc, plate, bowl, vase, abstract white texture, subject cropped away, facial ambiguity",
+  "seed": 556825,
+  "width": 1152,
+  "height": 1152,
+  "steps": 30,
+  "disable_refiner": true,
+  "performance_selection": "Quality",
+  "guidance_scale": 6.8,
+  "sampler": "dpmpp_2m_sde_gpu",
+  "scheduler": "karras",
+  "sharpness": 1.8,
+  "style_selections": [],
+  "image_number": 1,
+  "async_process": false
+}

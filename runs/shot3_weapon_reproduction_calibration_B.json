@@ -1,0 +1,42 @@
+{
+  "job_id": "shot3_weapon_reproduction_calibration_B",
+  "phase": "weapon_hero_frame",
+  "shot_type": "WEAPON_MACRO",
+  "user_idea": "Reproduce the locked Zenith Blade weapon hero master as tightly as possible using image-anchored reproduction. Massive engineered greatsword, unmistakable sword, perfectly straight blade, centered front-on full vertical framing, rigid long silhouette, non-device, non-abstract, restrained crimson seam only.",
+  "generation_mode": "reproduction",
+  "reproduction_anchor_mode": "image_anchored",
+  "reference_master": {
+    "candidate_id": "candidate-03",
+    "seed": 4203203,
+    "image_path": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-03\\output.png",
+    "lane": "weapon_hero_frame",
+    "silhouette_notes": "centered front-on rigid long straight greatsword silhouette",
+    "camera_notes": "front-on centered full vertical framing, no tilt, no side profile, no crop"
+  },
+  "reproduction_constraints": {
+    "camera_lock": true,
+    "silhouette_lock": true,
+    "proportion_lock": true,
+    "crimson_restraint_lock": true,
+    "variation_budget": "minimal"
+  },
+  "anchor_image_path": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-03\\output.png",
+  "anchor_strength": 0.9,
+  "denoise_strength": 0.12,
+  "composition_lock_strength": 0.95,
+  "silhouette_lock_strength": 1.0,
+  "render": {
+    "seed": 4203203,
+    "width": 1024,
+    "height": 1536,
+    "steps": 24,
+    "disable_refiner": true,
+    "guidance_scale": 7,
+    "sampler": "dpmpp_2m_sde_gpu",
+    "scheduler": "karras",
+    "sharpness": 1.8,
+    "candidate_count": 1,
+    "seed_policy": "small_spread",
+    "performance": "Quality"
+  }
+}

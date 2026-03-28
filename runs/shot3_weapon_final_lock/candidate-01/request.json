@@ -1,0 +1,18 @@
+﻿{
+    "prompt":  "Hero product shot of a massive engineered greatsword, unmistakably a sword, perfectly straight long blade, rigid linear silhouette, extreme length dominance, heavy industrial brutalist geometry, thick spine clearly visible, sharp defined edge, no curvature, no ornament, no ambiguity of function\n\nmatte charcoal-black graphene composite body (#0A0A0A), dark titanium structural joints, subtle micro texture, restrained deep crimson core (#E60000) visible only through extremely thin seams along the blade spine, no glow spread\n\nlow-angle cinematic framing, centered composition, black void background, minimal ground reflection, strong negative space, shadow-dominant lighting (70%), soft diffuse highlights, no specular plastic shine\n\nsubtle heat haze and pressure distortion near blade edge, very controlled, no explosion, no flame\n\npremium industrial product photography, ultra clear object read, no abstraction\n\ncamera distance: full blade fully visible, wider negative space, centered full-length sword read\nlight intensity: deeper shadow, stricter 70/30 split, restrained highlight lift",
+    "negative_prompt":  "circular object, ring, fan, turbine, engine, propeller, wheel\nabstract object, sculpture, ambiguous object\ncurved blade, katana, axe, hammer, gun\nfantasy ornament, rune, decorative guard\nneon glow, RGB lighting, oversaturated red\nlava sword, fire effects, explosion\nglossy plastic, chrome, toy-like surface\nsoft silhouette, unclear edge",
+    "seed":  4103101,
+    "width":  1024,
+    "height":  1536,
+    "performance_selection":  "Quality",
+    "style_selections":  [
+
+                         ],
+    "image_number":  1,
+    "guidance_scale":  6.9,
+    "steps":  24,
+    "disable_refiner":  true,
+    "sampler":  "dpmpp_2m_sde_gpu",
+    "scheduler":  "karras",
+    "sharpness":  1.8
+}

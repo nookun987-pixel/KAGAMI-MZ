@@ -1,0 +1,10 @@
+{
+  "job_id": "semantic_vlm_dependency_001",
+  "notion_page_id": "test_page_003",
+  "prompt": "Mikage character portrait",
+  "color_mode": "fallen ivory",
+  "shot_type": "portrait",
+  "environment": "minimal studio",
+  "priority": "normal",
+  "max_attempts": 1
+}

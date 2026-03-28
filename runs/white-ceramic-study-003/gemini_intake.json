@@ -1,0 +1,45 @@
+{
+  "objective": "Achieve a clean matte B4C ceramic material read for Mikage.",
+  "subject": "white ceramic material",
+  "phase_target": "material_study",
+  "core_risks": [
+    "plaster read",
+    "gypsum read",
+    "chalk read",
+    "concrete read",
+    "carved stone read",
+    "mineral banding read",
+    "sedimentary drift read"
+  ],
+  "likely_drifts": [
+    "material scope expansion beyond B4C ceramic",
+    "introduction of non-material elements",
+    "optimization of mask",
+    "optimization of identity",
+    "optimization of weapon",
+    "optimization of silhouette"
+  ],
+  "pass_signal": [
+    "clean matte B4C ceramic material read achieved",
+    "material_only scope preserved"
+  ],
+  "fail_signal": [
+    "material reads as plaster",
+    "material reads as gypsum",
+    "material reads as chalk",
+    "material reads as concrete",
+    "material reads as carved stone",
+    "material reads as mineral banding",
+    "material reads as sedimentary drift",
+    "scope drifts beyond material_only",
+    "mask optimized",
+    "identity optimized",
+    "weapon optimized",
+    "silhouette optimized"
+  ],
+  "direction_summary": "Focus on generating a clean matte B4C technical ceramic material study, strictly maintaining a material-only scope and avoiding any resemblance to plaster or other suppressed materials. Do not optimize mask, identity, weapon, or silhouette.",
+  "connector_status": "gemini",
+  "gemini_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash"
+}

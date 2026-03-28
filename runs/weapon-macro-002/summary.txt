@@ -1,0 +1,30 @@
+job_id: weapon-macro-002
+decision: REJECT
+reason: REJECT: Gemini validator FAIL: If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL., If the image does not read as a manufactured object immediately, it must FAIL.
+shot_type: MATERIAL_MACRO
+dominant_fail_reason: ABSTRACT_FRAME
+candidate_level: USABLE_CONTENT
+attempt_count: 3
+output_file_path: D:\KAGAMI-MZ\runs\weapon-macro-002\attempt-03\candidates\candidate-01\output.png
+validator_executed: true
+gemini_validation_executed: true
+gemini_pass_fail: FAIL
+render_profile: DEFAULT
+width: 1024
+height: 1024
+requested_steps: 32
+actual_steps: 32
+actual_steps_source: response
+size_truth_source: png_pixels
+actual_file_size: 1024x1024
+telemetry_warnings: none
+refiner_enabled: false
+render_duration_seconds: 596.23
+failed_rules: T3, T5, T6, T7, T8, T11, T12, C4, If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL., If the image does not read as a manufactured object immediately, it must FAIL.
+wrong_reads: porcelain-white #FAFAFA, matte B4C technical ceramic, dry, dense, engineered read, ultra-controlled eggshell microtexture, sparse fine hairline cracking, clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature, material clearly belongs to one manufactured object, not a wall, slab, or floating texture field, commercial material readability is immediate
+correction_guidance: T5: center one dominant object and keep the full manufactured silhouette readable. | T6: push dense matte engineered ceramic and suppress plaster, laminate, and plastic softness. | T11: restore sacred brutalist austerity and remove generic studio softness. | T12: tighten canonical geometry, symmetry, and hard-surface identity cues. | Subject recovery mode: force one clearly readable central manufactured object and remove abstract atmosphere.
+subject_recovery_mode_active: true
+subject_present: true
+manufactured_object_read: false
+material_read: true
+abstract_risk: HIGH

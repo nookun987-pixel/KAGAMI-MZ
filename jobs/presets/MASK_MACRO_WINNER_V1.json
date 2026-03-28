@@ -1,0 +1,57 @@
+{
+  "preset_id": "MASK_MACRO_WINNER_V1",
+  "preset_version": "1.0",
+  "locked_at": "2026-03-27T00:15:00Z",
+  "status": "FROZEN",
+  "derived_from": "ENTITY_MEDIUM_WINNER_V1",
+  "origin_run": "MASK_MACRO_RUN_03",
+  "shot_type": "MASK_MACRO",
+  "prompt": "Extreme macro product photography, premium studio close-up of a symmetrical Japanese kitsune mask with pointed triangular ears and narrow eye slits and small snout and whisker detail lines, matte porcelain-white B4C technical ceramic shell, bone-dry dense engineered ceramic surface, non-reflective matte finish like unglazed bisque porcelain, ultra-controlled eggshell microtexture, visible sparse fine hairline cracks across ceramic surface, void-black hollow eye sockets, clearly manufactured industrial artifact, precise geometric form, visible rim bevel and edge thickness, sharp contour silhouette, premium low-key studio lighting, soft overhead diffused key light, gentle side fill, clean dark neutral background, object readability first, zero specular highlights, single dominant mask object centered in frame",
+  "negative_prompt": "abstract, texture field, atmosphere, fog, soft fantasy blur, decorative clutter, neon glow, cyberpunk, distortion, organic face, visible human skin, asymmetrical mask, overexposed, cheap render, toy, figurine, plastic gloss, orange accent, orange contamination, blurry crop, atmosphere-only frame, painterly, grain, noise, messy background, glossy, shiny, reflective, polished, wet, specular, lacquer, glazed, PVC, plaster, stone, disc, plate, bowl, vase",
+  "render": {
+    "width": 1152,
+    "height": 1152,
+    "steps": 30,
+    "guidance_scale": 6.8,
+    "sampler": "dpmpp_2m_sde_gpu",
+    "scheduler": "karras",
+    "sharpness": 1.8,
+    "candidate_count": 1,
+    "disable_refiner": true,
+    "performance": "Quality",
+    "seed_policy": "small_spread"
+  },
+  "winning_seed": 556825,
+  "proven_seeds": [556825, 556862],
+  "runtime_flags": {
+    "SHOT_CANDIDATE_COUNT_OVERRIDE": 1,
+    "RENDER_PROFILE": "DEFAULT"
+  },
+  "pass_criteria": {
+    "manufactured_object_read": true,
+    "ceramic_read": true,
+    "abstract_frame": false
+  },
+  "prompt_engineering_notes": {
+    "critical_avoidance": "Do NOT use 'fox ears' — triggers canon forbidden matcher /\\bfox ears?\\b/. Use 'pointed triangular ears' instead.",
+    "critical_avoidance_2": "Do NOT use 'anime' in negative — triggers canon forbidden /\\banime\\b/.",
+    "matte_key": "'unglazed bisque porcelain' is the strongest matte anchor",
+    "anti_drift": "'disc, plate, bowl, vase' in negative prevents abstract object drift"
+  },
+  "run_history": [
+    {"run": "MASK_MACRO_RUN_01", "seed": 556825, "object": "PASS", "ceramic": "FAIL", "abstract": "PASS", "fail_reason": "glossy glazed surface + heavy red decorative paint"},
+    {"run": "MASK_MACRO_RUN_02", "seed": 556862, "object": "FAIL", "ceramic": "PASS", "abstract": "PASS", "fail_reason": "object drifted to abstract disc — over-negation killed mask shape"},
+    {"run": "MASK_MACRO_RUN_03", "seed": 556825, "object": "PASS", "ceramic": "PASS", "abstract": "PASS", "winner": true},
+    {"run": "MASK_MACRO_RUN_04", "seed": 556862, "object": "PASS", "ceramic": "PASS", "abstract": "PASS", "confirmed": true}
+  ],
+  "gemini_assessment_winner": {
+    "material_read": "clean, matte porcelain-white technical ceramic with dense, engineered feel and subtle eggshell microtexture. Avoids glossy, plastic, or toy-like appearance.",
+    "fail_rules": ["Missing sparse fine hairline cracking"],
+    "candidate_level": "BEST_OF_BATCH"
+  },
+  "gemini_assessment_confirm": {
+    "material_read": "Matte, smooth, white ceramic with an engineered feel.",
+    "fail_rules": ["Missing sparse fine hairline cracking"],
+    "candidate_level": "USABLE_CONTENT"
+  }
+}

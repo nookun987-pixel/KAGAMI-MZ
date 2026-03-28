@@ -1,0 +1,7 @@
+{
+  "has_api_key": true,
+  "key_source": "GEMINI_API_KEY",
+  "model": "gemini-2.5-flash",
+  "cwd": "D:\\KAGAMI-MZ",
+  "env_file_detected": true
+}

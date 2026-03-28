@@ -1,245 +1,941 @@
-/**
- * MIKAGE — orchestrator.test.js
- * End-to-end pipeline test.
- * Run: node orchestrator.test.js
- */
-
 "use strict";
 
-const { run, postControl } = require("./orchestrator");
-const { setNotionClient } = require("./memory/notion_logger");
-const { setFooocusClient } = require("./render/render_executor");
-const { setShellExecutor } = require("./render/vram_manager");
-const { forceReset } = require("./render/vram_manager");
-const { setAnalyzer } = require("./critic/rule_critic");
-const { setVLMBackend } = require("./critic/vision_critic");
-const { setIdentityAnalyzer } = require("./drift/identity_score");
-const { setNarrativeAnalyzer } = require("./drift/narrative_score");
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+
+const ONE_BY_ONE_PNG_BASE64 =
+  "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9WnS1xQAAAAASUVORK5CYII=";
 
 let passed = 0;
 let failed = 0;
-const failures = [];
 
-function assert(condition, label) {
+function buildPassingSignals(overrides = {}) {
+  return {
+    bounding_box_width_percentage: 40,
+    distorted_pixel_ratio: 0,
+    pixel_displacement: 0,
+    rgb_glitch_count: 0,
+    mesh_deformation_delta: 0,
+    boundary_intersection: 0,
+    edge_blur_radius: 0,
+    pixel_bleed_percentage: 0,
+    high_frequency_pixel_density_delta: 0.1,
+    edge_halo_detection: 0,
+    z_blue_delta_e: 0,
+    z_blue_color_shift_detected: 0,
+    saliency_peak_zone: "product_safe_zone",
+    rgb_chromatic_split_noise: 0,
+    vhs_noise_pattern: 0,
+    line_angle_deviation: 0,
+    grid_snap_variance: 0,
+    exposure_value_delta: 0,
+    histogram_clipping: 0,
+    geometry_symmetry_ratio: 99,
+    line_curvature_degree: 0,
+    ornament_bounding_box: 0,
+    human_eyes_detected: 0,
+    face_mesh_visible: 0,
+    high_gloss_specular: 0,
+    pvc_plastic_read: 0,
+    missing_weave_texture: 0,
+    soft_fabric_folds_on_joints: 0,
+    magenta_neon_spill: 0,
+    chaotic_particle_bloom: 0,
+    toon_shading: 0,
+    chibi_proportions: 0,
+    cyan_magenta_overload: 0,
+    lens_flare_spam: 0,
+    silhouette_read_time: 0.3,
+    edge_separation_score: 1,
+    recognition_time_seconds: 0.5,
+    primary_subject_confidence: 1,
+    logo_overlap_ratio: 0,
+    branding_zone_distortion_contact: 0,
+    thumbnail_subject_retention: 1,
+    thumbnail_saliency_rank: "subject",
+    product_color_delta_e: 0,
+    regional_hsv_shift: 0,
+    _vlm_status: "completed",
+    _analyzer_status: {},
+    ...overrides,
+  };
+}
+
+function assert(condition, message) {
   if (condition) {
-    passed++;
-  } else {
-    failed++;
-    failures.push(label);
-    console.error(`  FAIL: ${label}`);
+    passed += 1;
+    return;
   }
+  failed += 1;
+  console.error(`FAIL: ${message}`);
 }
 
-// --- Mocks ---
-setShellExecutor({ exec() { return ""; } });
-setNotionClient({
-  pages: [],
-  async createPage(p) { this.pages.push(p); return { id: "page_0", url: "https://notion.so/test" }; },
-  async updatePage(p) { return { id: p.page_id, updated: true }; },
-});
-setFooocusClient({
-  async submitRender(packet) {
-    return { output_file: "/tmp/mikage_render.png", seed_used: 999, render_time_ms: 3000, status: "OK" };
-  },
-  async abortRender() {},
-});
-setAnalyzer({
-  measureNegativeSpace: () => ({ ratio: 0.55 }),
-  measureSymmetry: () => ({ score: 0.30 }),
-  measureTextureVariance: () => ({ variance: 0.60 }),
-  measureSmoothness: () => ({ smoothness: 0.30 }),
-  measureSubjectRatio: () => ({ ratio: 0.22 }),
-});
-setVLMBackend({
-  async analyze() { return { plastic_look: 0.10, lack_of_depth: 0.15, over_polish: 0.10 }; },
-});
-setIdentityAnalyzer({
-  async analyze() {
-    return { silhouette: 0.90, material: 0.85, mask: 0.90, blade: 0.85, color: 0.95, anti_polish: 0.80 };
-  },
-});
-setNarrativeAnalyzer({
-  async analyze() {
-    return { perceived_intensity: 0.30, perceived_tones: ["restrained", "silent", "cold"], perceived_energy: "low" };
-  },
-});
-
-const GOOD_JOB = {
-  job_id: "mikage_e2e_001",
-  source: "notion",
-  mode: "AUTO_DRAFT",
-  identity: { character_id: "mikage_core", persona: "controlled poetic visual entity", identity_version: "v1.0" },
-  narrative: { arc_id: "arc_001", chapter: "fragment_03", continuity_notes: ["must feel restrained, not loud", "must preserve melancholy distance", "must avoid commercial glamour drift"] },
-  strategy: { objective: "identity_consistency", secondary_objective: "aesthetic_integrity", campaign_tag: "core_visual_language" },
-  art_direction: {
-    mood: ["melancholic", "restrained", "sacred stillness"],
-    material: ["weathered ceramic", "charred wood", "heat-warped carbon fiber"],
-    style: ["wabi-sabi", "editorial cinematic"],
-    composition: { negative_space_min: 0.4, broken_symmetry_required: true, imperfection_required: true, texture_variation_required: true },
-    forbidden: ["perfect skin", "plastic look", "over-smooth surfaces"],
-  },
-  render: { engine: "fooocus", seed: null, max_iteration: 3 },
-};
-
-;(async () => {
-try {
-
-// ===================================================================
-console.log("\n=== E2E — GOOD JOB → PASS ===");
-// ===================================================================
-
-forceReset("test");
-
-{
-  const result = await run(GOOD_JOB);
-
-  assert(result.status === "DONE", `Status: ${result.status}`);
-  assert(result.decision === "PASS", `Decision: ${result.decision}`);
-  assert(result.attempt_count === 1, `Attempts: ${result.attempt_count}`);
-  assert(result.identity_score >= 0.75, `Identity: ${result.identity_score}`);
-  assert(result.critic_score >= 0.75, `Critic: ${result.critic_score}`);
-  assert(result.output_files.length > 0, "Output files present");
-  assert(result.rejected_samples.length === 0, "No rejected samples");
-  assert(result.drift_flags.length === 0, "No drift flags");
-  assert(result.prompt !== null, "Prompt populated");
-  assert(result.negative_prompt !== null, "Negative prompt populated");
-  assert(result.audit.trace.length > 10, `Trace entries: ${result.audit.trace.length}`);
-
-  // Verify trace includes all major steps
-  const steps = result.audit.trace.map((e) => e.step);
-  assert(steps.includes("INGESTED"), "Trace: INGESTED");
-  assert(steps.includes("STRUCTURED"), "Trace: STRUCTURED");
-  assert(steps.includes("PRECHECKED"), "Trace: PRECHECKED");
-  assert(steps.includes("PRE_CONTROL"), "Trace: PRE_CONTROL");
-  assert(steps.includes("NORMALIZED"), "Trace: NORMALIZED");
-  assert(steps.includes("TRANSLATED"), "Trace: TRANSLATED");
-  assert(steps.includes("RENDERING"), "Trace: RENDERING");
-  assert(steps.includes("CRITIQUED"), "Trace: CRITIQUED");
-  assert(steps.includes("DRIFT_CHECKED"), "Trace: DRIFT_CHECKED");
-  assert(steps.includes("POSTCHECKED"), "Trace: POSTCHECKED");
-  assert(steps.includes("DECIDED"), "Trace: DECIDED");
-  assert(steps.includes("LOGGED"), "Trace: LOGGED");
-  assert(steps.includes("DONE"), "Trace: DONE");
+function resetModule(modulePath) {
+  delete require.cache[require.resolve(modulePath)];
 }
 
-// ===================================================================
-console.log("\n=== E2E — FORBIDDEN ELEMENT → REJECT AT PRE_CONTROL ===");
-// ===================================================================
-
-forceReset("test");
-
-{
-  const badJob = {
-    ...GOOD_JOB,
-    job_id: "mikage_e2e_reject_001",
-    art_direction: {
-      ...GOOD_JOB.art_direction,
-      style: ["anime cute kawaii"],
+function setRenderExecutorMock(mockImpl) {
+  const modulePath = path.resolve(__dirname, "render", "render_executor.js");
+  resetModule(modulePath);
+  require.cache[modulePath] = {
+    id: modulePath,
+    filename: modulePath,
+    loaded: true,
+    exports: {
+      executeRender: mockImpl,
     },
   };
-
-  const result = await run(badJob);
-
-  assert(result.status === "DONE", `Status: ${result.status}`);
-  assert(result.decision === "REJECT", `Decision: ${result.decision}`);
-  assert(result.rejected_reason && result.rejected_reason.length > 0, "Rejected reason set");
 }
 
-// ===================================================================
-console.log("\n=== E2E — CONSTRAINT VIOLATION → FAIL AT MIDDLEWARE ===");
-// ===================================================================
-
-forceReset("test");
-
-{
-  const badJob = {
-    ...GOOD_JOB,
-    job_id: "mikage_e2e_constraint_001",
-    art_direction: {
-      ...GOOD_JOB.art_direction,
-      composition: { negative_space_min: 0.10, broken_symmetry_required: false, imperfection_required: false, texture_variation_required: false },
+function setAnalyzerRunnerMock(mockImpl) {
+  const modulePath = path.resolve(__dirname, "analyzers", "run_all_analyzers.js");
+  resetModule(modulePath);
+  require.cache[modulePath] = {
+    id: modulePath,
+    filename: modulePath,
+    loaded: true,
+    exports: {
+      runAllAnalyzers: mockImpl,
     },
   };
+}
 
-  const result = await run(badJob);
-  // PRE_CONTROL catches composition violations before middleware
-  assert(result.decision !== "PASS", `Should not pass: ${result.decision}`);
+function setDriftDetectorMock(mockImpl) {
+  const modulePath = path.resolve(__dirname, "drift", "drift_detector.js");
+  resetModule(modulePath);
+  require.cache[modulePath] = {
+    id: modulePath,
+    filename: modulePath,
+    loaded: true,
+    exports: {
+      detectDrift: mockImpl,
+    },
+  };
+}
+
+function setGeminiConnectorMock(mockImpl = {}) {
+  const modulePath = path.resolve(__dirname, "gemini_connector.js");
+  resetModule(modulePath);
+  require.cache[modulePath] = {
+    id: modulePath,
+    filename: modulePath,
+    loaded: true,
+    exports: {
+      validateGeminiRuntime: mockImpl.validateGeminiRuntime || (async () => ({
+        ok: true,
+        http_status: 200,
+        error: null,
+        model: "mock-gemini",
+      })),
+      judgeRenderedImage: mockImpl.judgeRenderedImage || (async () => ({
+        decision: "PASS",
+        material_read: "correct",
+        drift_flags: [],
+        fail_rules: [],
+        corrections: [],
+        confidence: 0.95,
+        raw: {
+          pass_fail: "PASS",
+          material_read: "correct",
+          correct_reads: ["matte ceramic"],
+          wrong_reads: [],
+          fail_rules: [],
+          fix_direction: [],
+          summary: "PASS",
+          confidence: 0.95,
+          gemini_validation_executed: true,
+          parse_ok: true,
+          error: null,
+        },
+      })),
+    },
+  };
+}
+
+function setGeminiIntakeMock(mockImpl) {
+  const modulePath = path.resolve(__dirname, "gemini_intake.js");
+  resetModule(modulePath);
+  require.cache[modulePath] = {
+    id: modulePath,
+    filename: modulePath,
+    loaded: true,
+    exports: {
+      runGeminiIntake: mockImpl,
+    },
+  };
+}
+
+function createTempWorkspace() {
+  return fs.mkdtempSync(path.join(os.tmpdir(), "mikage-orchestrator-test-"));
+}
+
+function writeRealPng(targetPath) {
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+  fs.writeFileSync(targetPath, Buffer.from(ONE_BY_ONE_PNG_BASE64, "base64"));
+  return targetPath;
+}
+
+async function runSuccessCase() {
+  const workspace = createTempWorkspace();
+  return runAllowCase(workspace, "success-case", "entity-alpha");
+}
+
+async function runAllowCase(workspace, jobId, entityId) {
+  const runsDir = path.join(workspace, "runs");
+  const sourceDir = path.join(workspace, "source");
+  const sourceImage = writeRealPng(path.join(sourceDir, `${jobId}.png`));
+
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () => buildPassingSignals());
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.92,
+    narrative_score: 0.88,
+    aesthetic_integrity_score: 0.9,
+    anti_polish_score: 0.82,
+    drift_flags: [],
+    verdict: "PASS",
+    refineable: true,
+    refine_reason: "none",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock();
+
+  setRenderExecutorMock(async (_job, _token, _spec, opts) => {
+    const payloadPath = path.join(opts.output_dir, "final_payload.json");
+    if (!fs.existsSync(payloadPath)) {
+      throw new Error("final_payload.json missing before render");
+    }
+    return {
+      success: true,
+      render: {
+        output_file: sourceImage,
+        seed_used: 123,
+        render_time_ms: 10,
+        status: "RENDERED",
+      },
+    };
+  });
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: jobId,
+    entity_id: entityId,
+    entity_class: "guardian",
+    zone: "threshold",
+    weapon: "zenith_blade",
+    status: "active",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, jobId);
+  const outputPath = path.join(runDir, "output.png");
+  const summaryJson = JSON.parse(fs.readFileSync(path.join(runDir, "job_summary.json"), "utf-8"));
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+  const registryPath = path.join(runsDir, "canon_memory_registry.json");
+  const registry = JSON.parse(fs.readFileSync(registryPath, "utf-8"));
+
+  assert(fs.existsSync(outputPath), "success case should create a real output.png");
+  assert(summary.decision === "ALLOW", "success case should allow when real image + canon pass");
+  assert(summary.status === "DONE", "success case should complete when real image + canon pass");
+  assert(summary.output_files.length === 1, "success case should populate output_files");
+  assert(summary.output_files[0] === "output.png", "success case output_files should contain output.png");
+  assert(summary.final_decision_reason === "ALLOW: output exists + local validator PASS + Gemini PASS", "success case should record allow reason");
+  assert(summary.validator_executed === true, "success case should mark validator executed");
+  assert(summary.gemini_validation_executed === true, "success case should mark Gemini executed");
+  assert(summary.gemini_pass_fail === "PASS", "success case should mark Gemini pass");
+  assert(summaryJson.output_files[0] === "output.png", "job_summary output_files should contain output.png");
+  assert(summaryJson.validator_executed === true, "job_summary should mark validator executed");
+  assert(summaryJson.gemini_validation_executed === true, "job_summary should mark Gemini executed");
+  assert(summaryJson.registry_write === true, "job_summary should mark registry write on allow");
+  assert(summaryJson.registry_target.includes("local"), "job_summary should record local registry target");
+  assert(summaryJson.continuity.entity_id === entityId, "job_summary should include continuity payload");
+  assert(decisionJson.output_files[0] === "output.png", "final_decision output_files should contain output.png");
+  assert(decisionJson.validator_executed === true, "final_decision should mark validator executed");
+  assert(decisionJson.gemini_validation_executed === true, "final_decision should mark Gemini executed");
+  assert(decisionJson.gemini_pass_fail === "PASS", "final_decision should mark Gemini pass");
+  assert(decisionJson.decision_reason === "ALLOW: output exists + local validator PASS + Gemini PASS", "final_decision should record allow reason");
+  assert(fs.existsSync(path.join(runDir, "final_payload.json")), "final_payload.json should exist");
+  assert(fs.existsSync(path.join(runDir, "pre_validation.json")), "pre_validation.json should exist");
+  assert(fs.existsSync(path.join(runDir, "post_validation.json")), "post_validation.json should exist");
+  assert(fs.existsSync(path.join(runDir, "gemini_runtime_check.json")), "gemini_runtime_check.json should exist");
+  assert(fs.existsSync(path.join(runDir, "gemini_runtime_probe.json")), "gemini_runtime_probe.json should exist");
+  assert(fs.existsSync(path.join(runDir, "gemini_validation.json")), "gemini_validation.json should exist");
+  assert(fs.existsSync(path.join(runDir, "final_decision.json")), "final_decision.json should exist");
+  assert(fs.statSync(outputPath).size > 0, "output.png should be non-empty");
+  assert(Array.isArray(registry) && registry.length >= 1, "allow case should write an official registry record");
+  assert(registry.some((record) => record.decision === "ALLOW"), "registry should contain an official allow");
+  assert(registry.some((record) => record.entity_id === entityId), "registry record should persist entity_id");
+  return { workspace, summary };
+}
+
+async function runFailureCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () => buildPassingSignals());
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.92,
+    narrative_score: 0.88,
+    aesthetic_integrity_score: 0.9,
+    anti_polish_score: 0.82,
+    drift_flags: [],
+    verdict: "PASS",
+    refineable: true,
+    refine_reason: "none",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock();
+
+  setRenderExecutorMock(async () => {
+    return {
+      success: false,
+      render: {
+        output_file: null,
+        seed_used: null,
+        render_time_ms: 10,
+        status: "FAILED",
+        error: "mock render failed",
+      },
+    };
+  });
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "failure-case",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "failure-case");
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+  const geminiJson = JSON.parse(fs.readFileSync(path.join(runDir, "gemini_validation.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "failure case must reject when no real image exists");
+  assert(summary.status === "FAIL", "failure case must fail when no real image exists");
+  assert(summary.final_decision_reason === "REJECT: no real image on disk", "failure case should record no-image reason");
+  assert(summary.registry_write === false, "failure case must not write official registry");
+  assert(Array.isArray(summary.output_files) && summary.output_files.length === 0, "failure case must not populate output_files");
+  assert(!fs.existsSync(path.join(runDir, "output.png")), "failure case must not create fake output.png");
+  assert(summary.gemini_pass_fail === "FAIL", "failure case should surface Gemini failure state");
+  assert(geminiJson.error === "GEMINI_IMAGE_READ_FAILED", "failure case Gemini artifact should record image read failure");
+  assert(decisionJson.decision === "REJECT", "final_decision must reject when image missing");
+  assert(decisionJson.status === "FAIL", "final_decision must fail when image missing");
+}
+
+async function runCanonFailCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+  const sourceDir = path.join(workspace, "source");
+  const sourceImage = writeRealPng(path.join(sourceDir, "canon_fail.png"));
+
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () =>
+    buildPassingSignals({
+      human_eyes_detected: 1,
+      pvc_plastic_read: 1,
+    })
+  );
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.4,
+    narrative_score: 0.6,
+    aesthetic_integrity_score: 0.5,
+    anti_polish_score: 0.2,
+    drift_flags: ["identity_drift"],
+    verdict: "REJECT",
+    refineable: false,
+    refine_reason: "identity drift",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock();
+  setRenderExecutorMock(async () => ({
+    success: true,
+    render: {
+      output_file: sourceImage,
+      seed_used: 55,
+      render_time_ms: 10,
+      status: "RENDERED",
+    },
+  }));
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "canon-fail-case",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "canon-fail-case");
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "canon fail case must reject on canon hard fail");
+  assert(summary.status === "DONE", "canon fail case should finish with reject after validator");
+  assert(summary.validator_executed === true, "canon fail case should run validator");
+  assert(summary.gemini_validation_executed === true, "canon fail case should still run Gemini");
+  assert(summary.registry_write === false, "canon fail case must not write official registry");
+  assert(summary.output_files[0] === "output.png", "canon fail case should still keep real output file");
   assert(
-    result.status === "DONE" || result.status === "REVIEW",
-    `Status terminal or review: ${result.status}`
+    summary.failed_rules.length >= 1 || summary.post_validation_result.critical_failures.length >= 1,
+    "canon fail case should log failed rules"
   );
+  assert(summary.final_decision_reason.includes("REJECT: canon hard fail"), "canon fail case should record canon hard fail reason");
+  assert(decisionJson.decision === "REJECT", "canon fail final decision must reject");
 }
 
-// ===================================================================
-console.log("\n=== postControl — DIRECT TESTS ===");
-// ===================================================================
+async function runValidatorNotExecutedCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+  const sourceDir = path.join(workspace, "source");
+  const sourceImage = writeRealPng(path.join(sourceDir, "validator_skip.png"));
 
-{
-  // Both pass → PASS
-  const r1 = postControl(
-    { verdict: "PASS", quality_score: 0.85, issues: [] },
-    { verdict: "PASS", identity_score: 0.90, drift_flags: [], refineable: true },
-    1, 3
-  );
-  assert(r1.decision === "PASS", "Both pass → PASS");
-  assert(r1.publish_safe === true, "Publish safe on PASS");
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () => {
+    throw new Error("validator runner crashed");
+  });
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.92,
+    narrative_score: 0.88,
+    aesthetic_integrity_score: 0.9,
+    anti_polish_score: 0.82,
+    drift_flags: [],
+    verdict: "PASS",
+    refineable: true,
+    refine_reason: "none",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock();
+  setRenderExecutorMock(async () => ({
+    success: true,
+    render: {
+      output_file: sourceImage,
+      seed_used: 77,
+      render_time_ms: 10,
+      status: "RENDERED",
+    },
+  }));
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "validator-not-executed-case",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "validator-not-executed-case");
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "validator-not-executed case must reject");
+  assert(summary.status === "FAIL", "validator-not-executed case must fail");
+  assert(summary.validator_executed === false, "validator-not-executed case should mark validator false");
+  assert(summary.final_decision_reason === "REJECT: validator not executed", "validator-not-executed case should record reason");
+  assert(summary.registry_write === false, "validator-not-executed case must not write official registry");
+  assert(decisionJson.validator_executed === false, "final_decision should mark validator false");
 }
 
-{
-  // Drift reject → REJECT
-  const r2 = postControl(
-    { verdict: "PASS", quality_score: 0.85, issues: [] },
-    { verdict: "REJECT", identity_score: 0.50, drift_flags: ["identity_erosion"], refineable: false },
-    1, 3
-  );
-  assert(r2.decision === "REJECT", "Drift reject → REJECT");
+async function runGeminiFailCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+  const sourceDir = path.join(workspace, "source");
+  const sourceImage = writeRealPng(path.join(sourceDir, "gemini_fail.png"));
+
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () => buildPassingSignals());
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.92,
+    narrative_score: 0.88,
+    aesthetic_integrity_score: 0.9,
+    anti_polish_score: 0.82,
+    drift_flags: [],
+    verdict: "PASS",
+    refineable: true,
+    refine_reason: "none",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock({
+    judgeRenderedImage: async () => ({
+      decision: "FAIL",
+      material_read: "plastic",
+      drift_flags: ["glossy plastic"],
+      fail_rules: ["material_drift"],
+      corrections: ["increase ceramic constraints"],
+      confidence: 0.87,
+      raw: {
+        pass_fail: "FAIL",
+        material_read: "plastic",
+        correct_reads: [],
+        wrong_reads: ["glossy plastic"],
+        fail_rules: ["material_drift"],
+        fix_direction: ["increase ceramic constraints"],
+        summary: "material drift",
+        confidence: 0.87,
+        gemini_validation_executed: true,
+        parse_ok: true,
+        error: null,
+      },
+    }),
+  });
+  setRenderExecutorMock(async () => ({
+    success: true,
+    render: {
+      output_file: sourceImage,
+      seed_used: 91,
+      render_time_ms: 10,
+      status: "RENDERED",
+    },
+  }));
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "gemini-fail-case",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "gemini-fail-case");
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "gemini fail case must reject");
+  assert(summary.status === "DONE", "gemini fail case should finish with reject");
+  assert(summary.gemini_validation_executed === true, "gemini fail case should mark Gemini executed");
+  assert(summary.gemini_pass_fail === "FAIL", "gemini fail case should mark Gemini fail");
+  assert(summary.registry_write === false, "gemini fail case must not write official registry");
+  assert(summary.output_files[0] === "output.png", "gemini fail case should keep real output file");
+  assert(summary.wrong_reads.includes("glossy plastic"), "gemini fail case should surface wrong_reads");
+  assert(summary.failed_rules.includes("material_drift"), "gemini fail case should merge Gemini fail rules");
+  assert(decisionJson.decision_reason === "REJECT: Gemini validator FAIL: material_drift, glossy plastic", "gemini fail reason should be explicit");
 }
 
-{
-  // Critic reject → REJECT
-  const r3 = postControl(
-    { verdict: "REJECT", quality_score: 0.40, issues: ["too smooth"] },
-    { verdict: "PASS", identity_score: 0.85, drift_flags: [], refineable: true },
-    1, 3
-  );
-  assert(r3.decision === "REJECT", "Critic reject → REJECT");
+async function runGeminiRuntimeFailureCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+  const sourceDir = path.join(workspace, "source");
+  const sourceImage = writeRealPng(path.join(sourceDir, "gemini_runtime_failure.png"));
+
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () => buildPassingSignals());
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.92,
+    narrative_score: 0.88,
+    aesthetic_integrity_score: 0.9,
+    anti_polish_score: 0.82,
+    drift_flags: [],
+    verdict: "PASS",
+    refineable: true,
+    refine_reason: "none",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock({
+    validateGeminiRuntime: async () => ({
+      ok: false,
+      http_status: 403,
+      error: "GEMINI_HTTP_403",
+      model: "mock-gemini",
+    }),
+  });
+  setRenderExecutorMock(async () => ({
+    success: true,
+    render: {
+      output_file: sourceImage,
+      seed_used: 91,
+      render_time_ms: 10,
+      status: "RENDERED",
+    },
+  }));
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "gemini-runtime-failure-case",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "gemini-runtime-failure-case");
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "gemini runtime failure should reject");
+  assert(summary.status === "FAIL", "gemini runtime failure should fail");
+  assert(summary.gemini_validation_executed === false, "gemini runtime failure should not mark Gemini executed");
+  assert(summary.gemini_error === "GEMINI_HTTP_403", "gemini runtime failure should surface probe failure");
+  assert(summary.registry_write === false, "gemini runtime failure must not write official registry");
+  assert(decisionJson.decision_reason === "REJECT: GEMINI_HTTP_403", "gemini runtime failure should record exact reason");
 }
 
-{
-  // Refineable + attempts left → CONDITIONAL
-  const r4 = postControl(
-    { verdict: "REVIEW", quality_score: 0.70, issues: ["texture weak"] },
-    { verdict: "REVIEW", identity_score: 0.78, drift_flags: ["plastic_finish_drift"], refineable: true, refine_reason: "fixable" },
-    1, 3
-  );
-  assert(r4.decision === "CONDITIONAL", "Refineable + attempts → CONDITIONAL");
+async function runGeminiInvalidJsonCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+  const sourceDir = path.join(workspace, "source");
+  const sourceImage = writeRealPng(path.join(sourceDir, "gemini_invalid_json.png"));
+
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
+  setAnalyzerRunnerMock(async () => buildPassingSignals());
+  setDriftDetectorMock(async () => ({
+    identity_score: 0.92,
+    narrative_score: 0.88,
+    aesthetic_integrity_score: 0.9,
+    anti_polish_score: 0.82,
+    drift_flags: [],
+    verdict: "PASS",
+    refineable: true,
+    refine_reason: "none",
+    identity_detail: {},
+    narrative_detail: {},
+  }));
+  setGeminiConnectorMock({
+    judgeRenderedImage: async () => ({
+      decision: "FAIL",
+      material_read: "unknown",
+      drift_flags: [],
+      fail_rules: [],
+      corrections: [],
+      confidence: 0,
+      raw: {
+        pass_fail: "FAIL",
+        material_read: "unknown",
+        correct_reads: [],
+        wrong_reads: [],
+        fail_rules: [],
+        fix_direction: [],
+        summary: "bad json",
+        confidence: 0,
+        gemini_validation_executed: true,
+        parse_ok: false,
+        error: "GEMINI_INVALID_JSON",
+      },
+    }),
+  });
+  setRenderExecutorMock(async () => ({
+    success: true,
+    render: {
+      output_file: sourceImage,
+      seed_used: 91,
+      render_time_ms: 10,
+      status: "RENDERED",
+    },
+  }));
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "gemini-invalid-json-case",
+    identity: {
+      name: "Mikage",
+      archetype: "ethereal guardian",
+      visual_anchor: "silver-haired figure in moonlight",
+    },
+    narrative: {
+      theme: "solitude at the edge of twilight",
+      mood: "contemplative",
+      scene: "standing alone on a cliff overlooking a starlit ocean",
+    },
+    strategy: {
+      style: "cinematic illustration",
+      color_palette: "deep blue, silver, soft violet",
+    },
+    art_direction: {
+      mood: "melancholic",
+      material: "porcelain",
+      style: "wabi-sabi",
+    },
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "gemini-invalid-json-case");
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "gemini invalid json case must reject");
+  assert(summary.status === "FAIL", "gemini invalid json case should fail");
+  assert(summary.gemini_validation_executed === true, "gemini invalid json should still mark Gemini executed");
+  assert(summary.gemini_error === "GEMINI_INVALID_JSON", "gemini invalid json should surface exact error");
+  assert(summary.final_decision_reason === "REJECT: GEMINI_INVALID_JSON", "gemini invalid json should record exact reason");
+  assert(decisionJson.gemini_error === "GEMINI_INVALID_JSON", "final_decision should surface exact Gemini error");
 }
 
-{
-  // Not refineable + review → REVIEW
-  const r5 = postControl(
-    { verdict: "REVIEW", quality_score: 0.70, issues: [] },
-    { verdict: "REVIEW", identity_score: 0.78, drift_flags: ["mask_drift"], refineable: false, refine_reason: "terminal" },
-    3, 3
-  );
-  assert(r5.decision === "REVIEW", "Not refineable → REVIEW");
+async function runBaselineCase() {
+  const workspace = createTempWorkspace();
+  const first = await runAllowCase(workspace, "baseline-source", "entity-baseline");
+  const second = await runAllowCase(workspace, "baseline-followup", "entity-baseline");
+
+  assert(first.summary.registry_write === true, "baseline source allow should write registry");
+  assert(second.summary.baseline_found === true, "followup run should find baseline");
+  assert(second.summary.baseline_reference === "baseline-source", "followup run should reference previous allowed job");
+  assert(second.summary.baseline_source === "local", "followup run should report local baseline source");
 }
 
-// ===================================================================
-// RESULTS
-// ===================================================================
+async function runAutoPrecheckRejectCase() {
+  const workspace = createTempWorkspace();
+  const runsDir = path.join(workspace, "runs");
+  let renderCalled = false;
 
-console.log("\n" + "=".repeat(60));
-console.log(`RESULTS: ${passed} passed, ${failed} failed`);
-if (failures.length > 0) {
-  console.log("\nFAILURES:");
-  for (const f of failures) console.log(`  • ${f}`);
-}
-console.log("=".repeat(60) + "\n");
-process.exit(failed > 0 ? 1 : 0);
+  process.env.RUNS_DIR = runsDir;
+  process.env.NOTION_API_KEY = "";
+  process.env.MIKAGE_NOTION_DB = "";
+  process.env.GEMINI_API_KEY = "test-key";
 
-} catch (err) {
-  console.error("TEST RUNNER ERROR:", err);
-  process.exit(1);
+  setGeminiIntakeMock(async () => ({
+    creative_intent: "abstract atmosphere board",
+    subject: {
+      type: "atmosphere",
+      identity: "texture",
+      must_have: [],
+      must_not_have: [],
+    },
+    material: {
+      primary: "ceramic",
+      surface: "",
+      finish: "",
+      forbidden_reads: [],
+    },
+    composition: {
+      shot_type: "",
+      framing: "",
+      camera: "",
+      background: "",
+    },
+    lighting: {
+      style: "",
+      constraints: [],
+    },
+    core_risks: ["abstract drift"],
+    anti_drift_rules: [],
+    success_criteria: [],
+    direction_summary: "abstract ceramic mood",
+    connector_status: "gemini",
+    gemini_executed: true,
+    parse_ok: true,
+  }));
+  setGeminiConnectorMock({
+    validateGeminiRuntime: async () => ({
+      ok: true,
+      http_status: 200,
+      error: null,
+      model: "mock-gemini",
+    }),
+  });
+  setRenderExecutorMock(async () => {
+    renderCalled = true;
+    throw new Error("render should not execute after precheck reject");
+  });
+
+  resetModule(path.resolve(__dirname, "orchestrator.js"));
+  const { orchestrate } = require("./orchestrator");
+
+  const summary = await orchestrate({
+    job_id: "auto-precheck-reject-case",
+    user_idea: "moody ceramic atmosphere with abstract texture",
+    phase: "material_study",
+    render: {
+      width: 1024,
+      height: 1024,
+      performance: "Speed",
+    },
+  });
+
+  const runDir = path.join(runsDir, "auto-precheck-reject-case");
+  const precheckJson = JSON.parse(fs.readFileSync(path.join(runDir, "gemini_precheck.json"), "utf-8"));
+  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
+
+  assert(summary.decision === "REJECT", "auto precheck reject case must reject");
+  assert(summary.status === "FAIL", "auto precheck reject case must fail");
+  assert(precheckJson.status === "REJECT", "precheck artifact must record reject");
+  assert(precheckJson.issues.length > 0, "precheck reject must explain issues");
+  assert(renderCalled === false, "render must not execute after precheck reject");
+  assert(decisionJson.failed_rules.includes("GEMINI_PRECHECK_REJECT"), "final decision must record precheck rejection");
 }
+
+(async () => {
+  try {
+    await runSuccessCase();
+    await runCanonFailCase();
+    await runFailureCase();
+    await runValidatorNotExecutedCase();
+    await runGeminiFailCase();
+    await runGeminiRuntimeFailureCase();
+    await runGeminiInvalidJsonCase();
+    await runBaselineCase();
+    await runAutoPrecheckRejectCase();
+
+    console.log(`${passed} passed, ${failed} failed`);
+    process.exit(failed > 0 ? 1 : 0);
+  } catch (error) {
+    console.error(error.stack || error.message);
+    process.exit(1);
+  }
 })();

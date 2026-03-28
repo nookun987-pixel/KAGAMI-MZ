@@ -1,0 +1,29 @@
+{
+  "job_id": "stability-run-001",
+  "source": "manual",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "name": "Mikage",
+    "archetype": "ethereal guardian",
+    "visual_anchor": "silver-haired figure in moonlight"
+  },
+  "narrative": {
+    "theme": "solitude at the edge of twilight",
+    "mood": "contemplative",
+    "scene": "standing alone on a cliff overlooking a starlit ocean"
+  },
+  "strategy": {
+    "style": "cinematic illustration",
+    "color_palette": "deep blue, silver, soft violet"
+  },
+  "art_direction": {
+    "mood": "melancholic",
+    "material": "porcelain",
+    "style": "wabi-sabi"
+  },
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Speed"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "job_id": "ui-reject-case",
+  "status": "FAIL",
+  "decision": "REJECT",
+  "decision_reason": "REJECT: Subject clarity failed: intake does not define one clear manufactured object.",
+  "final_decision_reason": "REJECT: Subject clarity failed: intake does not define one clear manufactured object.",
+  "output_files": [],
+  "output_file_path": null,
+  "validator_executed": false,
+  "gemini_validation_executed": false,
+  "gemini_pass_fail": null,
+  "gemini_error": null,
+  "failed_rules": [
+    "GEMINI_PRECHECK_REJECT"
+  ],
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\ui-reject-case",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\gemini_intake.json",
+    "gemini_precheck": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\gemini_precheck.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\job_summary.json"
+  },
+  "continuity": {
+    "entity_id": null,
+    "entity_class": null,
+    "zone": null,
+    "weapon": null,
+    "status": null,
+    "canon_version": "v2"
+  },
+  "attempt_count": 0,
+  "precheck_status": "REJECT",
+  "precheck_pass": false,
+  "precheck_risk_level": "HIGH",
+  "precheck_issues": [
+    "Subject clarity failed: intake does not define one clear manufactured object.",
+    "Material clarity is too weak: primary, surface, or finish is missing or vague.",
+    "Abstract drift risk is elevated: intake does not sufficiently lock object-first behavior."
+  ],
+  "precheck_fixes": [
+    "Set subject.type to a manufactured object class and name the exact object in subject.identity.",
+    "Lock material.primary, material.surface, and material.finish to a specific engineered matte ceramic read.",
+    "Add anti-drift rules and explicit bans on texture-only, atmosphere-first, and abstract-first outcomes."
+  ],
+  "precheck_artifact": "D:\\KAGAMI-MZ\\runs\\ui-reject-case\\gemini_precheck.json"
+}

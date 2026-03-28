@@ -1,0 +1,121 @@
+{
+  "job_id": "white-ceramic-study-003",
+  "target_phase": "material_only",
+  "attempt": 3,
+  "escalation_level": "HIGH",
+  "primary_failure": "T3",
+  "repeated_failures": [
+    "T3",
+    "T5",
+    "T6",
+    "T7",
+    "T11",
+    "T12",
+    "C4",
+    "GEMINI_REQUEST_FAILED"
+  ],
+  "wrong_reads": [],
+  "forbidden_reads_to_eliminate": [],
+  "required_reads_to_strengthen": [
+    "matte B4C technical ceramic",
+    "porcelain-white #FAFAFA",
+    "dry dense engineered read",
+    "eggshell microtexture",
+    "sparse fine hairline cracking",
+    "single clear subject",
+    "full object visibility",
+    "clean silhouette",
+    "commercial readability under 1 second",
+    "controlled geometry with explicit edges",
+    "premium industrial product photo",
+    "plain brutalist background",
+    "no abstract composition",
+    "no decorative noise",
+    "no partial crop"
+  ],
+  "increase_signals": [
+    "matte B4C technical ceramic",
+    "porcelain-white #FAFAFA",
+    "dry dense engineered read",
+    "eggshell microtexture",
+    "sparse fine hairline cracking",
+    "single clear subject",
+    "full object visibility",
+    "clean silhouette",
+    "commercial readability under 1 second",
+    "controlled geometry with explicit edges",
+    "premium industrial product photo",
+    "plain brutalist background",
+    "no abstract composition",
+    "no decorative noise",
+    "no partial crop"
+  ],
+  "decrease_signals": [],
+  "do_not_preserve_from_previous_attempt": [],
+  "corrective_goal": "1-look premium matte B4C ceramic read",
+  "required_shifts": [
+    "increase engineered dense ceramic read",
+    "reduce plaster and carved mineral resemblance",
+    "tighten controlled eggshell microtexture",
+    "keep cracks sparse and hairline only",
+    "single clear subject",
+    "commercial product readability under 1 second",
+    "object silhouette must be explicit",
+    "no texture-only frame"
+  ],
+  "negative_reinforcements": [
+    "plaster",
+    "gypsum",
+    "chalk",
+    "concrete",
+    "carved stone",
+    "mineral banding",
+    "striated grooves",
+    "powdery porous masonry",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "abstract",
+    "texture study",
+    "material swatch",
+    "stone artifact",
+    "mineral slab",
+    "experimental composition",
+    "extreme close-up",
+    "ambiguous object",
+    "fragmented form"
+  ],
+  "lighting_adjustments": [
+    "keep low-key directional lighting",
+    "avoid ambient wash",
+    "use shadow to separate grain from grooves"
+  ],
+  "surface_adjustments": [
+    "dry dense non-porous ceramic",
+    "eggshell microtexture only",
+    "no sedimentary layering",
+    "no sculpted carving read"
+  ],
+  "auto_append_material_lock": null,
+  "auto_append_abstract_lock": null,
+  "retry_escalation": [
+    "harden negative locks tied to repeated failures",
+    "increase required reads tied to repeated failures",
+    "do not preserve drift traits from previous attempt"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ],
+  "source_fail_rules": [
+    "T3",
+    "T5",
+    "T6",
+    "T7",
+    "T11",
+    "T12",
+    "C4"
+  ]
+}

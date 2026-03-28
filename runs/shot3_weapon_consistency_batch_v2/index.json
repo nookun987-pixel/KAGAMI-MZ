@@ -1,0 +1,16 @@
+[
+  {
+    "id": "candidate-03",
+    "seed": 4203403,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_16-59-53_9330.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch_v2\\candidate-03\\output.png",
+    "nuance": "tiny finish variation only: dry diffuse finish becomes slightly softer while silhouette and proportions stay unchanged"
+  },
+  {
+    "id": "candidate-04",
+    "seed": 4203404,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_17-04-43_4473.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_consistency_batch_v2\\candidate-04\\output.png",
+    "nuance": "tiny structural read nuance only: titanium junction reads fractionally clearer without changing outline, silhouette, or proportions"
+  }
+]

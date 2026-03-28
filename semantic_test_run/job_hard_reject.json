@@ -1,0 +1,10 @@
+{
+  "job_id": "semantic_hard_reject_001",
+  "notion_page_id": "test_page_001",
+  "prompt": "anime style, chibi proportions, visible human eyes through mask, glossy plastic toy-like material, bright magenta neon spill",
+  "color_mode": "neon wound",
+  "shot_type": "portrait",
+  "environment": "cyberpunk city",
+  "priority": "normal",
+  "max_attempts": 1
+}

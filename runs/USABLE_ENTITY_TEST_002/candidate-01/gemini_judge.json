@@ -1,0 +1,57 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Missing sparse fine hairline cracking"
+  ],
+  "wrong_reads": [
+    "No sparse fine hairline cracking",
+    "Color is a very subtle off-white/bone, not precisely #FAFAFA"
+  ],
+  "correct_reads": [
+    "matte B4C technical ceramic (primary characteristics)",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "The material presents as a smooth, matte, off-white ceramic with a clean, engineered aesthetic. It feels dry and dense, suggesting a manufactured technical material.",
+  "fix_direction": [
+    "Introduce sparse, fine hairline cracking to meet the specified pass target and enhance the 'technical ceramic' character.",
+    "While the current off-white is acceptable within the 'porcelain-white' family, a slight adjustment towards a purer #FAFAFA could be considered if strict color adherence is required."
+  ],
+  "summary": "The white ceramic material largely succeeds in achieving a matte, dry, dense, and engineered read, effectively avoiding undesirable resemblances to plastic, plaster, or carved stone. The microtexture is well-controlled. However, it fails to incorporate the specified 'sparse fine hairline cracking,' which is a key detail for the intended technical ceramic aesthetic. The color is also a very subtle off-white, rather than a precise #FAFAFA.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "Missing sparse fine hairline cracking"
+    ],
+    "material_read": "The material presents as a smooth, matte, off-white ceramic with a clean, engineered aesthetic. It feels dry and dense, suggesting a manufactured technical material.",
+    "correct_reads": [
+      "matte B4C technical ceramic (primary characteristics)",
+      "dry, dense, engineered read",
+      "ultra-controlled eggshell microtexture",
+      "zero glossy/plastic/toy feel",
+      "zero plaster/mineral/carved stone resemblance",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "No sparse fine hairline cracking",
+      "Color is a very subtle off-white/bone, not precisely #FAFAFA"
+    ],
+    "severity": "MEDIUM",
+    "fix_direction": [
+      "Introduce sparse, fine hairline cracking to meet the specified pass target and enhance the 'technical ceramic' character.",
+      "While the current off-white is acceptable within the 'porcelain-white' family, a slight adjustment towards a purer #FAFAFA could be considered if strict color adherence is required."
+    ],
+    "summary": "The white ceramic material largely succeeds in achieving a matte, dry, dense, and engineered read, effectively avoiding undesirable resemblances to plastic, plaster, or carved stone. The microtexture is well-controlled. However, it fails to incorporate the specified 'sparse fine hairline cracking,' which is a key detail for the intended technical ceramic aesthetic. The color is also a very subtle off-white, rather than a precise #FAFAFA.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

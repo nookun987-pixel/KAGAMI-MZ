@@ -1,0 +1,36 @@
+{
+  "job_id": "strong-preservation-test-001",
+  "phase": "weapon_macro",
+  "shot_type": "WEAPON_MACRO",
+  "user_idea": "Zenith Blade greatsword — strong preservation reproduction test",
+  "generation_mode": "reproduction",
+  "reproduction_anchor_mode": "image_anchored",
+  "anchor_image_path": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-03\\output.png",
+  "preservation_mode": "strong_preservation",
+  "reconstruction_priority": "object_first",
+  "prompt_weight_reduction_when_anchor_present": 0.4,
+  "reference_master": {
+    "candidate_id": "candidate-03",
+    "seed": 4203203,
+    "image_path": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-03\\output.png",
+    "lane": "WEAPON_MACRO",
+    "silhouette_notes": "match locked master silhouette exactly",
+    "camera_notes": "front-on centered full vertical framing"
+  },
+  "reproduction_constraints": {
+    "camera_lock": true,
+    "silhouette_lock": true,
+    "proportion_lock": true,
+    "crimson_restraint_lock": true,
+    "variation_budget": "minimal"
+  },
+  "render": {
+    "seed": 4203203,
+    "width": 1280,
+    "height": 768,
+    "steps": 30,
+    "guidance_scale": 6.9,
+    "disable_refiner": true,
+    "performance": "Quality"
+  }
+}

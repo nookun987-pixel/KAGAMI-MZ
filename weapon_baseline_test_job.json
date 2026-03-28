@@ -1,0 +1,29 @@
+{
+  "job_id": "WEAPON_BASELINE_TEST_001",
+  "user_idea": "Test weapon baseline enforcement with strong preservation",
+  "shot_type": "WEAPON_MACRO",
+  "generation_mode": "reproduction",
+  "reference_master": {
+    "candidate_id": "candidate-03",
+    "seed": 4103103,
+    "image_path": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_final_lock\\candidate-03\\output.png",
+    "lane": "WEAPON_MACRO",
+    "silhouette_notes": "front-on centered full vertical framing",
+    "camera_notes": "front-on centered full vertical framing"
+  },
+  "reproduction_constraints": {
+    "camera_lock": true,
+    "silhouette_lock": true,
+    "proportion_lock": true,
+    "crimson_restraint_lock": true,
+    "variation_budget": "minimal"
+  },
+  "reproduction_anchor_mode": "image_anchored",
+  "anchor_image_path": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_final_lock\\candidate-03\\output.png",
+  "render": {
+    "width": 1280,
+    "height": 768,
+    "performance": "Quality",
+    "seed": 9999991
+  }
+}

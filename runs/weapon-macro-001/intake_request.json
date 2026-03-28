@@ -1,0 +1,15 @@
+{
+  "job_id": "weapon-macro-001",
+  "phase": "material_study",
+  "user_idea": "Single manufactured weapon entity: Mikage Zenith Greatsword. Industrial engineering focus, straight geometric edges, solid dark obsidian metal body. Restrained deep crimson heated core (#E60000) visible through narrow mechanical vents. Premium cinematic product photography, centered composition, full blade silhouette readable. Lighting: Controlled low-key studio lighting, no orange leak, zero abstract drift. Background: Plain dark brutalist concrete",
+  "priority_target": "clean matte B4C technical ceramic read",
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ]
+}

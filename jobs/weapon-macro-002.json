@@ -1,0 +1,10 @@
+{
+  "job_id": "weapon-macro-002",
+  "phase": "material_study",
+  "user_idea": "Extreme macro study of a single manufactured object: the Mikage Zenith Blade. The subject must read immediately as a straight engineered greatsword with a solid dark titanium-metal body and a restrained deep crimson heated core embedded along the blade. The blade must be fully readable as one object with clear edge geometry, straight structure, and industrial construction. No abstract framing, no texture-only composition, no atmosphere-first image. Clean premium product-style macro shot, controlled low-key lighting, sharp edge readability, dark minimal background, no ceramic, no plastic, no toy-like finish, no decorative fantasy clutter, no orange color contamination.",
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality"
+  }
+}

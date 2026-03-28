@@ -1,0 +1,59 @@
+{
+  "pass_fail": "PASS",
+  "fail_rules": [],
+  "wrong_reads": [
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "plaster",
+    "gypsum",
+    "chalk",
+    "concrete",
+    "carved stone",
+    "powdery porous masonry"
+  ],
+  "correct_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "The material reads as a high-quality, matte porcelain-white technical ceramic. It presents a dry, dense, and engineered surface with an ultra-controlled, smooth finish.",
+  "fix_direction": [],
+  "summary": "The white ceramic material successfully meets all pass targets. It exhibits the desired matte porcelain-white technical ceramic aesthetic, with a clean, engineered, and smooth surface that avoids any undesirable plastic, plaster, or stone resemblances. The material readability is immediate and correct.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": null,
+  "raw": {
+    "pass_fail": "PASS",
+    "fail_rules": [],
+    "material_read": "The material reads as a high-quality, matte porcelain-white technical ceramic. It presents a dry, dense, and engineered surface with an ultra-controlled, smooth finish.",
+    "correct_reads": [
+      "porcelain-white #FAFAFA",
+      "matte B4C technical ceramic",
+      "dry, dense, engineered read",
+      "ultra-controlled eggshell microtexture",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "glossy plastic",
+      "PVC sheen",
+      "toy-like finish",
+      "plaster",
+      "gypsum",
+      "chalk",
+      "concrete",
+      "carved stone",
+      "powdery porous masonry"
+    ],
+    "severity": "LOW",
+    "fix_direction": [],
+    "summary": "The white ceramic material successfully meets all pass targets. It exhibits the desired matte porcelain-white technical ceramic aesthetic, with a clean, engineered, and smooth surface that avoids any undesirable plastic, plaster, or stone resemblances. The material readability is immediate and correct.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

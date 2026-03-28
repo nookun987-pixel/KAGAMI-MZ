@@ -1,0 +1,184 @@
+{
+  "job_id": "mask-macro-ui-001",
+  "status": "FAIL",
+  "decision": "REJECT",
+  "output_files": [],
+  "output_file_path": null,
+  "scores": {
+    "identity_score": null,
+    "narrative_score": null,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": null
+  },
+  "drift_flags": [],
+  "timestamp": "2026-03-26T13:15:24.026Z",
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\gemini_intake.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\mask-macro-ui-001\\job_summary.json"
+  },
+  "canon_version": "v2",
+  "validator_executed": false,
+  "gemini_validation_executed": false,
+  "gemini_pass_fail": "FAIL",
+  "gemini_error": "GEMINI_IMAGE_READ_FAILED",
+  "wrong_reads": [],
+  "shot_type": "MATERIAL_MACRO",
+  "dominant_fail_reason": "GEMINI_IMAGE_READ_FAILED",
+  "correction_guidance": [],
+  "subject_diagnostics": {
+    "shot_type": "MATERIAL_MACRO",
+    "subject_present": true,
+    "manufactured_object_read": true,
+    "material_read": true,
+    "abstract_risk": "LOW",
+    "recovery_tags": [],
+    "subject_recovery_mode_active": false
+  },
+  "failed_rules": [
+    "GEMINI_IMAGE_READ_FAILED"
+  ],
+  "validator_fail_rules": [
+    "GEMINI_IMAGE_READ_FAILED"
+  ],
+  "final_decision_reason": "REJECT: no real image on disk",
+  "continuity": {
+    "entity_id": null,
+    "entity_class": null,
+    "zone": null,
+    "weapon": null,
+    "status": null,
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "pre_validation_result": {
+    "stage": "prompt_package",
+    "verdict": "REJECT",
+    "canon_version": "v2",
+    "source_version": "2.0",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "passed_checks": [
+      "porcelain"
+    ],
+    "failed_checks": [
+      "identity",
+      "mask",
+      "optics",
+      "hair",
+      "graphene",
+      "weapon",
+      "tone"
+    ],
+    "forbidden_hits": [],
+    "critical_failures": [],
+    "pass_ratio": 0.125,
+    "negative_lock_count": 36,
+    "job_input_validation": {
+      "stage": "job_input",
+      "verdict": "PASS",
+      "pass_ratio": 1,
+      "passed_checks": [],
+      "failed_checks": [],
+      "forbidden_hits": [],
+      "critical_failures": [],
+      "canon_version": "v2",
+      "source_version": "2.0",
+      "source_files": {
+        "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+        "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+        "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+      }
+    }
+  },
+  "post_validation_result": {
+    "stage": "post_render_image",
+    "verdict": "REJECT",
+    "validator_executed": false,
+    "canon_version": "v2",
+    "failed_checks": [],
+    "critical_failures": [
+      "pre_validation_failed"
+    ],
+    "forbidden_hits": [],
+    "analyzer_signals": {},
+    "missing_signals": [],
+    "blocking_unknown_rules": [],
+    "analyzer_summary": {
+      "use_vision_validator": false,
+      "vlm_backend_ready": false,
+      "vlm_status": "skipped",
+      "semantic_result": "SKIPPED",
+      "analyzer_unavailable": []
+    },
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "reason": "pre_validation_failed"
+  },
+  "gemini_validation_result": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "GEMINI_IMAGE_READ_FAILED"
+    ],
+    "wrong_reads": [],
+    "correct_reads": [],
+    "material_read": "unknown",
+    "fix_direction": [],
+    "summary": "GEMINI_IMAGE_READ_FAILED",
+    "confidence": 0,
+    "gemini_validation_executed": false,
+    "parse_ok": false,
+    "error": "GEMINI_IMAGE_READ_FAILED",
+    "raw": null
+  },
+  "final_decision_source": "post_render_image",
+  "registry_path": null,
+  "spec_version": "mikage_image_control_v24rules",
+  "z_blue_spec_version": "0.1.0-provisional",
+  "render": null,
+  "candidates": [],
+  "best_candidate": null,
+  "best_candidate_summary": null,
+  "candidate_level": "REJECT",
+  "final_prompt": "Extreme macro product photography of a perfectly symmetrical kitsune mask, ultra-detailed material study, porcelain-white matte B4C technical ceramic, dry eggshell microtexture, sparse ultra-fine hairline fractures, one restrained vertical kintsugi seam with deep internal crimson #E60000 glow, crack embedded beneath ceramic surface, hollow void-black eye sockets, sacred emotionless presence, zero specular highlights, zero gloss, zero plastic feel, cold industrial ceramic readability, brutal chiaroscuro lighting, black minimal background, premium commercial realism, razor-sharp surface definition, 8K, 100mm macro lens, f/2.8\n\nSUBJECT PRESENCE LOCK\none single main subject only\nsubject must occupy clear central frame presence\nobject/entity must be fully readable\nno abstract composition\nno atmospheric-only image\nno empty scene as final subject\ncentered or compositionally dominant subject\nsingle clearly visible subject\nmanufactured object clearly readable\nhard contour evidence\nnot abstract\nmaterial surface must visibly belong to a manufactured object\nmust show manufactured ceramic surface\nmust not read as wall, stone, or plaster slab\nmust keep curvature, edge, rim, bevel, seam, or contour evidence\nvisible edge, rim, bevel, curve, seam, or manufactured contour",
+  "negative_prompt": "plastic, glossy, shiny, wet, polished porcelain, lacquer, resin, PVC, toy-like, stone, plaster, gypsum, concrete, paper texture, overgrown crack network, lava, magma, neon red, sci-fi glow strips, cyberpunk, anime, ornate fantasy mask, visible face, visible eyes, asymmetry, soft blur, low detail, cluttered background, text, watermark, wall texture, plaster slab, mineral rock, marble wall, random flat wall surface, texture-only frame",
+  "seed": -1,
+  "requested_steps": null,
+  "actual_steps": null,
+  "actual_steps_source": null,
+  "requested_size": null,
+  "actual_size": null,
+  "actual_file_size": null,
+  "size_truth_source": null,
+  "telemetry_warnings": []
+}

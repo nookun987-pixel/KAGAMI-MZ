@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mikage Runtime</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .status { padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .healthy { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .degraded { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .fail { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .service { margin: 5px 0; padding: 8px; background: #f8f9fa; border-radius: 3px; }
+        .up { color: #28a745; }
+        .down { color: #dc3545; }
+        h1 { color: #333; }
+        .endpoint { background: #e9ecef; padding: 10px; border-radius: 3px; font-family: monospace; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎭 Mikage Runtime</h1>
+        
+        <div class="status healthy">
+            <strong>VM Status:</strong> HEALTHY<br>
+            <strong>API Status:</strong> Online<br>
+            <strong>Last Health Check:</strong> 2026-03-24T11:19:12.760Z
+        </div>
+        
+        <h3>Service Health</h3>
+        
+            <div class="service">
+                <strong>node_version:</strong> 
+                <span class="up">UP</span>
+                <br><small>Node 24.13.1 (requires >=18)</small>
+            </div>
+        
+            <div class="service">
+                <strong>MIKAGE_NOTION_DB:</strong> 
+                <span class="up">UP</span>
+                <br><small>set</small>
+            </div>
+        
+            <div class="service">
+                <strong>NOTION_API_KEY:</strong> 
+                <span class="up">UP</span>
+                <br><small>set</small>
+            </div>
+        
+            <div class="service">
+                <strong>OLLAMA_HOST:</strong> 
+                <span class="up">UP</span>
+                <br><small>http://localhost:11434</small>
+            </div>
+        
+            <div class="service">
+                <strong>OLLAMA_MODEL:</strong> 
+                <span class="up">UP</span>
+                <br><small>qwen2.5-coder:7b</small>
+            </div>
+        
+            <div class="service">
+                <strong>ollama:</strong> 
+                <span class="up">UP</span>
+                <br><small>http://localhost:11434 reachable</small>
+            </div>
+        
+            <div class="service">
+                <strong>fooocus:</strong> 
+                <span class="up">UP</span>
+                <br><small>http://127.0.0.1:7865 reachable</small>
+            </div>
+        
+            <div class="service">
+                <strong>vlm:</strong> 
+                <span class="up">UP</span>
+                <br><small>not configured (using simulated analyzers)</small>
+            </div>
+        
+            <div class="service">
+                <strong>vram:</strong> 
+                <span class="up">UP</span>
+                <br><small>phase=IDLE, ollama=false, fooocus=false</small>
+            </div>
+        
+            <div class="service">
+                <strong>dlq:</strong> 
+                <span class="up">UP</span>
+                <br><small>0 entries pending (0 in-memory, 0 files on disk)</small>
+            </div>
+        
+        
+        <h3>API Endpoints</h3>
+        <div class="endpoint">GET /health - Service health check</div>
+        <div class="endpoint">POST /run - Submit job for execution</div>
+        <div class="endpoint">GET /runs/:job_id - Get job artifacts metadata</div>
+        <div class="endpoint">GET /runs/:job_id/:file - Download artifact file</div>
+        
+        <h3>Active Jobs</h3>
+        <p>Currently tracking 1 job(s)</p>
+    </div>
+</body>
+</html>
+    

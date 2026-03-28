@@ -1,0 +1,16 @@
+{
+  "prompt": "Hero product shot of a single massive engineered greatsword, unmistakably a sword, one dominant object only, full sword visible from tip to base, perfectly straight long blade, rigid linear silhouette, extreme length dominance, blade occupies the main vertical axis of the frame, clear sword hierarchy: tip, edge, spine, blade body, base, no ambiguity of function\n\nheavy industrial brutalist geometry, thick spine clearly visible, sharp defined edge, wedge-like sword tip, no curvature, no ornament, no decorative guard, no segmentation into gadget parts, not a device, not a tool, not a machine part\n\nmatte charcoal-black graphene composite body (#0A0A0A), dark titanium structural joints, subtle micro texture, restrained deep crimson core (#E60000) visible only through extremely thin seams along the blade spine, no glow spread, no red flood\n\nlow-angle cinematic framing, centered composition, black void background, minimal ground reflection, strong negative space, shadow-dominant lighting (70%), soft diffuse highlights, no specular plastic shine\n\nsubtle heat haze and pressure distortion near blade edge, very controlled, no explosion, no flame\n\npremium industrial product photography, ultra clear sword read in under one second, full-length silhouette, no abstraction, no cropped silhouette\n\ncamera distance: moderate full-length framing, sword dominates vertical axis from tip to base\nlight intensity: deep shadow split, very restrained highlight\nslight weight balance nuance: lower blade body feels fractionally heavier and more grounded, silhouette unchanged",
+  "negative_prompt": "circular object, ring, fan, turbine, engine, propeller, wheel\nabstract object, sculpture, ambiguous object, texture study, macro crop\ncurved blade, katana, axe, hammer, gun, knife, machete\nfantasy ornament, rune, decorative guard\nneon glow, RGB lighting, oversaturated red\nlava sword, fire effects, explosion\nglossy plastic, chrome, toy-like surface\nsoft silhouette, unclear edge\nhandle-heavy object, mechanism-heavy object, segmented gadget, sci-fi component, tool head, industrial device\ncropped sword, partial blade, short silhouette, compressed object, stubby proportions\ntext, logo, markings, letters, symbols",
+  "seed": 4203303,
+  "width": 1024,
+  "height": 1536,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "guidance_scale": 7,
+  "steps": 24,
+  "disable_refiner": true,
+  "sampler": "dpmpp_2m_sde_gpu",
+  "scheduler": "karras",
+  "sharpness": 1.8
+}

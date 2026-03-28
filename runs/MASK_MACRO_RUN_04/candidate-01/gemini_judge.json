@@ -1,0 +1,51 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Missing 'sparse fine hairline cracking' pass target."
+  ],
+  "wrong_reads": [],
+  "correct_reads": [
+    "porcelain-white",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "Matte, smooth, white ceramic with an engineered feel.",
+  "fix_direction": [
+    "Introduce sparse fine hairline cracking to the material surface."
+  ],
+  "summary": "The white ceramic material successfully achieves a matte, dense, and engineered aesthetic, aligning with most pass targets and avoiding common fail drifts. However, it critically lacks the specified 'sparse fine hairline cracking', which is a required characteristic for a full pass.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": "GEMINI_VALIDATOR_FAIL",
+  "raw": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "Missing 'sparse fine hairline cracking' pass target."
+    ],
+    "material_read": "Matte, smooth, white ceramic with an engineered feel.",
+    "correct_reads": [
+      "porcelain-white",
+      "matte B4C technical ceramic",
+      "dry, dense, engineered read",
+      "ultra-controlled eggshell microtexture",
+      "zero glossy/plastic/toy feel",
+      "zero plaster/mineral/carved stone resemblance",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [],
+    "severity": "MEDIUM",
+    "fix_direction": [
+      "Introduce sparse fine hairline cracking to the material surface."
+    ],
+    "summary": "The white ceramic material successfully achieves a matte, dense, and engineered aesthetic, aligning with most pass targets and avoiding common fail drifts. However, it critically lacks the specified 'sparse fine hairline cracking', which is a required characteristic for a full pass.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

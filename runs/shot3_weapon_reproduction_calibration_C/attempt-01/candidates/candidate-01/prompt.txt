@@ -1,0 +1,40 @@
+SUBJECT
+Zenith Blade greatsword. Weapon macro study. Sword first, material second. Visible blade read is mandatory.
+
+GEOMETRY
+Straight engineered greatsword. Elongated linear form. Hard edge silhouette. Visible sword geometry. Clear blade planes and spine. No rounded industrial object ambiguity.
+
+MATERIAL
+forged metal. smooth. matte. Forged metal read only. Industrial precision. No ceramic drift.
+
+LIGHTING
+Hard directional industrial macro lighting. Controlled contrast to define edges, spine, blade planes, and heated core without abstract bloom.
+
+COMPOSITION
+Weapon macro framing. Blade-first readability. Macro close-up that preserves elongated sword geometry. Minimal dark industrial background. No sculpture ambiguity. No vessel, pod, or capsule read.
+
+REPRODUCTION ANCHOR
+generation mode: reproduction
+visual anchor candidate: candidate-03
+visual anchor seed: 4203203
+visual anchor image path: D:\KAGAMI-MZ\runs\shot3_weapon_round2\candidate-03\output.png
+silhouette anchor: centered front-on rigid long straight greatsword silhouette
+camera anchor: front-on centered full vertical framing, no tilt, no side profile, no crop
+camera_lock: true
+silhouette_lock: true
+proportion_lock: true
+crimson_restraint_lock: true
+variation_budget: minimal
+reproduction_anchor_mode: image_anchored
+anchor_image_path: D:\KAGAMI-MZ\runs\shot3_weapon_round2\candidate-03\output.png
+anchor_strength: 0.85
+denoise_strength: 0.16
+composition_lock_strength: 0.9
+silhouette_lock_strength: 0.95
+Preserve the same front-on centered framing, same outline logic, same guard/body/tip proportion logic, and allow only micro-surface noise variation.
+
+COLOR
+subtractive mineral color logic. low saturation, no neon. matte-first material response. shadow-dominant composition (70%). bokashi gradient, non-linear. no flat color, always material texture variation.
+
+QUALITY
+Ultra-detailed industrial weapon study. Crisp engineered edges. No abstract object read., one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject

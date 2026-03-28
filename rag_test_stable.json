@@ -1,0 +1,12 @@
+{
+  "job_id": "RAG_TEST_STABLE_001",
+  "user_idea": "Test RAG with stable white ceramic study",
+  "shot_type": "WHITE_CERAMIC_MACRO",
+  "generation_mode": "creative",
+  "render": {
+    "width": 1280,
+    "height": 768,
+    "performance": "Quality",
+    "seed": 9999993
+  }
+}

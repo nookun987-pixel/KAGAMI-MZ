@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mikage Command Center</title>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #151922;
+      --panel-soft: #1b2130;
+      --line: #2a3246;
+      --text: #edf2ff;
+      --muted: #97a3bf;
+      --accent: #ef4444;
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --bad: #f87171;
+      --info: #60a5fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.14), transparent 28%),
+        radial-gradient(circle at top left, rgba(239,68,68,.14), transparent 24%),
+        var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 1480px; margin: 0 auto; padding: 24px; }
+    .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 20px; }
+    .title h1 { margin: 0; font-size: 30px; }
+    .title p { margin: 6px 0 0; color: var(--muted); }
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .layout { display: grid; grid-template-columns: 360px 1fr 360px; gap: 18px; }
+    .col { display: grid; gap: 18px; align-content: start; }
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)), var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,.18);
+    }
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel-title { font-size: 16px; font-weight: 700; }
+    .panel-body { padding: 16px 18px 18px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stack { display: grid; gap: 10px; }
+    .field label, .mini-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    input, textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0f1420;
+      color: var(--text);
+      padding: 12px 14px;
+      font: inherit;
+    }
+    textarea { min-height: 160px; resize: vertical; }
+    .btn-row, .btn-grid { display: grid; gap: 10px; }
+    .btn-grid { grid-template-columns: 1fr 1fr; }
+    button {
+      border: 1px solid var(--line);
+      background: #111827;
+      color: var(--text);
+      border-radius: 12px;
+      padding: 11px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button.primary { background: linear-gradient(180deg, rgba(239,68,68,.22), rgba(239,68,68,.12)), #1b0f14; border-color: rgba(239,68,68,.45); }
+    button.good { background: linear-gradient(180deg, rgba(52,211,153,.16), rgba(52,211,153,.08)), #0f1d19; border-color: rgba(52,211,153,.3); }
+    button.warn { background: linear-gradient(180deg, rgba(251,191,36,.16), rgba(251,191,36,.08)), #241e10; border-color: rgba(251,191,36,.3); }
+    button:disabled { opacity: .55; cursor: not-allowed; }
+    .status-banner {
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+      display: grid;
+      gap: 6px;
+    }
+    .status-line { font-size: 14px; }
+    .status-line strong { color: var(--text); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+    .badge.ok { color: var(--ok); border-color: rgba(52,211,153,.35); background: rgba(52,211,153,.12); }
+    .badge.warn { color: var(--warn); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.12); }
+    .badge.bad { color: var(--bad); border-color: rgba(248,113,113,.35); background: rgba(248,113,113,.12); }
+    .badge.info { color: var(--info); border-color: rgba(96,165,250,.35); background: rgba(96,165,250,.12); }
+    .summary-card {
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+    }
+    .summary-row { display: grid; gap: 4px; }
+    .summary-row .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .summary-row .value { font-size: 14px; line-height: 1.5; word-break: break-word; }
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      display: grid;
+      gap: 6px;
+    }
+    .runs { display: grid; gap: 10px; max-height: 420px; overflow: auto; }
+    .run-item {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius: 14px;
+      padding: 12px;
+      cursor: pointer;
+      display: grid;
+      gap: 6px;
+    }
+    .run-item.active { border-color: rgba(96,165,250,.45); box-shadow: inset 0 0 0 1px rgba(96,165,250,.25); }
+    .run-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+    .run-id { font-weight: 700; font-size: 14px; }
+    .mini { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .output-box {
+      min-height: 340px;
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      background: #0d121b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+    }
+    .output-box img {
+      width: 100%;
+      max-height: 560px;
+      object-fit: contain;
+      border-radius: 12px;
+      display: block;
+    }
+    .json-box, .log-box {
+      background: #0d121b;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .log-box { max-height: 240px; overflow: auto; }
+    .focus-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .hidden { display: none; }
+    @media (max-width: 1280px) {
+      .layout { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .grid-2, .btn-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="title">
+        <h1>MIKAGE COMMAND CENTER</h1>
+        <p>Nhập ý tưởng thô, bấm chạy, theo dõi từng bước, đọc lý do reject, và xem output ngay trên giao diện.</p>
+      </div>
+      <div class="chips">
+        <div class="chip" id="chipJob">Job: -</div>
+        <div class="chip" id="chipRunState">Run: -</div>
+        <div class="chip" id="chipStep">Step: -</div>
+        <div class="chip" id="chipUpdated">Updated: -</div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="col">
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Create And Run</div>
+          </div>
+          <div class="panel-body stack">
+            <div class="field">
+              <label for="jobIdInput">Job ID</label>
+              <input id="jobIdInput" placeholder="auto-generated if left blank">
+            </div>
+            <div class="field">
+              <label for="ideaInput">Raw Idea</label>
+              <textarea id="ideaInput" placeholder="Ví dụ: single manufactured ceramic respirator shell, matte B4C technical ceramic, macro product shot, contour readable, no abstract drift"></textarea>
+            </div>
+            <div class="btn-grid">
+              <button class="primary" id="createJobBtn">Create Job</button>
+              <button class="good" id="runJobBtn">Run Job</button>
+            </div>
+            <div class="btn-grid">
+              <button id="refreshBtn">Refresh Status</button>
+              <button id="viewLatestBtn">View Latest Run</button>
+            </div>
+            <div class="focus-actions">
+              <button id="viewDecisionBtn">View Final Decision</button>
+              <button id="viewPrecheckBtn">View Precheck</button>
+              <button id="viewOutputBtn">View Output</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Run UI Tests</div>
+          </div>
+          <div class="panel-body stack">
+            <div class="mini">Chạy trực tiếp 3 case PASS / REVISE / REJECT từ chính Command Center để xác minh UI wiring.</div>
+            <div class="btn-grid">
+              <button class="good" data-case="PASS">Run PASS Test</button>
+              <button class="warn" data-case="REVISE">Run REVISE Test</button>
+            </div>
+            <button class="primary" data-case="REJECT">Run REJECT Test</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Recent Runs</div>
+          </div>
+          <div class="panel-body">
+            <div id="runsList" class="runs"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Run Status</div>
+          </div>
+          <div class="panel-body">
+            <div id="runStatusBanner" class="status-banner">
+              <div class="status-line"><strong>State:</strong> <span id="runStateText">-</span></div>
+              <div class="status-line"><strong>Current step:</strong> <span id="runStepText">-</span></div>
+              <div class="status-line"><strong>Latest server message:</strong> <span id="serverMessageText">-</span></div>
+              <div class="status-line"><strong>Latest error:</strong> <span id="serverErrorText">-</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="intakePanel">
+          <div class="panel-head">
+            <div class="panel-title">A. Intake Summary</div>
+            <span id="intakeBadge" class="badge info">Waiting</span>
+          </div>
+          <div class="panel-body stack" id="intakeSummary"></div>
+        </section>
+
+        <section class="panel" id="precheckPanel">
+          <div class="panel-head">
+            <div class="panel-title">B. Gemini Precheck</div>
+            <span id="precheckBadge" class="badge info">Waiting</span>
+          </div>
+          <div class="panel-body stack" id="precheckSummary"></div>
+        </section>
+
+        <section class="panel" id="specPanel">
+          <div class="panel-head">
+            <div class="panel-title">C. Claude / Spec Stage</div>
+          </div>
+          <div class="panel-body stack" id="specSummary"></div>
+        </section>
+
+        <section class="panel" id="decisionPanel">
+          <div class="panel-head">
+            <div class="panel-title">E. Final Decision</div>
+          </div>
+          <div class="panel-body stack" id="finalDecisionSummary"></div>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="panel" id="outputPanel">
+          <div class="panel-head">
+            <div class="panel-title">F. Output Area</div>
+          </div>
+          <div class="panel-body stack">
+            <div id="outputSummary" class="summary-card"></div>
+            <div class="output-box">
+              <img id="outputImage" alt="Latest output" class="hidden">
+              <div id="outputEmpty" class="mini">Chưa có output image.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Quick Debug</div>
+          </div>
+          <div class="panel-body stack">
+            <div class="summary-card">
+              <div class="summary-row">
+                <div class="label">Status Write Source</div>
+                <div class="value" id="debugWriteSource">-</div>
+              </div>
+              <div class="summary-row">
+                <div class="label">UI Read Source</div>
+                <div class="value" id="debugReadSource">-</div>
+              </div>
+              <div class="summary-row">
+                <div class="label">Current Step</div>
+                <div class="value" id="debugStep">-</div>
+              </div>
+              <div class="summary-row">
+                <div class="label">Latest Server Message</div>
+                <div class="value" id="debugServerMessage">-</div>
+              </div>
+              <div class="summary-row">
+                <div class="label">Latest Error Message</div>
+                <div class="value" id="debugErrorMessage">-</div>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-row">
+                <div class="label">State Transition History</div>
+                <div class="value" id="debugStateHistory">-</div>
+              </div>
+              <div class="summary-row">
+                <div class="label">Step Transition History</div>
+                <div class="value" id="debugStepHistory">-</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Key JSON Preview</div>
+          </div>
+          <div class="panel-body stack">
+            <div class="focus-actions">
+              <button data-json-view="intake">Intake</button>
+              <button data-json-view="precheck">Precheck</button>
+              <button data-json-view="decision">Final Decision</button>
+            </div>
+            <div id="jsonPreview" class="json-box">No preview selected.</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Server Log</div>
+          </div>
+          <div class="panel-body">
+            <div id="logBox" class="log-box">Loading...</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    let currentJobId = null;
+    let currentData = null;
+    let busy = false;
+
+    function $(id) { return document.getElementById(id); }
+
+    function escapeHtml(text) {
+      return String(text == null ? "" : text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function nl(items) {
+      const list = Array.isArray(items) ? items.filter(Boolean) : [];
+      if (!list.length) return "<div class=\"mini\">-</div>";
+      return "<ul class=\"list\">" + list.map(item => "<li>" + escapeHtml(item) + "</li>").join("") + "</ul>";
+    }
+
+    function badgeClass(value) {
+      const v = String(value || "").toUpperCase();
+      if (["PASS", "COMPLETED", "ALLOW", "READY"].includes(v)) return "ok";
+      if (["REVISE", "RUNNING", "QUEUED"].includes(v)) return "warn";
+      if (["REJECT", "FAILED", "FAIL"].includes(v)) return "bad";
+      return "info";
+    }
+
+    async function api(url, options = {}) {
+      const response = await fetch(url, {
+        cache: "no-store",
+        headers: { "Content-Type": "application/json" },
+        ...options,
+      });
+      const text = await response.text();
+      let data = null;
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch (_) {
+        data = { error: "Invalid JSON response", raw: text };
+      }
+      if (!response.ok && !data.error) {
+        data.error = "Request failed";
+      }
+      return data;
+    }
+
+    function setBusy(next) {
+      busy = next;
+      document.querySelectorAll("button").forEach(btn => {
+        btn.disabled = next;
+      });
+    }
+
+    function scrollToPanel(id) {
+      const el = $(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function renderSummaryCard(targetId, rows) {
+      const target = $(targetId);
+      if (!target) return;
+      if (!rows || !rows.length) {
+        target.innerHTML = "<div class=\"mini\">No data yet.</div>";
+        return;
+      }
+      target.innerHTML = rows.map(row => {
+        return "<div class=\"summary-card\">" +
+          "<div class=\"summary-row\"><div class=\"label\">" + escapeHtml(row.label) + "</div><div class=\"value\">" + row.value + "</div></div>" +
+        "</div>";
+      }).join("");
+    }
+
+    function renderIntake(intake) {
+      $("intakeBadge").className = "badge " + (intake ? "ok" : "info");
+      $("intakeBadge").textContent = intake ? "Loaded" : "Waiting";
+      renderSummaryCard("intakeSummary", intake ? [
+        { label: "Creative Intent", value: escapeHtml(intake.creative_intent || "-") },
+        { label: "Subject", value: nl(intake.subject || []) },
+        { label: "Material", value: nl(intake.material || []) },
+        { label: "Composition", value: nl(intake.composition || []) },
+        { label: "Direction Summary", value: escapeHtml(intake.direction_summary || "-") },
+      ] : []);
+    }
+
+    function renderPrecheck(precheck) {
+      $("precheckBadge").className = "badge " + badgeClass(precheck && precheck.status);
+      $("precheckBadge").textContent = precheck ? precheck.status : "Waiting";
+      if (!precheck) {
+        renderSummaryCard("precheckSummary", []);
+        return;
+      }
+
+      const rows = [
+        { label: "Status", value: "<span class=\"badge " + badgeClass(precheck.status) + "\">" + escapeHtml(precheck.status) + "</span>" },
+        { label: "Risk Level", value: escapeHtml(precheck.risk_level || "-") },
+        { label: "Issues", value: nl(precheck.issues || []) },
+        { label: "Fixes", value: nl(precheck.fixes || []) },
+      ];
+
+      if (precheck.status === "REJECT") {
+        rows.push({
+          label: "Stop Reason",
+          value: "Job stopped before render by design. This is a deliberate pipeline block, not a UI failure.",
+        });
+      }
+
+      if (precheck.status === "REVISE") {
+        rows.push({
+          label: "Revised Intake Applied",
+          value: precheck.revised_applied ? "Yes. Revised intake was merged before Claude/spec stage." : "No confirmation yet.",
+        });
+        if (precheck.revised_summary) {
+          rows.push({
+            label: "Adjusted Brief Summary",
+            value: nl([
+              precheck.revised_summary.subject,
+              precheck.revised_summary.material,
+              precheck.revised_summary.composition,
+              precheck.revised_summary.direction_summary,
+            ]),
+          });
+        }
+      }
+
+      if (precheck.failed_rule) {
+        rows.push({ label: "Failed Rule", value: escapeHtml(precheck.failed_rule) });
+      }
+
+      renderSummaryCard("precheckSummary", rows);
+    }
+
+    function renderSpec(spec) {
+      renderSummaryCard("specSummary", spec ? [
+        { label: "Phase Target", value: escapeHtml(spec.phase_target || "-") },
+        { label: "Shot Type", value: escapeHtml(spec.shot_type || "-") },
+        { label: "Prompt Package Summary", value: escapeHtml(spec.prompt_summary || "-") },
+        { label: "Negative Prompt Summary", value: escapeHtml(spec.negative_summary || "-") },
+        { label: "Intake Summary Passed Down", value: escapeHtml(spec.intake_summary || "-") },
+      ] : []);
+    }
+
+    function renderDecision(decision) {
+      renderSummaryCard("finalDecisionSummary", decision ? [
+        { label: "Decision", value: "<span class=\"badge " + badgeClass(decision.decision) + "\">" + escapeHtml(decision.decision || "-") + "</span>" },
+        { label: "Decision Reason", value: escapeHtml(decision.decision_reason || "-") },
+        { label: "Failed Rules", value: nl(decision.failed_rules || []) },
+        { label: "Dominant Fail Reason", value: escapeHtml(decision.dominant_fail_reason || "-") },
+      ] : []);
+    }
+
+    function renderOutput(output, runView) {
+      const summary = $("outputSummary");
+      const image = $("outputImage");
+      const empty = $("outputEmpty");
+
+      summary.innerHTML = output ? [
+        "<div class=\"summary-row\"><div class=\"label\">Run Folder</div><div class=\"value\">" + escapeHtml(output.run_folder_path || "-") + "</div></div>",
+        "<div class=\"summary-row\"><div class=\"label\">Seed</div><div class=\"value\">" + escapeHtml(output.seed || "-") + "</div></div>",
+        "<div class=\"summary-row\"><div class=\"label\">Preset</div><div class=\"value\">" + escapeHtml(output.preset || "-") + "</div></div>",
+      ].join("") : "<div class=\"mini\">No output summary yet.</div>";
+
+      if (output && output.has_image && output.image_url) {
+        image.src = output.image_url;
+        image.classList.remove("hidden");
+        empty.classList.add("hidden");
+        return;
+      }
+
+      image.classList.add("hidden");
+      image.removeAttribute("src");
+      empty.classList.remove("hidden");
+
+      const precheck = runView && runView.precheck;
+      if (precheck && precheck.status === "REJECT") {
+        empty.textContent = "No image by design. Job was stopped before render because Gemini Precheck rejected the brief.";
+      } else if (runView && runView.final_decision && runView.final_decision.decision_reason) {
+        empty.textContent = runView.final_decision.decision_reason;
+      } else {
+        empty.textContent = "No output image yet.";
+      }
+    }
+
+    function renderRuns(runs, selectedId) {
+      const target = $("runsList");
+      if (!runs || !runs.length) {
+        target.innerHTML = "<div class=\"mini\">No runs found.</div>";
+        return;
+      }
+      target.innerHTML = runs.map(run => {
+        const active = run.job_id === selectedId ? " active" : "";
+        const badge = badgeClass(run.decision || run.status);
+        return "<div class=\"run-item" + active + "\" data-job-id=\"" + escapeHtml(run.job_id) + "\">" +
+          "<div class=\"run-top\"><div class=\"run-id\">" + escapeHtml(run.job_id) + "</div><span class=\"badge " + badge + "\">" + escapeHtml(run.decision || run.status || "-") + "</span></div>" +
+          "<div class=\"mini\">Gemini: " + escapeHtml(run.gemini_pass_fail || "-") + " | Shot: " + escapeHtml(run.shot_type || "-") + "</div>" +
+          "<div class=\"mini\">" + escapeHtml((run.decision_reason || "-").slice(0, 110)) + "</div>" +
+          "<div class=\"mini\">" + escapeHtml(run.updated_at || "-") + "</div>" +
+        "</div>";
+      }).join("");
+    }
+
+    function renderJsonPreview(kind) {
+      const target = $("jsonPreview");
+      if (!currentData || !currentData.run_view) {
+        target.textContent = "No data loaded.";
+        return;
+      }
+      const map = {
+        intake: currentData.run_view.intake_summary,
+        precheck: currentData.run_view.precheck,
+        decision: currentData.run_view.final_decision,
+      };
+      target.textContent = JSON.stringify(map[kind] || {}, null, 2);
+    }
+
+    function render(data) {
+      currentData = data;
+      currentJobId = data.selected_job_id || currentJobId;
+      const runView = data.run_view || {};
+      const runStatus = runView.run_status || {};
+
+      $("chipJob").textContent = "Job: " + (currentJobId || "-");
+      $("chipRunState").textContent = "Run: " + (runStatus.state || "-");
+      $("chipStep").textContent = "Step: " + (runStatus.current_step || "-");
+      $("chipUpdated").textContent = "Updated: " + (data.latest_run && data.latest_run.updated_at || "-");
+
+      $("runStateText").textContent = runStatus.state || "-";
+      $("runStepText").textContent = runStatus.current_step || "-";
+      $("serverMessageText").textContent = runStatus.latest_server_message || "-";
+      $("serverErrorText").textContent = runStatus.latest_error_message || "-";
+      $("debugStep").textContent = runStatus.current_step || "-";
+      $("debugServerMessage").textContent = runStatus.latest_server_message || "-";
+      $("debugErrorMessage").textContent = runStatus.latest_error_message || "-";
+      $("debugWriteSource").textContent = runStatus.status_write_source || "-";
+      $("debugReadSource").textContent = runStatus.status_read_source || "-";
+      $("debugStateHistory").innerHTML = nl((runStatus.state_history || []).slice(-6).reverse().map(item => {
+        return [item.at, item.value, item.source].filter(Boolean).join(" | ");
+      }));
+      $("debugStepHistory").innerHTML = nl((runStatus.step_history || []).slice(-8).reverse().map(item => {
+        return [item.at, item.value, item.source].filter(Boolean).join(" | ");
+      }));
+      $("logBox").textContent = data.last_log || "No log yet.";
+
+      renderIntake(runView.intake_summary);
+      renderPrecheck(runView.precheck);
+      renderSpec(runView.spec_summary);
+      renderDecision(runView.final_decision);
+      renderOutput(runView.output, runView);
+      renderRuns(data.recent_runs || [], currentJobId);
+    }
+
+    async function refreshStatus(jobId) {
+      const baseQuery = jobId || currentJobId ? "job_id=" + encodeURIComponent(jobId || currentJobId) : "";
+      const query = "?" + [baseQuery, "t=" + Date.now()].filter(Boolean).join("&");
+      const data = await api("/api/status" + query);
+      if (data.error && !data.selected_job_id) {
+        $("logBox").textContent = "Refresh failed: " + data.error;
+        return;
+      }
+      render(data);
+    }
+
+    async function performAction(action) {
+      if (busy) return;
+      setBusy(true);
+      try {
+        let result = null;
+        if (action === "create-job") {
+          const payload = {
+            job_id: $("jobIdInput").value.trim(),
+            user_idea: $("ideaInput").value.trim(),
+            phase: "material_study",
+          };
+          result = await api("/api/create-job", {
+            method: "POST",
+            body: JSON.stringify(payload),
+          });
+          if (result.job_id) {
+            currentJobId = result.job_id;
+          }
+        } else if (action === "run-job") {
+          result = await api("/api/run-job", {
+            method: "POST",
+            body: JSON.stringify({ job_id: currentJobId || $("jobIdInput").value.trim() }),
+          });
+        } else if (action.startsWith("run-test:")) {
+          const caseName = action.split(":")[1];
+          result = await api("/api/run-test", {
+            method: "POST",
+            body: JSON.stringify({ case_name: caseName }),
+          });
+          if (result.job_id) {
+            currentJobId = result.job_id;
+          }
+        }
+
+        if (result && result.error) {
+          $("logBox").textContent = "Action failed: " + result.error + "\n\n" + JSON.stringify(result, null, 2);
+        } else if (result) {
+          $("logBox").textContent = JSON.stringify(result, null, 2);
+        }
+
+        await refreshStatus();
+      } finally {
+        setBusy(false);
+      }
+    }
+
+    document.getElementById("createJobBtn").addEventListener("click", () => performAction("create-job"));
+    document.getElementById("runJobBtn").addEventListener("click", () => performAction("run-job"));
+    document.getElementById("refreshBtn").addEventListener("click", () => refreshStatus());
+    document.getElementById("viewLatestBtn").addEventListener("click", async () => {
+      await refreshStatus();
+      scrollToPanel("intakePanel");
+    });
+    document.getElementById("viewDecisionBtn").addEventListener("click", () => scrollToPanel("decisionPanel"));
+    document.getElementById("viewPrecheckBtn").addEventListener("click", () => scrollToPanel("precheckPanel"));
+    document.getElementById("viewOutputBtn").addEventListener("click", () => scrollToPanel("outputPanel"));
+
+    document.querySelectorAll("[data-case]").forEach(btn => {
+      btn.addEventListener("click", () => performAction("run-test:" + btn.getAttribute("data-case")));
+    });
+
+    document.querySelectorAll("[data-json-view]").forEach(btn => {
+      btn.addEventListener("click", () => renderJsonPreview(btn.getAttribute("data-json-view")));
+    });
+
+    document.getElementById("runsList").addEventListener("click", async (event) => {
+      const item = event.target.closest(".run-item");
+      if (!item) return;
+      currentJobId = item.getAttribute("data-job-id");
+      await refreshStatus(currentJobId);
+    });
+
+    refreshStatus();
+    setInterval(() => refreshStatus(), 5000);
+  </script>
+</body>
+</html>

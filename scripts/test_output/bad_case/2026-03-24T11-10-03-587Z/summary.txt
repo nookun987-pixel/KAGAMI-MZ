@@ -1,0 +1,16 @@
+=== MIKAGE VERIFICATION RESULT ===
+Test Case: bad_case_anime_neon
+Timestamp: 2026-03-24T11:10:03.929Z
+Decision: FAIL
+Job Decision: N/A
+Exit Code: 0
+Signal: N/A
+Output Files: 0
+
+=== REASONS ===
+- No job result found - orchestrator may have failed silently
+
+=== OUTPUT FILES ===
+
+=== VERIFICATION STATUS ===
+❌ FAILED

@@ -1,0 +1,32 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL."
+  ],
+  "material_read": "Abstract digital noise, cosmic dust, nebula, static.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "commercial material readability is immediate"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with distinct contours and form.",
+    "Change the color palette to porcelain-white (#FAFAFA) and remove all vibrant purple, blue, and red hues.",
+    "Render a matte ceramic material with a dry, dense, engineered appearance.",
+    "Ensure the material exhibits an ultra-controlled eggshell microtexture and sparse fine hairline cracking.",
+    "Remove all abstract, noisy, and texture-only elements, focusing on object readability."
+  ],
+  "summary": "The image is an abstract, noisy, and colorful texture field that completely fails to represent a white ceramic material study or any manufactured object. It reads as digital static or a nebula, not a material product. It violates multiple primary pass targets and falls into critical fail drifts.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

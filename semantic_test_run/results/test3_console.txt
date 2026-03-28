@@ -1,0 +1,18 @@
+[dotenv@17.3.1] injecting env (10) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+D:\KAGAMI-MZ\orchestrator.js:97
+    throw new Error("USE_VISION_VALIDATOR=true requires VLM_ENDPOINT to be configured");
+    ^
+
+Error: USE_VISION_VALIDATOR=true requires VLM_ENDPOINT to be configured
+    at wireVLMBackend (D:\KAGAMI-MZ\orchestrator.js:97:11)
+    at Object.<anonymous> (D:\KAGAMI-MZ\orchestrator.js:1249:5)
+    at Module._compile (node:internal/modules/cjs/loader:1804:14)
+    at Object..js (node:internal/modules/cjs/loader:1936:10)
+    at Module.load (node:internal/modules/cjs/loader:1525:32)
+    at Module._load (node:internal/modules/cjs/loader:1327:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.13.1

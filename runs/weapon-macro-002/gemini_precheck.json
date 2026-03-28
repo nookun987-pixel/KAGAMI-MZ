@@ -1,0 +1,111 @@
+{
+  "pass": false,
+  "status": "REVISE",
+  "issues": [
+    "Abstract drift risk is elevated: intake does not sufficiently lock object-first behavior."
+  ],
+  "fixes": [
+    "Add anti-drift rules and explicit bans on texture-only, atmosphere-first, and abstract-first outcomes."
+  ],
+  "risk_level": "MEDIUM",
+  "revised_intake": {
+    "creative_intent": "Conduct an extreme macro material study of a single manufactured object, the Mikage Zenith Blade, specifically focusing on achieving a clean matte B4C technical ceramic read for its primary body, while preserving the blade's engineered form and sharp edge geometry.",
+    "subject": {
+      "type": "manufactured object",
+      "identity": "Mikage Zenith Blade",
+      "must_have": [
+        "clear edge geometry",
+        "straight structure",
+        "industrial construction",
+        "readable contour evidence of a greatsword blade",
+        "single, fully readable manufactured object",
+        "exactly one manufactured object as the clear subject",
+        "visible contour evidence such as edge, rim, bevel, seam, or curvature",
+        "material visibly attached to the object, not floating as texture",
+        "visible edge, rim, bevel, seam, or contour evidence",
+        "material visibly attached to the object"
+      ],
+      "must_not_have": [
+        "abstract framing",
+        "texture-only composition",
+        "atmosphere-first image",
+        "subject-loss outcomes",
+        "empty scene",
+        "decorative fantasy clutter",
+        "texture-only crop",
+        "atmosphere-first framing",
+        "abstract-first composition",
+        "subject dissolved into background",
+        "texture-only frame"
+      ]
+    },
+    "material": {
+      "primary": "B4C technical ceramic",
+      "surface": "matte",
+      "finish": "dry, dense, engineered",
+      "forbidden_reads": [
+        "plaster",
+        "gypsum",
+        "chalk",
+        "concrete",
+        "carved stone",
+        "mineral drift",
+        "glossy plastic",
+        "PVC sheen",
+        "toy-like finish",
+        "mineral banding",
+        "sedimentary drift",
+        "orange color contamination",
+        "rough rock"
+      ]
+    },
+    "composition": {
+      "shot_type": "Extreme macro study",
+      "framing": "Close-up on a single manufactured object, fully readable as one object",
+      "camera": "Detailed, sharp focus on material and form",
+      "background": "Dark minimal background"
+    },
+    "lighting": {
+      "style": "Controlled low-key lighting",
+      "constraints": [
+        "Sharp edge readability",
+        "Emphasize material texture and finish without glare",
+        "no ambient color wash",
+        "no neon spill",
+        "no glossy hotspots"
+      ]
+    },
+    "core_risks": [
+      "Drifting into abstract forms or texture-only images",
+      "Losing the manufactured object's identity or contour",
+      "Material reads resembling forbidden finishes (e.g., glossy plastic, plaster)",
+      "Contamination by unwanted colors or atmospheric effects",
+      "abstract drift",
+      "texture-only drift",
+      "material misread as plaster, stone, or glossy plastic"
+    ],
+    "anti_drift_rules": [
+      "Lock the object read to a single, identifiable manufactured object (Mikage Zenith Blade)",
+      "Prevent abstract drift by maintaining clear object contours and structure",
+      "Suppress any texture-only, atmosphere-first, or subject-loss outcomes",
+      "Ensure the material read is explicitly B4C technical ceramic and not any forbidden material",
+      "always preserve one clearly readable manufactured object",
+      "do not let texture or atmosphere become the subject",
+      "keep material identity locked and explicit",
+      "do not allow abstract, texture-only, or atmosphere-first subject drift",
+      "keep material identity explicit and stable"
+    ],
+    "success_criteria": [
+      "Immediate readability of the Mikage Zenith Blade as a straight, engineered greatsword",
+      "Clean, unambiguous matte B4C technical ceramic material read for the primary body",
+      "Dry, dense, engineered finish is clearly evident",
+      "Absence of all forbidden material reads and finishes",
+      "Sharp edge readability and industrial construction are preserved",
+      "manufactured object read is immediate",
+      "matte ceramic read is immediate",
+      "image does not collapse into abstract texture or atmosphere",
+      "image does not read as plaster, stone, or glossy plastic"
+    ],
+    "direction_summary": "Focus on an extreme macro study of the Mikage Zenith Blade, prioritizing a clean, matte B4C technical ceramic material read for its main body. Maintain the object's clear, engineered form and sharp edges against a dark, minimal background with controlled low-key lighting. Strictly avoid any abstract drift, texture-only outcomes, or forbidden material reads."
+  }
+}

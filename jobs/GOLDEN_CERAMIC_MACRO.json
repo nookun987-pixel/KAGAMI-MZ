@@ -1,0 +1,16 @@
+{
+  "job_id": "GOLDEN_CERAMIC_MACRO",
+  "phase": "material_study",
+  "user_idea": "golden white ceramic material macro for Mikage, manufactured contour visible, no plaster drift",
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality",
+    "seed": 224411
+  },
+  "shot_type": "MATERIAL_MACRO",
+  "entity_id": "golden_ceramic_macro",
+  "entity_class": "material_study",
+  "zone": "white_monolith",
+  "status": "golden_reference"
+}

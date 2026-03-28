@@ -1,0 +1,652 @@
+{
+  "job_id": "white-ceramic-study-002",
+  "status": "DONE",
+  "decision": "REJECT",
+  "output_files": [
+    "output.png"
+  ],
+  "output_file_path": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\output.png",
+  "scores": {
+    "identity_score": 0.83,
+    "narrative_score": 0.8,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": 0.75
+  },
+  "drift_flags": [],
+  "timestamp": "2026-03-26T07:41:47.937Z",
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_intake.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\job_summary.json"
+  },
+  "canon_version": "v2",
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "gemini_pass_fail": "FAIL",
+  "gemini_error": "GEMINI_VALIDATOR_FAIL",
+  "wrong_reads": [
+    "plaster",
+    "gypsum",
+    "fine concrete",
+    "textured paper",
+    "powdery porous masonry"
+  ],
+  "failed_rules": [
+    "T7",
+    "T8",
+    "T11",
+    "T12",
+    "C1",
+    "C4",
+    "zero plaster/mineral/carved stone resemblance",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "commercial material readability is immediate"
+  ],
+  "validator_fail_rules": [
+    "T7",
+    "T8",
+    "T11",
+    "T12",
+    "C1",
+    "C4",
+    "zero plaster/mineral/carved stone resemblance",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "commercial material readability is immediate"
+  ],
+  "final_decision_reason": "REJECT: canon hard fail: T7, T8, T11, T12, C1, C4",
+  "continuity": {
+    "entity_id": "mikage_material_white_ceramic",
+    "entity_class": "material_study",
+    "zone": "white_monolith",
+    "weapon": null,
+    "status": "material_test",
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "pre_validation_result": {
+    "stage": "prompt_package",
+    "verdict": "PASS",
+    "canon_version": "v2",
+    "source_version": "2.0",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "passed_checks": [
+      "identity",
+      "mask",
+      "optics",
+      "hair",
+      "porcelain",
+      "graphene",
+      "weapon",
+      "tone"
+    ],
+    "failed_checks": [],
+    "forbidden_hits": [],
+    "critical_failures": [],
+    "pass_ratio": 1,
+    "negative_lock_count": 23,
+    "job_input_validation": {
+      "stage": "job_input",
+      "verdict": "PASS",
+      "pass_ratio": 1,
+      "passed_checks": [],
+      "failed_checks": [],
+      "forbidden_hits": [],
+      "critical_failures": [],
+      "canon_version": "v2",
+      "source_version": "2.0",
+      "source_files": {
+        "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+        "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+        "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+      }
+    }
+  },
+  "post_validation_result": {
+    "stage": "post_render_image",
+    "verdict": "REJECT",
+    "validator_executed": true,
+    "canon_version": "v2",
+    "failed_checks": [
+      "T7",
+      "T8",
+      "T11",
+      "T12",
+      "C1",
+      "C4"
+    ],
+    "critical_failures": [
+      "T7",
+      "T8",
+      "T11",
+      "T12",
+      "C1",
+      "C4"
+    ],
+    "forbidden_hits": [],
+    "analyzer_signals": {
+      "edge_sharpness_gradient": 0.2954040781883735,
+      "edge_blur_radius": 0,
+      "raw_gradient": 8.862122345651205,
+      "high_frequency_pixel_density": 0.3151926165326949,
+      "high_frequency_pixel_density_delta": 0.015192616532694936,
+      "edge_halo_detection": 0,
+      "raw_variance": 252.15409322615594,
+      "exposure_value_delta": 0.8242524995123368,
+      "histogram_clipping": 0,
+      "clipping_ratio": 0.018865585327148438,
+      "mean_luminance": 233.5043199375791,
+      "pixel_bleed_percentage": 0.03561464949249125,
+      "edge_pixels_sampled": 16847,
+      "bleed_pixels_found": 6,
+      "distorted_pixel_ratio": 0,
+      "rgb_chromatic_split_noise": 0,
+      "vhs_noise_pattern": 0,
+      "distorted_pixel_count": 0,
+      "sampled_count": 116281,
+      "z_blue_detected": true,
+      "z_blue_pixel_ratio": 0.000003814697265625,
+      "z_blue_delta_e": 1,
+      "z_blue_color_shift_detected": 1,
+      "delta_e": 131.32402674301454,
+      "color_shift_hsv": 14.347826086956502,
+      "max_delta_e": 131.32402674301454,
+      "contamination_ratio": 1,
+      "avg_saturation_shift": 0.45882352941176474,
+      "z_blue_pixel_count": 1,
+      "product_color_delta_e": 1,
+      "regional_hsv_shift": 1,
+      "bounding_box_width_percentage": 40,
+      "center_noise_ratio": 0.8093195492366769,
+      "left_noise": 4.767901979951294,
+      "center_noise": 4.5517477577754955,
+      "right_noise": 6.480430676954255,
+      "pixel_displacement": 0,
+      "rgb_glitch_count": 0,
+      "safe_zone_glitch_ratio": 0,
+      "safe_zone_displacement_ratio": 0.006978155339805826,
+      "mesh_deformation_delta": 0,
+      "boundary_intersection": 0,
+      "geometry_symmetry_ratio": 91.29247572815534,
+      "line_curvature_degree": 0,
+      "ornament_bounding_box": 0,
+      "edge_separation_score": 1,
+      "silhouette_read_time": 0.5,
+      "edge_density": 25.165501370410613,
+      "fragmentation_ratio": 0,
+      "symmetry_ratio": 91.29247572815534,
+      "strong_edges": 7801,
+      "broken_edges": 0,
+      "saliency_peak_zone": "side_zone",
+      "recognition_time_seconds": 1.2,
+      "primary_subject_confidence": 0.4953879618124063,
+      "thumbnail_saliency_rank": "subject",
+      "thumbnail_subject_retention": 1,
+      "center_avg_saliency": 3.798324935836661,
+      "side_avg_saliency": 3.8336871589897576,
+      "center_dominance_ratio": 0.9907759236248126,
+      "max_saliency": 115.5425033569336,
+      "peak_position": {
+        "x": 0.9117647058823529,
+        "y": 0.8382352941176471
+      },
+      "_vlm_status": "unavailable",
+      "_vlm_signals_provided": 0,
+      "_analyzer_status": {
+        "pixel_analyzer": true,
+        "z_blue_detector": true,
+        "safe_zone_mask": true,
+        "silhouette_check": true,
+        "saliency_map": true,
+        "vlm_semantic_analyzer": true
+      }
+    },
+    "missing_signals": [
+      "line_angle_deviation",
+      "grid_snap_variance",
+      "human_eyes_detected",
+      "face_mesh_visible",
+      "high_gloss_specular",
+      "pvc_plastic_read",
+      "missing_weave_texture",
+      "soft_fabric_folds_on_joints",
+      "magenta_neon_spill",
+      "chaotic_particle_bloom",
+      "toon_shading",
+      "chibi_proportions",
+      "cyan_magenta_overload",
+      "lens_flare_spam",
+      "logo_overlap_ratio",
+      "branding_zone_distortion_contact"
+    ],
+    "blocking_unknown_rules": [
+      "I1",
+      "I2",
+      "I3",
+      "I4",
+      "I5",
+      "I6",
+      "C2"
+    ],
+    "analyzer_summary": {
+      "use_vision_validator": false,
+      "vlm_backend_ready": false,
+      "vlm_status": "unavailable",
+      "semantic_result": "PASS",
+      "analyzer_unavailable": [],
+      "analyzer_status": {
+        "pixel_analyzer": true,
+        "z_blue_detector": true,
+        "safe_zone_mask": true,
+        "silhouette_check": true,
+        "saliency_map": true,
+        "vlm_semantic_analyzer": true
+      }
+    },
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "hard_reject_hits": [],
+    "rule_engine": {
+      "decision": "REJECT",
+      "passed": false,
+      "block_level": "ABSOLUTE",
+      "failed_rules": [
+        "T7",
+        "T8",
+        "T11",
+        "T12",
+        "C1",
+        "C4"
+      ],
+      "unknown_rules": [
+        "T10",
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "C2"
+      ],
+      "stats": {
+        "total": 24,
+        "passed": 10,
+        "failed": 6,
+        "unknown": 8,
+        "enforced_pct": 67
+      },
+      "rule_results": [
+        {
+          "status": "PASS",
+          "rule_id": "T1"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T2"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T3"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T4"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T5"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T6"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T7",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T8",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T9"
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "T10",
+          "priority": "HIGH",
+          "missing_signals": [
+            "line_angle_deviation",
+            "grid_snap_variance"
+          ]
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T11",
+          "priority": "CRITICAL"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T12",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T13"
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I1",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "human_eyes_detected",
+            "face_mesh_visible"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I2",
+          "priority": "CRITICAL",
+          "missing_signals": [
+            "high_gloss_specular",
+            "pvc_plastic_read"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I3",
+          "priority": "CRITICAL",
+          "missing_signals": [
+            "missing_weave_texture",
+            "soft_fabric_folds_on_joints"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I4",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "magenta_neon_spill",
+            "chaotic_particle_bloom"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I5",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "toon_shading",
+            "chibi_proportions"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I6",
+          "priority": "CRITICAL",
+          "missing_signals": [
+            "cyan_magenta_overload",
+            "lens_flare_spam"
+          ]
+        },
+        {
+          "status": "PASS",
+          "rule_id": "I7"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "C1",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "C2",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "logo_overlap_ratio",
+            "branding_zone_distortion_contact"
+          ]
+        },
+        {
+          "status": "PASS",
+          "rule_id": "C3"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "C4",
+          "priority": "ABSOLUTE"
+        }
+      ]
+    },
+    "identity_analyzer": {
+      "identity_score": 0.83,
+      "dimensions": [
+        {
+          "dimension": "silhouette",
+          "score": 0.85,
+          "weight": 0.2,
+          "pass": true
+        },
+        {
+          "dimension": "material",
+          "score": 0.8,
+          "weight": 0.2,
+          "pass": true
+        },
+        {
+          "dimension": "mask",
+          "score": 0.85,
+          "weight": 0.15,
+          "pass": true
+        },
+        {
+          "dimension": "blade",
+          "score": 0.8,
+          "weight": 0.15,
+          "pass": true
+        },
+        {
+          "dimension": "color",
+          "score": 0.9,
+          "weight": 0.15,
+          "pass": true
+        },
+        {
+          "dimension": "anti_polish",
+          "score": 0.75,
+          "weight": 0.15,
+          "pass": true
+        }
+      ],
+      "failed_dimensions": []
+    },
+    "narrative_analyzer": {
+      "narrative_score": 0.8,
+      "phase": "establisher",
+      "intensity": {
+        "score": 0.85,
+        "detail": "Intensity 30% within establisher range [10%–35%]"
+      },
+      "tone": {
+        "score": 0.8,
+        "aligned": [
+          "restrained",
+          "silent",
+          "cold"
+        ],
+        "forbidden_hits": [],
+        "detail": "3/3 tones aligned with Canon register"
+      },
+      "continuity": {
+        "score": 0.75,
+        "violations": [],
+        "detail": "No continuity notes — neutral"
+      },
+      "raw_analysis": {
+        "perceived_intensity": 0.3,
+        "perceived_tones": [
+          "restrained",
+          "silent",
+          "cold"
+        ],
+        "perceived_energy": "low"
+      }
+    },
+    "drift": {
+      "verdict": "PASS",
+      "refineable": true,
+      "refine_reason": "Issues addressable via prompt adjustment",
+      "drift_flags": []
+    },
+    "scores": {
+      "identity_score": 0.83,
+      "narrative_score": 0.8,
+      "aesthetic_integrity_score": null,
+      "anti_polish_score": 0.75
+    }
+  },
+  "gemini_validation_result": {
+    "pass_fail": "FAIL",
+    "fail_rules": [
+      "zero plaster/mineral/carved stone resemblance",
+      "ultra-controlled eggshell microtexture",
+      "sparse fine hairline cracking",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "plaster",
+      "gypsum",
+      "fine concrete",
+      "textured paper",
+      "powdery porous masonry"
+    ],
+    "correct_reads": [
+      "porcelain-white",
+      "matte",
+      "dry",
+      "zero glossy/plastic/toy feel"
+    ],
+    "material_read": "The white material reads primarily as a fine, smooth plaster, gypsum, or a very light, smooth concrete. The background texture reinforces a powdery, porous masonry or even a textured paper feel. It lacks the hard, dense, and engineered characteristics of a technical ceramic.",
+    "fix_direction": [
+      "Increase the perceived density and hardness of the material to move away from a plaster/gypsum read.",
+      "Introduce the specified ultra-controlled eggshell microtexture, ensuring it feels solid and engineered, not diffuse or powdery.",
+      "Add sparse, fine hairline cracking to enhance the ceramic read and suggest material integrity.",
+      "Eliminate any visual cues that suggest a soft, porous, or easily scuffed surface.",
+      "Ensure the material's identity as a technical ceramic is immediately clear and distinct from common building materials."
+    ],
+    "summary": "The white ceramic material fails significantly as it strongly resembles plaster or gypsum, rather than a matte B4C technical ceramic. It lacks the required ultra-controlled eggshell microtexture and sparse fine hairline cracking, leading to a complete misread of the intended material and preventing immediate commercial readability.",
+    "confidence": 0,
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "error": "GEMINI_VALIDATOR_FAIL",
+    "raw": {
+      "pass_fail": "FAIL",
+      "fail_rules": [
+        "zero plaster/mineral/carved stone resemblance",
+        "ultra-controlled eggshell microtexture",
+        "sparse fine hairline cracking",
+        "commercial material readability is immediate"
+      ],
+      "material_read": "The white material reads primarily as a fine, smooth plaster, gypsum, or a very light, smooth concrete. The background texture reinforces a powdery, porous masonry or even a textured paper feel. It lacks the hard, dense, and engineered characteristics of a technical ceramic.",
+      "correct_reads": [
+        "porcelain-white",
+        "matte",
+        "dry",
+        "zero glossy/plastic/toy feel"
+      ],
+      "wrong_reads": [
+        "plaster",
+        "gypsum",
+        "fine concrete",
+        "textured paper",
+        "powdery porous masonry"
+      ],
+      "severity": "HIGH",
+      "fix_direction": [
+        "Increase the perceived density and hardness of the material to move away from a plaster/gypsum read.",
+        "Introduce the specified ultra-controlled eggshell microtexture, ensuring it feels solid and engineered, not diffuse or powdery.",
+        "Add sparse, fine hairline cracking to enhance the ceramic read and suggest material integrity.",
+        "Eliminate any visual cues that suggest a soft, porous, or easily scuffed surface.",
+        "Ensure the material's identity as a technical ceramic is immediately clear and distinct from common building materials."
+      ],
+      "summary": "The white ceramic material fails significantly as it strongly resembles plaster or gypsum, rather than a matte B4C technical ceramic. It lacks the required ultra-controlled eggshell microtexture and sparse fine hairline cracking, leading to a complete misread of the intended material and preventing immediate commercial readability.",
+      "gemini_validation_executed": true,
+      "parse_ok": true,
+      "model": "gemini-2.5-flash",
+      "error": null
+    }
+  },
+  "final_decision_source": "post_render_image",
+  "registry_path": null,
+  "spec_version": "mikage_image_control_v24rules",
+  "z_blue_spec_version": "0.1.0-provisional",
+  "render": {
+    "output_file": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\output.png",
+    "seed_used": -1,
+    "render_time_ms": 192726,
+    "status": "RENDERED",
+    "requested_steps": 16,
+    "actual_steps": 16,
+    "actual_steps_source": "response",
+    "requested_size": "512x512",
+    "response_reported_size": "1024x1024",
+    "actual_file_size": "1024x1024",
+    "actual_size": "1024x1024",
+    "actual_file_width": 1024,
+    "actual_file_height": 1024,
+    "actual_width": 1024,
+    "actual_height": 1024,
+    "size_truth_source": "png_pixels",
+    "sampler": null,
+    "scheduler": null,
+    "telemetry_warning": "SIZE_MISMATCH",
+    "telemetry_warnings": [
+      "SIZE_MISMATCH"
+    ],
+    "source_job_response_path": "D:\\KAGAMI-MZ\\runs\\white-ceramic-study-002\\render_response_raw.json"
+  },
+  "requested_steps": 16,
+  "actual_steps": 16,
+  "actual_steps_source": "response",
+  "requested_size": "512x512",
+  "actual_size": "1024x1024",
+  "actual_file_size": "1024x1024",
+  "size_truth_source": "png_pixels",
+  "telemetry_warnings": [
+    "SIZE_MISMATCH"
+  ]
+}

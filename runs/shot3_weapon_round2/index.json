@@ -1,0 +1,73 @@
+[
+  {
+    "id": "candidate-07",
+    "seed": 4203207,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-35-47_8085.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-07\\output.png",
+    "status": "GENERATED"
+  },
+  {
+    "id": "candidate-08",
+    "seed": 4203208,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-40-28_4611.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-08\\output.png",
+    "status": "SECONDARY_BACKUP_ONLY"
+  },
+  {
+    "id": "candidate-09",
+    "seed": 4203209,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-45-20_6652.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-09\\output.png",
+    "status": "GENERATED"
+  },
+  {
+    "id": "candidate-10",
+    "seed": 4203210,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-50-05_3891.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-10\\output.png",
+    "status": "REJECTED",
+    "reason": "crimson over-dominance"
+  },
+  {
+    "id": "candidate-01",
+    "seed": 4203201,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_14-59-27_3858.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-01\\output.png",
+    "status": "GENERATED"
+  },
+  {
+    "id": "candidate-02",
+    "seed": 4203202,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-04-09_5005.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-02\\output.png",
+    "status": "GENERATED"
+  },
+  {
+    "id": "candidate-03",
+    "seed": 4203203,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-08-51_3239.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-03\\output.png",
+    "status": "LOCKED_WINNER"
+  },
+  {
+    "id": "candidate-04",
+    "seed": 4203204,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-13-18_9782.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-04\\output.png",
+    "status": "GENERATED"
+  },
+  {
+    "id": "candidate-05",
+    "seed": 4203205,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-18-13_4527.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-05\\output.png",
+    "status": "GENERATED"
+  },
+  {
+    "id": "candidate-06",
+    "seed": 4203206,
+    "source": "D:\\Fooocus-main\\outputs\\2026-03-27\\2026-03-27_15-23-05_4073.png",
+    "saved": "D:\\KAGAMI-MZ\\runs\\shot3_weapon_round2\\candidate-06\\output.png",
+    "status": "GENERATED"
+  }
+]

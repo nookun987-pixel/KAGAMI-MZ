@@ -1,0 +1,12 @@
+{
+  "stage": "prompt_package",
+  "verdict": "REJECT",
+  "failed_checks": [
+    "Job file not found: D:\\KAGAMI-MZ\\--auto"
+  ],
+  "forbidden_hits": [],
+  "critical_failures": [
+    "Job file not found: D:\\KAGAMI-MZ\\--auto"
+  ],
+  "canon_version": "v2"
+}

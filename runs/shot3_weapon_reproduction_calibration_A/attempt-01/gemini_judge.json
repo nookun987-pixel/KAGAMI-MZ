@@ -1,0 +1,33 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "WEAPON_IDENTITY_MISSING",
+    "SWORD_GEOMETRY_MISSING",
+    "FORBIDDEN_MATERIAL_DRIFT",
+    "ABSTRACT_OBJECT_DRIFT"
+  ],
+  "material_read": "ambiguous noise / digital artifact",
+  "correct_reads": [],
+  "wrong_reads": [
+    "ceramic",
+    "porcelain",
+    "plastic",
+    "rounded industrial object",
+    "mask-like read",
+    "abstract object read",
+    "vessel / pod / capsule / sculpture ambiguity"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "The image must clearly depict a weapon, specifically a straight engineered greatsword.",
+    "Visible blade geometry, hard edges, and an elongated linear form are essential.",
+    "Establish a clear forged metal material read (titanium/steel/dark industrial alloy). The current image lacks any discernible material.",
+    "Improve image clarity and detail significantly; the current image is too dark and artifacted to convey any specific form or material.",
+    "Ensure the image does not read as an abstract object or ambiguous form."
+  ],
+  "summary": "The image fails critically as it does not read as a weapon or sword in any capacity. The form is entirely ambiguous, appearing as digital noise or an abstract artifact rather than a defined object. There is no discernible blade geometry, material read, or hard edge silhouette. This constitutes a severe failure in weapon identity and form definition.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

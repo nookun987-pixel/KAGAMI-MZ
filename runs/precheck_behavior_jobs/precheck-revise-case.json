@@ -1,0 +1,10 @@
+{
+  "job_id": "precheck-revise-case",
+  "user_idea": "A ceramic object in a moody frame, maybe a product surface, maybe something atmospheric.",
+  "phase": "material_study",
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Speed"
+  }
+}

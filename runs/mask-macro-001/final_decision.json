@@ -1,0 +1,118 @@
+{
+  "job_id": "mask-macro-001",
+  "status": "DONE",
+  "decision": "REJECT",
+  "decision_reason": "REJECT: canon hard fail: T5, T6, T8, T11, C1, C3",
+  "canon_version": "v2",
+  "output_files": [
+    "output.png"
+  ],
+  "output_file_path": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\output.png",
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "gemini_pass_fail": "FAIL",
+  "gemini_error": "GEMINI_VALIDATOR_FAIL",
+  "gemini_fail_rules": [
+    "Lacks ultra-controlled eggshell microtexture.",
+    "Lacks sparse fine hairline cracking."
+  ],
+  "gemini_summary": "The material achieves a clean, matte porcelain-white finish with an immediate commercial and engineered readability, successfully avoiding common undesirable material drifts like plaster or glossy plastic. However, it fails to incorporate the specified ultra-controlled eggshell microtexture and sparse fine hairline cracking, resulting in a surface that is too smooth and lacks the distinct textural characteristics required for a B4C technical ceramic read.",
+  "wrong_reads": [
+    "Too smooth, lacks specific ceramic microtexture.",
+    "Lacks hairline cracking.",
+    "Reads more like a smooth painted wall or composite panel than a technical ceramic with specific textural requirements."
+  ],
+  "canon_hard_fail_count": 6,
+  "failed_rules": [
+    "T5",
+    "T6",
+    "T8",
+    "T11",
+    "C1",
+    "C3",
+    "Lacks ultra-controlled eggshell microtexture.",
+    "Lacks sparse fine hairline cracking."
+  ],
+  "blocking_unknown_rules": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "C2"
+  ],
+  "critical_failures": [
+    "T5",
+    "T6",
+    "T8",
+    "T11",
+    "C1",
+    "C3"
+  ],
+  "forbidden_hits": [],
+  "analyzer_summary": {
+    "use_vision_validator": false,
+    "vlm_backend_ready": false,
+    "vlm_status": "unavailable",
+    "semantic_result": "PASS",
+    "analyzer_unavailable": [],
+    "analyzer_status": {
+      "pixel_analyzer": true,
+      "z_blue_detector": true,
+      "safe_zone_mask": true,
+      "silhouette_check": true,
+      "saliency_map": true,
+      "vlm_semantic_analyzer": true
+    }
+  },
+  "scores": {
+    "identity_score": 0.83,
+    "narrative_score": 0.8,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": 0.75
+  },
+  "drift_flags": [],
+  "continuity": {
+    "entity_id": null,
+    "entity_class": null,
+    "zone": null,
+    "weapon": null,
+    "status": null,
+    "canon_version": "v2"
+  },
+  "registry_write": false,
+  "registry_target": null,
+  "baseline_found": false,
+  "baseline_reference": null,
+  "baseline_source": null,
+  "baseline_canon_version": null,
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\mask-macro-001",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\gemini_intake.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\mask-macro-001\\job_summary.json"
+  },
+  "timestamps": {
+    "decided_at": "2026-03-26T09:29:45.530Z"
+  },
+  "registry_path": null
+}

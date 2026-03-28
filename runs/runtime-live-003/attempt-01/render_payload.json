@@ -1,0 +1,13 @@
+{
+  "prompt": "SUBJECT\nMacro product photography material study of matte B4C technical ceramic.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Exquisite eggshell microtexture. Highly detailed subtle hairline fractures and micro-cracks. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define form and grain. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nMacro close-up. Clean negative space. Premium commercial readability. Material purity emphasis.\n\nBACKGROUND\nBrutalist minimal concrete surface.\n\nQUALITY\nUltra-detailed 8K resolution. Industrial design aesthetic.",
+  "negative_prompt": "plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry",
+  "seed": -1,
+  "width": 1024,
+  "height": 1024,
+  "steps": -1,
+  "disable_refiner": false,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "async_process": false
+}

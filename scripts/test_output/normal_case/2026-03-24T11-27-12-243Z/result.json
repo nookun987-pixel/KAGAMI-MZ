@@ -1,0 +1,53 @@
+{
+  "test_case": {
+    "job_id": "normal_case_valid",
+    "source": "verification_test",
+    "mode": "AUTO_DRAFT",
+    "identity": {
+      "name": "Mikage",
+      "archetype": "ethereal guardian",
+      "visual_anchor": "porcelain armored figure with crimson energy"
+    },
+    "narrative": {
+      "theme": "solitude at twilight",
+      "mood": "contemplative",
+      "scene": "standing alone on a cliff overlooking a calm ocean at sunset"
+    },
+    "strategy": {
+      "style": "cinematic illustration",
+      "color_palette": "deep blue, silver, soft crimson"
+    },
+    "art_direction": {
+      "mood": "melancholic",
+      "material": "matte porcelain",
+      "style": "wabi-sabi with subtle internal glow",
+      "lighting": "natural twilight with controlled crimson energy"
+    },
+    "render": {
+      "width": 1024,
+      "height": 384,
+      "performance": "Quality",
+      "max_iteration": 1
+    }
+  },
+  "execution": {
+    "exitCode": -1,
+    "signal": "TIMEOUT",
+    "stdout": "[dotenv@17.3.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com\n2026-03-24T11:27:12.554Z \u001b[33m[WARN]\u001b[0m VLM backend not configured and USE_VISION_VALIDATOR=false — semantic validation disabled\n2026-03-24T11:27:12.556Z \u001b[36m[INFO]\u001b[0m Fooocus client: http://127.0.0.1:7865\n2026-03-24T11:27:12.556Z \u001b[36m[INFO]\u001b[0m Notion client: DB ddb0999c...\n2026-03-24T11:27:12.560Z \u001b[33m[WARN]\u001b[0m Notion initial write failed: (ad.mood || []).join is not a function — continuing pipeline\n2026-03-24T11:27:12.567Z \u001b[36m[INFO]\u001b[0m Job normal_case_valid — attempt 1/1\n",
+    "stderr": "The system cannot find the path specified.\r\n'true' is not recognized as an internal or external command,\r\noperable program or batch file.\r\nThe system cannot find the path specified.\r\n'true' is not recognized as an internal or external command,\r\noperable program or batch file.\r\nThe system cannot find the path specified.\r\nThe system cannot find the path specified.\r\n",
+    "error": "Process timed out after 600000ms"
+  },
+  "job_result": null,
+  "verification": {
+    "decision": "FAIL",
+    "reasons": [
+      "Execution failed: exit=-1, signal=TIMEOUT",
+      "Process timed out after 600000ms"
+    ],
+    "output_files": [],
+    "job_decision": null,
+    "exit_code": -1,
+    "signal": "TIMEOUT"
+  },
+  "timestamp": "2026-03-24T11:37:12.281Z"
+}

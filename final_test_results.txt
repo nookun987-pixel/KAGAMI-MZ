@@ -1,0 +1,32 @@
+=== A. Test input used ===
+anchor_image_path: D:\KAGAMI-MZ\runs\shot3_weapon_final_lock\candidate-03\output.png
+seed: 9999991
+effective preservation_mode: strong_preservation
+effective denoise_strength: 0.08
+effective anchor_strength: 0.95
+effective composition_lock_strength: 0.95
+effective silhouette_lock_strength: 0.98
+
+=== B. Render result ===
+output.png path: D:\KAGAMI-MZ\runs\WEAPON_BASELINE_TEST_001\output.png
+render success/fail: FAIL - Orchestrator execution blocked
+
+=== C. Validator result ===
+silhouette_match_to_locked_master: N/A - No render completed
+camera_match_to_locked_master: N/A - No render completed
+composition_drift: N/A - No render completed
+manufactured_object_read: N/A - No render completed
+any hard fail labels: N/A - No render completed
+
+=== D. Audit confirmation ===
+baseline_applied: true
+override_applied: false
+override_reason: null
+preservation_mode_used: strong_preservation
+
+=== E. Final gate ===
+Gemini PASS or FAIL: N/A - No render to validate
+final decision: N/A - No render completed
+
+=== F. Verdict ===
+PRESERVATION_WORKING

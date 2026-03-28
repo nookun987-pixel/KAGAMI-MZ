@@ -1,0 +1,72 @@
+[
+  {
+    "config_id": "A",
+    "job_file": "jobs/white-ceramic-study-004.json",
+    "job_id": "white-ceramic-study-004",
+    "shot_type": "MATERIAL_MACRO",
+    "sampler": "dpmpp_2m_sde_gpu",
+    "steps": "24",
+    "guidance": "6.2",
+    "seed_policy": "locked",
+    "exit_code": 0,
+    "decision": "REJECT",
+    "dominant_fail_reason": "MATERIAL_ABSENT",
+    "candidate_level": "USABLE_CONTENT",
+    "best_candidate": {
+      "selected_candidate_id": "candidate-01",
+      "why_selected": "subject present, manufactured object readable, material readable, abstract risk low, score 2590",
+      "usable_level": "USABLE_CONTENT",
+      "dominant_fail_reason": "T3"
+    }
+  },
+  {
+    "config_id": "B",
+    "job_file": "jobs/white-ceramic-study-004.json",
+    "job_id": "white-ceramic-study-004",
+    "shot_type": "MATERIAL_MACRO",
+    "sampler": "dpmpp_2m_sde_gpu",
+    "steps": "32",
+    "guidance": "6.8",
+    "seed_policy": "small_spread",
+    "exit_code": 0,
+    "decision": "REJECT",
+    "dominant_fail_reason": "ABSTRACT_FRAME",
+    "candidate_level": "USABLE_CONTENT",
+    "best_candidate": {
+      "selected_candidate_id": "candidate-01",
+      "why_selected": "subject present, manufactured object readable, material readable, abstract risk low, score 2590",
+      "usable_level": "USABLE_CONTENT",
+      "dominant_fail_reason": "T3"
+    }
+  },
+  {
+    "config_id": "A",
+    "job_file": "jobs/mask-macro-ui-001.json",
+    "job_id": "mask-macro-ui-001",
+    "shot_type": "ENTITY_MEDIUM",
+    "sampler": "dpmpp_2m_sde_gpu",
+    "steps": "24",
+    "guidance": "6.2",
+    "seed_policy": "locked",
+    "exit_code": 0,
+    "decision": "REJECT",
+    "dominant_fail_reason": "GEMINI_IMAGE_READ_FAILED",
+    "candidate_level": "REJECT",
+    "best_candidate": null
+  },
+  {
+    "config_id": "B",
+    "job_file": "jobs/mask-macro-ui-001.json",
+    "job_id": "mask-macro-ui-001",
+    "shot_type": "ENTITY_MEDIUM",
+    "sampler": "dpmpp_2m_sde_gpu",
+    "steps": "32",
+    "guidance": "6.8",
+    "seed_policy": "small_spread",
+    "exit_code": 0,
+    "decision": "REJECT",
+    "dominant_fail_reason": "GEMINI_IMAGE_READ_FAILED",
+    "candidate_level": "REJECT",
+    "best_candidate": null
+  }
+]

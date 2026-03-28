@@ -1,0 +1,32 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "zero glossy/plastic/toy feel",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "sparse fine hairline cracking"
+  ],
+  "material_read": "The material reads as a polished, slightly reflective white surface, resembling a high-gloss laminate or a polished ceramic tile rather than a matte technical ceramic. There is a distinct sheen that suggests a plastic or highly polished finish.",
+  "correct_reads": [
+    "porcelain-white",
+    "dense (visually)"
+  ],
+  "wrong_reads": [
+    "glossy plastic",
+    "polished tile",
+    "laminate",
+    "PVC sheen"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Eliminate all glossy and reflective properties to achieve a true matte finish.",
+    "Remove any plastic or toy-like sheen.",
+    "Introduce subtle, sparse fine hairline cracking to meet the specified microtexture.",
+    "Ensure the material conveys a dry and dense engineered quality, moving away from any wet or overly smooth appearance."
+  ],
+  "summary": "The white ceramic material fails significantly due to its prominent glossy sheen and reflectivity, directly contradicting the 'zero glossy/plastic/toy feel' and 'matte' requirements. It also lacks the specified sparse fine hairline cracking and does not fully convey a dry, dense, engineered read, leaning instead towards a polished, almost plastic-like surface.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

@@ -1,0 +1,25 @@
+{
+  "prompt": "Extreme macro product photography, premium studio close-up, single dominant subject, a symmetrical Japanese kitsune fox mask, matte porcelain-white B4C technical ceramic shell, bone-dry dense engineered ceramic surface, non-reflective matte finish, ultra-controlled eggshell microtexture, visible sparse fine hairline cracks across white ceramic surface, void-black hollow eye slits, clearly manufactured industrial artifact, precise geometric form, visible rim bevel and edge thickness, sharp contour silhouette, high material separation between ceramic and dark voids, premium low-key studio lighting, soft overhead diffused key light, gentle side fill, shallow controlled depth of field, clean dark neutral background, object readability first, zero specular highlights, flat matte ceramic like unglazed bisque porcelain, one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject",
+  "negative_prompt": "abstract, texture field, atmosphere, fog, soft fantasy blur, decorative clutter, anime, neon glow, cyberpunk, distortion, organic face, visible human skin, human eyes, asymmetrical mask, overexposed ceramic, cheap render, toy, figurine, plastic gloss, orange accent, orange contamination, red paint, red markings, crimson pattern, decorative paint, painted details, colored accents, blurry crop, atmosphere-only frame, painterly, grain, noise, messy background, glossy, shiny, reflective, polished, wet, specular, lacquer, glazed, PVC, plaster, stone, teeth, grinning, abstract white texture, subject cropped away, facial ambiguity",
+  "seed": 556862,
+  "width": 1152,
+  "height": 1152,
+  "steps": -1,
+  "disable_refiner": false,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "async_process": false,
+  "metadata": {
+    "job_id": "MASK_MACRO_RUN_02",
+    "canon_version": "v2",
+    "source_files": {
+      "canonMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "C:\\Users\\THIS PC\\Downloads\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "generated_at": "2026-03-26T17:06:11.925Z",
+    "direct_input_prompt": true,
+    "shot_type": "MASK_MACRO"
+  }
+}

@@ -4,7 +4,8 @@
   "description": "Mikage — Controlled Creative Operating System. Identity-first AI render pipeline.",
   "main": "orchestrator.js",
   "scripts": {
-    "start": "node orchestrator.js",
+    "start": "node server.js",
+    "orchestrator": "node orchestrator.js",
     "test": "node scripts/run_all_tests.js",
     "test:core": "node core/state_machine.test.js",
     "test:control": "node control/precheck.test.js",
@@ -22,7 +23,11 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@google-cloud/discoveryengine": "^2.6.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "@notionhq/client": "^5.14.0",
-    "dotenv": "^17.3.1"
+    "dotenv": "^17.3.1",
+    "playwright": "^1.58.2",
+    "sharp": "^0.34.5"
   }
 }

@@ -1,0 +1,69 @@
+{
+  "pass_fail": "PASS",
+  "fail_rules": [],
+  "wrong_reads": [
+    "plaster",
+    "gypsum",
+    "chalk",
+    "concrete",
+    "carved stone",
+    "mineral banding",
+    "rough rock",
+    "layered erosion",
+    "striated grooves",
+    "sculpted surface",
+    "powdery porous masonry",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish"
+  ],
+  "correct_reads": [
+    "porcelain-white",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "The material reads as a high-quality, matte technical ceramic with a precise, engineered finish. It exhibits a clean porcelain-white color and an ultra-controlled eggshell microtexture, conveying a dry and dense feel.",
+  "fix_direction": [],
+  "summary": "The white ceramic material successfully achieves the desired matte, dense, and engineered technical ceramic aesthetic. It presents a clean porcelain-white color and an ultra-controlled eggshell microtexture, effectively avoiding any resemblance to undesirable materials like plaster or plastic. The commercial material readability is immediate and strong.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": null,
+  "raw": {
+    "pass_fail": "PASS",
+    "fail_rules": [],
+    "material_read": "The material reads as a high-quality, matte technical ceramic with a precise, engineered finish. It exhibits a clean porcelain-white color and an ultra-controlled eggshell microtexture, conveying a dry and dense feel.",
+    "correct_reads": [
+      "porcelain-white",
+      "matte B4C technical ceramic",
+      "dry, dense, engineered read",
+      "ultra-controlled eggshell microtexture",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "plaster",
+      "gypsum",
+      "chalk",
+      "concrete",
+      "carved stone",
+      "mineral banding",
+      "rough rock",
+      "layered erosion",
+      "striated grooves",
+      "sculpted surface",
+      "powdery porous masonry",
+      "glossy plastic",
+      "PVC sheen",
+      "toy-like finish"
+    ],
+    "severity": "LOW",
+    "fix_direction": [],
+    "summary": "The white ceramic material successfully achieves the desired matte, dense, and engineered technical ceramic aesthetic. It presents a clean porcelain-white color and an ultra-controlled eggshell microtexture, effectively avoiding any resemblance to undesirable materials like plaster or plastic. The commercial material readability is immediate and strong.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "pass": true,
+  "status": "PASS",
+  "issues": [],
+  "fixes": [],
+  "risk_level": "LOW",
+  "revised_intake": {
+    "creative_intent": "Single manufactured object with immediate matte ceramic readability.",
+    "subject": {
+      "type": "manufactured_object",
+      "identity": "ceramic respirator shell",
+      "must_have": [
+        "exactly one manufactured object as the clear subject",
+        "visible rim and bevel contour evidence",
+        "material visibly attached to the object",
+        "visible edge, rim, bevel, seam, or contour evidence"
+      ],
+      "must_not_have": [
+        "texture-only frame",
+        "atmosphere-first image",
+        "abstract-first composition",
+        "subject dissolved into background"
+      ]
+    },
+    "material": {
+      "primary": "matte B4C technical ceramic",
+      "surface": "porcelain-white eggshell microtexture",
+      "finish": "dry matte engineered finish",
+      "forbidden_reads": [
+        "plaster",
+        "gypsum",
+        "glossy plastic",
+        "chalk",
+        "concrete",
+        "carved stone",
+        "mineral banding",
+        "rough rock",
+        "PVC sheen",
+        "toy-like finish"
+      ]
+    },
+    "composition": {
+      "shot_type": "macro product study",
+      "framing": "single dominant object centered in frame",
+      "camera": "macro close-up with readable contour evidence",
+      "background": "controlled minimal background"
+    },
+    "lighting": {
+      "style": "controlled low-key product lighting",
+      "constraints": [
+        "no ambient color wash",
+        "no glossy hotspots",
+        "no neon spill"
+      ]
+    },
+    "core_risks": [
+      "material drift"
+    ],
+    "anti_drift_rules": [
+      "always preserve one clearly readable manufactured object",
+      "do not allow abstract, texture-only, or atmosphere-first subject drift",
+      "keep material identity explicit and stable"
+    ],
+    "success_criteria": [
+      "manufactured object read is immediate",
+      "matte ceramic read is immediate",
+      "image does not read as plaster, stone, or glossy plastic"
+    ],
+    "direction_summary": "Clear ceramic respirator shell study."
+  }
+}

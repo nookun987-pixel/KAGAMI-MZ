@@ -1,0 +1,21 @@
+job_id: runtime-live-003
+decision: REJECT
+reason: REJECT: Gemini validator FAIL: Material not present in image.
+attempt_count: 3
+output_file_path: D:\KAGAMI-MZ\runs\runtime-live-003\output.png
+validator_executed: true
+gemini_validation_executed: true
+gemini_pass_fail: FAIL
+render_profile: DEFAULT
+width: 1024
+height: 1024
+requested_steps: -1
+actual_steps: 16
+actual_steps_source: fallback_requested
+size_truth_source: png_pixels
+actual_file_size: 1024x1024
+telemetry_warnings: none
+refiner_enabled: true
+render_duration_seconds: 691.77
+failed_rules: T3, T5, T6, T7, T8, T11, T12, C3, C4, Material not present in image.
+wrong_reads: none

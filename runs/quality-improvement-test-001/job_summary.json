@@ -1,0 +1,177 @@
+{
+  "job_id": "quality-improvement-test-001",
+  "status": "DONE",
+  "decision": "REJECT",
+  "attempt_count": 1,
+  "prompt": "Mikage Zenith, fully mechanical humanoid, strict hard-surface anatomy, zero organic influence, full porcelain faceless cybernetic helmet with subtle fox-like silhouette and void black optical sensors, narrow straight eye slits 0.7 inch, no emotion, no human features, completely flat chest rigid armor planes, straight structural waist, hips aligned with torso width, legs engineered load-bearing mechanical systems, long straight heavy black hair flowing naturally, Zenith Blade visible — massive heavy industrial straight sword, dark rusty titanium scrap metal over ferro-calcium core, thick spine ultra-thin edge, perfectly straight, no curvature no ornament, crimson heated core, matte porcelain-white ceramic surface, uneven finish with micro-crack detail, material-honest rendering, no artificial coating, matte porcelain-white B4C ceramic surface, subsurface scattering creating bone-depth translucency, micro-fractures with gold kintsugi repair seams, faint internal crimson glow through cracks (#E60000), soft diffusion under key light , rim highlight on edges, sharp edge definition , zero blur on armor boundaries, high-frequency surface texture , visible grain at close range, matte porcelain-white B4C ceramic surface 33 GPa hardness, clean fracture lines , no deformation, only crack and repair, subsurface scattering like biological bone structure, micro-crack network filled with kintsugi gold, crisp edge boundaries , no pixel bleed or softening, surface micro-detail preserved at high resolution, gold conductive resin filling ceramic fracture lines, faint crimson energy glow beneath gold surface, internal glow , no bloom, no external light spill, fracture lines follow Shinogi geometry of armor, single motivated light source, soft 45-degree key light on porcelain curves, restrained highlights , no hot spots, shadow preserves volume without losing form, subsurface scattering on B4C for bone-depth translucency, subject as visual anchor , strongest focal point in frame, exposure calibrated for ceramic surface detail, texture variation across all visible materials, depth through layered silence, mask geometry perfectly symmetrical , eye voids aligned, subject silhouette dominant in frame , immediate recognition, ARRI ALEXA 65 simulation , Panavision Ultra Vista Anamorphic, aspect ratio 2.76:1, 85mm T1.2 for portrait/close, 35mm for environmental wide, film grain present , analog texture layer, photorealistic hard sci-fi rendering, subject as primary visual anchor , strongest contrast point, thumbnail hierarchy , subject remains dominant when scaled down",
+  "negative_prompt": "cute, sexy, anime, chibi, waifu, kawaii, CGI look, 3d render, aura glow, shaky cam, greebling, airbrushed, soft edges, edge bleed, anime eyes, thin blade, sexualized, pixel bleed, tilted mask, anime style, animal ears, dirty armor, extra limbs, bad anatomy, perfect skin, plastic look, plastic skin, blurry edges, flat surface, crooked mask, curved waist, sunny nature, magic circle, curved katana, magic effects, bloom effects, over-smoothing, halo detection, smooth surface, hyper-symmetry, visible pupils, neon pollution, uniform texture, asymmetric mask, glossy toy look, rusty porcelain, rust on ceramic, AI polished look, weak focal point, uneven eye slits, slow recognition, perfect symmetry, organic softness, exaggerated hips, bulky mecha suit, generic ai beauty, ambiguous subject, clean laser sword, cyberpunk clutter, fashion editorial, clipped highlights, unclear silhouette, soft chest contour, exposed human face, visible human eyes, neon rainbow blade, heavy robotic suit, beauty photography, background dominant, distortion dominant, overexposed ceramic, lens flare overload, flat 2D HUD screens, over-smooth surfaces, artificial sharpness, no surface variation, blown out highlights, irregular mask shape, glossy luxury finish, digital painting look, generic bright sci-fi, external messy cables, loss of texture detail, poor subject hierarchy, weak subject dominance, floating glowing spells, external wires on armor, misaligned mask geometry, poor thumbnail hierarchy, cluttered messy cyberpunk, fantasy ornament overload, subject lost in background, loss of detail in highlights, organic anatomy exaggeration, background overwhelms subject, traditional anime kitsune mask, subject lost at thumbnail scale, deformed structural proportions",
+  "seed": null,
+  "critic_score": 0.84,
+  "identity_score": 0.83,
+  "narrative_score": 0.8,
+  "risk_score": 0.1,
+  "drift_flags": [],
+  "output_files": [
+    "runs\\quality-improvement-test-001\\output.png"
+  ],
+  "rejected_samples": [
+    "runs\\quality-improvement-test-001\\output.png"
+  ],
+  "failed_rules": [
+    "T5",
+    "T6",
+    "T8",
+    "T11",
+    "T12",
+    "C3"
+  ],
+  "block_level": "ABSOLUTE",
+  "decision_reason": "REJECT",
+  "spec_version": "mikage_image_control_v24rules",
+  "z_blue_spec_version": "0.1.0-provisional",
+  "rule_results": [
+    {
+      "status": "PASS",
+      "rule_id": "T1"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "T2"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "T3"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "T4"
+    },
+    {
+      "status": "FAIL",
+      "rule_id": "T5",
+      "priority": "ABSOLUTE"
+    },
+    {
+      "status": "FAIL",
+      "rule_id": "T6",
+      "priority": "CRITICAL"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "T7"
+    },
+    {
+      "status": "FAIL",
+      "rule_id": "T8",
+      "priority": "ABSOLUTE"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "T9"
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "T10",
+      "priority": "HIGH",
+      "missing_signals": [
+        "line_angle_deviation",
+        "grid_snap_variance"
+      ]
+    },
+    {
+      "status": "FAIL",
+      "rule_id": "T11",
+      "priority": "CRITICAL"
+    },
+    {
+      "status": "FAIL",
+      "rule_id": "T12",
+      "priority": "ABSOLUTE"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "T13"
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "I1",
+      "priority": "ABSOLUTE",
+      "missing_signals": [
+        "human_eyes_detected",
+        "face_mesh_visible"
+      ]
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "I2",
+      "priority": "CRITICAL",
+      "missing_signals": [
+        "high_gloss_specular",
+        "pvc_plastic_read"
+      ]
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "I3",
+      "priority": "CRITICAL",
+      "missing_signals": [
+        "missing_weave_texture",
+        "soft_fabric_folds_on_joints"
+      ]
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "I4",
+      "priority": "ABSOLUTE",
+      "missing_signals": [
+        "magenta_neon_spill",
+        "chaotic_particle_bloom"
+      ]
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "I5",
+      "priority": "ABSOLUTE",
+      "missing_signals": [
+        "toon_shading",
+        "chibi_proportions"
+      ]
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "I6",
+      "priority": "CRITICAL",
+      "missing_signals": [
+        "cyan_magenta_overload",
+        "lens_flare_spam"
+      ]
+    },
+    {
+      "status": "PASS",
+      "rule_id": "I7"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "C1"
+    },
+    {
+      "status": "UNKNOWN",
+      "rule_id": "C2",
+      "priority": "ABSOLUTE",
+      "missing_signals": [
+        "logo_overlap_ratio",
+        "branding_zone_distortion_contact"
+      ]
+    },
+    {
+      "status": "FAIL",
+      "rule_id": "C3",
+      "priority": "CRITICAL"
+    },
+    {
+      "status": "PASS",
+      "rule_id": "C4"
+    }
+  ],
+  "completed_at": "2026-03-24T16:12:04.077Z"
+}

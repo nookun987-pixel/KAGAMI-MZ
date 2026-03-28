@@ -1,0 +1,25 @@
+{
+  "job_id": "quality-improvement-test-001",
+  "source": "api",
+  "mode": "AUTO_DRAFT",
+  "identity": {
+    "character": "Mikage Zenith"
+  },
+  "narrative": {
+    "mood": ["restrained"],
+    "energy": "low"
+  },
+  "strategy": {
+    "composition": "wide",
+    "focus": "subject"
+  },
+  "art_direction": {
+    "mood": ["restrained"],
+    "material": ["porcelain", "boron carbide", "kintsugi"],
+    "style": ["wabi-sabi", "editorial cinematic"],
+    "forbidden": ["neon pollution", "cyberpunk clutter"]
+  },
+  "render": {
+    "max_iteration": 2
+  }
+}
