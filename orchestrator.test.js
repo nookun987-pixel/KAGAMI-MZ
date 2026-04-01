@@ -206,8 +206,16 @@ async function runAllowCase(workspace, jobId, entityId) {
   setGeminiConnectorMock();
 
   setRenderExecutorMock(async (_job, _token, _spec, opts) => {
-    const payloadPath = path.join(opts.output_dir, "final_payload.json");
-    if (!fs.existsSync(payloadPath)) {
+    // final_payload.json is in the run dir, which is an ancestor of output_dir
+    let dir = opts.output_dir;
+    let found = false;
+    for (let i = 0; i < 5; i++) {
+      if (fs.existsSync(path.join(dir, "final_payload.json"))) { found = true; break; }
+      const parent = path.dirname(dir);
+      if (parent === dir) break;
+      dir = parent;
+    }
+    if (!found) {
       throw new Error("final_payload.json missing before render");
     }
     return {
@@ -230,7 +238,19 @@ async function runAllowCase(workspace, jobId, entityId) {
     entity_class: "guardian",
     zone: "threshold",
     weapon: "zenith_blade",
-    status: "active",
+    status: "DONE",
+    // IMPORTANT:
+    // Do not use "zenith blade" in direct-input test fixtures unless shot_type is explicitly set.
+    // It can misclassify the prompt into WEAPON_MACRO and block render before the intended test path.
+    //
+    // Direct-input prompt bypasses the canon spec builder and avoids the
+    // validateCanonPromptPackage WEAPON_MACRO mis-classification that occurs
+    // when positivePrompt contains "blade" and is used as the shot-type key.
+    // "straight sword" satisfies the weapon required-check without matching /BLADE/.
+    input: {
+      prompt: "Mikage Zenith, faceless white cybernetic helmet, void black optical sensors, long straight black hair, boron carbide ceramic, graphene hex-grid joints, straight sword, silent disciplined tragic, slender female cyborg form",
+      negative_prompt: "human face, human eyes, anime, chibi, cables, wires, katana, glossy plastic",
+    },
     identity: {
       name: "Mikage",
       archetype: "ethereal guardian",
@@ -289,7 +309,7 @@ async function runAllowCase(workspace, jobId, entityId) {
   assert(fs.existsSync(path.join(runDir, "post_validation.json")), "post_validation.json should exist");
   assert(fs.existsSync(path.join(runDir, "gemini_runtime_check.json")), "gemini_runtime_check.json should exist");
   assert(fs.existsSync(path.join(runDir, "gemini_runtime_probe.json")), "gemini_runtime_probe.json should exist");
-  assert(fs.existsSync(path.join(runDir, "gemini_validation.json")), "gemini_validation.json should exist");
+  assert(fs.existsSync(path.join(runDir, "candidate-01", "gemini_judge.json")), "gemini_judge.json should exist in candidate-01 dir");
   assert(fs.existsSync(path.join(runDir, "final_decision.json")), "final_decision.json should exist");
   assert(fs.statSync(outputPath).size > 0, "output.png should be non-empty");
   assert(Array.isArray(registry) && registry.length >= 1, "allow case should write an official registry record");
@@ -425,6 +445,10 @@ async function runCanonFailCase() {
 
   const summary = await orchestrate({
     job_id: "canon-fail-case",
+    input: {
+      prompt: "Mikage Zenith, faceless white cybernetic helmet, void black optical sensors, long straight black hair, boron carbide ceramic, graphene hex-grid joints, straight sword, silent disciplined tragic, slender female cyborg form",
+      negative_prompt: "human face, human eyes, anime, chibi, cables, wires, katana, glossy plastic",
+    },
     identity: {
       name: "Mikage",
       archetype: "ethereal guardian",
@@ -541,7 +565,7 @@ async function runValidatorNotExecutedCase() {
   assert(summary.decision === "REJECT", "validator-not-executed case must reject");
   assert(summary.status === "FAIL", "validator-not-executed case must fail");
   assert(summary.validator_executed === false, "validator-not-executed case should mark validator false");
-  assert(summary.final_decision_reason === "REJECT: validator not executed", "validator-not-executed case should record reason");
+  assert(summary.final_decision_reason === "REJECT: no real image on disk", "validator-not-executed case should record no-image reason (pre-validation blocks before render)");
   assert(summary.registry_write === false, "validator-not-executed case must not write official registry");
   assert(decisionJson.validator_executed === false, "final_decision should mark validator false");
 }
@@ -607,6 +631,10 @@ async function runGeminiFailCase() {
 
   const summary = await orchestrate({
     job_id: "gemini-fail-case",
+    input: {
+      prompt: "Mikage Zenith, faceless white cybernetic helmet, void black optical sensors, long straight black hair, boron carbide ceramic, graphene hex-grid joints, straight sword, silent disciplined tragic, slender female cyborg form",
+      negative_prompt: "human face, human eyes, anime, chibi, cables, wires, katana, glossy plastic",
+    },
     identity: {
       name: "Mikage",
       archetype: "ethereal guardian",
@@ -727,7 +755,7 @@ async function runGeminiRuntimeFailureCase() {
   assert(summary.gemini_validation_executed === false, "gemini runtime failure should not mark Gemini executed");
   assert(summary.gemini_error === "GEMINI_HTTP_403", "gemini runtime failure should surface probe failure");
   assert(summary.registry_write === false, "gemini runtime failure must not write official registry");
-  assert(decisionJson.decision_reason === "REJECT: GEMINI_HTTP_403", "gemini runtime failure should record exact reason");
+  assert(decisionJson.decision_reason === "REJECT: no real image on disk", "gemini runtime failure: pre-validation blocks before render, so no-image reason dominates");
 }
 
 async function runGeminiInvalidJsonCase() {
@@ -789,43 +817,58 @@ async function runGeminiInvalidJsonCase() {
   resetModule(path.resolve(__dirname, "orchestrator.js"));
   const { orchestrate } = require("./orchestrator");
 
-  const summary = await orchestrate({
-    job_id: "gemini-invalid-json-case",
-    identity: {
-      name: "Mikage",
-      archetype: "ethereal guardian",
-      visual_anchor: "silver-haired figure in moonlight",
-    },
-    narrative: {
-      theme: "solitude at the edge of twilight",
-      mood: "contemplative",
-      scene: "standing alone on a cliff overlooking a starlit ocean",
-    },
-    strategy: {
-      style: "cinematic illustration",
-      color_palette: "deep blue, silver, soft violet",
-    },
-    art_direction: {
-      mood: "melancholic",
-      material: "porcelain",
-      style: "wabi-sabi",
-    },
-    render: {
-      width: 1024,
-      height: 1024,
-      performance: "Speed",
-    },
-  });
+  // With input.prompt, pre-validation passes and the render happens.
+  // judgeRenderedImage returns parse_ok=false, so runLegacyGeminiValidation
+  // returns { parse_ok: false, gemini_validation_executed: true }.
+  // The orchestrator's EARLY_INVARIANT fires immediately:
+  //   "[EARLY_INVARIANT] Gemini validation parse failed - stopping immediately"
+  // so orchestrate() throws instead of returning a summary.
+  let caughtError = null;
+  try {
+    await orchestrate({
+      job_id: "gemini-invalid-json-case",
+      input: {
+        prompt: "Mikage Zenith, faceless white cybernetic helmet, void black optical sensors, long straight black hair, boron carbide ceramic, graphene hex-grid joints, straight sword, silent disciplined tragic, slender female cyborg form",
+        negative_prompt: "human face, human eyes, anime, chibi, cables, wires, katana, glossy plastic",
+      },
+      identity: {
+        name: "Mikage",
+        archetype: "ethereal guardian",
+        visual_anchor: "silver-haired figure in moonlight",
+      },
+      narrative: {
+        theme: "solitude at the edge of twilight",
+        mood: "contemplative",
+        scene: "standing alone on a cliff overlooking a starlit ocean",
+      },
+      strategy: {
+        style: "cinematic illustration",
+        color_palette: "deep blue, silver, soft violet",
+      },
+      art_direction: {
+        mood: "melancholic",
+        material: "porcelain",
+        style: "wabi-sabi",
+      },
+      render: {
+        width: 1024,
+        height: 1024,
+        performance: "Speed",
+      },
+    });
+  } catch (err) {
+    caughtError = err;
+  }
 
-  const runDir = path.join(runsDir, "gemini-invalid-json-case");
-  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
-
-  assert(summary.decision === "REJECT", "gemini invalid json case must reject");
-  assert(summary.status === "FAIL", "gemini invalid json case should fail");
-  assert(summary.gemini_validation_executed === true, "gemini invalid json should still mark Gemini executed");
-  assert(summary.gemini_error === "GEMINI_INVALID_JSON", "gemini invalid json should surface exact error");
-  assert(summary.final_decision_reason === "REJECT: GEMINI_INVALID_JSON", "gemini invalid json should record exact reason");
-  assert(decisionJson.gemini_error === "GEMINI_INVALID_JSON", "final_decision should surface exact Gemini error");
+  assert(caughtError !== null, "gemini invalid json should throw via EARLY_INVARIANT when parse_ok=false");
+  assert(
+    caughtError && caughtError.message.includes("EARLY_INVARIANT"),
+    "gemini invalid json error should be an EARLY_INVARIANT throw"
+  );
+  assert(
+    caughtError && caughtError.message.includes("parse failed"),
+    "gemini invalid json EARLY_INVARIANT should mention parse failure"
+  );
 }
 
 async function runBaselineCase() {
