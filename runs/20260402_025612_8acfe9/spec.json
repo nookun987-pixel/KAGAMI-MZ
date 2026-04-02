@@ -1,0 +1,12 @@
+{
+  "subject": "porcelain kitsune mask",
+  "material": "porcelain",
+  "color_accent": "crimson #E60000 accent at seams and core, no bloom",
+  "background": "porcelain #FAFAFA",
+  "lighting": "chiaroscuro, approximately 4:1 ratio, shadow dominant",
+  "mood": "low energy, high control",
+  "canon_flags": [],
+  "prompt_seed": "porcelain kitsune mask, intricate details, crimson #E60000 seams, chiaroscuro lighting, porcelain #FAFAFA background, clean composition",
+  "negative_hints": "human eyes, facial expression, plastic, plaster, neon, RGB, cyberpunk, abstract frame, blurry, low quality, bloom, soft light",
+  "confidence": 0.6
+}

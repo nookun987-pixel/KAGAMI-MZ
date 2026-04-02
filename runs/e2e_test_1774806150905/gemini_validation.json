@@ -1,0 +1,33 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "If the image reads matte ceramic correctly but still loses object readability, it must FAIL."
+  ],
+  "material_read": "Abstract textured surface, mosaic, or rough masonry.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "wall or slab read",
+    "plaster",
+    "powdery porous masonry",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with defined contours (edge, rim, bevel, curvature).",
+    "Remove abstract patterning and focus on a singular object's material properties.",
+    "Ensure the material reads uniformly as matte ceramic, avoiding varied colors or mosaic-like elements.",
+    "Refine color palette to be low saturation, shadow-heavy, and consistent with porcelain-white B4C technical ceramic.",
+    "Eliminate small, bright, oversaturated color specks."
+  ],
+  "summary": "The image fails as a white ceramic material study because it presents an abstract, texture-only composition rather than a clear manufactured object. The material does not read as matte B4C technical ceramic, instead resembling a rough mosaic or textured masonry with inconsistent color and no defined form.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

@@ -300,7 +300,49 @@ function validateCanonJob(job, canon) {
   return validateCanonText(text, canon, "job_input", { skipRequired: true });
 }
 
-function validateCanonPromptPackage(spec, positivePrompt, negativePrompt, canon) {
+// ---------------------------------------------------------------------------
+// VALID SHOT TYPES and safe default
+// ---------------------------------------------------------------------------
+const VALID_SHOT_TYPES = Object.freeze([
+  "ENTITY_MEDIUM",
+  "WEAPON_MACRO",
+  "MASK_CLOSE",
+  "CHARACTER_FULL",
+  "ENVIRONMENT",
+]);
+const DEFAULT_SHOT_TYPE = "ENTITY_MEDIUM";
+
+/**
+ * Resolve shot_type from structured fields only — never from prompt text.
+ * Priority: shotTypeOverride → job.shot_type → lockedPromptPackage.shot_type
+ *           → spec.shot_type → spec.render_spec.shot_type → DEFAULT_SHOT_TYPE
+ *
+ * @param {Object|null} job
+ * @param {Object|null} spec
+ * @param {Object|null} lockedPromptPackage
+ * @param {string|null} [shotTypeOverride]
+ * @returns {string}
+ */
+function resolveShotType(job, spec, lockedPromptPackage, shotTypeOverride) {
+  const candidates = [
+    shotTypeOverride,
+    job && job.shot_type,
+    lockedPromptPackage && lockedPromptPackage.shot_type,
+    spec && spec.shot_type,
+    spec && spec.render_spec && spec.render_spec.shot_type,
+  ];
+  for (const candidate of candidates) {
+    if (candidate && typeof candidate === "string" && candidate.trim()) {
+      const normalized = candidate.trim().toUpperCase();
+      if (VALID_SHOT_TYPES.includes(normalized)) return normalized;
+      // Accept any non-empty structured value (not validated against whitelist)
+      return normalized;
+    }
+  }
+  return DEFAULT_SHOT_TYPE;
+}
+
+function validateCanonPromptPackage(spec, positivePrompt, negativePrompt, canon, shotTypeOverride) {
   const positiveText = [
     spec && spec.subject ? spec.subject : "",
     ...(spec && Array.isArray(spec.texture) ? spec.texture : []),
@@ -308,12 +350,10 @@ function validateCanonPromptPackage(spec, positivePrompt, negativePrompt, canon)
     ...(spec && Array.isArray(spec.composition_rules) ? spec.composition_rules : []),
     positivePrompt || "",
   ].join("\n");
-  const shotType = String(
-    (spec && spec.shot_type) ||
-    (spec && spec.render_spec && spec.render_spec.shot_type) ||
-    positivePrompt ||
-    ""
-  ).toUpperCase();
+  // IMPORTANT: shot_type MUST come from structured fields only, never from prompt text.
+  // The || positivePrompt fallback was removed — it caused prompt text containing "blade"
+  // or "ceramic" to be interpreted as a shot_type key, triggering WEAPON_MACRO mis-classification.
+  const shotType = resolveShotType(null, spec, null, shotTypeOverride);
   let result;
   if (/WEAPON_MACRO|WEAPON|BLADE|GREATSWORD/.test(shotType)) {
     const weaponCoreText = [
@@ -368,8 +408,11 @@ function validateCanonPromptPackage(spec, positivePrompt, negativePrompt, canon)
 
 module.exports = {
   DEFAULT_CANON_PATHS,
+  VALID_SHOT_TYPES,
+  DEFAULT_SHOT_TYPE,
   loadCanonV2,
   applyCanonV2ToSpec,
   validateCanonJob,
   validateCanonPromptPackage,
+  resolveShotType,
 };

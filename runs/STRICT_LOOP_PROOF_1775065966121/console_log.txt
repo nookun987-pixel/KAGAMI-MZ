@@ -1,0 +1,1863 @@
+[PROOF] Starting strict image loop...
+
+[STRICT_LOOP] Iteration 1/10
+[STRICT_LOOP] Rendering iteration 1...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":0}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_1\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_1
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_1\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T18:04:48.245Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_00-57-49_5467.png - Thu Apr 02 2026 00:57:50 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_00-43-30_6566.png - Thu Apr 02 2026 00:43:30 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-01_23-31-24_2350.png - Wed Apr 01 2026 23:31:24 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-01_23-08-01_1249.png - Wed Apr 01 2026 23:08:02 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-01_16-15-53_6423.png - Wed Apr 01 2026 16:15:53 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T17:52:48.220Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_00-57-49_5467.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-01\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-01\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-01\output.png (720078ms)
+[STRICT_LOOP] Validating iteration 1...
+[STRICT_LOOP] ✗ FAIL at iteration 1: The image is an abstract, highly saturated digital noise pattern, completely failing to represent a white ceramic material study or any manufactured object. It exhibits severe color drifts (neon, oversaturation, pure black, synthetic purple) and lacks any material or object readability, resulting in a complete failure across all primary validation criteria.
+[STRICT_LOOP] Iteration 2/10
+[STRICT_LOOP] Rendering iteration 2...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_2\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_2
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_2\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T18:17:05.898Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_01-10-28_8990.png - Thu Apr 02 2026 01:10:28 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_00-57-49_5467.png - Thu Apr 02 2026 00:57:50 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_00-43-30_6566.png - Thu Apr 02 2026 00:43:30 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-01_23-31-24_2350.png - Wed Apr 01 2026 23:31:24 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-01_23-08-01_1249.png - Wed Apr 01 2026 23:08:02 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T18:05:05.876Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_01-10-28_8990.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-02\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-02\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-02\output.png (720064ms)
+[STRICT_LOOP] Validating iteration 2...
+[STRICT_LOOP] ✗ FAIL at iteration 2: The image is a complete failure for a white ceramic material study. It presents as an abstract, highly saturated, noisy digital texture with no discernible manufactured object or ceramic material properties. The color palette is entirely incorrect, drifting heavily into neon and synthetic purples/blues, and the composition lacks any object readability or material specificity.
+[STRICT_LOOP] Iteration 3/10
+[STRICT_LOOP] Rendering iteration 3...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_3\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_3
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_3\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T18:29:23.603Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_01-23-05_2205.png - Thu Apr 02 2026 01:23:06 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_01-10-28_8990.png - Thu Apr 02 2026 01:10:28 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_00-57-49_5467.png - Thu Apr 02 2026 00:57:50 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_00-43-30_6566.png - Thu Apr 02 2026 00:43:30 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-01_23-31-24_2350.png - Wed Apr 01 2026 23:31:24 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T18:17:23.574Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_01-23-05_2205.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-03\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-03\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-03\output.png (720074ms)
+[STRICT_LOOP] Validating iteration 3...
+[STRICT_LOOP] ✗ FAIL at iteration 3: The image is an abstract, highly saturated, noisy purple and black texture that completely fails to represent a white ceramic material study or any discernible manufactured object. It exhibits severe color drifts (neon, oversaturation, plastic-like) and lacks any material or object readability.
+[STRICT_LOOP] Iteration 4/10
+[STRICT_LOOP] Rendering iteration 4...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_4\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_4
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_4\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T18:41:45.207Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_01-23-05_2205.png - Thu Apr 02 2026 01:23:06 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_01-10-28_8990.png - Thu Apr 02 2026 01:10:28 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_00-57-49_5467.png - Thu Apr 02 2026 00:57:50 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_00-43-30_6566.png - Thu Apr 02 2026 00:43:30 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T18:29:45.197Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_01-36-00_7226.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-04\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-04\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-04\output.png (720061ms)
+[STRICT_LOOP] Validating iteration 4...
+[STRICT_LOOP] ✗ FAIL at iteration 4: The image is an abstract, oversaturated digital noise pattern with no discernible manufactured object or ceramic material read. It fails all primary pass criteria, exhibiting strong drifts towards abstract composition, texture-only framing, and synthetic, neon-like colors. The color palette is entirely incorrect for the target material.
+[STRICT_LOOP] Iteration 5/10
+[STRICT_LOOP] Rendering iteration 5...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_5\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_5
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_5\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T18:54:03.888Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_01-23-05_2205.png - Thu Apr 02 2026 01:23:06 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-10-28_8990.png - Thu Apr 02 2026 01:10:28 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_00-57-49_5467.png - Thu Apr 02 2026 00:57:50 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T18:42:03.862Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_01-49-21_4114.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-05\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-05\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-05\output.png (720073ms)
+[STRICT_LOOP] Validating iteration 5...
+[STRICT_LOOP] ✗ FAIL at iteration 5: The image is an abstract, oversaturated digital noise texture with no discernible manufactured object or ceramic material read. It exhibits severe drifts towards neon, plastic colors, and a glossy, toy-like finish, completely failing the requirements for a matte white ceramic material study.
+[STRICT_LOOP] Iteration 6/10
+[STRICT_LOOP] Rendering iteration 6...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_6\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_6
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_6\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T19:06:23.952Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-23-05_2205.png - Thu Apr 02 2026 01:23:06 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-10-28_8990.png - Thu Apr 02 2026 01:10:28 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T18:54:20.913Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_02-03-15_2427.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-06\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-06\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-06\output.png (723113ms)
+[STRICT_LOOP] Validating iteration 6...
+[STRICT_LOOP] ✗ FAIL at iteration 6: The image is an abstract, highly saturated, dark purple digital noise texture. It completely fails to represent a white ceramic manufactured object. There is no object readability, no ceramic material read, and the color palette is entirely incorrect, exhibiting neon and oversaturation drifts. This is a fundamental failure across all primary validation criteria.
+[STRICT_LOOP] Iteration 7/10
+[STRICT_LOOP] Rendering iteration 7...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_7\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_7
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_7\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T19:18:39.049Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-23-05_2205.png - Thu Apr 02 2026 01:23:06 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:06:39.015Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_02-17-36_7076.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-07\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-07\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-07\output.png (720091ms)
+[STRICT_LOOP] Validating iteration 7...
+[STRICT_LOOP] ✗ FAIL at iteration 7: The image completely fails as a white ceramic material study. It is an abstract, highly saturated, dark purple and black noise pattern with no identifiable manufactured object or any properties resembling matte ceramic. The color, composition, and lack of object readability are critical failures against all primary pass targets.
+[STRICT_LOOP] Iteration 8/10
+[STRICT_LOOP] Rendering iteration 8...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_8\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_8
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_8\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T19:30:56.557Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:18:56.517Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_02-30-42_3237.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-08\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-08\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-08\output.png (720119ms)
+[STRICT_LOOP] Validating iteration 8...
+[STRICT_LOOP] ✗ FAIL at iteration 8: The image is an abstract, oversaturated digital noise texture with no discernible manufactured object or ceramic material properties. It completely fails to meet the 'white ceramic material study' criteria, exhibiting strong neon and oversaturation drifts, and lacks any object readability. The material read is entirely incorrect.
+[STRICT_LOOP] Iteration 9/10
+[STRICT_LOOP] Rendering iteration 9...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":1}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_9\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_9
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_9\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T19:43:13.459Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 2: 2026-04-01T19:43:15.512Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 3: 2026-04-01T19:43:17.576Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 4: 2026-04-01T19:43:19.625Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 5: 2026-04-01T19:43:21.669Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 6: 2026-04-01T19:43:23.709Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 7: 2026-04-01T19:43:25.762Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 8: 2026-04-01T19:43:27.834Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 9: 2026-04-01T19:43:29.890Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 10: 2026-04-01T19:43:31.938Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 11: 2026-04-01T19:43:33.981Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 12: 2026-04-01T19:43:36.035Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 13: 2026-04-01T19:43:38.095Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 14: 2026-04-01T19:43:40.188Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 15: 2026-04-01T19:43:42.239Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 16: 2026-04-01T19:43:44.294Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 17: 2026-04-01T19:43:46.336Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 18: 2026-04-01T19:43:48.386Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 19: 2026-04-01T19:43:50.439Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-36-00_7226.png - Thu Apr 02 2026 01:36:01 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775071873431
+[RENDER_EXECUTOR] Poll cycle 20: 2026-04-01T19:43:52.491Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (NEWER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:31:13.431Z
+[RENDER_EXECUTOR] Fallback captured: D:\Fooocus-main\outputs\2026-04-02\2026-04-02_02-43-50_9282.png → D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-09\output.png (1698056 bytes)
+[RENDER_EXECUTOR] Final saved file path: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-09\output.png
+[RENDER_EXECUTOR] Render complete: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-09\output.png (759123ms)
+[STRICT_LOOP] Validating iteration 9...
+[STRICT_LOOP] ✗ FAIL at iteration 9: The image is a highly abstract, oversaturated digital noise pattern with no discernible manufactured object or ceramic material. It fails all primary pass criteria, exhibiting severe color and compositional drifts, and lacks any resemblance to the target material.
+[STRICT_LOOP] Iteration 10/10
+[STRICT_LOOP] Rendering iteration 10...
+[RENDER_EXECUTOR] ⚠️ TOKEN CHECK BYPASSED (TEST MODE)
+[RENDER_EXECUTOR] Using pre-translated prompts (skip Ollama phase)
+[RENDER_EXECUTOR] Clearing Fooocus queue before render...
+[RENDER_EXECUTOR] Queue clear response: {"status":"stopped","tasks_stopped":0}
+[RENDER_EXECUTOR] PRE-BUILD - opts contains:
+[RENDER_EXECUTOR]   opts.input_image: MISSING
+[RENDER_EXECUTOR]   opts.denoise_strength: undefined
+[RENDER_EXECUTOR]   All opts keys: prompt, negative_prompt, fooocus_url, output_dir
+[RENDER_EXECUTOR] JOB RENDER - job.render contains:
+[RENDER_EXECUTOR]   job.render.input_image: MISSING
+[RENDER_EXECUTOR]   job.render.denoise_strength: undefined
+[RENDER_EXECUTOR] IMG2IMG input_image=MISSING
+[RENDER_EXECUTOR] IMG2IMG denoise=null
+[RENDER_EXECUTOR] IMG2IMG base64_present=NO
+[RENDER_EXECUTOR] IMG2IMG base64_len=0
+[RENDER_EXECUTOR] PAYLOAD SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_10\render_payload.json
+[RENDER_EXECUTOR] STEP 1 - After buildRenderPacket:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR]   input_image (log only): MISSING
+[RENDER_EXECUTOR] Submitting render for job strict_loop_proof_1775065966121_loop_10
+[RENDER_EXECUTOR] STEP 2 - Before _submitRenderViaHttp:
+[RENDER_EXECUTOR]   generation_mode: exploration
+[RENDER_EXECUTOR]   reproduction_anchor_mode: null
+[RENDER_EXECUTOR]   anchor_image_path: MISSING
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile INPUT:
+[RENDER_EXECUTOR]   anchor_image_base64: NONE
+[RENDER_EXECUTOR]   denoise_strength: null
+[RENDER_EXECUTOR] _applyEffectiveRenderProfile: No fast profile, returning unchanged
+[RENDER_EXECUTOR] PAYLOAD SUBMITTED SAVED: D:\KAGAMI-MZ\runs\strict_loop_proof_1775065966121_loop_10\render_payload_submitted.json
+[DISPATCH] TARGET: http://127.0.0.1:7865/generate
+[DISPATCH] METHOD: POST
+[DISPATCH] TIMEOUT: 720000ms
+[DISPATCH] BODY KEYS: prompt, negative_prompt, seed, width, height, steps, disable_refiner, performance_selection, guidance_scale, sampler, scheduler, sharpness, style_selections, styles, base_model, image_number, async_process, anchor_image_base64, generation_mode, reproduction_anchor_mode, anchor_image_path, denoise_strength, lora_name, lora_weight
+[DISPATCH] generation_mode: exploration
+[DISPATCH] reproduction_anchor_mode: null
+[DISPATCH] anchor_image_path: NONE
+[DISPATCH] anchor_image_base64: NONE
+[DISPATCH] denoise_strength: null
+[DISPATCH] prompt: boron carbide (B4C) technical ceramic, micro-pitted surface, sub-micron grain structure, irregular l...
+[DISPATCH] PAYLOAD SIZE: 4738 bytes
+[RENDER FINAL PAYLOAD CHECK] base_model = realvisxlV50_v40BakedVAE.safetensors
+[RENDER FINAL PAYLOAD CHECK] guidance_scale = 4
+[RENDER FINAL PAYLOAD CHECK] styles = []
+[RENDER FINAL PAYLOAD CHECK] style_selections = []
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[RENDER_EXECUTOR] Poll cycle 1: 2026-04-01T19:56:13.371Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 2: 2026-04-01T19:56:15.702Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 3: 2026-04-01T19:56:17.741Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 4: 2026-04-01T19:56:19.778Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 5: 2026-04-01T19:56:21.822Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 6: 2026-04-01T19:56:23.886Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 7: 2026-04-01T19:56:25.984Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 8: 2026-04-01T19:56:28.024Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 9: 2026-04-01T19:56:30.061Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 10: 2026-04-01T19:56:32.105Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 11: 2026-04-01T19:56:34.151Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 12: 2026-04-01T19:56:36.193Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 13: 2026-04-01T19:56:38.239Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 14: 2026-04-01T19:56:40.306Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 15: 2026-04-01T19:56:42.341Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 16: 2026-04-01T19:56:44.394Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 17: 2026-04-01T19:56:46.468Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 18: 2026-04-01T19:56:48.526Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 19: 2026-04-01T19:56:50.578Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 20: 2026-04-01T19:56:52.647Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 21: 2026-04-01T19:56:54.688Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 22: 2026-04-01T19:56:56.732Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 23: 2026-04-01T19:56:58.782Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 24: 2026-04-01T19:57:00.828Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 25: 2026-04-01T19:57:02.907Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 26: 2026-04-01T19:57:04.945Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 27: 2026-04-01T19:57:06.991Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 28: 2026-04-01T19:57:09.037Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 29: 2026-04-01T19:57:11.084Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 30: 2026-04-01T19:57:13.135Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 31: 2026-04-01T19:57:15.183Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 32: 2026-04-01T19:57:17.226Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 33: 2026-04-01T19:57:19.307Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 34: 2026-04-01T19:57:21.352Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 35: 2026-04-01T19:57:23.426Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 36: 2026-04-01T19:57:25.512Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 37: 2026-04-01T19:57:27.570Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 38: 2026-04-01T19:57:29.606Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 39: 2026-04-01T19:57:31.645Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 40: 2026-04-01T19:57:33.696Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 41: 2026-04-01T19:57:35.727Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 42: 2026-04-01T19:57:37.766Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 43: 2026-04-01T19:57:39.807Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 44: 2026-04-01T19:57:41.843Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 45: 2026-04-01T19:57:43.880Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 46: 2026-04-01T19:57:45.919Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 47: 2026-04-01T19:57:47.954Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 48: 2026-04-01T19:57:49.984Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 49: 2026-04-01T19:57:52.018Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 50: 2026-04-01T19:57:54.066Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 51: 2026-04-01T19:57:56.108Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 52: 2026-04-01T19:57:58.156Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 53: 2026-04-01T19:58:00.184Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 54: 2026-04-01T19:58:02.220Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 55: 2026-04-01T19:58:04.258Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 56: 2026-04-01T19:58:06.302Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 57: 2026-04-01T19:58:08.340Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 58: 2026-04-01T19:58:10.373Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 59: 2026-04-01T19:58:12.414Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 60: 2026-04-01T19:58:14.449Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 61: 2026-04-01T19:58:16.487Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 62: 2026-04-01T19:58:18.524Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 63: 2026-04-01T19:58:20.567Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 64: 2026-04-01T19:58:22.619Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 65: 2026-04-01T19:58:24.649Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 66: 2026-04-01T19:58:26.693Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 67: 2026-04-01T19:58:28.729Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 68: 2026-04-01T19:58:30.771Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 69: 2026-04-01T19:58:32.801Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 70: 2026-04-01T19:58:34.833Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 71: 2026-04-01T19:58:36.876Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 72: 2026-04-01T19:58:38.904Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 73: 2026-04-01T19:58:40.934Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 74: 2026-04-01T19:58:42.972Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 75: 2026-04-01T19:58:45.015Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 76: 2026-04-01T19:58:47.059Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 77: 2026-04-01T19:58:49.098Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 78: 2026-04-01T19:58:51.140Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 79: 2026-04-01T19:58:53.197Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 80: 2026-04-01T19:58:55.237Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 81: 2026-04-01T19:58:57.275Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 82: 2026-04-01T19:58:59.314Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 83: 2026-04-01T19:59:01.365Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 84: 2026-04-01T19:59:03.404Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 85: 2026-04-01T19:59:05.439Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 86: 2026-04-01T19:59:07.473Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 87: 2026-04-01T19:59:09.517Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 88: 2026-04-01T19:59:11.552Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 89: 2026-04-01T19:59:13.593Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 90: 2026-04-01T19:59:15.635Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 91: 2026-04-01T19:59:17.720Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 92: 2026-04-01T19:59:19.760Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 93: 2026-04-01T19:59:21.794Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 94: 2026-04-01T19:59:23.826Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 95: 2026-04-01T19:59:25.870Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 96: 2026-04-01T19:59:27.910Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 97: 2026-04-01T19:59:29.967Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 98: 2026-04-01T19:59:32.261Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 99: 2026-04-01T19:59:34.292Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 100: 2026-04-01T19:59:36.332Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 101: 2026-04-01T19:59:38.368Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 102: 2026-04-01T19:59:40.405Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 103: 2026-04-01T19:59:43.018Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 104: 2026-04-01T19:59:45.058Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 105: 2026-04-01T19:59:47.096Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 106: 2026-04-01T19:59:49.135Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 107: 2026-04-01T19:59:51.174Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 108: 2026-04-01T19:59:53.220Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 109: 2026-04-01T19:59:55.270Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 110: 2026-04-01T19:59:57.299Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 111: 2026-04-01T19:59:59.334Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 112: 2026-04-01T20:00:01.388Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 113: 2026-04-01T20:00:03.419Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 114: 2026-04-01T20:00:05.585Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 115: 2026-04-01T20:00:07.717Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 116: 2026-04-01T20:00:09.752Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Poll cycle 117: 2026-04-01T20:00:11.784Z
+[RENDER_EXECUTOR] Newest 5 PNGs:
+[RENDER_EXECUTOR]   1. 2026-04-02_02-43-50_9282.png - Thu Apr 02 2026 02:43:51 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   2. 2026-04-02_02-30-42_3237.png - Thu Apr 02 2026 02:30:43 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   3. 2026-04-02_02-17-36_7076.png - Thu Apr 02 2026 02:17:37 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   4. 2026-04-02_02-03-15_2427.png - Thu Apr 02 2026 02:03:16 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR]   5. 2026-04-02_01-49-21_4114.png - Thu Apr 02 2026 01:49:22 GMT+0700 (Indochina Time) (OLDER)
+[RENDER_EXECUTOR] Fallback capture: scanning D:/Fooocus-main/outputs for PNGs after 2026-04-01T19:44:13.259Z
+[RENDER_EXECUTOR] Fallback: no PNG found after 1775072653259
+[RENDER_EXECUTOR] Failure reason: Render timeout after 720000ms
+[ERROR] [STRICT_LOOP] Render failed at iteration 10: No output_file in result
+
+================================================================================
+PROOF EXECUTION COMPLETE
+================================================================================
+
+Final Status: MAX_ITERATIONS_REACHED
+Total Iterations: 10
+Last Render: D:\KAGAMI-MZ\runs\STRICT_LOOP_PROOF_1775065966121\attempt-09\output.png

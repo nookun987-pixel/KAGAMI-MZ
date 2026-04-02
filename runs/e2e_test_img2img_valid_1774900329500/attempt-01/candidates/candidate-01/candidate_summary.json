@@ -1,0 +1,58 @@
+{
+  "candidate_id": "candidate-01",
+  "shot_type": "MATERIAL_MACRO",
+  "render_profile": "DEFAULT",
+  "seed": 3129562424,
+  "prompt": "PRODUCT PHOTOGRAPHY - STUDIO PRODUCT SHOT\nOne engineered ceramic shell, hard-surface geometric chassis. brutalist industrial form with precision manufacturing. Isolated manufactured object, not character or costume. Catalog object, industrial design prototype.\n\nOBJECT ISOLATION (HARD TOKENS)\nSingle manufactured shell object centered. Product photography framing. Catalog object presentation. Clean white/neutral backdrop. Isolated object on clean background.\n\nPRODUCT PHOTOGRAPHY DISCIPLINE\nStudio product shot. Centered composition. Single object. Sharp edges. Engineered seams. Manufactured object clarity. Industrial design prototype.\n\nFORM DISCIPLINE\nHard-surface geometric chassis. Precision manufactured contours. Engineered silhouette with defined edges. Industrial ceramic housing. Non-organic, non-character.\n\nEDGES\nTwelve edges visible as sharp lines. Edge highlights define cube boundaries. No rounded corners. Geometric precision. Manufactured seam lines.\n\nMATERIAL\nMatte B4C technical ceramic. Warm white #FAFAFA. Flat faces show subtle eggshell texture. Zero gloss. Industrial ceramic, not plastic.\n\nLIGHTING\nDirectional light from upper left. Three faces at different brightness levels showing 3D form. Clear cast shadow. Dark minimal background. Studio lighting.\n\nREJECT IF\nNo cube visible. No sharp edges. Pattern only. Abstract texture. Wall or slab appearance. Environment storytelling. Cinematic scene. Character pose., one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject",
+  "negative_prompt": "cosplay, costume, apparel, clothing, outfit, fashion, character, portrait, person, human, face, eyes, skin, expression, warrior, knight, fighter, hero, magical, fantasy, fantasy armor, ornamental, decorative, filigree, embellishment, jewelry, accessory, necklace, crown, tiara, buckle, strap, anime, manga, cartoon, stylized, illustration, cinematic scene, environment heavy, background complexity, environment storytelling, action framing, corridor, abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture, plaster slab, mineral rock, marble wall, random flat wall surface",
+  "output_path": null,
+  "output_exists": false,
+  "validator_result": {
+    "stage": "post_render_image",
+    "verdict": "REJECT",
+    "validator_executed": false,
+    "canon_version": "v2",
+    "failed_checks": [],
+    "critical_failures": [
+      "HTTP 500: {\"success\":false,\"error\":\"NO_OUTPUT_FROM_FOOOCUS\"}"
+    ],
+    "forbidden_hits": [],
+    "analyzer_signals": {},
+    "missing_signals": [],
+    "blocking_unknown_rules": [],
+    "analyzer_summary": {
+      "use_vision_validator": false,
+      "vlm_backend_ready": false,
+      "vlm_status": "skipped",
+      "semantic_result": "SKIPPED",
+      "analyzer_unavailable": []
+    },
+    "source_files": {
+      "canonMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "D:\\KAGAMI-MZ\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "reason": "HTTP 500: {\"success\":false,\"error\":\"NO_OUTPUT_FROM_FOOOCUS\"}"
+  },
+  "subject_diagnostics": {
+    "shot_type": "MATERIAL_MACRO",
+    "subject_present": true,
+    "manufactured_object_read": true,
+    "material_read": true,
+    "abstract_risk": "LOW",
+    "recovery_tags": [],
+    "subject_recovery_mode_active": false
+  },
+  "gemini_result": null,
+  "local_diagnostics": [],
+  "candidate_score": 2950,
+  "candidate_level": "REJECT",
+  "dominant_fail_reason": "VALIDATION_FAIL",
+  "render": {
+    "output_file": null,
+    "seed_used": 3129562424,
+    "render_time_ms": 241756,
+    "status": "RENDER_FAILED",
+    "error": "HTTP 500: {\"success\":false,\"error\":\"NO_OUTPUT_FROM_FOOOCUS\"}"
+  }
+}

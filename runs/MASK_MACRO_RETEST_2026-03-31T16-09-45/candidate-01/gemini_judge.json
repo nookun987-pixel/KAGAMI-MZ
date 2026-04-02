@@ -1,0 +1,65 @@
+{
+  "pass_fail": "PASS",
+  "fail_rules": [],
+  "wrong_reads": [
+    "ultra-controlled eggshell microtexture (texture is fine but not distinctly eggshell)",
+    "sparse fine hairline cracking (no cracking visible)"
+  ],
+  "correct_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "subtractive mineral color logic",
+    "low saturation, shadow-heavy palette",
+    "bokashi non-linear gradient",
+    "matte-first material-color match",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "material_read": "The white material successfully reads as a dry, dense, matte ceramic, clearly belonging to a manufactured object. It avoids any glossy, plastic, plaster, or carved stone interpretations.",
+  "fix_direction": [
+    "Introduce a more distinct ultra-controlled eggshell microtexture to the surface.",
+    "Add sparse, fine hairline cracking to enhance the technical ceramic read."
+  ],
+  "summary": "The white ceramic material achieves a strong pass for its matte, engineered product read and excellent object readability. It successfully avoids all major fail drifts. The only minor misses are the specific 'eggshell microtexture' and 'sparse fine hairline cracking' details.",
+  "confidence": 0,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "error": null,
+  "raw": {
+    "pass_fail": "PASS",
+    "fail_rules": [],
+    "material_read": "The white material successfully reads as a dry, dense, matte ceramic, clearly belonging to a manufactured object. It avoids any glossy, plastic, plaster, or carved stone interpretations.",
+    "correct_reads": [
+      "porcelain-white #FAFAFA",
+      "matte B4C technical ceramic",
+      "dry, dense, engineered read",
+      "subtractive mineral color logic",
+      "low saturation, shadow-heavy palette",
+      "bokashi non-linear gradient",
+      "matte-first material-color match",
+      "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+      "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+      "zero glossy/plastic/toy feel",
+      "zero plaster/mineral/carved stone resemblance",
+      "commercial material readability is immediate"
+    ],
+    "wrong_reads": [
+      "ultra-controlled eggshell microtexture (texture is fine but not distinctly eggshell)",
+      "sparse fine hairline cracking (no cracking visible)"
+    ],
+    "severity": "LOW",
+    "fix_direction": [
+      "Introduce a more distinct ultra-controlled eggshell microtexture to the surface.",
+      "Add sparse, fine hairline cracking to enhance the technical ceramic read."
+    ],
+    "summary": "The white ceramic material achieves a strong pass for its matte, engineered product read and excellent object readability. It successfully avoids all major fail drifts. The only minor misses are the specific 'eggshell microtexture' and 'sparse fine hairline cracking' details.",
+    "gemini_validation_executed": true,
+    "parse_ok": true,
+    "model": "gemini-2.5-flash",
+    "error": null
+  }
+}

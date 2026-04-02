@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "code": "T1",
+      "pass": true,
+      "reason": "The subject is an engineered mask, appropriate for the MASK lane."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "The mask displays a neutral, stylized expression without conveying specific emotion."
+    },
+    {
+      "code": "T4",
+      "pass": false,
+      "reason": "The material, while conceptually a mask, is rendered with flat, uniform colors and completely lacks the required Keshiki texture for ceramic/porcelain, making it appear incorrect for the lane."
+    },
+    {
+      "code": "T8",
+      "pass": false,
+      "reason": "The background contains pure black (#000000) areas, which violates the rule against using #000000 for Sumi black."
+    },
+    {
+      "code": "T11",
+      "pass": true,
+      "reason": "The image clearly depicts a manufactured object (a mask), not abstract art."
+    },
+    {
+      "code": "T12",
+      "pass": false,
+      "reason": "The material is rendered as flat and uniform, completely lacking the required Keshiki texture. The surface is not clearly readable as porcelain ceramic with texture variation."
+    },
+    {
+      "code": "T13",
+      "pass": true,
+      "reason": "There is clear negative space around the subject, adhering to the Sacred Void (Ma) principle."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "The mask exhibits good symmetry and no apparent geometric distortion."
+    }
+  ],
+  "hard_fail_count": 1,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "reasoning": "The image fails to meet the MIKAGE ZENITH visual canon, primarily due to the absence of the required Keshiki texture on all surfaces, making the material appear flat and uniform (T12 hard fail). The white areas of the mask are rendered as pure white (#FFFFFF) instead of Gofun, and the background black is #000000 instead of Sumi, violating the color canon. Furthermore, the crimson accents are not limited to seams as required, and the overall material rendering does not convey porcelain ceramic with Keshiki texture (T4)."
+}

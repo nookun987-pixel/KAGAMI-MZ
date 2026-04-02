@@ -1,0 +1,10 @@
+{
+  "mode": "img2img",
+  "denoise_strength": 0.15,
+  "image_strength": 0.85,
+  "guidance_scale": 7,
+  "steps": 30,
+  "style_selections": [],
+  "seed": -1,
+  "input_image": "D:\\KAGAMI-MZ\\runs\\20260401_031831_7f116e\\output.png"
+}

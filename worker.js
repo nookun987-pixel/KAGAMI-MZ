@@ -31,12 +31,14 @@ function writeQueue(queue) {
 }
 
 function readJsonIfExists(filePath) {
-  try {
-    if (!fs.existsSync(filePath)) return null;
-    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  } catch (_) {
-    return null;
+  if (!fs.existsSync(filePath)) {
+    if (!fs.existsSync(filePath)) {
+  console.log(`[WORKER] Missing final_decision.json → skipping job`);
+  return null;
+}
   }
+  const content = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(content);
 }
 
 function reconcileCompletedRunningJobs() {
@@ -46,7 +48,9 @@ function reconcileCompletedRunningJobs() {
     if (job.status !== "RUNNING") continue;
     const finalDecisionPath = path.join(RUNS_ROOT, job.job_id, "final_decision.json");
     const finalDecision = readJsonIfExists(finalDecisionPath);
-    if (!finalDecision) continue;
+    if (!finalDecision) {
+      throw new Error(`[WORKER] final_decision.json exists but is empty/invalid for job ${job.job_id}`);
+    }
     job.status = finalDecision.decision === "ALLOW" ? "DONE" : "REJECT";
     job.runtime_result = {
       job_id: job.job_id,

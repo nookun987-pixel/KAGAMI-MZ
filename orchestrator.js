@@ -23,12 +23,16 @@ const {
   applyCanonV2ToSpec,
   validateCanonJob,
   validateCanonPromptPackage,
+  resolveShotType,
 } = require("./control/canon_v2_control");
 const { runAllAnalyzers } = require("./analyzers/run_all_analyzers");
 const { detectDrift } = require("./drift/drift_detector");
 const { runRuleEngine } = require("./validators/mikage_rule_engine");
 const { getSpecPath, getVersions } = require("./validators/load_mikage_specs");
 const { isVLMAvailable } = require("./analyzers/vlm_semantic_analyzer");
+const { assertPreWriteInvariants, assertCanonRecordIsAllow } = require("./core/invariants");
+const { validate: validateSchema } = require("./core/schema_registry");
+const { createRunTracker, STATES: SM_STATES } = require("./core/run_tracker");
 
 const ROOT_DIR = __dirname;
 const RUNS_DIR = path.resolve(process.env.RUNS_DIR || path.join(ROOT_DIR, "runs"));
@@ -178,6 +182,34 @@ function writeJson(filePath, payload) {
   return filePath;
 }
 
+// ---------------------------------------------------------------------------
+// SCHEMA-VALIDATED WRITE HELPERS
+// These MUST be used for all critical entity writes.
+// Invalid data → hard throw → pipeline stops.
+// ---------------------------------------------------------------------------
+
+function writeValidatedJson(filePath, entityType, payload) {
+  const result = validateSchema(entityType, payload, { strict: false });
+  if (!result.valid) {
+    const msg = `[SCHEMA] Cannot write ${entityType} to ${path.basename(filePath)}: ${result.errors.join("; ")}`;
+    console.error(msg);
+    throw new Error(msg);
+  }
+  return writeJson(filePath, payload);
+}
+
+function writeFinalDecision(filePath, payload) {
+  return writeValidatedJson(filePath, "final_decision", payload);
+}
+
+function writePostValidation(filePath, payload) {
+  return writeValidatedJson(filePath, "validator_result", payload);
+}
+
+function writeGeminiValidation(filePath, payload) {
+  return writeValidatedJson(filePath, "gemini_result", payload);
+}
+
 function writeText(filePath, body) {
   ensureDir(path.dirname(filePath));
   fs.writeFileSync(filePath, String(body || ""), "utf-8");
@@ -271,13 +303,18 @@ function isIdeaDrivenJob(job) {
   return !!(job && job.user_idea);
 }
 
-function getEffectiveRenderSettings(renderSpec = {}, baseRender = {}) {
+function getEffectiveRenderSettings(renderSpec = {}, baseRender = {}, job = {}) {
   const shotType = normalizeShotType(renderSpec.shot_type || baseRender.shot_type || "ENTITY_MEDIUM");
   const shotProfile = SHOT_RENDER_PROFILES[shotType] || SHOT_RENDER_PROFILES.ENTITY_MEDIUM;
   const profile = String(process.env.RENDER_PROFILE || "").trim() || "DEFAULT";
-  if (profile === "FAST_TEST") {
+  
+  // Test mode overrides
+  const isTestMode = job.test_mode === true;
+  const testCandidateCount = isTestMode ? Math.min(1, job.max_candidates || 1) : null;
+  
+  if (profile === "FAST_TEST" || isTestMode) {
     return {
-      profile,
+      profile: isTestMode ? "TEST_MODE" : profile,
       shot_type: shotType,
       width: parseInt(process.env.FAST_WIDTH || String(shotProfile.width || 512), 10),
       height: parseInt(process.env.FAST_HEIGHT || String(shotProfile.height || 512), 10),
@@ -287,9 +324,10 @@ function getEffectiveRenderSettings(renderSpec = {}, baseRender = {}) {
       sampler: shotProfile.sampler,
       scheduler: shotProfile.scheduler,
       sharpness: shotProfile.sharpness,
-      candidate_count: shotProfile.candidate_count,
+      candidate_count: testCandidateCount || shotProfile.candidate_count,
       seed_policy: shotProfile.seed_policy,
       performance: baseRender.performance || renderSpec.performance || "Quality",
+      test_mode: isTestMode,
     };
   }
   return {
@@ -306,6 +344,7 @@ function getEffectiveRenderSettings(renderSpec = {}, baseRender = {}) {
     candidate_count: parseInt(process.env.SHOT_CANDIDATE_COUNT_OVERRIDE || "", 10) || renderSpec.candidate_count || baseRender.candidate_count || shotProfile.candidate_count || 1,
     seed_policy: process.env.SHOT_SEED_POLICY_OVERRIDE || renderSpec.seed_policy || baseRender.seed_policy || shotProfile.seed_policy || "locked",
     performance: renderSpec.performance || baseRender.performance || "Quality",
+    test_mode: isTestMode,
   };
 }
 
@@ -876,15 +915,63 @@ function applySubjectPresenceGuard(promptPackage, job) {
     (promptPackage.locked_prompt_package && promptPackage.locked_prompt_package.negative_prompt) ||
     ""
   );
+  
+  // ANTI-ABSTRACT DIAGNOSTIC LOCK - P3 Implementation
+  // Check for abstract-risk keywords in prompt before rendering
+  const abstractRiskPatterns = [
+    /material study/i,
+    /texture study/i,
+    /macro close-up/i,
+    /surface only/i,
+    /wall texture/i,
+    /abstract composition/i,
+    /pattern without object/i,
+  ];
+  
+  const subjectClarityPatterns = [
+    /sphere|dish|plate|tile|component|object|vase|bowl|entity/i,
+    /full object/i,
+    /readable silhouette/i,
+    /manufactured object/i,
+  ];
+  
+  const hasAbstractRisk = abstractRiskPatterns.some(p => p.test(basePrompt));
+  const hasSubjectClarity = subjectClarityPatterns.some(p => p.test(basePrompt));
+  const hasAntiAbstractNegative = /abstract|texture-only|pattern without/i.test(baseNegative);
+  
+  const abstractRiskLevel = hasAbstractRisk && !hasSubjectClarity ? "HIGH" : 
+                          hasAbstractRisk && hasSubjectClarity ? "MEDIUM" : "LOW";
+  
+  if (abstractRiskLevel === "HIGH") {
+    console.warn(`[SUBJECT_LOCK] HIGH abstract risk detected in prompt for job ${job.job_id}`);
+    console.warn(`[SUBJECT_LOCK] Prompt lacks clear subject definition. Add: sphere, dish, plate, component`);
+  }
+  
   // Use comma-separated tags (diffusion-friendly) instead of instruction-style text blocks
   const guardTags = shot.positive
     .map((rule) => rule.replace(/^(must |not |no |only )/i, "").trim())
     .filter(Boolean)
     .slice(0, 6);
+  
+  // Add subject clarity tags if abstract risk detected
+  if (abstractRiskLevel !== "LOW" && !hasSubjectClarity) {
+    guardTags.push("single manufactured object", "readable silhouette", "full object visible");
+  }
+  
   const guardedPrompt = `${basePrompt}, ${guardTags.join(", ")}`.trim();
+  
+  // Add anti-abstract negatives if not present
+  const antiAbstractNegatives = [
+    "abstract composition",
+    "texture-only frame",
+    "pattern without object",
+    "background dominates",
+    "no clear subject",
+  ];
   const guardedNegative = dedupeStrings([
     ...baseNegative.split(",").map((item) => item.trim()).filter(Boolean),
     ...shot.negative,
+    ...(abstractRiskLevel !== "LOW" && !hasAntiAbstractNegative ? antiAbstractNegatives : []),
   ]).join(", ");
 
   return {
@@ -920,6 +1007,19 @@ function applySubjectPresenceGuard(promptPackage, job) {
       shot_type: shot.shot_type,
       positive: shot.positive,
       negative: shot.negative,
+    },
+    // P3: Anti-abstract diagnostic flags
+    subject_readability_lock: {
+      abstract_risk_level: abstractRiskLevel,
+      has_abstract_keywords: hasAbstractRisk,
+      has_subject_clarity: hasSubjectClarity,
+      has_anti_abstract_negative: hasAntiAbstractNegative,
+      guard_applied: abstractRiskLevel !== "LOW",
+      diagnostic_flags: [
+        ...(hasAbstractRisk ? ["ABSTRACT_KEYWORDS_DETECTED"] : []),
+        ...(!hasSubjectClarity ? ["SUBJECT_CLARITY_MISSING"] : []),
+        ...(!hasAntiAbstractNegative && hasAbstractRisk ? ["ANTI_ABSTRACT_NEGATIVE_MISSING"] : []),
+      ],
     },
   };
 }
@@ -1095,6 +1195,65 @@ function buildCorrectionGuidance(finalDecision, geminiValidation, subjectDiagnos
     hints.push("Subject recovery mode: force one clearly readable central manufactured object and remove abstract atmosphere.");
   }
   return dedupeStrings(hints);
+}
+
+/**
+ * Update shared_state.json to terminal state.
+ * OWNERSHIP NOTE: This is the ONLY place the orchestrator touches shared_state.
+ * All other shared_state writes go through telegram_bot/shared_state.js.
+ * Uses the shared_state module to avoid concurrent write corruption.
+ */
+function updateSharedStateTerminal(jobId, decision, status) {
+  try {
+    const { updateState } = require("./telegram_bot/shared_state");
+    const terminalStates = ['DONE', 'FAIL', 'REJECT', 'PASS'];
+    const isTerminal = terminalStates.some(s => (status || '').toUpperCase().includes(s)) ||
+                       terminalStates.some(s => (decision || '').toUpperCase().includes(s));
+
+    const newRunState = isTerminal ? 'DONE' : (decision === 'ALLOW' ? 'PASSED' : 'FAILED_VALIDATION');
+    const newStatus = decision === 'ALLOW' ? 'DONE' : (status || 'FAIL');
+
+    updateState((state) => {
+      state.activeJobId = null;
+      state.currentStep = 'RUN_COMPLETED';
+      state.runState = newRunState;
+      state.lastJobId = jobId;
+      state.lastDecision = decision;
+      state.lastStatus = newStatus;
+      state.completedAt = new Date().toISOString();
+      return state;
+    });
+    console.log(`[ORCHESTRATOR] Updated shared_state to terminal: ${newRunState}`);
+  } catch (err) {
+    console.error(`[ORCHESTRATOR] Failed to update shared_state: ${err.message}`);
+  }
+}
+
+/**
+ * Sync task.status to match run.status at terminal points.
+ * Mapping: RUNNING→RUNNING, DONE→DONE, FAIL→REJECT
+ */
+function syncTaskStatusToRun(jobId, runStatus) {
+  try {
+    const { updateTask, getTasks } = require("./telegram_bot/shared_state");
+    const tasks = getTasks();
+    const task = tasks.find(t => t.related_run_id === jobId || t.task_id === jobId);
+    if (!task) return;
+    
+    const mapping = {
+      'RUNNING': 'RUNNING',
+      'DONE': 'DONE',
+      'FAIL': 'REJECT',
+      'PENDING': 'PENDING'
+    };
+    const newTaskStatus = mapping[runStatus] || task.status;
+    if (newTaskStatus !== task.status) {
+      updateTask(task.task_id, { status: newTaskStatus });
+      console.log(`[TASK_SYNC] Task ${task.task_id} status updated: ${task.status} → ${newTaskStatus}`);
+    }
+  } catch (err) {
+    console.error(`[TASK_SYNC] Failed to sync task status: ${err.message}`);
+  }
 }
 
 function buildPromptPackage(job, canon) {
@@ -2011,6 +2170,9 @@ async function writeOfficialCanonRecord(finalDecision, continuity) {
     };
   }
 
+  // INV-6: Hard check — only ALLOW may enter the canon registry
+  assertCanonRecordIsAllow({ decision: finalDecision.decision, job_id: finalDecision.job_id });
+
   const record = {
     job_id: finalDecision.job_id,
     timestamp: nowIso(),
@@ -2759,16 +2921,39 @@ async function orchestrateLegacy(job) {
   let geminiValidation = null;
   let candidateBatch = null;
 
+  // --- STATE MACHINE TRACKING ---
+  const tracker = createRunTracker(job.job_id);
+  try { tracker.advance(SM_STATES.STRUCTURED); } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance to STRUCTURED: ${err.message}`); }
+
   writeJson(artifactPaths.final_payload, promptPackage.payload);
 
+  try { tracker.advance(SM_STATES.PRECHECKED); } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance to PRECHECKED: ${err.message}`); }
   const jobValidation = validateCanonJob(job, canon);
+
+  // Resolve shot_type from structured fields only — never from prompt text.
+  // Priority: job.shot_type → promptPackage.shot_type → spec.shot_type → spec.render_spec.shot_type → DEFAULT
+  const resolvedShotType = resolveShotType(job, promptPackage.spec, promptPackage.locked_prompt_package, promptPackage.shot_type);
+  const shotTypeResolution = {
+    value: resolvedShotType,
+    sources_checked: {
+      job_shot_type: job && job.shot_type || null,
+      package_shot_type: promptPackage && promptPackage.shot_type || null,
+      locked_shot_type: promptPackage && promptPackage.locked_prompt_package && promptPackage.locked_prompt_package.shot_type || null,
+      spec_shot_type: promptPackage && promptPackage.spec && promptPackage.spec.shot_type || null,
+      render_spec_shot_type: promptPackage && promptPackage.spec && promptPackage.spec.render_spec && promptPackage.spec.render_spec.shot_type || null,
+    },
+    inferred_from_prompt_text: false,
+  };
+
   const promptValidation = validateCanonPromptPackage(
     promptPackage.spec,
     promptPackage.positivePrompt,
     promptPackage.negativePrompt,
-    canon
+    canon,
+    resolvedShotType
   );
   const preValidation = mergePreValidation(jobValidation, promptValidation);
+  preValidation.shot_type_resolution = shotTypeResolution;
   writeJson(artifactPaths.pre_validation, preValidation);
   let renderResult = null;
   let outputFile = null;
@@ -2782,6 +2967,7 @@ async function orchestrateLegacy(job) {
   const preValidationBlocks = preValidation.verdict !== "PASS" && (!isDirectInput || hasCriticalBlock);
 
   if (preValidationBlocks) {
+    try { tracker.fail("pre_validation_blocked"); } catch (_) { /* best-effort */ }
     postValidation = buildFailedPostValidation("pre_validation_failed", canon, {
       use_vision_validator: String(process.env.USE_VISION_VALIDATOR || "false").toLowerCase() === "true",
       vlm_backend_ready: isVLMAvailable(),
@@ -2798,6 +2984,11 @@ async function orchestrateLegacy(job) {
         : await validateGeminiRuntime();
       writeJson(artifactPaths.gemini_runtime_probe, runtimeProbe);
     }
+    try {
+      tracker.advance(SM_STATES.NORMALIZED);
+      tracker.advance(SM_STATES.TRANSLATED);
+      tracker.advance(SM_STATES.RENDERING);
+    } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance rendering states: ${err.message}`); }
     candidateBatch = await runLegacyCandidateBatch({
       job,
       canon,
@@ -2807,11 +2998,34 @@ async function orchestrateLegacy(job) {
     });
     renderResult = candidateBatch.bestCandidate ? { render: candidateBatch.bestCandidate.render } : null;
     outputFile = candidateBatch.bestCandidate ? candidateBatch.bestCandidate.output_path : null;
+    
+    // --- EARLY INVARIANT: Stop if no output file after render ---
+    if (!outputFile) {
+      throw new Error('[EARLY_INVARIANT] Render produced no output file - stopping immediately');
+    }
+    
     postValidation = candidateBatch.bestCandidate ? candidateBatch.bestCandidate.validator_result : null;
+    
+    // --- EARLY INVARIANT: Stop if validator did not execute ---
+    if (!postValidation || postValidation.validator_executed !== true) {
+      throw new Error('[EARLY_INVARIANT] Validator did not execute - stopping immediately');
+    }
+    
     geminiValidation = candidateBatch.bestCandidate ? candidateBatch.bestCandidate.gemini_result : geminiValidation;
+    
+    // --- EARLY INVARIANT: Stop if gemini parse failed ---
+    if (geminiValidation && geminiValidation.parse_ok !== true) {
+      throw new Error('[EARLY_INVARIANT] Gemini validation parse failed - stopping immediately');
+    }
+    
+    try {
+      tracker.advance(SM_STATES.CRITIQUED);
+      tracker.advance(SM_STATES.DRIFT_CHECKED);
+      tracker.advance(SM_STATES.POSTCHECKED);
+    } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance postcheck states: ${err.message}`); }
   }
 
-  writeJson(artifactPaths.post_validation, postValidation);
+  writePostValidation(artifactPaths.post_validation, postValidation);
 
   if (enforceGemini && !candidateBatch) {
     const runtimeCheck = buildGeminiRuntimeCheck();
@@ -2828,7 +3042,7 @@ async function orchestrateLegacy(job) {
         summary: "GEMINI_API_KEY_MISSING",
       });
       writeJson(artifactPaths.gemini_runtime_probe, runtimeProbe);
-      writeJson(artifactPaths.gemini_validation, geminiValidation);
+      writeGeminiValidation(artifactPaths.gemini_validation, geminiValidation);
     } else {
       const runtimeProbe = await validateGeminiRuntime();
       writeJson(artifactPaths.gemini_runtime_probe, runtimeProbe);
@@ -2838,15 +3052,16 @@ async function orchestrateLegacy(job) {
           raw: runtimeProbe,
         });
         } else {
+          const legacyShotType = inferShotType(job, promptPackage);
           geminiValidation = await runLegacyGeminiValidation(
             outputFile,
             {
-              promptPath: resolveGeminiJudgePromptPath(effectiveRender.shot_type),
-              shotType: effectiveRender.shot_type,
+              promptPath: resolveGeminiJudgePromptPath(legacyShotType),
+              shotType: legacyShotType,
             }
           );
         }
-      writeJson(artifactPaths.gemini_validation, geminiValidation);
+      writeGeminiValidation(artifactPaths.gemini_validation, geminiValidation);
     }
   }
 
@@ -2931,13 +3146,59 @@ async function orchestrateLegacy(job) {
   finalDecision.best_candidate_summary = summary.best_candidate_summary;
   finalDecision.candidate_level = summary.candidate_level;
 
-  writeJson(artifactPaths.final_decision, finalDecision);
+  // --- INVARIANT GATE: validate final decision before persisting ---
+  try {
+    assertPreWriteInvariants(finalDecision, {
+      postValidation,
+      outputFilePath: outputFile,
+      enforceGemini,
+      sharedState: null,
+    });
+  } catch (invErr) {
+    console.error(`[INVARIANT] Pre-write check failed: ${invErr.message}`);
+    // Force REJECT if invariant violated on an ALLOW — never let a bad ALLOW through
+    if (finalDecision.decision === "ALLOW") {
+      finalDecision.decision = "REJECT";
+      finalDecision.status = "FAIL";
+      finalDecision.decision_reason = `REJECT: invariant violation: ${invErr.invariant || invErr.message}`;
+      summary.decision = "REJECT";
+      summary.status = "FAIL";
+    }
+  }
+
+  // --- STATE MACHINE: mark decided + finalize ---
+  try {
+    if (tracker.getState() !== SM_STATES.FAILED) {
+      tracker.advance(SM_STATES.DECIDED);
+      tracker.advance(SM_STATES.LOGGED);
+      tracker.advance(SM_STATES.DONE);
+    } else {
+      tracker.finalize();
+    }
+  } catch (err) { throw new Error(`[STATE_MACHINE] Failed to finalize: ${err.message}`); }
+  writeJson(path.join(runDir, "state_trace.json"), tracker.getTrace());
+
+  writeFinalDecision(artifactPaths.final_decision, finalDecision);
   writeJson(artifactPaths.job_summary, summary);
   await safeNotionLog(finalDecision, preValidation, postValidation);
+  
+  // --- TASK↔RUN SYNC: Sync task status to terminal state ---
+  syncTaskStatusToRun(job.job_id, finalDecision.status);
+  
   return summary;
 }
 
 async function orchestrateAutoLoop(job) {
+  const isTestMode = job.test_mode === true || job.no_retry === true;
+  const maxAttempts = isTestMode ? 1 : MAX_RENDER_RETRIES;
+
+  // --- STATE MACHINE TRACKING (auto-loop) ---
+  const tracker = createRunTracker(job.job_id);
+
+  if (isTestMode) {
+    console.log(`[ORCHESTRATOR] Test mode detected for job ${job.job_id} - limiting to ${maxAttempts} attempt(s), no retry`);
+  }
+
   const canon = loadCanonV2();
   const runDir = ensureDir(path.join(RUNS_DIR, job.job_id));
   const artifactPaths = buildArtifactPaths(runDir);
@@ -2975,7 +3236,7 @@ async function orchestrateAutoLoop(job) {
       error: "GEMINI_API_KEY_MISSING",
       model: geminiConfig.model,
     });
-    writeJson(artifactPaths.gemini_validation, failure);
+    writeGeminiValidation(artifactPaths.gemini_validation, failure);
     const finalDecision = {
       job_id: job.job_id,
       status: "FAIL",
@@ -2993,9 +3254,13 @@ async function orchestrateAutoLoop(job) {
       attempt_count: 0,
     };
     writeJson(artifactPaths.merged_decision, finalDecision);
-    writeJson(artifactPaths.final_decision, finalDecision);
+    writeFinalDecision(artifactPaths.final_decision, finalDecision);
     writeJson(artifactPaths.job_summary, finalDecision);
     writeText(artifactPaths.summary_txt, "REJECT: GEMINI_API_KEY_MISSING");
+    
+    // --- TASK↔RUN SYNC: Sync task status to terminal state ---
+    syncTaskStatusToRun(job.job_id, finalDecision.status);
+    
     return finalDecision;
   }
 
@@ -3015,7 +3280,7 @@ async function orchestrateAutoLoop(job) {
       parse_ok: false,
       error: runtimeProbe.error || "GEMINI_REQUEST_FAILED",
     };
-    writeJson(artifactPaths.gemini_validation, failure);
+    writeGeminiValidation(artifactPaths.gemini_validation, failure);
     const finalDecision = {
       job_id: job.job_id,
       status: "FAIL",
@@ -3033,11 +3298,17 @@ async function orchestrateAutoLoop(job) {
       attempt_count: 0,
     };
     writeJson(artifactPaths.merged_decision, finalDecision);
-    writeJson(artifactPaths.final_decision, finalDecision);
+    writeFinalDecision(artifactPaths.final_decision, finalDecision);
     writeJson(artifactPaths.job_summary, finalDecision);
     writeText(artifactPaths.summary_txt, `REJECT: ${runtimeProbe.error || "GEMINI_REQUEST_FAILED"}`);
+    
+    // --- TASK↔RUN SYNC: Sync task status to terminal state ---
+    syncTaskStatusToRun(job.job_id, finalDecision.status);
+    
     return finalDecision;
   }
+
+  try { tracker.advance(SM_STATES.STRUCTURED); } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance to STRUCTURED: ${err.message}`); }
 
   const intakeRequest = normalizeIdeaRequest(job);
   writeJson(artifactPaths.intake_request, intakeRequest);
@@ -3137,15 +3408,22 @@ async function orchestrateAutoLoop(job) {
   );
   writeJson(artifactPaths.gemini_intake, geminiIntake);
 
+  try { tracker.advance(SM_STATES.PRECHECKED); } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance to PRECHECKED: ${err.message}`); }
   const geminiPrecheck = runGeminiPrecheck(geminiIntake);
   writeJson(artifactPaths.gemini_precheck, geminiPrecheck);
 
   if (geminiPrecheck.status === "REJECT") {
     const finalDecision = buildPrecheckFailureDecision(job, artifactPaths, continuity, geminiPrecheck);
     writeJson(artifactPaths.merged_decision, finalDecision);
-    writeJson(artifactPaths.final_decision, finalDecision);
+    writeFinalDecision(artifactPaths.final_decision, finalDecision);
     writeJson(artifactPaths.job_summary, finalDecision);
     writeText(artifactPaths.summary_txt, finalDecision.decision_reason);
+    // Update shared_state to terminal state for precheck reject
+    updateSharedStateTerminal(job.job_id, finalDecision.decision, finalDecision.status);
+    
+    // --- TASK↔RUN SYNC: Sync task status to terminal state ---
+    syncTaskStatusToRun(job.job_id, finalDecision.status);
+    
     return finalDecision;
   }
 
@@ -3156,11 +3434,18 @@ async function orchestrateAutoLoop(job) {
   writeJson(artifactPaths.prompt_package, promptPackage);
   writeJson(artifactPaths.prompt_before, promptPackage);
 
+  try {
+    tracker.advance(SM_STATES.NORMALIZED);
+    tracker.advance(SM_STATES.TRANSLATED);
+  } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance to NORMALIZED/TRANSLATED: ${err.message}`); }
+
   let lastLocalSummary = null;
   let lastLocalValidation = null;
   let lastGeminiValidation = null;
 
-  for (let attempt = 1; attempt <= MAX_RENDER_RETRIES; attempt += 1) {
+  try { tracker.advance(SM_STATES.RENDERING); } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance to RENDERING: ${err.message}`); }
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const attemptDir = ensureDir(path.join(runDir, `attempt-${String(attempt).padStart(2, "0")}`));
     writeJson(artifactPaths.prompt_after, promptPackage);
     writeText(path.join(attemptDir, "prompt.txt"), promptPackage.structured_prompt || "");
@@ -3197,11 +3482,11 @@ async function orchestrateAutoLoop(job) {
         output_exists: false,
         validator_executed: false,
         gemini_validation_executed: false,
-        render_profile: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}).profile,
-        width: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}).width,
-        height: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}).height,
-        steps: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}).steps,
-        refiner_enabled: !getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}).disable_refiner,
+        render_profile: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}, job).profile,
+        width: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}, job).width,
+        height: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}, job).height,
+        steps: getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}, job).steps,
+        refiner_enabled: !getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}, job).disable_refiner,
         render_duration_seconds: 0,
         decision: "FAIL",
         fail_rules: [],
@@ -3217,12 +3502,12 @@ async function orchestrateAutoLoop(job) {
       }
     );
     lastGeminiValidation = geminiJudge.raw;
-    writeJson(artifactPaths.gemini_validation, lastGeminiValidation);
+    writeGeminiValidation(artifactPaths.gemini_validation, lastGeminiValidation);
     writeJson(path.join(attemptDir, "gemini_judge.json"), lastGeminiValidation);
     if (outputExists) {
       fs.copyFileSync(lastLocalSummary.output_file_path, path.join(attemptDir, "output.png"));
     }
-    const effectiveRender = getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {});
+    const effectiveRender = getEffectiveRenderSettings(promptPackage.render_spec || {}, job.render || {}, job);
 
     const geminiOk =
       lastGeminiValidation &&
@@ -3276,6 +3561,12 @@ async function orchestrateAutoLoop(job) {
       break;
     }
 
+    // In test mode, don't retry - just break after first attempt
+    if (isTestMode) {
+      console.log(`[ORCHESTRATOR] Test mode: not retrying after ${localPassed ? 'PASS' : 'FAIL'}`);
+      break;
+    }
+
     const fixBrief = buildFixBrief(job, lastLocalValidation, lastGeminiValidation, promptPackage, {
       ...intakeRequest,
       attempt,
@@ -3283,7 +3574,7 @@ async function orchestrateAutoLoop(job) {
     });
     writeJson(artifactPaths.fix_brief, fixBrief);
 
-    if (attempt >= MAX_RENDER_RETRIES) {
+    if (attempt >= maxAttempts) {
       break;
     }
 
@@ -3314,6 +3605,12 @@ async function orchestrateAutoLoop(job) {
 
   writeJson(artifactPaths.run_loop_trace, trace);
 
+  try {
+    tracker.advance(SM_STATES.CRITIQUED);
+    tracker.advance(SM_STATES.DRIFT_CHECKED);
+    tracker.advance(SM_STATES.POSTCHECKED);
+  } catch (err) { throw new Error(`[STATE_MACHINE] Failed to advance postcheck states: ${err.message}`); }
+
   const { finalDecision, summary } = buildClosedLoopDecision({
     job,
     artifactPaths,
@@ -3325,7 +3622,37 @@ async function orchestrateAutoLoop(job) {
     attemptCount: trace.length,
     trace,
   });
+
+  // --- STATE MACHINE: mark decided + finalize ---
+  try {
+    tracker.advance(SM_STATES.DECIDED);
+    tracker.advance(SM_STATES.LOGGED);
+    tracker.advance(SM_STATES.DONE);
+  } catch (err) { throw new Error(`[STATE_MACHINE] Failed to finalize: ${err.message}`); }
+  writeJson(path.join(runDir, "state_trace.json"), tracker.getTrace());
+
   writeJson(artifactPaths.merged_decision, finalDecision);
+
+  // --- INVARIANT GATE (auto-loop): validate final decision before persisting ---
+  try {
+    assertPreWriteInvariants(finalDecision, {
+      postValidation: lastLocalValidation,
+      outputFilePath: finalDecision.output_file_path,
+      enforceGemini: true,
+      sharedState: null,
+    });
+  } catch (invErr) {
+    console.error(`[INVARIANT] Auto-loop pre-write check failed: ${invErr.message}`);
+    if (finalDecision.decision === "ALLOW") {
+      finalDecision.decision = "REJECT";
+      finalDecision.status = "FAIL";
+      finalDecision.decision_reason = `REJECT: invariant violation: ${invErr.invariant || invErr.message}`;
+      if (summary) {
+        summary.decision = "REJECT";
+        summary.status = "FAIL";
+      }
+    }
+  }
 
   const registryResult = await writeOfficialCanonRecord(finalDecision, continuity);
   finalDecision.registry_write = registryResult.registry_write;
@@ -3335,7 +3662,7 @@ async function orchestrateAutoLoop(job) {
   summary.registry_target = registryResult.registry_target;
   summary.registry_path = registryResult.registry_path;
 
-  writeJson(artifactPaths.final_decision, finalDecision);
+  writeFinalDecision(artifactPaths.final_decision, finalDecision);
   writeJson(artifactPaths.job_summary, summary);
   writeJson(path.join(runDir, "attempt_index.json"), {
     attempts_used: trace.length,
@@ -3343,10 +3670,23 @@ async function orchestrateAutoLoop(job) {
   });
   writeText(artifactPaths.summary_txt, buildSummaryText(finalDecision, lastGeminiValidation));
   await safeNotionLog(finalDecision, summary.pre_validation_result, lastLocalValidation);
+  
+  // Update shared_state to terminal state
+  updateSharedStateTerminal(job.job_id, finalDecision.decision, finalDecision.status);
+  
+  // --- TASK↔RUN SYNC: Sync task status to terminal state ---
+  syncTaskStatusToRun(job.job_id, finalDecision.status);
+  
   return summary;
 }
 
 async function orchestrate(job) {
+  // --- INPUT VALIDATION: Validate job payload before processing ---
+  const jobValidation = validateSchema('run', { job_id: job.job_id, run_dir: '', status: job.status || 'RETRY', decision: job.decision || 'RETRY', shot_type: job.shot_type || 'ENTITY_MEDIUM', created_at: job.created_at || new Date().toISOString() }, { strict: false });
+  if (!jobValidation.valid) {
+    throw new Error(`[INPUT_VALIDATION] Invalid job payload: ${jobValidation.errors.join("; ")}`);
+  }
+  
   if (isIdeaDrivenJob(job)) {
     return orchestrateAutoLoop(job);
   }
@@ -3408,9 +3748,10 @@ async function main() {
       critical_failures: [error.message],
       canon_version: "v2",
     });
-    writeJson(artifactPaths.post_validation, {
+    writePostValidation(artifactPaths.post_validation, {
       stage: "post_render_image",
       verdict: "REJECT",
+      validator_executed: false,
       failed_checks: [],
       critical_failures: [error.message],
       forbidden_hits: [],
@@ -3418,13 +3759,16 @@ async function main() {
       missing_signals: [],
       source_files: {},
     });
-    writeJson(artifactPaths.final_decision, {
+    writeFinalDecision(artifactPaths.final_decision, {
       job_id: fallbackJobId,
       status: "FAIL",
       decision: "REJECT",
       decision_reason: error.message,
       canon_version: "v2",
       output_files: [],
+      output_file_path: null,
+      validator_executed: false,
+      gemini_validation_executed: false,
       failed_rules: [],
       blocking_unknown_rules: [],
       critical_failures: [error.message],
@@ -3436,6 +3780,10 @@ async function main() {
       timestamps: { decided_at: nowIso() },
     });
     writeJson(artifactPaths.job_summary, failure);
+    
+    // --- TASK↔RUN SYNC: Sync task status to terminal state ---
+    syncTaskStatusToRun(fallbackJobId, "FAIL");
+    
     console.error(error.stack || error.message);
     process.exit(1);
   }

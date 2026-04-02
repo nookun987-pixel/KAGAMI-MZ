@@ -1,0 +1,8 @@
+[RENDER_EXECUTOR] Token validation failed: No control token provided
+
+RenderTokenError: [RENDER_EXECUTOR] Token validation failed: No control token provided
+    at enforceToken (D:\KAGAMI-MZ\render\render_executor.js:1073:11)
+    at executeRender (D:\KAGAMI-MZ\render\render_executor.js:1263:3)
+    at runStrictImageLoop (D:\KAGAMI-MZ\strict_image_loop.js:187:32)
+    at runProof (D:\KAGAMI-MZ\run_strict_loop_proof.js:150:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

@@ -1,0 +1,91 @@
+{
+  "character_name": "Mikage Zenith",
+  "canon_version": "2.0",
+  "status": "LOCKED",
+  
+  "core_identity": {
+    "archetype": "Architect of the Divine Shadow",
+    "presence": "Silent, disciplined, wabi-sabi, tragic",
+    "aesthetic": "Porcelain Minimalism, Quiet Luxury, Emotional Porcelain"
+  },
+  
+  "body": {
+    "silhouette": "Sleek, geometric, minimalist, unbroken lines",
+    "chest": "Natural proportions, encased in solid porcelain",
+    "waist": "Fitted, revealing matte black graphene under-layer",
+    "hips": "Seamless biomechanical structure",
+    "legs": "Elegant, flowing, enclosed in white ceramic",
+    "neck": "High porcelain collar with black joint mechanics",
+    "hands": "Sleek tactical porcelain gloves",
+    "femininity_level": "High but heavily armored, delicate curves, non-sexualized",
+    "mechanical_purity": "Internalized micro-mechanics, zero external clutter"
+  },
+  
+  "head": {
+    "mask_type": "Faceless white cybernetic helmet",
+    "mask_geometry": "Smooth aerodynamic, subtle fox-like silhouette",
+    "eye_design": "Void black optical sensors, no pupils, no direct light",
+    "expression_rule": "Static, emotionless, strictly UI reactive",
+    "hair_rule": "Long, straight, heavy black hair flowing naturally"
+  },
+  
+  "armor": {
+    "outer_shell": "Boron Carbide (B4C) porcelain, ultra-hard, pristine white",
+    "inner_layer": "Matte black graphene hex-grid",
+    "joint_material": "Electrorheological (ER) fluids, matte black joints",
+    "surface_finish": "Glossy or smooth matte porcelain",
+    "crack_rule": "Fractured but intact, never shattered into loose pieces",
+    "kintsugi_rule": "Fine conductive gold resin filling the cracks",
+    "energy_rule": "Deep crimson synthetic blood and thermal glow leaking from seams"
+  },
+  
+  "weapon": {
+    "name": "Zenith Blade",
+    "class": "350kg heavy industrial melee sword",
+    "geometry": "Massive, oversized, thick rectangular block",
+    "curvature_rule": "Strictly straight, zero curvature",
+    "material": "Dark rusty titanium scrap metal over ferro-calcium bone",
+    "energy_detail": "Deep crimson heated core (>43C), emitting directional steam",
+    "forbidden_traits": ["curved katana", "thin blade", "clean laser", "neon rainbow"]
+  },
+  
+  "colors": {
+    "primary": ["#FAFAFA", "#0A0A0A"],
+    "secondary": ["Gold (Kintsugi lines only)"],
+    "accent": ["#E60000"],
+    "forbidden": ["Green", "Orange", "Yellow", "Cyan on character suit", "Rainbow"]
+  },
+  
+  "lighting": {
+    "style": "Cinematic Chiaroscuro 4:1, 5-point setup",
+    "contrast": "High contrast, deep shadows, crisp highlights",
+    "shadow_rule": "Graphite black, preserving volume",
+    "highlight_rule": "Soft 45-degree key light on curves, sharp rim light on edges"
+  },
+  
+  "camera": {
+    "framing": "Symmetrical or extreme Rule of Thirds",
+    "distance": "85mm for macro/portrait, 35mm for environmental wide",
+    "composition": "Requires foreground depth (mist, rain, sparks)",
+    "negative_space_rule": "Maximize negative space to enforce isolation"
+  },
+  
+  "environment": {
+    "allowed": ["Neon Grid slums", "White Monolith sterile halls", "Acid rain alleys"],
+    "forbidden": ["Sunny nature", "Generic bright sci-fi", "Cluttered messy cyberpunk"],
+    "detail_density": "High industrial detail obscured by atmospheric haze",
+    "priority_rule": "Must show physical consequences (steam, shattered concrete, mirage)"
+  },
+  
+  "forbidden_global": [
+    "Exposed human face",
+    "Visible human eyes",
+    "Traditional anime kitsune mask",
+    "Animal ears",
+    "Bulky robotic mecha suits",
+    "Exterior messy cables",
+    "Flat 2D UI screens",
+    "Floating magic circles",
+    "Shaky cam aesthetics"
+  ]
+}

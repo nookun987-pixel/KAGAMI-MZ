@@ -1,0 +1,172 @@
+{
+  "job_id": "20260401_134533_ee3529",
+  "job_dir": "D:\\KAGAMI-MZ\\runs\\20260401_134533_ee3529",
+  "brief": "\n(porcelain kitsune mask, centered, full object, clearly visible, product photography, studio shot:1.6),\n(clear single subject, fully in frame, not cropped:1.5),\n(hard-surface industrial design, sharp edges, planar geometry:1.4),\nmatte white ceramic, boron carbide B4C, micro-pitted surface, subtle grain (low intensity:1.1),\ndark background, sumi black (#252321), not pure black,\nstrong chiaroscuro lighting, 70 percent shadow,\nthin crimson seam only at crack lines, no glow, no spread,\nNOT abstract texture,\nNOT background pattern,\nNOT noise image,\nNOT grain-only,\nNOT material close-up,\nNOT empty frame\n",
+  "lane": "mask",
+  "stages": {
+    "gemini_intake": {
+      "status": "success",
+      "spec": {
+        "subject": "porcelain kitsune mask",
+        "material": "matte white ceramic with micro-pitted boron carbide (B4C) surface and subtle grain",
+        "color_accent": "thin crimson #E60000 seam only at crack lines, no glow, no spread",
+        "background": "obsidian #0A0A0A",
+        "lighting": "strong chiaroscuro, 70% shadow dominant (~4:1 ratio)",
+        "mood": "low energy, high control",
+        "canon_flags": [
+          "Background color adjusted to MIKAGE canon obsidian #0A0A0A from brief's sumi black #252321."
+        ],
+        "prompt_seed": "(porcelain kitsune mask, centered, full object, clearly visible, product photography, studio shot:1.6), (clear single subject, fully in frame, not cropped:1.5), (hard-surface industrial design, sharp edges, planar geometry:1.4), matte white ceramic, boron carbide B4C, micro-pitted surface, subtle grain (low intensity:1.1), thin crimson #E60000 seam only at crack lines, no glow, no spread, strong chiaroscuro lighting, 70 percent shadow, obsidian #0A0A0A background",
+        "negative_hints": "abstract texture, background pattern, noise image, grain-only, material close-up, empty frame, human eyes, facial expression, neon RGB, cyberpunk, abstract frame",
+        "confidence": 0.95
+      },
+      "gemini_executed": true,
+      "parse_ok": true,
+      "duration": 8.1
+    },
+    "claude_spec": {
+      "status": "success",
+      "lane": "mask",
+      "prompt_length": 1500,
+      "duration": 0.0
+    },
+    "render": {
+      "status": "success",
+      "output_path": "D:\\KAGAMI-MZ\\runs\\20260401_134533_ee3529\\output.png",
+      "all_images": [
+        "C:\\Users\\THISPC~1\\AppData\\Local\\Temp\\fooocus\\8b92ced1045a72ae075871c9550756e0bc2a2da1\\2026-04-01_13-55-44_9269.png"
+      ],
+      "duration": 602.9
+    },
+    "validator": {
+      "status": "pass",
+      "validator_executed": true,
+      "checks": {
+        "T2": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T5": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T6": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T7": {
+          "pass": true,
+          "value": 0.0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T9": {
+          "pass": true,
+          "value": 10.0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T10": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T15": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T16": {
+          "pass": true,
+          "value": 0.28,
+          "reason": "OK",
+          "hard_fail": false
+        }
+      },
+      "hard_fail_count": 0,
+      "hard_fails": [],
+      "pixel_report": {
+        "human_eyes_detected": 0,
+        "pvc_plastic_read": 0,
+        "toon_shading": 0,
+        "edge_activity": 0.28,
+        "crimson_ratio": 0.0,
+        "magenta_neon_spill": 0,
+        "logo_overlap_ratio": 0,
+        "shadow_ratio": 10.0,
+        "dark_pixel_ratio": 0.0,
+        "light_pixel_ratio": 0.0,
+        "mean_luminance": 132.5,
+        "std_luminance": 0.8,
+        "width": 1152,
+        "height": 896
+      },
+      "duration": 0.5
+    },
+    "gemini_gate": {
+      "gemini_executed": true,
+      "gemini_validation_executed": true,
+      "parse_ok": true,
+      "pass_fail": "FAIL",
+      "final_decision": "REJECT",
+      "hard_fail_count": 3,
+      "checks": [
+        {
+          "code": "T1",
+          "pass": false,
+          "reason": "The image is a solid, uniform color and does not depict an engineered entity appropriate for the MASK lane."
+        },
+        {
+          "code": "T3",
+          "pass": true,
+          "reason": "Not applicable, as no mask is present to display an expression."
+        },
+        {
+          "code": "T4",
+          "pass": false,
+          "reason": "The image displays a flat, uniform color without any discernible ceramic/porcelain material or the required Keshiki texture. This is a HARD FAIL."
+        },
+        {
+          "code": "T8",
+          "pass": false,
+          "reason": "The image is a uniform mid-tone brown/taupe color, which does not match the specified Sumi black or Gofun white for backgrounds."
+        },
+        {
+          "code": "T11",
+          "pass": false,
+          "reason": "The image is entirely abstract, consisting of a single flat color, and does not depict a clear manufactured object. This is a HARD FAIL."
+        },
+        {
+          "code": "T12",
+          "pass": false,
+          "reason": "The image is a flat, uniform color, making it impossible to discern any material or Keshiki texture. This is a HARD FAIL."
+        },
+        {
+          "code": "T13",
+          "pass": true,
+          "reason": "Not applicable, as there is no object to create negative space around. The entire image is a uniform color."
+        },
+        {
+          "code": "T14",
+          "pass": true,
+          "reason": "Not applicable, as there is no mask or geometry to assess for symmetry or distortion."
+        }
+      ],
+      "reasoning": "The image fails multiple critical checks. It is a solid, uniform color, not an engineered entity (T1). It lacks any discernible material or Keshiki texture (T4, T12 - HARD FAILs). It is abstract and does not depict a clear manufactured object (T11 - HARD FAIL). The color itself does not conform to the background color canon (T8). Due to multiple hard failures, the image is rejected.",
+      "errors": [],
+      "duration": 11.9
+    }
+  },
+  "final_decision": "REJECT",
+  "output_files": [],
+  "reject_reason": "Gemini gate: The image fails multiple critical checks. It is a solid, uniform color, not an engineered entity (T1). It lacks any discernible material or Keshiki texture (T4, T12 - HARD FAILs). It is abstract and does not depict a clear manufactured object (T11 - HARD FAIL). The color itself does not conform to the background color canon (T8). Due to multiple hard failures, the image is rejected.",
+  "total_duration": 623.5
+}

@@ -1,0 +1,15 @@
+{
+  "final_status": "FAILED",
+  "total_iterations": 1,
+  "max_iterations": 10,
+  "last_render_path": null,
+  "last_validator_output": null,
+  "history": [
+    {
+      "iteration": 1,
+      "status": "RENDER_FAILED",
+      "error": "Render execution failed"
+    }
+  ],
+  "timestamp": "2026-04-01T14:06:56.638Z"
+}

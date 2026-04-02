@@ -1,0 +1,30 @@
+{
+  "iteration_type": "correction",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT",
+    "PURE_BLACK_DRIFT"
+  ],
+  "fix_direction": [
+    "The image must depict a clear, manufactured object with contour evidence.",
+    "The material must be porcelain-white matte ceramic, not abstract digital noise.",
+    "Adjust the color palette to be low saturation, shadow-heavy, with subtractive mineral logic, avoiding neon or oversaturated colors.",
+    "Ensure the material has a dry, dense, engineered read with ultra-controlled eggshell microtexture and sparse fine hairline cracking.",
+    "Remove all abstract and texture-only elements; focus on immediate commercial material readability."
+  ],
+  "severity": "HIGH",
+  "summary": "The image is a highly abstract, oversaturated digital noise pattern with no discernible manufactured object or ceramic material. It fails all primary pass criteria, exhibiting severe color and compositional drifts, and lacks any resemblance to the target material.",
+  "material_read": "Abstract digital noise/texture. No discernible material.",
+  "correct_reads": []
+}

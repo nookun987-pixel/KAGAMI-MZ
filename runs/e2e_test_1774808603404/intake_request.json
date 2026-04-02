@@ -1,0 +1,31 @@
+{
+  "job_id": "e2e_test_1774808603404",
+  "phase": "material_study",
+  "shot_type": "ENTITY_MEDIUM",
+  "user_idea": "A single white ceramic cube, 8cm size, matte B4C technical ceramic, sharp edges, six flat faces. 3D object clearly visible, not abstract pattern. Dark minimal background. Professional product photography lighting.",
+  "generation_mode": "exploration",
+  "reference_master": null,
+  "reproduction_constraints": null,
+  "reproduction_anchor_mode": null,
+  "anchor_image_path": null,
+  "anchor_strength": null,
+  "denoise_strength": null,
+  "composition_lock_strength": null,
+  "silhouette_lock_strength": null,
+  "preservation_mode": null,
+  "reconstruction_priority": null,
+  "prompt_weight_reduction_when_anchor_present": null,
+  "weapon_baseline_applied": false,
+  "weapon_baseline_override_applied": false,
+  "weapon_baseline_override_reason": null,
+  "priority_target": "clean matte B4C technical ceramic read",
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ]
+}

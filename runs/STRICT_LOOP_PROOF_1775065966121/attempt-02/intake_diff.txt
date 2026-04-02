@@ -1,0 +1,10 @@
+=== INTAKE DIFF ===
+
+[priority_target]
+- BEFORE: matte ceramic material readability with clear manufactured object. Introduce a clear, identifiable manufactured object with defined contours (edges, rims, curvature).. Shift the primary color palette to porcelain-white (#FAFAFA) with subtle, subtractive mineral color logic.. Drastically reduce saturation, aiming for a low-saturation, shadow-heavy palette.. Develop a matte ceramic material read with dry, dense, engineered qualities and ultra-controlled eggshell microtexture.. Eliminate abstract composition, texture-only presentation, and digital noise.. Avoid neon, oversaturated, or plastic-like color drifts.. Ensure material-color match feels physically bonded, not like a digital fill.
++ AFTER:  matte ceramic material readability with clear manufactured object. Introduce a clear, identifiable manufactured object with defined contours (edges, rims, curvature).. Shift the primary color palette to porcelain-white (#FAFAFA) with subtle, subtractive mineral color logic.. Drastically reduce saturation, aiming for a low-saturation, shadow-heavy palette.. Develop a matte ceramic material read with dry, dense, engineered qualities and ultra-controlled eggshell microtexture.. Eliminate abstract composition, texture-only presentation, and digital noise.. Avoid neon, oversaturated, or plastic-like color drifts.. Ensure material-color match feels physically bonded, not like a digital fill.. Re-evaluate the core material target: porcelain-white matte ceramic.. Introduce a clear, identifiable manufactured object with defined contours (edge, rim, bevel, seam, or curvature).. Drastically reduce color saturation and shift palette to a low-saturation, shadow-heavy white/off-white.. Eliminate abstract noise and introduce specific ceramic microtexture (eggshell, hairline cracks).. Ensure material-color match feels physically bonded, not digital.. Remove all neon and synthetic color drifts.
+
+[fail_signal]
+- BEFORE: 26 items
++ AFTER:  39 items
+  ADDED: synthetic magenta drift, toy-like finish

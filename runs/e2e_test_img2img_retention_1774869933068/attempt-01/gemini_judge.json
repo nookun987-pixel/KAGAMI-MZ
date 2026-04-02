@@ -1,0 +1,39 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "object dissolved into background",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT",
+    "zero glossy/plastic/toy feel (violated by iridescent colors)",
+    "low saturation, shadow-heavy palette (violated by bright colors)",
+    "matte-first material-color match (color feels like digital artifact)"
+  ],
+  "material_read": "Abstract digital noise with iridescent highlights",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "digital noise",
+    "iridescent film",
+    "holographic effect",
+    "synthetic pattern",
+    "glitch art"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with distinct contours, edges, and curvature.",
+    "Eliminate all iridescent and neon color shifts; adhere strictly to a low saturation, shadow-heavy palette.",
+    "Focus on rendering a matte, dry, dense ceramic texture, removing the fragmented, linear, and chaotic pattern.",
+    "Ensure color feels materially bonded to the ceramic, not like a flat digital fill or overlay.",
+    "Reduce overall visual noise and complexity to prioritize material and object readability."
+  ],
+  "summary": "The image fails completely as a ceramic material study. It presents as an abstract, texture-only digital pattern with strong iridescent and neon color drifts, lacking any discernible manufactured object or correct matte ceramic material read. The color palette is highly saturated and synthetic, directly contradicting the target specifications for a low saturation, shadow-heavy ceramic.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

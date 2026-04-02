@@ -1,0 +1,34 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift."
+  ],
+  "material_read": "Abstract digital noise / vibrant synthetic texture",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT",
+    "glossy plastic",
+    "toy-like finish"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with defined contours (edge, rim, bevel, curvature).",
+    "Shift the color palette dramatically to porcelain-white (#FAFAFA) with low saturation and shadow-heavy gradients.",
+    "Develop a matte B4C technical ceramic material read, focusing on dry, dense, engineered qualities and eggshell microtexture.",
+    "Eliminate all abstract, noisy, and oversaturated elements.",
+    "Ensure the material does not appear glossy, plastic, or toy-like."
+  ],
+  "summary": "The image is a complete failure for a white ceramic material study. It presents as an abstract, oversaturated, noisy digital texture with vibrant synthetic colors, entirely lacking any discernible manufactured object or the specified porcelain-white matte ceramic material properties. It violates all primary pass targets and exhibits multiple critical fail drifts, including extreme color deviation and lack of object readability.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

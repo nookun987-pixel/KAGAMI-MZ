@@ -1,0 +1,61 @@
+{
+  "job_id": "20260402_025612_8acfe9",
+  "job_dir": "D:\\KAGAMI-MZ\\runs\\20260402_025612_8acfe9",
+  "brief": "test simple render",
+  "lane": "mask",
+  "stages": {
+    "gemini_intake": {
+      "status": "success",
+      "spec": {
+        "subject": "porcelain kitsune mask",
+        "material": "porcelain",
+        "color_accent": "crimson #E60000 accent at seams and core, no bloom",
+        "background": "porcelain #FAFAFA",
+        "lighting": "chiaroscuro, approximately 4:1 ratio, shadow dominant",
+        "mood": "low energy, high control",
+        "canon_flags": [],
+        "prompt_seed": "porcelain kitsune mask, intricate details, crimson #E60000 seams, chiaroscuro lighting, porcelain #FAFAFA background, clean composition",
+        "negative_hints": "human eyes, facial expression, plastic, plaster, neon, RGB, cyberpunk, abstract frame, blurry, low quality, bloom, soft light",
+        "confidence": 0.6
+      },
+      "gemini_executed": true,
+      "parse_ok": true,
+      "duration": 4.1
+    },
+    "rag_retrieval": {
+      "rag_executed": true,
+      "query_used": "mask porcelain kitsune mask porcelain",
+      "retriever_mode": "vertex",
+      "real_vertex_verified": true,
+      "retrieval_success": false,
+      "fallback_used": false,
+      "error": null,
+      "chunks_returned": 0,
+      "sources": [],
+      "credential_status": {
+        "credentials_file_present": true,
+        "credentials_env_present": false,
+        "credentials_file_readable": true,
+        "service_account_json_parse_ok": true,
+        "project_id_present": true,
+        "datastore_config_present": true
+      },
+      "duration": 3.0
+    },
+    "claude_spec": {
+      "status": "success",
+      "lane": "mask",
+      "prompt_length": 1691,
+      "duration": 0.0
+    },
+    "render": {
+      "status": "fail",
+      "error": "Cannot connect to proxy at http://127.0.0.1:7866. Is it running?",
+      "duration": 2.1
+    }
+  },
+  "final_decision": "REJECT",
+  "output_files": [],
+  "reject_reason": "Render: Cannot connect to proxy at http://127.0.0.1:7866. Is it running?",
+  "total_duration": 9.3
+}

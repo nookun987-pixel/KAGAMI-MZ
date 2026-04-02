@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "code": "T1",
+      "pass": false,
+      "reason": "The image presents an abstract texture field rather than a discernible engineered entity appropriate for the MASK lane."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "No mask is present in the image, therefore no facial expression can be observed."
+    },
+    {
+      "code": "T4",
+      "pass": false,
+      "reason": "The material is not clearly identifiable as porcelain B4C ceramic with Gofun/Shino surface, despite the presence of texture. It appears as an ambiguous dark texture."
+    },
+    {
+      "code": "T8",
+      "pass": false,
+      "reason": "The image is predominantly extremely dark (mean_luminance 3.9), appearing too close to #000000, which is explicitly forbidden. Additionally, the prominent magenta/purple hues in the textured areas are not within the specified Sumi black color canon."
+    },
+    {
+      "code": "T11",
+      "pass": false,
+      "reason": "The image is an abstract texture field and does not depict a clear manufactured object. This is a hard fail."
+    },
+    {
+      "code": "T12",
+      "pass": false,
+      "reason": "The specific material (porcelain B4C ceramic) is not clearly readable, despite the presence of some texture. This is a hard fail."
+    },
+    {
+      "code": "T13",
+      "pass": false,
+      "reason": "The image lacks a discernible subject, thus there is no clear negative space (Ma) or adherence to the 70/30 shadow rule around a subject."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "No mask is present, so symmetry cannot be evaluated."
+    }
+  ],
+  "hard_fail_count": 2,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "reasoning": "The image fails multiple critical checks, including two hard fails (T11: NO_ABSTRACT_FRAME and T12: MATERIAL_PRESENT). It is an abstract texture rather than a clear manufactured object, and the expected porcelain ceramic material is not clearly readable. The background color is too close to pure black and contains off-canon magenta/purple hues. The image does not represent an engineered entity appropriate for the MASK lane and lacks discernible negative space around a subject."
+}

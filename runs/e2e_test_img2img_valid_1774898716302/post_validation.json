@@ -1,0 +1,13 @@
+{
+  "stage": "post_render_image",
+  "verdict": "REJECT",
+  "validator_executed": false,
+  "failed_checks": [],
+  "critical_failures": [
+    "[EARLY_INVARIANT] Render produced no output file - stopping immediately"
+  ],
+  "forbidden_hits": [],
+  "analyzer_signals": {},
+  "missing_signals": [],
+  "source_files": {}
+}

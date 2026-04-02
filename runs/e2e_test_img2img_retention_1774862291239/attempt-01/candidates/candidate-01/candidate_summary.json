@@ -1,0 +1,477 @@
+{
+  "candidate_id": "candidate-01",
+  "shot_type": "MATERIAL_MACRO",
+  "render_profile": "DEFAULT",
+  "seed": 3161318126,
+  "prompt": "PRODUCT PHOTOGRAPHY - STUDIO PRODUCT SHOT\nOne engineered ceramic shell, hard-surface geometric chassis. brutalist industrial form with precision manufacturing. Isolated manufactured object, not character or costume. Catalog object, industrial design prototype.\n\nOBJECT ISOLATION (HARD TOKENS)\nSingle manufactured shell object centered. Product photography framing. Catalog object presentation. Clean white/neutral backdrop. Isolated object on clean background.\n\nPRODUCT PHOTOGRAPHY DISCIPLINE\nStudio product shot. Centered composition. Single object. Sharp edges. Engineered seams. Manufactured object clarity. Industrial design prototype.\n\nFORM DISCIPLINE\nHard-surface geometric chassis. Precision manufactured contours. Engineered silhouette with defined edges. Industrial ceramic housing. Non-organic, non-character.\n\nEDGES\nTwelve edges visible as sharp lines. Edge highlights define cube boundaries. No rounded corners. Geometric precision. Manufactured seam lines.\n\nMATERIAL\nMatte B4C technical ceramic. Warm white #FAFAFA. Flat faces show subtle eggshell texture. Zero gloss. Industrial ceramic, not plastic.\n\nLIGHTING\nDirectional light from upper left. Three faces at different brightness levels showing 3D form. Clear cast shadow. Dark minimal background. Studio lighting.\n\nREJECT IF\nNo cube visible. No sharp edges. Pattern only. Abstract texture. Wall or slab appearance. Environment storytelling. Cinematic scene. Character pose., one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject",
+  "negative_prompt": "cosplay, costume, apparel, clothing, outfit, fashion, character, portrait, person, human, face, eyes, skin, expression, warrior, knight, fighter, hero, magical, fantasy, fantasy armor, ornamental, decorative, filigree, embellishment, jewelry, accessory, necklace, crown, tiara, buckle, strap, anime, manga, cartoon, stylized, illustration, cinematic scene, environment heavy, background complexity, environment storytelling, action framing, corridor, abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture, plaster slab, mineral rock, marble wall, random flat wall surface",
+  "output_path": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_retention_1774862291239\\attempt-01\\candidates\\candidate-01\\output.png",
+  "output_exists": true,
+  "validator_result": {
+    "stage": "post_render_image",
+    "verdict": "REJECT",
+    "validator_executed": true,
+    "canon_version": "v2",
+    "failed_checks": [
+      "T3",
+      "T5",
+      "T7",
+      "T8",
+      "T9",
+      "T11",
+      "T12",
+      "C3",
+      "C4"
+    ],
+    "critical_failures": [
+      "T3",
+      "T5",
+      "T7",
+      "T8",
+      "T9",
+      "T11",
+      "T12",
+      "C3",
+      "C4"
+    ],
+    "forbidden_hits": [],
+    "analyzer_signals": {
+      "edge_sharpness_gradient": 1,
+      "edge_blur_radius": 0,
+      "raw_gradient": 63.238101135260344,
+      "high_frequency_pixel_density": 1,
+      "high_frequency_pixel_density_delta": 0.7,
+      "edge_halo_detection": 0,
+      "raw_variance": 2981.75201791411,
+      "exposure_value_delta": 0.08750101848575209,
+      "histogram_clipping": 1,
+      "clipping_ratio": 0.053180694580078125,
+      "mean_luminance": 139.20013036617627,
+      "pixel_bleed_percentage": 37.45739296596602,
+      "edge_pixels_sampled": 154904,
+      "bleed_pixels_found": 58023,
+      "distorted_pixel_ratio": 0.1724615371384835,
+      "rgb_chromatic_split_noise": 1,
+      "vhs_noise_pattern": 1,
+      "distorted_pixel_count": 20054,
+      "sampled_count": 116281,
+      "z_blue_detected": true,
+      "z_blue_pixel_ratio": 0.031970977783203125,
+      "z_blue_delta_e": 1,
+      "z_blue_color_shift_detected": 1,
+      "delta_e": 101.11095524537147,
+      "color_shift_hsv": 21.466277943991624,
+      "max_delta_e": 219.20310216782974,
+      "contamination_ratio": 0.9959432048681541,
+      "avg_saturation_shift": 0.11769772130049899,
+      "z_blue_pixel_count": 8381,
+      "product_color_delta_e": 1,
+      "regional_hsv_shift": 1,
+      "bounding_box_width_percentage": 40,
+      "center_noise_ratio": 1.0002127082001624,
+      "left_noise": 38.689614359917925,
+      "center_noise": 38.9053021384078,
+      "right_noise": 39.10444248308326,
+      "pixel_displacement": 11,
+      "rgb_glitch_count": 1528,
+      "safe_zone_glitch_ratio": 0.057949029126213594,
+      "safe_zone_displacement_ratio": 0.11199180825242719,
+      "mesh_deformation_delta": 0,
+      "boundary_intersection": 0,
+      "geometry_symmetry_ratio": 69.4629854368932,
+      "line_curvature_degree": 0,
+      "ornament_bounding_box": 0,
+      "edge_separation_score": 1,
+      "silhouette_read_time": 0.5,
+      "edge_density": 248.2842966442616,
+      "fragmentation_ratio": 0.00009511580349075,
+      "symmetry_ratio": 69.4629854368932,
+      "strong_edges": 84108,
+      "broken_edges": 8,
+      "saliency_peak_zone": "side_zone",
+      "recognition_time_seconds": 0.8,
+      "primary_subject_confidence": 0.5238499297898698,
+      "thumbnail_saliency_rank": "background",
+      "thumbnail_subject_retention": 0,
+      "center_avg_saliency": 41.30819598959688,
+      "side_avg_saliency": 39.42750933093253,
+      "center_dominance_ratio": 1.0476998595797395,
+      "max_saliency": 146.15878295898438,
+      "peak_position": {
+        "x": 0.23529411764705882,
+        "y": 0.39705882352941174
+      },
+      "_vlm_status": "unavailable",
+      "_vlm_signals_provided": 0,
+      "_analyzer_status": {
+        "pixel_analyzer": true,
+        "z_blue_detector": true,
+        "safe_zone_mask": true,
+        "silhouette_check": true,
+        "saliency_map": true,
+        "vlm_semantic_analyzer": true
+      }
+    },
+    "missing_signals": [
+      "line_angle_deviation",
+      "grid_snap_variance",
+      "human_eyes_detected",
+      "face_mesh_visible",
+      "high_gloss_specular",
+      "pvc_plastic_read",
+      "missing_weave_texture",
+      "soft_fabric_folds_on_joints",
+      "magenta_neon_spill",
+      "chaotic_particle_bloom",
+      "toon_shading",
+      "chibi_proportions",
+      "cyan_magenta_overload",
+      "lens_flare_spam",
+      "logo_overlap_ratio",
+      "branding_zone_distortion_contact"
+    ],
+    "blocking_unknown_rules": [
+      "I1",
+      "I2",
+      "I3",
+      "I4",
+      "I5",
+      "I6",
+      "C2"
+    ],
+    "analyzer_summary": {
+      "use_vision_validator": false,
+      "vlm_backend_ready": false,
+      "vlm_status": "unavailable",
+      "semantic_result": "PASS",
+      "analyzer_unavailable": [],
+      "analyzer_status": {
+        "pixel_analyzer": true,
+        "z_blue_detector": true,
+        "safe_zone_mask": true,
+        "silhouette_check": true,
+        "saliency_map": true,
+        "vlm_semantic_analyzer": true
+      }
+    },
+    "source_files": {
+      "canonMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "D:\\KAGAMI-MZ\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    },
+    "hard_reject_hits": [],
+    "rule_engine": {
+      "decision": "REJECT",
+      "passed": false,
+      "block_level": "ABSOLUTE",
+      "failed_rules": [
+        "T3",
+        "T5",
+        "T7",
+        "T8",
+        "T9",
+        "T11",
+        "T12",
+        "C3",
+        "C4"
+      ],
+      "unknown_rules": [
+        "T10",
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "C2"
+      ],
+      "stats": {
+        "total": 24,
+        "passed": 7,
+        "failed": 9,
+        "unknown": 8,
+        "enforced_pct": 67
+      },
+      "rule_results": [
+        {
+          "status": "PASS",
+          "rule_id": "T1"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T2"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T3",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T4"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T5",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T6"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T7",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T8",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T9",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "T10",
+          "priority": "HIGH",
+          "missing_signals": [
+            "line_angle_deviation",
+            "grid_snap_variance"
+          ]
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T11",
+          "priority": "CRITICAL"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "T12",
+          "priority": "ABSOLUTE"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "T13"
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I1",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "human_eyes_detected",
+            "face_mesh_visible"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I2",
+          "priority": "CRITICAL",
+          "missing_signals": [
+            "high_gloss_specular",
+            "pvc_plastic_read"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I3",
+          "priority": "CRITICAL",
+          "missing_signals": [
+            "missing_weave_texture",
+            "soft_fabric_folds_on_joints"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I4",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "magenta_neon_spill",
+            "chaotic_particle_bloom"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I5",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "toon_shading",
+            "chibi_proportions"
+          ]
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "I6",
+          "priority": "CRITICAL",
+          "missing_signals": [
+            "cyan_magenta_overload",
+            "lens_flare_spam"
+          ]
+        },
+        {
+          "status": "PASS",
+          "rule_id": "I7"
+        },
+        {
+          "status": "PASS",
+          "rule_id": "C1"
+        },
+        {
+          "status": "UNKNOWN",
+          "rule_id": "C2",
+          "priority": "ABSOLUTE",
+          "missing_signals": [
+            "logo_overlap_ratio",
+            "branding_zone_distortion_contact"
+          ]
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "C3",
+          "priority": "CRITICAL"
+        },
+        {
+          "status": "FAIL",
+          "rule_id": "C4",
+          "priority": "ABSOLUTE"
+        }
+      ]
+    },
+    "identity_analyzer": {
+      "identity_score": 0.83,
+      "dimensions": [
+        {
+          "dimension": "silhouette",
+          "score": 0.85,
+          "weight": 0.2,
+          "pass": true
+        },
+        {
+          "dimension": "material",
+          "score": 0.8,
+          "weight": 0.2,
+          "pass": true
+        },
+        {
+          "dimension": "mask",
+          "score": 0.85,
+          "weight": 0.15,
+          "pass": true
+        },
+        {
+          "dimension": "blade",
+          "score": 0.8,
+          "weight": 0.15,
+          "pass": true
+        },
+        {
+          "dimension": "color",
+          "score": 0.9,
+          "weight": 0.15,
+          "pass": true
+        },
+        {
+          "dimension": "anti_polish",
+          "score": 0.75,
+          "weight": 0.15,
+          "pass": true
+        }
+      ],
+      "failed_dimensions": []
+    },
+    "narrative_analyzer": {
+      "narrative_score": 0.8,
+      "phase": "establisher",
+      "intensity": {
+        "score": 0.85,
+        "detail": "Intensity 30% within establisher range [10%–35%]"
+      },
+      "tone": {
+        "score": 0.8,
+        "aligned": [
+          "restrained",
+          "silent",
+          "cold"
+        ],
+        "forbidden_hits": [],
+        "detail": "3/3 tones aligned with Canon register"
+      },
+      "continuity": {
+        "score": 0.75,
+        "violations": [],
+        "detail": "No continuity notes — neutral"
+      },
+      "raw_analysis": {
+        "perceived_intensity": 0.3,
+        "perceived_tones": [
+          "restrained",
+          "silent",
+          "cold"
+        ],
+        "perceived_energy": "low"
+      }
+    },
+    "drift": {
+      "verdict": "PASS",
+      "refineable": true,
+      "refine_reason": "Issues addressable via prompt adjustment",
+      "drift_flags": []
+    },
+    "scores": {
+      "identity_score": 0.83,
+      "narrative_score": 0.8,
+      "aesthetic_integrity_score": null,
+      "anti_polish_score": 0.75
+    }
+  },
+  "subject_diagnostics": {
+    "shot_type": "MATERIAL_MACRO",
+    "subject_present": true,
+    "manufactured_object_read": true,
+    "material_read": true,
+    "abstract_risk": "LOW",
+    "recovery_tags": [],
+    "subject_recovery_mode_active": false
+  },
+  "gemini_result": null,
+  "local_diagnostics": [
+    "T3",
+    "T5",
+    "T7",
+    "T8",
+    "T9",
+    "T11",
+    "T12",
+    "C3",
+    "C4"
+  ],
+  "candidate_score": 2590,
+  "candidate_level": "USABLE_CONTENT",
+  "dominant_fail_reason": "T3",
+  "render": {
+    "output_file": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_retention_1774862291239\\attempt-01\\candidates\\candidate-01\\output.png",
+    "seed_used": 3161318126,
+    "render_time_ms": 263465,
+    "status": "RENDERED",
+    "requested_steps": 20,
+    "actual_steps": 20,
+    "actual_steps_source": "response",
+    "requested_size": "1024x1024",
+    "response_reported_size": "1024x1024",
+    "actual_file_size": "1024x1024",
+    "actual_size": "1024x1024",
+    "actual_file_width": 1024,
+    "actual_file_height": 1024,
+    "actual_width": 1024,
+    "actual_height": 1024,
+    "size_truth_source": "png_pixels",
+    "sampler": "dpmpp_2m_sde_gpu",
+    "scheduler": "karras",
+    "telemetry_warning": null,
+    "telemetry_warnings": [],
+    "source_job_response_path": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_retention_1774862291239\\attempt-01\\candidates\\candidate-01\\render_response_raw.json"
+  }
+}

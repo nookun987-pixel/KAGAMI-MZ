@@ -2,6 +2,7 @@
     "path_checkpoints": [
         "D:\\Fooocus-main\\models\\checkpoints"
     ],
+    "default_model": "juggernautXL_v8Rundiffusion.safetensors",
     "path_loras": [
         "D:\\Fooocus-main\\models\\loras"
     ],

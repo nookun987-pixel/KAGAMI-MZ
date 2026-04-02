@@ -1,0 +1,56 @@
+{
+  "context": "=== MIKAGE MEMORY CONTEXT ===\nQuery: mask porcelain kitsune mask porcelain\nFound 2 relevant memories:\n\n[MEMORY 1]\nSource: final_decision.json (validation_failure)\nRelevance: 0.92\nContent: Previous mask run failed due to abstract composition issues. Need stronger subject presence and clearer manufactured object read.\n\n[MEMORY 2]\nSource: STRUCTURED_RULES.json (canon_rules)\nRelevance: 0.87\nContent: mask canon rules require: 1) Clear subject silhouette 2) Manufactured object readability 3) No abstract atmosphere 4) Material-first composition\n\n============================\n",
+  "raw_result": {
+    "chunks": [
+      {
+        "id": "mock_chunk_1",
+        "content": "Previous mask run failed due to abstract composition issues. Need stronger subject presence and clearer manufactured object read.",
+        "score": 0.92,
+        "metadata": {
+          "title": "final_decision.json",
+          "uri": "runs/previous_run/final_decision.json",
+          "source": "validation_failure"
+        }
+      },
+      {
+        "id": "mock_chunk_2",
+        "content": "mask canon rules require: 1) Clear subject silhouette 2) Manufactured object readability 3) No abstract atmosphere 4) Material-first composition",
+        "score": 0.87,
+        "metadata": {
+          "title": "STRUCTURED_RULES.json",
+          "uri": "canon/STRUCTURED_RULES.json",
+          "source": "canon_rules"
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "mock_chunk_1",
+        "title": "final_decision.json",
+        "uri": "runs/previous_run/final_decision.json",
+        "score": 0.92
+      },
+      {
+        "id": "mock_chunk_2",
+        "title": "STRUCTURED_RULES.json",
+        "uri": "canon/STRUCTURED_RULES.json",
+        "score": 0.87
+      }
+    ],
+    "query": "mask porcelain kitsune mask porcelain",
+    "totalResults": 2,
+    "retriever_mode": "mock",
+    "real_vertex_verified": false,
+    "fallback_used": true,
+    "error": "vertex_sdk_not_installed",
+    "credential_status": {
+      "credentials_file_present": true,
+      "credentials_env_present": false,
+      "credentials_file_readable": true,
+      "service_account_json_parse_ok": true,
+      "project_id_present": true,
+      "datastore_config_present": true
+    }
+  },
+  "injected_into_spec": true
+}

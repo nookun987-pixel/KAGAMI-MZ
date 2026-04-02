@@ -1,0 +1,164 @@
+{
+  "job_id": "e2e_test_1774807291916",
+  "phase_target": "material_study",
+  "structured_prompt": "SINGLE OBJECT PRODUCT SHOT\nOne white ceramic dinner plate, 20cm diameter, flat circular with raised rim and concave center. Matte B4C technical ceramic. 3D object clearly visible, not abstract pattern.\n\nFORM DEFINITION\nSingle solid ceramic plate with distinct 3D form. Flat base, raised outer rim, circular edge profile. Object casts shadow on surface beneath. Physical object presence, not texture or pattern. Readable as manufactured tableware immediately.\n\n3D STRUCTURE\nPlate rim visible as continuous circular edge. Slight depth showing concave bowl area. Thickness visible at rim edge. Object sits on surface with natural shadow contact. Foreground to background depth visible.\n\nMATERIAL\nMatte B4C technical ceramic, warm porcelain-white. Subtle surface texture on 3D form. Zero gloss. Cold industrial ceramic. Non-plastic.\n\nCOMPOSITION\nSingle object centered. Full plate visible from rim edge to rim edge. 45-degree angle showing top surface and rim thickness. Clean separation from dark concrete background. No pattern fills, no decorative elements.\n\nLIGHTING\nStudio directional light from upper left. Clear shadow cast beneath plate. Rim highlight defining edge. Dark background minimal.\n\nFORBIDDEN\nNo abstract patterns. No mosaic. No stained glass effect. No wall texture. No surface-only composition. Must be clear 3D object.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+  "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture",
+  "render_spec": {
+    "shot_type": "macro_material_study",
+    "lighting": "low_key_grazing",
+    "background": "minimal_brutalist",
+    "priority": "material_readability",
+    "width": 512,
+    "height": 512,
+    "performance": "Speed"
+  },
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ],
+  "intake_summary": "Focus on rendering a single, perfectly smooth, matte boron carbide ceramic sphere with high material fidelity. Ensure the object is clearly defined and centered, with strict chiaroscuro lighting and a minimal, dark concrete background. Absolutely no abstract elements, glossy finishes, or loss of object identity.",
+  "locked_prompt_package": {
+    "subject": "Mikage Zenith, matte B4C technical ceramic, porcelain white, silent disciplined material study",
+    "texture": [
+      "Faceless white cybernetic helmet",
+      "Long, straight, heavy black hair flowing naturally",
+      "matte B4C technical ceramic",
+      "porcelain white",
+      "eggshell microtexture",
+      "subtle hairline fractures",
+      "matte black graphene reference",
+      "void black optical sensors",
+      "Zenith Blade",
+      "subtractive mineral color logic",
+      "matte-first material response"
+    ],
+    "lighting": [
+      "low-key cinematic",
+      "no ambient color wash",
+      "no magenta spill",
+      "no neon",
+      "shadow-dominant composition (70%)",
+      "low saturation, no neon",
+      "bokashi gradient, non-linear"
+    ],
+    "composition_rules": [
+      "macro close-up",
+      "clean negative space",
+      "premium commercial readability",
+      "brutalist minimal concrete surface",
+      "no flat color, always material texture variation",
+      "form then material then color"
+    ],
+    "prompt": "SINGLE OBJECT PRODUCT SHOT\nOne white ceramic dinner plate, 20cm diameter, flat circular with raised rim and concave center. Matte B4C technical ceramic. 3D object clearly visible, not abstract pattern.\n\nFORM DEFINITION\nSingle solid ceramic plate with distinct 3D form. Flat base, raised outer rim, circular edge profile. Object casts shadow on surface beneath. Physical object presence, not texture or pattern. Readable as manufactured tableware immediately.\n\n3D STRUCTURE\nPlate rim visible as continuous circular edge. Slight depth showing concave bowl area. Thickness visible at rim edge. Object sits on surface with natural shadow contact. Foreground to background depth visible.\n\nMATERIAL\nMatte B4C technical ceramic, warm porcelain-white. Subtle surface texture on 3D form. Zero gloss. Cold industrial ceramic. Non-plastic.\n\nCOMPOSITION\nSingle object centered. Full plate visible from rim edge to rim edge. 45-degree angle showing top surface and rim thickness. Clean separation from dark concrete background. No pattern fills, no decorative elements.\n\nLIGHTING\nStudio directional light from upper left. Clear shadow cast beneath plate. Rim highlight defining edge. Dark background minimal.\n\nFORBIDDEN\nNo abstract patterns. No mosaic. No stained glass effect. No wall texture. No surface-only composition. Must be clear 3D object.",
+    "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture"
+  },
+  "positivePrompt": "SINGLE OBJECT PRODUCT SHOT\nOne white ceramic dinner plate, 20cm diameter, flat circular with raised rim and concave center. Matte B4C technical ceramic. 3D object clearly visible, not abstract pattern.\n\nFORM DEFINITION\nSingle solid ceramic plate with distinct 3D form. Flat base, raised outer rim, circular edge profile. Object casts shadow on surface beneath. Physical object presence, not texture or pattern. Readable as manufactured tableware immediately.\n\n3D STRUCTURE\nPlate rim visible as continuous circular edge. Slight depth showing concave bowl area. Thickness visible at rim edge. Object sits on surface with natural shadow contact. Foreground to background depth visible.\n\nMATERIAL\nMatte B4C technical ceramic, warm porcelain-white. Subtle surface texture on 3D form. Zero gloss. Cold industrial ceramic. Non-plastic.\n\nCOMPOSITION\nSingle object centered. Full plate visible from rim edge to rim edge. 45-degree angle showing top surface and rim thickness. Clean separation from dark concrete background. No pattern fills, no decorative elements.\n\nLIGHTING\nStudio directional light from upper left. Clear shadow cast beneath plate. Rim highlight defining edge. Dark background minimal.\n\nFORBIDDEN\nNo abstract patterns. No mosaic. No stained glass effect. No wall texture. No surface-only composition. Must be clear 3D object.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+  "negativePrompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture",
+  "spec": {
+    "texture": [
+      "subtractive mineral color logic",
+      "matte-first material response"
+    ],
+    "lighting": [
+      "shadow-dominant composition (70%)",
+      "low saturation, no neon",
+      "bokashi gradient, non-linear"
+    ],
+    "composition_rules": [
+      "no flat color, always material texture variation",
+      "form then material then color"
+    ],
+    "negative_prompt": [
+      "neon",
+      "neon rgb",
+      "oversaturation",
+      "pure white",
+      "pure black",
+      "rgb clean plastic color",
+      "magenta synthetic",
+      "flat color no texture",
+      "plastic color drift",
+      "crimson overuse",
+      "full-frame red wash",
+      "#FFFFFF",
+      "#000000",
+      "#FF0000",
+      "#FF2D55",
+      "#FF00FF",
+      "#FFD700",
+      "#FFA500",
+      "neon_rgb",
+      "plastic_rgb_clean",
+      "pure_white",
+      "pure_black",
+      "magenta_synthetic",
+      "flat_color_no_texture"
+    ]
+  },
+  "payload": {
+    "prompt": "SINGLE OBJECT PRODUCT SHOT\nOne white ceramic dinner plate, 20cm diameter, flat circular with raised rim and concave center. Matte B4C technical ceramic. 3D object clearly visible, not abstract pattern.\n\nFORM DEFINITION\nSingle solid ceramic plate with distinct 3D form. Flat base, raised outer rim, circular edge profile. Object casts shadow on surface beneath. Physical object presence, not texture or pattern. Readable as manufactured tableware immediately.\n\n3D STRUCTURE\nPlate rim visible as continuous circular edge. Slight depth showing concave bowl area. Thickness visible at rim edge. Object sits on surface with natural shadow contact. Foreground to background depth visible.\n\nMATERIAL\nMatte B4C technical ceramic, warm porcelain-white. Subtle surface texture on 3D form. Zero gloss. Cold industrial ceramic. Non-plastic.\n\nCOMPOSITION\nSingle object centered. Full plate visible from rim edge to rim edge. 45-degree angle showing top surface and rim thickness. Clean separation from dark concrete background. No pattern fills, no decorative elements.\n\nLIGHTING\nStudio directional light from upper left. Clear shadow cast beneath plate. Rim highlight defining edge. Dark background minimal.\n\nFORBIDDEN\nNo abstract patterns. No mosaic. No stained glass effect. No wall texture. No surface-only composition. Must be clear 3D object.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+    "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture"
+  },
+  "color_canon_applied": true,
+  "palette_used": [
+    "ceramic_off_white",
+    "charcoal_black",
+    "restrained_crimson",
+    "muted_earth"
+  ],
+  "color_constraints": [
+    "subtractive mineral color logic",
+    "color must follow form then material, never override them",
+    "low saturation, no neon",
+    "matte-first material response",
+    "shadow-dominant composition (70%)",
+    "bokashi gradient, non-linear",
+    "no flat color, always material texture variation",
+    "diffuse highlights, not specular",
+    "pure white and pure black are forbidden",
+    "plastic-clean RGB color is forbidden",
+    "ceramic off-white must stay warm and broken, never sterile pure white",
+    "charcoal black must keep temperature variation, never dead pure black",
+    "restrained crimson only in seams, cores, or controlled heat accents",
+    "muted earth support only, low saturation material support tones",
+    "shadow_anchor_sumi_iro",
+    "highlight_anchor_gofun",
+    "crimson_seam_if_applicable"
+  ],
+  "color_negative": [
+    "neon",
+    "neon rgb",
+    "oversaturation",
+    "pure white",
+    "pure black",
+    "rgb clean plastic color",
+    "magenta synthetic",
+    "flat color no texture",
+    "plastic color drift",
+    "crimson overuse",
+    "full-frame red wash",
+    "#FFFFFF",
+    "#000000",
+    "#FF0000",
+    "#FF2D55",
+    "#FF00FF",
+    "#FFD700",
+    "#FFA500",
+    "neon_rgb",
+    "plastic_rgb_clean",
+    "pure_white",
+    "pure_black",
+    "magenta_synthetic",
+    "flat_color_no_texture"
+  ],
+  "color_priority_order": [
+    "form",
+    "material",
+    "color"
+  ]
+}

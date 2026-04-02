@@ -1,3 +1,0 @@
-FATAL: Unexpected token '`', "```json
-{
-"... is not valid JSON

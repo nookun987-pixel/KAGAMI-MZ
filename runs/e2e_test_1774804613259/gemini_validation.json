@@ -1,0 +1,30 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature"
+  ],
+  "material_read": "Abstract pattern, stylized texture, digital noise, woven pattern.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "floating texture field"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, recognizable manufactured object.",
+    "Define contours, edges, and curvature to establish object form.",
+    "Focus on rendering a matte ceramic material, not an abstract pattern.",
+    "Ensure the material read is primary and immediate, not secondary to pattern or texture."
+  ],
+  "summary": "The image fails because it is an abstract, texture-only composition with no discernible manufactured object. There is no ceramic material read, and the frame prioritizes pattern over object or material definition.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

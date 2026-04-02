@@ -1,0 +1,12 @@
+{
+  "stage": "prompt_package",
+  "verdict": "REJECT",
+  "failed_checks": [
+    "Job file not found: D:\\KAGAMI-MZ\\MASK_MACRO_RETEST_2026-03-31T13-33-57"
+  ],
+  "forbidden_hits": [],
+  "critical_failures": [
+    "Job file not found: D:\\KAGAMI-MZ\\MASK_MACRO_RETEST_2026-03-31T13-33-57"
+  ],
+  "canon_version": "v2"
+}

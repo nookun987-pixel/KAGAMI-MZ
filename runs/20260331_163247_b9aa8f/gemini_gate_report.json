@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "code": "T1",
+      "pass": true,
+      "reason": "The subject is a sword, which is an engineered entity."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "There is no mask or facial expression present in the image."
+    },
+    {
+      "code": "T4",
+      "pass": false,
+      "reason": "The material of the sword is clearly metal, not ceramic or porcelain as required."
+    },
+    {
+      "code": "T8",
+      "pass": false,
+      "reason": "The background is a dark, textured surface with warm tones, which does not strictly match the specified #FAFAFA porcelain or #0A0A0A obsidian hex codes."
+    },
+    {
+      "code": "T11",
+      "pass": true,
+      "reason": "The sword is a clear, recognizable manufactured object, not abstract art."
+    },
+    {
+      "code": "T12",
+      "pass": true,
+      "reason": "The material of the sword's hilt and guard is clearly readable as metal."
+    },
+    {
+      "code": "T13",
+      "pass": true,
+      "reason": "There is clear negative space around the sword, and the background is uncluttered."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "The sword's blade appears perfectly straight, and its geometry is correct without distortion."
+    }
+  ],
+  "hard_fail_count": 0,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "reasoning": "The image fails on material (T4) as the sword is metal, not ceramic/porcelain, and the background (T8) does not match the specified hex codes for porcelain or obsidian, indicating a drift from brand identity."
+}

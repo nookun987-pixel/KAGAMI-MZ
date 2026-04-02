@@ -1,0 +1,24 @@
+{
+  "fail_types": [
+    "abstract_render",
+    "canon_drift",
+    "unreadable_object"
+  ],
+  "raw_fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "raw_wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT",
+    "synthetic magenta drift",
+    "toy-like finish"
+  ]
+}

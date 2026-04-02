@@ -1,0 +1,23 @@
+{
+  "context": "",
+  "raw_result": {
+    "chunks": [],
+    "sources": [],
+    "query": "mask porcelain kitsune mask porcelain",
+    "totalResults": 0,
+    "retriever_mode": "vertex",
+    "real_vertex_verified": true,
+    "fallback_used": false,
+    "error": null,
+    "credential_status": {
+      "credentials_file_present": true,
+      "credentials_env_present": false,
+      "credentials_file_readable": true,
+      "service_account_json_parse_ok": true,
+      "project_id_present": true,
+      "datastore_config_present": true
+    }
+  },
+  "injected_into_spec": false,
+  "error": "No context retrieved"
+}

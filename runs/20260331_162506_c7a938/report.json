@@ -1,0 +1,17 @@
+{
+  "job_id": "20260331_162506_c7a938",
+  "job_dir": "D:\\KAGAMI-MZ\\runs\\20260331_162506_c7a938",
+  "brief": "Zenith Blade, massive 350kg heavy industrial straight sword, dark rusty titanium scrap metal plates floating around glowing deep crimson ferro-calcium bone core, flux pinning mechanism, micro-vibration at joints, directional steam rising from heated core above 43C, obsidian void background, chiaroscuro dramatic lighting, extreme negative space, industrial brutalist aesthetic, no curved katana, no thin blade, no clean laser, no neon",
+  "stages": {
+    "gemini_intake": {
+      "status": "fail",
+      "error": "HTTP 404",
+      "gemini_executed": false,
+      "parse_ok": false,
+      "duration": 0.5
+    }
+  },
+  "final_decision": "REJECT",
+  "output_files": [],
+  "reject_reason": "Gemini intake failed: HTTP 404"
+}

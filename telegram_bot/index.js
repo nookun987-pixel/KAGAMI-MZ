@@ -1,10 +1,12 @@
 const TelegramBot = require('node-telegram-bot-api');
 const config = require('../telegram_bot_config');
 const router = require('./router');
+const guard = require('./duplicate_guard');
 
 const bot = new TelegramBot(config.TELEGRAM_BOT_TOKEN, { polling: true });
 
 console.log('[TELEGRAM] Mikage Operator Bot starting...');
+console.log('[TELEGRAM] Duplicate guard active:', guard.getGuardStatus());
 
 function logStep(command, step, chatId, msgId, extra = '') {
   const ts = new Date().toISOString();
@@ -15,6 +17,15 @@ bot.on('message', async (msg) => {
   const chatId = msg.chat.id;
   const text = msg.text || '';
   const msgId = msg.message_id;
+  
+  // GUARD: Check if message already processed (duplicate detection)
+  if (guard.isMessageProcessed(msgId)) {
+    logStep('DUPLICATE', 'REJECTED_ALREADY_PROCESSED', chatId, msgId);
+    return;
+  }
+  
+  // Mark this message as being processed immediately
+  guard.markMessageProcessed(msgId);
   
   // Only process commands
   if (!text.startsWith('/')) return;

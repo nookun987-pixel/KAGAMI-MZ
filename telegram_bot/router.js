@@ -7,6 +7,7 @@ const { getCostStatus } = require('./report_cost');
 const { restartService } = require('./service_manager');
 const { getTasks } = require('./shared_state');
 const masterControl = require('../lib/master_control');
+const guard = require('./duplicate_guard');
 
 async function handleCommand(text, msg) {
   const parts = text.split(' ');
@@ -90,6 +91,9 @@ async function handleCommand(text, msg) {
     case '/image_artifacts':
       return await handleImageArtifacts();
     
+    case '/image_test':
+      return await handleImageTest();
+    
     case '/help':
       return `*MIKAGE OPERATOR COMMANDS*
 /run <job> - Execute job
@@ -119,6 +123,7 @@ async function handleCommand(text, msg) {
 /image_last - Latest run info
 /image_fail - Failure diagnostics
 /image_artifacts - Latest artifacts
+/image_test - Run lightweight test job
 /help - Show this help`;
     
     default:
@@ -239,6 +244,19 @@ async function handleProof() {
     const result = await masterControl.proof();
     log('MASTER_CONTROL_SUCCESS');
     
+    // Read shared_state for terminal state info
+    const fs = require('fs');
+    const path = require('path');
+    const statePath = path.join(process.cwd(), 'data/shared_state.json');
+    let sharedState = null;
+    try {
+      if (fs.existsSync(statePath)) {
+        sharedState = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+      }
+    } catch (e) {
+      // ignore
+    }
+    
     let output = `PROOF RESULT\n\n`;
     
     output += `System:\n`;
@@ -254,13 +272,35 @@ async function handleProof() {
     output += `- Post Val: ${result.imageLane.postValidation}\n`;
     output += `- Gemini: ${result.imageLane.geminiValidation}\n`;
     output += `- Decision: ${result.imageLane.finalDecision}\n`;
-    output += `- Verdict: ${result.imageLane.verdict}\n\n`;
+    output += `- Verdict: ${result.imageLane.verdict}\n`;
     
-    if (result.queue) {
-      output += `Queue: P:${result.queue.pending} R:${result.queue.running} F:${result.queue.failed} D:${result.queue.done}\n\n`;
+    // Show shared_state terminal info if available
+    if (sharedState && sharedState.lastJobId) {
+      output += `- Run State: ${sharedState.runState || 'UNKNOWN'}\n`;
+      output += `- Last Decision: ${sharedState.lastDecision || 'N/A'}\n`;
+      output += `- Last Status: ${sharedState.lastStatus || 'N/A'}\n`;
+      if (sharedState.completedAt) {
+        output += `- Completed: ${sharedState.completedAt}\n`;
+      }
     }
     
-    output += `Final Verdict: ${result.imageLane.verdict === 'IMAGE LANE LOCKED' ? 'LOCKED' : 'NOT LOCKED'}`;
+    // Explicit messaging for services online but no run
+    if (result.system.fooocus === 'ALIVE' && result.system.ollama === 'ALIVE' && !result.imageLane.latestRun) {
+      output += `\n⚠️ services online but no run yet\n`;
+    }
+    
+    // Show active job info
+    if (sharedState && sharedState.activeJobId) {
+      output += `\n⚠️ Active Job: ${sharedState.activeJobId}\n`;
+      output += `- Step: ${sharedState.currentStep || 'UNKNOWN'}\n`;
+      output += `- State: ${sharedState.runState || 'RUNNING'}\n`;
+    }
+    
+    if (result.queue) {
+      output += `\nQueue: P:${result.queue.pending} R:${result.queue.running} F:${result.queue.failed} D:${result.queue.done}\n`;
+    }
+    
+    output += `\nFinal Verdict: ${result.imageLane.verdict === 'IMAGE LANE LOCKED' ? 'LOCKED' : 'NOT LOCKED'}`;
     
     log('HANDLER_SUCCESS', `output_length=${output.length}`);
     return output;
@@ -519,6 +559,123 @@ async function handleImageArtifacts() {
     }
   }
   return output;
+}
+
+async function handleImageTest() {
+  const { spawn } = require('child_process');
+  const fs = require('fs');
+  const path = require('path');
+  
+  // GUARD: Check if task already running
+  const testJobId = `telegram_test_${Date.now()}`;
+  
+  if (!guard.lockTask(testJobId, { type: 'image_test', created: new Date().toISOString() })) {
+    return `IMAGE TEST BLOCKED
+
+Task already running. Cannot start duplicate test.
+Wait for completion or run /image_status.`;
+  }
+  
+  // Also check via guard for any active image test
+  if (guard.getActiveTaskCount() > 0) {
+    const guardStatus = guard.getGuardStatus();
+    guard.unlockTask(testJobId); // Release our lock
+    return `IMAGE TEST BLOCKED
+
+Another task is already running.
+Active tasks: ${guardStatus.activeTaskCount}
+Run /image_status to check.`;
+  }
+  
+  // Check if services are running first
+  const proofReader = require('../lib/proof_reader');
+  const sysProof = await proofReader.getSystemProof();
+  
+  if (sysProof.fooocus !== 'ALIVE' || sysProof.ollama !== 'ALIVE') {
+    guard.unlockTask(testJobId);
+    return `IMAGE TEST BLOCKED
+
+Services not ready:
+- Fooocus: ${sysProof.fooocus}
+- Ollama: ${sysProof.ollama}
+
+Run /boot first to start services.`;
+  }
+  
+  // Check shared state as additional guard
+  const statePath = path.join(process.cwd(), 'data/shared_state.json');
+  let state = { activeJobId: null };
+  try {
+    if (fs.existsSync(statePath)) {
+      state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    }
+  } catch (e) {
+    // ignore
+  }
+  
+  if (state.activeJobId) {
+    guard.unlockTask(testJobId);
+    return `IMAGE TEST BLOCKED
+
+Job already running: ${state.activeJobId}
+Wait for completion or run /image_status.`;
+  }
+  
+  // Register the run_id to prevent duplicates
+  if (!guard.registerRun(testJobId)) {
+    guard.unlockTask(testJobId);
+    return `IMAGE TEST BLOCKED
+
+Run ID ${testJobId} already exists (duplicate detected).`;
+  }
+  const jobsDir = path.join(process.cwd(), 'jobs');
+  
+  if (!fs.existsSync(jobsDir)) {
+    fs.mkdirSync(jobsDir, { recursive: true });
+  }
+  
+  const jobFile = path.join(jobsDir, `${testJobId}.json`);
+  const jobData = {
+    job_id: testJobId,
+    phase: "material_study",
+    user_idea: "A single engineered ceramic sphere, manufactured object, perfectly smooth hard-surface boron carbide ceramic (B4C), matte porcelain finish. Centered composition, full object clearly visible. Environment: minimal brutalist concrete background. Lighting: strict chiaroscuro 4:1 ratio, single directional hard light. Color: Porcelain White #FAFAFA main surface, Obsidian Black #0A0A0A background. Surface: perfectly engineered symmetry, no plastic look, no glossy reflection. Camera: straight-on, neutral lens, no distortion, no blur. FORBIDDEN: human elements, eyes, fabric, organic material, cyberpunk/neon, particles, smoke, fog, multiple objects, abstract composition. OUTPUT: exactly one manufactured object, high clarity subject, zero ambiguity.",
+    test_mode: true,
+    max_candidates: 1,
+    no_retry: true,
+    skip_strict_validation: true,
+    render: {
+      width: 512,
+      height: 512,
+      performance: "Speed",
+      candidate_count: 1
+    }
+  };
+  
+  fs.writeFileSync(jobFile, JSON.stringify(jobData, null, 2));
+  
+  // Start the job in background
+  const child = spawn('node', ['orchestrator.js', jobFile], {
+    cwd: process.cwd(),
+    detached: true,
+    stdio: 'ignore',
+    windowsHide: true
+  });
+  
+  child.unref();
+  
+  // Update state
+  state.activeJobId = testJobId;
+  state.currentStep = 'RUN_STARTED';
+  state.runState = 'RUNNING';
+  fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
+  
+  return `IMAGE TEST STARTED
+
+Job ID: ${testJobId}
+Type: Lightweight test render
+Status: RUNNING
+
+Use /proof in 30-60 seconds to check completion.`;
 }
 
 async function approveTask(taskId) {

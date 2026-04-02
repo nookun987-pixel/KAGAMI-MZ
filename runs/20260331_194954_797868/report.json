@@ -1,0 +1,188 @@
+{
+  "job_id": "20260331_194954_797868",
+  "job_dir": "D:\\KAGAMI-MZ\\runs\\20260331_194954_797868",
+  "brief": "porcelain kitsune mask, thin crimson seam at jawline, obsidian void background, chiaroscuro dramatic shadow, industrial precision",
+  "lane": "mask",
+  "stages": {
+    "gemini_intake": {
+      "status": "success",
+      "spec": {
+        "subject": "porcelain kitsune mask",
+        "material": "porcelain",
+        "color_accent": "thin crimson #E60000 seam at jawline, no bloom",
+        "background": "obsidian #0A0A0A",
+        "lighting": "chiaroscuro ~4:1, dramatic shadow dominant",
+        "mood": "low energy, high control",
+        "canon_flags": [],
+        "prompt_seed": "porcelain kitsune mask, thin crimson seam at jawline, chiaroscuro lighting, dramatic shadow, industrial precision, obsidian background, no human eyes, no facial expression, clean composition, negative space",
+        "negative_hints": "human eyes, facial expression, plastic, plaster, neon, RGB, cyberpunk, abstract, blurry, soft light, bloom, multiple objects",
+        "confidence": 0.95
+      },
+      "gemini_executed": true,
+      "parse_ok": true,
+      "duration": 5.2
+    },
+    "claude_spec": {
+      "status": "success",
+      "lane": "mask",
+      "prompt_length": 1491,
+      "duration": 0.0
+    },
+    "render": {
+      "status": "success",
+      "output_path": "D:\\KAGAMI-MZ\\runs\\20260331_194954_797868\\output.png",
+      "all_images": [
+        "C:\\Users\\THISPC~1\\AppData\\Local\\Temp\\fooocus\\6fb1416bd4f571954696c66531e0cfbdccc724f8\\2026-03-31_20-00-55_9269.png"
+      ],
+      "duration": 656.5
+    },
+    "validator": {
+      "status": "pass",
+      "validator_executed": true,
+      "checks": {
+        "T2": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T5": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T6": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T7": {
+          "pass": true,
+          "value": 0.0338,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T9": {
+          "pass": true,
+          "value": 6.5,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T10": {
+          "pass": false,
+          "value": 1,
+          "reason": "magenta_neon_spill=1 exceeds threshold 0",
+          "hard_fail": false
+        },
+        "T15": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T16": {
+          "pass": true,
+          "value": 2.85,
+          "reason": "OK",
+          "hard_fail": false
+        }
+      },
+      "hard_fail_count": 0,
+      "hard_fails": [],
+      "pixel_report": {
+        "human_eyes_detected": 0,
+        "pvc_plastic_read": 0,
+        "toon_shading": 0,
+        "edge_activity": 2.85,
+        "crimson_ratio": 0.0338,
+        "magenta_neon_spill": 1,
+        "logo_overlap_ratio": 0,
+        "shadow_ratio": 6.5,
+        "dark_pixel_ratio": 0.638,
+        "light_pixel_ratio": 0.098,
+        "mean_luminance": 52.5,
+        "std_luminance": 76.6,
+        "width": 1152,
+        "height": 896
+      },
+      "duration": 0.9
+    },
+    "gemini_gate": {
+      "gemini_executed": true,
+      "parse_ok": true,
+      "pass_fail": "FAIL",
+      "final_decision": "REJECT",
+      "hard_fail_count": 1,
+      "checks": [
+        {
+          "code": "T1",
+          "pass": true,
+          "reason": "The subject is a mask, which is an engineered entity appropriate for the MASK lane."
+        },
+        {
+          "code": "T3",
+          "pass": true,
+          "reason": "The mask displays a neutral, stylized appearance without any discernible facial expression."
+        },
+        {
+          "code": "T4",
+          "pass": false,
+          "reason": "The material does not resemble porcelain B4C ceramic with Gofun/Shino surface. It appears as a vibrant, glossy digital rendering, lacking the expected matte finish and Keshiki texture variation. The surface is flat and uniform, failing the material and texture requirements for the MASK lane."
+        },
+        {
+          "code": "T8",
+          "pass": false,
+          "reason": "The background contains pure black (#000000) and prominent vibrant blue concentric circles, neither of which conform to the Sumi black or Gofun white canon. The rule explicitly states 'NEVER #000000'."
+        },
+        {
+          "code": "T11",
+          "pass": true,
+          "reason": "The image clearly depicts a manufactured object (a mask) and is not abstract art."
+        },
+        {
+          "code": "T12",
+          "pass": false,
+          "reason": "The material is not clearly readable as porcelain/ceramic with Keshiki texture. The surfaces are flat, uniform, and lack the required texture, appearing as a smooth digital illustration rather than a tangible material."
+        },
+        {
+          "code": "T13",
+          "pass": false,
+          "reason": "The vibrant blue concentric circles in the background disrupt the concept of 'Sacred Void (Ma)' and clear negative space. The background is not solely composed of shadows or canon colors."
+        },
+        {
+          "code": "T14",
+          "pass": true,
+          "reason": "The mask exhibits good symmetry without apparent distortion."
+        },
+        {
+          "code": "COLOR_CANON_WHITES",
+          "pass": false,
+          "reason": "The white areas of the mask are very bright, likely pure #FFFFFF, and do not match the specified Gofun tones (#EEE7D7, #F6F5F6)."
+        },
+        {
+          "code": "COLOR_CANON_BLACKS",
+          "pass": false,
+          "reason": "The background and eye holes contain pure black (#000000), which is explicitly forbidden by the Sumi black canon."
+        },
+        {
+          "code": "COLOR_CANON_CRIMSONS",
+          "pass": false,
+          "reason": "Crimson accents are not limited to 'seams/cores ONLY'; they are prominently featured on the ears, nose, lips, and the entire neck/shoulder area. The crimson also appears overly vibrant and neon, not adhering to the Bengala range."
+        },
+        {
+          "code": "COLOR_CANON_SURFACES",
+          "pass": false,
+          "reason": "All surfaces are flat and lack the required Keshiki texture variation."
+        }
+      ],
+      "reasoning": "The image fails multiple critical checks against the MIKAGE ZENITH visual canon. T12 (MATERIAL_PRESENT) is a hard fail, as the material is not clearly readable as porcelain/ceramic with Keshiki texture; instead, it appears flat and uniform. Additionally, T4 (MATERIAL_CORRECT_FOR_LANE) fails due to incorrect material appearance and lack of texture. The color canon is violated across the board: whites are not Gofun, blacks are pure #000000, crimson accents are not limited to seams/cores and are too vibrant, and all surfaces lack Keshiki texture. The background also fails T8 (BG_SUMI_OR_GOFUN) by containing pure black and non-canon blue elements, which also disrupts T13 (NEGATIVE_SPACE_MA). The overall aesthetic deviates significantly from the expected MIKAGE ZENITH style.",
+      "duration": 21.9
+    }
+  },
+  "final_decision": "REJECT",
+  "output_files": [],
+  "reject_reason": "Gemini gate: The image fails multiple critical checks against the MIKAGE ZENITH visual canon. T12 (MATERIAL_PRESENT) is a hard fail, as the material is not clearly readable as porcelain/ceramic with Keshiki texture; instead, it appears flat and uniform. Additionally, T4 (MATERIAL_CORRECT_FOR_LANE) fails due to incorrect material appearance and lack of texture. The color canon is violated across the board: whites are not Gofun, blacks are pure #000000, crimson accents are not limited to seams/cores and are too vibrant, and all surfaces lack Keshiki texture. The background also fails T8 (BG_SUMI_OR_GOFUN) by containing pure black and non-canon blue elements, which also disrupts T13 (NEGATIVE_SPACE_MA). The overall aesthetic deviates significantly from the expected MIKAGE ZENITH style.",
+  "total_duration": 684.5
+}

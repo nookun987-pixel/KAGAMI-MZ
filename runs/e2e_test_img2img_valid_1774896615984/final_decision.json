@@ -1,0 +1,53 @@
+{
+  "job_id": "e2e_test_img2img_valid_1774896615984",
+  "status": "FAIL",
+  "decision": "REJECT",
+  "decision_reason": "[EARLY_INVARIANT] Render produced no output file - stopping immediately",
+  "canon_version": "v2",
+  "output_files": [],
+  "output_file_path": null,
+  "validator_executed": false,
+  "gemini_validation_executed": false,
+  "failed_rules": [],
+  "blocking_unknown_rules": [],
+  "critical_failures": [
+    "[EARLY_INVARIANT] Render produced no output file - stopping immediately"
+  ],
+  "forbidden_hits": [],
+  "analyzer_summary": {},
+  "scores": {
+    "identity_score": null,
+    "narrative_score": null,
+    "aesthetic_integrity_score": null,
+    "anti_polish_score": null
+  },
+  "drift_flags": [],
+  "artifact_paths": {
+    "run_dir": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984",
+    "intake_request": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\intake_request.json",
+    "gemini_intake": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\gemini_intake.json",
+    "gemini_precheck": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\gemini_precheck.json",
+    "prompt_package": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\prompt_package.json",
+    "prompt_before": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\prompt_before.json",
+    "prompt_after": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\prompt_after.json",
+    "output_png": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\output.png",
+    "validation": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\validation.json",
+    "gemini_validation": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\gemini_validation.json",
+    "fix_brief": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\fix_brief.json",
+    "corrected_prompt_package": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\corrected_prompt_package.json",
+    "correction_diff": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\correction_diff.json",
+    "gemini_runtime_check": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\gemini_runtime_check.json",
+    "gemini_runtime_probe": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\gemini_runtime_probe.json",
+    "merged_decision": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\merged_decision.json",
+    "run_loop_trace": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\run_loop_trace.json",
+    "summary_txt": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\summary.txt",
+    "final_payload": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\final_payload.json",
+    "pre_validation": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\pre_validation.json",
+    "post_validation": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\post_validation.json",
+    "final_decision": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\final_decision.json",
+    "job_summary": "D:\\KAGAMI-MZ\\runs\\e2e_test_img2img_valid_1774896615984\\job_summary.json"
+  },
+  "timestamps": {
+    "decided_at": "2026-03-30T18:50:44.157Z"
+  }
+}

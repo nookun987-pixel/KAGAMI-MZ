@@ -1,0 +1,42 @@
+{
+  "stage": "prompt_package",
+  "verdict": "PASS",
+  "canon_version": "v2",
+  "source_version": "2.0",
+  "source_files": {
+    "canonMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_ZENITH_CANON_V2.md",
+    "structuredRules": "D:\\KAGAMI-MZ\\MIKAGE_STRUCTURED_RULES.json",
+    "checklistMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+  },
+  "passed_checks": [
+    "identity",
+    "mask",
+    "optics",
+    "hair",
+    "porcelain",
+    "graphene",
+    "weapon",
+    "tone"
+  ],
+  "failed_checks": [],
+  "forbidden_hits": [],
+  "critical_failures": [],
+  "pass_ratio": 1,
+  "negative_lock_count": 121,
+  "job_input_validation": {
+    "stage": "job_input",
+    "verdict": "PASS",
+    "pass_ratio": 1,
+    "passed_checks": [],
+    "failed_checks": [],
+    "forbidden_hits": [],
+    "critical_failures": [],
+    "canon_version": "v2",
+    "source_version": "2.0",
+    "source_files": {
+      "canonMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_ZENITH_CANON_V2.md",
+      "structuredRules": "D:\\KAGAMI-MZ\\MIKAGE_STRUCTURED_RULES.json",
+      "checklistMarkdown": "D:\\KAGAMI-MZ\\MIKAGE_PASS_FAIL_CHECKLIST.md"
+    }
+  }
+}

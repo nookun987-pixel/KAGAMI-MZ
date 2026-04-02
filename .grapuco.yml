@@ -1,0 +1,13 @@
+languages:
+  - python
+  - javascript
+
+include:
+  - "**/*.py"
+  - "**/*.js"
+
+exclude:
+  - "node_modules"
+  - ".git"
+  - "runs"
+  - "*.log"

@@ -1,0 +1,29 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field"
+  ],
+  "material_read": "The image reads as a digital mosaic or abstract pattern, not a cohesive matte ceramic material.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "digital mosaic",
+    "stained glass pattern",
+    "wall or slab read"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Depict a clear, single manufactured object with defined contours and form.",
+    "Ensure the material properties of matte B4C technical ceramic are evident, including dry, dense, engineered read and eggshell microtexture.",
+    "Remove the abstract pattern and black outlines that obscure material and object readability.",
+    "Focus on a shadow-heavy palette and bokashi gradient to define the object's form and material."
+  ],
+  "summary": "The image fails because it presents an abstract, texture-only composition rather than a discernible manufactured object. The material does not read as matte ceramic, instead appearing as a digital mosaic or stained glass pattern. Object readability and correct material properties are completely absent.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

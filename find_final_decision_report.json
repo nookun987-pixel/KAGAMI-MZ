@@ -1,0 +1,1197 @@
+{
+  "root": "D:\\KAGAMI-MZ",
+  "scanned_file_count": 3026,
+  "candidate_count": 1550,
+  "top_candidates": [
+    {
+      "filePath": "D:\\KAGAMI-MZ\\find_final_decision.js",
+      "score": 32,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "REJECT",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 7,
+          "text": "* It only scans files and reports which file actually writes final_decision.json"
+        },
+        {
+          "lineNumber": 8,
+          "text": "* or contains the true ALLOW/REJECT gate logic."
+        },
+        {
+          "lineNumber": 43,
+          "text": "\"final_decision.json\","
+        },
+        {
+          "lineNumber": 44,
+          "text": "\"ALLOW\","
+        },
+        {
+          "lineNumber": 45,
+          "text": "\"REJECT\","
+        },
+        {
+          "lineNumber": 46,
+          "text": "\"validator_executed\","
+        },
+        {
+          "lineNumber": 47,
+          "text": "\"gemini_validation\","
+        },
+        {
+          "lineNumber": 48,
+          "text": "\"output.png\","
+        },
+        {
+          "lineNumber": 49,
+          "text": "\"writeFileSync\","
+        },
+        {
+          "lineNumber": 100,
+          "text": "if (content.includes(\"final_decision.json\")) score += 8;"
+        },
+        {
+          "lineNumber": 101,
+          "text": "if (content.includes(\"writeFileSync\") || content.includes(\"fs.writeFileSync\")) score += 4;"
+        },
+        {
+          "lineNumber": 102,
+          "text": "if (content.includes(\"ALLOW\") && content.includes(\"REJECT\")) score += 4;"
+        },
+        {
+          "lineNumber": 103,
+          "text": "if (content.includes(\"validator_executed\")) score += 2;"
+        },
+        {
+          "lineNumber": 104,
+          "text": "if (content.includes(\"gemini_validation\")) score += 2;"
+        },
+        {
+          "lineNumber": 105,
+          "text": "if (content.includes(\"output.png\")) score += 2;"
+        },
+        {
+          "lineNumber": 118,
+          "text": "line.includes(\"final_decision.json\") ||"
+        },
+        {
+          "lineNumber": 119,
+          "text": "line.includes(\"ALLOW\") ||"
+        },
+        {
+          "lineNumber": 120,
+          "text": "line.includes(\"REJECT\") ||"
+        },
+        {
+          "lineNumber": 121,
+          "text": "line.includes(\"validator_executed\") ||"
+        },
+        {
+          "lineNumber": 122,
+          "text": "line.includes(\"gemini_validation\") ||"
+        },
+        {
+          "lineNumber": 123,
+          "text": "line.includes(\"output.png\") ||"
+        },
+        {
+          "lineNumber": 124,
+          "text": "line.includes(\"writeFileSync\")"
+        },
+        {
+          "lineNumber": 179,
+          "text": "fs.writeFileSync(outputPath, JSON.stringify(result, null, 2), \"utf8\");"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\exports\\grapuco_system_review\\01_ARCHITECTURE\\orchestrator.js",
+      "score": 30,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "REJECT",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 43,
+          "text": "const HARD_REJECT_SIGNALS = ["
+        },
+        {
+          "lineNumber": 122,
+          "text": "const CANDIDATE_TIER_ORDER = [\"REJECT\", \"BEST_OF_BATCH\", \"USABLE_INTERNAL\", \"USABLE_CONTENT\", \"PASS_STRONG\"];"
+        },
+        {
+          "lineNumber": 180,
+          "text": "fs.writeFileSync(filePath, jsonStr, \"utf-8\");"
+        },
+        {
+          "lineNumber": 214,
+          "text": "fs.writeFileSync(filePath, String(body || \"\"), \"utf-8\");"
+        },
+        {
+          "lineNumber": 231,
+          "text": "output_png: path.join(runDir, \"output.png\"),"
+        },
+        {
+          "lineNumber": 233,
+          "text": "gemini_validation: path.join(runDir, \"gemini_validation.json\"),"
+        },
+        {
+          "lineNumber": 245,
+          "text": "final_decision: path.join(runDir, \"final_decision.json\"),"
+        },
+        {
+          "lineNumber": 274,
+          "text": "decision: \"REJECT\","
+        },
+        {
+          "lineNumber": 275,
+          "text": "decision_reason: `REJECT: ${reason}`,"
+        },
+        {
+          "lineNumber": 276,
+          "text": "final_decision_reason: `REJECT: ${reason}`,"
+        },
+        {
+          "lineNumber": 279,
+          "text": "validator_executed: false,"
+        },
+        {
+          "lineNumber": 280,
+          "text": "gemini_validation_executed: false,"
+        },
+        {
+          "lineNumber": 283,
+          "text": "failed_rules: [\"GEMINI_PRECHECK_REJECT\"],"
+        },
+        {
+          "lineNumber": 287,
+          "text": "precheck_status: geminiPrecheck ? geminiPrecheck.status : \"REJECT\","
+        },
+        {
+          "lineNumber": 409,
+          "text": ".filter((record) => record && record.entity_id === entityId && record.decision === \"ALLOW\")"
+        },
+        {
+          "lineNumber": 1125,
+          "text": "if (!outputExists) return \"REJECT\";"
+        },
+        {
+          "lineNumber": 1136,
+          "text": "return \"REJECT\";"
+        },
+        {
+          "lineNumber": 1208,
+          "text": "const terminalStates = ['DONE', 'FAIL', 'REJECT', 'PASS'];"
+        },
+        {
+          "lineNumber": 1212,
+          "text": "const newRunState = isTerminal ? 'DONE' : (decision === 'ALLOW' ? 'PASSED' : 'FAILED_VALIDATION');"
+        },
+        {
+          "lineNumber": 1213,
+          "text": "const newStatus = decision === 'ALLOW' ? 'DONE' : (status || 'FAIL');"
+        },
+        {
+          "lineNumber": 1233,
+          "text": "* Mapping: RUNNING→RUNNING, DONE→DONE, FAIL→REJECT"
+        },
+        {
+          "lineNumber": 1245,
+          "text": "'FAIL': 'REJECT',"
+        },
+        {
+          "lineNumber": 1500,
+          "text": ": \"REJECT\";"
+        },
+        {
+          "lineNumber": 1525,
+          "text": "const targetPath = path.join(runDir, \"output.png\");"
+        },
+        {
+          "lineNumber": 1552,
+          "text": "verdict: \"REJECT\","
+        },
+        {
+          "lineNumber": 1553,
+          "text": "validator_executed: false,"
+        },
+        {
+          "lineNumber": 1603,
+          "text": "gemini_validation_executed: overrides.gemini_validation_executed === true,"
+        },
+        {
+          "lineNumber": 1629,
+          "text": "const executed = raw.gemini_validation_executed === true;"
+        },
+        {
+          "lineNumber": 1661,
+          "text": "gemini_validation_executed: executed,"
+        },
+        {
+          "lineNumber": 1680,
+          "text": "HARD_REJECT_SIGNALS.some((key) => Number(signals[key] || 0) > 0) ? \"REJECT\" : \"PASS\","
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\orchestrator.js",
+      "score": 30,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "REJECT",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 43,
+          "text": "const HARD_REJECT_SIGNALS = ["
+        },
+        {
+          "lineNumber": 122,
+          "text": "const CANDIDATE_TIER_ORDER = [\"REJECT\", \"BEST_OF_BATCH\", \"USABLE_INTERNAL\", \"USABLE_CONTENT\", \"PASS_STRONG\"];"
+        },
+        {
+          "lineNumber": 180,
+          "text": "fs.writeFileSync(filePath, jsonStr, \"utf-8\");"
+        },
+        {
+          "lineNumber": 214,
+          "text": "fs.writeFileSync(filePath, String(body || \"\"), \"utf-8\");"
+        },
+        {
+          "lineNumber": 231,
+          "text": "output_png: path.join(runDir, \"output.png\"),"
+        },
+        {
+          "lineNumber": 233,
+          "text": "gemini_validation: path.join(runDir, \"gemini_validation.json\"),"
+        },
+        {
+          "lineNumber": 245,
+          "text": "final_decision: path.join(runDir, \"final_decision.json\"),"
+        },
+        {
+          "lineNumber": 280,
+          "text": "decision: \"REJECT\","
+        },
+        {
+          "lineNumber": 281,
+          "text": "decision_reason: `REJECT: ${reason}`,"
+        },
+        {
+          "lineNumber": 282,
+          "text": "final_decision_reason: `REJECT: ${reason}`,"
+        },
+        {
+          "lineNumber": 285,
+          "text": "validator_executed: false,"
+        },
+        {
+          "lineNumber": 286,
+          "text": "gemini_validation_executed: false,"
+        },
+        {
+          "lineNumber": 289,
+          "text": "failed_rules: [\"GEMINI_PRECHECK_REJECT\"],"
+        },
+        {
+          "lineNumber": 293,
+          "text": "precheck_status: geminiPrecheck ? geminiPrecheck.status : \"REJECT\","
+        },
+        {
+          "lineNumber": 415,
+          "text": ".filter((record) => record && record.entity_id === entityId && record.decision === \"ALLOW\")"
+        },
+        {
+          "lineNumber": 1131,
+          "text": "if (!outputExists) return \"REJECT\";"
+        },
+        {
+          "lineNumber": 1142,
+          "text": "return \"REJECT\";"
+        },
+        {
+          "lineNumber": 1214,
+          "text": "const terminalStates = ['DONE', 'FAIL', 'REJECT', 'PASS'];"
+        },
+        {
+          "lineNumber": 1218,
+          "text": "const newRunState = isTerminal ? 'DONE' : (decision === 'ALLOW' ? 'PASSED' : 'FAILED_VALIDATION');"
+        },
+        {
+          "lineNumber": 1219,
+          "text": "const newStatus = decision === 'ALLOW' ? 'DONE' : (status || 'FAIL');"
+        },
+        {
+          "lineNumber": 1239,
+          "text": "* Mapping: RUNNING→RUNNING, DONE→DONE, FAIL→REJECT"
+        },
+        {
+          "lineNumber": 1251,
+          "text": "'FAIL': 'REJECT',"
+        },
+        {
+          "lineNumber": 1527,
+          "text": ": \"REJECT\";"
+        },
+        {
+          "lineNumber": 1552,
+          "text": "const targetPath = path.join(runDir, \"output.png\");"
+        },
+        {
+          "lineNumber": 1579,
+          "text": "verdict: \"REJECT\","
+        },
+        {
+          "lineNumber": 1580,
+          "text": "validator_executed: false,"
+        },
+        {
+          "lineNumber": 1630,
+          "text": "gemini_validation_executed: overrides.gemini_validation_executed === true,"
+        },
+        {
+          "lineNumber": 1656,
+          "text": "const executed = raw.gemini_validation_executed === true;"
+        },
+        {
+          "lineNumber": 1688,
+          "text": "gemini_validation_executed: executed,"
+        },
+        {
+          "lineNumber": 1707,
+          "text": "HARD_REJECT_SIGNALS.some((key) => Number(signals[key] || 0) > 0) ? \"REJECT\" : \"PASS\","
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\orchestrator.test.js",
+      "score": 30,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "REJECT",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 147,
+          "text": "gemini_validation_executed: true,"
+        },
+        {
+          "lineNumber": 175,
+          "text": "fs.writeFileSync(targetPath, Buffer.from(ONE_BY_ONE_PNG_BASE64, \"base64\"));"
+        },
+        {
+          "lineNumber": 269,
+          "text": "const outputPath = path.join(runDir, \"output.png\");"
+        },
+        {
+          "lineNumber": 271,
+          "text": "const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, \"final_decision.json\"), \"utf-8\"));"
+        },
+        {
+          "lineNumber": 275,
+          "text": "assert(fs.existsSync(outputPath), \"success case should create a real output.png\");"
+        },
+        {
+          "lineNumber": 276,
+          "text": "assert(summary.decision === \"ALLOW\", \"success case should allow when real image + canon pass\");"
+        },
+        {
+          "lineNumber": 279,
+          "text": "assert(summary.output_files[0] === \"output.png\", \"success case output_files should contain output.png\");"
+        },
+        {
+          "lineNumber": 280,
+          "text": "assert(summary.final_decision_reason === \"ALLOW: output exists + local validator PASS + Gemini PASS\", \"success case should record allow reason\");"
+        },
+        {
+          "lineNumber": 281,
+          "text": "assert(summary.validator_executed === true, \"success case should mark validator executed\");"
+        },
+        {
+          "lineNumber": 282,
+          "text": "assert(summary.gemini_validation_executed === true, \"success case should mark Gemini executed\");"
+        },
+        {
+          "lineNumber": 284,
+          "text": "assert(summaryJson.output_files[0] === \"output.png\", \"job_summary output_files should contain output.png\");"
+        },
+        {
+          "lineNumber": 285,
+          "text": "assert(summaryJson.validator_executed === true, \"job_summary should mark validator executed\");"
+        },
+        {
+          "lineNumber": 286,
+          "text": "assert(summaryJson.gemini_validation_executed === true, \"job_summary should mark Gemini executed\");"
+        },
+        {
+          "lineNumber": 290,
+          "text": "assert(decisionJson.output_files[0] === \"output.png\", \"final_decision output_files should contain output.png\");"
+        },
+        {
+          "lineNumber": 291,
+          "text": "assert(decisionJson.validator_executed === true, \"final_decision should mark validator executed\");"
+        },
+        {
+          "lineNumber": 292,
+          "text": "assert(decisionJson.gemini_validation_executed === true, \"final_decision should mark Gemini executed\");"
+        },
+        {
+          "lineNumber": 294,
+          "text": "assert(decisionJson.decision_reason === \"ALLOW: output exists + local validator PASS + Gemini PASS\", \"final_decision should record allow reason\");"
+        },
+        {
+          "lineNumber": 300,
+          "text": "assert(fs.existsSync(path.join(runDir, \"gemini_validation.json\")), \"gemini_validation.json should exist\");"
+        },
+        {
+          "lineNumber": 301,
+          "text": "assert(fs.existsSync(path.join(runDir, \"final_decision.json\")), \"final_decision.json should exist\");"
+        },
+        {
+          "lineNumber": 302,
+          "text": "assert(fs.statSync(outputPath).size > 0, \"output.png should be non-empty\");"
+        },
+        {
+          "lineNumber": 304,
+          "text": "assert(registry.some((record) => record.decision === \"ALLOW\"), \"registry should contain an official allow\");"
+        },
+        {
+          "lineNumber": 377,
+          "text": "const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, \"final_decision.json\"), \"utf-8\"));"
+        },
+        {
+          "lineNumber": 378,
+          "text": "const geminiJson = JSON.parse(fs.readFileSync(path.join(runDir, \"gemini_validation.json\"), \"utf-8\"));"
+        },
+        {
+          "lineNumber": 380,
+          "text": "assert(summary.decision === \"REJECT\", \"failure case must reject when no real image exists\");"
+        },
+        {
+          "lineNumber": 382,
+          "text": "assert(summary.final_decision_reason === \"REJECT: no real image on disk\", \"failure case should record no-image reason\");"
+        },
+        {
+          "lineNumber": 385,
+          "text": "assert(!fs.existsSync(path.join(runDir, \"output.png\")), \"failure case must not create fake output.png\");"
+        },
+        {
+          "lineNumber": 388,
+          "text": "assert(decisionJson.decision === \"REJECT\", \"final_decision must reject when image missing\");"
+        },
+        {
+          "lineNumber": 414,
+          "text": "verdict: \"REJECT\","
+        },
+        {
+          "lineNumber": 463,
+          "text": "const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, \"final_decision.json\"), \"utf-8\"));"
+        },
+        {
+          "lineNumber": 465,
+          "text": "assert(summary.decision === \"REJECT\", \"canon fail case must reject on canon hard fail\");"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\command_center_server.js",
+      "score": 27,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "REJECT",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 67,
+          "text": "fs.writeFileSync(STATE_FILE, JSON.stringify(next, null, 2), \"utf8\");"
+        },
+        {
+          "lineNumber": 135,
+          "text": "\"REJECT\","
+        },
+        {
+          "lineNumber": 147,
+          "text": "if ([\"DONE\", \"REJECT\", \"FAIL\"].includes(candidateUpper)) return candidateStep;"
+        },
+        {
+          "lineNumber": 148,
+          "text": "if ([\"DONE\", \"REJECT\", \"FAIL\"].includes(currentUpper)) return currentStep;"
+        },
+        {
+          "lineNumber": 390,
+          "text": "finalDecision: path.join(runDir, \"final_decision.json\"),"
+        },
+        {
+          "lineNumber": 391,
+          "text": "geminiValidation: path.join(runDir, \"gemini_validation.json\"),"
+        },
+        {
+          "lineNumber": 392,
+          "text": "outputPng: path.join(runDir, \"output.png\"),"
+        },
+        {
+          "lineNumber": 428,
+          "text": "\"output.png\","
+        },
+        {
+          "lineNumber": 429,
+          "text": "\"final_decision.json\","
+        },
+        {
+          "lineNumber": 430,
+          "text": "\"gemini_validation.json\","
+        },
+        {
+          "lineNumber": 601,
+          "text": "if (/gemini judge|gemini validator|gemini_validation|judge rendered/i.test(text)) return \"JUDGE\";"
+        },
+        {
+          "lineNumber": 602,
+          "text": "if (/finished for .*|\\\"decision\\\": \\\"ALLOW\\\"|\\\"decision\\\":\\\"ALLOW\\\"/i.test(text)) return \"DONE\";"
+        },
+        {
+          "lineNumber": 603,
+          "text": "if (/GEMINI_PRECHECK_REJECT|precheck rejected/i.test(text)) return \"REJECT\";"
+        },
+        {
+          "lineNumber": 613,
+          "text": "if (Array.isArray(finalDecision.failed_rules) && finalDecision.failed_rules.includes(\"GEMINI_PRECHECK_REJECT\")) {"
+        },
+        {
+          "lineNumber": 614,
+          "text": "return \"REJECT\";"
+        },
+        {
+          "lineNumber": 616,
+          "text": "if (finalDecision.decision === \"ALLOW\") return \"DONE\";"
+        },
+        {
+          "lineNumber": 617,
+          "text": "if (finalDecision.decision === \"REJECT\" || finalDecision.status === \"FAIL\") return \"FAIL\";"
+        },
+        {
+          "lineNumber": 624,
+          "text": "if (precheck) return precheck.status === \"REJECT\" ? \"REJECT\" : \"PRECHECK\";"
+        },
+        {
+          "lineNumber": 633,
+          "text": "if (Array.isArray(finalDecision.failed_rules) && finalDecision.failed_rules.includes(\"GEMINI_PRECHECK_REJECT\")) {"
+        },
+        {
+          "lineNumber": 634,
+          "text": "return \"REJECTED\";"
+        },
+        {
+          "lineNumber": 636,
+          "text": "if (finalDecision.decision === \"ALLOW\") return \"COMPLETED\";"
+        },
+        {
+          "lineNumber": 637,
+          "text": "if (finalDecision.status === \"FAIL\" || finalDecision.decision === \"REJECT\") return \"FAILED\";"
+        },
+        {
+          "lineNumber": 710,
+          "text": "stopped_before_render: precheck.status === \"REJECT\" && !!(finalDecision && Array.isArray(finalDecision.failed_rules) && finalDecision.failed_rules.includes(\"GEMINI_PRECHECK_REJECT\")),"
+        },
+        {
+          "lineNumber": 711,
+          "text": "failed_rule: finalDecision && Array.isArray(finalDecision.failed_rules) ? finalDecision.failed_rules.find((item) => item === \"GEMINI_PRECHECK_REJECT\") || null : null,"
+        },
+        {
+          "lineNumber": 780,
+          "text": "diag.detail.no_real_image = \"output.png does not exist in run directory\";"
+        },
+        {
+          "lineNumber": 783,
+          "text": "if (geminiPrecheck && geminiPrecheck.status === \"REJECT\") {"
+        },
+        {
+          "lineNumber": 784,
+          "text": "diag.reject_reasons.unshift(\"PRECHECK_REJECT\");"
+        },
+        {
+          "lineNumber": 837,
+          "text": "if (finalDecision.gemini_validation_executed === false) {"
+        },
+        {
+          "lineNumber": 858,
+          "text": "diag.detail.no_final_decision = \"final_decision.json not found — pipeline may not have completed\";"
+        },
+        {
+          "lineNumber": 861,
+          "text": "if (diag.reject_reasons.length === 0 && finalDecision && finalDecision.decision !== \"ALLOW\") {"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\p0_5_e2e_test.js",
+      "score": 25,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 4,
+          "text": "* Verify: output.png exists, local validator PASS, gemini PASS, final_decision = ALLOW"
+        },
+        {
+          "lineNumber": 42,
+          "text": "fs.writeFileSync(jobFile, JSON.stringify(jobData, null, 2));"
+        },
+        {
+          "lineNumber": 84,
+          "text": "// Check 1: output.png exists"
+        },
+        {
+          "lineNumber": 85,
+          "text": "const outputPng = path.join(runDir, 'output.png');"
+        },
+        {
+          "lineNumber": 94,
+          "text": "// Check 2: final_decision.json"
+        },
+        {
+          "lineNumber": 95,
+          "text": "const decisionFile = path.join(runDir, 'final_decision.json');"
+        },
+        {
+          "lineNumber": 116,
+          "text": "// Check 3: gemini_validation"
+        },
+        {
+          "lineNumber": 117,
+          "text": "const geminiFile = path.join(runDir, 'gemini_validation.json');"
+        },
+        {
+          "lineNumber": 133,
+          "text": "console.log(`      executed: ${gemini.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 161,
+          "text": "console.log(`      validator_executed: ${summary.validator_executed}`);"
+        },
+        {
+          "lineNumber": 162,
+          "text": "console.log(`      gemini_validation_executed: ${summary.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 174,
+          "text": "gemini_validation_exists: hasGemini,"
+        },
+        {
+          "lineNumber": 176,
+          "text": "decision_is_allow: decision && decision.decision === 'ALLOW',"
+        },
+        {
+          "lineNumber": 178,
+          "text": "gemini_executed: gemini && gemini.gemini_validation_executed === true,"
+        },
+        {
+          "lineNumber": 195,
+          "text": "console.log(`✅ Final decision: ALLOW`);"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\p0_5_e2e_test_lora.js",
+      "score": 25,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 4,
+          "text": "* Verify: output.png exists, local validator PASS, gemini PASS, final_decision = ALLOW"
+        },
+        {
+          "lineNumber": 45,
+          "text": "fs.writeFileSync(jobFile, JSON.stringify(jobData, null, 2));"
+        },
+        {
+          "lineNumber": 88,
+          "text": "// Check 1: output.png exists"
+        },
+        {
+          "lineNumber": 89,
+          "text": "const outputPng = path.join(runDir, 'output.png');"
+        },
+        {
+          "lineNumber": 98,
+          "text": "// Check 2: final_decision.json"
+        },
+        {
+          "lineNumber": 99,
+          "text": "const decisionFile = path.join(runDir, 'final_decision.json');"
+        },
+        {
+          "lineNumber": 120,
+          "text": "// Check 3: gemini_validation"
+        },
+        {
+          "lineNumber": 121,
+          "text": "const geminiFile = path.join(runDir, 'gemini_validation.json');"
+        },
+        {
+          "lineNumber": 137,
+          "text": "console.log(`      executed: ${gemini.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 165,
+          "text": "console.log(`      validator_executed: ${summary.validator_executed}`);"
+        },
+        {
+          "lineNumber": 166,
+          "text": "console.log(`      gemini_validation_executed: ${summary.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 178,
+          "text": "gemini_validation_exists: hasGemini,"
+        },
+        {
+          "lineNumber": 180,
+          "text": "decision_is_allow: decision && decision.decision === 'ALLOW',"
+        },
+        {
+          "lineNumber": 182,
+          "text": "gemini_executed: gemini && gemini.gemini_validation_executed === true,"
+        },
+        {
+          "lineNumber": 199,
+          "text": "console.log(`✅ Final decision: ALLOW`);"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\p0_5_e2e_test_product_object.js",
+      "score": 25,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 4,
+          "text": "* Verify: output.png exists, local validator PASS, gemini PASS, final_decision = ALLOW"
+        },
+        {
+          "lineNumber": 47,
+          "text": "fs.writeFileSync(jobFile, JSON.stringify(jobData, null, 2));"
+        },
+        {
+          "lineNumber": 90,
+          "text": "// Check 1: output.png exists"
+        },
+        {
+          "lineNumber": 91,
+          "text": "const outputPng = path.join(runDir, 'output.png');"
+        },
+        {
+          "lineNumber": 100,
+          "text": "// Check 2: final_decision.json"
+        },
+        {
+          "lineNumber": 101,
+          "text": "const decisionFile = path.join(runDir, 'final_decision.json');"
+        },
+        {
+          "lineNumber": 122,
+          "text": "// Check 3: gemini_validation"
+        },
+        {
+          "lineNumber": 123,
+          "text": "const geminiFile = path.join(runDir, 'gemini_validation.json');"
+        },
+        {
+          "lineNumber": 139,
+          "text": "console.log(`      executed: ${gemini.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 167,
+          "text": "console.log(`      validator_executed: ${summary.validator_executed}`);"
+        },
+        {
+          "lineNumber": 168,
+          "text": "console.log(`      gemini_validation_executed: ${summary.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 180,
+          "text": "gemini_validation_exists: hasGemini,"
+        },
+        {
+          "lineNumber": 182,
+          "text": "decision_is_allow: decision && decision.decision === 'ALLOW',"
+        },
+        {
+          "lineNumber": 184,
+          "text": "gemini_executed: gemini && gemini.gemini_validation_executed === true,"
+        },
+        {
+          "lineNumber": 201,
+          "text": "console.log(`✅ Final decision: ALLOW`);"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\p0_6_e2e_test_clean_baseline_object_form.js",
+      "score": 25,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "writeFileSync",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 48,
+          "text": "fs.writeFileSync(jobFile, JSON.stringify(jobData, null, 2));"
+        },
+        {
+          "lineNumber": 92,
+          "text": "// Check 1: output.png exists"
+        },
+        {
+          "lineNumber": 93,
+          "text": "const outputPng = path.join(runDir, 'output.png');"
+        },
+        {
+          "lineNumber": 102,
+          "text": "// Check 2: final_decision.json"
+        },
+        {
+          "lineNumber": 103,
+          "text": "const decisionFile = path.join(runDir, 'final_decision.json');"
+        },
+        {
+          "lineNumber": 124,
+          "text": "// Check 3: gemini_validation"
+        },
+        {
+          "lineNumber": 125,
+          "text": "const geminiFile = path.join(runDir, 'gemini_validation.json');"
+        },
+        {
+          "lineNumber": 141,
+          "text": "console.log(`      executed: ${gemini.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 169,
+          "text": "console.log(`      validator_executed: ${summary.validator_executed}`);"
+        },
+        {
+          "lineNumber": 170,
+          "text": "console.log(`      gemini_validation_executed: ${summary.gemini_validation_executed}`);"
+        },
+        {
+          "lineNumber": 182,
+          "text": "gemini_validation_exists: hasGemini,"
+        },
+        {
+          "lineNumber": 184,
+          "text": "decision_is_allow: decision && decision.decision === 'ALLOW',"
+        },
+        {
+          "lineNumber": 186,
+          "text": "gemini_executed: gemini && gemini.gemini_validation_executed === true,"
+        },
+        {
+          "lineNumber": 203,
+          "text": "console.log(`✅ Final decision: ALLOW`);"
+        }
+      ]
+    },
+    {
+      "filePath": "D:\\KAGAMI-MZ\\runs\\precheck_behavior_runs\\precheck_behavior_summary.json",
+      "score": 25,
+      "hits": [
+        "final_decision.json",
+        "ALLOW",
+        "REJECT",
+        "validator_executed",
+        "gemini_validation",
+        "output.png",
+        "job_summary"
+      ],
+      "snippets": [
+        {
+          "lineNumber": 10,
+          "text": "\"finalDecision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 21,
+          "text": "\"finalDecision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 29,
+          "text": "\"precheckStatus\": \"REJECT\","
+        },
+        {
+          "lineNumber": 32,
+          "text": "\"finalDecision\": \"REJECT\","
+        },
+        {
+          "lineNumber": 34,
+          "text": "\"GEMINI_PRECHECK_REJECT\""
+        },
+        {
+          "lineNumber": 47,
+          "text": "\"decision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 49,
+          "text": "\"output.png\""
+        },
+        {
+          "lineNumber": 51,
+          "text": "\"output_file_path\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\attempt-01\\\\candidates\\\\candidate-01\\\\output.png\","
+        },
+        {
+          "lineNumber": 52,
+          "text": "\"validator_executed\": true,"
+        },
+        {
+          "lineNumber": 53,
+          "text": "\"gemini_validation_executed\": true,"
+        },
+        {
+          "lineNumber": 82,
+          "text": "\"output_path\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\attempt-01\\\\candidates\\\\candidate-01\\\\output.png\","
+        },
+        {
+          "lineNumber": 87,
+          "text": "\"validator_executed\": true,"
+        },
+        {
+          "lineNumber": 157,
+          "text": "\"decision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 311,
+          "text": "\"output_path\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\attempt-01\\\\candidates\\\\candidate-02\\\\output.png\","
+        },
+        {
+          "lineNumber": 316,
+          "text": "\"validator_executed\": true,"
+        },
+        {
+          "lineNumber": 386,
+          "text": "\"decision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 540,
+          "text": "\"output_path\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\attempt-01\\\\candidates\\\\candidate-03\\\\output.png\","
+        },
+        {
+          "lineNumber": 545,
+          "text": "\"validator_executed\": true,"
+        },
+        {
+          "lineNumber": 615,
+          "text": "\"decision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 770,
+          "text": "\"output_path\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\attempt-01\\\\candidates\\\\candidate-01\\\\output.png\","
+        },
+        {
+          "lineNumber": 775,
+          "text": "\"validator_executed\": true,"
+        },
+        {
+          "lineNumber": 845,
+          "text": "\"decision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 1002,
+          "text": "\"final_decision_reason\": \"ALLOW: output exists + local validator PASS + Gemini PASS\","
+        },
+        {
+          "lineNumber": 1027,
+          "text": "\"output_png\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\output.png\","
+        },
+        {
+          "lineNumber": 1029,
+          "text": "\"gemini_validation\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\gemini_validation.json\","
+        },
+        {
+          "lineNumber": 1041,
+          "text": "\"final_decision\": \"D:\\\\KAGAMI-MZ\\\\runs\\\\precheck_behavior_runs\\\\precheck-pass-case\\\\final_decision.json\","
+        },
+        {
+          "lineNumber": 1089,
+          "text": "\"validator_executed\": true,"
+        },
+        {
+          "lineNumber": 1159,
+          "text": "\"decision\": \"ALLOW\","
+        },
+        {
+          "lineNumber": 1285,
+          "text": "\"gemini_validation_result\": {"
+        },
+        {
+          "lineNumber": 1297,
+          "text": "\"gemini_validation_executed\": true,"
+        }
+      ]
+    }
+  ],
+  "most_likely_real_final_decision_writer": {
+    "filePath": "D:\\KAGAMI-MZ\\find_final_decision.js",
+    "score": 32,
+    "hits": [
+      "final_decision.json",
+      "ALLOW",
+      "REJECT",
+      "validator_executed",
+      "gemini_validation",
+      "output.png",
+      "writeFileSync",
+      "job_summary"
+    ],
+    "snippets": [
+      {
+        "lineNumber": 7,
+        "text": "* It only scans files and reports which file actually writes final_decision.json"
+      },
+      {
+        "lineNumber": 8,
+        "text": "* or contains the true ALLOW/REJECT gate logic."
+      },
+      {
+        "lineNumber": 43,
+        "text": "\"final_decision.json\","
+      },
+      {
+        "lineNumber": 44,
+        "text": "\"ALLOW\","
+      },
+      {
+        "lineNumber": 45,
+        "text": "\"REJECT\","
+      },
+      {
+        "lineNumber": 46,
+        "text": "\"validator_executed\","
+      },
+      {
+        "lineNumber": 47,
+        "text": "\"gemini_validation\","
+      },
+      {
+        "lineNumber": 48,
+        "text": "\"output.png\","
+      },
+      {
+        "lineNumber": 49,
+        "text": "\"writeFileSync\","
+      },
+      {
+        "lineNumber": 100,
+        "text": "if (content.includes(\"final_decision.json\")) score += 8;"
+      },
+      {
+        "lineNumber": 101,
+        "text": "if (content.includes(\"writeFileSync\") || content.includes(\"fs.writeFileSync\")) score += 4;"
+      },
+      {
+        "lineNumber": 102,
+        "text": "if (content.includes(\"ALLOW\") && content.includes(\"REJECT\")) score += 4;"
+      },
+      {
+        "lineNumber": 103,
+        "text": "if (content.includes(\"validator_executed\")) score += 2;"
+      },
+      {
+        "lineNumber": 104,
+        "text": "if (content.includes(\"gemini_validation\")) score += 2;"
+      },
+      {
+        "lineNumber": 105,
+        "text": "if (content.includes(\"output.png\")) score += 2;"
+      },
+      {
+        "lineNumber": 118,
+        "text": "line.includes(\"final_decision.json\") ||"
+      },
+      {
+        "lineNumber": 119,
+        "text": "line.includes(\"ALLOW\") ||"
+      },
+      {
+        "lineNumber": 120,
+        "text": "line.includes(\"REJECT\") ||"
+      },
+      {
+        "lineNumber": 121,
+        "text": "line.includes(\"validator_executed\") ||"
+      },
+      {
+        "lineNumber": 122,
+        "text": "line.includes(\"gemini_validation\") ||"
+      },
+      {
+        "lineNumber": 123,
+        "text": "line.includes(\"output.png\") ||"
+      },
+      {
+        "lineNumber": 124,
+        "text": "line.includes(\"writeFileSync\")"
+      },
+      {
+        "lineNumber": 179,
+        "text": "fs.writeFileSync(outputPath, JSON.stringify(result, null, 2), \"utf8\");"
+      }
+    ]
+  }
+}

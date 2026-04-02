@@ -1,0 +1,62 @@
+[
+  {
+    "step": "INGESTED",
+    "timestamp": "2026-03-30T10:19:47.815Z",
+    "result": "OK"
+  },
+  {
+    "step": "STRUCTURED",
+    "timestamp": "2026-03-30T10:19:48.846Z",
+    "result": "OK"
+  },
+  {
+    "step": "PRECHECKED",
+    "timestamp": "2026-03-30T10:19:59.632Z",
+    "result": "OK"
+  },
+  {
+    "step": "NORMALIZED",
+    "timestamp": "2026-03-30T10:19:59.642Z",
+    "result": "OK"
+  },
+  {
+    "step": "TRANSLATED",
+    "timestamp": "2026-03-30T10:19:59.642Z",
+    "result": "OK"
+  },
+  {
+    "step": "RENDERING",
+    "timestamp": "2026-03-30T10:19:59.642Z",
+    "result": "OK"
+  },
+  {
+    "step": "CRITIQUED",
+    "timestamp": "2026-03-30T10:28:06.115Z",
+    "result": "OK"
+  },
+  {
+    "step": "DRIFT_CHECKED",
+    "timestamp": "2026-03-30T10:28:06.115Z",
+    "result": "OK"
+  },
+  {
+    "step": "POSTCHECKED",
+    "timestamp": "2026-03-30T10:28:06.115Z",
+    "result": "OK"
+  },
+  {
+    "step": "DECIDED",
+    "timestamp": "2026-03-30T10:28:06.118Z",
+    "result": "OK"
+  },
+  {
+    "step": "LOGGED",
+    "timestamp": "2026-03-30T10:28:06.118Z",
+    "result": "OK"
+  },
+  {
+    "step": "DONE",
+    "timestamp": "2026-03-30T10:28:06.118Z",
+    "result": "OK"
+  }
+]

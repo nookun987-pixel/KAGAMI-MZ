@@ -1,0 +1,18 @@
+{
+  "job_id": "MASK_MACRO_RETEST_2026-03-31T13-38-18",
+  "type": "render",
+  "shot_type": "MASK_MACRO",
+  "entity_id": "kitsune_mask_macro",
+  "entity_class": "mask_macro_study",
+  "zone": "white_monolith",
+  "status": "mask_macro_test",
+  "render": {
+    "width": 1152,
+    "height": 1152,
+    "performance": "Quality"
+  },
+  "input": {
+    "prompt": "Extreme macro product photography, premium studio close-up, single dominant subject, a symmetrical Japanese kitsune porcelain mask, matte porcelain-white B4C ceramic shell, dry dense engineered technical ceramic surface, ultra-controlled eggshell microtexture, visible sparse fine hairline fracture detail, controlled deep crimson kintsugi accent seam along cheekbone, void-black hollow eye slits, clearly manufactured artifact, precise industrial form, visible rim bevel and edge thickness, sharp contour silhouette, high material separation, premium low-key studio lighting, soft overhead key light, gentle side fill, shallow controlled depth of field, clean dark background, no environmental distraction, object readability first, non-reflective matte ceramic finish",
+    "negative_prompt": "abstract, texture field, atmosphere, fog, soft fantasy blur, decorative clutter, anime, neon glow, cyberpunk, distortion, organic face, visible human skin, human eyes, asymmetrical mask, overexposed ceramic, cheap render finish, toy, figurine, plastic gloss, orange accent, orange contamination, red spill, blurry crop, atmosphere-only frame, painterly, grain, noise, messy background, glossy, shiny, reflective, polished, wet, specular, lacquer, PVC, plaster, stone"
+  }
+}

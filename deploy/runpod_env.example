@@ -1,0 +1,61 @@
+# ============================================================================
+# MIKAGE — RunPod Environment Variables
+# Copy this to /workspace/KAGAMI-MZ/.env and fill in required values.
+# ============================================================================
+
+# ── REQUIRED ──────────────────────────────────────────────────────────────────
+# At least one Gemini key is needed for the pipeline (intake, spec, gate).
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+
+# ── FOOOCUS (BRIDGE-ONLY — no proxy) ─────────────────────────────────────────
+FOOOCUS_ROOT=/workspace/Fooocus
+FOOOCUS_BRIDGE_PORT=7865
+FOOOCUS_HEALTH_URL=http://127.0.0.1:7865/
+FOOOCUS_API=http://127.0.0.1:7865
+FOOOCUS_API_URL=http://127.0.0.1:7865
+FOOOCUS_OUTPUT_DIR=/workspace/Fooocus/outputs
+
+# ── MIKAGE SERVER ─────────────────────────────────────────────────────────────
+PORT=3000
+
+# ── WORKER ────────────────────────────────────────────────────────────────────
+WORKER_POLL_MS=5000
+MAX_AUTO_FIX_ATTEMPTS=3
+RUNS_ROOT=/workspace/KAGAMI-MZ/runs
+QUEUE_ROOT=/workspace/KAGAMI-MZ/queue
+
+# ── SERVICE AUTO-START (handled by runpod_start.sh, keep false) ───────────────
+AUTO_START_FOOOCUS=false
+FOOOCUS_START_CMD=python scripts/fooocus_bridge.py
+FOOOCUS_START_CWD=/workspace/KAGAMI-MZ
+
+# ── TRANSLATOR ────────────────────────────────────────────────────────────────
+TRANSLATOR_MODE=LOCAL
+
+# ── OLLAMA (optional — not required for default pipeline) ─────────────────────
+REQUIRE_OLLAMA=false
+OLLAMA_HEALTH_URL=http://127.0.0.1:11434/api/tags
+AUTO_START_OLLAMA=false
+
+# ── RENDER DIMENSIONS ─────────────────────────────────────────────────────────
+RENDER_WIDTH=1024
+RENDER_HEIGHT=384
+RENDER_PERFORMANCE=Quality
+
+# ── GEMINI MODEL (optional — defaults shown) ─────────────────────────────────
+# GEMINI_MODEL=gemini-2.5-flash
+# GEMINI_VISION_MODEL=gemini-2.5-flash
+
+# ── GOOGLE CLOUD / VERTEX AI (optional — for RAG retriever) ──────────────────
+# GOOGLE_APPLICATION_CREDENTIALS=/workspace/KAGAMI-MZ/service-account-key.json
+# GOOGLE_CLOUD_PROJECT=your-project-id
+
+# ── NOTION (optional — for audit logging) ─────────────────────────────────────
+# MIKAGE_NOTION_DB=
+# NOTION_API_KEY=
+
+# ── BRIDGES (optional) ───────────────────────────────────────────────────────
+GEMINI_BRIDGE_HEALTH_URL=
+AUTO_START_GEMINI_BRIDGE=false
+CLAUDE_BRIDGE_HEALTH_URL=
+AUTO_START_CLAUDE_BRIDGE=false

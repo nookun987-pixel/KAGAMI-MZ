@@ -1,0 +1,39 @@
+{
+  "iteration_type": "correction",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "If the ceramic read turns glossy, plastic, PVC-like, or toy-like, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "subtractive mineral color logic",
+    "low saturation, shadow-heavy palette",
+    "bokashi non-linear gradient",
+    "matte-first material-color match",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "zero glossy/plastic/toy feel (reads as synthetic/toy-like color)",
+    "zero plaster/mineral/carved stone resemblance"
+  ],
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with defined contours.",
+    "Change the material to porcelain-white #FAFAFA matte ceramic.",
+    "Significantly reduce color saturation, moving away from neon/RGB-clean purples.",
+    "Establish a shadow-heavy, low-saturation palette consistent with subtractive mineral color logic.",
+    "Replace abstract noise with ultra-controlled eggshell microtexture and sparse fine hairline cracking.",
+    "Ensure the material conveys a dry, dense, engineered read, not a chaotic texture.",
+    "Eliminate any synthetic, plastic, or toy-like color drifts."
+  ],
+  "severity": "HIGH",
+  "summary": "The image is an abstract, highly saturated purple digital noise texture. It completely fails to represent a white ceramic material study or any discernible manufactured object. The color palette is oversaturated and synthetic, directly contradicting the target material's requirements for low saturation, shadow-heavy, and matte ceramic properties. No aspect of the pass target is met.",
+  "material_read": "Abstract digital noise, highly saturated and synthetic texture.",
+  "correct_reads": []
+}

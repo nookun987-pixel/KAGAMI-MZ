@@ -1,0 +1,164 @@
+{
+  "job_id": "e2e_test_1774806150905",
+  "phase_target": "material_study",
+  "structured_prompt": "SUBJECT\nSingle manufactured ceramic sphere, 10cm diameter, perfectly round, matte B4C technical ceramic material. Full object clearly visible with readable silhouette.\n\nOBJECT DEFINITION\nOne concrete engineered object occupying central frame. Clear edges, rim curvature, and spherical form. Subject must be immediately recognizable as a manufactured ceramic sphere, not a wall texture or abstract pattern.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Subtle eggshell microtexture visible on spherical curvature. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define spherical form and curvature. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nCentered product photography. Full sphere visible with readable silhouette. Clean background separation. Subject-first framing. Background kept minimal and secondary.\n\nBACKGROUND\nBrutalist minimal concrete surface, kept secondary to subject.\n\nCOLOR\nsubtractive mineral color logic. low saturation, no neon. matte-first material response. shadow-dominant composition (70%). bokashi gradient, non-linear. no flat color, always material texture variation.\n\nQUALITY\nUltra-detailed industrial product photography. 8K resolution. Commercial readability.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+  "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture study, material swatch, abstract art, texture macro without context, wall texture, slab surface, floating texture field, pattern-first composition, atmospheric-only, no manufactured object, surface-only frame, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture",
+  "render_spec": {
+    "shot_type": "macro_material_study",
+    "lighting": "low_key_grazing",
+    "background": "minimal_brutalist",
+    "priority": "material_readability",
+    "width": 512,
+    "height": 512,
+    "performance": "Speed"
+  },
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ],
+  "intake_summary": "Focus on a single, perfectly engineered ceramic sphere made of matte boron carbide (B4C). Ensure a clean, dry, dense, and manufactured material read, avoiding any glossy, plastic, or toy-like finishes. Maintain a clear subject identity and contour within a material-only scope, preventing abstract drift or subject loss.",
+  "locked_prompt_package": {
+    "subject": "Mikage Zenith, matte B4C technical ceramic, porcelain white, silent disciplined material study",
+    "texture": [
+      "Faceless white cybernetic helmet",
+      "Long, straight, heavy black hair flowing naturally",
+      "matte B4C technical ceramic",
+      "porcelain white",
+      "eggshell microtexture",
+      "subtle hairline fractures",
+      "matte black graphene reference",
+      "void black optical sensors",
+      "Zenith Blade",
+      "subtractive mineral color logic",
+      "matte-first material response"
+    ],
+    "lighting": [
+      "low-key cinematic",
+      "no ambient color wash",
+      "no magenta spill",
+      "no neon",
+      "shadow-dominant composition (70%)",
+      "low saturation, no neon",
+      "bokashi gradient, non-linear"
+    ],
+    "composition_rules": [
+      "macro close-up",
+      "clean negative space",
+      "premium commercial readability",
+      "brutalist minimal concrete surface",
+      "no flat color, always material texture variation",
+      "form then material then color"
+    ],
+    "prompt": "SUBJECT\nSingle manufactured ceramic sphere, 10cm diameter, perfectly round, matte B4C technical ceramic material. Full object clearly visible with readable silhouette.\n\nOBJECT DEFINITION\nOne concrete engineered object occupying central frame. Clear edges, rim curvature, and spherical form. Subject must be immediately recognizable as a manufactured ceramic sphere, not a wall texture or abstract pattern.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Subtle eggshell microtexture visible on spherical curvature. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define spherical form and curvature. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nCentered product photography. Full sphere visible with readable silhouette. Clean background separation. Subject-first framing. Background kept minimal and secondary.\n\nBACKGROUND\nBrutalist minimal concrete surface, kept secondary to subject.\n\nCOLOR\nsubtractive mineral color logic. low saturation, no neon. matte-first material response. shadow-dominant composition (70%). bokashi gradient, non-linear. no flat color, always material texture variation.\n\nQUALITY\nUltra-detailed industrial product photography. 8K resolution. Commercial readability.",
+    "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture study, material swatch, abstract art, texture macro without context, wall texture, slab surface, floating texture field, pattern-first composition, atmospheric-only, no manufactured object, surface-only frame, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture"
+  },
+  "positivePrompt": "SUBJECT\nSingle manufactured ceramic sphere, 10cm diameter, perfectly round, matte B4C technical ceramic material. Full object clearly visible with readable silhouette.\n\nOBJECT DEFINITION\nOne concrete engineered object occupying central frame. Clear edges, rim curvature, and spherical form. Subject must be immediately recognizable as a manufactured ceramic sphere, not a wall texture or abstract pattern.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Subtle eggshell microtexture visible on spherical curvature. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define spherical form and curvature. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nCentered product photography. Full sphere visible with readable silhouette. Clean background separation. Subject-first framing. Background kept minimal and secondary.\n\nBACKGROUND\nBrutalist minimal concrete surface, kept secondary to subject.\n\nCOLOR\nsubtractive mineral color logic. low saturation, no neon. matte-first material response. shadow-dominant composition (70%). bokashi gradient, non-linear. no flat color, always material texture variation.\n\nQUALITY\nUltra-detailed industrial product photography. 8K resolution. Commercial readability.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+  "negativePrompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture study, material swatch, abstract art, texture macro without context, wall texture, slab surface, floating texture field, pattern-first composition, atmospheric-only, no manufactured object, surface-only frame, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture",
+  "spec": {
+    "texture": [
+      "subtractive mineral color logic",
+      "matte-first material response"
+    ],
+    "lighting": [
+      "shadow-dominant composition (70%)",
+      "low saturation, no neon",
+      "bokashi gradient, non-linear"
+    ],
+    "composition_rules": [
+      "no flat color, always material texture variation",
+      "form then material then color"
+    ],
+    "negative_prompt": [
+      "neon",
+      "neon rgb",
+      "oversaturation",
+      "pure white",
+      "pure black",
+      "rgb clean plastic color",
+      "magenta synthetic",
+      "flat color no texture",
+      "plastic color drift",
+      "crimson overuse",
+      "full-frame red wash",
+      "#FFFFFF",
+      "#000000",
+      "#FF0000",
+      "#FF2D55",
+      "#FF00FF",
+      "#FFD700",
+      "#FFA500",
+      "neon_rgb",
+      "plastic_rgb_clean",
+      "pure_white",
+      "pure_black",
+      "magenta_synthetic",
+      "flat_color_no_texture"
+    ]
+  },
+  "payload": {
+    "prompt": "SUBJECT\nSingle manufactured ceramic sphere, 10cm diameter, perfectly round, matte B4C technical ceramic material. Full object clearly visible with readable silhouette.\n\nOBJECT DEFINITION\nOne concrete engineered object occupying central frame. Clear edges, rim curvature, and spherical form. Subject must be immediately recognizable as a manufactured ceramic sphere, not a wall texture or abstract pattern.\n\nMATERIAL\nSolid porcelain-white #FAFAFA surface. Subtle eggshell microtexture visible on spherical curvature. Strictly zero specular highlights. Cold and dry industrial ceramic feel. Non-plastic, non-PVC, non-glossy, non-toy.\n\nLIGHTING\nLow-key cinematic. Precise shadows to define spherical form and curvature. No ambient color wash. No magenta spill. No neon.\n\nCOMPOSITION\nCentered product photography. Full sphere visible with readable silhouette. Clean background separation. Subject-first framing. Background kept minimal and secondary.\n\nBACKGROUND\nBrutalist minimal concrete surface, kept secondary to subject.\n\nCOLOR\nsubtractive mineral color logic. low saturation, no neon. matte-first material response. shadow-dominant composition (70%). bokashi gradient, non-linear. no flat color, always material texture variation.\n\nQUALITY\nUltra-detailed industrial product photography. 8K resolution. Commercial readability.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+    "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture study, material swatch, abstract art, texture macro without context, wall texture, slab surface, floating texture field, pattern-first composition, atmospheric-only, no manufactured object, surface-only frame, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, plaster, gypsum, chalk, concrete dust, carved stone, mineral banding, sedimentary pattern, rough rock, layered erosion, striated grooves, sculpted surface, powdery porous masonry, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture"
+  },
+  "color_canon_applied": true,
+  "palette_used": [
+    "ceramic_off_white",
+    "charcoal_black",
+    "restrained_crimson",
+    "muted_earth"
+  ],
+  "color_constraints": [
+    "subtractive mineral color logic",
+    "color must follow form then material, never override them",
+    "low saturation, no neon",
+    "matte-first material response",
+    "shadow-dominant composition (70%)",
+    "bokashi gradient, non-linear",
+    "no flat color, always material texture variation",
+    "diffuse highlights, not specular",
+    "pure white and pure black are forbidden",
+    "plastic-clean RGB color is forbidden",
+    "ceramic off-white must stay warm and broken, never sterile pure white",
+    "charcoal black must keep temperature variation, never dead pure black",
+    "restrained crimson only in seams, cores, or controlled heat accents",
+    "muted earth support only, low saturation material support tones",
+    "shadow_anchor_sumi_iro",
+    "highlight_anchor_gofun",
+    "crimson_seam_if_applicable"
+  ],
+  "color_negative": [
+    "neon",
+    "neon rgb",
+    "oversaturation",
+    "pure white",
+    "pure black",
+    "rgb clean plastic color",
+    "magenta synthetic",
+    "flat color no texture",
+    "plastic color drift",
+    "crimson overuse",
+    "full-frame red wash",
+    "#FFFFFF",
+    "#000000",
+    "#FF0000",
+    "#FF2D55",
+    "#FF00FF",
+    "#FFD700",
+    "#FFA500",
+    "neon_rgb",
+    "plastic_rgb_clean",
+    "pure_white",
+    "pure_black",
+    "magenta_synthetic",
+    "flat_color_no_texture"
+  ],
+  "color_priority_order": [
+    "form",
+    "material",
+    "color"
+  ]
+}

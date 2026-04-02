@@ -7,7 +7,6 @@
 "use strict";
 
 const sharp = require("sharp");
-const path = require("path");
 
 // ===================================================================
 // HELPERS
@@ -38,6 +37,7 @@ function deltaE_sRGB(r1, g1, b1, r2, g2, b2) {
 
 /**
  * Convert RGB to HSV.
+ * Returns h in degrees, s/v in 0..1
  */
 function rgbToHsv(r, g, b) {
   r /= 255; g /= 255; b /= 255;
@@ -54,6 +54,14 @@ function rgbToHsv(r, g, b) {
   return { h, s, v: max };
 }
 
+function isCrimsonHue(h) {
+  return h <= 18 || h >= 338;
+}
+
+function clamp01(v) {
+  return Math.max(0, Math.min(1, v));
+}
+
 // ===================================================================
 // 1. EDGE SHARPNESS (Laplacian-based)
 // ===================================================================
@@ -65,14 +73,12 @@ function rgbToHsv(r, g, b) {
 async function measureEdgeSharpness(imagePath) {
   const { data, width, height, channels } = await loadRaw(imagePath);
 
-  // Build luminance array
   const lum = new Float32Array(width * height);
   for (let i = 0; i < width * height; i++) {
     const off = i * channels;
     lum[i] = luminance(data[off], data[off + 1], data[off + 2]);
   }
 
-  // 3x3 Laplacian kernel: [0,-1,0 / -1,4,-1 / 0,-1,0]
   let sum = 0, count = 0;
   for (let y = 1; y < height - 1; y++) {
     for (let x = 1; x < width - 1; x++) {
@@ -86,12 +92,11 @@ async function measureEdgeSharpness(imagePath) {
   }
 
   const meanGradient = count > 0 ? sum / count : 0;
-  // Normalize to 0-1 range (typical values: 0-50 for 8-bit images)
   const normalized = Math.min(meanGradient / 30, 1.0);
 
   return {
     edge_sharpness_gradient: normalized,
-    edge_blur_radius: normalized < 0.15 ? 1 : 0, // blur detected if very low sharpness
+    edge_blur_radius: normalized < 0.15 ? 1 : 0,
     raw_gradient: meanGradient,
   };
 }
@@ -112,10 +117,9 @@ async function measureHighFrequencyDensity(imagePath) {
     lum[i] = luminance(data[off], data[off + 1], data[off + 2]);
   }
 
-  // 5x5 local variance
   const winSize = 2;
   let totalVariance = 0, count = 0;
-  const step = 4; // sample every 4th pixel for speed
+  const step = 4;
   for (let y = winSize; y < height - winSize; y += step) {
     for (let x = winSize; x < width - winSize; x += step) {
       let mean = 0, n = 0;
@@ -140,13 +144,12 @@ async function measureHighFrequencyDensity(imagePath) {
   }
 
   const avgVariance = count > 0 ? totalVariance / count : 0;
-  // Normalize: typical range 0-2000 for 8-bit
   const density = Math.min(avgVariance / 800, 1.0);
 
   return {
     high_frequency_pixel_density: density,
-    high_frequency_pixel_density_delta: density - 0.3, // delta from baseline
-    edge_halo_detection: density < 0.1 ? 1 : 0, // dead texture = possible halo
+    high_frequency_pixel_density_delta: density - 0.3,
+    edge_halo_detection: density < 0.1 ? 1 : 0,
     raw_variance: avgVariance,
   };
 }
@@ -174,10 +177,8 @@ async function measureHistogram(imagePath) {
   }
 
   const meanLum = totalLum / pixCount;
-  // Ideal mid-tone exposure ~128
-  const exposureDelta = (meanLum - 128) / 128; // -1.0 to +1.0
+  const exposureDelta = (meanLum - 128) / 128;
 
-  // Clipping: % pixels at extremes (0-5 or 250-255)
   let clippedDark = 0, clippedBright = 0;
   for (let i = 0; i <= 5; i++) clippedDark += histogram[i];
   for (let i = 250; i <= 255; i++) clippedBright += histogram[i];
@@ -185,7 +186,7 @@ async function measureHistogram(imagePath) {
 
   return {
     exposure_value_delta: exposureDelta,
-    histogram_clipping: clippingRatio > 0.05 ? 1 : 0, // >5% pixels clipped
+    histogram_clipping: clippingRatio > 0.05 ? 1 : 0,
     clipping_ratio: clippingRatio,
     mean_luminance: meanLum,
   };
@@ -206,7 +207,6 @@ async function measurePixelBleed(imagePath) {
     lum[i] = luminance(data[off], data[off + 1], data[off + 2]);
   }
 
-  // Find strong edges (Sobel-like) and measure color variance at those points
   let edgePixels = 0, bleedPixels = 0;
   const step = 2;
   for (let y = 1; y < height - 1; y += step) {
@@ -216,15 +216,13 @@ async function measurePixelBleed(imagePath) {
       const gy = Math.abs(lum[c + width] - lum[c - width]);
       const grad = gx + gy;
 
-      if (grad > 30) { // strong edge
+      if (grad > 30) {
         edgePixels++;
-        // Check if RGB values around edge have unusual variance (bleed)
-        const off1 = ((y) * width + (x - 1)) * channels;
-        const off2 = ((y) * width + (x + 1)) * channels;
+        const off1 = (y * width + (x - 1)) * channels;
+        const off2 = (y * width + (x + 1)) * channels;
         const rDiff = Math.abs(data[off1] - data[off2]);
         const gDiff = Math.abs(data[off1 + 1] - data[off2 + 1]);
         const bDiff = Math.abs(data[off1 + 2] - data[off2 + 2]);
-        // High color divergence at edge = potential bleed
         if (Math.max(rDiff, gDiff, bDiff) - Math.min(rDiff, gDiff, bDiff) > 60) {
           bleedPixels++;
         }
@@ -253,22 +251,18 @@ async function measureDistortion(imagePath) {
   const { data, width, height, channels } = await loadRaw(imagePath);
 
   let distortedCount = 0;
-  const pixCount = width * height;
   const step = 3;
 
   for (let y = 1; y < height - 1; y += step) {
     for (let x = 1; x < width - 1; x += step) {
       const off = (y * width + x) * channels;
-      const r = data[off], g = data[off + 1], b = data[off + 2];
 
-      // Check for RGB channel separation (chromatic aberration)
       const offL = (y * width + (x - 1)) * channels;
       const offR = (y * width + (x + 1)) * channels;
       const rShift = Math.abs(data[offL] - data[offR]);
       const gShift = Math.abs(data[offL + 1] - data[offR + 1]);
       const bShift = Math.abs(data[offL + 2] - data[offR + 2]);
 
-      // Large difference between channel shifts = chromatic split
       const maxShift = Math.max(rShift, gShift, bShift);
       const minShift = Math.min(rShift, gShift, bShift);
       if (maxShift - minShift > 80) {
@@ -276,13 +270,11 @@ async function measureDistortion(imagePath) {
         continue;
       }
 
-      // Check for VHS-style noise: high local variance in single channel
       const offU = ((y - 1) * width + x) * channels;
       const offD = ((y + 1) * width + x) * channels;
       const rVar = Math.abs(data[offU] - data[off]) + Math.abs(data[offD] - data[off]);
       const gVar = Math.abs(data[offU + 1] - data[off + 1]) + Math.abs(data[offD + 1] - data[off + 1]);
       const bVar = Math.abs(data[offU + 2] - data[off + 2]) + Math.abs(data[offD + 2] - data[off + 2]);
-      // One channel highly variable while others stable = noise pattern
       if (Math.max(rVar, gVar, bVar) > 100 && Math.min(rVar, gVar, bVar) < 20) {
         distortedCount++;
       }
@@ -302,16 +294,141 @@ async function measureDistortion(imagePath) {
 }
 
 // ===================================================================
+// 6. CRIMSON / RED SEAM DETECTION
+// ===================================================================
+
+/**
+ * Detect restrained crimson accents, including very thin dark red hairlines.
+ * Designed for Mikage seam/core reds, not broad red-painted surfaces.
+ */
+async function measureCrimsonPresence(imagePath) {
+  const { data, width, height, channels } = await loadRaw(imagePath);
+  const pixCount = width * height;
+
+  let crimsonPixels = 0;
+  let strongCrimsonPixels = 0;
+  let brightNeonRedPixels = 0;
+  let seamCandidatePixels = 0;
+
+  let bboxMinX = width, bboxMinY = height, bboxMaxX = -1, bboxMaxY = -1;
+  let totalHueDistance = 0;
+  let hueSamples = 0;
+
+  const neighborOffsets = [
+    [-1, 0], [1, 0], [0, -1], [0, 1],
+  ];
+
+  for (let y = 1; y < height - 1; y++) {
+    for (let x = 1; x < width - 1; x++) {
+      const off = (y * width + x) * channels;
+      const r = data[off];
+      const g = data[off + 1];
+      const b = data[off + 2];
+      const hsv = rgbToHsv(r, g, b);
+
+      const redDominance = r - Math.max(g, b);
+      const darkEnoughForSeam = hsv.v >= 0.10 && hsv.v <= 0.65;
+      const saturatedEnough = hsv.s >= 0.35;
+      const crimsonHue = isCrimsonHue(hsv.h);
+      const baseCrimson = crimsonHue && saturatedEnough && redDominance >= 18 && r >= 40;
+
+      if (!baseCrimson) continue;
+
+      crimsonPixels++;
+      const hueDistance = Math.min(Math.abs(hsv.h - 0), 360 - Math.abs(hsv.h - 0));
+      totalHueDistance += hueDistance;
+      hueSamples++;
+
+      if (hsv.s >= 0.50 && redDominance >= 35 && r >= 60) {
+        strongCrimsonPixels++;
+      }
+
+      if (hsv.v >= 0.78 && hsv.s >= 0.70 && redDominance >= 70) {
+        brightNeonRedPixels++;
+      }
+
+      let neighborContrastHits = 0;
+      const selfLum = luminance(r, g, b);
+      for (const [dx, dy] of neighborOffsets) {
+        const noff = ((y + dy) * width + (x + dx)) * channels;
+        const nr = data[noff];
+        const ng = data[noff + 1];
+        const nb = data[noff + 2];
+        const nLum = luminance(nr, ng, nb);
+        const nRedDominance = nr - Math.max(ng, nb);
+        const lumDelta = Math.abs(selfLum - nLum);
+
+        if (lumDelta >= 10 || Math.abs(redDominance - nRedDominance) >= 20) {
+          neighborContrastHits++;
+        }
+      }
+
+      if (darkEnoughForSeam && neighborContrastHits >= 2) {
+        seamCandidatePixels++;
+      }
+
+      if (x < bboxMinX) bboxMinX = x;
+      if (y < bboxMinY) bboxMinY = y;
+      if (x > bboxMaxX) bboxMaxX = x;
+      if (y > bboxMaxY) bboxMaxY = y;
+    }
+  }
+
+  const crimsonRatio = pixCount > 0 ? crimsonPixels / pixCount : 0;
+  const seamRatio = pixCount > 0 ? seamCandidatePixels / pixCount : 0;
+  const strongRatio = pixCount > 0 ? strongCrimsonPixels / pixCount : 0;
+  const neonRatio = pixCount > 0 ? brightNeonRedPixels / pixCount : 0;
+
+  const bboxArea =
+    bboxMaxX >= bboxMinX && bboxMaxY >= bboxMinY
+      ? ((bboxMaxX - bboxMinX + 1) * (bboxMaxY - bboxMinY + 1)) / pixCount
+      : 0;
+
+  const meanHueDistance = hueSamples > 0 ? totalHueDistance / hueSamples : 999;
+
+  // Hairline seams are small, sparse, dark, saturated accents.
+  const hairlinePresenceScore = clamp01(
+    (seamCandidatePixels >= 8 ? 0.45 : seamCandidatePixels / 20) +
+    (strongRatio > 0.00008 ? 0.25 : strongRatio / 0.00032) +
+    (crimsonRatio > 0.00015 ? 0.20 : crimsonRatio / 0.00075) +
+    (bboxArea > 0 && bboxArea < 0.22 ? 0.10 : 0)
+  );
+
+  // Fail only when red presence is broad / painted / neon-like.
+  const broadRedMaskRisk =
+    crimsonRatio > 0.08 ||
+    strongRatio > 0.05 ||
+    bboxArea > 0.35 ||
+    neonRatio > 0.01;
+
+  return {
+    crimson_ratio: Number(crimsonRatio.toFixed(6)),
+    crimson_seam_ratio: Number(seamRatio.toFixed(6)),
+    crimson_strong_ratio: Number(strongRatio.toFixed(6)),
+    crimson_neon_ratio: Number(neonRatio.toFixed(6)),
+    crimson_hairline_presence_score: Number(hairlinePresenceScore.toFixed(4)),
+    crimson_pixels: crimsonPixels,
+    crimson_seam_pixels: seamCandidatePixels,
+    crimson_bbox_area_ratio: Number(bboxArea.toFixed(6)),
+    crimson_mean_hue_distance: Number((meanHueDistance === 999 ? 999 : meanHueDistance).toFixed(3)),
+    crimson_detected: hairlinePresenceScore >= 0.20 ? 1 : 0,
+    crimson_overuse_detected: broadRedMaskRisk ? 1 : 0,
+    magenta_neon_spill: brightNeonRedPixels > 20 ? 1 : 0,
+  };
+}
+
+// ===================================================================
 // MASTER FUNCTION — run all pixel analyses
 // ===================================================================
 
 async function analyzePixels(imagePath) {
-  const [edges, hfDensity, histogram, bleed, distortion] = await Promise.all([
+  const [edges, hfDensity, histogram, bleed, distortion, crimson] = await Promise.all([
     measureEdgeSharpness(imagePath),
     measureHighFrequencyDensity(imagePath),
     measureHistogram(imagePath),
     measurePixelBleed(imagePath),
     measureDistortion(imagePath),
+    measureCrimsonPresence(imagePath),
   ]);
 
   return {
@@ -320,6 +437,7 @@ async function analyzePixels(imagePath) {
     ...histogram,
     ...bleed,
     ...distortion,
+    ...crimson,
   };
 }
 
@@ -330,7 +448,7 @@ module.exports = {
   measureHistogram,
   measurePixelBleed,
   measureDistortion,
-  // Helpers exposed for testing
+  measureCrimsonPresence,
   loadRaw,
   luminance,
   deltaE_sRGB,

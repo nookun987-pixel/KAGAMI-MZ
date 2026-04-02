@@ -1,0 +1,22 @@
+{
+  "job_id": "e2e_test_img2img_valid_1774898366722",
+  "phase": "material_study",
+  "user_idea": "front-facing engineered ceramic industrial component, precision-manufactured matte white boron-carbide ceramic housing, exact symmetrical hard-surface geometry, clean beveled edges, visible mounting holes, readable industrial object silhouette, non-decorative, non-organic, premium studio isolation, controlled shadow, minimal environment, precision product photograph, tactile ceramic density, subtle mineral surface variation, no consumer gadget styling, no fashion styling",
+  "test_mode": true,
+  "max_candidates": 1,
+  "no_retry": false,
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality",
+    "candidate_count": 1,
+    "steps": 40,
+    "guidance_scale": 7,
+    "lora_name": null,
+    "lora_weight": 0,
+    "style_selections": [],
+    "negative_prompt": "toy, toy-like, plastic, pvc, glossy polymer, glossy plastic, rubber, resin figurine, cute rounded object, abstract sculpture, decorative ceramic art, vase, ornament, porcelain decor, soft form, fashion lighting, product ad glow, neon, magenta spill, cyberpunk, emissive lighting, overexposed studio wash, reflective plastic sheen, translucent material, glassy surface, consumer electronics look, cheap commercial render, oversaturated, crimson overuse, color drift, bloom, neon light, emissive",
+    "input_image": "D:\\KAGAMI-MZ\\runs\\GOLDEN_CERAMIC_MACRO\\attempt-01\\candidates\\candidate-01\\output.png",
+    "denoise_strength": 0.3
+  }
+}

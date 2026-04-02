@@ -1,0 +1,14 @@
+{
+  "subject": "Zenith Blade, massive 350kg heavy industrial straight sword, dark rusty titanium scrap metal plates, flux pinning mechanism, directional steam rising from heated core",
+  "material": "metal",
+  "color_accent": "crimson #E60000 at core seams, no bloom",
+  "background": "obsidian #0A0A0A",
+  "lighting": "chiaroscuro ~4:1, shadow dominant",
+  "mood": "low energy, high control, industrial brutalist aesthetic",
+  "canon_flags": [
+    "color_accent_bloom_check"
+  ],
+  "prompt_seed": "Zenith Blade, massive 350kg heavy industrial straight sword, dark rusty titanium scrap metal plates, flux pinning mechanism, directional steam rising, crimson #E60000 core seams, obsidian #0A0A0A background, chiaroscuro ~4:1 shadow dominant lighting, extreme negative space, industrial brutalist aesthetic",
+  "negative_hints": "no curved katana, no thin blade, no neon, no human eyes, no facial expression, no abstract frame, no bloom, no plastic, no plaster, no organic textures",
+  "confidence": 0.95
+}

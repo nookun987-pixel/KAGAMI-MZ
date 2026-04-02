@@ -1,0 +1,19 @@
+{
+  "prompt": "(matte white porcelain ceramic:1.5), (boron carbide B4C ceramic surface:1.4), (micro-pitted matte surface with sub-micron grain:1.3), anisotropic micro-shadowing on ceramic, light-absorbing matte finish, Shino glaze crawling texture, carbon trapping spots, fine pinholes, orange-peel specularity, subsurface scattering, Gofun calcium-carbonate warm off-white (#EEE7D7), Keshiki surface landscape with mineral grain variation, (NOT glossy:1.3), (NOT smooth:1.3), (NOT polished:1.3), (NOT reflective:1.3), (porcelain kitsune mask:1.3), (NO human face:1.5), (NO nose:1.4), (NO lips:1.4), (NO cheeks:1.3), (engineered helmet geometry:1.4), (planar faceless mask:1.5), faceless, planar geometry, narrow horizontal eye slits, perfect bilateral symmetry, no mouth, no expression, (warm off-white background #EEE7D7:1.3), Gofun calcium-carbonate matte warmth, plaster texture, mineral grain, (dramatic deep shadows:1.4), (tenebrism chiaroscuro 4:1:1.3), (70 percent shadow volume:1.2), single dominant light from 45 degrees, Sumi ink shadow with Gosai temperature shift, masterpiece, best quality, ultra detailed, photorealistic, 8k uhd, RAW photo, studio photography, professional lighting, museum quality, negative space, clean composition, minimal, product photography, centered subject, sharp focus, (crimson seams ONLY at panel joints:1.4), (NOT on face surface:1.5), (structural crack lines between armor plates:1.3), (very thin dark red hairline at mask crack seam only:1.1), Bengala iron oxide #8E050F pigment visible only at structural fracture lines, crimson emission strictly localized to micro-fracture seams and nowhere else on the mask surface, the mask body is white porcelain not red",
+  "negative_prompt": "human eyes, facial expression, plastic, plaster, neon RGB, cyberpunk, abstract frame, blurry, low quality, bloom, soft light, (full red mask:1.5), (red colored mask:1.5), (crimson mask:1.4), (red surface:1.4), (mask painted red:1.4), (red porcelain:1.3), (glowing red:1.3), (emissive red:1.3), (red body:1.3), (glossy surface:1.4), (polished surface:1.4), (reflective coating:1.3), (shiny ceramic:1.3), (wet look:1.2), (resin:1.2), (lacquered:1.2), (smooth CG surface:1.3), human eyes, iris, pupil, sclera, facial expression, smile, frown, plastic, PVC, plaster, CGI, toon shading, cel shading, anime, cartoon, illustration, drawing, neon, RGB glow, cyberpunk, glitch, chromatic aberration, abstract, unrecognizable, blurry, noise, artifacts, watermark, logo, text, signature, bloom, lens flare, neon glow, low quality, worst quality, jpeg artifacts, deformed, distorted, asymmetric, sunny nature, bright background, (grey background:1.3), (mid-tone background:1.3), (pure white background:1.3), (pure black #000000:1.3), (flat uniform surface:1.3)",
+  "params": {
+    "image_number": 1,
+    "guidance_scale": 7.0,
+    "sharpness": 2.0,
+    "performance": "Quality",
+    "aspect_ratios": "1152\u00d7896",
+    "styles": [
+      "Fooocus V2",
+      "Fooocus Enhance",
+      "Fooocus Sharp"
+    ],
+    "base_model": "juggernautXL_v8Rundiffusion.safetensors",
+    "seed": -1
+  },
+  "lane": "mask"
+}

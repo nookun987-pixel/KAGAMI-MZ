@@ -1,0 +1,22 @@
+{
+  "job_id": "e2e_test_img2img_retention_1774864674737",
+  "phase": "material_study",
+  "user_idea": "keep original shape, minimal transformation, preserve silhouette, exact form lock",
+  "test_mode": true,
+  "max_candidates": 1,
+  "no_retry": false,
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality",
+    "candidate_count": 1,
+    "steps": 20,
+    "guidance_scale": 7,
+    "lora_name": null,
+    "lora_weight": 0,
+    "style_selections": [],
+    "negative_prompt": "noise, blur, distortion, abstract, pattern",
+    "input_image": "D:\\KAGAMI-MZ\\runs\\GOLDEN_CERAMIC_MACRO\\attempt-01\\candidates\\candidate-01\\output.png",
+    "denoise_strength": 0.05
+  }
+}

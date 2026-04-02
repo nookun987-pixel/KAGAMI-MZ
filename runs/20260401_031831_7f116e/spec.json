@@ -1,0 +1,12 @@
+{
+  "subject": "porcelain kitsune mask, centered, clear full mask silhouette",
+  "material": "ceramic",
+  "color_accent": "subtle crimson #E60000 accent at seams and core, no bloom",
+  "background": "obsidian #0A0A0A",
+  "lighting": "chiaroscuro ~4:1, shadow dominant",
+  "mood": "low energy, high control",
+  "canon_flags": [],
+  "prompt_seed": "white porcelain kitsune mask, centered, clear full mask silhouette, matte ceramic, subtle crimson #E60000 accent at seams, obsidian #0A0A0A background, chiaroscuro lighting, shadow dominant",
+  "negative_hints": "human eyes, facial expression, plastic, plaster, neon RGB, cyberpunk, abstract frame, blurry, low quality, bloom on crimson",
+  "confidence": 0.95
+}

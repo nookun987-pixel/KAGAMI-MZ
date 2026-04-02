@@ -242,18 +242,39 @@ function runRuleEngine({ specPath, signals }) {
   const enforcedCount = passed.length + failed.length;
   const enforcedPct = total > 0 ? Math.round((enforcedCount / total) * 100) : 0;
 
+  // [C] NORMALIZED SCHEMA — single contract, no blind merge
+  const failedRuleIds   = failed.map(f => f.rule_id);
+  const unknownRuleIds  = unknown.map(u => u.rule_id);
+  const hardFails       = failed.filter(f => f.priority === "ABSOLUTE" || f.priority === "CRITICAL");
+  const softFails       = failed.filter(f => f.priority !== "ABSOLUTE" && f.priority !== "CRITICAL");
+  const warnings        = [
+    ...unknownRuleIds.map(id => `UNKNOWN_SIGNAL: ${id}`),
+    ...softFails.map(f => `SOFT_FAIL: ${f.rule_id} (${f.priority || "HIGH"})`),
+  ];
+
   return {
-    passed: decision.passed,
+    // Core pass/fail
+    pass: decision.passed,
+    passed: decision.passed,           // alias for compatibility
     block_level: decision.block_level,
     decision: decision.decision,
-    failed_rules: failed.map(f => f.rule_id),
-    unknown_rules: unknown.map(u => u.rule_id),
+    // [C] Required fields
+    failed_rules:    failedRuleIds,
+    unknown_rules:   unknownRuleIds,
+    hard_fail_count: hardFails.length,
+    unknown_count:   unknown.length,
+    warnings,
+    // Signals echoed as-is for downstream trace (no mutation)
+    signals: signals || {},
+    // Raw results for deep audit
     rule_results: results,
     stats: {
       total,
-      passed: passed.length,
-      failed: failed.length,
-      unknown: unknown.length,
+      passed:       passed.length,
+      failed:       failed.length,
+      unknown:      unknown.length,
+      hard_fails:   hardFails.length,
+      soft_fails:   softFails.length,
       enforced_pct: enforcedPct,
     },
   };

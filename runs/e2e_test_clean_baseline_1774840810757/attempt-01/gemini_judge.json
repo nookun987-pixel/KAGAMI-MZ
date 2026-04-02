@@ -1,0 +1,35 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check histogram skew: shadows should dominate and highlights must stay diffuse.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "material_read": "Abstract digital pattern or highly stylized graphic texture.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, singular manufactured object with defined contours (edge, rim, bevel, seam, curvature).",
+    "Drastically reduce color saturation to achieve a low-saturation, shadow-heavy palette.",
+    "Shift the primary color to porcelain-white #FAFAFA with subtractive mineral color logic.",
+    "Ensure the material reads as matte B4C technical ceramic, avoiding any glossy, plastic, or toy-like feel.",
+    "Focus on a dry, dense, engineered texture with ultra-controlled eggshell microtexture and sparse fine hairline cracking.",
+    "Eliminate abstract patterning and ensure the material is clearly part of a single manufactured object, not a floating texture field."
+  ],
+  "summary": "The image fails completely as a white ceramic material study. It presents as an abstract, highly oversaturated, neon-colored digital pattern with no discernible manufactured object or ceramic material properties. The color palette is entirely incorrect, lacking the required low saturation and shadow dominance, and the material read is absent, leading to a high severity failure.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

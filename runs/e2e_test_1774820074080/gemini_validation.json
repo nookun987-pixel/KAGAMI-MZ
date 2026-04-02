@@ -1,0 +1,41 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "If the ceramic read turns glossy, plastic, PVC-like, or toy-like, it must FAIL.",
+    "Check histogram skew: shadows should dominate and highlights must stay diffuse.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "material_read": "The material reads as a highly saturated, glossy, plastic-like texture, resembling a toy or digital pattern rather than matte ceramic. The dominant neon green, cyan, and magenta colors contribute to a synthetic and artificial feel.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PURE_WHITE_DRIFT",
+    "PURE_BLACK_DRIFT",
+    "PLASTIC_COLOR_DRIFT",
+    "CRIMSON_OVERUSE"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Drastically reduce saturation and shift colors towards a low-saturation, shadow-heavy palette, aiming for porcelain-white #FAFAFA.",
+    "Ensure the image clearly depicts a single, identifiable manufactured object with contour evidence such as edge, rim, bevel, seam, or curvature.",
+    "Eliminate all glossy, plastic, or toy-like finishes; focus on a dry, dense, matte ceramic read with ultra-controlled eggshell microtexture.",
+    "Remove neon, RGB-clean, pure white, pure black, and synthetic magenta color drifts.",
+    "Ensure colors feel materially bonded to the surface, not like flat digital fills or abstract patterns."
+  ],
+  "summary": "The image fails severely due to its abstract, texture-only composition, complete lack of manufactured object readability, and an extremely oversaturated, neon, and plastic-like material read. The color palette exhibits multiple drifts including neon, pure white, pure black, and crimson, completely missing the target matte ceramic aesthetic and object clarity.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

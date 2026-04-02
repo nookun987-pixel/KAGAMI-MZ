@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "code": "T1",
+      "pass": true,
+      "reason": "The subject is a mask, which is an engineered entity appropriate for the MASK lane."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "The mask displays a neutral, stylized face without any discernible facial expression."
+    },
+    {
+      "code": "T4",
+      "pass": true,
+      "reason": "The mask appears to be made of a ceramic/porcelain-like material with a matte finish and visible Keshiki texture variation, consistent with the MASK lane material requirements."
+    },
+    {
+      "code": "T8",
+      "pass": false,
+      "reason": "The background is a solid medium-grey, which does not match the specified Sumi black or Gofun white colors required by the canon."
+    },
+    {
+      "code": "T11",
+      "pass": true,
+      "reason": "The image clearly depicts a manufactured object (a mask), not abstract art."
+    },
+    {
+      "code": "T12",
+      "pass": true,
+      "reason": "The material (ceramic/porcelain) is clearly readable, and the Keshiki texture is present and not flat or uniform."
+    },
+    {
+      "code": "T13",
+      "pass": true,
+      "reason": "There is clear negative space around the mask, adhering to the Sacred Void (Ma) principle."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "The mask exhibits perfect symmetry in its design and features, with no visible distortion."
+    }
+  ],
+  "hard_fail_count": 0,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "reasoning": "The image fails to meet the MIKAGE ZENITH visual canon due to two primary deviations: 1) The background color is a medium-grey, which does not conform to the required Sumi black or Gofun white (T8 failure). 2) The mask lacks any crimson accents at the seams, which is explicitly stated as an 'Expected accent' and part of the 'COLOR CANON' for the MASK lane. These deviations represent a drift from the strict identity requirements of the canon."
+}

@@ -1,0 +1,168 @@
+{
+  "job_id": "20260401_040504_0eaf89",
+  "job_dir": "D:\\KAGAMI-MZ\\runs\\20260401_040504_0eaf89",
+  "brief": "engineered B4C ceramic kitsune mask, centered front view, matte porcelain-white, micro-pitted surface, black void eye slits, NO decorative red markings, NO painted patterns, ONLY faint deep crimson microfracture seams inside material, no surface paint, brutalist dark background, chiaroscuro shadow, no plastic, no gloss, no neon",
+  "lane": "mask",
+  "stages": {
+    "gemini_intake": {
+      "status": "success",
+      "spec": {
+        "subject": "engineered B4C ceramic kitsune mask, centered front view",
+        "material": "ceramic/porcelain, matte, micro-pitted surface",
+        "color_accent": "faint deep crimson microfracture seams, internal only, no surface paint",
+        "background": "obsidian",
+        "lighting": "chiaroscuro ~4:1, shadow dominant",
+        "mood": "low energy, high control",
+        "canon_flags": [],
+        "prompt_seed": "engineered B4C ceramic kitsune mask, centered front view, matte porcelain-white, micro-pitted surface, black void eye slits, faint deep crimson microfracture seams (internal only), obsidian background, chiaroscuro lighting, low energy, high control.",
+        "negative_hints": "plastic, gloss, neon, human eyes, facial expression, abstract frame, bloom, painted patterns, decorative red markings, cyberpunk, RGB",
+        "confidence": 1.0
+      },
+      "gemini_executed": true,
+      "parse_ok": true,
+      "duration": 5.6
+    },
+    "claude_spec": {
+      "status": "success",
+      "lane": "mask",
+      "prompt_length": 1500,
+      "duration": 0.0
+    },
+    "render": {
+      "status": "success",
+      "output_path": "D:\\KAGAMI-MZ\\runs\\20260401_040504_0eaf89\\output.png",
+      "all_images": [
+        "C:\\Users\\THISPC~1\\AppData\\Local\\Temp\\fooocus\\c7f56d811795faffe98ad809a796f81f071c6ee4\\2026-04-01_04-14-11_8820.png"
+      ],
+      "duration": 542.0
+    },
+    "validator": {
+      "status": "pass",
+      "validator_executed": true,
+      "checks": {
+        "T2": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T5": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T6": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T7": {
+          "pass": true,
+          "value": 0.0004,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T9": {
+          "pass": true,
+          "value": 7.4,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T10": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T15": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T16": {
+          "pass": true,
+          "value": 2.96,
+          "reason": "OK",
+          "hard_fail": false
+        }
+      },
+      "hard_fail_count": 0,
+      "hard_fails": [],
+      "pixel_report": {
+        "human_eyes_detected": 0,
+        "pvc_plastic_read": 0,
+        "toon_shading": 0,
+        "edge_activity": 2.96,
+        "crimson_ratio": 0.0004,
+        "magenta_neon_spill": 0,
+        "logo_overlap_ratio": 0,
+        "shadow_ratio": 7.4,
+        "dark_pixel_ratio": 0.819,
+        "light_pixel_ratio": 0.111,
+        "mean_luminance": 47.3,
+        "std_luminance": 69.3,
+        "width": 1152,
+        "height": 896
+      },
+      "duration": 0.4
+    },
+    "gemini_gate": {
+      "gemini_executed": true,
+      "parse_ok": true,
+      "pass_fail": "FAIL",
+      "final_decision": "REJECT",
+      "hard_fail_count": 0,
+      "checks": [
+        {
+          "code": "T1",
+          "pass": true,
+          "reason": "The subject is a mask, which is an engineered entity appropriate for the MASK lane."
+        },
+        {
+          "code": "T3",
+          "pass": true,
+          "reason": "The mask displays a neutral, stylized expression without any discernible human-like facial expression."
+        },
+        {
+          "code": "T4",
+          "pass": true,
+          "reason": "The mask appears to be made of a ceramic or porcelain-like material with a matte finish and subtle Keshiki texture variations, consistent with the MASK lane material requirements."
+        },
+        {
+          "code": "T8",
+          "pass": true,
+          "reason": "The background is a dark, deep charcoal/black, consistent with the Sumi black specification and not pure #000000."
+        },
+        {
+          "code": "T11",
+          "pass": true,
+          "reason": "The image clearly depicts a manufactured object (a mask) and is not abstract art."
+        },
+        {
+          "code": "T12",
+          "pass": true,
+          "reason": "The material is clearly readable as ceramic/porcelain with Keshiki texture present, preventing a flat or uniform appearance."
+        },
+        {
+          "code": "T13",
+          "pass": true,
+          "reason": "There is clear negative space around the mask, and the shadow ratio supports the 70/30 shadow rule for Sacred Void (Ma)."
+        },
+        {
+          "code": "T14",
+          "pass": true,
+          "reason": "The mask exhibits perfect symmetry without any distortion."
+        }
+      ],
+      "reasoning": "All hard fail codes passed. However, the image fails the MASK lane's specific canon requirement for crimson accents. The canon states 'Expected accent: crimson at seams only', but the image displays crimson as decorative patterns across the mask's face, not restricted to structural seams. This constitutes a clear drift from the expected identity and canon.",
+      "duration": 18.0
+    }
+  },
+  "final_decision": "REJECT",
+  "output_files": [],
+  "reject_reason": "Gemini gate: All hard fail codes passed. However, the image fails the MASK lane's specific canon requirement for crimson accents. The canon states 'Expected accent: crimson at seams only', but the image displays crimson as decorative patterns across the mask's face, not restricted to structural seams. This constitutes a clear drift from the expected identity and canon.",
+  "total_duration": 566.0
+}

@@ -1,0 +1,15 @@
+[PROBE 2026-04-01T15:30:11.883Z] ========================================
+[PROBE 2026-04-01T15:30:11.890Z] RENDER CAPTURE PROBE — START
+[PROBE 2026-04-01T15:30:11.890Z] Bridge URL: http://127.0.0.1:7865
+[PROBE 2026-04-01T15:30:11.891Z] Probe dir: D:\KAGAMI-MZ\runs\CAPTURE_PROBE_1775057411882
+[PROBE 2026-04-01T15:30:11.892Z] ========================================
+[PROBE 2026-04-01T15:30:11.893Z] Sending render request to http://127.0.0.1:7865/generate
+[PROBE 2026-04-01T15:30:11.894Z] Payload size: 379 bytes
+[PROBE 2026-04-01T15:30:11.898Z] Artifact saved: request_payload.json (436 bytes)
+[PROBE 2026-04-01T15:30:11.923Z] HTTP 404 received in 24ms
+[PROBE 2026-04-01T15:30:11.925Z] Response headers: {"date":"Wed, 01 Apr 2026 15:30:11 GMT","server":"uvicorn","content-length":"22","content-type":"application/json"}
+[PROBE 2026-04-01T15:30:11.926Z] Response body length: 22 bytes
+[PROBE 2026-04-01T15:30:11.932Z] Artifact saved: response_meta.json (245 bytes)
+[PROBE 2026-04-01T15:30:11.934Z] BRIDGE ERROR: HTTP 404
+[PROBE 2026-04-01T15:30:11.936Z] Body: {"detail":"Not Found"}
+[PROBE 2026-04-01T15:30:11.937Z] Artifact saved: verdict.json (57 bytes)

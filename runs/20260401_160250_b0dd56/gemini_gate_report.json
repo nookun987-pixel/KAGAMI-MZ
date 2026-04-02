@@ -1,0 +1,52 @@
+{
+  "gemini_executed": true,
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "hard_fail_count": 3,
+  "checks": [
+    {
+      "code": "T1",
+      "pass": false,
+      "reason": "The image does not depict an engineered entity appropriate for the MASK lane; it is an abstract textured background."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "No mask is present, therefore no facial expression is displayed."
+    },
+    {
+      "code": "T4",
+      "pass": false,
+      "reason": "The image does not clearly show porcelain B4C ceramic material with Keshiki texture, which is expected for the MASK lane. The texture appears to be digital noise rather than a specific material."
+    },
+    {
+      "code": "T8",
+      "pass": false,
+      "reason": "The background is extremely dark (mean_luminance: 3.5), appearing to be #000000, which is explicitly forbidden by the color canon for Sumi black."
+    },
+    {
+      "code": "T11",
+      "pass": false,
+      "reason": "The image is abstract art (a textured background) and not a clear manufactured object."
+    },
+    {
+      "code": "T12",
+      "pass": false,
+      "reason": "The material is not clearly readable as porcelain with Keshiki texture; it appears as a noisy, undefined dark surface."
+    },
+    {
+      "code": "T13",
+      "pass": false,
+      "reason": "There is no clear manufactured object to define negative space ('Ma') around; the entire image is a textured field."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "No mask is present, so geometry (symmetry) cannot be evaluated."
+    }
+  ],
+  "reasoning": "The image fails multiple critical checks for the MASK lane. It does not depict an engineered entity (T1), lacks the required ceramic/porcelain material with Keshiki texture (T4, T12), and is abstract art rather than a clear manufactured object (T11). The background also appears to be pure black, which violates the Sumi black canon (T8). The presence of multiple hard fails (T4, T11, T12) leads to an instant REJECT.",
+  "errors": []
+}

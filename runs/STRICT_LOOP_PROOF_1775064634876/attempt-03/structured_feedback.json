@@ -1,0 +1,32 @@
+{
+  "iteration_type": "correction",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift."
+  ],
+  "wrong_reads": [
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT",
+    "glossy plastic",
+    "toy-like finish",
+    "synthetic magenta drift"
+  ],
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with distinct contours (edge, rim, bevel, seam, or curvature).",
+    "Shift the color palette to porcelain-white #FAFAFA, ensuring low saturation and a shadow-heavy, subtractive mineral color logic.",
+    "Develop a matte B4C technical ceramic material read, emphasizing dry, dense, and engineered qualities with an ultra-controlled eggshell microtexture.",
+    "Eliminate all abstract, neon, oversaturated, and synthetic color elements.",
+    "Ensure the material-color match feels materially bonded and not like flat digital fill or noise.",
+    "Remove any glossy, plastic, PVC, or toy-like finishes."
+  ],
+  "severity": "HIGH",
+  "summary": "The image is an abstract, highly saturated, and noisy digital texture with a predominantly purple and black palette. It completely fails to represent a white ceramic material study or any identifiable manufactured object. The colors are neon and oversaturated, contributing to a plastic/toy-like feel, and there is no evidence of matte ceramic properties or object contours. This is a severe deviation from the target material and object readability.",
+  "material_read": "Abstract digital noise/texture, highly saturated and pixelated, with a somewhat glossy/plastic feel.",
+  "correct_reads": []
+}

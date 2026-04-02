@@ -1,0 +1,35 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "If the ceramic read turns glossy, plastic, PVC-like, or toy-like, it must FAIL."
+  ],
+  "material_read": "Abstract digital texture with iridescent and fragmented color shifts.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "abstract composition",
+    "atmosphere-first frame",
+    "texture-only frame",
+    "manufactured object not readable",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with defined contours (edge, rim, bevel, seam, or curvature).",
+    "Eliminate all iridescent, neon, and oversaturated color shifts; adhere strictly to a low saturation, shadow-heavy palette.",
+    "Focus on achieving a dry, dense, engineered matte ceramic read, ensuring zero glossy, plastic, or toy-like finishes.",
+    "Ensure the material clearly belongs to one manufactured object, not a wall, slab, or floating texture field.",
+    "Remove abstract compositional elements and prioritize immediate commercial material readability."
+  ],
+  "summary": "The image fails fundamentally as a white ceramic material study. It presents as an abstract, texture-only digital effect with no discernible manufactured object. The material read is severely corrupted by iridescent, highly saturated, and neon color drifts, resulting in a glossy, plastic, and toy-like appearance, which directly contradicts the matte ceramic target.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

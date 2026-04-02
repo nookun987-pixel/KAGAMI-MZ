@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const { validate: validateSchema } = require('../core/schema_registry');
+
 const STATE_FILE = path.join(__dirname, '../data/shared_state.json');
 
 function ensureStateFile() {
@@ -34,12 +36,18 @@ function loadState() {
 }
 
 function saveState(state) {
+  const result = validateSchema('shared_state', state, { strict: false });
+  if (!result.valid) {
+    const msg = `[SCHEMA] Cannot write shared_state: ${result.errors.join("; ")}`;
+    console.error(msg);
+    throw new Error(msg);
+  }
   try {
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
     return true;
   } catch (error) {
     console.error('[STATE] Save error:', error.message);
-    return false;
+    throw error;
   }
 }
 

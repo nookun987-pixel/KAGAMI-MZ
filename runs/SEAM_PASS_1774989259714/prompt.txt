@@ -1,0 +1,7 @@
+SEAM PROMPT ADD:
+very thin internal kintsugi-style crimson seam only at micro fracture lines, no spread, no bloom, no glow, mask surface remains white porcelain
+
+NEGATIVE ADD:
+full red mask, red surface, glowing red, emissive red, bloom, neon, spill, glossy, polished
+
+INPUT IMAGE: D:\KAGAMI-MZ\runs\20260401_031831_7f116e\output.png

@@ -226,8 +226,93 @@ async function generateCommanderProof() {
     };
 }
 
+async function getSystemProof() {
+    const fooocusStatus = await checkFooocus();
+    const ollamaStatus = await checkOllama();
+    const geminiKeyStatus = checkGeminiKey();
+    const visionValidator = checkVisionValidator();
+    
+    return {
+        fooocus: fooocusStatus,
+        ollama: ollamaStatus,
+        gemini: geminiKeyStatus,
+        vision: visionValidator
+    };
+}
+
+async function getImageLaneProof() {
+    const latestRun = getLatestRunFolder();
+    const runPath = latestRun ? latestRun.path : null;
+    
+    let imageLaneProof = {
+        latest_run_path: runPath || 'MISSING',
+        output_png: 'MISSING',
+        post_validation: 'MISSING',
+        gemini_validation: 'MISSING',
+        final_decision: 'MISSING',
+        final_reason: '',
+        verdict: 'IMAGE LANE NOT LOCKED'
+    };
+    
+    if (runPath) {
+        imageLaneProof.output_png = checkFileExists(runPath, 'output.png') ? 'PRESENT' : 'MISSING';
+        
+        const postVal = readRunJson(runPath, 'post_validation.json');
+        imageLaneProof.post_validation = postVal ? (postVal.pass_fail || 'PARSE_FAIL') : 'MISSING';
+        
+        const geminiVal = readRunJson(runPath, 'gemini_validation.json');
+        imageLaneProof.gemini_validation = geminiVal ? (geminiVal.pass_fail || 'PARSE_FAIL') : 'MISSING';
+        
+        const finalDec = readRunJson(runPath, 'final_decision.json');
+        imageLaneProof.final_decision = finalDec ? (finalDec.decision || 'PARSE_FAIL') : 'MISSING';
+        imageLaneProof.final_reason = finalDec ? (finalDec.reason || finalDec.reject_reason || '') : '';
+        
+        const fooocusStatus = await checkFooocus();
+        const allPass = 
+            fooocusStatus === 'ALIVE' &&
+            imageLaneProof.output_png === 'PRESENT' &&
+            imageLaneProof.post_validation === 'PASS' &&
+            imageLaneProof.gemini_validation === 'PASS' &&
+            imageLaneProof.final_decision === 'ALLOW';
+        
+        imageLaneProof.verdict = allPass ? 'IMAGE LANE LOCKED' : 'IMAGE LANE NOT LOCKED';
+    }
+    
+    return imageLaneProof;
+}
+
+async function getFailureCenter() {
+    const imageLaneProof = await getImageLaneProof();
+    
+    let failureCenter = {
+        latest_reject_reason: imageLaneProof.final_reason || '-',
+        failed_rules: [],
+        validator_fail_source: '-',
+        gemini_fail_source: '-',
+        no_image_fail: imageLaneProof.output_png === 'MISSING'
+    };
+    
+    if (imageLaneProof.latest_run_path && imageLaneProof.latest_run_path !== 'MISSING') {
+        const postVal = readRunJson(imageLaneProof.latest_run_path, 'post_validation.json');
+        if (postVal && postVal.failed_rules) {
+            failureCenter.failed_rules = postVal.failed_rules;
+            failureCenter.validator_fail_source = 'post_validation';
+        }
+        
+        const geminiVal = readRunJson(imageLaneProof.latest_run_path, 'gemini_validation.json');
+        if (geminiVal && geminiVal.fail_reasons) {
+            failureCenter.gemini_fail_source = geminiVal.fail_reasons.join(' | ');
+        }
+    }
+    
+    return failureCenter;
+}
+
 module.exports = {
     generateCommanderProof,
+    getSystemProof,
+    getImageLaneProof,
+    getFailureCenter,
     readJsonSafe,
     checkFooocus,
     checkOllama,

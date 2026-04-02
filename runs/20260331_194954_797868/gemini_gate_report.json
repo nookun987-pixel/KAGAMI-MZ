@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "code": "T1",
+      "pass": true,
+      "reason": "The subject is a mask, which is an engineered entity appropriate for the MASK lane."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "The mask displays a neutral, stylized appearance without any discernible facial expression."
+    },
+    {
+      "code": "T4",
+      "pass": false,
+      "reason": "The material does not resemble porcelain B4C ceramic with Gofun/Shino surface. It appears as a vibrant, glossy digital rendering, lacking the expected matte finish and Keshiki texture variation. The surface is flat and uniform, failing the material and texture requirements for the MASK lane."
+    },
+    {
+      "code": "T8",
+      "pass": false,
+      "reason": "The background contains pure black (#000000) and prominent vibrant blue concentric circles, neither of which conform to the Sumi black or Gofun white canon. The rule explicitly states 'NEVER #000000'."
+    },
+    {
+      "code": "T11",
+      "pass": true,
+      "reason": "The image clearly depicts a manufactured object (a mask) and is not abstract art."
+    },
+    {
+      "code": "T12",
+      "pass": false,
+      "reason": "The material is not clearly readable as porcelain/ceramic with Keshiki texture. The surfaces are flat, uniform, and lack the required texture, appearing as a smooth digital illustration rather than a tangible material."
+    },
+    {
+      "code": "T13",
+      "pass": false,
+      "reason": "The vibrant blue concentric circles in the background disrupt the concept of 'Sacred Void (Ma)' and clear negative space. The background is not solely composed of shadows or canon colors."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "The mask exhibits good symmetry without apparent distortion."
+    },
+    {
+      "code": "COLOR_CANON_WHITES",
+      "pass": false,
+      "reason": "The white areas of the mask are very bright, likely pure #FFFFFF, and do not match the specified Gofun tones (#EEE7D7, #F6F5F6)."
+    },
+    {
+      "code": "COLOR_CANON_BLACKS",
+      "pass": false,
+      "reason": "The background and eye holes contain pure black (#000000), which is explicitly forbidden by the Sumi black canon."
+    },
+    {
+      "code": "COLOR_CANON_CRIMSONS",
+      "pass": false,
+      "reason": "Crimson accents are not limited to 'seams/cores ONLY'; they are prominently featured on the ears, nose, lips, and the entire neck/shoulder area. The crimson also appears overly vibrant and neon, not adhering to the Bengala range."
+    },
+    {
+      "code": "COLOR_CANON_SURFACES",
+      "pass": false,
+      "reason": "All surfaces are flat and lack the required Keshiki texture variation."
+    }
+  ],
+  "hard_fail_count": 1,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "reasoning": "The image fails multiple critical checks against the MIKAGE ZENITH visual canon. T12 (MATERIAL_PRESENT) is a hard fail, as the material is not clearly readable as porcelain/ceramic with Keshiki texture; instead, it appears flat and uniform. Additionally, T4 (MATERIAL_CORRECT_FOR_LANE) fails due to incorrect material appearance and lack of texture. The color canon is violated across the board: whites are not Gofun, blacks are pure #000000, crimson accents are not limited to seams/cores and are too vibrant, and all surfaces lack Keshiki texture. The background also fails T8 (BG_SUMI_OR_GOFUN) by containing pure black and non-canon blue elements, which also disrupts T13 (NEGATIVE_SPACE_MA). The overall aesthetic deviates significantly from the expected MIKAGE ZENITH style."
+}

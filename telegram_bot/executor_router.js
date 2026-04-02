@@ -1,5 +1,18 @@
+const guard = require('./duplicate_guard');
+
 async function runCommand(command, msg) {
   const taskId = 'task_' + Date.now();
+  
+  // GUARD: Check if task already running
+  if (!guard.lockTask(taskId, { type: 'run_command', command, created: new Date().toISOString() })) {
+    return `TASK_BLOCKED: Task already running. Cannot start duplicate.`;
+  }
+  
+  // GUARD: Check active task count
+  if (guard.getActiveTaskCount() > 1) { // >1 because we just locked our task
+    guard.unlockTask(taskId);
+    return `TASK_BLOCKED: Another task is already running. Active: ${guard.getActiveTaskCount()}`;
+  }
   
   try {
     console.log(`[EXECUTOR] Running: ${command}`);
@@ -25,6 +38,9 @@ async function runCommand(command, msg) {
       });
       
       proc.on('close', (code) => {
+        // Release task lock on completion
+        guard.unlockTask(taskId);
+        
         const result = code === 0 ? output : `ERROR: ${error}`;
         
         resolve(`TASK_ID: ${taskId}
@@ -38,6 +54,7 @@ NEXT ACTION: ${code !== 0 ? 'Check error logs' : 'Review results'}`);
     });
     
   } catch (error) {
+    guard.unlockTask(taskId);
     return `TASK_ID: ${taskId}
 STATUS: FAIL
 COMMAND_RUN: ${command}

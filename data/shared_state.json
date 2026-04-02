@@ -1,18 +1,15 @@
 {
   "tasks": [],
-  "services": {
-    "ollama": {
-      "name": "ollama",
-      "status": "ALIVE",
-      "last_checked_at": "2026-03-28T19:29:57.931Z",
-      "health_target": "http://127.0.0.1:11434/api/tags",
-      "detail": "HTTP 200"
-    }
-  },
+  "services": {},
   "runs": [],
   "artifacts": [],
   "costs": [],
   "alerts": [],
-  "fooocusPid": 14028,
-  "ollamaPid": 16468
+  "activeJobId": null,
+  "currentStep": "RUN_COMPLETED",
+  "runState": "DONE",
+  "lastJobId": "auto-precheck-reject-case",
+  "lastDecision": "REJECT",
+  "lastStatus": "FAIL",
+  "completedAt": "2026-04-01T04:10:29.277Z"
 }

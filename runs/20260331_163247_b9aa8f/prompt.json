@@ -1,0 +1,18 @@
+{
+  "prompt": "Zenith Blade, massive 350kg heavy industrial straight sword, dark rusty titanium scrap metal plates, flux pinning mechanism, directional steam rising, crimson #E60000 core seams, obsidian #0A0A0A background, chiaroscuro ~4:1 shadow dominant lighting, extreme negative space, industrial brutalist aesthetic, low energy, high control, industrial brutalist aesthetic, masterpiece, best quality, ultra detailed, photorealistic, 8k uhd, studio photography, professional lighting, chiaroscuro dramatic lighting, deep shadows, porcelain ceramic material, fine ceramic texture, matte porcelain surface, museum quality, negative space, clean composition, minimal, product photography, centered subject",
+  "negative_prompt": "no curved katana, no thin blade, no neon, no human eyes, no facial expression, no abstract frame, no bloom, no plastic, no plaster, no organic textures, human eyes, iris, pupil, sclera, facial expression, smile, frown, plastic, PVC, glossy plastic, plaster, CGI, toon shading, cel shading, anime, cartoon, illustration, neon, RGB, cyberpunk, glitch, chromatic aberration, abstract, unrecognizable, blurry, noise, artifacts, watermark, logo, text, signature, pure white background, pure black background, bloom, lens flare, glow, neon glow, low quality, worst quality, jpeg artifacts, deformed, distorted, asymmetric",
+  "params": {
+    "image_number": 1,
+    "guidance_scale": 4.0,
+    "sharpness": 2.0,
+    "performance": "Quality",
+    "aspect_ratios": "1152\u00d7896",
+    "styles": [
+      "Fooocus V2",
+      "Fooocus Enhance",
+      "Fooocus Sharp"
+    ],
+    "base_model": "juggernautXL_v8Rundiffusion.safetensors",
+    "seed": -1
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "job_id": "20260331_170638_0e03f3",
+  "job_dir": "D:\\KAGAMI-MZ\\runs\\20260331_170638_0e03f3",
+  "brief": "porcelain kitsune mask, thin crimson seam at jawline, obsidian void background, chiaroscuro dramatic shadow, industrial precision",
+  "lane": "mask",
+  "stages": {
+    "gemini_intake": {
+      "status": "success",
+      "spec": {
+        "subject": "porcelain kitsune mask",
+        "material": "ceramic/porcelain",
+        "color_accent": "thin crimson #E60000 seam at jawline",
+        "background": "obsidian #0A0A0A",
+        "lighting": "chiaroscuro ~4:1, shadow dominant",
+        "mood": "low energy, high control",
+        "canon_flags": [],
+        "prompt_seed": "porcelain kitsune mask, thin crimson seam at jawline, obsidian void background, chiaroscuro dramatic shadow, industrial precision, no human eyes, no facial expression, real ceramic, no plastic, no plaster, no bloom, negative space, clean composition",
+        "negative_hints": "no human eyes, no facial expression, no neon RGB, no cyberpunk, no abstract frame, no plastic, no plaster, no bloom",
+        "confidence": 1.0
+      },
+      "gemini_executed": true,
+      "parse_ok": true,
+      "duration": 3.5
+    },
+    "claude_spec": {
+      "status": "success",
+      "lane": "mask",
+      "prompt_length": 1226,
+      "duration": 0.0
+    },
+    "render": {
+      "status": "success",
+      "output_path": "D:\\KAGAMI-MZ\\runs\\20260331_170638_0e03f3\\output.png",
+      "all_images": [
+        "C:\\Users\\THISPC~1\\AppData\\Local\\Temp\\fooocus\\224ae959aac8bddfb73bd0f48ac00e136874f448\\2026-03-31_17-16-06_8820.png"
+      ],
+      "duration": 565.5
+    },
+    "validator": {
+      "status": "pass",
+      "validator_executed": true,
+      "checks": {
+        "T2": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T5": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T6": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": true
+        },
+        "T7": {
+          "pass": true,
+          "value": 0.0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T9": {
+          "pass": true,
+          "value": 3.3,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T10": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T15": {
+          "pass": true,
+          "value": 0,
+          "reason": "OK",
+          "hard_fail": false
+        },
+        "T16": {
+          "pass": true,
+          "value": 1.82,
+          "reason": "OK",
+          "hard_fail": false
+        }
+      },
+      "hard_fail_count": 0,
+      "hard_fails": [],
+      "pixel_report": {
+        "human_eyes_detected": 0,
+        "pvc_plastic_read": 0,
+        "toon_shading": 0,
+        "edge_activity": 1.82,
+        "crimson_ratio": 0.0,
+        "magenta_neon_spill": 0,
+        "logo_overlap_ratio": 0,
+        "shadow_ratio": 3.3,
+        "dark_pixel_ratio": 0.263,
+        "light_pixel_ratio": 0.079,
+        "mean_luminance": 103.3,
+        "std_luminance": 48.2,
+        "width": 1152,
+        "height": 896
+      },
+      "duration": 0.5
+    },
+    "gemini_gate": {
+      "gemini_executed": true,
+      "parse_ok": true,
+      "pass_fail": "FAIL",
+      "final_decision": "REJECT",
+      "hard_fail_count": 0,
+      "checks": [
+        {
+          "code": "T1",
+          "pass": true,
+          "reason": "The subject is a mask, which is an engineered entity appropriate for the MASK lane."
+        },
+        {
+          "code": "T3",
+          "pass": true,
+          "reason": "The mask displays a neutral, expressionless demeanor."
+        },
+        {
+          "code": "T4",
+          "pass": true,
+          "reason": "The mask appears to be made of ceramic/porcelain with a visible Keshiki texture, consistent with the MASK lane material requirements."
+        },
+        {
+          "code": "T8",
+          "pass": false,
+          "reason": "The background is a mid-grey, which is neither Sumi black nor Gofun white as required by the canon."
+        },
+        {
+          "code": "T11",
+          "pass": true,
+          "reason": "The image clearly depicts a manufactured object (a mask) and is not abstract art."
+        },
+        {
+          "code": "T12",
+          "pass": true,
+          "reason": "The ceramic/porcelain material is clearly readable and exhibits a distinct Keshiki texture, not a flat uniform surface."
+        },
+        {
+          "code": "T13",
+          "pass": true,
+          "reason": "The composition features clear negative space around the mask, adhering to the Sacred Void (Ma) principle."
+        },
+        {
+          "code": "T14",
+          "pass": true,
+          "reason": "The mask exhibits perfect symmetry, as required for MASK geometry."
+        }
+      ],
+      "reasoning": "The image fails to meet the MIKAGE ZENITH visual canon. The background is a mid-grey, violating T8 which requires Sumi black or Gofun white. Furthermore, the mask lacks the expected crimson accents at the seams, which is a critical component of the MASK lane's visual canon.",
+      "duration": 19.7
+    }
+  },
+  "final_decision": "REJECT",
+  "output_files": [],
+  "reject_reason": "Gemini gate: The image fails to meet the MIKAGE ZENITH visual canon. The background is a mid-grey, violating T8 which requires Sumi black or Gofun white. Furthermore, the mask lacks the expected crimson accents at the seams, which is a critical component of the MASK lane's visual canon.",
+  "total_duration": 589.2
+}

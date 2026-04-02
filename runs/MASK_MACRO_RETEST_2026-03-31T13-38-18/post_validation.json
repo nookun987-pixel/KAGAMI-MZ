@@ -1,0 +1,13 @@
+{
+  "stage": "post_render_image",
+  "verdict": "REJECT",
+  "validator_executed": false,
+  "failed_checks": [],
+  "critical_failures": [
+    "[INPUT_VALIDATION] Invalid job payload: run.status: value \"mask_macro_test\" not in enum [DONE, FAIL, RETRY]"
+  ],
+  "forbidden_hits": [],
+  "analyzer_signals": {},
+  "missing_signals": [],
+  "source_files": {}
+}

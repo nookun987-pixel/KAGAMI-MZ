@@ -1,0 +1,53 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "Image reads as abstract, texture-only, and subjectless.",
+    "Image does not read as a manufactured object immediately.",
+    "No ceramic material read; colors are oversaturated and synthetic.",
+    "Color palette is completely incorrect for porcelain-white #FAFAFA.",
+    "The image exhibits strong COLOR_NEON_DRIFT and OVERSATURATION_DRIFT."
+  ],
+  "material_read": "Abstract digital noise/texture, synthetic pattern.",
+  "correct_reads": [],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "subtractive mineral color logic",
+    "low saturation, shadow-heavy palette",
+    "bokashi non-linear gradient",
+    "matte-first material-color match",
+    "clear manufactured object read with contour evidence",
+    "material clearly belongs to one manufactured object",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate",
+    "abstract composition",
+    "atmosphere-first frame",
+    "texture-only frame",
+    "manufactured object not readable",
+    "object dissolved into background",
+    "wall or slab read",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with defined contours (edge, rim, bevel, seam, or curvature).",
+    "Shift the color palette dramatically to porcelain-white #FAFAFA, ensuring low saturation and a shadow-heavy, diffuse highlight distribution.",
+    "Develop a convincing matte ceramic material read, eliminating any glossy, plastic, PVC, or toy-like qualities.",
+    "Focus on engineered microtexture (eggshell) and subtractive mineral color logic.",
+    "Remove abstract noise and oversaturated, synthetic colors, aiming for a dry, dense, engineered feel."
+  ],
+  "summary": "The image is an abstract, oversaturated digital noise pattern with no discernible manufactured object or ceramic material read. It fails all primary pass criteria, exhibiting strong drifts towards abstract composition, texture-only framing, and synthetic, neon-like colors. The color palette is entirely incorrect for the target material.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

@@ -1,0 +1,13 @@
+=== INTAKE DIFF ===
+
+[priority_target]
+- BEFORE: matte ceramic material readability with clear manufactured object
++ AFTER:  matte ceramic material readability with clear manufactured object. Introduce a clear, identifiable manufactured object with contour evidence.. Shift the color palette to porcelain-white (#FAFAFA) with low saturation and a shadow-heavy, diffuse highlight distribution.. Develop a matte ceramic material read with dry, dense, engineered qualities and an ultra-controlled eggshell microtexture.. Implement sparse fine hairline cracking and subtractive mineral color logic.. Remove all abstract noise, oversaturated colors, and neon/plastic color drifts.
+
+[fail_signal]
+- BEFORE: 0 items
++ AFTER:  13 items
+  ADDED: porcelain-white ceramic, matte B4C technical ceramic, manufactured object, dry, dense, engineered material, eggshell microtexture, subtractive mineral color, bokashi non-linear gradient, Image reads as abstract, texture-only, and subjectless., Image does not read as a manufactured object immediately., No ceramic material is discernible., Colors are oversaturated and exhibit neon/plastic drift., Palette is not low saturation or shadow-heavy as required for matte ceramic., Pure black and synthetic magenta/purple drift are present.
+
+[correction_context]
++ ADDED: correction_context object

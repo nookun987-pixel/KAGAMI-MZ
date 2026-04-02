@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "code": "T1",
+      "pass": true,
+      "reason": "The subject is a mask, an engineered entity appropriate for the MASK lane."
+    },
+    {
+      "code": "T3",
+      "pass": true,
+      "reason": "The mask displays a neutral, stylized expression without human-like facial emotions."
+    },
+    {
+      "code": "T4",
+      "pass": true,
+      "reason": "The mask appears to be made of ceramic/porcelain, consistent with the MASK lane material. The surface exhibits Keshiki texture variation."
+    },
+    {
+      "code": "T8",
+      "pass": true,
+      "reason": "The background is a dark, textured black, consistent with Sumi black and not pure #000000."
+    },
+    {
+      "code": "T11",
+      "pass": true,
+      "reason": "The image clearly depicts a manufactured object (a mask), not abstract art."
+    },
+    {
+      "code": "T12",
+      "pass": true,
+      "reason": "The material (ceramic/porcelain) is clearly readable with Keshiki texture, and the surface is not flat or uniform."
+    },
+    {
+      "code": "T13",
+      "pass": true,
+      "reason": "There is clear negative space around the mask, adhering to the Sacred Void (Ma) principle and the 70/30 shadow rule."
+    },
+    {
+      "code": "T14",
+      "pass": true,
+      "reason": "The mask exhibits perfect symmetry and no visible distortion."
+    }
+  ],
+  "hard_fail_count": 0,
+  "pass_fail": "FAIL",
+  "final_decision": "REJECT",
+  "reasoning": "All T-codes passed. However, the image violates the MIKAGE ZENITH visual canon for the MASK lane regarding crimson accent placement. The canon specifies 'crimson at seams only' and 'seams/cores ONLY'. The mask features crimson markings on the forehead and around the eyes that are decorative patterns, not seams or cores, thus failing this specific canon requirement."
+}

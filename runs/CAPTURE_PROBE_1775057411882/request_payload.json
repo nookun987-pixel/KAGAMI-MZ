@@ -1,0 +1,16 @@
+{
+  "prompt": "white ceramic cube, studio product shot, minimal dark background, sharp edges",
+  "negative_prompt": "blurry, watermark, text, person, character",
+  "seed": 42,
+  "width": 512,
+  "height": 512,
+  "performance_selection": "Speed",
+  "steps": 4,
+  "disable_refiner": true,
+  "image_number": 1,
+  "async_process": false,
+  "style_selections": [],
+  "guidance_scale": 4,
+  "sharpness": 2,
+  "generation_mode": "exploration"
+}

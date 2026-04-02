@@ -1,0 +1,43 @@
+[
+  {
+    "attempt": 1,
+    "phase": "material_study",
+    "shot_type": "MATERIAL_MACRO",
+    "render_ok": true,
+    "output_exists": true,
+    "validator_executed": true,
+    "gemini_validation_executed": true,
+    "render_profile": "TEST_MODE",
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "requested_steps": 16,
+    "actual_steps_source": "response",
+    "size_truth_source": "png_pixels",
+    "actual_file_size": "1024x1024",
+    "telemetry_warnings": [],
+    "refiner_enabled": false,
+    "render_duration_seconds": 279.89,
+    "decision": "FAIL",
+    "fail_rules": [
+      "T3",
+      "T5",
+      "T7",
+      "T9",
+      "T11",
+      "T12",
+      "C3",
+      "C4",
+      "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+      "If the image does not read as a manufactured object immediately, it must FAIL.",
+      "If the ceramic read turns glossy, plastic, PVC-like, or toy-like, it must FAIL.",
+      "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+      "Check color harmony: reject pure white, pure black, and synthetic magenta drift."
+    ],
+    "recovery_tags": [
+      "ABSTRACT_FRAME"
+    ],
+    "subject_recovery_mode_active": true,
+    "primary_failure": "abstract composition"
+  }
+]

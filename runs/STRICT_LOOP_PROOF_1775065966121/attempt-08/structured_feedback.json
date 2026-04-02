@@ -1,0 +1,44 @@
+{
+  "iteration_type": "correction",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "subtractive mineral color logic",
+    "low saturation, shadow-heavy palette",
+    "bokashi non-linear gradient",
+    "matte-first material-color match",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate",
+    "abstract composition",
+    "atmosphere-first frame",
+    "texture-only frame",
+    "manufactured object not readable",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PLASTIC_COLOR_DRIFT"
+  ],
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with distinct contours.",
+    "Shift the color palette to porcelain-white (#FAFAFA) with a low saturation, shadow-heavy approach.",
+    "Develop a convincing matte ceramic material read, focusing on dry, dense, engineered qualities and an eggshell microtexture.",
+    "Eliminate the abstract composition and texture-only presentation.",
+    "Remove all neon and oversaturated colors, especially the dominant purples and blues, to avoid plastic color drift."
+  ],
+  "severity": "HIGH",
+  "summary": "The image is an abstract, oversaturated digital noise texture with no discernible manufactured object or ceramic material properties. It completely fails to meet the 'white ceramic material study' criteria, exhibiting strong neon and oversaturation drifts, and lacks any object readability. The material read is entirely incorrect.",
+  "material_read": "Abstract digital noise/texture",
+  "correct_reads": []
+}

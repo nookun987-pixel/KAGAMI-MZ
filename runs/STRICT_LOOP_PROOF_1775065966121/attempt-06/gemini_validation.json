@@ -1,0 +1,41 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "Check saturation: reject neon, RGB-clean, or oversaturated reads.",
+    "Check color harmony: reject pure white, pure black, and synthetic magenta drift.",
+    "Check material-color match: color must feel materially bonded, never flat digital fill."
+  ],
+  "material_read": "Abstract digital noise, synthetic texture",
+  "correct_reads": [],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "subtractive mineral color logic",
+    "low saturation, shadow-heavy palette",
+    "bokashi non-linear gradient",
+    "matte-first material-color match",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "The image is an abstract digital texture and does not depict a white ceramic manufactured object. A complete re-evaluation of the image content is required.",
+    "Focus on rendering a clear, identifiable manufactured object with distinct contours (edges, rims, curvature).",
+    "Adhere strictly to the 'porcelain-white #FAFAFA' color target and 'matte B4C technical ceramic' material properties.",
+    "Eliminate all neon, oversaturated, and synthetic color drifts. The current dark purple/blue palette is entirely incorrect.",
+    "Ensure the material reads as dry, dense, and engineered, with an ultra-controlled eggshell microtexture, not as chaotic digital noise.",
+    "The current image reads as 'abstract composition', 'texture-only frame', and exhibits 'COLOR_NEON_DRIFT' and 'OVERSATURATION_DRIFT'."
+  ],
+  "summary": "The image is an abstract, highly saturated, dark purple digital noise texture. It completely fails to represent a white ceramic manufactured object. There is no object readability, no ceramic material read, and the color palette is entirely incorrect, exhibiting neon and oversaturation drifts. This is a fundamental failure across all primary validation criteria.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

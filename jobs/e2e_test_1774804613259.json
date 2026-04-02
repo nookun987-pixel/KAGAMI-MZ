@@ -1,0 +1,16 @@
+{
+  "job_id": "e2e_test_1774804613259",
+  "phase": "material_study",
+  "user_idea": "A single engineered ceramic sphere, manufactured object, perfectly smooth hard-surface boron carbide ceramic (B4C), matte porcelain finish. Centered composition, full object clearly visible. Environment: minimal brutalist concrete background. Lighting: strict chiaroscuro 4:1 ratio, single directional hard light. Color: Porcelain White #FAFAFA main surface, Obsidian Black #0A0A0A background. Surface: perfectly engineered symmetry, no plastic look, no glossy reflection. Camera: straight-on, neutral lens, no distortion, no blur. FORBIDDEN: human elements, eyes, fabric, organic material, cyberpunk/neon, particles, smoke, fog, multiple objects, abstract composition. OUTPUT: exactly one manufactured object, high clarity subject, zero ambiguity.",
+  "test_mode": true,
+  "max_candidates": 1,
+  "no_retry": false,
+  "render": {
+    "width": 512,
+    "height": 512,
+    "performance": "Speed",
+    "candidate_count": 1,
+    "steps": 20,
+    "guidance_scale": 4
+  }
+}

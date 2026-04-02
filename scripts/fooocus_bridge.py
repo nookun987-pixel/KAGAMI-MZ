@@ -3,26 +3,58 @@ MIKAGE — Fooocus Direct Bridge (No Gradio)
 Calls Fooocus internal pipeline directly via AsyncTask.
 
 Start:
-  cd D:/KAGAMI-MZ && python scripts/fooocus_bridge.py
+  cd /workspace/KAGAMI-MZ && python scripts/fooocus_bridge.py
 
 Fooocus engine loads in-process — no separate Fooocus UI needed.
 """
 
 import base64
+import io
 import os
 import sys
 import time
 import threading
 import traceback
 import struct
+import faulthandler
 import numpy as np
 from PIL import Image
+
+# --- CRASH CAPTURE: enable faulthandler for segfault tracebacks ---
+_CRASH_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "runs", "bridge_crash.log")
+os.makedirs(os.path.dirname(_CRASH_LOG), exist_ok=True)
+_crash_fh = open(_CRASH_LOG, "w")
+faulthandler.enable(file=_crash_fh)
+print(f"[BRIDGE] Crash log enabled: {os.path.abspath(_CRASH_LOG)}")
+
+def _log_crash(msg):
+    """Write crash info to file before process dies."""
+    try:
+        with open(_CRASH_LOG, "a") as f:
+            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {msg}\n")
+    except:
+        pass
+
+def _global_excepthook(exc_type, exc_value, exc_tb):
+    tb_str = "".join(traceback.format_exception(exc_type, exc_value, exc_tb))
+    _log_crash(f"UNHANDLED EXCEPTION:\n{tb_str}")
+    print(f"[BRIDGE] FATAL UNHANDLED EXCEPTION:\n{tb_str}", file=sys.stderr)
+    sys.__excepthook__(exc_type, exc_value, exc_tb)
+
+sys.excepthook = _global_excepthook
+
+def _thread_excepthook(args):
+    tb_str = "".join(traceback.format_exception(args.exc_type, args.exc_value, args.exc_traceback))
+    _log_crash(f"THREAD CRASH ({args.thread}):\n{tb_str}")
+    print(f"[BRIDGE] THREAD CRASH ({args.thread}):\n{tb_str}", file=sys.stderr)
+
+threading.excepthook = _thread_excepthook
 
 # ---------------------------------------------------------------------------
 # Bootstrap Fooocus — must happen BEFORE importing Fooocus modules
 # ---------------------------------------------------------------------------
 
-FOOOCUS_ROOT = os.environ.get("FOOOCUS_ROOT", "D:/Fooocus-main")
+FOOOCUS_ROOT = os.environ.get("FOOOCUS_ROOT", "/workspace/Fooocus")
 BRIDGE_PORT = int(os.environ.get("FOOOCUS_BRIDGE_PORT", "7865"))
 
 # Inject Fooocus into sys.path
@@ -85,11 +117,13 @@ class TextToImgRequest(BaseModel):
     sampler: str | None = None
     scheduler: str | None = None
     sharpness: float = 2.0
+    base_model: str = "juggernautXL_v8Rundiffusion.safetensors"
     generation_mode: str = "exploration"
     reference_master: dict | None = None
     reproduction_constraints: dict | None = None
     reproduction_anchor_mode: str | None = None
     anchor_image_path: str | None = None
+    anchor_image_base64: str | None = None
     anchor_strength: float | None = None
     denoise_strength: float | None = None
     composition_lock_strength: float | None = None
@@ -100,6 +134,9 @@ class TextToImgRequest(BaseModel):
     reconstruction_priority: str | None = None
     prompt_weight_reduction_when_anchor_present: float | None = None
     dry_run: bool = False
+    # LoRA support
+    lora_name: str | None = None
+    lora_weight: float = 0.7
 
 
 @app.get("/")
@@ -153,6 +190,24 @@ def _load_anchor_image(anchor_image_path: str | None):
         raise FileNotFoundError(f"Anchor image not found: {normalized}")
     image = Image.open(normalized).convert("RGB")
     return np.array(image), normalized
+
+
+def _load_anchor_image_from_base64(base64_string: str | None, original_path: str | None):
+    """Load anchor image from base64 string. Returns (numpy_array, path_or_identifier)."""
+    if not base64_string:
+        return None, None
+    try:
+        # Handle data URI format (data:image/png;base64,...)
+        if base64_string.startswith('data:'):
+            base64_string = base64_string.split(',')[1]
+        
+        image_bytes = base64.b64decode(base64_string)
+        image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+        print(f"[BRIDGE] REAL IMAGE LOADED FROM BASE64: shape={image.size}, path_ref={original_path}")
+        return np.array(image), (original_path or "base64_embedded")
+    except Exception as e:
+        print(f"[BRIDGE] BASE64 LOAD FAILED: {e}")
+        return None, None
 
 
 def _is_image_anchored_reproduction(req: TextToImgRequest) -> bool:
@@ -295,9 +350,37 @@ def _build_args(req: TextToImgRequest) -> list:
     # prompt expansion for canon-locked prompts.
     styles = [s for s in req.style_selections if s] if req.style_selections is not None else []
     aspect = _match_aspect(req.width, req.height)
-    image_anchor_active = _is_image_anchored_reproduction(req)
-    strong = _is_strong_preservation(req)
-    anchor_image, normalized_anchor_path = _load_anchor_image(req.anchor_image_path) if image_anchor_active else (None, None)
+
+    # --- FORCE IMG2IMG if base64 payload exists ---
+    has_base64 = bool(req.anchor_image_base64 and len(req.anchor_image_base64 or "") > 100)
+    has_local_file = bool(req.anchor_image_path) and os.path.isfile(os.path.abspath(req.anchor_image_path))
+    image_anchor_active = has_base64 or (has_local_file and _is_image_anchored_reproduction(req))
+    strong = _is_strong_preservation(req) if image_anchor_active else False
+
+    print(f"[BRIDGE] IMG2IMG ACTIVE: {image_anchor_active}")
+    print(f"[BRIDGE] has_base64: {has_base64}, has_local_file: {has_local_file}")
+    print(f"[BRIDGE] anchor_image_path: {req.anchor_image_path}")
+
+    # --- LOAD IMAGE: Prefer base64, fallback to local file ---
+    anchor_image = None
+    normalized_anchor_path = None
+
+    if image_anchor_active and has_base64:
+        anchor_image, normalized_anchor_path = _load_anchor_image_from_base64(
+            req.anchor_image_base64, req.anchor_image_path
+        )
+        if anchor_image is not None:
+            print(f"[BRIDGE] IMG2IMG loaded from base64: shape={anchor_image.shape}")
+
+    if image_anchor_active and anchor_image is None and has_local_file:
+        anchor_image, normalized_anchor_path = _load_anchor_image(req.anchor_image_path)
+        if anchor_image is not None:
+            print(f"[BRIDGE] IMG2IMG loaded from file: {normalized_anchor_path}")
+
+    if image_anchor_active and anchor_image is None:
+        raise ValueError("IMG2IMG BRIDGE FAIL: no usable input image from base64 or file path")
+
+    print(f"[BRIDGE] ARGS_HAS_IMAGE: {anchor_image is not None}")
 
     # Effective preservation values
     eff_denoise = _effective_denoise(req, strong)
@@ -315,6 +398,17 @@ def _build_args(req: TextToImgRequest) -> list:
     n_cn = fooocus_config.default_controlnet_image_count  # typically 4
     n_enhance = fooocus_config.default_enhance_tabs  # typically 3
 
+    # current_tab: "uov" for simple img2img (vary), "ip" only when strong preservation needs ControlNet
+    use_ip_tab = image_anchor_active and strong
+
+    print(f"[BRIDGE] IMG2IMG ACTIVE: {image_anchor_active}")
+    print(f"[BRIDGE] ARGS_HAS_IMAGE: {anchor_image is not None}")
+    print(f"[BRIDGE] current_tab: {'ip' if use_ip_tab else 'uov'}")
+    print(f"[BRIDGE] uov_method: {fooocus_flags.subtle_variation if image_anchor_active else fooocus_flags.disabled}")
+    print(f"[BRIDGE] eff_denoise: {eff_denoise}")
+    print(f"[BRIDGE] mixing_ip_vary: {use_ip_tab}")
+    print(f"[BRIDGE] strong: {strong}")
+
     args = [
         False,                              # [0]  Generate Image Grid
         effective_prompt,                   # [1]  Prompt
@@ -328,19 +422,26 @@ def _build_args(req: TextToImgRequest) -> list:
         False,                              # [9]  Read wildcards in order
         req.sharpness,                      # [10] Image Sharpness
         req.guidance_scale,                 # [11] Guidance Scale
-        "juggernautXL_v8Rundiffusion.safetensors",  # [12] Base Model
+        req.base_model,                         # [12] Base Model
         "None" if req.disable_refiner else "None",  # [13] Refiner
         0.5,                                # [14] Refiner Switch At
     ]
 
     # LoRA slots (enabled, name, weight) × n_loras
-    for _ in range(n_loras):
-        args.extend([False, "None", 1.0])
+    # First slot uses request lora_name/lora_weight if provided
+    lora_configs = []
+    if req.lora_name:
+        lora_configs.append([True, req.lora_name, req.lora_weight])
+    # Fill remaining slots with disabled
+    for _ in range(n_loras - len(lora_configs)):
+        lora_configs.append([False, "None", 1.0])
+    for enabled, name, weight in lora_configs[:n_loras]:
+        args.extend([enabled, name, weight])
 
     # Image input block
     args.extend([
         image_anchor_active,          # Input Image checkbox
-        "ip" if image_anchor_active else "uov",          # current_tab
+        "ip" if use_ip_tab else "uov",  # current_tab
         fooocus_flags.subtle_variation if image_anchor_active else fooocus_flags.disabled,     # Upscale or Variation
         anchor_image if image_anchor_active else None,           # UoV Image
         [],             # Outpaint Direction
@@ -369,7 +470,7 @@ def _build_args(req: TextToImgRequest) -> list:
         -1,             # Forced Overwrite Height
         eff_denoise if image_anchor_active else -1.0,           # Forced Vary Strength
         -1.0,           # Forced Upscale Strength
-        image_anchor_active,          # Mixing Image Prompt and Vary/Upscale
+        use_ip_tab,                   # Mixing Image Prompt and Vary/Upscale (only when IP tab)
         False,          # Mixing Image Prompt and Inpaint
         False,          # Debug Preprocessors
         False,          # Skip Preprocessors
@@ -462,62 +563,166 @@ def _build_args(req: TextToImgRequest) -> list:
 
 def _run_task(req: TextToImgRequest) -> dict:
     """Submit task to Fooocus worker and wait for results. No Gradio involved."""
+    _log_crash(f"_run_task ENTER: prompt={req.prompt[:80]}")
+    print(f"[BRIDGE] entering _run_task")
+    print(f"[BRIDGE] img2img: {req.anchor_image_base64 is not None and len(req.anchor_image_base64 or '') > 100}")
+    print(f"[BRIDGE] anchor_image_path: {req.anchor_image_path}")
+    print(f"[BRIDGE] generation_mode: {req.generation_mode}")
+    print(f"[BRIDGE] denoise_strength: {req.denoise_strength}")
+
     # --- Preflight: fail-fast if strong preservation is requested but anchor is invalid ---
     if _is_strong_preservation(req):
         anchor_path = req.anchor_image_path
         if not anchor_path:
+            print(f"[BRIDGE] PREFLIGHT_FAIL: anchor_image_path missing for strong_preservation")
             return {
-                "status": "PREFLIGHT_FAIL",
+                "success": False,
                 "error": "STRONG_PRESERVATION_REQUIRES_ANCHOR_IMAGE",
-                "reason": "preservation_mode is strong_preservation but anchor_image_path is missing",
-                "machine_code": "PREFLIGHT_ANCHOR_MISSING",
             }
         normalized = os.path.abspath(anchor_path)
         if not os.path.isfile(normalized):
+            print(f"[BRIDGE] PREFLIGHT_FAIL: anchor not found on disk: {normalized}")
             return {
-                "status": "PREFLIGHT_FAIL",
-                "error": "STRONG_PRESERVATION_ANCHOR_NOT_FOUND",
-                "reason": f"preservation_mode is strong_preservation but anchor image not found on disk: {normalized}",
-                "machine_code": "PREFLIGHT_ANCHOR_NOT_FOUND",
+                "success": False,
+                "error": f"STRONG_PRESERVATION_ANCHOR_NOT_FOUND: {normalized}",
             }
 
-    args, debug_payload = _build_args(req)
+    print(f"[BRIDGE] building args...")
+    try:
+        args, debug_payload = _build_args(req)
+    except Exception as build_err:
+        print(f"[BRIDGE] _build_args CRASHED: {build_err}")
+        traceback.print_exc()
+        return {"success": False, "error": f"BUILD_ARGS_FAILED: {build_err}"}
+    print(f"[BRIDGE] args built: {len(args)} elements")
+
     if req.dry_run:
         return {
             "status": "dry_run_ok",
             "bridge_payload_debug": debug_payload,
         }
-    task = async_worker.AsyncTask(args)
+
+    print(f"[BRIDGE] TASK CREATING...")
+    try:
+        task = async_worker.AsyncTask(args)
+    except Exception as task_err:
+        print(f"[BRIDGE] AsyncTask() CRASHED: {task_err}")
+        traceback.print_exc()
+        return {"success": False, "error": f"ASYNC_TASK_INIT_FAILED: {task_err}"}
+    print(f"[BRIDGE] TASK CREATED: type={type(task).__name__}, "
+          f"has_yields={hasattr(task, 'yields')}, "
+          f"has_results={hasattr(task, 'results')}")
+
+    # --- WORKER ALIVE CHECK (fail-fast) ---
+    _wref = getattr(async_worker, '_worker_thread_ref', None)
+    _walive = getattr(async_worker, '_worker_alive', None)
+    _winloop = getattr(async_worker, '_worker_in_loop', None)
+    print(f"[BRIDGE] WORKER STATUS: thread_ref={_wref is not None}, "
+          f"is_alive={_wref.is_alive() if _wref else 'N/A'}, "
+          f"_worker_alive={_walive}, _worker_in_loop={_winloop}")
+
+    if _wref and not _wref.is_alive():
+        msg = "WORKER_THREAD_DEAD: thread exists but is_alive=False. Worker crashed during boot."
+        print(f"[BRIDGE] FATAL: {msg}")
+        _log_crash(msg)
+        return {"success": False, "error": msg}
 
     start_t = time.time()
-    print(f"[BRIDGE] Render start: prompt='{req.prompt[:80]}', seed={req.seed}, "
-          f"aspect={_match_aspect(req.width, req.height)}")
-
-    # Push task to worker queue
+    queue_len_before = len(async_worker.async_tasks)
     async_worker.async_tasks.append(task)
+    queue_len_after = len(async_worker.async_tasks)
+    print(f"[BRIDGE] TASK QUEUED: queue {queue_len_before} -> {queue_len_after}, "
+          f"queue id={id(async_worker.async_tasks)}")
+    _log_crash(f"TASK QUEUED: queue {queue_len_before} -> {queue_len_after}")
+
+    # --- FAIL-FAST: if worker doesn't pop within 30s, hard error ---
+    WORKER_POP_TIMEOUT = 30
+    pop_deadline = time.time() + WORKER_POP_TIMEOUT
+    while time.time() < pop_deadline:
+        if len(task.yields) > 0:
+            break  # Worker started processing (produced a yield)
+        if task not in async_worker.async_tasks:
+            break  # Worker popped it from queue
+        time.sleep(0.5)
+    else:
+        # Check if task is still in queue (never popped)
+        still_queued = task in async_worker.async_tasks
+        _wref2 = getattr(async_worker, '_worker_thread_ref', None)
+        alive2 = _wref2.is_alive() if _wref2 else False
+        msg = (f"WORKER_POP_TIMEOUT: task not picked up in {WORKER_POP_TIMEOUT}s. "
+               f"still_in_queue={still_queued}, queue_len={len(async_worker.async_tasks)}, "
+               f"worker_alive={alive2}")
+        print(f"[BRIDGE] FATAL: {msg}")
+        _log_crash(msg)
+        # Remove stale task
+        if still_queued:
+            try: async_worker.async_tasks.remove(task)
+            except: pass
+        return {"success": False, "error": msg}
+
+    print(f"[BRIDGE] Worker picked up task in {time.time()-start_t:.1f}s")
 
     # Wait for task completion (yields ends with ['finish', results])
     timeout = 900  # 15 min max
     deadline = time.time() + timeout
+    poll_count = 0
     while time.time() < deadline:
         if len(task.yields) > 0:
             last = task.yields[-1]
             if isinstance(last, (list, tuple)) and len(last) >= 1 and last[0] == "finish":
+                print(f"[BRIDGE] FINISH DETECTED at poll {poll_count}, elapsed={time.time()-start_t:.1f}s")
                 break
+            poll_count += 1
+            if poll_count % 20 == 0:
+                elapsed_so_far = time.time() - start_t
+                print(f"[BRIDGE] WAIT LOOP poll={poll_count}, yields={len(task.yields)}, "
+                      f"last_type={type(last).__name__}, "
+                      f"last_preview={str(last)[:120]}, "
+                      f"elapsed={elapsed_so_far:.0f}s")
+        else:
+            poll_count += 1
+            if poll_count % 20 == 0:
+                print(f"[BRIDGE] WAIT LOOP poll={poll_count}, yields=0, "
+                      f"queue_len={len(async_worker.async_tasks)}, elapsed={time.time()-start_t:.0f}s")
         time.sleep(0.5)
     else:
-        raise RuntimeError(f"Render timeout after {timeout}s")
+        print(f"[BRIDGE] TIMEOUT after {timeout}s, yields={len(task.yields)}")
+        for i, y in enumerate(task.yields[-10:]):
+            print(f"[BRIDGE] TIMEOUT yield[{i}]: {str(y)[:200]}")
+        return {"success": False, "error": f"RENDER_TIMEOUT_{timeout}s"}
 
     elapsed = time.time() - start_t
-    print(f"[BRIDGE] Render end: {elapsed:.1f}s")
+    print(f"[BRIDGE] render done: {elapsed:.1f}s, total_yields={len(task.yields)}")
+    _log_crash(f"RENDER DONE: {elapsed:.1f}s, yields={len(task.yields)}")
 
-    # Extract results — task.results contains image paths from save_and_log()
-    # The last yield is ['finish', results_list]
+    # Extract results
     finish_yield = task.yields[-1]
-    result_paths = finish_yield[1] if len(finish_yield) > 1 else []
+    finish_results = finish_yield[1] if isinstance(finish_yield, (list, tuple)) and len(finish_yield) > 1 else []
+    print(f"[BRIDGE] FINISHED YIELD: type={type(finish_yield).__name__}, "
+          f"len={len(finish_yield) if isinstance(finish_yield, (list, tuple)) else 'N/A'}, "
+          f"results_count={len(finish_results)}")
+
+    # Also check task.results directly (worker sets this before yielding finish)
+    task_results = getattr(task, 'results', None)
+    print(f"[BRIDGE] task.results: type={type(task_results).__name__ if task_results is not None else 'None'}, "
+          f"len={len(task_results) if task_results else 0}, "
+          f"value={[str(r)[:100] for r in (task_results or [])[:3]]}")
+
+    result_paths = finish_results if finish_results else (task_results or [])
+    print(f"[BRIDGE] RESULT_PATHS: {[str(p) for p in result_paths]}")
+    _log_crash(f"RESULT_PATHS: {[str(p) for p in result_paths]}")
 
     if not result_paths:
-        raise RuntimeError("Fooocus produced no output images")
+        # Dump ALL yields for full diagnosis
+        print(f"[BRIDGE] TASK_NOT_EXECUTED — dumping all {len(task.yields)} yields:")
+        for i, y in enumerate(task.yields):
+            if isinstance(y, (list, tuple)):
+                tag = y[0] if y else "empty"
+                detail = str(y[1])[:150] if len(y) > 1 else "no-detail"
+                print(f"[BRIDGE]   yield[{i}]: tag={tag}, detail={detail}")
+            else:
+                print(f"[BRIDGE]   yield[{i}]: {str(y)[:200]}")
+        return {"success": False, "error": "TASK_NOT_EXECUTED"}
 
     # Build response: encode each image as base64
     images = []
@@ -584,8 +789,10 @@ def _run_task(req: TextToImgRequest) -> dict:
         print(f"[BRIDGE] Metadata fields present: steps={'steps' in response_item}, meta={'meta' in response_item}, advanced_params={'advanced_params' in response_item}, image_info={'image_info' in response_item}")
 
     if not images:
+        _log_crash("FAIL: All result files missing from disk")
         raise RuntimeError("All result files missing from disk")
 
+    _log_crash(f"SUCCESS: returning {len(images)} image(s)")
     return images
 
 
@@ -597,12 +804,31 @@ def _run_task(req: TextToImgRequest) -> dict:
 async def text_to_img(req: TextToImgRequest):
     """Direct pipeline call — no Gradio."""
     import asyncio
+    img2img_active = _is_image_anchored_reproduction(req)
+    print(f"[BRIDGE] REQUEST RECEIVED: generation_mode={req.generation_mode}, "
+          f"img2img={img2img_active}, "
+          f"anchor_path={req.anchor_image_path}, "
+          f"base64_present={bool(req.anchor_image_base64)}, "
+          f"base64_len={len(req.anchor_image_base64) if req.anchor_image_base64 else 0}")
     try:
         result = await asyncio.get_event_loop().run_in_executor(None, lambda: _run_task(req))
+        # Ensure response always has image_base64 at top level for executor compatibility
+        if isinstance(result, list) and len(result) > 0 and "base64" in result[0]:
+            print(f"[BRIDGE] GENERATION DONE: {len(result)} image(s), "
+                  f"base64_len={len(result[0]['base64'])}")
+        else:
+            print(f"[BRIDGE] GENERATION DONE: result_type={type(result).__name__}, "
+                  f"keys={list(result.keys()) if isinstance(result, dict) else 'N/A'}")
         return JSONResponse(content=result)
     except Exception as e:
         traceback.print_exc()
-        raise HTTPException(status_code=502, detail=f"Fooocus pipeline error: {str(e)}")
+        error_detail = f"Fooocus pipeline error: {str(e)}"
+        _log_crash(f"GENERATION EXCEPTION: {error_detail}\n{traceback.format_exc()}")
+        print(f"[BRIDGE] GENERATION FAILED: {error_detail}")
+        return JSONResponse(
+            status_code=500,
+            content={"success": False, "error": error_detail},
+        )
 
 
 @app.post("/generate")

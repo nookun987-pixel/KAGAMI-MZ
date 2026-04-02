@@ -1,0 +1,4 @@
+{
+  "error": "[INPUT_VALIDATION] Invalid job payload: run.status: value \"mask_macro_test\" not in enum [DONE, FAIL, RETRY]",
+  "generated_at": "2026-03-31T13:38:18.996Z"
+}

@@ -92,7 +92,7 @@ module.exports = {
   applyCanonV2ToSpec: async (input) => mappedExports.applyCanonV2ToSpec(input.spec, input.canon),
   validateCanonJob: async (input) => mappedExports.validateCanonJob(input.job, input.canon),
   validateCanonPromptPackage: async (input) =>
-    mappedExports.validateCanonPromptPackage(input.spec, input.positivePrompt, input.negativePrompt, input.canon),
+    mappedExports.validateCanonPromptPackage(input.spec, input.positivePrompt, input.negativePrompt, input.canon, input.shotType || null),
   runGeminiValidator: wrapJson((input) => mappedExports.runGeminiValidator(input.imagePath, input.promptPath)),
   judgeRenderedImage: wrapJson((input) => mappedExports.judgeRenderedImage(input.imagePath, input.context || {})),
   validateGeminiRuntime: wrapJson(() => mappedExports.validateGeminiRuntime()),

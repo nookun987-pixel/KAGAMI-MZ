@@ -1,0 +1,38 @@
+{
+  "iteration_type": "correction",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "If the ceramic read turns glossy, plastic, PVC-like, or toy-like, it must FAIL.",
+    "Reject neon, RGB-clean, or oversaturated reads.",
+    "Reject pure black and synthetic magenta drift.",
+    "Color must feel materially bonded, never flat digital fill."
+  ],
+  "wrong_reads": [
+    "abstract composition",
+    "atmosphere-first frame",
+    "texture-only frame",
+    "manufactured object not readable",
+    "object dissolved into background",
+    "wall or slab read",
+    "glossy plastic",
+    "PVC sheen",
+    "toy-like finish",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "PURE_BLACK_DRIFT",
+    "PLASTIC_COLOR_DRIFT"
+  ],
+  "fix_direction": [
+    "Introduce a clear, identifiable manufactured object with defined contours.",
+    "Shift the color palette to porcelain-white #FAFAFA, focusing on low saturation and a shadow-heavy palette.",
+    "Develop a distinct matte B4C technical ceramic material read, emphasizing dry, dense, and engineered qualities.",
+    "Eliminate all abstract, noisy, and oversaturated elements.",
+    "Ensure the material-color match feels physically bonded and not like a flat digital fill.",
+    "Remove all neon, oversaturated, and pure black color elements."
+  ],
+  "severity": "HIGH",
+  "summary": "The image is an abstract, oversaturated digital noise field with no discernible manufactured object or ceramic material. It fails on all primary criteria, exhibiting strong neon color drift, pure black areas, and a synthetic, toy-like feel, completely missing the target of a matte white ceramic material study.",
+  "material_read": "Abstract digital noise/texture field, synthetic color.",
+  "correct_reads": []
+}

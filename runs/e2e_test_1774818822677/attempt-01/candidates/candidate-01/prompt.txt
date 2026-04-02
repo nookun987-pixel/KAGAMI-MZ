@@ -1,0 +1,23 @@
+3D OBJECT RENDER - SINGLE CUBE
+One white ceramic cube, 8cm sides, perfect cube with sharp edges and six flat faces. Matte B4C technical ceramic. Isolated 3D object, not pattern.
+
+GEOMETRY
+Perfect cube geometry. Six square faces meet at 90-degree angles. Sharp edges visible. Three faces visible from camera angle. Clear 3D form with depth and volume.
+
+OBJECT ISOLATION
+Single solid cube object floating or resting on surface. Object casts shadow beneath. Background secondary and dark. Object edges define silhouette clearly.
+
+EDGES
+Twelve edges visible as sharp lines. Edge highlights define cube boundaries. No rounded corners. Geometric precision.
+
+MATERIAL
+Matte B4C technical ceramic. Warm white #FAFAFA. Flat faces show subtle eggshell texture. Zero gloss. Industrial ceramic, not plastic.
+
+LIGHTING
+Directional light from upper left. Three faces at different brightness levels showing 3D form. Clear cast shadow. Dark minimal background.
+
+COMPOSITION
+Single cube centered. Full object visible. Edges sharp. No decorative patterns on faces. No abstract elements.
+
+REJECT IF
+No cube visible. No sharp edges. Pattern only. Abstract texture. Wall or slab appearance., one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable, abstract composition, atmospheric-only image, empty scene as final subject

@@ -1,0 +1,45 @@
+{
+  "attempt": 1,
+  "phase": "material_study",
+  "shot_type": "MATERIAL_MACRO",
+  "render_ok": true,
+  "output_exists": true,
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "render_profile": "DEFAULT",
+  "width": 1024,
+  "height": 1024,
+  "steps": 28,
+  "requested_steps": 28,
+  "actual_steps_source": "response",
+  "size_truth_source": "png_pixels",
+  "actual_file_size": "1024x1024",
+  "telemetry_warnings": [
+    "SIZE_MISMATCH"
+  ],
+  "refiner_enabled": false,
+  "render_duration_seconds": 316.52,
+  "decision": "FAIL",
+  "fail_rules": [
+    "T3",
+    "T7",
+    "T8",
+    "T11",
+    "T12",
+    "C4",
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "abstract composition",
+    "texture-only frame",
+    "manufactured object not readable",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "PURE_WHITE_DRIFT",
+    "PURE_BLACK_DRIFT"
+  ],
+  "recovery_tags": [
+    "ABSTRACT_FRAME",
+    "NO_MANUFACTURED_OBJECT_READ"
+  ],
+  "subject_recovery_mode_active": true,
+  "primary_failure": "matte B4C technical ceramic"
+}

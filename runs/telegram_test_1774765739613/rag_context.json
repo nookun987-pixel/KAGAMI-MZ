@@ -1,0 +1,28 @@
+{
+  "rag_executed": true,
+  "query_used": "ENTITY_MEDIUM exploration A single engineered ceramic sphere, manufactured object, perfectly smooth hard-surface boron carbide ceramic (B4C), matte porcelain finish. Centered composition, full object clearly visible. Environment: minimal brutalist concrete background. Lighting: strict chiaroscuro 4:1 ratio, single directional hard light. Color: Porcelain White #FAFAFA main surface, Obsidian Black #0A0A0A background. Surface: perfectly engineered symmetry, no plastic look, no glossy reflection. Camera: straight-on, neutral lens, no distortion, no blur. FORBIDDEN: human elements, eyes, fabric, organic material, cyberpunk/neon, particles, smoke, fog, multiple objects, abstract composition. OUTPUT: exactly one manufactured object, high clarity subject, zero ambiguity.",
+  "top_k": 5,
+  "chunks_returned": 2,
+  "sources": [
+    {
+      "memory_id": 1,
+      "source": "final_decision.json (validation_failure)"
+    },
+    {
+      "memory_id": 2,
+      "source": "STRUCTURED_RULES.json (canon_rules)"
+    }
+  ],
+  "error": null,
+  "context_preview": "=== MIKAGE MEMORY CONTEXT ===\nQuery: ENTITY_MEDIUM exploration A single engineered ceramic sphere, manufactured object, perfectly smooth hard-surface boron carbide ceramic (B4C), matte porcelain finish. Centered composition, full object clearly visible. Environment: minimal brutalist concrete background. Lighting: strict chiaroscuro 4:1 ratio, single directional hard light. Color: Porcelain White #FAFAFA main surface, Obsidian Black #0A0A0A background. Surface: perfectly engineered symmetry, no plastic look, no glossy reflection. Camera: straight-on, neutral lens, no distortion, no blur. FORBIDDEN: human elements, eyes, fabric, organic material, cyberpunk/neon, particles, smoke, fog, multiple objects, abstract composition. OUTPUT: exactly one manufactured object, high clarity subject, zero ambiguity.\nFound 2 relevant memories:\n\n[MEMORY 1]\nSource: final_decision.json (validation_failure)\nRelevance: 0.92\nContent: Previous ENTITY_MEDIUM run failed due to abstract composition issues. Need stronger subject presence and clearer manufactured object read.\n\n[MEMORY 2]\nSource: STRUCTURED_RULES.json (canon_rules)\nRelevance: 0.87\nContent: ENTITY_MEDIUM canon rules require: 1) Clear subject silhouette 2) Manufactured object readability 3) No abstract atmosphere 4) Material-first composition\n\n============================\n",
+  "retriever_mode": "mock",
+  "real_vertex_verified": false,
+  "cloud_credentials_present": false,
+  "context_injected": true,
+  "credentials_file_present": false,
+  "credentials_env_present": false,
+  "project_id_present": false,
+  "datastore_config_present": false,
+  "vertex_client_init_success": false,
+  "credential_error": null
+}

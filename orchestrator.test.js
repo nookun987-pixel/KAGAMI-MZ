@@ -357,48 +357,56 @@ async function runFailureCase() {
   resetModule(path.resolve(__dirname, "orchestrator.js"));
   const { orchestrate } = require("./orchestrator");
 
-  const summary = await orchestrate({
-    job_id: "failure-case",
-    identity: {
-      name: "Mikage",
-      archetype: "ethereal guardian",
-      visual_anchor: "silver-haired figure in moonlight",
-    },
-    narrative: {
-      theme: "solitude at the edge of twilight",
-      mood: "contemplative",
-      scene: "standing alone on a cliff overlooking a starlit ocean",
-    },
-    strategy: {
-      style: "cinematic illustration",
-      color_palette: "deep blue, silver, soft violet",
-    },
-    art_direction: {
-      mood: "melancholic",
-      material: "porcelain",
-      style: "wabi-sabi",
-    },
-    render: {
-      width: 1024,
-      height: 1024,
-      performance: "Speed",
-    },
-  });
+  // IMPORTANT:
+  // This test exercises the EARLY_INVARIANT guard at the render output check.
+  // After the WEAPON_MACRO fallback fix (removing || positivePrompt from validateCanonPromptPackage),
+  // canon pre-validation no longer mis-classifies non-weapon jobs as WEAPON_MACRO.
+  // The render IS now attempted (pre-validation passes), but the mock returns output_file=null.
+  // The EARLY_INVARIANT ([EARLY_INVARIANT] Render produced no output file) fires and throws.
+  // This is the correct post-fix behavior: render failure surfaces as an EARLY_INVARIANT throw,
+  // not a silent REJECT summary from the pre-validation block path.
+  let failureCaseError = null;
+  try {
+    await orchestrate({
+      job_id: "failure-case",
+      identity: {
+        name: "Mikage",
+        archetype: "ethereal guardian",
+        visual_anchor: "silver-haired figure in moonlight",
+      },
+      narrative: {
+        theme: "solitude at the edge of twilight",
+        mood: "contemplative",
+        scene: "standing alone on a cliff overlooking a starlit ocean",
+      },
+      strategy: {
+        style: "cinematic illustration",
+        color_palette: "deep blue, silver, soft violet",
+      },
+      art_direction: {
+        mood: "melancholic",
+        material: "porcelain",
+        style: "wabi-sabi",
+      },
+      render: {
+        width: 1024,
+        height: 1024,
+        performance: "Speed",
+      },
+    });
+  } catch (err) {
+    failureCaseError = err;
+  }
 
-  const runDir = path.join(runsDir, "failure-case");
-  const decisionJson = JSON.parse(fs.readFileSync(path.join(runDir, "final_decision.json"), "utf-8"));
-  const geminiJson = JSON.parse(fs.readFileSync(path.join(runDir, "gemini_validation.json"), "utf-8"));
-
-  assert(summary.decision === "REJECT", "failure case must reject when no real image exists");
-  assert(summary.status === "FAIL", "failure case must fail when no real image exists");
-  assert(summary.final_decision_reason === "REJECT: no real image on disk", "failure case should record no-image reason");
-  assert(summary.registry_write === false, "failure case must not write official registry");
-  assert(Array.isArray(summary.output_files) && summary.output_files.length === 0, "failure case must not populate output_files");
-  assert(!fs.existsSync(path.join(runDir, "output.png")), "failure case must not create fake output.png");
-  assert(summary.gemini_pass_fail === "FAIL", "failure case should surface Gemini failure state");
-  assert(geminiJson.error === "GEMINI_IMAGE_READ_FAILED", "failure case Gemini artifact should record image read failure");
-  assert(decisionJson.decision === "REJECT", "final_decision must reject when image missing");
-  assert(decisionJson.status === "FAIL", "final_decision must fail when image missing");
+  assert(failureCaseError !== null, "failure case must throw when render produces no output file");
+  assert(
+    failureCaseError && failureCaseError.message.includes("EARLY_INVARIANT"),
+    "failure case throw must be an EARLY_INVARIANT guard"
+  );
+  assert(
+    failureCaseError && /no output file/i.test(failureCaseError.message),
+    "failure case EARLY_INVARIANT must mention 'no output file'"
+  );
 }
 
 async function runCanonFailCase() {
@@ -963,6 +971,100 @@ async function runAutoPrecheckRejectCase() {
   assert(decisionJson.failed_rules.includes("GEMINI_PRECHECK_REJECT"), "final decision must record precheck rejection");
 }
 
+// =============================================================================
+// REGRESSION TESTS — SHOT_TYPE FALLBACK REMOVAL (resolveShotType / validateCanonPromptPackage)
+//
+// These tests guard against re-introduction of the || positivePrompt fallback
+// that caused prompt text containing "blade" or "ceramic" to be misclassified
+// as a shot_type key, triggering WEAPON_MACRO for non-weapon jobs.
+// =============================================================================
+
+/**
+ * Test A: Missing shot_type + prompt contains "zenith blade"
+ * → resolveShotType must return ENTITY_MEDIUM, NOT WEAPON_MACRO
+ * → validateCanonPromptPackage must NOT enter WEAPON_MACRO branch
+ */
+function runShotTypeRegressionA() {
+  const { resolveShotType, validateCanonPromptPackage, loadCanonV2, DEFAULT_CANON_PATHS } = require("./control/canon_v2_control");
+
+  // No shot_type anywhere in structured fields
+  const job = { job_id: "regression-a", user_idea: "test" };
+  const spec = { subject: "Mikage Zenith mask, ceramic porcelain" };
+  const resolved = resolveShotType(job, spec, null, null);
+
+  assert(resolved === "ENTITY_MEDIUM", "Test A: missing shot_type + 'zenith blade' prompt → must resolve ENTITY_MEDIUM, not WEAPON_MACRO");
+
+  // Confirm validateCanonPromptPackage with "blade" in positivePrompt does NOT enter WEAPON_MACRO
+  // when no structured shot_type is set — it should use ENTITY_MEDIUM and NOT flag ceramic as forbidden
+  const canon = loadCanonV2();
+  const result = validateCanonPromptPackage(
+    spec,
+    "Mikage Zenith, zenith blade, ceramic porcelain mask",
+    "human face, anime",
+    canon,
+    resolved  // pass resolved ENTITY_MEDIUM explicitly
+  );
+
+  assert(
+    !Array.isArray(result.critical_failures) || result.critical_failures.length === 0,
+    "Test A: ENTITY_MEDIUM shot_type must NOT flag 'ceramic' as a critical failure"
+  );
+}
+
+/**
+ * Test B: Explicit shot_type=WEAPON_MACRO + prompt has ceramic/mask terms
+ * → WEAPON_MACRO branch runs, ceramic IS flagged as critical failure
+ */
+function runShotTypeRegressionB() {
+  const { resolveShotType, validateCanonPromptPackage, loadCanonV2 } = require("./control/canon_v2_control");
+
+  const job = { job_id: "regression-b", shot_type: "WEAPON_MACRO" };
+  const spec = { subject: "Mikage Zenith zenith blade, dark titanium" };
+  const resolved = resolveShotType(job, spec, null, null);
+
+  assert(resolved === "WEAPON_MACRO", "Test B: explicit job.shot_type=WEAPON_MACRO must resolve WEAPON_MACRO");
+
+  const canon = loadCanonV2();
+  const result = validateCanonPromptPackage(
+    spec,
+    "zenith blade, ceramic porcelain mask, cybernetic helmet",
+    "anime, chibi",
+    canon,
+    resolved
+  );
+
+  assert(
+    Array.isArray(result.critical_failures) && result.critical_failures.length > 0,
+    "Test B: WEAPON_MACRO + ceramic in prompt → critical_failures must be non-empty"
+  );
+}
+
+/**
+ * Test C: Explicit shot_type=ENTITY_MEDIUM + prompt has "blade"
+ * → stays ENTITY_MEDIUM regardless of "blade" text in prompt
+ */
+function runShotTypeRegressionC() {
+  const { resolveShotType } = require("./control/canon_v2_control");
+
+  const job = { job_id: "regression-c" };
+  const spec = { shot_type: "ENTITY_MEDIUM", subject: "Mikage Zenith mask" };
+  const resolved = resolveShotType(job, spec, null, null);
+
+  assert(resolved === "ENTITY_MEDIUM", "Test C: spec.shot_type=ENTITY_MEDIUM must stay ENTITY_MEDIUM even if prompt has 'blade'");
+}
+
+/**
+ * Test D: Missing shot_type everywhere → defaults to ENTITY_MEDIUM (not a crash, not WEAPON_MACRO)
+ */
+function runShotTypeRegressionD() {
+  const { resolveShotType } = require("./control/canon_v2_control");
+
+  const resolved = resolveShotType(null, null, null, null);
+
+  assert(resolved === "ENTITY_MEDIUM", "Test D: all-null inputs → resolveShotType must return ENTITY_MEDIUM default");
+  assert(typeof resolved === "string", "Test D: resolveShotType must always return a string");
+}
+
 (async () => {
   try {
     await runSuccessCase();
@@ -974,6 +1076,12 @@ async function runAutoPrecheckRejectCase() {
     await runGeminiInvalidJsonCase();
     await runBaselineCase();
     await runAutoPrecheckRejectCase();
+
+    // Regression tests — shot_type fallback removal
+    runShotTypeRegressionA();
+    runShotTypeRegressionB();
+    runShotTypeRegressionC();
+    runShotTypeRegressionD();
 
     console.log(`${passed} passed, ${failed} failed`);
     process.exit(failed > 0 ? 1 : 0);

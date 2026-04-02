@@ -1,0 +1,9 @@
+CERAMIC SPEC MISSING — WILL FAIL GEMINI: prompt must include 'boron carbide (B4C)' and 'micro-pitted' tokens
+
+Error: CERAMIC SPEC MISSING — WILL FAIL GEMINI: prompt must include 'boron carbide (B4C)' and 'micro-pitted' tokens
+    at applyColorCanonToSpec (D:\KAGAMI-MZ\color_rules.js:271:13)
+    at buildMaterialPromptPackage (D:\KAGAMI-MZ\claude_spec_bridge.js:141:10)
+    at buildPromptPackageFromIntake (D:\KAGAMI-MZ\claude_spec_bridge.js:595:12)
+    at runStrictImageLoop (D:\KAGAMI-MZ\strict_image_loop.js:173:27)
+    at runProof (D:\KAGAMI-MZ\run_strict_loop_proof.js:150:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

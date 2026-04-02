@@ -1,0 +1,33 @@
+{
+  "rag_executed": true,
+  "query_used": "mask porcelain kitsune mask porcelain",
+  "retriever_mode": "mock",
+  "real_vertex_verified": false,
+  "retrieval_success": true,
+  "fallback_used": true,
+  "error": "vertex_sdk_not_installed",
+  "chunks_returned": 2,
+  "sources": [
+    {
+      "id": "mock_chunk_1",
+      "title": "final_decision.json",
+      "uri": "runs/previous_run/final_decision.json",
+      "score": 0.92
+    },
+    {
+      "id": "mock_chunk_2",
+      "title": "STRUCTURED_RULES.json",
+      "uri": "canon/STRUCTURED_RULES.json",
+      "score": 0.87
+    }
+  ],
+  "credential_status": {
+    "credentials_file_present": true,
+    "credentials_env_present": false,
+    "credentials_file_readable": true,
+    "service_account_json_parse_ok": true,
+    "project_id_present": true,
+    "datastore_config_present": true
+  },
+  "duration": 0.0
+}

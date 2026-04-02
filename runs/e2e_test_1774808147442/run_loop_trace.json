@@ -1,0 +1,52 @@
+[
+  {
+    "attempt": 1,
+    "phase": "material_study",
+    "shot_type": "MATERIAL_MACRO",
+    "render_ok": true,
+    "output_exists": true,
+    "validator_executed": true,
+    "gemini_validation_executed": true,
+    "render_profile": "TEST_MODE",
+    "width": 1024,
+    "height": 1024,
+    "steps": 20,
+    "requested_steps": 16,
+    "actual_steps_source": "response",
+    "size_truth_source": "png_pixels",
+    "actual_file_size": "1024x1024",
+    "telemetry_warnings": [
+      "SIZE_MISMATCH"
+    ],
+    "refiner_enabled": false,
+    "render_duration_seconds": 275.78,
+    "decision": "FAIL",
+    "fail_rules": [
+      "T3",
+      "T5",
+      "T7",
+      "T9",
+      "T12",
+      "C3",
+      "C4",
+      "abstract composition",
+      "texture-only frame",
+      "manufactured object not readable",
+      "COLOR_NEON_DRIFT",
+      "OVERSATURATION_DRIFT",
+      "PLASTIC_COLOR_DRIFT",
+      "toy-like finish",
+      "zero glossy/plastic/toy feel",
+      "porcelain-white #FAFAFA",
+      "matte B4C technical ceramic",
+      "low saturation, shadow-heavy palette",
+      "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field"
+    ],
+    "recovery_tags": [
+      "ABSTRACT_FRAME",
+      "NO_MANUFACTURED_OBJECT_READ"
+    ],
+    "subject_recovery_mode_active": true,
+    "primary_failure": "abstract composition"
+  }
+]

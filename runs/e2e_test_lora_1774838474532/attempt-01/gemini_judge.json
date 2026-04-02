@@ -1,0 +1,42 @@
+{
+  "pass_fail": "FAIL",
+  "fail_rules": [
+    "If the image reads as abstract, atmosphere-first, texture-only, or subjectless, it must FAIL.",
+    "If the image does not read as a manufactured object immediately, it must FAIL.",
+    "COLOR_NEON_DRIFT",
+    "OVERSATURATION_DRIFT",
+    "CRIMSON_OVERUSE",
+    "If the ceramic read turns glossy, plastic, PVC-like, or toy-like, it must FAIL."
+  ],
+  "material_read": "Abstract digital pattern, fragmented texture, woven digital threads",
+  "correct_reads": [],
+  "wrong_reads": [
+    "porcelain-white #FAFAFA",
+    "matte B4C technical ceramic",
+    "dry, dense, engineered read",
+    "ultra-controlled eggshell microtexture",
+    "sparse fine hairline cracking",
+    "subtractive mineral color logic",
+    "low saturation, shadow-heavy palette",
+    "bokashi non-linear gradient",
+    "matte-first material-color match",
+    "clear manufactured object read with contour evidence such as edge, rim, bevel, seam, or curvature",
+    "material clearly belongs to one manufactured object, not a wall, slab, or floating texture field",
+    "zero glossy/plastic/toy feel",
+    "zero plaster/mineral/carved stone resemblance",
+    "commercial material readability is immediate"
+  ],
+  "severity": "HIGH",
+  "fix_direction": [
+    "Introduce a clear, recognizable manufactured object with defined contours and form.",
+    "Drastically reduce saturation and shift the color palette towards a porcelain-white (#FAFAFA) base.",
+    "Eliminate all neon and oversaturated colors, particularly the bright reds and cyans.",
+    "Develop a matte, dry, dense ceramic material read with an ultra-controlled eggshell microtexture.",
+    "Remove the abstract, fragmented, and woven digital pattern; focus on a single, cohesive object material."
+  ],
+  "summary": "The image is an abstract, highly saturated digital pattern with no discernible manufactured object. The material does not resemble matte white ceramic and exhibits strong neon color drift, oversaturation, and crimson overuse, leading to a complete failure on all primary criteria.",
+  "gemini_validation_executed": true,
+  "parse_ok": true,
+  "model": "gemini-2.5-flash",
+  "error": null
+}

@@ -1,0 +1,14 @@
+{
+  "subject": "porcelain kitsune mask",
+  "material": "matte white ceramic with micro-pitted boron carbide (B4C) surface and subtle grain",
+  "color_accent": "thin crimson #E60000 seam only at crack lines, no glow, no spread",
+  "background": "obsidian #0A0A0A",
+  "lighting": "strong chiaroscuro, 70% shadow dominant (~4:1 ratio)",
+  "mood": "low energy, high control",
+  "canon_flags": [
+    "Background color adjusted to MIKAGE canon obsidian #0A0A0A from brief's sumi black #252321."
+  ],
+  "prompt_seed": "(porcelain kitsune mask, centered, full object, clearly visible, product photography, studio shot:1.6), (clear single subject, fully in frame, not cropped:1.5), (hard-surface industrial design, sharp edges, planar geometry:1.4), matte white ceramic, boron carbide B4C, micro-pitted surface, subtle grain (low intensity:1.1), thin crimson #E60000 seam only at crack lines, no glow, no spread, strong chiaroscuro lighting, 70 percent shadow, obsidian #0A0A0A background",
+  "negative_hints": "abstract texture, background pattern, noise image, grain-only, material close-up, empty frame, human eyes, facial expression, neon RGB, cyberpunk, abstract frame",
+  "confidence": 0.95
+}

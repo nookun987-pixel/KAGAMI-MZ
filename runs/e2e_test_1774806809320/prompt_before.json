@@ -1,0 +1,164 @@
+{
+  "job_id": "e2e_test_1774806809320",
+  "phase_target": "material_study",
+  "structured_prompt": "PRODUCT PHOTOGRAPHY - SINGLE OBJECT\nOne shallow ceramic dish, 15cm diameter, circular with raised rim, matte B4C technical ceramic. Centered in frame, fully visible, immediately readable as manufactured tableware.\n\nOBJECT DEFINITION\nSingle engineered ceramic dish with distinct rim, concave bowl surface, and circular outer edge. Full object silhouette clearly defined against background. No ambiguity, no abstract pattern, no wall texture.\n\nCOMPOSITION\nProduct photography framing. Object centered, 70% of frame. Full silhouette visible from rim to base. Clean separation from background. Shot from 30-degree elevated angle showing dish interior and rim profile.\n\nMATERIAL\nMatte B4C technical ceramic, porcelain-white #FAFAFA. Subtle eggshell texture visible on curved surface. Zero gloss, zero specular highlights. Cold industrial ceramic read. Non-plastic, non-PVC, non-toy material.\n\nLIGHTING\nLow-key studio lighting. Directional light creating defining shadow on one side. Highlights rim curvature and bowl depth. No ambient wash, no magenta, no neon.\n\nBACKGROUND\nMinimal dark concrete surface, out of focus secondary to subject.\n\nCOLOR\nSubtractive mineral palette. Low saturation. Shadow-dominant 70%. Warm off-white ceramic with subtle temperature variation in shadows.\n\nQUALITY\nCommercial product photography. 8K detail. Industrial design aesthetic. Crisp readable object.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+  "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture",
+  "render_spec": {
+    "shot_type": "macro_material_study",
+    "lighting": "low_key_grazing",
+    "background": "minimal_brutalist",
+    "priority": "material_readability",
+    "width": 512,
+    "height": 512,
+    "performance": "Speed"
+  },
+  "scope_lock": [
+    "material_only"
+  ],
+  "do_not_touch": [
+    "mask",
+    "identity",
+    "weapon",
+    "silhouette"
+  ],
+  "intake_summary": "Focus on a single, perfectly engineered boron carbide ceramic sphere with a matte porcelain finish. Ensure a clean, dry, dense, and engineered material read, explicitly avoiding any plastic, glossy, or natural stone appearances. The object must be clearly visible, centered, and unambiguous, set against a minimal brutalist concrete background with strict chiaroscuro lighting. Maintain a material-only scope while preserving the manufactured object's identity.",
+  "locked_prompt_package": {
+    "subject": "Mikage Zenith, matte B4C technical ceramic, porcelain white, silent disciplined material study",
+    "texture": [
+      "Faceless white cybernetic helmet",
+      "Long, straight, heavy black hair flowing naturally",
+      "matte B4C technical ceramic",
+      "porcelain white",
+      "eggshell microtexture",
+      "subtle hairline fractures",
+      "matte black graphene reference",
+      "void black optical sensors",
+      "Zenith Blade",
+      "subtractive mineral color logic",
+      "matte-first material response"
+    ],
+    "lighting": [
+      "low-key cinematic",
+      "no ambient color wash",
+      "no magenta spill",
+      "no neon",
+      "shadow-dominant composition (70%)",
+      "low saturation, no neon",
+      "bokashi gradient, non-linear"
+    ],
+    "composition_rules": [
+      "macro close-up",
+      "clean negative space",
+      "premium commercial readability",
+      "brutalist minimal concrete surface",
+      "no flat color, always material texture variation",
+      "form then material then color"
+    ],
+    "prompt": "PRODUCT PHOTOGRAPHY - SINGLE OBJECT\nOne shallow ceramic dish, 15cm diameter, circular with raised rim, matte B4C technical ceramic. Centered in frame, fully visible, immediately readable as manufactured tableware.\n\nOBJECT DEFINITION\nSingle engineered ceramic dish with distinct rim, concave bowl surface, and circular outer edge. Full object silhouette clearly defined against background. No ambiguity, no abstract pattern, no wall texture.\n\nCOMPOSITION\nProduct photography framing. Object centered, 70% of frame. Full silhouette visible from rim to base. Clean separation from background. Shot from 30-degree elevated angle showing dish interior and rim profile.\n\nMATERIAL\nMatte B4C technical ceramic, porcelain-white #FAFAFA. Subtle eggshell texture visible on curved surface. Zero gloss, zero specular highlights. Cold industrial ceramic read. Non-plastic, non-PVC, non-toy material.\n\nLIGHTING\nLow-key studio lighting. Directional light creating defining shadow on one side. Highlights rim curvature and bowl depth. No ambient wash, no magenta, no neon.\n\nBACKGROUND\nMinimal dark concrete surface, out of focus secondary to subject.\n\nCOLOR\nSubtractive mineral palette. Low saturation. Shadow-dominant 70%. Warm off-white ceramic with subtle temperature variation in shadows.\n\nQUALITY\nCommercial product photography. 8K detail. Industrial design aesthetic. Crisp readable object.",
+    "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture"
+  },
+  "positivePrompt": "PRODUCT PHOTOGRAPHY - SINGLE OBJECT\nOne shallow ceramic dish, 15cm diameter, circular with raised rim, matte B4C technical ceramic. Centered in frame, fully visible, immediately readable as manufactured tableware.\n\nOBJECT DEFINITION\nSingle engineered ceramic dish with distinct rim, concave bowl surface, and circular outer edge. Full object silhouette clearly defined against background. No ambiguity, no abstract pattern, no wall texture.\n\nCOMPOSITION\nProduct photography framing. Object centered, 70% of frame. Full silhouette visible from rim to base. Clean separation from background. Shot from 30-degree elevated angle showing dish interior and rim profile.\n\nMATERIAL\nMatte B4C technical ceramic, porcelain-white #FAFAFA. Subtle eggshell texture visible on curved surface. Zero gloss, zero specular highlights. Cold industrial ceramic read. Non-plastic, non-PVC, non-toy material.\n\nLIGHTING\nLow-key studio lighting. Directional light creating defining shadow on one side. Highlights rim curvature and bowl depth. No ambient wash, no magenta, no neon.\n\nBACKGROUND\nMinimal dark concrete surface, out of focus secondary to subject.\n\nCOLOR\nSubtractive mineral palette. Low saturation. Shadow-dominant 70%. Warm off-white ceramic with subtle temperature variation in shadows.\n\nQUALITY\nCommercial product photography. 8K detail. Industrial design aesthetic. Crisp readable object.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+  "negativePrompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture",
+  "spec": {
+    "texture": [
+      "subtractive mineral color logic",
+      "matte-first material response"
+    ],
+    "lighting": [
+      "shadow-dominant composition (70%)",
+      "low saturation, no neon",
+      "bokashi gradient, non-linear"
+    ],
+    "composition_rules": [
+      "no flat color, always material texture variation",
+      "form then material then color"
+    ],
+    "negative_prompt": [
+      "neon",
+      "neon rgb",
+      "oversaturation",
+      "pure white",
+      "pure black",
+      "rgb clean plastic color",
+      "magenta synthetic",
+      "flat color no texture",
+      "plastic color drift",
+      "crimson overuse",
+      "full-frame red wash",
+      "#FFFFFF",
+      "#000000",
+      "#FF0000",
+      "#FF2D55",
+      "#FF00FF",
+      "#FFD700",
+      "#FFA500",
+      "neon_rgb",
+      "plastic_rgb_clean",
+      "pure_white",
+      "pure_black",
+      "magenta_synthetic",
+      "flat_color_no_texture"
+    ]
+  },
+  "payload": {
+    "prompt": "PRODUCT PHOTOGRAPHY - SINGLE OBJECT\nOne shallow ceramic dish, 15cm diameter, circular with raised rim, matte B4C technical ceramic. Centered in frame, fully visible, immediately readable as manufactured tableware.\n\nOBJECT DEFINITION\nSingle engineered ceramic dish with distinct rim, concave bowl surface, and circular outer edge. Full object silhouette clearly defined against background. No ambiguity, no abstract pattern, no wall texture.\n\nCOMPOSITION\nProduct photography framing. Object centered, 70% of frame. Full silhouette visible from rim to base. Clean separation from background. Shot from 30-degree elevated angle showing dish interior and rim profile.\n\nMATERIAL\nMatte B4C technical ceramic, porcelain-white #FAFAFA. Subtle eggshell texture visible on curved surface. Zero gloss, zero specular highlights. Cold industrial ceramic read. Non-plastic, non-PVC, non-toy material.\n\nLIGHTING\nLow-key studio lighting. Directional light creating defining shadow on one side. Highlights rim curvature and bowl depth. No ambient wash, no magenta, no neon.\n\nBACKGROUND\nMinimal dark concrete surface, out of focus secondary to subject.\n\nCOLOR\nSubtractive mineral palette. Low saturation. Shadow-dominant 70%. Warm off-white ceramic with subtle temperature variation in shadows.\n\nQUALITY\nCommercial product photography. 8K detail. Industrial design aesthetic. Crisp readable object.\n\nCOLOR\nsubtractive mineral color logic\ncolor must follow form then material, never override them\nlow saturation, no neon\nmatte-first material response\nshadow-dominant composition (70%)\nbokashi gradient, non-linear\nno flat color, always material texture variation\ndiffuse highlights, not specular\npure white and pure black are forbidden\nplastic-clean RGB color is forbidden\nceramic off-white must stay warm and broken, never sterile pure white\ncharcoal black must keep temperature variation, never dead pure black\nrestrained crimson only in seams, cores, or controlled heat accents\nmuted earth support only, low saturation material support tones\nshadow_anchor_sumi_iro\nhighlight_anchor_gofun\ncrimson_seam_if_applicable",
+    "negative_prompt": "abstract composition, texture-only frame, pattern without object, background dominates, no clear subject, fragmented composition, decorative texture, material swatch, abstract art, wall texture, slab surface, floating texture, pattern-first, atmospheric-only, no object, surface-only, macro without context, mosaic, rough masonry, porous stone, plaster, gypsum, chalk, concrete dust, mineral banding, layered erosion, plastic, glossy, shiny, PVC, toy-like, anime, cyberpunk, vibrant colors, neon, glitter, metal, glass, wet, smooth skin, low quality, blurry, watermark, text, messy background, oversaturated, specular highlights, ambient color wash, magenta spill, carved stone, sculpted surface, neon rgb, oversaturation, pure white, pure black, rgb clean plastic color, magenta synthetic, flat color no texture, plastic color drift, crimson overuse, full-frame red wash, #FFFFFF, #000000, #FF0000, #FF2D55, #FF00FF, #FFD700, #FFA500, neon_rgb, plastic_rgb_clean, pure_white, pure_black, magenta_synthetic, flat_color_no_texture"
+  },
+  "color_canon_applied": true,
+  "palette_used": [
+    "ceramic_off_white",
+    "charcoal_black",
+    "restrained_crimson",
+    "muted_earth"
+  ],
+  "color_constraints": [
+    "subtractive mineral color logic",
+    "color must follow form then material, never override them",
+    "low saturation, no neon",
+    "matte-first material response",
+    "shadow-dominant composition (70%)",
+    "bokashi gradient, non-linear",
+    "no flat color, always material texture variation",
+    "diffuse highlights, not specular",
+    "pure white and pure black are forbidden",
+    "plastic-clean RGB color is forbidden",
+    "ceramic off-white must stay warm and broken, never sterile pure white",
+    "charcoal black must keep temperature variation, never dead pure black",
+    "restrained crimson only in seams, cores, or controlled heat accents",
+    "muted earth support only, low saturation material support tones",
+    "shadow_anchor_sumi_iro",
+    "highlight_anchor_gofun",
+    "crimson_seam_if_applicable"
+  ],
+  "color_negative": [
+    "neon",
+    "neon rgb",
+    "oversaturation",
+    "pure white",
+    "pure black",
+    "rgb clean plastic color",
+    "magenta synthetic",
+    "flat color no texture",
+    "plastic color drift",
+    "crimson overuse",
+    "full-frame red wash",
+    "#FFFFFF",
+    "#000000",
+    "#FF0000",
+    "#FF2D55",
+    "#FF00FF",
+    "#FFD700",
+    "#FFA500",
+    "neon_rgb",
+    "plastic_rgb_clean",
+    "pure_white",
+    "pure_black",
+    "magenta_synthetic",
+    "flat_color_no_texture"
+  ],
+  "color_priority_order": [
+    "form",
+    "material",
+    "color"
+  ]
+}

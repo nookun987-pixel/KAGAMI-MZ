@@ -1,0 +1,12 @@
+{
+  "subject": "engineered B4C ceramic kitsune mask, centered front view",
+  "material": "ceramic/porcelain, matte, micro-pitted surface",
+  "color_accent": "faint deep crimson microfracture seams, internal only, no surface paint",
+  "background": "obsidian",
+  "lighting": "chiaroscuro ~4:1, shadow dominant",
+  "mood": "low energy, high control",
+  "canon_flags": [],
+  "prompt_seed": "engineered B4C ceramic kitsune mask, centered front view, matte porcelain-white, micro-pitted surface, black void eye slits, faint deep crimson microfracture seams (internal only), obsidian background, chiaroscuro lighting, low energy, high control.",
+  "negative_hints": "plastic, gloss, neon, human eyes, facial expression, abstract frame, bloom, painted patterns, decorative red markings, cyberpunk, RGB",
+  "confidence": 1.0
+}
