@@ -19,6 +19,7 @@ def final_gate(image_path: str, pixel_report: dict, job_dir: Path, lane: str = "
     path = Path(image_path)
     if not path.exists():
         return {
+            "source_of_truth": "gemini",
             "gemini_executed": False, "gemini_validation_executed": False,
             "parse_ok": False, "pass_fail": "FAIL", "final_decision": "REJECT",
             "error": f"Image not found: {image_path}", "errors": [f"Image not found: {image_path}"],
@@ -79,6 +80,7 @@ Be strict on identity. No drift."""
             log.error(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
             _err = f"Gemini HTTP {r.status_code}"
             return {
+                "source_of_truth": "gemini",
                 "gemini_executed": False, "gemini_validation_executed": False,
                 "parse_ok": False, "pass_fail": "FAIL", "final_decision": "REJECT",
                 "error": _err, "errors": [_err],
@@ -110,6 +112,7 @@ Be strict on identity. No drift."""
         except json.JSONDecodeError as e:
             log.error(f"Gemini invalid JSON: {e}")
             return {
+                "source_of_truth": "gemini",
                 "gemini_executed": True,
                 "gemini_validation_executed": True,
                 "parse_ok": False,
@@ -123,6 +126,7 @@ Be strict on identity. No drift."""
     except Exception as e:
         log.error(f"Gemini gate error: {e}")
         return {
+            "source_of_truth": "gemini",
             "gemini_executed": False,
             "gemini_validation_executed": False,
             "parse_ok": False,

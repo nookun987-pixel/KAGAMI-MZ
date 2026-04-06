@@ -1,0 +1,132 @@
+[
+  {
+    "test_name": "Empty output_files",
+    "expected_reject": true,
+    "actual_reject": true,
+    "hard_rejects": [
+      {
+        "rule": "output_files_empty",
+        "severity": "hard_fail",
+        "reason": "output_files array is empty - no files generated",
+        "evidence": {
+          "output_files": []
+        }
+      },
+      {
+        "rule": "no_output_png_exists",
+        "severity": "hard_fail",
+        "reason": "output.png does not exist in job directory",
+        "evidence": {
+          "job_dir": "test_hard_reject_images",
+          "output_files": []
+        }
+      }
+    ],
+    "final_verdict": "REJECT",
+    "passed": true
+  },
+  {
+    "test_name": "No output.png exists",
+    "expected_reject": true,
+    "actual_reject": true,
+    "hard_rejects": [
+      {
+        "rule": "no_output_png_exists",
+        "severity": "hard_fail",
+        "reason": "output.png does not exist in job directory",
+        "evidence": {
+          "job_dir": "test_hard_reject_images",
+          "output_files": [
+            "some_other_file.png"
+          ]
+        }
+      }
+    ],
+    "final_verdict": "REJECT",
+    "passed": true
+  },
+  {
+    "test_name": "Noise pattern (no silhouette)",
+    "expected_reject": true,
+    "actual_reject": true,
+    "hard_rejects": [
+      {
+        "rule": "texture_only_noise_pattern",
+        "severity": "hard_fail",
+        "reason": "Image is texture-only or noise pattern with no coherent object",
+        "evidence": {
+          "texture_score": 1.0
+        }
+      },
+      {
+        "rule": "material_reads_as_plastic_cgi",
+        "severity": "hard_fail",
+        "reason": "Material reads as plastic/CGI rather than intended material",
+        "evidence": {
+          "material_score": 1.0
+        }
+      }
+    ],
+    "final_verdict": "REJECT",
+    "passed": true
+  },
+  {
+    "test_name": "Texture-only pattern",
+    "expected_reject": true,
+    "actual_reject": true,
+    "hard_rejects": [
+      {
+        "rule": "material_reads_as_plastic_cgi",
+        "severity": "hard_fail",
+        "reason": "Material reads as plastic/CGI rather than intended material",
+        "evidence": {
+          "material_score": 1.0
+        }
+      }
+    ],
+    "final_verdict": "REJECT",
+    "passed": true
+  },
+  {
+    "test_name": "Plastic/CGI material",
+    "expected_reject": true,
+    "actual_reject": true,
+    "hard_rejects": [
+      {
+        "rule": "multiple_disconnected_shapes",
+        "severity": "hard_fail",
+        "reason": "Multiple disconnected shapes detected instead of single coherent object",
+        "evidence": {
+          "shape_count": 3
+        }
+      }
+    ],
+    "final_verdict": "REJECT",
+    "passed": true
+  },
+  {
+    "test_name": "Multiple disconnected shapes",
+    "expected_reject": true,
+    "actual_reject": true,
+    "hard_rejects": [
+      {
+        "rule": "material_reads_as_plastic_cgi",
+        "severity": "hard_fail",
+        "reason": "Material reads as plastic/CGI rather than intended material",
+        "evidence": {
+          "material_score": 1.0
+        }
+      }
+    ],
+    "final_verdict": "REJECT",
+    "passed": true
+  },
+  {
+    "test_name": "Good image (should pass)",
+    "expected_reject": false,
+    "actual_reject": false,
+    "hard_rejects": [],
+    "final_verdict": "ALLOW",
+    "passed": true
+  }
+]

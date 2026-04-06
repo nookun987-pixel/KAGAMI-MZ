@@ -207,9 +207,29 @@ def run_pipeline(brief: str) -> dict:
     return result
 
 
+def _trigger_flow_snapshot():
+    """Non-blocking: generate system visualization snapshot after run finishes."""
+    import subprocess, sys
+    snapshot_script = Path(__file__).resolve().parent.parent / "system_visualization" / "flow_snapshot_writer.py"
+    if snapshot_script.exists():
+        try:
+            subprocess.Popen(
+                [sys.executable, str(snapshot_script)],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+            log.info("[SNAPSHOT] Flow snapshot writer triggered")
+        except Exception as e:
+            log.warning(f"[SNAPSHOT] Failed to trigger snapshot writer: {e}")
+
+
 def save_result(result: dict, job_dir: Path):
     clean = json.loads(json.dumps(result, default=str))
     (job_dir / "report.json").write_text(json.dumps(clean, indent=2))
+    try:
+        _trigger_flow_snapshot()
+    except Exception as e:
+        log.warning(f"[SNAPSHOT] failed to trigger snapshot writer: {e}")
 
 
 def main():

@@ -1,0 +1,8 @@
+{
+  "task_id": "POST_ANCHOR_STABILITY_BATCH_P0",
+  "batch_pass_rate": 1.0,
+  "pass_count": 50,
+  "reject_count": 0,
+  "material_reject_ratio": 0,
+  "manual_check": "FAIL"
+}

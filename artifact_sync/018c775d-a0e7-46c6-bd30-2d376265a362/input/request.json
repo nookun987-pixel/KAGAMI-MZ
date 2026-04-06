@@ -1,0 +1,22 @@
+{
+  "job_id": null,
+  "prompt": "readiness test",
+  "negative_prompt": "",
+  "seed": -1,
+  "width": 1024,
+  "height": 384,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "guidance_scale": 7.0,
+  "steps": -1,
+  "sampler": null,
+  "scheduler": null,
+  "sharpness": 2.0,
+  "base_model": "realvisxlV50_v40Bakedvae.safetensors",
+  "generation_mode": "exploration",
+  "anchor_image_base64": null,
+  "anchor_image_path": null,
+  "dry_run": true,
+  "timeout_seconds": 600
+}

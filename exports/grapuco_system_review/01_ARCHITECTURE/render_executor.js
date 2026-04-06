@@ -585,7 +585,7 @@ async function _submitRenderViaHttp(renderPacket, outputRoot, startMs) {
     sharpness: Number.isFinite(renderPacket.sharpness) ? renderPacket.sharpness : 2.0,
     style_selections: [],
     styles: [],
-    base_model: "realvisxlV50_v40BakedVAE.safetensors",
+    base_model: "realvisxlV50_v40Bakedvae.safetensors",
     image_number: Number.isFinite(renderPacket.image_number) ? renderPacket.image_number : 1,
     async_process: false,
     // Bridge img2img fields (must match TextToImgRequest in fooocus_bridge.py)
@@ -625,7 +625,7 @@ async function _submitRenderViaHttp(renderPacket, outputRoot, startMs) {
   const bodyObject = _applyEffectiveRenderProfile(requestedPayload);
 
   // --- HARD OVERRIDE: Final enforcement before HTTP dispatch ---
-  bodyObject.base_model = "realvisxlV50_v40BakedVAE.safetensors";
+  bodyObject.base_model = "realvisxlV50_v40Bakedvae.safetensors";
   bodyObject.guidance_scale = 4.0;
   bodyObject.styles = [];
   bodyObject.style_selections = [];

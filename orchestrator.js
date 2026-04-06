@@ -25,6 +25,7 @@ const {
   validateCanonPromptPackage,
   resolveShotType,
 } = require("./control/canon_v2_control");
+const { compileCanonPacket, injectCompiledCanonPacket } = require("./canon/canon_rule_compiler");
 const { runAllAnalyzers } = require("./analyzers/run_all_analyzers");
 const { detectDrift } = require("./drift/drift_detector");
 const { runRuleEngine } = require("./validators/mikage_rule_engine");
@@ -33,6 +34,12 @@ const { isVLMAvailable } = require("./analyzers/vlm_semantic_analyzer");
 const { assertPreWriteInvariants, assertCanonRecordIsAllow } = require("./core/invariants");
 const { validate: validateSchema } = require("./core/schema_registry");
 const { createRunTracker, STATES: SM_STATES } = require("./core/run_tracker");
+const { getExecutionLaneMetadata, routeRenderExecution, LOCK_CONFIG } = require("./core/execution_lane_router");
+const { classifyFailure } = require("./training_loop/fail_classifier");
+const { generatePatchPlan } = require("./training_loop/patch_engine");
+const { runABRetest } = require("./training_loop/ab_retest_runner");
+const { writeTrainingCase } = require("./training_loop/training_case_writer");
+const { runObjectDefinitionLane, extractSpecInheritance } = require("./object_definition/object_definition_bridge");
 
 const ROOT_DIR = __dirname;
 const RUNS_DIR = path.resolve(process.env.RUNS_DIR || path.join(ROOT_DIR, "runs"));
@@ -245,6 +252,7 @@ function buildArtifactPaths(runDir) {
     post_validation: path.join(runDir, "post_validation.json"),
     final_decision: path.join(runDir, "final_decision.json"),
     job_summary: path.join(runDir, "job_summary.json"),
+    object_definition: path.join(runDir, "object_definition.json"),
   };
 }
 
@@ -1359,7 +1367,12 @@ function buildPromptPackage(job, canon) {
   }
 
   const baseSpec = buildBaseSpec(job);
-  const spec = applyCanonV2ToSpec(baseSpec, canon);
+  const canonQuery = {
+    lane: normalizeText(job && (job.lane || job.shot_type || (job.strategy && job.strategy.lane) || (job.render && job.render.shot_type) || "")) || null,
+  };
+  const generalizedCanonPacket = compileCanonPacket(canonQuery);
+  const generalizedBaseSpec = injectCompiledCanonPacket(baseSpec, generalizedCanonPacket);
+  const spec = applyCanonV2ToSpec(generalizedBaseSpec, canon);
   const materialLock = [
     "matte B4C technical ceramic",
     "eggshell microtexture",
@@ -1457,6 +1470,7 @@ function buildPromptPackage(job, canon) {
       canon_version: canon.canonVersion,
       source_files: canon.paths,
       generated_at: nowIso(),
+      generalized_canon_packet: generalizedCanonPacket,
     },
   };
 
@@ -2474,6 +2488,15 @@ function buildClosedLoopDecision({
     attempt_count: attemptCount,
     artifact_paths: artifactPaths,
     run_loop_trace: trace,
+    execution_lane: job.__execution_lane || "google",
+    executor_type: job.__executor_type || "imagen_api",
+    execution_lane_status: "PRODUCTION",
+    execution_runner: job.__execution_runner || "colab",
+    runner_status: job.__runner_status || "PRIMARY",
+    render_model: job.__render_model || "imagen-3.0-generate-001",
+    render_location: job.__render_location || "us-central1",
+    execution_lane_locked: true,
+    execution_lane_lock_version: LOCK_CONFIG?.lock_version || "1.1.0",
     timestamps: {
       decided_at: nowIso(),
     },
@@ -2558,6 +2581,15 @@ function buildClosedLoopDecision({
     post_validation_result: localValidation || null,
     gemini_validation_result: geminiValidation || null,
     final_decision_source: "closed_loop_gemini_post_render",
+    execution_lane: finalDecision.execution_lane,
+    executor_type: finalDecision.executor_type,
+    execution_lane_status: finalDecision.execution_lane_status,
+    execution_runner: finalDecision.execution_runner,
+    runner_status: finalDecision.runner_status,
+    render_model: finalDecision.render_model,
+    render_location: finalDecision.render_location,
+    execution_lane_locked: finalDecision.execution_lane_locked,
+    execution_lane_lock_version: finalDecision.execution_lane_lock_version,
   };
 
   return { finalDecision, summary };
@@ -2607,6 +2639,11 @@ function buildSummaryText(finalDecision, geminiValidation) {
     `gemini_validation_executed: ${finalDecision.gemini_validation_executed}`,
     `gemini_pass_fail: ${finalDecision.gemini_pass_fail || "null"}`,
     `render_profile: ${latestTrace ? latestTrace.render_profile : "DEFAULT"}`,
+    `execution_lane: ${finalDecision.execution_lane || "google"}`,
+    `executor_type: ${finalDecision.executor_type || "imagen_api"}`,
+    `execution_runner: ${finalDecision.execution_runner || "colab"}`,
+    `runner_status: ${finalDecision.runner_status || "PRIMARY"}`,
+    `execution_lane_status: ${finalDecision.execution_lane_status || "PRODUCTION"}`,
     `width: ${latestTrace ? latestTrace.width : "n/a"}`,
     `height: ${latestTrace ? latestTrace.height : "n/a"}`,
     `requested_steps: ${latestTrace ? latestTrace.requested_steps : "n/a"}`,
@@ -2909,11 +2946,138 @@ async function runHealthCheck() {
   };
 }
 
+// ---------------------------------------------------------------------------
+// TRAINING LOOP V1 — REJECT PATH HOOK
+// Triggers ONLY on verified REJECT with real output image.
+// Never modifies the main finalDecision. Wrapped in try/catch for safety.
+// ---------------------------------------------------------------------------
+
+function extractValidationSignalsForTrainingLoop(postValidation) {
+  if (!postValidation) return {};
+  const signals = postValidation.analyzer_signals || {};
+  const failedRules = (postValidation.rule_engine && postValidation.rule_engine.failed_rules) || [];
+  const failedChecks = postValidation.failed_checks || [];
+  const forbiddenHits = postValidation.forbidden_hits || [];
+  const allFails = [...failedRules, ...failedChecks, ...forbiddenHits].map(s => String(s).toLowerCase());
+
+  // Map raw analyzer signals to training loop format
+  return {
+    silhouette_clear: signals.mesh_deformation_delta === 0 && signals.boundary_intersection === 0
+      ? true
+      : (signals.mesh_deformation_delta > 0 || signals.boundary_intersection > 0 ? false : undefined),
+    plastic_read: typeof signals.pvc_plastic_read === "number"
+      ? signals.pvc_plastic_read >= 0.5
+      : allFails.some(f => f.includes("plastic") || f.includes("pvc")),
+    texture_only: allFails.some(f => f.includes("texture_only")),
+    object_count: allFails.some(f => f.includes("multi_object") || f.includes("disconnected")) ? 2 : 1,
+    eyes_visible: typeof signals.human_eyes_detected === "number"
+      ? signals.human_eyes_detected >= 0.5
+      : allFails.some(f => f.includes("eyes") || f.includes("human_eyes")),
+  };
+}
+
+function runTrainingLoopOnReject(jobId, runDir, finalDecision, postValidation, outputFilePath, job) {
+  const trainingLoopArtifactPath = path.join(runDir, "training_loop_result.json");
+
+  // --- GATE: Check all trigger conditions ---
+  const isReject = finalDecision && (finalDecision.decision === "REJECT" || finalDecision.status === "FAIL");
+  const validatorExecuted = !!(postValidation && postValidation.validator_executed === true);
+  const hasOutputFiles = !!(finalDecision && finalDecision.output_files && finalDecision.output_files.length > 0);
+  const hasRealImage = !!(outputFilePath && fs.existsSync(outputFilePath));
+
+  if (!isReject) {
+    writeJson(trainingLoopArtifactPath, { job_id: jobId, triggered: false, skipped_reason: "final_decision_not_reject", timestamp: nowIso() });
+    return;
+  }
+  if (!validatorExecuted) {
+    console.log(`[TRAINING_LOOP] skipped: validator_not_executed for job ${jobId}`);
+    writeJson(trainingLoopArtifactPath, { job_id: jobId, triggered: false, skipped_reason: "validator_not_executed", timestamp: nowIso() });
+    return;
+  }
+  if (!hasOutputFiles) {
+    console.log(`[TRAINING_LOOP] skipped: no_output_png for job ${jobId}`);
+    writeJson(trainingLoopArtifactPath, { job_id: jobId, triggered: false, skipped_reason: "no_output_png", timestamp: nowIso() });
+    return;
+  }
+  if (!hasRealImage) {
+    console.log(`[TRAINING_LOOP] skipped: no_real_image for job ${jobId}`);
+    writeJson(trainingLoopArtifactPath, { job_id: jobId, triggered: false, skipped_reason: "no_real_image", timestamp: nowIso() });
+    return;
+  }
+
+  // --- All conditions met: run training loop ---
+  try {
+    console.log(`[TRAINING_LOOP] triggered for REJECT job: ${jobId}`);
+
+    // Step 1: Extract signals and classify
+    const validationSignals = extractValidationSignalsForTrainingLoop(postValidation);
+    const failureAnalysis = classifyFailure(validationSignals, finalDecision);
+    console.log(`[TRAINING_LOOP] failure_class: ${JSON.stringify(failureAnalysis.failure_class)}`);
+
+    // Step 2: Generate patch plan
+    const patchPlan = generatePatchPlan(failureAnalysis.failure_class);
+    console.log(`[TRAINING_LOOP] patch actions: ${JSON.stringify(patchPlan.actions)}`);
+
+    // Step 3: Mock A/B retest
+    const jobForRetest = { ...job, failure_class: failureAnalysis.failure_class };
+    const abResult = runABRetest(jobForRetest, patchPlan);
+    console.log(`[TRAINING_LOOP] ab improved: ${abResult.delta.improved}`);
+
+    // Step 4: Write training case to memory
+    writeTrainingCase({
+      job_id: jobId,
+      failure_class: failureAnalysis.failure_class,
+      patch_plan: patchPlan,
+      ab_result: abResult,
+    });
+    console.log(`[TRAINING_LOOP] case written`);
+
+    // Step 5: Write artifact
+    writeJson(trainingLoopArtifactPath, {
+      job_id: jobId,
+      triggered: true,
+      failure_analysis: {
+        failure_class: failureAnalysis.failure_class,
+        primary_failure: failureAnalysis.primary_failure,
+        severity: failureAnalysis.severity,
+      },
+      patch_plan: {
+        patch_targets: patchPlan.patch_targets,
+        actions: patchPlan.actions,
+      },
+      ab_result: abResult,
+      timestamp: nowIso(),
+    });
+
+  } catch (err) {
+    console.warn(`[TRAINING_LOOP][WARN] ${err.message}`);
+    writeJson(trainingLoopArtifactPath, {
+      job_id: jobId,
+      triggered: true,
+      error: err.message,
+      timestamp: nowIso(),
+    });
+  }
+}
+
 async function orchestrateLegacy(job) {
   const canon = loadCanonV2();
   const specVersions = getVersions();
   const runDir = ensureDir(path.join(RUNS_DIR, job.job_id));
   const artifactPaths = buildArtifactPaths(runDir);
+  
+  // --- EXECUTION LANE LOCK: Set Google lane as default ---
+  const laneMetadata = getExecutionLaneMetadata(job);
+  job.__execution_lane = laneMetadata.execution_lane;
+  job.__executor_type = laneMetadata.executor_type;
+  job.__execution_runner = laneMetadata.execution_runner;
+  job.__runner_status = laneMetadata.runner_status;
+  job.__render_model = laneMetadata.render_model;
+  job.__render_location = laneMetadata.render_location;
+  
+  console.log(`[EXECUTION_LANE] Using ${job.__execution_lane} lane (${laneMetadata.execution_lane_status})`);
+  console.log(`[EXECUTION_LANE] Runner: ${job.__execution_runner} (${job.__runner_status})`);
+  
   const continuity = normalizeContinuity(job, canon.canonVersion);
   const baseline = findBaselineRecord(continuity.entity_id);
   const enforceGemini = job.__skip_legacy_gemini !== true;
@@ -3185,6 +3349,9 @@ async function orchestrateLegacy(job) {
   // --- TASK↔RUN SYNC: Sync task status to terminal state ---
   syncTaskStatusToRun(job.job_id, finalDecision.status);
   
+  // --- TRAINING LOOP V1: Hook into reject path ---
+  runTrainingLoopOnReject(job.job_id, runDir, finalDecision, postValidation, outputFile, job);
+  
   return summary;
 }
 
@@ -3315,92 +3482,63 @@ async function orchestrateAutoLoop(job) {
 
   // Query Mikage Brain for relevant context
   const ragQuery = `${intakeRequest.shot_type} ${intakeRequest.generation_mode} ${intakeRequest.user_idea || ''}`;
-  console.log(`[RAG] Query started: ${ragQuery}`);
+  console.log(`[RAG] Querying real Vertex AI: ${ragQuery}`);
   
   const mikageMemoryContext = await getMikageMemoryContext(ragQuery);
   
-  // Create RAG debug artifact
-  const ragDebug = {
-    rag_executed: true,
-    query_used: ragQuery,
-    top_k: 5,
-    chunks_returned: 0,
-    sources: [],
-    error: null,
-    context_preview: "",
-    retriever_mode: getRetrieverMode(),
-    real_vertex_verified: isRealVertexVerified(),
-    cloud_credentials_present: areCloudCredentialsPresent(),
-    context_injected: false,
-    // Credential detection fields for vertex mode
-    credentials_file_present: false,
-    credentials_env_present: false,
-    project_id_present: false,
-    datastore_config_present: false,
-    vertex_client_init_success: false,
-    credential_error: null
+  // Determine retriever status
+  const retrieverMode = getRetrieverMode();
+  const realVertexVerified = isRealVertexVerified();
+  
+  // Create RAG context artifact with required format
+  const ragContextArtifact = {
+    retriever_mode: retrieverMode,
+    real_vertex_verified: realVertexVerified,
+    query: ragQuery,
+    context: mikageMemoryContext || "",
+    chunks: []
   };
+  
+  // Parse chunks from context if available
+  if (mikageMemoryContext) {
+    const lines = mikageMemoryContext.split('\n');
+    const memoryBlocks = lines.filter(line => line.startsWith('[MEMORY'));
+    
+    memoryBlocks.forEach((block, index) => {
+      const blockIndex = lines.indexOf(block);
+      const sourceLine = lines.find((line, i) => line.startsWith('Source:') && i > blockIndex);
+      const contentLines = [];
+      let i = blockIndex + 1;
+      while (i < lines.length && !lines[i].startsWith('[MEMORY') && !lines[i].startsWith('===')) {
+        if (lines[i].startsWith('Content:')) {
+          contentLines.push(lines[i].replace('Content:', '').trim());
+        }
+        i++;
+      }
+      
+      ragContextArtifact.chunks.push({
+        id: `chunk_${index + 1}`,
+        content: contentLines.join(' '),
+        score: 0.0, // Will be populated from actual Vertex response
+        metadata: {
+          source: sourceLine ? sourceLine.replace('Source:', '').trim() : 'unknown'
+        }
+      });
+    });
+    
+    console.log(`[RAG] Retrieved ${ragContextArtifact.chunks.length} chunks from Vertex AI`);
+    console.log(`[RAG] Context injected`);
+  } else {
+    console.warn(`[RAG] No real chunks retrieved`);
+  }
   
   // Inject memory context into intake request
   if (mikageMemoryContext) {
     intakeRequest.mikage_memory_context = mikageMemoryContext;
-    ragDebug.context_injected = true;
-    console.log("[RAG] Injected Mikage memory context into intake");
-    
-    // Parse context for debug info
-    const lines = mikageMemoryContext.split('\n');
-    const memoryBlocks = lines.filter(line => line.startsWith('[MEMORY'));
-    ragDebug.chunks_returned = memoryBlocks.length;
-    ragDebug.context_preview = mikageMemoryContext.substring(0, 1500);
-    
-    // Extract sources
-    memoryBlocks.forEach((block, index) => {
-      const sourceLine = lines.find((line, i) => line.startsWith('Source:') && i > lines.indexOf(block));
-      if (sourceLine) {
-        ragDebug.sources.push({
-          memory_id: index + 1,
-          source: sourceLine.replace('Source:', '').trim()
-        });
-      }
-    });
-    
-    console.log(`[RAG] Retrieved ${ragDebug.chunks_returned} chunks`);
-    
-    // Extract credential detection from context (for real vertex mode)
-    if (ragDebug.retriever_mode === 'vertex') {
-      // Try to extract credential info from the retriever result
-      try {
-        const { queryMikageBrain } = require('./rag/rag_retriever_resolver');
-        const retriever = require('./rag/rag_retriever_resolver');
-        // Note: This is a simplified approach - in a real implementation,
-        // we'd pass the full query result back from the retriever
-      } catch (e) {
-        // Fallback - set basic credential detection
-        ragDebug.credentials_file_present = require('fs').existsSync('service-account-key.json');
-        ragDebug.credentials_env_present = !!(process.env.GOOGLE_APPLICATION_CREDENTIALS || process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
-        ragDebug.project_id_present = true; // Hardcoded in retriever
-        ragDebug.datastore_config_present = true; // Hardcoded in retriever
-        ragDebug.vertex_client_init_success = ragDebug.chunks_returned > 0;
-      }
-    }
-  } else {
-    console.log("[RAG] Fallback path used - no context retrieved");
-    ragDebug.rag_executed = false;
-    ragDebug.error = "No context returned";
-    
-    // For vertex mode, capture credential error
-    if (ragDebug.retriever_mode === 'vertex') {
-      ragDebug.credentials_file_present = require('fs').existsSync('service-account-key.json');
-      ragDebug.credentials_env_present = !!(process.env.GOOGLE_APPLICATION_CREDENTIALS || process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
-      ragDebug.project_id_present = true; // Hardcoded in retriever
-      ragDebug.datastore_config_present = true; // Hardcoded in retriever
-      ragDebug.vertex_client_init_success = false;
-      ragDebug.credential_error = "No context returned from Vertex query";
-    }
   }
   
-  // Write RAG debug artifact
-  writeJson(path.join(artifactPaths.run_dir, "rag_context.json"), ragDebug);
+  // Write RAG context artifact
+  writeJson(path.join(artifactPaths.run_dir, "rag_context.json"), ragContextArtifact);
 
   const geminiIntake = await runGeminiIntake(
     intakeRequest,
@@ -3430,7 +3568,81 @@ async function orchestrateAutoLoop(job) {
   const precheckedIntake = mergeGeminiPrecheckIntake(geminiIntake, geminiPrecheck);
   writeJson(artifactPaths.gemini_intake, precheckedIntake);
 
+  // ── OBJECT DEFINITION LANE (HARD LOCK) ──
+  // Runs between precheck and Claude Spec. If REJECT → hard block run.
+  const rawPromptForObjDef = precheckedIntake.structured_prompt
+    || precheckedIntake.direction_summary
+    || precheckedIntake.prompt
+    || intakeRequest.prompt
+    || intakeRequest.user_idea
+    || job.brief
+    || "";
+  const objDefResult = runObjectDefinitionLane(rawPromptForObjDef, {
+    shot_type: intakeRequest.shot_type || job.shot_type,
+    lane: intakeRequest.lane || job.lane,
+    entity_id: job.entity_id,
+  });
+  writeJson(artifactPaths.object_definition, objDefResult);
+  console.log(`[ORCHESTRATOR] Object Definition: verdict=${objDefResult.verdict}, score=${objDefResult.readability_score}`);
+
+  if (objDefResult.verdict === "REJECT" || objDefResult.verdict === "NORMALIZER_REJECT") {
+    const reason = objDefResult.rejection_reason || "Object definition gate rejected";
+    console.error(`[ORCHESTRATOR] OBJECT_DEFINITION_HARD_REJECT: ${reason}`);
+    const finalDecision = {
+      job_id: job.job_id,
+      status: "FAIL",
+      decision: "REJECT",
+      decision_reason: `OBJECT_DEFINITION_REJECT: ${reason}`,
+      final_decision_reason: `OBJECT_DEFINITION_REJECT: ${reason}`,
+      output_files: [],
+      output_file_path: null,
+      validator_executed: false,
+      gemini_validation_executed: false,
+      gemini_pass_fail: null,
+      gemini_error: null,
+      failed_rules: ["OBJECT_DEFINITION_REJECT", ...objDefResult.fatal_flags],
+      artifact_paths: artifactPaths,
+      continuity,
+      attempt_count: 0,
+      object_definition_verdict: objDefResult.verdict,
+      object_definition_score: objDefResult.readability_score,
+      object_definition_fatal_flags: objDefResult.fatal_flags,
+      dominant_fail_reason: reason,
+    };
+    writeJson(artifactPaths.merged_decision, finalDecision);
+    writeFinalDecision(artifactPaths.final_decision, finalDecision);
+    writeJson(artifactPaths.job_summary, finalDecision);
+    writeText(artifactPaths.summary_txt, finalDecision.decision_reason);
+    updateSharedStateTerminal(job.job_id, finalDecision.decision, finalDecision.status);
+    syncTaskStatusToRun(job.job_id, finalDecision.status);
+    return finalDecision;
+  }
+
+  // Attach object_definition inheritance for Claude Spec consumption
+  const objDefInheritance = objDefResult.object_spec ? extractSpecInheritance(objDefResult.object_spec) : null;
+
   let promptPackage = buildPromptPackageFromIntake(job, intakeRequest, precheckedIntake);
+
+  // ── INJECT OBJECT DEFINITION INTO PROMPT PACKAGE ──
+  // Claude Spec must inherit object_definition locks. No silent drop.
+  if (objDefInheritance) {
+    promptPackage.object_definition_inheritance = objDefInheritance;
+    promptPackage.object_definition_applied = true;
+    // Override prompt with object-definition-compiled prompt when available
+    if (objDefResult.compiled_prompt) {
+      promptPackage.structured_prompt = objDefResult.compiled_prompt;
+      promptPackage.object_definition_prompt_override = true;
+    }
+    if (objDefResult.compiled_negative) {
+      promptPackage.negative_prompt = objDefResult.compiled_negative;
+      promptPackage.object_definition_negative_override = true;
+    }
+    console.log(`[ORCHESTRATOR] Object Definition inheritance injected into prompt_package`);
+  } else {
+    promptPackage.object_definition_inheritance = null;
+    promptPackage.object_definition_applied = false;
+  }
+
   writeJson(artifactPaths.prompt_package, promptPackage);
   writeJson(artifactPaths.prompt_before, promptPackage);
 
@@ -3658,9 +3870,13 @@ async function orchestrateAutoLoop(job) {
   finalDecision.registry_write = registryResult.registry_write;
   finalDecision.registry_target = registryResult.registry_target;
   finalDecision.registry_path = registryResult.registry_path;
+  finalDecision.retriever_mode = retrieverMode;
+  finalDecision.real_vertex_verified = realVertexVerified;
   summary.registry_write = registryResult.registry_write;
   summary.registry_target = registryResult.registry_target;
   summary.registry_path = registryResult.registry_path;
+  summary.retriever_mode = retrieverMode;
+  summary.real_vertex_verified = realVertexVerified;
 
   writeFinalDecision(artifactPaths.final_decision, finalDecision);
   writeJson(artifactPaths.job_summary, summary);
@@ -3676,6 +3892,9 @@ async function orchestrateAutoLoop(job) {
   
   // --- TASK↔RUN SYNC: Sync task status to terminal state ---
   syncTaskStatusToRun(job.job_id, finalDecision.status);
+  
+  // --- TRAINING LOOP V1: Hook into reject path ---
+  runTrainingLoopOnReject(job.job_id, runDir, finalDecision, lastLocalValidation, finalDecision.output_file_path, job);
   
   return summary;
 }

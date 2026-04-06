@@ -1,0 +1,22 @@
+{
+  "job_id": "f32cee43-4aa8-46de-8bd5-af92ad675024",
+  "prompt": "a centered white ceramic kitsune mask, matte boron carbide texture, black background, studio lighting, sharp silhouette, (front-facing kitsune mask:1.5), (symmetrical mask geometry:1.4), (full object visible:1.3), (centered composition:1.3), (clear silhouette:1.3), (distinct eye holes:1.3), (but no visible eyes:1.4), (structured nose ridge:1.3), (structured jawline:1.3), single object only, no background noise, no multi-object, no environment storytelling, object occupies 60-80% frame, clear edges, no fade-out",
+  "negative_prompt": "abstract, texture-only, amorphous, blob, gradient object, organic shape, sculpture blob, noise field, light orb, glow object, energy ball, toy plastic, smooth resin, pvc, cartoon shading",
+  "seed": 12347,
+  "width": 1024,
+  "height": 384,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "guidance_scale": 7.0,
+  "steps": 20,
+  "sampler": null,
+  "scheduler": null,
+  "sharpness": 2.0,
+  "base_model": "realvisxlV50_v40Bakedvae.safetensors",
+  "generation_mode": "exploration",
+  "anchor_image_base64": null,
+  "anchor_image_path": null,
+  "dry_run": false,
+  "timeout_seconds": 200
+}

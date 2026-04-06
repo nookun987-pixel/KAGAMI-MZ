@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-04-04T03:26:15.399472",
+  "task_id": "TASK_35153F35",
+  "task_type": "script_runner",
+  "action": "run_script",
+  "status": "PASS",
+  "evidence": {
+    "command": "python D:/KAGAMI-MZ/test_bridge_direct.py",
+    "working_dir": "D:\\KAGAMI-MZ",
+    "return_code": 0,
+    "execution_time": 30.809488773345947,
+    "stdout": "=== DIRECT BRIDGE TEST ===\nURL: http://127.0.0.1:7865/generate\nPayload: {\n  \"prompt\": \"simple test\",\n  \"negative_prompt\": \"\",\n  \"params\": {\n    \"image_number\": 1,\n    \"guidance_scale\": 7.0,\n    \"sharpness\": 2.0,\n    \"performance\": \"Speed\",\n    \"aspect_ratios\": \"1152\\u00d7896\",\n    \"base_model\": \"realvisxlV50_v40Bakedvae.safetensors\",\n    \"seed\": 1234\n  }\n}\n\nSending request...\nStatus Code: 200\nHeaders: {'date': 'Fri, 03 Apr 2026 20:26:15 GMT', 'server': 'uvicorn', 'content-length': '126', 'content-type': 'application/json'}\n\nResponse JSON:\n{\n  \"success\": false,\n  \"error\": \"WORKER_POP_TIMEOUT: task not picked up in 30s. still_in_queue=True, queue_len=1, worker_alive=True\"\n}\n\nNo 'images' key in response\nAvailable keys: ['success', 'error']\n",
+    "stderr": "",
+    "timeout": 60,
+    "success": true
+  },
+  "failure_reason": "",
+  "execution_time": 30.809488773345947
+}

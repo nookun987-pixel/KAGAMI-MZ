@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-04-04T07:40:42.803Z",
+  "test": "vertex_e2e_retrieval",
+  "query": "white ceramic mask macro shot",
+  "retriever_mode": "vertex",
+  "real_vertex_verified": true,
+  "chunk_count": 17,
+  "context_length": 3917,
+  "duration_ms": 12336,
+  "artifact_output": {
+    "retriever_mode": "vertex",
+    "real_vertex_verified": true,
+    "query": "white ceramic mask macro shot",
+    "context": "=== MIKAGE MEMORY CONTEXT ===\nQuery: white ceramic mask macro shot\nFound 17 relevant memories:\n\n[MEMORY 1]\nSource: mask-macro-ui-001__job_summary (vertex_ai_search)\nRelevance: 0.6591334939002991\nContent: Title: mask-macro-ui-001__job_summary\nSource: gs://mikage-search-brain-1234/mask-macro-ui-001__job_summary.json\n\n[MEMORY 2]\nSource: MASK_MACRO_RUN_01__job_summary (vertex_ai_search)\nRelevance: 0.6691967844963074\nContent: Title: MASK_MACRO_RUN_01__job_summary\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_01__job_summary.json\n\n[MEMORY 3]\nSource: mask-macro-001__gemini_validation (vertex_ai_search)\nRelevance: 0.7058413028717041\nContent: Title: mask-macro-001__gemini_validation\nSource: gs://mikage-search-brain-1234/mask-macro-001__gemini_validation.json\n\n[MEMORY 4]\nSource: MASK_MACRO_RUN_02__final_decision (vertex_ai_search)\nRelevance: 0.672756016254425\nContent: Title: MASK_MACRO_RUN_02__final_decision\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_02__final_decision.json\n\n[MEMORY 5]\nSource: MASK_MACRO_RUN_01__final_decision (vertex_ai_search)\nRelevance: 0.6770810484886169\nContent: Title: MASK_MACRO_RUN_01__final_decision\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_01__final_decision.json\n\n[MEMORY 6]\nSource: MASK_MACRO_RUN_02__job_summary (vertex_ai_search)\nRelevance: 0.6641055941581726\nContent: Title: MASK_MACRO_RUN_02__job_summary\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_02__job_summary.json\n\n[MEMORY 7]\nSource: mask-macro-001__final_decision (vertex_ai_search)\nRelevance: 0.6674563884735107\nContent: Title: mask-macro-001__final_decision\nSource: gs://mikage-search-brain-1234/mask-macro-001__final_decision.json\n\n[MEMORY 8]\nSource: mask-macro-001__job_summary (vertex_ai_search)\nRelevance: 0.6625893712043762\nContent: Title: mask-macro-001__job_summary\nSource: gs://mikage-search-brain-1234/mask-macro-001__job_summary.json\n\n[MEMORY 9]\nSource: MASK_MACRO_RUN_03__job_summary (vertex_ai_search)\nRelevance: 0.6636660695075989\nContent: Title: MASK_MACRO_RUN_03__job_summary\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_03__job_summary.json\n\n[MEMORY 10]\nSource: MASK_MACRO_RUN_03__final_decision (vertex_ai_search)\nRelevance: 0.6699369549751282\nContent: Title: MASK_MACRO_RUN_03__final_decision\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_03__final_decision.json\n\n[MEMORY 11]\nSource: MASK_MACRO_RUN_04__job_summary (vertex_ai_search)\nRelevance: 0.66005539894104\nContent: Title: MASK_MACRO_RUN_04__job_summary\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_04__job_summary.json\n\n[MEMORY 12]\nSource: MASK_MACRO_RUN_04__final_decision (vertex_ai_search)\nRelevance: 0.6655559539794922\nContent: Title: MASK_MACRO_RUN_04__final_decision\nSource: gs://mikage-search-brain-1234/MASK_MACRO_RUN_04__final_decision.json\n\n[MEMORY 13]\nSource: GOLDEN_MASK_MACRO__job_summary (vertex_ai_search)\nRelevance: 0.6593766212463379\nContent: Title: GOLDEN_MASK_MACRO__job_summary\nSource: gs://mikage-search-brain-1234/GOLDEN_MASK_MACRO__job_summary.json\n\n[MEMORY 14]\nSource: pipeline-test-003__job_summary (vertex_ai_search)\nRelevance: 0.6221210956573486\nContent: Title: pipeline-test-003__job_summary\nSource: gs://mikage-search-brain-1234/pipeline-test-003__job_summary.json\n\n[MEMORY 15]\nSource: postgate-test-001__job_summary (vertex_ai_search)\nRelevance: 0.6103146076202393\nContent: Title: postgate-test-001__job_summary\nSource: gs://mikage-search-brain-1234/postgate-test-001__job_summary.json\n\n[MEMORY 16]\nSource: pipeline-test-004__job_summary (vertex_ai_search)\nRelevance: 0.6074444651603699\nContent: Title: pipeline-test-004__job_summary\nSource: gs://mikage-search-brain-1234/pipeline-test-004__job_summary.json\n\n[MEMORY 17]\nSource: render-test-002__job_summary (vertex_ai_search)\nRelevance: 0.6232213973999023\nContent: Title: render-test-002__job_summary\nSource: gs://mikage-search-brain-1234/render-test-002__job_summary.json\n\n============================\n",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "source": "mask-macro-ui-001__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_2",
+        "source": "MASK_MACRO_RUN_01__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_3",
+        "source": "mask-macro-001__gemini_validation (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_4",
+        "source": "MASK_MACRO_RUN_02__final_decision (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_5",
+        "source": "MASK_MACRO_RUN_01__final_decision (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_6",
+        "source": "MASK_MACRO_RUN_02__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_7",
+        "source": "mask-macro-001__final_decision (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_8",
+        "source": "mask-macro-001__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_9",
+        "source": "MASK_MACRO_RUN_03__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_10",
+        "source": "MASK_MACRO_RUN_03__final_decision (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_11",
+        "source": "MASK_MACRO_RUN_04__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_12",
+        "source": "MASK_MACRO_RUN_04__final_decision (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_13",
+        "source": "GOLDEN_MASK_MACRO__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_14",
+        "source": "pipeline-test-003__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_15",
+        "source": "postgate-test-001__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_16",
+        "source": "pipeline-test-004__job_summary (vertex_ai_search)"
+      },
+      {
+        "id": "chunk_17",
+        "source": "render-test-002__job_summary (vertex_ai_search)"
+      }
+    ]
+  },
+  "checks": {
+    "retriever_mode === \"vertex\"": true,
+    "real_vertex_verified === true": true,
+    "chunks.length > 0": true,
+    "rag_context has real chunks": true,
+    "context injected (length > 0)": true
+  },
+  "result": "PASS"
+}

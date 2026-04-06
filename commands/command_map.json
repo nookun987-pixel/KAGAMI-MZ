@@ -1,0 +1,59 @@
+{
+  "current_phase": "PHASE_5",
+  "commands": {
+    "run_live_reject_test": {
+      "description": "Run 1 live REJECT job test to verify training loop hook",
+      "allowed_phase": ["PHASE_2", "PHASE_3"],
+      "route": "training_loop",
+      "owner": "brain",
+      "safe": true,
+      "modifies_pipeline": false,
+      "calls_execution_lane": false,
+      "steps": [
+        "locate_reject_source",
+        "create_test_job",
+        "run_training_loop",
+        "verify_artifact",
+        "verify_memory",
+        "verify_logs",
+        "return_summary"
+      ]
+    },
+    "generate_patched_job_spec": {
+      "description": "Generate patched job spec from training loop output (PHASE 3 only)",
+      "allowed_phase": ["PHASE_3"],
+      "route": "training_loop",
+      "owner": "brain",
+      "safe": true,
+      "modifies_pipeline": false,
+      "calls_execution_lane": false,
+      "steps": ["find_patchable_run", "load_training_loop_result", "load_final_decision", "extract_source_prompt", "apply_patch_actions", "extract_correction_context", "lookup_historical_pattern", "write_patched_job_spec"]
+    },
+    "execute_patched_job_spec": {
+      "description": "Execute a validated patched_job_spec through one controlled execution lane (PHASE 4)",
+      "allowed_phase": ["PHASE_4", "PHASE_5"],
+      "route": "execution",
+      "owner": "execution_lane",
+      "safe": false,
+      "modifies_pipeline": false,
+      "calls_execution_lane": true,
+      "steps": ["find_patched_job_spec", "validate_contract", "resolve_adapter", "execute", "write_execution_result"]
+    }
+  },
+  "routes": {
+    "training_loop": { "owner": "brain", "lane": "control_plane" },
+    "orchestrator": { "owner": "brain", "lane": "control_plane" },
+    "execution": { "owner": "execution_lane", "lane": "render" }
+  },
+  "safety": {
+    "blocked_intents": [
+      "deploy",
+      "promote_canon",
+      "execute_colab",
+      "execute_vertex",
+      "execute_imagen",
+      "rerender",
+      "auto_retry"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "run_id": "run_mnmjdwbd_ttgpg",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 0.25,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T02:03:41.357Z"
+  },
+  {
+    "run_id": "run_mnmm6u9z_bvp9t",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 0.5,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T03:12:14.521Z"
+  },
+  {
+    "run_id": "run_mnmmage0_alyqm",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 0.75,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T03:15:01.173Z"
+  },
+  {
+    "run_id": "run_mnmmij1r_yillh",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 1,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T03:21:17.915Z"
+  },
+  {
+    "run_id": "run_mnmmmvd9_670jw",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 1.25,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T03:24:40.580Z"
+  },
+  {
+    "run_id": "run_mnmmt5zy_v06jr",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 1.5,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T03:29:34.158Z"
+  },
+  {
+    "run_id": "run_mnmop1is_1dkce",
+    "attempt": 1,
+    "cost": 0.25,
+    "cumulative_run_cost": 0.25,
+    "cumulative_global_cost": 1.75,
+    "estimated_cost": 0.25,
+    "flags": [],
+    "timestamp": "2026-04-06T04:22:20.991Z"
+  }
+]

@@ -1,0 +1,201 @@
+{
+  "runs": {
+    "run_mnmj9b73_dqe5c": {
+      "run_id": "run_mnmj9b73_dqe5c",
+      "lane": "MASK_MACRO",
+      "attempts": 0,
+      "retry_count": 0,
+      "final_status": null,
+      "final_reason": null,
+      "cost_used": 0,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T01:50:06.850Z",
+      "finished_at": null
+    },
+    "run_mnmjdwbd_ttgpg": {
+      "run_id": "run_mnmjdwbd_ttgpg",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "REJECT",
+      "final_reason": "Colab execution timed out after 600000ms",
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T01:53:40.843Z",
+      "finished_at": "2026-04-06T02:03:41.374Z"
+    },
+    "run_mnmm6u9z_bvp9t": {
+      "run_id": "run_mnmm6u9z_bvp9t",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "ALLOW",
+      "final_reason": null,
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:12:10.461Z",
+      "finished_at": "2026-04-06T03:12:14.538Z"
+    },
+    "run_mnmmage0_alyqm": {
+      "run_id": "run_mnmmage0_alyqm",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "ALLOW",
+      "final_reason": null,
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:14:59.096Z",
+      "finished_at": "2026-04-06T03:15:01.188Z"
+    },
+    "run_mnmmd35l_e5wm6": {
+      "run_id": "run_mnmmd35l_e5wm6",
+      "lane": "MASK_MACRO",
+      "attempts": 0,
+      "retry_count": 0,
+      "final_status": null,
+      "final_reason": null,
+      "cost_used": 0,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:17:01.901Z",
+      "finished_at": null
+    },
+    "run_mnmme6w2_f1pcw": {
+      "run_id": "run_mnmme6w2_f1pcw",
+      "lane": "MASK_MACRO",
+      "attempts": 0,
+      "retry_count": 0,
+      "final_status": null,
+      "final_reason": null,
+      "cost_used": 0,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:17:53.400Z",
+      "finished_at": null
+    },
+    "run_mnmmij1r_yillh": {
+      "run_id": "run_mnmmij1r_yillh",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "ALLOW",
+      "final_reason": null,
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:21:15.780Z",
+      "finished_at": "2026-04-06T03:21:17.931Z"
+    },
+    "run_mnmmmvd9_670jw": {
+      "run_id": "run_mnmmmvd9_670jw",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "ALLOW",
+      "final_reason": null,
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:24:38.391Z",
+      "finished_at": "2026-04-06T03:24:40.604Z"
+    },
+    "run_mnmmt5zy_v06jr": {
+      "run_id": "run_mnmmt5zy_v06jr",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "ALLOW",
+      "final_reason": null,
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T03:29:32.088Z",
+      "finished_at": "2026-04-06T03:29:34.188Z"
+    },
+    "run_mnmonh7y_3ej9v": {
+      "run_id": "run_mnmonh7y_3ej9v",
+      "lane": "MASK_MACRO",
+      "attempts": 0,
+      "retry_count": 0,
+      "final_status": null,
+      "final_reason": null,
+      "cost_used": 0,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T04:21:05.928Z",
+      "finished_at": null
+    },
+    "run_mnmop1is_1dkce": {
+      "run_id": "run_mnmop1is_1dkce",
+      "lane": "MASK_MACRO",
+      "attempts": 1,
+      "retry_count": 0,
+      "final_status": "REJECT",
+      "final_reason": "TIMEOUT_FAILED",
+      "cost_used": 0.25,
+      "canon_packet_applied": false,
+      "started_at": "2026-04-06T04:22:18.894Z",
+      "finished_at": "2026-04-06T04:22:21.008Z"
+    }
+  },
+  "attempts": [
+    {
+      "run_id": "run_mnmjdwbd_ttgpg",
+      "attempt": 1,
+      "status": "FAIL",
+      "reason": "Colab execution timed out after 600000ms",
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T02:03:41.365Z"
+    },
+    {
+      "run_id": "run_mnmm6u9z_bvp9t",
+      "attempt": 1,
+      "status": "DONE",
+      "reason": null,
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T03:12:14.529Z"
+    },
+    {
+      "run_id": "run_mnmmage0_alyqm",
+      "attempt": 1,
+      "status": "DONE",
+      "reason": null,
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T03:15:01.178Z"
+    },
+    {
+      "run_id": "run_mnmmij1r_yillh",
+      "attempt": 1,
+      "status": "DONE",
+      "reason": null,
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T03:21:17.920Z"
+    },
+    {
+      "run_id": "run_mnmmmvd9_670jw",
+      "attempt": 1,
+      "status": "DONE",
+      "reason": null,
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T03:24:40.590Z"
+    },
+    {
+      "run_id": "run_mnmmt5zy_v06jr",
+      "attempt": 1,
+      "status": "DONE",
+      "reason": null,
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T03:29:34.169Z"
+    },
+    {
+      "run_id": "run_mnmop1is_1dkce",
+      "attempt": 1,
+      "status": "FAIL",
+      "reason": "TIMEOUT_FAILED",
+      "patch_applied": false,
+      "cost": 0.25,
+      "timestamp": "2026-04-06T04:22:20.997Z"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "stage": "post_render_image",
+  "verdict": "PASS",
+  "validator_executed": true,
+  "failed_checks": [],
+  "critical_failures": [],
+  "forbidden_hits": [],
+  "analyzer_signals": {
+    "identity_match": 0.85,
+    "narrative_coherence": 0.9,
+    "canon_adherence": 0.95
+  },
+  "source_files": {
+    "output_image": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\output.png"
+  }
+}

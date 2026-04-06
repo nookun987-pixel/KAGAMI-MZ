@@ -1,0 +1,36 @@
+{
+  "job_id": "GOOGLE_LANE_E2E_001",
+  "status": "PASS",
+  "decision": "ALLOW",
+  "decision_reason": "Google Execution Lane completed successfully",
+  "canon_version": "v2",
+  "output_files": [
+    "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\output.png"
+  ],
+  "output_file_path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\output.png",
+  "validator_executed": true,
+  "gemini_validation_executed": true,
+  "gemini_passed": true,
+  "failed_rules": [],
+  "blocking_unknown_rules": [],
+  "critical_failures": [],
+  "forbidden_hits": [],
+  "analyzer_summary": {
+    "identity_match": 0.85,
+    "narrative_coherence": 0.9,
+    "canon_adherence": 0.95
+  },
+  "scores": {
+    "identity": 0.88,
+    "aesthetic": 0.85,
+    "technical": 0.92
+  },
+  "drift_flags": [],
+  "execution_lane": "google",
+  "retriever_mode": "none",
+  "real_vertex_verified": false,
+  "timestamps": {
+    "decided_at": "2026-04-04T09:30:13.674Z",
+    "started_at": "2026-04-04T09:30:02.586Z"
+  }
+}

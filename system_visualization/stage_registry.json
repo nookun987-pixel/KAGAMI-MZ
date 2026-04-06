@@ -1,0 +1,60 @@
+{
+  "stages": [
+    {
+      "id": "gemini_intake",
+      "name": "Gemini Intake",
+      "layer": "INTAKE_LAYER",
+      "required": true,
+      "input": ["user_intent", "optional_rag_context"],
+      "output": ["intake.json"]
+    },
+    {
+      "id": "precheck",
+      "name": "Precheck",
+      "layer": "INTAKE_LAYER",
+      "required": true,
+      "input": ["intake.json"],
+      "output": ["precheck_result.json"]
+    },
+    {
+      "id": "claude_spec",
+      "name": "Claude Spec",
+      "layer": "INTAKE_LAYER",
+      "required": true,
+      "input": ["intake.json", "precheck_result.json"],
+      "output": ["spec.json"]
+    },
+    {
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "layer": "EXECUTION_LAYER",
+      "required": true,
+      "input": ["spec.json"],
+      "output": ["render_payload.json", "run_loop_trace.json"]
+    },
+    {
+      "id": "fooocus_render",
+      "name": "Fooocus Render",
+      "layer": "EXECUTION_LAYER",
+      "required": true,
+      "input": ["render_payload.json"],
+      "output": ["output.png", "render_response_raw.json", "render_timing.json"]
+    },
+    {
+      "id": "local_validator",
+      "name": "Local Validator",
+      "layer": "VALIDATION_LAYER",
+      "required": true,
+      "input": ["output.png"],
+      "output": ["post_validation.json", "analyzer_status.json"]
+    },
+    {
+      "id": "gemini_judge",
+      "name": "Gemini Judge",
+      "layer": "VALIDATION_LAYER",
+      "required": true,
+      "input": ["post_validation.json", "output.png"],
+      "output": ["gemini_validation.json", "final_decision.json"]
+    }
+  ]
+}

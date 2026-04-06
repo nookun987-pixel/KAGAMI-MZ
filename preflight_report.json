@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-04-04T02:24:47.696608",
+  "overall_status": "PASS",
+  "checks": {
+    "python_environment": {
+      "status": "PASS",
+      "message": "Python environment OK",
+      "python_version": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]"
+    },
+    "disk_space": {
+      "status": "PASS",
+      "message": "Sufficient disk space: 22.1GB available",
+      "free_gb": 22.055564880371094
+    },
+    "render_permissions": {
+      "status": "PASS",
+      "message": "Render directory permissions OK"
+    },
+    "fooocus_bridge": {
+      "status": "PASS",
+      "message": "Fooocus bridge is running"
+    },
+    "model_files": {
+      "status": "PASS",
+      "message": "Model file available"
+    }
+  },
+  "pass_rate": 1.0,
+  "checks_passed": 5,
+  "checks_total": 5
+}

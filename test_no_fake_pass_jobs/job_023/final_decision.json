@@ -1,0 +1,6 @@
+{
+  "final_verdict": "REJECT",
+  "source_of_truth": "gemini",
+  "hard_reject_count": 1,
+  "reasoning": "Test validation for plastic_multi_03.png"
+}

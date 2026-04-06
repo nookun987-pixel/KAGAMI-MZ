@@ -1,0 +1,22 @@
+{
+  "job_id": "66cca4f7-7303-44f6-9d1b-d373e8ce95bb",
+  "prompt": "a simple red circle on white background, minimal style",
+  "negative_prompt": "complex, detailed, textured",
+  "seed": 12345,
+  "width": 512,
+  "height": 512,
+  "performance_selection": "Speed",
+  "style_selections": [],
+  "image_number": 1,
+  "guidance_scale": 7.0,
+  "steps": 10,
+  "sampler": null,
+  "scheduler": null,
+  "sharpness": 2.0,
+  "base_model": "realvisxlV50_v40Bakedvae.safetensors",
+  "generation_mode": "exploration",
+  "anchor_image_base64": null,
+  "anchor_image_path": null,
+  "dry_run": false,
+  "timeout_seconds": 200
+}

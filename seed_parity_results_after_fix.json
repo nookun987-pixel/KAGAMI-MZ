@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-04-03T22:28:57.789666",
+  "task_id": "PROMPT_CONFLICT_FIX_01",
+  "test_prompt": "porcelain kitsune mask, thin crimson seam at jawline, obsidian void background",
+  "seeds_tested": [
+    1001,
+    1003
+  ],
+  "validation_results": [
+    {
+      "seed": 1001,
+      "job_id": "fix_validation_1001_ffd82a",
+      "output_class": "VALID_MASK",
+      "file_size": 1236737,
+      "final_decision": "REJECT",
+      "authority": "system_brain",
+      "prompt_order": "(kitsune mask object focus:1.6), (front-facing symmetrical mask:1.5), (full mask object visible:1.5), (clear readable silhouette:1.5), (defined eye holes:1.4), (defined nose ridge:1.3), (structured ja...",
+      "negative_prompt": "human eyes, facial expression, plastic, plaster, neon RGB, cyberpunk, abstract frame, bloom, blurry, low contrast, soft lighting, (no plastic surface:1.3), (no glossy finish:1.2), (no toy-like materia...",
+      "identity_terms_present": {
+        "kitsune mask object focus": true,
+        "front-facing symmetrical mask": true,
+        "full mask object visible": true,
+        "clear readable silhouette": true,
+        "defined eye holes": true,
+        "defined nose ridge": true,
+        "structured jawline": true
+      },
+      "forbidden_terms_absent": {
+        "(smooth surface:1.8)": true,
+        "extreme anti-smooth stacking": true,
+        "redundant resin/plastic/cgi duplicates": true
+      }
+    },
+    {
+      "seed": 1003,
+      "job_id": "fix_validation_1003_db30bf",
+      "output_class": "VALID_MASK",
+      "file_size": 1232137,
+      "final_decision": "REJECT",
+      "authority": "gemini_gate",
+      "prompt_order": "(kitsune mask object focus:1.6), (front-facing symmetrical mask:1.5), (full mask object visible:1.5), (clear readable silhouette:1.5), (defined eye holes:1.4), (defined nose ridge:1.3), (structured ja...",
+      "negative_prompt": "plastic, plaster, human, eyes, facial expression, neon, RGB, cyberpunk, abstract frame, blurry, soft, bright, high key, bloom, multiple colors, vibrant, busy, cluttered, warm, inviting, (no plastic su...",
+      "identity_terms_present": {
+        "kitsune mask object focus": true,
+        "front-facing symmetrical mask": true,
+        "full mask object visible": true,
+        "clear readable silhouette": true,
+        "defined eye holes": true,
+        "defined nose ridge": true,
+        "structured jawline": true
+      },
+      "forbidden_terms_absent": {
+        "(smooth surface:1.8)": true,
+        "extreme anti-smooth stacking": true,
+        "redundant resin/plastic/cgi duplicates": true
+      }
+    }
+  ],
+  "output_classification": {
+    "VALID_MASK": 2
+  },
+  "pass_condition": true,
+  "summary": {
+    "valid_masks": 2,
+    "small_blobs": 0,
+    "white_noise": 0,
+    "total_tests": 2
+  }
+}

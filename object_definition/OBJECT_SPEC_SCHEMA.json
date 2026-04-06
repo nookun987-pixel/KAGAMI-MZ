@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MikageObjectSpec",
+  "description": "Locked schema for object-oriented design specs. Every renderable entity must pass through this before prompt compilation.",
+  "type": "object",
+  "required": [
+    "object_class",
+    "identity_core",
+    "readable_as",
+    "topology",
+    "silhouette_rules",
+    "must_have_parts",
+    "forbidden_parts",
+    "material_truth",
+    "common_misreads",
+    "anti_misread_rules",
+    "part_priority_order"
+  ],
+  "properties": {
+    "spec_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "object_id": {
+      "type": "string",
+      "description": "Unique identifier for this object definition"
+    },
+    "object_class": {
+      "type": "string",
+      "description": "Top-level category: mask, weapon, vessel, garment, artifact, architecture, creature, symbol",
+      "enum": ["mask", "weapon", "vessel", "garment", "artifact", "architecture", "creature", "symbol"]
+    },
+    "identity_core": {
+      "type": "object",
+      "description": "What this object IS at its most fundamental level",
+      "required": ["name", "origin", "function", "one_sentence"],
+      "properties": {
+        "name": { "type": "string", "description": "Canonical name" },
+        "origin": { "type": "string", "description": "Cultural/design origin" },
+        "function": { "type": "string", "description": "What this object does or represents" },
+        "one_sentence": { "type": "string", "description": "Single sentence: a viewer sees this and immediately knows it is ___" }
+      }
+    },
+    "readable_as": {
+      "type": "string",
+      "description": "Plain language: what a human viewer should immediately recognize this as. E.g. 'a Japanese fox mask made of white ceramic'"
+    },
+    "topology": {
+      "type": "object",
+      "description": "Structural geometry of the object",
+      "required": ["primary_form", "symmetry", "orientation", "dominant_axis"],
+      "properties": {
+        "primary_form": { "type": "string", "description": "Base geometric form: ovoid, cylindrical, planar, etc." },
+        "symmetry": { "type": "string", "enum": ["bilateral", "radial", "asymmetric"] },
+        "orientation": { "type": "string", "description": "Default viewing angle: frontal, three-quarter, profile" },
+        "dominant_axis": { "type": "string", "enum": ["vertical", "horizontal", "depth"] }
+      }
+    },
+    "silhouette_rules": {
+      "type": "object",
+      "description": "What the outline MUST and MUST NOT look like",
+      "required": ["must_read_as", "forbidden_silhouettes"],
+      "properties": {
+        "must_read_as": { "type": "string", "description": "The silhouette alone must read as ___" },
+        "key_contour_features": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Contour landmarks that define the silhouette"
+        },
+        "forbidden_silhouettes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Silhouette shapes that would make this unreadable"
+        }
+      }
+    },
+    "must_have_parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["part_name", "description", "visibility"],
+        "properties": {
+          "part_name": { "type": "string" },
+          "description": { "type": "string" },
+          "visibility": { "type": "string", "enum": ["required_visible", "implied", "optional"] }
+        }
+      },
+      "description": "Parts that MUST be present for the object to be readable"
+    },
+    "forbidden_parts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Parts that must NEVER appear on this object"
+    },
+    "material_truth": {
+      "type": "object",
+      "description": "What this object is actually made of",
+      "required": ["primary_material", "surface_finish", "texture_descriptor"],
+      "properties": {
+        "primary_material": { "type": "string" },
+        "secondary_material": { "type": "string" },
+        "surface_finish": { "type": "string", "description": "matte, gloss, satin, rough, etc." },
+        "texture_descriptor": { "type": "string", "description": "Precise texture language for prompt" },
+        "forbidden_materials": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "common_misreads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["misread", "cause"],
+        "properties": {
+          "misread": { "type": "string", "description": "What the AI might accidentally generate instead" },
+          "cause": { "type": "string", "description": "Why this misread happens" }
+        }
+      },
+      "description": "Known failure modes where the AI generates the wrong thing"
+    },
+    "anti_misread_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule", "enforcement"],
+        "properties": {
+          "rule": { "type": "string" },
+          "enforcement": { "type": "string", "enum": ["negative_prompt", "positive_prompt", "both"] }
+        }
+      },
+      "description": "Explicit rules to prevent common misreads"
+    },
+    "part_priority_order": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of parts from most important to least. Prompt compiler uses this to weight tokens."
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "Whether this spec has been approved for render"
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

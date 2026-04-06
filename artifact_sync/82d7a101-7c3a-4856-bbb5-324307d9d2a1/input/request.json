@@ -1,0 +1,22 @@
+{
+  "job_id": null,
+  "prompt": "white ceramic kitsune mask, front-facing, symmetrical, clear silhouette, black background, studio lighting, (front-facing kitsune mask:1.5), (symmetrical mask geometry:1.4), (clear silhouette:1.3), (distinct eye holes:1.3)",
+  "negative_prompt": "abstract, blob, amorphous, texture-only, toy plastic",
+  "seed": 12345,
+  "width": 512,
+  "height": 512,
+  "performance_selection": "Speed",
+  "style_selections": [],
+  "image_number": 1,
+  "guidance_scale": 7.0,
+  "steps": 10,
+  "sampler": null,
+  "scheduler": null,
+  "sharpness": 2.0,
+  "base_model": "realvisxlV50_v40Bakedvae.safetensors",
+  "generation_mode": "exploration",
+  "anchor_image_base64": null,
+  "anchor_image_path": null,
+  "dry_run": false,
+  "timeout_seconds": 60
+}

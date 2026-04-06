@@ -4,6 +4,7 @@ Calls Fooocus Direct Bridge (port 7865) and saves rendered image to job director
 """
 
 import logging
+import os
 import shutil
 import requests
 from pathlib import Path
@@ -83,7 +84,7 @@ def render(prompt: str, negative_prompt: str, params: dict, job_dir: Path) -> di
         "sampler": params.get("sampler"),
         "scheduler": params.get("scheduler"),
         "disable_refiner": params.get("disable_refiner", False),
-        "base_model": params.get("base_model", "juggernautXL_v8Rundiffusion.safetensors"),
+        "base_model": params.get("base_model", os.getenv("FOOOCUS_MODEL", "realvisxlV50_v40Bakedvae.safetensors")),
     }
 
     url = f"{FOOOCUS_BRIDGE_URL}/generate"

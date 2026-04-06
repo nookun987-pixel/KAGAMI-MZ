@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-04-04T06:37:46.746125",
+  "port": 7865,
+  "health_url": "http://localhost:7865/health",
+  "identity_url": "http://localhost:7865/identity",
+  "generate_url": "http://localhost:7865/generate",
+  "health_status_code": 200,
+  "identity_status_code": 200,
+  "generate_route_check_status": 200,
+  "service_identity": "fooocus_bridge",
+  "supports_generate": true,
+  "route_generate_exists": true,
+  "verdict": "PASS",
+  "error_code": null,
+  "checks": {
+    "health": {
+      "status_code": 200,
+      "success": true,
+      "response": "{\"status\":\"healthy\",\"service\":\"fooocus_bridge\",\"worker_alive\":true,\"output_dir\":\"D:\\\\Fooocus-main\\\\outputs\"}"
+    },
+    "identity": {
+      "status_code": 200,
+      "payload": {
+        "service": "fooocus_bridge",
+        "supports_generate": true,
+        "version": "IMAGE_LANE_CONTROL_V1",
+        "port": 7865
+      },
+      "success": true
+    },
+    "generate": {
+      "status_code": 200,
+      "exists": true,
+      "method": "OPTIONS"
+    }
+  }
+}

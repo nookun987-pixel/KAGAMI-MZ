@@ -1,0 +1,22 @@
+{
+  "job_id": null,
+  "prompt": "a centered white ceramic kitsune mask, matte boron carbide texture, black background, studio lighting, sharp silhouette, (front-facing kitsune mask:1.5), (symmetrical mask geometry:1.4), (full object visible:1.3), (centered composition:1.3), (clear silhouette:1.3), (distinct eye holes:1.3), (but no visible eyes:1.4), (structured nose ridge:1.3), (structured jawline:1.3), matte ceramic surface, non-reflective material, technical ceramic, industrial ceramic finish, product photography, neutral studio lighting, soft diffuse light, physical manufactured object, real photographed object, single centered mask only, no environment storytelling, no red background, no colored light spill, no shiny reflections, no metallic read, no organic/fur/skin read, surface must read as matte ceramic manufactured object, image must read as product photo, not concept render",
+  "negative_prompt": "metal, chrome, reflective surface, glossy, specular highlight, dramatic lighting, cinematic lighting, red lighting, colored lighting, neon, glow, low poly, polygon, faceted, wireframe, mesh, cgi, 3d render, concept art, line art",
+  "seed": 20003,
+  "width": 1024,
+  "height": 384,
+  "performance_selection": "Quality",
+  "style_selections": [],
+  "image_number": 1,
+  "guidance_scale": 7.0,
+  "steps": 20,
+  "sampler": null,
+  "scheduler": null,
+  "sharpness": 2.0,
+  "base_model": "realvisxlV50_v40Bakedvae.safetensors",
+  "generation_mode": "exploration",
+  "anchor_image_base64": null,
+  "anchor_image_path": null,
+  "dry_run": false,
+  "timeout_seconds": 180
+}

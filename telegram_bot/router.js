@@ -9,6 +9,21 @@ const { getTasks } = require('./shared_state');
 const masterControl = require('../lib/master_control');
 const guard = require('./duplicate_guard');
 
+// ─── TELEGRAM SAFETY GATE ──────────────────────────────────────────
+// Only read-only / status commands are allowed.
+// All mutating / execution commands are BLOCKED until explicitly unlocked.
+const SAFE_COMMANDS = new Set([
+  '/status', '/latest', '/queue', '/system', '/project', '/cost',
+  '/artifacts', '/help', '/proof', '/master_status',
+  '/image_status', '/image_last', '/image_fail', '/image_artifacts',
+]);
+
+const BLOCKED_COMMANDS = new Set([
+  '/run', '/task', '/restart', '/approve', '/reject',
+  '/boot', '/heal', '/start_all', '/stop_all', '/restart_all',
+  '/image_test',
+]);
+
 async function handleCommand(text, msg) {
   const parts = text.split(' ');
   const rawCommand = parts[0];
@@ -16,7 +31,17 @@ async function handleCommand(text, msg) {
   
   // Strip @botname suffix if present
   const command = rawCommand.split('@')[0];
-  
+
+  // SAFETY GATE: Block unsafe commands
+  if (BLOCKED_COMMANDS.has(command)) {
+    console.log(`[TELEGRAM_SAFETY] BLOCKED command: ${command}`);
+    return `BLOCKED: ${command}\n\nThis command is restricted by Telegram Safety Gate.\nOnly read-only / status commands are allowed.\nUse /help to see available commands.`;
+  }
+  if (!SAFE_COMMANDS.has(command)) {
+    console.log(`[TELEGRAM_SAFETY] UNKNOWN command: ${command}`);
+    return 'ERROR: Unknown command. Use /help';
+  }
+
   switch (command) {
     case '/run':
       return await runCommand(args.join(' '), msg);
@@ -95,36 +120,31 @@ async function handleCommand(text, msg) {
       return await handleImageTest();
     
     case '/help':
-      return `*MIKAGE OPERATOR COMMANDS*
-/run <job> - Execute job
-/task <instruction> - Execute task  
+      return `*MIKAGE OPERATOR — SAFE COMMANDS ONLY*
+
+*STATUS / READ*
 /status [task_id] - Get task status
 /latest - Latest artifacts
 /queue - Queue status
 /system - System status
 /project - Project status
 /cost - Cost status
-/restart <service> - Restart service
 /artifacts - Artifact inventory
-/approve <task_id> - Approve task
-/reject <task_id> - Reject task
-
-*OPERATIONS CAPTAIN*
-/boot - Boot system services
-/heal - Detect and fix broken services
 /proof - System proof verification
 /master_status - Master system status
-/start_all - Start all services
-/stop_all - Stop all services
-/restart_all - Restart all services
 
-*IMAGE LANE*
+*IMAGE LANE (READ ONLY)*
 /image_status - Image lane status
 /image_last - Latest run info
 /image_fail - Failure diagnostics
 /image_artifacts - Latest artifacts
-/image_test - Run lightweight test job
-/help - Show this help`;
+
+/help - Show this help
+
+*BLOCKED (Safety Gate)*
+/run, /task, /restart, /approve, /reject
+/boot, /heal, /start_all, /stop_all, /restart_all
+/image_test`;
     
     default:
       return 'ERROR: Unknown command. Use /help';

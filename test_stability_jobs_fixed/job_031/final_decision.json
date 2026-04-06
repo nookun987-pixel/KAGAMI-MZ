@@ -1,0 +1,6 @@
+{
+  "final_verdict": "REJECT",
+  "source_of_truth": "gemini",
+  "hard_reject_count": 1,
+  "reasoning": "Rejected for good_mask_031.png: [{'rule': 'material_reads_as_plastic_cgi', 'severity': 'hard_fail', 'reason': 'Material reads as plastic/CGI rather than intended material', 'evidence': {'material_score': 0.8300814777940209}}]"
+}

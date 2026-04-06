@@ -1,0 +1,36 @@
+[
+  {
+    "intel_id": "INTEL-2026-04-05-001",
+    "name": "Google Picatrix",
+    "type": "notebook_helper_pipeline",
+    "source_kind": "repo_or_framework",
+    "core_function": "Jupyter helper commands for querying and processing data",
+    "real_strength": [
+      "fast notebook-side query workflow",
+      "useful for security analyst manual workflows"
+    ],
+    "mikage_fit": "NO",
+    "phase_fit": "NEVER",
+    "integration_point": "NONE",
+    "architecture_check": {
+      "clear_role": false,
+      "clear_boundary": false,
+      "has_contract": false,
+      "requires_manual_user_action": true,
+      "bypasses_brain": false,
+      "breaks_lane_isolation": false
+    },
+    "verdict": "DISCARD",
+    "reason": [
+      "manual notebook tool",
+      "not a system node",
+      "does not fit user-no-touch principle"
+    ],
+    "tags": [
+      "notebook",
+      "manual_tool",
+      "discarded"
+    ],
+    "created_at": "2026-04-05T00:00:00Z"
+  }
+]

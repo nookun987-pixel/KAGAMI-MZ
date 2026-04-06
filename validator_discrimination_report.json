@@ -1,0 +1,584 @@
+{
+  "task_id": "VALIDATOR_RECOVERY",
+  "total_jobs": 55,
+  "pass_count": 35,
+  "reject_count": 20,
+  "batch_pass_rate": 0.6364,
+  "fake_pass": 20,
+  "manual_alignment": 0.6364,
+  "material_reject_ratio": 0.3636,
+  "rule_reject_counts": {
+    "no_clear_object_silhouette": 10,
+    "material_reads_as_plastic_cgi": 20
+  },
+  "score_distributions": {
+    "material": {
+      "min": 0.053,
+      "max": 0.995,
+      "mean": 0.514,
+      "std": 0.298
+    },
+    "silhouette": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.713
+    },
+    "texture": {
+      "min": 0.0,
+      "max": 0.616,
+      "mean": 0.114
+    }
+  },
+  "rows": [
+    {
+      "name": "bad_noise_00",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.614
+    },
+    {
+      "name": "bad_noise_01",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.616
+    },
+    {
+      "name": "bad_noise_02",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.613
+    },
+    {
+      "name": "bad_noise_03",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.615
+    },
+    {
+      "name": "bad_noise_04",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.615
+    },
+    {
+      "name": "bad_noise_05",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.614
+    },
+    {
+      "name": "bad_noise_06",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.613
+    },
+    {
+      "name": "bad_noise_07",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.614
+    },
+    {
+      "name": "bad_noise_08",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.614
+    },
+    {
+      "name": "bad_noise_09",
+      "label": "pure_noise",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.053,
+      "sil": 0.69,
+      "tex": 0.615
+    },
+    {
+      "name": "bad_flat_00",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_01",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_02",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_03",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_04",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_05",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_06",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_07",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_08",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_flat_09",
+      "label": "flat_uniform",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.995,
+      "sil": 0.0,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_00",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_01",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_02",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_03",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_04",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_05",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_06",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_07",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_08",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_plastic_09",
+      "label": "plastic_blob",
+      "ground_truth": "REJECT",
+      "verdict": "REJECT",
+      "fake_pass": false,
+      "mat": 0.672,
+      "sil": 0.946,
+      "tex": 0.0
+    },
+    {
+      "name": "bad_multishape_00",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_01",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_02",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_03",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_04",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_05",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_06",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_07",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_08",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "bad_multishape_09",
+      "label": "multi_shape",
+      "ground_truth": "REJECT",
+      "verdict": "ALLOW",
+      "fake_pass": true,
+      "mat": 0.511,
+      "sil": 1.0,
+      "tex": 0.001
+    },
+    {
+      "name": "good_ceramic_00",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.008
+    },
+    {
+      "name": "good_ceramic_01",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_02",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_03",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.008
+    },
+    {
+      "name": "good_ceramic_04",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_05",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_06",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.008
+    },
+    {
+      "name": "good_ceramic_07",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_08",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_09",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_10",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.008
+    },
+    {
+      "name": "good_ceramic_11",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_12",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    },
+    {
+      "name": "good_ceramic_13",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.008
+    },
+    {
+      "name": "good_ceramic_14",
+      "label": "ceramic_mask",
+      "ground_truth": "ALLOW",
+      "verdict": "ALLOW",
+      "fake_pass": false,
+      "mat": 0.398,
+      "sil": 0.857,
+      "tex": 0.007
+    }
+  ]
+}

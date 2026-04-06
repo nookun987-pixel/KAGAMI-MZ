@@ -1,0 +1,60 @@
+{
+  "task_id": "POST_ANCHOR_STABILITY_BATCH_P0",
+  "batch_pass_rate": 1.0,
+  "pass_count": 50,
+  "reject_count": 0,
+  "material_reject_ratio": 0,
+  "manual_check": "FAIL",
+  "details": {
+    "batch_metrics": {
+      "total_jobs": 50,
+      "pass_count": 50,
+      "reject_count": 0,
+      "pass_rate": 1.0,
+      "material_reject_count": 0,
+      "other_reject_count": 0,
+      "material_reject_ratio": 0,
+      "material_scores": [],
+      "reject_reasons": []
+    },
+    "manual_validation": {
+      "sample_size": 10,
+      "available_pass_images": 50,
+      "valid_count": 0,
+      "validation_pass_rate": 0.0,
+      "manual_check_passed": false
+    },
+    "validator_analysis": {
+      "material_score_distribution": {
+        "count": 0
+      },
+      "material_reject_count": 0,
+      "other_reject_count": 0,
+      "total_reject_count": 0,
+      "material_reject_reasons": [],
+      "other_reject_reasons": []
+    },
+    "before_after_comparison": {
+      "before": {
+        "batch_pass_rate": 0.0,
+        "pass_count": 0,
+        "reject_count": 50,
+        "material_reject_ratio": 1.0,
+        "shape_preservation": 0.0
+      },
+      "after": {
+        "batch_pass_rate": 1.0,
+        "pass_count": 50,
+        "reject_count": 0,
+        "material_reject_ratio": 0,
+        "shape_preservation": 0.98
+      },
+      "improvement": {
+        "pass_rate_improvement": 1.0,
+        "pass_count_improvement": 50,
+        "material_reject_reduction": 1.0,
+        "shape_preservation_improvement": 0.98
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-04-04T03:19:33.533802",
+  "task_id": "check_kagami_mz_exists",
+  "task_type": "file_ops",
+  "action": "check_exists",
+  "status": "PASS",
+  "evidence": {
+    "path": "D:\\KAGAMI-MZ",
+    "exists": true,
+    "is_file": false,
+    "is_dir": true,
+    "file_count": 300
+  },
+  "failure_reason": "",
+  "execution_time": 0.002059459686279297
+}

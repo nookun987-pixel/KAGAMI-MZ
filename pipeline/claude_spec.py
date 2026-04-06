@@ -106,7 +106,7 @@ LANE_CONFIG = {
         ),
         "material": MATERIAL_CERAMIC,
         "crimson": CRIMSON_SEAM_MASK,
-        "model": "juggernautXL_v8Rundiffusion.safetensors",
+        "model": "realvisxlV50_v40Bakedvae.safetensors",
     },
     "weapon": {
         "subject": (
@@ -116,7 +116,7 @@ LANE_CONFIG = {
         ),
         "material": MATERIAL_METAL,
         "crimson": CRIMSON_SEAM_WEAPON,
-        "model": "juggernautXL_v8Rundiffusion.safetensors",
+        "model": "realvisxlV50_v40Bakedvae.safetensors",
     },
     "character": {
         "subject": (
@@ -126,7 +126,7 @@ LANE_CONFIG = {
         ),
         "material": MATERIAL_CERAMIC,
         "crimson": CRIMSON_SEAM_CHARACTER,
-        "model": "juggernautXL_v8Rundiffusion.safetensors",
+        "model": "realvisxlV50_v40Bakedvae.safetensors",
     },
     "environment": {
         "subject": (
@@ -135,7 +135,7 @@ LANE_CONFIG = {
         ),
         "material": MATERIAL_METAL,
         "crimson": "(minimal crimson on active infrastructure seams only:1.0)",
-        "model": "juggernautXL_v8Rundiffusion.safetensors",
+        "model": "realvisxlV50_v40Bakedvae.safetensors",
     },
 }
 

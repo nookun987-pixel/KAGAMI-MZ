@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "job_id": "GOOGLE_LANE_E2E_001",
+  "shot_type": "MASK_MACRO",
+  "entity_id": "google_lane_test_mask",
+  "prompt": "PRODUCT PHOTOGRAPHY - white ceramic mask, hard-surface geometric chassis, studio lighting, macro detail, pure matte ceramic texture, porcelain finish, minimalism, white on white, single object, centered composition, 8K detail",
+  "negative_prompt": "cosplay, character, person, face, organic, wood, metal, rust, weathered, damaged, broken, cartoon, anime, illustration, painting, drawing",
+  "seed": 123456,
+  "seed_policy": "fixed",
+  "aspect_ratio": "1:1",
+  "width": 1024,
+  "height": 1024,
+  "rag_enabled": false,
+  "rag_query": "MASK_MACRO white ceramic mask macro test",
+  "canon_flags": {
+    "entity_first": true,
+    "zone_locked": true,
+    "material_locked": false,
+    "reproduction_mode": false,
+    "anchor_images": []
+  },
+  "output_path": "runs\\GOOGLE_LANE_E2E_001",
+  "storage_backend": "local",
+  "imagen_config": {
+    "model": "imagen-3.0-generate-001",
+    "number_of_images": 1,
+    "guidance_scale": 7.5,
+    "safety_filter_level": "block_some",
+    "person_generation": "dont_allow"
+  },
+  "control_core_metadata": {
+    "pipeline_version": "2.0",
+    "canon_version": "v2",
+    "intake_timestamp": "2026-04-04T09:30:02.606Z",
+    "spec_build_timestamp": "2026-04-04T09:30:02.606Z",
+    "claude_model": "claude-sonnet-4-20250514"
+  },
+  "created_at": "2026-04-04T09:30:02.606Z"
+}

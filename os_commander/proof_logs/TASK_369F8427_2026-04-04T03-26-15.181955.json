@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-04-04T03:26:15.181955",
+  "task_id": "TASK_369F8427",
+  "task_type": "service_ops",
+  "action": "start_service",
+  "status": "FAIL",
+  "evidence": {},
+  "failure_reason": "Service not registered: test_service",
+  "execution_time": 6.604194641113281e-05
+}

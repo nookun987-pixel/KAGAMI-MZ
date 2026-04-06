@@ -1,0 +1,6 @@
+{
+  "final_verdict": "ALLOW",
+  "source_of_truth": "gemini",
+  "reasoning": "Post-anchor stability batch test for anchor_img_001_denoise_0.03.png",
+  "hard_reject_count": 0
+}

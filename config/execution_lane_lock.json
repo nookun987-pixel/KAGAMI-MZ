@@ -1,0 +1,45 @@
+{
+  "execution_lane_default": "google",
+  "executor_type_default": "imagen_api",
+  "execution_runner_default": "colab",
+  "execution_runner_status": "PRIMARY",
+  "local_render_status": "FALLBACK_ONLY",
+  "local_render_requires_explicit_override": true,
+  "legacy_fooocus_status": "FALLBACK_ONLY",
+  "legacy_fooocus_requires_explicit_override": true,
+  "google_lane": {
+    "enabled": true,
+    "is_production": true,
+    "default_runner": "colab",
+    "fallback_runner": "direct_imagen",
+    "default_model": "imagen-3.0-generate-001",
+    "default_location": "us-central1",
+    "requires_service_account": true
+  },
+  "legacy_fooocus": {
+    "enabled": true,
+    "is_production": false,
+    "is_fallback": true,
+    "requires_explicit_job_flag": true,
+    "flag_name": "USE_LEGACY_FOOOCUS"
+  },
+  "local_direct_render": {
+    "enabled": true,
+    "is_production": false,
+    "is_fallback": true,
+    "requires_explicit_override": true,
+    "description": "Direct local Imagen API calls - use only when Colab unavailable"
+  },
+  "execution_lane_metadata_fields": [
+    "execution_lane",
+    "executor_type",
+    "execution_lane_status",
+    "execution_runner",
+    "runner_status",
+    "render_model",
+    "render_location"
+  ],
+  "lock_version": "1.1.0",
+  "lock_date": "2026-04-04",
+  "locked_by": "COLAB_RUNNER_PRIMARY_LOCK"
+}

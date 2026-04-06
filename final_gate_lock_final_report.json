@@ -1,0 +1,7 @@
+{
+  "task_id": "FINAL_GATE_LOCK + STABILITY_BATCH_P0",
+  "fake_pass": 0,
+  "gemini_enforced": true,
+  "batch_pass_rate": 0.0,
+  "manual_check": "FAIL"
+}

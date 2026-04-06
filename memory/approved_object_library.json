@@ -1,0 +1,101 @@
+{
+  "version": "1.0.0",
+  "description": "Approved object definitions that have passed the readability gate. These are locked specs ready for render.",
+  "objects": [
+    {
+      "spec_version": "1.0.0",
+      "object_id": "MASK_KITSUNE_CERAMIC_001",
+      "object_class": "mask",
+      "identity_core": {
+        "name": "Kitsune Porcelain Mask",
+        "origin": "Japanese Noh theater — fox spirit archetype, adapted to engineered ceramic",
+        "function": "Ceremonial/decorative wall-mount mask representing the kitsune (fox) spirit",
+        "one_sentence": "A viewer sees this and immediately knows it is a white ceramic Japanese fox mask with precise manufactured form."
+      },
+      "readable_as": "a symmetrical Japanese kitsune porcelain mask — white ceramic, fox-shaped, clearly a manufactured artifact",
+      "topology": {
+        "primary_form": "ovoid with tapered snout",
+        "symmetry": "bilateral",
+        "orientation": "frontal",
+        "dominant_axis": "vertical"
+      },
+      "silhouette_rules": {
+        "must_read_as": "a mask face-shape with pointed fox ears at top and a tapered snout at center",
+        "key_contour_features": [
+          "pointed ear tips at 10-o'clock and 2-o'clock",
+          "smooth curved cheek boundary",
+          "tapered snout narrowing toward nose",
+          "visible rim/edge thickness at perimeter",
+          "concave interior implied by shadow at eye slits"
+        ],
+        "forbidden_silhouettes": [
+          "perfect circle (loses fox identity)",
+          "human face oval (loses animal identity)",
+          "blob/organic mass (loses manufactured identity)",
+          "flat plane without depth (loses object quality)"
+        ]
+      },
+      "must_have_parts": [
+        { "part_name": "fox_ears", "description": "Two pointed ear forms at top of mask, clearly part of the mask structure", "visibility": "required_visible" },
+        { "part_name": "eye_slits", "description": "Narrow elongated eye openings, dark/void, angled slightly upward", "visibility": "required_visible" },
+        { "part_name": "snout_bridge", "description": "Raised nose/snout ridge running vertically down center", "visibility": "required_visible" },
+        { "part_name": "cheekbones", "description": "Defined cheek surfaces with subtle curvature", "visibility": "required_visible" },
+        { "part_name": "rim_edge", "description": "Visible edge thickness where mask meets air — proves it is a 3D object, not a flat image", "visibility": "required_visible" },
+        { "part_name": "mouth_line", "description": "Subtle carved line or slight opening suggesting mouth", "visibility": "implied" }
+      ],
+      "forbidden_parts": [
+        "human eyes or realistic eyeballs",
+        "fur or hair texture",
+        "organic skin texture",
+        "teeth (unless subtle carved suggestion)",
+        "nose holes (nostrils)",
+        "visible interior straps or elastic",
+        "decorative flowers or added ornaments"
+      ],
+      "material_truth": {
+        "primary_material": "engineered technical ceramic (B4C-inspired porcelain)",
+        "secondary_material": "crimson kintsugi accent seam (gold-repaired crack motif)",
+        "surface_finish": "matte",
+        "texture_descriptor": "dry dense eggshell microtexture, visible sparse fine hairline fractures, non-reflective matte ceramic finish",
+        "forbidden_materials": [
+          "glossy lacquer",
+          "plastic",
+          "PVC",
+          "stone",
+          "plaster",
+          "metal",
+          "glass",
+          "wood grain"
+        ]
+      },
+      "common_misreads": [
+        { "misread": "human face wearing a mask", "cause": "AI generates a person instead of the mask object alone" },
+        { "misread": "abstract white texture field", "cause": "prompt emphasis on ceramic/texture overwhelms object identity" },
+        { "misread": "flat 2D illustration", "cause": "missing depth cues, rim thickness, shadow" },
+        { "misread": "realistic fox animal face", "cause": "AI interprets 'kitsune' as literal fox rather than mask" },
+        { "misread": "generic oval mask", "cause": "fox-specific features (ears, snout) lost to smoothing" },
+        { "misread": "glossy porcelain figurine", "cause": "AI defaults to shiny ceramic instead of matte engineered surface" }
+      ],
+      "anti_misread_rules": [
+        { "rule": "Must be a single isolated object, not worn on a face", "enforcement": "both" },
+        { "rule": "No human skin, eyes, or organic facial features", "enforcement": "negative_prompt" },
+        { "rule": "No fur, hair, or animal skin texture", "enforcement": "negative_prompt" },
+        { "rule": "Matte finish only — no gloss, no specular, no reflection", "enforcement": "negative_prompt" },
+        { "rule": "Fox ears must be structurally present at mask crown", "enforcement": "positive_prompt" },
+        { "rule": "Eye slits must be dark voids, not painted-on eyes", "enforcement": "positive_prompt" },
+        { "rule": "Visible rim/edge thickness to prove 3D manufactured object", "enforcement": "positive_prompt" },
+        { "rule": "Subject must occupy clear central frame, not cropped or ambient", "enforcement": "positive_prompt" }
+      ],
+      "part_priority_order": [
+        "fox_ears",
+        "eye_slits",
+        "snout_bridge",
+        "rim_edge",
+        "cheekbones",
+        "mouth_line"
+      ],
+      "approved": true,
+      "approved_at": "2026-04-06T00:00:00.000Z"
+    }
+  ]
+}

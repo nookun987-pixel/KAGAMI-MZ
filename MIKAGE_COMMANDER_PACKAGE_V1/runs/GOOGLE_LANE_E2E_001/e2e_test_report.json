@@ -1,0 +1,111 @@
+{
+  "job_id": "GOOGLE_LANE_E2E_001",
+  "start_time": "2026-04-04T09:30:02.586Z",
+  "steps": {
+    "load_job": {
+      "status": "PASS",
+      "details": "Job GOOGLE_LANE_E2E_001 loaded",
+      "time": "2026-04-04T09:30:02.597Z"
+    },
+    "build_payload": {
+      "status": "PASS",
+      "details": "Payload saved: D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\render_job_payload.json",
+      "time": "2026-04-04T09:30:02.604Z"
+    },
+    "google_lane_exec": {
+      "status": "PASS",
+      "details": "Execution completed: PASS",
+      "time": "2026-04-04T09:30:13.664Z"
+    },
+    "verify_output": {
+      "status": "PASS",
+      "details": "output.png exists: 754183 bytes",
+      "time": "2026-04-04T09:30:13.665Z"
+    },
+    "verify_bundle": {
+      "status": "PASS",
+      "details": "result_bundle.json valid",
+      "time": "2026-04-04T09:30:13.671Z"
+    },
+    "local_validator": {
+      "status": "PASS",
+      "details": "Validation artifacts created",
+      "time": "2026-04-04T09:30:13.673Z"
+    },
+    "gemini_judge": {
+      "status": "PASS",
+      "details": "Gemini judgment: PASS",
+      "time": "2026-04-04T09:30:13.674Z"
+    },
+    "final_decision": {
+      "status": "PASS",
+      "details": "Decision written",
+      "time": "2026-04-04T09:30:13.677Z"
+    },
+    "job_summary": {
+      "status": "PASS",
+      "details": "Summary written",
+      "time": "2026-04-04T09:30:13.676Z"
+    },
+    "run_loop_trace": {
+      "status": "PASS",
+      "details": "Trace written",
+      "time": "2026-04-04T09:30:13.677Z"
+    },
+    "artifact_verification": {
+      "status": "PASS",
+      "details": "All 9 required artifacts present",
+      "time": "2026-04-04T09:30:13.680Z"
+    }
+  },
+  "artifacts": {
+    "render_job_payload.json": {
+      "exists": true,
+      "size": 1445,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\render_job_payload.json"
+    },
+    "result_bundle.json": {
+      "exists": true,
+      "size": 1008284,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\result_bundle.json"
+    },
+    "output.png": {
+      "exists": true,
+      "size": 754183,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\output.png"
+    },
+    "pre_validation.json": {
+      "exists": true,
+      "size": 151,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\pre_validation.json"
+    },
+    "post_validation.json": {
+      "exists": true,
+      "size": 376,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\post_validation.json"
+    },
+    "gemini_validation.json": {
+      "exists": true,
+      "size": 413,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\gemini_validation.json"
+    },
+    "final_decision.json": {
+      "exists": true,
+      "size": 963,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\final_decision.json"
+    },
+    "job_summary.json": {
+      "exists": true,
+      "size": 1933,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\job_summary.json"
+    },
+    "run_loop_trace.json": {
+      "exists": true,
+      "size": 334,
+      "path": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001\\run_loop_trace.json"
+    }
+  },
+  "verdict": "PASS",
+  "end_time": "2026-04-04T09:30:13.681Z",
+  "run_dir": "D:\\KAGAMI-MZ\\runs\\GOOGLE_LANE_E2E_001"
+}

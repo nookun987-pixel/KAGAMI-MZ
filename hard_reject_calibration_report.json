@@ -1,0 +1,549 @@
+{
+  "task_id": "HARD_REJECT_CALIBRATION_P0",
+  "fake_pass": 0,
+  "material_threshold_before": 0.8,
+  "material_threshold_after": 0.8,
+  "batch_pass_rate": 0.0,
+  "manual_check": "FAIL",
+  "false_reject_count": 30,
+  "details": {
+    "calibration_set": {
+      "group_a_count": 15,
+      "group_b_count": 20,
+      "group_c_count": 15
+    },
+    "material_audit": {
+      "material_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8066219956546775,
+        0.803710879564701,
+        0.8077943498129507,
+        0.8048018156722303,
+        0.8071784162304299,
+        0.8056632198087788,
+        0.8056605007398352,
+        0.8045177092463587,
+        0.8080226594290743,
+        0.8051782524363433,
+        0.8043106013395308,
+        0.8086062282419401,
+        0.8110316548603533,
+        0.806994929598068,
+        0.807132742584565,
+        0.8059890710527319,
+        0.8044312306899213,
+        0.8052980399550972,
+        0.8054542249904548,
+        0.8052754340777413,
+        1.0,
+        1.0,
+        0.9724103975359202,
+        1.0,
+        0.9737892353499399,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9734383942510776
+      ],
+      "validation_results": [
+        {
+          "image": "group_a_plastic_00.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_01.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_02.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_03.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_04.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_05.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_06.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_07.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_08.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_09.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_10.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_11.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_12.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_13.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_a_plastic_14.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_00.png",
+          "raw_material_score": 0.8066219956546775,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_01.png",
+          "raw_material_score": 0.803710879564701,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_02.png",
+          "raw_material_score": 0.8077943498129507,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_03.png",
+          "raw_material_score": 0.8048018156722303,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_04.png",
+          "raw_material_score": 0.8071784162304299,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_05.png",
+          "raw_material_score": 0.8056632198087788,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_06.png",
+          "raw_material_score": 0.8056605007398352,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_07.png",
+          "raw_material_score": 0.8045177092463587,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_08.png",
+          "raw_material_score": 0.8080226594290743,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_09.png",
+          "raw_material_score": 0.8051782524363433,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_10.png",
+          "raw_material_score": 0.8043106013395308,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_11.png",
+          "raw_material_score": 0.8086062282419401,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_12.png",
+          "raw_material_score": 0.8110316548603533,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_13.png",
+          "raw_material_score": 0.806994929598068,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_14.png",
+          "raw_material_score": 0.807132742584565,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_15.png",
+          "raw_material_score": 0.8059890710527319,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_16.png",
+          "raw_material_score": 0.8044312306899213,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_17.png",
+          "raw_material_score": 0.8052980399550972,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_18.png",
+          "raw_material_score": 0.8054542249904548,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_b_borderline_19.png",
+          "raw_material_score": 0.8052754340777413,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_00.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_01.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_02.png",
+          "raw_material_score": 0.9724103975359202,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_03.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_04.png",
+          "raw_material_score": 0.9737892353499399,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_05.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_06.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_07.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_08.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_09.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_10.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_11.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_12.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_13.png",
+          "raw_material_score": 1.0,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        },
+        {
+          "image": "group_c_ceramic_14.png",
+          "raw_material_score": 0.9734383942510776,
+          "is_plastic_cgi": "True",
+          "threshold": 0.8,
+          "passes": "False"
+        }
+      ],
+      "score_statistics": {
+        "min": 0.803710879564701,
+        "max": 1.0,
+        "mean": 0.9208662396624544,
+        "std": 0.0938509978755699,
+        "median": 1.0,
+        "count": 50
+      },
+      "current_threshold": 0.8
+    },
+    "threshold_testing": {
+      "0.8": {
+        "threshold": 0.8,
+        "group_a": {
+          "reject_count": 15,
+          "total": 15,
+          "reject_rate": 1.0
+        },
+        "group_b": {
+          "reject_count": 20,
+          "pass_count": 0,
+          "total": 20,
+          "reject_rate": 1.0,
+          "pass_rate": 0.0
+        },
+        "group_c": {
+          "reject_count": 15,
+          "pass_count": 0,
+          "total": 15,
+          "reject_rate": 1.0,
+          "pass_rate": 0.0
+        }
+      },
+      "0.85": {
+        "threshold": 0.85,
+        "group_a": {
+          "reject_count": 15,
+          "total": 15,
+          "reject_rate": 1.0
+        },
+        "group_b": {
+          "reject_count": 0,
+          "pass_count": 20,
+          "total": 20,
+          "reject_rate": 0.0,
+          "pass_rate": 1.0
+        },
+        "group_c": {
+          "reject_count": 15,
+          "pass_count": 0,
+          "total": 15,
+          "reject_rate": 1.0,
+          "pass_rate": 0.0
+        }
+      },
+      "0.9": {
+        "threshold": 0.9,
+        "group_a": {
+          "reject_count": 15,
+          "total": 15,
+          "reject_rate": 1.0
+        },
+        "group_b": {
+          "reject_count": 0,
+          "pass_count": 20,
+          "total": 20,
+          "reject_rate": 0.0,
+          "pass_rate": 1.0
+        },
+        "group_c": {
+          "reject_count": 15,
+          "pass_count": 0,
+          "total": 15,
+          "reject_rate": 1.0,
+          "pass_rate": 0.0
+        }
+      },
+      "0.92": {
+        "threshold": 0.92,
+        "group_a": {
+          "reject_count": 15,
+          "total": 15,
+          "reject_rate": 1.0
+        },
+        "group_b": {
+          "reject_count": 0,
+          "pass_count": 20,
+          "total": 20,
+          "reject_rate": 0.0,
+          "pass_rate": 1.0
+        },
+        "group_c": {
+          "reject_count": 15,
+          "pass_count": 0,
+          "total": 15,
+          "reject_rate": 1.0,
+          "pass_rate": 0.0
+        }
+      },
+      "0.95": {
+        "threshold": 0.95,
+        "group_a": {
+          "reject_count": 15,
+          "total": 15,
+          "reject_rate": 1.0
+        },
+        "group_b": {
+          "reject_count": 0,
+          "pass_count": 20,
+          "total": 20,
+          "reject_rate": 0.0,
+          "pass_rate": 1.0
+        },
+        "group_c": {
+          "reject_count": 15,
+          "pass_count": 0,
+          "total": 15,
+          "reject_rate": 1.0,
+          "pass_rate": 0.0
+        }
+      }
+    },
+    "calibration_batch": {
+      "total_jobs": 30,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "false_reject_count": 30
+    }
+  }
+}

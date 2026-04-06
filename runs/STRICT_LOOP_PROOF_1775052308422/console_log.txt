@@ -1,3 +1,0 @@
-[PROOF] Starting strict image loop...
-
-[STRICT_LOOP] Iteration 1/10

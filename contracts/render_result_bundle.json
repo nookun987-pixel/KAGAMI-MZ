@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mikage-render-result-bundle",
+  "title": "Mikage Render Result Bundle Contract",
+  "description": "Structured result bundle returned from Google Execution Lane to Control Core",
+  "type": "object",
+  "required": [
+    "version",
+    "job_id",
+    "status",
+    "output_files",
+    "render_payload",
+    "render_response_raw",
+    "execution_lane_info",
+    "completed_at"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "Contract version for compatibility checking"
+    },
+    "job_id": {
+      "type": "string",
+      "description": "Must match the job_id from render_job_payload.json"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["SUCCESS", "FAIL", "PARTIAL"],
+      "description": "Overall execution status"
+    },
+    "output_files": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["path", "type", "size_bytes"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Full path to output file"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["image", "metadata", "log"]
+          },
+          "mime_type": {
+            "type": "string",
+            "examples": ["image/png", "application/json"]
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "width": {
+            "type": "integer",
+            "description": "Image width (if type=image)"
+          },
+          "height": {
+            "type": "integer",
+            "description": "Image height (if type=image)"
+          }
+        }
+      }
+    },
+    "primary_output": {
+      "type": ["string", "null"],
+      "description": "Path to primary output image. NULL if no image generated."
+    },
+    "render_payload": {
+      "type": "object",
+      "description": "Echo of the input render payload for traceability",
+      "required": ["job_id", "prompt", "seed"]
+    },
+    "render_response_raw": {
+      "type": "object",
+      "description": "Raw API response from Imagen (including errors if any)"
+    },
+    "rag_context": {
+      "type": ["object", "null"],
+      "description": "RAG context if rag_enabled was true",
+      "required": ["retriever_mode", "real_vertex_verified", "query", "context", "chunks"],
+      "properties": {
+        "retriever_mode": {
+          "type": "string",
+          "enum": ["vertex", "mock", "none"]
+        },
+        "real_vertex_verified": {
+          "type": "boolean"
+        },
+        "query": {
+          "type": "string"
+        },
+        "context": {
+          "type": "string"
+        },
+        "chunks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "content": { "type": "string" },
+              "score": { "type": "number" },
+              "metadata": { "type": "object" }
+            }
+          }
+        }
+      }
+    },
+    "execution_lane_info": {
+      "type": "object",
+      "required": ["platform", "runtime"],
+      "properties": {
+        "platform": {
+          "type": "string",
+          "enum": ["colab", "local", "cloud_run", "vertex"],
+          "description": "Execution platform"
+        },
+        "runtime": {
+          "type": "string",
+          "enum": ["python", "nodejs"]
+        },
+        "gpu_available": {
+          "type": "boolean"
+        },
+        "execution_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "error": {
+      "type": ["object", "null"],
+      "description": "Error details if status != SUCCESS",
+      "properties": {
+        "code": { "type": "string" },
+        "message": { "type": "string" },
+        "stage": {
+          "type": "string",
+          "enum": ["rag_retrieval", "imagen_api", "file_save", "validation"]
+        },
+        "retryable": { "type": "boolean" }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "properties": {
+        "started_at": { "type": "string", "format": "date-time" },
+        "rag_completed_at": { "type": "string", "format": "date-time" },
+        "imagen_started_at": { "type": "string", "format": "date-time" },
+        "imagen_completed_at": { "type": "string", "format": "date-time" },
+        "total_duration_ms": { "type": "integer" }
+      }
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When execution started"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When execution completed"
+    }
+  },
+  "additionalProperties": false
+}

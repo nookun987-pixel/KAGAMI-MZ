@@ -1,0 +1,17 @@
+{
+  "final_verdict": "REJECT",
+  "source_of_truth": "gemini",
+  "hard_reject_count": 1,
+  "hard_rejects": [
+    {
+      "rule": "material_reads_as_plastic_cgi",
+      "severity": "hard_fail",
+      "reason": "Material reads as plastic/CGI rather than intended material",
+      "evidence": {
+        "material_score": 0.6718456885790413
+      }
+    }
+  ],
+  "timestamp": "D:\\KAGAMI-MZ",
+  "reasoning": "Hard reject validation: 1 rules triggered"
+}

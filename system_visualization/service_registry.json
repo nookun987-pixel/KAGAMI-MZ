@@ -1,0 +1,24 @@
+{
+  "services": [
+    {
+      "name": "fooocus_bridge",
+      "port": 7865,
+      "healthcheck": "http://127.0.0.1:7865/"
+    },
+    {
+      "name": "ollama",
+      "port": 11434,
+      "healthcheck": "http://127.0.0.1:11434/api/tags"
+    },
+    {
+      "name": "command_center",
+      "port": 3030,
+      "healthcheck": "http://127.0.0.1:3030/"
+    },
+    {
+      "name": "local_bridge",
+      "port": 3031,
+      "healthcheck": "http://127.0.0.1:3031/health"
+    }
+  ]
+}

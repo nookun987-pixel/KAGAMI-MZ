@@ -1,0 +1,232 @@
+{
+  "system_name": "MIKAGE-MZ",
+  "generated_at": "2026-04-03T03:18:55.609629",
+  "latest_run_id": "STRICT_LOOP_PROOF_1775065966121",
+  "layers": [
+    {
+      "name": "INTAKE_LAYER",
+      "nodes": [
+        "Gemini Intake",
+        "Precheck",
+        "Claude Spec"
+      ]
+    },
+    {
+      "name": "EXECUTION_LAYER",
+      "nodes": [
+        "Orchestrator",
+        "Fooocus Render"
+      ]
+    },
+    {
+      "name": "VALIDATION_LAYER",
+      "nodes": [
+        "Local Validator",
+        "Rule Engine",
+        "Analyzers",
+        "Gemini Judge"
+      ]
+    },
+    {
+      "name": "MEMORY_LAYER",
+      "nodes": [
+        "Canon Memory Registry",
+        "RAG Retriever"
+      ]
+    },
+    {
+      "name": "OBSERVABILITY_LAYER",
+      "nodes": [
+        "Run Artifacts",
+        "Flow Snapshot Writer",
+        "Command Center"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "Gemini Intake",
+      "to": "Precheck",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Precheck",
+      "to": "Claude Spec",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Claude Spec",
+      "to": "Orchestrator",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Fooocus Render",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Fooocus Render",
+      "to": "Local Validator",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Local Validator",
+      "to": "Rule Engine",
+      "type": "STEP_IN_PROCESS"
+    },
+    {
+      "from": "Local Validator",
+      "to": "Analyzers",
+      "type": "STEP_IN_PROCESS"
+    },
+    {
+      "from": "Rule Engine",
+      "to": "Gemini Judge",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Analyzers",
+      "to": "Gemini Judge",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Gemini Judge",
+      "to": "Canon Memory Registry",
+      "type": "ALLOW_WRITES_TO_MEMORY"
+    },
+    {
+      "from": "RAG Retriever",
+      "to": "Gemini Intake",
+      "type": "CONTEXT_INJECTION"
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Run Artifacts",
+      "type": "WRITES_ARTIFACTS"
+    },
+    {
+      "from": "Run Artifacts",
+      "to": "Flow Snapshot Writer",
+      "type": "READS_STATUS"
+    },
+    {
+      "from": "Flow Snapshot Writer",
+      "to": "Command Center",
+      "type": "EXPOSES_STATUS"
+    }
+  ],
+  "stages_status": [
+    {
+      "id": "gemini_intake",
+      "name": "Gemini Intake",
+      "layer": "INTAKE_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "intake.json"
+      ],
+      "present_outputs": []
+    },
+    {
+      "id": "precheck",
+      "name": "Precheck",
+      "layer": "INTAKE_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "precheck_result.json"
+      ],
+      "present_outputs": []
+    },
+    {
+      "id": "claude_spec",
+      "name": "Claude Spec",
+      "layer": "INTAKE_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "spec.json"
+      ],
+      "present_outputs": []
+    },
+    {
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "layer": "EXECUTION_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "render_payload.json",
+        "run_loop_trace.json"
+      ],
+      "present_outputs": []
+    },
+    {
+      "id": "fooocus_render",
+      "name": "Fooocus Render",
+      "layer": "EXECUTION_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "output.png",
+        "render_response_raw.json",
+        "render_timing.json"
+      ],
+      "present_outputs": []
+    },
+    {
+      "id": "local_validator",
+      "name": "Local Validator",
+      "layer": "VALIDATION_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "post_validation.json",
+        "analyzer_status.json"
+      ],
+      "present_outputs": []
+    },
+    {
+      "id": "gemini_judge",
+      "name": "Gemini Judge",
+      "layer": "VALIDATION_LAYER",
+      "status": "MISSING",
+      "expected_outputs": [
+        "gemini_validation.json",
+        "final_decision.json"
+      ],
+      "present_outputs": []
+    }
+  ],
+  "services_status": [
+    {
+      "name": "fooocus_bridge",
+      "port": 7865,
+      "port_open": false,
+      "http_alive": false,
+      "http_status_code": null,
+      "http_error": "<urlopen error timed out>"
+    },
+    {
+      "name": "ollama",
+      "port": 11434,
+      "port_open": false,
+      "http_alive": false,
+      "http_status_code": null,
+      "http_error": "<urlopen error timed out>"
+    },
+    {
+      "name": "command_center",
+      "port": 3030,
+      "port_open": false,
+      "http_alive": false,
+      "http_status_code": null,
+      "http_error": "<urlopen error timed out>"
+    },
+    {
+      "name": "local_bridge",
+      "port": 3031,
+      "port_open": false,
+      "http_alive": false,
+      "http_status_code": null,
+      "http_error": "<urlopen error timed out>"
+    }
+  ],
+  "final_decision": {},
+  "gemini_validation": {},
+  "post_validation": {}
+}

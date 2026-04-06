@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-04T03:17:49.820571",
+  "task_id": "read_config_file",
+  "task_type": "file_ops",
+  "action": "check_config",
+  "status": "PASS",
+  "evidence": {
+    "path": "D:\\KAGAMI-MZ\\config.txt",
+    "size_bytes": 984,
+    "content_type": "json",
+    "content": {
+      "path_checkpoints": [
+        "D:\\Fooocus-main\\models\\checkpoints"
+      ],
+      "default_model": "juggernautXL_v8Rundiffusion.safetensors",
+      "path_loras": [
+        "D:\\Fooocus-main\\models\\loras"
+      ],
+      "path_embeddings": "D:\\Fooocus-main\\models\\embeddings",
+      "path_vae_approx": "D:\\Fooocus-main\\models\\vae_approx",
+      "path_vae": "D:\\Fooocus-main\\models\\vae",
+      "path_upscale_models": "D:\\Fooocus-main\\models\\upscale_models",
+      "path_inpaint": "D:\\Fooocus-main\\models\\inpaint",
+      "path_controlnet": "D:\\Fooocus-main\\models\\controlnet",
+      "path_clip_vision": "D:\\Fooocus-main\\models\\clip_vision",
+      "path_fooocus_expansion": "D:\\Fooocus-main\\models\\prompt_expansion\\fooocus_expansion",
+      "path_wildcards": "D:\\Fooocus-main\\wildcards",
+      "path_safety_checker": "D:\\Fooocus-main\\models\\safety_checker",
+      "path_sam": "D:\\Fooocus-main\\models\\sam",
+      "path_outputs": "D:\\Fooocus-main\\outputs"
+    }
+  },
+  "failure_reason": "",
+  "execution_time": 0.0020279884338378906
+}

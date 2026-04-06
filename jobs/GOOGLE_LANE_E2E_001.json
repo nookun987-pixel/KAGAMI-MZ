@@ -1,0 +1,19 @@
+{
+  "job_id": "GOOGLE_LANE_E2E_001",
+  "type": "render",
+  "generation_mode": "exploration",
+  "shot_type": "MASK_MACRO",
+  "entity_id": "google_lane_test_mask",
+  "entity_class": "mask_study",
+  "zone": "white_monolith",
+  "user_idea": "white ceramic mask macro test",
+  "render": {
+    "width": 1024,
+    "height": 1024,
+    "performance": "Quality",
+    "seed": 123456,
+    "aspect_ratio": "1:1"
+  },
+  "use_rag": true,
+  "test_mode": true
+}

@@ -1,0 +1,112 @@
+{
+  "overall_status": "PASS",
+  "timestamp": "2026-04-04T02:24:50.932861",
+  "summary": {
+    "PASS": 9,
+    "FAIL": 0,
+    "WARN": 0,
+    "SKIP": 0
+  },
+  "checks": [
+    {
+      "name": "model_file",
+      "status": "PASS",
+      "details": [
+        "model file OK: D:\\Fooocus-main\\models\\checkpoints\\juggernautXL_v8Rundiffusion.safetensors"
+      ],
+      "data": {
+        "configured_model": "D:\\Fooocus-main\\models\\checkpoints\\juggernautXL_v8Rundiffusion.safetensors"
+      }
+    },
+    {
+      "name": "fooocus_path",
+      "status": "PASS",
+      "details": [
+        "Fooocus root OK: D:\\Fooocus-main"
+      ],
+      "data": {
+        "fooocus_root": "D:\\Fooocus-main"
+      }
+    },
+    {
+      "name": "bridge_file",
+      "status": "PASS",
+      "details": [
+        "bridge script OK: D:\\KAGAMI-MZ\\scripts\\fooocus_bridge.py"
+      ],
+      "data": {
+        "bridge_script": "D:\\KAGAMI-MZ\\scripts\\fooocus_bridge.py"
+      }
+    },
+    {
+      "name": "python_executable",
+      "status": "PASS",
+      "details": [
+        "python executable OK: C:\\Users\\THIS PC\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+      ],
+      "data": {
+        "python_executable": "C:\\Users\\THIS PC\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+      }
+    },
+    {
+      "name": "output_dir",
+      "status": "PASS",
+      "details": [
+        "output dir ready: D:\\KAGAMI-MZ\\outputs",
+        "output dir write test OK"
+      ],
+      "data": {
+        "output_dir": "D:\\KAGAMI-MZ\\outputs"
+      }
+    },
+    {
+      "name": "required_folders",
+      "status": "PASS",
+      "details": [
+        "folder OK: D:\\KAGAMI-MZ\\runs",
+        "folder OK: D:\\KAGAMI-MZ\\outputs"
+      ],
+      "data": {
+        "required_folders": [
+          "runs",
+          "outputs"
+        ]
+      }
+    },
+    {
+      "name": "port_plan",
+      "status": "PASS",
+      "details": [
+        "port defined: 7865",
+        "bridge URL defined: http://127.0.0.1:7865/generate"
+      ],
+      "data": {
+        "port": "7865",
+        "bridge_url": "http://127.0.0.1:7865/generate"
+      }
+    },
+    {
+      "name": "render_entry",
+      "status": "PASS",
+      "details": [
+        "render_workflow.py OK: D:\\KAGAMI-MZ\\render_workflow.py"
+      ],
+      "data": {
+        "render_workflow": "D:\\KAGAMI-MZ\\render_workflow.py"
+      }
+    },
+    {
+      "name": "config_consistency",
+      "status": "PASS",
+      "details": [
+        "env model: D:\\Fooocus-main\\models\\checkpoints\\juggernautXL_v8Rundiffusion.safetensors"
+      ],
+      "data": {
+        "hardcoded_model": null,
+        "env_model": "D:\\Fooocus-main\\models\\checkpoints\\juggernautXL_v8Rundiffusion.safetensors"
+      }
+    }
+  ],
+  "blockers": [],
+  "warnings": []
+}

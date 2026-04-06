@@ -1,0 +1,727 @@
+[
+  {
+    "run_id": "run_mnmjdwbd_ttgpg",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmjdwbd_ttgpg",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "",
+        "negative_prompt": "",
+        "job_payload": {
+          "lane": "MASK_MACRO",
+          "idea": "test",
+          "execution_target": "colab",
+          "job_id": "JOB-1775440420811-STQZTZ",
+          "queue_id": "queue_mnmjdwbg_jfwak",
+          "run_id": "run_mnmjdwbd_ttgpg",
+          "worker_id": "server_13112",
+          "_prior_run_state": {
+            "run_id": "run_mnmjdwbd_ttgpg",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775440420811-STQZTZ",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T01:53:40.825Z",
+            "updated_at": "2026-04-06T01:53:40.857Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmjdwbg_jfwak",
+            "active_queue_ids": [
+              "queue_mnmjdwbg_jfwak"
+            ],
+            "queue_history": [
+              "queue_mnmjdwbg_jfwak"
+            ],
+            "active_worker_id": "server_13112",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmjdwbg_jfwak",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T01:53:40.860Z"
+      }
+    },
+    "normalized_result": {
+      "status": "FAIL",
+      "transport_ok": false,
+      "execution_ok": false,
+      "result_type": null,
+      "artifacts": [],
+      "raw_response_present": false,
+      "raw_response": null,
+      "error_type": "TRANSPORT_FAILURE",
+      "error_reason": "Colab execution timed out after 600000ms",
+      "run_id": "run_mnmjdwbd_ttgpg",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T02:03:41.350Z"
+  },
+  {
+    "run_id": "run_mnmm6u9z_bvp9t",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmm6u9z_bvp9t",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "test dry run",
+        "negative_prompt": "",
+        "job_payload": {
+          "idea": "test dry run",
+          "prompt": "test dry run",
+          "execution_target": "colab",
+          "lane": "MASK_MACRO",
+          "job_id": "JOB-1775445130422-V8SH2W",
+          "queue_id": "queue_mnmm6ua2_8z6p5",
+          "run_id": "run_mnmm6u9z_bvp9t",
+          "worker_id": "server_12792",
+          "_prior_run_state": {
+            "run_id": "run_mnmm6u9z_bvp9t",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775445130422-V8SH2W",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T03:12:10.439Z",
+            "updated_at": "2026-04-06T03:12:10.474Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmm6ua2_8z6p5",
+            "active_queue_ids": [
+              "queue_mnmm6ua2_8z6p5"
+            ],
+            "queue_history": [
+              "queue_mnmm6ua2_8z6p5"
+            ],
+            "active_worker_id": "server_12792",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmm6ua2_8z6p5",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T03:12:10.478Z"
+      }
+    },
+    "normalized_result": {
+      "status": "SUCCESS",
+      "transport_ok": true,
+      "execution_ok": true,
+      "result_type": "image_generation",
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445130422-V8SH2W\\output.png"
+        }
+      ],
+      "raw_response_present": true,
+      "raw_response": {
+        "job_id": "JOB-1775445130422-V8SH2W",
+        "status": "DONE",
+        "output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445130422-V8SH2W\\output.png",
+        "output_files": [
+          {
+            "path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445130422-V8SH2W\\output.png",
+            "type": "image"
+          }
+        ],
+        "result_type": "image_generation",
+        "execution_runner": "colab",
+        "execution_lane": "google_drive_colab",
+        "executor_type": "drive_bridge",
+        "result_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445130422-V8SH2W\\result.json",
+        "raw_result": {
+          "job_id": "JOB-1775445130422-V8SH2W",
+          "status": "SUCCESS",
+          "processed_at": "2026-04-06T03:12:12.729006+00:00",
+          "worker_mode": "dry_run",
+          "source_job_file": "G:\\My Drive\\mikage_runner\\job_processing\\JOB-1775445130422-V8SH2W.json",
+          "output_dir": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445130422-V8SH2W"
+        }
+      },
+      "error_type": null,
+      "error_reason": null,
+      "run_id": "run_mnmm6u9z_bvp9t",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T03:12:14.514Z"
+  },
+  {
+    "run_id": "run_mnmmage0_alyqm",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmmage0_alyqm",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "stage1 real execution",
+        "negative_prompt": "",
+        "job_payload": {
+          "idea": "stage1 real execution",
+          "prompt": "stage1 real execution",
+          "execution_target": "colab",
+          "lane": "MASK_MACRO",
+          "job_id": "JOB-1775445299051-TKIIN3",
+          "queue_id": "queue_mnmmage5_2yhp6",
+          "run_id": "run_mnmmage0_alyqm",
+          "worker_id": "server_6468",
+          "_prior_run_state": {
+            "run_id": "run_mnmmage0_alyqm",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775445299051-TKIIN3",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T03:14:59.064Z",
+            "updated_at": "2026-04-06T03:14:59.128Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmmage5_2yhp6",
+            "active_queue_ids": [
+              "queue_mnmmage5_2yhp6"
+            ],
+            "queue_history": [
+              "queue_mnmmage5_2yhp6"
+            ],
+            "active_worker_id": "server_6468",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmmage5_2yhp6",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T03:14:59.135Z"
+      }
+    },
+    "normalized_result": {
+      "status": "SUCCESS",
+      "transport_ok": true,
+      "execution_ok": true,
+      "result_type": "image_generation",
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445299051-TKIIN3\\output.png"
+        }
+      ],
+      "raw_response_present": true,
+      "raw_response": {
+        "job_id": "JOB-1775445299051-TKIIN3",
+        "status": "DONE",
+        "output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445299051-TKIIN3\\output.png",
+        "output_files": [
+          {
+            "path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445299051-TKIIN3\\output.png",
+            "type": "image"
+          }
+        ],
+        "result_type": "image_generation",
+        "execution_runner": "colab",
+        "execution_lane": "google_drive_colab",
+        "executor_type": "drive_bridge",
+        "result_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445299051-TKIIN3\\result.json",
+        "raw_result": {
+          "job_id": "JOB-1775445299051-TKIIN3",
+          "status": "SUCCESS",
+          "worker_mode": "execution_scaffold_v1",
+          "lane": "unknown",
+          "execution_target": null,
+          "processed_at": "2026-04-06T03:14:59.276145+00:00",
+          "output_dir": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445299051-TKIIN3"
+        }
+      },
+      "error_type": null,
+      "error_reason": null,
+      "run_id": "run_mnmmage0_alyqm",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T03:15:01.168Z"
+  },
+  {
+    "run_id": "run_mnmmij1r_yillh",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmmij1r_yillh",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "payload fidelity fixed",
+        "negative_prompt": "",
+        "job_payload": {
+          "idea": "payload fidelity fixed",
+          "prompt": "payload fidelity fixed",
+          "execution_target": "colab",
+          "lane": "MASK_MACRO",
+          "job_id": "JOB-1775445675741-76MTDC",
+          "queue_id": "queue_mnmmij1u_9v8l5",
+          "run_id": "run_mnmmij1r_yillh",
+          "worker_id": "server_7904",
+          "_prior_run_state": {
+            "run_id": "run_mnmmij1r_yillh",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775445675741-76MTDC",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T03:21:15.759Z",
+            "updated_at": "2026-04-06T03:21:15.796Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmmij1u_9v8l5",
+            "active_queue_ids": [
+              "queue_mnmmij1u_9v8l5"
+            ],
+            "queue_history": [
+              "queue_mnmmij1u_9v8l5"
+            ],
+            "active_worker_id": "server_7904",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmmij1u_9v8l5",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T03:21:15.800Z"
+      }
+    },
+    "normalized_result": {
+      "status": "SUCCESS",
+      "transport_ok": true,
+      "execution_ok": true,
+      "result_type": "image_generation",
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445675741-76MTDC\\output.png"
+        }
+      ],
+      "raw_response_present": true,
+      "raw_response": {
+        "job_id": "JOB-1775445675741-76MTDC",
+        "status": "DONE",
+        "output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445675741-76MTDC\\output.png",
+        "output_files": [
+          {
+            "path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445675741-76MTDC\\output.png",
+            "type": "image"
+          }
+        ],
+        "result_type": "image_generation",
+        "execution_runner": "colab",
+        "execution_lane": "google_drive_colab",
+        "executor_type": "drive_bridge",
+        "result_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445675741-76MTDC\\result.json",
+        "raw_result": {
+          "job_id": "JOB-1775445675741-76MTDC",
+          "status": "SUCCESS",
+          "worker_mode": "execution_scaffold_v1",
+          "lane": "MASK_MACRO",
+          "execution_target": "colab",
+          "processed_at": "2026-04-06T03:21:16.368463+00:00",
+          "output_dir": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445675741-76MTDC"
+        }
+      },
+      "error_type": null,
+      "error_reason": null,
+      "run_id": "run_mnmmij1r_yillh",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T03:21:17.910Z"
+  },
+  {
+    "run_id": "run_mnmmmvd9_670jw",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmmmvd9_670jw",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "real image flow v1",
+        "negative_prompt": "",
+        "job_payload": {
+          "lane": "MASK_MACRO",
+          "idea": "real image flow v1",
+          "prompt": "real image flow v1",
+          "execution_target": "colab",
+          "job_id": "JOB-1775445878332-XL0XLJ",
+          "queue_id": "queue_mnmmmvde_tw15v",
+          "run_id": "run_mnmmmvd9_670jw",
+          "worker_id": "server_6496",
+          "_prior_run_state": {
+            "run_id": "run_mnmmmvd9_670jw",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775445878332-XL0XLJ",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T03:24:38.349Z",
+            "updated_at": "2026-04-06T03:24:38.432Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmmmvde_tw15v",
+            "active_queue_ids": [
+              "queue_mnmmmvde_tw15v"
+            ],
+            "queue_history": [
+              "queue_mnmmmvde_tw15v"
+            ],
+            "active_worker_id": "server_6496",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmmmvde_tw15v",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T03:24:38.439Z"
+      }
+    },
+    "normalized_result": {
+      "status": "SUCCESS",
+      "transport_ok": true,
+      "execution_ok": true,
+      "result_type": "image_generation",
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmmvd9_670jw\\output.png"
+        }
+      ],
+      "raw_response_present": true,
+      "raw_response": {
+        "job_id": "JOB-1775445878332-XL0XLJ",
+        "status": "DONE",
+        "output_file_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmmvd9_670jw\\output.png",
+        "output_files": [
+          {
+            "path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmmvd9_670jw\\output.png",
+            "type": "image"
+          }
+        ],
+        "result_type": "image_generation",
+        "execution_runner": "colab",
+        "execution_lane": "google_drive_colab",
+        "executor_type": "drive_bridge",
+        "result_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445878332-XL0XLJ\\result.json",
+        "raw_result": {
+          "job_id": "JOB-1775445878332-XL0XLJ",
+          "status": "SUCCESS",
+          "worker_mode": "pil_placeholder_v1",
+          "lane": "MASK_MACRO",
+          "execution_target": "colab",
+          "processed_at": "2026-04-06T03:24:39.205468+00:00",
+          "output_dir": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445878332-XL0XLJ",
+          "output_image": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445878332-XL0XLJ\\output.png",
+          "output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775445878332-XL0XLJ\\output.png"
+        }
+      },
+      "error_type": null,
+      "error_reason": null,
+      "run_id": "run_mnmmmvd9_670jw",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T03:24:40.572Z"
+  },
+  {
+    "run_id": "run_mnmmt5zy_v06jr",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmmt5zy_v06jr",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "real renderer v2",
+        "negative_prompt": "",
+        "job_payload": {
+          "lane": "MASK_MACRO",
+          "idea": "real renderer v2",
+          "prompt": "real renderer v2",
+          "execution_target": "colab",
+          "job_id": "JOB-1775446172049-DB6DSO",
+          "queue_id": "queue_mnmmt603_cxtwh",
+          "run_id": "run_mnmmt5zy_v06jr",
+          "worker_id": "server_1664",
+          "_prior_run_state": {
+            "run_id": "run_mnmmt5zy_v06jr",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775446172049-DB6DSO",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T03:29:32.062Z",
+            "updated_at": "2026-04-06T03:29:32.111Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmmt603_cxtwh",
+            "active_queue_ids": [
+              "queue_mnmmt603_cxtwh"
+            ],
+            "queue_history": [
+              "queue_mnmmt603_cxtwh"
+            ],
+            "active_worker_id": "server_1664",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmmt603_cxtwh",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T03:29:32.119Z"
+      }
+    },
+    "normalized_result": {
+      "status": "SUCCESS",
+      "transport_ok": true,
+      "execution_ok": true,
+      "result_type": "image_generation",
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmt5zy_v06jr\\output.png"
+        }
+      ],
+      "raw_response_present": true,
+      "raw_response": {
+        "job_id": "JOB-1775446172049-DB6DSO",
+        "status": "DONE",
+        "output_file_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmt5zy_v06jr\\output.png",
+        "output_files": [
+          {
+            "path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmt5zy_v06jr\\output.png",
+            "type": "image"
+          }
+        ],
+        "result_type": "image_generation",
+        "execution_runner": "colab",
+        "execution_lane": "google_drive_colab",
+        "executor_type": "drive_bridge",
+        "result_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775446172049-DB6DSO\\result.json",
+        "raw_result": {
+          "job_id": "JOB-1775446172049-DB6DSO",
+          "status": "SUCCESS",
+          "worker_mode": "procedural_renderer_v1",
+          "lane": "MASK_MACRO",
+          "execution_target": "colab",
+          "processed_at": "2026-04-06T03:29:33.338402+00:00",
+          "output_dir": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775446172049-DB6DSO",
+          "output_image": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775446172049-DB6DSO\\output.png",
+          "output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775446172049-DB6DSO\\output.png"
+        }
+      },
+      "error_type": null,
+      "error_reason": null,
+      "run_id": "run_mnmmt5zy_v06jr",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T03:29:34.150Z"
+  },
+  {
+    "run_id": "run_mnmop1is_1dkce",
+    "attempt": 1,
+    "target": "colab",
+    "packet": {
+      "run_id": "run_mnmop1is_1dkce",
+      "attempt": 1,
+      "lane": "unknown",
+      "target": "colab",
+      "spec": {
+        "prompt": "timeout test",
+        "negative_prompt": "",
+        "job_payload": {
+          "lane": "MASK_MACRO",
+          "idea": "timeout test",
+          "prompt": "timeout test",
+          "execution_target": "colab",
+          "job_id": "JOB-1775449338853-46W7RY",
+          "queue_id": "queue_mnmop1ix_4bl1m",
+          "run_id": "run_mnmop1is_1dkce",
+          "worker_id": "server_8560",
+          "_prior_run_state": {
+            "run_id": "run_mnmop1is_1dkce",
+            "task_type": "run_render_task",
+            "job_id": "JOB-1775449338853-46W7RY",
+            "entity_id": null,
+            "status": "running",
+            "attempt_count": 1,
+            "max_attempts": 3,
+            "created_at": "2026-04-06T04:22:18.868Z",
+            "updated_at": "2026-04-06T04:22:18.924Z",
+            "last_decision": null,
+            "last_reason": null,
+            "context_mode": null,
+            "sources_used": [],
+            "failure_patterns": [],
+            "patch_history": [],
+            "decision_history": [],
+            "operator_result_summary": {},
+            "latest_active_queue_id": "queue_mnmop1ix_4bl1m",
+            "active_queue_ids": [
+              "queue_mnmop1ix_4bl1m"
+            ],
+            "queue_history": [
+              "queue_mnmop1ix_4bl1m"
+            ],
+            "active_worker_id": "server_8560",
+            "finalized_identity": null,
+            "metadata": {
+              "last_queue_link": {
+                "queue_id": "queue_mnmop1ix_4bl1m",
+                "queue_status": "queued",
+                "duplicate": false
+              }
+            }
+          }
+        }
+      },
+      "canon_packet": null,
+      "metadata": {
+        "caller": "mikage-control-plane",
+        "timestamp": "2026-04-06T04:22:18.929Z"
+      }
+    },
+    "normalized_result": {
+      "status": "FAIL",
+      "transport_ok": true,
+      "execution_ok": false,
+      "result_type": "execution_dispatch",
+      "artifacts": [],
+      "raw_response_present": true,
+      "raw_response": {
+        "job_id": "JOB-1775449338853-46W7RY",
+        "status": "FAIL",
+        "result_type": "execution_dispatch",
+        "execution_runner": "colab",
+        "execution_lane": "google_drive_colab",
+        "executor_type": "drive_bridge",
+        "error": "TIMEOUT_FAILED",
+        "error_reason": "No completion artifact after 2000ms",
+        "timeout_ms": 2000,
+        "result_path": "G:\\My Drive\\mikage_runner\\outputs\\JOB-1775449338853-46W7RY\\result.json",
+        "raw_result": {
+          "status": "FAILED",
+          "error": "TIMEOUT_FAILED",
+          "error_reason": "No completion artifact after 2000ms",
+          "timeout_ms": 2000,
+          "job_id": "JOB-1775449338853-46W7RY"
+        }
+      },
+      "error_type": "EXECUTION_FAILURE",
+      "error_reason": "TIMEOUT_FAILED",
+      "run_id": "run_mnmop1is_1dkce",
+      "attempt": 1,
+      "target": "colab"
+    },
+    "timestamp": "2026-04-06T04:22:20.985Z"
+  }
+]

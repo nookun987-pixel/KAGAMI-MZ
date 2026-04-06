@@ -23,8 +23,9 @@ from PIL import Image
 # Bootstrap Fooocus — must happen BEFORE importing Fooocus modules
 # ---------------------------------------------------------------------------
 
-FOOOCUS_ROOT = os.environ.get("FOOOCUS_ROOT", "D:/Fooocus-main")
+FOOOCUS_ROOT = os.environ.get("FOOOCUS_ROOT", "/workspace/Fooocus")
 BRIDGE_PORT = int(os.environ.get("FOOOCUS_BRIDGE_PORT", "7865"))
+FOOOCUS_MODEL = os.environ.get("FOOOCUS_MODEL", "realvisxlV50_v40Bakedvae.safetensors")
 
 # Inject Fooocus into sys.path
 if FOOOCUS_ROOT not in sys.path:
@@ -56,6 +57,54 @@ print(f"[BRIDGE] Output dir: {fooocus_config.path_outputs}")
 
 # Restore argv for uvicorn
 sys.argv = _original_argv
+
+# ---------------------------------------------------------------------------
+# Worker thread management — capture ref so we can check alive / restart
+# ---------------------------------------------------------------------------
+
+def _find_worker_thread():
+    """Find the Fooocus worker daemon thread by scanning all threads."""
+    for t in threading.enumerate():
+        if t.daemon and t.is_alive() and 'worker' in t.name.lower():
+            return t
+    # Fallback: any alive daemon thread that isn't MainThread
+    for t in threading.enumerate():
+        if t.daemon and t.is_alive() and t.name != 'MainThread':
+            return t
+    return None
+
+_worker_thread = _find_worker_thread()
+if _worker_thread:
+    print(f"[BRIDGE] Worker thread captured: {_worker_thread.name}, alive={_worker_thread.is_alive()}")
+else:
+    print(f"[BRIDGE] WARNING: Could not find worker thread after Fooocus import")
+
+
+def _ensure_worker_alive() -> bool:
+    """Check if the Fooocus worker thread is alive. If dead, attempt restart."""
+    global _worker_thread
+    if _worker_thread and _worker_thread.is_alive():
+        return True
+    _worker_thread = _find_worker_thread()
+    if _worker_thread and _worker_thread.is_alive():
+        print(f"[BRIDGE] Worker thread re-found: {_worker_thread.name}")
+        return True
+    print(f"[BRIDGE] Worker thread DEAD. Attempting restart...")
+    try:
+        import importlib
+        importlib.reload(async_worker)
+        time.sleep(2)
+        _worker_thread = _find_worker_thread()
+        if _worker_thread and _worker_thread.is_alive():
+            print(f"[BRIDGE] Worker thread RESTARTED: {_worker_thread.name}")
+            return True
+        else:
+            print(f"[BRIDGE] Worker restart FAILED — no alive thread found")
+            return False
+    except Exception as e:
+        print(f"[BRIDGE] Worker restart EXCEPTION: {e}")
+        traceback.print_exc()
+        return False
 
 # ---------------------------------------------------------------------------
 # FastAPI REST layer
@@ -390,7 +439,7 @@ def _build_args(req: TextToImgRequest) -> list:
         False,                              # [9]  Read wildcards in order
         req.sharpness,                      # [10] Image Sharpness
         req.guidance_scale,                 # [11] Guidance Scale
-        "juggernautXL_v8Rundiffusion.safetensors",  # [12] Base Model
+        FOOOCUS_MODEL,                              # [12] Base Model
         "None" if req.disable_refiner else "None",  # [13] Refiner
         0.5,                                # [14] Refiner Switch At
     ]
@@ -580,11 +629,42 @@ def _run_task(req: TextToImgRequest) -> dict:
           f"has_yields={hasattr(task, 'yields')}, "
           f"has_results={hasattr(task, 'results')}")
 
+    # --- WORKER ALIVE CHECK (fail-fast) ---
+    worker_ok = _ensure_worker_alive()
+    print(f"[BRIDGE] WORKER STATUS: alive={worker_ok}, thread={_worker_thread}")
+    if not worker_ok:
+        msg = "WORKER_THREAD_DEAD: Fooocus worker not running. Cannot process render."
+        print(f"[BRIDGE] FATAL: {msg}")
+        return {"success": False, "error": msg}
+
     start_t = time.time()
     queue_len_before = len(async_worker.async_tasks)
     async_worker.async_tasks.append(task)
     queue_len_after = len(async_worker.async_tasks)
     print(f"[BRIDGE] TASK QUEUED: queue {queue_len_before} -> {queue_len_after}")
+
+    # --- FAIL-FAST: if worker doesn't pop within 30s, hard error ---
+    WORKER_POP_TIMEOUT = 30
+    pop_deadline = time.time() + WORKER_POP_TIMEOUT
+    while time.time() < pop_deadline:
+        if len(task.yields) > 0:
+            break
+        if task not in async_worker.async_tasks:
+            break
+        time.sleep(0.5)
+    else:
+        still_queued = task in async_worker.async_tasks
+        alive2 = _worker_thread.is_alive() if _worker_thread else False
+        msg = (f"WORKER_POP_TIMEOUT: task not picked up in {WORKER_POP_TIMEOUT}s. "
+               f"still_in_queue={still_queued}, queue_len={len(async_worker.async_tasks)}, "
+               f"worker_alive={alive2}")
+        print(f"[BRIDGE] FATAL: {msg}")
+        if still_queued:
+            try: async_worker.async_tasks.remove(task)
+            except: pass
+        return {"success": False, "error": msg}
+
+    print(f"[BRIDGE] Worker picked up task in {time.time()-start_t:.1f}s")
 
     # Wait for task completion (yields ends with ['finish', results])
     timeout = 900  # 15 min max
@@ -778,6 +858,25 @@ async def queue_status():
     }
 
 
+@app.get("/worker-status")
+async def worker_status():
+    """Diagnostic endpoint: check if Fooocus worker thread is alive."""
+    alive = _worker_thread.is_alive() if _worker_thread else False
+    thread_name = _worker_thread.name if _worker_thread else None
+    daemon_threads = [
+        {"name": t.name, "alive": t.is_alive(), "daemon": t.daemon}
+        for t in threading.enumerate() if t.daemon
+    ]
+    return {
+        "worker_alive": alive,
+        "worker_thread": thread_name,
+        "queue_length": len(async_worker.async_tasks),
+        "daemon_threads": daemon_threads,
+        "model": FOOOCUS_MODEL,
+        "output_dir": fooocus_config.path_outputs,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -785,5 +884,6 @@ async def queue_status():
 if __name__ == "__main__":
     print(f"[BRIDGE] Starting Fooocus Direct Bridge on :{BRIDGE_PORT}")
     print(f"[BRIDGE] Mode: internal pipeline (no Gradio)")
+    print(f"[BRIDGE] Base model: {FOOOCUS_MODEL}")
     print(f"[BRIDGE] Output dir: {fooocus_config.path_outputs}")
     uvicorn.run(app, host="0.0.0.0", port=BRIDGE_PORT, log_level="info")

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-04-04T06:37:33.258749",
+  "port": 7865,
+  "expected_service": "fooocus_bridge",
+  "pid": 9104,
+  "command": "C:\\Users\\THIS PC\\AppData\\Local\\Programs\\Python\\Python310\\python.exe D:\\KAGAMI-MZ\\scripts\\fooocus_bridge.py",
+  "process_name": "python.exe",
+  "identity_url": "http://localhost:7865/identity",
+  "identity_status_code": 200,
+  "identity_payload": {
+    "service": "fooocus_bridge",
+    "supports_generate": true,
+    "version": "IMAGE_LANE_CONTROL_V1",
+    "port": 7865
+  },
+  "is_expected_service": true,
+  "verdict": "PASS",
+  "error_code": null
+}

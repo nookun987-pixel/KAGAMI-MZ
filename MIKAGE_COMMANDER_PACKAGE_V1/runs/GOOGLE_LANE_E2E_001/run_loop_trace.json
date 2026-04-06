@@ -1,0 +1,16 @@
+[
+  {
+    "attempt": 1,
+    "phase": "GOOGLE_LANE",
+    "render_ok": true,
+    "output_exists": true,
+    "validator_executed": true,
+    "gemini_validation_executed": true,
+    "render_profile": "imagen-3.0",
+    "width": 1024,
+    "height": 1024,
+    "render_duration_seconds": 11,
+    "decision": "PASS",
+    "fail_rules": []
+  }
+]

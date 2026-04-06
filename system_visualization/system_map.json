@@ -1,0 +1,117 @@
+{
+  "system_name": "MIKAGE-MZ",
+  "version": "1.0",
+  "layers": [
+    {
+      "name": "INTAKE_LAYER",
+      "nodes": [
+        "Gemini Intake",
+        "Precheck",
+        "Claude Spec"
+      ]
+    },
+    {
+      "name": "EXECUTION_LAYER",
+      "nodes": [
+        "Orchestrator",
+        "Fooocus Render"
+      ]
+    },
+    {
+      "name": "VALIDATION_LAYER",
+      "nodes": [
+        "Local Validator",
+        "Rule Engine",
+        "Analyzers",
+        "Gemini Judge"
+      ]
+    },
+    {
+      "name": "MEMORY_LAYER",
+      "nodes": [
+        "Canon Memory Registry",
+        "RAG Retriever"
+      ]
+    },
+    {
+      "name": "OBSERVABILITY_LAYER",
+      "nodes": [
+        "Run Artifacts",
+        "Flow Snapshot Writer",
+        "Command Center"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "Gemini Intake",
+      "to": "Precheck",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Precheck",
+      "to": "Claude Spec",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Claude Spec",
+      "to": "Orchestrator",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Fooocus Render",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Fooocus Render",
+      "to": "Local Validator",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Local Validator",
+      "to": "Rule Engine",
+      "type": "STEP_IN_PROCESS"
+    },
+    {
+      "from": "Local Validator",
+      "to": "Analyzers",
+      "type": "STEP_IN_PROCESS"
+    },
+    {
+      "from": "Rule Engine",
+      "to": "Gemini Judge",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Analyzers",
+      "to": "Gemini Judge",
+      "type": "STEP_IN_FLOW"
+    },
+    {
+      "from": "Gemini Judge",
+      "to": "Canon Memory Registry",
+      "type": "ALLOW_WRITES_TO_MEMORY"
+    },
+    {
+      "from": "RAG Retriever",
+      "to": "Gemini Intake",
+      "type": "CONTEXT_INJECTION"
+    },
+    {
+      "from": "Orchestrator",
+      "to": "Run Artifacts",
+      "type": "WRITES_ARTIFACTS"
+    },
+    {
+      "from": "Run Artifacts",
+      "to": "Flow Snapshot Writer",
+      "type": "READS_STATUS"
+    },
+    {
+      "from": "Flow Snapshot Writer",
+      "to": "Command Center",
+      "type": "EXPOSES_STATUS"
+    }
+  ]
+}

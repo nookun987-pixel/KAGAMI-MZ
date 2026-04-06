@@ -60,6 +60,36 @@ export PORT="${PORT:-3000}"
 
 mkdir -p "$FOOOCUS_OUTPUT_DIR"
 
+# ── SDXL Model validation ──
+CHECKPOINT_DIR="${FOOOCUS_ROOT}/models/checkpoints"
+PREFERRED_MODEL="realvisxlV50_v40Bakedvae.safetensors"
+FALLBACK_MODEL="juggernautXL_v8Rundiffusion.safetensors"
+
+if [ -f "${CHECKPOINT_DIR}/${PREFERRED_MODEL}" ]; then
+    export FOOOCUS_MODEL="${PREFERRED_MODEL}"
+    log "Model: ${PREFERRED_MODEL} (preferred)"
+elif [ -f "${CHECKPOINT_DIR}/${FALLBACK_MODEL}" ]; then
+    export FOOOCUS_MODEL="${FALLBACK_MODEL}"
+    warn "Preferred model not found. Using fallback: ${FALLBACK_MODEL}"
+else
+    # Check if ANY .safetensors file exists
+    FOUND_MODEL=$(find "${CHECKPOINT_DIR}" -maxdepth 1 -name '*.safetensors' -type f 2>/dev/null | head -1)
+    if [ -n "$FOUND_MODEL" ]; then
+        export FOOOCUS_MODEL=$(basename "$FOUND_MODEL")
+        warn "Using detected model: ${FOOOCUS_MODEL}"
+    else
+        fail "NO SDXL MODEL FOUND in ${CHECKPOINT_DIR}/. Upload a .safetensors model first."
+    fi
+fi
+
+# Validate model is SDXL-sized (should be >2GB for SDXL)
+MODEL_PATH="${CHECKPOINT_DIR}/${FOOOCUS_MODEL}"
+MODEL_SIZE=$(stat --format=%s "${MODEL_PATH}" 2>/dev/null || echo 0)
+if [ "$MODEL_SIZE" -lt 2000000000 ]; then
+    fail "Model ${FOOOCUS_MODEL} is ${MODEL_SIZE} bytes — too small for SDXL. Need >2GB .safetensors file."
+fi
+log "Model validated: ${FOOOCUS_MODEL} ($(( MODEL_SIZE / 1048576 )) MB)"
+
 # ── Cleanup old tmux sessions ──
 log "Cleaning up existing tmux sessions..."
 for s in mikage-bridge mikage-server mikage-worker; do
@@ -67,16 +97,39 @@ for s in mikage-bridge mikage-server mikage-worker; do
 done
 sleep 1
 
+# ── Kill stale process on :7865 ──
+STALE_PID=$(lsof -ti:${FOOOCUS_BRIDGE_PORT} 2>/dev/null || true)
+if [ -n "$STALE_PID" ]; then
+    log "Killing stale process on :${FOOOCUS_BRIDGE_PORT} (PID: $STALE_PID)"
+    kill -9 $STALE_PID 2>/dev/null || true
+    sleep 1
+fi
+
 # ── 1. Start Fooocus Bridge ──
-log "Starting Fooocus Bridge on port ${FOOOCUS_BRIDGE_PORT}..."
+VENV_PYTHON="${VENV_DIR}/bin/python"
+if [ ! -f "$VENV_PYTHON" ]; then
+    fail "Venv python not found at ${VENV_PYTHON}. Run bootstrap first."
+fi
+
+BRIDGE_SCRIPT="${PROJECT_DIR}/scripts/fooocus_bridge.py"
+if [ ! -f "$BRIDGE_SCRIPT" ]; then
+    # Fallback to exports path if scripts/ doesn't exist
+    BRIDGE_SCRIPT="${PROJECT_DIR}/exports/grapuco_system_review/01_ARCHITECTURE/fooocus_bridge.py"
+fi
+if [ ! -f "$BRIDGE_SCRIPT" ]; then
+    fail "Bridge script not found. Checked scripts/ and exports/."
+fi
+log "Bridge script: ${BRIDGE_SCRIPT}"
+
+log "Starting Fooocus Bridge on port ${FOOOCUS_BRIDGE_PORT} with model ${FOOOCUS_MODEL}..."
 tmux new-session -d -s mikage-bridge \
-  "source '${VENV_DIR}/bin/activate' && \
-   export FOOOCUS_ROOT='${FOOOCUS_ROOT}' && \
+  "export FOOOCUS_ROOT='${FOOOCUS_ROOT}' && \
    export FOOOCUS_BRIDGE_PORT='${FOOOCUS_BRIDGE_PORT}' && \
    export FOOOCUS_OUTPUT_DIR='${FOOOCUS_OUTPUT_DIR}' && \
    export FOOOCUS_ALWAYS_HIGH_VRAM='${FOOOCUS_ALWAYS_HIGH_VRAM}' && \
+   export FOOOCUS_MODEL='${FOOOCUS_MODEL}' && \
    cd '${PROJECT_DIR}' && \
-   python scripts/fooocus_bridge.py 2>&1 | tee '${LOGS_DIR}/fooocus_bridge.log'"
+   '${VENV_PYTHON}' '${BRIDGE_SCRIPT}' 2>&1 | tee '${LOGS_DIR}/fooocus_bridge.log'"
 
 # ── 2. Wait for Bridge ──
 log "Waiting for Fooocus Bridge to initialize (first run may take 5-15 min if models download)..."

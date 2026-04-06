@@ -1,0 +1,19 @@
+{
+  "task_id": "FINAL_GATE_LOCK + STABILITY_BATCH_P0",
+  "fake_pass": 0,
+  "gemini_enforced": true,
+  "batch_pass_rate": 0.0,
+  "manual_check": "FAIL",
+  "details": {
+    "stability_batch": {
+      "total_jobs": 50,
+      "pass_count": 0,
+      "pass_rate": 0.0
+    },
+    "final_assessment": {
+      "gemini_lock_passed": true,
+      "stability_passed": false,
+      "manual_passed": false
+    }
+  }
+}

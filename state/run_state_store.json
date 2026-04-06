@@ -1,0 +1,699 @@
+{
+  "version": "1",
+  "updated_at": "2026-04-06T04:22:21.006Z",
+  "runs": {
+    "run_mnmj9b73_dqe5c": {
+      "run_id": "run_mnmj9b73_dqe5c",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775440206824-JQGXAI",
+      "entity_id": null,
+      "status": "running",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T01:50:06.831Z",
+      "updated_at": "2026-04-06T01:50:06.862Z",
+      "last_decision": null,
+      "last_reason": null,
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [],
+      "operator_result_summary": {},
+      "latest_active_queue_id": "queue_mnmj9b75_8h46r",
+      "active_queue_ids": [
+        "queue_mnmj9b75_8h46r"
+      ],
+      "queue_history": [
+        "queue_mnmj9b75_8h46r"
+      ],
+      "active_worker_id": "server_19364",
+      "finalized_identity": null,
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmj9b75_8h46r",
+          "queue_status": "queued",
+          "duplicate": false
+        }
+      }
+    },
+    "run_mnmjdwbd_ttgpg": {
+      "run_id": "run_mnmjdwbd_ttgpg",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775440420811-STQZTZ",
+      "entity_id": null,
+      "status": "failed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T01:53:40.825Z",
+      "updated_at": "2026-04-06T02:03:41.372Z",
+      "last_decision": "FAIL",
+      "last_reason": "render failed: FAIL",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmjdwbd_ttgpg:queue_mnmjdwbg_jfwak:server_13112:FAIL",
+          "timestamp": "2026-04-06T02:03:41.372Z",
+          "decision": "FAIL",
+          "reason": "render failed: FAIL"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "FAIL",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render failed: FAIL",
+        "error": "Colab execution timed out after 600000ms",
+        "queue_id": "queue_mnmjdwbg_jfwak",
+        "worker_id": "server_13112"
+      },
+      "latest_active_queue_id": "queue_mnmjdwbg_jfwak",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmjdwbg_jfwak"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmjdwbd_ttgpg:queue_mnmjdwbg_jfwak:server_13112:FAIL",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmjdwbg_jfwak",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 0,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmjdwbd_ttgpg",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmjdwbd_ttgpg",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 0.25,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T02:03:41.357Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmjdwbg_jfwak"
+      }
+    },
+    "run_mnmm6u9z_bvp9t": {
+      "run_id": "run_mnmm6u9z_bvp9t",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775445130422-V8SH2W",
+      "entity_id": null,
+      "status": "completed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:12:10.439Z",
+      "updated_at": "2026-04-06T03:12:14.536Z",
+      "last_decision": "COMPLETE",
+      "last_reason": "render complete: SUCCESS",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmm6u9z_bvp9t:queue_mnmm6ua2_8z6p5:server_12792:DONE",
+          "timestamp": "2026-04-06T03:12:14.535Z",
+          "decision": "COMPLETE",
+          "reason": "render complete: SUCCESS"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "DONE",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render complete: SUCCESS",
+        "error": null,
+        "queue_id": "queue_mnmm6ua2_8z6p5",
+        "worker_id": "server_12792"
+      },
+      "latest_active_queue_id": "queue_mnmm6ua2_8z6p5",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmm6ua2_8z6p5"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmm6u9z_bvp9t:queue_mnmm6ua2_8z6p5:server_12792:DONE",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmm6ua2_8z6p5",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 0.25,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmm6u9z_bvp9t",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmm6u9z_bvp9t",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 0.5,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T03:12:14.521Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmm6ua2_8z6p5"
+      }
+    },
+    "run_mnmmage0_alyqm": {
+      "run_id": "run_mnmmage0_alyqm",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775445299051-TKIIN3",
+      "entity_id": null,
+      "status": "completed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:14:59.064Z",
+      "updated_at": "2026-04-06T03:15:01.186Z",
+      "last_decision": "COMPLETE",
+      "last_reason": "render complete: SUCCESS",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmmage0_alyqm:queue_mnmmage5_2yhp6:server_6468:DONE",
+          "timestamp": "2026-04-06T03:15:01.186Z",
+          "decision": "COMPLETE",
+          "reason": "render complete: SUCCESS"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "DONE",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render complete: SUCCESS",
+        "error": null,
+        "queue_id": "queue_mnmmage5_2yhp6",
+        "worker_id": "server_6468"
+      },
+      "latest_active_queue_id": "queue_mnmmage5_2yhp6",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmmage5_2yhp6"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmmage0_alyqm:queue_mnmmage5_2yhp6:server_6468:DONE",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmmage5_2yhp6",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 0.5,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmmage0_alyqm",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmmage0_alyqm",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 0.75,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T03:15:01.173Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmmage5_2yhp6"
+      }
+    },
+    "run_mnmmd35l_e5wm6": {
+      "run_id": "run_mnmmd35l_e5wm6",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775445421868-XA51AV",
+      "entity_id": null,
+      "status": "running",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:17:01.881Z",
+      "updated_at": "2026-04-06T03:17:01.915Z",
+      "last_decision": null,
+      "last_reason": null,
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [],
+      "operator_result_summary": {},
+      "latest_active_queue_id": "queue_mnmmd35o_summu",
+      "active_queue_ids": [
+        "queue_mnmmd35o_summu"
+      ],
+      "queue_history": [
+        "queue_mnmmd35o_summu"
+      ],
+      "active_worker_id": "server_7672",
+      "finalized_identity": null,
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmmd35o_summu",
+          "queue_status": "queued",
+          "duplicate": false
+        }
+      }
+    },
+    "run_mnmme6w2_f1pcw": {
+      "run_id": "run_mnmme6w2_f1pcw",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775445473367-AZ14QY",
+      "entity_id": null,
+      "status": "running",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:17:53.378Z",
+      "updated_at": "2026-04-06T03:17:53.418Z",
+      "last_decision": null,
+      "last_reason": null,
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [],
+      "operator_result_summary": {},
+      "latest_active_queue_id": "queue_mnmme6w6_ys4vu",
+      "active_queue_ids": [
+        "queue_mnmme6w6_ys4vu"
+      ],
+      "queue_history": [
+        "queue_mnmme6w6_ys4vu"
+      ],
+      "active_worker_id": "server_20060",
+      "finalized_identity": null,
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmme6w6_ys4vu",
+          "queue_status": "queued",
+          "duplicate": false
+        }
+      }
+    },
+    "run_mnmmij1r_yillh": {
+      "run_id": "run_mnmmij1r_yillh",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775445675741-76MTDC",
+      "entity_id": null,
+      "status": "completed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:21:15.759Z",
+      "updated_at": "2026-04-06T03:21:17.928Z",
+      "last_decision": "COMPLETE",
+      "last_reason": "render complete: SUCCESS",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmmij1r_yillh:queue_mnmmij1u_9v8l5:server_7904:DONE",
+          "timestamp": "2026-04-06T03:21:17.928Z",
+          "decision": "COMPLETE",
+          "reason": "render complete: SUCCESS"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "DONE",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render complete: SUCCESS",
+        "error": null,
+        "queue_id": "queue_mnmmij1u_9v8l5",
+        "worker_id": "server_7904"
+      },
+      "latest_active_queue_id": "queue_mnmmij1u_9v8l5",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmmij1u_9v8l5"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmmij1r_yillh:queue_mnmmij1u_9v8l5:server_7904:DONE",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmmij1u_9v8l5",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 0.75,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmmij1r_yillh",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmmij1r_yillh",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 1,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T03:21:17.915Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmmij1u_9v8l5"
+      }
+    },
+    "run_mnmmmvd9_670jw": {
+      "run_id": "run_mnmmmvd9_670jw",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775445878332-XL0XLJ",
+      "entity_id": null,
+      "status": "completed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:24:38.349Z",
+      "updated_at": "2026-04-06T03:24:40.601Z",
+      "last_decision": "COMPLETE",
+      "last_reason": "render complete: SUCCESS",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmmmvd9_670jw:queue_mnmmmvde_tw15v:server_6496:DONE",
+          "timestamp": "2026-04-06T03:24:40.600Z",
+          "decision": "COMPLETE",
+          "reason": "render complete: SUCCESS"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "DONE",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render complete: SUCCESS",
+        "error": null,
+        "queue_id": "queue_mnmmmvde_tw15v",
+        "worker_id": "server_6496"
+      },
+      "latest_active_queue_id": "queue_mnmmmvde_tw15v",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmmmvde_tw15v"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmmmvd9_670jw:queue_mnmmmvde_tw15v:server_6496:DONE",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmmmvde_tw15v",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 1,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmmmvd9_670jw",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmmmvd9_670jw",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 1.25,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T03:24:40.580Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmmmvde_tw15v"
+      }
+    },
+    "run_mnmmt5zy_v06jr": {
+      "run_id": "run_mnmmt5zy_v06jr",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775446172049-DB6DSO",
+      "entity_id": null,
+      "status": "completed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T03:29:32.062Z",
+      "updated_at": "2026-04-06T03:29:34.184Z",
+      "last_decision": "COMPLETE",
+      "last_reason": "render complete: SUCCESS",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmmt5zy_v06jr:queue_mnmmt603_cxtwh:server_1664:DONE",
+          "timestamp": "2026-04-06T03:29:34.184Z",
+          "decision": "COMPLETE",
+          "reason": "render complete: SUCCESS"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "DONE",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render complete: SUCCESS",
+        "error": null,
+        "queue_id": "queue_mnmmt603_cxtwh",
+        "worker_id": "server_1664"
+      },
+      "latest_active_queue_id": "queue_mnmmt603_cxtwh",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmmt603_cxtwh"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmmt5zy_v06jr:queue_mnmmt603_cxtwh:server_1664:DONE",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmmt603_cxtwh",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 1.25,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmmt5zy_v06jr",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmmt5zy_v06jr",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 1.5,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T03:29:34.158Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmmt603_cxtwh"
+      }
+    },
+    "run_mnmonh7y_3ej9v": {
+      "run_id": "run_mnmonh7y_3ej9v",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775449265886-VV2DV5",
+      "entity_id": null,
+      "status": "running",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T04:21:05.902Z",
+      "updated_at": "2026-04-06T04:21:05.949Z",
+      "last_decision": null,
+      "last_reason": null,
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [],
+      "operator_result_summary": {},
+      "latest_active_queue_id": "queue_mnmonh82_0mucs",
+      "active_queue_ids": [
+        "queue_mnmonh82_0mucs"
+      ],
+      "queue_history": [
+        "queue_mnmonh82_0mucs"
+      ],
+      "active_worker_id": "server_20800",
+      "finalized_identity": null,
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmonh82_0mucs",
+          "queue_status": "queued",
+          "duplicate": false
+        }
+      }
+    },
+    "run_mnmop1is_1dkce": {
+      "run_id": "run_mnmop1is_1dkce",
+      "task_type": "run_render_task",
+      "job_id": "JOB-1775449338853-46W7RY",
+      "entity_id": null,
+      "status": "failed",
+      "attempt_count": 1,
+      "max_attempts": 3,
+      "created_at": "2026-04-06T04:22:18.868Z",
+      "updated_at": "2026-04-06T04:22:21.006Z",
+      "last_decision": "FAIL",
+      "last_reason": "render failed: FAIL",
+      "context_mode": null,
+      "sources_used": [],
+      "failure_patterns": [],
+      "patch_history": [],
+      "decision_history": [
+        {
+          "identity": "run_mnmop1is_1dkce:queue_mnmop1ix_4bl1m:server_8560:FAIL",
+          "timestamp": "2026-04-06T04:22:21.006Z",
+          "decision": "FAIL",
+          "reason": "render failed: FAIL"
+        }
+      ],
+      "operator_result_summary": {
+        "operator_verdict": "FAIL",
+        "called_module": "execution.execution_connector",
+        "result_summary": "render failed: FAIL",
+        "error": "TIMEOUT_FAILED",
+        "queue_id": "queue_mnmop1ix_4bl1m",
+        "worker_id": "server_8560"
+      },
+      "latest_active_queue_id": "queue_mnmop1ix_4bl1m",
+      "active_queue_ids": [],
+      "queue_history": [
+        "queue_mnmop1ix_4bl1m"
+      ],
+      "active_worker_id": null,
+      "finalized_identity": "run_mnmop1is_1dkce:queue_mnmop1ix_4bl1m:server_8560:FAIL",
+      "metadata": {
+        "last_queue_link": {
+          "queue_id": "queue_mnmop1ix_4bl1m",
+          "queue_status": "queued",
+          "duplicate": false
+        },
+        "cost_guard": {
+          "status": "PASS",
+          "reason": null,
+          "allowed": true,
+          "estimated_cost": 0.25,
+          "run_used": 0,
+          "global_used": 1.5,
+          "config": {
+            "global_budget": 50,
+            "global_used": 0,
+            "run_budget": 2,
+            "run_used": 0,
+            "max_attempt_per_run": 5,
+            "max_retry_per_failure": 2,
+            "cost_per_attempt_estimate": 0.25
+          },
+          "run_id": "run_mnmop1is_1dkce",
+          "attempt": 1,
+          "retry_count": 0
+        },
+        "cost_record": {
+          "run_id": "run_mnmop1is_1dkce",
+          "attempt": 1,
+          "cost": 0.25,
+          "cumulative_run_cost": 0.25,
+          "cumulative_global_cost": 1.75,
+          "estimated_cost": 0.25,
+          "flags": [],
+          "timestamp": "2026-04-06T04:22:20.991Z"
+        },
+        "cost_flags": [],
+        "last_finalize_queue_id": "queue_mnmop1ix_4bl1m"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "task_id": "IMG2IMG_ANCHOR_FIX_P0",
+  "anchor_active": true,
+  "denoise_strength": 0.03,
+  "shape_preservation": 0.9813333333333333,
+  "ceramic_read": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-04-04T03:24:51.635942",
+  "task_id": "TASK_F58694D8",
+  "task_type": "file_ops",
+  "action": "check_exists",
+  "status": "PASS",
+  "evidence": {
+    "path": "D:\\Fooocus-main",
+    "exists": true,
+    "is_file": false,
+    "is_dir": true,
+    "file_count": 52
+  },
+  "failure_reason": "",
+  "execution_time": 0.0010039806365966797
+}

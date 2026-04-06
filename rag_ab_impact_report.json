@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-04-04T08:33:25.693Z",
+  "test": "rag_ab_impact",
+  "rag_enabled": {
+    "mode": "vertex",
+    "verified": true,
+    "chunks": 17,
+    "context_length": 3917,
+    "duration_ms": 12159,
+    "has_context": true
+  },
+  "rag_disabled": {
+    "mode": "mock",
+    "verified": false,
+    "chunks": 2,
+    "context_length": 568,
+    "duration_ms": 2,
+    "has_context": true
+  },
+  "comparison": {
+    "rag_changes_spec": false,
+    "rag_provides_memory": true,
+    "rag_has_latency_cost": true
+  },
+  "recommendation": "OPTIONAL",
+  "result": "FAIL"
+}

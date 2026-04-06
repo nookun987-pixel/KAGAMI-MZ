@@ -1,0 +1,58 @@
+[
+  {
+    "run_id": "run_mnmjdwbd_ttgpg",
+    "final_status": "REJECT",
+    "final_reason": "Colab execution timed out after 600000ms",
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmjdwbd_ttgpg\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmjdwbd_ttgpg\\proof_summary.md",
+    "timestamp": "2026-04-06T02:03:41.379Z"
+  },
+  {
+    "run_id": "run_mnmm6u9z_bvp9t",
+    "final_status": "ALLOW",
+    "final_reason": null,
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmm6u9z_bvp9t\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmm6u9z_bvp9t\\proof_summary.md",
+    "timestamp": "2026-04-06T03:12:14.550Z"
+  },
+  {
+    "run_id": "run_mnmmage0_alyqm",
+    "final_status": "ALLOW",
+    "final_reason": null,
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmage0_alyqm\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmage0_alyqm\\proof_summary.md",
+    "timestamp": "2026-04-06T03:15:01.195Z"
+  },
+  {
+    "run_id": "run_mnmmij1r_yillh",
+    "final_status": "ALLOW",
+    "final_reason": null,
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmij1r_yillh\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmij1r_yillh\\proof_summary.md",
+    "timestamp": "2026-04-06T03:21:17.938Z"
+  },
+  {
+    "run_id": "run_mnmmmvd9_670jw",
+    "final_status": "ALLOW",
+    "final_reason": null,
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmmvd9_670jw\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmmvd9_670jw\\proof_summary.md",
+    "timestamp": "2026-04-06T03:24:40.612Z"
+  },
+  {
+    "run_id": "run_mnmmt5zy_v06jr",
+    "final_status": "ALLOW",
+    "final_reason": null,
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmt5zy_v06jr\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmmt5zy_v06jr\\proof_summary.md",
+    "timestamp": "2026-04-06T03:29:34.200Z"
+  },
+  {
+    "run_id": "run_mnmop1is_1dkce",
+    "final_status": "REJECT",
+    "final_reason": "TIMEOUT_FAILED",
+    "proof_pack_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmop1is_1dkce\\proof_pack.json",
+    "proof_summary_path": "\\workspace\\KAGAMI-MZ\\runs\\run_mnmop1is_1dkce\\proof_summary.md",
+    "timestamp": "2026-04-06T04:22:21.016Z"
+  }
+]

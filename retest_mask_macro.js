@@ -25,7 +25,7 @@ const jobData = {
     height: 1152,
     performance: "Quality"
     // Note: render_executor now forces:
-    // - base_model: "realvisxlV50_v40BakedVAE.safetensors"
+    // - base_model: "realvisxlV50_v40Bakedvae.safetensors"
     // - guidance_scale: 4.0
     // - styles: []
     // - style_selections: []

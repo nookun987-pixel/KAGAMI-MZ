@@ -1,0 +1,167 @@
+{
+  "worker_url": "http://localhost:7865",
+  "timestamp": "2026-04-04T06:53:13.419291",
+  "overall_status": "FAIL",
+  "passed_checks": 8,
+  "total_checks": 10,
+  "pass_rate": "8/10",
+  "checks": {
+    "port_binding": {
+      "check": "port_binding",
+      "status": "PASS",
+      "details": "HTTP 200",
+      "timestamp": "2026-04-04T06:52:59.072374"
+    },
+    "health_endpoint": {
+      "check": "health_endpoint",
+      "status": "PASS",
+      "details": "worker_alive=True",
+      "data": {
+        "status": "healthy",
+        "service": "fooocus_bridge",
+        "worker_alive": true,
+        "output_dir": "D:\\Fooocus-main\\outputs"
+      },
+      "timestamp": "2026-04-04T06:53:01.124252"
+    },
+    "identity_endpoint": {
+      "check": "identity_endpoint",
+      "status": "PASS",
+      "details": "service=fooocus_bridge, supports_generate=True",
+      "data": {
+        "service": "fooocus_bridge",
+        "supports_generate": true,
+        "version": "IMAGE_LANE_CONTROL_V1",
+        "port": 7865
+      },
+      "timestamp": "2026-04-04T06:53:03.166782"
+    },
+    "fooocus_engine_loaded": {
+      "check": "fooocus_engine_loaded",
+      "status": "PASS",
+      "details": "status=healthy, output_dir=D:\\Fooocus-main\\outputs",
+      "data": {
+        "status": "healthy",
+        "service": "fooocus_bridge",
+        "worker_alive": true,
+        "output_dir": "D:\\Fooocus-main\\outputs"
+      },
+      "timestamp": "2026-04-04T06:53:05.208673"
+    },
+    "worker_thread_alive": {
+      "check": "worker_thread_alive",
+      "status": "FAIL",
+      "details": "worker_alive=True, queue_length=-1",
+      "data": {
+        "status": "healthy",
+        "service": "fooocus_bridge",
+        "worker_alive": true,
+        "output_dir": "D:\\Fooocus-main\\outputs"
+      },
+      "timestamp": "2026-04-04T06:53:07.238890"
+    },
+    "output_directory_writable": {
+      "check": "output_directory_writable",
+      "status": "PASS",
+      "details": "dry_run_status=dry_run_ok",
+      "data": {
+        "status": "dry_run_ok",
+        "bridge_payload_debug": {
+          "generation_mode": "exploration",
+          "reproduction_anchor_mode": null,
+          "anchor_image_path": null,
+          "anchor_image_loaded": false,
+          "uov_input_image": {
+            "present": false,
+            "shape": null
+          },
+          "uov_method": "Disabled",
+          "uov_method_normalized": "disabled",
+          "current_tab": "uov",
+          "mixing_image_prompt_and_vary_upscale": false,
+          "overwrite_vary_strength": -1.0,
+          "control_stack": [],
+          "anchor_method_used": null,
+          "image_anchor_success_expected": false,
+          "preservation_mode_used": null,
+          "anchor_image_used": null,
+          "backend_method_used": null,
+          "effective_denoise_strength": null,
+          "effective_preservation_strength": null,
+          "composition_lock_strength": null,
+          "silhouette_lock_strength": null,
+          "reconstruction_priority": null,
+          "prompt_reduction_applied": false,
+          "prompt_reduction_factor": null
+        }
+      },
+      "timestamp": "2026-04-04T06:53:09.301701"
+    },
+    "artifact_sync_accessible": {
+      "check": "artifact_sync_accessible",
+      "status": "PASS",
+      "details": "artifact_sync_dir=D:\\KAGAMI-MZ\\artifact_sync, write_read_ok=True",
+      "timestamp": "2026-04-04T06:53:09.317845"
+    },
+    "model_files_accessible": {
+      "check": "model_files_accessible",
+      "status": "FAIL",
+      "details": "worker_type=unknown, features=[]",
+      "data": {
+        "service": "fooocus_bridge",
+        "supports_generate": true,
+        "version": "IMAGE_LANE_CONTROL_V1",
+        "port": 7865
+      },
+      "timestamp": "2026-04-04T06:53:11.340573"
+    },
+    "memory_available": {
+      "check": "memory_available",
+      "status": "PASS",
+      "details": "available=10.2GB, total=31.9GB",
+      "data": {
+        "available_gb": 10.177547454833984,
+        "total_gb": 31.947872161865234,
+        "percent_used": 68.1
+      },
+      "timestamp": "2026-04-04T06:53:11.365160"
+    },
+    "dry_run_generate": {
+      "check": "dry_run_generate",
+      "status": "PASS",
+      "details": "dry_run_status=dry_run_ok",
+      "data": {
+        "status": "dry_run_ok",
+        "bridge_payload_debug": {
+          "generation_mode": "exploration",
+          "reproduction_anchor_mode": null,
+          "anchor_image_path": null,
+          "anchor_image_loaded": false,
+          "uov_input_image": {
+            "present": false,
+            "shape": null
+          },
+          "uov_method": "Disabled",
+          "uov_method_normalized": "disabled",
+          "current_tab": "uov",
+          "mixing_image_prompt_and_vary_upscale": false,
+          "overwrite_vary_strength": -1.0,
+          "control_stack": [],
+          "anchor_method_used": null,
+          "image_anchor_success_expected": false,
+          "preservation_mode_used": null,
+          "anchor_image_used": null,
+          "backend_method_used": null,
+          "effective_denoise_strength": null,
+          "effective_preservation_strength": null,
+          "composition_lock_strength": null,
+          "silhouette_lock_strength": null,
+          "reconstruction_priority": null,
+          "prompt_reduction_applied": false,
+          "prompt_reduction_factor": null
+        }
+      },
+      "timestamp": "2026-04-04T06:53:13.418285"
+    }
+  }
+}

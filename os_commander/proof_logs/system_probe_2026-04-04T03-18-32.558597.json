@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-04-04T03:18:32.558597",
+  "task_id": "system_probe",
+  "task_type": "system_probe",
+  "action": "full_probe",
+  "status": "PASS",
+  "evidence": {
+    "system": {
+      "os": "Windows",
+      "os_version": "10.0.19045",
+      "architecture": [
+        "64bit",
+        "WindowsPE"
+      ],
+      "processor": "AMD64 Family 23 Model 17 Stepping 0, AuthenticAMD",
+      "python_version": "3.10.11",
+      "python_executable": "C:\\Users\\THIS PC\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+      "node": {
+        "installed": true,
+        "version": "v24.13.1"
+      },
+      "gpu": {
+        "available": true,
+        "name": "NVIDIA GeForce GTX 1660 SUPER",
+        "memory_gb": 5.99957275390625,
+        "cuda_version": "12.1"
+      }
+    },
+    "paths": {
+      "paths": {
+        "kagami_mz": {
+          "exists": true,
+          "is_dir": true,
+          "path": "D:\\KAGAMI-MZ"
+        },
+        "fooocus_main": {
+          "exists": true,
+          "is_dir": true,
+          "path": "D:\\Fooocus-main"
+        },
+        "os_commander": {
+          "exists": true,
+          "is_dir": true,
+          "path": "D:\\KAGAMI-MZ\\os_commander"
+        }
+      }
+    },
+    "services": {
+      "services": {
+        "fooocus_bridge": {
+          "open": true,
+          "port": 7865
+        },
+        "web_server": {
+          "open": false,
+          "port": 8080
+        },
+        "database": {
+          "open": true,
+          "port": 5432
+        }
+      }
+    }
+  },
+  "failure_reason": "",
+  "execution_time": 4.564652681350708
+}

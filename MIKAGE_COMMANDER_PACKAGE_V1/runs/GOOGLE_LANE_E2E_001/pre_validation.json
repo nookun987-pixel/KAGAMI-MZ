@@ -1,0 +1,8 @@
+{
+  "stage": "prompt_package",
+  "verdict": "PASS",
+  "failed_checks": [],
+  "critical_failures": [],
+  "forbidden_hits": [],
+  "canon_version": "v2"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "HARD_REJECT_CALIBRATION_P0",
+  "fake_pass": 0,
+  "material_threshold_before": 0.8,
+  "material_threshold_after": 0.7,
+  "batch_pass_rate": 0.0,
+  "manual_check": "FAIL",
+  "false_reject_count": 0
+}

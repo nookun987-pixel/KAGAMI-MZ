@@ -1,0 +1,136 @@
+[
+  {
+    "job_id": "TRAINING_LOOP_TEST_001",
+    "failure_class": [
+      "SILHOUETTE_FAIL",
+      "PLASTIC_MATERIAL_FAIL",
+      "MULTI_OBJECT_FAIL"
+    ],
+    "patch_plan": {
+      "patch_targets": [
+        "composition",
+        "topology",
+        "material"
+      ],
+      "actions": [
+        "inject_single_object_lock",
+        "inject_no_fragment_rule",
+        "inject_anti_plastic_negative",
+        "inject_ceramic_microstructure",
+        "reject_disconnected_shapes"
+      ]
+    },
+    "ab_result": {
+      "baseline": {
+        "failure_count": 3
+      },
+      "patched": {
+        "failure_count": 2
+      },
+      "delta": {
+        "improved": true
+      }
+    },
+    "timestamp": "2026-04-04T20:16:35.594Z"
+  },
+  {
+    "job_id": "TRAINING_LOOP_LIVE_TEST_001",
+    "failure_class": [],
+    "patch_plan": {
+      "patch_targets": [],
+      "actions": []
+    },
+    "ab_result": {
+      "baseline": {
+        "failure_count": 0
+      },
+      "patched": {
+        "failure_count": 0
+      },
+      "delta": {
+        "improved": false
+      }
+    },
+    "timestamp": "2026-04-04T20:25:30.013Z"
+  },
+  {
+    "job_id": "CMD_REJECT_TEST_1775335533218",
+    "failure_class": [],
+    "patch_plan": {
+      "patch_targets": [],
+      "actions": []
+    },
+    "ab_result": {
+      "baseline": {
+        "failure_count": 0
+      },
+      "patched": {
+        "failure_count": 0
+      },
+      "delta": {
+        "improved": false
+      }
+    },
+    "timestamp": "2026-04-04T20:45:33.224Z"
+  },
+  {
+    "job_id": "CMD_REJECT_TEST_1775335553667",
+    "failure_class": [],
+    "patch_plan": {
+      "patch_targets": [],
+      "actions": []
+    },
+    "ab_result": {
+      "baseline": {
+        "failure_count": 0
+      },
+      "patched": {
+        "failure_count": 0
+      },
+      "delta": {
+        "improved": false
+      }
+    },
+    "timestamp": "2026-04-04T20:45:53.672Z"
+  },
+  {
+    "job_id": "CMD_REJECT_TEST_1775336084548",
+    "failure_class": [],
+    "patch_plan": {
+      "patch_targets": [],
+      "actions": []
+    },
+    "ab_result": {
+      "baseline": {
+        "failure_count": 0
+      },
+      "patched": {
+        "failure_count": 0
+      },
+      "delta": {
+        "improved": false
+      }
+    },
+    "timestamp": "2026-04-04T20:54:44.556Z"
+  },
+  {
+    "job_id": "CMD_REJECT_TEST_1775336109358",
+    "failure_class": [],
+    "patch_plan": {
+      "patch_targets": [],
+      "actions": []
+    },
+    "ab_result": {
+      "baseline": {
+        "failure_count": 0
+      },
+      "patched": {
+        "failure_count": 0
+      },
+      "delta": {
+        "improved": false
+      }
+    },
+    "timestamp": "2026-04-04T20:55:09.362Z"
+  }
+]

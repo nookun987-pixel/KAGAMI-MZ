@@ -13,6 +13,7 @@ FOOOCUS_BRIDGE_PORT=7865
 FOOOCUS_HEALTH_URL=http://127.0.0.1:7865/
 FOOOCUS_API=http://127.0.0.1:7865
 FOOOCUS_API_URL=http://127.0.0.1:7865
+FOOOCUS_MODEL=realvisxlV50_v40Bakedvae.safetensors
 FOOOCUS_OUTPUT_DIR=/workspace/Fooocus/outputs
 
 # ── MIKAGE SERVER ─────────────────────────────────────────────────────────────

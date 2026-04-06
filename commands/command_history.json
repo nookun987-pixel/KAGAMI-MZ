@@ -1,0 +1,804 @@
+[
+  {
+    "command_id": "CMD-1775336084469-0001",
+    "intent": "run_live_reject_test",
+    "status": "COMPLETED",
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "job_id": "CMD_REJECT_TEST_1775336084548",
+      "source_job_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "final_decision": "REJECT",
+      "training_loop": {
+        "triggered": true,
+        "error": null
+      },
+      "artifact_check": {
+        "training_loop_result": "PASS",
+        "memory_appended": "PASS"
+      },
+      "pipeline_safety": {
+        "orchestrator_crash": false,
+        "final_decision_modified": false
+      },
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\CMD_REJECT_TEST_1775336084548\\training_loop_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\CMD_REJECT_TEST_1775336084548\\training_loop_result.json"
+    ],
+    "error": null,
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-04T20:54:44.471Z",
+        "detail": "run_live_reject_test"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-04T20:54:44.471Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-04T20:54:44.472Z",
+        "detail": "route=training_loop owner=brain lane=control_plane"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-04T20:54:44.473Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "COMPLETED",
+        "at": "2026-04-04T20:54:44.559Z",
+        "detail": "all checks passed"
+      }
+    ],
+    "started_at": "2026-04-04T20:54:44.471Z",
+    "completed_at": "2026-04-04T20:54:44.560Z"
+  },
+  {
+    "command_id": "CMD-1775336109265-0002",
+    "intent": "run_live_reject_test",
+    "status": "COMPLETED",
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "job_id": "CMD_REJECT_TEST_1775336109358",
+      "source_job_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "final_decision": "REJECT",
+      "training_loop": {
+        "triggered": true,
+        "error": null
+      },
+      "artifact_check": {
+        "training_loop_result": "PASS",
+        "memory_appended": "PASS"
+      },
+      "pipeline_safety": {
+        "orchestrator_crash": false,
+        "final_decision_modified": false
+      },
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\CMD_REJECT_TEST_1775336109358\\training_loop_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\CMD_REJECT_TEST_1775336109358\\training_loop_result.json"
+    ],
+    "error": null,
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-04T20:55:09.266Z",
+        "detail": "run_live_reject_test"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-04T20:55:09.266Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-04T20:55:09.266Z",
+        "detail": "route=training_loop owner=brain lane=control_plane"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-04T20:55:09.266Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "COMPLETED",
+        "at": "2026-04-04T20:55:09.364Z",
+        "detail": "all checks passed"
+      }
+    ],
+    "started_at": "2026-04-04T20:55:09.266Z",
+    "completed_at": "2026-04-04T20:55:09.364Z"
+  },
+  {
+    "command_id": "CMD-1775336121826-0003",
+    "intent": "totally_fake_intent",
+    "status": "FAILED",
+    "ok": false,
+    "summary": null,
+    "artifacts": [],
+    "error": "UNKNOWN: intent \"totally_fake_intent\" not found in command_map",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-04T20:55:21.826Z",
+        "detail": "totally_fake_intent"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "FAILED",
+        "at": "2026-04-04T20:55:21.827Z",
+        "detail": "UNKNOWN: intent \"totally_fake_intent\" not in command_map"
+      }
+    ],
+    "started_at": "2026-04-04T20:55:21.826Z",
+    "completed_at": "2026-04-04T20:55:21.827Z"
+  },
+  {
+    "command_id": "CMD-1775336132557-0004",
+    "intent": "promote_canon",
+    "status": "FAILED",
+    "ok": false,
+    "summary": null,
+    "artifacts": [],
+    "error": "BLOCKED: intent \"promote_canon\" is forbidden",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-04T20:55:32.560Z",
+        "detail": "promote_canon"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "FAILED",
+        "at": "2026-04-04T20:55:32.587Z",
+        "detail": "BLOCKED: intent \"promote_canon\" is forbidden"
+      }
+    ],
+    "started_at": "2026-04-04T20:55:32.560Z",
+    "completed_at": "2026-04-04T20:55:32.594Z"
+  },
+  {
+    "command_id": "CMD-1775336160706-0005",
+    "intent": "generate_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": null,
+    "artifacts": [],
+    "error": "PHASE_INVALID: intent \"generate_patched_job_spec\" requires PHASE_3 but current phase is PHASE_2",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-04T20:56:00.707Z",
+        "detail": "generate_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "FAILED",
+        "at": "2026-04-04T20:56:00.708Z",
+        "detail": "PHASE_INVALID: current=PHASE_2, allowed=PHASE_3"
+      }
+    ],
+    "started_at": "2026-04-04T20:56:00.707Z",
+    "completed_at": "2026-04-04T20:56:00.708Z"
+  },
+  {
+    "command_id": "CMD-1775357478446-0001",
+    "intent": "generate_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "error": "No patchable REJECT run found (need training_loop_result.json + final_decision.json)",
+      "artifacts": []
+    },
+    "artifacts": [],
+    "error": "No patchable REJECT run found (need training_loop_result.json + final_decision.json)",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T02:51:18.484Z",
+        "detail": "generate_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T02:51:18.486Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T02:51:18.486Z",
+        "detail": "route=training_loop owner=brain lane=control_plane"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T02:51:18.488Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "FAILED",
+        "at": "2026-04-05T02:51:18.544Z",
+        "detail": "No patchable REJECT run found (need training_loop_result.json + final_decision.json)"
+      }
+    ],
+    "started_at": "2026-04-05T02:51:18.484Z",
+    "completed_at": "2026-04-05T02:51:18.545Z"
+  },
+  {
+    "command_id": "CMD-1775358076295-0001",
+    "intent": "generate_patched_job_spec",
+    "status": "COMPLETED",
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_job_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "failure_classes": [],
+      "actions_applied": [],
+      "actions_skipped": [],
+      "historical_matches": 0,
+      "patched_job_spec_path": "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\patched_job_spec.json",
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\patched_job_spec.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\patched_job_spec.json"
+    ],
+    "error": null,
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T03:01:16.297Z",
+        "detail": "generate_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T03:01:16.298Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T03:01:16.298Z",
+        "detail": "route=training_loop owner=brain lane=control_plane"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T03:01:16.298Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "COMPLETED",
+        "at": "2026-04-05T03:01:16.435Z",
+        "detail": "patched_job_spec written for MASK_MACRO_RETEST_2026-03-31T16-09-45"
+      }
+    ],
+    "started_at": "2026-04-05T03:01:16.296Z",
+    "completed_at": "2026-04-05T03:01:16.435Z"
+  },
+  {
+    "command_id": "CMD-1775362381865-0001",
+    "intent": "generate_patched_job_spec",
+    "status": "COMPLETED",
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_job_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "failure_classes": [
+        "PLASTIC_MATERIAL_FAIL"
+      ],
+      "actions_applied": [
+        "inject_anti_plastic_negative",
+        "inject_ceramic_microstructure"
+      ],
+      "actions_skipped": [],
+      "historical_matches": 1,
+      "patched_job_spec_path": "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\patched_job_spec.json",
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\patched_job_spec.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\patched_job_spec.json"
+    ],
+    "error": null,
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T04:13:01.867Z",
+        "detail": "generate_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T04:13:01.868Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T04:13:01.868Z",
+        "detail": "route=training_loop owner=brain lane=control_plane"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T04:13:01.868Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "COMPLETED",
+        "at": "2026-04-05T04:13:01.962Z",
+        "detail": "patched_job_spec written for MASK_MACRO_RETEST_2026-03-31T16-09-45"
+      }
+    ],
+    "started_at": "2026-04-05T04:13:01.866Z",
+    "completed_at": "2026-04-05T04:13:01.963Z"
+  },
+  {
+    "command_id": "CMD-1775394386387-0001",
+    "intent": "execute_patched_job_spec",
+    "status": "COMPLETED",
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "execution_id": "EXEC-1775394386396-CMD-1775394386387-0001",
+      "execution_state": "EXECUTED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "dry_run",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 161,
+      "error": null,
+      "adapter_response": {
+        "dry_run": true,
+        "simulated": true,
+        "prompt_length": 1078,
+        "negative_prompt_length": 605,
+        "render_config": {
+          "width": 1152,
+          "height": 1152,
+          "performance": "Quality"
+        },
+        "shot_type": "MASK_MACRO",
+        "entity_id": "kitsune_mask_macro",
+        "patch_actions_count": 2,
+        "simulated_render_ms": 161,
+        "message": "DRY_RUN: Contract validated. No image generated. Pipeline proven end-to-end."
+      },
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": null,
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T13:06:26.394Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T13:06:26.395Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T13:06:26.395Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T13:06:26.396Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "COMPLETED",
+        "at": "2026-04-05T13:06:26.420Z",
+        "detail": "execution_state=EXECUTED adapter=dry_run"
+      }
+    ],
+    "started_at": "2026-04-05T13:06:26.393Z",
+    "completed_at": "2026-04-05T13:06:26.421Z"
+  },
+  {
+    "command_id": "CMD-1775397015492-0001",
+    "intent": "execute_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "execution_id": "EXEC-1775397015496-CMD-1775397015492-0001",
+      "execution_state": "FAILED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "fooocus_local",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 17,
+      "error": "Fooocus render failed: Fooocus HTTP 404: {\"detail\":\"Not Found\"}",
+      "adapter_response": null,
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": "Fooocus render failed: Fooocus HTTP 404: {\"detail\":\"Not Found\"}",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T13:50:15.495Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T13:50:15.495Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T13:50:15.495Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T13:50:15.495Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "FAILED",
+        "at": "2026-04-05T13:50:15.582Z",
+        "detail": "execution_state=FAILED: Fooocus render failed: Fooocus HTTP 404: {\"detail\":\"Not Found\"}"
+      }
+    ],
+    "started_at": "2026-04-05T13:50:15.494Z",
+    "completed_at": "2026-04-05T13:50:15.582Z"
+  },
+  {
+    "command_id": "CMD-1775397028480-0002",
+    "intent": "execute_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "execution_id": "EXEC-1775397028481-CMD-1775397028480-0002",
+      "execution_state": "FAILED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "fooocus_local",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 23,
+      "error": "Fooocus render failed: Fooocus HTTP 404: {\"detail\":\"Not Found\"}",
+      "adapter_response": null,
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": "Fooocus render failed: Fooocus HTTP 404: {\"detail\":\"Not Found\"}",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T13:50:28.480Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T13:50:28.481Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T13:50:28.481Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T13:50:28.481Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "FAILED",
+        "at": "2026-04-05T13:50:28.527Z",
+        "detail": "execution_state=FAILED: Fooocus render failed: Fooocus HTTP 404: {\"detail\":\"Not Found\"}"
+      }
+    ],
+    "started_at": "2026-04-05T13:50:28.480Z",
+    "completed_at": "2026-04-05T13:50:28.527Z"
+  },
+  {
+    "command_id": "CMD-1775403792880-0003",
+    "intent": "execute_patched_job_spec",
+    "status": "COMPLETED",
+    "ok": true,
+    "summary": {
+      "ok": true,
+      "execution_id": "EXEC-1775403792884-CMD-1775403792880-0003",
+      "execution_state": "EXECUTED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "dry_run",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 227,
+      "error": null,
+      "adapter_response": {
+        "dry_run": true,
+        "simulated": true,
+        "prompt_length": 1078,
+        "negative_prompt_length": 605,
+        "render_config": {
+          "width": 1152,
+          "height": 1152,
+          "performance": "Quality"
+        },
+        "shot_type": "MASK_MACRO",
+        "entity_id": "kitsune_mask_macro",
+        "patch_actions_count": 2,
+        "simulated_render_ms": 227,
+        "message": "DRY_RUN: Contract validated. No image generated. Pipeline proven end-to-end."
+      },
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": null,
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T15:43:12.883Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T15:43:12.883Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T15:43:12.884Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T15:43:12.884Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "COMPLETED",
+        "at": "2026-04-05T15:43:12.946Z",
+        "detail": "execution_state=EXECUTED adapter=dry_run"
+      }
+    ],
+    "started_at": "2026-04-05T15:43:12.883Z",
+    "completed_at": "2026-04-05T15:43:12.946Z"
+  },
+  {
+    "command_id": "CMD-1775403892849-0001",
+    "intent": "execute_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "execution_id": "EXEC-1775403892854-CMD-1775403892849-0001",
+      "execution_state": "FAILED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "fooocus_local",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 300072,
+      "error": "Fooocus render failed: Fooocus render timeout after 300000ms",
+      "adapter_response": null,
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": "Fooocus render failed: Fooocus render timeout after 300000ms",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T15:44:52.852Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T15:44:52.852Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T15:44:52.853Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T15:44:52.853Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "FAILED",
+        "at": "2026-04-05T15:49:52.996Z",
+        "detail": "execution_state=FAILED: Fooocus render failed: Fooocus render timeout after 300000ms"
+      }
+    ],
+    "started_at": "2026-04-05T15:44:52.850Z",
+    "completed_at": "2026-04-05T15:49:52.996Z"
+  },
+  {
+    "command_id": "CMD-1775404370582-0001",
+    "intent": "execute_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "execution_id": "EXEC-1775404370612-CMD-1775404370582-0001",
+      "execution_state": "FAILED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "fooocus_local",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 30203,
+      "error": "FAIL_CLOSED: output.png does not exist after render. No url or base64 in Fooocus response",
+      "adapter_response": {
+        "raw_response_keys": [
+          "success",
+          "error"
+        ]
+      },
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": "FAIL_CLOSED: output.png does not exist after render. No url or base64 in Fooocus response",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T15:52:50.611Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T15:52:50.611Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T15:52:50.612Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T15:52:50.612Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "FAILED",
+        "at": "2026-04-05T15:53:20.873Z",
+        "detail": "execution_state=FAILED: FAIL_CLOSED: output.png does not exist after render. No url or base64 in Fooocus response"
+      }
+    ],
+    "started_at": "2026-04-05T15:52:50.584Z",
+    "completed_at": "2026-04-05T15:53:20.874Z"
+  },
+  {
+    "command_id": "CMD-1775404818355-0002",
+    "intent": "execute_patched_job_spec",
+    "status": "FAILED",
+    "ok": false,
+    "summary": {
+      "ok": false,
+      "execution_id": "EXEC-1775404818356-CMD-1775404818355-0002",
+      "execution_state": "FAILED",
+      "patched_job_id": "PATCHED_MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "source_run_id": "MASK_MACRO_RETEST_2026-03-31T16-09-45",
+      "adapter_name": "fooocus_local",
+      "output_path": null,
+      "output_exists": false,
+      "render_time_ms": 184629,
+      "error": "Fooocus render failed: Fooocus connection error: read ECONNRESET",
+      "adapter_response": null,
+      "artifacts": [
+        "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+      ]
+    },
+    "artifacts": [
+      "D:\\KAGAMI-MZ\\runs\\MASK_MACRO_RETEST_2026-03-31T16-09-45\\execution_result.json"
+    ],
+    "error": "Fooocus render failed: Fooocus connection error: read ECONNRESET",
+    "state_transitions": [
+      {
+        "from": null,
+        "to": "RECEIVED",
+        "at": "2026-04-05T16:00:18.356Z",
+        "detail": "execute_patched_job_spec"
+      },
+      {
+        "from": "RECEIVED",
+        "to": "VALIDATED",
+        "at": "2026-04-05T16:00:18.356Z"
+      },
+      {
+        "from": "VALIDATED",
+        "to": "ROUTED",
+        "at": "2026-04-05T16:00:18.356Z",
+        "detail": "route=execution owner=execution_lane lane=render"
+      },
+      {
+        "from": "ROUTED",
+        "to": "RUNNING",
+        "at": "2026-04-05T16:00:18.356Z"
+      },
+      {
+        "from": "RUNNING",
+        "to": "FAILED",
+        "at": "2026-04-05T16:03:23.005Z",
+        "detail": "execution_state=FAILED: Fooocus render failed: Fooocus connection error: read ECONNRESET"
+      }
+    ],
+    "started_at": "2026-04-05T16:00:18.356Z",
+    "completed_at": "2026-04-05T16:03:23.005Z"
+  }
+]
