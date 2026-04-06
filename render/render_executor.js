@@ -96,7 +96,11 @@ let _fooocusClient = {
     const fs = require("fs");
     const path = require("path");
 
-    const url = new URL(baseUrl + "/v1/generation/text-to-img");
+    // Force bridge endpoint — /generate only, no Gradio / /api/predict / /v1/ paths
+    const endpoint = "/generate";
+    const urlStr = baseUrl.replace(/\/$/, "") + endpoint;
+    console.log("Calling bridge:", urlStr);
+
     const body = JSON.stringify({
       prompt: renderPacket.prompt,
       negative_prompt: renderPacket.negative_prompt,
@@ -116,11 +120,12 @@ let _fooocusClient = {
         reject(new Error(`[FOOOCUS] Render timeout after ${timeoutMs}ms`));
       }, timeoutMs);
 
+      const reqUrl = new URL(urlStr);
       const req = http.request(
         {
-          hostname: url.hostname,
-          port: url.port,
-          path: url.pathname,
+          hostname: reqUrl.hostname,
+          port: reqUrl.port,
+          path: reqUrl.pathname,
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -189,14 +194,17 @@ let _fooocusClient = {
   async abortRender(jobId) {
     const baseUrl = process.env.FOOOCUS_API || "http://127.0.0.1:7865";
     const http = require("http");
-    const url = new URL(baseUrl + "/v1/generation/stop");
+    // Force bridge endpoint — /generate only
+    const urlStr = baseUrl.replace(/\/$/, "") + "/generate";
+    console.log("Calling bridge (abort):", urlStr);
+    const reqUrl = new URL(urlStr);
 
     await new Promise((resolve, reject) => {
       const req = http.request(
         {
-          hostname: url.hostname,
-          port: url.port,
-          path: url.pathname,
+          hostname: reqUrl.hostname,
+          port: reqUrl.port,
+          path: reqUrl.pathname,
           method: "POST",
           headers: { "Content-Type": "application/json" },
         },
