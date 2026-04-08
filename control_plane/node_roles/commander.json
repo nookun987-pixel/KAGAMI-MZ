@@ -1,0 +1,9 @@
+{
+  "role_id": "commander",
+  "permissions": {
+    "reviewed_repo_mutation": true,
+    "desktop_control": true,
+    "desktop_observe": true,
+    "bridge_write": true
+  }
+}

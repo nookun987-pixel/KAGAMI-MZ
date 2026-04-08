@@ -1,29 +1,31 @@
 "use strict";
 
-const net = require("net");
-const { STARTUP_PROFILE } = require("./config");
+const fs = require("fs");
+const path = require("path");
+const config = require("./config");
 
-function checkPort(port) {
-  return new Promise((resolve) => {
-    const socket = new net.Socket();
-    socket.setTimeout(1000);
-    socket.on("connect", () => {
-      socket.destroy();
-      resolve(true);
-    });
-    socket.on("error", () => resolve(false));
-    socket.on("timeout", () => resolve(false));
-    socket.connect(port, "127.0.0.1");
-  });
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
-async function health() {
-  const ports = STARTUP_PROFILE.service_ports;
-  const results = {};
-  for (const p of ports) {
-    results[p] = await checkPort(p);
-  }
-  return results;
+function runtimeHealth() {
+  const entrypoints = readJson(config.ENTRYPOINTS_REGISTRY);
+  const paths = [
+    path.join(config.ROOT, "start_mikage.bat"),
+    path.join(config.ROOT, "MIKAGE", "index.js"),
+    path.join(config.ROOT, "runtime", "drive_queue", "runtime.js"),
+    path.join(config.ROOT, "runtime", "colab_worker", "colab_one_click_worker.ipynb"),
+  ];
+  return {
+    active_runtime: entrypoints.live_render_path,
+    entrypoints: entrypoints.live_entrypoints,
+    files_exist: paths.map((filePath) => ({
+      path: filePath,
+      exists: fs.existsSync(filePath),
+    })),
+  };
 }
 
-module.exports = { health };
+module.exports = {
+  runtimeHealth,
+};

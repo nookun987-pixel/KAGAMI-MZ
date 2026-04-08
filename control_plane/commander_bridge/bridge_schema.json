@@ -1,0 +1,29 @@
+{
+  "bridge_version": "1.0",
+  "command_schema": {
+    "required": [
+      "command_id",
+      "action",
+      "payload",
+      "approval",
+      "requested_by",
+      "created_at"
+    ]
+  },
+  "report_schema": {
+    "required": [
+      "command_id",
+      "action",
+      "status",
+      "files",
+      "risk",
+      "next",
+      "created_at"
+    ],
+    "status_enum": [
+      "PASS",
+      "FAIL",
+      "BLOCKED"
+    ]
+  }
+}

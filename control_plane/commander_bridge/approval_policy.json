@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "auto_allow": [
+    "repo.status",
+    "runtime.health",
+    "disk.smart_scan",
+    "disk.latest_report",
+    "system.snapshot",
+    "system.map_check"
+  ],
+  "requires_approval": [
+    "repo.commit",
+    "repo.push",
+    "disk.safe_clean",
+    "codex.build_task"
+  ],
+  "hard_block_rules": [
+    "deleting protected paths",
+    "changing active runtime entrypoints without explicit approval",
+    "touching deprecated legacy archives unless explicitly requested",
+    "any action that bypasses bridge logging"
+  ],
+  "architecture_sensitive_paths": [
+    "start_mikage.bat",
+    "MIKAGE/index.js",
+    "runtime/drive_queue/runtime.js",
+    "runtime/colab_worker/",
+    "control_plane/",
+    "state/system_entrypoints.json"
+  ]
+}

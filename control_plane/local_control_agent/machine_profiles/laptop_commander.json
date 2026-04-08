@@ -1,0 +1,50 @@
+{
+  "machine_id": "laptop_commander",
+  "hostnames": [
+    "LAPTOP-COMMANDER",
+    "UNVERIFIED_HOSTNAME"
+  ],
+  "node_role": "commander",
+  "repo_root": "d:\\KAGAMI-MZ",
+  "chrome_path": "chrome",
+  "vscode_path": "code",
+  "cmd_path": "cmd",
+  "browser_profile_name": "Default",
+  "allowed_url_prefixes": [
+    "https://chatgpt.com",
+    "https://chat.openai.com",
+    "https://github.com/",
+    "https://drive.google.com/",
+    "http://127.0.0.1:",
+    "http://localhost:"
+  ],
+  "startup_apps": [
+    "chrome",
+    "vscode"
+  ],
+  "startup_urls": [
+    "https://chatgpt.com",
+    "https://github.com/nookun987-pixel/KAGAMI-MZ"
+  ],
+  "window_titles": {
+    "chrome": "Chrome",
+    "vscode": "Visual Studio Code",
+    "cmd": "Command Prompt",
+    "chatgpt": "ChatGPT",
+    "github": "GitHub",
+    "drive": "Google Drive",
+    "localhost": "127.0.0.1"
+  },
+  "desktop_resolution": {
+    "width": null,
+    "height": null,
+    "status": "UNVERIFIED"
+  },
+  "monitor_layout": {
+    "layout": "UNVERIFIED"
+  },
+  "click_map": {},
+  "localhost_ports": [
+    3032
+  ]
+}

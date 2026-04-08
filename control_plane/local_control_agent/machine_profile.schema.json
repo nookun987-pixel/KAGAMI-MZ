@@ -1,0 +1,19 @@
+{
+  "required_fields": [
+    "machine_id",
+    "node_role",
+    "repo_root",
+    "chrome_path",
+    "vscode_path",
+    "cmd_path",
+    "browser_profile_name",
+    "allowed_url_prefixes",
+    "startup_apps",
+    "startup_urls",
+    "window_titles",
+    "desktop_resolution",
+    "monitor_layout",
+    "click_map",
+    "localhost_ports"
+  ]
+}

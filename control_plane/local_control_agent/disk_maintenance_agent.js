@@ -2,69 +2,74 @@
 
 const fs = require("fs");
 const path = require("path");
-const { classifyPath } = require("./disk_maintenance_policy");
-const { log } = require("./audit_logger");
+const config = require("./config");
 
-function scanDirectory(dir, results = []) {
-  if (!fs.existsSync(dir)) return results;
-
-  const items = fs.readdirSync(dir);
-  for (const item of items) {
-    const full = path.join(dir, item);
+function safeCandidates(rootDir) {
+  const results = [];
+  function walk(dir) {
+    let entries = [];
     try {
-      const stat = fs.statSync(full);
-      const type = classifyPath(full);
-
-      if (stat.isDirectory()) {
-        results.push({ path: full, type, size: 0, kind: "dir" });
-        scanDirectory(full, results);
-      } else {
-        results.push({ path: full, type, size: stat.size, kind: "file" });
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch (_) {
+      return;
+    }
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (config.SAFE_CLEAN_GLOBS.includes(entry.name)) {
+          results.push({ path: fullPath, reason: "safe_cache_dir" });
+          continue;
+        }
+        walk(fullPath);
+        continue;
       }
-    } catch (_) {}
+      const ext = path.extname(entry.name).toLowerCase();
+      if (config.SAFE_CLEAN_EXTENSIONS.includes(ext) || config.SAFE_CLEAN_GLOBS.includes(entry.name)) {
+        results.push({ path: fullPath, reason: "safe_temp_file" });
+      }
+    }
   }
-
+  walk(rootDir);
   return results;
 }
 
-function scanDisk(targetPath) {
-  const results = scanDirectory(targetPath);
-  const grouped = {
-    safe_delete: [],
-    review_required: [],
-    protected: [],
+function diskSmartScan() {
+  const candidates = safeCandidates(config.ROOT);
+  return {
+    root: config.ROOT,
+    candidate_count: candidates.length,
+    candidates: candidates.slice(0, 200),
   };
-
-  for (const r of results) {
-    grouped[r.type].push(r);
-  }
-
-  log("disk.scan", { targetPath, summary: {
-    safe: grouped.safe_delete.length,
-    review: grouped.review_required.length,
-    protected: grouped.protected.length,
-  }});
-
-  return grouped;
 }
 
-function safeClean(grouped) {
-  const deleted = [];
-
-  for (const item of grouped.safe_delete) {
-    try {
-      if (item.kind === "file") {
-        fs.unlinkSync(item.path);
-      }
-      deleted.push(item.path);
-    } catch (_) {}
+function diskLatestReport() {
+  const reportPath = path.join(config.STATE_DIR, "latest_disk_scan.json");
+  if (!fs.existsSync(reportPath)) {
+    return { exists: false, report: null };
   }
+  return {
+    exists: true,
+    report: JSON.parse(fs.readFileSync(reportPath, "utf8")),
+  };
+}
 
-  log("disk.safe_clean", { count: deleted.length });
-  return deleted;
+function diskSafeClean(targets) {
+  const removed = [];
+  for (const item of targets || []) {
+    if (!fs.existsSync(item.path)) continue;
+    const stat = fs.statSync(item.path);
+    if (stat.isDirectory()) {
+      fs.rmSync(item.path, { recursive: true, force: true });
+    } else {
+      fs.unlinkSync(item.path);
+    }
+    removed.push(item.path);
+  }
+  return { removed };
 }
 
 module.exports = {
-  scanDisk,
-  safeClean,
+  diskSmartScan,
+  diskLatestReport,
+  diskSafeClean,
 };

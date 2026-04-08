@@ -1,22 +1,94 @@
 {
+  "version": "1.0",
   "auto_allow": [
     "repo.status",
-    "repo.diff",
-    "queue.observe",
-    "read.state",
-    "read.logs"
+    "runtime.health",
+    "disk.smart_scan",
+    "disk.latest_report",
+    "system.snapshot",
+    "system.map_check",
+    "system.resolve_machine_profile",
+    "system.resolve_node_role",
+    "system.run_bringup_check",
+    "system.generate_bringup_report",
+    "desktop.open_app",
+    "desktop.open_url",
+    "desktop.startup_workspace",
+    "desktop.focus_window",
+    "desktop.open_tab",
+    "desktop.switch_tab",
+    "desktop.startup_workspace_full",
+    "desktop.get_active_window",
+    "desktop.list_open_windows",
+    "desktop.get_browser_context",
+    "desktop.verify_window",
+    "desktop.verify_tab",
+    "desktop.capture_desktop_state"
   ],
   "require_approval": [
     "repo.commit",
     "repo.push",
-    "codex.build",
-    "disk.clean",
-    "runtime.change"
+    "repo.reviewed_commit_push",
+    "disk.safe_clean",
+    "codex.build_task",
+    "desktop.run_shell",
+    "desktop.send_keys",
+    "desktop.type_text",
+    "desktop.basic_click"
   ],
-  "hard_block": [
-    "delete_root",
-    "overwrite_system_map",
-    "bypass_validator",
-    "claim_unproven_endpoint"
-  ]
+  "approved_url_prefixes": [
+    "https://chatgpt.com",
+    "https://chat.openai.com",
+    "https://github.com/",
+    "https://drive.google.com/",
+    "http://127.0.0.1:",
+    "http://localhost:"
+  ],
+  "node_role_policy": {
+    "reviewed_repo_actions": [
+      "repo.commit",
+      "repo.push",
+      "repo.reviewed_commit_push"
+    ],
+    "support_node_requires_explicit_override": true
+  },
+  "hard_block": {
+    "repo.push": {
+      "blocked_branches": [
+        "main",
+        "master"
+      ]
+    },
+    "desktop.run_shell": {
+      "blocked_patterns": [
+        " remove-item ",
+        " del ",
+        " rmdir ",
+        " rd ",
+        " format ",
+        " reg add ",
+        " reg delete ",
+        " invoke-webrequest",
+        " wget ",
+        " curl ",
+        " start-bitstransfer",
+        " powershell -enc",
+        " cmd /c del",
+        " robocopy /mir",
+        " shutdown ",
+        " diskpart"
+      ]
+    },
+    "desktop.send_keys": {
+      "blocked_keys": [
+        "alt+f4",
+        "ctrl+w",
+        "ctrl+shift+esc",
+        "win+r",
+        "win+x",
+        "alt+space",
+        "ctrl+alt+del"
+      ]
+    }
+  }
 }

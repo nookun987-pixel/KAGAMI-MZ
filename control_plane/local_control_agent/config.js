@@ -1,37 +1,59 @@
 "use strict";
 
 const path = require("path");
+const { resolveMachineProfile } = require("./machine_profile");
+const { resolveNodeRole } = require("../node_role");
 
-const REPO_ROOT = path.resolve(__dirname, "..", "..");
-const STATE_ROOT = path.join(REPO_ROOT, "control_plane", "local_control_agent", "state");
-const TASK_ROOT = path.join(REPO_ROOT, "control_plane", "local_control_agent", "tasks");
-const LOG_ROOT = path.join(REPO_ROOT, "control_plane", "local_control_agent", "logs");
-const DRIVE_ROOT = process.env.MIKAGE_DRIVE_ROOT || "G:\\My Drive\\mikage_runner";
+const ROOT = path.resolve(__dirname, "..", "..");
+const BRIDGE_ROOT = path.join(ROOT, "control_plane", "commander_bridge");
+const MACHINE_PROFILE = resolveMachineProfile({ hostname: process.env.COMPUTERNAME || process.env.HOSTNAME });
+const NODE_ROLE = resolveNodeRole(MACHINE_PROFILE);
 
 module.exports = {
-  REPO_ROOT,
-  STATE_ROOT,
-  TASK_ROOT,
-  LOG_ROOT,
-  DRIVE_ROOT,
-  CONTROL_PORT: Number(process.env.MIKAGE_CONTROL_PORT || 3032),
-  CONTROL_HOST: process.env.MIKAGE_CONTROL_HOST || "127.0.0.1",
-  POLL_INTERVAL_MS: Number(process.env.MIKAGE_CONTROL_POLL_MS || 4000),
-  CODEX_COMMAND: process.env.MIKAGE_CODEX_COMMAND || "codex",
-  CODEX_ARGS: (process.env.MIKAGE_CODEX_ARGS || "").split(" ").filter(Boolean),
-  TELEGRAM_BOT_TOKEN: process.env.MIKAGE_TELEGRAM_BOT_TOKEN || "",
-  TELEGRAM_CHAT_ID: process.env.MIKAGE_TELEGRAM_CHAT_ID || "",
-  DEFAULT_BRANCH: process.env.MIKAGE_DEFAULT_BRANCH || "main",
-  STARTUP_PROFILE: {
-    required_paths: [
-      REPO_ROOT,
-      DRIVE_ROOT,
-    ],
-    service_ports: [3000, 3030, 7865, 11434],
-    required_tabs: [
-      "ChatGPT",
-      "Chrome",
-      "VSCode/Codex",
-    ],
-  },
+  ROOT,
+  BRIDGE_ROOT,
+  MACHINE_PROFILE,
+  NODE_ROLE,
+  INBOX_DIR: path.join(BRIDGE_ROOT, "inbox"),
+  OUTBOX_DIR: path.join(BRIDGE_ROOT, "outbox"),
+  STATE_DIR: path.join(BRIDGE_ROOT, "state"),
+  LOGS_DIR: path.join(BRIDGE_ROOT, "logs"),
+  ARCHIVE_DIR: path.join(BRIDGE_ROOT, "archive"),
+  AUDIT_LOG: path.join(BRIDGE_ROOT, "logs", "audit.log"),
+  LATEST_AGENT_REPORT: path.join(BRIDGE_ROOT, "state", "latest_agent_report.json"),
+  PENDING_ACTIONS: path.join(BRIDGE_ROOT, "state", "pending_actions.json"),
+  SYSTEM_RUNTIME_SNAPSHOT: path.join(BRIDGE_ROOT, "state", "system_runtime_snapshot.json"),
+  LOCAL_AGENT_STATE_DIR: path.join(ROOT, "control_plane", "local_control_agent", "state"),
+  LOCAL_AGENT_REPORTS_DIR: path.join(ROOT, "control_plane", "local_control_agent", "state", "reports"),
+  LOCAL_AGENT_LAST_ACTION: path.join(ROOT, "control_plane", "local_control_agent", "state", "latest_reviewed_action.json"),
+  LOCAL_AGENT_LAST_DESKTOP_ACTION: path.join(ROOT, "control_plane", "local_control_agent", "state", "latest_desktop_action.json"),
+  APPROVAL_POLICY: path.join(BRIDGE_ROOT, "approval_policy.json"),
+  APPROVAL_MODEL: path.join(ROOT, "control_plane", "approval_model.json"),
+  ENTRYPOINTS_REGISTRY: path.join(ROOT, "state", "system_entrypoints.json"),
+  STORAGE_POLICY_LOCK: path.join(ROOT, "STORAGE_POLICY_LOCK.md"),
+  SAFE_CLEAN_GLOBS: ["__pycache__", ".pytest_cache", ".cache", "Thumbs.db"],
+  SAFE_CLEAN_EXTENSIONS: [".log", ".tmp", ".temp", ".cache"],
+  PROTECTED_PATH_PREFIXES: [
+    ROOT.toLowerCase(),
+    "g:\\my drive".toLowerCase(),
+    "c:\\users\\this pc\\desktop".toLowerCase(),
+    "c:\\users\\this pc\\documents".toLowerCase(),
+    "c:\\users\\this pc\\downloads".toLowerCase(),
+    "c:\\users\\this pc\\pictures".toLowerCase(),
+    "c:\\users\\this pc\\videos".toLowerCase()
+  ],
+  ARCH_SENSITIVE_PATHS: [
+    "start_mikage.bat",
+    "MIKAGE/index.js",
+    "runtime/drive_queue/runtime.js",
+    "runtime/colab_worker/",
+    "control_plane/",
+    "state/system_entrypoints.json"
+  ],
+  ALLOWED_WRITE_PREFIXES: [
+    path.join(ROOT, "control_plane", "commander_bridge").toLowerCase(),
+    path.join(ROOT, "control_plane", "local_control_agent").toLowerCase(),
+    path.join(ROOT, "state").toLowerCase(),
+    path.join(ROOT, "tests").toLowerCase()
+  ]
 };

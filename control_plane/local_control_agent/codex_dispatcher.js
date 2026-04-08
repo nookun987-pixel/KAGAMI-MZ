@@ -1,29 +1,25 @@
 "use strict";
 
-const { spawn } = require("child_process");
-const fs = require("fs");
 const path = require("path");
-const { CODEX_COMMAND, CODEX_ARGS, TASK_ROOT } = require("./config");
-const { log } = require("./audit_logger");
+const { writeJson } = require("./bridge_writer");
+const config = require("./config");
 
-function runCodex(task) {
-  const promptFile = path.join(TASK_ROOT, `${task.id}.prompt.txt`);
-  fs.writeFileSync(promptFile, task.prompt);
-
-  return new Promise((resolve) => {
-    const proc = spawn(CODEX_COMMAND, [...CODEX_ARGS, promptFile], {
-      shell: true,
-    });
-
-    let output = "";
-    proc.stdout.on("data", (d) => (output += d.toString()));
-    proc.stderr.on("data", (d) => (output += d.toString()));
-
-    proc.on("close", () => {
-      log("codex.run", { task: task.id });
-      resolve(output);
-    });
-  });
+function buildCodexTask(command) {
+  const taskId = `codex_${Date.now()}`;
+  const filePath = path.join(config.STATE_DIR, `${taskId}.json`);
+  const record = {
+    task_id: taskId,
+    source_command_id: command.command_id,
+    action: command.action,
+    scope: command.payload || {},
+    approval: command.approval || {},
+    result_pointer: null,
+    created_at: new Date().toISOString(),
+  };
+  writeJson(filePath, record);
+  return { taskId, filePath, record };
 }
 
-module.exports = { runCodex };
+module.exports = {
+  buildCodexTask,
+};

@@ -2,23 +2,16 @@
 
 const fs = require("fs");
 const path = require("path");
-const { LOG_ROOT } = require("./config");
+const config = require("./config");
 
-function ensureDir(dir) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
+function logAudit(event) {
+  fs.mkdirSync(path.dirname(config.AUDIT_LOG), { recursive: true });
+  fs.appendFileSync(config.AUDIT_LOG, `${JSON.stringify({
+    timestamp: new Date().toISOString(),
+    ...event,
+  })}\n`, "utf8");
 }
 
-function log(event, payload = {}) {
-  ensureDir(LOG_ROOT);
-  const file = path.join(LOG_ROOT, "agent.log");
-  const line = JSON.stringify({
-    ts: new Date().toISOString(),
-    event,
-    payload,
-  });
-  fs.appendFileSync(file, line + "\n");
-}
-
-module.exports = { log };
+module.exports = {
+  logAudit,
+};
