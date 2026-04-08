@@ -1,22 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>MIKAGE CONTROL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mikage Commander</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --line: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --good: #3fb950;
+      --warn: #d29922;
+      --bad: #f85149;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0d1117 0%, #111827 100%);
+      color: var(--text);
+    }
+    header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(13, 17, 23, 0.9);
+      position: sticky;
+      top: 0;
+    }
+    h1, h2 { margin: 0 0 12px; }
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+    .panel {
+      background: rgba(22, 27, 34, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      min-height: 220px;
+    }
+    .toolbar, .workflow-grid {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    button {
+      background: #1f6feb;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+    button.secondary { background: #30363d; }
+    button.warn { background: #9e6a03; }
+    button.bad { background: #a40e26; }
+    input, textarea, select {
+      width: 100%;
+      background: #0d1117;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    pre {
+      background: #0b0f14;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      overflow: auto;
+      white-space: pre-wrap;
+      min-height: 120px;
+    }
+    .badge { font-size: 12px; color: var(--muted); }
+  </style>
 </head>
 <body>
-  <h2>MIKAGE CONTROL PANEL</h2>
-  <input id="cmd" style="width:400px" placeholder="command..." />
-  <button onclick="send()">SEND</button>
-  <pre id="out"></pre>
+  <header>
+    <h1>Mikage Commander Dashboard</h1>
+    <div class="badge">Bridge-aware control surface with reviewed flow enforcement</div>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>SYSTEM</h2>
+      <div class="toolbar">
+        <button onclick="loadHealth()">Refresh Health</button>
+        <button class="secondary" onclick="loadStatus()">Refresh Status</button>
+      </div>
+      <pre id="systemPanel">Loading...</pre>
+    </section>
 
-<script>
-async function send(){
-  const cmd = document.getElementById('cmd').value;
-  const res = await fetch('/control',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({command:cmd})});
-  const data = await res.json();
-  document.getElementById('out').innerText = JSON.stringify(data,null,2);
-}
-</script>
+    <section class="panel">
+      <h2>CONTROL</h2>
+      <div class="toolbar">
+        <button onclick="postSimple('/agent/start')">Start Agent</button>
+        <button class="warn" onclick="postSimple('/agent/restart')">Restart Agent</button>
+        <button class="bad" onclick="postSimple('/agent/stop')">Stop Agent</button>
+      </div>
+      <pre id="controlPanel">No actions yet.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>COMMAND PANEL</h2>
+      <input id="commandAction" value="repo.status" />
+      <textarea id="commandPayload">{}</textarea>
+      <label><input id="commandWait" type="checkbox" checked /> wait for result</label>
+      <label><input id="commandApprove" type="checkbox" /> mark approved</label>
+      <div class="toolbar">
+        <button onclick="runCommand()">Run Command</button>
+      </div>
+      <pre id="commandPanel">No command sent.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>REPORTS</h2>
+      <div class="toolbar">
+        <button onclick="loadReports()">Latest Reports</button>
+        <button class="secondary" onclick="loadLogs()">Recent Logs</button>
+      </div>
+      <pre id="reportsPanel">No report loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>WORKFLOWS</h2>
+      <div class="workflow-grid">
+        <button onclick="runWorkflow('WAKE_VERIFY')">WAKE_VERIFY</button>
+        <button onclick="runWorkflow('DESKTOP_CHECK')">DESKTOP_CHECK</button>
+        <button onclick="runWorkflow('REPO_CHECK')">REPO_CHECK</button>
+        <button onclick="runWorkflow('DAILY_HEALTH')">DAILY_HEALTH</button>
+        <button class="warn" onclick="runWorkflow('SAFE_SHUTDOWN')">SAFE_SHUTDOWN</button>
+      </div>
+      <pre id="workflowPanel">No workflow run.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>ALERTS</h2>
+      <div class="toolbar">
+        <button onclick="loadQueue()">Queue Status</button>
+        <button class="secondary" onclick="loadAlerts()">Refresh Alerts</button>
+      </div>
+      <pre id="alertsPanel">No alerts loaded.</pre>
+    </section>
+  </main>
+  <script>
+    async function request(url, options) {
+      const response = await fetch(url, options);
+      const data = await response.json();
+      return data;
+    }
+    function render(id, data) {
+      document.getElementById(id).textContent = JSON.stringify(data, null, 2);
+    }
+    async function loadHealth() { render("systemPanel", await request("/health")); }
+    async function loadStatus() { render("systemPanel", await request("/status")); }
+    async function loadReports() { render("reportsPanel", await request("/reports/latest")); }
+    async function loadLogs() { render("reportsPanel", await request("/logs/recent")); }
+    async function loadQueue() { render("alertsPanel", await request("/queue/status")); }
+    async function loadAlerts() {
+      const status = await request("/status");
+      render("alertsPanel", {
+        blockers: status.snapshot && status.snapshot.blockers || [],
+        agent: status.agent,
+        latest_report: status.latest_report && status.latest_report.status,
+      });
+    }
+    async function postSimple(url) {
+      const result = await request(url, { method: "POST", headers: { "Content-Type": "application/json" } });
+      render("controlPanel", result);
+      await loadStatus();
+    }
+    async function runCommand() {
+      let payload;
+      try {
+        payload = JSON.parse(document.getElementById("commandPayload").value || "{}");
+      } catch (error) {
+        render("commandPanel", { status: "FAIL", error: "invalid JSON payload" });
+        return;
+      }
+      const result = await request("/command/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: document.getElementById("commandAction").value,
+          payload,
+          wait: document.getElementById("commandWait").checked,
+          approval_status: document.getElementById("commandApprove").checked ? "approved" : undefined,
+        }),
+      });
+      render("commandPanel", result);
+      await loadStatus();
+    }
+    async function runWorkflow(name) {
+      const result = await request("/workflow/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ workflow: name }),
+      });
+      render("workflowPanel", result);
+      await loadStatus();
+    }
+    loadHealth();
+    loadQueue();
+  </script>
 </body>
 </html>

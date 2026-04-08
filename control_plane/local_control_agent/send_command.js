@@ -70,6 +70,10 @@ function buildCommandId(action) {
   return `cmd_${slug}_${Date.now()}_${nonce}`;
 }
 
+function submitCommand(command) {
+  return writeInboxCommand(command);
+}
+
 function resolveApprovalStatus(action, flags) {
   if (flags["approval-status"]) return String(flags["approval-status"]);
   if (DIRECT_AUTO_ALLOW.has(action)) return "auto_allow";
@@ -259,7 +263,9 @@ if (require.main === module) {
 
 module.exports = {
   parseArgv,
+  buildCommandId,
   buildCommandFromFlags,
+  submitCommand,
   writeInboxCommand,
   waitForResult,
   main,
