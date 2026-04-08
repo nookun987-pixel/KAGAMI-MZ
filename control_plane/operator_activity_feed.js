@@ -41,6 +41,7 @@ function appendActivityFeed(input) {
     feed_id: input.feed_id || `feed_${Date.now()}_${crypto.randomBytes(3).toString("hex")}`,
     workflow_id: input.workflow_id || null,
     task_id: input.task_id || null,
+    intent_id: input.intent_id || null,
     event_type: input.event_type,
     short_text: input.short_text || "",
     severity: input.severity || "info",

@@ -19,6 +19,10 @@ const { writeGovernanceReport } = require("./governance_report_writer");
 const { appendActivityFeed } = require("./operator_activity_feed");
 const { appendAuditRecord } = require("./audit_trail_store");
 const { upsertWorkflowSummary } = require("./workflow_summary_view");
+const { createIntentFromFailure, createIntentFromRetry, createIntentFromCompletion } = require("./intent_engine");
+const { resolveIntentToTask } = require("./intent_resolver");
+const { createAutoTask } = require("./auto_task_generator");
+const { evaluateLoopSafety, markLoopUsage } = require("./loop_stability_guard");
 const { resolveTaskIntake } = require("./task_intake_resolver");
 const { buildActionPlan } = require("./action_planner");
 const { createExecutionStateRecord, transitionExecutionState } = require("./execution_state_machine");
@@ -119,6 +123,99 @@ function emitGovernanceBundle(input) {
     last_action: input.action,
     latest_refs: refs,
   });
+}
+
+function runGuardedAutonomyFromIntent(intent, options = {}) {
+  const loopCheck = evaluateLoopSafety({
+    depth: intent.depth || 1,
+    failure_fingerprint: options.failure_fingerprint || null,
+    retry_source: options.retry_source || null,
+  });
+  if (!loopCheck.allowed) {
+    appendAuditRecord({
+      workflow_id: options.workflow_id || intent.workflow_id || null,
+      task_id: intent.task_id || null,
+      intent_id: intent.intent_id,
+      source_ref: intent.source_ref || null,
+      actor_type: "system_guard",
+      actor_id: "loop_stability_guard",
+      action: "intent.evaluate",
+      decision: "blocked",
+      reason: loopCheck.reason,
+      refs: intent.refs || [],
+    });
+    return { status: "BLOCKED", reason: loopCheck.reason };
+  }
+
+  appendActivityFeed({
+    workflow_id: options.workflow_id || intent.workflow_id || null,
+    task_id: intent.task_id || null,
+    intent_id: intent.intent_id,
+    event_type: "intent_created",
+    short_text: intent.goal,
+    severity: intent.risk_level === "high" ? "high" : "info",
+    refs: intent.refs || [],
+  });
+  appendAuditRecord({
+    workflow_id: options.workflow_id || intent.workflow_id || null,
+    task_id: intent.task_id || null,
+    intent_id: intent.intent_id,
+    source_ref: intent.source_ref || null,
+    actor_type: "auto_agent",
+    actor_id: "intent_engine",
+    action: "intent.create",
+    decision: "recorded",
+    reason: intent.goal,
+    refs: intent.refs || [],
+  });
+
+  const resolvedTask = resolveIntentToTask(intent);
+  const created = createAutoTask(intent, resolvedTask);
+  if (created.status !== "PASS") {
+    appendAuditRecord({
+      workflow_id: options.workflow_id || intent.workflow_id || null,
+      task_id: intent.task_id || null,
+      intent_id: intent.intent_id,
+      source_ref: intent.source_ref || null,
+      actor_type: "system_guard",
+      actor_id: "auto_task_generator",
+      action: "auto_task.create",
+      decision: "blocked",
+      reason: created.reason,
+      refs: intent.refs || [],
+    });
+    return created;
+  }
+
+  markLoopUsage({
+    intent_id: intent.intent_id,
+    depth: intent.depth || 1,
+    failure_fingerprint: options.failure_fingerprint || null,
+    retry_source: options.retry_source || null,
+  });
+  appendActivityFeed({
+    workflow_id: options.workflow_id || intent.workflow_id || null,
+    task_id: created.task.task_id,
+    intent_id: intent.intent_id,
+    event_type: "auto_task_generated",
+    short_text: `auto task generated ${created.task.task_id}`,
+    severity: "info",
+    refs: [created.task.task_path],
+  });
+  appendAuditRecord({
+    workflow_id: options.workflow_id || intent.workflow_id || null,
+    task_id: created.task.task_id,
+    intent_id: intent.intent_id,
+    source_ref: intent.source_ref || null,
+    generated_task_id: created.task.task_id,
+    actor_type: "auto_agent",
+    actor_id: "auto_task_generator",
+    action: "auto_task.create",
+    decision: "created",
+    reason: intent.goal,
+    refs: [created.task.task_path],
+  });
+  return created;
 }
 
 async function runAutoAgentLoop(commandEntry) {
@@ -650,6 +747,12 @@ async function runAutoAgentLoop(commandEntry) {
       last_executor_result: execution.status,
       latest_task_id: intake.task_id,
     });
+    runGuardedAutonomyFromIntent(createIntentFromCompletion({
+      workflow_id: workflowId,
+      task_id: intake.task_id,
+      status: "PASS",
+      refs: [written.resultPaths.jsonPath],
+    }), { workflow_id: workflowId });
     return written.report;
   } catch (error) {
     stateRecord = transitionExecutionState(stateRecord, "failed", {
@@ -719,6 +822,12 @@ async function runAutoAgentLoop(commandEntry) {
         current_stage: "retrying",
         refs: [written.resultPaths.jsonPath],
       });
+      runGuardedAutonomyFromIntent(createIntentFromRetry({
+        ...retry.entry,
+      }), {
+        workflow_id: workflowId,
+        retry_source: retry.entry.failure_id,
+      });
     } else {
       emitGovernanceBundle({
         workflow_id: workflowId,
@@ -739,6 +848,10 @@ async function runAutoAgentLoop(commandEntry) {
         refs: [written.resultPaths.jsonPath],
       });
     }
+    runGuardedAutonomyFromIntent(createIntentFromFailure(failure), {
+      workflow_id: workflowId,
+      failure_fingerprint: failure.fingerprint,
+    });
     registerTaskRun(command, stateRecord, {
       artifacts_written: [written.resultPaths.jsonPath, written.archivePath, preview && preview.artifact_path, diffPreview && diffPreview.artifact_path].filter(Boolean),
       blocker_reason: error.message,
@@ -759,5 +872,6 @@ async function runAutoAgentLoop(commandEntry) {
 }
 
 module.exports = {
+  runGuardedAutonomyFromIntent,
   runAutoAgentLoop,
 };
