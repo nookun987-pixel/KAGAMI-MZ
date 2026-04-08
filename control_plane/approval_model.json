@@ -1,0 +1,22 @@
+{
+  "auto_allow": [
+    "repo.status",
+    "repo.diff",
+    "queue.observe",
+    "read.state",
+    "read.logs"
+  ],
+  "require_approval": [
+    "repo.commit",
+    "repo.push",
+    "codex.build",
+    "disk.clean",
+    "runtime.change"
+  ],
+  "hard_block": [
+    "delete_root",
+    "overwrite_system_map",
+    "bypass_validator",
+    "claim_unproven_endpoint"
+  ]
+}
