@@ -1,0 +1,8 @@
+{
+  "active": ["MIKAGE", "runtime"],
+  "state": ["state"],
+  "bridge": ["control_plane/local_control_agent"],
+  "logs": ["control_plane/local_control_agent/logs"],
+  "archive": ["archive"],
+  "commander": ["commander/tasks", "commander/reports"]
+}
