@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "audited_at": "2026-04-06T00:00:00.000Z",
+  "sanitation_version": "v1",
+  "summary": {
+    "kept": 0,
+    "quarantined": 1,
+    "removed": 0
+  },
+  "records": [
+    {
+      "object_id": "MASK_KITSUNE_CERAMIC_001",
+      "identity_key": "mask::kitsune porcelain mask::a symmetrical japanese kitsune porcelain mask — white ceramic, fox-shaped, clearly a manufactured artifact",
+      "classification": {
+        "bucket": "QUARANTINE",
+        "reasons": [
+          "canon_contamination_detected"
+        ],
+        "contamination_hits": [
+          "kitsune",
+          "fox",
+          "animal_ear",
+          "creature_or_character",
+          "human_face_likeness"
+        ],
+        "positive_evidence": [
+          "manufactured_object",
+          "technical_ceramic",
+          "non_wearable",
+          "object_readability"
+        ],
+        "identity_key": "mask::kitsune porcelain mask::a symmetrical japanese kitsune porcelain mask — white ceramic, fox-shaped, clearly a manufactured artifact",
+        "active_for_live_reuse": false
+      }
+    }
+  ]
+}

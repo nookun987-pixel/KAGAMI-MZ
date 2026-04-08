@@ -1,0 +1,7 @@
+{
+  "lane": "image",
+  "job_id": "AUTO_20260407_001",
+  "dispatch_target": "phase_2_image_runtime_adapter_pending",
+  "created_at": "2026-04-06T20:11:20.117Z",
+  "mode": "control_plane_receipt"
+}

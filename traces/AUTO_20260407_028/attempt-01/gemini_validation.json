@@ -1,0 +1,20 @@
+{
+  "job_id": "AUTO_20260407_028",
+  "attempt_index": 1,
+  "source": "live",
+  "status": "REVIEW",
+  "quality_score": 0.75,
+  "overall_score": 0.55,
+  "failure_codes": [
+    "CANON_DRIFT"
+  ],
+  "notes": [
+    "The masks are generally well-rendered with good detail and texture. However, the integration of the masks with the human faces in the top-left and bottom-left quadrants is unconvincing, leading to an artificial appearance of the human subjects and an awkward fit of the masks. This detracts from the overall realism and consistency."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_028\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": false,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.221Z"
+}

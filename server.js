@@ -28,6 +28,7 @@ const {
 
 const PORT = process.env.PORT || 3000;
 const RUNS_DIR = process.env.RUNS_DIR || path.join(__dirname, "runs");
+const DRIVE_ROOT = process.env.DRIVE_ROOT || path.join(__dirname, "drive_staging");
 
 if (!fs.existsSync(RUNS_DIR)) {
   fs.mkdirSync(RUNS_DIR, { recursive: true });
@@ -198,6 +199,122 @@ function buildJobId(body = {}) {
   return body.job_id || body.run_id || `JOB-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
 }
 
+function safeReadJson(filePath) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (_) {
+    return null;
+  }
+}
+
+function readDriveRuntimeStatus(filterJobId = null) {
+  const jobInboxDir = path.join(DRIVE_ROOT, "job_inbox");
+  const claimsDir = path.join(DRIVE_ROOT, "claims");
+  const outputsDir = path.join(DRIVE_ROOT, "outputs");
+  const logsDir = path.join(DRIVE_ROOT, "logs");
+
+  const jobs = new Map();
+  const track = (jobId) => {
+    if (!jobs.has(jobId)) {
+      jobs.set(jobId, {
+        job_id: jobId,
+        status: "pending",
+        state_anchor: "job_inbox",
+        lane: null,
+        idea: null,
+        prompt: null,
+        execution_target: null,
+        created_at: null,
+        claimed_at: null,
+        completed_at: null,
+        artifacts: [],
+      });
+    }
+    return jobs.get(jobId);
+  };
+
+  if (fs.existsSync(jobInboxDir)) {
+    for (const file of fs.readdirSync(jobInboxDir).filter((name) => name.endsWith(".json"))) {
+      const payload = safeReadJson(path.join(jobInboxDir, file)) || {};
+      const jobId = String(payload.job_id || file.replace(/\.json$/i, ""));
+      const job = track(jobId);
+      job.status = "pending";
+      job.state_anchor = "job_inbox";
+      job.created_at = payload.created_at || job.created_at;
+      job.lane = payload.lane || job.lane;
+      job.idea = payload.idea || job.idea;
+      job.prompt = payload.prompt || job.prompt;
+      job.execution_target = payload.execution_target || job.execution_target;
+    }
+  }
+
+  if (fs.existsSync(claimsDir)) {
+    for (const file of fs.readdirSync(claimsDir).filter((name) => name.endsWith(".json"))) {
+      const payload = safeReadJson(path.join(claimsDir, file)) || {};
+      const jobId = String(payload.job_id || file.replace(/\.json$/i, ""));
+      const job = track(jobId);
+      job.status = "running";
+      job.state_anchor = "claims";
+      job.claimed_at = payload.claimed_at || payload.started_at || job.claimed_at;
+      job.lane = payload.lane || job.lane;
+      job.idea = payload.idea || job.idea;
+      job.prompt = payload.prompt || job.prompt;
+      job.execution_target = payload.execution_target || job.execution_target;
+    }
+  }
+
+  if (fs.existsSync(outputsDir)) {
+    for (const jobId of fs.readdirSync(outputsDir).filter((name) => fs.statSync(path.join(outputsDir, name)).isDirectory())) {
+      const outputDir = path.join(outputsDir, jobId);
+      const result = safeReadJson(path.join(outputDir, "result.json")) || {};
+      const job = track(jobId);
+      const status = String(result.status || result.final_status || "").toLowerCase();
+      if (["success", "done", "completed", "complete", "ok"].includes(status)) {
+        job.status = "completed";
+        job.completed_at = result.completed_at || result.finished_at || job.completed_at;
+        job.state_anchor = "outputs/result.json";
+      } else if (["failed", "fail", "error", "rejected"].includes(status)) {
+        job.status = "failed";
+        job.completed_at = result.completed_at || result.finished_at || job.completed_at;
+        job.state_anchor = "outputs/result.json";
+      }
+      job.artifacts = fs.readdirSync(outputDir)
+        .filter((name) => name !== "result.json")
+        .map((name) => ({ name, path: path.join(outputDir, name) }));
+      job.result = result;
+    }
+  }
+
+  const allJobs = Array.from(jobs.values())
+    .filter((job) => !filterJobId || job.job_id === filterJobId)
+    .sort((a, b) => String(b.completed_at || b.claimed_at || b.created_at || "").localeCompare(String(a.completed_at || a.claimed_at || a.created_at || "")));
+
+  const recentLogs = fs.existsSync(logsDir)
+    ? fs.readdirSync(logsDir)
+        .filter((name) => name.endsWith(".log") || name.endsWith(".txt"))
+        .sort((a, b) => fs.statSync(path.join(logsDir, b)).mtimeMs - fs.statSync(path.join(logsDir, a)).mtimeMs)
+        .slice(0, 10)
+    : [];
+
+  return {
+    root: DRIVE_ROOT,
+    counts: {
+      pending: allJobs.filter((job) => job.status === "pending").length,
+      running: allJobs.filter((job) => job.status === "running").length,
+      completed: allJobs.filter((job) => job.status === "completed").length,
+      failed: allJobs.filter((job) => job.status === "failed").length,
+      total: allJobs.length,
+    },
+    jobs: allJobs,
+    logs: recentLogs,
+    proof: {
+      dashboard_source: "shared_drive_filesystem",
+      final_state_anchor: "outputs/<job_id>/result.json",
+      contract_folders: ["job_inbox", "claims", "outputs", "logs"],
+    },
+  };
+}
+
 function isLoopbackRequest(req) {
   const remote = req && req.socket && req.socket.remoteAddress;
   return remote === "127.0.0.1" || remote === "::1" || remote === "::ffff:127.0.0.1";
@@ -254,6 +371,9 @@ async function handleRunRequest(req, res) {
   try {
     const body = await parseJsonBody(req);
     body.job_id = buildJobId(body);
+    body.execution_target = body.execution_target || process.env.MIKAGE_EXECUTION_TARGET || "colab_runner";
+    body.lane = body.lane || body.shot_type || "unknown";
+    body.idea = body.idea || body.user_idea || body.prompt || "";
     console.log(`[RUN RECEIVED] ${JSON.stringify(body)}`);
     const routePath = ((req && req.url) ? String(req.url).split("?")[0] : "") || "/run-task";
     const useLocalRelaxedAccess = isLoopbackRequest(req)
@@ -418,6 +538,11 @@ function handleDashboardData(req, res) {
   });
 }
 
+function handleDriveStatus(req, res, jobId = null) {
+  const status = readDriveRuntimeStatus(jobId);
+  sendJsonResponse(res, 200, status);
+}
+
 function handleArtifactRequest(req, res, jobId, filename) {
   const filePath = path.join(RUNS_DIR, jobId, filename);
   if (!fs.existsSync(filePath)) {
@@ -494,6 +619,11 @@ async function handleRequest(req, res) {
     return;
   }
 
+  if (req.method === "GET" && pathname === "/drive-status") {
+    handleDriveStatus(req, res, parsedUrl.query && parsedUrl.query.job_id ? String(parsedUrl.query.job_id) : null);
+    return;
+  }
+
   if (req.method === "POST" && (pathname === "/run" || pathname === "/run-task")) {
     await handleRunRequest(req, res);
     return;
@@ -556,3 +686,9 @@ module.exports = {
   handleRequest,
   handleRunRequest,
 };
+/**
+ * DEPRECATED ENTRY STACK
+ *
+ * Active MIKAGE V2 control plane is MIKAGE/index.js and MIKAGE/control_plane/.
+ * This server remains legacy/compatibility infrastructure.
+ */

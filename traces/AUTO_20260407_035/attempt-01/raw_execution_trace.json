@@ -1,0 +1,1280 @@
+{
+  "job_id": "AUTO_20260407_035",
+  "attempt_index": 1,
+  "options": {
+    "timeoutMs": 300000,
+    "pollIntervalMs": 1500,
+    "staleClaimMs": 120000
+  },
+  "intent": {
+    "intent_type": "image",
+    "goal": "create ceramic mask hero frame",
+    "constraints": [
+      "RENDER_MODE:HERO_LOCK",
+      "SHOT_PROFILE:MASK_MACRO"
+    ],
+    "priority": "normal",
+    "signals": {
+      "source": "direct_input",
+      "classified_by": "keyword_router"
+    }
+  },
+  "taskSpec": {
+    "job_id": "AUTO_20260407_035",
+    "lane": "image",
+    "objective": "create ceramic mask hero frame",
+    "constraints": [
+      "RENDER_MODE:HERO_LOCK",
+      "SHOT_PROFILE:MASK_MACRO"
+    ],
+    "priority": "normal",
+    "execution_plan": {
+      "steps": [
+        "prepare_prompt",
+        "dispatch_render",
+        "validate_output"
+      ]
+    },
+    "success_criteria": [
+      "real output exists",
+      "validator pass",
+      "final judge allow"
+    ],
+    "context": {
+      "planned_at": "2026-04-07T16:59:34.259Z",
+      "planner_version": "mikage_v2_control_plane",
+      "signals": {
+        "source": "direct_input",
+        "classified_by": "keyword_router"
+      },
+      "memory_hints": [
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-06T20:11:20.123Z"
+        },
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-07T16:29:59.418Z"
+        },
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-07T16:37:47.557Z"
+        },
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-07T16:38:22.304Z"
+        },
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-07T16:39:05.681Z"
+        }
+      ],
+      "dominant_reference": {
+        "job_id": "AUTO_20260408_015",
+        "score": 0.9,
+        "locked_at": "2026-04-07T14:18:55.657Z",
+        "silhouette_traits": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry"
+        ],
+        "material_traits": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance"
+        ],
+        "framing_traits": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech"
+        ],
+        "blocked_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell"
+        ]
+      },
+      "requested_render_mode": "HERO_LOCK",
+      "dna_lock_packet": {
+        "dna_id": "DNA_AUTO_20260408_015",
+        "source_job_id": "AUTO_20260408_015",
+        "source_lane": "image",
+        "contract_version": "CONTROLLED_EVOLUTION_V1",
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "edge_dna": [
+          "micro erosion on exposed edges",
+          "slight irregular bevel",
+          "non-uniform edge wear"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "color_law": [
+          "restricted charcoal ceramic palette",
+          "controlled off-white mineral accent"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "hard_forbidden_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell",
+          "fashion accessory styling"
+        ]
+      },
+      "variation_envelope": {
+        "envelope_version": "CONTROLLED_EVOLUTION_V1",
+        "variant_slot": "B",
+        "strict": true,
+        "bounded_axes": {
+          "silhouette_variant": {
+            "allowed": [
+              "anchor",
+              "brow_guard_delta",
+              "jaw_vent_delta",
+              "cheek_notch_delta"
+            ],
+            "selected": "brow_guard_delta"
+          },
+          "wear_level": {
+            "allowed": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "selected": "medium"
+          },
+          "microtexture_profile": {
+            "allowed": [
+              "fine_pitting",
+              "striated_erosion",
+              "sintered_grain"
+            ],
+            "selected": "striated_erosion"
+          },
+          "seam_intensity": {
+            "allowed": [
+              "minimal",
+              "visible",
+              "pronounced"
+            ],
+            "selected": "visible"
+          },
+          "asymmetry_tolerance": {
+            "allowed": [
+              "tight",
+              "balanced",
+              "expressive"
+            ],
+            "selected": "tight"
+          }
+        }
+      },
+      "variant_spec": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+        "variant_family": "HERO_LOCK",
+        "variant_slot": "B",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "allowed_axes": {
+          "silhouette_variant": "brow_guard_delta",
+          "wear_level": "medium",
+          "microtexture_profile": "striated_erosion",
+          "seam_intensity": "visible",
+          "asymmetry_tolerance": "tight"
+        },
+        "allowed_differences": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:tight"
+        ],
+        "prompt_controls": {
+          "positive_additions": [
+            "single hero artifact only",
+            "one frontal mask only",
+            "one manufactured subject readable at first glance",
+            "subject occupies dominant frame area",
+            "clear subject separation from background",
+            "obsidian void background",
+            "technical ceramic B4C material read",
+            "controlled brow guard variation only",
+            "keep central single-mask presentation",
+            "preserve exact core silhouette while reinforcing brow guard",
+            "standalone mounted mask artifact only",
+            "no wearer and no human presence",
+            "slightly reinforced brow guard within locked silhouette grammar",
+            "moderate wear concentration on exposed ceramic surfaces",
+            "subtle striated erosion traces across ceramic shell",
+            "visible seam logic within locked structural design",
+            "tight symmetry bias with only slight asymmetry tolerance"
+          ],
+          "negative_additions": [
+            "multiple masks",
+            "extra view panels",
+            "alternate angle inserts",
+            "secondary miniatures",
+            "contact sheet layout",
+            "sculptural cluster",
+            "small background masks",
+            "split composition board",
+            "mask cluster",
+            "secondary masks",
+            "multi-mask composition",
+            "human wearer",
+            "human face",
+            "portrait photo",
+            "skin integration",
+            "fashion editorial",
+            "person wearing mask",
+            "multi-angle board",
+            "generic product render",
+            "full body humanoid mech",
+            "white glossy plastic shell",
+            "fashion accessory styling"
+          ]
+        }
+      }
+    }
+  },
+  "runRecord": {
+    "job_id": "AUTO_20260407_035",
+    "lane": "image",
+    "state": "rejected",
+    "timeline": [
+      {
+        "state": "started",
+        "timestamp": "2026-04-07T16:59:34.260Z"
+      },
+      {
+        "state": "running",
+        "timestamp": "2026-04-07T16:59:34.260Z"
+      },
+      {
+        "state": "rejected",
+        "timestamp": "2026-04-07T17:00:14.193Z"
+      }
+    ]
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260407_035",
+    "lane": "image",
+    "status": "rejected",
+    "summary": "Image lane produced an invalid or incomplete result.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_035.json"
+      },
+      {
+        "type": "claim_json",
+        "label": "claim_json",
+        "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_035.claim.json"
+      },
+      {
+        "type": "result_json",
+        "label": "result_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\result.json"
+      },
+      {
+        "type": "judge_output_json",
+        "label": "judge_output_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\judge_output.json"
+      },
+      {
+        "type": "image",
+        "label": "output_image",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\output.png"
+      }
+    ],
+    "validator_result": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "judge_output": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.7,
+        "overall_score": 0.3,
+        "failure_codes": [
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+      },
+      "judge_output_path": "outputs/AUTO_20260407_035/judge_output.json",
+      "critic_merge": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.7,
+        "overall_score": 0.7,
+        "failure_codes": [
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION",
+          "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+        ],
+        "judge_output_path": "outputs/AUTO_20260407_035/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.7,
+          "quality_score": 0.7,
+          "failure_codes": [
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION"
+          ],
+          "issues": [
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+          ],
+          "verdict": "REJECT",
+          "raw": {
+            "source": "live",
+            "status": "REJECT",
+            "quality_score": 0.7,
+            "overall_score": 0.3,
+            "failure_codes": [
+              "CANON_DRIFT",
+              "ABSTRACT_COMPOSITION"
+            ],
+            "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+          }
+        }
+      },
+      "proof_blocked": false
+    },
+    "error": "live_judge_fail",
+    "started_at": "2026-04-07T16:59:34.260Z",
+    "finished_at": "2026-04-07T17:00:14.193Z",
+    "metadata": {
+      "queue_state": "completed",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T16:59:34.283Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_035.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_035.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\result.json",
+      "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\judge_output.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\output.png",
+      "claim": {
+        "job_id": "AUTO_20260407_035",
+        "worker_id": "colab-worker-01",
+        "claimed_at": "2026-04-07T16:59:51.984969Z",
+        "status": "claimed"
+      },
+      "result": {
+        "job_id": "AUTO_20260407_035",
+        "status": "completed",
+        "output_image_path": "outputs/AUTO_20260407_035/output.png",
+        "judge_output_path": "outputs/AUTO_20260407_035/judge_output.json",
+        "judge_output": {
+          "source": "live",
+          "status": "REJECT",
+          "quality_score": 0.7,
+          "overall_score": 0.3,
+          "failure_codes": [
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION"
+          ],
+          "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+        },
+        "validator_result": {
+          "passed": true,
+          "signals": []
+        },
+        "artifacts": [
+          {
+            "type": "image",
+            "path": "outputs/AUTO_20260407_035/output.png"
+          },
+          {
+            "type": "judge_output_json",
+            "path": "outputs/AUTO_20260407_035/judge_output.json"
+          }
+        ],
+        "started_at": "2026-04-07T16:59:51.991123Z",
+        "finished_at": "2026-04-07T17:00:01.816405Z",
+        "metadata": {
+          "model_id": "stabilityai/sdxl-turbo",
+          "device": "cuda",
+          "seed": 42,
+          "num_inference_steps": 4,
+          "guidance_scale": 0
+        }
+      },
+      "judge_output": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.7,
+        "overall_score": 0.3,
+        "failure_codes": [
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+      },
+      "critic_merge": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.7,
+        "overall_score": 0.7,
+        "failure_codes": [
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION",
+          "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+        ],
+        "judge_output_path": "outputs/AUTO_20260407_035/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.7,
+          "quality_score": 0.7,
+          "failure_codes": [
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION"
+          ],
+          "issues": [
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+          ],
+          "verdict": "REJECT",
+          "raw": {
+            "source": "live",
+            "status": "REJECT",
+            "quality_score": 0.7,
+            "overall_score": 0.3,
+            "failure_codes": [
+              "CANON_DRIFT",
+              "ABSTRACT_COMPOSITION"
+            ],
+            "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image."
+          }
+        }
+      },
+      "proof_blocked": false,
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260407_035",
+    "lane": "image",
+    "state": "rejected",
+    "queue_state": "completed",
+    "issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "fatal_issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "fatal_issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T17:00:14.195Z"
+  },
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T17:00:14.195Z"
+  },
+  "qualityFailurePacket": {
+    "supported_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION",
+      "GENERIC_OBJECT",
+      "WEAK_IDENTITY",
+      "MATERIAL_TOO_CLEAN",
+      "CG_PERFECTION",
+      "PRODUCT_RENDER_LOOK",
+      "DECORATIVE_FORM",
+      "LIGHTWEIGHT_OBJECT",
+      "SIGNATURE_DRIFT",
+      "EDGE_TOO_CLEAN",
+      "MATERIAL_UNIFORM",
+      "FORM_INCONSISTENT",
+      "COLOR_DRIFT",
+      "TEXTURE_ONLY_FRAME",
+      "CERAMIC_NOT_CONVINCING",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "TOY_READ",
+      "SURFACE_TOO_SMOOTH",
+      "SILHOUETTE_NOISY",
+      "CANON_DRIFT",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE"
+    ],
+    "primary_failure_code": "ABSTRACT_COMPOSITION",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION",
+      "CANON_DRIFT"
+    ],
+    "primary_failure_codes": [
+      "ABSTRACT_COMPOSITION",
+      "CANON_DRIFT"
+    ],
+    "secondary_failure_codes": [],
+    "repair_class": "canon",
+    "quality_score": 0.7,
+    "score": 0.7,
+    "judge_summary": {
+      "status": "REJECT",
+      "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image.",
+      "failure_codes": [
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ]
+    },
+    "validator_summary": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ]
+    },
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "patch_targets": [
+      "object_form",
+      "object_centrality",
+      "subject_hierarchy"
+    ],
+    "job_id": "AUTO_20260407_035",
+    "attempt": 1,
+    "source_artifacts": {
+      "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\output.png",
+      "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\judge_output.json"
+    },
+    "pass": false,
+    "critical_failure": true
+  },
+  "failureRoute": {
+    "failure_type": "abstract_composition",
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "anti_abstract_reinforcement",
+    "repair_class": "quality",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairPatchPacket": {
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "repair_class": "canon",
+    "recovery_mode": "STRONG_OBJECT_RECOVERY",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION",
+      "CANON_DRIFT"
+    ],
+    "primary_failure_codes": [
+      "ABSTRACT_COMPOSITION",
+      "CANON_DRIFT"
+    ],
+    "patch_targets": [
+      "object_form",
+      "object_centrality",
+      "subject_hierarchy"
+    ],
+    "prompt_patch": {
+      "positive_additions": [
+        "force literal manufactured object as primary subject",
+        "force non-abstract composition",
+        "force object-first frame hierarchy",
+        "force clear subject separation from background",
+        "force visual reading in one glance",
+        "literal subject framing",
+        "single engineered ceramic object centered in frame",
+        "front readable silhouette with one-glance object recognition",
+        "front dominant silhouette",
+        "fixed narrow eye cavity ratio",
+        "central forehead spine",
+        "layered jaw-vent geometry",
+        "dark matte technical ceramic shell",
+        "micro-abrasion wear",
+        "subtle ceramic micro-pitting",
+        "uneven reflectance",
+        "single mounted mask artifact",
+        "industrial frame backdrop",
+        "centered hero framing",
+        "no turntable board",
+        "no full body mech"
+      ],
+      "negative_additions": [
+        "no abstract composition",
+        "no symbolic framing",
+        "no conceptual poster-like image",
+        "no mood-first composition",
+        "no texture-first composition",
+        "no atmospheric subject loss",
+        "abstract composition",
+        "symbolic non-literal framing",
+        "mood-first composition",
+        "texture-first composition",
+        "off-canon drift",
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell"
+      ]
+    },
+    "canon_reinforcements": [
+      "object readability over aesthetics",
+      "literal form over mood",
+      "manufactured subject over visual ambiguity"
+    ],
+    "canon_patch": {
+      "dominant_traits": [],
+      "supportive_traits": [],
+      "blocked_traits": [],
+      "must_have_traits": [],
+      "dominant_reference": {
+        "job_id": "AUTO_20260408_015",
+        "score": 0.9,
+        "locked_at": "2026-04-07T14:18:55.657Z",
+        "silhouette_traits": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry"
+        ],
+        "material_traits": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance"
+        ],
+        "framing_traits": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech"
+        ],
+        "blocked_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell"
+        ]
+      }
+    }
+  },
+  "qualityRetryDecision": {
+    "retry_allowed": false,
+    "repair_class": "quality",
+    "decision_reason": "Max retry cap reached.",
+    "hard_stop": true,
+    "repeated_failure_code": "",
+    "proof_blocked": false
+  },
+  "qualityScoreDelta": {
+    "previous_score": null,
+    "current_score": 0.7,
+    "delta": null,
+    "improved": null
+  },
+  "dnaLockPacket": {
+    "dna_id": "DNA_AUTO_20260408_015",
+    "source_job_id": "AUTO_20260408_015",
+    "source_lane": "image",
+    "contract_version": "CONTROLLED_EVOLUTION_V1",
+    "material_dna": [
+      "dark matte technical ceramic shell",
+      "micro-abrasion wear",
+      "subtle ceramic micro-pitting",
+      "uneven reflectance",
+      "technical ceramic read",
+      "matte non-plastic finish",
+      "micro-imperfect surface truth"
+    ],
+    "edge_dna": [
+      "micro erosion on exposed edges",
+      "slight irregular bevel",
+      "non-uniform edge wear"
+    ],
+    "silhouette_grammar": [
+      "front dominant silhouette",
+      "fixed narrow eye cavity ratio",
+      "central forehead spine",
+      "layered jaw-vent geometry",
+      "coherent mask proportion logic"
+    ],
+    "color_law": [
+      "restricted charcoal ceramic palette",
+      "controlled off-white mineral accent"
+    ],
+    "identity_anchors": [
+      "single mounted mask artifact",
+      "industrial frame backdrop",
+      "centered hero framing",
+      "no turntable board",
+      "no full body mech",
+      "engineered ceramic artifact",
+      "industrial mounting logic",
+      "single subject hero framing"
+    ],
+    "hard_forbidden_traits": [
+      "multi-angle board",
+      "generic product render",
+      "full body humanoid mech",
+      "white glossy plastic shell",
+      "fashion accessory styling"
+    ]
+  },
+  "variationEnvelope": {
+    "envelope_version": "CONTROLLED_EVOLUTION_V1",
+    "variant_slot": "B",
+    "strict": true,
+    "bounded_axes": {
+      "silhouette_variant": {
+        "allowed": [
+          "anchor",
+          "brow_guard_delta",
+          "jaw_vent_delta",
+          "cheek_notch_delta"
+        ],
+        "selected": "brow_guard_delta"
+      },
+      "wear_level": {
+        "allowed": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "selected": "medium"
+      },
+      "microtexture_profile": {
+        "allowed": [
+          "fine_pitting",
+          "striated_erosion",
+          "sintered_grain"
+        ],
+        "selected": "striated_erosion"
+      },
+      "seam_intensity": {
+        "allowed": [
+          "minimal",
+          "visible",
+          "pronounced"
+        ],
+        "selected": "visible"
+      },
+      "asymmetry_tolerance": {
+        "allowed": [
+          "tight",
+          "balanced",
+          "expressive"
+        ],
+        "selected": "tight"
+      }
+    }
+  },
+  "variantSpec": {
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+    "variant_family": "HERO_LOCK",
+    "variant_slot": "B",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "allowed_axes": {
+      "silhouette_variant": "brow_guard_delta",
+      "wear_level": "medium",
+      "microtexture_profile": "striated_erosion",
+      "seam_intensity": "visible",
+      "asymmetry_tolerance": "tight"
+    },
+    "allowed_differences": [
+      "silhouette_variant:brow_guard_delta",
+      "wear_level:medium",
+      "microtexture_profile:striated_erosion",
+      "seam_intensity:visible",
+      "asymmetry_tolerance:tight"
+    ],
+    "prompt_controls": {
+      "positive_additions": [
+        "single hero artifact only",
+        "one frontal mask only",
+        "one manufactured subject readable at first glance",
+        "subject occupies dominant frame area",
+        "clear subject separation from background",
+        "obsidian void background",
+        "technical ceramic B4C material read",
+        "controlled brow guard variation only",
+        "keep central single-mask presentation",
+        "preserve exact core silhouette while reinforcing brow guard",
+        "standalone mounted mask artifact only",
+        "no wearer and no human presence",
+        "slightly reinforced brow guard within locked silhouette grammar",
+        "moderate wear concentration on exposed ceramic surfaces",
+        "subtle striated erosion traces across ceramic shell",
+        "visible seam logic within locked structural design",
+        "tight symmetry bias with only slight asymmetry tolerance"
+      ],
+      "negative_additions": [
+        "multiple masks",
+        "extra view panels",
+        "alternate angle inserts",
+        "secondary miniatures",
+        "contact sheet layout",
+        "sculptural cluster",
+        "small background masks",
+        "split composition board",
+        "mask cluster",
+        "secondary masks",
+        "multi-mask composition",
+        "human wearer",
+        "human face",
+        "portrait photo",
+        "skin integration",
+        "fashion editorial",
+        "person wearing mask",
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell",
+        "fashion accessory styling"
+      ]
+    }
+  },
+  "variantJudgeOutput": {
+    "job_id": "AUTO_20260407_035",
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+    "variant_family": "HERO_LOCK",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "supported_failure_codes": [
+      "TOO_SIMILAR",
+      "DRIFT_VIOLATION",
+      "IDENTITY_LOSS",
+      "MATERIAL_BREAK",
+      "SILHOUETTE_BREAK",
+      "SIGNATURE_DRIFT",
+      "EDGE_TOO_CLEAN",
+      "MATERIAL_UNIFORM",
+      "FORM_INCONSISTENT",
+      "COLOR_DRIFT",
+      "GENERIC_OBJECT",
+      "WEAK_IDENTITY",
+      "MATERIAL_TOO_CLEAN",
+      "CG_PERFECTION",
+      "PRODUCT_RENDER_LOOK",
+      "DECORATIVE_FORM",
+      "LIGHTWEIGHT_OBJECT",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "SURFACE_TOO_SMOOTH",
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION"
+    ],
+    "allowed_differences": [
+      "silhouette_variant:brow_guard_delta",
+      "wear_level:medium",
+      "microtexture_profile:striated_erosion",
+      "seam_intensity:visible",
+      "asymmetry_tolerance:tight"
+    ],
+    "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+    "verdict": "REJECT_DRIFT",
+    "repeatability_confirmed": false,
+    "dna_retention": {
+      "passed": false,
+      "blocked_by": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ]
+    },
+    "variant_distinctness": {
+      "passed": true,
+      "sibling_collision_variant_id": ""
+    },
+    "drift_violation": {
+      "passed": false,
+      "codes": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ]
+    },
+    "identity_loss": {
+      "passed": true,
+      "codes": []
+    },
+    "material_integrity": {
+      "passed": true,
+      "codes": []
+    },
+    "silhouette_integrity": {
+      "passed": true,
+      "codes": []
+    },
+    "score": 0.7
+  },
+  "variantDeltaReport": {
+    "job_id": "AUTO_20260407_035",
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+    "variant_family": "HERO_LOCK",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "dna_retention_passed": false,
+    "variant_distinctness_passed": true,
+    "drift_detected": true,
+    "signature_consistency": 0.5,
+    "approved_sibling_count": 2,
+    "repeatability_exists": true,
+    "allowed_differences": [
+      "silhouette_variant:brow_guard_delta",
+      "wear_level:medium",
+      "microtexture_profile:striated_erosion",
+      "seam_intensity:visible",
+      "asymmetry_tolerance:tight"
+    ],
+    "verdict": "REJECT_DRIFT"
+  },
+  "proof_blocked": false,
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "quality",
+    "recovery_mode": "STRONG_OBJECT_RECOVERY",
+    "current_attempt": 1,
+    "max_attempts": 1,
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "anti_abstract_reinforcement",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260407_035",
+      "parent_job_id": "AUTO_20260407_035",
+      "current_attempt": 1,
+      "next_attempt": null
+    },
+    "quality_failure_packet": {
+      "supported_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "FUNCTIONAL_FORM_WEAK",
+        "OBJECT_CENTRALITY_WEAK",
+        "SYMBOLIC_FRAMING",
+        "FASHION_COMPOSITION",
+        "GENERIC_OBJECT",
+        "WEAK_IDENTITY",
+        "MATERIAL_TOO_CLEAN",
+        "CG_PERFECTION",
+        "PRODUCT_RENDER_LOOK",
+        "DECORATIVE_FORM",
+        "LIGHTWEIGHT_OBJECT",
+        "SIGNATURE_DRIFT",
+        "EDGE_TOO_CLEAN",
+        "MATERIAL_UNIFORM",
+        "FORM_INCONSISTENT",
+        "COLOR_DRIFT",
+        "TEXTURE_ONLY_FRAME",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC",
+        "MATERIAL_RESIN",
+        "TOY_READ",
+        "SURFACE_TOO_SMOOTH",
+        "SILHOUETTE_NOISY",
+        "CANON_DRIFT",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE"
+      ],
+      "primary_failure_code": "ABSTRACT_COMPOSITION",
+      "failure_codes": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "secondary_failure_codes": [],
+      "repair_class": "canon",
+      "quality_score": 0.7,
+      "score": 0.7,
+      "judge_summary": {
+        "status": "REJECT",
+        "notes": "The image displays four distinct masks/helmets with significant variations in style, material interpretation, and presentation (some worn by a person, others floating). This lack of a cohesive visual canon and the abstract grid composition lead to a low overall quality score for a single rendered image.",
+        "failure_codes": [
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ]
+      },
+      "validator_summary": {
+        "passed": false,
+        "signals": [
+          "live_judge_fail",
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ],
+        "issues": [
+          "live_judge_fail",
+          "CANON_DRIFT",
+          "ABSTRACT_COMPOSITION"
+        ]
+      },
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "patch_targets": [
+        "object_form",
+        "object_centrality",
+        "subject_hierarchy"
+      ],
+      "job_id": "AUTO_20260407_035",
+      "attempt": 1,
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\output.png",
+        "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_035\\judge_output.json"
+      },
+      "pass": false,
+      "critical_failure": true
+    },
+    "repair_patch_packet": {
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "repair_class": "canon",
+      "recovery_mode": "STRONG_OBJECT_RECOVERY",
+      "failure_codes": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "patch_targets": [
+        "object_form",
+        "object_centrality",
+        "subject_hierarchy"
+      ],
+      "prompt_patch": {
+        "positive_additions": [
+          "force literal manufactured object as primary subject",
+          "force non-abstract composition",
+          "force object-first frame hierarchy",
+          "force clear subject separation from background",
+          "force visual reading in one glance",
+          "literal subject framing",
+          "single engineered ceramic object centered in frame",
+          "front readable silhouette with one-glance object recognition",
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech"
+        ],
+        "negative_additions": [
+          "no abstract composition",
+          "no symbolic framing",
+          "no conceptual poster-like image",
+          "no mood-first composition",
+          "no texture-first composition",
+          "no atmospheric subject loss",
+          "abstract composition",
+          "symbolic non-literal framing",
+          "mood-first composition",
+          "texture-first composition",
+          "off-canon drift",
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell"
+        ]
+      },
+      "canon_reinforcements": [
+        "object readability over aesthetics",
+        "literal form over mood",
+        "manufactured subject over visual ambiguity"
+      ],
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": [],
+        "dominant_reference": {
+          "job_id": "AUTO_20260408_015",
+          "score": 0.9,
+          "locked_at": "2026-04-07T14:18:55.657Z",
+          "silhouette_traits": [
+            "front dominant silhouette",
+            "fixed narrow eye cavity ratio",
+            "central forehead spine",
+            "layered jaw-vent geometry"
+          ],
+          "material_traits": [
+            "dark matte technical ceramic shell",
+            "micro-abrasion wear",
+            "subtle ceramic micro-pitting",
+            "uneven reflectance"
+          ],
+          "framing_traits": [
+            "single mounted mask artifact",
+            "industrial frame backdrop",
+            "centered hero framing",
+            "no turntable board",
+            "no full body mech"
+          ],
+          "blocked_traits": [
+            "multi-angle board",
+            "generic product render",
+            "full body humanoid mech",
+            "white glossy plastic shell"
+          ]
+        }
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": false,
+      "repair_class": "quality",
+      "decision_reason": "Max retry cap reached.",
+      "hard_stop": true,
+      "repeated_failure_code": "",
+      "proof_blocked": false
+    },
+    "notes": [
+      "Max retry cap reached."
+    ],
+    "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_035\\attempt-01\\repair_patch_packet.json"
+  }
+}

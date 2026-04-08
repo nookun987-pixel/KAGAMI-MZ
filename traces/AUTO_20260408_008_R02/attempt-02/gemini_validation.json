@@ -1,0 +1,20 @@
+{
+  "job_id": "AUTO_20260408_008_R02",
+  "attempt_index": 2,
+  "source": "live",
+  "status": "REJECT",
+  "quality_score": 0.8,
+  "overall_score": 0.3,
+  "failure_codes": [
+    "CANON_DRIFT"
+  ],
+  "notes": [
+    "The helmet design strongly evokes a Space Marine aesthetic but incorporates non-standard elements such as prominent headphones and gas mask filters, indicating a significant canon drift. Additionally, there is unreadable placeholder text in the bottom left corner."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008_R02\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": false,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.293Z"
+}

@@ -1,0 +1,5 @@
+{
+  "stale_after_days": 30,
+  "decay_step": 0.1,
+  "archive_below": 0.5
+}

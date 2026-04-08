@@ -1,0 +1,18 @@
+{
+  "job_id": "AUTO_20260408_011",
+  "attempt_index": 1,
+  "source": "live",
+  "status": "PASS",
+  "quality_score": 0.9,
+  "overall_score": 0.9,
+  "failure_codes": [],
+  "notes": [
+    "High-quality rendering of a futuristic helmet from multiple angles. The design is consistent across views, and the material rendering (dark metallic with glowing red eyes) is excellent. No visual artifacts or inconsistencies."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_011\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": true,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.307Z"
+}

@@ -1,0 +1,146 @@
+{
+  "repairable": false,
+  "repair_class": "",
+  "recovery_mode": "STRONG_OBJECT_RECOVERY",
+  "current_attempt": 2,
+  "max_attempts": 2,
+  "responsible_module": "",
+  "repair_strategy": "",
+  "actions": [],
+  "next_options": {},
+  "prompt_patch": {
+    "positive_additions": [],
+    "negative_additions": []
+  },
+  "canon_patch": {
+    "lock_boost": [],
+    "blocked_trait_reinforcement": [],
+    "dominant_trait_reinforcement": [],
+    "must_have_replay": [],
+    "hard_negative_carryover": []
+  },
+  "lineage": {
+    "original_job_id": "AUTO_20260408_006",
+    "parent_job_id": "AUTO_20260408_006_R02",
+    "current_attempt": 2,
+    "next_attempt": null
+  },
+  "quality_failure_packet": {
+    "supported_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION",
+      "TEXTURE_ONLY_FRAME",
+      "CERAMIC_NOT_CONVINCING",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "TOY_READ",
+      "SURFACE_TOO_SMOOTH",
+      "SILHOUETTE_NOISY",
+      "CANON_DRIFT",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE"
+    ],
+    "primary_failure_code": "ABSTRACT_COMPOSITION",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "primary_failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "secondary_failure_codes": [],
+    "repair_class": "quality",
+    "quality_score": 0.9,
+    "score": 0.9,
+    "judge_summary": {
+      "status": "PASS",
+      "notes": "The image displays well-rendered abstract geometric models with clean lines, consistent lighting, and a convincing matte material. The composition is clear and organized, and all objects are easily readable.",
+      "failure_codes": []
+    },
+    "validator_summary": {
+      "passed": true,
+      "signals": [],
+      "issues": []
+    },
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "patch_targets": [
+      "object_form",
+      "object_centrality",
+      "subject_hierarchy"
+    ],
+    "job_id": "AUTO_20260408_006_R02",
+    "attempt": 2,
+    "source_artifacts": {
+      "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_006_R02\\output.png",
+      "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_006_R02\\judge_output.json"
+    },
+    "pass": true,
+    "critical_failure": true
+  },
+  "repair_patch_packet": {
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "repair_class": "quality",
+    "recovery_mode": "STRONG_OBJECT_RECOVERY",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "primary_failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "patch_targets": [
+      "object_form",
+      "object_centrality",
+      "subject_hierarchy"
+    ],
+    "prompt_patch": {
+      "positive_additions": [
+        "force literal manufactured object as primary subject",
+        "force non-abstract composition",
+        "force object-first frame hierarchy",
+        "force clear subject separation from background",
+        "force visual reading in one glance",
+        "literal subject framing",
+        "single engineered ceramic object centered in frame",
+        "front readable silhouette with one-glance object recognition"
+      ],
+      "negative_additions": [
+        "no abstract composition",
+        "no symbolic framing",
+        "no conceptual poster-like image",
+        "no mood-first composition",
+        "no texture-first composition",
+        "no atmospheric subject loss",
+        "abstract composition",
+        "symbolic non-literal framing",
+        "mood-first composition",
+        "texture-first composition"
+      ]
+    },
+    "canon_reinforcements": [
+      "object readability over aesthetics",
+      "literal form over mood",
+      "manufactured subject over visual ambiguity"
+    ],
+    "canon_patch": {
+      "dominant_traits": [],
+      "supportive_traits": [],
+      "blocked_traits": [],
+      "must_have_traits": []
+    }
+  },
+  "quality_retry_decision": {
+    "retry_allowed": false,
+    "repair_class": "",
+    "decision_reason": "No retry required.",
+    "hard_stop": false,
+    "repeated_failure_code": "",
+    "proof_blocked": false
+  },
+  "notes": [
+    "Max retry cap reached."
+  ],
+  "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_006_R02\\attempt-02\\repair_patch_packet.json"
+}

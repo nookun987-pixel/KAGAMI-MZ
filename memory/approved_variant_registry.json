@@ -1,0 +1,304 @@
+{
+  "base_artifacts": [
+    {
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "source_job_id": "AUTO_20260408_015",
+      "material_dna": [
+        "dark matte technical ceramic shell",
+        "micro-abrasion wear",
+        "subtle ceramic micro-pitting",
+        "uneven reflectance",
+        "technical ceramic read",
+        "matte non-plastic finish",
+        "micro-imperfect surface truth"
+      ],
+      "edge_dna": [
+        "micro erosion on exposed edges",
+        "slight irregular bevel",
+        "non-uniform edge wear"
+      ],
+      "silhouette_grammar": [
+        "front dominant silhouette",
+        "fixed narrow eye cavity ratio",
+        "central forehead spine",
+        "layered jaw-vent geometry",
+        "coherent mask proportion logic"
+      ],
+      "color_law": [
+        "restricted charcoal ceramic palette",
+        "controlled off-white mineral accent"
+      ],
+      "identity_anchors": [
+        "single mounted mask artifact",
+        "industrial frame backdrop",
+        "centered hero framing",
+        "no turntable board",
+        "no full body mech",
+        "engineered ceramic artifact",
+        "industrial mounting logic",
+        "single subject hero framing"
+      ],
+      "hard_forbidden_traits": [
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell",
+        "fashion accessory styling"
+      ]
+    }
+  ],
+  "approved_variants": [
+    {
+      "job_id": "AUTO_20260407_007",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "output_hash": "79BE507EFFF09B7A65918F2E87983D0BF7ED8BA1A709EBCF94CAE5B168158DB7",
+      "allowed_differences": [
+        "silhouette_variant:anchor",
+        "wear_level:low",
+        "microtexture_profile:fine_pitting",
+        "seam_intensity:minimal",
+        "asymmetry_tolerance:tight"
+      ],
+      "branch_family": "HERO_LOCK",
+      "base_artifact": "AUTO_20260408_015",
+      "recorded_at": "2026-04-07T16:29:59.420Z"
+    },
+    {
+      "job_id": "AUTO_20260407_019",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "output_hash": "95AB2D04666BEFAF71D90E688A7B1DB84F75FF49B1AAC5428B3331CBA34B8335",
+      "allowed_differences": [
+        "silhouette_variant:brow_guard_delta",
+        "wear_level:medium",
+        "microtexture_profile:striated_erosion",
+        "seam_intensity:visible",
+        "asymmetry_tolerance:balanced"
+      ],
+      "branch_family": "HERO_LOCK",
+      "base_artifact": "AUTO_20260408_015",
+      "recorded_at": "2026-04-07T16:39:49.618Z"
+    },
+    {
+      "job_id": "AUTO_20260407_022",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "output_hash": "5131D4711C1B146E689CFC46E77E261645E5472E233042933FE410DB12B0B024",
+      "allowed_differences": [
+        "silhouette_variant:jaw_vent_delta",
+        "wear_level:high",
+        "microtexture_profile:sintered_grain",
+        "seam_intensity:pronounced",
+        "asymmetry_tolerance:expressive"
+      ],
+      "branch_family": "HERO_LOCK",
+      "base_artifact": "AUTO_20260408_015",
+      "recorded_at": "2026-04-07T16:41:44.789Z"
+    }
+  ],
+  "rejected_drift_reasons": [
+    {
+      "job_id": "AUTO_20260407_008",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:30:44.923Z"
+    },
+    {
+      "job_id": "AUTO_20260407_009",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:31:24.330Z"
+    },
+    {
+      "job_id": "AUTO_20260407_010",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:32:04.892Z"
+    },
+    {
+      "job_id": "AUTO_20260407_011",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:32:41.732Z"
+    },
+    {
+      "job_id": "AUTO_20260407_012",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:33:26.981Z"
+    },
+    {
+      "job_id": "AUTO_20260407_013",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:34:09.538Z"
+    },
+    {
+      "job_id": "AUTO_20260407_014",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:34:48.888Z"
+    },
+    {
+      "job_id": "AUTO_20260407_015",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_SILHOUETTE_BREAK",
+      "reasons": [
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:35:25.294Z"
+    },
+    {
+      "job_id": "AUTO_20260407_021",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:41:00.868Z"
+    },
+    {
+      "job_id": "AUTO_20260407_025",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:44:23.642Z"
+    },
+    {
+      "job_id": "AUTO_20260407_026",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:45:12.169Z"
+    },
+    {
+      "job_id": "AUTO_20260407_027",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:53:23.371Z"
+    },
+    {
+      "job_id": "AUTO_20260407_028",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:54:19.631Z"
+    },
+    {
+      "job_id": "AUTO_20260407_029",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:55:21.847Z"
+    },
+    {
+      "job_id": "AUTO_20260407_033",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:58:48.945Z"
+    },
+    {
+      "job_id": "AUTO_20260407_035",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T17:00:15.115Z"
+    },
+    {
+      "job_id": "AUTO_20260408_034",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T17:06:52.297Z"
+    }
+  ]
+}

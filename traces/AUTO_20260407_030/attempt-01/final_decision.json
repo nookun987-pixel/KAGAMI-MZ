@@ -1,0 +1,111 @@
+{
+  "job_id": "AUTO_20260407_030",
+  "attempt_index": 1,
+  "decision": {
+    "decision": "ALLOW",
+    "reasons": [
+      "Lane completion policy satisfied."
+    ],
+    "timestamp": "2026-04-07T16:56:07.750Z"
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260407_030",
+    "lane": "image",
+    "state": "completed",
+    "queue_state": "completed",
+    "issues": [],
+    "fatal_issues": [],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [],
+      "issues": [],
+      "fatal_issues": [],
+      "success": true
+    },
+    "monitored_at": "2026-04-07T16:56:07.750Z"
+  },
+  "variantJudgeOutput": {
+    "job_id": "AUTO_20260407_030",
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+    "variant_family": "HERO_LOCK",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "supported_failure_codes": [
+      "TOO_SIMILAR",
+      "DRIFT_VIOLATION",
+      "IDENTITY_LOSS",
+      "MATERIAL_BREAK",
+      "SILHOUETTE_BREAK",
+      "SIGNATURE_DRIFT",
+      "EDGE_TOO_CLEAN",
+      "MATERIAL_UNIFORM",
+      "FORM_INCONSISTENT",
+      "COLOR_DRIFT",
+      "GENERIC_OBJECT",
+      "WEAK_IDENTITY",
+      "MATERIAL_TOO_CLEAN",
+      "CG_PERFECTION",
+      "PRODUCT_RENDER_LOOK",
+      "DECORATIVE_FORM",
+      "LIGHTWEIGHT_OBJECT",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "SURFACE_TOO_SMOOTH",
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION"
+    ],
+    "allowed_differences": [
+      "silhouette_variant:jaw_vent_delta",
+      "wear_level:high",
+      "microtexture_profile:sintered_grain",
+      "seam_intensity:pronounced",
+      "asymmetry_tolerance:balanced"
+    ],
+    "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+    "verdict": "PASS_CANON_VARIANT",
+    "repeatability_confirmed": false,
+    "dna_retention": {
+      "passed": true,
+      "blocked_by": []
+    },
+    "variant_distinctness": {
+      "passed": true,
+      "sibling_collision_variant_id": ""
+    },
+    "drift_violation": {
+      "passed": true,
+      "codes": []
+    },
+    "identity_loss": {
+      "passed": true,
+      "codes": []
+    },
+    "material_integrity": {
+      "passed": true,
+      "codes": []
+    },
+    "silhouette_integrity": {
+      "passed": true,
+      "codes": []
+    },
+    "score": 0.9
+  },
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.227Z"
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mikage Lane Run Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "artifacts", "validator_result", "summary"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["started", "queued", "claimed", "running", "waiting", "failed", "completed", "timeout", "rejected"]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "path"],
+        "properties": {
+          "type": { "type": "string" },
+          "path": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "validator_result": {
+      "type": "object",
+      "required": ["passed"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "issues": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

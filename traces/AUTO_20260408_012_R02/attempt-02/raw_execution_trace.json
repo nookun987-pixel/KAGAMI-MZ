@@ -1,0 +1,785 @@
+{
+  "job_id": "AUTO_20260408_012_R02",
+  "attempt_index": 2,
+  "options": {
+    "timeoutMs": 300000,
+    "pollIntervalMs": 2000,
+    "staleClaimMs": 300000
+  },
+  "intent": {
+    "intent_type": "image",
+    "goal": "single engineered ceramic sentinel mask, asymmetrical structural brow fins, dense technical ceramic shell, matte charcoal finish, micro-abrasion wear, dark void field, military-industrial object identity, no product render look",
+    "constraints": [
+      "RENDER_MODE:HERO_LOCK",
+      "SHOT_PROFILE:MASK_MACRO"
+    ],
+    "priority": "normal",
+    "signals": {
+      "source": "direct_input",
+      "classified_by": "keyword_router"
+    }
+  },
+  "taskSpec": {
+    "job_id": "AUTO_20260408_012_R02",
+    "lane": "image",
+    "objective": "single engineered ceramic sentinel mask, asymmetrical structural brow fins, dense technical ceramic shell, matte charcoal finish, micro-abrasion wear, dark void field, military-industrial object identity, no product render look",
+    "constraints": [
+      "RENDER_MODE:HERO_LOCK",
+      "SHOT_PROFILE:MASK_MACRO",
+      "NEGATIVE:off-canon drift"
+    ],
+    "priority": "normal",
+    "execution_plan": {
+      "steps": [
+        "prepare_prompt",
+        "dispatch_render",
+        "validate_output"
+      ]
+    },
+    "success_criteria": [
+      "real output exists",
+      "validator pass",
+      "final judge allow"
+    ],
+    "context": {
+      "planned_at": "2026-04-07T14:14:28.919Z",
+      "planner_version": "mikage_v2_control_plane",
+      "signals": {
+        "source": "direct_input",
+        "classified_by": "keyword_router"
+      },
+      "memory_hints": [],
+      "retry_of": "AUTO_20260408_012",
+      "retry_attempt": 2,
+      "repair_action": {
+        "repairable": true,
+        "repair_class": "canon",
+        "recovery_mode": "STANDARD_RECOVERY",
+        "current_attempt": 1,
+        "max_attempts": 2,
+        "responsible_module": "MIKAGE/lanes/image",
+        "repair_strategy": "canon_lock_boost",
+        "actions": [
+          "canon_lock_boost",
+          "must_have_replay"
+        ],
+        "next_options": {},
+        "prompt_patch": {
+          "positive_additions": [],
+          "negative_additions": [
+            "off-canon drift"
+          ]
+        },
+        "canon_patch": {
+          "lock_boost": [
+            "global_canon_lock"
+          ],
+          "blocked_trait_reinforcement": [],
+          "dominant_trait_reinforcement": [],
+          "must_have_replay": [
+            "must_have_core_traits"
+          ],
+          "hard_negative_carryover": []
+        },
+        "lineage": {
+          "original_job_id": "AUTO_20260408_012",
+          "parent_job_id": "AUTO_20260408_012",
+          "current_attempt": 1,
+          "next_attempt": 2
+        },
+        "quality_failure_packet": {
+          "supported_failure_codes": [
+            "OBJECT_UNREADABLE",
+            "ABSTRACT_COMPOSITION",
+            "FUNCTIONAL_FORM_WEAK",
+            "OBJECT_CENTRALITY_WEAK",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "MATERIAL_TOO_CLEAN",
+            "CG_PERFECTION",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT",
+            "TEXTURE_ONLY_FRAME",
+            "CERAMIC_NOT_CONVINCING",
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "TOY_READ",
+            "SURFACE_TOO_SMOOTH",
+            "SILHOUETTE_NOISY",
+            "CANON_DRIFT",
+            "SILHOUETTE_BREAK",
+            "COMPOSITION_COLLAPSE"
+          ],
+          "primary_failure_code": "CANON_DRIFT",
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "primary_failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "secondary_failure_codes": [],
+          "repair_class": "canon",
+          "quality_score": 0.95,
+          "score": 0.95,
+          "judge_summary": {
+            "status": "REVIEW",
+            "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review.",
+            "failure_codes": [
+              "CANON_DRIFT"
+            ]
+          },
+          "validator_summary": {
+            "passed": false,
+            "signals": [
+              "live_judge_fail",
+              "CANON_DRIFT"
+            ],
+            "issues": [
+              "live_judge_fail",
+              "CANON_DRIFT"
+            ]
+          },
+          "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+          "patch_targets": [],
+          "job_id": "AUTO_20260408_012",
+          "attempt": 1,
+          "source_artifacts": {
+            "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012\\output.png",
+            "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012\\judge_output.json"
+          },
+          "pass": false,
+          "critical_failure": true
+        },
+        "repair_patch_packet": {
+          "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+          "repair_class": "canon",
+          "recovery_mode": "STANDARD_RECOVERY",
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "primary_failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "patch_targets": [],
+          "prompt_patch": {
+            "positive_additions": [],
+            "negative_additions": [
+              "off-canon drift"
+            ]
+          },
+          "canon_reinforcements": [],
+          "canon_patch": {
+            "dominant_traits": [],
+            "supportive_traits": [],
+            "blocked_traits": [],
+            "must_have_traits": []
+          }
+        },
+        "quality_retry_decision": {
+          "retry_allowed": true,
+          "repair_class": "canon",
+          "decision_reason": "Canon-aware repair patch approved for retry.",
+          "hard_stop": false,
+          "repeated_failure_code": "",
+          "proof_blocked": false
+        },
+        "notes": [],
+        "canon_reinforcements": [],
+        "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_012\\attempt-01\\repair_patch_packet.json"
+      },
+      "repair_patch_packet": {
+        "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+        "repair_class": "canon",
+        "recovery_mode": "STANDARD_RECOVERY",
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "primary_failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "patch_targets": [],
+        "prompt_patch": {
+          "positive_additions": [],
+          "negative_additions": [
+            "off-canon drift"
+          ]
+        },
+        "canon_reinforcements": [],
+        "canon_patch": {
+          "dominant_traits": [],
+          "supportive_traits": [],
+          "blocked_traits": [],
+          "must_have_traits": []
+        }
+      },
+      "retry_context": {
+        "source_attempt": 1,
+        "recovery_mode": "STANDARD_RECOVERY",
+        "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_012\\attempt-01\\repair_patch_packet.json",
+        "primary_failure_codes": [
+          "CANON_DRIFT"
+        ]
+      },
+      "lineage": {
+        "original_job_id": "AUTO_20260408_012",
+        "parent_job_id": "AUTO_20260408_012",
+        "current_attempt": 1,
+        "next_attempt": 2
+      }
+    }
+  },
+  "runRecord": {
+    "job_id": "AUTO_20260408_012_R02",
+    "lane": "image",
+    "state": "rejected",
+    "timeline": [
+      {
+        "state": "started",
+        "timestamp": "2026-04-07T14:15:20.366Z"
+      },
+      {
+        "state": "running",
+        "timestamp": "2026-04-07T14:15:20.366Z"
+      },
+      {
+        "state": "rejected",
+        "timestamp": "2026-04-07T14:16:17.956Z"
+      }
+    ]
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260408_012_R02",
+    "lane": "image",
+    "status": "rejected",
+    "summary": "Image lane produced an invalid or incomplete result.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_012_R02.json"
+      },
+      {
+        "type": "claim_json",
+        "label": "claim_json",
+        "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_012_R02.claim.json"
+      },
+      {
+        "type": "result_json",
+        "label": "result_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\result.json"
+      },
+      {
+        "type": "judge_output_json",
+        "label": "judge_output_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\judge_output.json"
+      },
+      {
+        "type": "image",
+        "label": "output_image",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\output.png"
+      }
+    ],
+    "validator_result": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "CANON_DRIFT"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "CANON_DRIFT"
+      ],
+      "judge_output": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.95,
+        "overall_score": 0.8,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+      },
+      "judge_output_path": "outputs/AUTO_20260408_012_R02/judge_output.json",
+      "critic_merge": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.95,
+        "overall_score": 0.95,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "CANON_DRIFT",
+          "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+        ],
+        "judge_output_path": "outputs/AUTO_20260408_012_R02/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.95,
+          "quality_score": 0.95,
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "issues": [
+            "CANON_DRIFT",
+            "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+          ],
+          "verdict": "REVIEW",
+          "raw": {
+            "source": "live",
+            "status": "REVIEW",
+            "quality_score": 0.95,
+            "overall_score": 0.8,
+            "failure_codes": [
+              "CANON_DRIFT"
+            ],
+            "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+          }
+        }
+      },
+      "proof_blocked": false
+    },
+    "error": "live_judge_fail",
+    "started_at": "2026-04-07T14:15:20.366Z",
+    "finished_at": "2026-04-07T14:16:17.956Z",
+    "metadata": {
+      "queue_state": "completed",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T14:15:20.435Z"
+        },
+        {
+          "state": "claimed",
+          "timestamp": "2026-04-07T14:15:58.378Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_012_R02.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_012_R02.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\result.json",
+      "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\judge_output.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\output.png",
+      "claim": {
+        "job_id": "AUTO_20260408_012_R02",
+        "worker_id": "colab-worker-01",
+        "claimed_at": "2026-04-07T14:15:40.728686Z",
+        "status": "claimed"
+      },
+      "result": {
+        "job_id": "AUTO_20260408_012_R02",
+        "status": "completed",
+        "output_image_path": "outputs/AUTO_20260408_012_R02/output.png",
+        "judge_output_path": "outputs/AUTO_20260408_012_R02/judge_output.json",
+        "judge_output": {
+          "source": "live",
+          "status": "REVIEW",
+          "quality_score": 0.95,
+          "overall_score": 0.8,
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+        },
+        "validator_result": {
+          "passed": true,
+          "signals": []
+        },
+        "artifacts": [
+          {
+            "type": "image",
+            "path": "outputs/AUTO_20260408_012_R02/output.png"
+          },
+          {
+            "type": "judge_output_json",
+            "path": "outputs/AUTO_20260408_012_R02/judge_output.json"
+          }
+        ],
+        "started_at": "2026-04-07T14:15:40.734709Z",
+        "finished_at": "2026-04-07T14:15:53.930958Z",
+        "metadata": {
+          "model_id": "stabilityai/sdxl-turbo",
+          "device": "cuda",
+          "seed": 42,
+          "num_inference_steps": 4,
+          "guidance_scale": 0
+        }
+      },
+      "judge_output": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.95,
+        "overall_score": 0.8,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+      },
+      "critic_merge": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.95,
+        "overall_score": 0.95,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "CANON_DRIFT",
+          "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+        ],
+        "judge_output_path": "outputs/AUTO_20260408_012_R02/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.95,
+          "quality_score": 0.95,
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "issues": [
+            "CANON_DRIFT",
+            "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+          ],
+          "verdict": "REVIEW",
+          "raw": {
+            "source": "live",
+            "status": "REVIEW",
+            "quality_score": 0.95,
+            "overall_score": 0.8,
+            "failure_codes": [
+              "CANON_DRIFT"
+            ],
+            "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review."
+          }
+        }
+      },
+      "proof_blocked": false,
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260408_012_R02",
+    "lane": "image",
+    "state": "rejected",
+    "queue_state": "completed",
+    "issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "fatal_issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [
+        "live_judge_fail",
+        "CANON_DRIFT"
+      ],
+      "issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "fatal_issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T14:16:17.960Z"
+  },
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T14:16:17.960Z"
+  },
+  "qualityFailurePacket": {
+    "supported_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION",
+      "GENERIC_OBJECT",
+      "WEAK_IDENTITY",
+      "MATERIAL_TOO_CLEAN",
+      "CG_PERFECTION",
+      "PRODUCT_RENDER_LOOK",
+      "DECORATIVE_FORM",
+      "LIGHTWEIGHT_OBJECT",
+      "TEXTURE_ONLY_FRAME",
+      "CERAMIC_NOT_CONVINCING",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "TOY_READ",
+      "SURFACE_TOO_SMOOTH",
+      "SILHOUETTE_NOISY",
+      "CANON_DRIFT",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE"
+    ],
+    "primary_failure_code": "CANON_DRIFT",
+    "failure_codes": [
+      "CANON_DRIFT"
+    ],
+    "primary_failure_codes": [
+      "CANON_DRIFT"
+    ],
+    "secondary_failure_codes": [],
+    "repair_class": "canon",
+    "quality_score": 0.95,
+    "score": 0.95,
+    "judge_summary": {
+      "status": "REVIEW",
+      "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review.",
+      "failure_codes": [
+        "CANON_DRIFT"
+      ]
+    },
+    "validator_summary": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "CANON_DRIFT"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "CANON_DRIFT"
+      ]
+    },
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "patch_targets": [],
+    "job_id": "AUTO_20260408_012_R02",
+    "attempt": 2,
+    "source_artifacts": {
+      "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\output.png",
+      "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\judge_output.json"
+    },
+    "pass": false,
+    "critical_failure": true
+  },
+  "failureRoute": {
+    "failure_type": "canon_drift",
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "canon_lock_boost",
+    "repair_class": "canon",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairPatchPacket": {
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "repair_class": "canon",
+    "recovery_mode": "STANDARD_RECOVERY",
+    "failure_codes": [
+      "CANON_DRIFT"
+    ],
+    "primary_failure_codes": [
+      "CANON_DRIFT"
+    ],
+    "patch_targets": [],
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": [
+        "off-canon drift"
+      ]
+    },
+    "canon_reinforcements": [],
+    "canon_patch": {
+      "dominant_traits": [],
+      "supportive_traits": [],
+      "blocked_traits": [],
+      "must_have_traits": []
+    }
+  },
+  "qualityRetryDecision": {
+    "retry_allowed": false,
+    "repair_class": "canon",
+    "decision_reason": "Repeated quality failure persisted: CANON_DRIFT",
+    "hard_stop": true,
+    "repeated_failure_code": "CANON_DRIFT",
+    "proof_blocked": false
+  },
+  "qualityScoreDelta": {
+    "previous_score": 0.95,
+    "current_score": 0.95,
+    "delta": 0,
+    "improved": false
+  },
+  "proof_blocked": false,
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "canon",
+    "recovery_mode": "STANDARD_RECOVERY",
+    "current_attempt": 2,
+    "max_attempts": 2,
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "canon_lock_boost",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260408_012",
+      "parent_job_id": "AUTO_20260408_012_R02",
+      "current_attempt": 2,
+      "next_attempt": null
+    },
+    "quality_failure_packet": {
+      "supported_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "FUNCTIONAL_FORM_WEAK",
+        "OBJECT_CENTRALITY_WEAK",
+        "SYMBOLIC_FRAMING",
+        "FASHION_COMPOSITION",
+        "GENERIC_OBJECT",
+        "WEAK_IDENTITY",
+        "MATERIAL_TOO_CLEAN",
+        "CG_PERFECTION",
+        "PRODUCT_RENDER_LOOK",
+        "DECORATIVE_FORM",
+        "LIGHTWEIGHT_OBJECT",
+        "TEXTURE_ONLY_FRAME",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC",
+        "MATERIAL_RESIN",
+        "TOY_READ",
+        "SURFACE_TOO_SMOOTH",
+        "SILHOUETTE_NOISY",
+        "CANON_DRIFT",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE"
+      ],
+      "primary_failure_code": "CANON_DRIFT",
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "secondary_failure_codes": [],
+      "repair_class": "canon",
+      "quality_score": 0.95,
+      "score": 0.95,
+      "judge_summary": {
+        "status": "REVIEW",
+        "notes": "The rendering quality of the metallic helmet is excellent, with sharp details, convincing reflections, and a strong composition. However, the presence of a 'HERO' watermark in the bottom left corner introduces external branding, which is considered a canon drift from a clean, unadulterated render of the object. This warrants a review.",
+        "failure_codes": [
+          "CANON_DRIFT"
+        ]
+      },
+      "validator_summary": {
+        "passed": false,
+        "signals": [
+          "live_judge_fail",
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "live_judge_fail",
+          "CANON_DRIFT"
+        ]
+      },
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "patch_targets": [],
+      "job_id": "AUTO_20260408_012_R02",
+      "attempt": 2,
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\output.png",
+        "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_012_R02\\judge_output.json"
+      },
+      "pass": false,
+      "critical_failure": true
+    },
+    "repair_patch_packet": {
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "repair_class": "canon",
+      "recovery_mode": "STANDARD_RECOVERY",
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "patch_targets": [],
+      "prompt_patch": {
+        "positive_additions": [],
+        "negative_additions": [
+          "off-canon drift"
+        ]
+      },
+      "canon_reinforcements": [],
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": []
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": false,
+      "repair_class": "canon",
+      "decision_reason": "Repeated quality failure persisted: CANON_DRIFT",
+      "hard_stop": true,
+      "repeated_failure_code": "CANON_DRIFT",
+      "proof_blocked": false
+    },
+    "notes": [
+      "Max retry cap reached."
+    ],
+    "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_012_R02\\attempt-02\\repair_patch_packet.json"
+  }
+}

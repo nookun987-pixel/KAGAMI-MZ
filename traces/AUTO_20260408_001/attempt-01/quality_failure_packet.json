@@ -1,0 +1,38 @@
+{
+  "supported_failure_codes": [
+    "OBJECT_UNREADABLE",
+    "ABSTRACT_COMPOSITION",
+    "TEXTURE_ONLY_FRAME",
+    "CERAMIC_NOT_CONVINCING",
+    "CANON_DRIFT",
+    "SILHOUETTE_BREAK",
+    "COMPOSITION_COLLAPSE"
+  ],
+  "primary_failure_code": "",
+  "failure_codes": [],
+  "primary_failure_codes": [],
+  "secondary_failure_codes": [],
+  "repair_class": "",
+  "quality_score": 0.9,
+  "score": 0.9,
+  "judge_summary": {
+    "status": "PASS",
+    "notes": "The image presents a visually striking and well-rendered composition of multiple shiny pink masks. The objects are clearly readable, and the material properties are consistently depicted. No significant visual defects or canon drifts are apparent.",
+    "failure_codes": []
+  },
+  "validator_summary": {
+    "passed": true,
+    "signals": [],
+    "issues": []
+  },
+  "job_id": "AUTO_20260408_001",
+  "attempt": 1,
+  "source_artifacts": {
+    "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_001\\output.png",
+    "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_001\\judge_output.json"
+  },
+  "pass": true,
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "critical_failure": false,
+  "patch_targets": []
+}

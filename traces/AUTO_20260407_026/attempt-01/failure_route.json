@@ -1,0 +1,8 @@
+{
+  "failure_type": "canon_drift",
+  "responsible_module": "MIKAGE/lanes/image",
+  "repair_strategy": "canon_lock_boost",
+  "repair_class": "canon",
+  "retry_allowed": true,
+  "repairable": true
+}

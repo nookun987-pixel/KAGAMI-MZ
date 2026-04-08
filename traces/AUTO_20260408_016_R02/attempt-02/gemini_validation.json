@@ -1,0 +1,20 @@
+{
+  "job_id": "AUTO_20260408_016_R02",
+  "attempt_index": 2,
+  "source": "live",
+  "status": "REJECT",
+  "quality_score": 0.5,
+  "overall_score": 0.5,
+  "failure_codes": [
+    "CANON_DRIFT"
+  ],
+  "notes": [
+    "Image contains prominent unreadable text/glyphs artifact in the bottom left, which significantly detracts from the overall visual quality and canon adherence."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_016_R02\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": false,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.331Z"
+}

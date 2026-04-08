@@ -13,6 +13,10 @@ function setupEnv() {
   process.env.DRIVE_ROOT = path.join(root, "mikage_runner");
   process.env.COLAB_POLL_INTERVAL_MS = "50";
   process.env.COLAB_TIMEOUT_MS = "2000";
+  process.env.MIKAGE_ENABLE_RECOVERED_CONTROL_LANE = "false";
+  process.env.MIKAGE_ENABLE_LIVE_GEMINI_CONTROL = "false";
+  process.env.MIKAGE_ENABLE_POSTVALIDATION = "false";
+  process.env.MIKAGE_STRICT_UNKNOWN_RULES = "false";
   return root;
 }
 
@@ -101,7 +105,7 @@ function simulateColabWorker(sharedRoot) {
         const resultPath = path.join(outputDir, "result.json");
 
         console.log(`COLAB_PICKED_UP ${job.job_id}`);
-        fs.writeFileSync(imagePath, "fake-image-bytes", "utf8");
+        fs.writeFileSync(imagePath, Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+X2ioAAAAASUVORK5CYII=", "base64"));
         fs.writeFileSync(resultPath, JSON.stringify({
           status: "SUCCESS",
           output_file_path: imagePath,

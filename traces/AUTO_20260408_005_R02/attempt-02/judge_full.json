@@ -1,0 +1,211 @@
+{
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T13:47:35.020Z"
+  },
+  "failureRoute": {
+    "failure_type": "object_unreadable",
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "identity_focus_reinforcement",
+    "repair_class": "quality",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "quality",
+    "recovery_mode": "STRONG_OBJECT_RECOVERY",
+    "current_attempt": 2,
+    "max_attempts": 2,
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "identity_focus_reinforcement",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260408_005",
+      "parent_job_id": "AUTO_20260408_005_R02",
+      "current_attempt": 2,
+      "next_attempt": null
+    },
+    "quality_failure_packet": {
+      "supported_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "FUNCTIONAL_FORM_WEAK",
+        "OBJECT_CENTRALITY_WEAK",
+        "SYMBOLIC_FRAMING",
+        "FASHION_COMPOSITION",
+        "TEXTURE_ONLY_FRAME",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC",
+        "MATERIAL_RESIN",
+        "TOY_READ",
+        "SURFACE_TOO_SMOOTH",
+        "SILHOUETTE_NOISY",
+        "CANON_DRIFT",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE"
+      ],
+      "primary_failure_code": "OBJECT_UNREADABLE",
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "COMPOSITION_COLLAPSE",
+        "SILHOUETTE_BREAK",
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "secondary_failure_codes": [
+        "COMPOSITION_COLLAPSE",
+        "SILHOUETTE_BREAK",
+        "CANON_DRIFT"
+      ],
+      "repair_class": "canon",
+      "quality_score": 0.3,
+      "score": 0.3,
+      "judge_summary": {
+        "status": "REJECT",
+        "notes": "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon.",
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT"
+        ]
+      },
+      "validator_summary": {
+        "passed": false,
+        "signals": [
+          "live_judge_fail",
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "live_judge_fail",
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT"
+        ]
+      },
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "patch_targets": [
+        "object_form",
+        "silhouette",
+        "whole_subject",
+        "object_centrality",
+        "subject_hierarchy"
+      ],
+      "job_id": "AUTO_20260408_005_R02",
+      "attempt": 2,
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\output.png",
+        "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\judge_output.json"
+      },
+      "pass": false,
+      "critical_failure": true
+    },
+    "repair_patch_packet": {
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "repair_class": "canon",
+      "recovery_mode": "STRONG_OBJECT_RECOVERY",
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "COMPOSITION_COLLAPSE",
+        "SILHOUETTE_BREAK",
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "patch_targets": [
+        "object_form",
+        "silhouette",
+        "whole_subject",
+        "object_centrality",
+        "subject_hierarchy"
+      ],
+      "prompt_patch": {
+        "positive_additions": [
+          "force literal manufactured object as primary subject",
+          "increase object legibility",
+          "force coherent manufacturable silhouette",
+          "force identifiable engineered form",
+          "force non-abstract composition",
+          "force object-first frame hierarchy",
+          "force clear subject separation from background",
+          "force visual reading in one glance",
+          "clear readable hero object",
+          "single dominant subject silhouette",
+          "literal subject framing",
+          "single engineered ceramic object centered in frame",
+          "front readable silhouette with one-glance object recognition",
+          "clean intact silhouette edge",
+          "stable centered composition",
+          "clear foreground subject separation"
+        ],
+        "negative_additions": [
+          "no fragmented subject",
+          "no unreadable crop",
+          "no broken form dominance",
+          "no abstract composition",
+          "no symbolic framing",
+          "no conceptual poster-like image",
+          "no mood-first composition",
+          "no texture-first composition",
+          "no atmospheric subject loss",
+          "abstract composition",
+          "symbolic non-literal framing",
+          "mood-first composition",
+          "texture-first composition",
+          "off-canon drift"
+        ]
+      },
+      "canon_reinforcements": [
+        "object readability over aesthetics",
+        "manufactured form over ambiguity",
+        "literal form over mood",
+        "manufactured subject over visual ambiguity"
+      ],
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": []
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": false,
+      "repair_class": "quality",
+      "decision_reason": "Max retry cap reached.",
+      "hard_stop": true,
+      "repeated_failure_code": "",
+      "proof_blocked": false
+    },
+    "notes": [
+      "Max retry cap reached."
+    ],
+    "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_005_R02\\attempt-02\\repair_patch_packet.json"
+  }
+}

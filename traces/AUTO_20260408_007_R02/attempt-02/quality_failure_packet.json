@@ -1,0 +1,47 @@
+{
+  "supported_failure_codes": [
+    "OBJECT_UNREADABLE",
+    "ABSTRACT_COMPOSITION",
+    "FUNCTIONAL_FORM_WEAK",
+    "OBJECT_CENTRALITY_WEAK",
+    "SYMBOLIC_FRAMING",
+    "FASHION_COMPOSITION",
+    "TEXTURE_ONLY_FRAME",
+    "CERAMIC_NOT_CONVINCING",
+    "MATERIAL_PLASTIC",
+    "MATERIAL_RESIN",
+    "TOY_READ",
+    "SURFACE_TOO_SMOOTH",
+    "SILHOUETTE_NOISY",
+    "CANON_DRIFT",
+    "SILHOUETTE_BREAK",
+    "COMPOSITION_COLLAPSE"
+  ],
+  "primary_failure_code": "",
+  "failure_codes": [],
+  "primary_failure_codes": [],
+  "secondary_failure_codes": [],
+  "repair_class": "",
+  "quality_score": 0.9,
+  "score": 0.9,
+  "judge_summary": {
+    "status": "PASS",
+    "notes": "The image displays well-rendered abstract geometric models with clean lines, consistent lighting, and a convincing matte material. The composition is clear and organized, and all objects are easily readable.",
+    "failure_codes": []
+  },
+  "validator_summary": {
+    "passed": true,
+    "signals": [],
+    "issues": []
+  },
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "patch_targets": [],
+  "job_id": "AUTO_20260408_007_R02",
+  "attempt": 2,
+  "source_artifacts": {
+    "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_007_R02\\output.png",
+    "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_007_R02\\judge_output.json"
+  },
+  "pass": true,
+  "critical_failure": false
+}

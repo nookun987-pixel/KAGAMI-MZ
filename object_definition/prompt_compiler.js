@@ -20,12 +20,104 @@ const LIGHTING_SUFFIX = "premium low-key studio lighting, soft overhead key ligh
 
 const FRAMING_RULES = "one single main subject only, subject must occupy clear central frame presence, object/entity must be fully readable";
 
+function isMaskSpec(spec) {
+  return String(spec && spec.object_class || "").toLowerCase() === "mask";
+}
+
+function getMaskPositiveLocks() {
+  return [
+    "boron carbide (B4C) technical ceramic manufactured object",
+    "not wearable artifact object",
+    "not a character",
+    "sealed eye region",
+    "perfect bilateral symmetry",
+    "micro-pitted surface",
+    "sub-micron grain structure",
+    "anisotropic micro-shadowing",
+    "sharp engineered edges",
+    "matte black ceramic",
+    "black void background",
+    "centered frontal artifact shot",
+  ];
+}
+
+function getMaskNegativeLocks() {
+  return [
+    "human",
+    "face",
+    "eyes",
+    "skin",
+    "creature",
+    "animal",
+    "horn",
+    "ears",
+    "cosplay",
+    "helmet",
+    "wearable",
+    "fabric",
+    "leather",
+    "plastic",
+    "resin",
+    "toy",
+    "glossy",
+    "neon",
+    "magenta",
+    "ring",
+    "halo",
+    "frame",
+    "border",
+  ];
+}
+
+function getCanonEvolutionTraits(spec) {
+  const evolution = spec && spec.canon_evolution;
+  if (!evolution) {
+    return {
+      material: [],
+      identity: [],
+      silhouette: [],
+      composition: [],
+      negative_guards: [],
+    };
+  }
+  const positiveTraits = [
+    ...(Array.isArray(evolution.dominant_traits) ? evolution.dominant_traits : []),
+    ...(Array.isArray(evolution.supportive_traits) ? evolution.supportive_traits : []),
+    ...(Array.isArray(evolution.provisional_supportive) ? evolution.provisional_supportive : []),
+  ];
+  const readabilityTraits = Array.isArray(evolution.readability_cues) ? evolution.readability_cues : [];
+  const negativeTraits = [
+    ...(Array.isArray(evolution.negative_enforcements) ? evolution.negative_enforcements : []),
+    ...(Array.isArray(evolution.blocked_traits) ? evolution.blocked_traits : []),
+  ];
+  const normalizeGroup = (value) => String(value || "").trim().toLowerCase().replace(/\s+/g, "_");
+  return {
+    material: positiveTraits
+      .filter((entry) => entry && ["material", "surface", "color_discipline"].includes(normalizeGroup(entry.group)))
+      .map((entry) => entry.trait),
+    identity: positiveTraits
+      .filter((entry) => entry && ["readability_cues", "silhouette"].includes(normalizeGroup(entry.group)))
+      .map((entry) => entry.trait),
+    silhouette: positiveTraits
+      .filter((entry) => entry && normalizeGroup(entry.group) === "silhouette")
+      .map((entry) => entry.trait),
+    composition: [
+      ...positiveTraits
+        .filter((entry) => entry && ["composition", "background"].includes(normalizeGroup(entry.group)))
+        .map((entry) => entry.trait),
+      ...readabilityTraits.map((entry) => entry.trait),
+    ],
+    negative_guards: negativeTraits.map((entry) => entry && entry.trait).filter(Boolean),
+  };
+}
+
 // ---------------------------------------------------------------------------
 // COMPILE POSITIVE PROMPT
 // ---------------------------------------------------------------------------
 function compilePositivePrompt(spec) {
   const segments = [];
   const notes = [];
+  const evolution = getCanonEvolutionTraits(spec);
 
   // 1. Shot prefix
   segments.push(SHOT_PREFIX);
@@ -48,6 +140,20 @@ function compilePositivePrompt(spec) {
     if (mt.secondary_material) {
       segments.push(mt.secondary_material);
     }
+  }
+
+  if (isMaskSpec(spec)) {
+    segments.push(...getMaskPositiveLocks());
+    notes.push("mask_material_lock_v2: injected positive mask locks");
+  }
+  if (
+    evolution.material.length > 0 ||
+    evolution.identity.length > 0 ||
+    evolution.silhouette.length > 0 ||
+    evolution.composition.length > 0
+  ) {
+    segments.push(...evolution.material, ...evolution.identity, ...evolution.silhouette, ...evolution.composition);
+    notes.push("canon_evolution: injected evolved positive traits");
   }
 
   // 4. Must-have parts in priority order
@@ -107,6 +213,7 @@ function compilePositivePrompt(spec) {
 function compileNegativePrompt(spec) {
   const segments = [];
   const notes = [];
+  const evolution = getCanonEvolutionTraits(spec);
 
   // 1. Anti-misread negative enforcement
   for (const rule of spec.anti_misread_rules || []) {
@@ -142,6 +249,15 @@ function compileNegativePrompt(spec) {
     if (misread.misread) {
       segments.push(misread.misread);
     }
+  }
+
+  if (isMaskSpec(spec)) {
+    segments.push(...getMaskNegativeLocks());
+    notes.push("mask_material_lock_v2: injected negative mask locks");
+  }
+  if (evolution.negative_guards.length > 0) {
+    segments.push(...evolution.negative_guards);
+    notes.push("canon_evolution: injected evolved negative guards");
   }
 
   // 6. Universal negatives for object photography

@@ -1,0 +1,18 @@
+{
+  "job_id": "AUTO_20260408_012",
+  "attempt_1_score": 0.95,
+  "attempt_2_score": 0.95,
+  "score_delta": 0,
+  "failure_count_attempt_1": 1,
+  "failure_count_attempt_2": 1,
+  "failure_delta": 0,
+  "resolved_codes": [],
+  "remaining_codes": [
+    "CANON_DRIFT"
+  ],
+  "primary_failure_removed": false,
+  "identity_improved": false,
+  "generic_removed": false,
+  "improved": false,
+  "verdict": "RECOVERY_FLAT"
+}

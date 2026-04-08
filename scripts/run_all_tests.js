@@ -12,6 +12,7 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 
 const SUITES = [
+  { name: "MIKAGE/control_plane",    file: "MIKAGE/mikage.test.js" },
   { name: "core/state_machine",      file: "core/state_machine.test.js" },
   { name: "control/precheck",        file: "control/precheck.test.js" },
   { name: "middleware",              file: "middleware/middleware.test.js" },

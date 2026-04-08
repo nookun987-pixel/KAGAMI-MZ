@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-04-07T18:54:37.176Z",
+  "architecture_mode": "hub_module_control",
+  "control_hub": "MIKAGE/index.js",
+  "active_modules": [
+    "MIKAGE/modules/intake/index.js",
+    "MIKAGE/modules/generation/index.js",
+    "MIKAGE/modules/validation/index.js",
+    "MIKAGE/modules/decision/index.js",
+    "MIKAGE/modules/memory/index.js"
+  ],
+  "active_lane": {
+    "image": {
+      "status": "active",
+      "executor": "MIKAGE/lanes/image/image_executor.js",
+      "validator": "MIKAGE/lanes/image/image_validator.js"
+    },
+    "cine": {
+      "status": "UNVERIFIED"
+    },
+    "game": {
+      "status": "UNVERIFIED"
+    },
+    "content": {
+      "status": "UNVERIFIED"
+    },
+    "ops": {
+      "status": "UNVERIFIED"
+    }
+  },
+  "hard_rules": {
+    "no_image_no_pass": true,
+    "validator_bypass_forbidden": true,
+    "gemini_bypass_forbidden": true,
+    "render_endpoint_change_forbidden": true
+  },
+  "live_entrypoints": [
+    {
+      "name": "batch_entrypoint",
+      "path": "start_mikage.bat",
+      "status": "active",
+      "confidence": "proven_from_repo",
+      "notes": [
+        "Requires DRIVE_ROOT.",
+        "Verifies job_inbox, claims, and outputs folders before launching the hub."
+      ]
+    },
+    {
+      "name": "control_hub",
+      "path": "MIKAGE/index.js",
+      "status": "active",
+      "confidence": "proven_from_repo",
+      "notes": [
+        "Single hub orchestration path.",
+        "Calls modules in order: intake -> generation -> validation -> decision."
+      ]
+    }
+  ],
+  "live_render_path": {
+    "queue_runtime": "runtime/drive_queue/runtime.js",
+    "worker_path": "runtime/colab_worker/colab_one_click_worker.ipynb",
+    "renderer_endpoint": "UNKNOWN_NOT_PROVEN",
+    "output_root": "G:/My Drive/mikage_runner/outputs/<job_id>",
+    "status": "active_drive_queue_runtime",
+    "confidence": "proven_for_queue_contract_but_not_for_http_endpoint"
+  },
+  "source_of_truth_rank": [
+    "real_artifacts",
+    "active_code",
+    "approved_memory",
+    "historical_notes_untrusted"
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "job_id": "AUTO_20260407_025",
+  "lane": "image",
+  "status": "rejected",
+  "summary": "Image lane produced an invalid or incomplete result.",
+  "artifacts": [
+    {
+      "type": "job_json",
+      "label": "job_json",
+      "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_025.json"
+    },
+    {
+      "type": "claim_json",
+      "label": "claim_json",
+      "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_025.claim.json"
+    },
+    {
+      "type": "result_json",
+      "label": "result_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_025\\result.json"
+    },
+    {
+      "type": "judge_output_json",
+      "label": "judge_output_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_025\\judge_output.json"
+    },
+    {
+      "type": "image",
+      "label": "output_image",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_025\\output.png"
+    }
+  ],
+  "validator_result": {
+    "passed": false,
+    "signals": [
+      "live_judge_fail",
+      "OBJECT_UNREADABLE",
+      "CERAMIC_NOT_CONVINCING"
+    ],
+    "issues": [
+      "live_judge_fail",
+      "OBJECT_UNREADABLE",
+      "CERAMIC_NOT_CONVINCING"
+    ],
+    "judge_output": {
+      "source": "live",
+      "status": "REVIEW",
+      "quality_score": 0.6,
+      "overall_score": 0.6,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "notes": "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+    },
+    "judge_output_path": "outputs/AUTO_20260407_025/judge_output.json",
+    "critic_merge": {
+      "source": "live",
+      "status": "REVIEW",
+      "quality_score": 0.6,
+      "overall_score": 0.6,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING",
+        "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+      ],
+      "judge_output_path": "outputs/AUTO_20260407_025/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.6,
+        "quality_score": 0.6,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "issues": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING",
+          "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+        ],
+        "verdict": "REVIEW",
+        "raw": {
+          "source": "live",
+          "status": "REVIEW",
+          "quality_score": 0.6,
+          "overall_score": 0.6,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING"
+          ],
+          "notes": "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+        }
+      }
+    },
+    "proof_blocked": false
+  },
+  "error": "live_judge_fail",
+  "started_at": "2026-04-07T16:43:39.633Z",
+  "finished_at": "2026-04-07T16:44:22.746Z",
+  "metadata": {
+    "queue_state": "completed",
+    "observed_states": [
+      {
+        "state": "queued",
+        "timestamp": "2026-04-07T16:43:39.660Z"
+      }
+    ],
+    "drive_root": "G:\\My Drive\\mikage_runner",
+    "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_025.json",
+    "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_025.claim.json",
+    "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_025\\result.json",
+    "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_025\\judge_output.json",
+    "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_025\\output.png",
+    "claim": {
+      "job_id": "AUTO_20260407_025",
+      "worker_id": "colab-worker-01",
+      "claimed_at": "2026-04-07T16:44:00.875925Z",
+      "status": "claimed"
+    },
+    "result": {
+      "job_id": "AUTO_20260407_025",
+      "status": "completed",
+      "output_image_path": "outputs/AUTO_20260407_025/output.png",
+      "judge_output_path": "outputs/AUTO_20260407_025/judge_output.json",
+      "judge_output": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.6,
+        "overall_score": 0.6,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "notes": "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+      },
+      "validator_result": {
+        "passed": true,
+        "signals": []
+      },
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "outputs/AUTO_20260407_025/output.png"
+        },
+        {
+          "type": "judge_output_json",
+          "path": "outputs/AUTO_20260407_025/judge_output.json"
+        }
+      ],
+      "started_at": "2026-04-07T16:44:00.882135Z",
+      "finished_at": "2026-04-07T16:44:10.614820Z",
+      "metadata": {
+        "model_id": "stabilityai/sdxl-turbo",
+        "device": "cuda",
+        "seed": 42,
+        "num_inference_steps": 4,
+        "guidance_scale": 0
+      }
+    },
+    "judge_output": {
+      "source": "live",
+      "status": "REVIEW",
+      "quality_score": 0.6,
+      "overall_score": 0.6,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "notes": "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+    },
+    "critic_merge": {
+      "source": "live",
+      "status": "REVIEW",
+      "quality_score": 0.6,
+      "overall_score": 0.6,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING",
+        "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+      ],
+      "judge_output_path": "outputs/AUTO_20260407_025/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.6,
+        "quality_score": 0.6,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "issues": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING",
+          "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+        ],
+        "verdict": "REVIEW",
+        "raw": {
+          "source": "live",
+          "status": "REVIEW",
+          "quality_score": 0.6,
+          "overall_score": 0.6,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING"
+          ],
+          "notes": "The central mask is well-rendered and convincing in its sculptural quality. However, several smaller masks in the composition are either too abstract, indistinct, or show inconsistencies in form and material rendering, making them less convincing as cohesive sculptural objects. Some are blurry or appear malformed."
+        }
+      }
+    },
+    "proof_blocked": false,
+    "malformed_result": false,
+    "stale_claim": false
+  }
+}

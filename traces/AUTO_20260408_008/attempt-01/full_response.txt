@@ -1,0 +1,232 @@
+{
+  "job_id": "AUTO_20260408_008",
+  "lane": "image",
+  "status": "rejected",
+  "summary": "Image lane produced an invalid or incomplete result.",
+  "artifacts": [
+    {
+      "type": "job_json",
+      "label": "job_json",
+      "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_008.json"
+    },
+    {
+      "type": "claim_json",
+      "label": "claim_json",
+      "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_008.claim.json"
+    },
+    {
+      "type": "result_json",
+      "label": "result_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008\\result.json"
+    },
+    {
+      "type": "judge_output_json",
+      "label": "judge_output_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008\\judge_output.json"
+    },
+    {
+      "type": "image",
+      "label": "output_image",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008\\output.png"
+    }
+  ],
+  "validator_result": {
+    "passed": false,
+    "signals": [
+      "live_judge_fail",
+      "CANON_DRIFT"
+    ],
+    "issues": [
+      "live_judge_fail",
+      "CANON_DRIFT"
+    ],
+    "judge_output": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.85,
+      "overall_score": 0.3,
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "notes": "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+    },
+    "judge_output_path": "outputs/AUTO_20260408_008/judge_output.json",
+    "critic_merge": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.85,
+      "overall_score": 0.85,
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "CANON_DRIFT",
+        "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+      ],
+      "judge_output_path": "outputs/AUTO_20260408_008/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.85,
+        "quality_score": 0.85,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "CANON_DRIFT",
+          "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+        ],
+        "verdict": "REJECT",
+        "raw": {
+          "source": "live",
+          "status": "REJECT",
+          "quality_score": 0.85,
+          "overall_score": 0.3,
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "notes": "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+        }
+      }
+    },
+    "proof_blocked": false
+  },
+  "error": "live_judge_fail",
+  "started_at": "2026-04-07T14:09:46.956Z",
+  "finished_at": "2026-04-07T14:10:42.112Z",
+  "metadata": {
+    "queue_state": "completed",
+    "observed_states": [
+      {
+        "state": "queued",
+        "timestamp": "2026-04-07T14:09:47.025Z"
+      }
+    ],
+    "drive_root": "G:\\My Drive\\mikage_runner",
+    "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_008.json",
+    "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_008.claim.json",
+    "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008\\result.json",
+    "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008\\judge_output.json",
+    "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008\\output.png",
+    "claim": {
+      "job_id": "AUTO_20260408_008",
+      "worker_id": "colab-worker-01",
+      "claimed_at": "2026-04-07T14:10:23.985057Z",
+      "status": "claimed"
+    },
+    "result": {
+      "job_id": "AUTO_20260408_008",
+      "status": "completed",
+      "output_image_path": "outputs/AUTO_20260408_008/output.png",
+      "judge_output_path": "outputs/AUTO_20260408_008/judge_output.json",
+      "judge_output": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.85,
+        "overall_score": 0.3,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "notes": "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+      },
+      "validator_result": {
+        "passed": true,
+        "signals": []
+      },
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "outputs/AUTO_20260408_008/output.png"
+        },
+        {
+          "type": "judge_output_json",
+          "path": "outputs/AUTO_20260408_008/judge_output.json"
+        }
+      ],
+      "started_at": "2026-04-07T14:10:23.990647Z",
+      "finished_at": "2026-04-07T14:10:33.970015Z",
+      "metadata": {
+        "model_id": "stabilityai/sdxl-turbo",
+        "device": "cuda",
+        "seed": 42,
+        "num_inference_steps": 4,
+        "guidance_scale": 0
+      }
+    },
+    "judge_output": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.85,
+      "overall_score": 0.3,
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "notes": "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+    },
+    "critic_merge": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.85,
+      "overall_score": 0.85,
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "CANON_DRIFT",
+        "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+      ],
+      "judge_output_path": "outputs/AUTO_20260408_008/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.85,
+        "quality_score": 0.85,
+        "failure_codes": [
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "CANON_DRIFT",
+          "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+        ],
+        "verdict": "REJECT",
+        "raw": {
+          "source": "live",
+          "status": "REJECT",
+          "quality_score": 0.85,
+          "overall_score": 0.3,
+          "failure_codes": [
+            "CANON_DRIFT"
+          ],
+          "notes": "The helmet design, while well-rendered, exhibits significant canon drift due to the prominent integrated headphones and specific gas mask elements, which do not align with established canon aesthetics. There is also some unreadable text artifact in the bottom left."
+        }
+      }
+    },
+    "proof_blocked": false,
+    "malformed_result": false,
+    "stale_claim": false
+  }
+}

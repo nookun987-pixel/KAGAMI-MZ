@@ -1,0 +1,10 @@
+{
+  "maximum_trust_score": 2,
+  "multi_run_support": {
+    "min_support": 2,
+    "increment": 0.2
+  },
+  "successful_reuse": {
+    "increment_per_hit": 0.05
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "job_id": "AUTO_20260408_010",
+  "attempt_index": 1,
+  "source": "live",
+  "status": "PASS",
+  "quality_score": 0.95,
+  "overall_score": 0.9,
+  "failure_codes": [],
+  "notes": [
+    "High-quality 3D render of a stylized mask with excellent detail, sharp edges, and good lighting. The material appears consistent and well-defined. A small, illegible watermark is present in the bottom left corner, slightly impacting the overall score."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_010\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": true,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.301Z"
+}

@@ -1,0 +1,118 @@
+{
+  "repairable": true,
+  "repair_class": "quality",
+  "current_attempt": 1,
+  "max_attempts": 2,
+  "responsible_module": "MIKAGE/lanes/image",
+  "repair_strategy": "anti_abstract_reinforcement",
+  "actions": [
+    "anti_abstract_reinforcement"
+  ],
+  "next_options": {},
+  "prompt_patch": {
+    "positive_additions": [
+      "literal object readability",
+      "literal subject framing"
+    ],
+    "negative_additions": [
+      "abstract composition",
+      "symbolic non-literal framing"
+    ]
+  },
+  "canon_patch": {
+    "lock_boost": [],
+    "blocked_trait_reinforcement": [],
+    "dominant_trait_reinforcement": [],
+    "must_have_replay": [],
+    "hard_negative_carryover": []
+  },
+  "lineage": {
+    "original_job_id": "AUTO_20260408_002",
+    "parent_job_id": "AUTO_20260408_002",
+    "current_attempt": 1,
+    "next_attempt": 2
+  },
+  "quality_failure_packet": {
+    "supported_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "TEXTURE_ONLY_FRAME",
+      "CERAMIC_NOT_CONVINCING",
+      "CANON_DRIFT",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE"
+    ],
+    "primary_failure_code": "ABSTRACT_COMPOSITION",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "primary_failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "secondary_failure_codes": [],
+    "repair_class": "quality",
+    "quality_score": 0.85,
+    "score": 0.85,
+    "judge_summary": {
+      "status": "REJECT",
+      "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects.",
+      "failure_codes": [
+        "ABSTRACT_COMPOSITION"
+      ]
+    },
+    "validator_summary": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ]
+    },
+    "job_id": "AUTO_20260408_002",
+    "attempt": 1,
+    "source_artifacts": {
+      "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\output.png",
+      "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\judge_output.json"
+    },
+    "pass": false,
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "critical_failure": true,
+    "patch_targets": [
+      "object_form"
+    ]
+  },
+  "repair_patch_packet": {
+    "repair_class": "quality",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "prompt_patch": {
+      "positive_additions": [
+        "literal subject framing"
+      ],
+      "negative_additions": [
+        "abstract composition",
+        "symbolic non-literal framing"
+      ]
+    },
+    "canon_patch": {
+      "dominant_traits": [],
+      "supportive_traits": [],
+      "blocked_traits": [],
+      "must_have_traits": []
+    }
+  },
+  "quality_retry_decision": {
+    "retry_allowed": true,
+    "repair_class": "quality",
+    "decision_reason": "Canon-aware repair patch approved for retry.",
+    "hard_stop": false,
+    "repeated_failure_code": "",
+    "proof_blocked": false
+  },
+  "notes": [],
+  "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_002\\attempt-01\\repair_patch_packet.json"
+}

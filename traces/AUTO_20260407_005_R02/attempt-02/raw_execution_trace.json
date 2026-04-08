@@ -1,0 +1,262 @@
+{
+  "job_id": "AUTO_20260407_005_R02",
+  "attempt_index": 2,
+  "options": {
+    "timeoutMs": 185000,
+    "pollIntervalMs": 1000,
+    "staleClaimMs": 300000
+  },
+  "intent": {
+    "intent_type": "image",
+    "goal": "ceramic mask hero frame live repair v2 runtime retry proof take 2",
+    "constraints": [],
+    "priority": "normal",
+    "signals": {
+      "source": "direct_input",
+      "classified_by": "keyword_router"
+    }
+  },
+  "taskSpec": {
+    "job_id": "AUTO_20260407_005_R02",
+    "lane": "image",
+    "objective": "ceramic mask hero frame live repair v2 runtime retry proof take 2",
+    "constraints": [],
+    "priority": "normal",
+    "execution_plan": {
+      "steps": [
+        "prepare_prompt",
+        "dispatch_render",
+        "validate_output"
+      ]
+    },
+    "success_criteria": [
+      "real output exists",
+      "validator pass",
+      "final judge allow"
+    ],
+    "context": {
+      "planned_at": "2026-04-07T10:53:57.724Z",
+      "planner_version": "mikage_v2_control_plane",
+      "signals": {
+        "source": "direct_input",
+        "classified_by": "keyword_router"
+      },
+      "memory_hints": [],
+      "retry_of": "AUTO_20260407_005",
+      "retry_attempt": 2,
+      "repair_action": {
+        "repairable": true,
+        "repair_class": "runtime",
+        "current_attempt": 1,
+        "max_attempts": 2,
+        "responsible_module": "runtime/drive_queue/runtime.js",
+        "repair_strategy": "retry_with_longer_timeout",
+        "actions": [
+          "increase_timeout"
+        ],
+        "next_options": {
+          "timeoutMs": 185000
+        },
+        "prompt_patch": {
+          "positive_additions": [],
+          "negative_additions": []
+        },
+        "canon_patch": {
+          "lock_boost": [],
+          "blocked_trait_reinforcement": [],
+          "dominant_trait_reinforcement": [],
+          "must_have_replay": [],
+          "hard_negative_carryover": []
+        },
+        "lineage": {
+          "original_job_id": "AUTO_20260407_005",
+          "parent_job_id": "AUTO_20260407_005",
+          "current_attempt": 1,
+          "next_attempt": 2
+        },
+        "notes": [
+          "Increased timeout for retry."
+        ]
+      },
+      "lineage": {
+        "original_job_id": "AUTO_20260407_005",
+        "parent_job_id": "AUTO_20260407_005",
+        "current_attempt": 1,
+        "next_attempt": 2
+      }
+    }
+  },
+  "runRecord": {
+    "job_id": "AUTO_20260407_005_R02",
+    "lane": "image",
+    "state": "completed",
+    "timeline": [
+      {
+        "state": "started",
+        "timestamp": "2026-04-07T10:54:02.850Z"
+      },
+      {
+        "state": "running",
+        "timestamp": "2026-04-07T10:54:02.850Z"
+      },
+      {
+        "state": "completed",
+        "timestamp": "2026-04-07T10:54:46.517Z"
+      }
+    ]
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260407_005_R02",
+    "lane": "image",
+    "status": "completed",
+    "summary": "Image lane completed through Drive queue and Colab output contract.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_005_R02.json"
+      },
+      {
+        "type": "claim_json",
+        "label": "claim_json",
+        "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_005_R02.claim.json"
+      },
+      {
+        "type": "result_json",
+        "label": "result_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_005_R02\\result.json"
+      },
+      {
+        "type": "image",
+        "label": "output_image",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_005_R02\\output.png"
+      }
+    ],
+    "validator_result": {
+      "passed": true,
+      "signals": [],
+      "issues": []
+    },
+    "error": null,
+    "started_at": "2026-04-07T10:54:02.851Z",
+    "finished_at": "2026-04-07T10:54:46.517Z",
+    "metadata": {
+      "queue_state": "completed",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T10:54:02.873Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_005_R02.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_005_R02.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_005_R02\\result.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_005_R02\\output.png",
+      "claim": {
+        "job_id": "AUTO_20260407_005_R02",
+        "worker_id": "colab-worker-01",
+        "claimed_at": "2026-04-07T10:54:26.968363Z",
+        "status": "claimed"
+      },
+      "result": {
+        "job_id": "AUTO_20260407_005_R02",
+        "status": "completed",
+        "validator_result": {
+          "passed": true,
+          "signals": []
+        },
+        "artifacts": [
+          {
+            "type": "image",
+            "path": "outputs/AUTO_20260407_005_R02/output.png"
+          }
+        ],
+        "started_at": "2026-04-07T10:54:26.986719Z",
+        "finished_at": "2026-04-07T10:54:27.750924Z",
+        "metadata": {
+          "model_id": "stabilityai/sdxl-turbo",
+          "device": "cuda",
+          "seed": 42,
+          "num_inference_steps": 4,
+          "guidance_scale": 0
+        }
+      },
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260407_005_R02",
+    "lane": "image",
+    "state": "completed",
+    "queue_state": "completed",
+    "issues": [],
+    "fatal_issues": [],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "image"
+      ],
+      "validator_signals": [],
+      "issues": [],
+      "fatal_issues": [],
+      "success": true
+    },
+    "monitored_at": "2026-04-07T10:54:46.520Z"
+  },
+  "decision": {
+    "decision": "ALLOW",
+    "reasons": [
+      "Lane completion policy satisfied."
+    ],
+    "timestamp": "2026-04-07T10:54:46.520Z"
+  },
+  "failureRoute": {
+    "failure_type": "",
+    "responsible_module": "",
+    "repair_strategy": "",
+    "repair_class": "",
+    "retry_allowed": false,
+    "repairable": false
+  },
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "",
+    "current_attempt": 2,
+    "max_attempts": 2,
+    "responsible_module": "",
+    "repair_strategy": "",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260407_005",
+      "parent_job_id": "AUTO_20260407_005_R02",
+      "current_attempt": 2,
+      "next_attempt": null
+    },
+    "notes": [
+      "Max retry cap reached."
+    ]
+  }
+}

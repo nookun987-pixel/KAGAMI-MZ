@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-04-07T18:54:09.749Z",
+  "total_entries": 21,
+  "archived_entries": 0,
+  "by_type": {
+    "approved_variant": 8,
+    "object_trait": 12,
+    "canon_rule": 1
+  },
+  "by_lane": {
+    "image": 21
+  },
+  "by_status": {
+    "active": 21
+  },
+  "family_ids": [
+    "HERO_LOCK"
+  ]
+}

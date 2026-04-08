@@ -1,0 +1,567 @@
+{
+  "job_id": "AUTO_20260408_002",
+  "attempt_index": 1,
+  "options": {
+    "timeoutMs": 300000,
+    "pollIntervalMs": 2000,
+    "staleClaimMs": 300000
+  },
+  "intent": {
+    "intent_type": "image",
+    "goal": "blurry abstract neon magenta glossy plastic resin toy fashion product texture-only image with broken silhouette and generic grey studio background",
+    "constraints": [],
+    "priority": "normal",
+    "signals": {
+      "source": "direct_input",
+      "classified_by": "keyword_router"
+    }
+  },
+  "taskSpec": {
+    "job_id": "AUTO_20260408_002",
+    "lane": "image",
+    "objective": "blurry abstract neon magenta glossy plastic resin toy fashion product texture-only image with broken silhouette and generic grey studio background",
+    "constraints": [],
+    "priority": "normal",
+    "execution_plan": {
+      "steps": [
+        "prepare_prompt",
+        "dispatch_render",
+        "validate_output"
+      ]
+    },
+    "success_criteria": [
+      "real output exists",
+      "validator pass",
+      "final judge allow"
+    ],
+    "context": {
+      "planned_at": "2026-04-07T13:30:59.823Z",
+      "planner_version": "mikage_v2_control_plane",
+      "signals": {
+        "source": "direct_input",
+        "classified_by": "keyword_router"
+      },
+      "memory_hints": []
+    }
+  },
+  "runRecord": {
+    "job_id": "AUTO_20260408_002",
+    "lane": "image",
+    "state": "rejected",
+    "timeline": [
+      {
+        "state": "started",
+        "timestamp": "2026-04-07T13:30:59.824Z"
+      },
+      {
+        "state": "running",
+        "timestamp": "2026-04-07T13:30:59.824Z"
+      },
+      {
+        "state": "rejected",
+        "timestamp": "2026-04-07T13:31:53.332Z"
+      }
+    ]
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260408_002",
+    "lane": "image",
+    "status": "rejected",
+    "summary": "Image lane produced an invalid or incomplete result.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_002.json"
+      },
+      {
+        "type": "claim_json",
+        "label": "claim_json",
+        "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_002.claim.json"
+      },
+      {
+        "type": "result_json",
+        "label": "result_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\result.json"
+      },
+      {
+        "type": "judge_output_json",
+        "label": "judge_output_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\judge_output.json"
+      },
+      {
+        "type": "image",
+        "label": "output_image",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\output.png"
+      }
+    ],
+    "validator_result": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "judge_output": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.85,
+        "overall_score": 0.3,
+        "failure_codes": [
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+      },
+      "judge_output_path": "outputs/AUTO_20260408_002/judge_output.json",
+      "critic_merge": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.85,
+        "overall_score": 0.85,
+        "failure_codes": [
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "ABSTRACT_COMPOSITION",
+          "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+        ],
+        "judge_output_path": "outputs/AUTO_20260408_002/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.85,
+          "quality_score": 0.85,
+          "failure_codes": [
+            "ABSTRACT_COMPOSITION"
+          ],
+          "issues": [
+            "ABSTRACT_COMPOSITION",
+            "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+          ],
+          "verdict": "REJECT",
+          "raw": {
+            "source": "live",
+            "status": "REJECT",
+            "quality_score": 0.85,
+            "overall_score": 0.3,
+            "failure_codes": [
+              "ABSTRACT_COMPOSITION"
+            ],
+            "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+          }
+        }
+      },
+      "proof_blocked": false
+    },
+    "error": "live_judge_fail",
+    "started_at": "2026-04-07T13:30:59.825Z",
+    "finished_at": "2026-04-07T13:31:53.332Z",
+    "metadata": {
+      "queue_state": "completed",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T13:30:59.883Z"
+        },
+        {
+          "state": "claimed",
+          "timestamp": "2026-04-07T13:31:40.370Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_002.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_002.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\result.json",
+      "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\judge_output.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\output.png",
+      "claim": {
+        "job_id": "AUTO_20260408_002",
+        "worker_id": "colab-worker-01",
+        "claimed_at": "2026-04-07T13:31:19.710486Z",
+        "status": "claimed"
+      },
+      "result": {
+        "job_id": "AUTO_20260408_002",
+        "status": "completed",
+        "output_image_path": "outputs/AUTO_20260408_002/output.png",
+        "judge_output_path": "outputs/AUTO_20260408_002/judge_output.json",
+        "judge_output": {
+          "source": "live",
+          "status": "REJECT",
+          "quality_score": 0.85,
+          "overall_score": 0.3,
+          "failure_codes": [
+            "ABSTRACT_COMPOSITION"
+          ],
+          "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+        },
+        "validator_result": {
+          "passed": true,
+          "signals": []
+        },
+        "artifacts": [
+          {
+            "type": "image",
+            "path": "outputs/AUTO_20260408_002/output.png"
+          },
+          {
+            "type": "judge_output_json",
+            "path": "outputs/AUTO_20260408_002/judge_output.json"
+          }
+        ],
+        "started_at": "2026-04-07T13:31:19.716159Z",
+        "finished_at": "2026-04-07T13:31:32.438356Z",
+        "metadata": {
+          "model_id": "stabilityai/sdxl-turbo",
+          "device": "cuda",
+          "seed": 42,
+          "num_inference_steps": 4,
+          "guidance_scale": 0
+        }
+      },
+      "judge_output": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.85,
+        "overall_score": 0.3,
+        "failure_codes": [
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+      },
+      "critic_merge": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.85,
+        "overall_score": 0.85,
+        "failure_codes": [
+          "ABSTRACT_COMPOSITION"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "ABSTRACT_COMPOSITION",
+          "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+        ],
+        "judge_output_path": "outputs/AUTO_20260408_002/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.85,
+          "quality_score": 0.85,
+          "failure_codes": [
+            "ABSTRACT_COMPOSITION"
+          ],
+          "issues": [
+            "ABSTRACT_COMPOSITION",
+            "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+          ],
+          "verdict": "REJECT",
+          "raw": {
+            "source": "live",
+            "status": "REJECT",
+            "quality_score": 0.85,
+            "overall_score": 0.3,
+            "failure_codes": [
+              "ABSTRACT_COMPOSITION"
+            ],
+            "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects."
+          }
+        }
+      },
+      "proof_blocked": false,
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260408_002",
+    "lane": "image",
+    "state": "rejected",
+    "queue_state": "completed",
+    "issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "fatal_issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "fatal_issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T13:31:53.335Z"
+  },
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T13:31:53.336Z"
+  },
+  "qualityFailurePacket": {
+    "supported_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "TEXTURE_ONLY_FRAME",
+      "CERAMIC_NOT_CONVINCING",
+      "CANON_DRIFT",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE"
+    ],
+    "primary_failure_code": "ABSTRACT_COMPOSITION",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "primary_failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "secondary_failure_codes": [],
+    "repair_class": "quality",
+    "quality_score": 0.85,
+    "score": 0.85,
+    "judge_summary": {
+      "status": "REJECT",
+      "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects.",
+      "failure_codes": [
+        "ABSTRACT_COMPOSITION"
+      ]
+    },
+    "validator_summary": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "ABSTRACT_COMPOSITION"
+      ]
+    },
+    "job_id": "AUTO_20260408_002",
+    "attempt": 1,
+    "source_artifacts": {
+      "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\output.png",
+      "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\judge_output.json"
+    },
+    "pass": false,
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "critical_failure": true,
+    "patch_targets": [
+      "object_form"
+    ]
+  },
+  "failureRoute": {
+    "failure_type": "abstract_composition",
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "anti_abstract_reinforcement",
+    "repair_class": "quality",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairPatchPacket": {
+    "repair_class": "quality",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ],
+    "prompt_patch": {
+      "positive_additions": [
+        "literal subject framing"
+      ],
+      "negative_additions": [
+        "abstract composition",
+        "symbolic non-literal framing"
+      ]
+    },
+    "canon_patch": {
+      "dominant_traits": [],
+      "supportive_traits": [],
+      "blocked_traits": [],
+      "must_have_traits": []
+    }
+  },
+  "qualityRetryDecision": {
+    "retry_allowed": true,
+    "repair_class": "quality",
+    "decision_reason": "Canon-aware repair patch approved for retry.",
+    "hard_stop": false,
+    "repeated_failure_code": "",
+    "proof_blocked": false
+  },
+  "qualityScoreDelta": {
+    "previous_score": null,
+    "current_score": 0.85,
+    "delta": null,
+    "improved": null
+  },
+  "proof_blocked": false,
+  "repairAction": {
+    "repairable": true,
+    "repair_class": "quality",
+    "current_attempt": 1,
+    "max_attempts": 2,
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "anti_abstract_reinforcement",
+    "actions": [
+      "anti_abstract_reinforcement"
+    ],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [
+        "literal object readability",
+        "literal subject framing"
+      ],
+      "negative_additions": [
+        "abstract composition",
+        "symbolic non-literal framing"
+      ]
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260408_002",
+      "parent_job_id": "AUTO_20260408_002",
+      "current_attempt": 1,
+      "next_attempt": 2
+    },
+    "quality_failure_packet": {
+      "supported_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "TEXTURE_ONLY_FRAME",
+        "CERAMIC_NOT_CONVINCING",
+        "CANON_DRIFT",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE"
+      ],
+      "primary_failure_code": "ABSTRACT_COMPOSITION",
+      "failure_codes": [
+        "ABSTRACT_COMPOSITION"
+      ],
+      "primary_failure_codes": [
+        "ABSTRACT_COMPOSITION"
+      ],
+      "secondary_failure_codes": [],
+      "repair_class": "quality",
+      "quality_score": 0.85,
+      "score": 0.85,
+      "judge_summary": {
+        "status": "REJECT",
+        "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects.",
+        "failure_codes": [
+          "ABSTRACT_COMPOSITION"
+        ]
+      },
+      "validator_summary": {
+        "passed": false,
+        "signals": [
+          "live_judge_fail",
+          "ABSTRACT_COMPOSITION"
+        ],
+        "issues": [
+          "live_judge_fail",
+          "ABSTRACT_COMPOSITION"
+        ]
+      },
+      "job_id": "AUTO_20260408_002",
+      "attempt": 1,
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\output.png",
+        "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_002\\judge_output.json"
+      },
+      "pass": false,
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "critical_failure": true,
+      "patch_targets": [
+        "object_form"
+      ]
+    },
+    "repair_patch_packet": {
+      "repair_class": "quality",
+      "failure_codes": [
+        "ABSTRACT_COMPOSITION"
+      ],
+      "prompt_patch": {
+        "positive_additions": [
+          "literal subject framing"
+        ],
+        "negative_additions": [
+          "abstract composition",
+          "symbolic non-literal framing"
+        ]
+      },
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": []
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": true,
+      "repair_class": "quality",
+      "decision_reason": "Canon-aware repair patch approved for retry.",
+      "hard_stop": false,
+      "repeated_failure_code": "",
+      "proof_blocked": false
+    },
+    "notes": [],
+    "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_002\\attempt-01\\repair_patch_packet.json"
+  }
+}

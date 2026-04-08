@@ -1,0 +1,29 @@
+{
+  "lanes": {
+    "image": {
+      "enabled": true,
+      "status": "active",
+      "aliases": ["image", "render", "shot", "frame", "poster", "mask", "visual"]
+    },
+    "cine": {
+      "enabled": true,
+      "status": "planned",
+      "aliases": ["cine", "cinematic", "sequence", "scene", "storyboard", "video"]
+    },
+    "game": {
+      "enabled": true,
+      "status": "planned",
+      "aliases": ["game", "combat", "level", "mechanic", "quest", "system"]
+    },
+    "content": {
+      "enabled": true,
+      "status": "planned",
+      "aliases": ["content", "copy", "post", "article", "script", "campaign"]
+    },
+    "ops": {
+      "enabled": true,
+      "status": "planned",
+      "aliases": ["ops", "deploy", "automation", "audit", "monitor", "workflow"]
+    }
+  }
+}

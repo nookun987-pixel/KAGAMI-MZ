@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mikage Final Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["decision", "reasons", "timestamp"],
+  "properties": {
+    "decision": {
+      "type": "string",
+      "enum": ["ALLOW", "REVISE", "REJECT"]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  }
+}

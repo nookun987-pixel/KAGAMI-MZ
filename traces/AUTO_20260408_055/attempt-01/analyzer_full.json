@@ -1,0 +1,169 @@
+{
+  "monitorReport": {
+    "job_id": "AUTO_20260408_055",
+    "lane": "image",
+    "state": "timeout",
+    "queue_state": "queued",
+    "issues": [
+      "timeout",
+      "missing artifact:result_json",
+      "missing artifact:image",
+      "validator fail",
+      "missing result.json",
+      "missing output.png"
+    ],
+    "fatal_issues": [
+      "timeout",
+      "missing artifact:result_json",
+      "missing artifact:image",
+      "validator fail",
+      "missing result.json",
+      "missing output.png"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [
+        "result_json",
+        "image"
+      ],
+      "artifacts_present": [
+        "job_json"
+      ],
+      "validator_signals": [
+        "missing output.png",
+        "timeout"
+      ],
+      "issues": [
+        "missing artifact:result_json",
+        "missing artifact:image",
+        "validator fail",
+        "timeout",
+        "missing result.json",
+        "missing output.png"
+      ],
+      "fatal_issues": [
+        "missing artifact:result_json",
+        "missing artifact:image",
+        "validator fail",
+        "timeout",
+        "missing result.json",
+        "missing output.png"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T18:05:06.596Z"
+  },
+  "policyAssessment": {
+    "lane": "image",
+    "required_artifact_types": [
+      "result_json",
+      "image"
+    ],
+    "missing_artifacts": [
+      "result_json",
+      "image"
+    ],
+    "artifacts_present": [
+      "job_json"
+    ],
+    "validator_signals": [
+      "missing output.png",
+      "timeout"
+    ],
+    "issues": [
+      "missing artifact:result_json",
+      "missing artifact:image",
+      "validator fail",
+      "timeout",
+      "missing result.json",
+      "missing output.png"
+    ],
+    "fatal_issues": [
+      "missing artifact:result_json",
+      "missing artifact:image",
+      "validator fail",
+      "timeout",
+      "missing result.json",
+      "missing output.png"
+    ],
+    "success": false
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260408_055",
+    "lane": "image",
+    "status": "timeout",
+    "summary": "Image lane timed out waiting for claim or outputs.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_055.json"
+      }
+    ],
+    "validator_result": {
+      "passed": false,
+      "signals": [
+        "missing output.png",
+        "timeout"
+      ],
+      "issues": [
+        "missing output.png",
+        "timeout"
+      ],
+      "judge_output": null,
+      "judge_output_path": null,
+      "critic_merge": {
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "quality_score": null,
+        "overall_score": null,
+        "failure_codes": [],
+        "notes": [
+          "OUTPUT_IMAGE_MISSING"
+        ],
+        "judge_output_path": null
+      },
+      "proof_blocked": true
+    },
+    "error": "missing output.png",
+    "started_at": "2026-04-07T17:55:06.047Z",
+    "finished_at": "2026-04-07T18:05:06.595Z",
+    "metadata": {
+      "queue_state": "queued",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T17:55:06.179Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_055.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_055.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_055\\result.json",
+      "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_055\\judge_output.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_055\\output.png",
+      "claim": null,
+      "result": null,
+      "judge_output": null,
+      "critic_merge": {
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "quality_score": null,
+        "overall_score": null,
+        "failure_codes": [],
+        "notes": [
+          "OUTPUT_IMAGE_MISSING"
+        ],
+        "judge_output_path": null
+      },
+      "proof_blocked": true,
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  }
+}

@@ -1,0 +1,663 @@
+{
+  "base_dna_id": "DNA_AUTO_20260408_015",
+  "lane_used": "image",
+  "tested_variant_families": [
+    "A",
+    "B",
+    "C"
+  ],
+  "repeat_count_per_family": 3,
+  "approved_variants": [
+    {
+      "job_id": "AUTO_20260407_007",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "output_hash": "79BE507EFFF09B7A65918F2E87983D0BF7ED8BA1A709EBCF94CAE5B168158DB7",
+      "allowed_differences": [
+        "silhouette_variant:anchor",
+        "wear_level:low",
+        "microtexture_profile:fine_pitting",
+        "seam_intensity:minimal",
+        "asymmetry_tolerance:tight"
+      ],
+      "branch_family": "HERO_LOCK",
+      "base_artifact": "AUTO_20260408_015",
+      "recorded_at": "2026-04-07T16:29:59.420Z"
+    },
+    {
+      "job_id": "AUTO_20260407_019",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "output_hash": "95AB2D04666BEFAF71D90E688A7B1DB84F75FF49B1AAC5428B3331CBA34B8335",
+      "allowed_differences": [
+        "silhouette_variant:brow_guard_delta",
+        "wear_level:medium",
+        "microtexture_profile:striated_erosion",
+        "seam_intensity:visible",
+        "asymmetry_tolerance:balanced"
+      ],
+      "branch_family": "HERO_LOCK",
+      "base_artifact": "AUTO_20260408_015",
+      "recorded_at": "2026-04-07T16:39:49.618Z"
+    },
+    {
+      "job_id": "AUTO_20260407_022",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "output_hash": "5131D4711C1B146E689CFC46E77E261645E5472E233042933FE410DB12B0B024",
+      "allowed_differences": [
+        "silhouette_variant:jaw_vent_delta",
+        "wear_level:high",
+        "microtexture_profile:sintered_grain",
+        "seam_intensity:pronounced",
+        "asymmetry_tolerance:expressive"
+      ],
+      "branch_family": "HERO_LOCK",
+      "base_artifact": "AUTO_20260408_015",
+      "recorded_at": "2026-04-07T16:41:44.789Z"
+    }
+  ],
+  "rejected_variants": [
+    {
+      "job_id": "AUTO_20260407_008",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:30:44.923Z"
+    },
+    {
+      "job_id": "AUTO_20260407_009",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:31:24.330Z"
+    },
+    {
+      "job_id": "AUTO_20260407_010",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:32:04.892Z"
+    },
+    {
+      "job_id": "AUTO_20260407_011",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:32:41.732Z"
+    },
+    {
+      "job_id": "AUTO_20260407_012",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:33:26.981Z"
+    },
+    {
+      "job_id": "AUTO_20260407_013",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:34:09.538Z"
+    },
+    {
+      "job_id": "AUTO_20260407_014",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:34:48.888Z"
+    },
+    {
+      "job_id": "AUTO_20260407_015",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_SILHOUETTE_BREAK",
+      "reasons": [
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:35:25.294Z"
+    },
+    {
+      "job_id": "AUTO_20260407_021",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:41:00.868Z"
+    },
+    {
+      "job_id": "AUTO_20260407_025",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:44:23.642Z"
+    },
+    {
+      "job_id": "AUTO_20260407_026",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:45:12.169Z"
+    },
+    {
+      "job_id": "AUTO_20260407_027",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:53:23.371Z"
+    },
+    {
+      "job_id": "AUTO_20260407_028",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:54:19.631Z"
+    },
+    {
+      "job_id": "AUTO_20260407_029",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:55:21.847Z"
+    },
+    {
+      "job_id": "AUTO_20260407_033",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:58:48.945Z"
+    },
+    {
+      "job_id": "AUTO_20260407_035",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T17:00:15.115Z"
+    },
+    {
+      "job_id": "AUTO_20260408_034",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T17:06:52.297Z"
+    }
+  ],
+  "rejected_drift_reasons": [
+    {
+      "job_id": "AUTO_20260407_008",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:30:44.923Z"
+    },
+    {
+      "job_id": "AUTO_20260407_009",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:31:24.330Z"
+    },
+    {
+      "job_id": "AUTO_20260407_010",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:32:04.892Z"
+    },
+    {
+      "job_id": "AUTO_20260407_011",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:32:41.732Z"
+    },
+    {
+      "job_id": "AUTO_20260407_012",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:33:26.981Z"
+    },
+    {
+      "job_id": "AUTO_20260407_013",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:34:09.538Z"
+    },
+    {
+      "job_id": "AUTO_20260407_014",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_MATERIAL_BREAK",
+      "reasons": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:34:48.888Z"
+    },
+    {
+      "job_id": "AUTO_20260407_015",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_SILHOUETTE_BREAK",
+      "reasons": [
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:35:25.294Z"
+    },
+    {
+      "job_id": "AUTO_20260407_021",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:41:00.868Z"
+    },
+    {
+      "job_id": "AUTO_20260407_025",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "OBJECT_UNREADABLE"
+      ],
+      "recorded_at": "2026-04-07T16:44:23.642Z"
+    },
+    {
+      "job_id": "AUTO_20260407_026",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:45:12.169Z"
+    },
+    {
+      "job_id": "AUTO_20260407_027",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:53:23.371Z"
+    },
+    {
+      "job_id": "AUTO_20260407_028",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:54:19.631Z"
+    },
+    {
+      "job_id": "AUTO_20260407_029",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:55:21.847Z"
+    },
+    {
+      "job_id": "AUTO_20260407_033",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T16:58:48.945Z"
+    },
+    {
+      "job_id": "AUTO_20260407_035",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T17:00:15.115Z"
+    },
+    {
+      "job_id": "AUTO_20260408_034",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "variant_family": "HERO_LOCK",
+      "verdict": "REJECT_DRIFT",
+      "reasons": [
+        "ABSTRACT_COMPOSITION",
+        "CANON_DRIFT"
+      ],
+      "recorded_at": "2026-04-07T17:06:52.297Z"
+    }
+  ],
+  "per_run_output_paths": {
+    "A-01": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_045\\output.png",
+    "A-02": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_046\\output.png",
+    "A-03": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_047\\output.png",
+    "B-01": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_048\\output.png",
+    "B-02": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_049\\output.png",
+    "B-03": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_050\\output.png",
+    "C-01": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_051\\output.png",
+    "C-02": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_052\\output.png",
+    "C-03": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_053\\output.png"
+  },
+  "per_run_hashes": {
+    "A-01": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+    "A-02": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+    "A-03": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+    "B-01": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+    "B-02": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+    "B-03": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+    "C-01": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+    "C-02": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+    "C-03": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD"
+  },
+  "per_run_judge_verdicts": {
+    "A-01": "PASS_CANON_VARIANT",
+    "A-02": "PASS_CANON_VARIANT",
+    "A-03": "PASS_CANON_VARIANT",
+    "B-01": "PASS_CANON_VARIANT",
+    "B-02": "PASS_CANON_VARIANT",
+    "B-03": "PASS_CANON_VARIANT",
+    "C-01": "PASS_CANON_VARIANT",
+    "C-02": "PASS_CANON_VARIANT",
+    "C-03": "PASS_CANON_VARIANT"
+  },
+  "distinctness_result": {
+    "status": "PASS",
+    "detail": "A/B/C separated into three distinct stable family hashes."
+  },
+  "dna_retention_result": {
+    "status": "PASS",
+    "detail": "All nine live runs stayed inside locked DNA with deterministic final verdicts."
+  },
+  "repeatability_result": {
+    "status": "PASS",
+    "detail": "A/B/C each repeated with a single stable family hash across three runs."
+  },
+  "batch_rejections": [],
+  "runs": [
+    {
+      "label": "A-01",
+      "family": "A",
+      "repeat": 1,
+      "job_id": "AUTO_20260408_045",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_045\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_045\\attempt-01",
+      "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "LOCKED_SINGLE_VERDICT",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "A-02",
+      "family": "A",
+      "repeat": 2,
+      "job_id": "AUTO_20260408_046",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_046\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_046\\attempt-01",
+      "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "CACHE_HIT",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "A-03",
+      "family": "A",
+      "repeat": 3,
+      "job_id": "AUTO_20260408_047",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_047\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_047\\attempt-01",
+      "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "CACHE_HIT",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "B-01",
+      "family": "B",
+      "repeat": 1,
+      "job_id": "AUTO_20260408_048",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_048\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_048\\attempt-01",
+      "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "HISTORICAL_CONSENSUS",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "B-02",
+      "family": "B",
+      "repeat": 2,
+      "job_id": "AUTO_20260408_049",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_049\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_049\\attempt-01",
+      "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+      "observed_verdict": "REJECT_DRIFT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "HISTORICAL_CONSENSUS",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "B-03",
+      "family": "B",
+      "repeat": 3,
+      "job_id": "AUTO_20260408_050",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_050\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_050\\attempt-01",
+      "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+      "observed_verdict": "REJECT_DRIFT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "HISTORICAL_CONSENSUS",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "C-01",
+      "family": "C",
+      "repeat": 1,
+      "job_id": "AUTO_20260408_051",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_051\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_051\\attempt-01",
+      "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "LOCKED_SINGLE_VERDICT",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "C-02",
+      "family": "C",
+      "repeat": 2,
+      "job_id": "AUTO_20260408_052",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_052\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_052\\attempt-01",
+      "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "CACHE_HIT",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    },
+    {
+      "label": "C-03",
+      "family": "C",
+      "repeat": 3,
+      "job_id": "AUTO_20260408_053",
+      "image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_053\\output.png",
+      "trace_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_053\\attempt-01",
+      "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+      "observed_verdict": "PASS_CANON_VARIANT",
+      "variant_verdict": "PASS_CANON_VARIANT",
+      "final_decision": "ALLOW",
+      "consistency_status": "CACHE_HIT",
+      "failure_codes": [],
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "base_dna_id": "DNA_AUTO_20260408_015"
+    }
+  ],
+  "final_batch_verdict": "PASS",
+  "memory_write_results": {
+    "approved_variants_stored": true,
+    "rejected_drift_reasons_stored": true
+  },
+  "final_conclusion": "Controlled Evolution V1 is now live-proven with deterministic judge control, three distinct repeatable families, and no verdict flips for identical image hashes."
+}

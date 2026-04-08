@@ -1,13 +1,25 @@
+const { buildRuntimeSnapshot } = require("../lib/google_drive_runtime");
+
 export default async function handler(req, res) {
-  const bridgeUrl = process.env.LOCAL_MIKAGE_BRIDGE_URL || 'http://localhost:3031';
-  
   try {
-    const response = await fetch(`${bridgeUrl}/logs`);
-    const data = await response.json();
-    res.status(200).json(data);
-  } catch (error) {
+    const snapshot = await buildRuntimeSnapshot();
+    const logs = snapshot.logs.flatMap((file) => {
+      if (!file.lines.length) {
+        return [`[${file.name}] <empty>`];
+      }
+      return file.lines.map((line) => `[${file.name}] ${line}`);
+    });
+
     res.status(200).json({
-      logs: [`Bridge offline: ${error.message}`]
+      logs,
+      files: snapshot.logs.map((file) => ({
+        name: file.name,
+        modifiedTime: file.modifiedTime,
+      })),
+    });
+  } catch (error) {
+    res.status(500).json({
+      logs: [`Google Drive logs unavailable: ${error.message}`],
     });
   }
 }

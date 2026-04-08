@@ -42,47 +42,7 @@ const THRESHOLDS = Object.freeze({
  *
  * Each method takes an image path and returns a numeric score.
  */
-let _analyzer = {
-  /**
-   * Measure negative space ratio (0.0 = no space, 1.0 = all space).
-   * Production: count pixels below luminance threshold / total pixels.
-   */
-  measureNegativeSpace(imagePath) {
-    return { ratio: 0.50, detail: "simulated" };
-  },
-
-  /**
-   * Measure bilateral symmetry (0.0 = fully asymmetric, 1.0 = perfect mirror).
-   * Production: flip image horizontally, compute SSIM between halves.
-   */
-  measureSymmetry(imagePath) {
-    return { score: 0.35, detail: "simulated" };
-  },
-
-  /**
-   * Measure texture variance across the image (0.0 = uniform, 1.0 = highly varied).
-   * Production: compute local standard deviation of Laplacian across grid cells.
-   */
-  measureTextureVariance(imagePath) {
-    return { variance: 0.55, detail: "simulated" };
-  },
-
-  /**
-   * Measure surface smoothness (0.0 = rough/textured, 1.0 = perfectly smooth).
-   * Production: inverse of high-frequency energy in FFT domain.
-   */
-  measureSmoothness(imagePath) {
-    return { smoothness: 0.40, detail: "simulated" };
-  },
-
-  /**
-   * Measure subject-to-frame ratio (0.0 = no subject, 1.0 = fills frame).
-   * Production: foreground segmentation, compute bounding box area / total area.
-   */
-  measureSubjectRatio(imagePath) {
-    return { ratio: 0.25, detail: "simulated" };
-  },
-};
+let _analyzer = null;
 
 /**
  * Inject a custom image analyzer (for testing or alternative backends).
@@ -107,6 +67,17 @@ function setAnalyzer(analyzer) {
 /** Get current analyzer (for inspection). */
 function getAnalyzer() {
   return _analyzer;
+}
+
+function buildUnavailableRuleResult(reason = "RULE_ANALYZER_UNAVAILABLE") {
+  return {
+    status: "UNAVAILABLE",
+    source: "unavailable",
+    rule_score: null,
+    checks: [],
+    issues: [reason],
+    verdict: "UNAVAILABLE",
+  };
 }
 
 // ===================================================================
@@ -318,6 +289,9 @@ function runAllRules(imagePath) {
   if (!imagePath) {
     throw new Error("[RULE_CRITIC] imagePath is required");
   }
+  if (!_analyzer) {
+    return buildUnavailableRuleResult();
+  }
 
   const checks = [
     checkNegativeSpace(imagePath),
@@ -373,20 +347,14 @@ function runAllRules(imagePath) {
 // ===================================================================
 
 module.exports = {
-  // Main entry
   runAllRules,
-
-  // Individual checks
+  buildUnavailableRuleResult,
   checkNegativeSpace,
   checkSymmetry,
   checkTextureVariation,
   checkSurfaceSmoothness,
   checkSubjectRatio,
-
-  // Analyzer injection
   setAnalyzer,
   getAnalyzer,
-
-  // Thresholds (read-only)
   THRESHOLDS,
 };

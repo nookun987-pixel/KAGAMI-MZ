@@ -1,0 +1,148 @@
+{
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T14:11:29.456Z"
+  },
+  "failureRoute": {
+    "failure_type": "canon_drift",
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "canon_lock_boost",
+    "repair_class": "canon",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "canon",
+    "recovery_mode": "STANDARD_RECOVERY",
+    "current_attempt": 2,
+    "max_attempts": 2,
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "canon_lock_boost",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260408_008",
+      "parent_job_id": "AUTO_20260408_008_R02",
+      "current_attempt": 2,
+      "next_attempt": null
+    },
+    "quality_failure_packet": {
+      "supported_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "FUNCTIONAL_FORM_WEAK",
+        "OBJECT_CENTRALITY_WEAK",
+        "SYMBOLIC_FRAMING",
+        "FASHION_COMPOSITION",
+        "GENERIC_OBJECT",
+        "WEAK_IDENTITY",
+        "MATERIAL_TOO_CLEAN",
+        "CG_PERFECTION",
+        "PRODUCT_RENDER_LOOK",
+        "DECORATIVE_FORM",
+        "LIGHTWEIGHT_OBJECT",
+        "TEXTURE_ONLY_FRAME",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC",
+        "MATERIAL_RESIN",
+        "TOY_READ",
+        "SURFACE_TOO_SMOOTH",
+        "SILHOUETTE_NOISY",
+        "CANON_DRIFT",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE"
+      ],
+      "primary_failure_code": "CANON_DRIFT",
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "secondary_failure_codes": [],
+      "repair_class": "canon",
+      "quality_score": 0.8,
+      "score": 0.8,
+      "judge_summary": {
+        "status": "REJECT",
+        "notes": "The helmet design strongly evokes a Space Marine aesthetic but incorporates non-standard elements such as prominent headphones and gas mask filters, indicating a significant canon drift. Additionally, there is unreadable placeholder text in the bottom left corner.",
+        "failure_codes": [
+          "CANON_DRIFT"
+        ]
+      },
+      "validator_summary": {
+        "passed": false,
+        "signals": [
+          "live_judge_fail",
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "live_judge_fail",
+          "CANON_DRIFT"
+        ]
+      },
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "patch_targets": [],
+      "job_id": "AUTO_20260408_008_R02",
+      "attempt": 2,
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008_R02\\output.png",
+        "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_008_R02\\judge_output.json"
+      },
+      "pass": false,
+      "critical_failure": true
+    },
+    "repair_patch_packet": {
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "repair_class": "canon",
+      "recovery_mode": "STANDARD_RECOVERY",
+      "failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "primary_failure_codes": [
+        "CANON_DRIFT"
+      ],
+      "patch_targets": [],
+      "prompt_patch": {
+        "positive_additions": [],
+        "negative_additions": [
+          "off-canon drift"
+        ]
+      },
+      "canon_reinforcements": [],
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": []
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": false,
+      "repair_class": "canon",
+      "decision_reason": "Repeated quality failure persisted: CANON_DRIFT",
+      "hard_stop": true,
+      "repeated_failure_code": "CANON_DRIFT",
+      "proof_blocked": false
+    },
+    "notes": [
+      "Max retry cap reached."
+    ],
+    "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_008_R02\\attempt-02\\repair_patch_packet.json"
+  }
+}

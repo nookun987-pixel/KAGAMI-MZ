@@ -16,6 +16,7 @@ const fs = require("fs");
 const path = require("path");
 
 const { runObjectDefinitionLane, extractSpecInheritance } = require("./object_definition_bridge");
+const { applyObjectDefinitionPromptOverride, getRenderPromptFields } = require("../orchestrator");
 
 let passed = 0;
 let failed = 0;
@@ -195,6 +196,36 @@ console.log("\n=== TEST D: MASK_MACRO live-style dry run ===");
 
   // Cleanup
   fs.rmSync(runDir, { recursive: true, force: true });
+}
+
+// =========================================================================
+// TEST E: Object Definition override reaches executeRender prompt fields
+// =========================================================================
+console.log("\n=== TEST E: Object Definition override reaches executeRender fields ===");
+{
+  const objDefResult = runObjectDefinitionLane(
+    "engineered ceremonial mask artifact, matte ceramic, non-human object",
+    { shot_type: "MASK_MACRO", lane: "mask" }
+  );
+  assert(objDefResult.verdict === "PASS", "object definition returns PASS", objDefResult.verdict);
+
+  const inheritance = extractSpecInheritance(objDefResult.object_spec);
+  const promptPackage = {
+    structured_prompt: "OLD_STRUCTURED_PROMPT",
+    positivePrompt: "OLD_POSITIVE_PROMPT",
+    negative_prompt: "OLD_NEGATIVE_PROMPT",
+    negativePrompt: "OLD_NEGATIVE_ALIAS",
+  };
+
+  applyObjectDefinitionPromptOverride(promptPackage, objDefResult, inheritance);
+  const renderPrompts = getRenderPromptFields(promptPackage);
+
+  assert(promptPackage.structured_prompt === objDefResult.compiled_prompt, "structured_prompt overridden");
+  assert(promptPackage.positivePrompt === objDefResult.compiled_prompt, "positivePrompt overridden for executeRender");
+  assert(promptPackage.negative_prompt === objDefResult.compiled_negative, "negative_prompt overridden");
+  assert(promptPackage.negativePrompt === objDefResult.compiled_negative, "negativePrompt overridden for executeRender");
+  assert(renderPrompts.prompt === objDefResult.compiled_prompt, "render payload prompt uses object definition compiled prompt");
+  assert(renderPrompts.negative_prompt === objDefResult.compiled_negative, "render payload negative uses object definition compiled negative");
 }
 
 // =========================================================================

@@ -1,0 +1,334 @@
+{
+  "job_id": "AUTO_20260407_006",
+  "attempt_index": 1,
+  "options": {
+    "timeoutMs": 240000,
+    "pollIntervalMs": 2000,
+    "staleClaimMs": 300000
+  },
+  "intent": {
+    "intent_type": "image",
+    "goal": "ceramic mask hero frame live quality proof after judge wiring",
+    "constraints": [],
+    "priority": "normal",
+    "signals": {
+      "source": "direct_input",
+      "classified_by": "keyword_router"
+    }
+  },
+  "taskSpec": {
+    "job_id": "AUTO_20260407_006",
+    "lane": "image",
+    "objective": "ceramic mask hero frame live quality proof after judge wiring",
+    "constraints": [],
+    "priority": "normal",
+    "execution_plan": {
+      "steps": [
+        "prepare_prompt",
+        "dispatch_render",
+        "validate_output"
+      ]
+    },
+    "success_criteria": [
+      "real output exists",
+      "validator pass",
+      "final judge allow"
+    ],
+    "context": {
+      "planned_at": "2026-04-07T12:19:39.138Z",
+      "planner_version": "mikage_v2_control_plane",
+      "signals": {
+        "source": "direct_input",
+        "classified_by": "keyword_router"
+      },
+      "memory_hints": []
+    }
+  },
+  "runRecord": {
+    "job_id": "AUTO_20260407_006",
+    "lane": "image",
+    "state": "completed",
+    "timeline": [
+      {
+        "state": "started",
+        "timestamp": "2026-04-07T12:19:39.140Z"
+      },
+      {
+        "state": "running",
+        "timestamp": "2026-04-07T12:19:39.140Z"
+      },
+      {
+        "state": "completed",
+        "timestamp": "2026-04-07T12:20:21.803Z"
+      }
+    ]
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260407_006",
+    "lane": "image",
+    "status": "completed",
+    "summary": "Image lane completed through Drive queue and Colab output contract.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_006.json"
+      },
+      {
+        "type": "claim_json",
+        "label": "claim_json",
+        "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_006.claim.json"
+      },
+      {
+        "type": "result_json",
+        "label": "result_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_006\\result.json"
+      },
+      {
+        "type": "image",
+        "label": "output_image",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_006\\output.png"
+      }
+    ],
+    "validator_result": {
+      "passed": true,
+      "signals": [],
+      "issues": [],
+      "judge_output": null,
+      "judge_output_path": null,
+      "critic_merge": {
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "quality_score": null,
+        "overall_score": null,
+        "failure_codes": [],
+        "notes": [
+          "LIVE_JUDGE_UNAVAILABLE"
+        ],
+        "judge_output_path": null,
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "unavailable",
+          "source": "unavailable",
+          "status": "UNAVAILABLE",
+          "vision_score": null,
+          "quality_score": null,
+          "failure_codes": [],
+          "issues": [
+            "LIVE_JUDGE_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE",
+          "raw": null
+        }
+      },
+      "proof_blocked": true
+    },
+    "error": null,
+    "started_at": "2026-04-07T12:19:39.140Z",
+    "finished_at": "2026-04-07T12:20:21.803Z",
+    "metadata": {
+      "queue_state": "completed",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T12:19:39.232Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_006.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_006.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_006\\result.json",
+      "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_006\\judge_output.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_006\\output.png",
+      "claim": {
+        "job_id": "AUTO_20260407_006",
+        "worker_id": "colab-worker-01",
+        "claimed_at": "2026-04-07T12:19:58.256016Z",
+        "status": "claimed"
+      },
+      "result": {
+        "job_id": "AUTO_20260407_006",
+        "status": "completed",
+        "validator_result": {
+          "passed": true,
+          "signals": []
+        },
+        "artifacts": [
+          {
+            "type": "image",
+            "path": "outputs/AUTO_20260407_006/output.png"
+          }
+        ],
+        "started_at": "2026-04-07T12:19:58.261651Z",
+        "finished_at": "2026-04-07T12:19:59.028365Z",
+        "metadata": {
+          "model_id": "stabilityai/sdxl-turbo",
+          "device": "cuda",
+          "seed": 42,
+          "num_inference_steps": 4,
+          "guidance_scale": 0
+        }
+      },
+      "judge_output": null,
+      "critic_merge": {
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "quality_score": null,
+        "overall_score": null,
+        "failure_codes": [],
+        "notes": [
+          "LIVE_JUDGE_UNAVAILABLE"
+        ],
+        "judge_output_path": null,
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "unavailable",
+          "source": "unavailable",
+          "status": "UNAVAILABLE",
+          "vision_score": null,
+          "quality_score": null,
+          "failure_codes": [],
+          "issues": [
+            "LIVE_JUDGE_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE",
+          "raw": null
+        }
+      },
+      "proof_blocked": true,
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260407_006",
+    "lane": "image",
+    "state": "completed",
+    "queue_state": "completed",
+    "issues": [],
+    "fatal_issues": [],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "image"
+      ],
+      "validator_signals": [],
+      "issues": [],
+      "fatal_issues": [],
+      "success": true
+    },
+    "monitored_at": "2026-04-07T12:20:21.807Z"
+  },
+  "decision": {
+    "decision": "ALLOW",
+    "reasons": [
+      "Lane completion policy satisfied."
+    ],
+    "timestamp": "2026-04-07T12:20:21.807Z"
+  },
+  "qualityFailurePacket": null,
+  "failureRoute": {
+    "failure_type": "",
+    "responsible_module": "",
+    "repair_strategy": "",
+    "repair_class": "",
+    "retry_allowed": false,
+    "repairable": false
+  },
+  "repairPatchPacket": null,
+  "qualityRetryDecision": {
+    "retry_allowed": false,
+    "repair_class": "",
+    "decision_reason": "QUALITY_PROOF_BLOCKED_NO_LIVE_JUDGE",
+    "hard_stop": true,
+    "repeated_failure_code": "",
+    "proof_blocked": true
+  },
+  "qualityScoreDelta": {
+    "previous_score": null,
+    "current_score": 0,
+    "delta": null,
+    "improved": null
+  },
+  "proof_blocked": true,
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "",
+    "current_attempt": 1,
+    "max_attempts": 2,
+    "responsible_module": "",
+    "repair_strategy": "",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260407_006",
+      "parent_job_id": "AUTO_20260407_006",
+      "current_attempt": 1,
+      "next_attempt": null
+    },
+    "quality_failure_packet": {},
+    "repair_patch_packet": {
+      "repair_class": "",
+      "failure_codes": [],
+      "prompt_patch": {
+        "positive_additions": [],
+        "negative_additions": []
+      },
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": []
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": false,
+      "repair_class": "",
+      "decision_reason": "QUALITY_PROOF_BLOCKED_NO_LIVE_JUDGE",
+      "hard_stop": true,
+      "repeated_failure_code": "",
+      "proof_blocked": true
+    },
+    "notes": [
+      "QUALITY_PROOF_BLOCKED_NO_LIVE_JUDGE"
+    ]
+  }
+}

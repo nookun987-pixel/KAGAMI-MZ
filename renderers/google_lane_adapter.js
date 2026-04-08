@@ -11,6 +11,144 @@
 const fs = require('fs');
 const path = require('path');
 const { executeRenderJob } = require('../renderers/imagen_adapter');
+const { runAllAnalyzers } = require("../analyzers/run_all_analyzers");
+const { isVLMAvailable } = require("../analyzers/vlm_semantic_analyzer");
+const { runRuleEngine } = require("../validators/mikage_rule_engine");
+const { getSpecPath } = require("../validators/load_mikage_specs");
+
+const HARD_REJECT_SIGNALS = [
+  "human_eyes_detected",
+  "pvc_plastic_read",
+  "toon_shading",
+  "magenta_neon_spill",
+  "logo_overlap_ratio",
+];
+
+function dedupeStrings(values) {
+  const seen = new Set();
+  const output = [];
+  for (const value of values || []) {
+    const normalized = String(value || '').trim();
+    if (!normalized) continue;
+    const key = normalized.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push(normalized);
+  }
+  return output;
+}
+
+function writeJson(filePath, payload) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, JSON.stringify(payload, null, 2));
+  return filePath;
+}
+
+function collectBlockingUnknownRules(ruleResults) {
+  if (String(process.env.MIKAGE_STRICT_UNKNOWN_RULES || "false").toLowerCase() !== "true") {
+    return [];
+  }
+  return (ruleResults || [])
+    .filter((result) => result.status === "UNKNOWN" && (result.priority === "CRITICAL" || result.priority === "ABSOLUTE"))
+    .map((result) => result.rule_id);
+}
+
+function collectCriticalFailedRules(ruleResults) {
+  return (ruleResults || [])
+    .filter((result) => result.status === "FAIL" && (result.priority === "CRITICAL" || result.priority === "ABSOLUTE"))
+    .map((result) => result.rule_id);
+}
+
+function collectHardRejectSignals(signals = {}) {
+  return HARD_REJECT_SIGNALS.filter((key) => Number(signals[key] || 0) > 0);
+}
+
+function isRecoveredPostValidationEnabled() {
+  return String(process.env.MIKAGE_ENABLE_POSTVALIDATION || "true").toLowerCase() !== "false";
+}
+
+async function runRecoveredPostValidation(outputPath, artifactPaths = {}) {
+  const signals = await runAllAnalyzers(outputPath, {
+    stop_before_semantics_on_hard_fail: true,
+  });
+  const lane = artifactPaths.lane || artifactPaths.shot_type || "unknown";
+  const ruleEngine = runRuleEngine({
+    specPath: getSpecPath("image_control"),
+    signals,
+    lane,
+  });
+  const hardRejectHits = collectHardRejectSignals(signals);
+  const criticalFailedRules = collectCriticalFailedRules(ruleEngine.rule_results);
+  const blockingUnknownRules = collectBlockingUnknownRules(ruleEngine.rule_results);
+  const failedChecks = dedupeStrings([...(ruleEngine.failed_rules || []), ...hardRejectHits]);
+  const criticalFailures = dedupeStrings([...criticalFailedRules, ...hardRejectHits]);
+  const semanticVlmExecuted =
+    isVLMAvailable() &&
+    signals._vlm_status !== "unavailable" &&
+    signals._vlm_status !== "disabled" &&
+    signals._vlm_status !== "skipped_due_to_hard_fail" &&
+    signals._vlm_status !== "unconfigured";
+  const semanticRejectSignals = dedupeStrings(ruleEngine.semantic_reject_signals || []);
+  const canonHardFailures = dedupeStrings(ruleEngine.canon_hard_failures || []);
+  const semanticBlocking = semanticVlmExecuted && semanticRejectSignals.length > 0;
+  const canonBlocking = canonHardFailures.length > 0 || criticalFailures.length > 0 || blockingUnknownRules.length > 0;
+  const pass =
+    fs.existsSync(outputPath) &&
+    ruleEngine.passed === true &&
+    semanticBlocking === false &&
+    canonBlocking === false;
+  const semanticMode = signals._vlm_mode || (isVLMAvailable() ? "local+semantic" : "local_only");
+  const payload = {
+    stage: "post_render_image",
+    verdict: pass ? "PASS" : "REJECT",
+    validator_executed: true,
+    validator_verdict: ruleEngine.validator_verdict || (pass ? "PASS" : "REJECT"),
+    validation_mode: semanticMode,
+    semantic_vlm_executed: semanticVlmExecuted,
+    semantic_vlm_mode: semanticMode,
+    semantic_reject_signals: semanticRejectSignals,
+    semantic_summary: {
+      status: signals._vlm_status || "unknown",
+      mode: semanticMode,
+      local_only: semanticVlmExecuted === false,
+      executed: semanticVlmExecuted,
+      reject_signal_count: semanticRejectSignals.length,
+    },
+    semantic_blocking: semanticBlocking,
+    canon_hard_failures: canonHardFailures,
+    canon_blocking: canonBlocking,
+    failed_checks: failedChecks,
+    critical_failures: criticalFailures,
+    forbidden_hits: hardRejectHits,
+    hard_reject_hits: hardRejectHits,
+    blocking_unknown_rules: blockingUnknownRules,
+    analyzer_signals: signals,
+    analyzer_summary: {
+      vlm_backend_ready: isVLMAvailable(),
+      vlm_status: signals._vlm_status || "unknown",
+      analyzer_status: signals._analyzer_status || {},
+    },
+    missing_signals: (ruleEngine.rule_results || []).flatMap((result) => result.missing_signals || []),
+    rule_engine: {
+      decision: ruleEngine.decision,
+      passed: ruleEngine.passed,
+      block_level: ruleEngine.block_level,
+      failed_rules: ruleEngine.failed_rules,
+      unknown_rules: ruleEngine.unknown_rules,
+      stats: ruleEngine.stats,
+      rule_results: ruleEngine.rule_results,
+    },
+    source_files: {
+      image_control_spec: getSpecPath("image_control"),
+    },
+  };
+
+  if (artifactPaths.run_dir) {
+    writeJson(path.join(artifactPaths.run_dir, 'post_validation.json'), payload);
+    writeJson(path.join(artifactPaths.run_dir, 'validation.json'), payload);
+  }
+  return payload;
+}
 
 /**
  * Build render job payload from prompt package
@@ -139,9 +277,38 @@ async function executeGoogleRender(job, promptPackage, artifactPaths) {
     console.error(`[GOOGLE_RENDER] HARD FAIL: ${resultBundle.error?.message || 'No output'}`);
     throw new Error(`Render failed: ${resultBundle.error?.message || 'Unknown error'}`);
   }
+
+  const postValidation = isRecoveredPostValidationEnabled()
+    ? await runRecoveredPostValidation(renderResult.output_file_path, {
+        ...(artifactPaths || {}),
+        lane: job.lane || job.shot_type || promptPackage.shot_type || "unknown",
+        shot_type: promptPackage.shot_type || job.shot_type || job.lane || "unknown",
+      })
+    : {
+        stage: "post_render_image",
+        verdict: "PASS",
+        validator_executed: false,
+        validation_mode: "disabled",
+      };
+  if (postValidation.verdict !== "PASS") {
+    return {
+      job_id: job.job_id,
+      status: "FAIL",
+      result_type: "execution_dispatch",
+      output_file_path: renderResult.output_file_path,
+      output_files: renderResult.output_file_path ? [renderResult.output_file_path] : [],
+      error: "LOCAL_VALIDATION_REJECT",
+      error_reason: `Local validation rejected render: ${(postValidation.critical_failures || postValidation.failed_checks || []).join(", ") || "UNKNOWN"}`,
+      post_validation: postValidation,
+      _raw_response: resultBundle.render_response_raw,
+    };
+  }
   
   console.log(`[GOOGLE_RENDER] Success: ${resultBundle.output_files.length} files`);
-  return renderResult;
+  return {
+    ...renderResult,
+    post_validation: postValidation,
+  };
 }
 
 /**

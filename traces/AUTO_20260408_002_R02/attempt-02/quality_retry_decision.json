@@ -1,0 +1,8 @@
+{
+  "retry_allowed": false,
+  "repair_class": "quality",
+  "decision_reason": "Repeated quality failure persisted: ABSTRACT_COMPOSITION",
+  "hard_stop": true,
+  "repeated_failure_code": "ABSTRACT_COMPOSITION",
+  "proof_blocked": false
+}

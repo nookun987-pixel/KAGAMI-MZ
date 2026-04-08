@@ -1,0 +1,136 @@
+{
+  "job_id": "AUTO_20260408_050",
+  "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+  "variant_family": "HERO_LOCK",
+  "base_dna_id": "DNA_AUTO_20260408_015",
+  "supported_failure_codes": [
+    "TOO_SIMILAR",
+    "DRIFT_VIOLATION",
+    "IDENTITY_LOSS",
+    "MATERIAL_BREAK",
+    "SILHOUETTE_BREAK",
+    "SIGNATURE_DRIFT",
+    "EDGE_TOO_CLEAN",
+    "MATERIAL_UNIFORM",
+    "FORM_INCONSISTENT",
+    "COLOR_DRIFT",
+    "GENERIC_OBJECT",
+    "WEAK_IDENTITY",
+    "MATERIAL_TOO_CLEAN",
+    "CG_PERFECTION",
+    "PRODUCT_RENDER_LOOK",
+    "DECORATIVE_FORM",
+    "LIGHTWEIGHT_OBJECT",
+    "MATERIAL_PLASTIC",
+    "MATERIAL_RESIN",
+    "SURFACE_TOO_SMOOTH",
+    "OBJECT_UNREADABLE",
+    "ABSTRACT_COMPOSITION",
+    "FUNCTIONAL_FORM_WEAK",
+    "OBJECT_CENTRALITY_WEAK",
+    "SYMBOLIC_FRAMING",
+    "FASHION_COMPOSITION"
+  ],
+  "allowed_differences": [
+    "silhouette_variant:brow_guard_delta",
+    "wear_level:medium",
+    "microtexture_profile:striated_erosion",
+    "seam_intensity:visible",
+    "asymmetry_tolerance:tight"
+  ],
+  "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+  "normalized_input_hash": "19DB20A6297F6C625A596B3BDAFE1D2DF071EF9E32AC84C029E7797F5E4D5950",
+  "normalized_judge_input": {
+    "allowed_differences": [
+      "asymmetry_tolerance:tight",
+      "microtexture_profile:striated_erosion",
+      "seam_intensity:visible",
+      "silhouette_variant:brow_guard_delta",
+      "wear_level:medium"
+    ],
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "contract": {
+      "drift_codes": [
+        "SIGNATURE_DRIFT",
+        "COLOR_DRIFT",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION",
+        "SYMBOLIC_FRAMING",
+        "FASHION_COMPOSITION",
+        "OBJECT_CENTRALITY_WEAK"
+      ],
+      "identity_codes": [
+        "GENERIC_OBJECT",
+        "WEAK_IDENTITY",
+        "PRODUCT_RENDER_LOOK",
+        "DECORATIVE_FORM",
+        "LIGHTWEIGHT_OBJECT"
+      ],
+      "material_codes": [
+        "MATERIAL_PLASTIC",
+        "MATERIAL_RESIN",
+        "SURFACE_TOO_SMOOTH",
+        "MATERIAL_TOO_CLEAN",
+        "MATERIAL_UNIFORM",
+        "CG_PERFECTION"
+      ],
+      "silhouette_codes": [
+        "OBJECT_UNREADABLE",
+        "FUNCTIONAL_FORM_WEAK",
+        "FORM_INCONSISTENT",
+        "SILHOUETTE_BREAK",
+        "SILHOUETTE_NOISY"
+      ]
+    },
+    "lane": "image",
+    "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+    "render_mode": "HERO_LOCK",
+    "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+    "variant_family": "HERO_LOCK",
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+    "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+  },
+  "observed_verdict": "REJECT_DRIFT",
+  "raw_failure_codes": [
+    "ABSTRACT_COMPOSITION",
+    "CANON_DRIFT"
+  ],
+  "consistency_control": {
+    "cache_key": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E:19DB20A6297F6C625A596B3BDAFE1D2DF071EF9E32AC84C029E7797F5E4D5950",
+    "cache_path": "D:\\KAGAMI-MZ\\memory\\judge_cache.json",
+    "consistency_status": "HISTORICAL_CONSENSUS",
+    "historical_observation_count": 126,
+    "observation_counts": {
+      "REJECT_DRIFT": 65,
+      "PASS_CANON_VARIANT": 61
+    },
+    "unstable_judge": true
+  },
+  "verdict": "PASS_CANON_VARIANT",
+  "repeatability_confirmed": false,
+  "dna_retention": {
+    "passed": true,
+    "blocked_by": []
+  },
+  "variant_distinctness": {
+    "passed": true,
+    "sibling_collision_variant_id": ""
+  },
+  "drift_violation": {
+    "passed": true,
+    "codes": []
+  },
+  "identity_loss": {
+    "passed": true,
+    "codes": []
+  },
+  "material_integrity": {
+    "passed": true,
+    "codes": []
+  },
+  "silhouette_integrity": {
+    "passed": true,
+    "codes": []
+  },
+  "score": 0.7
+}

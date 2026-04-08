@@ -1,0 +1,84 @@
+{
+  "control_hub": {
+    "path": "MIKAGE/index.js",
+    "responsibility": "Orchestrate all modules in strict order and own the only cross-module flow.",
+    "inputs": [
+      "user input",
+      "runtime options"
+    ],
+    "outputs": [
+      "final run result",
+      "trace artifacts",
+      "memory writes"
+    ]
+  },
+  "intake_module": {
+    "path": "MIKAGE/modules/intake/index.js",
+    "responsibility": "Normalize input, build task spec, inject canon and variant rules.",
+    "inputs": [
+      "user input",
+      "memory runtime"
+    ],
+    "outputs": [
+      "intent",
+      "taskSpec",
+      "canonMemory",
+      "approvedVariantRegistry"
+    ]
+  },
+  "generation_module": {
+    "path": "MIKAGE/modules/generation/index.js",
+    "responsibility": "Dispatch the live image lane and return raw generation output.",
+    "inputs": [
+      "taskSpec",
+      "generation runtime options"
+    ],
+    "outputs": [
+      "runRecord",
+      "laneResult"
+    ]
+  },
+  "validation_module": {
+    "path": "MIKAGE/modules/validation/index.js",
+    "responsibility": "Run analyzers, enforce hard validation rules, and prepare validation signals.",
+    "inputs": [
+      "taskSpec",
+      "laneResult",
+      "runRecord"
+    ],
+    "outputs": [
+      "monitorReport",
+      "qualityFailurePacket",
+      "variantJudgeOutput",
+      "variantDeltaReport"
+    ]
+  },
+  "decision_module": {
+    "path": "MIKAGE/modules/decision/index.js",
+    "responsibility": "Produce final decision, deterministic judge override, retry decision, and repair action.",
+    "inputs": [
+      "taskSpec",
+      "intent",
+      "monitorReport",
+      "qualityFailurePacket",
+      "variantJudgeOutput"
+    ],
+    "outputs": [
+      "effectiveDecision",
+      "qualityRetryDecision",
+      "repairAction"
+    ]
+  },
+  "memory_module": {
+    "path": "MIKAGE/modules/memory/index.js",
+    "responsibility": "Expose runtime memory interface and persistence hook for current run outputs. Long-term ingestion remains placeholder.",
+    "inputs": [
+      "memory options",
+      "final variant decision payload"
+    ],
+    "outputs": [
+      "memory runtime",
+      "variant persistence write"
+    ]
+  }
+}

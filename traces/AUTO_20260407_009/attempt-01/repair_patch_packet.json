@@ -1,0 +1,93 @@
+{
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "repair_class": "quality",
+  "recovery_mode": "STRONG_OBJECT_RECOVERY",
+  "failure_codes": [
+    "OBJECT_UNREADABLE",
+    "CERAMIC_NOT_CONVINCING",
+    "MATERIAL_PLASTIC"
+  ],
+  "primary_failure_codes": [
+    "OBJECT_UNREADABLE",
+    "CERAMIC_NOT_CONVINCING"
+  ],
+  "patch_targets": [
+    "object_form",
+    "silhouette",
+    "whole_subject"
+  ],
+  "prompt_patch": {
+    "positive_additions": [
+      "force literal manufactured object as primary subject",
+      "increase object legibility",
+      "force coherent manufacturable silhouette",
+      "force identifiable engineered form",
+      "clear readable hero object",
+      "single dominant subject silhouette",
+      "convincing fired ceramic surface",
+      "ceramic glaze material read",
+      "front dominant silhouette",
+      "fixed narrow eye cavity ratio",
+      "central forehead spine",
+      "layered jaw-vent geometry",
+      "dark matte technical ceramic shell",
+      "micro-abrasion wear",
+      "subtle ceramic micro-pitting",
+      "uneven reflectance",
+      "single mounted mask artifact",
+      "industrial frame backdrop",
+      "centered hero framing",
+      "no turntable board",
+      "no full body mech"
+    ],
+    "negative_additions": [
+      "no fragmented subject",
+      "no unreadable crop",
+      "no broken form dominance",
+      "multi-angle board",
+      "generic product render",
+      "full body humanoid mech",
+      "white glossy plastic shell"
+    ]
+  },
+  "canon_reinforcements": [
+    "object readability over aesthetics",
+    "manufactured form over ambiguity"
+  ],
+  "canon_patch": {
+    "dominant_traits": [],
+    "supportive_traits": [],
+    "blocked_traits": [],
+    "must_have_traits": [],
+    "dominant_reference": {
+      "job_id": "AUTO_20260408_015",
+      "score": 0.9,
+      "locked_at": "2026-04-07T14:18:55.657Z",
+      "silhouette_traits": [
+        "front dominant silhouette",
+        "fixed narrow eye cavity ratio",
+        "central forehead spine",
+        "layered jaw-vent geometry"
+      ],
+      "material_traits": [
+        "dark matte technical ceramic shell",
+        "micro-abrasion wear",
+        "subtle ceramic micro-pitting",
+        "uneven reflectance"
+      ],
+      "framing_traits": [
+        "single mounted mask artifact",
+        "industrial frame backdrop",
+        "centered hero framing",
+        "no turntable board",
+        "no full body mech"
+      ],
+      "blocked_traits": [
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell"
+      ]
+    }
+  }
+}

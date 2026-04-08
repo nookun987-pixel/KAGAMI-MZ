@@ -1,0 +1,56 @@
+{
+  "job_id": "AUTO_20260408_034",
+  "attempt_index": 1,
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T17:06:51.438Z"
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260408_034",
+    "lane": "image",
+    "state": "rejected",
+    "queue_state": "completed",
+    "issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "fatal_issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "fatal_issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T17:06:51.438Z"
+  }
+}

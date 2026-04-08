@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "sanitized_at": "2026-04-06T17:17:49.546Z",
+  "sanitation_version": "v2",
+  "historical_only": [],
+  "quarantined": [
+    {
+      "ref_id": "kitsune_noh_mask",
+      "object_class": "mask",
+      "cultural_origin": "Japanese Noh theater",
+      "canonical_name": "Kitsune (Fox) Noh Mask",
+      "key_features": [
+        "elongated fox snout",
+        "narrow slit eyes angled upward",
+        "pointed ear forms at top",
+        "bilateral symmetry",
+        "smooth curved cheekbones",
+        "visible mouth slit or teeth suggestion",
+        "forehead ridge or brow line"
+      ],
+      "material_tradition": [
+        "painted wood",
+        "lacquered wood",
+        "porcelain adaptation"
+      ],
+      "silhouette_landmarks": [
+        "pointed ears",
+        "snout taper",
+        "ovoid face boundary"
+      ],
+      "common_ai_failures": [
+        "generates human face instead of fox mask",
+        "loses snout, becomes generic oval",
+        "adds realistic fur texture instead of hard surface",
+        "merges with background into abstract texture"
+      ],
+      "design_notes": "The kitsune mask must always read as a manufactured artifact — not an animal face. It is a designed object with clear edges, rim thickness, and surface finish.",
+      "sanitation": {
+        "status": "quarantine",
+        "reasons": [
+          "contamination_detected"
+        ],
+        "contamination_hits": [
+          "kitsune",
+          "fox_ear",
+          "creature",
+          "human_face_bias",
+          "bad_background_drift"
+        ]
+      }
+    },
+    {
+      "ref_id": "hannya_mask",
+      "object_class": "mask",
+      "cultural_origin": "Japanese Noh theater",
+      "canonical_name": "Hannya Demon Mask",
+      "key_features": [
+        "two sharp horns",
+        "wide glaring eyes",
+        "open mouth with visible fangs",
+        "sharp cheekbone ridges",
+        "bilateral symmetry",
+        "expression of rage and sorrow"
+      ],
+      "material_tradition": [
+        "painted wood",
+        "lacquered wood"
+      ],
+      "silhouette_landmarks": [
+        "horns at crown",
+        "wide jaw with open mouth",
+        "angular cheeks"
+      ],
+      "common_ai_failures": [
+        "generates generic demon face",
+        "loses horn definition",
+        "becomes too organic/fleshy",
+        "mouth reads as scream rather than carved opening"
+      ],
+      "design_notes": "Hannya is a mask, not a face. Carved wood or ceramic. The horns and mouth opening are structural features, not organic.",
+      "sanitation": {
+        "status": "quarantine",
+        "reasons": [
+          "contamination_detected"
+        ],
+        "contamination_hits": [
+          "horn",
+          "creature",
+          "human_face_bias"
+        ]
+      }
+    }
+  ],
+  "dead": []
+}

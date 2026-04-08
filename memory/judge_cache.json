@@ -1,0 +1,1628 @@
+{
+  "entries": {
+    "D9457936C12A2C3D064D94B316DB4687976A25D37493DD760B79E4B9940396A3:B4454B3E9FC5FAC0608087371C723A95E516233015CC6FD533726D34907D7D30": {
+      "cache_key": "D9457936C12A2C3D064D94B316DB4687976A25D37493DD760B79E4B9940396A3:B4454B3E9FC5FAC0608087371C723A95E516233015CC6FD533726D34907D7D30",
+      "image_hash": "D9457936C12A2C3D064D94B316DB4687976A25D37493DD760B79E4B9940396A3",
+      "normalized_input_hash": "B4454B3E9FC5FAC0608087371C723A95E516233015CC6FD533726D34907D7D30",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:tight",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "silhouette_variant:anchor",
+          "wear_level:low"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "D9457936C12A2C3D064D94B316DB4687976A25D37493DD760B79E4B9940396A3",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "PASS_CANON_VARIANT",
+      "consistency_status": "CACHE_HIT",
+      "observation_counts": {
+        "PASS_CANON_VARIANT": 6
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260408_001",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_001",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_004",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_001",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_001",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_004",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        }
+      ],
+      "last_job_id": "AUTO_20260408_004"
+    },
+    "8A0635F900CF950FC4A54E3A3B6C453661B1B91ED0EC7D8943E37E2BAFD260BB:7018A1A1A7CA739B1F830DA9D9F21DCC05D7BAFBF178F597115F8BEE927777DC": {
+      "cache_key": "8A0635F900CF950FC4A54E3A3B6C453661B1B91ED0EC7D8943E37E2BAFD260BB:7018A1A1A7CA739B1F830DA9D9F21DCC05D7BAFBF178F597115F8BEE927777DC",
+      "image_hash": "8A0635F900CF950FC4A54E3A3B6C453661B1B91ED0EC7D8943E37E2BAFD260BB",
+      "normalized_input_hash": "7018A1A1A7CA739B1F830DA9D9F21DCC05D7BAFBF178F597115F8BEE927777DC",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:tight",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "8A0635F900CF950FC4A54E3A3B6C453661B1B91ED0EC7D8943E37E2BAFD260BB",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "PASS_CANON_VARIANT",
+      "consistency_status": "CACHE_HIT",
+      "observation_counts": {
+        "PASS_CANON_VARIANT": 2
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260408_002",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_002",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        }
+      ],
+      "last_job_id": "AUTO_20260408_002"
+    },
+    "A5C40DEA81C211A995C3DD1D5972D60F70BEB9AB3EE56CB2FED2D4639480E5C4:DE7A343F8A4418D5021C98B1848DC0A93EF65E82C10B26DAF4A06D45401A2349": {
+      "cache_key": "A5C40DEA81C211A995C3DD1D5972D60F70BEB9AB3EE56CB2FED2D4639480E5C4:DE7A343F8A4418D5021C98B1848DC0A93EF65E82C10B26DAF4A06D45401A2349",
+      "image_hash": "A5C40DEA81C211A995C3DD1D5972D60F70BEB9AB3EE56CB2FED2D4639480E5C4",
+      "normalized_input_hash": "DE7A343F8A4418D5021C98B1848DC0A93EF65E82C10B26DAF4A06D45401A2349",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:balanced",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "A5C40DEA81C211A995C3DD1D5972D60F70BEB9AB3EE56CB2FED2D4639480E5C4",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "PASS_CANON_VARIANT",
+      "consistency_status": "CACHE_HIT",
+      "observation_counts": {
+        "PASS_CANON_VARIANT": 2
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260408_003",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_003",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        }
+      ],
+      "last_job_id": "AUTO_20260408_003"
+    },
+    "4A48E6B6B3CD6DC1760E62A9D1C58970F1A7ABFBE4B024DA373D0FFB6098FE05:7180FE5F7AEA9F4B328368DB6ADE2BFA595CF6131EA0029FFA00670B2FCCC866": {
+      "cache_key": "4A48E6B6B3CD6DC1760E62A9D1C58970F1A7ABFBE4B024DA373D0FFB6098FE05:7180FE5F7AEA9F4B328368DB6ADE2BFA595CF6131EA0029FFA00670B2FCCC866",
+      "image_hash": "4A48E6B6B3CD6DC1760E62A9D1C58970F1A7ABFBE4B024DA373D0FFB6098FE05",
+      "normalized_input_hash": "7180FE5F7AEA9F4B328368DB6ADE2BFA595CF6131EA0029FFA00670B2FCCC866",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:balanced",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:visible",
+          "silhouette_variant:cheek_notch_delta",
+          "wear_level:medium"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "4A48E6B6B3CD6DC1760E62A9D1C58970F1A7ABFBE4B024DA373D0FFB6098FE05",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_D",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "REJECT_DRIFT",
+      "consistency_status": "CACHE_HIT",
+      "observation_counts": {
+        "REJECT_DRIFT": 2
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260408_005",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "FORM_INCONSISTENT",
+            "SIGNATURE_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_005",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "FORM_INCONSISTENT",
+            "SIGNATURE_DRIFT"
+          ]
+        }
+      ],
+      "last_job_id": "AUTO_20260408_005"
+    },
+    "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E:19DB20A6297F6C625A596B3BDAFE1D2DF071EF9E32AC84C029E7797F5E4D5950": {
+      "cache_key": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E:19DB20A6297F6C625A596B3BDAFE1D2DF071EF9E32AC84C029E7797F5E4D5950",
+      "image_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+      "normalized_input_hash": "19DB20A6297F6C625A596B3BDAFE1D2DF071EF9E32AC84C029E7797F5E4D5950",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:tight",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "PASS_CANON_VARIANT",
+      "consistency_status": "HISTORICAL_CONSENSUS",
+      "observation_counts": {
+        "REJECT_DRIFT": 65,
+        "PASS_CANON_VARIANT": 61
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_042",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_042",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_043",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_042",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_043",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_044",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_042",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_043",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_044",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_048",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_042",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_043",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_044",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_048",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_049",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260407_033",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_034",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_035",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_027",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_028",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_029",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_033",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_034",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_035",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_039",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_040",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_041",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_042",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_043",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_044",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_048",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_049",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        },
+        {
+          "job_id": "AUTO_20260408_050",
+          "observed_verdict": "REJECT_DRIFT",
+          "final_verdict": "REJECT_DRIFT",
+          "raw_failure_codes": [
+            "ABSTRACT_COMPOSITION",
+            "CANON_DRIFT"
+          ]
+        }
+      ],
+      "last_job_id": "AUTO_20260408_050"
+    },
+    "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9:A645493CDD8163752CAE92BF0963065D9C8C366617BB68CB59C0F6CC97CA1C41": {
+      "cache_key": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9:A645493CDD8163752CAE92BF0963065D9C8C366617BB68CB59C0F6CC97CA1C41",
+      "image_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+      "normalized_input_hash": "A645493CDD8163752CAE92BF0963065D9C8C366617BB68CB59C0F6CC97CA1C41",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:tight",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "silhouette_variant:anchor",
+          "wear_level:low"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "PASS_CANON_VARIANT",
+      "consistency_status": "CACHE_HIT",
+      "observation_counts": {
+        "PASS_CANON_VARIANT": 15
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260408_030",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_031",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_032",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_045",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_030",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_031",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_032",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_045",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_046",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_030",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_031",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_032",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_045",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_046",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_047",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        }
+      ],
+      "last_job_id": "AUTO_20260408_047"
+    },
+    "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD:71D989446F8C7A54224628B77F9A4C1EC410987A176A256D80BFC18DDE237867": {
+      "cache_key": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD:71D989446F8C7A54224628B77F9A4C1EC410987A176A256D80BFC18DDE237867",
+      "image_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+      "normalized_input_hash": "71D989446F8C7A54224628B77F9A4C1EC410987A176A256D80BFC18DDE237867",
+      "normalized_input": {
+        "allowed_differences": [
+          "asymmetry_tolerance:balanced",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high"
+        ],
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "contract": {
+          "drift_codes": [
+            "SIGNATURE_DRIFT",
+            "COLOR_DRIFT",
+            "CANON_DRIFT",
+            "ABSTRACT_COMPOSITION",
+            "SYMBOLIC_FRAMING",
+            "FASHION_COMPOSITION",
+            "OBJECT_CENTRALITY_WEAK"
+          ],
+          "identity_codes": [
+            "GENERIC_OBJECT",
+            "WEAK_IDENTITY",
+            "PRODUCT_RENDER_LOOK",
+            "DECORATIVE_FORM",
+            "LIGHTWEIGHT_OBJECT"
+          ],
+          "material_codes": [
+            "MATERIAL_PLASTIC",
+            "MATERIAL_RESIN",
+            "SURFACE_TOO_SMOOTH",
+            "MATERIAL_TOO_CLEAN",
+            "MATERIAL_UNIFORM",
+            "CG_PERFECTION"
+          ],
+          "silhouette_codes": [
+            "OBJECT_UNREADABLE",
+            "FUNCTIONAL_FORM_WEAK",
+            "FORM_INCONSISTENT",
+            "SILHOUETTE_BREAK",
+            "SILHOUETTE_NOISY"
+          ]
+        },
+        "lane": "image",
+        "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+        "render_mode": "HERO_LOCK",
+        "shot_profile": "SHOT_PROFILE:MASK_MACRO",
+        "variant_family": "HERO_LOCK",
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+        "version": "DETERMINISTIC_VARIANT_JUDGE_V1"
+      },
+      "final_verdict": "PASS_CANON_VARIANT",
+      "consistency_status": "CACHE_HIT",
+      "observation_counts": {
+        "PASS_CANON_VARIANT": 24
+      },
+      "observations": [
+        {
+          "job_id": "AUTO_20260407_030",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_031",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_032",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_036",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_037",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_038",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_051",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_030",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_031",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_032",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_036",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_037",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_038",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_051",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_052",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_030",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_031",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260407_032",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_036",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_037",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_038",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_051",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_052",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        },
+        {
+          "job_id": "AUTO_20260408_053",
+          "observed_verdict": "PASS_CANON_VARIANT",
+          "final_verdict": "PASS_CANON_VARIANT",
+          "raw_failure_codes": []
+        }
+      ],
+      "last_job_id": "AUTO_20260408_053"
+    }
+  }
+}

@@ -1,0 +1,1192 @@
+{
+  "job_id": "AUTO_20260407_014",
+  "attempt_index": 1,
+  "options": {
+    "timeoutMs": 300000,
+    "pollIntervalMs": 1500,
+    "staleClaimMs": 120000
+  },
+  "intent": {
+    "intent_type": "image",
+    "goal": "create ceramic mask hero frame",
+    "constraints": [
+      "RENDER_MODE:HERO_LOCK",
+      "SHOT_PROFILE:MASK_MACRO"
+    ],
+    "priority": "normal",
+    "signals": {
+      "source": "direct_input",
+      "classified_by": "keyword_router"
+    }
+  },
+  "taskSpec": {
+    "job_id": "AUTO_20260407_014",
+    "lane": "image",
+    "objective": "create ceramic mask hero frame",
+    "constraints": [
+      "RENDER_MODE:HERO_LOCK",
+      "SHOT_PROFILE:MASK_MACRO"
+    ],
+    "priority": "normal",
+    "execution_plan": {
+      "steps": [
+        "prepare_prompt",
+        "dispatch_render",
+        "validate_output"
+      ]
+    },
+    "success_criteria": [
+      "real output exists",
+      "validator pass",
+      "final judge allow"
+    ],
+    "context": {
+      "planned_at": "2026-04-07T16:34:09.568Z",
+      "planner_version": "mikage_v2_control_plane",
+      "signals": {
+        "source": "direct_input",
+        "classified_by": "keyword_router"
+      },
+      "memory_hints": [
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-06T20:11:20.123Z"
+        },
+        {
+          "lane": "image",
+          "match": "create ceramic mask hero frame",
+          "effective": true,
+          "decision": "ALLOW",
+          "recorded_at": "2026-04-07T16:29:59.418Z"
+        }
+      ],
+      "dominant_reference": {
+        "job_id": "AUTO_20260408_015",
+        "score": 0.9,
+        "locked_at": "2026-04-07T14:18:55.657Z",
+        "silhouette_traits": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry"
+        ],
+        "material_traits": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance"
+        ],
+        "framing_traits": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech"
+        ],
+        "blocked_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell"
+        ]
+      },
+      "requested_render_mode": "HERO_LOCK",
+      "dna_lock_packet": {
+        "dna_id": "DNA_AUTO_20260408_015",
+        "source_job_id": "AUTO_20260408_015",
+        "source_lane": "image",
+        "contract_version": "CONTROLLED_EVOLUTION_V1",
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "edge_dna": [
+          "micro erosion on exposed edges",
+          "slight irregular bevel",
+          "non-uniform edge wear"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "color_law": [
+          "restricted charcoal ceramic palette",
+          "controlled off-white mineral accent"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "hard_forbidden_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell",
+          "fashion accessory styling"
+        ]
+      },
+      "variation_envelope": {
+        "envelope_version": "CONTROLLED_EVOLUTION_V1",
+        "variant_slot": "C",
+        "strict": true,
+        "bounded_axes": {
+          "silhouette_variant": {
+            "allowed": [
+              "anchor",
+              "brow_guard_delta",
+              "jaw_vent_delta",
+              "cheek_notch_delta"
+            ],
+            "selected": "jaw_vent_delta"
+          },
+          "wear_level": {
+            "allowed": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "selected": "high"
+          },
+          "microtexture_profile": {
+            "allowed": [
+              "fine_pitting",
+              "striated_erosion",
+              "sintered_grain"
+            ],
+            "selected": "sintered_grain"
+          },
+          "seam_intensity": {
+            "allowed": [
+              "minimal",
+              "visible",
+              "pronounced"
+            ],
+            "selected": "pronounced"
+          },
+          "asymmetry_tolerance": {
+            "allowed": [
+              "tight",
+              "balanced",
+              "expressive"
+            ],
+            "selected": "expressive"
+          }
+        }
+      },
+      "variant_spec": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+        "variant_family": "HERO_LOCK",
+        "variant_slot": "C",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "allowed_axes": {
+          "silhouette_variant": "jaw_vent_delta",
+          "wear_level": "high",
+          "microtexture_profile": "sintered_grain",
+          "seam_intensity": "pronounced",
+          "asymmetry_tolerance": "expressive"
+        },
+        "allowed_differences": [
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "asymmetry_tolerance:expressive"
+        ],
+        "prompt_controls": {
+          "positive_additions": [
+            "slightly emphasized jaw vent geometry within locked silhouette grammar",
+            "heavier wear concentration on exposed ceramic surfaces",
+            "sintered grain microtexture across ceramic shell",
+            "pronounced seam articulation within locked structural design",
+            "expressive asymmetry within manufacturable tolerance"
+          ],
+          "negative_additions": [
+            "multi-angle board",
+            "generic product render",
+            "full body humanoid mech",
+            "white glossy plastic shell",
+            "fashion accessory styling"
+          ]
+        }
+      }
+    }
+  },
+  "runRecord": {
+    "job_id": "AUTO_20260407_014",
+    "lane": "image",
+    "state": "rejected",
+    "timeline": [
+      {
+        "state": "started",
+        "timestamp": "2026-04-07T16:34:09.568Z"
+      },
+      {
+        "state": "running",
+        "timestamp": "2026-04-07T16:34:09.568Z"
+      },
+      {
+        "state": "rejected",
+        "timestamp": "2026-04-07T16:34:47.951Z"
+      }
+    ]
+  },
+  "laneResult": {
+    "job_id": "AUTO_20260407_014",
+    "lane": "image",
+    "status": "rejected",
+    "summary": "Image lane produced an invalid or incomplete result.",
+    "artifacts": [
+      {
+        "type": "job_json",
+        "label": "job_json",
+        "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_014.json"
+      },
+      {
+        "type": "claim_json",
+        "label": "claim_json",
+        "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_014.claim.json"
+      },
+      {
+        "type": "result_json",
+        "label": "result_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\result.json"
+      },
+      {
+        "type": "judge_output_json",
+        "label": "judge_output_json",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\judge_output.json"
+      },
+      {
+        "type": "image",
+        "label": "output_image",
+        "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\output.png"
+      }
+    ],
+    "validator_result": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "judge_output": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.7,
+        "overall_score": 0.65,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+      },
+      "judge_output_path": "outputs/AUTO_20260407_014/judge_output.json",
+      "critic_merge": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.7,
+        "overall_score": 0.7,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING",
+          "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+        ],
+        "judge_output_path": "outputs/AUTO_20260407_014/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.7,
+          "quality_score": 0.7,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING"
+          ],
+          "issues": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING",
+            "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+          ],
+          "verdict": "REVIEW",
+          "raw": {
+            "source": "live",
+            "status": "REVIEW",
+            "quality_score": 0.7,
+            "overall_score": 0.65,
+            "failure_codes": [
+              "OBJECT_UNREADABLE",
+              "CERAMIC_NOT_CONVINCING"
+            ],
+            "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+          }
+        }
+      },
+      "proof_blocked": false
+    },
+    "error": "live_judge_fail",
+    "started_at": "2026-04-07T16:34:09.568Z",
+    "finished_at": "2026-04-07T16:34:47.951Z",
+    "metadata": {
+      "queue_state": "completed",
+      "observed_states": [
+        {
+          "state": "queued",
+          "timestamp": "2026-04-07T16:34:09.592Z"
+        }
+      ],
+      "drive_root": "G:\\My Drive\\mikage_runner",
+      "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_014.json",
+      "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_014.claim.json",
+      "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\result.json",
+      "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\judge_output.json",
+      "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\output.png",
+      "claim": {
+        "job_id": "AUTO_20260407_014",
+        "worker_id": "colab-worker-01",
+        "claimed_at": "2026-04-07T16:34:28.822125Z",
+        "status": "claimed"
+      },
+      "result": {
+        "job_id": "AUTO_20260407_014",
+        "status": "completed",
+        "output_image_path": "outputs/AUTO_20260407_014/output.png",
+        "judge_output_path": "outputs/AUTO_20260407_014/judge_output.json",
+        "judge_output": {
+          "source": "live",
+          "status": "REVIEW",
+          "quality_score": 0.7,
+          "overall_score": 0.65,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING"
+          ],
+          "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+        },
+        "validator_result": {
+          "passed": true,
+          "signals": []
+        },
+        "artifacts": [
+          {
+            "type": "image",
+            "path": "outputs/AUTO_20260407_014/output.png"
+          },
+          {
+            "type": "judge_output_json",
+            "path": "outputs/AUTO_20260407_014/judge_output.json"
+          }
+        ],
+        "started_at": "2026-04-07T16:34:28.827727Z",
+        "finished_at": "2026-04-07T16:34:37.477381Z",
+        "metadata": {
+          "model_id": "stabilityai/sdxl-turbo",
+          "device": "cuda",
+          "seed": 42,
+          "num_inference_steps": 4,
+          "guidance_scale": 0
+        }
+      },
+      "judge_output": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.7,
+        "overall_score": 0.65,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+      },
+      "critic_merge": {
+        "source": "live",
+        "status": "REVIEW",
+        "quality_score": 0.7,
+        "overall_score": 0.7,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "notes": [
+          "RULE_ANALYZER_UNAVAILABLE",
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING",
+          "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+        ],
+        "judge_output_path": "outputs/AUTO_20260407_014/judge_output.json",
+        "rule_detail": {
+          "status": "UNAVAILABLE",
+          "source": "unavailable",
+          "rule_score": null,
+          "checks": [],
+          "issues": [
+            "RULE_ANALYZER_UNAVAILABLE"
+          ],
+          "verdict": "UNAVAILABLE"
+        },
+        "vision_detail": {
+          "mode": "gemini_live",
+          "source": "live",
+          "status": "LIVE",
+          "vision_score": 0.7,
+          "quality_score": 0.7,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING"
+          ],
+          "issues": [
+            "OBJECT_UNREADABLE",
+            "CERAMIC_NOT_CONVINCING",
+            "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+          ],
+          "verdict": "REVIEW",
+          "raw": {
+            "source": "live",
+            "status": "REVIEW",
+            "quality_score": 0.7,
+            "overall_score": 0.65,
+            "failure_codes": [
+              "OBJECT_UNREADABLE",
+              "CERAMIC_NOT_CONVINCING"
+            ],
+            "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal."
+          }
+        }
+      },
+      "proof_blocked": false,
+      "malformed_result": false,
+      "stale_claim": false
+    }
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260407_014",
+    "lane": "image",
+    "state": "rejected",
+    "queue_state": "completed",
+    "issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "fatal_issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [
+        "live_judge_fail",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "fatal_issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T16:34:47.952Z"
+  },
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T16:34:47.952Z"
+  },
+  "qualityFailurePacket": {
+    "supported_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION",
+      "GENERIC_OBJECT",
+      "WEAK_IDENTITY",
+      "MATERIAL_TOO_CLEAN",
+      "CG_PERFECTION",
+      "PRODUCT_RENDER_LOOK",
+      "DECORATIVE_FORM",
+      "LIGHTWEIGHT_OBJECT",
+      "SIGNATURE_DRIFT",
+      "EDGE_TOO_CLEAN",
+      "MATERIAL_UNIFORM",
+      "FORM_INCONSISTENT",
+      "COLOR_DRIFT",
+      "TEXTURE_ONLY_FRAME",
+      "CERAMIC_NOT_CONVINCING",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "TOY_READ",
+      "SURFACE_TOO_SMOOTH",
+      "SILHOUETTE_NOISY",
+      "CANON_DRIFT",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE"
+    ],
+    "primary_failure_code": "OBJECT_UNREADABLE",
+    "failure_codes": [
+      "OBJECT_UNREADABLE",
+      "CERAMIC_NOT_CONVINCING",
+      "MATERIAL_PLASTIC"
+    ],
+    "primary_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "CERAMIC_NOT_CONVINCING"
+    ],
+    "secondary_failure_codes": [
+      "MATERIAL_PLASTIC"
+    ],
+    "repair_class": "quality",
+    "quality_score": 0.7,
+    "score": 0.7,
+    "judge_summary": {
+      "status": "REVIEW",
+      "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal.",
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ]
+    },
+    "validator_summary": {
+      "passed": false,
+      "signals": [
+        "live_judge_fail",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "issues": [
+        "live_judge_fail",
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ]
+    },
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "patch_targets": [
+      "object_form",
+      "silhouette",
+      "whole_subject"
+    ],
+    "job_id": "AUTO_20260407_014",
+    "attempt": 1,
+    "source_artifacts": {
+      "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\output.png",
+      "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\judge_output.json"
+    },
+    "pass": false,
+    "critical_failure": true
+  },
+  "failureRoute": {
+    "failure_type": "object_unreadable",
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "identity_focus_reinforcement",
+    "repair_class": "quality",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairPatchPacket": {
+    "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+    "repair_class": "quality",
+    "recovery_mode": "STRONG_OBJECT_RECOVERY",
+    "failure_codes": [
+      "OBJECT_UNREADABLE",
+      "CERAMIC_NOT_CONVINCING",
+      "MATERIAL_PLASTIC"
+    ],
+    "primary_failure_codes": [
+      "OBJECT_UNREADABLE",
+      "CERAMIC_NOT_CONVINCING"
+    ],
+    "patch_targets": [
+      "object_form",
+      "silhouette",
+      "whole_subject"
+    ],
+    "prompt_patch": {
+      "positive_additions": [
+        "force literal manufactured object as primary subject",
+        "increase object legibility",
+        "force coherent manufacturable silhouette",
+        "force identifiable engineered form",
+        "clear readable hero object",
+        "single dominant subject silhouette",
+        "convincing fired ceramic surface",
+        "ceramic glaze material read",
+        "front dominant silhouette",
+        "fixed narrow eye cavity ratio",
+        "central forehead spine",
+        "layered jaw-vent geometry",
+        "dark matte technical ceramic shell",
+        "micro-abrasion wear",
+        "subtle ceramic micro-pitting",
+        "uneven reflectance",
+        "single mounted mask artifact",
+        "industrial frame backdrop",
+        "centered hero framing",
+        "no turntable board",
+        "no full body mech"
+      ],
+      "negative_additions": [
+        "no fragmented subject",
+        "no unreadable crop",
+        "no broken form dominance",
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell"
+      ]
+    },
+    "canon_reinforcements": [
+      "object readability over aesthetics",
+      "manufactured form over ambiguity"
+    ],
+    "canon_patch": {
+      "dominant_traits": [],
+      "supportive_traits": [],
+      "blocked_traits": [],
+      "must_have_traits": [],
+      "dominant_reference": {
+        "job_id": "AUTO_20260408_015",
+        "score": 0.9,
+        "locked_at": "2026-04-07T14:18:55.657Z",
+        "silhouette_traits": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry"
+        ],
+        "material_traits": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance"
+        ],
+        "framing_traits": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech"
+        ],
+        "blocked_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell"
+        ]
+      }
+    }
+  },
+  "qualityRetryDecision": {
+    "retry_allowed": false,
+    "repair_class": "quality",
+    "decision_reason": "Max retry cap reached.",
+    "hard_stop": true,
+    "repeated_failure_code": "",
+    "proof_blocked": false
+  },
+  "qualityScoreDelta": {
+    "previous_score": null,
+    "current_score": 0.7,
+    "delta": null,
+    "improved": null
+  },
+  "dnaLockPacket": {
+    "dna_id": "DNA_AUTO_20260408_015",
+    "source_job_id": "AUTO_20260408_015",
+    "source_lane": "image",
+    "contract_version": "CONTROLLED_EVOLUTION_V1",
+    "material_dna": [
+      "dark matte technical ceramic shell",
+      "micro-abrasion wear",
+      "subtle ceramic micro-pitting",
+      "uneven reflectance",
+      "technical ceramic read",
+      "matte non-plastic finish",
+      "micro-imperfect surface truth"
+    ],
+    "edge_dna": [
+      "micro erosion on exposed edges",
+      "slight irregular bevel",
+      "non-uniform edge wear"
+    ],
+    "silhouette_grammar": [
+      "front dominant silhouette",
+      "fixed narrow eye cavity ratio",
+      "central forehead spine",
+      "layered jaw-vent geometry",
+      "coherent mask proportion logic"
+    ],
+    "color_law": [
+      "restricted charcoal ceramic palette",
+      "controlled off-white mineral accent"
+    ],
+    "identity_anchors": [
+      "single mounted mask artifact",
+      "industrial frame backdrop",
+      "centered hero framing",
+      "no turntable board",
+      "no full body mech",
+      "engineered ceramic artifact",
+      "industrial mounting logic",
+      "single subject hero framing"
+    ],
+    "hard_forbidden_traits": [
+      "multi-angle board",
+      "generic product render",
+      "full body humanoid mech",
+      "white glossy plastic shell",
+      "fashion accessory styling"
+    ]
+  },
+  "variationEnvelope": {
+    "envelope_version": "CONTROLLED_EVOLUTION_V1",
+    "variant_slot": "C",
+    "strict": true,
+    "bounded_axes": {
+      "silhouette_variant": {
+        "allowed": [
+          "anchor",
+          "brow_guard_delta",
+          "jaw_vent_delta",
+          "cheek_notch_delta"
+        ],
+        "selected": "jaw_vent_delta"
+      },
+      "wear_level": {
+        "allowed": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "selected": "high"
+      },
+      "microtexture_profile": {
+        "allowed": [
+          "fine_pitting",
+          "striated_erosion",
+          "sintered_grain"
+        ],
+        "selected": "sintered_grain"
+      },
+      "seam_intensity": {
+        "allowed": [
+          "minimal",
+          "visible",
+          "pronounced"
+        ],
+        "selected": "pronounced"
+      },
+      "asymmetry_tolerance": {
+        "allowed": [
+          "tight",
+          "balanced",
+          "expressive"
+        ],
+        "selected": "expressive"
+      }
+    }
+  },
+  "variantSpec": {
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+    "variant_family": "HERO_LOCK",
+    "variant_slot": "C",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "allowed_axes": {
+      "silhouette_variant": "jaw_vent_delta",
+      "wear_level": "high",
+      "microtexture_profile": "sintered_grain",
+      "seam_intensity": "pronounced",
+      "asymmetry_tolerance": "expressive"
+    },
+    "allowed_differences": [
+      "silhouette_variant:jaw_vent_delta",
+      "wear_level:high",
+      "microtexture_profile:sintered_grain",
+      "seam_intensity:pronounced",
+      "asymmetry_tolerance:expressive"
+    ],
+    "prompt_controls": {
+      "positive_additions": [
+        "slightly emphasized jaw vent geometry within locked silhouette grammar",
+        "heavier wear concentration on exposed ceramic surfaces",
+        "sintered grain microtexture across ceramic shell",
+        "pronounced seam articulation within locked structural design",
+        "expressive asymmetry within manufacturable tolerance"
+      ],
+      "negative_additions": [
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell",
+        "fashion accessory styling"
+      ]
+    }
+  },
+  "variantJudgeOutput": {
+    "job_id": "AUTO_20260407_014",
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+    "variant_family": "HERO_LOCK",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "supported_failure_codes": [
+      "TOO_SIMILAR",
+      "DRIFT_VIOLATION",
+      "IDENTITY_LOSS",
+      "MATERIAL_BREAK",
+      "SILHOUETTE_BREAK",
+      "SIGNATURE_DRIFT",
+      "EDGE_TOO_CLEAN",
+      "MATERIAL_UNIFORM",
+      "FORM_INCONSISTENT",
+      "COLOR_DRIFT",
+      "GENERIC_OBJECT",
+      "WEAK_IDENTITY",
+      "MATERIAL_TOO_CLEAN",
+      "CG_PERFECTION",
+      "PRODUCT_RENDER_LOOK",
+      "DECORATIVE_FORM",
+      "LIGHTWEIGHT_OBJECT",
+      "MATERIAL_PLASTIC",
+      "MATERIAL_RESIN",
+      "SURFACE_TOO_SMOOTH",
+      "OBJECT_UNREADABLE",
+      "ABSTRACT_COMPOSITION",
+      "FUNCTIONAL_FORM_WEAK",
+      "OBJECT_CENTRALITY_WEAK",
+      "SYMBOLIC_FRAMING",
+      "FASHION_COMPOSITION"
+    ],
+    "allowed_differences": [
+      "silhouette_variant:jaw_vent_delta",
+      "wear_level:high",
+      "microtexture_profile:sintered_grain",
+      "seam_intensity:pronounced",
+      "asymmetry_tolerance:expressive"
+    ],
+    "output_hash": "68314F177A7EF2615665E7A5BF4EE7EACDAF9BAB0EF6C0D9D45D54264C62B68C",
+    "verdict": "REJECT_MATERIAL_BREAK",
+    "repeatability_confirmed": false,
+    "dna_retention": {
+      "passed": false,
+      "blocked_by": [
+        "MATERIAL_PLASTIC",
+        "OBJECT_UNREADABLE"
+      ]
+    },
+    "variant_distinctness": {
+      "passed": true,
+      "sibling_collision_variant_id": ""
+    },
+    "drift_violation": {
+      "passed": true,
+      "codes": []
+    },
+    "identity_loss": {
+      "passed": true,
+      "codes": []
+    },
+    "material_integrity": {
+      "passed": false,
+      "codes": [
+        "MATERIAL_PLASTIC"
+      ]
+    },
+    "silhouette_integrity": {
+      "passed": false,
+      "codes": [
+        "OBJECT_UNREADABLE"
+      ]
+    },
+    "score": 0.7
+  },
+  "variantDeltaReport": {
+    "job_id": "AUTO_20260407_014",
+    "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+    "variant_family": "HERO_LOCK",
+    "base_dna_id": "DNA_AUTO_20260408_015",
+    "dna_retention_passed": false,
+    "variant_distinctness_passed": true,
+    "drift_detected": false,
+    "signature_consistency": 0.75,
+    "approved_sibling_count": 1,
+    "repeatability_exists": true,
+    "allowed_differences": [
+      "silhouette_variant:jaw_vent_delta",
+      "wear_level:high",
+      "microtexture_profile:sintered_grain",
+      "seam_intensity:pronounced",
+      "asymmetry_tolerance:expressive"
+    ],
+    "verdict": "REJECT_MATERIAL_BREAK"
+  },
+  "proof_blocked": false,
+  "repairAction": {
+    "repairable": false,
+    "repair_class": "quality",
+    "recovery_mode": "STRONG_OBJECT_RECOVERY",
+    "current_attempt": 1,
+    "max_attempts": 1,
+    "responsible_module": "MIKAGE/lanes/image",
+    "repair_strategy": "identity_focus_reinforcement",
+    "actions": [],
+    "next_options": {},
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260407_014",
+      "parent_job_id": "AUTO_20260407_014",
+      "current_attempt": 1,
+      "next_attempt": null
+    },
+    "quality_failure_packet": {
+      "supported_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "ABSTRACT_COMPOSITION",
+        "FUNCTIONAL_FORM_WEAK",
+        "OBJECT_CENTRALITY_WEAK",
+        "SYMBOLIC_FRAMING",
+        "FASHION_COMPOSITION",
+        "GENERIC_OBJECT",
+        "WEAK_IDENTITY",
+        "MATERIAL_TOO_CLEAN",
+        "CG_PERFECTION",
+        "PRODUCT_RENDER_LOOK",
+        "DECORATIVE_FORM",
+        "LIGHTWEIGHT_OBJECT",
+        "SIGNATURE_DRIFT",
+        "EDGE_TOO_CLEAN",
+        "MATERIAL_UNIFORM",
+        "FORM_INCONSISTENT",
+        "COLOR_DRIFT",
+        "TEXTURE_ONLY_FRAME",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC",
+        "MATERIAL_RESIN",
+        "TOY_READ",
+        "SURFACE_TOO_SMOOTH",
+        "SILHOUETTE_NOISY",
+        "CANON_DRIFT",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE"
+      ],
+      "primary_failure_code": "OBJECT_UNREADABLE",
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC"
+      ],
+      "primary_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "secondary_failure_codes": [
+        "MATERIAL_PLASTIC"
+      ],
+      "repair_class": "quality",
+      "quality_score": 0.7,
+      "score": 0.7,
+      "judge_summary": {
+        "status": "REVIEW",
+        "notes": "The main subject (robot head) is well-rendered and visually appealing. However, the 'CERAMIC' text at the bottom left is distorted and largely unreadable. Additionally, the material of the head does not convincingly appear to be ceramic, looking more like matte plastic or painted metal.",
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ]
+      },
+      "validator_summary": {
+        "passed": false,
+        "signals": [
+          "live_judge_fail",
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ],
+        "issues": [
+          "live_judge_fail",
+          "OBJECT_UNREADABLE",
+          "CERAMIC_NOT_CONVINCING"
+        ]
+      },
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "patch_targets": [
+        "object_form",
+        "silhouette",
+        "whole_subject"
+      ],
+      "job_id": "AUTO_20260407_014",
+      "attempt": 1,
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\output.png",
+        "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_014\\judge_output.json"
+      },
+      "pass": false,
+      "critical_failure": true
+    },
+    "repair_patch_packet": {
+      "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+      "repair_class": "quality",
+      "recovery_mode": "STRONG_OBJECT_RECOVERY",
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING",
+        "MATERIAL_PLASTIC"
+      ],
+      "primary_failure_codes": [
+        "OBJECT_UNREADABLE",
+        "CERAMIC_NOT_CONVINCING"
+      ],
+      "patch_targets": [
+        "object_form",
+        "silhouette",
+        "whole_subject"
+      ],
+      "prompt_patch": {
+        "positive_additions": [
+          "force literal manufactured object as primary subject",
+          "increase object legibility",
+          "force coherent manufacturable silhouette",
+          "force identifiable engineered form",
+          "clear readable hero object",
+          "single dominant subject silhouette",
+          "convincing fired ceramic surface",
+          "ceramic glaze material read",
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech"
+        ],
+        "negative_additions": [
+          "no fragmented subject",
+          "no unreadable crop",
+          "no broken form dominance",
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell"
+        ]
+      },
+      "canon_reinforcements": [
+        "object readability over aesthetics",
+        "manufactured form over ambiguity"
+      ],
+      "canon_patch": {
+        "dominant_traits": [],
+        "supportive_traits": [],
+        "blocked_traits": [],
+        "must_have_traits": [],
+        "dominant_reference": {
+          "job_id": "AUTO_20260408_015",
+          "score": 0.9,
+          "locked_at": "2026-04-07T14:18:55.657Z",
+          "silhouette_traits": [
+            "front dominant silhouette",
+            "fixed narrow eye cavity ratio",
+            "central forehead spine",
+            "layered jaw-vent geometry"
+          ],
+          "material_traits": [
+            "dark matte technical ceramic shell",
+            "micro-abrasion wear",
+            "subtle ceramic micro-pitting",
+            "uneven reflectance"
+          ],
+          "framing_traits": [
+            "single mounted mask artifact",
+            "industrial frame backdrop",
+            "centered hero framing",
+            "no turntable board",
+            "no full body mech"
+          ],
+          "blocked_traits": [
+            "multi-angle board",
+            "generic product render",
+            "full body humanoid mech",
+            "white glossy plastic shell"
+          ]
+        }
+      }
+    },
+    "quality_retry_decision": {
+      "retry_allowed": false,
+      "repair_class": "quality",
+      "decision_reason": "Max retry cap reached.",
+      "hard_stop": true,
+      "repeated_failure_code": "",
+      "proof_blocked": false
+    },
+    "notes": [
+      "Max retry cap reached."
+    ],
+    "repair_patch_packet_path": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_014\\attempt-01\\repair_patch_packet.json"
+  }
+}

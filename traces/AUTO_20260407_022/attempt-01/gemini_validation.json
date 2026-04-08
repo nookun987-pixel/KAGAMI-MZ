@@ -1,0 +1,18 @@
+{
+  "job_id": "AUTO_20260407_022",
+  "attempt_index": 1,
+  "source": "live",
+  "status": "PASS",
+  "quality_score": 0.95,
+  "overall_score": 0.95,
+  "failure_codes": [],
+  "notes": [
+    "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": true,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.195Z"
+}

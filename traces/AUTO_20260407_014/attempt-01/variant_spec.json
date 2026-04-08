@@ -1,0 +1,36 @@
+{
+  "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+  "variant_family": "HERO_LOCK",
+  "variant_slot": "C",
+  "base_dna_id": "DNA_AUTO_20260408_015",
+  "allowed_axes": {
+    "silhouette_variant": "jaw_vent_delta",
+    "wear_level": "high",
+    "microtexture_profile": "sintered_grain",
+    "seam_intensity": "pronounced",
+    "asymmetry_tolerance": "expressive"
+  },
+  "allowed_differences": [
+    "silhouette_variant:jaw_vent_delta",
+    "wear_level:high",
+    "microtexture_profile:sintered_grain",
+    "seam_intensity:pronounced",
+    "asymmetry_tolerance:expressive"
+  ],
+  "prompt_controls": {
+    "positive_additions": [
+      "slightly emphasized jaw vent geometry within locked silhouette grammar",
+      "heavier wear concentration on exposed ceramic surfaces",
+      "sintered grain microtexture across ceramic shell",
+      "pronounced seam articulation within locked structural design",
+      "expressive asymmetry within manufacturable tolerance"
+    ],
+    "negative_additions": [
+      "multi-angle board",
+      "generic product render",
+      "full body humanoid mech",
+      "white glossy plastic shell",
+      "fashion accessory styling"
+    ]
+  }
+}

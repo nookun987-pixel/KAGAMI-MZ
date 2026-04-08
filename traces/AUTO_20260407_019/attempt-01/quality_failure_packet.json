@@ -1,0 +1,59 @@
+{
+  "supported_failure_codes": [
+    "OBJECT_UNREADABLE",
+    "ABSTRACT_COMPOSITION",
+    "FUNCTIONAL_FORM_WEAK",
+    "OBJECT_CENTRALITY_WEAK",
+    "SYMBOLIC_FRAMING",
+    "FASHION_COMPOSITION",
+    "GENERIC_OBJECT",
+    "WEAK_IDENTITY",
+    "MATERIAL_TOO_CLEAN",
+    "CG_PERFECTION",
+    "PRODUCT_RENDER_LOOK",
+    "DECORATIVE_FORM",
+    "LIGHTWEIGHT_OBJECT",
+    "SIGNATURE_DRIFT",
+    "EDGE_TOO_CLEAN",
+    "MATERIAL_UNIFORM",
+    "FORM_INCONSISTENT",
+    "COLOR_DRIFT",
+    "TEXTURE_ONLY_FRAME",
+    "CERAMIC_NOT_CONVINCING",
+    "MATERIAL_PLASTIC",
+    "MATERIAL_RESIN",
+    "TOY_READ",
+    "SURFACE_TOO_SMOOTH",
+    "SILHOUETTE_NOISY",
+    "CANON_DRIFT",
+    "SILHOUETTE_BREAK",
+    "COMPOSITION_COLLAPSE"
+  ],
+  "primary_failure_code": "",
+  "failure_codes": [],
+  "primary_failure_codes": [],
+  "secondary_failure_codes": [],
+  "repair_class": "",
+  "quality_score": 0.88,
+  "score": 0.88,
+  "judge_summary": {
+    "status": "PASS",
+    "notes": "The main mask is rendered with excellent detail and material quality. The surrounding smaller masks maintain a consistent aesthetic, though some exhibit slightly less definition or clarity compared to the central piece.",
+    "failure_codes": []
+  },
+  "validator_summary": {
+    "passed": true,
+    "signals": [],
+    "issues": []
+  },
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "patch_targets": [],
+  "job_id": "AUTO_20260407_019",
+  "attempt": 1,
+  "source_artifacts": {
+    "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_019\\output.png",
+    "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_019\\judge_output.json"
+  },
+  "pass": true,
+  "critical_failure": false
+}

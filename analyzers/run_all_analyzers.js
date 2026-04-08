@@ -11,7 +11,7 @@ const { detectZBlue } = require("./z_blue_detector");
 const { analyzeSafeZone } = require("./safe_zone_mask");
 const { analyzeSilhouette } = require("./silhouette_check");
 const { analyzeSaliency } = require("./saliency_map");
-const { analyzeSemantics, setVLMClient } = require("./vlm_semantic_analyzer");
+const { analyzeSemantics, setVLMClient, wireVLMClientFromEnv } = require("./vlm_semantic_analyzer");
 
 function nowMs() {
   return Date.now();
@@ -136,6 +136,7 @@ function shouldStopBeforeSemantics(signals, options = {}) {
  * @returns {Promise<Object>}
  */
 async function runAllAnalyzers(imagePath, options = {}) {
+  wireVLMClientFromEnv();
   const stageResults = [];
   const signals = {};
   const pipelineStartedAt = nowMs();

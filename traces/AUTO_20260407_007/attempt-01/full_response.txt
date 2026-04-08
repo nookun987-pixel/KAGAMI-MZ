@@ -1,0 +1,189 @@
+{
+  "job_id": "AUTO_20260407_007",
+  "lane": "image",
+  "status": "completed",
+  "summary": "Image lane completed through Drive queue and Colab output contract.",
+  "artifacts": [
+    {
+      "type": "job_json",
+      "label": "job_json",
+      "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_007.json"
+    },
+    {
+      "type": "claim_json",
+      "label": "claim_json",
+      "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_007.claim.json"
+    },
+    {
+      "type": "result_json",
+      "label": "result_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_007\\result.json"
+    },
+    {
+      "type": "judge_output_json",
+      "label": "judge_output_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_007\\judge_output.json"
+    },
+    {
+      "type": "image",
+      "label": "output_image",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_007\\output.png"
+    }
+  ],
+  "validator_result": {
+    "passed": true,
+    "signals": [],
+    "issues": [],
+    "judge_output": {
+      "source": "unavailable",
+      "status": "UNAVAILABLE",
+      "quality_score": null,
+      "overall_score": null,
+      "failure_codes": [],
+      "notes": [
+        "GEMINI_API_KEY_MISSING"
+      ]
+    },
+    "judge_output_path": "outputs/AUTO_20260407_007/judge_output.json",
+    "critic_merge": {
+      "source": "unavailable",
+      "status": "UNAVAILABLE",
+      "quality_score": null,
+      "overall_score": null,
+      "failure_codes": [],
+      "notes": [
+        "LIVE_JUDGE_UNAVAILABLE"
+      ],
+      "judge_output_path": "outputs/AUTO_20260407_007/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "unavailable",
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "vision_score": null,
+        "quality_score": null,
+        "failure_codes": [],
+        "issues": [
+          "LIVE_JUDGE_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE",
+        "raw": null
+      }
+    },
+    "proof_blocked": true
+  },
+  "error": null,
+  "started_at": "2026-04-07T16:29:59.281Z",
+  "finished_at": "2026-04-07T16:29:59.341Z",
+  "metadata": {
+    "queue_state": "completed",
+    "observed_states": [],
+    "drive_root": "G:\\My Drive\\mikage_runner",
+    "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_007.json",
+    "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_007.claim.json",
+    "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_007\\result.json",
+    "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_007\\judge_output.json",
+    "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_007\\output.png",
+    "claim": {
+      "job_id": "AUTO_20260407_007",
+      "worker_id": "colab-worker-01",
+      "claimed_at": "2026-04-07T13:05:22.915383Z",
+      "status": "claimed"
+    },
+    "result": {
+      "job_id": "AUTO_20260407_007",
+      "status": "completed",
+      "output_image_path": "outputs/AUTO_20260407_007/output.png",
+      "judge_output_path": "outputs/AUTO_20260407_007/judge_output.json",
+      "judge_output": {
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "quality_score": null,
+        "overall_score": null,
+        "failure_codes": [],
+        "notes": [
+          "GEMINI_API_KEY_MISSING"
+        ]
+      },
+      "validator_result": {
+        "passed": true,
+        "signals": []
+      },
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "outputs/AUTO_20260407_007/output.png"
+        },
+        {
+          "type": "judge_output_json",
+          "path": "outputs/AUTO_20260407_007/judge_output.json"
+        }
+      ],
+      "started_at": "2026-04-07T13:05:22.921026Z",
+      "finished_at": "2026-04-07T13:05:25.777179Z",
+      "metadata": {
+        "model_id": "stabilityai/sdxl-turbo",
+        "device": "cuda",
+        "seed": 42,
+        "num_inference_steps": 4,
+        "guidance_scale": 0
+      }
+    },
+    "judge_output": {
+      "source": "unavailable",
+      "status": "UNAVAILABLE",
+      "quality_score": null,
+      "overall_score": null,
+      "failure_codes": [],
+      "notes": [
+        "GEMINI_API_KEY_MISSING"
+      ]
+    },
+    "critic_merge": {
+      "source": "unavailable",
+      "status": "UNAVAILABLE",
+      "quality_score": null,
+      "overall_score": null,
+      "failure_codes": [],
+      "notes": [
+        "LIVE_JUDGE_UNAVAILABLE"
+      ],
+      "judge_output_path": "outputs/AUTO_20260407_007/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "unavailable",
+        "source": "unavailable",
+        "status": "UNAVAILABLE",
+        "vision_score": null,
+        "quality_score": null,
+        "failure_codes": [],
+        "issues": [
+          "LIVE_JUDGE_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE",
+        "raw": null
+      }
+    },
+    "proof_blocked": true,
+    "malformed_result": false,
+    "stale_claim": false
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "job_id": "AUTO_20260407_022",
+  "lane": "image",
+  "status": "completed",
+  "summary": "Image lane completed through Drive queue and Colab output contract.",
+  "artifacts": [
+    {
+      "type": "job_json",
+      "label": "job_json",
+      "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_022.json"
+    },
+    {
+      "type": "claim_json",
+      "label": "claim_json",
+      "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_022.claim.json"
+    },
+    {
+      "type": "result_json",
+      "label": "result_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\result.json"
+    },
+    {
+      "type": "judge_output_json",
+      "label": "judge_output_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\judge_output.json"
+    },
+    {
+      "type": "image",
+      "label": "output_image",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\output.png"
+    }
+  ],
+  "validator_result": {
+    "passed": true,
+    "signals": [],
+    "issues": [],
+    "judge_output": {
+      "source": "live",
+      "status": "PASS",
+      "quality_score": 0.95,
+      "overall_score": 0.95,
+      "failure_codes": [],
+      "notes": "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+    },
+    "judge_output_path": "outputs/AUTO_20260407_022/judge_output.json",
+    "critic_merge": {
+      "source": "live",
+      "status": "PASS",
+      "quality_score": 0.95,
+      "overall_score": 0.95,
+      "failure_codes": [],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+      ],
+      "judge_output_path": "outputs/AUTO_20260407_022/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.95,
+        "quality_score": 0.95,
+        "failure_codes": [],
+        "issues": [
+          "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+        ],
+        "verdict": "PASS",
+        "raw": {
+          "source": "live",
+          "status": "PASS",
+          "quality_score": 0.95,
+          "overall_score": 0.95,
+          "failure_codes": [],
+          "notes": "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+        }
+      }
+    },
+    "proof_blocked": false
+  },
+  "error": null,
+  "started_at": "2026-04-07T16:41:00.904Z",
+  "finished_at": "2026-04-07T16:41:43.767Z",
+  "metadata": {
+    "queue_state": "completed",
+    "observed_states": [
+      {
+        "state": "queued",
+        "timestamp": "2026-04-07T16:41:00.970Z"
+      }
+    ],
+    "drive_root": "G:\\My Drive\\mikage_runner",
+    "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_022.json",
+    "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_022.claim.json",
+    "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\result.json",
+    "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\judge_output.json",
+    "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\output.png",
+    "claim": {
+      "job_id": "AUTO_20260407_022",
+      "worker_id": "colab-worker-01",
+      "claimed_at": "2026-04-07T16:41:21.184083Z",
+      "status": "claimed"
+    },
+    "result": {
+      "job_id": "AUTO_20260407_022",
+      "status": "completed",
+      "output_image_path": "outputs/AUTO_20260407_022/output.png",
+      "judge_output_path": "outputs/AUTO_20260407_022/judge_output.json",
+      "judge_output": {
+        "source": "live",
+        "status": "PASS",
+        "quality_score": 0.95,
+        "overall_score": 0.95,
+        "failure_codes": [],
+        "notes": "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+      },
+      "validator_result": {
+        "passed": true,
+        "signals": []
+      },
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "outputs/AUTO_20260407_022/output.png"
+        },
+        {
+          "type": "judge_output_json",
+          "path": "outputs/AUTO_20260407_022/judge_output.json"
+        }
+      ],
+      "started_at": "2026-04-07T16:41:21.189972Z",
+      "finished_at": "2026-04-07T16:41:29.278987Z",
+      "metadata": {
+        "model_id": "stabilityai/sdxl-turbo",
+        "device": "cuda",
+        "seed": 42,
+        "num_inference_steps": 4,
+        "guidance_scale": 0
+      }
+    },
+    "judge_output": {
+      "source": "live",
+      "status": "PASS",
+      "quality_score": 0.95,
+      "overall_score": 0.95,
+      "failure_codes": [],
+      "notes": "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+    },
+    "critic_merge": {
+      "source": "live",
+      "status": "PASS",
+      "quality_score": 0.95,
+      "overall_score": 0.95,
+      "failure_codes": [],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+      ],
+      "judge_output_path": "outputs/AUTO_20260407_022/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.95,
+        "quality_score": 0.95,
+        "failure_codes": [],
+        "issues": [
+          "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+        ],
+        "verdict": "PASS",
+        "raw": {
+          "source": "live",
+          "status": "PASS",
+          "quality_score": 0.95,
+          "overall_score": 0.95,
+          "failure_codes": [],
+          "notes": "The image provides a high-quality, detailed render of the object from multiple angles. The intricate lattice design is clearly visible, and the material rendering is consistent and convincing."
+        }
+      }
+    },
+    "proof_blocked": false,
+    "malformed_result": false,
+    "stale_claim": false
+  }
+}

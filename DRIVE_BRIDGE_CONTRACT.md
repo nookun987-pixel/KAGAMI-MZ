@@ -1,68 +1,78 @@
-# DRIVE BRIDGE CONTRACT — PHASE 6.6
+# DRIVE BRIDGE CONTRACT - PHASE 6.6
 
 ## Purpose
 
-Lock the shared path contract between local dispatcher staging and Colab Drive inbox.
-Swapping from local staging to real Google Drive must not change job format, filename behavior, or execution_target.
+Lock the shared runtime contract between the local control plane, the Colab execution lane, and the dashboard.
+All three must point at the same `mikage_runner` bus without adding another orchestration layer.
 
 ## Path Contract
 
-| Role | Current (local staging) | Future (Google Drive) |
-|------|------------------------|-----------------------|
+| Role | Local staging | Shared Runtime (Google Drive) |
+|------|---------------|-------------------------------|
 | **Root** | `D:\KAGAMI-MZ\drive_staging` | `MyDrive/mikage_runner` |
 | **Job inbox** | `D:\KAGAMI-MZ\drive_staging\job_inbox` | `MyDrive/mikage_runner/job_inbox` |
-| **Job processing** | `D:\KAGAMI-MZ\drive_staging\job_processing` | `MyDrive/mikage_runner/job_processing` |
-| **Job done** | `D:\KAGAMI-MZ\drive_staging\job_done` | `MyDrive/mikage_runner/job_done` |
-| **Job failed** | `D:\KAGAMI-MZ\drive_staging\job_failed` | `MyDrive/mikage_runner/job_failed` |
+| **Claims** | `D:\KAGAMI-MZ\drive_staging\claims` | `MyDrive/mikage_runner/claims` |
 | **Outputs** | `D:\KAGAMI-MZ\drive_staging\outputs` | `MyDrive/mikage_runner/outputs` |
+| **Logs** | `D:\KAGAMI-MZ\drive_staging\logs` | `MyDrive/mikage_runner/logs` |
 
 ## Env Override
 
-```
+```txt
 DRIVE_ROOT=<path>
 ```
 
 - Default: `D:\KAGAMI-MZ\drive_staging`
 - On Colab: `/content/drive/MyDrive/mikage_runner`
-- All subfolders (`job_inbox/`, `job_done/`, etc.) are relative to `DRIVE_ROOT`
+- All subfolders (`job_inbox/`, `claims/`, `outputs/`, `logs/`) are relative to `DRIVE_ROOT`
 
 ## Job File Contract
 
 **Filename:** `{job_id}.json` inside `job_inbox/`
 
-**Schema:**
+**Required top-level fields:**
 
 ```json
 {
-  "job_id": "JOB_{spec_job_id}_{iso_timestamp}",
-  "patched_job_spec": { ... },
-  "execution_target": "colab_runner",
-  "created_at": "ISO-8601"
+  "job_id": "JOB_...",
+  "lane": "mask_macro",
+  "idea": "user idea",
+  "prompt": "compiled prompt",
+  "execution_target": "colab_runner"
 }
 ```
 
+Additional metadata may be present, but these fields must always exist.
+
 ## Invariants
 
-1. **Same JSON contract** — identical schema whether written to local staging or real Drive
-2. **Same filename behavior** — `{job_id}.json` in `job_inbox/`
-3. **Same execution_target** — always `"colab_runner"`
-4. **Single write** — one `writeFileSync` per job, no append, no partial
-5. **No retry** — writer does not retry on failure
-6. **No queue** — inbox is a flat folder of JSON files, not a queue system
+1. **Same shared root** - all runtime actors point at the same `mikage_runner` folder
+2. **Same filename behavior** - `{job_id}.json` in `job_inbox/`
+3. **Same control-plane write contract** - `job_id`, `lane`, `idea`, `prompt`, `execution_target`
+4. **Final state anchor** - `outputs/{job_id}/result.json` is the only terminal state source
+5. **Single inbox write** - one JSON file per dispatch, no append, no partial writes
+6. **Flat contract** - `job_inbox/`, `claims/`, `outputs/`, and `logs/` stay flat and simple
 
 ## Lifecycle
 
+```txt
+LOCAL /run      -> job_inbox/{job_id}.json
+COLAB claim     -> claims/{job_id}.json
+COLAB artifacts -> outputs/{job_id}/output.png
+COLAB final     -> outputs/{job_id}/result.json
+DASHBOARD read  -> job_inbox + claims + outputs + logs
 ```
-LOCAL writes   →  job_inbox/{job_id}.json
-COLAB picks up →  moves to job_processing/{job_id}.json
-COLAB succeeds →  moves to job_done/{job_id}.json   + writes outputs/{job_id}/
-COLAB fails    →  moves to job_failed/{job_id}.json
-LOCAL polls    →  reads job_done or job_failed, writes execution_result.json locally
-```
+
+## State Mapping
+
+- `pending`: inbox file exists, no claim, no terminal `result.json`
+- `running`: claim file exists, no terminal `result.json`
+- `completed`: `outputs/{job_id}/result.json` exists with success status
+- `failed`: `outputs/{job_id}/result.json` exists with failure status
 
 ## Swap Procedure
 
 To switch from local staging to real Google Drive:
-1. Install Google Drive for Desktop
-2. Set `DRIVE_ROOT` to the mounted Drive path (e.g., `G:\My Drive\mikage_runner`)
-3. No code changes required
+1. Mount or sync the shared folder locally if the control plane is using the filesystem path.
+2. Set `DRIVE_ROOT` to the mounted path, for example `G:\My Drive\mikage_runner`.
+3. Share the same `mikage_runner` folder with the dashboard service account.
+4. For the dashboard backend, configure Google Drive API credentials and point them at the same folder.

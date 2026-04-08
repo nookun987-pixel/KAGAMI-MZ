@@ -1,0 +1,43 @@
+{
+  "job_id": "AUTO_20260407_004",
+  "lane": "image",
+  "status": "timeout",
+  "summary": "Image lane timed out waiting for claim or outputs.",
+  "artifacts": [
+    {
+      "type": "job_json",
+      "label": "job_json",
+      "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_004.json"
+    }
+  ],
+  "validator_result": {
+    "passed": false,
+    "signals": [
+      "timeout"
+    ],
+    "issues": [
+      "timeout"
+    ]
+  },
+  "error": "timeout",
+  "started_at": "2026-04-07T10:51:06.193Z",
+  "finished_at": "2026-04-07T10:51:11.325Z",
+  "metadata": {
+    "queue_state": "queued",
+    "observed_states": [
+      {
+        "state": "queued",
+        "timestamp": "2026-04-07T10:51:06.238Z"
+      }
+    ],
+    "drive_root": "G:\\My Drive\\mikage_runner",
+    "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260407_004.json",
+    "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260407_004.claim.json",
+    "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_004\\result.json",
+    "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_004\\output.png",
+    "claim": null,
+    "result": null,
+    "malformed_result": false,
+    "stale_claim": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mikage Intent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["intent_type", "goal", "constraints", "priority"],
+  "properties": {
+    "intent_type": {
+      "type": "string",
+      "enum": ["image", "cine", "game", "content", "ops"]
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "normal", "high", "critical"]
+    },
+    "signals": {
+      "type": "object"
+    }
+  }
+}

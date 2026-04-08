@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MIKAGE Judge Schema V2",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "source": {
+      "type": "string",
+      "enum": ["live", "unavailable"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PASS", "REVIEW", "REJECT", "UNAVAILABLE"]
+    },
+    "quality_score": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "overall_score": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "failure_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "OBJECT_UNREADABLE",
+          "ABSTRACT_COMPOSITION",
+          "TEXTURE_ONLY_FRAME",
+          "CERAMIC_NOT_CONVINCING",
+          "CANON_DRIFT",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE"
+        ]
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "judge_output_path": {
+      "type": ["string", "null"]
+    }
+  }
+}

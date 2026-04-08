@@ -2282,6 +2282,35 @@ function buildCorrectionDiff(previousPromptPackage, correctedPromptPackage) {
   };
 }
 
+function getRenderPromptFields(promptPackage = {}) {
+  return {
+    prompt: promptPackage.structured_prompt || promptPackage.positivePrompt || "",
+    negative_prompt: promptPackage.negative_prompt || promptPackage.negativePrompt || "",
+  };
+}
+
+function applyObjectDefinitionPromptOverride(promptPackage, objDefResult, objDefInheritance) {
+  if (!promptPackage || !objDefInheritance) {
+    return promptPackage;
+  }
+
+  promptPackage.object_definition_inheritance = objDefInheritance;
+  promptPackage.object_definition_applied = true;
+
+  if (objDefResult && objDefResult.compiled_prompt) {
+    promptPackage.structured_prompt = objDefResult.compiled_prompt;
+    promptPackage.positivePrompt = objDefResult.compiled_prompt;
+    promptPackage.object_definition_prompt_override = true;
+  }
+  if (objDefResult && objDefResult.compiled_negative) {
+    promptPackage.negative_prompt = objDefResult.compiled_negative;
+    promptPackage.negativePrompt = objDefResult.compiled_negative;
+    promptPackage.object_definition_negative_override = true;
+  }
+
+  return promptPackage;
+}
+
 function enforceSubstantiveCorrectionDelta(promptPackage, correctedPromptPackage, correctionDiff, fixBrief) {
   if (correctionDiff.substantive_delta) {
     return {
@@ -2701,13 +2730,14 @@ async function runLegacyCandidateBatch({
     const candidateId = `candidate-${String(index).padStart(2, "0")}`;
     const candidateDir = ensureDir(path.join(candidateRoot, candidateId));
     const candidateSeed = computeSeed(promptPackage.payload.seed, job.job_id, index - 1, effectiveRender.seed_policy);
+    const renderPrompts = getRenderPromptFields(promptPackage);
     const renderResult = await executeRender(
       job,
       controlToken,
       promptPackage.spec,
       {
-        prompt: promptPackage.positivePrompt,
-        negative_prompt: promptPackage.negativePrompt,
+        prompt: renderPrompts.prompt,
+        negative_prompt: renderPrompts.negative_prompt,
         width: effectiveRender.width,
         height: effectiveRender.height,
         steps: effectiveRender.steps,
@@ -3626,17 +3656,7 @@ async function orchestrateAutoLoop(job) {
   // ── INJECT OBJECT DEFINITION INTO PROMPT PACKAGE ──
   // Claude Spec must inherit object_definition locks. No silent drop.
   if (objDefInheritance) {
-    promptPackage.object_definition_inheritance = objDefInheritance;
-    promptPackage.object_definition_applied = true;
-    // Override prompt with object-definition-compiled prompt when available
-    if (objDefResult.compiled_prompt) {
-      promptPackage.structured_prompt = objDefResult.compiled_prompt;
-      promptPackage.object_definition_prompt_override = true;
-    }
-    if (objDefResult.compiled_negative) {
-      promptPackage.negative_prompt = objDefResult.compiled_negative;
-      promptPackage.object_definition_negative_override = true;
-    }
+    applyObjectDefinitionPromptOverride(promptPackage, objDefResult, objDefInheritance);
     console.log(`[ORCHESTRATOR] Object Definition inheritance injected into prompt_package`);
   } else {
     promptPackage.object_definition_inheritance = null;
@@ -4015,4 +4035,12 @@ if (require.main === module) {
 module.exports = {
   orchestrate,
   runHealthCheck,
+  getRenderPromptFields,
+  applyObjectDefinitionPromptOverride,
 };
+/**
+ * DEPRECATED ENTRY STACK
+ *
+ * Active MIKAGE V2 control plane is MIKAGE/index.js and MIKAGE/control_plane/.
+ * This file remains for legacy orchestration compatibility only.
+ */

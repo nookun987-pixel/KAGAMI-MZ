@@ -1,0 +1,1279 @@
+{
+  "generated_at": "2026-04-07T18:54:09.749Z",
+  "generated_by": "tools/handoff/build_memory_registry.js",
+  "entries": [
+    {
+      "id": "mem_20260407172920_33a615a736f3",
+      "source_run": "AUTO_20260408_042",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+        "allowed_differences": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:tight"
+        ],
+        "quality_score": 0.7,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T17:29:20.325Z",
+      "last_used": "2026-04-07T18:54:14.653Z",
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.653Z",
+      "support_count": 4,
+      "reuse_count": 1,
+      "fingerprint": "fc2f125759d313462318c0e242354c3798b940bad6d63ec1163794ca8dbd4188",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_042\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_042\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_042\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "supporting_runs": [
+        "AUTO_20260408_042",
+        "AUTO_20260408_043",
+        "AUTO_20260408_049",
+        "AUTO_20260408_050"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407172920_ebc970b78381",
+      "source_run": "AUTO_20260408_042",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+        "quality_score": 0.7,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:tight"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T17:29:20.325Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.653Z",
+      "support_count": 4,
+      "reuse_count": 0,
+      "fingerprint": "e7c981f087d8880bc56d103e0c6611438e3cc071e8b414329ed59185a3b9c409",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_042\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_042\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_042\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "supporting_runs": [
+        "AUTO_20260408_042",
+        "AUTO_20260408_043",
+        "AUTO_20260408_049",
+        "AUTO_20260408_050"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407170409_dddf4f6e1010",
+      "source_run": "AUTO_20260408_030",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+        "allowed_differences": [
+          "silhouette_variant:anchor",
+          "wear_level:low",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "asymmetry_tolerance:tight"
+        ],
+        "quality_score": 0.95,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T17:04:09.863Z",
+      "last_used": "2026-04-07T18:54:14.653Z",
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.562Z",
+      "support_count": 5,
+      "reuse_count": 1,
+      "fingerprint": "c3c4b57278f76cd703d62c1e124791f3577a93fb7e5db2cb398a395feda0a4f4",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_030\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_030\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_030\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "supporting_runs": [
+        "AUTO_20260408_030",
+        "AUTO_20260408_031",
+        "AUTO_20260408_032",
+        "AUTO_20260408_045",
+        "AUTO_20260408_047"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407170409_77e6a203639a",
+      "source_run": "AUTO_20260408_030",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+        "quality_score": 0.95,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:anchor",
+          "wear_level:low",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "asymmetry_tolerance:tight"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T17:04:09.863Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.562Z",
+      "support_count": 5,
+      "reuse_count": 0,
+      "fingerprint": "2ef93647b06cde7a1bb478c47306fc194c7a9735b4ee3a4947c870726761ae02",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_030\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_030\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_030\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "supporting_runs": [
+        "AUTO_20260408_030",
+        "AUTO_20260408_031",
+        "AUTO_20260408_032",
+        "AUTO_20260408_045",
+        "AUTO_20260408_047"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407165933_178a6fe2239c",
+      "source_run": "AUTO_20260407_034",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+        "allowed_differences": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:tight"
+        ],
+        "quality_score": 0.9,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:59:33.305Z",
+      "last_used": "2026-04-07T18:54:14.653Z",
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.346Z",
+      "support_count": 8,
+      "reuse_count": 1,
+      "fingerprint": "f7923b438664ed3a2efc657825ff5168e420c93bd5b38f4e223aeb80061fce09",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_034\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_034\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_034\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "supporting_runs": [
+        "AUTO_20260407_034",
+        "AUTO_20260408_027",
+        "AUTO_20260408_028",
+        "AUTO_20260408_029",
+        "AUTO_20260408_033",
+        "AUTO_20260408_035",
+        "AUTO_20260408_044",
+        "AUTO_20260408_048"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407165933_07bd7689b36a",
+      "source_run": "AUTO_20260407_034",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "6D90B8AE505DC41CC23984C3F59159947A628E61DA51480FACA48C3D761C9D2E",
+        "quality_score": 0.9,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:tight"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:59:33.305Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.347Z",
+      "support_count": 8,
+      "reuse_count": 0,
+      "fingerprint": "476edcb7992522d7b99bddeda09a46be21e5c1c9a65ae2d6503d0cadff347e02",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_034\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_034\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_034\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "supporting_runs": [
+        "AUTO_20260407_034",
+        "AUTO_20260408_027",
+        "AUTO_20260408_028",
+        "AUTO_20260408_029",
+        "AUTO_20260408_033",
+        "AUTO_20260408_035",
+        "AUTO_20260408_044",
+        "AUTO_20260408_048"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407165607_beeafb03f452",
+      "source_run": "AUTO_20260407_030",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+        "allowed_differences": [
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "asymmetry_tolerance:balanced"
+        ],
+        "quality_score": 0.9,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:56:07.750Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.318Z",
+      "support_count": 9,
+      "reuse_count": 0,
+      "fingerprint": "7a680527915e66a82ecc696eb0c8c92a666bd0f09c4e30088b00d4f515a688a5",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_030\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_030\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_030\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "supporting_runs": [
+        "AUTO_20260407_030",
+        "AUTO_20260407_031",
+        "AUTO_20260407_032",
+        "AUTO_20260408_036",
+        "AUTO_20260408_037",
+        "AUTO_20260408_038",
+        "AUTO_20260408_051",
+        "AUTO_20260408_052",
+        "AUTO_20260408_053"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407165607_73b4bc9de65d",
+      "source_run": "AUTO_20260407_030",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "000C69925F4D62F326DBEC68C3BFF54CC0ADF3A1BA3BC88AA3EF0226650A73CD",
+        "quality_score": 0.9,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "asymmetry_tolerance:balanced"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:56:07.750Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.318Z",
+      "support_count": 9,
+      "reuse_count": 0,
+      "fingerprint": "70cd8ede20e1edf6d0d7dd60373a40cbdc3efdd91c3f314d2473445d192fb550",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_030\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_030\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_030\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "supporting_runs": [
+        "AUTO_20260407_030",
+        "AUTO_20260407_031",
+        "AUTO_20260407_032",
+        "AUTO_20260408_036",
+        "AUTO_20260408_037",
+        "AUTO_20260408_038",
+        "AUTO_20260408_051",
+        "AUTO_20260408_052",
+        "AUTO_20260408_053"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407164143_231355e1b6d0",
+      "source_run": "AUTO_20260407_022",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "5131D4711C1B146E689CFC46E77E261645E5472E233042933FE410DB12B0B024",
+        "allowed_differences": [
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "asymmetry_tolerance:expressive"
+        ],
+        "quality_score": 0.95,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:41:43.769Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.258Z",
+      "support_count": 2,
+      "reuse_count": 0,
+      "fingerprint": "d2c22ea0eb3c854a38101107838d02779c2fb15cd44e6a5b3fc17ab697a35839",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_022\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_022\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "supporting_runs": [
+        "AUTO_20260407_022",
+        "AUTO_20260407_024"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407164143_589bddd60168",
+      "source_run": "AUTO_20260407_022",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "5131D4711C1B146E689CFC46E77E261645E5472E233042933FE410DB12B0B024",
+        "quality_score": 0.95,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:jaw_vent_delta",
+          "wear_level:high",
+          "microtexture_profile:sintered_grain",
+          "seam_intensity:pronounced",
+          "asymmetry_tolerance:expressive"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:41:43.769Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.258Z",
+      "support_count": 2,
+      "reuse_count": 0,
+      "fingerprint": "6f78827218c51f4d46feb325ca50efd26a0173913d1da1bec4330dbdc6b3144e",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_022\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_022\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_022\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_C",
+      "supporting_runs": [
+        "AUTO_20260407_022",
+        "AUTO_20260407_024"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407163948_6a2b649d0799",
+      "source_run": "AUTO_20260407_019",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "95AB2D04666BEFAF71D90E688A7B1DB84F75FF49B1AAC5428B3331CBA34B8335",
+        "allowed_differences": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:balanced"
+        ],
+        "quality_score": 0.88,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:39:48.574Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.236Z",
+      "support_count": 2,
+      "reuse_count": 0,
+      "fingerprint": "4177c07cd1962fb68ef0dbaa4038789bb9882e0ae45ff0b82afb6be4ce1d03cb",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_019\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_019\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_019\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "supporting_runs": [
+        "AUTO_20260407_019",
+        "AUTO_20260407_020"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407163948_240eec96c9ec",
+      "source_run": "AUTO_20260407_019",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "95AB2D04666BEFAF71D90E688A7B1DB84F75FF49B1AAC5428B3331CBA34B8335",
+        "quality_score": 0.88,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:brow_guard_delta",
+          "wear_level:medium",
+          "microtexture_profile:striated_erosion",
+          "seam_intensity:visible",
+          "asymmetry_tolerance:balanced"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:39:48.574Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.237Z",
+      "support_count": 2,
+      "reuse_count": 0,
+      "fingerprint": "2c54fd622f70be98e70d10d0990da37e97cbb6893bb7b5eb9088e32a52a3dd2a",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_019\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_019\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_019\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+      "supporting_runs": [
+        "AUTO_20260407_019",
+        "AUTO_20260407_020"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407163746_b49714eccb37",
+      "source_run": "AUTO_20260407_016",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "8C123538B48682E54250A5C8721CEC9A895A9FAD5ED77F4F9A3E963F080747D6",
+        "allowed_differences": [
+          "silhouette_variant:anchor",
+          "wear_level:low",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "asymmetry_tolerance:tight"
+        ],
+        "quality_score": 0.9,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:37:46.646Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.215Z",
+      "support_count": 3,
+      "reuse_count": 0,
+      "fingerprint": "fbd174d12f819ccf7453369b4c889723289a3b760e9b48d23c3ab860c045d4da",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_016\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_016\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_016\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "supporting_runs": [
+        "AUTO_20260407_016",
+        "AUTO_20260407_017",
+        "AUTO_20260407_018"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407163746_ac7c53eeec1f",
+      "source_run": "AUTO_20260407_016",
+      "lane": "image",
+      "type": "canon_rule",
+      "content": {
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "source_job_id": "AUTO_20260408_015",
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "edge_dna": [
+          "micro erosion on exposed edges",
+          "slight irregular bevel",
+          "non-uniform edge wear"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "color_law": [
+          "restricted charcoal ceramic palette",
+          "controlled off-white mineral accent"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "hard_forbidden_traits": [
+          "multi-angle board",
+          "generic product render",
+          "full body humanoid mech",
+          "white glossy plastic shell",
+          "fashion accessory styling"
+        ]
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:37:46.646Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.215Z",
+      "support_count": 34,
+      "reuse_count": 0,
+      "fingerprint": "72db2527f392e90df18f8e7dd7c79410da5997cba358cd85fc5b786fe8ad5aed",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_016\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_016\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_016\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "supporting_runs": [
+        "AUTO_20260407_016",
+        "AUTO_20260407_017",
+        "AUTO_20260407_018",
+        "AUTO_20260407_019",
+        "AUTO_20260407_020",
+        "AUTO_20260407_022",
+        "AUTO_20260407_024",
+        "AUTO_20260407_030",
+        "AUTO_20260407_031",
+        "AUTO_20260407_032",
+        "AUTO_20260407_034",
+        "AUTO_20260408_027",
+        "AUTO_20260408_028",
+        "AUTO_20260408_029",
+        "AUTO_20260408_030",
+        "AUTO_20260408_031",
+        "AUTO_20260408_032",
+        "AUTO_20260408_033",
+        "AUTO_20260408_035",
+        "AUTO_20260408_036",
+        "AUTO_20260408_037",
+        "AUTO_20260408_038",
+        "AUTO_20260408_042",
+        "AUTO_20260408_043",
+        "AUTO_20260408_044",
+        "AUTO_20260408_045",
+        "AUTO_20260408_046",
+        "AUTO_20260408_047",
+        "AUTO_20260408_048",
+        "AUTO_20260408_049",
+        "AUTO_20260408_050",
+        "AUTO_20260408_051",
+        "AUTO_20260408_052",
+        "AUTO_20260408_053"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.749Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407163746_ee8f53719f90",
+      "source_run": "AUTO_20260407_016",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "8C123538B48682E54250A5C8721CEC9A895A9FAD5ED77F4F9A3E963F080747D6",
+        "quality_score": 0.9,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:anchor",
+          "wear_level:low",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "asymmetry_tolerance:tight"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T16:37:46.646Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.215Z",
+      "support_count": 3,
+      "reuse_count": 0,
+      "fingerprint": "d0d13402dd1d7a5803d378b1a73df61bd6d4b17e65fcde9c670ca365fad42fc1",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260407_016\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_016\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260407_016\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "supporting_runs": [
+        "AUTO_20260407_016",
+        "AUTO_20260407_017",
+        "AUTO_20260407_018"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407141428_eb6e3d2408ed",
+      "source_run": "AUTO_20260408_011",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "quality_score": 0.9,
+        "material_dna": [],
+        "silhouette_grammar": [],
+        "identity_anchors": [],
+        "allowed_variation_axes": [],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T14:14:28.827Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.439Z",
+      "support_count": 6,
+      "reuse_count": 0,
+      "fingerprint": "ce0b686fb407f5b8c7236bb80c468ef55265d50d1d42d22d9878bc00609b82de",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_011\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_011\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_011\\attempt-01\\gemini_validation.json"
+      },
+      "supporting_runs": [
+        "AUTO_20260408_011",
+        "AUTO_20260408_015",
+        "AUTO_20260408_019_R02",
+        "AUTO_20260408_021",
+        "AUTO_20260408_023",
+        "AUTO_20260408_025"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407141254_c4534ba48abe",
+      "source_run": "AUTO_20260408_010",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "quality_score": 0.95,
+        "material_dna": [],
+        "silhouette_grammar": [],
+        "identity_anchors": [],
+        "allowed_variation_axes": [],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T14:12:54.891Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.433Z",
+      "support_count": 7,
+      "reuse_count": 0,
+      "fingerprint": "c6c51bab3bc18b4b7cc1fe539efc39d144259b3e960df1ff6d63942f048ed528",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_010\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_010\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_010\\attempt-01\\gemini_validation.json"
+      },
+      "supporting_runs": [
+        "AUTO_20260408_010",
+        "AUTO_20260408_017",
+        "AUTO_20260408_018",
+        "AUTO_20260408_020",
+        "AUTO_20260408_022",
+        "AUTO_20260408_024",
+        "AUTO_20260408_026"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407141208_7f58c0633a6e",
+      "source_run": "AUTO_20260408_009",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "quality_score": 0.9,
+        "material_dna": [],
+        "silhouette_grammar": [],
+        "identity_anchors": [],
+        "allowed_variation_axes": [],
+        "shot_profile": "ENTITY_MEDIUM"
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T14:12:08.754Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.428Z",
+      "support_count": 2,
+      "reuse_count": 0,
+      "fingerprint": "23f904b511997fec38543862b3d7d58c10c505c2866fba9e90ac24a1eabc11fb",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_009\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_009\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_009\\attempt-01\\gemini_validation.json"
+      },
+      "supporting_runs": [
+        "AUTO_20260408_009",
+        "AUTO_20260408_013"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407133048_db208fb08c3b",
+      "source_run": "AUTO_20260408_001",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "quality_score": 0.9,
+        "material_dna": [],
+        "silhouette_grammar": [],
+        "identity_anchors": [],
+        "allowed_variation_axes": []
+      },
+      "trust_score": 1.6,
+      "created_at": "2026-04-07T13:30:48.363Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.359Z",
+      "support_count": 5,
+      "reuse_count": 0,
+      "fingerprint": "02a5984e906c62065babfbc5eb967154caa792029abfe7f121f733e88badac48",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_001\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_001\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_001\\attempt-01\\gemini_validation.json"
+      },
+      "supporting_runs": [
+        "AUTO_20260408_001",
+        "AUTO_20260408_003",
+        "AUTO_20260408_004",
+        "AUTO_20260408_006_R02",
+        "AUTO_20260408_007_R02"
+      ],
+      "last_seen_at": "2026-04-07T18:54:09.748Z",
+      "promotion_notes": [
+        "multi_run_support"
+      ],
+      "promoted_at": "2026-04-07T18:54:09.753Z",
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407173242_00fe48ec829f",
+      "source_run": "AUTO_20260408_046",
+      "lane": "image",
+      "type": "approved_variant",
+      "content": {
+        "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+        "variant_family": "HERO_LOCK",
+        "base_dna_id": "DNA_AUTO_20260408_015",
+        "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+        "allowed_differences": [
+          "silhouette_variant:anchor",
+          "wear_level:low",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "asymmetry_tolerance:tight"
+        ],
+        "quality_score": 0.9,
+        "shot_profile": "MASK_MACRO",
+        "dna_retention_passed": true,
+        "variant_distinctness_passed": true
+      },
+      "trust_score": 1,
+      "created_at": "2026-04-07T17:32:42.619Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.681Z",
+      "support_count": 1,
+      "reuse_count": 0,
+      "fingerprint": "999ab2f9094a1f74ad0c284fcbaa0805f49fc258b135ba0d8784a5b18e7de30a",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_046\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_046\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_046\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "supporting_runs": [
+        "AUTO_20260408_046"
+      ],
+      "promotion_notes": [],
+      "promoted_at": null,
+      "decayed_at": null
+    },
+    {
+      "id": "mem_20260407173242_6e14540bc34c",
+      "source_run": "AUTO_20260408_046",
+      "lane": "image",
+      "type": "object_trait",
+      "content": {
+        "output_hash": "AB5D437617C1D5226C4AA856556B387E712128A7A72AAE43F39F8700318075E9",
+        "quality_score": 0.9,
+        "material_dna": [
+          "dark matte technical ceramic shell",
+          "micro-abrasion wear",
+          "subtle ceramic micro-pitting",
+          "uneven reflectance",
+          "technical ceramic read",
+          "matte non-plastic finish",
+          "micro-imperfect surface truth"
+        ],
+        "silhouette_grammar": [
+          "front dominant silhouette",
+          "fixed narrow eye cavity ratio",
+          "central forehead spine",
+          "layered jaw-vent geometry",
+          "coherent mask proportion logic"
+        ],
+        "identity_anchors": [
+          "single mounted mask artifact",
+          "industrial frame backdrop",
+          "centered hero framing",
+          "no turntable board",
+          "no full body mech",
+          "engineered ceramic artifact",
+          "industrial mounting logic",
+          "single subject hero framing"
+        ],
+        "allowed_variation_axes": [
+          "silhouette_variant:anchor",
+          "wear_level:low",
+          "microtexture_profile:fine_pitting",
+          "seam_intensity:minimal",
+          "asymmetry_tolerance:tight"
+        ],
+        "shot_profile": "MASK_MACRO"
+      },
+      "trust_score": 1,
+      "created_at": "2026-04-07T17:32:42.619Z",
+      "last_used": null,
+      "status": "active",
+      "generated_by": "tools/handoff/ingest_verified_artifacts.js",
+      "generated_at": "2026-04-07T18:54:09.682Z",
+      "support_count": 1,
+      "reuse_count": 0,
+      "fingerprint": "da868acf12db0dbec40a8152e8d3c06d8952f7fe9351ba7ae0337af4876ba109",
+      "source_artifacts": {
+        "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_046\\output.png",
+        "final_decision_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_046\\attempt-01\\final_decision.json",
+        "gemini_validation_json": "D:\\KAGAMI-MZ\\traces\\AUTO_20260408_046\\attempt-01\\gemini_validation.json"
+      },
+      "family_id": "HERO_LOCK",
+      "base_dna_id": "DNA_AUTO_20260408_015",
+      "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_A",
+      "supporting_runs": [
+        "AUTO_20260408_046"
+      ],
+      "promotion_notes": [],
+      "promoted_at": null,
+      "decayed_at": null
+    }
+  ],
+  "archived_entries": [],
+  "pruned_at": "2026-04-07T18:54:09.755Z"
+}

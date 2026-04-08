@@ -1,0 +1,20 @@
+{
+  "job_id": "AUTO_20260408_043",
+  "variant_id": "DNA_AUTO_20260408_015_HERO_LOCK_B",
+  "variant_family": "HERO_LOCK",
+  "base_dna_id": "DNA_AUTO_20260408_015",
+  "dna_retention_passed": true,
+  "variant_distinctness_passed": true,
+  "drift_detected": false,
+  "signature_consistency": 1,
+  "approved_sibling_count": 2,
+  "repeatability_exists": true,
+  "allowed_differences": [
+    "silhouette_variant:brow_guard_delta",
+    "wear_level:medium",
+    "microtexture_profile:striated_erosion",
+    "seam_intensity:visible",
+    "asymmetry_tolerance:tight"
+  ],
+  "verdict": "PASS_CANON_VARIANT"
+}

@@ -1,0 +1,23 @@
+{
+  "job_id": "AUTO_20260408_005_R02",
+  "attempt_index": 2,
+  "source": "live",
+  "status": "REJECT",
+  "quality_score": 0.3,
+  "overall_score": 0.2,
+  "failure_codes": [
+    "OBJECT_UNREADABLE",
+    "SILHOUETTE_BREAK",
+    "COMPOSITION_COLLAPSE",
+    "CANON_DRIFT"
+  ],
+  "notes": [
+    "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": false,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.275Z"
+}

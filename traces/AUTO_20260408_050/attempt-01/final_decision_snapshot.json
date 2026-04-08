@@ -1,0 +1,57 @@
+{
+  "job_id": "AUTO_20260408_050",
+  "attempt_index": 1,
+  "decision": {
+    "decision": "ALLOW",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T17:35:41.139Z",
+    "reason": "Deterministic judge cache consensus override."
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260408_050",
+    "lane": "image",
+    "state": "rejected",
+    "queue_state": "completed",
+    "issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "fatal_issues": [
+      "validator fail",
+      "lane rejected"
+    ],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [
+        "live_judge_fail",
+        "CANON_DRIFT",
+        "ABSTRACT_COMPOSITION"
+      ],
+      "issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "fatal_issues": [
+        "validator fail",
+        "lane rejected"
+      ],
+      "success": false
+    },
+    "monitored_at": "2026-04-07T17:35:41.139Z"
+  }
+}

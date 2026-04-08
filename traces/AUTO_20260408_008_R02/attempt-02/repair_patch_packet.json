@@ -1,0 +1,25 @@
+{
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "repair_class": "canon",
+  "recovery_mode": "STANDARD_RECOVERY",
+  "failure_codes": [
+    "CANON_DRIFT"
+  ],
+  "primary_failure_codes": [
+    "CANON_DRIFT"
+  ],
+  "patch_targets": [],
+  "prompt_patch": {
+    "positive_additions": [],
+    "negative_additions": [
+      "off-canon drift"
+    ]
+  },
+  "canon_reinforcements": [],
+  "canon_patch": {
+    "dominant_traits": [],
+    "supportive_traits": [],
+    "blocked_traits": [],
+    "must_have_traits": []
+  }
+}

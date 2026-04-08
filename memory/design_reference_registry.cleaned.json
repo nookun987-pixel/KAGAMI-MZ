@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "description": "Registry of known design references that inform object spec generation. Each entry maps a cultural/design concept to structural rules. Sanitized live-safe references only.",
+  "sanitized_at": "2026-04-06T17:17:49.546Z",
+  "sanitation_version": "v2",
+  "references": []
+}

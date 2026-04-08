@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-04-07T18:54:37.176Z",
+  "lanes": {
+    "image": {
+      "status": "active",
+      "confidence": "proven_from_repo",
+      "executor": "MIKAGE/lanes/image/image_executor.js",
+      "validator": "MIKAGE/lanes/image/image_validator.js"
+    },
+    "cine": {
+      "status": "UNVERIFIED",
+      "confidence": "placeholder_only"
+    },
+    "game": {
+      "status": "UNVERIFIED",
+      "confidence": "placeholder_only"
+    },
+    "content": {
+      "status": "UNVERIFIED",
+      "confidence": "placeholder_only"
+    },
+    "ops": {
+      "status": "UNVERIFIED",
+      "confidence": "placeholder_only"
+    }
+  }
+}

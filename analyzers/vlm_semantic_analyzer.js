@@ -22,13 +22,18 @@
 "use strict";
 
 const fs = require("fs");
-const path = require("path");
 
 // ===================================================================
 // VLM CLIENT — injectable, same pattern as vision_critic.js
 // ===================================================================
 
 let _vlmClient = null;
+let _vlmRuntimeInfo = {
+  configured: false,
+  mode: "inactive",
+  status: "unavailable",
+  reason: "VLM client not configured",
+};
 
 /**
  * Inject a VLM client.
@@ -39,6 +44,21 @@ function setVLMClient(client) {
     throw new Error("[VLM_SEMANTIC] Client must have async query(imagePath, systemPrompt, userPrompt)");
   }
   _vlmClient = client;
+  if (client) {
+    _vlmRuntimeInfo = {
+      configured: true,
+      mode: client.mode || "custom_client",
+      status: "configured",
+      reason: null,
+    };
+  } else {
+    _vlmRuntimeInfo = {
+      configured: false,
+      mode: "inactive",
+      status: "unavailable",
+      reason: "VLM client not configured",
+    };
+  }
 }
 
 function getVLMClient() {
@@ -50,6 +70,139 @@ function getVLMClient() {
  */
 function isVLMAvailable() {
   return _vlmClient !== null;
+}
+
+function getVLMRuntimeInfo() {
+  return { ..._vlmRuntimeInfo };
+}
+
+function extractJsonFromText(text) {
+  const raw = String(text || "").trim();
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch (_) {}
+  const match = raw.match(/\{[\s\S]*\}/);
+  if (!match) return null;
+  try {
+    return JSON.parse(match[0]);
+  } catch (_) {
+    return null;
+  }
+}
+
+function buildOpenAICompatibleVLMClientFromEnv() {
+  const enabled = String(process.env.USE_VISION_VALIDATOR || "false").toLowerCase() === "true";
+  if (!enabled) {
+    _vlmRuntimeInfo = {
+      configured: false,
+      mode: "inactive",
+      status: "disabled",
+      reason: "USE_VISION_VALIDATOR=false",
+    };
+    return null;
+  }
+
+  const endpoint = String(process.env.VLM_ENDPOINT || "").trim();
+  if (!endpoint) {
+    _vlmRuntimeInfo = {
+      configured: false,
+      mode: "inactive",
+      status: "unconfigured",
+      reason: "USE_VISION_VALIDATOR=true but VLM_ENDPOINT is missing",
+    };
+    return null;
+  }
+
+  const apiKey = String(process.env.VLM_API_KEY || process.env.OPENAI_API_KEY || "").trim();
+  const model = String(process.env.VLM_MODEL || "vlm-semantic").trim();
+
+  const client = {
+    mode: "openai_compatible_http",
+    endpoint,
+    model,
+    async query(imagePath, systemPrompt, userPrompt) {
+      const imageBase64 = fs.readFileSync(imagePath).toString("base64");
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      if (apiKey) {
+        headers.Authorization = `Bearer ${apiKey}`;
+      }
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          model,
+          temperature: 0,
+          messages: [
+            { role: "system", content: systemPrompt },
+            {
+              role: "user",
+              content: [
+                { type: "text", text: userPrompt },
+                {
+                  type: "image_url",
+                  image_url: {
+                    url: `data:image/png;base64,${imageBase64}`,
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      });
+
+      const payload = await response.json();
+      const content =
+        payload &&
+        payload.choices &&
+        payload.choices[0] &&
+        payload.choices[0].message &&
+        payload.choices[0].message.content;
+
+      if (!response.ok) {
+        throw new Error(`VLM_HTTP_${response.status}`);
+      }
+
+      if (typeof content === "string") {
+        return extractJsonFromText(content) || content;
+      }
+      if (Array.isArray(content)) {
+        const joined = content
+          .map((part) => {
+            if (typeof part === "string") return part;
+            if (part && typeof part.text === "string") return part.text;
+            return "";
+          })
+          .join("\n");
+        return extractJsonFromText(joined) || joined;
+      }
+      return content;
+    },
+  };
+
+  _vlmRuntimeInfo = {
+    configured: true,
+    mode: client.mode,
+    status: "configured",
+    reason: null,
+    endpoint,
+    model,
+  };
+  return client;
+}
+
+function wireVLMClientFromEnv() {
+  if (isVLMAvailable()) {
+    return getVLMRuntimeInfo();
+  }
+  const client = buildOpenAICompatibleVLMClientFromEnv();
+  if (client) {
+    setVLMClient(client);
+  }
+  return getVLMRuntimeInfo();
 }
 
 // ===================================================================
@@ -89,10 +242,25 @@ const IDENTITY_MATERIAL_PROMPT = {
     "Score 0.0 for realistic/PBR rendering. Score 1.0 for obvious toon/cel shading.\n\n" +
     "8. chibi_proportions: Are body proportions exaggerated in a cute/chibi/super-deformed way? " +
     "Score 0.0 for realistic proportions. Score 1.0 for chibi/cute proportions.\n\n" +
+    "9. human_face_read: Does the image read as a human or character face rather than a manufactured artifact? " +
+    "Score 0.0 if it reads as a strict mask object. Score 1.0 if a human/character face read is obvious.\n\n" +
+    "10. visible_eyes_detected: Are visible eyes present in the eye region? Score 0.0 for sealed voids. Score 1.0 for visible eyes.\n\n" +
+    "11. cosplay_or_wearable_read: Does the object read like a wearable helmet, cosplay prop, or costume piece? " +
+    "Score 0.0 for isolated artifact object. Score 1.0 for wearable/cosplay read.\n\n" +
+    "12. creature_features_detected: Are creature, animal, or character-anatomy features present? " +
+    "Score 0.0 for manufactured artifact. Score 1.0 for creature/character features.\n\n" +
+    "13. horn_or_ear_extension_detected: Are horns, ears, fox ears, animal ears, or protruding crown appendages visible? " +
+    "Score 0.0 if none. Score 1.0 if visible.\n\n" +
+    "14. plastic_or_resin_read: Does the object read as plastic, resin, PVC, or toy material? Score 0.0 for technical ceramic. Score 1.0 for plastic/resin.\n\n" +
+    "15. non_ceramic_material_read: Does the primary shell read as non-ceramic material? Score 0.0 for ceramic. Score 1.0 for non-ceramic.\n\n" +
+    "16. abstract_unreadable_object: Does the image fail to read as one clear manufactured object? Score 0.0 if object identity is immediate. Score 1.0 if abstract/unreadable.\n\n" +
     "RESPOND ONLY with JSON:\n" +
     '{"human_eyes_detected":0.0,"face_mesh_visible":0.0,"high_gloss_specular":0.0,' +
     '"pvc_plastic_read":0.0,"missing_weave_texture":0.0,"soft_fabric_folds_on_joints":0.0,' +
-    '"toon_shading":0.0,"chibi_proportions":0.0}',
+    '"toon_shading":0.0,"chibi_proportions":0.0,"human_face_read":0.0,' +
+    '"visible_eyes_detected":0.0,"cosplay_or_wearable_read":0.0,"creature_features_detected":0.0,' +
+    '"horn_or_ear_extension_detected":0.0,"plastic_or_resin_read":0.0,' +
+    '"non_ceramic_material_read":0.0,"abstract_unreadable_object":0.0}',
 };
 
 /**
@@ -120,9 +288,14 @@ const ENERGY_ATMOSPHERE_PROMPT = {
     "4. lens_flare_spam: Are there excessive lens flares, light streaks, or " +
     "anamorphic flare effects cluttering the image? Score 0.0 if clean. " +
     "Score 1.0 if flare spam.\n\n" +
+    "5. halo_ring_frame_object: Is there a halo, ring, circular frame, border device, or framing object competing with the mask? " +
+    "Score 0.0 if none. Score 1.0 if visible.\n\n" +
+    "6. missing_black_void_background: Does the background fail to read as a black void? " +
+    "Score 0.0 for black void. Score 1.0 for visible environment/background clutter.\n\n" +
     "RESPOND ONLY with JSON:\n" +
     '{"magenta_neon_spill":0.0,"chaotic_particle_bloom":0.0,' +
-    '"cyan_magenta_overload":0.0,"lens_flare_spam":0.0}',
+    '"cyan_magenta_overload":0.0,"lens_flare_spam":0.0,"halo_ring_frame_object":0.0,' +
+    '"missing_black_void_background":0.0}',
 };
 
 /**
@@ -222,10 +395,11 @@ function clampDegrees(val) {
  */
 async function analyzeSemantics(imagePath) {
   if (!isVLMAvailable()) {
-    // No VLM configured — return empty object.
-    // All semantic signals stay undefined → rule engine marks UNKNOWN.
+    const runtime = getVLMRuntimeInfo();
     return {
-      _vlm_status: "unavailable",
+      _vlm_status: runtime.status || "unavailable",
+      _vlm_mode: runtime.mode || "inactive",
+      _vlm_reason: runtime.reason || null,
       _vlm_signals_provided: 0,
     };
   }
@@ -233,6 +407,7 @@ async function analyzeSemantics(imagePath) {
   if (!fs.existsSync(imagePath)) {
     return {
       _vlm_status: "image_not_found",
+      _vlm_mode: getVLMRuntimeInfo().mode || "unknown",
       _vlm_signals_provided: 0,
     };
   }
@@ -254,15 +429,26 @@ async function analyzeSemantics(imagePath) {
       "high_gloss_specular", "pvc_plastic_read",
       "missing_weave_texture", "soft_fabric_folds_on_joints",
       "toon_shading", "chibi_proportions",
+      "human_face_read", "visible_eyes_detected",
+      "cosplay_or_wearable_read", "creature_features_detected",
+      "horn_or_ear_extension_detected", "plastic_or_resin_read",
+      "non_ceramic_material_read", "abstract_unreadable_object",
     ];
     for (const f of fields) {
       const v = clampScore(identityRaw[f]);
       if (v !== undefined) {
-        // Convert continuous 0-1 score to binary signal for rule engine
-        // Threshold: > 0.4 = detected (1), <= 0.4 = not detected (0)
         signals[f] = v > 0.4 ? 1 : 0;
         provided++;
       }
+    }
+    if (signals.visible_eyes_detected !== undefined && signals.human_eyes_detected === undefined) {
+      signals.human_eyes_detected = signals.visible_eyes_detected;
+    }
+    if (signals.human_face_read !== undefined && signals.face_mesh_visible === undefined) {
+      signals.face_mesh_visible = signals.human_face_read;
+    }
+    if (signals.plastic_or_resin_read !== undefined && signals.pvc_plastic_read === undefined) {
+      signals.pvc_plastic_read = signals.plastic_or_resin_read;
     }
   }
 
@@ -271,6 +457,7 @@ async function analyzeSemantics(imagePath) {
     const fields = [
       "magenta_neon_spill", "chaotic_particle_bloom",
       "cyan_magenta_overload", "lens_flare_spam",
+      "halo_ring_frame_object", "missing_black_void_background",
     ];
     for (const f of fields) {
       const v = clampScore(energyRaw[f]);
@@ -310,6 +497,7 @@ async function analyzeSemantics(imagePath) {
   }
 
   signals._vlm_status = "completed";
+  signals._vlm_mode = getVLMRuntimeInfo().mode || "custom_client";
   signals._vlm_signals_provided = provided;
   signals._vlm_batches = {
     identity_material: identityRaw !== null,
@@ -329,6 +517,8 @@ module.exports = {
   setVLMClient,
   getVLMClient,
   isVLMAvailable,
+  getVLMRuntimeInfo,
+  wireVLMClientFromEnv,
   // Exposed for testing
   IDENTITY_MATERIAL_PROMPT,
   ENERGY_ATMOSPHERE_PROMPT,

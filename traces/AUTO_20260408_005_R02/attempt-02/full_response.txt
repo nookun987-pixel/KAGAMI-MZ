@@ -1,0 +1,277 @@
+{
+  "job_id": "AUTO_20260408_005_R02",
+  "lane": "image",
+  "status": "rejected",
+  "summary": "Image lane produced an invalid or incomplete result.",
+  "artifacts": [
+    {
+      "type": "job_json",
+      "label": "job_json",
+      "path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_005_R02.json"
+    },
+    {
+      "type": "claim_json",
+      "label": "claim_json",
+      "path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_005_R02.claim.json"
+    },
+    {
+      "type": "result_json",
+      "label": "result_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\result.json"
+    },
+    {
+      "type": "judge_output_json",
+      "label": "judge_output_json",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\judge_output.json"
+    },
+    {
+      "type": "image",
+      "label": "output_image",
+      "path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\output.png"
+    }
+  ],
+  "validator_result": {
+    "passed": false,
+    "signals": [
+      "live_judge_fail",
+      "OBJECT_UNREADABLE",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE",
+      "CANON_DRIFT"
+    ],
+    "issues": [
+      "live_judge_fail",
+      "OBJECT_UNREADABLE",
+      "SILHOUETTE_BREAK",
+      "COMPOSITION_COLLAPSE",
+      "CANON_DRIFT"
+    ],
+    "judge_output": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.3,
+      "overall_score": 0.2,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE",
+        "CANON_DRIFT"
+      ],
+      "notes": "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+    },
+    "judge_output_path": "outputs/AUTO_20260408_005_R02/judge_output.json",
+    "critic_merge": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.3,
+      "overall_score": 0.3,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE",
+        "CANON_DRIFT"
+      ],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "OBJECT_UNREADABLE",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE",
+        "CANON_DRIFT",
+        "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+      ],
+      "judge_output_path": "outputs/AUTO_20260408_005_R02/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.3,
+        "quality_score": 0.3,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT",
+          "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+        ],
+        "verdict": "REJECT",
+        "raw": {
+          "source": "live",
+          "status": "REJECT",
+          "quality_score": 0.3,
+          "overall_score": 0.2,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "SILHOUETTE_BREAK",
+            "COMPOSITION_COLLAPSE",
+            "CANON_DRIFT"
+          ],
+          "notes": "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+        }
+      }
+    },
+    "proof_blocked": false
+  },
+  "error": "live_judge_fail",
+  "started_at": "2026-04-07T13:46:50.257Z",
+  "finished_at": "2026-04-07T13:47:35.017Z",
+  "metadata": {
+    "queue_state": "completed",
+    "observed_states": [
+      {
+        "state": "queued",
+        "timestamp": "2026-04-07T13:46:50.310Z"
+      }
+    ],
+    "drive_root": "G:\\My Drive\\mikage_runner",
+    "job_file_path": "G:\\My Drive\\mikage_runner\\job_inbox\\AUTO_20260408_005_R02.json",
+    "claim_file_path": "G:\\My Drive\\mikage_runner\\claims\\AUTO_20260408_005_R02.claim.json",
+    "result_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\result.json",
+    "judge_output_file_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\judge_output.json",
+    "output_image_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_005_R02\\output.png",
+    "claim": {
+      "job_id": "AUTO_20260408_005_R02",
+      "worker_id": "colab-worker-01",
+      "claimed_at": "2026-04-07T13:47:07.106539Z",
+      "status": "claimed"
+    },
+    "result": {
+      "job_id": "AUTO_20260408_005_R02",
+      "status": "completed",
+      "output_image_path": "outputs/AUTO_20260408_005_R02/output.png",
+      "judge_output_path": "outputs/AUTO_20260408_005_R02/judge_output.json",
+      "judge_output": {
+        "source": "live",
+        "status": "REJECT",
+        "quality_score": 0.3,
+        "overall_score": 0.2,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT"
+        ],
+        "notes": "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+      },
+      "validator_result": {
+        "passed": true,
+        "signals": []
+      },
+      "artifacts": [
+        {
+          "type": "image",
+          "path": "outputs/AUTO_20260408_005_R02/output.png"
+        },
+        {
+          "type": "judge_output_json",
+          "path": "outputs/AUTO_20260408_005_R02/judge_output.json"
+        }
+      ],
+      "started_at": "2026-04-07T13:47:07.112277Z",
+      "finished_at": "2026-04-07T13:47:17.384410Z",
+      "metadata": {
+        "model_id": "stabilityai/sdxl-turbo",
+        "device": "cuda",
+        "seed": 42,
+        "num_inference_steps": 4,
+        "guidance_scale": 0
+      }
+    },
+    "judge_output": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.3,
+      "overall_score": 0.2,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE",
+        "CANON_DRIFT"
+      ],
+      "notes": "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+    },
+    "critic_merge": {
+      "source": "live",
+      "status": "REJECT",
+      "quality_score": 0.3,
+      "overall_score": 0.3,
+      "failure_codes": [
+        "OBJECT_UNREADABLE",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE",
+        "CANON_DRIFT"
+      ],
+      "notes": [
+        "RULE_ANALYZER_UNAVAILABLE",
+        "OBJECT_UNREADABLE",
+        "SILHOUETTE_BREAK",
+        "COMPOSITION_COLLAPSE",
+        "CANON_DRIFT",
+        "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+      ],
+      "judge_output_path": "outputs/AUTO_20260408_005_R02/judge_output.json",
+      "rule_detail": {
+        "status": "UNAVAILABLE",
+        "source": "unavailable",
+        "rule_score": null,
+        "checks": [],
+        "issues": [
+          "RULE_ANALYZER_UNAVAILABLE"
+        ],
+        "verdict": "UNAVAILABLE"
+      },
+      "vision_detail": {
+        "mode": "gemini_live",
+        "source": "live",
+        "status": "LIVE",
+        "vision_score": 0.3,
+        "quality_score": 0.3,
+        "failure_codes": [
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT"
+        ],
+        "issues": [
+          "OBJECT_UNREADABLE",
+          "SILHOUETTE_BREAK",
+          "COMPOSITION_COLLAPSE",
+          "CANON_DRIFT",
+          "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+        ],
+        "verdict": "REJECT",
+        "raw": {
+          "source": "live",
+          "status": "REJECT",
+          "quality_score": 0.3,
+          "overall_score": 0.2,
+          "failure_codes": [
+            "OBJECT_UNREADABLE",
+            "SILHOUETTE_BREAK",
+            "COMPOSITION_COLLAPSE",
+            "CANON_DRIFT"
+          ],
+          "notes": "Many objects, especially on the right-hand structure and lower shelves, are unreadable or abstractly rendered. The humanoid figure's lower body is awkwardly obscured by a block, breaking its silhouette. The overall composition feels cluttered and lacks clear definition for many elements, leading to a sense of compositional collapse and drift from a coherent design canon."
+        }
+      }
+    },
+    "proof_blocked": false,
+    "malformed_result": false,
+    "stale_claim": false
+  }
+}

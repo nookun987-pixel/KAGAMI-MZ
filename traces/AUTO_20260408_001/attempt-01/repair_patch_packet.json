@@ -1,0 +1,14 @@
+{
+  "repair_class": "",
+  "failure_codes": [],
+  "prompt_patch": {
+    "positive_additions": [],
+    "negative_additions": []
+  },
+  "canon_patch": {
+    "dominant_traits": [],
+    "supportive_traits": [],
+    "blocked_traits": [],
+    "must_have_traits": []
+  }
+}

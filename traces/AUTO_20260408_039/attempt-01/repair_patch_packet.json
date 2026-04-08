@@ -1,0 +1,101 @@
+{
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "repair_class": "canon",
+  "recovery_mode": "STRONG_OBJECT_RECOVERY",
+  "failure_codes": [
+    "ABSTRACT_COMPOSITION",
+    "CANON_DRIFT"
+  ],
+  "primary_failure_codes": [
+    "ABSTRACT_COMPOSITION",
+    "CANON_DRIFT"
+  ],
+  "patch_targets": [
+    "object_form",
+    "object_centrality",
+    "subject_hierarchy"
+  ],
+  "prompt_patch": {
+    "positive_additions": [
+      "force literal manufactured object as primary subject",
+      "force non-abstract composition",
+      "force object-first frame hierarchy",
+      "force clear subject separation from background",
+      "force visual reading in one glance",
+      "literal subject framing",
+      "single engineered ceramic object centered in frame",
+      "front readable silhouette with one-glance object recognition",
+      "front dominant silhouette",
+      "fixed narrow eye cavity ratio",
+      "central forehead spine",
+      "layered jaw-vent geometry",
+      "dark matte technical ceramic shell",
+      "micro-abrasion wear",
+      "subtle ceramic micro-pitting",
+      "uneven reflectance",
+      "single mounted mask artifact",
+      "industrial frame backdrop",
+      "centered hero framing",
+      "no turntable board",
+      "no full body mech"
+    ],
+    "negative_additions": [
+      "no abstract composition",
+      "no symbolic framing",
+      "no conceptual poster-like image",
+      "no mood-first composition",
+      "no texture-first composition",
+      "no atmospheric subject loss",
+      "abstract composition",
+      "symbolic non-literal framing",
+      "mood-first composition",
+      "texture-first composition",
+      "off-canon drift",
+      "multi-angle board",
+      "generic product render",
+      "full body humanoid mech",
+      "white glossy plastic shell"
+    ]
+  },
+  "canon_reinforcements": [
+    "object readability over aesthetics",
+    "literal form over mood",
+    "manufactured subject over visual ambiguity"
+  ],
+  "canon_patch": {
+    "dominant_traits": [],
+    "supportive_traits": [],
+    "blocked_traits": [],
+    "must_have_traits": [],
+    "dominant_reference": {
+      "job_id": "AUTO_20260408_015",
+      "score": 0.9,
+      "locked_at": "2026-04-07T14:18:55.657Z",
+      "silhouette_traits": [
+        "front dominant silhouette",
+        "fixed narrow eye cavity ratio",
+        "central forehead spine",
+        "layered jaw-vent geometry"
+      ],
+      "material_traits": [
+        "dark matte technical ceramic shell",
+        "micro-abrasion wear",
+        "subtle ceramic micro-pitting",
+        "uneven reflectance"
+      ],
+      "framing_traits": [
+        "single mounted mask artifact",
+        "industrial frame backdrop",
+        "centered hero framing",
+        "no turntable board",
+        "no full body mech"
+      ],
+      "blocked_traits": [
+        "multi-angle board",
+        "generic product render",
+        "full body humanoid mech",
+        "white glossy plastic shell"
+      ]
+    }
+  }
+}

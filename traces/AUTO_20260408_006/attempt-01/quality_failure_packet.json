@@ -1,0 +1,63 @@
+{
+  "supported_failure_codes": [
+    "OBJECT_UNREADABLE",
+    "ABSTRACT_COMPOSITION",
+    "FUNCTIONAL_FORM_WEAK",
+    "OBJECT_CENTRALITY_WEAK",
+    "SYMBOLIC_FRAMING",
+    "FASHION_COMPOSITION",
+    "TEXTURE_ONLY_FRAME",
+    "CERAMIC_NOT_CONVINCING",
+    "MATERIAL_PLASTIC",
+    "MATERIAL_RESIN",
+    "TOY_READ",
+    "SURFACE_TOO_SMOOTH",
+    "SILHOUETTE_NOISY",
+    "CANON_DRIFT",
+    "SILHOUETTE_BREAK",
+    "COMPOSITION_COLLAPSE"
+  ],
+  "primary_failure_code": "ABSTRACT_COMPOSITION",
+  "failure_codes": [
+    "ABSTRACT_COMPOSITION"
+  ],
+  "primary_failure_codes": [
+    "ABSTRACT_COMPOSITION"
+  ],
+  "secondary_failure_codes": [],
+  "repair_class": "quality",
+  "quality_score": 0.85,
+  "score": 0.85,
+  "judge_summary": {
+    "status": "REJECT",
+    "notes": "The image presents a highly abstract composition of interlocking pink geometric shapes. While the rendering quality, material properties, and lighting are technically well-executed, the purely abstract nature of the composition is considered a failure against canon requirements that typically favor more recognizable or interpretable subjects.",
+    "failure_codes": [
+      "ABSTRACT_COMPOSITION"
+    ]
+  },
+  "validator_summary": {
+    "passed": false,
+    "signals": [
+      "live_judge_fail",
+      "ABSTRACT_COMPOSITION"
+    ],
+    "issues": [
+      "live_judge_fail",
+      "ABSTRACT_COMPOSITION"
+    ]
+  },
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "patch_targets": [
+    "object_form",
+    "object_centrality",
+    "subject_hierarchy"
+  ],
+  "job_id": "AUTO_20260408_006",
+  "attempt": 1,
+  "source_artifacts": {
+    "output_png": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_006\\output.png",
+    "judge_output_json": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_006\\judge_output.json"
+  },
+  "pass": false,
+  "critical_failure": true
+}

@@ -100,36 +100,62 @@ function mergeVerdicts(qualityScore, ruleVerdict, visionVerdict) {
  * @returns {Promise<CriticResult>}
  */
 async function runCritic(imagePath) {
+  const context = arguments[1] || {};
   if (!imagePath) {
     throw new Error("[CRITIC_MERGE] imagePath is required");
   }
 
-  // --- Layer 1: Rule-based ---
-  const ruleResult = runAllRules(imagePath);
+  const ruleResult = runAllRules(imagePath, context);
+  const visionResult = await runVisionCritic({
+    imagePath,
+    prompt: context.prompt || "",
+    liveJudgeOutput: context.liveJudgeOutput || null,
+  });
 
-  // --- Layer 2: Vision-based ---
-  const visionResult = await runVisionCritic(imagePath);
+  if (visionResult.source !== "live") {
+    return {
+      source: "unavailable",
+      status: "UNAVAILABLE",
+      quality_score: null,
+      overall_score: null,
+      failure_codes: [],
+      notes: ["LIVE_JUDGE_UNAVAILABLE"],
+      judge_output_path: context.judgeOutputPath || null,
+      rule_detail: ruleResult,
+      vision_detail: visionResult,
+    };
+  }
 
-  // --- Merge ---
-  const qualityScore = mergeScores(ruleResult.rule_score, visionResult.vision_score);
-  const verdict = mergeVerdicts(qualityScore, ruleResult.verdict, visionResult.verdict);
-
-  // --- Combine issues ---
-  const issues = [
-    ...ruleResult.issues.map((i) => `[RULE] ${i}`),
-    ...visionResult.issues.map((i) => `[VISION] ${i}`),
-  ];
+  const qualityScore = typeof visionResult.quality_score === "number"
+    ? visionResult.quality_score
+    : typeof visionResult.vision_score === "number"
+      ? visionResult.vision_score
+      : null;
+  const overallScore = typeof qualityScore === "number" && typeof ruleResult.rule_score === "number"
+    ? mergeScores(ruleResult.rule_score, qualityScore)
+    : qualityScore;
+  const ruleVerdict = ruleResult.verdict === "UNAVAILABLE" ? "PASS" : ruleResult.verdict;
+  const verdict = overallScore === null
+    ? "UNAVAILABLE"
+    : mergeVerdicts(overallScore, ruleVerdict, visionResult.verdict === "REJECT" ? "FAIL" : visionResult.verdict);
+  const failureCodes = [...new Set([]
+    .concat(visionResult.failure_codes || [])
+    .concat(context.liveJudgeOutput && context.liveJudgeOutput.failure_codes || []))];
+  const notes = []
+    .concat(ruleResult.issues || [])
+    .concat(visionResult.issues || [])
+    .filter(Boolean);
 
   return {
-    rule_score: ruleResult.rule_score,
-    vision_score: visionResult.vision_score,
+    source: "live",
+    status: verdict,
     quality_score: qualityScore,
-    rule_verdict: ruleResult.verdict,
-    vision_verdict: visionResult.verdict,
-    verdict,
+    overall_score: overallScore,
+    failure_codes: failureCodes,
+    notes,
+    judge_output_path: context.judgeOutputPath || null,
     rule_detail: ruleResult,
     vision_detail: visionResult,
-    issues,
   };
 }
 

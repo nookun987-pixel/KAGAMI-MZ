@@ -1,15 +1,26 @@
+const { buildRuntimeSnapshot } = require("../lib/google_drive_runtime");
+
 export default async function handler(req, res) {
-  const bridgeUrl = process.env.LOCAL_MIKAGE_BRIDGE_URL || 'http://localhost:3031';
-  
   try {
-    // Proxy to local bridge
-    const response = await fetch(`${bridgeUrl}/queue`);
-    const data = await response.json();
-    
-    res.status(response.ok ? 200 : 500).json(data);
-    
+    const snapshot = await buildRuntimeSnapshot();
+    const jobs = snapshot.jobs.map((job) => ({
+      job_id: job.job_id,
+      status: job.status,
+      execution_guard: job.status === "pending" ? "awaiting_colab_claim" : "shared_drive_live",
+      created_at: job.created_at || job.claimed_at || job.completed_at || job.failed_at || snapshot.generated_at,
+      started_at: job.claimed_at || null,
+      finished_at: job.completed_at || job.failed_at || null,
+      lane: job.lane,
+      execution_target: job.execution_target,
+      error: job.result && (job.result.error || job.result.error_reason) || null,
+    }));
+
+    res.status(200).json({
+      count: jobs.length,
+      jobs,
+      proof: snapshot.proof,
+    });
   } catch (error) {
-    console.error('[API] Get queue failed:', error);
     res.status(500).json({ error: error.message });
   }
 }

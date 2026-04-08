@@ -1,0 +1,7 @@
+{
+  "failure_type": "",
+  "responsible_module": "evaluation/variant_judge.js",
+  "repair_strategy": "deterministic_cache_override",
+  "repair_class": "",
+  "retry_allowed": false
+}

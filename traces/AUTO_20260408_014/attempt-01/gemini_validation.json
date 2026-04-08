@@ -1,0 +1,18 @@
+{
+  "job_id": "AUTO_20260408_014",
+  "attempt_index": 1,
+  "source": "live",
+  "status": "REVIEW",
+  "quality_score": 0.85,
+  "overall_score": 0.75,
+  "failure_codes": [],
+  "notes": [
+    "The render quality of the stylized head is good, with clear forms and effective lighting. However, a visible watermark/signature is present in the bottom left corner, which detracts from the overall clean presentation of the image."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_014\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": false,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.322Z"
+}

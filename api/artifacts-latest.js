@@ -1,13 +1,20 @@
+const { buildRuntimeSnapshot } = require("../lib/google_drive_runtime");
+
 export default async function handler(req, res) {
-  const bridgeUrl = process.env.LOCAL_MIKAGE_BRIDGE_URL || 'http://localhost:3031';
-  
   try {
-    const response = await fetch(`${bridgeUrl}/artifacts/latest`);
-    const data = await response.json();
-    res.status(200).json(data);
+    const snapshot = await buildRuntimeSnapshot();
+    const latestArtifacts = snapshot.jobs
+      .flatMap((job) => job.artifacts.map((artifact) => ({
+        ...artifact,
+        job_id: job.job_id,
+      })))
+      .sort((a, b) => String(b.modifiedTime || "").localeCompare(String(a.modifiedTime || "")))
+      .slice(0, 20);
+
+    res.status(200).json(latestArtifacts);
   } catch (error) {
-    res.status(200).json({
-      error: `Bridge offline: ${error.message}`
+    res.status(500).json({
+      error: error.message,
     });
   }
 }

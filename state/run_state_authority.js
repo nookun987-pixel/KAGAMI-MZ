@@ -320,3 +320,9 @@ module.exports = {
   markRunRepairNeeded,
   isRetryExhausted,
 };
+/**
+ * LEGACY STATE AUTHORITY
+ *
+ * MIKAGE V2 source of truth is MIKAGE/shared/memory/.
+ * This file is retained only for legacy queue/run state compatibility.
+ */

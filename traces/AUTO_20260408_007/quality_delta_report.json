@@ -1,0 +1,16 @@
+{
+  "job_id": "AUTO_20260408_007",
+  "attempt_1_score": 0.85,
+  "attempt_2_score": 0.9,
+  "score_delta": 0.050000000000000044,
+  "failure_count_attempt_1": 1,
+  "failure_count_attempt_2": 0,
+  "failure_delta": -1,
+  "resolved_codes": [
+    "ABSTRACT_COMPOSITION"
+  ],
+  "remaining_codes": [],
+  "primary_failure_removed": true,
+  "improved": true,
+  "verdict": "RECOVERY_MAJOR_IMPROVED"
+}

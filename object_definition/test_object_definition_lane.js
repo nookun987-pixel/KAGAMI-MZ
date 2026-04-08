@@ -7,7 +7,7 @@
  *   raw intent → normalizer → spec generator → readability gate → prompt compiler
  *
  * Tests:
- *   1. Known kitsune mask intent → approved spec → PASS gate → compiled prompt
+ *   1. Generic mask intent → clean skeleton spec → PASS gate → compiled prompt
  *   2. Abstract/texture intent → REJECT at normalizer
  *   3. Vague intent (no object class) → REJECT at normalizer
  *   4. Skeleton spec (unknown object) → REVISE or PASS at gate
@@ -35,19 +35,19 @@ function assert(condition, testName, detail) {
 }
 
 // -------------------------------------------------------------------------
-// TEST 1: Known kitsune mask intent → full lane PASS
+// TEST 1: Generic mask intent → full lane PASS
 // -------------------------------------------------------------------------
-console.log("\n=== TEST 1: Kitsune mask intent (approved library match) ===");
+console.log("\n=== TEST 1: Generic mask intent (sanitized library fallback) ===");
 {
-  const raw = "a symmetrical japanese kitsune porcelain mask, matte ceramic, fox-shaped";
+  const raw = "matte black technical ceramic mask, centered front view, severe symmetrical silhouette";
   const norm = normalizeIntent(raw);
-  assert(norm.ok === true, "normalizer accepts kitsune intent");
+  assert(norm.ok === true, "normalizer accepts mask intent");
   assert(norm.design_intent.object_class === "mask", "detected class = mask", norm.design_intent?.object_class);
 
   const specResult = generateObjectSpec(norm.design_intent);
   assert(specResult.ok === true, "spec generated successfully");
-  assert(specResult.source === "approved_library", "source = approved_library", specResult.source);
-  assert(specResult.spec.object_id === "MASK_KITSUNE_CERAMIC_001", "matched approved MASK_KITSUNE_CERAMIC_001", specResult.spec?.object_id);
+  assert(specResult.source !== "approved_library", "sanitized library does not force contaminated approved reuse", specResult.source);
+  assert(specResult.approved_memory_reused === false, "approved memory not reused");
 
   const gate = evaluateReadability(specResult.spec);
   assert(gate.verdict === "PASS", "readability gate = PASS", `verdict=${gate.verdict}, score=${gate.readability_score}`);
@@ -57,8 +57,8 @@ console.log("\n=== TEST 1: Kitsune mask intent (approved library match) ===");
   const compiled = compilePrompt(specResult.spec);
   assert(compiled.prompt.length > 100, "compiled prompt is substantial", compiled.prompt.length);
   assert(compiled.negative_prompt.length > 50, "compiled negative_prompt exists", compiled.negative_prompt.length);
-  assert(compiled.prompt.includes("kitsune"), "prompt includes kitsune");
-  assert(compiled.prompt.includes("ceramic"), "prompt includes ceramic");
+  assert(/ceramic/i.test(compiled.prompt), "prompt includes ceramic");
+  assert(/sealed eye region|bilateral symmetry|black void/i.test(compiled.prompt), "prompt includes mask canon locks");
   assert(compiled.negative_prompt.includes("plastic"), "negative includes plastic");
 
   console.log(`  Compiled prompt length: ${compiled.prompt.length} chars`);
@@ -129,36 +129,17 @@ console.log("\n=== TEST 5: Unknown weapon (skeleton spec) ===");
 }
 
 // -------------------------------------------------------------------------
-// TEST 6: Full lane on real mask master (direct spec from library)
+// TEST 6: Sanitized approved library keeps contaminated mask master out of live reuse
 // -------------------------------------------------------------------------
-console.log("\n=== TEST 6: Direct approved spec → gate → compile (mask master) ===");
+console.log("\n=== TEST 6: Sanitized approved library excludes contaminated record ===");
 {
   const fs = require("fs");
   const path = require("path");
   const library = JSON.parse(
     fs.readFileSync(path.join(__dirname, "..", "memory", "approved_object_library.json"), "utf-8")
   );
-  const maskSpec = library.objects[0];
-  assert(maskSpec.object_id === "MASK_KITSUNE_CERAMIC_001", "loaded mask master spec");
-
-  const gate = evaluateReadability(maskSpec);
-  assert(gate.verdict === "PASS", "mask master passes gate", gate.verdict);
-  assert(gate.readability_score >= 90, "mask master score >= 90", gate.readability_score);
-
-  const compiled = compilePrompt(maskSpec);
-  assert(compiled.prompt.includes("fox"), "prompt includes fox");
-  assert(compiled.prompt.includes("eye_slits") || compiled.prompt.includes("eye") || compiled.prompt.includes("slit"),
-    "prompt includes eye slit reference");
-  assert(compiled.negative_prompt.includes("fur") || compiled.negative_prompt.includes("hair"),
-    "negative blocks fur/hair");
-  assert(compiled.compilation_notes.length > 0, "compilation notes generated", compiled.compilation_notes.length);
-
-  console.log(`\n  === COMPILED MASK MASTER PROMPT ===`);
-  console.log(`  PROMPT (${compiled.prompt.length} chars):`);
-  console.log(`  ${compiled.prompt.slice(0, 200)}...`);
-  console.log(`  NEGATIVE (${compiled.negative_prompt.length} chars):`);
-  console.log(`  ${compiled.negative_prompt.slice(0, 200)}...`);
-  console.log(`  NOTES: ${compiled.compilation_notes.length} entries`);
+  assert(Array.isArray(library.objects), "approved library objects is array");
+  assert(library.objects.length === 0, "contaminated record removed from live approved library", library.objects.length);
 }
 
 // -------------------------------------------------------------------------

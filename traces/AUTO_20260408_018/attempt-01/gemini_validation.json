@@ -1,0 +1,18 @@
+{
+  "job_id": "AUTO_20260408_018",
+  "attempt_index": 1,
+  "source": "live",
+  "status": "PASS",
+  "quality_score": 0.95,
+  "overall_score": 0.92,
+  "failure_codes": [],
+  "notes": [
+    "High-quality render of a futuristic, metallic helmet. Excellent detail, lighting, and material representation. The composition is strong and centered. Minor decorative text below 'HERO' is stylized and not fully legible, but it does not impact the primary subject or overall image quality."
+  ],
+  "judge_output_path": "G:\\My Drive\\mikage_runner\\outputs\\AUTO_20260408_018\\judge_output.json",
+  "validator_executed": true,
+  "validator_passed": true,
+  "proof_blocked": false,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.343Z"
+}

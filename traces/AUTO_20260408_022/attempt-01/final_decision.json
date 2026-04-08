@@ -1,0 +1,43 @@
+{
+  "job_id": "AUTO_20260408_022",
+  "attempt_index": 1,
+  "decision": {
+    "decision": "ALLOW",
+    "reasons": [
+      "Lane completion policy satisfied."
+    ],
+    "timestamp": "2026-04-07T14:49:34.913Z"
+  },
+  "monitorReport": {
+    "job_id": "AUTO_20260408_022",
+    "lane": "image",
+    "state": "completed",
+    "queue_state": "completed",
+    "issues": [],
+    "fatal_issues": [],
+    "policy_name": "image",
+    "policy_assessment": {
+      "lane": "image",
+      "required_artifact_types": [
+        "result_json",
+        "image"
+      ],
+      "missing_artifacts": [],
+      "artifacts_present": [
+        "job_json",
+        "claim_json",
+        "result_json",
+        "judge_output_json",
+        "image"
+      ],
+      "validator_signals": [],
+      "issues": [],
+      "fatal_issues": [],
+      "success": true
+    },
+    "monitored_at": "2026-04-07T14:49:34.913Z"
+  },
+  "variantJudgeOutput": null,
+  "generated_by": "tools/handoff/post_run_snapshot_refresh.js",
+  "generated_at": "2026-04-07T18:52:46.357Z"
+}

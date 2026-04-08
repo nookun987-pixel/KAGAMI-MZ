@@ -1,0 +1,8 @@
+{
+  "retry_allowed": false,
+  "repair_class": "quality",
+  "decision_reason": "Max retry cap reached.",
+  "hard_stop": true,
+  "repeated_failure_code": "",
+  "proof_blocked": false
+}

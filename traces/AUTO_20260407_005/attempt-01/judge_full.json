@@ -1,0 +1,51 @@
+{
+  "decision": {
+    "decision": "REJECT",
+    "reasons": [
+      "Lane validator failed."
+    ],
+    "timestamp": "2026-04-07T10:54:02.827Z"
+  },
+  "failureRoute": {
+    "failure_type": "timeout",
+    "responsible_module": "runtime/drive_queue/runtime.js",
+    "repair_strategy": "retry_with_longer_timeout",
+    "repair_class": "runtime",
+    "retry_allowed": true,
+    "repairable": true
+  },
+  "repairAction": {
+    "repairable": true,
+    "repair_class": "runtime",
+    "current_attempt": 1,
+    "max_attempts": 2,
+    "responsible_module": "runtime/drive_queue/runtime.js",
+    "repair_strategy": "retry_with_longer_timeout",
+    "actions": [
+      "increase_timeout"
+    ],
+    "next_options": {
+      "timeoutMs": 185000
+    },
+    "prompt_patch": {
+      "positive_additions": [],
+      "negative_additions": []
+    },
+    "canon_patch": {
+      "lock_boost": [],
+      "blocked_trait_reinforcement": [],
+      "dominant_trait_reinforcement": [],
+      "must_have_replay": [],
+      "hard_negative_carryover": []
+    },
+    "lineage": {
+      "original_job_id": "AUTO_20260407_005",
+      "parent_job_id": "AUTO_20260407_005",
+      "current_attempt": 1,
+      "next_attempt": 2
+    },
+    "notes": [
+      "Increased timeout for retry."
+    ]
+  }
+}

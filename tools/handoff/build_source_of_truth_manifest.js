@@ -1,0 +1,83 @@
+"use strict";
+
+const path = require("path");
+
+function rootPath(...parts) {
+  return path.resolve(__dirname, "..", "..", ...parts);
+}
+
+function buildSourceOfTruthManifest() {
+  return {
+    generated_at: new Date().toISOString(),
+    ranked_sources: [
+      {
+        rank: 1,
+        label: "real_artifacts",
+        trust_level: "highest",
+        description: "Real artifact files produced by the active runtime and traces are the primary source of truth.",
+        paths: [
+          "G:/My Drive/mikage_runner/job_inbox/<job_id>.json",
+          "G:/My Drive/mikage_runner/claims/<job_id>.claim.json",
+          "G:/My Drive/mikage_runner/outputs/<job_id>/output.png",
+          "G:/My Drive/mikage_runner/outputs/<job_id>/judge_output.json",
+          "G:/My Drive/mikage_runner/outputs/<job_id>/result.json",
+          "traces/<job_id>/attempt-XX/final_decision.json",
+        ],
+        status: "active",
+      },
+      {
+        rank: 2,
+        label: "active_code",
+        trust_level: "high",
+        description: "Active runtime logic lives in the hub, modules, image lane, drive queue runtime, and Colab worker notebook.",
+        paths: [
+          "MIKAGE/index.js",
+          "MIKAGE/modules",
+          "MIKAGE/lanes/image",
+          "runtime/drive_queue/runtime.js",
+          "runtime/colab_worker/colab_one_click_worker.ipynb",
+        ],
+        status: "active",
+      },
+      {
+        rank: 3,
+        label: "approved_memory",
+        trust_level: "medium",
+        description: "Approved memory and judge cache may guide future runs but do not override missing artifacts.",
+        paths: [
+          "MIKAGE/shared/memory",
+          "memory/approved_variant_registry.json",
+          "memory/judge_cache.json",
+        ],
+        status: "active",
+      },
+      {
+        rank: 4,
+        label: "historical_notes",
+        trust_level: "low",
+        description: "Historical chats, ad hoc notes, and legacy docs are not trusted unless verified against active code or artifacts.",
+        paths: [
+          "old chats",
+          "stale notes",
+          "legacy docs outside docs/ai_handoff",
+        ],
+        status: "untrusted",
+      },
+    ],
+    hard_rules: [
+      "NO IMAGE = NO PASS",
+      "No bypass validator",
+      "No live proof without real artifacts",
+      "If not proven from repo or artifact contract, mark UNVERIFIED or UNKNOWN_NOT_PROVEN",
+    ],
+    root: rootPath().replace(/\\/g, "/"),
+  };
+}
+
+module.exports = {
+  buildSourceOfTruthManifest,
+};
+
+if (require.main === module) {
+  process.stdout.write(`${JSON.stringify(buildSourceOfTruthManifest(), null, 2)}\n`);
+}

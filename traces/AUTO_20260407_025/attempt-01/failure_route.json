@@ -1,0 +1,8 @@
+{
+  "failure_type": "object_unreadable",
+  "responsible_module": "MIKAGE/lanes/image",
+  "repair_strategy": "identity_focus_reinforcement",
+  "repair_class": "quality",
+  "retry_allowed": true,
+  "repairable": true
+}
