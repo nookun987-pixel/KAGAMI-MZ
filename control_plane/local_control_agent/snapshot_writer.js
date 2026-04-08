@@ -6,6 +6,8 @@ const { writeJson, readPendingActions, readJsonSafe } = require("./bridge_writer
 const config = require("./config");
 const repoManager = require("./repo_manager");
 const { LAST_OBSERVER_ACTION } = require("./desktop_observer");
+const { getSessionState } = require("../session_manager");
+const { getWorkflowHistory, readApprovalQueue } = require("../workflow_registry");
 
 function runGit(args) {
   return execFileSync("git", args, {
@@ -23,6 +25,9 @@ function writeSnapshot(extra = {}) {
   const latestReviewedAction = readJsonSafe(config.LOCAL_AGENT_LAST_ACTION, null);
   const latestDesktopAction = readJsonSafe(config.LOCAL_AGENT_LAST_DESKTOP_ACTION, null);
   const latestObserverAction = readJsonSafe(LAST_OBSERVER_ACTION, null);
+  const sessions = getSessionState();
+  const workflowHistory = getWorkflowHistory(5);
+  const approvalQueue = readApprovalQueue();
   const branch = runGit(["branch", "--show-current"]);
   const latestCommit = runGit(["rev-parse", "HEAD"]);
   const activeServices = [
@@ -54,6 +59,7 @@ function writeSnapshot(extra = {}) {
       worker: "runtime/colab_worker/colab_one_click_worker.ipynb",
     },
     pending_actions_count: Array.isArray(pending.pending) ? pending.pending.length : 0,
+    approval_queue_count: Array.isArray(approvalQueue.pending) ? approvalQueue.pending.length : 0,
     latest_completed_action: latestReport ? latestReport.action : null,
     last_action: latestReviewedAction ? latestReviewedAction.intent.action : null,
     approval_status: latestReviewedAction ? latestReviewedAction.approval_decision.approval_status : null,
@@ -74,6 +80,10 @@ function writeSnapshot(extra = {}) {
     last_verified_tab: latestObserverAction ? (latestObserverAction.last_verified_tab || null) : null,
     desktop_state_last_capture: latestObserverAction ? (latestObserverAction.desktop_state_last_capture || null) : null,
     last_passed_workflow: latestReport && latestReport.status === "PASS" ? latestReport.action : null,
+    sessions,
+    latest_successful_workflow: workflowHistory.latest_successful_workflow,
+    latest_blocked_workflow: workflowHistory.latest_blocked_workflow,
+    latest_failed_workflow: workflowHistory.latest_failed_workflow,
     blockers,
     machine_profile: {
       repo_root: config.MACHINE_PROFILE.repo_root,

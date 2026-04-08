@@ -51,6 +51,18 @@ function request(server, method, route, body) {
     assert.strictEqual(queue.status, "PASS");
     assert.ok(Array.isArray(queue.pending_actions));
 
+    const sessions = await request(server, "GET", "/sessions");
+    assert.strictEqual(sessions.status, "PASS");
+    assert.ok(sessions.sessions);
+
+    const history = await request(server, "GET", "/history");
+    assert.strictEqual(history.status, "PASS");
+    assert.ok(history.workflow_history);
+
+    const approvals = await request(server, "GET", "/approval/queue");
+    assert.strictEqual(approvals.status, "PASS");
+    assert.ok(Array.isArray(approvals.approval_queue));
+
     const reports = await request(server, "GET", "/reports/latest");
     assert.strictEqual(reports.status, "PASS");
 

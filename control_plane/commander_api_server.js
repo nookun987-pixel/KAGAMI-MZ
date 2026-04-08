@@ -61,7 +61,42 @@ async function handleApiRoute(req, res) {
   }
   if (req.method === "POST" && req.url === "/workflow/run") {
     const body = await parseBody(req);
-    sendJson(res, 200, await service.runWorkflow(body.workflow));
+    sendJson(res, 200, await service.runWorkflow(body.workflow, {
+      requested_by: body.requested_by || "dashboard",
+      reviewed_by: body.reviewed_by || null,
+      approval_state: body.approval_state || null,
+    }));
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/sessions") {
+    sendJson(res, 200, {
+      status: "PASS",
+      sessions: service.getStatus().sessions,
+    });
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/history") {
+    sendJson(res, 200, {
+      status: "PASS",
+      workflow_history: service.getStatus().workflow_history,
+    });
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/approval/queue") {
+    sendJson(res, 200, {
+      status: "PASS",
+      approval_queue: service.getQueueStatus().approval_queue,
+    });
+    return true;
+  }
+  if (req.method === "POST" && req.url === "/approval/approve") {
+    const body = await parseBody(req);
+    sendJson(res, 200, await service.approveWorkflow(body.id, body.reviewed_by || "dashboard_operator"));
+    return true;
+  }
+  if (req.method === "POST" && req.url === "/approval/reject") {
+    const body = await parseBody(req);
+    sendJson(res, 200, service.rejectWorkflow(body.id, body.reviewed_by || "dashboard_operator"));
     return true;
   }
   if (req.method === "GET" && req.url === "/reports/latest") {

@@ -90,6 +90,14 @@
   </header>
   <main>
     <section class="panel">
+      <h2>SESSION</h2>
+      <div class="toolbar">
+        <button onclick="loadSessions()">Refresh Sessions</button>
+      </div>
+      <pre id="sessionPanel">No session data loaded.</pre>
+    </section>
+
+    <section class="panel">
       <h2>SYSTEM</h2>
       <div class="toolbar">
         <button onclick="loadHealth()">Refresh Health</button>
@@ -142,6 +150,25 @@
     </section>
 
     <section class="panel">
+      <h2>EXECUTION HISTORY</h2>
+      <div class="toolbar">
+        <button onclick="loadHistory()">Refresh History</button>
+      </div>
+      <pre id="historyPanel">No workflow history loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>APPROVAL QUEUE</h2>
+      <input id="approvalId" placeholder="approval queue id" />
+      <div class="toolbar">
+        <button onclick="loadApprovalQueue()">Refresh Queue</button>
+        <button onclick="approveSelected()">Approve</button>
+        <button class="warn" onclick="rejectSelected()">Reject</button>
+      </div>
+      <pre id="approvalPanel">No approval queue loaded.</pre>
+    </section>
+
+    <section class="panel">
       <h2>ALERTS</h2>
       <div class="toolbar">
         <button onclick="loadQueue()">Queue Status</button>
@@ -161,9 +188,12 @@
     }
     async function loadHealth() { render("systemPanel", await request("/health")); }
     async function loadStatus() { render("systemPanel", await request("/status")); }
+    async function loadSessions() { render("sessionPanel", await request("/sessions")); }
     async function loadReports() { render("reportsPanel", await request("/reports/latest")); }
     async function loadLogs() { render("reportsPanel", await request("/logs/recent")); }
     async function loadQueue() { render("alertsPanel", await request("/queue/status")); }
+    async function loadHistory() { render("historyPanel", await request("/history")); }
+    async function loadApprovalQueue() { render("approvalPanel", await request("/approval/queue")); }
     async function loadAlerts() {
       const status = await request("/status");
       render("alertsPanel", {
@@ -171,6 +201,32 @@
         agent: status.agent,
         latest_report: status.latest_report && status.latest_report.status,
       });
+    }
+    async function approveSelected() {
+      const id = document.getElementById("approvalId").value.trim();
+      if (!id) {
+        render("approvalPanel", { status: "BLOCKED", error: "missing approval id" });
+        return;
+      }
+      render("approvalPanel", await request("/approval/approve", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, reviewed_by: "dashboard_operator" }),
+      }));
+      await loadHistory();
+    }
+    async function rejectSelected() {
+      const id = document.getElementById("approvalId").value.trim();
+      if (!id) {
+        render("approvalPanel", { status: "BLOCKED", error: "missing approval id" });
+        return;
+      }
+      render("approvalPanel", await request("/approval/reject", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, reviewed_by: "dashboard_operator" }),
+      }));
+      await loadHistory();
     }
     async function postSimple(url) {
       const result = await request(url, { method: "POST", headers: { "Content-Type": "application/json" } });
@@ -202,13 +258,18 @@
       const result = await request("/workflow/run", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ workflow: name }),
+        body: JSON.stringify({ workflow: name, requested_by: "dashboard" }),
       });
       render("workflowPanel", result);
       await loadStatus();
+      await loadHistory();
+      await loadApprovalQueue();
     }
     loadHealth();
+    loadSessions();
     loadQueue();
+    loadHistory();
+    loadApprovalQueue();
   </script>
 </body>
 </html>

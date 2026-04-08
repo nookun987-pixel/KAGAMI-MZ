@@ -22,6 +22,7 @@ logs/
 
 # Runtime-generated control-plane state
 control_plane/commander_bridge/state/*.json
+control_plane/commander_bridge/state/*.jsonl
 control_plane/commander_bridge/inbox/*.json
 control_plane/commander_bridge/outbox/*.json
 control_plane/commander_bridge/outbox/*.txt

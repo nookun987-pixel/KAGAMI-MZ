@@ -52,6 +52,23 @@
     ],
     "support_node_requires_explicit_override": true
   },
+  "autopilot_prep": {
+    "safe_workflows": [
+      "WAKE_VERIFY",
+      "DESKTOP_CHECK",
+      "REPO_CHECK",
+      "DAILY_HEALTH"
+    ],
+    "guarded_workflows": [
+      "SAFE_SHUTDOWN"
+    ],
+    "telegram_forbidden_actions": [
+      "desktop.run_shell",
+      "desktop.send_keys",
+      "desktop.type_text",
+      "desktop.basic_click"
+    ]
+  },
   "hard_block": {
     "repo.push": {
       "blocked_branches": [

@@ -7,6 +7,12 @@ function parseWorkflowCommand(text) {
   return match ? match[1].toUpperCase() : null;
 }
 
+function parseApprovalCommand(text, action) {
+  const pattern = new RegExp(`^\\/${action}\\s+([a-zA-Z0-9_-]+)`, "i");
+  const match = String(text || "").trim().match(pattern);
+  return match ? match[1] : null;
+}
+
 function buildTelegramHandlers(service) {
   return {
     "/status": async () => service.getStatus(),
@@ -36,13 +42,21 @@ function buildTelegramHandlers(service) {
       wait: true,
     }),
     "/alerts": async () => {
-      const status = service.getStatus();
+      const status = await service.getStatus();
       return {
         status: "PASS",
         blockers: status.snapshot ? (status.snapshot.blockers || []) : [],
         latest_report: status.latest_report || null,
       };
     },
+    "/queue": async () => ({
+      status: "PASS",
+      approval_queue: service.getQueueStatus().approval_queue,
+    }),
+    "/history": async () => ({
+      status: "PASS",
+      workflow_history: (await service.getStatus()).workflow_history,
+    }),
   };
 }
 
@@ -75,9 +89,25 @@ function startTelegramOperator(service, options = {}) {
 
     const text = String(message.text || "").trim();
     const workflow = parseWorkflowCommand(text);
+    const approveId = parseApprovalCommand(text, "approve");
+    const rejectId = parseApprovalCommand(text, "reject");
     try {
       if (workflow) {
-        const result = await service.runWorkflow(workflow);
+        const result = await service.runWorkflow(workflow, {
+          requested_by: "telegram",
+          reviewed_by: null,
+          approval_state: null,
+        });
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (approveId) {
+        const result = await service.approveWorkflow(approveId, "telegram_operator");
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (rejectId) {
+        const result = await service.rejectWorkflow(rejectId, "telegram_operator");
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }
@@ -104,6 +134,7 @@ function startTelegramOperator(service, options = {}) {
 
 module.exports = {
   parseWorkflowCommand,
+  parseApprovalCommand,
   buildTelegramHandlers,
   startTelegramOperator,
 };
