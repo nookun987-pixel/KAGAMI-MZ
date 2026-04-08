@@ -29,7 +29,7 @@ function writeObserverReport(record) {
 
 function defaultCollectWindowState() {
   const script = [
-    "Add-Type @'",
+    "$typeDef = @\"",
     "using System;",
     "using System.Runtime.InteropServices;",
     "using System.Text;",
@@ -37,7 +37,8 @@ function defaultCollectWindowState() {
     "  [DllImport(\"user32.dll\")] public static extern IntPtr GetForegroundWindow();",
     "  [DllImport(\"user32.dll\", CharSet=CharSet.Auto)] public static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);",
     "}",
-    "'@;",
+    "\"@;",
+    "Add-Type -TypeDefinition $typeDef;",
     "$sb = New-Object System.Text.StringBuilder 1024;",
     "$hwnd = [WinApi]::GetForegroundWindow();",
     "[void][WinApi]::GetWindowText($hwnd, $sb, $sb.Capacity);",
@@ -47,7 +48,7 @@ function defaultCollectWindowState() {
     "};",
     "$payload = [PSCustomObject]@{ active_title = $activeTitle; windows = $windows };",
     "$payload | ConvertTo-Json -Depth 5 -Compress",
-  ].join(" ");
+  ].join("\n");
   const result = spawnSync("powershell.exe", ["-NoProfile", "-Command", script], {
     encoding: "utf8",
     windowsHide: true,
@@ -56,7 +57,12 @@ function defaultCollectWindowState() {
   if (result.status !== 0) {
     throw new Error(result.stderr ? String(result.stderr).trim() : `observer_collect_failed:${result.status}`);
   }
-  return JSON.parse(String(result.stdout || "{}"));
+  const rawStdout = String(result.stdout || "{}");
+  const sanitizedStdout = rawStdout.replace(/[\u0000-\u001F]/g, (char) => {
+    if (char === "\r" || char === "\n" || char === "\t") return char;
+    return "";
+  }).trim();
+  return JSON.parse(sanitizedStdout || "{}");
 }
 
 function collectState(options = {}) {
