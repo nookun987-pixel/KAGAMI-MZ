@@ -78,6 +78,24 @@ function request(server, method, route, body) {
     const governance = await request(server, "GET", "/api/governance-snapshot/latest");
     assert.strictEqual(governance.status, "PASS");
 
+    const activityFeed = await request(server, "GET", "/api/activity-feed");
+    assert.strictEqual(activityFeed.status, "PASS");
+    assert.ok(activityFeed.activity_feed);
+
+    const governanceReports = await request(server, "GET", "/api/governance-reports");
+    assert.strictEqual(governanceReports.status, "PASS");
+    assert.ok(governanceReports.governance_reports);
+
+    const workflowSummary = await request(server, "GET", "/api/workflow-summary/wf_test_pass");
+    assert.strictEqual(workflowSummary.status, "PASS");
+
+    const audit = await request(server, "GET", "/api/audit/auto_loop_test");
+    assert.strictEqual(audit.status, "PASS");
+    assert.ok(audit.audit_trail);
+
+    const report = await request(server, "GET", "/api/report/wf_test_pass");
+    assert.strictEqual(report.status, "PASS");
+
     const reports = await request(server, "GET", "/reports/latest");
     assert.strictEqual(reports.status, "PASS");
 

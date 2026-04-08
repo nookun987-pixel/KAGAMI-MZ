@@ -318,6 +318,33 @@
       </div>
       <pre id="governancePanel">No governance snapshot loaded.</pre>
     </section>
+
+    <section class="panel">
+      <h2>WORKFLOW SUMMARY V1</h2>
+      <input id="workflowSummaryId" placeholder="workflow id" />
+      <div class="toolbar">
+        <button onclick="loadWorkflowSummary()">Load Workflow Summary</button>
+      </div>
+      <pre id="workflowSummaryPanel">No workflow summary loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>ACTIVITY FEED V1</h2>
+      <div class="toolbar">
+        <button onclick="loadActivityFeed()">Refresh Activity Feed</button>
+      </div>
+      <pre id="activityFeedPanel">No activity feed loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>GOVERNANCE REPORTS V1</h2>
+      <input id="workflowReportId" placeholder="workflow id" />
+      <div class="toolbar">
+        <button onclick="loadGovernanceReports()">Refresh Reports</button>
+        <button onclick="loadWorkflowReport()">Load Workflow Report</button>
+      </div>
+      <pre id="governanceReportsPanel">No governance reports loaded.</pre>
+    </section>
   </main>
   <section id="orchestraView" class="orchestra-shell hidden">
     <section class="orchestra-stage">
@@ -461,6 +488,8 @@
     async function loadFailureCenter() { render("failureCenterPanel", await request("/api/failure-center")); }
     async function loadRetryQueue() { render("retryQueuePanel", await request("/api/retry-queue")); }
     async function loadGovernanceSnapshot() { render("governancePanel", await request("/api/governance-snapshot/latest")); }
+    async function loadActivityFeed() { render("activityFeedPanel", await request("/api/activity-feed")); }
+    async function loadGovernanceReports() { render("governanceReportsPanel", await request("/api/governance-reports")); }
     async function loadAlerts() {
       const status = await request("/status");
       render("alertsPanel", {
@@ -518,6 +547,22 @@
       }
       render("taskLifecyclePanel", await request(`/api/task-lifecycle/${encodeURIComponent(id)}`));
     }
+    async function loadWorkflowSummary() {
+      const id = document.getElementById("workflowSummaryId").value.trim();
+      if (!id) {
+        render("workflowSummaryPanel", { status: "BLOCKED", error: "missing workflow id" });
+        return;
+      }
+      render("workflowSummaryPanel", await request(`/api/workflow-summary/${encodeURIComponent(id)}`));
+    }
+    async function loadWorkflowReport() {
+      const id = document.getElementById("workflowReportId").value.trim();
+      if (!id) {
+        render("governanceReportsPanel", { status: "BLOCKED", error: "missing workflow id" });
+        return;
+      }
+      render("governanceReportsPanel", await request(`/api/report/${encodeURIComponent(id)}`));
+    }
     async function postSimple(url) {
       const result = await request(url, { method: "POST", headers: { "Content-Type": "application/json" } });
       render("controlPanel", result);
@@ -564,6 +609,8 @@
     loadFailureCenter();
     loadRetryQueue();
     loadGovernanceSnapshot();
+    loadActivityFeed();
+    loadGovernanceReports();
     loadStatus();
   </script>
 </body>

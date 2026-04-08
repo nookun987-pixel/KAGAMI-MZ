@@ -1,6 +1,7 @@
 "use strict";
 
 const TelegramBot = require("node-telegram-bot-api");
+const KNOWN_WORKFLOWS = new Set(["WAKE_VERIFY", "DESKTOP_CHECK", "REPO_CHECK", "DAILY_HEALTH", "SAFE_SHUTDOWN"]);
 
 function parseWorkflowCommand(text) {
   const match = String(text || "").trim().match(/^\/workflow\s+([a-zA-Z0-9_-]+)/);
@@ -34,13 +35,6 @@ function buildTelegramHandlers(service) {
       requested_by: "telegram",
       wait: true,
     }),
-    "/snapshot": async () => service.runBridgeCommand({
-      action: "system.snapshot",
-      payload: {},
-      approval_status: "auto_allow",
-      requested_by: "telegram",
-      wait: true,
-    }),
     "/alerts": async () => {
       const status = await service.getStatus();
       return {
@@ -52,6 +46,7 @@ function buildTelegramHandlers(service) {
     "/approvals": async () => service.getApprovalInbox(),
     "/failures": async () => service.getFailureCenter(),
     "/snapshot": async () => service.getGovernanceSnapshotLatest(),
+    "/feed": async () => service.getActivityFeedView(),
     "/queue": async () => ({
       status: "PASS",
       approval_queue: service.getQueueStatus().approval_queue,
@@ -98,13 +93,17 @@ function startTelegramOperator(service, options = {}) {
     const planId = parseApprovalCommand(text, "plan");
     const retryId = parseApprovalCommand(text, "retry");
     const taskId = parseApprovalCommand(text, "task");
+    const auditId = parseApprovalCommand(text, "audit");
+    const reportId = parseApprovalCommand(text, "report");
     try {
       if (workflow) {
-        const result = await service.runWorkflow(workflow, {
-          requested_by: "telegram",
-          reviewed_by: null,
-          approval_state: null,
-        });
+        const result = KNOWN_WORKFLOWS.has(workflow)
+          ? await service.runWorkflow(workflow, {
+            requested_by: "telegram",
+            reviewed_by: null,
+            approval_state: null,
+          })
+          : await service.getWorkflowSummaryView(workflow);
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }
@@ -130,6 +129,16 @@ function startTelegramOperator(service, options = {}) {
       }
       if (taskId) {
         const result = await service.getTaskLifecycle(taskId);
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (auditId) {
+        const result = await service.getAuditTrailView(auditId);
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (reportId) {
+        const result = await service.getWorkflowReport(reportId);
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }

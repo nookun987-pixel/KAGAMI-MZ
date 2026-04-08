@@ -105,6 +105,14 @@ async function handleApiRoute(req, res) {
     sendJson(res, 200, service.getGovernanceSnapshotLatest());
     return true;
   }
+  if (req.method === "GET" && req.url === "/api/governance-reports") {
+    sendJson(res, 200, service.getGovernanceReports());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/activity-feed") {
+    sendJson(res, 200, service.getActivityFeedView());
+    return true;
+  }
   if (req.method === "POST" && req.url === "/approval/approve") {
     const body = await parseBody(req);
     sendJson(res, 200, await service.approveWorkflow(body.id, body.reviewed_by || "dashboard_operator"));
@@ -135,6 +143,21 @@ async function handleApiRoute(req, res) {
   if (req.method === "GET" && /^\/api\/task-lifecycle\/[^/]+$/.test(req.url)) {
     const taskId = decodeURIComponent(req.url.split("/")[3]);
     sendJson(res, 200, service.getTaskLifecycle(taskId));
+    return true;
+  }
+  if (req.method === "GET" && /^\/api\/workflow-summary\/[^/]+$/.test(req.url)) {
+    const workflowId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.getWorkflowSummaryView(workflowId));
+    return true;
+  }
+  if (req.method === "GET" && /^\/api\/audit\/[^/]+$/.test(req.url)) {
+    const taskId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.getAuditTrailView(taskId));
+    return true;
+  }
+  if (req.method === "GET" && /^\/api\/report\/[^/]+$/.test(req.url)) {
+    const workflowId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.getWorkflowReport(workflowId));
     return true;
   }
   if (req.method === "GET" && req.url === "/reports/latest") {

@@ -21,6 +21,10 @@ const { readRetryQueue, requestRetry } = require("./retry_queue_manager");
 const { readTaskLifecycle, appendLifecycleEvent } = require("./lifecycle_timeline_writer");
 const { readJsonSafe: readBridgeJsonSafe } = require("./local_control_agent/bridge_writer");
 const { writeGovernanceSnapshot } = require("./governance_snapshot_writer");
+const { readGovernanceReports, writeGovernanceReport, readGovernanceReportByWorkflow } = require("./governance_report_writer");
+const { getActivityFeed, appendActivityFeed } = require("./operator_activity_feed");
+const { appendAuditRecord, getAuditTrailByTask } = require("./audit_trail_store");
+const { getWorkflowSummary, upsertWorkflowSummary } = require("./workflow_summary_view");
 const {
   buildRunId,
   registerWorkflowRun,
@@ -137,6 +141,8 @@ async function runBridgeCommand(input = {}) {
       reviewed_by: input.reviewed_by || null,
       approval_state: command.approval.status,
       last_action: action,
+      current_task_id: command.payload.task_id || null,
+      current_workflow_id: command.payload.task_id ? `task_${command.payload.task_id}` : null,
     },
   });
   const inboxPath = submitCommand(command);
@@ -241,6 +247,41 @@ function getGovernanceSnapshotLatest() {
   return {
     status: "PASS",
     governance_snapshot: readBridgeJsonSafe(config.GOVERNANCE_SNAPSHOT_LATEST, null),
+  };
+}
+
+function getGovernanceReports() {
+  return {
+    status: "PASS",
+    governance_reports: readGovernanceReports(),
+  };
+}
+
+function getActivityFeedView(limit = 50) {
+  return {
+    status: "PASS",
+    activity_feed: getActivityFeed(limit),
+  };
+}
+
+function getWorkflowSummaryView(workflowId) {
+  return {
+    status: "PASS",
+    workflow_summary: getWorkflowSummary(workflowId),
+  };
+}
+
+function getAuditTrailView(taskId) {
+  return {
+    status: "PASS",
+    audit_trail: getAuditTrailByTask(taskId),
+  };
+}
+
+function getWorkflowReport(workflowId) {
+  return {
+    status: "PASS",
+    report: readGovernanceReportByWorkflow(workflowId),
   };
 }
 
@@ -481,6 +522,46 @@ async function approveApproval(approvalId, reviewedBy = "operator") {
     summary: `approval ${approvalId} approved`,
     artifact_refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
   });
+  appendAuditRecord({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    actor_type: reviewedBy === "telegram_operator" ? "telegram_operator" : "dashboard_operator",
+    actor_id: reviewedBy,
+    action: "approval.approve",
+    decision: "approved",
+    reason: `approval ${approvalId} approved`,
+    refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  appendActivityFeed({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    event_type: "approval_approved",
+    short_text: `approval ${approvalId} approved`,
+    severity: "info",
+    refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  writeGovernanceReport({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    session_id: resolved.session_id || null,
+    report_type: "APPROVAL_RESOLVED",
+    summary: `approval ${approvalId} approved`,
+    risk_level: resolved.risk_level || "medium",
+    approval_state: "approved",
+    execution_state: "approved",
+    failure_state: null,
+    retry_state: "none",
+    boundary_state: "clear",
+    refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  upsertWorkflowSummary({
+    workflow_id: resolved.workflow_id || `task_${resolved.task_id || "unknown"}`,
+    task_id: resolved.task_id || "unknown",
+    current_stage: "approved",
+    approval_state: "approved",
+    last_action: resolved.tool_name || "approval.approve",
+    latest_refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
   writeGovernanceSnapshot({
     workflow_status: "approved",
     current_approval_state: "approved",
@@ -517,6 +598,46 @@ function rejectApproval(approvalId, reviewedBy = "operator") {
     summary: `approval ${approvalId} rejected`,
     artifact_refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
   });
+  appendAuditRecord({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    actor_type: reviewedBy === "telegram_operator" ? "telegram_operator" : "dashboard_operator",
+    actor_id: reviewedBy,
+    action: "approval.reject",
+    decision: "rejected",
+    reason: `approval ${approvalId} rejected`,
+    refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  appendActivityFeed({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    event_type: "approval_rejected",
+    short_text: `approval ${approvalId} rejected`,
+    severity: "warn",
+    refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  writeGovernanceReport({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    session_id: resolved.session_id || null,
+    report_type: "APPROVAL_RESOLVED",
+    summary: `approval ${approvalId} rejected`,
+    risk_level: resolved.risk_level || "high",
+    approval_state: "rejected",
+    execution_state: "blocked",
+    failure_state: "APPROVAL_REJECTED",
+    retry_state: "none",
+    boundary_state: "clear",
+    refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  upsertWorkflowSummary({
+    workflow_id: resolved.workflow_id || `task_${resolved.task_id || "unknown"}`,
+    task_id: resolved.task_id || "unknown",
+    current_stage: "rejected",
+    approval_state: "rejected",
+    last_action: resolved.tool_name || "approval.reject",
+    latest_refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
   writeGovernanceSnapshot({
     workflow_status: "rejected",
     current_approval_state: "rejected",
@@ -549,6 +670,46 @@ function retryFailureAction(failureId) {
       latest_task_id: result.entry.task_id || null,
       last_executor_result: "retry_queued",
     });
+    appendAuditRecord({
+      workflow_id: null,
+      task_id: result.entry.task_id || "unknown",
+      actor_type: "dashboard_operator",
+      actor_id: "retry_queue_manager",
+      action: "failure.retry",
+      decision: "queued",
+      reason: `retry queued for ${failureId}`,
+      refs: [],
+    });
+    appendActivityFeed({
+      workflow_id: null,
+      task_id: result.entry.task_id || "unknown",
+      event_type: "retry_scheduled",
+      short_text: `retry queued for ${failureId}`,
+      severity: "warn",
+      refs: [],
+    });
+    writeGovernanceReport({
+      workflow_id: null,
+      task_id: result.entry.task_id || "unknown",
+      session_id: null,
+      report_type: "RETRY_TRIGGERED",
+      summary: `retry queued for ${failureId}`,
+      risk_level: "medium",
+      approval_state: null,
+      execution_state: "retrying",
+      failure_state: failureId,
+      retry_state: "queued",
+      boundary_state: "clear",
+      refs: [],
+    });
+    upsertWorkflowSummary({
+      workflow_id: `task_${result.entry.task_id || "unknown"}`,
+      task_id: result.entry.task_id || "unknown",
+      current_stage: "retrying",
+      approval_state: null,
+      last_action: "failure.retry",
+      latest_refs: [],
+    });
   }
   return result;
 }
@@ -571,6 +732,11 @@ module.exports = {
   getRetryQueue,
   getTaskLifecycle,
   getGovernanceSnapshotLatest,
+  getGovernanceReports,
+  getActivityFeedView,
+  getWorkflowSummaryView,
+  getAuditTrailView,
+  getWorkflowReport,
   getTaskPlan,
   runWorkflow,
   approveWorkflow,
