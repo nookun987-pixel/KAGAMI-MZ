@@ -12,6 +12,8 @@ const { writeBringupReport } = require("./bringup_report");
 const { writeJson } = require("./bridge_writer");
 const config = require("./config");
 const { runReviewedOperator } = require("../reviewed_operator_flow");
+const { validateToolCommand } = require("../tool_validator");
+const { enforcePlanFirst } = require("../plan_guard");
 
 const REVIEWED_ACTIONS = new Set([
   "repo.commit",
@@ -25,7 +27,43 @@ const REVIEWED_ACTIONS = new Set([
   "desktop.basic_click",
 ]);
 
+function inspectCommand(command) {
+  const validation = validateToolCommand(command);
+  if (!validation.valid) {
+    return {
+      ok: false,
+      tool_type: validation.tool_type,
+      reason: validation.reason,
+      schema: validation.schema,
+      plan: null,
+    };
+  }
+  const plan = enforcePlanFirst(validation.tool_type, command);
+  if (!plan.allowed) {
+    return {
+      ok: false,
+      tool_type: validation.tool_type,
+      reason: plan.reason,
+      schema: validation.schema,
+      plan,
+    };
+  }
+  return {
+    ok: true,
+    tool_type: validation.tool_type,
+    reason: "command_ready",
+    schema: validation.schema,
+    plan,
+  };
+}
+
 async function routeCommand(command, options = {}) {
+  if (!options.skipInspection) {
+    const inspection = options.inspection || inspectCommand(command);
+    if (!inspection.ok) {
+      throw new Error(inspection.reason);
+    }
+  }
   if (REVIEWED_ACTIONS.has(command.action)) {
     return runReviewedOperator({
       command_id: command.command_id,
@@ -112,5 +150,6 @@ async function routeCommand(command, options = {}) {
 }
 
 module.exports = {
+  inspectCommand,
   routeCommand,
 };

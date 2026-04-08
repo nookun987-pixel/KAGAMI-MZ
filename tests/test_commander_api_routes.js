@@ -63,6 +63,21 @@ function request(server, method, route, body) {
     assert.strictEqual(approvals.status, "PASS");
     assert.ok(Array.isArray(approvals.approval_queue));
 
+    const approvalInbox = await request(server, "GET", "/api/approval-inbox");
+    assert.strictEqual(approvalInbox.status, "PASS");
+    assert.ok(approvalInbox.approval_inbox);
+
+    const failureCenter = await request(server, "GET", "/api/failure-center");
+    assert.strictEqual(failureCenter.status, "PASS");
+    assert.ok(failureCenter.failure_center);
+
+    const retryQueue = await request(server, "GET", "/api/retry-queue");
+    assert.strictEqual(retryQueue.status, "PASS");
+    assert.ok(retryQueue.retry_queue);
+
+    const governance = await request(server, "GET", "/api/governance-snapshot/latest");
+    assert.strictEqual(governance.status, "PASS");
+
     const reports = await request(server, "GET", "/reports/latest");
     assert.strictEqual(reports.status, "PASS");
 

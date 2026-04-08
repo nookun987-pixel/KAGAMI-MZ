@@ -123,6 +123,7 @@ function buildCommandFromFlags(input) {
   if (parsed.branch) command.payload.branch = String(parsed.branch);
   if (parsed.remote) command.payload.remote = String(parsed.remote);
   if (parsed.task) command.payload.task = String(parsed.task);
+  if (parsed["task-id"]) command.payload.task_id = String(parsed["task-id"]);
   if (parsed.scope) command.payload.scope = String(parsed.scope);
   if (parsed.app) command.payload.app = String(parsed.app);
   if (parsed.url) command.payload.url = String(parsed.url);
@@ -199,6 +200,7 @@ function printPaths(paths) {
 function printQueuedCommand(command, inboxPath) {
   console.log(`command_id: ${command.command_id}`);
   console.log(`action: ${command.action}`);
+  if (command.payload && command.payload.task_id) console.log(`task_id: ${command.payload.task_id}`);
   console.log(`inbox_file: ${inboxPath}`);
   console.log(`next_check: ${config.OUTBOX_DIR}`);
   console.log(`review_reports: ${config.LOCAL_AGENT_REPORTS_DIR}`);

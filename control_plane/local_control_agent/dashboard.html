@@ -275,6 +275,49 @@
       </div>
       <pre id="alertsPanel">No alerts loaded.</pre>
     </section>
+
+    <section class="panel">
+      <h2>APPROVAL INBOX V1</h2>
+      <div class="toolbar">
+        <button onclick="loadApprovalInbox()">Refresh Inbox</button>
+      </div>
+      <pre id="approvalInboxPanel">No approval inbox loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>FAILURE CENTER V1</h2>
+      <div class="toolbar">
+        <button onclick="loadFailureCenter()">Refresh Failures</button>
+      </div>
+      <pre id="failureCenterPanel">No failure center loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>RETRY QUEUE V1</h2>
+      <input id="retryFailureId" placeholder="failure id" />
+      <div class="toolbar">
+        <button onclick="loadRetryQueue()">Refresh Retry Queue</button>
+        <button onclick="retrySelectedFailure()">Retry Failure</button>
+      </div>
+      <pre id="retryQueuePanel">No retry queue loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>TASK LIFECYCLE V1</h2>
+      <input id="taskLifecycleId" placeholder="task id" />
+      <div class="toolbar">
+        <button onclick="loadTaskLifecycle()">Load Task Lifecycle</button>
+      </div>
+      <pre id="taskLifecyclePanel">No lifecycle loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>GOVERNANCE SNAPSHOT V1</h2>
+      <div class="toolbar">
+        <button onclick="loadGovernanceSnapshot()">Refresh Snapshot</button>
+      </div>
+      <pre id="governancePanel">No governance snapshot loaded.</pre>
+    </section>
   </main>
   <section id="orchestraView" class="orchestra-shell hidden">
     <section class="orchestra-stage">
@@ -414,6 +457,10 @@
     async function loadQueue() { render("alertsPanel", await request("/queue/status")); }
     async function loadHistory() { render("historyPanel", await request("/history")); }
     async function loadApprovalQueue() { render("approvalPanel", await request("/approval/queue")); }
+    async function loadApprovalInbox() { render("approvalInboxPanel", await request("/api/approval-inbox")); }
+    async function loadFailureCenter() { render("failureCenterPanel", await request("/api/failure-center")); }
+    async function loadRetryQueue() { render("retryQueuePanel", await request("/api/retry-queue")); }
+    async function loadGovernanceSnapshot() { render("governancePanel", await request("/api/governance-snapshot/latest")); }
     async function loadAlerts() {
       const status = await request("/status");
       render("alertsPanel", {
@@ -428,10 +475,10 @@
         render("approvalPanel", { status: "BLOCKED", error: "missing approval id" });
         return;
       }
-      render("approvalPanel", await request("/approval/approve", {
+      render("approvalPanel", await request(`/api/approval/${encodeURIComponent(id)}/approve`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, reviewed_by: "dashboard_operator" }),
+        body: JSON.stringify({ reviewed_by: "dashboard_operator" }),
       }));
       await loadHistory();
     }
@@ -441,13 +488,35 @@
         render("approvalPanel", { status: "BLOCKED", error: "missing approval id" });
         return;
       }
-      render("approvalPanel", await request("/approval/reject", {
+      render("approvalPanel", await request(`/api/approval/${encodeURIComponent(id)}/reject`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, reviewed_by: "dashboard_operator" }),
+        body: JSON.stringify({ reviewed_by: "dashboard_operator" }),
       }));
       await loadHistory();
       await loadStatus();
+    }
+    async function retrySelectedFailure() {
+      const id = document.getElementById("retryFailureId").value.trim();
+      if (!id) {
+        render("retryQueuePanel", { status: "BLOCKED", error: "missing failure id" });
+        return;
+      }
+      render("retryQueuePanel", await request(`/api/retry/${encodeURIComponent(id)}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      }));
+      await loadGovernanceSnapshot();
+      await loadFailureCenter();
+      await loadRetryQueue();
+    }
+    async function loadTaskLifecycle() {
+      const id = document.getElementById("taskLifecycleId").value.trim();
+      if (!id) {
+        render("taskLifecyclePanel", { status: "BLOCKED", error: "missing task id" });
+        return;
+      }
+      render("taskLifecyclePanel", await request(`/api/task-lifecycle/${encodeURIComponent(id)}`));
     }
     async function postSimple(url) {
       const result = await request(url, { method: "POST", headers: { "Content-Type": "application/json" } });
@@ -491,6 +560,10 @@
     loadQueue();
     loadHistory();
     loadApprovalQueue();
+    loadApprovalInbox();
+    loadFailureCenter();
+    loadRetryQueue();
+    loadGovernanceSnapshot();
     loadStatus();
   </script>
 </body>

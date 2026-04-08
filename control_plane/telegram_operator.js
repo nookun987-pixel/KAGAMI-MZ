@@ -49,9 +49,13 @@ function buildTelegramHandlers(service) {
         latest_report: status.latest_report || null,
       };
     },
+    "/approvals": async () => service.getApprovalInbox(),
+    "/failures": async () => service.getFailureCenter(),
+    "/snapshot": async () => service.getGovernanceSnapshotLatest(),
     "/queue": async () => ({
       status: "PASS",
       approval_queue: service.getQueueStatus().approval_queue,
+      latest_task_runs: (await service.getStatus()).latest_task_runs || {},
     }),
     "/history": async () => ({
       status: "PASS",
@@ -91,6 +95,9 @@ function startTelegramOperator(service, options = {}) {
     const workflow = parseWorkflowCommand(text);
     const approveId = parseApprovalCommand(text, "approve");
     const rejectId = parseApprovalCommand(text, "reject");
+    const planId = parseApprovalCommand(text, "plan");
+    const retryId = parseApprovalCommand(text, "retry");
+    const taskId = parseApprovalCommand(text, "task");
     try {
       if (workflow) {
         const result = await service.runWorkflow(workflow, {
@@ -102,12 +109,27 @@ function startTelegramOperator(service, options = {}) {
         return;
       }
       if (approveId) {
-        const result = await service.approveWorkflow(approveId, "telegram_operator");
+        const result = await service.approveApproval(approveId, "telegram_operator");
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }
       if (rejectId) {
-        const result = await service.rejectWorkflow(rejectId, "telegram_operator");
+        const result = await service.rejectApproval(rejectId, "telegram_operator");
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (planId) {
+        const result = await service.getTaskPlan(planId);
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (retryId) {
+        const result = await service.retryFailureAction(retryId);
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (taskId) {
+        const result = await service.getTaskLifecycle(taskId);
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }

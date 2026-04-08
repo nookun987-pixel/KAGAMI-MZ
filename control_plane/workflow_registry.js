@@ -5,6 +5,11 @@ const path = require("path");
 const crypto = require("crypto");
 
 const config = require("./local_control_agent/config");
+const {
+  readApprovalInbox,
+  createApprovalItem,
+  resolveApprovalItem,
+} = require("./approval_inbox_store");
 
 function readJsonSafe(filePath, fallback = null) {
   try {
@@ -35,6 +40,7 @@ function readRegistry() {
     latest_successful_workflow: null,
     latest_blocked_workflow: null,
     latest_failed_workflow: null,
+    latest_task_runs: {},
     runs: [],
   });
 }
@@ -52,6 +58,8 @@ function registerWorkflowRun(record) {
   if (record.final_verdict === "PASS") registry.latest_successful_workflow = record;
   if (record.final_verdict === "BLOCKED") registry.latest_blocked_workflow = record;
   if (record.final_verdict === "FAIL") registry.latest_failed_workflow = record;
+  registry.latest_task_runs = registry.latest_task_runs || {};
+  if (record.task_id) registry.latest_task_runs[record.task_id] = record;
   writeRegistry(registry);
   appendJsonl(config.WORKFLOW_REGISTRY_JSONL, record);
   return registry;
@@ -63,49 +71,37 @@ function getWorkflowHistory(limit = 20) {
     latest_successful_workflow: registry.latest_successful_workflow || null,
     latest_blocked_workflow: registry.latest_blocked_workflow || null,
     latest_failed_workflow: registry.latest_failed_workflow || null,
+    latest_task_runs: registry.latest_task_runs || {},
     runs: (registry.runs || []).slice(0, limit),
   };
 }
 
 function readApprovalQueue() {
-  return readJsonSafe(config.APPROVAL_QUEUE_PATH, {
-    generated_at: null,
-    pending: [],
-  });
+  const inbox = readApprovalInbox();
+  return {
+    generated_at: inbox.generated_at || null,
+    pending: inbox.pending || [],
+  };
 }
 
 function writeApprovalQueue(queue) {
-  queue.generated_at = new Date().toISOString();
   writeJson(config.APPROVAL_QUEUE_PATH, queue);
 }
 
 function enqueueApproval(item) {
-  const queue = readApprovalQueue();
-  queue.pending = Array.isArray(queue.pending) ? queue.pending : [];
-  queue.pending.unshift(item);
-  writeApprovalQueue(queue);
-  return item;
+  return createApprovalItem(item).item;
 }
 
 function resolveApproval(id, decision, extra = {}) {
-  const queue = readApprovalQueue();
-  const pending = Array.isArray(queue.pending) ? queue.pending : [];
-  const index = pending.findIndex((item) => item.id === id);
-  if (index === -1) {
-    return null;
-  }
-  const item = pending[index];
-  pending.splice(index, 1);
-  queue.pending = pending;
-  writeApprovalQueue(queue);
-  const resolved = {
-    ...item,
-    approval_state: decision,
-    reviewed_by: extra.reviewed_by || "commander_operator",
-    reviewed_at: new Date().toISOString(),
+  const resolved = resolveApprovalItem(id, decision, extra.reviewed_by || "commander_operator");
+  if (!resolved) return null;
+  const compat = {
+    ...resolved,
+    id: resolved.approval_id,
+    approval_state: resolved.status,
   };
-  appendJsonl(config.APPROVAL_QUEUE_HISTORY_JSONL, resolved);
-  return resolved;
+  appendJsonl(config.APPROVAL_QUEUE_HISTORY_JSONL, compat);
+  return compat;
 }
 
 module.exports = {

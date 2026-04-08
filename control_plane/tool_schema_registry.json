@@ -1,0 +1,207 @@
+{
+  "repo.status": {
+    "tool_name": "repo.status",
+    "type": "read",
+    "input_schema": {}
+  },
+  "runtime.health": {
+    "tool_name": "runtime.health",
+    "type": "read",
+    "input_schema": {}
+  },
+  "disk.smart_scan": {
+    "tool_name": "disk.smart_scan",
+    "type": "read",
+    "input_schema": {}
+  },
+  "disk.latest_report": {
+    "tool_name": "disk.latest_report",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.snapshot": {
+    "tool_name": "system.snapshot",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.map_check": {
+    "tool_name": "system.map_check",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.resolve_machine_profile": {
+    "tool_name": "system.resolve_machine_profile",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.resolve_node_role": {
+    "tool_name": "system.resolve_node_role",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.run_bringup_check": {
+    "tool_name": "system.run_bringup_check",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.generate_bringup_report": {
+    "tool_name": "system.generate_bringup_report",
+    "type": "read",
+    "input_schema": {}
+  },
+  "desktop.open_app": {
+    "tool_name": "desktop.open_app",
+    "type": "read",
+    "input_schema": {
+      "app": "string"
+    }
+  },
+  "desktop.open_url": {
+    "tool_name": "desktop.open_url",
+    "type": "read",
+    "input_schema": {
+      "url": "string"
+    }
+  },
+  "desktop.startup_workspace": {
+    "tool_name": "desktop.startup_workspace",
+    "type": "read",
+    "input_schema": {}
+  },
+  "desktop.focus_window": {
+    "tool_name": "desktop.focus_window",
+    "type": "read",
+    "input_schema": {
+      "target": "string"
+    }
+  },
+  "desktop.open_tab": {
+    "tool_name": "desktop.open_tab",
+    "type": "read",
+    "input_schema": {
+      "url": "string"
+    }
+  },
+  "desktop.switch_tab": {
+    "tool_name": "desktop.switch_tab",
+    "type": "read",
+    "input_schema": {
+      "target": "string"
+    }
+  },
+  "desktop.startup_workspace_full": {
+    "tool_name": "desktop.startup_workspace_full",
+    "type": "read",
+    "input_schema": {}
+  },
+  "desktop.get_active_window": {
+    "tool_name": "desktop.get_active_window",
+    "type": "read",
+    "input_schema": {}
+  },
+  "desktop.list_open_windows": {
+    "tool_name": "desktop.list_open_windows",
+    "type": "read",
+    "input_schema": {}
+  },
+  "desktop.get_browser_context": {
+    "tool_name": "desktop.get_browser_context",
+    "type": "read",
+    "input_schema": {}
+  },
+  "desktop.verify_window": {
+    "tool_name": "desktop.verify_window",
+    "type": "read",
+    "input_schema": {
+      "target": "string"
+    }
+  },
+  "desktop.verify_tab": {
+    "tool_name": "desktop.verify_tab",
+    "type": "read",
+    "input_schema": {
+      "target": "string"
+    }
+  },
+  "desktop.capture_desktop_state": {
+    "tool_name": "desktop.capture_desktop_state",
+    "type": "read",
+    "input_schema": {}
+  },
+  "repo.commit": {
+    "tool_name": "repo.commit",
+    "type": "write",
+    "input_schema": {
+      "message": "string",
+      "files": "string[]",
+      "task_id": "string"
+    }
+  },
+  "repo.push": {
+    "tool_name": "repo.push",
+    "type": "write",
+    "input_schema": {
+      "branch": "string",
+      "task_id": "string"
+    }
+  },
+  "repo.reviewed_commit_push": {
+    "tool_name": "repo.reviewed_commit_push",
+    "type": "write",
+    "input_schema": {
+      "message": "string",
+      "files": "string[]",
+      "branch": "string",
+      "task_id": "string"
+    }
+  },
+  "codex.build_task": {
+    "tool_name": "codex.build_task",
+    "type": "write",
+    "input_schema": {
+      "task": "string",
+      "task_id": "string"
+    }
+  },
+  "desktop.run_shell": {
+    "tool_name": "desktop.run_shell",
+    "type": "write",
+    "input_schema": {
+      "command": "string",
+      "task_id": "string"
+    }
+  },
+  "desktop.send_keys": {
+    "tool_name": "desktop.send_keys",
+    "type": "write",
+    "input_schema": {
+      "keys": "string",
+      "task_id": "string"
+    }
+  },
+  "desktop.type_text": {
+    "tool_name": "desktop.type_text",
+    "type": "write",
+    "input_schema": {
+      "text": "string",
+      "task_id": "string"
+    }
+  },
+  "desktop.basic_click": {
+    "tool_name": "desktop.basic_click",
+    "type": "write",
+    "input_schema": {
+      "x": "number",
+      "y": "number",
+      "task_id": "string"
+    }
+  },
+  "disk.safe_clean": {
+    "tool_name": "disk.safe_clean",
+    "type": "destructive",
+    "input_schema": {
+      "targets": "object[]",
+      "task_id": "string"
+    }
+  }
+}

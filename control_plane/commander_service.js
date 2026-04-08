@@ -15,6 +15,12 @@ const snapshotWriter = require("./local_control_agent/snapshot_writer");
 const { readRuntimeStatus } = require("./runtime_status_reader");
 const agentManager = require("./agent_process_manager");
 const { getSessionState, writeSessionState } = require("./session_manager");
+const { readApprovalInbox, resolveApprovalItem, expireApprovals } = require("./approval_inbox_store");
+const { readFailureCenter, updateFailure } = require("./failure_center_store");
+const { readRetryQueue, requestRetry } = require("./retry_queue_manager");
+const { readTaskLifecycle, appendLifecycleEvent } = require("./lifecycle_timeline_writer");
+const { readJsonSafe: readBridgeJsonSafe } = require("./local_control_agent/bridge_writer");
+const { writeGovernanceSnapshot } = require("./governance_snapshot_writer");
 const {
   buildRunId,
   registerWorkflowRun,
@@ -91,6 +97,9 @@ function getStatus() {
   const sessions = getSessionState();
   const workflowHistory = getWorkflowHistory(10);
   const approvalQueue = readApprovalQueue();
+  const approvalInbox = readApprovalInbox();
+  const failureCenter = readFailureCenter();
+  const retryQueue = readRetryQueue();
   return {
     status: "PASS",
     snapshot,
@@ -99,7 +108,11 @@ function getStatus() {
     agent,
     sessions,
     workflow_history: workflowHistory,
+    latest_task_runs: workflowHistory.latest_task_runs || {},
     approval_queue: approvalQueue,
+    approval_inbox: approvalInbox,
+    failure_center: failureCenter,
+    retry_queue: retryQueue,
   };
 }
 
@@ -157,13 +170,15 @@ async function runBridgeCommand(input = {}) {
 }
 
 function getLatestReports() {
+  const workflowHistory = getWorkflowHistory(10);
   return {
     status: "PASS",
     latest_agent_report: readJsonSafe(config.LATEST_AGENT_REPORT, null),
     latest_reviewed_action: readJsonSafe(config.LOCAL_AGENT_LAST_ACTION, null),
     latest_desktop_action: readJsonSafe(config.LOCAL_AGENT_LAST_DESKTOP_ACTION, null),
     sessions: getSessionState(),
-    workflow_history: getWorkflowHistory(10),
+    workflow_history: workflowHistory,
+    latest_task_runs: workflowHistory.latest_task_runs || {},
     local_reports: listLatestLocalReports(15),
   };
 }
@@ -179,7 +194,7 @@ function getRecentLogs(limit = 50) {
 function getQueueStatus() {
   const pending = readJsonSafe(config.PENDING_ACTIONS, { pending: [] });
   const inbox = listInboxCommands();
-  const approvals = readApprovalQueue();
+  const approvals = readApprovalInbox();
   return {
     status: "PASS",
     pending_actions: pending.pending || [],
@@ -190,6 +205,64 @@ function getQueueStatus() {
       action: entry.payload.action,
       file: entry.name,
     })),
+  };
+}
+
+function getApprovalInbox() {
+  expireApprovals();
+  return {
+    status: "PASS",
+    approval_inbox: readApprovalInbox(),
+  };
+}
+
+function getFailureCenter() {
+  return {
+    status: "PASS",
+    failure_center: readFailureCenter(),
+  };
+}
+
+function getRetryQueue() {
+  return {
+    status: "PASS",
+    retry_queue: readRetryQueue(),
+  };
+}
+
+function getTaskLifecycle(taskId) {
+  return {
+    status: "PASS",
+    task_lifecycle: readTaskLifecycle(taskId),
+  };
+}
+
+function getGovernanceSnapshotLatest() {
+  return {
+    status: "PASS",
+    governance_snapshot: readBridgeJsonSafe(config.GOVERNANCE_SNAPSHOT_LATEST, null),
+  };
+}
+
+function getTaskPlan(taskId) {
+  const normalized = String(taskId || "").trim();
+  if (!normalized) {
+    return { status: "BLOCKED", reason: "missing_task_id" };
+  }
+  const taskPath = path.join(config.TASKS_DIR, `${normalized}.md`);
+  if (!fs.existsSync(taskPath)) {
+    return {
+      status: "BLOCKED",
+      task_id: normalized,
+      task_path: taskPath,
+      reason: "task_plan_not_found",
+    };
+  }
+  return {
+    status: "PASS",
+    task_id: normalized,
+    task_path: taskPath,
+    content: fs.readFileSync(taskPath, "utf8"),
   };
 }
 
@@ -353,6 +426,15 @@ async function approveWorkflow(id, reviewedBy = "telegram_operator") {
   if (!resolved) {
     return { status: "BLOCKED", reason: "approval_id_not_found", id };
   }
+  if (!resolved.workflow) {
+    return {
+      status: "PASS",
+      task_id: resolved.task_id || resolved.id,
+      approval_state: "approved",
+      reviewed_by: reviewedBy,
+      resolved,
+    };
+  }
   return runWorkflow(resolved.workflow, {
     requested_by: resolved.requested_by,
     reviewed_by: reviewedBy,
@@ -365,6 +447,16 @@ function rejectWorkflow(id, reviewedBy = "telegram_operator") {
   if (!resolved) {
     return { status: "BLOCKED", reason: "approval_id_not_found", id };
   }
+  if (!resolved.workflow) {
+    return {
+      status: "BLOCKED",
+      task_id: resolved.task_id || resolved.id,
+      approval_state: "rejected",
+      reviewed_by: reviewedBy,
+      blocker_reason: "rejected_by_operator",
+      resolved,
+    };
+  }
   const report = {
     ...resolved,
     ended_at: new Date().toISOString(),
@@ -376,6 +468,89 @@ function rejectWorkflow(id, reviewedBy = "telegram_operator") {
   registerWorkflowRun(report);
   snapshotWriter.writeSnapshot({ agent_status: "blocked" });
   return report;
+}
+
+async function approveApproval(approvalId, reviewedBy = "operator") {
+  const resolved = resolveApprovalItem(approvalId, "approved", reviewedBy);
+  if (!resolved) return { status: "BLOCKED", reason: "approval_id_not_found", approval_id: approvalId };
+  appendLifecycleEvent({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    stage: "approved",
+    status: "PASS",
+    summary: `approval ${approvalId} approved`,
+    artifact_refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  writeGovernanceSnapshot({
+    workflow_status: "approved",
+    current_approval_state: "approved",
+    latest_approval_id: approvalId,
+    latest_task_id: resolved.task_id || null,
+    last_executor_result: "approval_resolved",
+  });
+  let execution = null;
+  if (resolved.command_snapshot && resolved.command_snapshot.action) {
+    execution = await runBridgeCommand({
+      action: resolved.command_snapshot.action,
+      payload: resolved.command_snapshot.payload || {},
+      approval_status: "approved",
+      requested_by: reviewedBy,
+      reviewed_by: reviewedBy,
+      wait: true,
+    });
+  }
+  return {
+    status: "PASS",
+    approval: resolved,
+    execution,
+  };
+}
+
+function rejectApproval(approvalId, reviewedBy = "operator") {
+  const resolved = resolveApprovalItem(approvalId, "rejected", reviewedBy);
+  if (!resolved) return { status: "BLOCKED", reason: "approval_id_not_found", approval_id: approvalId };
+  appendLifecycleEvent({
+    workflow_id: resolved.workflow_id || null,
+    task_id: resolved.task_id || "unknown",
+    stage: "rejected",
+    status: "BLOCKED",
+    summary: `approval ${approvalId} rejected`,
+    artifact_refs: [resolved.preview_ref, resolved.diff_ref].filter(Boolean),
+  });
+  writeGovernanceSnapshot({
+    workflow_status: "rejected",
+    current_approval_state: "rejected",
+    latest_approval_id: approvalId,
+    latest_task_id: resolved.task_id || null,
+    last_executor_result: "approval_rejected",
+  });
+  return {
+    status: "BLOCKED",
+    approval: resolved,
+  };
+}
+
+function retryFailureAction(failureId) {
+  const result = requestRetry(failureId);
+  if (result.status === "PASS") {
+    updateFailure(failureId, { status: "retrying" });
+    appendLifecycleEvent({
+      workflow_id: null,
+      task_id: result.entry.task_id || "unknown",
+      stage: "retrying",
+      status: "PASS",
+      summary: `retry queued for ${failureId}`,
+      artifact_refs: [],
+    });
+    writeGovernanceSnapshot({
+      workflow_status: "retrying",
+      current_approval_state: null,
+      latest_failure_id: failureId,
+      latest_task_id: result.entry.task_id || null,
+      last_executor_result: "retry_queued",
+    });
+  }
+  return result;
 }
 
 module.exports = {
@@ -391,7 +566,16 @@ module.exports = {
   getLatestReports,
   getRecentLogs,
   getQueueStatus,
+  getApprovalInbox,
+  getFailureCenter,
+  getRetryQueue,
+  getTaskLifecycle,
+  getGovernanceSnapshotLatest,
+  getTaskPlan,
   runWorkflow,
   approveWorkflow,
   rejectWorkflow,
+  approveApproval,
+  rejectApproval,
+  retryFailureAction,
 };

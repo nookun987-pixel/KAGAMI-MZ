@@ -32,6 +32,8 @@ function buildUserSession(extra = {}) {
     started_at: previous.started_at || new Date().toISOString(),
     updated_at: new Date().toISOString(),
     last_action: extra.last_action || previous.last_action || null,
+    current_task_id: extra.current_task_id || previous.current_task_id || null,
+    current_approval_id: extra.current_approval_id || previous.current_approval_id || null,
   };
 }
 

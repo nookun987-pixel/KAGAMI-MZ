@@ -89,6 +89,22 @@ async function handleApiRoute(req, res) {
     });
     return true;
   }
+  if (req.method === "GET" && req.url === "/api/approval-inbox") {
+    sendJson(res, 200, service.getApprovalInbox());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/failure-center") {
+    sendJson(res, 200, service.getFailureCenter());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/retry-queue") {
+    sendJson(res, 200, service.getRetryQueue());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/governance-snapshot/latest") {
+    sendJson(res, 200, service.getGovernanceSnapshotLatest());
+    return true;
+  }
   if (req.method === "POST" && req.url === "/approval/approve") {
     const body = await parseBody(req);
     sendJson(res, 200, await service.approveWorkflow(body.id, body.reviewed_by || "dashboard_operator"));
@@ -97,6 +113,28 @@ async function handleApiRoute(req, res) {
   if (req.method === "POST" && req.url === "/approval/reject") {
     const body = await parseBody(req);
     sendJson(res, 200, service.rejectWorkflow(body.id, body.reviewed_by || "dashboard_operator"));
+    return true;
+  }
+  if (req.method === "POST" && /^\/api\/approval\/[^/]+\/approve$/.test(req.url)) {
+    const approvalId = decodeURIComponent(req.url.split("/")[3]);
+    const body = await parseBody(req);
+    sendJson(res, 200, await service.approveApproval(approvalId, body.reviewed_by || "dashboard_operator"));
+    return true;
+  }
+  if (req.method === "POST" && /^\/api\/approval\/[^/]+\/reject$/.test(req.url)) {
+    const approvalId = decodeURIComponent(req.url.split("/")[3]);
+    const body = await parseBody(req);
+    sendJson(res, 200, service.rejectApproval(approvalId, body.reviewed_by || "dashboard_operator"));
+    return true;
+  }
+  if (req.method === "POST" && /^\/api\/retry\/[^/]+$/.test(req.url)) {
+    const failureId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.retryFailureAction(failureId));
+    return true;
+  }
+  if (req.method === "GET" && /^\/api\/task-lifecycle\/[^/]+$/.test(req.url)) {
+    const taskId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.getTaskLifecycle(taskId));
     return true;
   }
   if (req.method === "GET" && req.url === "/reports/latest") {

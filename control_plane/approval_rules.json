@@ -1,0 +1,9 @@
+{
+  "version": "APPROVAL_MODEL_V2",
+  "tiers": {
+    "read": "auto",
+    "write": "ask",
+    "destructive": "block",
+    "unknown": "block"
+  }
+}
