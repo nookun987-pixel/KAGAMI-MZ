@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>MIKAGE CONTROL</title>
+</head>
+<body>
+  <h2>MIKAGE CONTROL PANEL</h2>
+  <input id="cmd" style="width:400px" placeholder="command..." />
+  <button onclick="send()">SEND</button>
+  <pre id="out"></pre>
+
+<script>
+async function send(){
+  const cmd = document.getElementById('cmd').value;
+  const res = await fetch('/control',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({command:cmd})});
+  const data = await res.json();
+  document.getElementById('out').innerText = JSON.stringify(data,null,2);
+}
+</script>
+</body>
+</html>
