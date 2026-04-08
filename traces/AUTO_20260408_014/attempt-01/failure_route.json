@@ -1,8 +1,0 @@
-{
-  "failure_type": "validator_fail",
-  "responsible_module": "MIKAGE/lanes/image",
-  "repair_strategy": "manual_review",
-  "repair_class": "quality",
-  "retry_allowed": false,
-  "repairable": false
-}

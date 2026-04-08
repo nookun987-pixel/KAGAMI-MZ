@@ -31,12 +31,8 @@ control_plane/local_control_agent/state/*.json
 control_plane/local_control_agent/state/reports/*.json
 
 # Runtime-generated trace artifacts
-traces/**/analyzer_full.json
-traces/**/final_decision.json
-traces/**/final_decision_snapshot.json
-traces/**/full_response.txt
-traces/**/judge_full.json
-traces/**/raw_execution_trace.json
+traces/**
+!traces/.gitkeep
 
 # Cache
 .cache/

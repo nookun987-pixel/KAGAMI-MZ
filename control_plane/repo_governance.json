@@ -1,0 +1,91 @@
+{
+  "version": "REPO_GOVERNANCE_LOCK_V1",
+  "system_map_version": "SYSTEM_MAP_V2",
+  "protected_paths": [
+    "start_mikage.bat",
+    "MIKAGE/index.js",
+    "runtime/drive_queue/runtime.js",
+    "runtime/colab_worker/",
+    "state/system_entrypoints.json"
+  ],
+  "active_control_plane_paths": [
+    "control_plane/local_control_agent/",
+    "control_plane/commander_bridge/",
+    "control_plane/reviewed_operator_flow.js",
+    "control_plane/node_role.js",
+    "control_plane/node_roles/",
+    "control_plane/runtime_status_reader.js"
+  ],
+  "active_runtime_paths": [
+    "start_mikage.bat",
+    "MIKAGE/index.js",
+    "MIKAGE/modules/",
+    "MIKAGE/lanes/image/",
+    "runtime/drive_queue/runtime.js",
+    "runtime/colab_worker/"
+  ],
+  "legacy_or_untrusted_paths": [
+    "execution_lane/",
+    "renderers/",
+    "system_control_plane/",
+    "control_core/",
+    "orchestrator.js",
+    "server.js",
+    "command_center_server.js",
+    "service_manager.js",
+    "bootstrap_verify.js",
+    "translator/ollama_translate.js"
+  ],
+  "allowed_edit_zones": [
+    "control_plane/",
+    "docs/ai_handoff/",
+    "state/",
+    "tests/"
+  ],
+  "generated_artifact_classes": [
+    "bridge_inbox",
+    "bridge_outbox",
+    "bridge_archive",
+    "bridge_logs",
+    "bridge_state_json",
+    "local_agent_state_json",
+    "local_agent_reports",
+    "runtime_trace_artifacts"
+  ],
+  "git_ignored_zones": [
+    "control_plane/commander_bridge/inbox/*.json",
+    "control_plane/commander_bridge/outbox/*.json",
+    "control_plane/commander_bridge/outbox/*.txt",
+    "control_plane/commander_bridge/archive/*.json",
+    "control_plane/commander_bridge/logs/*.log",
+    "control_plane/commander_bridge/state/*.json",
+    "control_plane/local_control_agent/state/*.json",
+    "control_plane/local_control_agent/state/reports/*.json",
+    "traces/**"
+  ],
+  "trace_policy": {
+    "mode": "runtime_generated_traces_are_ignored",
+    "tracked_exception": [
+      "traces/.gitkeep",
+      "docs/ai_handoff/",
+      "state/*.json",
+      "root-level curated reports"
+    ]
+  },
+  "command_safety_boundaries": {
+    "review_required_for": [
+      "runtime-sensitive path edits",
+      "reviewed repo mutation",
+      "desktop.run_shell",
+      "desktop.send_keys",
+      "desktop.type_text",
+      "desktop.basic_click"
+    ],
+    "hard_rules": [
+      "NO IMAGE = NO PASS",
+      "do not bypass validator",
+      "do not bypass deterministic judge",
+      "do not treat runtime artifacts as source changes"
+    ]
+  }
+}

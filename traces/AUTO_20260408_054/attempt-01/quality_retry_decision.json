@@ -1,8 +1,0 @@
-{
-  "retry_allowed": true,
-  "repair_class": "runtime",
-  "decision_reason": "Runtime retry path allowed.",
-  "hard_stop": false,
-  "repeated_failure_code": "",
-  "proof_blocked": false
-}

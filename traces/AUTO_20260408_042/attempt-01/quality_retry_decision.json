@@ -1,8 +1,0 @@
-{
-  "retry_allowed": false,
-  "repair_class": "",
-  "decision_reason": "DETERMINISTIC_JUDGE_CACHE_HIT",
-  "hard_stop": true,
-  "repeated_failure_code": "",
-  "proof_blocked": false
-}

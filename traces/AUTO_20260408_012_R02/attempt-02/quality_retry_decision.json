@@ -1,8 +1,0 @@
-{
-  "retry_allowed": false,
-  "repair_class": "canon",
-  "decision_reason": "Repeated quality failure persisted: CANON_DRIFT",
-  "hard_stop": true,
-  "repeated_failure_code": "CANON_DRIFT",
-  "proof_blocked": false
-}

@@ -1,8 +1,0 @@
-{
-  "retry_allowed": false,
-  "repair_class": "",
-  "decision_reason": "No retry required.",
-  "hard_stop": false,
-  "repeated_failure_code": "",
-  "proof_blocked": false
-}

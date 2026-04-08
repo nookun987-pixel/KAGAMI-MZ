@@ -1,10 +1,19 @@
 "use strict";
 
 const path = require("path");
+const { execFileSync } = require("child_process");
 const { writeJson, readPendingActions, readJsonSafe } = require("./bridge_writer");
 const config = require("./config");
 const repoManager = require("./repo_manager");
 const { LAST_OBSERVER_ACTION } = require("./desktop_observer");
+
+function runGit(args) {
+  return execFileSync("git", args, {
+    cwd: config.ROOT,
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  }).trim();
+}
 
 function writeSnapshot(extra = {}) {
   const pending = readPendingActions();
@@ -14,12 +23,30 @@ function writeSnapshot(extra = {}) {
   const latestReviewedAction = readJsonSafe(config.LOCAL_AGENT_LAST_ACTION, null);
   const latestDesktopAction = readJsonSafe(config.LOCAL_AGENT_LAST_DESKTOP_ACTION, null);
   const latestObserverAction = readJsonSafe(LAST_OBSERVER_ACTION, null);
+  const branch = runGit(["branch", "--show-current"]);
+  const latestCommit = runGit(["rev-parse", "HEAD"]);
+  const activeServices = [
+    "local_control_agent",
+    "commander_bridge_filesystem",
+    "drive_queue_runtime",
+    "colab_worker_contract",
+  ];
+  const blockers = [];
+  if (repoState.dirty) blockers.push("repo_dirty");
+  if ((extra.agent_status || "idle") === "blocked") blockers.push("agent_blocked");
+  if ((extra.agent_status || "idle") === "error") blockers.push("agent_error");
   const snapshot = {
     generated_at: new Date().toISOString(),
+    system_map_version: "SYSTEM_MAP_V2",
     machine_id: config.MACHINE_PROFILE.machine_id,
     node_role: config.NODE_ROLE.role_id,
+    branch,
+    latest_commit: latestCommit,
+    repo_clean: !repoState.dirty,
+    repo_dirty: repoState.dirty,
     bridge_status: extra.bridge_status || "ready",
     agent_status: extra.agent_status || "idle",
+    active_services: activeServices,
     active_runtime: {
       entrypoint: "start_mikage.bat",
       hub: "MIKAGE/index.js",
@@ -46,6 +73,8 @@ function writeSnapshot(extra = {}) {
     last_verified_window: latestObserverAction ? (latestObserverAction.last_verified_window || null) : null,
     last_verified_tab: latestObserverAction ? (latestObserverAction.last_verified_tab || null) : null,
     desktop_state_last_capture: latestObserverAction ? (latestObserverAction.desktop_state_last_capture || null) : null,
+    last_passed_workflow: latestReport && latestReport.status === "PASS" ? latestReport.action : null,
+    blockers,
     machine_profile: {
       repo_root: config.MACHINE_PROFILE.repo_root,
       browser_profile_name: config.MACHINE_PROFILE.browser_profile_name,

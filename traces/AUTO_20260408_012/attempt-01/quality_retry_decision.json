@@ -1,8 +1,0 @@
-{
-  "retry_allowed": true,
-  "repair_class": "canon",
-  "decision_reason": "Canon-aware repair patch approved for retry.",
-  "hard_stop": false,
-  "repeated_failure_code": "",
-  "proof_blocked": false
-}

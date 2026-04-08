@@ -1,8 +1,0 @@
-{
-  "retry_allowed": false,
-  "repair_class": "",
-  "decision_reason": "QUALITY_PROOF_BLOCKED_NO_LIVE_JUDGE",
-  "hard_stop": true,
-  "repeated_failure_code": "",
-  "proof_blocked": true
-}

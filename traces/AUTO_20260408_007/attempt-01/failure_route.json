@@ -1,8 +1,0 @@
-{
-  "failure_type": "abstract_composition",
-  "responsible_module": "MIKAGE/lanes/image",
-  "repair_strategy": "anti_abstract_reinforcement",
-  "repair_class": "quality",
-  "retry_allowed": true,
-  "repairable": true
-}
