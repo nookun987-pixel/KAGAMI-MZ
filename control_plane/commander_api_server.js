@@ -124,6 +124,12 @@ function createServer() {
         res.end(html);
         return;
       }
+      if (req.method === "GET" && req.url === "/dashboard/orchestra_view.js") {
+        const js = fs.readFileSync(path.join(__dirname, "local_control_agent", "orchestra_view.js"), "utf8");
+        res.writeHead(200, { "Content-Type": "application/javascript; charset=utf-8" });
+        res.end(js);
+        return;
+      }
       sendJson(res, 404, { status: "FAIL", error: "not_found" });
     } catch (error) {
       sendJson(res, 500, { status: "FAIL", error: error.message });

@@ -81,14 +81,113 @@
       min-height: 120px;
     }
     .badge { font-size: 12px; color: var(--muted); }
+    .view-toggle { display: flex; gap: 8px; margin-top: 12px; }
+    .view-toggle button.active { background: var(--accent); }
+    #opsView.hidden, #orchestraView.hidden { display: none; }
+    .orchestra-shell {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      padding: 20px;
+    }
+    .orchestra-stage {
+      background: rgba(22, 27, 34, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      min-height: 720px;
+    }
+    .orchestra-panels {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+    .orchestra-map {
+      position: relative;
+      width: 100%;
+      min-height: 640px;
+    }
+    .orchestra-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 640px;
+      pointer-events: none;
+    }
+    .orchestra-edge {
+      stroke: #2f3c4a;
+      stroke-width: 2;
+      opacity: 0.75;
+    }
+    .orchestra-edge.active {
+      stroke: #58a6ff;
+      stroke-width: 3;
+      opacity: 1;
+    }
+    .node-grid {
+      position: relative;
+      min-height: 640px;
+    }
+    .node {
+      position: absolute;
+      width: 144px;
+      transform: translate(-50%, -50%);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px;
+      background: #0f1720;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+    }
+    .node .state {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .node.idle { border-color: #3d4852; }
+    .node.listening { border-color: #58a6ff; }
+    .node.active { border-color: #3fb950; }
+    .node.blocked { border-color: #d29922; }
+    .node.error { border-color: #f85149; }
+    .conductor-node {
+      width: 180px;
+      background: #121925;
+      font-weight: 700;
+    }
+    .mini-panel {
+      background: rgba(22, 27, 34, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .timeline-list {
+      display: grid;
+      gap: 10px;
+    }
+    .timeline-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #0b0f14;
+    }
+    .subtle {
+      color: var(--muted);
+      font-size: 12px;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Mikage Commander Dashboard</h1>
     <div class="badge">Bridge-aware control surface with reviewed flow enforcement</div>
+    <div class="view-toggle">
+      <button id="opsViewButton" class="active" onclick="setView('ops')">OPS VIEW</button>
+      <button id="orchestraViewButton" class="secondary" onclick="setView('orchestra')">ORCHESTRA VIEW</button>
+    </div>
   </header>
-  <main>
+  <main id="opsView">
     <section class="panel">
       <h2>SESSION</h2>
       <div class="toolbar">
@@ -177,7 +276,53 @@
       <pre id="alertsPanel">No alerts loaded.</pre>
     </section>
   </main>
+  <section id="orchestraView" class="orchestra-shell hidden">
+    <section class="orchestra-stage">
+      <h2>ORCHESTRA VIEW</h2>
+      <div class="badge">User as conductor, fixed control/runtime nodes, real state only</div>
+      <div class="orchestra-map">
+        <svg id="orchestraEdges" class="orchestra-svg" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet"></svg>
+        <div id="orchestraNodes" class="node-grid"></div>
+      </div>
+    </section>
+    <section class="orchestra-panels">
+      <div class="mini-panel">
+        <h2>Current Workflow</h2>
+        <pre id="orchestraWorkflowPanel">No workflow.</pre>
+      </div>
+      <div class="mini-panel">
+        <h2>Verdict Board</h2>
+        <pre id="orchestraVerdictPanel">No verdict.</pre>
+      </div>
+      <div class="mini-panel">
+        <h2>Latest Blocker</h2>
+        <pre id="orchestraBlockerPanel">No blocker.</pre>
+      </div>
+      <div class="mini-panel">
+        <h2>Timeline Feed</h2>
+        <div id="orchestraTimelinePanel" class="timeline-list"></div>
+      </div>
+    </section>
+  </section>
+  <script src="/dashboard/orchestra_view.js"></script>
   <script>
+    let currentView = "ops";
+    let lastStatusPayload = null;
+    const ORCHESTRA_LAYOUT = {
+      conductor: { x: 500, y: 70 },
+      commander_api_server: { x: 240, y: 170 },
+      commander_service: { x: 500, y: 170 },
+      session_manager: { x: 760, y: 170 },
+      workflow_registry: { x: 240, y: 320 },
+      agent_process_manager: { x: 500, y: 320 },
+      commander_bridge: { x: 760, y: 320 },
+      local_control_agent: { x: 500, y: 460 },
+      drive_queue: { x: 220, y: 570 },
+      colab_worker: { x: 400, y: 570 },
+      validation: { x: 580, y: 570 },
+      decision: { x: 760, y: 570 },
+      memory: { x: 920, y: 570 }
+    };
     async function request(url, options) {
       const response = await fetch(url, options);
       const data = await response.json();
@@ -186,8 +331,83 @@
     function render(id, data) {
       document.getElementById(id).textContent = JSON.stringify(data, null, 2);
     }
+    function setView(view) {
+      currentView = view;
+      const ops = document.getElementById("opsView");
+      const orchestra = document.getElementById("orchestraView");
+      const opsButton = document.getElementById("opsViewButton");
+      const orchestraButton = document.getElementById("orchestraViewButton");
+      ops.classList.toggle("hidden", view !== "ops");
+      orchestra.classList.toggle("hidden", view !== "orchestra");
+      opsButton.classList.toggle("active", view === "ops");
+      orchestraButton.classList.toggle("active", view === "orchestra");
+      opsButton.classList.toggle("secondary", view !== "ops");
+      orchestraButton.classList.toggle("secondary", view !== "orchestra");
+      if (view === "orchestra" && lastStatusPayload) {
+        renderOrchestraView(lastStatusPayload);
+      }
+    }
+    function renderTimeline(items) {
+      const host = document.getElementById("orchestraTimelinePanel");
+      host.innerHTML = "";
+      if (!items || !items.length) {
+        host.innerHTML = "<div class=\"timeline-item\">No workflow history.</div>";
+        return;
+      }
+      for (const item of items) {
+        const el = document.createElement("div");
+        el.className = "timeline-item";
+        el.innerHTML = `<strong>${item.workflow || "-"}</strong><div class="subtle">${item.verdict || "-"} • ${item.ended_at || "-"}</div><div>${item.blocker || "clear"}</div>`;
+        host.appendChild(el);
+      }
+    }
+    function renderOrchestraMap(orchestraState) {
+      const nodesHost = document.getElementById("orchestraNodes");
+      const edgesHost = document.getElementById("orchestraEdges");
+      nodesHost.innerHTML = "";
+      edgesHost.innerHTML = "";
+      for (const edge of orchestraState.edges) {
+        const from = ORCHESTRA_LAYOUT[edge.from];
+        const to = ORCHESTRA_LAYOUT[edge.to];
+        if (!from || !to) continue;
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", from.x);
+        line.setAttribute("y1", from.y);
+        line.setAttribute("x2", to.x);
+        line.setAttribute("y2", to.y);
+        line.setAttribute("class", `orchestra-edge${edge.active ? " active" : ""}`);
+        edgesHost.appendChild(line);
+      }
+      for (const node of orchestraState.nodes) {
+        const pos = ORCHESTRA_LAYOUT[node.id];
+        if (!pos) continue;
+        const el = document.createElement("div");
+        el.className = `node ${node.state}${node.id === "conductor" ? " conductor-node" : ""}`;
+        el.style.left = `${pos.x}px`;
+        el.style.top = `${pos.y}px`;
+        el.innerHTML = `<div>${node.label}</div><span class="state">${node.state}</span>`;
+        nodesHost.appendChild(el);
+      }
+    }
+    function renderOrchestraView(statusPayload) {
+      if (!window.MikageOrchestraView) return;
+      const orchestraState = window.MikageOrchestraView.mapOrchestraState(statusPayload);
+      renderOrchestraMap(orchestraState);
+      render("orchestraWorkflowPanel", {
+        workflow: orchestraState.current_workflow,
+        sessions: statusPayload.sessions || null,
+      });
+      render("orchestraVerdictPanel", orchestraState.verdict_board);
+      render("orchestraBlockerPanel", orchestraState.latest_blocker);
+      renderTimeline(orchestraState.timeline_feed);
+    }
     async function loadHealth() { render("systemPanel", await request("/health")); }
-    async function loadStatus() { render("systemPanel", await request("/status")); }
+    async function loadStatus() {
+      const data = await request("/status");
+      lastStatusPayload = data;
+      render("systemPanel", data);
+      if (currentView === "orchestra") renderOrchestraView(data);
+    }
     async function loadSessions() { render("sessionPanel", await request("/sessions")); }
     async function loadReports() { render("reportsPanel", await request("/reports/latest")); }
     async function loadLogs() { render("reportsPanel", await request("/logs/recent")); }
@@ -227,6 +447,7 @@
         body: JSON.stringify({ id, reviewed_by: "dashboard_operator" }),
       }));
       await loadHistory();
+      await loadStatus();
     }
     async function postSimple(url) {
       const result = await request(url, { method: "POST", headers: { "Content-Type": "application/json" } });
@@ -270,6 +491,7 @@
     loadQueue();
     loadHistory();
     loadApprovalQueue();
+    loadStatus();
   </script>
 </body>
 </html>

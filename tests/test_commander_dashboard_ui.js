@@ -8,6 +8,8 @@ const html = fs.readFileSync(path.join(__dirname, "..", "control_plane", "local_
 
 assert.ok(html.includes("SYSTEM"));
 assert.ok(html.includes("SESSION"));
+assert.ok(html.includes("ORCHESTRA VIEW"));
+assert.ok(html.includes("OPS VIEW"));
 assert.ok(html.includes("CONTROL"));
 assert.ok(html.includes("COMMAND PANEL"));
 assert.ok(html.includes("REPORTS"));
@@ -15,10 +17,16 @@ assert.ok(html.includes("WORKFLOWS"));
 assert.ok(html.includes("EXECUTION HISTORY"));
 assert.ok(html.includes("APPROVAL QUEUE"));
 assert.ok(html.includes("ALERTS"));
+assert.ok(html.includes("Current Workflow"));
+assert.ok(html.includes("Verdict Board"));
+assert.ok(html.includes("Timeline Feed"));
+assert.ok(html.includes("Latest Blocker"));
 assert.ok(html.includes("WAKE_VERIFY"));
 assert.ok(html.includes("DESKTOP_CHECK"));
 assert.ok(html.includes("REPO_CHECK"));
 assert.ok(html.includes("DAILY_HEALTH"));
 assert.ok(html.includes("SAFE_SHUTDOWN"));
+assert.ok(html.includes("setView('ops')"));
+assert.ok(html.includes("setView('orchestra')"));
 
 console.log("PASS");

@@ -66,6 +66,20 @@ function request(server, method, route, body) {
     const reports = await request(server, "GET", "/reports/latest");
     assert.strictEqual(reports.status, "PASS");
 
+    const js = await new Promise((resolve, reject) => {
+      const address = server.address();
+      http.get({
+        hostname: "127.0.0.1",
+        port: address.port,
+        path: "/dashboard/orchestra_view.js",
+      }, (res) => {
+        let data = "";
+        res.on("data", (chunk) => { data += chunk; });
+        res.on("end", () => resolve(data));
+      }).on("error", reject);
+    });
+    assert.ok(js.includes("mapOrchestraState"));
+
     console.log("PASS");
   } finally {
     server.close();
