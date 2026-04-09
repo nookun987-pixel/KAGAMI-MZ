@@ -1,20 +1,28 @@
 "use strict";
 
 const path = require("path");
-const { execFileSync } = require("child_process");
 const { writeJson, readPendingActions, readJsonSafe } = require("./bridge_writer");
 const config = require("./config");
 const repoManager = require("./repo_manager");
 const { LAST_OBSERVER_ACTION } = require("./desktop_observer");
 const { getSessionState } = require("../session_manager");
 const { getWorkflowHistory, readApprovalQueue } = require("../workflow_registry");
+const { governedExecFileSync } = require("../process_governor");
+const { getGovernorStatus } = require("../process_governor");
 
 function runGit(args) {
-  return execFileSync("git", args, {
+  const result = governedExecFileSync({
+    command: "git",
+    args,
     cwd: config.ROOT,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-  }).trim();
+    owner_module: "snapshot_writer",
+    rate_limit_exempt: true,
+    timeout_ms: 15000,
+  });
+  if (result.status !== "PASS") {
+    return "";
+  }
+  return String(result.result.stdout || "").trim();
 }
 
 function writeSnapshot(extra = {}) {
@@ -100,6 +108,7 @@ function writeSnapshot(extra = {}) {
     disk_scan_summary: latestDiskScan ? {
       candidate_count: latestDiskScan.candidate_count,
     } : null,
+    process_governor: extra.process_governor || getGovernorStatus(20),
   };
   writeJson(config.SYSTEM_RUNTIME_SNAPSHOT, snapshot);
   return snapshot;

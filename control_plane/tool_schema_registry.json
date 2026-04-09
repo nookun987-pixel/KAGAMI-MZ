@@ -49,6 +49,48 @@
     "type": "read",
     "input_schema": {}
   },
+  "system.executor_jobs": {
+    "tool_name": "system.executor_jobs",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.executor_job": {
+    "tool_name": "system.executor_job",
+    "type": "read",
+    "input_schema": {
+      "job_id": "string"
+    }
+  },
+  "system.goal_state": {
+    "tool_name": "system.goal_state",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.next_task_plan": {
+    "tool_name": "system.next_task_plan",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.repo_health": {
+    "tool_name": "system.repo_health",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.self_heal_plan": {
+    "tool_name": "system.self_heal_plan",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.processes": {
+    "tool_name": "system.processes",
+    "type": "read",
+    "input_schema": {}
+  },
+  "system.process_incidents": {
+    "tool_name": "system.process_incidents",
+    "type": "read",
+    "input_schema": {}
+  },
   "desktop.open_app": {
     "tool_name": "desktop.open_app",
     "type": "read",

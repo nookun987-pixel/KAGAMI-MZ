@@ -2,9 +2,9 @@
 
 const fs = require("fs");
 const path = require("path");
-const { spawnSync } = require("child_process");
 const config = require("./config");
 const { log } = require("./audit_logger");
+const { governedSpawnSync } = require("../process_governor");
 
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) {
@@ -15,29 +15,29 @@ function ensureDir(dir) {
 function commandExists(command) {
   if (!command) return false;
   const probe = process.platform === "win32"
-    ? spawnSync("where", [command], { stdio: "pipe", shell: true })
-    : spawnSync("which", [command], { stdio: "pipe" });
-  return probe.status === 0;
+    ? governedSpawnSync({ command: "where", args: [command], shell: true, owner_module: "bootstrap", timeout_ms: 5000, rate_limit_exempt: true })
+    : governedSpawnSync({ command: "which", args: [command], owner_module: "bootstrap", timeout_ms: 5000, rate_limit_exempt: true });
+  return probe.status === "PASS";
 }
 
 function runBootstrap() {
-  ensureDir(config.STATE_ROOT);
-  ensureDir(config.TASK_ROOT);
-  ensureDir(config.LOG_ROOT);
+  ensureDir(config.STATE_DIR);
+  ensureDir(config.TASKS_DIR);
+  ensureDir(config.LOGS_DIR);
 
   const snapshot = {
     ts: new Date().toISOString(),
     node_version: process.version,
-    repo_root: config.REPO_ROOT,
-    drive_root: config.DRIVE_ROOT,
-    codex_command: config.CODEX_COMMAND,
-    codex_available: commandExists(config.CODEX_COMMAND),
-    drive_root_exists: fs.existsSync(config.DRIVE_ROOT),
-    repo_root_exists: fs.existsSync(config.REPO_ROOT),
+    repo_root: config.ROOT,
+    drive_root: "G:\\My Drive\\mikage_runner",
+    codex_command: "node",
+    codex_available: commandExists("node"),
+    drive_root_exists: fs.existsSync("G:\\My Drive\\mikage_runner"),
+    repo_root_exists: fs.existsSync(config.ROOT),
   };
 
   fs.writeFileSync(
-    path.join(config.STATE_ROOT, "bootstrap_status.json"),
+    path.join(config.STATE_DIR, "bootstrap_status.json"),
     JSON.stringify(snapshot, null, 2)
   );
   log("bootstrap.completed", snapshot);

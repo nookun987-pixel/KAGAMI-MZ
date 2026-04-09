@@ -25,7 +25,24 @@ control_plane/commander_bridge/state/*.json
 control_plane/commander_bridge/state/*.jsonl
 control_plane/commander_bridge/state/action_previews/**
 control_plane/commander_bridge/state/diff_previews/**
+control_plane/commander_bridge/state/task_contracts/**
+control_plane/commander_bridge/state/task_briefs/**
+control_plane/commander_bridge/state/codex_dispatch_packs/**
+control_plane/commander_bridge/state/executor_jobs/**
+control_plane/commander_bridge/state/execution_results/**
+control_plane/commander_bridge/state/execution_failures/**
+control_plane/commander_bridge/state/result_ingest/**
+control_plane/commander_bridge/state/execution_reports/**
+control_plane/commander_bridge/state/progress_evals/**
+control_plane/commander_bridge/state/next_task_candidates/**
+control_plane/commander_bridge/state/next_task_decisions/**
+control_plane/commander_bridge/state/repo_health_scans/**
+control_plane/commander_bridge/state/self_heal_candidates/**
+control_plane/commander_bridge/state/self_heal_decisions/**
+control_plane/commander_bridge/state/live_operation_proofs/**
+control_plane/commander_bridge/state/operator_friction_reports/**
 control_plane/commander_bridge/state/task_lifecycle/**
+control_plane/commander_bridge/state/watchdog_actions/**
 control_plane/commander_bridge/inbox/*.json
 control_plane/commander_bridge/outbox/*.json
 control_plane/commander_bridge/outbox/*.txt
@@ -33,6 +50,8 @@ control_plane/commander_bridge/archive/*.json
 control_plane/commander_bridge/logs/*.log
 control_plane/local_control_agent/state/*.json
 control_plane/local_control_agent/state/reports/*.json
+tasks/task_live_proof_*.md
+tasks/task_live_runner_*.md
 
 # Runtime-generated trace artifacts
 traces/**

@@ -21,6 +21,10 @@ function resolveActionPolicy(toolType) {
   return tiers[String(toolType || "unknown")] || tiers.unknown || "block";
 }
 
+function requiresExecutorHandoff(command) {
+  return !!(command && command.action === "codex.build_task");
+}
+
 function queueApproval(command, toolType, reason, extra = {}) {
   const taskId = command && command.payload && command.payload.task_id;
   const sessions = getSessionState();
@@ -36,6 +40,15 @@ function queueApproval(command, toolType, reason, extra = {}) {
     reason,
     preview_ref: extra.preview_ref || null,
     diff_ref: extra.diff_ref || "NO_DIFF_AVAILABLE",
+    task_contract_ref: extra.task_contract_ref || null,
+    task_brief_ref: extra.task_brief_ref || null,
+    codex_dispatch_pack_ref: extra.codex_dispatch_pack_ref || null,
+    goal_state_ref: extra.goal_state_ref || null,
+    progress_eval_ref: extra.progress_eval_ref || null,
+    next_task_decision_ref: extra.next_task_decision_ref || null,
+    repo_health_scan_ref: extra.repo_health_scan_ref || null,
+    maintenance_issues_ref: extra.maintenance_issues_ref || null,
+    self_heal_decision_ref: extra.self_heal_decision_ref || null,
     command_ref: command.command_id,
     command_snapshot: {
       action: command.action,
@@ -52,6 +65,12 @@ function evaluateActionApproval(command, toolType, context = {}) {
   if (planFailureReasons.has(reason)) {
     const queued = queueApproval(command, toolType, reason, {
       artifacts_written: context.artifacts_written || [],
+      summary: context.summary,
+      preview_ref: context.preview_ref,
+      diff_ref: context.diff_ref,
+      task_contract_ref: context.task_contract_ref,
+      task_brief_ref: context.task_brief_ref,
+      codex_dispatch_pack_ref: context.codex_dispatch_pack_ref,
     });
     return {
       allowed: false,
@@ -93,6 +112,12 @@ function evaluateActionApproval(command, toolType, context = {}) {
 
   const queued = queueApproval(command, toolType, context.reason || "approval_required", {
     artifacts_written: context.artifacts_written || [],
+    summary: context.summary,
+    preview_ref: context.preview_ref,
+    diff_ref: context.diff_ref,
+    task_contract_ref: context.task_contract_ref,
+    task_brief_ref: context.task_brief_ref,
+    codex_dispatch_pack_ref: context.codex_dispatch_pack_ref,
   });
   return {
     allowed: false,
@@ -116,6 +141,7 @@ module.exports = {
   readRules,
   readApprovalQueue: readApprovalInbox,
   resolveActionPolicy,
+  requiresExecutorHandoff,
   evaluateActionApproval,
   queueApproval,
   approveTask,

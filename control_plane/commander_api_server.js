@@ -6,34 +6,13 @@ const path = require("path");
 
 const config = require("./local_control_agent/config");
 const service = require("./commander_service");
-const { startTelegramOperator } = require("./telegram_operator");
-
-function parseBody(req) {
-  return new Promise((resolve) => {
-    let data = "";
-    req.on("data", (chunk) => {
-      data += chunk;
-    });
-    req.on("end", () => {
-      if (!data.trim()) {
-        resolve({});
-        return;
-      }
-      try {
-        resolve(JSON.parse(data));
-      } catch (_) {
-        resolve({});
-      }
-    });
-  });
-}
-
-function sendJson(res, statusCode, payload) {
-  res.writeHead(statusCode, { "Content-Type": "application/json; charset=utf-8" });
-  res.end(JSON.stringify(payload, null, 2));
-}
+const { startTelegramBot } = require("./telegram_bot");
+const { parseBody, sendJson, handleApiRoute: handleTaskApiRoute } = require("./api_routes");
 
 async function handleApiRoute(req, res) {
+  if (await handleTaskApiRoute(req, res, service)) {
+    return true;
+  }
   if (req.method === "GET" && req.url === "/health") {
     sendJson(res, 200, service.getHealth());
     return true;
@@ -43,20 +22,76 @@ async function handleApiRoute(req, res) {
     return true;
   }
   if (req.method === "POST" && req.url === "/agent/start") {
-    sendJson(res, 200, service.startAgent());
+    sendJson(res, 200, await service.startAgent());
     return true;
   }
   if (req.method === "POST" && req.url === "/agent/stop") {
-    sendJson(res, 200, service.stopAgent());
+    sendJson(res, 200, await service.stopAgent());
     return true;
   }
   if (req.method === "POST" && req.url === "/agent/restart") {
-    sendJson(res, 200, service.restartAgent());
+    sendJson(res, 200, await service.restartAgent());
     return true;
   }
   if (req.method === "POST" && req.url === "/command/run") {
     const body = await parseBody(req);
     sendJson(res, 200, await service.runBridgeCommand(body));
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/executor-jobs") {
+    sendJson(res, 200, service.getExecutorJobsView());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/live-operation-proofs") {
+    sendJson(res, 200, service.getLiveOperationProofs());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/stability-anomalies") {
+    sendJson(res, 200, service.getStabilityAnomalies());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/operator-friction-reports") {
+    sendJson(res, 200, service.getOperatorFrictionReports());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/goal-state") {
+    sendJson(res, 200, service.getGoalStateView());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/next-task-plan") {
+    sendJson(res, 200, service.getNextTaskPlan());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/repo-health") {
+    sendJson(res, 200, service.getRepoHealthView());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/processes") {
+    sendJson(res, 200, service.getProcessGovernorView());
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/process-incidents") {
+    const view = service.getProcessGovernorView();
+    sendJson(res, 200, {
+      status: "PASS",
+      incidents: view.incidents,
+      active_processes: view.active_processes,
+      locks: view.locks,
+    });
+    return true;
+  }
+  if (req.method === "GET" && req.url === "/api/self-heal-plan") {
+    sendJson(res, 200, service.getSelfHealPlan());
+    return true;
+  }
+  if (req.method === "POST" && req.url === "/api/executor-result/ingest") {
+    const body = await parseBody(req);
+    sendJson(res, 200, service.ingestExecutorResult(body));
+    return true;
+  }
+  if (req.method === "POST" && req.url === "/api/live-operation/run") {
+    const body = await parseBody(req);
+    sendJson(res, 200, await service.runLiveOperationProof(body));
     return true;
   }
   if (req.method === "POST" && req.url === "/workflow/run") {
@@ -145,6 +180,16 @@ async function handleApiRoute(req, res) {
     sendJson(res, 200, service.getTaskLifecycle(taskId));
     return true;
   }
+  if (req.method === "GET" && /^\/api\/task-artifacts\/[^/]+$/.test(req.url)) {
+    const taskId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.getTaskArtifacts(taskId));
+    return true;
+  }
+  if (req.method === "GET" && /^\/api\/executor-job\/[^/]+$/.test(req.url)) {
+    const jobId = decodeURIComponent(req.url.split("/")[3]);
+    sendJson(res, 200, service.getExecutorJobView(jobId));
+    return true;
+  }
   if (req.method === "GET" && /^\/api\/workflow-summary\/[^/]+$/.test(req.url)) {
     const workflowId = decodeURIComponent(req.url.split("/")[3]);
     sendJson(res, 200, service.getWorkflowSummaryView(workflowId));
@@ -175,16 +220,29 @@ async function handleApiRoute(req, res) {
   return false;
 }
 
+function serveUiAsset(req, res) {
+  const uiRoot = path.join(__dirname, "ui");
+  const route = req.url === "/" ? "/dashboard.html" : req.url;
+  const assetPath = path.join(uiRoot, route.replace(/^\/+/, ""));
+  if (!assetPath.startsWith(uiRoot) || !fs.existsSync(assetPath)) {
+    return false;
+  }
+  const ext = path.extname(assetPath).toLowerCase();
+  const contentType = ext === ".js"
+    ? "application/javascript; charset=utf-8"
+    : ext === ".css"
+      ? "text/css; charset=utf-8"
+      : "text/html; charset=utf-8";
+  res.writeHead(200, { "Content-Type": contentType });
+  res.end(fs.readFileSync(assetPath, "utf8"));
+  return true;
+}
+
 function createServer() {
   return http.createServer(async (req, res) => {
     try {
       if (await handleApiRoute(req, res)) return;
-      if (req.method === "GET" && req.url === "/") {
-        const html = fs.readFileSync(path.join(__dirname, "local_control_agent", "dashboard.html"), "utf8");
-        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-        res.end(html);
-        return;
-      }
+      if (req.method === "GET" && serveUiAsset(req, res)) return;
       if (req.method === "GET" && req.url === "/dashboard/orchestra_view.js") {
         const js = fs.readFileSync(path.join(__dirname, "local_control_agent", "orchestra_view.js"), "utf8");
         res.writeHead(200, { "Content-Type": "application/javascript; charset=utf-8" });
@@ -200,13 +258,13 @@ function createServer() {
 
 function startCommanderApi(options = {}) {
   const host = options.host || config.CONTROL_API_HOST;
-  const port = options.port || config.CONTROL_API_PORT;
+  const port = options.port || Number(process.env.MIKAGE_OPERATOR_PORT || 3030);
   const server = createServer();
   server.listen(port, host);
-  const telegram = startTelegramOperator(service, options.telegram || {});
+  const telegramBot = startTelegramBot({ ...(options.telegram || {}), port });
   return {
     server,
-    telegram,
+    telegramBot,
     host,
     port,
   };

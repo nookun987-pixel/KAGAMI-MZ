@@ -1,14 +1,23 @@
 "use strict";
 
-const { execFileSync } = require("child_process");
 const config = require("./config");
+const { governedExecFileSync } = require("../process_governor");
 
 function runGit(args, options = {}) {
-  return execFileSync("git", args, {
+  const result = governedExecFileSync({
+    command: "git",
+    args,
     cwd: options.cwd || config.ROOT,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
+    owner_module: "repo_manager",
+    rate_limit_exempt: true,
+    task_id: options.task_id || null,
+    workflow_id: options.workflow_id || null,
+    timeout_ms: options.timeout_ms || config.PROCESS_LIMITS.default_timeout_ms,
   });
+  if (result.status !== "PASS") {
+    throw new Error(result.result && (result.result.error || result.result.stderr_preview) || result.reason || "git_command_failed");
+  }
+  return result.result.stdout;
 }
 
 function repoStatus(options = {}) {

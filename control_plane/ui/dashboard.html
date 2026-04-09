@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIKAGE Operator Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>MIKAGE Operator</h1>
+        <p class="subtitle">What is happening, and what do I do now?</p>
+      </div>
+      <div id="status-badge" class="status-badge status-waiting">LOADING</div>
+    </header>
+
+    <section class="panel compose-panel">
+      <label class="label" for="task-input">NEW TASK</label>
+      <textarea id="task-input" rows="3" placeholder="Nhập task ngắn, rõ mục tiêu, đúng scope..."></textarea>
+      <button id="create-task" class="primary-button">RUN / TAO TASK</button>
+    </section>
+
+    <section class="panel feedback-panel">
+      <div class="panel-header">
+        <h2>ACTION RESULT</h2>
+      </div>
+      <div id="action-feedback" class="feedback-text">Ready.</div>
+    </section>
+
+    <section class="panel queue-panel">
+      <div class="panel-header">
+        <h2>WAITING APPROVAL</h2>
+        <span id="pending-count" class="small-pill">0</span>
+      </div>
+      <div id="approval-focus" class="focus-card empty-state">No pending approval.</div>
+    </section>
+
+    <section class="panel current-job-panel">
+      <div class="panel-header">
+        <h2>CURRENT JOB</h2>
+        <span id="job-caption" class="small-pill">No active job</span>
+      </div>
+      <div id="current-job-view" class="job-view">
+        <div class="empty-state">No job running.</div>
+      </div>
+    </section>
+
+    <section class="panel summary-panel">
+      <div class="panel-header">
+        <h2>SHORT RESULT</h2>
+      </div>
+      <div id="short-result" class="result-text">No result yet.</div>
+      <div class="action-row">
+        <button id="approve-latest" class="primary-button">APPROVE</button>
+        <button id="reject-latest" class="secondary-button">REJECT</button>
+        <button id="retry-latest" class="secondary-button">RETRY</button>
+      </div>
+    </section>
+
+    <section class="panel system-panel">
+      <div class="panel-header">
+        <h2>SYSTEM</h2>
+      </div>
+      <div id="system-quick" class="system-quick">Loading...</div>
+      <div class="action-row">
+        <button id="pause-system" class="secondary-button">TAM DUNG</button>
+        <button id="resume-system" class="secondary-button">TIEP TUC</button>
+        <button id="restart-system" class="secondary-button">RESTART</button>
+      </div>
+    </section>
+  </main>
+  <script src="/dashboard.js"></script>
+</body>
+</html>

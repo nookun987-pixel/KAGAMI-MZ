@@ -345,6 +345,43 @@
       </div>
       <pre id="governanceReportsPanel">No governance reports loaded.</pre>
     </section>
+
+    <section class="panel">
+      <h2>EXECUTOR JOBS V1</h2>
+      <input id="executorJobId" placeholder="executor job id" />
+      <textarea id="executorIngestPayload">{"outcome":"success","job_id":"","task_id":"","changed_files":[],"tests_executed":[],"tests_passed":[],"tests_failed":[],"artifacts_returned":[],"summary":""}</textarea>
+      <div class="toolbar">
+        <button onclick="loadExecutorJobs()">Refresh Jobs</button>
+        <button onclick="loadExecutorJob()">Load Job</button>
+        <button onclick="ingestExecutorResult()">Ingest Result</button>
+      </div>
+      <pre id="executorJobsPanel">No executor jobs loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>LIVE OPERATION PROOF V1</h2>
+      <div class="toolbar">
+        <button onclick="runLiveOperationProof()">Run Live Proof</button>
+        <button class="secondary" onclick="loadLiveOperationProofs()">Refresh Proofs</button>
+      </div>
+      <pre id="liveOperationProofPanel">No live operation proof loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>STABILITY ANOMALIES V1</h2>
+      <div class="toolbar">
+        <button onclick="loadStabilityAnomalies()">Refresh Anomalies</button>
+      </div>
+      <pre id="stabilityAnomaliesPanel">No stability anomalies loaded.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>OPERATOR FRICTION V1</h2>
+      <div class="toolbar">
+        <button onclick="loadOperatorFrictionReports()">Refresh Friction</button>
+      </div>
+      <pre id="operatorFrictionPanel">No operator friction report loaded.</pre>
+    </section>
   </main>
   <section id="orchestraView" class="orchestra-shell hidden">
     <section class="orchestra-stage">
@@ -490,6 +527,10 @@
     async function loadGovernanceSnapshot() { render("governancePanel", await request("/api/governance-snapshot/latest")); }
     async function loadActivityFeed() { render("activityFeedPanel", await request("/api/activity-feed")); }
     async function loadGovernanceReports() { render("governanceReportsPanel", await request("/api/governance-reports")); }
+    async function loadExecutorJobs() { render("executorJobsPanel", await request("/api/executor-jobs")); }
+    async function loadLiveOperationProofs() { render("liveOperationProofPanel", await request("/api/live-operation-proofs")); }
+    async function loadStabilityAnomalies() { render("stabilityAnomaliesPanel", await request("/api/stability-anomalies")); }
+    async function loadOperatorFrictionReports() { render("operatorFrictionPanel", await request("/api/operator-friction-reports")); }
     async function loadAlerts() {
       const status = await request("/status");
       render("alertsPanel", {
@@ -563,6 +604,43 @@
       }
       render("governanceReportsPanel", await request(`/api/report/${encodeURIComponent(id)}`));
     }
+    async function loadExecutorJob() {
+      const id = document.getElementById("executorJobId").value.trim();
+      if (!id) {
+        render("executorJobsPanel", { status: "BLOCKED", error: "missing executor job id" });
+        return;
+      }
+      render("executorJobsPanel", await request(`/api/executor-job/${encodeURIComponent(id)}`));
+    }
+    async function ingestExecutorResult() {
+      let payload;
+      try {
+        payload = JSON.parse(document.getElementById("executorIngestPayload").value || "{}");
+      } catch (_) {
+        render("executorJobsPanel", { status: "FAIL", error: "invalid executor ingest JSON" });
+        return;
+      }
+      render("executorJobsPanel", await request("/api/executor-result/ingest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }));
+      await loadStatus();
+      await loadHistory();
+    }
+    async function runLiveOperationProof() {
+      render("liveOperationProofPanel", await request("/api/live-operation/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ requested_by: "dashboard_live_proof" }),
+      }));
+      await loadStatus();
+      await loadHistory();
+      await loadApprovalInbox();
+      await loadExecutorJobs();
+      await loadStabilityAnomalies();
+      await loadOperatorFrictionReports();
+    }
     async function postSimple(url) {
       const result = await request(url, { method: "POST", headers: { "Content-Type": "application/json" } });
       render("controlPanel", result);
@@ -611,6 +689,10 @@
     loadGovernanceSnapshot();
     loadActivityFeed();
     loadGovernanceReports();
+    loadExecutorJobs();
+    loadLiveOperationProofs();
+    loadStabilityAnomalies();
+    loadOperatorFrictionReports();
     loadStatus();
   </script>
 </body>

@@ -2,9 +2,9 @@
 
 const fs = require("fs");
 const path = require("path");
-const { spawn, spawnSync } = require("child_process");
 
 const config = require("./local_control_agent/config");
+const { governedSpawn, governedSpawnSync, releaseGovernorLock } = require("./process_governor");
 
 const AGENT_ENTRYPOINT = path.join(config.ROOT, "control_plane", "local_control_agent", "index.js");
 const AGENT_STATE_PATH = path.join(config.STATE_DIR, "agent_process.json");
@@ -24,12 +24,19 @@ function writeJson(filePath, value) {
 }
 
 function runPowerShell(script) {
-  return spawnSync("powershell.exe", ["-NoProfile", "-Command", script], {
+  const result = governedSpawnSync({
+    command: "powershell.exe",
+    args: ["-NoProfile", "-Command", script],
     cwd: config.ROOT,
-    encoding: "utf8",
-    windowsHide: true,
-    stdio: ["ignore", "pipe", "pipe"],
+    owner_module: "agent_process_manager",
+    rate_limit_exempt: true,
+    timeout_ms: 15000,
   });
+  return {
+    status: result.status === "PASS" ? 0 : 1,
+    stdout: result.result && result.result.stdout || "",
+    stderr: result.result && result.result.stderr || result.reason || "",
+  };
 }
 
 function normalizeProcesses(raw) {
@@ -57,18 +64,19 @@ function findAgentProcesses() {
   if (result.status !== 0) return [];
   const stdout = String(result.stdout || "").trim();
   if (!stdout) return [];
-  let parsed;
   try {
-    parsed = JSON.parse(stdout);
+    const parsed = JSON.parse(stdout);
+    return normalizeProcesses(Array.isArray(parsed) ? parsed : [parsed]);
   } catch (_) {
     return [];
   }
-  return normalizeProcesses(Array.isArray(parsed) ? parsed : [parsed]);
 }
 
 function readAgentState() {
   return readJsonSafe(AGENT_STATE_PATH, {
     pid: null,
+    process_id: null,
+    singleton_key: "auto_agent_loop",
     status: "stopped",
     started_at: null,
     command_line: null,
@@ -80,9 +88,7 @@ function writeAgentState(state) {
 }
 
 function clearAgentState() {
-  if (fs.existsSync(AGENT_STATE_PATH)) {
-    fs.unlinkSync(AGENT_STATE_PATH);
-  }
+  if (fs.existsSync(AGENT_STATE_PATH)) fs.unlinkSync(AGENT_STATE_PATH);
 }
 
 function getAgentStatus() {
@@ -106,7 +112,7 @@ function getAgentStatus() {
   };
 }
 
-function startAgentProcess() {
+async function startAgentProcess() {
   const current = getAgentStatus();
   if (current.live) {
     return {
@@ -117,33 +123,47 @@ function startAgentProcess() {
       processes: current.processes,
     };
   }
-
-  const child = spawn(process.execPath, [AGENT_ENTRYPOINT], {
+  const launch = await governedSpawn({
+    command: process.execPath,
+    args: [AGENT_ENTRYPOINT],
     cwd: config.ROOT,
     detached: true,
-    stdio: "ignore",
+    wait_for_exit: false,
     windowsHide: true,
+    owner_module: "agent_process_manager",
+    singleton_key: "auto_agent_loop",
+    kill_policy: "manual_stop",
+    timeout_ms: 10000,
   });
-  child.unref();
-
+  if (launch.status !== "PASS") {
+    return {
+      status: "FAIL",
+      action: "agent.start",
+      already_running: false,
+      pid: null,
+      processes: [],
+      reason: launch.reason || launch.result && launch.result.error || "agent_spawn_failed",
+    };
+  }
   writeAgentState({
-    pid: child.pid,
+    pid: launch.result && launch.result.pid || null,
+    process_id: launch.process && launch.process.process_id || null,
+    singleton_key: "auto_agent_loop",
     status: "running",
     started_at: new Date().toISOString(),
     command_line: `${process.execPath} ${AGENT_ENTRYPOINT}`,
   });
-
   const verified = getAgentStatus();
   return {
     status: verified.live ? "PASS" : "FAIL",
     action: "agent.start",
     already_running: false,
-    pid: verified.pid || child.pid,
+    pid: verified.pid || launch.result && launch.result.pid || null,
     processes: verified.processes || [],
   };
 }
 
-function stopAgentProcess() {
+async function stopAgentProcess() {
   const current = getAgentStatus();
   if (!current.live) {
     clearAgentState();
@@ -154,18 +174,19 @@ function stopAgentProcess() {
       stopped_pids: [],
     };
   }
-
   const stopped = [];
   for (const proc of current.processes) {
-    spawnSync("taskkill", ["/PID", String(proc.pid), "/T", "/F"], {
+    governedSpawnSync({
+      command: "taskkill",
+      args: ["/PID", String(proc.pid), "/T", "/F"],
       cwd: config.ROOT,
-      encoding: "utf8",
-      windowsHide: true,
-      stdio: ["ignore", "pipe", "pipe"],
+      owner_module: "agent_process_manager",
+      timeout_ms: 15000,
     });
     stopped.push(proc.pid);
   }
-
+  const state = readAgentState();
+  if (state.singleton_key) releaseGovernorLock(state.singleton_key, state.process_id || null);
   clearAgentState();
   const verified = getAgentStatus();
   return {
@@ -176,9 +197,9 @@ function stopAgentProcess() {
   };
 }
 
-function restartAgentProcess() {
-  const stopped = stopAgentProcess();
-  const started = startAgentProcess();
+async function restartAgentProcess() {
+  const stopped = await stopAgentProcess();
+  const started = await startAgentProcess();
   return {
     status: started.status === "PASS" ? "PASS" : "FAIL",
     action: "agent.restart",

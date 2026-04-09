@@ -6,9 +6,17 @@ const { ensureBridgeDirs, readNextCommand, listInboxCommands } = require("./brid
 const { updatePendingActions } = require("./bridge_writer");
 const snapshotWriter = require("./snapshot_writer");
 const { runAutoAgentLoop } = require("../auto_agent_loop");
+const { log } = require("./audit_logger");
+const { getGovernorStatus } = require("../process_governor");
 
 async function processCommand(commandEntry) {
-  return runAutoAgentLoop(commandEntry);
+  const result = await runAutoAgentLoop(commandEntry);
+  snapshotWriter.writeSnapshot({
+    last_task_id: result && result.task_id || null,
+    last_command_action: commandEntry && commandEntry.payload && commandEntry.payload.action || null,
+    process_governor: getGovernorStatus(20),
+  });
+  return result;
 }
 
 async function runOnce() {
@@ -22,7 +30,7 @@ async function runOnce() {
   const next = readNextCommand();
   if (!next) {
     updatePendingActions([]);
-    snapshotWriter.writeSnapshot({ agent_status: "idle" });
+    snapshotWriter.writeSnapshot({ agent_status: "idle", process_governor: getGovernorStatus(20) });
     return null;
   }
   const result = await processCommand(next);
@@ -32,17 +40,17 @@ async function runOnce() {
     file: entry.name,
   }));
   updatePendingActions(remaining);
-  snapshotWriter.writeSnapshot({ agent_status: "idle" });
+  snapshotWriter.writeSnapshot({ agent_status: "idle", process_governor: getGovernorStatus(20) });
   return result;
 }
 
 async function startAgent(options = {}) {
   ensureBridgeDirs();
   if (options.once) return runOnce();
-  snapshotWriter.writeSnapshot({ bridge_status: "watching", agent_status: "watching" });
+  snapshotWriter.writeSnapshot({ bridge_status: "watching", agent_status: "watching", process_governor: getGovernorStatus(20) });
   setInterval(() => {
     runOnce().catch((error) => {
-      logAudit({ action: "agent.loop", status: "FAIL", reason: error.message });
+      log("agent.loop.fail", { reason: error.message });
     });
   }, options.pollIntervalMs || 3000);
   return { started: true };

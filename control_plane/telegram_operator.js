@@ -1,6 +1,7 @@
 "use strict";
 
 const TelegramBot = require("node-telegram-bot-api");
+const DEPRECATED_SURFACE_REASON = "deprecated_surface_use_telegram_bot";
 const KNOWN_WORKFLOWS = new Set(["WAKE_VERIFY", "DESKTOP_CHECK", "REPO_CHECK", "DAILY_HEALTH", "SAFE_SHUTDOWN"]);
 
 function parseWorkflowCommand(text) {
@@ -45,6 +46,23 @@ function buildTelegramHandlers(service) {
     },
     "/approvals": async () => service.getApprovalInbox(),
     "/failures": async () => service.getFailureCenter(),
+    "/jobs": async () => service.getExecutorJobsView(),
+    "/proofs": async () => service.getLiveOperationProofs(),
+    "/anomalies": async () => service.getStabilityAnomalies(),
+    "/friction": async () => service.getOperatorFrictionReports(),
+    "/goals": async () => service.getGoalStateView(),
+    "/nexttask": async () => service.getNextTaskPlan(),
+    "/repohealth": async () => service.getRepoHealthView(),
+    "/selfheal": async () => service.getSelfHealPlan(),
+    "/processes": async () => service.getProcessGovernorView(),
+    "/incidents": async () => {
+      const view = service.getProcessGovernorView();
+      return {
+        status: "PASS",
+        incidents: view.incidents,
+        active_processes: view.active_processes,
+      };
+    },
     "/snapshot": async () => service.getGovernanceSnapshotLatest(),
     "/feed": async () => service.getActivityFeedView(),
     "/queue": async () => ({
@@ -64,6 +82,12 @@ function formatTelegramResponse(result) {
 }
 
 function startTelegramOperator(service, options = {}) {
+  if (!options.allowDeprecated) {
+    return {
+      enabled: false,
+      reason: DEPRECATED_SURFACE_REASON,
+    };
+  }
   const token = options.token || process.env.MIKAGE_TELEGRAM_BOT_TOKEN;
   if (!token) {
     return {
@@ -95,6 +119,7 @@ function startTelegramOperator(service, options = {}) {
     const taskId = parseApprovalCommand(text, "task");
     const auditId = parseApprovalCommand(text, "audit");
     const reportId = parseApprovalCommand(text, "report");
+    const jobId = parseApprovalCommand(text, "job");
     try {
       if (workflow) {
         const result = KNOWN_WORKFLOWS.has(workflow)
@@ -118,7 +143,10 @@ function startTelegramOperator(service, options = {}) {
         return;
       }
       if (planId) {
-        const result = await service.getTaskPlan(planId);
+        const result = {
+          plan: await service.getTaskPlan(planId),
+          artifacts: await service.getTaskArtifacts(planId),
+        };
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }
@@ -139,6 +167,11 @@ function startTelegramOperator(service, options = {}) {
       }
       if (reportId) {
         const result = await service.getWorkflowReport(reportId);
+        await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
+        return;
+      }
+      if (jobId) {
+        const result = await service.getExecutorJobView(jobId);
         await bot.sendMessage(message.chat.id, formatTelegramResponse(result));
         return;
       }
@@ -164,6 +197,7 @@ function startTelegramOperator(service, options = {}) {
 }
 
 module.exports = {
+  DEPRECATED_SURFACE_REASON,
   parseWorkflowCommand,
   parseApprovalCommand,
   buildTelegramHandlers,

@@ -2,9 +2,9 @@
 
 const fs = require("fs");
 const path = require("path");
-const { spawnSync } = require("child_process");
 
 const config = require("./config");
+const { governedSpawnSync } = require("../process_governor");
 const {
   normalizeWindowList,
   inferBrowserContext,
@@ -49,15 +49,17 @@ function defaultCollectWindowState() {
     "$payload = [PSCustomObject]@{ active_title = $activeTitle; windows = $windows };",
     "$payload | ConvertTo-Json -Depth 5 -Compress",
   ].join("\n");
-  const result = spawnSync("powershell.exe", ["-NoProfile", "-Command", script], {
-    encoding: "utf8",
-    windowsHide: true,
-    stdio: ["ignore", "pipe", "pipe"],
+  const governed = governedSpawnSync({
+    command: "powershell.exe",
+    args: ["-NoProfile", "-Command", script],
+    owner_module: "desktop_observer",
+    rate_limit_exempt: true,
+    timeout_ms: 15000,
   });
-  if (result.status !== 0) {
-    throw new Error(result.stderr ? String(result.stderr).trim() : `observer_collect_failed:${result.status}`);
+  if (governed.status !== "PASS") {
+    throw new Error(governed.result && governed.result.stderr ? String(governed.result.stderr).trim() : governed.reason || "observer_collect_failed");
   }
-  const rawStdout = String(result.stdout || "{}");
+  const rawStdout = String(governed.result.stdout || "{}");
   const sanitizedStdout = rawStdout.replace(/[\u0000-\u001F]/g, (char) => {
     if (char === "\r" || char === "\n" || char === "\t") return char;
     return "";

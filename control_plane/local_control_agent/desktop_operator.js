@@ -2,12 +2,12 @@
 
 const fs = require("fs");
 const path = require("path");
-const { spawnSync, execSync } = require("child_process");
 const crypto = require("crypto");
 
 const config = require("./config");
 const { getAppTarget, getFocusTitle, getTabTarget } = require("./window_registry");
 const { buildStartupWorkspacePlan, buildStartupWorkspaceFullPlan } = require("./startup_workspace");
+const { governedSpawnSync } = require("../process_governor");
 
 function ensureReportDirs() {
   fs.mkdirSync(config.LOCAL_AGENT_REPORTS_DIR, { recursive: true });
@@ -28,17 +28,22 @@ function writeDesktopReport(record) {
 }
 
 function defaultStartProcess(target, args = []) {
-  return spawnSync("cmd", ["/c", "start", "", target, ...args], {
-    windowsHide: true,
-    stdio: "ignore",
+  return governedSpawnSync({
+    command: "cmd",
+    args: ["/c", "start", "", target, ...args],
+    owner_module: "desktop_operator",
+    visible_window: true,
+    windowsHide: false,
+    timeout_ms: 10000,
   });
 }
 
 function defaultPowerShell(script) {
-  return spawnSync("powershell.exe", ["-NoProfile", "-Command", script], {
-    windowsHide: true,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
+  return governedSpawnSync({
+    command: "powershell.exe",
+    args: ["-NoProfile", "-Command", script],
+    owner_module: "desktop_operator",
+    timeout_ms: 15000,
   });
 }
 
@@ -95,6 +100,19 @@ function finalizeRecord(record, updates) {
   };
 }
 
+function spawnFailed(result) {
+  if (!result) return false;
+  if (typeof result.status === "number") return result.status !== 0;
+  return result.status !== "PASS";
+}
+
+function spawnErrorText(result) {
+  if (!result) return "spawn_failed";
+  if (result.result && result.result.stderr) return String(result.result.stderr);
+  if (result.stderr) return String(result.stderr);
+  return result.reason || `exit_${result.status}`;
+}
+
 function openApp(params = {}, options = {}) {
   const target = getAppTarget(params.app);
   const record = buildRecordBase("desktop.open_app", params, options.commandId);
@@ -108,12 +126,12 @@ function openApp(params = {}, options = {}) {
   }
   const launcher = options.startProcess || defaultStartProcess;
   const launchResult = launcher(target.app, target.args);
-  if (launchResult && typeof launchResult.status === "number" && launchResult.status !== 0) {
+  if (spawnFailed(launchResult)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "app_open_failed",
       opened_targets: [],
-      error: launchResult.stderr ? String(launchResult.stderr) : `exit_${launchResult.status}`,
+      error: spawnErrorText(launchResult),
     });
   }
   return finalizeRecord(record, {
@@ -138,12 +156,12 @@ function openUrl(params = {}, options = {}) {
   }
   const launcher = options.startProcess || defaultStartProcess;
   const launchResult = launcher("chrome", [url]);
-  if (launchResult && typeof launchResult.status === "number" && launchResult.status !== 0) {
+  if (spawnFailed(launchResult)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "url_open_failed",
       opened_targets: [],
-      error: launchResult.stderr ? String(launchResult.stderr) : `exit_${launchResult.status}`,
+      error: spawnErrorText(launchResult),
     });
   }
   return finalizeRecord(record, {
@@ -248,13 +266,13 @@ function focusWindow(params = {}, options = {}) {
   const executor = options.uiExecutor || defaultPowerShell;
   const script = `$ws = New-Object -ComObject WScript.Shell; if (-not $ws.AppActivate('${escapePowerShellSingleQuoted(title)}')) { exit 1 }`;
   const result = executor(script);
-  if (result && typeof result.status === "number" && result.status !== 0) {
+  if (spawnFailed(result)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "focus_window_failed",
       opened_targets: [],
       focused_window: target,
-      error: result.stderr ? String(result.stderr) : `exit_${result.status}`,
+      error: spawnErrorText(result),
     });
   }
   return finalizeRecord(record, {
@@ -274,8 +292,8 @@ function sendKeys(params = {}, options = {}) {
     const executor = options.uiExecutor || defaultPowerShell;
     const script = `$ws = New-Object -ComObject WScript.Shell; $ws.SendKeys('${escapePowerShellSingleQuoted(KEY_MAP[normalized])}')`;
     const result = executor(script);
-    if (result && typeof result.status === "number" && result.status !== 0) {
-      throw new Error(result.stderr ? String(result.stderr) : `exit_${result.status}`);
+    if (spawnFailed(result)) {
+      throw new Error(spawnErrorText(result));
     }
     return finalizeRecord(record, {
       status: "PASS",
@@ -312,13 +330,13 @@ function typeText(params = {}, options = {}) {
   const executor = options.uiExecutor || defaultPowerShell;
   const script = `$ws = New-Object -ComObject WScript.Shell; $ws.SendKeys('${escapePowerShellSingleQuoted(escapeSendKeysText(text))}')`;
   const result = executor(script);
-  if (result && typeof result.status === "number" && result.status !== 0) {
+  if (spawnFailed(result)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "type_text_failed",
       opened_targets: [],
       typed_text_hash: crypto.createHash("sha256").update(text).digest("hex"),
-      error: result.stderr ? String(result.stderr) : `exit_${result.status}`,
+      error: spawnErrorText(result),
       opened_apps: [],
       opened_urls: [],
     });
@@ -346,12 +364,12 @@ function openTab(params = {}, options = {}) {
   }
   const launcher = options.startProcess || defaultStartProcess;
   const launchResult = launcher("chrome", ["--new-tab", url]);
-  if (launchResult && typeof launchResult.status === "number" && launchResult.status !== 0) {
+  if (spawnFailed(launchResult)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "open_tab_failed",
       opened_targets: [],
-      error: launchResult.stderr ? String(launchResult.stderr) : `exit_${launchResult.status}`,
+      error: spawnErrorText(launchResult),
     });
   }
   return finalizeRecord(record, {
@@ -378,13 +396,13 @@ function switchTab(params = {}, options = {}) {
   }
   const launcher = options.startProcess || defaultStartProcess;
   const launchResult = launcher("chrome", [url]);
-  if (launchResult && typeof launchResult.status === "number" && launchResult.status !== 0) {
+  if (spawnFailed(launchResult)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "switch_tab_failed",
       opened_targets: [],
       tab_target: target,
-      error: launchResult.stderr ? String(launchResult.stderr) : `exit_${launchResult.status}`,
+      error: spawnErrorText(launchResult),
     });
   }
   return finalizeRecord(record, {
@@ -423,13 +441,13 @@ function basicClick(params = {}, options = {}) {
     "[MouseOps]::mouse_event(4,0,0,0,0);",
   ].join(" ");
   const result = executor(script);
-  if (result && typeof result.status === "number" && result.status !== 0) {
+  if (spawnFailed(result)) {
     return finalizeRecord(record, {
       status: "FAIL",
       result_summary: "basic_click_failed",
       opened_targets: [],
       click_action: { x, y },
-      error: result.stderr ? String(result.stderr) : `exit_${result.status}`,
+      error: spawnErrorText(result),
       opened_apps: [],
       opened_urls: [],
     });
@@ -458,14 +476,28 @@ function runShell(params = {}, options = {}) {
 
   try {
     validateShellCommand(commandText);
-    const executor = options.execShell || ((cmd) => execSync(cmd, {
+    const executor = options.execShell || ((cmd) => governedSpawnSync({
+      command: "powershell.exe",
+      args: ["-NoProfile", "-Command", cmd],
       cwd: config.ROOT,
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "pipe"],
-      shell: "powershell.exe",
+      owner_module: "desktop_operator",
+      timeout_ms: 15000,
     }));
     const stdout = executor(commandText);
-    const preview = String(stdout || "").trim().split(/\r?\n/).slice(0, 20).join("\n");
+    if (typeof stdout === "string") {
+      return finalizeRecord(record, {
+        status: "PASS",
+        result_summary: "shell command executed",
+        opened_targets: [],
+        stdout_preview: String(stdout || "").trim().split(/\r?\n/).slice(0, 20).join("\n"),
+        opened_apps: [],
+        opened_urls: [],
+      });
+    }
+    if (stdout.status !== "PASS") {
+      throw new Error(stdout.result && stdout.result.stderr_preview || stdout.reason || "shell_command_failed");
+    }
+    const preview = String(stdout.result.stdout || "").trim().split(/\r?\n/).slice(0, 20).join("\n");
     return finalizeRecord(record, {
       status: "PASS",
       result_summary: "shell command executed",

@@ -92,6 +92,9 @@ function createApprovalItem(input) {
     command_ref: input.command_ref || null,
     command_snapshot: input.command_snapshot || null,
     report_ref: input.report_ref || null,
+    task_contract_ref: input.task_contract_ref || null,
+    task_brief_ref: input.task_brief_ref || null,
+    codex_dispatch_pack_ref: input.codex_dispatch_pack_ref || null,
   };
   store.pending = Array.isArray(store.pending) ? store.pending : [];
   store.pending.unshift(item);

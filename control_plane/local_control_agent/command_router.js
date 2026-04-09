@@ -11,9 +11,22 @@ const { buildBringupChecklist } = require("./bringup_checklist");
 const { writeBringupReport } = require("./bringup_report");
 const { writeJson } = require("./bridge_writer");
 const config = require("./config");
+const { listExecutorJobs, getExecutorJob } = require("../executor_job_store");
+const { getExecutorStatus } = require("../executor_status_tracker");
+const { readGoalStateRegistry } = require("../goal_state_registry");
+const { evaluateProgress } = require("../progress_evaluator");
+const { planNextTasks } = require("../next_task_planner");
+const { scanRepoHealth } = require("../repo_health_scanner");
+const { registerMaintenanceIssues } = require("../maintenance_issue_registry");
+const { planSelfHeal } = require("../self_heal_planner");
+const { getWorkflowHistory } = require("../workflow_registry");
+const { readFailureCenter } = require("../failure_center_store");
+const { listExecutorJobs: listPlannerJobs } = require("../executor_job_store");
 const { runReviewedOperator } = require("../reviewed_operator_flow");
 const { validateToolCommand } = require("../tool_validator");
 const { enforcePlanFirst } = require("../plan_guard");
+const { resolveTaskType, validateTaskGoal } = require("../task_goal_registry");
+const { getGovernorStatus } = require("../process_governor");
 
 const REVIEWED_ACTIONS = new Set([
   "repo.commit",
@@ -39,6 +52,24 @@ function inspectCommand(command) {
     };
   }
   const plan = enforcePlanFirst(validation.tool_type, command);
+  if (command.action === "codex.build_task") {
+    const objective = command.payload && (command.payload.objective || command.payload.task) || "";
+    const taskType = resolveTaskType({
+      task_type: command.payload && command.payload.task_type,
+      objective,
+      fallback: "operator_action",
+    });
+    const goal = validateTaskGoal(taskType, objective);
+    if (!goal.valid) {
+      return {
+        ok: false,
+        tool_type: validation.tool_type,
+        reason: goal.reason,
+        schema: validation.schema,
+        plan,
+      };
+    }
+  }
   if (!plan.allowed) {
     return {
       ok: false,
@@ -137,6 +168,65 @@ async function routeCommand(command, options = {}) {
       return buildBringupChecklist();
     case "system.generate_bringup_report":
       return writeBringupReport();
+    case "system.executor_jobs":
+      return {
+        status: "PASS",
+        executor_jobs: listExecutorJobs(50),
+      };
+    case "system.executor_job":
+      return {
+        status: "PASS",
+        executor_job: getExecutorJob(command.payload && command.payload.job_id),
+        executor_status: getExecutorStatus(command.payload && command.payload.job_id),
+      };
+    case "system.goal_state":
+      return {
+        status: "PASS",
+        goal_state_registry: readGoalStateRegistry(),
+      };
+    case "system.next_task_plan": {
+      const goal = (readGoalStateRegistry().goals || []).find((item) => item.current_state === "active") || null;
+      const progress = evaluateProgress({
+        governance_snapshot: require("./bridge_writer").readJsonSafe(config.GOVERNANCE_SNAPSHOT_LATEST, {}),
+        failure_center: readFailureCenter(),
+        workflow_history: getWorkflowHistory(50),
+        executor_jobs: listPlannerJobs(50),
+      });
+      return {
+        status: "PASS",
+        goal_state: goal,
+        next_task_plan: goal ? planNextTasks(goal, progress) : { status: "BLOCKED", reason: "no_active_goal" },
+      };
+    }
+    case "system.repo_health": {
+      const scan = scanRepoHealth();
+      const registry = registerMaintenanceIssues(scan.scan);
+      return {
+        status: "PASS",
+        repo_health_scan: scan,
+        maintenance_issues: registry,
+      };
+    }
+    case "system.self_heal_plan": {
+      const scan = scanRepoHealth();
+      const registry = registerMaintenanceIssues(scan.scan);
+      return {
+        status: "PASS",
+        repo_health_scan: scan,
+        maintenance_issues: registry,
+        self_heal_plan: planSelfHeal(registry),
+      };
+    }
+    case "system.processes":
+      return getGovernorStatus(100);
+    case "system.process_incidents": {
+      const view = getGovernorStatus(100);
+      return {
+        status: "PASS",
+        incidents: view.incidents,
+        active_processes: view.active_processes,
+      };
+    }
     case "system.map_check":
       return {
         active_runtime_entrypoint: "start_mikage.bat",

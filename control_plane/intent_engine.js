@@ -125,6 +125,11 @@ function createIntentFromOperatorHint(hint, extra = {}) {
     hint.goal || "Operator follow-up",
     {
       hint: hint.hint || "",
+      task_type: hint.task_type || null,
+      scope_in: hint.scope_in || [],
+      scope_out: hint.scope_out || [],
+      success_criteria: hint.success_criteria || [],
+      target_files: hint.target_files || [],
       bounded_scope: ["tasks_only", "approval_preserved"],
     },
     hint.risk_level || "medium",
