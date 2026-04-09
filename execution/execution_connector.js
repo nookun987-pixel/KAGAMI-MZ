@@ -543,7 +543,7 @@ function appendCanonMemoryRecord(finalDecision, job = {}) {
   };
 }
 
-async function runLiveGeminiJudge(outputPath, job = {}, packet = {}) {
+async function runLiveGeminiJudge(outputPath, job = {}, packet = {}, runId = null) {
   if (!outputPath || !fs.existsSync(outputPath)) {
     return buildGeminiValidationFailure("GEMINI_IMAGE_READ_FAILED", {
       summary: "GEMINI_IMAGE_READ_FAILED",
@@ -567,7 +567,7 @@ async function runLiveGeminiJudge(outputPath, job = {}, packet = {}) {
   }
 
   try {
-    const judged = await judgeRenderedImage(outputPath, { promptPath });
+    const judged = await judgeRenderedImage(outputPath, { promptPath, job_id: runId });
     const raw = judged && judged.raw ? judged.raw : {};
     const parseOk = raw.parse_ok === true;
     const executed = raw.gemini_validation_executed === true;
@@ -849,7 +849,7 @@ async function applyRecoveredControlLane(packet) {
 
   if (isLiveGeminiControlEnabled(packet)) {
     const intakeRequest = buildGeminiIntakeRequest(job, packet);
-    geminiIntake = await runGeminiIntake(intakeRequest, DEFAULT_GEMINI_INTAKE_PROMPT_PATH);
+    geminiIntake = await runGeminiIntake(intakeRequest, DEFAULT_GEMINI_INTAKE_PROMPT_PATH, runId);
     writeJson(artifactPaths.gemini_intake, geminiIntake);
 
     if (!(geminiIntake && geminiIntake.gemini_executed === true && geminiIntake.parse_ok === true)) {
@@ -1188,7 +1188,7 @@ async function finalizeLiveExecution(packet, rawResponse) {
       : readJsonSafe(artifactPaths.post_validation, null);
   const outputPath = ensureOutputArtifact(rawResponse || {}, artifactPaths);
   const geminiValidation = isLiveGeminiControlEnabled(packet)
-    ? await runLiveGeminiJudge(outputPath, job, packet)
+    ? await runLiveGeminiJudge(outputPath, job, packet, runId)
     : buildGeminiValidationFailure("GEMINI_DISABLED_FOR_TEST", {
         summary: "Gemini live control disabled",
         gemini_validation_executed: false,

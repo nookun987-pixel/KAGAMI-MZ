@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getGeminiConfig } = require("./gemini_env");
+const { callGeminiWithState, extractResponseText } = require("./gemini/gemini_call_adapter");
 
 function sanitizeGeminiText(text) {
   let s = String(text || "").trim();
@@ -53,7 +54,7 @@ function buildFailure(errorMessage) {
   };
 }
 
-async function runGeminiValidator(imagePath, promptPath) {
+async function runGeminiValidator(imagePath, promptPath, jobId = null) {
   const rubric = fs.readFileSync(path.resolve(promptPath), "utf-8");
   const gemini = getGeminiConfig();
 
@@ -87,27 +88,15 @@ async function runGeminiValidator(imagePath, promptPath) {
     },
   };
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${gemini.model}:generateContent`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": gemini.apiKey,
-      },
-      body: JSON.stringify(body),
-    }
-  );
+  const { payload, response, geminiTrace } = await callGeminiWithState({
+    model: gemini.model,
+    apiKey: gemini.apiKey,
+    body,
+    jobId,
+    role: "validator",
+  });
 
-  const payload = await response.json();
-  const text =
-    payload &&
-    payload.candidates &&
-    payload.candidates[0] &&
-    payload.candidates[0].content &&
-    payload.candidates[0].content.parts &&
-    payload.candidates[0].content.parts[0] &&
-    payload.candidates[0].content.parts[0].text;
+  const text = extractResponseText(payload);
 
   const parsed = extractJson(text);
   if (!response.ok || !parsed) {
@@ -121,6 +110,7 @@ async function runGeminiValidator(imagePath, promptPath) {
       http_status: response.status,
       raw_text: String(text || "").slice(0, 2000),
       error: exactError,
+      gemini_trace: geminiTrace,
     };
   }
 
@@ -130,6 +120,7 @@ async function runGeminiValidator(imagePath, promptPath) {
     parse_ok: true,
     model: gemini.model,
     error: null,
+    gemini_trace: geminiTrace,
   };
 }
 

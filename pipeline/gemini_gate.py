@@ -6,16 +6,17 @@ Lane-aware Gemini vision final gate.
 import json
 import base64
 import logging
-import requests
 from pathlib import Path
+from typing import Optional
 
-from .config import get_gemini_key, GEMINI_VISION_MODEL
+from .config import GEMINI_VISION_MODEL
+from .gemini_call_adapter import call_gemini_with_state
 from .canon_rules import build_canon_checklist_prompt, HARD_FAIL_CODES
 
 log = logging.getLogger("mikage.gemini_gate")
 
 
-def final_gate(image_path: str, pixel_report: dict, job_dir: Path, lane: str = "mask") -> dict:
+def final_gate(image_path: str, pixel_report: dict, job_dir: Path, lane: str = "mask", job_id: Optional[str] = None) -> dict:
     path = Path(image_path)
     if not path.exists():
         return {
@@ -60,9 +61,6 @@ IMPORTANT: Material check (T4) is LANE-DEPENDENT:
 Output JSON only. If ANY hard fail code fails, final_decision MUST be REJECT.
 Be strict on identity. No drift."""
 
-    key = get_gemini_key()
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_VISION_MODEL}:generateContent?key={key}"
-
     body = {
         "contents": [{"role": "user", "parts": [
             {"inlineData": {"mimeType": mime_type, "data": image_b64}},
@@ -74,20 +72,26 @@ Be strict on identity. No drift."""
     log.info(f"Gemini gate: sending image ({len(image_bytes)} bytes), lane={lane}")
 
     try:
-        r = requests.post(url, json=body, timeout=120)
+        r = call_gemini_with_state(
+            body,
+            model=GEMINI_VISION_MODEL,
+            job_id=job_id,
+            role="judge",
+            timeout=120,
+        )
 
-        if r.status_code != 200:
-            log.error(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
-            _err = f"Gemini HTTP {r.status_code}"
+        if not r["ok"]:
+            log.error(f"Gemini HTTP {r['http_status']}: {r.get('error', '')}")
+            _err = f"Gemini HTTP {r['http_status']}"
             return {
                 "source_of_truth": "gemini",
                 "gemini_executed": False, "gemini_validation_executed": False,
                 "parse_ok": False, "pass_fail": "FAIL", "final_decision": "REJECT",
                 "error": _err, "errors": [_err],
+                "gemini_trace": r.get("gemini_trace"),
             }
 
-        data = r.json()
-        text = data["candidates"][0]["content"]["parts"][0]["text"]
+        text = r["text"]
 
         try:
             gate_result = json.loads(text)
@@ -106,6 +110,7 @@ Be strict on identity. No drift."""
                 "checks": gate_result.get("checks", []),
                 "reasoning": gate_result.get("reasoning", ""),
                 "errors": [],
+                "gemini_trace": r.get("gemini_trace"),
             }
             gate_path.write_text(json.dumps(result, indent=2))
             return result
@@ -121,6 +126,7 @@ Be strict on identity. No drift."""
                 "error": f"JSON parse: {e}",
                 "errors": [f"JSON parse: {e}"],
                 "raw_text": text[:500],
+                "gemini_trace": r.get("gemini_trace"),
             }
 
     except Exception as e:

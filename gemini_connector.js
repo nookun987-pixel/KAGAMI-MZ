@@ -2,6 +2,7 @@
 
 const { getGeminiConfig } = require("./gemini_env");
 const { runGeminiValidator } = require("./gemini_validator");
+const { callGeminiWithState } = require("./gemini/gemini_call_adapter");
 
 async function validateGeminiRuntime() {
   const config = getGeminiConfig();
@@ -15,20 +16,17 @@ async function validateGeminiRuntime() {
   }
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${config.model}:generateContent`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": config.apiKey,
-        },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: "say ok" }] }],
-          generationConfig: { temperature: 0 },
-        }),
-      }
-    );
+    // Health-check ping: no job context, signature intentionally skipped (jobId=null).
+    const { response } = await callGeminiWithState({
+      model: config.model,
+      apiKey: config.apiKey,
+      body: {
+        contents: [{ parts: [{ text: "say ok" }] }],
+        generationConfig: { temperature: 0 },
+      },
+      jobId: null,
+      role: "runtime",
+    });
 
     return {
       ok: response.ok,
@@ -55,7 +53,7 @@ async function validateGeminiRuntime() {
 
 async function judgeRenderedImage(imagePath, context = {}) {
   const promptPath = context.promptPath || context.rubricPath;
-  const result = await runGeminiValidator(imagePath, promptPath);
+  const result = await runGeminiValidator(imagePath, promptPath, context.job_id || null);
 
   return {
     decision: result && result.pass_fail === "PASS" && result.parse_ok === true ? "PASS" : "FAIL",

@@ -5,45 +5,35 @@ Gemini parses a creative brief into a structured spec with canon checklist.
 
 import json
 import logging
-import requests
 from typing import Optional
 
-from .config import get_gemini_key, GEMINI_MODEL
+from .gemini_call_adapter import call_gemini_with_state, extract_response_text
 
 log = logging.getLogger("mikage.gemini_intake")
 
 
-def call_gemini(prompt: str, system: str = "") -> dict:
-    """Call Gemini API. Returns {"text": str, "ok": bool}"""
-    key = get_gemini_key()
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={key}"
-
+def call_gemini(prompt: str, system: str = "", job_id: Optional[str] = None) -> dict:
+    """Call Gemini API via stateful adapter. Returns {"text": str, "ok": bool}."""
     contents = [{"role": "user", "parts": [{"text": prompt}]}]
     body = {"contents": contents}
     if system:
         body["systemInstruction"] = {"parts": [{"text": system}]}
-
     body["generationConfig"] = {
         "temperature": 0.2,
         "responseMimeType": "application/json",
     }
-
-    try:
-        r = requests.post(url, json=body, timeout=60)
-        if r.status_code != 200:
-            log.error(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
-            return {"text": "", "ok": False, "error": f"HTTP {r.status_code}"}
-
-        data = r.json()
-        text = data["candidates"][0]["content"]["parts"][0]["text"]
-        return {"text": text, "ok": True}
-
-    except Exception as e:
-        log.error(f"Gemini call failed: {e}")
-        return {"text": "", "ok": False, "error": str(e)}
+    result = call_gemini_with_state(body, job_id=job_id, role="intake", timeout=60)
+    if not result["ok"]:
+        log.error(f"Gemini HTTP {result['http_status']}: {result.get('error', '')}")
+    return {
+        "text": result["text"] or "",
+        "ok": result["ok"],
+        "error": result.get("error"),
+        "gemini_trace": result.get("gemini_trace"),
+    }
 
 
-def intake(brief: str) -> dict:
+def intake(brief: str, job_id: Optional[str] = None) -> dict:
     """
     Parse creative brief through Gemini.
     Returns structured spec or error.
@@ -81,7 +71,7 @@ If the brief conflicts with canon, flag it and adjust. Never break canon."""
     user_prompt = f"Creative brief:\n{brief}\n\nParse this into a MIKAGE spec."
 
     log.info("Gemini intake: parsing brief...")
-    result = call_gemini(user_prompt, system=system_prompt)
+    result = call_gemini(user_prompt, system=system_prompt, job_id=job_id)
 
     if not result["ok"]:
         return {
@@ -89,6 +79,7 @@ If the brief conflicts with canon, flag it and adjust. Never break canon."""
             "error": result.get("error", "Gemini intake failed"),
             "gemini_executed": False,
             "parse_ok": False,
+            "gemini_trace": result.get("gemini_trace"),
         }
 
     try:
@@ -99,6 +90,7 @@ If the brief conflicts with canon, flag it and adjust. Never break canon."""
             "spec": spec,
             "gemini_executed": True,
             "parse_ok": True,
+            "gemini_trace": result.get("gemini_trace"),
         }
     except json.JSONDecodeError as e:
         log.error(f"Gemini returned invalid JSON: {e}")
@@ -108,4 +100,5 @@ If the brief conflicts with canon, flag it and adjust. Never break canon."""
             "raw_text": result["text"][:500],
             "gemini_executed": True,
             "parse_ok": False,
+            "gemini_trace": result.get("gemini_trace"),
         }

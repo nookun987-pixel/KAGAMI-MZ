@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getGeminiConfig } = require("./gemini_env");
+const { callGeminiWithState, extractResponseText } = require("./gemini/gemini_call_adapter");
 const { applyLaneRuleToIntake, normalizeLaneShotType } = require("./lane_rules");
 const { applyColorCanonToIntake } = require("./color_rules");
 
@@ -257,7 +258,7 @@ function buildFallback(intakeRequest) {
   );
 }
 
-async function runGeminiIntake(intakeRequest, promptPath) {
+async function runGeminiIntake(intakeRequest, promptPath, jobId = null) {
   const rubric = fs.readFileSync(path.resolve(promptPath), "utf-8");
   const gemini = getGeminiConfig();
 
@@ -288,27 +289,16 @@ async function runGeminiIntake(intakeRequest, promptPath) {
     },
   };
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${gemini.model}:generateContent`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": gemini.apiKey,
-      },
-      body: JSON.stringify(body),
-    }
-  );
+  const resolvedJobId = jobId || (intakeRequest && intakeRequest.job_id) || null;
+  const { payload, response, geminiTrace } = await callGeminiWithState({
+    model: gemini.model,
+    apiKey: gemini.apiKey,
+    body,
+    jobId: resolvedJobId,
+    role: "intake",
+  });
 
-  const payload = await response.json();
-  const text =
-    payload &&
-    payload.candidates &&
-    payload.candidates[0] &&
-    payload.candidates[0].content &&
-    payload.candidates[0].content.parts &&
-    payload.candidates[0].content.parts[0] &&
-    payload.candidates[0].content.parts[0].text;
+  const text = extractResponseText(payload);
 
   const parsed = extractJson(text);
   if (!response.ok || !parsed) {
@@ -320,6 +310,7 @@ async function runGeminiIntake(intakeRequest, promptPath) {
       http_status: response.status,
       raw_text: String(text || "").slice(0, 2000),
       error: !response.ok ? JSON.stringify(payload).slice(0, 2000) : "Gemini response was not valid JSON",
+      gemini_trace: geminiTrace,
     };
   }
 
@@ -329,6 +320,7 @@ async function runGeminiIntake(intakeRequest, promptPath) {
     gemini_executed: true,
     parse_ok: true,
     model: gemini.model,
+    gemini_trace: geminiTrace,
   };
 }
 
