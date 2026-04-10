@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "domains": {
+    "execution_lane": {
+      "canonical_files": [
+        "core/execution_lane_router.js"
+      ],
+      "forbidden_as_truth": [
+        "README.md",
+        "docs/**"
+      ]
+    },
+    "render_flow": {
+      "canonical_files": [
+        "core/orchestration/orchestrator.js",
+        "render/image_loop/run_and_proof.js",
+        "render/image_loop/run_real_vertex_validation.js",
+        "render/image_loop/run_strict_loop_proof.js"
+      ],
+      "forbidden_as_truth": [
+        "README.md",
+        "docs/**"
+      ]
+    },
+    "canon_rules": {
+      "canonical_files": [
+        "CANON_V2.md",
+        "STRUCTURED_RULES.json",
+        "PASS_FAIL_CHECKLIST.md",
+        "render/validators/rule_engine.js"
+      ],
+      "forbidden_as_truth": [
+        "README.md",
+        "docs/**"
+      ]
+    },
+    "artifact_contract": {
+      "canonical_files": [
+        "core/runtime/artifact_metadata_normalizer.js",
+        "integrations/google/gcs_artifact_store.js",
+        "integrations/google/gcs_path_builder.js"
+      ],
+      "forbidden_as_truth": [
+        "README.md",
+        "docs/**"
+      ]
+    },
+    "operator_commands": {
+      "canonical_files": [
+        "mikage-operator/index.js",
+        "mikage-operator/lib/service_runner.js",
+        "mikage-operator/data/state.json"
+      ],
+      "forbidden_as_truth": [
+        "README.md",
+        "docs/**"
+      ]
+    }
+  },
+  "global_rules": [
+    "CODE_FIRST_DOCS_AFTER",
+    "NO_DOCS_AS_SOURCE_OF_TRUTH",
+    "AGENT_MUST_READ_CANONICAL_FILES_BEFORE_EDIT",
+    "IF_DOMAIN_UNKNOWN_STOP_AND_REQUEST_MAPPING"
+  ]
+}

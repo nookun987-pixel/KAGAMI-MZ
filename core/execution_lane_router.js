@@ -29,6 +29,17 @@ try {
  * Google lane is default; legacy Fooocus requires explicit override
  */
 function resolveExecutionLane(job = {}) {
+  if (job.execution_lane === "vertex_imagen") {
+    return {
+      lane: "google",
+      executor: "vertex_imagen",
+      status: "PRODUCTION",
+      model: lockConfig.google_lane?.default_model || "imagen-3.0-generate-001",
+      location: lockConfig.google_lane?.default_location || "us-central1",
+      requires_explicit_flag: false
+    };
+  }
+
   // Check for explicit legacy override
   if (job.USE_LEGACY_FOOOCUS === true || job.execution_lane === "legacy_fooocus") {
     if (lockConfig.legacy_fooocus_requires_explicit_override) {
