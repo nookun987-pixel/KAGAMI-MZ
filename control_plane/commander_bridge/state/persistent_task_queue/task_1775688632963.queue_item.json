@@ -1,0 +1,101 @@
+{
+  "task_id": "task_1775688632963",
+  "workflow_id": "task_task_1775688632963",
+  "created_at": "2026-04-08T22:50:33.015Z",
+  "completed_steps": [
+    1
+  ],
+  "failed_steps": [
+    {
+      "order": 2,
+      "failure_type": "codex_exec_failed",
+      "summary": "codex_exec_failed"
+    }
+  ],
+  "retry_state": {
+    "retry_count": 1,
+    "retryable_failure_types": [],
+    "last_failure_type": "codex_exec_failed",
+    "last_retry_at": "2026-04-08T22:50:52.927Z"
+  },
+  "approval_id": "approval_1775688632983_78ab16",
+  "requested_by": "proof_runner",
+  "dispatch_ref": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\codex_dispatch_packs\\task_1775688632963.codex_dispatch_pack.json",
+  "queue_kind": "mixed",
+  "status": "blocked",
+  "total_steps": 2,
+  "current_step_index": 1,
+  "step_results": [
+    {
+      "order": 1,
+      "step_id": "task_1775688632951_step_1",
+      "executor_lane": "web_ops",
+      "status": "PASS",
+      "summary": "web status checked: status=0 title=n/a url=https://nonexistent.invalid",
+      "report_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\execution_reports\\job_task_1775688632951_step_1_1775688633083_6ea435.execution_report.json"
+    },
+    {
+      "order": 2,
+      "step_id": "task_1775688632951_step_2",
+      "executor_lane": "dev_write",
+      "status": "FAIL",
+      "summary": "codex_exec_failed",
+      "report_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\execution_reports\\job_task_1775688632951_step_2_1775688652963_056910.execution_report.json"
+    }
+  ],
+  "mixed_plan": {
+    "title": "Mixed Task Plan: kiem tra web nay https://nonexistent.invalid va ghi note vao repo",
+    "steps": [
+      {
+        "step_id": "task_1775688632951_step_1",
+        "order": 1,
+        "content": "kiem tra web nay https://nonexistent.invalid",
+        "route_reason": "safe_read_only_fallback",
+        "executor_lane": "web_ops",
+        "task_type": "web_status_check",
+        "scope_in": [
+          "https://nonexistent.invalid"
+        ],
+        "target_files": [],
+        "tests_required": [],
+        "success_criteria": [
+          "target web state inspected",
+          "short structured summary returned",
+          "artifacts captured explicitly"
+        ]
+      },
+      {
+        "step_id": "task_1775688632951_step_2",
+        "order": 2,
+        "content": "write docs update control_plane/commander_bridge/state/mixed_task_reports/task_1775688632951_step2_repo_summary.md based on step 1",
+        "route_reason": "no_safe_route",
+        "executor_lane": "dev_write",
+        "task_type": "docs_update",
+        "scope_in": [
+          "control_plane/commander_bridge/state/mixed_task_reports/task_1775688632951_step2_repo_summary.md"
+        ],
+        "target_files": [
+          "control_plane/commander_bridge/state/mixed_task_reports/task_1775688632951_step2_repo_summary.md"
+        ],
+        "tests_required": [],
+        "success_criteria": [
+          "write a short bounded summary note",
+          "only the approved target file changes",
+          "report explicit changed_files"
+        ]
+      }
+    ],
+    "pause_after_step": null
+  },
+  "updated_at": "2026-04-08T22:50:57.556Z",
+  "artifact_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\persistent_task_queue\\task_1775688632963.queue_item.json",
+  "approved_at": "2026-04-08T22:50:52.940Z",
+  "last_error": "mixed flow stopped at step 2: codex_exec_failed",
+  "finished_at": "2026-04-08T22:50:57.555Z",
+  "resume_state": {
+    "task_id": "task_1775688632963",
+    "next_step_index": 1,
+    "mode": "retry",
+    "resumed_at": "2026-04-08T22:50:52.931Z"
+  }
+}

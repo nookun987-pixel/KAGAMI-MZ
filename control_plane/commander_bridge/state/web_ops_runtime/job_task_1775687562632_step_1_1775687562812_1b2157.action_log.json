@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775687562632_step_1_1775687562812_1b2157",
+  "task_id": "task_1775687562632_step_1",
+  "task_type": "web_status_check",
+  "objective": "check grant dang mo https://example.com",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "https://example.com",
+      "started_at": "2026-04-08T22:32:43.184Z",
+      "status": "FAIL",
+      "summary": "failed to fetch https://example.com: singleton_already_locked"
+    }
+  ],
+  "generated_at": "2026-04-08T22:32:43.459Z"
+}

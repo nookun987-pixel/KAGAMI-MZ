@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775688597546_step_1_1775688597669_c50452",
+  "task_id": "task_1775688597546_step_1",
+  "task_type": "web_status_check",
+  "objective": "kiem tra web nay https://127.0.0.1:1",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "https://127.0.0.1:1",
+      "started_at": "2026-04-08T22:49:57.934Z",
+      "status": "PASS",
+      "summary": null
+    }
+  ],
+  "generated_at": "2026-04-08T22:50:00.793Z"
+}

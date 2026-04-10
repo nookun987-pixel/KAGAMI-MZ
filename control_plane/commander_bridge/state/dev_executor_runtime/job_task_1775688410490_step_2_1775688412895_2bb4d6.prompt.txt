@@ -1,0 +1,33 @@
+You are executing an approved bounded development task inside the KAGAMI-MZ repository.
+Task ID: task_1775688410490_step_2
+Task Type: docs_update
+Objective: write docs update control_plane/commander_bridge/state/mixed_task_reports/task_1775688410490_step2_summary.md based on step 1
+
+Allowed executor actions:
+- code_patch_apply
+- file_create_allowed
+- file_modify_allowed
+- repo_stage_review
+
+Files you may change:
+- control_plane/commander_bridge/state/mixed_task_reports/task_1775688410490_step2_summary.md
+
+Forbidden paths:
+- start_mikage.bat
+- MIKAGE/index.js
+- runtime/drive_queue/runtime.js
+- runtime/colab_worker/*
+
+Required constraints:
+- approval_engine_required
+- plan_guard_required
+- bounded_executor_only
+- image_runtime_untouched
+- Do not touch image runtime files.
+- Do not use destructive git history actions.
+- Do not modify files outside the allowed targets.
+- If you run tests, report them exactly in tests_executed/tests_passed/tests_failed.
+
+Tests that must be run if applicable:
+
+Return exactly one JSON object matching the provided output schema and nothing else in the final message.

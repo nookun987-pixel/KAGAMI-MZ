@@ -1,0 +1,96 @@
+{
+  "task_id": "task_1775688410496",
+  "workflow_id": "task_task_1775688410496",
+  "created_at": "2026-04-08T22:46:50.553Z",
+  "completed_steps": [
+    1,
+    2
+  ],
+  "failed_steps": [],
+  "retry_state": {
+    "retry_count": 0,
+    "retryable_failure_types": [],
+    "last_failure_type": null,
+    "last_retry_at": null
+  },
+  "approval_id": "approval_1775688410520_41070f",
+  "requested_by": "proof_runner",
+  "dispatch_ref": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\codex_dispatch_packs\\task_1775688410496.codex_dispatch_pack.json",
+  "queue_kind": "mixed",
+  "status": "completed",
+  "total_steps": 2,
+  "current_step_index": 2,
+  "step_results": [
+    {
+      "order": 1,
+      "step_id": "task_1775688410490_step_1",
+      "executor_lane": "dev_read",
+      "status": "PASS",
+      "summary": "workflow summary prepared: no recent workflow",
+      "report_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\execution_reports\\job_task_1775688410490_step_1_1775688410620_f16e6f.execution_report.json"
+    },
+    {
+      "order": 2,
+      "step_id": "task_1775688410490_step_2",
+      "executor_lane": "dev_write",
+      "status": "PASS",
+      "summary": "Created the bounded step 2 summary markdown based on step 1 artifacts, documenting the read-only workflow inspection result (`workflow summary prepared: no recent workflow`) and confirming that step 1 changed no files and ran no tests.",
+      "report_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\execution_reports\\job_task_1775688410490_step_2_1775688412895_2bb4d6.execution_report.json"
+    }
+  ],
+  "mixed_plan": {
+    "title": "Mixed Task Plan: doc workflow hien tai roi sua file tong ket",
+    "steps": [
+      {
+        "step_id": "task_1775688410490_step_1",
+        "order": 1,
+        "content": "doc workflow hien tai",
+        "route_reason": "deterministic:workflow_reader",
+        "executor_lane": "dev_read",
+        "task_type": "operator_action",
+        "scope_in": [
+          "control_plane",
+          "workflow_registry",
+          "commander_bridge/state"
+        ],
+        "target_files": [
+          "control_plane",
+          "control_plane/commander_bridge/state"
+        ],
+        "tests_required": [
+          "node MIKAGE\\mikage.test.js"
+        ],
+        "success_criteria": [
+          "current workflow state inspected",
+          "latest workflow summarized",
+          "no executor path changed"
+        ]
+      },
+      {
+        "step_id": "task_1775688410490_step_2",
+        "order": 2,
+        "content": "write docs update control_plane/commander_bridge/state/mixed_task_reports/task_1775688410490_step2_summary.md based on step 1",
+        "route_reason": "no_safe_route",
+        "executor_lane": "dev_write",
+        "task_type": "docs_update",
+        "scope_in": [
+          "control_plane/commander_bridge/state/mixed_task_reports/task_1775688410490_step2_summary.md"
+        ],
+        "target_files": [
+          "control_plane/commander_bridge/state/mixed_task_reports/task_1775688410490_step2_summary.md"
+        ],
+        "tests_required": [],
+        "success_criteria": [
+          "write a short bounded summary note",
+          "only the approved target file changes",
+          "report explicit changed_files"
+        ]
+      }
+    ]
+  },
+  "updated_at": "2026-04-08T22:48:12.654Z",
+  "artifact_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\persistent_task_queue\\task_1775688410496.queue_item.json",
+  "approved_at": "2026-04-08T22:46:50.562Z",
+  "last_error": null,
+  "finished_at": "2026-04-08T22:48:12.654Z"
+}

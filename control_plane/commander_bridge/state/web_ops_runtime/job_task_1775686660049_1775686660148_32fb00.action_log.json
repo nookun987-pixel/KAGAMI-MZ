@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775686660049_1775686660148_32fb00",
+  "task_id": "task_1775686660049",
+  "task_type": "web_status_check",
+  "objective": "web status check https://example.com",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "https://example.com",
+      "started_at": "2026-04-08T22:17:40.397Z",
+      "status": "PASS",
+      "summary": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more"
+    }
+  ],
+  "generated_at": "2026-04-08T22:17:41.461Z"
+}

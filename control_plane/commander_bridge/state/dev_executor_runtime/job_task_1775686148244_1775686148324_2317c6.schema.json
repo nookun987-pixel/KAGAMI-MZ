@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "changed_files",
+    "tests_executed",
+    "tests_passed",
+    "tests_failed",
+    "artifacts_returned",
+    "summary",
+    "error"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "changed_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tests/dev_executor_generated_helper.js"
+        ]
+      }
+    },
+    "tests_executed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tests_passed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tests_failed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifacts_returned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "error": {
+      "type": "string"
+    }
+  }
+}

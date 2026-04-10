@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775687085753_1775687085911_1980f6",
+  "task_id": "task_1775687085753",
+  "task_type": "web_status_check",
+  "objective": "kiem tra trang thai web nay https://example.com",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "web:status",
+      "started_at": "2026-04-08T22:24:46.288Z",
+      "status": "PASS",
+      "summary": null
+    }
+  ],
+  "generated_at": "2026-04-08T22:24:47.334Z"
+}

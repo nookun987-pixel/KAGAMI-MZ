@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775686646262_1775686646368_b51899",
+  "task_id": "task_1775686646262",
+  "task_type": "web_status_check",
+  "objective": "web status check https://example.com",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "https://example.com",
+      "started_at": "2026-04-08T22:17:26.653Z",
+      "status": "FAIL",
+      "summary": "failed to fetch https://example.com: At line:1 char:184\n+ ...  30 -Uri 'https://example.com'; $payload = [PSCustomObject]@{;   url  ...\n+                                                                  ~\nThe hash literal was incomplete.\nAt line:1 char:308\n+ ... us = [int]$response.StatusCode;   text = $response.Content; }; $paylo ...\n+                                                                 ~\nUnexpected token '}' in expression or statement.\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\n    + FullyQualifiedErrorId : IncompleteHashLiteral"
+    }
+  ],
+  "generated_at": "2026-04-08T22:17:27.385Z"
+}

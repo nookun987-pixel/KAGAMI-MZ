@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "changed_files": [
+    "control_plane/commander_bridge/state/dev_executor_smoke_note.md"
+  ],
+  "outside_targets": [],
+  "lines": [
+    "?? control_plane/commander_bridge/state/dev_executor_smoke_note.md"
+  ]
+}

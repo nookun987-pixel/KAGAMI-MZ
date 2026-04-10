@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775686625948_1775686626050_8c0fdf",
+  "task_id": "task_1775686625948",
+  "task_type": "web_status_check",
+  "objective": "web status check https://example.com",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "https://example.com",
+      "started_at": "2026-04-08T22:17:06.314Z",
+      "status": "FAIL",
+      "summary": "failed to fetch https://example.com: fetch failed"
+    }
+  ],
+  "generated_at": "2026-04-08T22:17:06.492Z"
+}

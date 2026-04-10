@@ -1,0 +1,25 @@
+{
+  "task_id": "task_1775735626479",
+  "workflow_id": "task_task_1775735626479",
+  "created_at": "2026-04-09T11:53:46.513Z",
+  "completed_steps": [],
+  "failed_steps": [],
+  "retry_state": {
+    "retry_count": 0,
+    "retryable_failure_types": [],
+    "last_failure_type": null,
+    "last_retry_at": null
+  },
+  "approval_id": "approval_1775735626492_0aac65",
+  "requested_by": "telegram_operator",
+  "dispatch_ref": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\codex_dispatch_packs\\task_1775735626479.codex_dispatch_pack.json",
+  "queue_kind": "single",
+  "status": "approved",
+  "total_steps": 1,
+  "current_step_index": 0,
+  "step_results": [],
+  "mixed_plan": null,
+  "updated_at": "2026-04-09T11:53:46.550Z",
+  "artifact_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\persistent_task_queue\\task_1775735626479.queue_item.json",
+  "approved_at": "2026-04-09T11:53:46.519Z"
+}

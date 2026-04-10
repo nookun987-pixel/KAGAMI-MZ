@@ -1,0 +1,1 @@
+{"status":"PASS","changed_files":["control_plane/commander_bridge/state/dev_executor_smoke_note.md"],"tests_executed":[],"tests_passed":[],"tests_failed":[],"artifacts_returned":[],"summary":"Updated the smoke note into a smaller executor-facing documentation artifact with concise purpose and pass-condition bullets, scoped strictly to the approved file.","error":""}

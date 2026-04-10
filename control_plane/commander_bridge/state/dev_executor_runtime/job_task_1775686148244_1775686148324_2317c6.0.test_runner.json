@@ -1,0 +1,7 @@
+{
+  "command": "node MIKAGE\\mikage.test.js",
+  "status": "PASS",
+  "exit_code": 0,
+  "stdout_preview": "=== INTENT ROUTER ===\n\n=== TASK PLANNER ===\n\n=== REAL IMAGE LANE ===\n\n=== CONTROL MEMORY ===\n\n=== END TO END CONTROL PLANE ===\n\n=== META HARNESS AUTO RETRY ===\n\n=== CANON-AWARE IMAGE INTELLIGENCE V1 ===\n\n=== FAILURE ROUTER V2 ===\n\n=== REPAIR ENGINE V2 ===\n\n============================================================\nRESULTS: 116 passed, 0 failed",
+  "stderr_preview": ""
+}

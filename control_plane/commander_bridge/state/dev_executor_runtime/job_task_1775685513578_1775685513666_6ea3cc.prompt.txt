@@ -1,0 +1,32 @@
+You are executing an approved bounded development task inside the KAGAMI-MZ repository.
+Task ID: task_1775685513578
+Task Type: docs_update
+Objective: write docs update to create a tiny smoke note for dev executor
+
+Allowed executor actions:
+- code_patch_apply
+- file_create_allowed
+- file_modify_allowed
+- repo_stage_review
+
+Files you may change:
+- control_plane/commander_bridge/state/dev_executor_smoke_note.md
+
+Forbidden paths:
+- start_mikage.bat
+- MIKAGE/index.js
+- runtime/drive_queue/runtime.js
+- runtime/colab_worker/*
+
+Required constraints:
+- approval_engine_required
+- plan_guard_required
+- bounded_executor_only
+- image_runtime_untouched
+- Do not touch image runtime files.
+- Do not use destructive git history actions.
+- Do not modify files outside the allowed targets.
+
+Tests that must be run if applicable:
+
+Return a final JSON object matching the provided output schema only.

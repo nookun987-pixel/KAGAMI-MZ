@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "changed_files": [
+    "control_plane/commander_bridge/state/mixed_task_reports/task_1775687694805_step2_repo_summary.md"
+  ],
+  "outside_targets": [],
+  "lines": [
+    "?? control_plane/commander_bridge/state/mixed_task_reports/task_1775687694805_step2_repo_summary.md"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "requested_url": "https://example.com",
+  "final_url": "https://example.com/",
+  "status": 200,
+  "title": "Example Domain",
+  "text_preview": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+  "links": [
+    "https://iana.org/domains/example"
+  ],
+  "captured_at": "2026-04-08T22:38:09.740Z"
+}

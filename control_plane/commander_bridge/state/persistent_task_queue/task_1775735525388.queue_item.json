@@ -1,0 +1,87 @@
+{
+  "task_id": "task_1775735525388",
+  "workflow_id": "task_task_1775735525388",
+  "created_at": "2026-04-09T11:52:05.424Z",
+  "completed_steps": [],
+  "failed_steps": [
+    {
+      "order": 1,
+      "failure_type": "objective_not_allowed_for_task_type"
+    }
+  ],
+  "retry_state": {
+    "retry_count": 0,
+    "retryable_failure_types": [],
+    "last_failure_type": null,
+    "last_retry_at": null
+  },
+  "approval_id": "approval_1775735525402_0c6f54",
+  "requested_by": "telegram_operator",
+  "dispatch_ref": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\codex_dispatch_packs\\task_1775735525388.codex_dispatch_pack.json",
+  "queue_kind": "mixed",
+  "status": "blocked",
+  "total_steps": 2,
+  "current_step_index": 0,
+  "step_results": [
+    {
+      "order": 1,
+      "step_id": "task_1775735525385_step_1",
+      "executor_lane": "dev_write",
+      "status": "BLOCKED",
+      "summary": "objective_not_allowed_for_task_type"
+    }
+  ],
+  "mixed_plan": {
+    "title": "Mixed Task Plan: kiểm tra file control_plane/telegram_bot.js và báo tóm tắt command đang ",
+    "steps": [
+      {
+        "step_id": "task_1775735525385_step_1",
+        "order": 1,
+        "content": "kiểm tra file control_plane/telegram_bot.js",
+        "route_reason": "no_safe_route",
+        "executor_lane": "dev_write",
+        "task_type": "add_module",
+        "scope_in": [
+          "control_plane/telegram_bot.js"
+        ],
+        "target_files": [
+          "control_plane/telegram_bot.js"
+        ],
+        "tests_required": [
+          "node MIKAGE\\mikage.test.js"
+        ],
+        "success_criteria": [
+          "bounded implementation completed",
+          "required tests pass",
+          "changed files stay within approved targets"
+        ]
+      },
+      {
+        "step_id": "task_1775735525385_step_2",
+        "order": 2,
+        "content": "báo tóm tắt command đang hỗ trợ",
+        "route_reason": "no_safe_route",
+        "executor_lane": "dev_write",
+        "task_type": "add_module",
+        "scope_in": [
+          "control_plane/"
+        ],
+        "target_files": [],
+        "tests_required": [
+          "node MIKAGE\\mikage.test.js"
+        ],
+        "success_criteria": [
+          "bounded implementation completed",
+          "required tests pass",
+          "changed files stay within approved targets"
+        ]
+      }
+    ],
+    "pause_after_step": null
+  },
+  "updated_at": "2026-04-09T11:55:25.539Z",
+  "artifact_path": "D:\\KAGAMI-MZ\\control_plane\\commander_bridge\\state\\persistent_task_queue\\task_1775735525388.queue_item.json",
+  "approved_at": "2026-04-09T11:55:25.498Z",
+  "last_error": "mixed flow stopped at step 1: objective_not_allowed_for_task_type",
+  "finished_at": "2026-04-09T11:55:25.538Z"
+}

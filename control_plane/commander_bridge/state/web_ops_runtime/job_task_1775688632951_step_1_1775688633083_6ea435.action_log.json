@@ -1,0 +1,16 @@
+{
+  "job_id": "job_task_1775688632951_step_1_1775688633083_6ea435",
+  "task_id": "task_1775688632951_step_1",
+  "task_type": "web_status_check",
+  "objective": "kiem tra web nay https://nonexistent.invalid",
+  "actions": [
+    {
+      "type": "fetch",
+      "url": "https://nonexistent.invalid",
+      "started_at": "2026-04-08T22:50:33.346Z",
+      "status": "PASS",
+      "summary": null
+    }
+  ],
+  "generated_at": "2026-04-08T22:50:34.497Z"
+}

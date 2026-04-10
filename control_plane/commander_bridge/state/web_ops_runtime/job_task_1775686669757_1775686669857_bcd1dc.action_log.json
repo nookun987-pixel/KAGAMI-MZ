@@ -1,0 +1,22 @@
+{
+  "job_id": "job_task_1775686669757_1775686669857_bcd1dc",
+  "task_id": "task_1775686669757",
+  "task_type": "form_prepare",
+  "objective": "form prepare https://example.com",
+  "actions": [
+    {
+      "type": "open_tab",
+      "url": "https://example.com",
+      "started_at": "2026-04-08T22:17:50.104Z",
+      "status": "PASS",
+      "report_path": "D:\\KAGAMI-MZ\\control_plane\\local_control_agent\\state\\reports\\job_task_1775686669757_1775686669857_bcd1dc_open_tab.json"
+    },
+    {
+      "type": "capture_desktop_state",
+      "started_at": "2026-04-08T22:17:50.289Z",
+      "status": "PASS",
+      "report_path": "D:\\KAGAMI-MZ\\control_plane\\local_control_agent\\state\\reports\\job_task_1775686669757_1775686669857_bcd1dc_capture_state.json"
+    }
+  ],
+  "generated_at": "2026-04-08T22:17:52.061Z"
+}
