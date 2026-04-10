@@ -1,0 +1,86 @@
+# ROOT_CLEANUP_SUMMARY
+
+- Commit hash: `c439c97`
+
+## Folders created
+
+- `artifacts/logs`
+- `artifacts/samples`
+- `docs/reports`
+- `tests/manual/fixtures`
+- `quarantine/root_review`
+- `quarantine/root_debug`
+- `archive/root_packages`
+
+## Files moved
+
+- `bridge.log` -> `artifacts/logs/bridge.log`
+- `command-center-runtime.err.log` -> `artifacts/logs/command-center-runtime.err.log`
+- `command-center-runtime.log` -> `artifacts/logs/command-center-runtime.log`
+- `p0_final_test_output.log` -> `artifacts/logs/p0_final_test_output.log`
+- `p0_test_b_output.log` -> `artifacts/logs/p0_test_b_output.log`
+- `p0_trace_output.log` -> `artifacts/logs/p0_trace_output.log`
+- `server-runtime-live-004.err.log` -> `artifacts/logs/server-runtime-live-004.err.log`
+- `server-runtime-live-004.log` -> `artifacts/logs/server-runtime-live-004.log`
+- `worker-runtime-live-004.err.log` -> `artifacts/logs/worker-runtime-live-004.err.log`
+- `worker-runtime-live-004.log` -> `artifacts/logs/worker-runtime-live-004.log`
+- `GOLDEN_MASK_001.png` -> `artifacts/samples/GOLDEN_MASK_001.png`
+- `golden_mask_batch_001.png` -> `artifacts/samples/golden_mask_batch_001.png`
+- `golden_mask_batch_002.png` -> `artifacts/samples/golden_mask_batch_002.png`
+- `golden_mask_batch_003.png` -> `artifacts/samples/golden_mask_batch_003.png`
+- `golden_mask_batch_004.png` -> `artifacts/samples/golden_mask_batch_004.png`
+- `golden_mask_batch_005.png` -> `artifacts/samples/golden_mask_batch_005.png`
+- `img2img_fixed_1.png` -> `artifacts/samples/img2img_fixed_1.png`
+- `img2img_fixed_2.png` -> `artifacts/samples/img2img_fixed_2.png`
+- `img_1.png` -> `artifacts/samples/img_1.png`
+- `img_2.png` -> `artifacts/samples/img_2.png`
+- `img_3.png` -> `artifacts/samples/img_3.png`
+- `img_4.png` -> `artifacts/samples/img_4.png`
+- `files.zip` -> `archive/root_packages/files.zip`
+- `MIKAGE_COMMANDER_PACKAGE_V1.zip` -> `archive/root_packages/MIKAGE_COMMANDER_PACKAGE_V1.zip`
+- `API_AUDIT_REPORT.md` -> `docs/reports/API_AUDIT_REPORT.md`
+- `CLEANUP_RESTRUCTURE_REPORT.md` -> `docs/reports/CLEANUP_RESTRUCTURE_REPORT.md`
+- `IDENTITY_LOCK_STATUS.md` -> `docs/reports/IDENTITY_LOCK_STATUS.md`
+- `MIKAGE_WORLD_CORE_RECOVERY_REPORT.md` -> `docs/reports/MIKAGE_WORLD_CORE_RECOVERY_REPORT.md`
+- `P0_FORENSIC_REPORT.md` -> `docs/reports/P0_FORENSIC_REPORT.md`
+- `P7_CHECKPOINT_FINAL_REPORT.md` -> `docs/reports/P7_CHECKPOINT_FINAL_REPORT.md`
+- `P7_CHECKPOINT_STATUS_REPORT.md` -> `docs/reports/P7_CHECKPOINT_STATUS_REPORT.md`
+- `P7_FINAL_STATUS.md` -> `docs/reports/P7_FINAL_STATUS.md`
+- `P7_MODEL_COMPARISON_RESULTS.md` -> `docs/reports/P7_MODEL_COMPARISON_RESULTS.md`
+- `P8_LORA_A_B_REPORT.md` -> `docs/reports/P8_LORA_A_B_REPORT.md`
+- `P8_PROGRESS_REPORT.md` -> `docs/reports/P8_PROGRESS_REPORT.md`
+- `RAG_INTEGRATION_SUMMARY.md` -> `docs/reports/RAG_INTEGRATION_SUMMARY.md`
+- `RAG_LIVE_VALIDATION_REPORT.md` -> `docs/reports/RAG_LIVE_VALIDATION_REPORT.md`
+- `REAL_VERTEX_FINAL_VERIFICATION_REPORT.md` -> `docs/reports/REAL_VERTEX_FINAL_VERIFICATION_REPORT.md`
+- `REAL_VERTEX_LIVE_VALIDATION_REPORT.md` -> `docs/reports/REAL_VERTEX_LIVE_VALIDATION_REPORT.md`
+- `SAFE_COPY_BOUNDARY_REPORT.md` -> `docs/reports/SAFE_COPY_BOUNDARY_REPORT.md`
+- `VERTEX_CREDENTIAL_CHECK_REPORT.md` -> `docs/reports/VERTEX_CREDENTIAL_CHECK_REPORT.md`
+- `VERTEX_ONE_SHOT_PROOF_REPORT.md` -> `docs/reports/VERTEX_ONE_SHOT_PROOF_REPORT.md`
+- `VM_VERIFICATION_SUMMARY.md` -> `docs/reports/VM_VERIFICATION_SUMMARY.md`
+- `WINDOWS_SHELL_FIX_SUMMARY.md` -> `docs/reports/WINDOWS_SHELL_FIX_SUMMARY.md`
+- `gemini_test_result.json` -> `tests/manual/fixtures/gemini_test_result.json`
+- `quality_test_001.json` -> `tests/manual/fixtures/quality_test_001.json`
+- `quality_test_002.json` -> `tests/manual/fixtures/quality_test_002.json`
+- `quality_test_003.json` -> `tests/manual/fixtures/quality_test_003.json`
+- `rag_test_mask.json` -> `tests/manual/fixtures/rag_test_mask.json`
+- `rag_test_stable.json` -> `tests/manual/fixtures/rag_test_stable.json`
+- `rag_test_weapon.json` -> `tests/manual/fixtures/rag_test_weapon.json`
+- `runway_prep_test_001.json` -> `tests/manual/fixtures/runway_prep_test_001.json`
+- `runway_prep_test_002.json` -> `tests/manual/fixtures/runway_prep_test_002.json`
+- `runway_prep_test_003.json` -> `tests/manual/fixtures/runway_prep_test_003.json`
+- `test_job_for_server.json` -> `tests/manual/fixtures/test_job_for_server.json`
+- `test_pipeline_run.json` -> `tests/manual/fixtures/test_pipeline_run.json`
+- `test_pipeline_run_004.json` -> `tests/manual/fixtures/test_pipeline_run_004.json`
+- `test_render_job.json` -> `tests/manual/fixtures/test_render_job.json`
+- `test_stability_run_001.json` -> `tests/manual/fixtures/test_stability_run_001.json`
+- `test_stability_run_002.json` -> `tests/manual/fixtures/test_stability_run_002.json`
+- `test_strong_preservation_001.json` -> `tests/manual/fixtures/test_strong_preservation_001.json`
+- `weapon_baseline_test_job.json` -> `tests/manual/fixtures/weapon_baseline_test_job.json`
+- `debug_render_capture.js` -> `quarantine/root_debug/debug_render_capture.js`
+- `debug_vertex_response.js` -> `quarantine/root_debug/debug_vertex_response.js`
+- `out.txt` -> `quarantine/root_debug/out.txt`
+- `quick_verify.js` -> `quarantine/root_debug/quick_verify.js`
+- `tmp_gradio_config.json` -> `quarantine/root_debug/tmp_gradio_config.json`
+- `tmp_node_env_check.js` -> `quarantine/root_debug/tmp_node_env_check.js`
+- `tmp_node_require_fs.js` -> `quarantine/root_debug/tmp_node_require_fs.js`
+- `tmp_node_smoke.js` -> `quarantine/root_debug/tmp_node_smoke.js`
