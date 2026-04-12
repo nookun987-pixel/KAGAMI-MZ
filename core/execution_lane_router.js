@@ -108,39 +108,52 @@ function isGoogleLaneAvailable() {
 }
 
 /**
- * Route render execution to appropriate lane
- * Colab runner is default for Google lane; legacy Fooocus requires explicit override
+ * Check if a shot_type is blocked for the current backend configuration.
+ * Reads shot_type_dispatch_guards from the lane lock config.
+ * Throws if the shot type is blocked.
  */
-async function routeRenderExecution(job, promptPackage, artifactPaths) {
-  const lane = resolveExecutionLane(job);
-  
-  console.log(`[EXECUTION_LANE] Routing job ${job.job_id} to ${lane.lane} (${lane.status})`);
-  
-  if (lane.lane === "google") {
-    // Use Colab Runner as primary (not direct Imagen)
-    const { colabRunnerAdapter, isColabRunnerEnabled } = require("../renderers/colab_runner_adapter");
-    
-    if (isColabRunnerEnabled()) {
-      console.log(`[EXECUTION_LANE] Using Colab Runner (PRIMARY)`);
-      return colabRunnerAdapter(job, promptPackage, artifactPaths);
-    }
-    
-    // Fallback to direct Imagen if Colab not enabled
-    console.log(`[EXECUTION_LANE] Colab not enabled, using direct Imagen (FALLBACK)`);
-    const { renderExecutorAdapter } = require("../renderers/google_lane_adapter");
-    return renderExecutorAdapter(job, promptPackage, artifactPaths);
+function assertShotTypeAllowed(job = {}) {
+  const guards = lockConfig.shot_type_dispatch_guards || {};
+  const rawShotType = String(job.shot_type || job.lane || "").toUpperCase().replace(/-/g, "_");
+  const guard = guards[rawShotType];
+  if (!guard) return; // no guard defined — allow
+  if (guard.status === "BLOCKED") {
+    const err = new Error(
+      `SHOT_TYPE_BACKEND_BLOCKED: ${rawShotType} is blocked on the current backend. ` +
+      `Reason: ${guard.block_reason || "see execution_lane_lock.json"}. ` +
+      `Unblock condition: ${guard.unblock_condition || "upgrade backend model"}.`
+    );
+    err.code = "SHOT_TYPE_BACKEND_BLOCKED";
+    err.shot_type = rawShotType;
+    err.guard = guard;
+    throw err;
   }
-  
-  // Use legacy Fooocus path
-  console.warn(`[EXECUTION_LANE] WARNING: Using LEGACY FOOOCUS path - this is FALLBACK ONLY`);
-  const { executeRender } = require("../render/render_executor");
-  return executeRender(job, promptPackage, artifactPaths);
+}
+
+async function routeRenderExecution(job, promptPackage, artifactPaths) {
+  assertShotTypeAllowed(job);
+
+  // ❌ chặn Colab
+  if (job?.execution_target === "colab_runner") {
+    return { status: "BLOCKED", reason: "COLAB_DISABLED" };
+  }
+
+  // ✅ ép đi Vertex
+  const { runVertexImagen } = require("../lanes/image/vertex_imagen_executor");
+  const result = await runVertexImagen({ job, promptPackage, artifactPaths });
+
+  return {
+    status: "SUCCESS",
+    output: result?.image_url || null,
+    meta: result
+  };
 }
 
 module.exports = {
   resolveExecutionLane,
   getExecutionLaneMetadata,
   isGoogleLaneAvailable,
+  assertShotTypeAllowed,
   routeRenderExecution,
   LOCK_CONFIG: lockConfig
 };
