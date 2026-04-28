@@ -1,0 +1,22 @@
+# MIKAGE CONTEXT SNAPSHOT V1
+
+ACTIVE_LANE=GOVERNANCE / KNOWLEDGE MIRROR
+CURRENT_PHASE=GOVERNANCE / OPERATOR_REST_MODE_V0
+MAIN_REPO=D:\KAGAMI-MZ_SYNC_PUSH_V2
+OLD_REPO=D:\KAGAMI-MZ (HOLD / SOURCE_RECOVERY_ONLY)
+BASE_BRANCH=main
+HEAD_ANCHOR=0dabbce
+HEAD_SUBJECT=Restore Mikage agent skills index
+REPO_STATUS=clean_at_last_verification
+
+BRAIN_PACK_FILES_PRESENT=YES
+- AGENTS.md
+- docs/agent_dev_task_board.md
+- docs/architecture/MIKAGE_REPO_BUTLER_MAP.md
+- docs/architecture/MIKAGE_GARA_CURRENT_FLOW_MAP.md
+- docs/MIKAGE_AGENT_SKILL.md
+- docs/MIKAGE_PHASE_AGENT_MATRIX.md
+- docs/agent_skills/MIKAGE_AGENT_SKILLS_INDEX.md
+
+NEXT_SAFE_ACTION=One-file governance/doc task only; no runtime/sync unless explicitly approved.
+SAFE_TO_RUN_RUNTIME=NO
