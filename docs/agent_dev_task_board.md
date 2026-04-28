@@ -6,8 +6,8 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = GOVERNANCE / OPERATOR_REST_MODE_V0
-- STATUS = IN_PROGRESS (TRIAL PASS)
+- PHASE = Operator Rest Mode / Governance Handoff
+- STATUS = PHASE 0 COMPLETE
 
 ## 3. Completed Items
 - AUTOPILOT_GUARD_BASELINE = DONE
@@ -15,14 +15,14 @@
 - AGENTS_ENTRY_GUARD = DONE
 - EXTERNAL_CMD_FALLBACK_GUARD = DONE
 - OPERATOR_REST_MODE_V0_TRIAL = PASS
-- HEAD_COMMIT = e353d87
+- MIKAGE_CONTEXT_CHECKPOINT_COMMITTED = 912e638
+- HEAD_COMMIT = 912e638
 
 ## 4. Current Blocker
 - NONE
 
 ## 5. Next Safe Action
-- Prepare Operator Rest Mode V0 handoff.
-- Next one-file governance alignment only (no runtime/sync/push).
+- One-file governance/doc task only; no runtime/sync unless explicitly approved.
 
 ## 6. Forbidden Actions
 - No push.
@@ -40,10 +40,10 @@
 - Operator can resume by reading AGENTS.md + task board + Butler Map.
 
 ## 8. Latest Verified State
-- EVIDENCE_SOURCE = EXTERNAL_CMD_VERIFIED + REPO_FILES
+- EVIDENCE_SOURCE = WINDSURF_CMD_VERIFIED + REPO_FILES
 - REPO_STATUS = clean
 - BRANCH = main
-- HEAD_COMMIT = e353d87
-- OPERATOR_REST_MODE_AFTER_E353D87 = PASS
-- PUSH_DONE = YES
-- REMOTE_MAIN = e353d87
+- HEAD_COMMIT = 912e638
+- OPERATOR_REST_MODE_GOVERNANCE_HANDOFF = PASS
+- PUSH_DONE = NO
+- REMOTE_MAIN = 0dabbce
