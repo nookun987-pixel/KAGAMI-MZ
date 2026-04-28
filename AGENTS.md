@@ -48,6 +48,27 @@ When running commands in Windows PowerShell or CMD:
 - Do not treat missing stdout as success.
 - Do not claim repo clean unless `git status --porcelain=v1` is visibly empty from a reliable command source.
 
+## External CMD Evidence Fallback
+
+If Windsurf command output is incomplete but external Windows CMD output has been provided by the operator:
+
+- The agent may use the external CMD output as repo-state evidence.
+- The external CMD output must include all required checks:
+  - `git status --porcelain=v1`
+  - `git branch --show-current`
+  - `git log -1 --oneline`
+- The agent must quote or summarize the observed external CMD evidence in the status report.
+- The agent must clearly mark the evidence source as `EXTERNAL_CMD_VERIFIED`.
+- If external CMD shows:
+  - empty `git status --porcelain=v1`
+  - branch = `main`
+  - latest commit visible
+  then the agent may treat repo state as verified.
+- If external CMD output is missing any required check, the agent must stop and report blocker.
+- External CMD fallback does not allow bypassing scope rules.
+- External CMD fallback does not allow runtime, sync, push, or secret inspection.
+- External CMD fallback only resolves repo-state verification issues caused by unreliable Windsurf stdout.
+
 ## Current Scope Lock
 
 - Active work is `GOVERNANCE / OPERATOR_REST_MODE_V0`.
@@ -83,6 +104,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 
 - Read governance files.
 - Verify repo state.
+- Use external CMD evidence only when Windsurf stdout is unreliable.
 - Update one explicitly declared governance file if approved.
 - Report next safe action.
 - Write structured status back to the requested target.
@@ -110,6 +132,7 @@ Every task must end with this report structure:
 
 - FILES_CHANGED =
 - COMMANDS_RUN =
+- EVIDENCE_SOURCE =
 - REPO_STATUS =
 - SUCCESS_CHECK =
 - PASS_FAIL =
