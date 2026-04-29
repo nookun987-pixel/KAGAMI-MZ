@@ -1,0 +1,7 @@
+# One substring per line; case-insensitive match anywhere in text_raw.
+# Lines starting with # are ignored.
+#
+# Add substrings here when you see repeated SEO chrome that slips through prefix-hash + same-domain dedup.
+# Example phrases from vinhomeshcmc snapshots (commented — prefix dedup handles those clusters):
+# Có Thể Bạn Đang Tìm Thuê Ngắn Hạn
+# Cho thuê Landmark 81 theo ngày

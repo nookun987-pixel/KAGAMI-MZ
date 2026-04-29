@@ -1,0 +1,30 @@
+{
+  "profile_name": "VCP_RENT_DEMAND",
+  "description": "Quét nhu cầu thuê căn hộ Vinhomes Central Park (V1)",
+  "keywords": [
+    "vinhomes central park",
+    "vinhome central park",
+    "vcp",
+    "cần thuê vinhomes central park",
+    "tìm căn vinhomes central park",
+    "thuê căn vcp",
+    "studio vcp",
+    "1pn vcp",
+    "2pn vcp",
+    "3pn vcp",
+    "landmark",
+    "landmark 81",
+    "park 1",
+    "park 2",
+    "park 3"
+  ],
+  "negative_keywords": [
+    "ô tô",
+    "o to",
+    "xe máy",
+    "xe may",
+    "mua bán xe",
+    "bán xe",
+    "cần mua xe"
+  ]
+}

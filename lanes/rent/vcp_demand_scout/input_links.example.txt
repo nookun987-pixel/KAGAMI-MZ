@@ -1,0 +1,4 @@
+# Mỗi dòng một URL công khai (blog, forum, trang tin). Dòng bắt đầu # bị bỏ qua.
+# Copy file này thành input_links.txt và sửa nội dung.
+
+# https://example.com/bai-dang-mau
