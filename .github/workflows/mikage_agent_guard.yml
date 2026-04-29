@@ -1,0 +1,57 @@
+name: Mikage Agent Guard
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  guard:
+    name: Validate Mikage PR report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check PR report contract
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          echo "MIKAGE_GUARD_REPORT"
+          echo "BASE_SHA=$BASE_SHA"
+          echo "HEAD_SHA=$HEAD_SHA"
+          echo "Changed files:"
+          git diff --name-only "$BASE_SHA" "$HEAD_SHA"
+
+          required_sections=(
+            "MIKAGE_AGENT_PR_REPORT"
+            "LINKED_TASK"
+            "USER_INTENT"
+            "TASK_TYPE"
+            "ACTIVE_LANE"
+            "FILES_CHANGED"
+            "COMMANDS_RUN"
+            "PASS_FAIL"
+            "EVIDENCE"
+            "RISKS"
+            "REPO_STATUS"
+            "NEXT_SAFE_ACTION"
+            "GPT_REVIEW_REQUIRED"
+          )
+
+          for section in "${required_sections[@]}"; do
+            if ! grep -q "$section" <<< "$PR_BODY"; then
+              echo "FAIL: missing PR body section: $section"
+              exit 1
+            fi
+          done
+
+          echo "PASS: Mikage PR report contract shape is valid"
