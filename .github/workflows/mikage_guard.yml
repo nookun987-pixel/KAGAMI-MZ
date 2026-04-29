@@ -1,0 +1,98 @@
+name: Mikage Guard
+
+on:
+  pull_request:
+    branches: [main]
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate pull request report
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          body_file="$RUNNER_TEMP/pr_body.md"
+          cat > "$body_file" <<'PR_BODY'
+          ${{ github.event.pull_request.body }}
+          PR_BODY
+
+          required=(
+            "## LINKED_TASK"
+            "## TASK_TYPE"
+            "## ACTIVE_LANE"
+            "## FILES_CHANGED"
+            "## COMMANDS_RUN"
+            "## PASS_FAIL"
+            "## EVIDENCE"
+            "## RISKS"
+            "## REPO_STATUS"
+            "## NEXT_SAFE_ACTION"
+          )
+
+          missing=0
+          for marker in "${required[@]}"; do
+            if ! grep -Fq "$marker" "$body_file"; then
+              echo "Missing PR template marker: $marker"
+              missing=1
+            fi
+          done
+
+          if grep -Eiq "direct push to main|auto[- ]?merge|GSheet sync|Telegram send|credentials|\.env" "$body_file"; then
+            echo "Guard note: PR body mentions sensitive/forbidden terms. Human review required."
+          fi
+
+          if [ "$missing" -ne 0 ]; then
+            echo "MIKAGE_GUARD_REPORT=FAIL"
+            exit 1
+          fi
+
+          echo "MIKAGE_GUARD_REPORT=PASS"
+
+      - name: Validate issue task template
+        if: github.event_name == 'issues'
+        shell: bash
+        run: |
+          set -euo pipefail
+          body_file="$RUNNER_TEMP/issue_body.md"
+          cat > "$body_file" <<'ISSUE_BODY'
+          ${{ github.event.issue.body }}
+          ISSUE_BODY
+
+          required=(
+            "## USER_INTENT"
+            "## TASK_TYPE"
+            "## ACTIVE_LANE"
+            "## TARGET"
+            "## ALLOWED_ACTIONS"
+            "## ALLOWED_FILES"
+            "## FORBIDDEN_ACTIONS"
+            "## VERIFY_COMMANDS"
+            "## EXPECTED_AGENT_REPORT"
+          )
+
+          missing=0
+          for marker in "${required[@]}"; do
+            if ! grep -Fq "$marker" "$body_file"; then
+              echo "Missing issue template marker: $marker"
+              missing=1
+            fi
+          done
+
+          if [ "$missing" -ne 0 ]; then
+            echo "MIKAGE_ISSUE_GUARD=FAIL"
+            exit 1
+          fi
+
+          echo "MIKAGE_ISSUE_GUARD=PASS"
