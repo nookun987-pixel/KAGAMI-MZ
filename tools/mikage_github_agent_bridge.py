@@ -68,6 +68,15 @@ def get_github_token() -> str:
     )
 
 
+def repo_api_path(repo: str) -> str:
+    """Return REST API repo path in /repos/{owner}/{repo} form."""
+    parts = repo.split("/", 1)
+    if len(parts) != 2 or not parts[0] or not parts[1]:
+        raise BridgeError(f"Invalid repo format, expected owner/name: {repo}")
+    owner, name = parts
+    return f"/repos/{quote(owner, safe='')}/{quote(name, safe='')}"
+
+
 def github_request(method: str, path: str, token: str, payload: dict[str, Any] | None = None) -> Any:
     url = f"https://api.github.com{path}"
     body = None
@@ -102,9 +111,8 @@ def sanitize_slug(text: str, limit: int = 60) -> str:
 
 
 def fetch_open_task_issues(repo: str, label: str, token: str, limit: int) -> list[dict[str, Any]]:
-    encoded_repo = quote(repo, safe="")
     encoded_label = quote(label, safe="")
-    path = f"/repos/{encoded_repo}/issues?state=open&labels={encoded_label}&per_page={limit}"
+    path = f"{repo_api_path(repo)}/issues?state=open&labels={encoded_label}&per_page={limit}"
     issues = github_request("GET", path, token)
     if not isinstance(issues, list):
         raise BridgeError("Unexpected GitHub issues response")
@@ -180,8 +188,7 @@ def cmd_report(args: argparse.Namespace) -> int:
 {report}
 """
     token = get_github_token()
-    encoded_repo = quote(args.repo, safe="")
-    path = f"/repos/{encoded_repo}/issues/{args.issue}/comments"
+    path = f"{repo_api_path(args.repo)}/issues/{args.issue}/comments"
     github_request("POST", path, token, {"body": body})
 
     _safe_print("MIKAGE_GITHUB_AGENT_BRIDGE_REPORT")
