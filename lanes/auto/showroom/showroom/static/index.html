@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIKAGE AUTO SHOWROOM</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="showroom-di-linh">
+  <header class="top">
+    <div class="brand">MIKAGE AUTO SHOWROOM — Gara Di Linh</div>
+    <div class="sub">Chỉ xe đạt chuẩn tuổi xe / km / khu vực miền Nam / ảnh hợp lệ</div>
+  </header>
+
+  <nav class="tabs">
+    <button type="button" class="tab active" data-tab="main">Sàn chính</button>
+  </nav>
+
+  <div id="panel-main">
+    <div class="toolbar">
+      <label>Lọc kho</label>
+      <span class="filter-scope-hint">(Kho xe)</span>
+      <select id="filterSel">
+        <option value="all">Tất cả</option>
+        <option value="under_500m">Dưới 500 triệu</option>
+        <option value="under_1b">Dưới 1 tỷ</option>
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV</option>
+        <option value="pickup">Bán tải</option>
+        <option value="owner">Chủ đăng</option>
+        <option value="has_phone">Có số liên hệ</option>
+      </select>
+      <button id="btnReload" type="button">Tải lại</button>
+      <a class="btn-link" href="/api/export/csv" target="_blank">CSV phụ</a>
+    </div>
+
+    <main id="app">
+      <p class="main-hint">Showroom Di Linh chỉ hiển thị xe đã qua lọc cứng: tuổi ≤ 6 năm, km ≤ 80.000, trong miền Nam, ảnh hợp lệ. Xe không đạt không lưu trong hệ thống showroom. Nên xem theo thứ tự: <strong>mới lên sàn</strong> → <strong>nổi bật hôm nay</strong> → <strong>cần gọi ngay</strong> → <strong>kho</strong>.</p>
+      <section>
+        <h2>Xe mới lên sàn</h2>
+        <div class="row" id="secNew"></div>
+      </section>
+      <section>
+        <h2>Xe nổi bật hôm nay</h2>
+        <div class="row" id="secHi"></div>
+      </section>
+      <section>
+        <h2>Xe cần gọi ngay</h2>
+        <div class="row" id="secUrgent"></div>
+      </section>
+      <section class="section-warehouse">
+        <h2>Kho xe theo nhóm</h2>
+        <h3 class="subsec-title">Xe gần gara <span class="subsec-hint">(lõi TP.HCM &amp; vùng ven)</span></h3>
+        <div class="row" id="secWhNear"></div>
+        <h3 class="subsec-title">Xe vùng mở rộng <span class="subsec-hint">(Cần Thơ, An Giang, Khánh Hòa &amp; chưa xếp lớp)</span></h3>
+        <div class="row" id="secWhFar"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="panel-review" class="hidden" hidden>
+    <section class="review-head">
+      <h2>Tin cần xem lại</h2>
+      <p class="muted">(Không dùng — showroom Di Linh)</p>
+    </section>
+    <div class="row" id="secReview"></div>
+  </div>
+
+  <div id="detailModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal tabindex="-1"></div>
+    <div class="modal-panel" role="dialog" aria-labelledby="dmTitle">
+      <button type="button" class="modal-close" data-close-modal aria-label="Đóng">×</button>
+      <h3 id="dmTitle" class="dm-title"></h3>
+      <div id="dmPrice" class="dm-price"></div>
+      <p id="dmMeta" class="dm-meta"></p>
+      <p id="dmGeo" class="dm-geo" aria-label="Lớp ưu tiên địa lý"></p>
+      <div id="dmNote" class="dm-note"></div>
+      <div class="dm-actions">
+        <a id="dmLink" class="dm-btn dm-btn-primary" href="#" target="_blank" rel="noopener">Mở tin gốc</a>
+        <button type="button" id="dmSale" class="dm-btn" data-act="save_sale">Lưu sale</button>
+        <button type="button" id="dmPri" class="dm-btn" data-act="priority">Ưu tiên</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

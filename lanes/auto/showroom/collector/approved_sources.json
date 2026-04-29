@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "sources": [
+    {
+      "id": "xe.chotot.com",
+      "enabled": true,
+      "label": "Chợ Tốt Xe",
+      "collector": "chotot",
+      "seeds": [
+        "https://xe.chotot.com/mua-ban-oto-binh-duong",
+        "https://xe.chotot.com/mua-ban-oto-dong-nai",
+        "https://xe.chotot.com/mua-ban-oto-long-an",
+        "https://xe.chotot.com/mua-ban-oto-ba-ria-vung-tau",
+        "https://xe.chotot.com/mua-ban-oto-tp-ho-chi-minh",
+        "https://xe.chotot.com/mua-ban-oto-can-tho",
+        "https://xe.chotot.com/mua-ban-oto-khanh-hoa",
+        "https://xe.chotot.com/mua-ban-oto-an-giang"
+      ],
+      "pages_per_seed": 3,
+      "max_vehicles_per_run": 110,
+      "request_delay_sec": 0.55
+    },
+    {
+      "id": "oto.com.vn",
+      "enabled": true,
+      "label": "Oto.com.vn",
+      "collector": "oto_com",
+      "seeds": [
+        "https://oto.com.vn/mua-ban-xe-binh-duong",
+        "https://oto.com.vn/mua-ban-xe-dong-nai",
+        "https://oto.com.vn/mua-ban-xe-long-an",
+        "https://oto.com.vn/mua-ban-xe-ba-ria-vung-tau",
+        "https://oto.com.vn/mua-ban-xe-tp-hcm",
+        "https://oto.com.vn/mua-ban-xe"
+      ],
+      "pages_per_seed": 3,
+      "max_vehicles_per_run": 56,
+      "request_delay_sec": 0.65
+    }
+  ]
+}

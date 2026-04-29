@@ -1,0 +1,28 @@
+{
+  "version": "2026.04.18-3-age-km",
+  "weights": {
+    "recency_score": 25,
+    "completeness_score": 20,
+    "price_signal_score": 20,
+    "image_quality_score": 10,
+    "seller_signal_score": 10,
+    "contactability_score": 15
+  },
+  "thresholds": {
+    "new_hours": 72,
+    "good_price_under_vnd": 600000000,
+    "display_ready_min_score": 62,
+    "review_min_score": 45,
+    "call_now_score": 78,
+    "new_floor_top_n": 6,
+    "highlight_top_n": 8,
+    "urgent_top_n": 16
+  },
+  "flag_rules": {
+    "MOI_LEN_SAN_hours": 48,
+    "TIN_RO_RANG_min_fields": 5,
+    "NEN_GOI_min_score": 76,
+    "bonus_real_phone": 5,
+    "penalty_bad_image": 10
+  }
+}
