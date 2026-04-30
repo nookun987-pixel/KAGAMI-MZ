@@ -26,21 +26,62 @@ DATA_STORE_ID = "mikage-brain_1774647243976"
 
 def get_credential_status() -> Dict:
     """Check if Vertex AI credentials are available."""
-    creds_file = Path("service-account-key.json")
-    creds_env = os.getenv("GOOGLE_APPLICATION_CREDENTIALS") or os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
-    
+    google_application_credentials = (os.getenv("GOOGLE_APPLICATION_CREDENTIALS") or "").strip()
+    mikage_google_application_credentials = (os.getenv("MIKAGE_GOOGLE_APPLICATION_CREDENTIALS") or "").strip()
+    google_application_credentials_json = (os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON") or "").strip()
+    repo_credentials_file = Path("repo_credentials") / "gsheet_key.json"
+    legacy_creds_file = Path("service-account-key.json")
+
+    credential_sources = [
+        ("GOOGLE_APPLICATION_CREDENTIALS", Path(google_application_credentials) if google_application_credentials else None),
+        ("MIKAGE_GOOGLE_APPLICATION_CREDENTIALS", Path(mikage_google_application_credentials) if mikage_google_application_credentials else None),
+        ("GOOGLE_APPLICATION_CREDENTIALS_JSON", google_application_credentials_json if google_application_credentials_json else None),
+        ("repo_credentials/gsheet_key.json", repo_credentials_file if repo_credentials_file.exists() else None),
+        ("service-account-key.json", legacy_creds_file if legacy_creds_file.exists() else None),
+    ]
+
+    resolved_source = None
+    resolved_path = None
+    resolved_json = None
+
+    for source_name, candidate in credential_sources:
+        if candidate is None:
+            continue
+        if source_name == "GOOGLE_APPLICATION_CREDENTIALS_JSON":
+            resolved_source = source_name
+            resolved_json = candidate
+            break
+        if isinstance(candidate, Path) and candidate.exists():
+            resolved_source = source_name
+            resolved_path = candidate
+            break
+
     status = {
-        "credentials_file_present": creds_file.exists(),
-        "credentials_env_present": bool(creds_env),
+        "credentials_file_present": legacy_creds_file.exists(),
+        "credentials_env_present": bool(
+            google_application_credentials
+            or mikage_google_application_credentials
+            or google_application_credentials_json
+        ),
         "credentials_file_readable": False,
         "service_account_json_parse_ok": False,
+        "credential_lookup_source": resolved_source,
+        "credential_lookup_path": str(resolved_path) if resolved_path else "",
+        "credential_lookup_json_present": bool(resolved_json),
         "project_id_present": bool(PROJECT_ID),
         "datastore_config_present": bool(DATA_STORE_ID),
     }
     
-    if creds_file.exists():
+    if resolved_json:
         try:
-            with open(creds_file) as f:
+            json.loads(resolved_json)
+            status["credentials_file_readable"] = True
+            status["service_account_json_parse_ok"] = True
+        except Exception as e:
+            log.warning(f"Credential JSON parse error: {e}")
+    elif resolved_path:
+        try:
+            with open(resolved_path) as f:
                 json.load(f)
             status["credentials_file_readable"] = True
             status["service_account_json_parse_ok"] = True
@@ -62,15 +103,21 @@ def query_mikage_brain(query: str, top_k: int = 5) -> Dict:
         log.warning("[RAG] Vertex AI SDK not installed, using mock")
         return _mock_query(query, cred_status, "vertex_sdk_not_installed")
     
-    if not (cred_status["credentials_file_present"] or cred_status["credentials_env_present"]):
+    if not (
+        cred_status["credentials_file_present"]
+        or cred_status["credentials_env_present"]
+        or cred_status["credential_lookup_json_present"]
+    ):
         log.warning("[RAG] No credentials found, using mock")
         return _mock_query(query, cred_status, "no_credentials")
     
     try:
         log.info(f"[RAG] Querying real Vertex AI: {query}")
         
-        # Set credentials path if file exists
-        if cred_status["credentials_file_present"]:
+        # Set credentials path if a file-based credential was resolved.
+        if cred_status["credential_lookup_path"]:
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = cred_status["credential_lookup_path"]
+        elif cred_status["credentials_file_present"]:
             os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "service-account-key.json"
         
         # Initialize client
