@@ -1,6 +1,39 @@
 const fs = require('fs');
 const path = require('path');
 
+function normalizeCredentialInput(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function resolveVertexCredentialSource() {
+  const googleApplicationCredentials = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+  if (googleApplicationCredentials) {
+    return { source: 'GOOGLE_APPLICATION_CREDENTIALS', path: googleApplicationCredentials };
+  }
+
+  const mikageGoogleApplicationCredentials = normalizeCredentialInput(process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS);
+  if (mikageGoogleApplicationCredentials) {
+    return { source: 'MIKAGE_GOOGLE_APPLICATION_CREDENTIALS', path: mikageGoogleApplicationCredentials };
+  }
+
+  const googleApplicationCredentialsJson = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+  if (googleApplicationCredentialsJson) {
+    return { source: 'GOOGLE_APPLICATION_CREDENTIALS_JSON', json: googleApplicationCredentialsJson };
+  }
+
+  const repoCredentialsPath = path.join(process.cwd(), 'repo_credentials', 'gsheet_key.json');
+  if (fs.existsSync(repoCredentialsPath)) {
+    return { source: 'repo_credentials/gsheet_key.json', path: repoCredentialsPath };
+  }
+
+  const legacyKeyPath = path.join(process.cwd(), 'service-account-key.json');
+  if (fs.existsSync(legacyKeyPath)) {
+    return { source: 'service-account-key.json', path: legacyKeyPath };
+  }
+
+  return null;
+}
+
 async function runVertexCredentialCheck() {
   console.log('=== VERTEX CREDENTIAL CHECK ===');
   
@@ -17,15 +50,18 @@ async function runVertexCredentialCheck() {
   console.log('Retriever mode:', resolver.getRetrieverMode());
   
   // Credential detection
-  const credentialsFilePresent = fs.existsSync('service-account-key.json');
+  const credentialSource = resolveVertexCredentialSource();
+  const credentialsFilePresent = !!credentialSource;
   const credentialsEnvPresent = !!(
     process.env.GOOGLE_APPLICATION_CREDENTIALS ||
+    process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS ||
     process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON
   );
   
   console.log('\n--- Credential Detection ---');
   console.log('credentials_file_present:', credentialsFilePresent);
   console.log('credentials_env_present:', credentialsEnvPresent);
+  console.log('credential_lookup_source:', credentialSource ? credentialSource.source : '');
   console.log('project_id_present:', true); // Hardcoded
   console.log('datastore_config_present:', true); // Hardcoded
   
@@ -82,6 +118,7 @@ async function runVertexCredentialCheck() {
 - USE_REAL_VERTEX_RAG: true
 - credentials_file_present: ${credentialsFilePresent}
 - credentials_env_present: ${credentialsEnvPresent}
+- credential_lookup_source: ${credentialSource ? credentialSource.source : ''}
 - project_id_present: true
 - datastore_config_present: true
 
@@ -106,6 +143,7 @@ ${chunkCount > 0 ? 'QUERY SUCCESS' : 'QUERY FAILED'}
   return {
     credentialsFilePresent,
     credentialsEnvPresent,
+    credentialLookupSource: credentialSource ? credentialSource.source : '',
     vertexClientInitSuccess,
     queryAttempted,
     chunkCount,
