@@ -78,6 +78,23 @@ If Windsurf command output is incomplete but external Windows CMD output has bee
 - Current clean branch baseline is `main`.
 - Do not touch `D:\KAGAMI-MZ` unless the task is explicitly read-only classification.
 
+## ROOT ARTIFACT CREATION LOCK
+
+- Agents must not create new files directly in the repository root unless the user explicitly authorizes the exact filename.
+- Temporary outputs, smoke results, debug files, generated reports, screenshots, images, JSON test outputs, and local run artifacts must go under one of:
+  - `runtime/`
+  - `data/`
+  - `docs/archive/`
+  - `docs/reports/`
+  - `_tmp/` outside repo when possible
+- If a task creates an unexpected root file, the task must STOP before commit and report:
+  - file name
+  - command that created it
+  - whether it is tracked, untracked, or ignored
+  - recommended cleanup action
+- Do not use `git clean -fdx` for root cleanup unless explicitly approved by the user.
+- Tracked root files must not be moved by pattern. They require an approved move list and rename-only verification.
+
 ## Required Source-of-Truth Files
 
 The agent must read these files before proposing the next action:
