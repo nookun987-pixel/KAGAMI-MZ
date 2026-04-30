@@ -20,6 +20,93 @@ function getSearchClient() {
   return searchServiceClient;
 }
 
+function normalizeCredentialInput(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function getCredentialLookupCandidates() {
+  const candidates = [];
+  const googleApplicationCredentials = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+  const mikageGoogleApplicationCredentials = normalizeCredentialInput(process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS);
+  const googleApplicationCredentialsJson = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+  const repoCredentialsPath = path.join(process.cwd(), 'repo_credentials', 'gsheet_key.json');
+  const legacyCredentialsPath = path.join(process.cwd(), 'service-account-key.json');
+
+  if (googleApplicationCredentials) {
+    candidates.push({
+      source: 'GOOGLE_APPLICATION_CREDENTIALS',
+      kind: 'path',
+      path: path.resolve(googleApplicationCredentials)
+    });
+  }
+
+  if (mikageGoogleApplicationCredentials && mikageGoogleApplicationCredentials !== googleApplicationCredentials) {
+    candidates.push({
+      source: 'MIKAGE_GOOGLE_APPLICATION_CREDENTIALS',
+      kind: 'path',
+      path: path.resolve(mikageGoogleApplicationCredentials)
+    });
+  }
+
+  if (googleApplicationCredentialsJson) {
+    candidates.push({
+      source: 'GOOGLE_APPLICATION_CREDENTIALS_JSON',
+      kind: 'json',
+      json: googleApplicationCredentialsJson
+    });
+  }
+
+  if (fs.existsSync(repoCredentialsPath)) {
+    candidates.push({
+      source: 'repo_credentials/gsheet_key.json',
+      kind: 'path',
+      path: repoCredentialsPath
+    });
+  }
+
+  if (fs.existsSync(legacyCredentialsPath)) {
+    candidates.push({
+      source: 'service-account-key.json',
+      kind: 'path',
+      path: legacyCredentialsPath
+    });
+  }
+
+  return candidates;
+}
+
+function readCredentialJson(candidate) {
+  if (candidate.kind === 'json') {
+    return JSON.parse(candidate.json);
+  }
+
+  if (!fs.existsSync(candidate.path)) {
+    return null;
+  }
+
+  return JSON.parse(fs.readFileSync(candidate.path, 'utf8'));
+}
+
+function getResolvedCredentialStatus() {
+  const candidates = getCredentialLookupCandidates();
+
+  for (const candidate of candidates) {
+    try {
+      const keyData = readCredentialJson(candidate);
+      if (keyData && keyData.type && keyData.project_id && keyData.private_key) {
+        return {
+          candidate,
+          keyData
+        };
+      }
+    } catch (error) {
+      console.error(`[RAG] Credential candidate invalid (${candidate.source}):`, error.message);
+    }
+  }
+
+  return null;
+}
+
 /**
  * Real Vertex AI query implementation using Discovery Engine
  * @param {string} query - The search query
@@ -238,29 +325,13 @@ async function getMikageMemoryContext(query) {
  * @returns {boolean} - Whether real Vertex retrieval is verified
  */
 function isRealVertexVerified() {
-  const credentialsFile = fs.existsSync('service-account-key.json');
-  const credentialsEnv = !!(
-    process.env.GOOGLE_APPLICATION_CREDENTIALS ||
-    process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON
-  );
-  
-  if (!credentialsFile && !credentialsEnv) {
+  const resolvedCredential = getResolvedCredentialStatus();
+
+  if (!resolvedCredential) {
     return false;
   }
-  
-  // Check file readability and JSON parsing
-  if (credentialsFile) {
-    try {
-      const keyContent = fs.readFileSync('service-account-key.json', 'utf8');
-      const keyData = JSON.parse(keyContent);
-      return !!(keyData.type && keyData.project_id && keyData.private_key);
-    } catch (error) {
-      console.error('[RAG] Service account key file invalid:', error.message);
-      return false;
-    }
-  }
-  
-  return true; // Env credentials assumed valid
+
+  return true;
 }
 
 /**
@@ -276,31 +347,38 @@ function areCloudCredentialsPresent() {
  * @returns {Object} - Detailed credential status
  */
 function getCredentialStatus() {
-  const credentialsFile = fs.existsSync('service-account-key.json');
+  const legacyCredentialsFile = fs.existsSync(path.join(process.cwd(), 'service-account-key.json'));
   const credentialsEnv = !!(
     process.env.GOOGLE_APPLICATION_CREDENTIALS ||
+    process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS ||
     process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON
   );
-  
+  const resolvedCredential = getResolvedCredentialStatus();
+
   let credentialsFileReadable = false;
   let serviceAccountJsonParseOk = false;
+  let credentialLookupSource = '';
+  let credentialLookupPath = '';
   
-  if (credentialsFile) {
+  if (resolvedCredential) {
     try {
-      const keyContent = fs.readFileSync('service-account-key.json', 'utf8');
-      const keyData = JSON.parse(keyContent);
+      const keyData = resolvedCredential.keyData;
       credentialsFileReadable = true;
       serviceAccountJsonParseOk = !!(keyData.type && keyData.project_id && keyData.private_key);
+      credentialLookupSource = resolvedCredential.candidate.source;
+      credentialLookupPath = resolvedCredential.candidate.kind === 'path' ? resolvedCredential.candidate.path : 'GOOGLE_APPLICATION_CREDENTIALS_JSON';
     } catch (error) {
       console.error('[RAG] Service account key validation failed:', error.message);
     }
   }
   
   return {
-    credentials_file_present: credentialsFile,
+    credentials_file_present: legacyCredentialsFile,
     credentials_env_present: credentialsEnv,
     credentials_file_readable: credentialsFileReadable,
     service_account_json_parse_ok: serviceAccountJsonParseOk,
+    credential_lookup_source: credentialLookupSource,
+    credential_lookup_path: credentialLookupPath,
     project_id_present: !!PROJECT_ID,
     datastore_config_present: !!DATA_STORE_ID
   };
