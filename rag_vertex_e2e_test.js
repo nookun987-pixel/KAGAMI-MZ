@@ -8,16 +8,50 @@ const path = require('path');
 
 console.log('=== REAL VERTEX E2E RETRIEVAL TEST ===\n');
 
+function normalizeCredentialInput(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function resolveVertexCredentialSource() {
+  const googleApplicationCredentials = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+  if (googleApplicationCredentials) {
+    return { source: 'GOOGLE_APPLICATION_CREDENTIALS', path: googleApplicationCredentials };
+  }
+
+  const mikageGoogleApplicationCredentials = normalizeCredentialInput(process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS);
+  if (mikageGoogleApplicationCredentials) {
+    return { source: 'MIKAGE_GOOGLE_APPLICATION_CREDENTIALS', path: mikageGoogleApplicationCredentials };
+  }
+
+  const googleApplicationCredentialsJson = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+  if (googleApplicationCredentialsJson) {
+    return { source: 'GOOGLE_APPLICATION_CREDENTIALS_JSON', json: googleApplicationCredentialsJson };
+  }
+
+  const repoCredentialsPath = path.join(__dirname, 'repo_credentials', 'gsheet_key.json');
+  if (fs.existsSync(repoCredentialsPath)) {
+    return { source: 'repo_credentials/gsheet_key.json', path: repoCredentialsPath };
+  }
+
+  return { source: 'service-account-key.json', path: path.join(__dirname, 'service-account-key.json') };
+}
+
 // Set env vars if not already set
-if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-  process.env.GOOGLE_APPLICATION_CREDENTIALS = path.join(__dirname, 'service-account-key.json');
+const credentialSource = resolveVertexCredentialSource();
+if (credentialSource.path) {
+  process.env.GOOGLE_APPLICATION_CREDENTIALS = credentialSource.path;
+}
+if (credentialSource.json) {
+  process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON = credentialSource.json;
 }
 process.env.USE_REAL_VERTEX_RAG = 'true';
 
 console.log('Environment:');
+console.log('  Selected credential source:', credentialSource.source);
 console.log('  GOOGLE_APPLICATION_CREDENTIALS:', process.env.GOOGLE_APPLICATION_CREDENTIALS ? 'SET' : 'NOT SET');
+console.log('  GOOGLE_APPLICATION_CREDENTIALS_JSON:', process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON ? 'SET' : 'NOT SET');
 console.log('  USE_REAL_VERTEX_RAG:', process.env.USE_REAL_VERTEX_RAG);
-console.log('  Credentials file exists:', fs.existsSync(process.env.GOOGLE_APPLICATION_CREDENTIALS));
+console.log('  Credentials file exists:', process.env.GOOGLE_APPLICATION_CREDENTIALS ? fs.existsSync(process.env.GOOGLE_APPLICATION_CREDENTIALS) : 'N/A');
 
 // Load the RAG resolver
 const { getMikageMemoryContext, getRetrieverMode, isRealVertexVerified } = require('./rag/rag_retriever_resolver');
