@@ -49,11 +49,6 @@ function resolveGoogleLaneCredentialSource() {
     return { source: 'repo_credentials/gsheet_key.json', path: repoCredentialsPath };
   }
 
-  const legacyKeyPath = path.join(process.cwd(), 'service-account-key.json');
-  if (fs.existsSync(legacyKeyPath)) {
-    return { source: 'service-account-key.json', path: legacyKeyPath };
-  }
-
   return null;
 }
 
