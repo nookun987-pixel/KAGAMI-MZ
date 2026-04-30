@@ -30,7 +30,6 @@ function getCredentialLookupCandidates() {
   const mikageGoogleApplicationCredentials = normalizeCredentialInput(process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS);
   const googleApplicationCredentialsJson = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
   const repoCredentialsPath = path.join(process.cwd(), 'repo_credentials', 'gsheet_key.json');
-  const legacyCredentialsPath = path.join(process.cwd(), 'service-account-key.json');
 
   if (googleApplicationCredentials) {
     candidates.push({
@@ -61,14 +60,6 @@ function getCredentialLookupCandidates() {
       source: 'repo_credentials/gsheet_key.json',
       kind: 'path',
       path: repoCredentialsPath
-    });
-  }
-
-  if (fs.existsSync(legacyCredentialsPath)) {
-    candidates.push({
-      source: 'service-account-key.json',
-      kind: 'path',
-      path: legacyCredentialsPath
     });
   }
 
@@ -122,7 +113,7 @@ async function queryMikageBrain(query) {
     console.log(`[RAG] Credential check: file=${credStatus.credentials_file_present}, env=${credStatus.credentials_env_present}, readable=${credStatus.credentials_file_readable}, parse_ok=${credStatus.service_account_json_parse_ok}`);
     
     if (!credStatus.credentials_file_present && !credStatus.credentials_env_present) {
-      throw new Error("Google Cloud credentials not found - missing service-account-key.json and GOOGLE_APPLICATION_CREDENTIALS");
+      throw new Error("Google Cloud credentials not found - set GOOGLE_APPLICATION_CREDENTIALS, MIKAGE_GOOGLE_APPLICATION_CREDENTIALS, GOOGLE_APPLICATION_CREDENTIALS_JSON, or provide repo_credentials/gsheet_key.json");
     }
     
     if (credStatus.credentials_file_present && (!credStatus.credentials_file_readable || !credStatus.service_account_json_parse_ok)) {
@@ -347,7 +338,6 @@ function areCloudCredentialsPresent() {
  * @returns {Object} - Detailed credential status
  */
 function getCredentialStatus() {
-  const legacyCredentialsFile = fs.existsSync(path.join(process.cwd(), 'service-account-key.json'));
   const credentialsEnv = !!(
     process.env.GOOGLE_APPLICATION_CREDENTIALS ||
     process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS ||
@@ -359,6 +349,7 @@ function getCredentialStatus() {
   let serviceAccountJsonParseOk = false;
   let credentialLookupSource = '';
   let credentialLookupPath = '';
+  let supportedCredentialsPresent = !!credentialsEnv;
   
   if (resolvedCredential) {
     try {
@@ -367,13 +358,14 @@ function getCredentialStatus() {
       serviceAccountJsonParseOk = !!(keyData.type && keyData.project_id && keyData.private_key);
       credentialLookupSource = resolvedCredential.candidate.source;
       credentialLookupPath = resolvedCredential.candidate.kind === 'path' ? resolvedCredential.candidate.path : 'GOOGLE_APPLICATION_CREDENTIALS_JSON';
+      supportedCredentialsPresent = true;
     } catch (error) {
       console.error('[RAG] Service account key validation failed:', error.message);
     }
   }
   
   return {
-    credentials_file_present: legacyCredentialsFile,
+    credentials_file_present: supportedCredentialsPresent,
     credentials_env_present: credentialsEnv,
     credentials_file_readable: credentialsFileReadable,
     service_account_json_parse_ok: serviceAccountJsonParseOk,
