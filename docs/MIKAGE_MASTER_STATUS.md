@@ -5,7 +5,7 @@
 - ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0
 - CLEAN_WORKSPACE: D:\KAGAMI-MZ_SYNC_PUSH_V2
 - CURRENT_BRANCH: main
-- CURRENT_HEAD: 3966248
+- CURRENT_HEAD: f611c37
 - REPO_STATUS: clean
 - DIRTY_ORIGINAL_REPO: D:\KAGAMI-MZ HOLD ONLY
 
@@ -65,6 +65,18 @@
 - Agent must propose one next safe action only.
 - Phase 9A: trace the safe GARA command contract before any smoke attempt.
 - Then standardize a single central execution lock file at `docs\agent_skills\MIKAGE_AGENT_EXECUTION_LOCK_V1.md` or `docs\governance\MIKAGE_AGENT_EXECUTION_LOCK_V1.md`.
+
+## Root Cleanup Closeout
+
+- ROOT_FILE_COUNT_FINAL: 208
+- TOTAL_ARCHIVED_FROM_ROOT: 68
+- ARCHIVE_BATCH1_TRACKED_COUNT: 30
+- ARCHIVE_BATCH2B_TRACKED_COUNT: 19
+- ARCHIVE_BATCH3B_TRACKED_COUNT: 19
+- ROOT_ARTIFACT_CREATION_LOCK_ADDED_IN_AGENTS: 887b037
+- KEY_USER_TXT: not inspected or moved
+- REMAINING_ROOT_JS_MD: keep rooted unless approved by a read-only dependency review
+- NEXT_ACTION: read-only dependency review only if cleanup continues
 
 ## Forbidden Actions
 
