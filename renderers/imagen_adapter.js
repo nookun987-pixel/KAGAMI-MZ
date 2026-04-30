@@ -157,14 +157,53 @@ async function callImagenREST(request, projectId, location, modelId) {
   const fetch = (await import('node-fetch')).default;
   const { GoogleAuth } = require('google-auth-library');
   
+  function normalizeCredentialInput(value) {
+    return typeof value === 'string' ? value.trim() : '';
+  }
+
+  function resolveImagenCredentialPath() {
+    const googleApplicationCredentials = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+    if (googleApplicationCredentials) {
+      return { source: 'GOOGLE_APPLICATION_CREDENTIALS', path: googleApplicationCredentials };
+    }
+
+    const mikageGoogleApplicationCredentials = normalizeCredentialInput(process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS);
+    if (mikageGoogleApplicationCredentials) {
+      return { source: 'MIKAGE_GOOGLE_APPLICATION_CREDENTIALS', path: mikageGoogleApplicationCredentials };
+    }
+
+    const googleApplicationCredentialsJson = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+    if (googleApplicationCredentialsJson) {
+      return { source: 'GOOGLE_APPLICATION_CREDENTIALS_JSON', json: googleApplicationCredentialsJson };
+    }
+
+    const repoCredentialsPath = path.join(process.cwd(), 'repo_credentials', 'gsheet_key.json');
+    if (fs.existsSync(repoCredentialsPath)) {
+      return { source: 'repo_credentials/gsheet_key.json', path: repoCredentialsPath };
+    }
+
+    const legacyKeyPath = path.join(process.cwd(), 'service-account-key.json');
+    if (fs.existsSync(legacyKeyPath)) {
+      return { source: 'service-account-key.json', path: legacyKeyPath };
+    }
+
+    return null;
+  }
+
   // Explicitly load service account credentials
-  const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS || './service-account-key.json';
+  const credentialSelection = resolveImagenCredentialPath();
   let auth;
   
-  if (fs.existsSync(keyPath)) {
-    console.log(`[IMAGEN] Using service account key: ${keyPath}`);
+  if (credentialSelection && credentialSelection.path && fs.existsSync(credentialSelection.path)) {
+    console.log(`[IMAGEN] Using service account key (${credentialSelection.source}): ${credentialSelection.path}`);
     auth = new GoogleAuth({
-      keyFile: keyPath,
+      keyFile: credentialSelection.path,
+      scopes: ['https://www.googleapis.com/auth/cloud-platform']
+    });
+  } else if (credentialSelection && credentialSelection.json) {
+    console.log(`[IMAGEN] Using service account JSON from ${credentialSelection.source}`);
+    auth = new GoogleAuth({
+      credentials: JSON.parse(credentialSelection.json),
       scopes: ['https://www.googleapis.com/auth/cloud-platform']
     });
   } else {
