@@ -30,14 +30,12 @@ def get_credential_status() -> Dict:
     mikage_google_application_credentials = (os.getenv("MIKAGE_GOOGLE_APPLICATION_CREDENTIALS") or "").strip()
     google_application_credentials_json = (os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON") or "").strip()
     repo_credentials_file = Path("repo_credentials") / "gsheet_key.json"
-    legacy_creds_file = Path("service-account-key.json")
 
     credential_sources = [
         ("GOOGLE_APPLICATION_CREDENTIALS", Path(google_application_credentials) if google_application_credentials else None),
         ("MIKAGE_GOOGLE_APPLICATION_CREDENTIALS", Path(mikage_google_application_credentials) if mikage_google_application_credentials else None),
         ("GOOGLE_APPLICATION_CREDENTIALS_JSON", google_application_credentials_json if google_application_credentials_json else None),
         ("repo_credentials/gsheet_key.json", repo_credentials_file if repo_credentials_file.exists() else None),
-        ("service-account-key.json", legacy_creds_file if legacy_creds_file.exists() else None),
     ]
 
     resolved_source = None
@@ -57,7 +55,7 @@ def get_credential_status() -> Dict:
             break
 
     status = {
-        "credentials_file_present": legacy_creds_file.exists(),
+        "credentials_file_present": bool(resolved_path),
         "credentials_env_present": bool(
             google_application_credentials
             or mikage_google_application_credentials
@@ -117,8 +115,6 @@ def query_mikage_brain(query: str, top_k: int = 5) -> Dict:
         # Set credentials path if a file-based credential was resolved.
         if cred_status["credential_lookup_path"]:
             os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = cred_status["credential_lookup_path"]
-        elif cred_status["credentials_file_present"]:
-            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "service-account-key.json"
         
         # Initialize client
         client_options = ClientOptions(api_endpoint=f"{LOCATION}-discoveryengine.googleapis.com")
