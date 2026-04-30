@@ -24,6 +24,39 @@ const HARD_REJECT_SIGNALS = [
   "logo_overlap_ratio",
 ];
 
+function normalizeCredentialInput(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function resolveGoogleLaneCredentialSource() {
+  const googleApplicationCredentials = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+  if (googleApplicationCredentials) {
+    return { source: 'GOOGLE_APPLICATION_CREDENTIALS', path: googleApplicationCredentials };
+  }
+
+  const mikageGoogleApplicationCredentials = normalizeCredentialInput(process.env.MIKAGE_GOOGLE_APPLICATION_CREDENTIALS);
+  if (mikageGoogleApplicationCredentials) {
+    return { source: 'MIKAGE_GOOGLE_APPLICATION_CREDENTIALS', path: mikageGoogleApplicationCredentials };
+  }
+
+  const googleApplicationCredentialsJson = normalizeCredentialInput(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+  if (googleApplicationCredentialsJson) {
+    return { source: 'GOOGLE_APPLICATION_CREDENTIALS_JSON', json: googleApplicationCredentialsJson };
+  }
+
+  const repoCredentialsPath = path.join(process.cwd(), 'repo_credentials', 'gsheet_key.json');
+  if (fs.existsSync(repoCredentialsPath)) {
+    return { source: 'repo_credentials/gsheet_key.json', path: repoCredentialsPath };
+  }
+
+  const legacyKeyPath = path.join(process.cwd(), 'service-account-key.json');
+  if (fs.existsSync(legacyKeyPath)) {
+    return { source: 'service-account-key.json', path: legacyKeyPath };
+  }
+
+  return null;
+}
+
 function dedupeStrings(values) {
   const seen = new Set();
   const output = [];
@@ -317,8 +350,8 @@ async function executeGoogleRender(job, promptPackage, artifactPaths) {
  */
 function isGoogleLaneAvailable() {
   // Check for required credentials
-  const hasCreds = process.env.GOOGLE_APPLICATION_CREDENTIALS || 
-                   fs.existsSync('service-account-key.json');
+  const credentialSource = resolveGoogleLaneCredentialSource();
+  const hasCreds = !!credentialSource;
   
   return hasCreds;
 }
