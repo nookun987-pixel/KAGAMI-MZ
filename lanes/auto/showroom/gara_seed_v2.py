@@ -21,7 +21,7 @@ SEED_SEED_URL = "https://example.com/gara/v2/seed/private-party-0001"
 SEED_SOURCE_URL = "https://example.com/gara/v2/listings/private-party-0001"
 SEED_RAW_PAYLOAD_REF = "seed:gara_v2:private_party_0001"
 SEED_RAW_PAYLOAD_PATH = ""
-SEED_COLLECTED_AT = "2025-05-01T00:00:00+00:00"
+SEED_COLLECTED_AT = 1746057600.0
 SEED_SCORE_VERSION = "gara_seed_v2"
 
 
