@@ -11,10 +11,13 @@ import traceback
 from pathlib import Path
 from typing import Any
 
-from lanes.auto.scout.chotot import sleep_between_requests
+try:
+    from lanes.auto.scout.chotot import sleep_between_requests
+except ModuleNotFoundError:
+    def sleep_between_requests(delay: float) -> None:
+        time.sleep(max(0.0, float(delay)))
+
 from lanes.auto.showroom.audit.audit_log_service import audit
-from lanes.auto.showroom.collector.detail_fetcher import fetch_detail
-from lanes.auto.showroom.collector.listing_fetcher import fetch_listing_page
 from lanes.auto.showroom.collector.location_cleanup import backfill_location_cleanup
 from lanes.auto.showroom.collector.normalizer import normalize_chotot_listing_detail
 from lanes.auto.showroom.collector.source_registry import assert_source_enabled, load_approved_sources
@@ -143,6 +146,9 @@ def _ingest_one_source(
     per_seed_listing_cap: int | None = None,
     run_deadline_monotonic: float | None = None,
 ) -> dict[str, Any]:
+    from lanes.auto.showroom.collector.detail_fetcher import fetch_detail
+    from lanes.auto.showroom.collector.listing_fetcher import fetch_listing_page
+
     source_id = cfg["id"]
     collector = cfg.get("collector") or "chotot"
     seeds = cfg["seeds"]
