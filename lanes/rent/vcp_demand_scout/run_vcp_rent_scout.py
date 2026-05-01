@@ -1596,9 +1596,11 @@ def run_real_demand_lane(
             skipped.append((fname, reason))
             continue
         label = f"real_demand:{fname}"
+        url_match = re.search(r"https?://[^\s<>'\"()\[\]{}]+", text)
+        link = url_match.group(0) if url_match else ""
         r: dict[str, Any] = {
             "source": label,
-            "link": "",
+            "link": link,
             "text_raw": text,
             "contact": "",
             "area": "",
