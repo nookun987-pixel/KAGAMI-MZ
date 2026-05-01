@@ -13,7 +13,15 @@ def project_root() -> str:
 
 
 def data_dir() -> str:
-    d = os.path.join(project_root(), "data", "mikage_auto_showroom")
+    override = (os.environ.get("SHOWROOM_DATA_DIR") or "").strip()
+    if override:
+        d = override
+    else:
+        root = (os.environ.get("MIKAGE_SHOWROOM_DATA_ROOT") or "").strip()
+        if root:
+            d = os.path.join(root, "mikage_auto_showroom")
+        else:
+            d = os.path.join(project_root(), "data", "mikage_auto_showroom")
     os.makedirs(d, exist_ok=True)
     return d
 
