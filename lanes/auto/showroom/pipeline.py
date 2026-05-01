@@ -577,7 +577,11 @@ def ingest_run() -> dict[str, Any]:
         conn.close()
 
     if verify_limit is not None:
-        out_path = Path(__file__).resolve().parents[1] / "output" / "gara_rejection_audit.csv"
+        audit_path_override = (os.getenv("GARA_REJECTION_AUDIT_PATH") or "").strip()
+        if audit_path_override:
+            out_path = Path(audit_path_override)
+        else:
+            out_path = Path(__file__).resolve().parents[1] / "output" / "gara_rejection_audit.csv"
         _write_rejection_audit_csv(out_path, rejection_audit_rows)
         total["rejection_audit_rows"] = len(rejection_audit_rows)
         total["rejection_audit_path"] = str(out_path)
