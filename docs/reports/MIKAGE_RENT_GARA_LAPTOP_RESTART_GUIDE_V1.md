@@ -149,7 +149,7 @@ python run_vcp_rent_scout.py --real-demand-only
 
 ## 5. GARA SEED SMOKE COMMAND
 
-This command seeds one controlled test vehicle into the GARA showroom database and verifies the pipeline accepts it.
+This command seeds **one controlled test vehicle** into the GARA showroom database using the `gara_seed_v2` module and verifies the pipeline accepts it. This is **NOT** a live ingest — no external sources are fetched.
 
 ### 5.1 One-Time Setup
 
@@ -166,21 +166,37 @@ python -c "from lanes.auto.showroom.db import init_db; init_db(); print('GARA DB
 
 ### 5.2 Run GARA Seed Smoke Test
 
+Run the controlled seed module (does NOT fetch live data):
+
 ```bash
 cd <repo_root>
-python -m lanes.auto.showroom ingest
+python -m lanes.auto.showroom.gara_seed_v2
 ```
 
 **Expected Output:**
 ```
-[showroom_ingest] processed=1, ingested=1, rejected=0, errors=0
-[contract] lanes/auto/output/final.csv written rows=1
+[showroom_seed] vehicle_id=gara-v2-private-party-0001 inserted
+[showroom_seed] score=90, display_status=DISPLAY_READY
 ```
 
-**If it fails:**
+**Exit code:** `0` (success)
+
+### 5.3 (Optional) Export and Verify
+
+After seed succeeds, optionally view the seeded record in CSV export:
+
+```bash
+python -m lanes.auto.showroom export
+```
+
+**Expected Output:**
+- File created: `lanes/auto/data/showroom_export.csv`
+- Contains 1 row (the seeded vehicle)
+
+**If seed fails:**
 - Check SQLite is available: `python -c "import sqlite3"`
-- Check module imports: `python -c "from lanes.auto.showroom.pipeline import ingest_run"`
-- Look for network errors (if source collector tries live fetch; this is expected for first run)
+- Check module imports: `python -c "from lanes.auto.showroom.gara_seed_v2 import seed_gara_v2"`
+- Delete database and retry: `rm lanes/auto/data/showroom.db` (Linux/Mac) or `del lanes\auto\data\showroom.db` (Windows)
 
 ---
 
@@ -188,19 +204,19 @@ python -m lanes.auto.showroom ingest
 
 **Status:** Allowed only under explicit operator approval with bounded safety caps.
 
-The GARA live ingest command is:
+The GARA live ingest command (fetches from xe.chotot.com and oto.com.vn) is:
 
 ```bash
 # ⛔ DO NOT RUN WITHOUT EXPLICIT APPROVAL ⛔
 python -m lanes.auto.showroom ingest
-# (without VCP_USE_LOCAL_SNAPSHOT env var, this will fetch live from xe.chotot.com and oto.com.vn)
+# (this will fetch live from xe.chotot.com and oto.com.vn — NOT the controlled seed)
 ```
 
 ### Why Not Yet?
 
-1. Fetches from external sources (ve.chotot.com, oto.com.vn) — internet dependency
-2. Writes to showroom database — data persistence impact
-3. Requires approval from operations team for scope and timing
+1. Fetches from external sources (xe.chotot.com, oto.com.vn) — internet dependency and rate-limit risk
+2. Writes many rows to showroom database — significant data persistence impact
+3. Requires explicit approval from operations team for scope and timing
 
 ### When Safe to Run (Future)
 
@@ -325,17 +341,16 @@ pip install -r requirements.txt
   python -c "from lanes.auto.showroom.db import init_db; init_db(); print('OK')"
   ```
 
-- [ ] **Run GARA seed ingest**
+- [ ] **Run GARA seed (controlled test)**
   ```bash
-  python -m lanes.auto.showroom ingest
+  python -m lanes.auto.showroom.gara_seed_v2
   ```
 
-- [ ] **Check output file**
-  - `lanes/auto/output/final.csv` created ✅
-  - File has at least 1 row (the seed vehicle) ✅
+- [ ] **Check database was updated**
+  - Exit code: `0` (success)
+  - Console shows: `vehicle_id=gara-v2-private-party-0001 inserted`
 
 - [ ] **No errors in console**
-  - Look for: `[contract] lanes/auto/output/final.csv written rows=1`
   - Avoid: `ModuleNotFoundError`, `ImportError`, SQLite errors
 
 ### GARA Live (Only if Approved)
@@ -367,7 +382,7 @@ pip install -r requirements.txt
 | Exit Code | Lane | Meaning | Next Action |
 |-----------|------|---------|-------------|
 | `0` | RENT | ✅ Success — CSV written | Proceed to GARA |
-| `0` | GARA | ✅ Success — DB updated | Ready for approval/live run |
+| `0` | GARA Seed | ✅ Success — DB seeded with controlled vehicle | Ready for approval/live ingest |
 | `1` | Either | ❌ Runtime error | Check console output; see blockers § 7 |
 | `124` | GARA | ❌ Process timeout | Reduce GARA_VERIFY_LIMIT or increase timeout |
 | `missing file` | Either | ❌ Input file not found | Create input directory; add test files |
@@ -388,12 +403,14 @@ pip install -r requirements.txt
 Done. Supply: 0 -> ... | Demand: 0 -> ... | Sale-ready: output_vcp_demand_sale_ready.csv + DEMAND_SALE_HANDOFF.md
 ```
 
-#### ✅ PASS (GARA Seed)
+#### ✅ PASS (GARA Seed — Controlled)
 
 ```
-processed=1, ingested=1, rejected=0, errors=0
-[contract] lanes/auto/output/final.csv written rows=1
+[showroom_seed] vehicle_id=gara-v2-private-party-0001 inserted
+[showroom_seed] score=90, display_status=DISPLAY_READY
 ```
+
+Exit code: `0`
 
 #### ❌ FAIL (RENT)
 
@@ -403,18 +420,18 @@ ModuleNotFoundError: No module named 'requests'
 
 **Action:** Run `pip install requests`
 
-#### ❌ FAIL (GARA)
+#### ❌ FAIL (GARA Seed)
 
 ```
-ImportError: cannot import name 'ingest_run' from 'lanes.auto.showroom.pipeline'
+ImportError: cannot import name 'seed_gara_v2' from 'lanes.auto.showroom.gara_seed_v2'
 ```
 
-**Action:** Check Python path; ensure repo root is in PYTHONPATH. Run from repo root:
+**Action:** Check module is accessible. Run from repo root:
 
 ```bash
 cd <repo_root>
 set PYTHONPATH=%CD%
-python -m lanes.auto.showroom ingest
+python -m lanes.auto.showroom.gara_seed_v2
 ```
 
 ---
@@ -439,14 +456,15 @@ python -m lanes.auto.showroom ingest
 
 - ❌ Run RENT or GARA without Python environment verified
 - ❌ Modify `.env` files or commit secret changes
-- ❌ Run GARA live without explicit operator approval + safety caps
+- ❌ Run GARA live ingest (`python -m lanes.auto.showroom ingest`) without explicit operator approval + safety caps
 - ❌ Push this guide or any changes to `main` branch without review
 - ❌ Send Telegram or write to GSheet from RENT/GARA runs
 
 ### Always
 
 - ✅ Set `VCP_USE_LOCAL_SNAPSHOT=1` for RENT local testing
-- ✅ Set `GARA_VERIFY_LIMIT` + `GARA_VERIFY_PER_SEED_CAP` before GARA live runs
+- ✅ Run GARA seed (`gara_seed_v2`) first — this is the safe smoke test
+- ✅ Set `GARA_VERIFY_LIMIT` + `GARA_VERIFY_PER_SEED_CAP` before GARA live ingest (§ 6)
 - ✅ Save console output to a log file for audit
 - ✅ Check this guide for updates before restarting on a new laptop
 
@@ -464,8 +482,9 @@ python -m lanes.auto.showroom ingest
 
 | Field | Value |
 |-------|-------|
-| **Document Version** | V1 |
+| **Document Version** | V1.1 |
 | **Created** | 2026-05-05 |
+| **Fixed** | 2026-05-05 (§5 GARA seed command corrected) |
 | **Repo Commit Verified Against** | 5455a375d9febd80f989a27e18861ceba0590641 |
 | **Files Verified** | 10 / 13 (77% complete — see § 7) |
 | **Status** | Ready for non-coder operator use |
