@@ -41,7 +41,7 @@ def score_vehicle(record: dict[str, Any], rules: dict[str, Any] | None = None) -
             fields_ok += 1
         elif k == "price" and int(v or 0) > 0:
             fields_ok += 1
-        elif k in ("title", "location", "mileage") and (v or "").strip():
+        elif k in ("title", "location", "mileage") and str(v or "").strip():
             fields_ok += 1
     completeness = (fields_ok / 5.0) * w["completeness_score"]
 
