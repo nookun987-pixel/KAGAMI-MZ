@@ -51,6 +51,23 @@
 - After push, report commit SHA, branch, file path, final HEAD, and final origin/main.
 - ChatGPT should verify the file from GitHub before issuing the next task.
 
+## Latest Handoff Pointer Rule
+
+After every completed Codex task, Codex must update:
+`docs/handoff/00_LATEST_CODEX_HANDOFF.md`
+
+The user should only need to tell ChatGPT:
+"check GitHub"
+
+ChatGPT must then read:
+
+1. `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
+2. the report file referenced inside it
+3. `NEXT_TASK.md` if needed
+4. `.mikage_context` if lane verification is needed
+
+Codex must commit and push this pointer update with the task report.
+
 ## Expected Final Report Format
 
 ```text
