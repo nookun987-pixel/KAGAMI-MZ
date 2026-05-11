@@ -21,6 +21,18 @@ This pack does not authorize image generation, video generation, rendering, Comf
 
 ## Pack Result
 
-PARTIAL_SOURCE_PACK_NEEDS_HUMAN_REVIEW
+PASS_SOURCE_PACK_STRENGTHENED
 
-Reason: canon/style references are strong, and three visual candidates are available, but no repo evidence proves the selected visuals are approved film-proof sources.
+Reason: FILM-01B replaced the weak FILM-01 visual candidates with three existing ComfyUI canon stills that have nearby locked/public usage evidence. These copies are source-pack inputs only; they do not authorize rendering, video generation, public deployment, source edits, canon approval, or asset lock creation.
+
+## Selected Canon Candidate Folder
+
+`comfyui_canon_candidates/`
+
+Selected source slots:
+
+- `SHOT_01_SIGNAL_VOID_OR_SYSTEM_WAKE__01_AUDIO_SHORT_VISUAL_CANON_V4_LOCKED__APPROVED_FOR_FILM_PROOF_SOURCE.png`
+- `SHOT_02_MIKAGE_PRESENCE__02_UNIFIED_KEY_VISUAL_V4_LOCKED__APPROVED_FOR_FILM_PROOF_SOURCE.png`
+- `SHOT_03_TITLE_OR_ICONIC_HERO__03_ZENITH_BLADE_V2_LOCKED__APPROVED_FOR_FILM_PROOF_SOURCE.png`
+
+Superseded weak FILM-01 candidates remain in `visual_candidates/` for audit history only and should not be used for FILM-02.

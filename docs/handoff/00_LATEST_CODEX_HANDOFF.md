@@ -2,11 +2,11 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-FILM-01_COLLECT_MIKAGE_FILM_PROOF_01_SOURCE_PACK_V1
+FILM-01B_IMPORT_COMFYUI_CANON_ASSETS_TO_FILM_SOURCE_PACK_V1
 
 ## 2. LATEST_RESULT
 
-PARTIAL_SOURCE_PACK_NEEDS_HUMAN_REVIEW
+PASS_SOURCE_PACK_STRENGTHENED
 
 ## 3. ACTIVE_LANE
 
@@ -14,22 +14,20 @@ MIKAGE SUPERPOWER SYSTEM / runtime skeleton / coordination system
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/FILM-01_COLLECT_MIKAGE_FILM_PROOF_01_SOURCE_PACK_V1_REPORT.md
+docs/handoff/FILM-01B_IMPORT_COMFYUI_CANON_ASSETS_TO_FILM_SOURCE_PACK_V1_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-FILM-01 created:
+FILM-01B created:
+
+- `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/comfyui_canon_candidates/`
+- `docs/handoff/FILM-01B_IMPORT_COMFYUI_CANON_ASSETS_TO_FILM_SOURCE_PACK_V1_REPORT.md`
+
+FILM-01B modified:
 
 - `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/README.md`
 - `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/SOURCE_PACK_MANIFEST.md`
 - `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/SELECTED_3_SHOT_SOURCE_MAP.md`
-- `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/canon_refs/`
-- `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/visual_candidates/`
-- `film_proofs/MIKAGE_FILM_PROOF_01/source_pack_v1/rejected_or_archive_only/`
-- `docs/handoff/FILM-01_COLLECT_MIKAGE_FILM_PROOF_01_SOURCE_PACK_V1_REPORT.md`
-
-FILM-01 modified:
-
 - `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
 Latest completed commit:
