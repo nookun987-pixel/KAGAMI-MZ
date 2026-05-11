@@ -1,0 +1,468 @@
+{
+  "contract_version": "MIKAGE_VISUAL_CONTRACT_V1",
+  "OBJECT_READABILITY": {
+    "required": true,
+    "fail_conditions": [
+      "object is abstract texture only",
+      "no clear functional or manufactured form",
+      "silhouette cannot be described cleanly"
+    ]
+  },
+  "ABSTRACT_COMPOSITION": {
+    "required": true,
+    "severity": "critical",
+    "fail_conditions": [
+      "composition reads as texture field",
+      "composition reads as symbolic mood frame",
+      "composition reads as non-literal art image",
+      "object cannot be clearly described as a manufactured subject"
+    ]
+  },
+  "FUNCTIONAL_FORM": {
+    "required": true,
+    "fail_conditions": [
+      "object appears only as fragment",
+      "no coherent manufacturable read",
+      "shape logic is not describable"
+    ]
+  },
+  "OBJECT_CENTRALITY": {
+    "required": true,
+    "fail_conditions": [
+      "subject does not dominate frame",
+      "frame is mostly atmosphere or background",
+      "main object occupies too little semantic importance"
+    ]
+  },
+  "MATERIAL_TRUTH": {
+    "required": true,
+    "expected_read": "engineered ceramic / technical material",
+    "fail_conditions": [
+      "plastic read",
+      "resin read",
+      "toy-like read",
+      "fashion-product read",
+      "overly smooth synthetic surface"
+    ]
+  },
+  "SURFACE_STRUCTURE": {
+    "required": true,
+    "fail_conditions": [
+      "missing micro-imperfection cues",
+      "missing grain or micro-shadow cues",
+      "perfect smooth CG surface"
+    ]
+  },
+  "COLOR_LAW": {
+    "required": true,
+    "fail_conditions": [
+      "neon RGB",
+      "magenta spill",
+      "fashion color pop drift",
+      "unrestrained palette"
+    ]
+  },
+  "BACKGROUND_LAW": {
+    "required": true,
+    "fail_conditions": [
+      "grey studio backdrop",
+      "generic fashion gradient"
+    ],
+    "preferred": [
+      "void",
+      "controlled dark field"
+    ]
+  },
+  "SILHOUETTE_LAW": {
+    "required": true,
+    "fail_conditions": [
+      "noisy contour fragmentation",
+      "edge readability absent"
+    ]
+  },
+  "SHOT_DISCIPLINE": {
+    "required": true,
+    "fail_conditions": [
+      "symbolic non-literal framing",
+      "editorial fashion composition",
+      "art-poster ambiguity",
+      "texture-first image when lane requires object-first image"
+    ]
+  },
+  "MIKAGE_IDENTITY_LOCK": {
+    "required": true,
+    "MATERIAL_IDENTITY": {
+      "required": true,
+      "target_read": "technical ceramic / B4C-style / matte / micro-imperfect / non-plastic",
+      "fail_conditions": [
+        "glossy consumer finish",
+        "clean CG perfection",
+        "plastic read",
+        "resin read"
+      ]
+    },
+    "FORM_LANGUAGE": {
+      "required": true,
+      "fail_conditions": [
+        "decorative geometry",
+        "random shapes",
+        "ornamental curves without function"
+      ]
+    },
+    "VISUAL_WEIGHT": {
+      "required": true,
+      "fail_conditions": [
+        "floating toy read",
+        "fashion accessory read",
+        "lightweight non-manufactured read"
+      ]
+    },
+    "COLOR_DISCIPLINE": {
+      "required": true,
+      "fail_conditions": [
+        "neon",
+        "oversaturated pop",
+        "trendy color grading"
+      ]
+    },
+    "ANTI_GENERIC_FILTER": {
+      "required": true,
+      "fail_conditions": [
+        "product catalog",
+        "behance render",
+        "generic 3d art",
+        "architecture mood board"
+      ],
+      "pass_condition": "belongs to a specific system/world"
+    }
+  },
+  "MIKAGE_SIGNATURE_LOCK": {
+    "required": true,
+    "FORM_SIGNATURE": {
+      "required": true,
+      "target": "single dominant mask form language with fixed eye cavity ratio, jaw shape, and forehead slope",
+      "fail_conditions": [
+        "random variation beyond small tolerance",
+        "silhouette deviates too much",
+        "form language inconsistent across runs"
+      ]
+    },
+    "EDGE_BEHAVIOR": {
+      "required": true,
+      "target": "micro erosion, slight irregular bevel, non-uniform edge wear",
+      "fail_conditions": [
+        "clean CAD edge",
+        "perfectly sharp edge",
+        "plastic smooth edge"
+      ]
+    },
+    "MATERIAL_FINGERPRINT": {
+      "required": true,
+      "target": "ceramic micro-pitting, uneven reflectance, anisotropic micro shadow, subtle imperfection noise",
+      "fail_conditions": [
+        "smooth resin",
+        "glossy product finish",
+        "uniform surface"
+      ]
+    },
+    "COLOR_IDENTITY": {
+      "required": true,
+      "target": "restricted palette with one to two dominant tones",
+      "fail_conditions": [
+        "palette drift across runs",
+        "trendy color grade"
+      ]
+    },
+    "STRUCTURAL_CONTEXT": {
+      "required": true,
+      "target": "consistent mounting style, framing logic, and camera discipline",
+      "fail_conditions": [
+        "mounting style drift",
+        "camera discipline drift",
+        "context inconsistency"
+      ]
+    }
+  },
+  "FORBIDDEN_READS": [
+    "abstract art",
+    "fashion product",
+    "cosplay prop",
+    "toy",
+    "glossy commercial product shot"
+  ],
+  "PRIORITY_ORDER": [
+    "OBJECT_READABILITY",
+    "ABSTRACT_COMPOSITION",
+    "FUNCTIONAL_FORM",
+    "OBJECT_CENTRALITY",
+    "MATERIAL_TRUTH",
+    "SILHOUETTE_LAW",
+    "SURFACE_STRUCTURE",
+    "COLOR_LAW",
+    "BACKGROUND_LAW"
+  ],
+  "PATCH_HINTS": {
+    "OBJECT_UNREADABLE": {
+      "targets": ["object_form", "silhouette", "whole_subject"],
+      "prompt": [
+        "force literal manufactured object as primary subject",
+        "increase object legibility",
+        "force coherent manufacturable silhouette",
+        "force identifiable engineered form"
+      ],
+      "negative": [
+        "no fragmented subject",
+        "no unreadable crop",
+        "no broken form dominance"
+      ],
+      "canon": [
+        "object readability over aesthetics",
+        "manufactured form over ambiguity"
+      ]
+    },
+    "ABSTRACT_COMPOSITION": {
+      "targets": ["object_form", "object_centrality", "subject_hierarchy"],
+      "prompt": [
+        "force literal manufactured object as primary subject",
+        "force non-abstract composition",
+        "force object-first frame hierarchy",
+        "force clear subject separation from background",
+        "force visual reading in one glance"
+      ],
+      "negative": [
+        "no abstract composition",
+        "no symbolic framing",
+        "no conceptual poster-like image",
+        "no mood-first composition",
+        "no texture-first composition",
+        "no atmospheric subject loss"
+      ],
+      "canon": [
+        "object readability over aesthetics",
+        "literal form over mood",
+        "manufactured subject over visual ambiguity"
+      ]
+    },
+    "FUNCTIONAL_FORM_WEAK": {
+      "targets": ["form_logic", "manufacturable_shape"],
+      "prompt": [
+        "emphasize engineered geometry",
+        "emphasize intentional manufacturable structure",
+        "emphasize designed form logic"
+      ],
+      "negative": [
+        "no amorphous object",
+        "no decorative ambiguity",
+        "no pure sculptural abstraction"
+      ],
+      "canon": [
+        "designed form logic over abstraction"
+      ]
+    },
+    "OBJECT_CENTRALITY_WEAK": {
+      "targets": ["subject_dominance", "frame_hierarchy"],
+      "prompt": [
+        "center semantic importance on subject",
+        "increase subject frame dominance",
+        "reduce environmental competition"
+      ],
+      "negative": [
+        "no background-dominant frame",
+        "no atmosphere dominating subject",
+        "no excessive empty composition"
+      ],
+      "canon": [
+        "subject dominance over ambience"
+      ]
+    },
+    "GENERIC_OBJECT": {
+      "targets": ["identity_lock", "subject_hierarchy", "industrial_form"],
+      "prompt": [
+        "emphasize engineered ceramic artifact",
+        "emphasize intentional structural design",
+        "emphasize industrial non-consumer form",
+        "emphasize weight and physical presence",
+        "emphasize micro-imperfection and material truth"
+      ],
+      "negative": [
+        "no product render",
+        "no design showcase",
+        "no minimal aesthetic product shot",
+        "no glossy finish",
+        "no clean CG perfection",
+        "no decorative geometry"
+      ],
+      "canon": [
+        "identity over aesthetics",
+        "system object over design object",
+        "manufactured logic over visual appeal"
+      ]
+    },
+    "WEAK_IDENTITY": {
+      "targets": ["identity_lock", "world_specificity"],
+      "prompt": [
+        "force world-specific engineered artifact identity",
+        "force system-level visual language",
+        "force non-generic manufactured presence"
+      ],
+      "negative": [
+        "no generic 3d art",
+        "no generic product catalog",
+        "no architecture mood board"
+      ],
+      "canon": [
+        "specific system identity over generic taste"
+      ]
+    },
+    "MATERIAL_TOO_CLEAN": {
+      "targets": ["material_read"],
+      "prompt": [
+        "matte technical ceramic with micro-imperfections",
+        "micro-shadow and grain cues"
+      ],
+      "negative": [
+        "no overly clean surface",
+        "no glossy consumer finish"
+      ],
+      "canon": [
+        "material truth over polish"
+      ]
+    },
+    "CG_PERFECTION": {
+      "targets": ["material_read", "identity_lock"],
+      "prompt": [
+        "physical manufacturing wear cues",
+        "structural realism over cg perfection"
+      ],
+      "negative": [
+        "no clean cg perfection",
+        "no digitally perfect finish"
+      ],
+      "canon": [
+        "physical artifact over render polish"
+      ]
+    },
+    "PRODUCT_RENDER_LOOK": {
+      "targets": ["identity_lock", "shot_discipline"],
+      "prompt": [
+        "non-consumer industrial artifact framing",
+        "hero object from a specific world system"
+      ],
+      "negative": [
+        "no product render",
+        "no catalog lighting",
+        "no showcase render"
+      ],
+      "canon": [
+        "system object over product object"
+      ]
+    },
+    "DECORATIVE_FORM": {
+      "targets": ["industrial_form"],
+      "prompt": [
+        "intentional structural geometry",
+        "functional engineered modules"
+      ],
+      "negative": [
+        "no decorative geometry",
+        "no ornamental curves"
+      ],
+      "canon": [
+        "engineered logic over decoration"
+      ]
+    },
+    "LIGHTWEIGHT_OBJECT": {
+      "targets": ["visual_weight"],
+      "prompt": [
+        "heavy manufactured mass",
+        "dense physical presence",
+        "inert industrial object weight"
+      ],
+      "negative": [
+        "no floating toy read",
+        "no accessory-like object"
+      ],
+      "canon": [
+        "visual weight over stylization"
+      ]
+    },
+    "SIGNATURE_DRIFT": {
+      "targets": ["signature_form", "mounting_context", "camera_discipline"],
+      "prompt": [
+        "match dominant mask proportions from world reference",
+        "lock forehead slope and jaw taper",
+        "preserve mounting-frame discipline"
+      ],
+      "negative": [
+        "no silhouette drift",
+        "no mounting style drift",
+        "no camera logic drift"
+      ],
+      "canon": [
+        "signature product over variation"
+      ]
+    },
+    "EDGE_TOO_CLEAN": {
+      "targets": ["edge_behavior"],
+      "prompt": [
+        "micro erosion on exposed edges",
+        "slight irregular bevel",
+        "non-uniform edge wear"
+      ],
+      "negative": [
+        "no clean cad edge",
+        "no perfectly sharp edge"
+      ],
+      "canon": [
+        "manufactured wear over digital sharpness"
+      ]
+    },
+    "MATERIAL_UNIFORM": {
+      "targets": ["material_fingerprint"],
+      "prompt": [
+        "ceramic micro-pitting",
+        "uneven reflectance",
+        "anisotropic micro shadow",
+        "subtle imperfection noise"
+      ],
+      "negative": [
+        "no uniform surface",
+        "no glossy product finish",
+        "no smooth resin"
+      ],
+      "canon": [
+        "material fingerprint over smooth uniformity"
+      ]
+    },
+    "FORM_INCONSISTENT": {
+      "targets": ["signature_form"],
+      "prompt": [
+        "reinforce fixed eye cavity ratio",
+        "reinforce fixed jaw taper",
+        "reinforce fixed forehead slope"
+      ],
+      "negative": [
+        "no random proportion drift",
+        "no silhouette deviation"
+      ],
+      "canon": [
+        "fixed product proportions over freeform variation"
+      ]
+    },
+    "COLOR_DRIFT": {
+      "targets": ["color_identity"],
+      "prompt": [
+        "restricted charcoal and off-white palette",
+        "controlled neutral industrial toning"
+      ],
+      "negative": [
+        "no color drift",
+        "no trendy color grading",
+        "no oversaturated pop"
+      ],
+      "canon": [
+        "palette lock over chroma novelty"
+      ]
+    }
+  }
+}
