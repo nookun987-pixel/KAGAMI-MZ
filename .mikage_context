@@ -1,14 +1,14 @@
 # MIKAGE CONTEXT SNAPSHOT V1
 
-ACTIVE_LANE=GOVERNANCE / KNOWLEDGE MIRROR
+ACTIVE_LANE=MIKAGE SUPERPOWER SYSTEM / runtime skeleton / coordination system
 MAIN_REPO=D:\KAGAMI-MZ_SYNC_PUSH_V2
 OLD_REPO=D:\KAGAMI-MZ (HOLD / SOURCE_RECOVERY_ONLY)
 BASE_BRANCH=main
-MIKAGE_CONTEXT_CHECKPOINT_COMMIT=912e638
-HEAD_ANCHOR=912e638
-HEAD_SUBJECT=Restore Mikage agent skills index
-CURRENT_PHASE=GOVERNANCE / OPERATOR_REST_MODE_GOVERNANCE_HANDOFF
-REPO_STATUS=clean after Phase 0; currently dirty only because docs/agent_dev_task_board.md is modified
+MIKAGE_CONTEXT_CHECKPOINT_COMMIT=ea552d2
+HEAD_ANCHOR=ea552d2
+HEAD_SUBJECT=Add current repo state snapshot for ChatGPT review
+CURRENT_PHASE=SPW-03_MINIMAL_SUPERPOWERS_RUNTIME_SKELETON
+REPO_STATUS=SPW-03 in progress; pre-existing untracked docs/handoff files may remain outside this task scope
 PUSH_DONE=NO
 
 BRAIN_PACK_FILES_PRESENT=YES
@@ -20,6 +20,6 @@ BRAIN_PACK_FILES_PRESENT=YES
 - docs/MIKAGE_PHASE_AGENT_MATRIX.md
 - docs/agent_skills/MIKAGE_AGENT_SKILLS_INDEX.md
 
-NEXT_SAFE_ACTION=one-file governance/doc task only; no runtime/sync unless explicitly approved
-FORBIDDEN_ACTIONS=no push, no runtime, no RENT/GARA/Image/CALL run, no sync/GSheet/Telegram, no secret/env inspection
-SAFE_TO_RUN_RUNTIME=NO
+NEXT_SAFE_ACTION=SPW-03_CREATE_MINIMAL_SUPERPOWERS_RUNTIME_SKELETON_V1
+FORBIDDEN_ACTIONS=no image, no video, no render, no ComfyUI, no Blender, no public deploy, no canon approval, no asset lock, no sync/GSheet/Telegram, no secret/env inspection
+SAFE_TO_RUN_RUNTIME=YES_NON_RENDER_SUPERPOWERS_SKELETON_ONLY

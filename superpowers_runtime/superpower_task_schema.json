@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mikage Superpowers Minimal Runtime Task",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "task_id",
+    "short_task_code",
+    "raw_user_request",
+    "normalized_objective",
+    "current_stage",
+    "assigned_agent",
+    "approval_required",
+    "approval_status",
+    "allowed_actions",
+    "forbidden_actions",
+    "expected_outputs",
+    "report_path",
+    "status",
+    "blocker",
+    "next_safe_task"
+  ],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "short_task_code": { "type": "string", "minLength": 1 },
+    "raw_user_request": { "type": "string", "minLength": 1 },
+    "normalized_objective": { "type": "string", "minLength": 1 },
+    "current_stage": {
+      "type": "string",
+      "enum": [
+        "USER_REQUEST",
+        "INTAKE",
+        "STATE_CHECK",
+        "LANE_CHECK",
+        "TASK_BUILD",
+        "EXECUTION_READY",
+        "DONE_OR_STOP"
+      ]
+    },
+    "assigned_agent": { "type": "string", "minLength": 1 },
+    "approval_required": { "type": "boolean" },
+    "approval_status": {
+      "type": "string",
+      "enum": ["not_required", "pending", "approved", "rejected"]
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "report_path": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["active", "blocked", "passed", "failed", "done", "stop"]
+    },
+    "blocker": {
+      "type": ["object", "string", "null"]
+    },
+    "next_safe_task": {
+      "type": ["string", "null"]
+    },
+    "requested_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

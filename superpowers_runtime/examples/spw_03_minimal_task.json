@@ -1,0 +1,41 @@
+{
+  "task_id": "spw-03-minimal-runtime-skeleton-v1",
+  "short_task_code": "SPW-03",
+  "raw_user_request": "Create the minimal Mikage Superpowers runtime skeleton from the approved handoff task.",
+  "normalized_objective": "Create a non-render coordination runtime skeleton that validates a task object, applies hard lane rules, routes through minimal stages, and returns a structured result.",
+  "current_stage": "USER_REQUEST",
+  "assigned_agent": "ROUTER_AGENT",
+  "approval_required": false,
+  "approval_status": "not_required",
+  "allowed_actions": [
+    "validate task object",
+    "check repo state references",
+    "apply lane guard",
+    "build structured runtime result"
+  ],
+  "forbidden_actions": [
+    "image generation",
+    "video generation",
+    "render execution",
+    "ComfyUI use",
+    "Blender use",
+    "public deployment",
+    "canon approval",
+    "asset lock"
+  ],
+  "expected_outputs": [
+    "minimal runtime entry file",
+    "task schema file",
+    "README",
+    "example task",
+    "example dry-run result",
+    "handoff report"
+  ],
+  "report_path": "docs/handoff/SPW-03_CREATE_MINIMAL_SUPERPOWERS_RUNTIME_SKELETON_V1_REPORT.md",
+  "status": "active",
+  "blocker": null,
+  "next_safe_task": "SPW-04_TEST_MINIMAL_SUPERPOWERS_RUNTIME_WITH_REAL_HANDOFF_TASK_V1",
+  "requested_actions": [
+    "runtime skeleton dry run"
+  ]
+}
