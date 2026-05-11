@@ -2,11 +2,11 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-SPW-03_CREATE_MINIMAL_SUPERPOWERS_RUNTIME_SKELETON_V1
+FILM-00_AUDIT_MIKAGE_FILM_PROOF_READINESS_FROM_REPO_V1
 
 ## 2. LATEST_RESULT
 
-PASS
+PARTIAL_READY_NEEDS_SOURCE_PACK
 
 ## 3. ACTIVE_LANE
 
@@ -14,31 +14,25 @@ MIKAGE SUPERPOWER SYSTEM / runtime skeleton / coordination system
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/SPW-03_CREATE_MINIMAL_SUPERPOWERS_RUNTIME_SKELETON_V1_REPORT.md
+docs/handoff/FILM-00_AUDIT_MIKAGE_FILM_PROOF_READINESS_FROM_REPO_V1_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-SPW-03 created:
+FILM-00 created:
 
-- `superpowers_runtime/mikage_superpowers_runtime.js`
-- `superpowers_runtime/superpower_task_schema.json`
-- `superpowers_runtime/README.md`
-- `superpowers_runtime/examples/spw_03_minimal_task.json`
-- `superpowers_runtime/examples/spw_03_minimal_result.json`
-- `docs/handoff/SPW-03_CREATE_MINIMAL_SUPERPOWERS_RUNTIME_SKELETON_V1_REPORT.md`
+- `docs/handoff/FILM-00_AUDIT_MIKAGE_FILM_PROOF_READINESS_FROM_REPO_V1_REPORT.md`
 
-SPW-03 modified:
+FILM-00 modified:
 
-- `.mikage_context`
-- `NEXT_TASK.md`
+- `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
 Latest completed commit:
 
-- `d1834118a7fb4be48d804c5d4ab168b666086b28`
+- Recorded in the latest Git commit for this pointer update.
 
 ## 6. CURRENT_NEXT_TASK
 
-SPW-04_TEST_MINIMAL_SUPERPOWERS_RUNTIME_WITH_REAL_HANDOFF_TASK_V1
+FILM-01_COLLECT_MIKAGE_FILM_PROOF_01_SOURCE_PACK_V1
 
 ## 7. GITHUB_REVIEW_INSTRUCTION_FOR_CHATGPT
 
