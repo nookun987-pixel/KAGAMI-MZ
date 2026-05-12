@@ -2,38 +2,26 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-09A_PREPARE_RUNPOD_JSON_HANDOFF_PACK_NO_RENDER
+CREATE_MIKAGE_AGENT_WORK_PROTOCOL_V1
 
 ## 2. LATEST_RESULT
 
-PASS - RunPod handoff pack created for candidate 00002 repair render
+PASS - Mikage agent work protocol created
 
 ## 3. ACTIVE_LANE
 
-MIKAGE MASTER PIPELINE / Phase 4 Component Integration / bust bridge repair packaging
+MIKAGE MASTER PIPELINE / governance and task-handling protocol
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-09A_PREPARE_RUNPOD_JSON_HANDOFF_PACK_NO_RENDER_REPORT.md
+docs/handoff/MIKAGE_AGENT_WORK_PROTOCOL_V1.md
 
-## 5. PACK_PATH
+## 5. FILES_CREATED_OR_MODIFIED
 
-C:\Users\THIS PC\Desktop\MIKAGE_RUNPOD_ASSET_BUILD_09_PACK
-
-## 6. LATEST_MANIFEST_PATH
-
-C:\Users\THIS PC\Desktop\MIKAGE_RUNPOD_ASSET_BUILD_09_PACK\MANIFEST_ASSET_BUILD_09A.md
-
-## 7. SOURCE_CANDIDATE
-
-D:\workspace\ComfyUI\MIKAGE_CANON\11_BUST_BRIDGE_CANDIDATES_V1\MIKAGE_BUST_BRIDGE_CAND_01_REVIEW_CANDIDATE_20260512_00002_.png
-
-## 8. FILES_CREATED_OR_MODIFIED
-
-- Created `docs/handoff/ASSET-BUILD-09A_PREPARE_RUNPOD_JSON_HANDOFF_PACK_NO_RENDER_REPORT.md`
+- Created `docs/handoff/MIKAGE_AGENT_WORK_PROTOCOL_V1.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
-## 9. ASSET-BUILD-09A_STATE
+## 6. PROTOCOL_STATE
 
 | Field | Value |
 |---|---|
@@ -42,10 +30,8 @@ D:\workspace\ComfyUI\MIKAGE_CANON\11_BUST_BRIDGE_CANDIDATES_V1\MIKAGE_BUST_BRIDG
 | New images created | NO |
 | Canon approval created | NO |
 | Asset lock created | NO |
-| Final gate meaning | no canon lock, no asset lock |
-| JSON UI loadable | YES |
-| Fallback JSON created | NO |
+| Final gate meaning | documentation only |
 
-## 10. NEXT_SAFE_TASK
+## 7. NEXT_SAFE_TASK
 
-Authorize and run workflow A only for one repair render of candidate `00002`
+Use the protocol to guide the next Mikage task with read-first validation and one next safe task only.
