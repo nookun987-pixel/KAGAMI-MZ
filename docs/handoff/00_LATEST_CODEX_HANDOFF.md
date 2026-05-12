@@ -2,14 +2,11 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-07_EXPORT_CLOSEOUT_TO_KAGAMI_SYNC_REPO
+ASSET-BUILD-08_REPAIR_PLAN_FROM_ASSET-BUILD-07_CANDIDATE_00002
 
 ## 2. LATEST_RESULT
 
-PASS - ASSET-BUILD-07 closeout recorded locally for KAGAMI sync.
-Human baseline remains:
-00002 is the best pick; 00001/00002/00003/00006 pass temp;
-00004/00005/00007 fail visor slits.
+PASS - ASSET-BUILD-08 repair plan created for candidate 00002 with no render.
 
 ## 3. ACTIVE_LANE
 
@@ -17,36 +14,35 @@ MIKAGE MASTER PIPELINE / Phase 4 Component Integration / bust bridge generation
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-07_CLOSEOUT.md
+docs/handoff/ASSET-BUILD-08_REPAIR_PLAN_V1_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/handoff/ASSET-BUILD-07_CLOSEOUT.md`
+- Created `docs/handoff/ASSET-BUILD-08_REPAIR_PLAN_V1.md`
+- Created `docs/handoff/ASSET-BUILD-08_REPAIR_PLAN_V1_REPORT.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
-## 6. ASSET-BUILD-07_STATE
+## 6. ASSET-BUILD-08_STATE
 
 | Field | Value |
 |---|---|
-| Local result | PASS_TEMP baseline recorded |
+| Local result | PASS |
 | Render executed | NO |
-| ComfyUI submitted | NO |
+| New images created | NO |
 | Canon approval created | NO |
 | Asset lock created | NO |
 | Final gate meaning | no canon lock, no asset lock |
 
-## 7. ASSET-BUILD-07_HUMAN_BASELINE
+## 7. ASSET-BUILD-08_REPAIR_INTENT
 
-| Candidate | Baseline |
+| Target | Value |
 |---|---|
-| 00001 | PASS_TEMP |
-| 00002 | PASS_TEMP / BEST_PICK |
-| 00003 | PASS_TEMP |
-| 00004 | FAIL_VISOR_SLITS |
-| 00005 | FAIL_VISOR_SLITS |
-| 00006 | PASS_TEMP / BORDERLINE_GROOVE |
-| 00007 | FAIL_VISOR_SLITS |
+| Source candidate | `00002` |
+| Best repair intent | preserve sealed white faceplate |
+| Fail block | black visor / eye slits |
+| Graphene rule | seams and gaps only |
+| Next render count | 1 |
 
 ## 8. NEXT_SAFE_TASK
 
-ASSET-BUILD-08 only if an authorized KAGAMI sync target is defined for the next export.
+Await authorization for a single repair render of candidate `00002`.
