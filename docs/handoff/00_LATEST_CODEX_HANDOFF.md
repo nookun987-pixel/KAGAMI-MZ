@@ -2,11 +2,11 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-CANON-00_CREATE_MIKAGE_CANON_ASSET_PIPELINE_FROM_MARKET_REFERENCES_NO_RENDER_V1
+ASSET-BUILD-05_GENERATE_BUST_BRIDGE_CANDIDATES_V2
 
 ## 2. LATEST_RESULT
 
-PASS — pipeline framework created, wrong Browser Run handled, no render executed
+FAIL_BLOCKED_TIMEOUT — script submitted, job still running on GPU at report time, zero outputs collected
 
 ## 3. ACTIVE_LANE
 
@@ -14,61 +14,61 @@ MIKAGE MASTER PIPELINE / Phase 4 Component Integration / bust bridge generation
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET_CANON_00_CREATE_MIKAGE_CANON_ASSET_PIPELINE_REPORT.md
+docs/handoff/ASSET-BUILD-05_BUST_BRIDGE_CANDIDATES_V2_TIMEOUT_OR_RESULT_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/pipeline/00_MIKAGE_PIPELINE_OVERVIEW.md`
-- Created `docs/pipeline/01_CANON_ASSET_REGISTRY.md`
-- Created `docs/pipeline/02_ASSET_LIFECYCLE_RULES.md`
-- Created `docs/pipeline/03_ASSET_BUILD_ORDER.md`
-- Created `docs/pipeline/04_EXECUTION_GATE_RULES.md`
-- Created `docs/pipeline/05_REVIEW_QA_RULES.md`
-- Created `docs/pipeline/06_CLOUD_GPU_PACKET_STANDARD.md`
-- Created `docs/pipeline/07_STORYBOARD_ANIMATIC_RULES.md`
-- Created `docs/pipeline/08_CINEMATIC_PRODUCTION_READINESS.md`
-- Created `docs/handoff/ASSET_CANON_00_CREATE_MIKAGE_CANON_ASSET_PIPELINE_REPORT.md`
+- Created `docs/handoff/ASSET-BUILD-05_BUST_BRIDGE_CANDIDATES_V2_TIMEOUT_OR_RESULT_REPORT.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
-## 6. WRONG_RUN_HANDLED
+## 6. ASSET-BUILD-05_STATE
 
-Browser Run output `test_minimal_00001_` (512×512, 2026-05-12) formally registered as
-FAILED_DO_NOT_USE. Mismatches on: filename prefix, resolution, output directory, script
-source. Documented in `docs/pipeline/01_CANON_ASSET_REGISTRY.md` entry D-04 and
-`docs/pipeline/04_EXECUTION_GATE_RULES.md` Section 2.1.
-
-## 7. PIPELINE_FRAMEWORK_SUMMARY
-
-| Document | Purpose |
+| Field | Value |
 |---|---|
-| `docs/pipeline/00_MIKAGE_PIPELINE_OVERVIEW.md` | Framework + market reference adaptations (Blender Studio, Kitsu, AYON, Storyboarder, OpenUSD) |
-| `docs/pipeline/01_CANON_ASSET_REGISTRY.md` | All assets: status, path, evidence, allowed/forbidden use |
-| `docs/pipeline/02_ASSET_LIFECYCLE_RULES.md` | Status definitions, transitions, wrong-run protocol |
-| `docs/pipeline/03_ASSET_BUILD_ORDER.md` | Ordered build sequence, dependency graph |
-| `docs/pipeline/04_EXECUTION_GATE_RULES.md` | Browser Run prohibition, pre-submit checklist, retry rules |
-| `docs/pipeline/05_REVIEW_QA_RULES.md` | Quick-Pass Gate, formal evaluation, evidence package |
-| `docs/pipeline/06_CLOUD_GPU_PACKET_STANDARD.md` | Cloud GPU packet format (parked, NOT ACTIVE) |
-| `docs/pipeline/07_STORYBOARD_ANIMATIC_RULES.md` | Storyboard / animatic gates before cinematic |
-| `docs/pipeline/08_CINEMATIC_PRODUCTION_READINESS.md` | 7 gates required before cinematic production |
+| Script submitted | YES — `MIKAGE_BUST_BRIDGE_EXECUTE_V2.py` via API |
+| Browser Run | NO |
+| Prompt ID | `91a86ec8-4ee0-44ee-b01f-06de5a13b642` |
+| Script timeout | 600s (10 min) |
+| ComfyUI job state | STILL RUNNING at report time |
+| Outputs in target dir | ZERO ASSET-BUILD-05 outputs |
+| Pre-submit patches applied | YES — ImageScale 768×1024, RepeatLatentBatch ×4, SUBMIT=True |
+| Script state | DIRTY — patches not formally versioned |
 
-## 8. CURRENT_NEXT_TASK
+## 7. DIRTY_SCRIPT_NOTE
 
-ASSET-BUILD-05_GENERATE_BUST_BRIDGE_CANDIDATES_V2
+`D:\workspace\ComfyUI\MIKAGE_BUST_BRIDGE_EXECUTE_V2.py` has three patches applied
+during ASSET-BUILD-05 pre-submit that were not part of the ASSET-BUILD-04 validated state:
+- Node 40: ImageScale 768×1024 (base image was 2048×2048)
+- Node 41: RepeatLatentBatch ×4 (VAEEncode produces batch=1)
+- SUBMIT = True
 
-**To execute:**
-1. Set `SUBMIT = True` in `D:\workspace\ComfyUI\MIKAGE_BUST_BRIDGE_EXECUTE_V2.py`
-2. Confirm ComfyUI running on port 8188
-3. Run the script — script-submitted only, NOT via Browser Run
-4. Apply Quick-Pass Gate per `docs/pipeline/05_REVIEW_QA_RULES.md`
-5. If pass → prepare evidence package → formal evaluation
-6. If fail → ASSET-BUILD-06 repair task, do not re-run same script
+Do NOT rerun this script. ASSET-BUILD-06 must produce a clean V3 with these patches
+formally incorporated and statically validated.
 
-**Rules:**
-- No canon approval / no asset lock / no production-ready claim
-- No Phase 5 / no film / no video / no shotlist
-- Browser Run is forbidden — script-submitted only
+## 8. STILL-RUNNING JOB PROTOCOL
 
-## 9. PHASE5_UNBLOCKING_CONDITIONS
+ComfyUI job `91a86ec8-4ee0-44ee-b01f-06de5a13b642` may still be processing.
+If it completes and produces files, BEFORE accepting any output:
+
+1. Confirm filename prefix: `MIKAGE_BUST_BRIDGE_CAND_01_REVIEW_CANDIDATE_20260512`
+2. Confirm resolution: 768×1024
+3. Confirm directory: `D:\workspace\ComfyUI\MIKAGE_CANON\11_BUST_BRIDGE_CANDIDATES_V1\`
+4. Apply Quick-Pass Gate (7 checks, `docs/pipeline/05_REVIEW_QA_RULES.md`)
+5. If all pass → create evidence package → submit as ASSET-BUILD-05B evaluation
+6. If any fail → FAILED_DO_NOT_USE → proceed to ASSET-BUILD-06
+
+## 9. CURRENT_NEXT_TASK
+
+ASSET-BUILD-06_REPAIR_BUST_BRIDGE_CANDIDATE_GENERATION_AFTER_V2_FAIL_NO_RERUN
+
+ASSET-BUILD-06 must (no render, no submit):
+1. Check if still-running job produced valid outputs; evaluate if so
+2. Formally document all ASSET-BUILD-05 pre-submit patches
+3. Produce a clean V3 script: batch=1 (or configurable), steps 20–25
+4. Static validation PASS before any submit authorised
+5. No generation during ASSET-BUILD-06
+
+## 10. PHASE5_UNBLOCKING_CONDITIONS
 
 | Condition | Status |
 |---|---|
@@ -76,32 +76,32 @@ ASSET-BUILD-05_GENERATE_BUST_BRIDGE_CANDIDATES_V2
 | Phase 4 stack manifest updated with decisions | MET |
 | Bust / upper-body bridge spec exists | MET |
 | Bust / upper-body bridge generation plan + execution packet | MET |
-| Bust / upper-body bridge candidate accepted | NOT MET — ASSET-BUILD-05 pending |
+| Bust / upper-body bridge candidate accepted | NOT MET — generation timed out |
 | Phase 5 readiness re-review PASS | NOT MET |
 
 PHASE5_ALLOWED: NO
 
-## 10. ACTIVE_MANIFEST
+## 11. ACTIVE_MANIFEST
 
 `docs/handoff/MIKAGE_PHASE4_STACK_MANIFEST_V2.md`
 
-## 11. EXECUTION_SCRIPTS
+## 12. EXECUTION_SCRIPTS
 
 | Script | Status |
 |---|---|
 | `D:\workspace\ComfyUI\MIKAGE_BUST_BRIDGE_EXECUTE.py` | DEPRECATED — do not use |
-| `D:\workspace\ComfyUI\MIKAGE_BUST_BRIDGE_EXECUTE_V2.py` | CURRENT — SUBMIT=False, set True for ASSET-BUILD-05 |
+| `D:\workspace\ComfyUI\MIKAGE_BUST_BRIDGE_EXECUTE_V2.py` | DIRTY — do not rerun; patches applied in ASSET-BUILD-05 pre-submit, must be formally versioned in ASSET-BUILD-06 |
 
-## 12. GITHUB_REVIEW_INSTRUCTION_FOR_CHATGPT
+## 13. GITHUB_REVIEW_INSTRUCTION_FOR_CHATGPT
 
 ChatGPT should read this file first whenever the user says "check GitHub", then read the latest report path listed here. The user should not need to paste task results manually.
 
-## 13. PROHIBITED_LANES
+## 14. PROHIBITED_LANES
 
 - IMAGE: NO
 - VIDEO: NO
-- RENDER: NO
-- COMFYUI_BROWSER_RUN: NO (forbidden for all production routes)
+- RENDER: NO (ASSET-BUILD-05 submitted but timed out — do not rerun)
+- COMFYUI_BROWSER_RUN: NO (forbidden)
 - BLENDER: NO
 - PUBLIC_DEPLOY: NO
 - CANON_APPROVAL: NO
@@ -110,4 +110,4 @@ ChatGPT should read this file first whenever the user says "check GitHub", then 
 - SHOTLIST: NO
 - CANDIDATES_AS_PRODUCTION_READY: NO
 - PHASE5_STARTED: NO
-- CINEMATIC_PRODUCTION: NO (0 of 7 gates met)
+- CINEMATIC_PRODUCTION: NO
