@@ -2,56 +2,67 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-02_CREATE_BUST_BRIDGE_LOCAL_COMFYUI_EXECUTION_PACKET_NO_RENDER_V1
+ASSET-BUILD-03_BUST_BRIDGE_CANDIDATE_GENERATION_FAIL_REPORT_V1
 
 ## 2. LATEST_RESULT
 
-PASS
+FAIL_DO_NOT_USE — generation attempted, all outputs non-compliant, no candidate accepted
 
 ## 3. ACTIVE_LANE
 
-MIKAGE MASTER PIPELINE / Phase 4 Component Integration / missing asset build sequence
+MIKAGE MASTER PIPELINE / Phase 4 Component Integration / bust bridge generation repair
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-02_CREATE_BUST_BRIDGE_LOCAL_COMFYUI_EXECUTION_PACKET_NO_RENDER_V1_REPORT.md
+docs/handoff/ASSET-BUILD-03_BUST_BRIDGE_CANDIDATE_GENERATION_FAIL_REPORT_V1.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/handoff/ASSET-BUILD-02_BUST_BRIDGE_LOCAL_COMFYUI_EXECUTION_PACKET_V1.md`
-- Created `docs/handoff/ASSET-BUILD-02_CREATE_BUST_BRIDGE_LOCAL_COMFYUI_EXECUTION_PACKET_NO_RENDER_V1_REPORT.md`
+- Created `docs/handoff/ASSET-BUILD-03_BUST_BRIDGE_CANDIDATE_GENERATION_FAIL_REPORT_V1.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
-## 6. PHASE4_SEQUENCE_STATUS
+## 6. BLOCK_REASON
 
-| Task | Status |
+Bust bridge generation workflow produced non-compliant outputs:
+- Wrong subject (no Mikage bust / upper body depicted)
+- Green / grass environment drift in background
+- Blurred artifact
+- IP-Adapter anchor conditioning did not take effect
+
+Root causes identified:
+- `clip_vision_g.safetensors` filename does not match IPAdapterUnifiedLoader VIT-G preset regex — auto-detection silently failed
+- Full txt2img (denoise 1.0) without img2img base or ControlNet depth produced unconstrained outputs
+- Multi-image IPAdapterAdvanced chain wiring untested end-to-end before submit
+
+All outputs in `D:\workspace\ComfyUI\MIKAGE_CANON\11_BUST_BRIDGE_CANDIDATES_V1\` are FAIL_DO_NOT_USE.
+
+## 7. WHAT MUST HAPPEN BEFORE NEXT GENERATION
+
+A workflow repair task must complete before any new ComfyUI submit:
+
+| Repair item | Required |
 |---|---|
-| ASSET-RESET-11 — Prepare held candidate human review summary | COMPLETE |
-| ASSET-RESET-12 — Record human review decisions | COMPLETE |
-| ASSET-RESET-13 — Update Phase 4 stack manifest (V2) | COMPLETE |
-| ASSET-RESET-14 — Define bust/upper-body bridge spec | COMPLETE |
-| ASSET-BUILD-01 — Create bust bridge candidate render plan | COMPLETE |
-| ASSET-BUILD-02 — Create bust bridge local ComfyUI execution packet | COMPLETE |
-| ASSET-RESET-15 — Define body continuity constraint spec | BLOCKED — requires bust bridge candidate accepted |
+| Fix IP-Adapter clip_vision loading (explicit CLIPVisionLoader verified) | YES |
+| Fix multi-image IPAdapterAdvanced chain node wiring | YES |
+| Add img2img base from valid Mikage helmet source anchor | YES |
+| Add ControlNet depth conditioning from 3D helmet ortho | STRONGLY RECOMMENDED |
+| Validate workflow JSON against ComfyUI API (no generation) | YES |
+| Produce corrected execution packet as ASSET-BUILD-04 output | YES |
 
-## 7. CURRENT_NEXT_TASK
+## 8. CURRENT_NEXT_TASK
 
-BLOCKED — NO CLAUDE TASK EXECUTABLE
+ASSET-BUILD-04_REPAIR_BUST_BRIDGE_GENERATION_WORKFLOW_NO_RENDER_V1
 
-All Claude documentation and preparation tasks for the current pipeline state are complete.
+**Rules for ASSET-BUILD-04:**
+- NO render
+- NO ComfyUI submit
+- NO canon approval
+- NO asset lock
+- Do NOT call any output production-ready
 
-**ACTION REQUIRED (Codex / local ComfyUI operator — not Claude):**
+Deliverable: corrected workflow spec / script that can be re-submitted for generation in ASSET-BUILD-05.
 
-Open and execute:
-`docs/handoff/ASSET-BUILD-02_BUST_BRIDGE_LOCAL_COMFYUI_EXECUTION_PACKET_V1.md`
-
-This is a single-document, copy-paste-ready execution packet. Contains finalized prompts, all anchor paths, naming convention, pre-run checklist, batch protocol, evidence package template, and stop rules. No further interpretation required.
-
-Output directory: `D:\workspace\ComfyUI\MIKAGE_CANON\11_BUST_BRIDGE_CANDIDATES_V1\`
-
-On completion: submit candidate path + review report path to the handoff loop for formal 4-step evaluation per `docs/handoff/MIKAGE_BUST_UPPER_BODY_BRIDGE_ASSET_REQUEST_SPEC_V1.md` Section 9.
-
-## 8. PHASE5_UNBLOCKING_CONDITIONS
+## 9. PHASE5_UNBLOCKING_CONDITIONS
 
 | Condition | Status |
 |---|---|
@@ -60,26 +71,22 @@ On completion: submit candidate path + review report path to the handoff loop fo
 | Bust / upper-body bridge spec exists | MET — ASSET-RESET-14 |
 | Bust / upper-body bridge generation plan exists | MET — ASSET-BUILD-01 |
 | Bust / upper-body bridge execution packet exists | MET — ASSET-BUILD-02 |
-| Bust / upper-body bridge candidate accepted | NOT MET — execution not yet run |
+| Bust / upper-body bridge candidate accepted | NOT MET — generation failed |
 | Phase 5 readiness re-review PASS | NOT MET |
 
 PHASE5_ALLOWED: NO
 
-5 of 7 conditions MET. Blocked on Codex / local ComfyUI execution of ASSET-BUILD-02 packet.
+5 of 7 conditions MET. Blocked on compliant bust bridge candidate generation.
 
-## 9. ACTIVE_MANIFEST
+## 10. ACTIVE_MANIFEST
 
 `docs/handoff/MIKAGE_PHASE4_STACK_MANIFEST_V2.md`
 
-## 10. EXECUTION_PACKET
+## 11. EXECUTION_PACKET
 
 `docs/handoff/ASSET-BUILD-02_BUST_BRIDGE_LOCAL_COMFYUI_EXECUTION_PACKET_V1.md`
 
-Ready for Codex / local operator. Open and execute top to bottom.
-
-## 11. RENDER_ALLOWED
-
-NO (by Claude). Packet execution is Codex / local ComfyUI only.
+DO NOT re-run this packet without completing ASSET-BUILD-04 repair first.
 
 ## 12. GITHUB_REVIEW_INSTRUCTION_FOR_CHATGPT
 
