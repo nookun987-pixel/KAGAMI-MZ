@@ -2,13 +2,14 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-06_PREPARE_EXTERNAL_GPU_API_BUST_BRIDGE_HANDOFF_NO_RENDER
+ASSET-BUILD-06C_AMEND_EXECUTION_PACKET_WITH_REPAIRED_ANCHORS_NO_RENDER
 
 ## 2. LATEST_RESULT
 
-PASS — External GPU API handoff package prepared. Local route retired (GTX 1660 Super
-6 GB VRAM cannot complete SDXL + 6× IPA + ControlNet + batch=4 in budget). Four
-documents produced. No render executed. No API called.
+PASS — Execution packet V2 produced. Two deficient primary anchors repaired:
+(1) img2img base + IPA 0.8 swapped to MIKAGE_COMP_01A_HELMET_FACEPLATE_CLEAN_PASS.png;
+(2) side ortho anchor dropped (no acceptable side view exists). 24-node workflow ready.
+ASSET-BUILD-07 gate is now open for human cost authorisation. Use packet V2 only.
 
 ## 3. ACTIVE_LANE
 
@@ -16,17 +17,16 @@ MIKAGE MASTER PIPELINE / Phase 4 Component Integration / bust bridge generation
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_BUST_BRIDGE_HANDOFF_NO_RENDER_REPORT.md
+docs/handoff/ASSET-BUILD-06C_AMEND_EXECUTION_PACKET_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_BUST_BRIDGE_HANDOFF_NO_RENDER_REPORT.md`
-- Created `docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_EXECUTION_PACKET_V1.md`
-- Created `docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_COST_AND_TIMEOUT_GUARD_V1.md`
-- Created `docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_OUTPUT_REVIEW_GATE_V1.md`
+- Created `docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_EXECUTION_PACKET_V2.md`
+- Created `docs/handoff/ASSET-BUILD-06C_AMEND_EXECUTION_PACKET_REPORT.md`
+- Created `docs/handoff/ASSET-BUILD-06B_AUDIT_BUST_BRIDGE_SOURCE_IMAGES_NO_RENDER_REPORT.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
-## 6. ASSET-BUILD-06_STATE
+## 6. ASSET-BUILD-06_STATE (reference — unchanged)
 
 | Field | Value |
 |---|---|
@@ -40,6 +40,23 @@ docs/handoff/ASSET-BUILD-06_EXTERNAL_GPU_API_BUST_BRIDGE_HANDOFF_NO_RENDER_REPOR
 | Phase 5 started | NO |
 | Local route status | BLOCKED_TIMEOUT — retired |
 | External GPU route | PREPARED_NOT_EXECUTED |
+
+## 6B. ASSET-BUILD-06B_STATE
+
+| Field | Value |
+|---|---|
+| Task result | FAIL — anchor images deficient |
+| Render executed | NO |
+| External API called | NO |
+| GPU spend authorised | NO |
+| Anchor 1 (img2img base + IPA 0.8) | ❌ NEAR-ZERO CONTRAST — must replace |
+| Anchor 2 (IPA 0.6 side) | ❌ WRONG ANGLE (top-down) — must replace or drop |
+| Anchor 3 (IPA 0.6 faceplate) | ✅ PASS |
+| Anchor 4 (IPA 0.5 B4C porcelain) | ✅ PASS |
+| Anchor 5 (IPA 0.4 graphene) | ✅ PASS |
+| Anchor 6 (IPA 0.3 key visual) | ✅ PASS |
+| Recommended A1 fix | Swap Anchor 1 → MIKAGE_COMP_01A_HELMET_FACEPLATE_CLEAN_PASS.png |
+| Recommended A2 fix | Drop Anchor 2 / Node 11; promote faceplate weight to 0.75 |
 
 ## 7. EXTERNAL_GPU_PACKET_SUMMARY
 
@@ -70,6 +87,9 @@ The V2 script is superseded by the external GPU execution packet for this workfl
 ## 9. CURRENT_NEXT_TASK
 
 ASSET-BUILD-07_RUN_SINGLE_BUST_BRIDGE_CANDIDATE_EXTERNAL_GPU_API
+
+Use execution packet **V2** (`ASSET-BUILD-06_EXTERNAL_GPU_API_EXECUTION_PACKET_V2.md`).
+Do NOT use V1 — it contains deficient anchors.
 
 ASSET-BUILD-07 requires human authorisation before execution:
 1. Human confirms cost authorisation (recommended cap: $5.00 USD)
