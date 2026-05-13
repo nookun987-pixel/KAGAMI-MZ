@@ -2,11 +2,11 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-10E3_MANUAL_GRAPHENE_COMPOSITE — Q-5 PASS
+ASSET-BUILD-10F_CANON_GATE_SPRINT — DIAGNOSTIC COMPLETE (no pass candidate)
 
 ## 2. LATEST_RESULT
 
-E-3 manual composite complete. 09E3_graphene_composite_v1.png produced. Q-5 PASS — all 9 criteria met. Structured carbon fiber texture clearly visible in all three seam channels. Best visual result in full pipeline. Ready for bust bridge authorization.
+Canon gate sprint complete. 16 Imagen references + 7 MASK_V3 samples tested. Best score: 79/100 (R3 baseline unchanged). Formula decoded — 3/4 bust + black bg + blade fill = predicted 86/100. No pass candidate found. Bust bridge authorization still pending.
 
 ## 3. ACTIVE_LANE
 
@@ -14,11 +14,13 @@ MIKAGE MASTER PIPELINE / bust bridge repair packaging
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-10E3_RESULTS_REPORT.md
+docs/handoff/ASSET-BUILD-10F_CANON_GATE_SPRINT_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/handoff/ASSET-BUILD-10E3_RESULTS_REPORT.md` (E-3 Q-5 PASS report)
+- Created `docs/handoff/ASSET-BUILD-10F_CANON_GATE_SPRINT_REPORT.md` (sprint diagnostic)
+- Created `MIKAGE_CANON/09_GEN_ROUND_4_REFERENCE/` (16 Imagen reference images)
+- Created `MIKAGE_CANON/09_GEN_ROUND_4_REFERENCE/MASK_V3_SAMPLE/` (7 MASK_V3 samples)
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
 ## 6. RENDER_SESSION_STATE
@@ -33,7 +35,8 @@ docs/handoff/ASSET-BUILD-10E3_RESULTS_REPORT.md
 | Q-5 status | **CLEARED — all 9 criteria** |
 | RunPod pod | ACTION REQUIRED — confirm shutdown |
 | Bust bridge | READY — pending authorization |
-| Canon gate | ELIGIBLE — requires bust bridge composite first |
+| Canon gate | SPRINT DONE — best 79/100 — formula decoded — path to ≥85 known |
+| Canon gate path | 3/4 bust + black bg + blade fill → predicted 86/100 |
 
 ## 7. E-3 CANDIDATE
 
