@@ -2,7 +2,7 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-09E_GRAPHENE_INPAINT_APPROACH (pre-render package complete)
+ASSET-BUILD-09E_GRAPHENE_INPAINT_APPROACH (pre-render package complete + ComfyUI workflow JSON ready)
 
 ## 2. LATEST_RESULT
 
@@ -21,6 +21,7 @@ docs/handoff/ASSET-BUILD-09E_WORKFLOW_SPEC.md
 - Created `docs/handoff/ASSET-BUILD-09E_GRAPHENE_INPAINT_APPROACH.md` (authorization + task spec)
 - Created `docs/handoff/ASSET-BUILD-09E_WORKFLOW_SPEC.md` (ComfyUI parameter spec)
 - Created `docs/handoff/ASSET-BUILD-09E_SESSION_LOG.md` (results log template)
+- Created `docs/handoff/ASSET-BUILD-09E_COMFYUI_WORKFLOW.json` (import-ready ComfyUI workflow)
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
 ## 6. RENDER_SESSION_STATE

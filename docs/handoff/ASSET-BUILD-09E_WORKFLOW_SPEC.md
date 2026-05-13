@@ -28,13 +28,13 @@ FILE_1 — BASE IMAGE:
 FILE_2 — INPAINTING MASK:
   Source:     Manually created from base image
   Format:     PNG, same resolution as base image, grayscale or RGB
-  Mask rules:
-    - BLACK  = inpaint this area (panel gaps, seam channels, intersection points)
-    - WHITE  = preserve this area (white panel surfaces, faceplate, visor, background)
+  Mask rules (ComfyUI convention — do not reverse):
+    - WHITE  = inpaint this area (panel gaps, seam channels, intersection points)
+    - BLACK  = preserve this area (white panel surfaces, faceplate, visor, background)
   Mask width: TIGHT — trace panel line geometry precisely
               Do NOT widen mask into white panel surface areas
               If uncertain about boundary, go narrower and iterate
-  Key areas to mask BLACK:
+  Key areas to paint WHITE:
     - Vertical panel gap lines on chest armor
     - Horizontal seam cut lines
     - V-shape apex intersection

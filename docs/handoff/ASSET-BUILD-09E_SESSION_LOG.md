@@ -22,7 +22,7 @@ Fill in before starting any renders.
 [ ] RunPod pod confirmed RUNNING (or restarted)
 [ ] Best WF-C geometry render identified — filename: [TO BE FILLED]
 [ ] Inpainting mask image created — filename: [TO BE FILLED]
-[ ] Mask verified: black on gap regions only, white everywhere else
+[ ] Mask verified: WHITE on gap regions, BLACK everywhere else (ComfyUI convention)
 [ ] Base image loaded into ComfyUI inpainting node
 [ ] Mask loaded into ComfyUI inpainting node
 [ ] Prompt set per ASSET-BUILD-09E_WORKFLOW_SPEC.md
