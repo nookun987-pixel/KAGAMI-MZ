@@ -7,9 +7,9 @@ TASK_CODE:          ASSET-BUILD-09E_GRAPHENE_INPAINT_APPROACH
 SESSION_TYPE:       E-1 Inpainting render session
 APPROACH:           img2img inpainting — panel gap/seam mask only
 AUTHORIZED:         YES — 2026-05-13
-SESSION_STATUS:     NOT STARTED
-DATE_STARTED:       [TO BE FILLED]
-DATE_COMPLETED:     [TO BE FILLED]
+SESSION_STATUS:     COMPLETE — Q-5 PASS
+DATE_STARTED:       2026-05-13
+DATE_COMPLETED:     2026-05-13
 ```
 
 ---
@@ -19,16 +19,16 @@ DATE_COMPLETED:     [TO BE FILLED]
 Fill in before starting any renders.
 
 ```
-[ ] RunPod pod confirmed RUNNING (or restarted)
-[ ] Best WF-C geometry render identified — filename: [TO BE FILLED]
-[ ] Inpainting mask image created — filename: [TO BE FILLED]
-[ ] Mask verified: WHITE on gap regions, BLACK everywhere else (ComfyUI convention)
-[ ] Base image loaded into ComfyUI inpainting node
-[ ] Mask loaded into ComfyUI inpainting node
-[ ] Prompt set per ASSET-BUILD-09E_WORKFLOW_SPEC.md
-[ ] Parameters set for R1 (denoise 0.75, CFG 7.5, steps 35)
-[ ] Q-5 evaluation criteria reviewed
-[ ] Abort conditions reviewed
+[x] RunPod pod confirmed RUNNING (or restarted)
+[x] Best WF-C geometry render identified — filename: ASSET_BUILD_09_REPAIR_CAND00002_C_VISOR_SUPPRESS_STANDBY_00008_.png
+[x] Inpainting mask image created — filename: mask.png
+[x] Mask verified: WHITE on gap regions, BLACK everywhere else (ComfyUI convention)
+[x] Base image loaded into ComfyUI inpainting node
+[x] Mask loaded into ComfyUI inpainting node
+[x] Prompt set per ASSET-BUILD-09E_WORKFLOW_SPEC.md
+[x] Parameters set for R1 (denoise 0.75, CFG 7.5, steps 35)
+[x] Q-5 evaluation criteria reviewed
+[x] Abort conditions reviewed
 ```
 
 ---
@@ -36,10 +36,10 @@ Fill in before starting any renders.
 ## 3. Base Image Record
 
 ```
-SELECTED_BASE:      [filename]
+SELECTED_BASE:      ASSET_BUILD_09_REPAIR_CAND00002_C_VISOR_SUPPRESS_STANDBY_00008_.png
 SOURCE_SESSION:     ASSET-BUILD-09D — Workflow C
-REASON_SELECTED:    [note — e.g. "strongest V-shape geometry, cleanest horizontal cut"]
-RESOLUTION:         [width × height]
+REASON_SELECTED:    Strongest V-shape geometry, cleanest horizontal cut line, white surface intact
+RESOLUTION:         Original render resolution (SDXL)
 ```
 
 ---
@@ -47,9 +47,9 @@ RESOLUTION:         [width × height]
 ## 4. Mask Record
 
 ```
-MASK_FILENAME:      [filename]
-MASK_TOOL:          [e.g. Photoshop / GIMP / Krita]
-MASK_NOTES:         [any observations about mask coverage]
+MASK_FILENAME:      mask.png
+MASK_TOOL:          Manual paint (brush ~8-10px)
+MASK_NOTES:         White Y-shape panel lines on black. Covers vertical seam, horizontal V-cut, apex intersection. Tight trace — no bleed into white panel surface.
 ```
 
 ---
@@ -68,16 +68,17 @@ BATCH_SIZE:         4
 
 | # | Filename | Seed | Q-5 Result | Observation |
 |---|---|---|---|---|
-| R1-01 | | | | |
-| R1-02 | | | | |
-| R1-03 | | | | |
-| R1-04 | | | | |
+| R1-01 | 09E_inpaint_01.png | random | FAIL | Vertical seam tối, horizontal seam nhạt/pale — không đủ dark |
+| R1-02 | 09E_inpaint_02.png | random | FAIL | Horizontal seam icy/blue-white — gap vẫn sáng |
+| R1-03 | 09E_inpaint_03.png | random | FAIL | Vertical OK, horizontal jagged artifact — không clean |
+| R1-04 | 09E_inpaint_04.png | random | **PASS** ⭐ | Cả hai seam tối rõ, geometry sạch, không bleed, visor đóng |
+| R1-05 | 09E_inpaint_05.png | random | **PASS** | Dark graphene texture trong seam, structured pattern visible |
 
 **R1 SUMMARY:**
 ```
-Q-5 PASS COUNT:     [0 / 4]
-BEST CANDIDATE:     [filename or NONE]
-PROCEED TO R2:      [YES / NO]
+Q-5 PASS COUNT:     2 / 5
+BEST CANDIDATE:     09E_inpaint_04.png
+PROCEED TO R2:      NO — Q-5 PASS achieved at R1
 ```
 
 ---
@@ -140,11 +141,11 @@ BEST CANDIDATE:     [filename or NONE]
 ## 6. Session Result
 
 ```
-TOTAL_RENDERS:      [number]
-TOTAL_ROUNDS:       [1 / 2 / 3]
-Q-5_FINAL_STATUS:   [PASS / FAIL]
-BEST_CANDIDATE:     [filename or NONE]
-SESSION_OUTCOME:    [PASS — proceed to bridge / FAIL — escalate to E-3]
+TOTAL_RENDERS:      5
+TOTAL_ROUNDS:       1
+Q-5_FINAL_STATUS:   PASS
+BEST_CANDIDATE:     09E_inpaint_04.png
+SESSION_OUTCOME:    PASS — proceed to bust bridge / canon gate evaluation
 ```
 
 ---
@@ -154,12 +155,12 @@ SESSION_OUTCOME:    [PASS — proceed to bridge / FAIL — escalate to E-3]
 ### If Q-5 PASS
 
 ```
-[ ] Best candidate identified and filename recorded
-[ ] Candidate downloaded from RunPod before pod shutdown
-[ ] Pod shut down (stop cost accumulation)
-[ ] Create ASSET-BUILD-09E results report
-[ ] Update 00_LATEST_CODEX_HANDOFF.md
-[ ] Commit and push
+[x] Best candidate identified and filename recorded — 09E_inpaint_04.png
+[x] Candidate downloaded from RunPod before pod shutdown
+[ ] Pod shut down (stop cost accumulation) — ACTION REQUIRED
+[x] Create ASSET-BUILD-09E results report
+[x] Update 00_LATEST_CODEX_HANDOFF.md
+[x] Commit and push
 [ ] Next task: bust bridge / canon gate evaluation
 ```
 
