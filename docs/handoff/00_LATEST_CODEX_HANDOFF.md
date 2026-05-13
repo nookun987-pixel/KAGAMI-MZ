@@ -2,11 +2,13 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-10_EVALUATE_Q5_CLEARED_CANDIDATE_FOR_BUST_BRIDGE_CANON_GATE
+ASSET-BUILD-10E3_MANUAL_GRAPHENE_COMPOSITE (spec written — awaiting human execution)
 
 ## 2. LATEST_RESULT
 
-Evaluation complete. 09E_inpaint_04.png is BUST_BRIDGE_READY (conditional on RISK-1 to RISK-5 visual check by human). CANON_GATE_READY: NOT YET — requires bust bridge composite first. No renders executed. No asset locked.
+E-3 authorized. E-1 inpainting (09E) confirmed insufficient for structured graphene texture
+due to narrow seam mask + white panel context. Manual composite spec written.
+09E_inpaint_04.png confirmed as base for E-3. No new renders. No IPAdapter.
 
 ## 3. ACTIVE_LANE
 
@@ -14,11 +16,11 @@ MIKAGE MASTER PIPELINE / bust bridge repair packaging
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-10_EVALUATE_Q5_CLEARED_CANDIDATE_FOR_BUST_BRIDGE_CANON_GATE.md
+docs/handoff/ASSET-BUILD-10E3_MANUAL_GRAPHENE_COMPOSITE.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/handoff/ASSET-BUILD-10_EVALUATE_Q5_CLEARED_CANDIDATE_FOR_BUST_BRIDGE_CANON_GATE.md`
+- Created `docs/handoff/ASSET-BUILD-10E3_MANUAL_GRAPHENE_COMPOSITE.md` (E-3 composite spec)
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
 ## 6. RENDER_SESSION_STATE
@@ -26,48 +28,49 @@ docs/handoff/ASSET-BUILD-10_EVALUATE_Q5_CLEARED_CANDIDATE_FOR_BUST_BRIDGE_CANON_
 | Field | Value |
 |---|---|
 | Last completed render session | ASSET-BUILD-09E — 5 renders R1, Q-5 PASS 2/5 |
-| IPAdapter approach | RETIRED |
-| E-1 inpainting | COMPLETE — Q-5 PASS |
-| Best candidate | 09E_inpaint_04.png |
-| Secondary candidate | 09E_inpaint_05.png |
-| Q-5 status | **CLEARED** |
-| Pod status | ACTION REQUIRED — shut down to stop cost |
-| Bust bridge | READY (pending human visual check + authorization) |
-| Canon gate | NOT YET — requires bust composite first |
+| IPAdapter approach | RETIRED — do not return |
+| E-1 inpainting | COMPLETE — Q-5 technical pass, graphene texture insufficient |
+| E-3 manual composite | AUTHORIZED — spec written — awaiting human execution |
+| Base for E-3 | 09E_inpaint_04.png |
+| Q-5 (technical seam dark) | CLEARED via E-1 |
+| Q-5 (structured graphene texture) | PENDING — E-3 target |
+| RunPod pod | ACTION REQUIRED — confirm shutdown |
+| Canon gate | NOT YET — requires E-3 pass + bust bridge |
 
-## 7. CANDIDATE STATUS
+## 7. E-3 TASK SUMMARY
 
 ```
-BEST_CANDIDATE:     09E_inpaint_04.png
-LOCATION:           Desktop/MIKAGE_RUNPOD_ASSET_BUILD_09_PACK/outputs_download_here/
-Q-5_STATUS:         PASS — all 7 criteria met
-BUST_BRIDGE_READY:  YES (conditional)
-CANON_GATE_READY:   NOT YET
-
-VISUAL RISKS TO CHECK (human):
-  RISK-1: Horizontal seam uniformity vs vertical seam
-  RISK-2: Inpainting boundary edge artifact
-  RISK-3: Mask coverage completeness in bust framing
-  RISK-4: Lighting integration in bust context
-  RISK-5: Visor sealed final confirmation
+TASK:               ASSET-BUILD-10E3_MANUAL_GRAPHENE_COMPOSITE
+BASE_IMAGE:         09E_inpaint_04.png
+SECONDARY_REF:      09E_inpaint_05.png (reference only)
+TOOL:               Photoshop / Affinity / GIMP (human)
+TARGET_REGIONS:     Vertical seam, V-cut left/right arms, V-apex intersection
+BLEND_MODE:         Multiply (recommended) or Normal 60-85% opacity
+TEXTURE_SOURCE:     Option C (procedural) recommended — or extract from 09E_inpaint_05.png
+OUTPUT:             09E3_graphene_composite_v1.png
+GPU_REQUIRED:       NO
+RENDER_REQUIRED:    NO
 ```
 
 ## 8. NEXT_SAFE_TASK
 
 ```
 IMMEDIATE HUMAN ACTIONS:
-  1. Shut down RunPod pod — stop cost
-  2. Visually inspect 09E_inpaint_04.png — confirm RISK-1 to RISK-5
-  3. Authorize ASSET-BUILD-11_BUST_BRIDGE_COMPOSITE
+  1. Confirm RunPod pod shutdown — stop cost
+  2. Open 09E_inpaint_04.png in Photoshop / Affinity
+  3. Execute composite per ASSET-BUILD-10E3_MANUAL_GRAPHENE_COMPOSITE.md
+  4. Run Q-5 check on result
+  5. Save as 09E3_graphene_composite_v1.png
 
-NEXT CODEX TASK (requires human authorization):
-  ASSET-BUILD-11_BUST_BRIDGE_COMPOSITE
-  Integrate 09E_inpaint_04.png into bust context for canon gate entry
+AFTER E-3 Q-5 PASS:
+  TASK: ASSET-BUILD-11_BUST_BRIDGE_COMPOSITE
+  Requires: Human authorization
+  Input: 09E3_graphene_composite_v1.png
 
 FORBIDDEN:
   - Do NOT return to IPAdapter
-  - Do NOT run more 09E renders
+  - Do NOT run more 09E inpainting rounds
   - Do NOT lock any asset
   - Do NOT approve canon
-  - Do NOT start bust bridge without human authorization
+  - Do NOT start bust bridge without E-3 Q-5 pass
 ```
