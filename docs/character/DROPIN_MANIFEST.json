@@ -1,0 +1,14 @@
+{
+  "status": "DROPIN_READY",
+  "target_repo": "D:\\KAGAMI-MZ_SYNC_PUSH_V2",
+  "target_files": [
+    "docs\\character\\CHARACTER_CONCEPT_MIKAGE_v0.1.md",
+    "docs\\character\\mikage_character_reveal_v02.html",
+    "docs\\character\\README.md",
+    "docs\\character\\DROPIN_MANIFEST.json"
+  ],
+  "canon_locked": false,
+  "asset_locked": false,
+  "public_ready": false,
+  "next_action": "Unzip into repo root, then commit and push."
+}
