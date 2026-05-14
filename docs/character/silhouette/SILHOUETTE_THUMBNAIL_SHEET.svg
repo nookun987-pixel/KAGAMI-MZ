@@ -1,0 +1,141 @@
+<svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg" width="880" height="260">
+  <title>SILHOUETTE THUMBNAIL READABILITY SHEET</title>
+  <rect width="880" height="260" fill="#f0f0f0"/>
+
+  <!-- TITLE -->
+  <text x="440" y="22" font-family="monospace" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">MIKAGE SILHOUETTE CANDIDATES — THUMBNAIL READABILITY TEST</text>
+  <text x="440" y="38" font-family="monospace" font-size="10" fill="#666" text-anchor="middle">Each cell: 100×175px — must be readable at this scale</text>
+
+  <!-- CELL BACKGROUNDS -->
+  <rect x="20" y="48" width="100" height="175" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="140" y="48" width="100" height="175" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="260" y="48" width="100" height="175" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="380" y="48" width="100" height="175" fill="white" stroke="#ccc" stroke-width="1"/>
+
+  <!-- CANDIDATE A — THE DIAGONAL (scaled 0.25x of 400x720) -->
+  <g transform="translate(20,48) scale(0.25)">
+    <!-- Sword -->
+    <g transform="translate(272, 415) rotate(-20)">
+      <rect x="-22" y="-255" width="44" height="315" rx="2" fill="black"/>
+      <rect x="-44" y="-272" width="88" height="22" rx="2" fill="black"/>
+    </g>
+    <!-- Hair -->
+    <path d="M 172,52 C 150,44 120,58 100,92 C 80,130 74,195 76,278 C 78,355 88,435 106,505 C 114,482 113,415 110,348 C 107,278 114,212 132,170 C 144,146 162,128 168,105 Z" fill="black"/>
+    <!-- Cloak -->
+    <path d="M 153,225 C 135,285 124,375 128,460 C 131,520 140,562 150,578 C 156,552 154,495 152,438 C 150,370 153,305 160,255 Z" fill="black"/>
+    <!-- Pauldrons -->
+    <path d="M 66,185 L 172,185 L 164,218 L 74,218 Z" fill="black"/>
+    <path d="M 210,185 L 332,185 L 324,218 L 202,218 Z" fill="black"/>
+    <rect x="150" y="180" width="90" height="40" fill="black"/>
+    <!-- Body -->
+    <rect x="148" y="218" width="88" height="106" rx="3" fill="black"/>
+    <rect x="156" y="324" width="72" height="52" rx="3" fill="black"/>
+    <rect x="146" y="376" width="92" height="58" rx="3" fill="black"/>
+    <rect x="146" y="432" width="42" height="218" rx="4" fill="black"/>
+    <rect x="196" y="432" width="42" height="218" rx="4" fill="black"/>
+    <!-- Helmet -->
+    <ellipse cx="186" cy="116" rx="58" ry="74" fill="black"/>
+    <rect x="147" y="105" width="78" height="7" rx="3" fill="white"/>
+    <rect x="147" y="122" width="78" height="7" rx="3" fill="white"/>
+  </g>
+
+  <!-- CANDIDATE B — THE MONOLITH (scaled 0.25x) -->
+  <g transform="translate(140,48) scale(0.25)">
+    <!-- Sword vertical -->
+    <rect x="286" y="295" width="46" height="358" rx="2" fill="black"/>
+    <rect x="264" y="278" width="90" height="22" rx="2" fill="black"/>
+    <!-- Hair -->
+    <path d="M 170,48 C 148,42 118,56 98,95 C 76,138 72,210 74,300 C 76,388 86,472 102,538 C 110,516 110,448 108,378 C 106,305 112,238 130,192 C 142,165 160,142 168,110 Z" fill="black"/>
+    <!-- Cloak -->
+    <path d="M 148,222 C 130,295 122,385 126,475 C 128,538 138,580 148,596 C 155,572 154,510 152,448 C 150,375 152,308 158,260 Z" fill="black"/>
+    <!-- Pauldrons -->
+    <path d="M 62,185 L 170,185 L 162,218 L 70,218 Z" fill="black"/>
+    <path d="M 212,185 L 336,185 L 328,218 L 204,218 Z" fill="black"/>
+    <rect x="150" y="180" width="86" height="42" fill="black"/>
+    <!-- Body -->
+    <rect x="150" y="220" width="86" height="104" rx="3" fill="black"/>
+    <rect x="158" y="324" width="70" height="50" rx="3" fill="black"/>
+    <rect x="148" y="374" width="90" height="58" rx="3" fill="black"/>
+    <rect x="148" y="430" width="40" height="222" rx="4" fill="black"/>
+    <rect x="198" y="430" width="40" height="222" rx="4" fill="black"/>
+    <!-- Helmet -->
+    <ellipse cx="188" cy="112" rx="57" ry="76" fill="black"/>
+    <rect x="148" y="100" width="80" height="7" rx="3" fill="white"/>
+    <rect x="148" y="117" width="80" height="7" rx="3" fill="white"/>
+  </g>
+
+  <!-- CANDIDATE C — THE CARRY (scaled 0.25x) -->
+  <g transform="translate(260,48) scale(0.25)">
+    <!-- Sword at shoulder -->
+    <g transform="translate(268, 248) rotate(-55)">
+      <rect x="-22" y="-260" width="44" height="310" rx="2" fill="black"/>
+      <rect x="-44" y="-275" width="88" height="22" rx="2" fill="black"/>
+    </g>
+    <!-- Hair -->
+    <path d="M 174,55 C 148,42 115,52 94,88 C 72,128 68,198 70,280 C 72,358 82,438 98,505 L 108,488 C 106,418 103,348 106,278 C 110,210 122,168 140,145 C 154,128 168,118 172,98 Z" fill="black"/>
+    <!-- Cloak -->
+    <path d="M 150,232 C 126,298 112,392 116,482 C 118,542 128,582 140,598 C 148,572 146,508 144,444 C 142,372 146,304 154,258 Z" fill="black"/>
+    <!-- Pauldrons -->
+    <path d="M 58,190 L 164,184 L 158,216 L 64,222 Z" fill="black"/>
+    <path d="M 208,184 L 334,178 L 328,210 L 202,216 Z" fill="black"/>
+    <rect x="148" y="182" width="88" height="40" fill="black"/>
+    <!-- Body -->
+    <rect x="146" y="220" width="88" height="108" rx="3" fill="black"/>
+    <rect x="154" y="328" width="74" height="50" rx="3" fill="black"/>
+    <rect x="144" y="378" width="94" height="58" rx="3" fill="black"/>
+    <rect x="144" y="434" width="42" height="215" rx="4" fill="black"/>
+    <rect x="194" y="434" width="42" height="215" rx="4" fill="black"/>
+    <!-- Helmet -->
+    <ellipse cx="185" cy="114" rx="57" ry="73" fill="black"/>
+    <rect x="146" y="103" width="78" height="7" rx="3" fill="white"/>
+    <rect x="146" y="120" width="78" height="7" rx="3" fill="white"/>
+  </g>
+
+  <!-- CANDIDATE D — THE PRESENCE (scaled 0.25x) -->
+  <g transform="translate(380,48) scale(0.25)">
+    <!-- Sword steep -->
+    <g transform="translate(258, 440) rotate(-10)">
+      <rect x="-22" y="-270" width="44" height="330" rx="2" fill="black"/>
+      <rect x="-44" y="-288" width="88" height="22" rx="2" fill="black"/>
+    </g>
+    <!-- Hair wide -->
+    <path d="M 174,50 C 144,38 108,50 84,90 C 60,135 55,215 57,308 C 59,395 70,478 88,548 C 98,522 98,452 96,378 C 94,302 100,235 118,188 C 132,158 152,136 170,106 Z" fill="black"/>
+    <!-- Cloak -->
+    <path d="M 148,228 C 118,305 104,408 108,498 C 110,562 122,602 134,618 C 142,590 140,525 138,460 C 136,386 140,314 150,264 Z" fill="black"/>
+    <!-- Pauldrons wide -->
+    <path d="M 44,186 L 168,186 L 160,220 L 52,220 Z" fill="black"/>
+    <path d="M 214,186 L 356,186 L 348,220 L 206,220 Z" fill="black"/>
+    <rect x="150" y="182" width="86" height="42" fill="black"/>
+    <!-- Body -->
+    <rect x="150" y="222" width="86" height="105" rx="3" fill="black"/>
+    <rect x="158" y="327" width="70" height="50" rx="3" fill="black"/>
+    <rect x="148" y="377" width="90" height="58" rx="3" fill="black"/>
+    <rect x="148" y="433" width="40" height="218" rx="4" fill="black"/>
+    <rect x="196" y="433" width="40" height="218" rx="4" fill="black"/>
+    <!-- Helmet tall -->
+    <ellipse cx="188" cy="110" rx="54" ry="78" fill="black"/>
+    <rect x="150" y="97" width="76" height="7" rx="3" fill="white"/>
+    <rect x="150" y="114" width="76" height="7" rx="3" fill="white"/>
+  </g>
+
+  <!-- LABELS BELOW CELLS -->
+  <text x="70"  y="236" font-family="monospace" font-size="9" fill="#333" text-anchor="middle">A: DIAGONAL</text>
+  <text x="190" y="236" font-family="monospace" font-size="9" fill="#333" text-anchor="middle">B: MONOLITH</text>
+  <text x="310" y="236" font-family="monospace" font-size="9" fill="#333" text-anchor="middle">C: CARRY</text>
+  <text x="430" y="236" font-family="monospace" font-size="9" fill="#333" text-anchor="middle">D: PRESENCE</text>
+
+  <!-- PASS CRITERIA LEGEND -->
+  <text x="560" y="65"  font-family="monospace" font-size="10" fill="#333" font-weight="bold">READABILITY CHECKS (thumbnail scale):</text>
+  <text x="560" y="83"  font-family="monospace" font-size="9"  fill="#444">✓ Helmet: elongated oval readable?</text>
+  <text x="560" y="97"  font-family="monospace" font-size="9"  fill="#444">✓ Sensor slits: two thin lines visible?</text>
+  <text x="560" y="111" font-family="monospace" font-size="9"  fill="#444">✓ Sword: rectangular slab readable?</text>
+  <text x="560" y="125" font-family="monospace" font-size="9"  fill="#444">✓ Hair: distinct mass shape visible?</text>
+  <text x="560" y="139" font-family="monospace" font-size="9"  fill="#444">✓ Pauldrons: wider than head?</text>
+  <text x="560" y="153" font-family="monospace" font-size="9"  fill="#444">✓ NOT samurai / NOT cyberpunk clutter?</text>
+  <text x="560" y="167" font-family="monospace" font-size="9"  fill="#444">✓ Asymmetry: left-heavy vs sword-right?</text>
+  <text x="560" y="181" font-family="monospace" font-size="9"  fill="#444">✓ Memorable in under 2 seconds?</text>
+  <text x="560" y="200" font-family="monospace" font-size="10" fill="#888">Sensor slits = white gaps in helmet black.</text>
+  <text x="560" y="214" font-family="monospace" font-size="10" fill="#888">Sword = rectangle, not katana curve.</text>
+  <text x="560" y="228" font-family="monospace" font-size="10" fill="#888">Hair = downward mass, not strands.</text>
+  <text x="560" y="248" font-family="monospace" font-size="10" fill="#555">MIKAGE_SILHOUETTE_CANON_V1 — not canon-locked</text>
+</svg>

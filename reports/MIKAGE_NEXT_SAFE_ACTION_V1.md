@@ -1,73 +1,68 @@
 # MIKAGE_NEXT_SAFE_ACTION_V1
 
-**Updated:** 2026-05-15 — post MIKAGE_CHARACTER_SOURCE_PACK_V1
-**Previous blocker:** RESOLVED — source pack built
+**Updated:** 2026-05-15 — post MIKAGE_SILHOUETTE_CANON_V1
 
 ---
 
 ## CURRENT STATUS
 
-Source pack built. 13 reference files in `docs/character/references/`. One gap: no isolated helmet reference (ComfyUI not mounted). Workaround available via SP-001 full-character frame.
-
-| Item | Status |
-|---|---|
-| Prompt library | ✓ Canon-patched — helmet slits, violet, hair |
-| Test set | ✓ Ready — docs/character/MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md |
-| Source pack | ✓ Built — docs/character/references/ (13 files) |
-| Isolated helmet ref | ⚠ MISSING — mount ComfyUI to resolve |
-| Txt2img workflow | ⚠ PENDING — use Fooocus or save ComfyUI default |
+4 silhouette candidates created as SVG (A/B/C/D) + thumbnail readability sheet.
+A, B, D scored STRONG (90–91). C scored CONDITIONAL (85).
+**Human visual review required before selecting primary silhouette.**
 
 ---
 
-## NEXT SAFE TASK
+## IMMEDIATE HUMAN ACTION REQUIRED
+
+Open these files and visually review at screen size:
 
 ```
-MIKAGE_SILHOUETTE_CANON_V1
-Goal:   Define the locked silhouette specification for Character V1.
-        Extract silhouette rules from prompt library, structured rules, and world core.
-        Create a single authoritative silhouette reference document
-        combining: shape hierarchy, proportion rules, read-distance requirements,
-        hair mass position, sword diagonal angle, pauldron-to-head width ratio.
-        Generate a canon SVG silhouette diagram (no AI generation — vector only).
-
-Input:
-  docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md (Section 2.2)
-  MIKAGE_STRUCTURED_RULES.json (body, silhouette rules)
-  MIKAGE_WORLD_CORE.json (silhouette_rules, readability)
-  docs/character/references/mask_body_silhouette/REF_SP001_UNIFIED_KEY_VISUAL_V4__MASK_BODY_SILHOUETTE.png
-
-Output:
-  docs/character/MIKAGE_SILHOUETTE_CANON_V1.md
-    — Shape hierarchy with proportions
-    — Sensor slit position on helmet
-    — Hair mass: position, volume, direction
-    — Sword diagonal angle range
-    — Pauldron width ratio (vs head)
-    — Read-distance rules
-  docs/character/MIKAGE_SILHOUETTE_CANON_V1.svg
-    — Canon silhouette diagram (vector, no AI)
-
-FORBIDDEN:
-  Do not render. Do not generate images. Do not canon-lock. Do not asset-lock.
+docs/character/silhouette/SILHOUETTE_THUMBNAIL_SHEET.svg   ← start here
+docs/character/silhouette/SILHOUETTE_A_THE_DIAGONAL.svg
+docs/character/silhouette/SILHOUETTE_B_THE_MONOLITH.svg
+docs/character/silhouette/SILHOUETTE_C_THE_CARRY.svg
+docs/character/silhouette/SILHOUETTE_D_THE_PRESENCE.svg
 ```
+
+Step back from screen. Check: helmet readable? sword slab readable? hair mass readable?
+Return your verdict: which 1–2 candidates to carry forward.
 
 ---
 
-## OPTIONAL BEFORE SILHOUETTE CANON
+## NEXT AGENT TASK (after human selects candidate)
 
 ```
-If user mounts D:\workspace\ComfyUI:
-  Copy MIKAGE_HELMET_FRONT_VIEW_3D_SOURCE_V1_ORTHO.png
-  and MIKAGE_VOLUME_FIRST_3D_HELMET_SIDE_V1_ORTHO.png
-  into docs/character/references/helmet/
-  → Enables proper isolated helmet review for Steps 1 and 5
+MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC
+Goal:   Write the locked silhouette spec document based on selected candidate.
+        Define exact proportions from the chosen SVG geometry:
+          — helmet rx/ry ratio
+          — pauldron width ratio vs helmet
+          — sword dimensions and angle
+          — hair mass position and volume
+          — cloak hierarchy
+          — negative space rules
+        Create MIKAGE_SILHOUETTE_CANON_V1.md as authoritative spec.
+
+Input:  Human selection from A/B/C/D
+        docs/character/silhouette/SILHOUETTE_[X]_[NAME].svg (selected)
+
+Output: docs/character/MIKAGE_SILHOUETTE_CANON_V1.md
+
+FORBIDDEN: Do not canon-lock. Do not render. Do not asset-lock.
 ```
 
 ---
 
-## GENERATION READINESS
+## PARALLEL PATH — generation can start now
 
-All blockers resolved for running MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1 Steps 1–8 when ready. Use Fooocus (simplest) or ComfyUI default txt2img workflow. Score each output against source pack references in `docs/character/references/`.
+The prompt library is patched and the source pack is built. Generation does not need to wait for silhouette lock. Run character test set Steps 1–8 independently at any time:
+
+```
+File: docs/character/MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md
+Tool: Fooocus (simplest) or ComfyUI default txt2img workflow
+Start: Step 1 — Helmet with sensor slits
+Compare: docs/character/references/ (SP-001, material refs)
+```
 
 ---
 

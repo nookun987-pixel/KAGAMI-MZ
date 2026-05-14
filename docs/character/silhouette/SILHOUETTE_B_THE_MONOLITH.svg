@@ -1,0 +1,66 @@
+<svg viewBox="0 0 400 720" xmlns="http://www.w3.org/2000/svg" width="400" height="720">
+  <title>SILHOUETTE_B — THE MONOLITH</title>
+  <rect width="400" height="720" fill="white"/>
+
+  <!-- SWORD: VERTICAL, planted at right side, tip on ground. Maximum slab read. -->
+  <!-- Blade body -->
+  <rect x="286" y="295" width="46" height="358" rx="2" fill="black"/>
+  <!-- Guard: horizontal bar -->
+  <rect x="264" y="278" width="90" height="22" rx="2" fill="black"/>
+
+  <!-- HAIR MASS: falls straight down, very heavy — fills left negative space -->
+  <path d="
+    M 170,48
+    C 148,42 118,56 98,95
+    C 76,138 72,210 74,300
+    C 76,388 86,472 102,538
+    C 110,516 110,448 108,378
+    C 106,305 112,238 130,192
+    C 142,165 160,142 168,110
+    Z
+  " fill="black"/>
+
+  <!-- CLOAK: wide, falls behind entire figure — secondary mass -->
+  <path d="
+    M 148,222
+    C 130,295 122,385 126,475
+    C 128,538 138,580 148,596
+    C 155,572 154,510 152,448
+    C 150,375 152,308 158,260
+    Z
+  " fill="black"/>
+
+  <!-- PAULDRONS: wide flat horizontal plates -->
+  <!-- Left pauldron -->
+  <path d="M 62,185 L 170,185 L 162,218 L 70,218 Z" fill="black"/>
+  <!-- Right pauldron — extends toward sword -->
+  <path d="M 212,185 L 336,185 L 328,218 L 204,218 Z" fill="black"/>
+  <!-- Shoulder bridge -->
+  <rect x="150" y="180" width="86" height="42" fill="black"/>
+
+  <!-- RIGHT ARM: resting on sword pommel -->
+  <path d="M 234,265 L 260,280 L 270,295 L 282,295 L 268,268 L 250,255 Z" fill="black"/>
+
+  <!-- CHEST -->
+  <rect x="150" y="220" width="86" height="104" rx="3" fill="black"/>
+
+  <!-- WAIST -->
+  <rect x="158" y="324" width="70" height="50" rx="3" fill="black"/>
+
+  <!-- HIPS -->
+  <rect x="148" y="374" width="90" height="58" rx="3" fill="black"/>
+
+  <!-- LEGS: straight down — statue stance -->
+  <rect x="148" y="430" width="40" height="222" rx="4" fill="black"/>
+  <rect x="198" y="430" width="40" height="222" rx="4" fill="black"/>
+
+  <!-- HELMET: elongated ovoid — slightly more vertical than A -->
+  <ellipse cx="188" cy="112" rx="57" ry="76" fill="black"/>
+
+  <!-- SENSOR SLITS -->
+  <rect x="148" y="100" width="80" height="7" rx="3" fill="white"/>
+  <rect x="148" y="117" width="80" height="7" rx="3" fill="white"/>
+
+  <!-- LABEL -->
+  <text x="200" y="690" font-family="monospace" font-size="11" fill="#888" text-anchor="middle">B — THE MONOLITH</text>
+</svg>

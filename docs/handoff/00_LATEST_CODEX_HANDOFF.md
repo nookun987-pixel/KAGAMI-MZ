@@ -2,25 +2,29 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-MIKAGE_CHARACTER_SOURCE_PACK_V1 — PARTIAL_PASS (missing isolated helmet ref — workaround documented)
+MIKAGE_SILHOUETTE_CANON_V1 — PASS
 
 ## 2. LATEST_RESULT
 
-13 reference files copied into docs/character/references/ across 4 categories: mask/body/silhouette (SP-001), blade (SP-002), environment (SP-003), material (good_ceramic x5), reject_examples (x5). Missing category: HELMET_ISOLATED — requires mounting D:\workspace\ComfyUI. Workaround: SP-001 full-character frame usable for helmet area inspection.
+4 silhouette candidates created as SVG (vector, black/white only, no AI generation). Thumbnail readability sheet included. A/B/D scored STRONG (90–91). C scored CONDITIONAL (85). Human visual review required to select primary candidate. Generation can proceed in parallel.
 
 ## 3. ACTIVE_LANE
 
-CHARACTER LANE — silhouette canon definition next
+CHARACTER LANE — human silhouette selection + parallel generation
 
 ## 4. LATEST_REPORT_PATH
 
-reports/MIKAGE_CHARACTER_SOURCE_PACK_V1_MANIFEST.md
+reports/MIKAGE_SILHOUETTE_CANON_V1_REVIEW.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/character/references/` (13 image files across 5 subfolders)
-- Created `reports/MIKAGE_CHARACTER_SOURCE_PACK_V1_MANIFEST.md`
-- Created `reports/MIKAGE_CHARACTER_SOURCE_PACK_V1_REJECTS.md`
+- Created `docs/character/silhouette/SILHOUETTE_A_THE_DIAGONAL.svg`
+- Created `docs/character/silhouette/SILHOUETTE_B_THE_MONOLITH.svg`
+- Created `docs/character/silhouette/SILHOUETTE_C_THE_CARRY.svg`
+- Created `docs/character/silhouette/SILHOUETTE_D_THE_PRESENCE.svg`
+- Created `docs/character/silhouette/SILHOUETTE_THUMBNAIL_SHEET.svg`
+- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_REVIEW.md`
+- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_SCORE_TABLE.md`
 - Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
@@ -32,13 +36,14 @@ reports/MIKAGE_CHARACTER_SOURCE_PACK_V1_MANIFEST.md
 | ASSET_LOCKED | NO |
 | PUBLIC_READY | NO |
 | PROMPT_LIBRARY_STATUS | PROMPT_LIBRARY_DRAFT — canon patch applied |
-| PROMPT_TEST_SET_STATUS | V0_1_READY — awaiting generation run |
-| SOURCE_PACK_STATUS | V1_PARTIAL — 13 refs built; helmet isolated ref missing |
+| PROMPT_TEST_SET_STATUS | V0_1_READY — can run now |
+| SOURCE_PACK_STATUS | V1_PARTIAL — 13 refs built |
+| SILHOUETTE_STATUS | V1_DRAFT — 4 candidates, human review required |
+| SILHOUETTE_PRIMARY | PENDING_HUMAN_SELECTION (A/B/D all STRONG) |
 | ACTIVE_PALETTE | Electric violet #8F00FF / #7B2FFF |
 | CRIMSON_STATUS | LEGACY/DEPRECATED for Character V1 |
 | OPS_DB_STATUS | V1_ACTIVE — 20 tracks populated |
-| PREV_COMMIT | 9f088ea (character test set) |
-| SOURCE_PACK_COMMIT | PENDING |
+| PREV_COMMIT | PENDING (source pack + silhouette) |
 
 ## 6. RENDER_SESSION_STATE
 
@@ -52,16 +57,21 @@ reports/MIKAGE_CHARACTER_SOURCE_PACK_V1_MANIFEST.md
 ## 8. NEXT_SAFE_TASK
 
 ```
-MIKAGE_SILHOUETTE_CANON_V1
-Goal:   Define locked silhouette spec for Character V1.
-        Create authoritative silhouette document + SVG diagram (vector only, no AI).
-Input:  docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md (Section 2.2)
-        MIKAGE_STRUCTURED_RULES.json · MIKAGE_WORLD_CORE.json
-        docs/character/references/mask_body_silhouette/REF_SP001_UNIFIED_KEY_VISUAL_V4__MASK_BODY_SILHOUETTE.png
-Output: docs/character/MIKAGE_SILHOUETTE_CANON_V1.md
-        docs/character/MIKAGE_SILHOUETTE_CANON_V1.svg
+HUMAN ACTION FIRST:
+  Open docs/character/silhouette/SILHOUETTE_THUMBNAIL_SHEET.svg
+  View all 4 candidates at screen size
+  Select 1–2 to carry forward (A, B, D all scored STRONG)
+  Return selection to agent
 
-OPTIONAL FIRST: mount D:\workspace\ComfyUI to add isolated helmet refs
+AFTER SELECTION:
+  MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC
+  Goal: Write proportions spec from selected SVG geometry
+  Output: docs/character/MIKAGE_SILHOUETTE_CANON_V1.md
 
-FORBIDDEN: no render · no AI image gen · no canon lock · no asset lock
+PARALLEL (can run now without waiting):
+  MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1 Steps 1–8
+  File: docs/character/MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md
+  Tool: Fooocus — paste prompt, run, score against source pack
+
+FORBIDDEN: no render · no AI gen · no canon lock · no asset lock
 ```

@@ -1,0 +1,65 @@
+<svg viewBox="0 0 400 720" xmlns="http://www.w3.org/2000/svg" width="400" height="720">
+  <title>SILHOUETTE_C — THE CARRY</title>
+  <rect width="400" height="720" fill="white"/>
+
+  <!-- SWORD: carried near-horizontal at right shoulder — creates extreme horizontal mass -->
+  <!-- This pose tests whether the slab reads at a shallow angle -->
+  <g transform="translate(268, 248) rotate(-55)">
+    <rect x="-22" y="-260" width="44" height="310" rx="2" fill="black"/>
+    <rect x="-44" y="-275" width="88" height="22" rx="2" fill="black"/>
+  </g>
+
+  <!-- HAIR MASS: swept left and back — creates strong counter-diagonal to sword -->
+  <path d="
+    M 174,55
+    C 148,42 115,52 94,88
+    C 72,128 68,198 70,280
+    C 72,358 82,438 98,505
+    L 108,488
+    C 106,418 103,348 106,278
+    C 110,210 122,168 140,145
+    C 154,128 168,118 172,98
+    Z
+  " fill="black"/>
+
+  <!-- CLOAK: billows more dramatically left — figure in slight forward lean -->
+  <path d="
+    M 150,232
+    C 126,298 112,392 116,482
+    C 118,542 128,582 140,598
+    C 148,572 146,508 144,444
+    C 142,372 146,304 154,258
+    Z
+  " fill="black"/>
+
+  <!-- RIGHT ARM: raised, carrying sword at shoulder height -->
+  <path d="M 234,218 L 262,205 L 278,220 L 272,235 L 252,228 L 230,238 Z" fill="black"/>
+
+  <!-- PAULDRONS: slightly angled — forward lean stance -->
+  <path d="M 58,190 L 164,184 L 158,216 L 64,222 Z" fill="black"/>
+  <path d="M 208,184 L 334,178 L 328,210 L 202,216 Z" fill="black"/>
+  <rect x="148" y="182" width="88" height="40" fill="black"/>
+
+  <!-- CHEST: slight forward tilt -->
+  <rect x="146" y="220" width="88" height="108" rx="3" fill="black"/>
+
+  <!-- WAIST -->
+  <rect x="154" y="328" width="74" height="50" rx="3" fill="black"/>
+
+  <!-- HIPS -->
+  <rect x="144" y="378" width="94" height="58" rx="3" fill="black"/>
+
+  <!-- LEGS: slight weight shift left -->
+  <rect x="144" y="434" width="42" height="215" rx="4" fill="black"/>
+  <path d="M 194,434 L 236,434 L 240,649 L 196,649 Z" rx="4" fill="black"/>
+
+  <!-- HELMET -->
+  <ellipse cx="185" cy="114" rx="57" ry="73" fill="black"/>
+
+  <!-- SENSOR SLITS -->
+  <rect x="146" y="103" width="78" height="7" rx="3" fill="white"/>
+  <rect x="146" y="120" width="78" height="7" rx="3" fill="white"/>
+
+  <!-- LABEL -->
+  <text x="200" y="690" font-family="monospace" font-size="11" fill="#888" text-anchor="middle">C — THE CARRY</text>
+</svg>

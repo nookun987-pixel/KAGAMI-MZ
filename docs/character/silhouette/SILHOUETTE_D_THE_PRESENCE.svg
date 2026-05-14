@@ -1,0 +1,64 @@
+<svg viewBox="0 0 400 720" xmlns="http://www.w3.org/2000/svg" width="400" height="720">
+  <title>SILHOUETTE_D — THE PRESENCE</title>
+  <rect width="400" height="720" fill="white"/>
+
+  <!-- SWORD: steep diagonal, almost vertical — sword mass runs parallel to body.
+       Tests whether slab reads even when close to body axis. -->
+  <g transform="translate(258, 440) rotate(-10)">
+    <rect x="-22" y="-270" width="44" height="330" rx="2" fill="black"/>
+    <rect x="-44" y="-288" width="88" height="22" rx="2" fill="black"/>
+  </g>
+
+  <!-- HAIR MASS: very wide, dramatic — maximum hair volume test -->
+  <path d="
+    M 174,50
+    C 144,38 108,50 84,90
+    C 60,135 55,215 57,308
+    C 59,395 70,478 88,548
+    C 98,522 98,452 96,378
+    C 94,302 100,235 118,188
+    C 132,158 152,136 170,106
+    Z
+  " fill="black"/>
+
+  <!-- CLOAK: merges with hair mass at left — very large combined left shape -->
+  <path d="
+    M 148,228
+    C 118,305 104,408 108,498
+    C 110,562 122,602 134,618
+    C 142,590 140,525 138,460
+    C 136,386 140,314 150,264
+    Z
+  " fill="black"/>
+
+  <!-- PAULDRONS: extremely wide — tests maximum pauldron read -->
+  <path d="M 44,186 L 168,186 L 160,220 L 52,220 Z" fill="black"/>
+  <path d="M 214,186 L 356,186 L 348,220 L 206,220 Z" fill="black"/>
+  <rect x="150" y="182" width="86" height="42" fill="black"/>
+
+  <!-- ARMS: tight to body — not competing with pauldron/sword read -->
+  <rect x="236" y="250" width="22" height="100" rx="4" fill="black"/>
+
+  <!-- CHEST -->
+  <rect x="150" y="222" width="86" height="105" rx="3" fill="black"/>
+
+  <!-- WAIST -->
+  <rect x="158" y="327" width="70" height="50" rx="3" fill="black"/>
+
+  <!-- HIPS -->
+  <rect x="148" y="377" width="90" height="58" rx="3" fill="black"/>
+
+  <!-- LEGS -->
+  <rect x="148" y="433" width="40" height="218" rx="4" fill="black"/>
+  <rect x="196" y="433" width="40" height="218" rx="4" fill="black"/>
+
+  <!-- HELMET: maximum elongation — tall narrow variant -->
+  <ellipse cx="188" cy="110" rx="54" ry="78" fill="black"/>
+
+  <!-- SENSOR SLITS: positioned slightly higher on this variant -->
+  <rect x="150" y="97" width="76" height="7" rx="3" fill="white"/>
+  <rect x="150" y="114" width="76" height="7" rx="3" fill="white"/>
+
+  <!-- LABEL -->
+  <text x="200" y="690" font-family="monospace" font-size="11" fill="#888" text-anchor="middle">D — THE PRESENCE</text>
+</svg>
