@@ -2,37 +2,36 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ADD_CHARACTER_CONCEPT_FOUNDATION_V0_1 — PASS
+REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY — PASS
 
 ## 2. LATEST_RESULT
 
-Character concept foundation committed and pushed. 4 files added to `docs/character/`. Status: CONCEPT_FOUNDATION_DRAFT. No locks applied. Commit: `1f4ea9cb`.
+Concept foundation reviewed against HTML reveal source. No canon risk found. Prompt library draft created with 12 sections: gate, visual constants, 6 prompt blocks (helmet/full-body/sword/silhouette/material/environment), universal negative prompt, 14-item drift checklist, 8-step generation sequence, 100-point review scoring table. All gate flags remain NO.
 
 ## 3. ACTIVE_LANE
 
-MIKAGE MASTER PIPELINE / character concept foundation review
+MIKAGE MASTER PIPELINE / character prompt library generation test
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/00_LATEST_CODEX_HANDOFF.md
+docs/character/REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/character/CHARACTER_CONCEPT_MIKAGE_v0.1.md`
-- Created `docs/character/mikage_character_reveal_v02.html`
-- Created `docs/character/README.md`
-- Created `docs/character/DROPIN_MANIFEST.json`
+- Created `docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md`
+- Created `docs/character/REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY_REPORT.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
-## 5a. GATE STATUS (CHARACTER_CONCEPT_FOUNDATION_V0_1)
+## 5a. GATE STATUS
 
 | Field | Value |
 |---|---|
 | CANON_LOCKED | NO |
 | ASSET_LOCKED | NO |
 | PUBLIC_READY | NO |
-| STATUS | CONCEPT_FOUNDATION_DRAFT |
-| COMMIT | 1f4ea9cb |
+| CONCEPT_STATUS | CONCEPT_FOUNDATION_DRAFT |
+| PROMPT_LIBRARY_STATUS | PROMPT_LIBRARY_DRAFT |
+| PREV_COMMIT | 1f4ea9cb |
 
 ## 6. RENDER_SESSION_STATE
 
@@ -66,15 +65,20 @@ VISOR:              Sealed
 
 ```
 NEXT TASK:
-  REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY
-  Input: docs/character/CHARACTER_CONCEPT_MIKAGE_v0.1.md
-  Goal:  Review prompt library seed (Section 7) — validate against current
-         visual spec and canon rules — flag any drift or gaps
+  GENERATE_CHARACTER_PROMPT_TEST_SET_V0_1_FROM_LIBRARY
+  Input:  docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md
+  Goal:   Execute Section 11 (8-step generation sequence) in order
+          Score each output against Section 12 (100-point scoring table)
+          Apply Section 10 (14-item forbidden drift checklist) to each result
+          Document results per image — scores, drift flags, fail modes
+          Do not advance any output to canon or asset lock
 
 FORBIDDEN:
-  - Do NOT asset-lock from this document
-  - Do NOT approve canon
-  - Do NOT mark PUBLIC_READY
+  - Do NOT canon-lock from generation output
+  - Do NOT asset-lock from generation output
+  - Do NOT mark any output production-ready
+  - Do NOT resolve open questions from concept doc Section 9
+  - Do NOT skip drift checklist
   - Do NOT return to IPAdapter
   - Do NOT run more 09E renders
 ```
