@@ -2,29 +2,24 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-MIKAGE_SILHOUETTE_CANON_V1 — PASS
+MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC — PASS
 
 ## 2. LATEST_RESULT
 
-4 silhouette candidates created as SVG (vector, black/white only, no AI generation). Thumbnail readability sheet included. A/B/D scored STRONG (90–91). C scored CONDITIONAL (85). Human visual review required to select primary candidate. Generation can proceed in parallel.
+Silhouette selection recorded: B — THE MONOLITH as primary, D — THE PRESENCE as secondary. A retired to motion/action exploration only. C rejected (CONDITIONAL). Full proportions spec extracted from SVG geometry and written to reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md. Selection decision written to reports/MIKAGE_SILHOUETTE_CANON_V1_SELECTION_DECISION.md.
 
 ## 3. ACTIVE_LANE
 
-CHARACTER LANE — human silhouette selection + parallel generation
+CHARACTER LANE — anchor plan phase
 
 ## 4. LATEST_REPORT_PATH
 
-reports/MIKAGE_SILHOUETTE_CANON_V1_REVIEW.md
+reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/character/silhouette/SILHOUETTE_A_THE_DIAGONAL.svg`
-- Created `docs/character/silhouette/SILHOUETTE_B_THE_MONOLITH.svg`
-- Created `docs/character/silhouette/SILHOUETTE_C_THE_CARRY.svg`
-- Created `docs/character/silhouette/SILHOUETTE_D_THE_PRESENCE.svg`
-- Created `docs/character/silhouette/SILHOUETTE_THUMBNAIL_SHEET.svg`
-- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_REVIEW.md`
-- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_SCORE_TABLE.md`
+- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md`
+- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_SELECTION_DECISION.md`
 - Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
@@ -38,12 +33,15 @@ reports/MIKAGE_SILHOUETTE_CANON_V1_REVIEW.md
 | PROMPT_LIBRARY_STATUS | PROMPT_LIBRARY_DRAFT — canon patch applied |
 | PROMPT_TEST_SET_STATUS | V0_1_READY — can run now |
 | SOURCE_PACK_STATUS | V1_PARTIAL — 13 refs built |
-| SILHOUETTE_STATUS | V1_DRAFT — 4 candidates, human review required |
-| SILHOUETTE_PRIMARY | PENDING_HUMAN_SELECTION (A/B/D all STRONG) |
+| SILHOUETTE_STATUS | V1_LOCK_SPEC WRITTEN — not canon-locked |
+| SILHOUETTE_PRIMARY | B — THE MONOLITH |
+| SILHOUETTE_SECONDARY | D — THE PRESENCE |
+| SILHOUETTE_MOTION_ONLY | A — THE DIAGONAL |
+| SILHOUETTE_REJECTED | C — THE CARRY |
 | ACTIVE_PALETTE | Electric violet #8F00FF / #7B2FFF |
 | CRIMSON_STATUS | LEGACY/DEPRECATED for Character V1 |
 | OPS_DB_STATUS | V1_ACTIVE — 20 tracks populated |
-| PREV_COMMIT | PENDING (source pack + silhouette) |
+| PREV_COMMIT | PENDING (source pack + silhouette + lock spec) |
 
 ## 6. RENDER_SESSION_STATE
 
@@ -57,21 +55,23 @@ reports/MIKAGE_SILHOUETTE_CANON_V1_REVIEW.md
 ## 8. NEXT_SAFE_TASK
 
 ```
-HUMAN ACTION FIRST:
-  Open docs/character/silhouette/SILHOUETTE_THUMBNAIL_SHEET.svg
-  View all 4 candidates at screen size
-  Select 1–2 to carry forward (A, B, D all scored STRONG)
-  Return selection to agent
+TASK: MIKAGE_CHARACTER_ANCHOR_V1_PLAN
+GOAL: Plan the path from silhouette spec → first full-character generation brief.
+      Define generation order, settings, and scoring gates for Character V1 anchor.
+OUTPUT: docs/character/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
 
-AFTER SELECTION:
-  MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC
-  Goal: Write proportions spec from selected SVG geometry
-  Output: docs/character/MIKAGE_SILHOUETTE_CANON_V1.md
+PARALLEL (can run without waiting):
+  Run MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md Steps 1–8
+  Tool: Fooocus or ComfyUI txt2img (NOT 09E inpaint)
+  Compare outputs against docs/character/references/
 
-PARALLEL (can run now without waiting):
-  MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1 Steps 1–8
-  File: docs/character/MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md
-  Tool: Fooocus — paste prompt, run, score against source pack
+PENDING GIT (human action):
+  cd D:\KAGAMI-MZ_SYNC_PUSH_V2
+  git add docs/character/references/ docs/character/silhouette/ reports/
+  git add docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md
+  git add docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  git commit -m "character: source pack V1 + silhouette canon V1 lock spec"
+  git push
 
 FORBIDDEN: no render · no AI gen · no canon lock · no asset lock
 ```
