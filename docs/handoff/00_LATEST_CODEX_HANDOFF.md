@@ -2,24 +2,27 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY — PASS
+OPS-DB-01_CREATE_MIKAGE_OPERATING_DATABASE_V1 — PASS
 
 ## 2. LATEST_RESULT
 
-Concept foundation reviewed against HTML reveal source. No canon risk found. Prompt library draft created with 12 sections: gate, visual constants, 6 prompt blocks (helmet/full-body/sword/silhouette/material/environment), universal negative prompt, 14-item drift checklist, 8-step generation sequence, 100-point review scoring table. All gate flags remain NO.
+Operating database v1 created. 5 files verified on disk. Asset route database populated from handoff files (14 routes). Track catalog placeholder created — all fields CHUA_XAC_NHAN (no TooLost/UPC/track data found in any accessible file). Agent operating rules written (14 rules). Inaccessible paths: D:\workspace\ComfyUI\MIKAGE_CANON not mounted — mitigated by indirect handoff references.
 
 ## 3. ACTIVE_LANE
 
-MIKAGE MASTER PIPELINE / character prompt library generation test
+MIKAGE MASTER PIPELINE / OPS-DB lane + character prompt library lane
 
 ## 4. LATEST_REPORT_PATH
 
-docs/character/REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY_REPORT.md
+docs/handoff/OPS_DB_01_CREATE_MIKAGE_OPERATING_DATABASE_V1_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md`
-- Created `docs/character/REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY_REPORT.md`
+- Created `docs/handoff/MIKAGE_OPERATING_DATABASE_V1.md`
+- Created `docs/handoff/MIKAGE_TRACK_CATALOG_DATABASE_V1.csv`
+- Created `docs/handoff/MIKAGE_ASSET_ROUTE_STATUS_DATABASE_V1.csv`
+- Created `docs/handoff/MIKAGE_AGENT_OPERATING_RULES_V1.md`
+- Created `docs/handoff/OPS_DB_01_CREATE_MIKAGE_OPERATING_DATABASE_V1_REPORT.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
 ## 5a. GATE STATUS
@@ -31,6 +34,8 @@ docs/character/REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY_REPOR
 | PUBLIC_READY | NO |
 | CONCEPT_STATUS | CONCEPT_FOUNDATION_DRAFT |
 | PROMPT_LIBRARY_STATUS | PROMPT_LIBRARY_DRAFT |
+| OPS_DB_STATUS | V1_CREATED — PARTIAL DATA |
+| UNVERIFIED_FIELDS | ~23 (track catalog + 1 asset row) |
 | PREV_COMMIT | 1f4ea9cb |
 
 ## 6. RENDER_SESSION_STATE
@@ -64,21 +69,27 @@ VISOR:              Sealed
 ## 8. NEXT_SAFE_TASK
 
 ```
-NEXT TASK:
+OPS-DB LANE:
+  OPS-DB-02_POPULATE_AND_RECONCILE_MIKAGE_TRACK_CATALOG_FROM_VERIFIED_SOURCES_V1
+  Input:  docs/handoff/MIKAGE_TRACK_CATALOG_DATABASE_V1.csv (placeholder — all CHUA_XAC_NHAN)
+  Goal:   Populate track catalog with verified TooLost records, UPC, catalog numbers,
+          release dates, store delivery log status
+  Requires: Human to provide TooLost export or verified source file — cannot proceed without it
+
+MAIN PIPELINE LANE:
   GENERATE_CHARACTER_PROMPT_TEST_SET_V0_1_FROM_LIBRARY
   Input:  docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md
   Goal:   Execute Section 11 (8-step generation sequence) in order
           Score each output against Section 12 (100-point scoring table)
           Apply Section 10 (14-item forbidden drift checklist) to each result
           Document results per image — scores, drift flags, fail modes
-          Do not advance any output to canon or asset lock
 
-FORBIDDEN:
+FORBIDDEN (both lanes):
   - Do NOT canon-lock from generation output
   - Do NOT asset-lock from generation output
   - Do NOT mark any output production-ready
-  - Do NOT resolve open questions from concept doc Section 9
-  - Do NOT skip drift checklist
   - Do NOT return to IPAdapter
   - Do NOT run more 09E renders
+  - Do NOT submit anything to TooLost
+  - Do NOT invent UPC, catalog numbers, or release dates
 ```
