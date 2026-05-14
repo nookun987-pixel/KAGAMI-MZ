@@ -2,26 +2,37 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-ASSET-BUILD-10F_CANON_GATE_SPRINT — DIAGNOSTIC COMPLETE (no pass candidate)
+ADD_CHARACTER_CONCEPT_FOUNDATION_V0_1 — PASS
 
 ## 2. LATEST_RESULT
 
-Canon gate sprint complete. 16 Imagen references + 7 MASK_V3 samples tested. Best score: 79/100 (R3 baseline unchanged). Formula decoded — 3/4 bust + black bg + blade fill = predicted 86/100. No pass candidate found. Bust bridge authorization still pending.
+Character concept foundation committed and pushed. 4 files added to `docs/character/`. Status: CONCEPT_FOUNDATION_DRAFT. No locks applied. Commit: `1f4ea9cb`.
 
 ## 3. ACTIVE_LANE
 
-MIKAGE MASTER PIPELINE / bust bridge repair packaging
+MIKAGE MASTER PIPELINE / character concept foundation review
 
 ## 4. LATEST_REPORT_PATH
 
-docs/handoff/ASSET-BUILD-10F_CANON_GATE_SPRINT_REPORT.md
+docs/handoff/00_LATEST_CODEX_HANDOFF.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/handoff/ASSET-BUILD-10F_CANON_GATE_SPRINT_REPORT.md` (sprint diagnostic)
-- Created `MIKAGE_CANON/09_GEN_ROUND_4_REFERENCE/` (16 Imagen reference images)
-- Created `MIKAGE_CANON/09_GEN_ROUND_4_REFERENCE/MASK_V3_SAMPLE/` (7 MASK_V3 samples)
+- Created `docs/character/CHARACTER_CONCEPT_MIKAGE_v0.1.md`
+- Created `docs/character/mikage_character_reveal_v02.html`
+- Created `docs/character/README.md`
+- Created `docs/character/DROPIN_MANIFEST.json`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
+
+## 5a. GATE STATUS (CHARACTER_CONCEPT_FOUNDATION_V0_1)
+
+| Field | Value |
+|---|---|
+| CANON_LOCKED | NO |
+| ASSET_LOCKED | NO |
+| PUBLIC_READY | NO |
+| STATUS | CONCEPT_FOUNDATION_DRAFT |
+| COMMIT | 1f4ea9cb |
 
 ## 6. RENDER_SESSION_STATE
 
@@ -35,8 +46,9 @@ docs/handoff/ASSET-BUILD-10F_CANON_GATE_SPRINT_REPORT.md
 | Q-5 status | **CLEARED — all 9 criteria** |
 | RunPod pod | ACTION REQUIRED — confirm shutdown |
 | Bust bridge | READY — pending authorization |
-| Canon gate | SPRINT DONE — best 79/100 — formula decoded — path to ≥85 known |
-| Canon gate path | 3/4 bust + black bg + blade fill → predicted 86/100 |
+| Canon gate | SPRINT CLOSED — Drive loot exhausted — best 79/100 (R3) |
+| Canon gate verdict | T4/MASK_V3/Imagen all FAIL — no new candidate — requires new generation |
+| Canon gate path | 3/4 bust + black bg + blade fill → predicted 86 — DO AFTER bust bridge |
 
 ## 7. E-3 CANDIDATE
 
@@ -53,19 +65,16 @@ VISOR:              Sealed
 ## 8. NEXT_SAFE_TASK
 
 ```
-IMMEDIATE HUMAN ACTIONS:
-  1. Confirm 09E3_graphene_composite_v1.png saved locally
-  2. Confirm RunPod pod shutdown
-  3. Authorize ASSET-BUILD-11_BUST_BRIDGE_COMPOSITE
-
-NEXT TASK (requires human authorization):
-  ASSET-BUILD-11_BUST_BRIDGE_COMPOSITE
-  Input: 09E3_graphene_composite_v1.png
-  Goal:  Integrate Q-5 cleared faceplate into bust context
+NEXT TASK:
+  REVIEW_CHARACTER_CONCEPT_FOUNDATION_V0_1_FOR_PROMPT_LIBRARY
+  Input: docs/character/CHARACTER_CONCEPT_MIKAGE_v0.1.md
+  Goal:  Review prompt library seed (Section 7) — validate against current
+         visual spec and canon rules — flag any drift or gaps
 
 FORBIDDEN:
+  - Do NOT asset-lock from this document
+  - Do NOT approve canon
+  - Do NOT mark PUBLIC_READY
   - Do NOT return to IPAdapter
   - Do NOT run more 09E renders
-  - Do NOT lock asset
-  - Do NOT approve canon
 ```
