@@ -1,6 +1,6 @@
 # MIKAGE_NEXT_SAFE_ACTION_V1
 
-**Updated:** 2026-05-15 — post MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC
+**Updated:** 2026-05-15 — post MIKAGE_CHARACTER_ANCHOR_V1_PLAN
 
 ---
 
@@ -14,8 +14,8 @@
 | PROMPT_TEST_SET | V0_1_READY — can run now |
 | SOURCE_PACK | V1_PARTIAL — 13 refs built |
 | SILHOUETTE | V1_LOCK_SPEC WRITTEN — B=primary, D=secondary |
-| SILHOUETTE_PRIMARY | B — THE MONOLITH |
-| SILHOUETTE_SECONDARY | D — THE PRESENCE |
+| ANCHOR_PLAN | V1 WRITTEN — generation phases 1–4 defined |
+| ANCHOR_STATUS | NOT GENERATED — plan ready, awaiting human execution |
 | ACTIVE_PALETTE | Electric violet #8F00FF / #7B2FFF |
 | CRIMSON_STATUS | LEGACY/DEPRECATED for Character V1 |
 
@@ -24,26 +24,34 @@
 ## NEXT_SAFE_TASK
 
 ```
-TASK: MIKAGE_CHARACTER_ANCHOR_V1_PLAN
-GOAL: Plan the path from silhouette spec → first full-character generation brief.
-      Define what inputs are needed, what format the brief takes,
-      and what success looks like for Character V1 anchor image.
+TASK: MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST
+GOAL: Human executes generation phases P1→P4 from anchor plan.
+      Agent scores resulting outputs against review checklist.
+      First output passing all gates becomes CHARACTER ANCHOR V1.
 
-INPUTS AVAILABLE:
-  - docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md (patched)
-  - docs/character/MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md (8 steps ready)
-  - reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md (proportion rules)
-  - docs/character/references/ (13 ref images)
-  - docs/character/silhouette/ (5 SVGs)
+HUMAN RUNS:
+  1. Open: reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
+  2. Run Phase 1 (P1-A, P1-B, P1-C) — silhouette geometry validation
+  3. Run Phase 2 (P2-A, P2-B, P2-C) — material zone validation
+  4. Run Phase 3 (P3-A, P3-B, P3-C) — full figure candidates
+  5. Run Phase 4 — select best passing output as anchor candidate
+  6. Save candidate as: docs/character/anchor/CHARACTER_ANCHOR_V1_CANDIDATE.png
+  7. Return output to agent for formal scoring
 
-EXPECTED OUTPUT:
-  docs/character/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
-  (plan doc: what to generate, in what order, with what settings,
-   what scoring gates to apply before accepting an anchor)
+AGENT DOES:
+  - Score output against MIKAGE_CHARACTER_ANCHOR_V1_REVIEW_CHECKLIST.md
+  - Write MIKAGE_CHARACTER_ANCHOR_V1_RECORD.md
+  - Update handoff and pointer
+
+TOOL: Fooocus (recommended) or ComfyUI txt2img
+      DO NOT USE 09E INPAINTING WORKFLOW — no base image exists yet
+MODEL: juggernautXL_v8Rundiffusion.safetensors
+SETTINGS: Steps=35, CFG=7.5, Sampler=dpmpp_2m karras, Aspect=2:3
+PROMPTS: Section 6 of MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md (ready to paste)
+CHECKLIST: reports/MIKAGE_CHARACTER_ANCHOR_V1_REVIEW_CHECKLIST.md
 
 DO NOT:
-  Render. Generate final character. Lock canon. Lock assets.
-  Claim production-ready.
+  Render agent-side. Canon-lock. Asset-lock. Claim production-ready.
 ```
 
 ---
@@ -51,26 +59,25 @@ DO NOT:
 ## PARALLEL (can run any time without agent)
 
 ```
-Human-executable parallel tasks:
-
-1. Run MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md
-   Tool: Fooocus or ComfyUI txt2img (NOT 09E inpaint workflow)
-   Steps 1–8, score each output against source pack
+1. Run MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md Steps 1–8
+   (separate from anchor plan — cross-validates prompt library)
    File: docs/character/MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md
+   Tool: Fooocus or ComfyUI txt2img
 
-2. Commit + push all pending work since b4e516c:
+2. Commit + push all pending work:
    cd D:\KAGAMI-MZ_SYNC_PUSH_V2
    git add docs/character/references/
    git add docs/character/silhouette/
    git add reports/
    git add docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md
    git add docs/handoff/00_LATEST_CODEX_HANDOFF.md
-   git commit -m "character: source pack V1 + silhouette canon V1 lock spec
+   git commit -m "character: anchor V1 plan + review checklist
 
-   Source pack: 13 refs in docs/character/references/.
-   Canon patch: prompt library v0.1 — helmet slits, violet, hair.
-   Silhouette: B=primary, D=secondary. Lock spec + selection decision.
-   NEXT: MIKAGE_CHARACTER_ANCHOR_V1_PLAN"
+   Source pack V1 (13 refs), silhouette lock spec (B=primary, D=secondary).
+   Anchor plan: 4-phase generation path defined, prompts ready to paste.
+   Review checklist: 7 sections, 6 instant rejects, 8 silhouette checks,
+   10 material checks, 15 drift checks, scoring table, anchor gate.
+   NEXT: MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST"
    git push
 ```
 

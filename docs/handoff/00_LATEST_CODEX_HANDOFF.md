@@ -2,24 +2,24 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC — PASS
+MIKAGE_CHARACTER_ANCHOR_V1_PLAN — PASS
 
 ## 2. LATEST_RESULT
 
-Silhouette selection recorded: B — THE MONOLITH as primary, D — THE PRESENCE as secondary. A retired to motion/action exploration only. C rejected (CONDITIONAL). Full proportions spec extracted from SVG geometry and written to reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md. Selection decision written to reports/MIKAGE_SILHOUETTE_CANON_V1_SELECTION_DECISION.md.
+Full anchor generation plan written. Defines 4-phase generation path (P1 silhouette → P2 material → P3 full figure → P4 anchor selection). 5 material zones specified (porcelain / graphene underlayer / violet accent / matte blade / hair). Anti-drift guide from 5 reject examples. 3 ready-to-paste Fooocus prompts. Review checklist with 7 sections (6 instant rejects, 8 silhouette checks, 10 material zone checks, 15 drift checks, scoring table, anchor gate, reject cross-check).
 
 ## 3. ACTIVE_LANE
 
-CHARACTER LANE — anchor plan phase
+CHARACTER LANE — anchor generation (human executes)
 
 ## 4. LATEST_REPORT_PATH
 
-reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md
+reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md`
-- Created `reports/MIKAGE_SILHOUETTE_CANON_V1_SELECTION_DECISION.md`
+- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md`
+- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_REVIEW_CHECKLIST.md`
 - Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
@@ -38,10 +38,12 @@ reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md
 | SILHOUETTE_SECONDARY | D — THE PRESENCE |
 | SILHOUETTE_MOTION_ONLY | A — THE DIAGONAL |
 | SILHOUETTE_REJECTED | C — THE CARRY |
+| ANCHOR_PLAN_STATUS | V1 WRITTEN — generation phases 1–4 defined |
+| ANCHOR_STATUS | NOT GENERATED — awaiting human execution |
 | ACTIVE_PALETTE | Electric violet #8F00FF / #7B2FFF |
 | CRIMSON_STATUS | LEGACY/DEPRECATED for Character V1 |
 | OPS_DB_STATUS | V1_ACTIVE — 20 tracks populated |
-| PREV_COMMIT | PENDING (source pack + silhouette + lock spec) |
+| PREV_COMMIT | PENDING (all work since b4e516c) |
 
 ## 6. RENDER_SESSION_STATE
 
@@ -55,23 +57,24 @@ reports/MIKAGE_SILHOUETTE_CANON_V1_LOCK_SPEC.md
 ## 8. NEXT_SAFE_TASK
 
 ```
-TASK: MIKAGE_CHARACTER_ANCHOR_V1_PLAN
-GOAL: Plan the path from silhouette spec → first full-character generation brief.
-      Define generation order, settings, and scoring gates for Character V1 anchor.
-OUTPUT: docs/character/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
+TASK: MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST
+GOAL: Human runs generation phases P1–P4 from anchor plan.
+      Agent scores outputs and records first passing output as Anchor V1.
 
-PARALLEL (can run without waiting):
-  Run MIKAGE_CHARACTER_PROMPT_TEST_SET_V0_1.md Steps 1–8
-  Tool: Fooocus or ComfyUI txt2img (NOT 09E inpaint)
-  Compare outputs against docs/character/references/
+PLAN FILE:   reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
+CHECKLIST:   reports/MIKAGE_CHARACTER_ANCHOR_V1_REVIEW_CHECKLIST.md
+PROMPTS:     Section 6 of plan (3 prompts ready to paste)
+TOOL:        Fooocus or ComfyUI txt2img (NOT 09E — no base image yet)
+MODEL:       juggernautXL_v8Rundiffusion.safetensors
+SETTINGS:    Steps=35, CFG=7.5, dpmpp_2m karras, 2:3 portrait
 
 PENDING GIT (human action):
   cd D:\KAGAMI-MZ_SYNC_PUSH_V2
   git add docs/character/references/ docs/character/silhouette/ reports/
   git add docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md
   git add docs/handoff/00_LATEST_CODEX_HANDOFF.md
-  git commit -m "character: source pack V1 + silhouette canon V1 lock spec"
+  git commit -m "character: anchor V1 plan + review checklist + silhouette lock spec"
   git push
 
-FORBIDDEN: no render · no AI gen · no canon lock · no asset lock
+FORBIDDEN: no render · no AI gen agent-side · no canon lock · no asset lock
 ```
