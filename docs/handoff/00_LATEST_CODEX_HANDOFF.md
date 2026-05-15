@@ -2,16 +2,17 @@
 
 ## 1. Latest Completed Task
 
-`DECIDE_PROXY_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1` - complete.
+`PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| HEAD | `38e4abb` |
+| HEAD | `a79d706` |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
-| PROXY_REFINEMENT_OR_RIG_PREP_DECISION_STATUS | COMPLETE |
+| SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
 | DECISION | `RIG_PREPARATION_FROM_CURRENT_PROXY_BLOCKOUT` |
+| PROXY_RIG_PREP_STATUS | PREPARED |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -19,28 +20,22 @@
 
 ## 3. Latest Result
 
-Decided the next route from the reviewed proxy blockout:
+Prepared the proxy rig-prep plan:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_REFINEMENT_OR_RIG_PREP_DECISION.md
+reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md
 ```
 
-Selected route:
+The plan defines bone/control planning requirements, allowed proxy objects for rig planning, deformation-risk notes, QA checks, and forbidden changes.
 
-```text
-PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1
-```
-
-Reason: the proxy blockout passed review with required Anchor V1 components present, and no documented geometry blocker requires refinement before rig-prep planning.
-
-No rig was created. No rig readiness is claimed.
+No rig was created. No rig readiness is claimed. The Anchor V1 locked reference and proxy `.blend` were not modified.
 
 ## 4. Current Route State
 
 | Field | Value |
 |---|---|
-| PROXY_REFINEMENT_OR_RIG_PREP_DECISION_STATUS | COMPLETE |
-| NEXT_SAFE_TASK | `PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1` |
+| PROXY_RIG_PREP_STATUS | PREPARED |
+| NEXT_SAFE_TASK | `REVIEW_PROXY_RIG_PREP_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -48,16 +43,16 @@ No rig was created. No rig readiness is claimed.
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_REFINEMENT_OR_RIG_PREP_DECISION.md`
-- `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BLOCKOUT_REVIEW.md`
-- `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_EXECUTION_REPORT.md`
 - `production/character/proxy_actor/MIKAGE_PROXY_3D_ACTOR_FROM_ANCHOR_V1_NOTES.md`
+- `production/character/proxy_actor/MIKAGE_PROXY_3D_ACTOR_FROM_ANCHOR_V1_BLOCKOUT.blend`
 
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1
+REVIEW_PROXY_RIG_PREP_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
