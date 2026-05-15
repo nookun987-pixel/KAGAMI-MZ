@@ -1,8 +1,8 @@
 # MIKAGE_CHARACTER_ANCHOR_V1_SELECTION_REPORT
 
-**Status:** NO SELECTION — GENERATION_BLOCKER  
+**Status:** NO SELECTION — REVISE REQUIRED  
 **Date:** 2026-05-15  
-**Task:** MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST
+**Task:** SCORE_ANCHOR_V1_CANDIDATES
 
 ---
 
@@ -10,62 +10,80 @@
 
 **No anchor candidate selected.**
 
-Zero qualifying outputs exist. All existing images in the accessible repo fail at the Instant Reject gate (IR-01, IR-02, IR-06) or are disqualified (LOCKED / not full-body / pipeline test placeholder).
+Two candidates scored. Neither reaches anchor gate threshold (90+). Both fail on sensor slits (score 1). TEST_001 additionally fails on sword form and aesthetic axis. TEST_002 is the only viable revision base.
 
 ---
 
 ## CANDIDATE SUMMARY TABLE
 
-| ID | File | Type | Instant Reject gate | Verdict |
-|---|---|---|---|---|
-| EX-01 | GOOGLE_LANE_E2E_001.png | Low-poly face mask | IR-01 + IR-02 + IR-06 | INSTANT REJECT |
-| EX-02 | UNIFIED_KEY_VISUAL_V4 (LOCKED) | Helmet close-up | IR-02 borderline + LOCKED + not full-body | DISQUALIFIED |
-| EX-03 | base_anchor / input_image | Pipeline placeholder | All gates fail | INSTANT REJECT |
-| EX-04 | img_1 through img_4 | Noise calibration | All gates fail | INSTANT REJECT |
-| EX-05 | GOLDEN_MASK archives | Pre-classified reject | IR warm tone | INSTANT REJECT |
+| File | Score | Threshold | Verdict |
+|---|---|---|---|
+| ANCHOR_V1_P3A_TEST_001_STRONG_PARTIAL.png | 61/100 — WEAK | 90+ required | REJECT as revision base |
+| ANCHOR_V1_P3A_TEST_002_STRONG_PARTIAL.png | 78/100 — CONDITIONAL | 90+ required | REVISE — one targeted iteration |
 
 ---
 
-## WHAT MUST EXIST BEFORE SELECTION CAN HAPPEN
+## WHY NOT SELECTED
 
-A qualifying anchor candidate must be a human-generated image that:
+**TEST_001 (61/100):** Four concurrent issues — sensor slits absent, sword has traditional taper (not rectangular slab), leg armor gaps, anime drift (stiletto boots, slim proportions). Too many root problems for revision. Do not use as base.
 
-1. Passes all 7 Instant Reject checks (IR-01 through IR-07)
-2. Passes all 8 Silhouette Gate checks (SG-01 through SG-08)
-3. Passes all 10 Material Gate checks (MZ-01 through MZ-10)
-4. Passes all 15 Drift Checks (D-01 through D-15)
-5. Scores 90+ on scoring table
-6. Passes all 6 Anchor Gate checks (AG-01 through AG-06)
-7. Is confirmed NOT matching any of the 5 reject examples
-
-**None of this can be evaluated without a human-generated full-body character image.**
+**TEST_002 (78/100):** Two specific issues only — sensor slits not visible on helmet, pauldrons below 2.4× spec width. All other criteria correct. Foundation is valid. This is a targeted revision case, not a root rebuild.
 
 ---
 
-## UNLOCKED POSITIVE OBSERVATION
+## WHAT IS CORRECT IN TEST_002
 
-The LOCKED UNIFIED_KEY_VISUAL_V4 helmet image (EX-02) demonstrates the model can produce:
-- Correct portrait oval helmet shape (approximately 1.35:1 H:W ratio — within spec)
-- Sealed face with no human features
-- Void black background
-- Violet ambient halo in correct position and intensity
-
-This means the drift toward face masks (EX-01 failure) is not inevitable — the model has produced correct sealed helmet geometry before. The risk is in full-body prompt construction. P3-A prompt hardening (see Generation Test Report Section 6) addresses this.
+These elements are working and must be preserved:
+- Sword form: rectangular dark slab, correct width-to-height ratio, horizontal guard bar — **DO NOT CHANGE sword prompts**
+- Palette: cool white armor, void black background, violet seam accents — **PRESERVE**
+- Armor coverage: fully sealed, no exposure — **PRESERVE**
+- Hair: long heavy straight black, fills left negative space — **PRESERVE**
+- Aesthetic axis: sacred-tech, not anime — **PRESERVE**
+- Pose: standing upright, sword at right side, planted stance — **PRESERVE**
 
 ---
 
-## ANCHOR CANDIDATE DIRECTORY
+## REVISION REQUIRED — EXACT PROMPT CHANGES
 
-Created and ready: `docs/character/anchor_v1_candidates/`
+### Add to positive (place near start of prompt):
+```
+two ultra-narrow horizontal void-black sensor slits clearly visible on helmet face,
+sensor slits are two thin dark parallel horizontal lines cut across the white porcelain helmet at eye level,
+dark recessed void channels spanning 70% of helmet width visible in white surface,
+dramatically oversized flat-topped pauldron plates extending far wider than the head,
+pauldrons are nearly three times the helmet width, wide horizontal shoulder armor like battlements
+```
 
-Human saves all generation outputs here. Agent scores each on return.
+### Add to negative (append to existing):
+```
+smooth featureless helmet, completely blank helmet, sealed blank helmet, single slit, vertical slit,
+diagonal slit, V-shaped visor, curved visor, cross slit, narrow shoulders, small pauldrons,
+proportional shoulders, normal shoulder width
+```
+
+### What NOT to change:
+Everything else in P3-A prompt — sword, hair, coverage, palette, background, pose.
+
+---
+
+## PROJECTED SCORE AFTER REVISION
+
+| Criterion | TEST_002 current | After revision | Delta |
+|---|---|---|---|
+| Helmet + sensor slits | 1 → 10pts | 2 → 20pts | +10 |
+| Pauldron width | 1 → 5pts | 2 → 10pts | +5 |
+| Silhouette legibility | 1 → 8pts | 2 → 15pts | +7 (pauldrons fix unlocks this) |
+| All others | unchanged | unchanged | 0 |
+| **Projected total** | **78** | **93** | **+15** |
+
+**93/100 projected — STRONG — would pass anchor gate if sensor slits and pauldrons are correctly rendered.**
 
 ---
 
 ## SELECTION WILL HAPPEN WHEN
 
-Human returns at least 1 file path in `docs/character/anchor_v1_candidates/` and requests scoring. Agent runs full checklist against that image and writes selection record if any output qualifies.
+Human runs revised P3-A prompt (exact additions above) and returns at least 1 output to `docs/character/anchor_v1_candidates/`. Agent scores and runs anchor gate if score ≥ 90.
 
 ---
 
-*Generated: 2026-05-15 | Task: MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST | Selection: NONE — PENDING HUMAN GENERATION*
+*Generated: 2026-05-15 | Task: SCORE_ANCHOR_V1_CANDIDATES | Selection: NONE — REVISION PENDING*

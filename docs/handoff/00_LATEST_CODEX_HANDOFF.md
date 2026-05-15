@@ -2,27 +2,28 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST — FAIL (GENERATION_BLOCKER)
+OPS-DB-UPDATE — MIKAGE_TRACK_CATALOG_DATABASE_V1_LOCKED_21 — COMPLETE
 
 ## 2. LATEST_RESULT
 
-All existing repo images scanned and scored. 5 candidate types inspected. Zero qualify. EX-01 (GOOGLE_LANE_E2E_001) = low-poly face mask, fails IR-01+IR-02+IR-06. EX-02 (UNIFIED_KEY_VISUAL_V4 LOCKED) = helmet close-up only, LOCKED, pre-spec slit design, disqualified. EX-03/04/05 = pipeline placeholders and noise. No full-body character generation has ever been run under current V1 canon (sensor slits + hair mandatory). Agent cannot generate agent-side. Human must run P3-A prompt in Fooocus. Hardened prompt additions documented to counter face-mask drift (EX-01 failure mode).
+Track catalog xlsx updated: last_verified_date synced to 2026-05-15 for all 19 tracks (01–15, 17–20) that were on 2026-05-13. Track 16 and 21 already at 2026-05-15 — unchanged. Track 21 (DÙ BẦU TRỜI TẮT NẮNG, Vietnamese, 2026-07-03) appended to repo CSV. All 21 tracks now have last_verified_date=2026-05-15. Xlsx saved to workspace root. CSV at docs/handoff/MIKAGE_TRACK_CATALOG_DATABASE_V1.csv is now 22 lines (header + 21 tracks).
 
 ## 3. ACTIVE_LANE
 
-CHARACTER LANE — BLOCKED at anchor generation — human must execute Fooocus
+CHARACTER LANE — anchor revision iteration (human generates, agent scores)
 
 ## 4. LATEST_REPORT_PATH
 
-reports/MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST_REPORT.md
+reports/MIKAGE_CHARACTER_ANCHOR_V1_CANDIDATE_SCORE_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `docs/character/anchor_v1_candidates/` (directory — empty, ready for outputs)
-- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST_REPORT.md`
-- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_SELECTION_REPORT.md`
-- Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
+- Updated `MIKAGE_TRACK_CATALOG_DATABASE_V1_LOCKED_21.xlsx` (last_verified_date sync, saved to workspace root)
+- Updated `docs/handoff/MIKAGE_TRACK_CATALOG_DATABASE_V1.csv` (track 21 appended)
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
+- (Previous session) Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_CANDIDATE_SCORE_REPORT.md`
+- (Previous session) Updated `reports/MIKAGE_CHARACTER_ANCHOR_V1_SELECTION_REPORT.md`
+- (Previous session) Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
 
 ## 5a. GATE STATUS
 
@@ -31,19 +32,19 @@ reports/MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST_REPORT.md
 | CANON_LOCKED | NO |
 | ASSET_LOCKED | NO |
 | PUBLIC_READY | NO |
-| PROMPT_LIBRARY_STATUS | PROMPT_LIBRARY_DRAFT — canon patch applied |
-| SOURCE_PACK_STATUS | V1_PARTIAL — 13 refs built |
-| SILHOUETTE_STATUS | V1_LOCK_SPEC WRITTEN — not canon-locked |
 | SILHOUETTE_PRIMARY | B — THE MONOLITH |
 | SILHOUETTE_SECONDARY | D — THE PRESENCE |
-| ANCHOR_PLAN_STATUS | V1 WRITTEN — 3 prompts ready to paste |
-| ANCHOR_STATUS | **BLOCKED — no qualifying full-body generation in repo** |
-| ANCHOR_CANDIDATES_DIR | docs/character/anchor_v1_candidates/ — EMPTY |
-| KNOWN_DRIFT_RISK | EX-01 face-mask drift (juggernautXL default). Hardened negatives written. |
+| ANCHOR_PLAN_STATUS | V1 WRITTEN |
+| ANCHOR_STATUS | **REVISION — TEST_002 at 78/100, 12 pts from threshold** |
+| ANCHOR_TEST_001 | 61/100 WEAK — REJECTED as revision base |
+| ANCHOR_TEST_002 | 78/100 CONDITIONAL — REVISION BASE |
+| ANCHOR_BLOCKER | Sensor slits not visible (−10) + pauldrons below 2.4× spec (−5) |
+| ANCHOR_REVISION_PROMPT | WRITTEN — exact additions in SELECTION_REPORT + NEXT_SAFE_ACTION |
+| CONFIRMED_WORKING | Sword (2/2), Palette (2/2), Coverage (2/2), Hair (2/2), Aesthetic (2/2) |
 | ACTIVE_PALETTE | Electric violet #8F00FF / #7B2FFF |
 | CRIMSON_STATUS | LEGACY/DEPRECATED for Character V1 |
-| OPS_DB_STATUS | V1_ACTIVE — 20 tracks populated |
-| PREV_COMMIT | PENDING (all work since b4e516c) |
+| TRACK_CATALOG_COUNT | 21 tracks — all last_verified_date=2026-05-15 |
+| PREV_COMMIT | PENDING |
 
 ## 6. RENDER_SESSION_STATE
 
@@ -57,26 +58,32 @@ reports/MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST_REPORT.md
 ## 8. NEXT_SAFE_TASK
 
 ```
-HUMAN ACTION — run in Fooocus on Windows:
-  Model: juggernautXL_v8Rundiffusion.safetensors
-  Prompt: P3-A from reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md Section 6
-  Settings: Steps=35, CFG=7.5, dpmpp_2m karras, 2:3 portrait
-  Batch: 5–8 seeds
+HUMAN — run REVISED P3-A in Fooocus:
+  Base prompt: reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md Section 6 (P3-A)
+  Keep all existing prompt text — only ADD the following:
 
-  CRITICAL ADDITIONS (counter EX-01 face-mask drift):
-  Positive add: sealed matte white porcelain helmet no facial features,
-    two ultra-narrow horizontal void-black sensor slits at eye level only,
-    no face shape no nose no mouth no chin no jaw
-  Negative add: face mask, polygon face, low poly face, faceted face,
-    geometric face, open face, human face shape, face topology, face plate
+  POSITIVE ADDITIONS (insert near start):
+    two ultra-narrow horizontal void-black sensor slits clearly visible on helmet face,
+    sensor slits are two thin dark parallel horizontal lines cut across the white
+    porcelain helmet at eye level, dark recessed void channels spanning 70% of helmet
+    width visible in white surface, dramatically oversized flat-topped pauldron plates
+    extending far wider than the head, pauldrons nearly three times the helmet width,
+    wide horizontal shoulder armor like battlements
 
-  Save all outputs to: docs/character/anchor_v1_candidates/
-  Return filenames → agent scores against review checklist
+  NEGATIVE ADDITIONS (append to end):
+    smooth featureless helmet, completely blank helmet, single slit, vertical slit,
+    diagonal slit, V-shaped visor, narrow shoulders, small pauldrons,
+    proportional shoulders, normal shoulder width
 
-PENDING GIT (run before or after generation):
+  DO NOT CHANGE: sword / hair / coverage / palette / background / pose prompts
+  Settings: Steps=35, CFG=7.5, dpmpp_2m karras, 2:3 portrait, batch 5–8
+  Save to: docs/character/anchor_v1_candidates/P3A_R2_[seed].png
+  Return filenames → agent scores → target 90+ = ANCHOR V1
+
+PENDING GIT:
   cd D:\KAGAMI-MZ_SYNC_PUSH_V2
-  git add docs/character/ reports/ docs/handoff/
-  git commit -m "character: anchor V1 plan + generation test (BLOCKER documented)"
+  git add docs/character/ reports/ docs/handoff/ MIKAGE_TRACK_CATALOG_DATABASE_V1_LOCKED_21.xlsx
+  git commit -m "ops: track catalog updated — 21 tracks, last_verified_date synced to 2026-05-15; character: TEST_002 78/100 CONDITIONAL, revision ready"
   git push
 
 FORBIDDEN: no render agent-side · no canon lock · no asset lock
