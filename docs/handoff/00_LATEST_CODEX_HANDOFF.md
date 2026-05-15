@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_PROXY_RIG_AND_MOTION_REVIEW_DECISION_FROM_ANCHOR_V1` - complete.
+`PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `337627b5b0c1333226b587f5fe23909b22683a2b` |
+| START_HEAD | `a04b3528b1fdd1e59158f3808500a199c3780ba5` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -24,6 +24,7 @@
 | PROXY_POSE_MOTION_TEST_REVIEW_STATUS | PASS |
 | PROXY_RIG_AND_MOTION_REVIEW_DECISION_STATUS | COMPLETE |
 | DECISION_RESULT | `PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1` |
+| LIMITED_PROXY_RIG_REVIEW_PACKAGE_STATUS | PREPARED |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -33,15 +34,15 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Prepared the proxy rig and motion review decision:
+Prepared the limited proxy rig review package:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_RIG_AND_MOTION_REVIEW_DECISION_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1.md
 ```
 
-Decision result: `PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1`.
+Package status: PREPARED.
 
-The decision confirms the proxy rig passed review, the controlled 3.0 second motion test passed review, helmet/two sensor slits/sword/pauldrons/hair/legs/source anchor were preserved, all source files were protected, no facial controls/shape keys/visor morphs/slit animation controls were introduced, and no further controlled retest is required before preparing a limited proxy rig review package.
+The package references the source Anchor V1 image, original proxy blockout `.blend`, reviewed rig-prep `.blend`, controlled pose/motion test `.blend`, rig execution/review reports, pose/motion execution/review reports, and the rig-and-motion decision report. It includes a package manifest, current state summary, approved files list, evidence chain, QA summary, claim boundaries, forbidden future misuse, and next safe task recommendation.
 
 No `.blend` file was modified. No new motion was created. No cinematic output or final video was rendered. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
 
@@ -60,7 +61,8 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 | PROXY_POSE_MOTION_TEST_REVIEW_STATUS | PASS |
 | PROXY_RIG_AND_MOTION_REVIEW_DECISION_STATUS | COMPLETE |
 | DECISION_RESULT | `PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1` |
-| NEXT_SAFE_TASK | `PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1` |
+| LIMITED_PROXY_RIG_REVIEW_PACKAGE_STATUS | PREPARED |
+| NEXT_SAFE_TASK | `REVIEW_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -68,6 +70,8 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1.md`
+- `production/character/proxy_actor/MIKAGE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_MANIFEST_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_AND_MOTION_REVIEW_DECISION_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_POSE_MOTION_TEST_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_POSE_MOTION_TEST_EXECUTION_REPORT_FROM_ANCHOR_V1.md`
@@ -89,7 +93,7 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 ## 6. Next Safe Task
 
 ```text
-PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1
+REVIEW_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -100,6 +104,7 @@ PREPARE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FROM_ANCHOR_V1
 - Do not claim this controlled test as final rig readiness.
 - Do not claim final asset lock or cinematic readiness from this proxy test.
 - Do not treat the limited proxy package as final rig readiness or final asset lock.
+- Do not release the limited proxy package without review.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
