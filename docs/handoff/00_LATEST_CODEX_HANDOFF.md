@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PROXY_RIG_REVIEW_PACKAGE_RELEASE_DECISION_FROM_ANCHOR_V1` - complete.
+`PREPARE_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `0b57b772592bd51cb74042c8cfeb462b0e324ee5` |
+| START_HEAD | `4998b204d0324e4582a95b4190e94c690f665a31` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -30,6 +30,8 @@
 | RELEASE_DECISION_RESULT | `RELEASE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FOR_INTERNAL_USE` |
 | RELEASE_DECISION_REVIEW_STATUS | PASS |
 | RELEASE_DECISION_REVIEW_RESULT | `APPROVED_FOR_INTERNAL_PROXY_REVIEW_PLANNING_USE_ONLY` |
+| INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_STATUS | PREPARED |
+| INTERNAL_PROXY_RIG_PACKAGE_USAGE_SCOPE | `INTERNAL_PROXY_REVIEW_PLANNING_ONLY` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -39,15 +41,15 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the proxy rig review package release decision:
+Prepared the internal proxy rig package usage baseline:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_PACKAGE_RELEASE_DECISION_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1.md
 ```
 
-Review result: `APPROVED_FOR_INTERNAL_PROXY_REVIEW_PLANNING_USE_ONLY`.
+Baseline status: PREPARED.
 
-The release decision is valid because the package review status is PASS, the release is internal proxy review/planning use only, final rig readiness/final asset lock/cinematic readiness/final character asset approval are not claimed, Anchor V1 is unchanged, `.blend` files are not modified, and no new motion/render/video output is created.
+The baseline defines approved internal use for proxy review, planning reference, technical discussion of proxy rig and controlled motion evidence, and downstream planning checkpoint only. It also defines forbidden use and preserves all protected non-final state values.
 
 No `.blend` file was modified. No new motion was created. No cinematic output or final video was rendered. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
 
@@ -72,7 +74,9 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 | RELEASE_DECISION_RESULT | `RELEASE_LIMITED_PROXY_RIG_REVIEW_PACKAGE_FOR_INTERNAL_USE` |
 | RELEASE_DECISION_REVIEW_STATUS | PASS |
 | RELEASE_DECISION_REVIEW_RESULT | `APPROVED_FOR_INTERNAL_PROXY_REVIEW_PLANNING_USE_ONLY` |
-| NEXT_SAFE_TASK | `PREPARE_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1` |
+| INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_STATUS | PREPARED |
+| INTERNAL_PROXY_RIG_PACKAGE_USAGE_SCOPE | `INTERNAL_PROXY_REVIEW_PLANNING_ONLY` |
+| NEXT_SAFE_TASK | `REVIEW_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -80,6 +84,7 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_PACKAGE_RELEASE_DECISION_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_PACKAGE_RELEASE_DECISION_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_LIMITED_PROXY_RIG_REVIEW_PACKAGE_REVIEW_FROM_ANCHOR_V1.md`
@@ -106,7 +111,7 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 ## 6. Next Safe Task
 
 ```text
-PREPARE_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1
+REVIEW_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -121,6 +126,7 @@ PREPARE_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1
 - Do not release the limited proxy package as final rig-ready, final asset-locked, or cinematic-ready.
 - Do not use the internal release decision without review.
 - Do not use the internal proxy package outside proxy review/planning boundaries.
+- Do not treat the usage baseline as final rig readiness, asset lock, or cinematic readiness.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
