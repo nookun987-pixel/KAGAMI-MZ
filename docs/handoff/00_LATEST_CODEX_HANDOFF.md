@@ -2,24 +2,25 @@
 
 ## 1. LATEST_COMPLETED_TASK
 
-MIKAGE_CHARACTER_ANCHOR_V1_PLAN — PASS
+MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST — FAIL (GENERATION_BLOCKER)
 
 ## 2. LATEST_RESULT
 
-Full anchor generation plan written. Defines 4-phase generation path (P1 silhouette → P2 material → P3 full figure → P4 anchor selection). 5 material zones specified (porcelain / graphene underlayer / violet accent / matte blade / hair). Anti-drift guide from 5 reject examples. 3 ready-to-paste Fooocus prompts. Review checklist with 7 sections (6 instant rejects, 8 silhouette checks, 10 material zone checks, 15 drift checks, scoring table, anchor gate, reject cross-check).
+All existing repo images scanned and scored. 5 candidate types inspected. Zero qualify. EX-01 (GOOGLE_LANE_E2E_001) = low-poly face mask, fails IR-01+IR-02+IR-06. EX-02 (UNIFIED_KEY_VISUAL_V4 LOCKED) = helmet close-up only, LOCKED, pre-spec slit design, disqualified. EX-03/04/05 = pipeline placeholders and noise. No full-body character generation has ever been run under current V1 canon (sensor slits + hair mandatory). Agent cannot generate agent-side. Human must run P3-A prompt in Fooocus. Hardened prompt additions documented to counter face-mask drift (EX-01 failure mode).
 
 ## 3. ACTIVE_LANE
 
-CHARACTER LANE — anchor generation (human executes)
+CHARACTER LANE — BLOCKED at anchor generation — human must execute Fooocus
 
 ## 4. LATEST_REPORT_PATH
 
-reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
+reports/MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST_REPORT.md
 
 ## 5. FILES_CREATED_OR_MODIFIED
 
-- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md`
-- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_REVIEW_CHECKLIST.md`
+- Created `docs/character/anchor_v1_candidates/` (directory — empty, ready for outputs)
+- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST_REPORT.md`
+- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_SELECTION_REPORT.md`
 - Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
 - Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
 
@@ -31,15 +32,14 @@ reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
 | ASSET_LOCKED | NO |
 | PUBLIC_READY | NO |
 | PROMPT_LIBRARY_STATUS | PROMPT_LIBRARY_DRAFT — canon patch applied |
-| PROMPT_TEST_SET_STATUS | V0_1_READY — can run now |
 | SOURCE_PACK_STATUS | V1_PARTIAL — 13 refs built |
 | SILHOUETTE_STATUS | V1_LOCK_SPEC WRITTEN — not canon-locked |
 | SILHOUETTE_PRIMARY | B — THE MONOLITH |
 | SILHOUETTE_SECONDARY | D — THE PRESENCE |
-| SILHOUETTE_MOTION_ONLY | A — THE DIAGONAL |
-| SILHOUETTE_REJECTED | C — THE CARRY |
-| ANCHOR_PLAN_STATUS | V1 WRITTEN — generation phases 1–4 defined |
-| ANCHOR_STATUS | NOT GENERATED — awaiting human execution |
+| ANCHOR_PLAN_STATUS | V1 WRITTEN — 3 prompts ready to paste |
+| ANCHOR_STATUS | **BLOCKED — no qualifying full-body generation in repo** |
+| ANCHOR_CANDIDATES_DIR | docs/character/anchor_v1_candidates/ — EMPTY |
+| KNOWN_DRIFT_RISK | EX-01 face-mask drift (juggernautXL default). Hardened negatives written. |
 | ACTIVE_PALETTE | Electric violet #8F00FF / #7B2FFF |
 | CRIMSON_STATUS | LEGACY/DEPRECATED for Character V1 |
 | OPS_DB_STATUS | V1_ACTIVE — 20 tracks populated |
@@ -57,24 +57,27 @@ reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
 ## 8. NEXT_SAFE_TASK
 
 ```
-TASK: MIKAGE_CHARACTER_ANCHOR_V1_GENERATION_TEST
-GOAL: Human runs generation phases P1–P4 from anchor plan.
-      Agent scores outputs and records first passing output as Anchor V1.
+HUMAN ACTION — run in Fooocus on Windows:
+  Model: juggernautXL_v8Rundiffusion.safetensors
+  Prompt: P3-A from reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md Section 6
+  Settings: Steps=35, CFG=7.5, dpmpp_2m karras, 2:3 portrait
+  Batch: 5–8 seeds
 
-PLAN FILE:   reports/MIKAGE_CHARACTER_ANCHOR_V1_PLAN.md
-CHECKLIST:   reports/MIKAGE_CHARACTER_ANCHOR_V1_REVIEW_CHECKLIST.md
-PROMPTS:     Section 6 of plan (3 prompts ready to paste)
-TOOL:        Fooocus or ComfyUI txt2img (NOT 09E — no base image yet)
-MODEL:       juggernautXL_v8Rundiffusion.safetensors
-SETTINGS:    Steps=35, CFG=7.5, dpmpp_2m karras, 2:3 portrait
+  CRITICAL ADDITIONS (counter EX-01 face-mask drift):
+  Positive add: sealed matte white porcelain helmet no facial features,
+    two ultra-narrow horizontal void-black sensor slits at eye level only,
+    no face shape no nose no mouth no chin no jaw
+  Negative add: face mask, polygon face, low poly face, faceted face,
+    geometric face, open face, human face shape, face topology, face plate
 
-PENDING GIT (human action):
+  Save all outputs to: docs/character/anchor_v1_candidates/
+  Return filenames → agent scores against review checklist
+
+PENDING GIT (run before or after generation):
   cd D:\KAGAMI-MZ_SYNC_PUSH_V2
-  git add docs/character/references/ docs/character/silhouette/ reports/
-  git add docs/character/MIKAGE_CHARACTER_PROMPT_LIBRARY_v0.1.md
-  git add docs/handoff/00_LATEST_CODEX_HANDOFF.md
-  git commit -m "character: anchor V1 plan + review checklist + silhouette lock spec"
+  git add docs/character/ reports/ docs/handoff/
+  git commit -m "character: anchor V1 plan + generation test (BLOCKER documented)"
   git push
 
-FORBIDDEN: no render · no AI gen agent-side · no canon lock · no asset lock
+FORBIDDEN: no render agent-side · no canon lock · no asset lock
 ```
