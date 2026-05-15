@@ -2,39 +2,45 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_PROXY_3D_ACTOR_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1` - complete.
+`DECIDE_PROXY_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| REQUESTED_HEAD | `11c2671` |
-| ACTUAL_HEAD_AT_START | `11c2627` |
+| HEAD | `38e4abb` |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
-| PROXY_3D_ACTOR_REFINEMENT_OR_RIG_PREP_STATUS | PREPARED |
+| PROXY_REFINEMENT_OR_RIG_PREP_DECISION_STATUS | COMPLETE |
+| DECISION | `RIG_PREPARATION_FROM_CURRENT_PROXY_BLOCKOUT` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `NOT_STARTED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
-Note: requested HEAD `11c2671` was not a valid object in this repository. The task proceeded from current HEAD `11c2627`.
-
 ## 3. Latest Result
 
-Prepared the next route decision package:
+Decided the next route from the reviewed proxy blockout:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PROXY_REFINEMENT_OR_RIG_PREP_DECISION.md
 ```
 
-The decision package defines two allowed next paths: proxy refinement or rig preparation. No refinement was executed. No rig was created.
+Selected route:
+
+```text
+PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1
+```
+
+Reason: the proxy blockout passed review with required Anchor V1 components present, and no documented geometry blocker requires refinement before rig-prep planning.
+
+No rig was created. No rig readiness is claimed.
 
 ## 4. Current Route State
 
 | Field | Value |
 |---|---|
-| PROXY_3D_ACTOR_REFINEMENT_OR_RIG_PREP_STATUS | PREPARED |
-| NEXT_SAFE_TASK | `DECIDE_PROXY_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1` |
+| PROXY_REFINEMENT_OR_RIG_PREP_DECISION_STATUS | COMPLETE |
+| NEXT_SAFE_TASK | `PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -42,16 +48,16 @@ The decision package defines two allowed next paths: proxy refinement or rig pre
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_REFINEMENT_OR_RIG_PREP_DECISION.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BLOCKOUT_REVIEW.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_EXECUTION_REPORT.md`
 - `production/character/proxy_actor/MIKAGE_PROXY_3D_ACTOR_FROM_ANCHOR_V1_NOTES.md`
-- `production/character/proxy_actor/MIKAGE_PROXY_3D_ACTOR_FROM_ANCHOR_V1_BLOCKOUT.blend`
 
 ## 6. Next Safe Task
 
 ```text
-DECIDE_PROXY_REFINEMENT_OR_RIG_PREP_FROM_ANCHOR_V1
+PREPARE_PROXY_RIG_PREP_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
