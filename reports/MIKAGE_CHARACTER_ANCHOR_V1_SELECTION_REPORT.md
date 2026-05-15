@@ -1,8 +1,8 @@
 # MIKAGE_CHARACTER_ANCHOR_V1_SELECTION_REPORT
 
-**Status:** NO SELECTION — REVISE REQUIRED  
+**Status:** NO SELECTION — R3 REVISION REQUIRED  
 **Date:** 2026-05-15  
-**Task:** SCORE_ANCHOR_V1_CANDIDATES
+**Last scored:** P3A_R2_001 — 78/100 CONDITIONAL
 
 ---
 
@@ -10,7 +10,7 @@
 
 **No anchor candidate selected.**
 
-Two candidates scored. Neither reaches anchor gate threshold (90+). Both fail on sensor slits (score 1). TEST_001 additionally fails on sword form and aesthetic axis. TEST_002 is the only viable revision base.
+Three candidates scored across two revision iterations. No candidate reaches anchor gate threshold (90+). P3A_R2_001 is the current revision base — same score as TEST_002 numerically (78/100) but with confirmed sub-threshold progress on both blocker criteria.
 
 ---
 
@@ -18,72 +18,95 @@ Two candidates scored. Neither reaches anchor gate threshold (90+). Both fail on
 
 | File | Score | Threshold | Verdict |
 |---|---|---|---|
-| ANCHOR_V1_P3A_TEST_001_STRONG_PARTIAL.png | 61/100 — WEAK | 90+ required | REJECT as revision base |
-| ANCHOR_V1_P3A_TEST_002_STRONG_PARTIAL.png | 78/100 — CONDITIONAL | 90+ required | REVISE — one targeted iteration |
+| ANCHOR_V1_P3A_TEST_001_STRONG_PARTIAL.png | 61/100 — WEAK | 90+ required | REJECTED — sword drift, anime drift, coverage |
+| ANCHOR_V1_P3A_TEST_002_STRONG_PARTIAL.png | 78/100 — CONDITIONAL | 90+ required | SUPERSEDED — was revision base R1 |
+| P3A_R2_001.png | 78/100 — CONDITIONAL | 90+ required | **CURRENT REVISION BASE — R3 pending** |
 
 ---
 
-## WHY NOT SELECTED
+## WHY R2 DID NOT ADVANCE SCORE
 
-**TEST_001 (61/100):** Four concurrent issues — sensor slits absent, sword has traditional taper (not rectangular slab), leg armor gaps, anime drift (stiletto boots, slim proportions). Too many root problems for revision. Do not use as base.
+**P3A_R2_001 (78/100):** Sub-threshold progress confirmed on both blockers:
+- **Sensor slits:** ONE slit now visible at eye level (progress vs TEST_002 which had smooth/sealed helmet). Spec requires TWO distinct parallel horizontal slits. Second slit absent — score remains 1.
+- **Pauldrons:** ~2.1–2.2× helmet width (progress vs TEST_002 ~2.0× estimate). Spec requires ≥2.4×. Below threshold — score remains 1.
 
-**TEST_002 (78/100):** Two specific issues only — sensor slits not visible on helmet, pauldrons below 2.4× spec width. All other criteria correct. Foundation is valid. This is a targeted revision case, not a root rebuild.
-
----
-
-## WHAT IS CORRECT IN TEST_002
-
-These elements are working and must be preserved:
-- Sword form: rectangular dark slab, correct width-to-height ratio, horizontal guard bar — **DO NOT CHANGE sword prompts**
-- Palette: cool white armor, void black background, violet seam accents — **PRESERVE**
-- Armor coverage: fully sealed, no exposure — **PRESERVE**
-- Hair: long heavy straight black, fills left negative space — **PRESERVE**
-- Aesthetic axis: sacred-tech, not anime — **PRESERVE**
-- Pose: standing upright, sword at right side, planted stance — **PRESERVE**
+All working elements maintained: sword (2), palette (2), coverage (2), hair (2), aesthetic (2).
 
 ---
 
-## REVISION REQUIRED — EXACT PROMPT CHANGES
+## WHAT IS CORRECT IN P3A_R2_001 (PRESERVE ALL)
 
-### Add to positive (place near start of prompt):
+- **Sword form:** Rectangular dark slab, consistent width, horizontal guard bar — DO NOT CHANGE
+- **Palette:** Cool white armor, void black background, violet accent — PRESERVE
+- **Armor coverage:** Fully sealed, no exposure — PRESERVE
+- **Hair:** Long heavy straight black, fills left negative space — PRESERVE
+- **Aesthetic axis:** Sacred-tech dominant, no anime drift — PRESERVE
+- **Pose:** Standing upright, sword at right side, planted stance — PRESERVE
+
+---
+
+## R3 REVISION REQUIRED — EXACT PROMPT CHANGES
+
+### Replace sensor slit additions (do NOT use R2 additions — use these instead):
+
+**Add to positive (near top):**
 ```
-two ultra-narrow horizontal void-black sensor slits clearly visible on helmet face,
-sensor slits are two thin dark parallel horizontal lines cut across the white porcelain helmet at eye level,
-dark recessed void channels spanning 70% of helmet width visible in white surface,
-dramatically oversized flat-topped pauldron plates extending far wider than the head,
-pauldrons are nearly three times the helmet width, wide horizontal shoulder armor like battlements
+exactly two separate horizontal sensor slits on helmet face,
+TWO distinct ultra-narrow void-black parallel lines cut horizontally across helmet at eye level,
+a clear visible gap between the two slits — upper slit and lower slit separated by a narrow band of white porcelain,
+two parallel dark recessed channels both visible as distinct separate lines in white helmet surface,
+dual horizontal slits, two cuts, two lines, twin slits
 ```
 
-### Add to negative (append to existing):
+**Add to negative (append):**
 ```
-smooth featureless helmet, completely blank helmet, sealed blank helmet, single slit, vertical slit,
-diagonal slit, V-shaped visor, curved visor, cross slit, narrow shoulders, small pauldrons,
-proportional shoulders, normal shoulder width
+single slit, one slit, one line on helmet, single horizontal line, single visor,
+merged slit, unified slit, connected slit, smooth featureless helmet, completely blank helmet,
+sealed blank helmet, V-shaped visor, diagonal slit, vertical slit
+```
+
+### Replace pauldron additions (do NOT use R2 additions — use these instead):
+
+**Add to positive:**
+```
+enormous dramatically oversized flat-topped pauldron plates,
+pauldrons extend four times wider than the helmet on each side,
+pauldron total span is four to five times the helmet width,
+massive horizontal shoulder battlements dominate the upper silhouette,
+pauldrons like aircraft wings extending from shoulders,
+exaggerated superhuman shoulder width that dwarfs the head
+```
+
+**Add to negative:**
+```
+normal shoulders, narrow shoulders, small pauldrons, proportional shoulders,
+shoulder armor that matches body width, human shoulder proportions,
+normal shoulder width
 ```
 
 ### What NOT to change:
-Everything else in P3-A prompt — sword, hair, coverage, palette, background, pose.
+Everything else in P3-A prompt — sword, hair, coverage, palette, background, pose, aesthetic. All scoring 2 and confirmed working.
 
 ---
 
-## PROJECTED SCORE AFTER REVISION
+## PROJECTED SCORE AFTER R3
 
-| Criterion | TEST_002 current | After revision | Delta |
+| Criterion | P3A_R2_001 | After R3 (both fixes land) | Delta |
 |---|---|---|---|
 | Helmet + sensor slits | 1 → 10pts | 2 → 20pts | +10 |
 | Pauldron width | 1 → 5pts | 2 → 10pts | +5 |
-| Silhouette legibility | 1 → 8pts | 2 → 15pts | +7 (pauldrons fix unlocks this) |
+| Silhouette legibility | 1 → 8pts | 2 → 15pts | +7 (pauldron unlock) |
 | All others | unchanged | unchanged | 0 |
 | **Projected total** | **78** | **93** | **+15** |
 
-**93/100 projected — STRONG — would pass anchor gate if sensor slits and pauldrons are correctly rendered.**
+**93/100 projected — STRONG — anchor gate threshold is 90+.**
 
 ---
 
 ## SELECTION WILL HAPPEN WHEN
 
-Human runs revised P3-A prompt (exact additions above) and returns at least 1 output to `docs/character/anchor_v1_candidates/`. Agent scores and runs anchor gate if score ≥ 90.
+Human runs R3 prompt with above additions and returns outputs to `docs/character/anchor_v1_candidates/`. Files named `P3A_R3_[seed].png`. Agent scores — first output ≥90 triggers anchor gate evaluation.
 
 ---
 
-*Generated: 2026-05-15 | Task: SCORE_ANCHOR_V1_CANDIDATES | Selection: NONE — REVISION PENDING*
+*Updated: 2026-05-15 | Task: SCORE_P3A_R2_ANCHOR_CANDIDATE | Selection: NONE — R3 pending*
