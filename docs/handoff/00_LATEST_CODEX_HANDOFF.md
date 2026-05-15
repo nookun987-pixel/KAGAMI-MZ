@@ -2,66 +2,65 @@
 
 ## 1. Latest Completed Task
 
-`OPEN_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1` - complete.
+`BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| HEAD | `9b7d04b` |
-| ANCHOR_V1_ROUTE_STATUS | CLOSED |
-| ANCHOR_V1_FINAL_HANDOFF_STATUS | COMPLETE |
-| CANON_LOCK_STATUS | `ANCHOR_V1_LOCKED_ONLY` |
-| ASSET_LOCK_STATUS | `NOT_LOCKED` |
-| FULL_BODY_R6_ALLOWED | NO |
-
-## 3. Current Route
-
-| Field | Value |
-|---|---|
+| HEAD | `a44737e` |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
-| PRODUCTION_ROUTE_STATUS | OPENED |
-| NEXT_SAFE_TASK | `BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1` |
+| CHARACTER_PRODUCTION_SOURCE_PACK_STATUS | PREPARED |
+| ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `NOT_STARTED` |
 | RIG_STATUS | `NOT_STARTED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
-## 4. Latest Result
+## 3. Latest Result
 
-Opened a new character production route from Anchor V1.
-
-The old Anchor V1 render/revision route is closed and must not be continued.
-
-Locked source anchor:
+Prepared the production source pack from Anchor V1:
 
 ```text
-docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png
+reports/MIKAGE_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1.md
 ```
 
-## 5. Required Production Route Order
+The source pack collects the approved Anchor V1 reference, source base, helmet inpaint mask, score report, lock decision report, registry entry, final handoff, approved visual traits, forbidden drift rules, production-use boundaries, and next required gate.
 
-1. Audit Anchor V1 and existing locked canon sources.
-2. Build character production source pack from Anchor V1.
-3. Define full-body production constraints.
-4. Create proxy 3D actor plan.
-5. Prepare rig/motion test plan.
-6. Prepare cinematic proof shot plan.
-7. Only after review, allow production execution.
+No new image rendering was needed or performed.
 
-## 6. Latest Report Paths
+## 4. Source Pack Inputs
 
-- `reports/MIKAGE_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1_OPEN.md`
-- `reports/MIKAGE_CHARACTER_ANCHOR_V1_FINAL_HANDOFF.md`
-- `docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md`
+| Role | Path |
+|---|---|
+| Source anchor | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
+| Source base | `docs/character/anchor_v1_candidates/P3A_R4_001_STRONG_CANDIDATE.png` |
+| Helmet inpaint mask | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001_MASK.png` |
+| Registry entry | `docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md` |
+| Final handoff | `reports/MIKAGE_CHARACTER_ANCHOR_V1_FINAL_HANDOFF.md` |
+| Route open report | `reports/MIKAGE_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1_OPEN.md` |
+| Score report | `reports/SCORE_P3A_R4_HELMET_INPAINT_ANCHOR_CANDIDATE.md` |
+| Lock decision report | `reports/MIKAGE_CHARACTER_ANCHOR_V1_LOCK_DECISION.md` |
 
-## 7. Next Safe Task
+## 5. Current Route State
+
+| Field | Value |
+|---|---|
+| CHARACTER_PRODUCTION_SOURCE_PACK_STATUS | PREPARED |
+| SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
+| NEXT_SAFE_TASK | `DEFINE_FULL_BODY_PRODUCTION_CONSTRAINTS_FROM_ANCHOR_V1` |
+| ASSET_LOCK_STATUS | `NOT_LOCKED` |
+| 3D_ACTOR_STATUS | `NOT_STARTED` |
+| RIG_STATUS | `NOT_STARTED` |
+| CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
+
+## 6. Next Safe Task
 
 ```text
-BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1
+DEFINE_FULL_BODY_PRODUCTION_CONSTRAINTS_FROM_ANCHOR_V1
 ```
 
-## 8. Forbidden
+## 7. Forbidden
 
 - Do not render new images.
 - Do not run full-body R6.
