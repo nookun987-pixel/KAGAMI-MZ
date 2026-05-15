@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`EXECUTE_PROXY_RIG_FROM_ANCHOR_V1` - complete.
+`REVIEW_PROXY_RIG_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `766f0de765e7baed163847417d5be350f7dda242` |
+| START_HEAD | `3a8a302da6fa98f3f139916ccda4faa69df70444` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -17,26 +17,27 @@
 | PROXY_RIG_EXECUTION_SPEC_STATUS | PREPARED |
 | PROXY_RIG_EXECUTION_SPEC_REVIEW_STATUS | PASS |
 | PROXY_RIG_EXECUTION_STATUS | BUILT_FOR_REVIEW |
+| PROXY_RIG_REVIEW_STATUS | PASS |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
-| RIG_STATUS | `PROXY_REVIEW_RIG_CREATED_NOT_READY` |
+| RIG_STATUS | `PROXY_REVIEW_RIG_PASSED_CONTROLLED_TEST_GATE` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
 Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirmed HEAD = a79d706`, while the completed prep commit is `2793ee0659bd69c0df18b7bd37b6d17ce09e85d2`. This handoff uses `START_HEAD` and `COMPLETED_COMMIT` to avoid state confusion.
 
 ## 3. Latest Result
 
-Executed the proxy rig build for review:
+Reviewed the proxy rig output:
 
 ```text
-production/character/proxy_actor/MIKAGE_PROXY_3D_ACTOR_FROM_ANCHOR_V1_RIG_PREP_BLOCKOUT.blend
+reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_FROM_ANCHOR_V1.md
 ```
 
-Execution result: BUILT_FOR_REVIEW.
+Review result: PASS.
 
-Created a separate review-only proxy rig output from the existing Anchor V1 proxy blockout. The source blockout `.blend` was not overwritten. The output contains one minimal proxy armature/control setup, preserves exactly two separate sensor slit objects, keeps helmet/sensor slits/sword/pauldrons rigid, keeps the sword as a right-side rectangular slab, keeps hair as a left-side mass shell, and keeps the source anchor plane reference-only.
+The rigged proxy output opens in Blender, has 44 objects and 1 armature named `ARM_proxy_review_minimal_from_anchor_v1`, includes all expected minimal proxy control groups, preserves exactly two separate sensor slit objects, keeps helmet/sensor slits/sword/pauldrons as rigid anchors, keeps the sword as a right-side rectangular slab, keeps hair as a left-side mass shell, and keeps the source anchor plane reference-only and hidden from render.
 
-No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
+No `.blend` file was modified during review. No motion test was run. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
 
 ## 4. Current Route State
 
@@ -46,14 +47,16 @@ No final rig readiness is claimed. No final asset lock is claimed. No cinematic 
 | PROXY_RIG_EXECUTION_SPEC_STATUS | PREPARED |
 | PROXY_RIG_EXECUTION_SPEC_REVIEW_STATUS | PASS |
 | PROXY_RIG_EXECUTION_STATUS | BUILT_FOR_REVIEW |
-| NEXT_SAFE_TASK | `REVIEW_PROXY_RIG_FROM_ANCHOR_V1` |
+| PROXY_RIG_REVIEW_STATUS | PASS |
+| NEXT_SAFE_TASK | `PREPARE_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
-| RIG_STATUS | `PROXY_REVIEW_RIG_CREATED_NOT_READY` |
+| RIG_STATUS | `PROXY_REVIEW_RIG_PASSED_CONTROLLED_TEST_GATE` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_EXECUTION_REPORT_FROM_ANCHOR_V1.md`
 - `production/character/proxy_actor/MIKAGE_PROXY_3D_ACTOR_FROM_ANCHOR_V1_RIG_PREP_BLOCKOUT.blend`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_EXECUTION_SPEC_REVIEW_FROM_ANCHOR_V1.md`
@@ -67,13 +70,14 @@ No final rig readiness is claimed. No final asset lock is claimed. No cinematic 
 ## 6. Next Safe Task
 
 ```text
-REVIEW_PROXY_RIG_FROM_ANCHOR_V1
+PREPARE_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
 
 - Do not claim final rig readiness.
 - Do not overwrite the source proxy blockout `.blend`.
+- Do not run motion tests until a controlled test spec is prepared and reviewed.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
