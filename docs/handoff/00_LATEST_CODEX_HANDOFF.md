@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1` - complete.
+`REVIEW_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `899276c0623e7f4b7678fd1766b44113166a09e3` |
+| START_HEAD | `e2076b67ed327a00aef045601721fb7109699ad3` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -19,6 +19,7 @@
 | PROXY_RIG_EXECUTION_STATUS | BUILT_FOR_REVIEW |
 | PROXY_RIG_REVIEW_STATUS | PASS |
 | PROXY_POSE_MOTION_TEST_SPEC_STATUS | PREPARED |
+| PROXY_POSE_MOTION_TEST_SPEC_REVIEW_STATUS | PASS |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_REVIEW_RIG_PASSED_CONTROLLED_TEST_GATE` |
@@ -28,15 +29,15 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Prepared the controlled proxy pose/motion test specification:
+Reviewed the controlled proxy pose/motion test specification:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PROXY_POSE_MOTION_TEST_SPEC_REVIEW_FROM_ANCHOR_V1.md
 ```
 
-Specification result: PREPARED.
+Review result: PASS.
 
-The specification defines the exact `.blend` allowed for a future controlled pose/motion test, proposed future output files, allowed control groups, forbidden controls and features, pose test list, short motion test list, identity-preservation checks, frame/checkpoint review requirements, failure conditions, and rollback boundaries.
+The review confirms the controlled test spec uses the correct reviewed rig `.blend`, isolates future outputs under `motion_tests/`, limits manipulation to reviewed proxy controls, fully forbids facial/visor/slit-animation drift, includes sufficient pose and 2-3 second motion tests, preserves Anchor V1 identity checks, defines frame/checkpoint review requirements, and protects source files through strict rollback boundaries.
 
 No `.blend` file was modified. No pose test was run. No motion test was run. No animation, render, or cinematic output was created. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
 
@@ -50,7 +51,8 @@ No `.blend` file was modified. No pose test was run. No motion test was run. No 
 | PROXY_RIG_EXECUTION_STATUS | BUILT_FOR_REVIEW |
 | PROXY_RIG_REVIEW_STATUS | PASS |
 | PROXY_POSE_MOTION_TEST_SPEC_STATUS | PREPARED |
-| NEXT_SAFE_TASK | `REVIEW_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1` |
+| PROXY_POSE_MOTION_TEST_SPEC_REVIEW_STATUS | PASS |
+| NEXT_SAFE_TASK | `EXECUTE_PROXY_POSE_MOTION_TEST_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_REVIEW_RIG_PASSED_CONTROLLED_TEST_GATE` |
@@ -58,6 +60,7 @@ No `.blend` file was modified. No pose test was run. No motion test was run. No 
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_POSE_MOTION_TEST_SPEC_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_EXECUTION_REPORT_FROM_ANCHOR_V1.md`
@@ -73,14 +76,14 @@ No `.blend` file was modified. No pose test was run. No motion test was run. No 
 ## 6. Next Safe Task
 
 ```text
-REVIEW_PROXY_POSE_MOTION_TEST_SPEC_FROM_ANCHOR_V1
+EXECUTE_PROXY_POSE_MOTION_TEST_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
 
 - Do not claim final rig readiness.
 - Do not overwrite the source proxy blockout `.blend`.
-- Do not run pose or motion tests until this controlled test spec is reviewed.
+- Do not exceed the reviewed controlled 2-3 second pose/motion test scope.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
