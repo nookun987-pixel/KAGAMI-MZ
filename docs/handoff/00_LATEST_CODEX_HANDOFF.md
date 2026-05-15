@@ -2,16 +2,16 @@
 
 ## 1. Latest Completed Task
 
-`DEFINE_FULL_BODY_PRODUCTION_CONSTRAINTS_FROM_ANCHOR_V1` - complete.
+`PREPARE_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| HEAD | `efe889a` |
+| HEAD | `7ec2975` |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
-| FULL_BODY_PRODUCTION_CONSTRAINTS_STATUS | PREPARED |
+| PROXY_3D_ACTOR_PLAN_STATUS | PREPARED |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `NOT_STARTED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -19,23 +19,21 @@
 
 ## 3. Latest Result
 
-Prepared full-body production constraints from Anchor V1:
+Prepared a planning-only proxy 3D actor plan:
 
 ```text
-reports/MIKAGE_CHARACTER_FULL_BODY_PRODUCTION_CONSTRAINTS_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1.md
 ```
 
-The constraints define helmet, sensor slit, pauldron, armor coverage, sword, hair mass, silhouette, palette/material, forbidden body drift, and production QA requirements.
-
-No production execution was authorized.
+No 3D actor was created. No rig was created. No cinematic readiness is claimed.
 
 ## 4. Current Route State
 
 | Field | Value |
 |---|---|
-| FULL_BODY_PRODUCTION_CONSTRAINTS_STATUS | PREPARED |
+| PROXY_3D_ACTOR_PLAN_STATUS | PREPARED |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
-| NEXT_SAFE_TASK | `PREPARE_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1` |
+| NEXT_SAFE_TASK | `REVIEW_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `NOT_STARTED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -43,15 +41,15 @@ No production execution was authorized.
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_FULL_BODY_PRODUCTION_CONSTRAINTS_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1.md`
 - `docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md`
-- `reports/SCORE_P3A_R4_HELMET_INPAINT_ANCHOR_CANDIDATE.md`
 
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1
+REVIEW_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -60,6 +58,7 @@ PREPARE_PROXY_3D_ACTOR_PLAN_FROM_ANCHOR_V1
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
 - Do not claim final asset lock.
+- Do not create an actual 3D actor.
 - Do not claim 3D actor readiness.
 - Do not claim rig readiness.
 - Do not claim cinematic readiness.
