@@ -1,8 +1,8 @@
 # MIKAGE_CHARACTER_ANCHOR_V1_SELECTION_REPORT
 
-**Status:** NO SELECTION — R5 REVISION REQUIRED (SINGLE FOCUS: SENSOR SLITS)
+**Status:** NO SELECTION — R6 REVISION REQUIRED (DUAL FIX: SLITS + PAULDRONS)
 **Date:** 2026-05-15  
-**Last scored:** P3A_R4_001_STRONG_CANDIDATE — 73/100 — REJECT (IR-02/D-01)
+**Last scored:** P3A_R5_001 — 78/100 — REVISE
 
 ---
 
@@ -10,7 +10,7 @@
 
 **No anchor candidate selected.**
 
-Four candidates scored across four revision iterations. P3A_R4_001 is formally disqualified by IR-02 (blank helmet) and D-01 (slits absent) mandatory checklist conditions. However, R4 is the strongest candidate in all non-slit criteria. R5 has a single job: sensor slits.
+Five scored candidates across five iterations. No candidate reaches anchor gate (90+). The generation is oscillating between two unresolved criteria — sensor slits and pauldron width — and cannot maintain both simultaneously. R6 must force both into the same output.
 
 ---
 
@@ -18,54 +18,45 @@ Four candidates scored across four revision iterations. P3A_R4_001 is formally d
 
 | File | Score | Threshold | Verdict |
 |---|---|---|---|
-| ANCHOR_V1_P3A_TEST_001_STRONG_PARTIAL.png | 61/100 — WEAK | 90+ required | REJECTED — sword drift, anime drift, coverage |
-| ANCHOR_V1_P3A_TEST_002_STRONG_PARTIAL.png | 78/100 — CONDITIONAL | 90+ required | SUPERSEDED |
-| P3A_R2_001.png | 78/100 — CONDITIONAL | 90+ required | SUPERSEDED |
-| P3A_R3_001_SPEC_BOARD_STRONG.png | SPEC BOARD — NOT SCORED | N/A | Design reference only — shows ideal target including slits |
-| P3A_R4_001_STRONG_CANDIDATE.png | 73/100 — DISQUALIFIED | 90+ required | **REJECT (IR-02/D-01) — current revision base for R5** |
+| ANCHOR_V1_P3A_TEST_001 | 61/100 | 90+ required | REJECTED |
+| ANCHOR_V1_P3A_TEST_002 | 78/100 | 90+ required | SUPERSEDED |
+| P3A_R2_001 | 78/100 | 90+ required | SUPERSEDED |
+| P3A_R3_001_SPEC_BOARD | SPEC BOARD | N/A | Design reference only |
+| P3A_R4_001_STRONG_CANDIDATE | 73/100 — REJECT (IR-02/D-01) | 90+ required | Pauldron breakthrough (score 2), slits absent (score 0) |
+| **P3A_R5_001** | **78/100 — CONDITIONAL** | 90+ required | **CURRENT REVISION BASE — slit marginal improvement, pauldron regression** |
 
 ---
 
-## WHY R4 IS DISQUALIFIED (AND WHY IT IS STILL THE REVISION BASE)
+## OSCILLATION PATTERN — BLOCKING ANALYSIS
 
-**Disqualifier:** IR-02 (helmet blank) + D-01 (slits absent) = mandatory reject per checklist.
+| Candidate | Slit Score | Pauldron Score | Total |
+|---|---|---|---|
+| TEST_002 | 1 (borderline) | 1 (~2.0×) | 78 |
+| R2 | 1 (one slit visible) | 1 (~2.2×) | 78 |
+| R4 | 0 (completely blank) | **2 (~3.0–3.5× PASS)** | 73 |
+| R5 | 1 (faint borderline) | 1 (~2.0–2.2×) | 78 |
 
-**Why R4 is still the base:**
-
-R4 is the first candidate in the series to score 2 (maximum) on SIX criteria simultaneously:
-- Sword form (2) — maintained from TEST_002
-- Palette (2) — maintained
-- Coverage (2) — validated by R3 spec board
-- Pauldrons (2) — **FIRST SPEC PASS IN SERIES** (~3.0–3.5× estimated vs 2.4× required)
-- Aesthetic (2) — validated by R3 spec board
-- Hair (2) — maintained
-
-The one failing criterion (helmet/slits = 0) is the only remaining blocker. If R5 produces two visible slits on an R4-type output, the projected score is 100/100.
+**The model is trading slits for pauldrons and vice versa.** When slit prompts dominate, pauldrons regress. When pauldron prompts dominate, slits vanish. Both must appear in the same seed at 90+ total for anchor gate to open.
 
 ---
 
-## WHAT IS CORRECT IN R4 (PRESERVE EXACTLY)
+## WHAT IS CONFIRMED WORKING (PRESERVE IN R6)
 
-| Element | Status | Action |
+| Element | Score in R5 | Action |
 |---|---|---|
-| Zenith Blade rectangular slab | PASS (score 2) | DO NOT change sword prompts |
-| Palette (white/void black/violet) | PASS (score 2) | PRESERVE |
-| Armor coverage (fully sealed + flowing lower body) | PASS (score 2) | PRESERVE — spec board validates |
-| Pauldrons (~3.0–3.5× helmet width) | PASS (score 2) — FIRST PASS | PRESERVE — breakthrough achieved |
-| Aesthetic axis (sacred-tech) | PASS (score 2) | PRESERVE — spec board validates |
-| Hair mass (left negative space) | PASS (score 2) | PRESERVE |
+| Sword rectangular slab | 2 | DO NOT change |
+| Palette (white/black/violet) | 2 | PRESERVE |
+| Armor coverage + lower body | 2 | PRESERVE — spec-validated |
+| Aesthetic axis (sacred-tech) | 2 | PRESERVE |
+| Hair (left mass) | 2 | PRESERVE |
 
 ---
 
-## R5 REVISION — SINGLE FOCUS: SENSOR SLITS
+## R6 REVISION — DUAL PRIORITY INJECTION
 
-### What failed: zero slits across 4 of 4 candidates (R2 partial: 1 slit)
+Two priority blocks placed at absolute top of positive. Two negative blocks placed at absolute top of negative.
 
-The model consistently produces smooth sealed helmets regardless of slit prompt additions. Slit prompts are being overridden or deprioritized.
-
-**R5 strategy: priority injection — place slit prompt at absolute front of both positive and negative.**
-
-### Add to positive (first lines — above all other positive content):
+### Priority Block 1 — Sensor Slits (ABSOLUTE TOP of positive):
 ```
 HELMET FACE DETAIL: two separate void-black horizontal sensor slits,
 one slit at upper third of helmet face, one slit at lower third of helmet face,
@@ -75,37 +66,52 @@ both slits visible simultaneously, two parallel dark lines on white face,
 slit one above slit two, vertical gap between them, TWO slits not one
 ```
 
-### Add to negative (first lines — above all other negative content):
+### Priority Block 2 — Pauldrons (immediately after slit block):
+```
+enormously wide flat-topped pauldron plates three times the helmet width,
+dramatic horizontal shoulder battlements spanning four times the head width,
+pauldrons like aircraft wings extending from shoulders,
+massively oversized superhuman shoulder armor dominating upper silhouette,
+shoulder width dwarfs the head, maximum pauldron exaggeration
+```
+
+### Negative Priority (ABSOLUTE TOP of negative):
 ```
 completely blank helmet, smooth helmet face, featureless helmet, sealed helmet face,
-one slit, single slit, single line, single horizontal line, one line on helmet,
-merged slits, connected slits, no markings, no features on helmet
+one slit, single slit, single line, merged slits, no features on helmet,
+normal shoulders, narrow shoulders, small pauldrons, proportional shoulders,
+shoulder armor matching body width, human shoulder proportions
 ```
 
 ### What NOT to change:
-Everything else from R4 — sword, pauldrons, lower body, palette, hair, aesthetic, coverage, pose.
+Sword, palette, coverage, lower body, aesthetic, hair — all scoring 2 and stable.
+
+### R6 generation settings:
+```
+Steps=35, CFG=7.5, dpmpp_2m karras, 2:3 portrait
+BATCH: 8-12 seeds (increased to capture simultaneous fix)
+SAVE TO: docs/character/anchor_v1_candidates/P3A_R6_[seed].png
+```
 
 ---
 
-## PROJECTED SCORE AFTER R5
+## PROJECTED R6 SCORE
 
-| Criterion | R4 current | After R5 (slits correct) | Delta |
+| Scenario | Calculation | Total | Gate |
 |---|---|---|---|
-| Helmet + sensor slits | 0 → 0pts | 2 → 20pts | +20 |
-| Silhouette legibility | 1 → 8pts | 2 → 15pts | +7 (all other SG checks already pass) |
-| All others | unchanged | unchanged | 0 |
-| **Projected total** | **73** | **100** | **+27** |
+| Both slits + pauldrons fix | 78 + 10 + 5 + 7 | 100/100 | PASS |
+| Slits only fix | 78 + 10 + 7 | 95/100 | PASS |
+| Pauldrons only fix | 78 + 5 + 7 | 90/100 | AT GATE |
+| Neither fixes | 78/100 | 78/100 | REVISE |
 
-**100/100 projected if both slits render correctly. Anchor gate threshold is 90+.**
-
-Even partial improvement (slits score 0→1): 73 + 10 + 7 = 90 = at anchor gate threshold.
+**Any single fix (slits OR pauldrons) reaching score 2 opens or equals the anchor gate threshold.**
 
 ---
 
 ## SELECTION WILL HAPPEN WHEN
 
-Human runs R5 prompt with slit additions at top of prompt and returns outputs to `docs/character/anchor_v1_candidates/`. Files named `P3A_R5_[seed].png`. Agent scores — first output ≥90 triggers anchor gate evaluation.
+Human runs R6 with dual priority prompt and returns files `P3A_R6_[seed].png` to `docs/character/anchor_v1_candidates/`. Agent scores — first output ≥90 triggers anchor gate.
 
 ---
 
-*Updated: 2026-05-15 | Task: SCORE_P3A_R4_ANCHOR_CANDIDATE | Selection: NONE — R5 SINGLE FOCUS: SENSOR SLITS*
+*Updated: 2026-05-15 | Task: SCORE_P3A_R5_ANCHOR_CANDIDATE | Selection: NONE — R6 dual fix required*
