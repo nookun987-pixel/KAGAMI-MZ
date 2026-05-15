@@ -2,52 +2,59 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_ANCHOR_V1_LOCK_DECISION_AFTER_USER_APPROVAL` - complete.
+`PREPARE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| HEAD | `a3f0e65` |
+| HEAD | `d0015ce` |
 | CURRENT_BEST_BASE | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
-| ANCHOR_V1_STATUS | `PASS_AS_USABLE_CANDIDATE` |
-| SCORE | `100/100 PASS` |
-| USER_APPROVAL | APPROVED to proceed with Anchor V1 lock decision |
+| ANCHOR_V1_LOCK_DECISION | APPROVED |
+| CANON_LOCK_STATUS | `ANCHOR_V1_LOCKED_ONLY` |
+| ASSET_LOCK_STATUS | `NOT_LOCKED` |
+| FULL_BODY_R6_ALLOWED | NO |
 
 ## 3. Latest Result
 
-Anchor V1 lock decision is approved for:
+Created the Anchor V1 asset registry entry:
+
+```text
+docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md
+```
+
+The registry entry records the approved Anchor V1 reference candidate:
 
 ```text
 docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png
 ```
 
-This is an Anchor V1 lock decision only. It is not a final canon character asset lock.
+No new image rendering was needed or performed.
 
 ## 4. Current Decision State
 
 | Field | Value |
 |---|---|
-| ANCHOR_V1_LOCK_DECISION | APPROVED |
+| ASSET_REGISTRY_ENTRY_ID | `MIKAGE_CHARACTER_ANCHOR_V1` |
 | CURRENT_BEST_BASE | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
+| ANCHOR_V1_LOCK_DECISION | APPROVED |
 | FULL_BODY_R6_ALLOWED | NO |
 | CANON_LOCK_STATUS | `ANCHOR_V1_LOCKED_ONLY` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 
 ## 5. Latest Report Paths
 
-- `reports/SCORE_P3A_R4_HELMET_INPAINT_ANCHOR_CANDIDATE.md`
-- `reports/MIKAGE_CHARACTER_ANCHOR_V1_PASS_DECISION_REPORT.md`
-- `reports/MIKAGE_CHARACTER_ANCHOR_V1_LOCK_REVIEW.md`
+- `docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md`
 - `reports/MIKAGE_CHARACTER_ANCHOR_V1_LOCK_DECISION.md`
+- `reports/SCORE_P3A_R4_HELMET_INPAINT_ANCHOR_CANDIDATE.md`
 
 ## 6. Next Safe Task
 
-Prepare a separate asset lock task if final canon character asset lock is required.
+Create a separate final asset lock task only if explicit approval is given.
 
 ## 7. Forbidden
 
-- Do not claim final canon character asset lock from this decision.
+- Do not claim final full character asset lock from this registry entry.
 - Do not render new images.
 - Do not run full-body R6.
 - Do not replace the current best base with R5.
