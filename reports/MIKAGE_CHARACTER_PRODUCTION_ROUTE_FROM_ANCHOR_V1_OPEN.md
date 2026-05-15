@@ -1,45 +1,52 @@
-# 00_LATEST_CODEX_HANDOFF
+# MIKAGE_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1_OPEN
 
-## 1. Latest Completed Task
+**Date:** 2026-05-15  
+**Task:** `OPEN_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1`  
+**Confirmed HEAD:** `9b7d04b`  
 
-`OPEN_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1` - complete.
+---
 
-## 2. Confirmed State
-
-| Field | Value |
-|---|---|
-| HEAD | `9b7d04b` |
-| ANCHOR_V1_ROUTE_STATUS | CLOSED |
-| ANCHOR_V1_FINAL_HANDOFF_STATUS | COMPLETE |
-| CANON_LOCK_STATUS | `ANCHOR_V1_LOCKED_ONLY` |
-| ASSET_LOCK_STATUS | `NOT_LOCKED` |
-| FULL_BODY_R6_ALLOWED | NO |
-
-## 3. Current Route
+## Route State
 
 | Field | Value |
 |---|---|
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
+| ANCHOR_V1_ROUTE_STATUS | CLOSED |
 | PRODUCTION_ROUTE_STATUS | OPENED |
 | NEXT_SAFE_TASK | `BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1` |
+| ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `NOT_STARTED` |
 | RIG_STATUS | `NOT_STARTED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
-## 4. Latest Result
+---
 
-Opened a new character production route from Anchor V1.
+## Starting Point
 
-The old Anchor V1 render/revision route is closed and must not be continued.
+Anchor V1 route is complete. Do not continue the old Anchor V1 render/revision route.
 
-Locked source anchor:
+Locked Anchor V1 source:
 
 ```text
 docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png
 ```
 
-## 5. Required Production Route Order
+Registry:
+
+```text
+docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md
+```
+
+Final handoff:
+
+```text
+reports/MIKAGE_CHARACTER_ANCHOR_V1_FINAL_HANDOFF.md
+```
+
+---
+
+## Required Production Route Order
 
 1. Audit Anchor V1 and existing locked canon sources.
 2. Build character production source pack from Anchor V1.
@@ -49,19 +56,13 @@ docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png
 6. Prepare cinematic proof shot plan.
 7. Only after review, allow production execution.
 
-## 6. Latest Report Paths
+---
 
-- `reports/MIKAGE_CHARACTER_PRODUCTION_ROUTE_FROM_ANCHOR_V1_OPEN.md`
-- `reports/MIKAGE_CHARACTER_ANCHOR_V1_FINAL_HANDOFF.md`
-- `docs/character/MIKAGE_CHARACTER_ANCHOR_V1_ASSET_REGISTRY_ENTRY.md`
+## Boundary
 
-## 7. Next Safe Task
+This opens a new character production route from Anchor V1. It does not unlock the closed Anchor V1 render/revision route.
 
-```text
-BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1
-```
-
-## 8. Forbidden
+Forbidden from this state:
 
 - Do not render new images.
 - Do not run full-body R6.
@@ -71,3 +72,11 @@ BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1
 - Do not claim rig readiness.
 - Do not claim cinematic readiness.
 - Do not change the Anchor V1 locked reference.
+
+---
+
+## Next Safe Task
+
+```text
+BUILD_CHARACTER_PRODUCTION_SOURCE_PACK_FROM_ANCHOR_V1
+```
