@@ -2,38 +2,40 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PROXY_3D_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` - complete.
+`PREPARE_PROXY_3D_ACTOR_BUILD_EXECUTION_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| HEAD | `5ef654d` |
+| HEAD | `0167dba` |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
-| PROXY_3D_ACTOR_BUILD_SPEC_REVIEW_STATUS | PASS |
+| PROXY_3D_ACTOR_BUILD_EXECUTION_PREP_STATUS | PREPARED |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `NOT_STARTED` |
 | RIG_STATUS | `NOT_STARTED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
+Note: requested HEAD `d167dba` was not a valid object; current confirmed HEAD is `0167dbaca704b425b8fcb156462e1f9cdb0b0773`.
+
 ## 3. Latest Result
 
-Reviewed the proxy 3D actor build specification:
+Prepared the proxy 3D actor build execution package:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_SPEC_REVIEW.md
+reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_EXECUTION_PREP_FROM_ANCHOR_V1.md
 ```
 
-The build spec passes for execution preparation only. No actual 3D actor was created. No rig was created. No cinematic readiness is claimed.
+This is execution preparation only. No actual 3D actor was created. No rig was created. No cinematic readiness is claimed.
 
 ## 4. Current Route State
 
 | Field | Value |
 |---|---|
-| PROXY_3D_ACTOR_BUILD_SPEC_REVIEW_STATUS | PASS |
+| PROXY_3D_ACTOR_BUILD_EXECUTION_PREP_STATUS | PREPARED |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
-| NEXT_SAFE_TASK | `PREPARE_PROXY_3D_ACTOR_BUILD_EXECUTION_FROM_ANCHOR_V1` |
+| NEXT_SAFE_TASK | `EXECUTE_PROXY_3D_ACTOR_BUILD_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `NOT_STARTED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -41,6 +43,7 @@ The build spec passes for execution preparation only. No actual 3D actor was cre
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_EXECUTION_PREP_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_SPEC_REVIEW.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_3D_ACTOR_PLAN_REVIEW.md`
@@ -51,17 +54,18 @@ The build spec passes for execution preparation only. No actual 3D actor was cre
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PROXY_3D_ACTOR_BUILD_EXECUTION_FROM_ANCHOR_V1
+EXECUTE_PROXY_3D_ACTOR_BUILD_FROM_ANCHOR_V1
 ```
+
+Execution requires a separate explicit execution approval task.
 
 ## 7. Forbidden
 
-- Do not render new images.
+- Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
 - Do not claim final asset lock.
-- Do not create an actual 3D actor.
-- Do not claim 3D actor readiness.
+- Do not create an actual 3D actor without separate execution approval.
 - Do not claim rig readiness.
 - Do not claim cinematic readiness.
 - Do not change the Anchor V1 locked reference.
