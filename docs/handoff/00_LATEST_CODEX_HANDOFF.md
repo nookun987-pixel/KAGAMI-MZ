@@ -2,18 +2,19 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PROXY_RIG_PREP_FROM_ANCHOR_V1` - complete.
+`PREPARE_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `2793ee0659bd69c0df18b7bd37b6d17ce09e85d2` |
+| START_HEAD | `8a7fec8709e80224bde38429d9bc17d3cf7d23e6` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
 | DECISION | `RIG_PREPARATION_FROM_CURRENT_PROXY_BLOCKOUT` |
 | PROXY_RIG_PREP_REVIEW_STATUS | PASS |
+| PROXY_RIG_EXECUTION_SPEC_STATUS | PREPARED |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -23,15 +24,15 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the proxy rig-prep plan:
+Prepared the proxy rig execution specification:
 
 ```text
-reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1.md
 ```
 
-Review result: PASS.
+Specification result: PREPARED.
 
-The plan correctly defines allowed proxy objects, bone/control planning requirements, rigid helmet handling, protection for exactly two separate sensor slits, no facial rig/control, pauldron width preservation, rigid sword separation, left-side hair mass preservation, deformation-risk notes, and QA checks.
+The specification defines the exact files allowed to read, the only `.blend` allowed for future rig execution, the proposed future rigged proxy output path, armature/bone/control groups, parenting and binding strategy, rigid-object rules, forbidden facial controls, deformation constraints, QA checks, and rollback/fail conditions.
 
 No rig was created. No rig readiness is claimed. The proxy `.blend` and Anchor V1 locked reference were not modified.
 
@@ -40,7 +41,8 @@ No rig was created. No rig readiness is claimed. The proxy `.blend` and Anchor V
 | Field | Value |
 |---|---|
 | PROXY_RIG_PREP_REVIEW_STATUS | PASS |
-| NEXT_SAFE_TASK | `PREPARE_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1` |
+| PROXY_RIG_EXECUTION_SPEC_STATUS | PREPARED |
+| NEXT_SAFE_TASK | `REVIEW_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `NOT_STARTED` |
@@ -48,6 +50,7 @@ No rig was created. No rig readiness is claimed. The proxy `.blend` and Anchor V
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_REFINEMENT_OR_RIG_PREP_DECISION.md`
@@ -57,7 +60,7 @@ No rig was created. No rig readiness is claimed. The proxy `.blend` and Anchor V
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1
+REVIEW_PROXY_RIG_EXECUTION_SPEC_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
