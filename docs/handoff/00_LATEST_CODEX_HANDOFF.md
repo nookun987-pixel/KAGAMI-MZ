@@ -2,78 +2,64 @@
 
 ## 1. Latest Completed Task
 
-`MIKAGE_CHARACTER_ANCHOR_V1_R4_HELMET_ONLY_INPAINT_PREP` - complete.
+`MIKAGE_CHARACTER_ANCHOR_V1_PASS_DECISION_REPORT` - complete.
 
-## 2. Latest Result
+## 2. Confirmed Pushed State
 
-R4 remains the best body/base candidate: `docs/character/anchor_v1_candidates/P3A_R4_001_STRONG_CANDIDATE.png`.
+Use commit `4970acd` as the confirmed pushed state.
 
-R5 is not selected as Anchor V1. It improves helmet marks only marginally and still does not achieve exactly two clean horizontal sensor slits. It also regresses R4's strong pauldron span from roughly 3.0x-ish down to roughly 2.0-2.2x.
+```text
+4970acd character: R4 helmet-only inpaint PASS for Anchor V1
+```
 
-The next correction path is helmet-only inpaint on R4. Do not run another full-body generation.
+Commit `4970acd` contains:
 
-## 3. Active Lane
+- `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png`
+- `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001_MASK.png`
+- `reports/SCORE_P3A_R4_HELMET_INPAINT_ANCHOR_CANDIDATE.md`
 
-Character lane - Anchor V1 helmet-only correction.
+## 3. Latest Result
 
-## 4. Latest Report Paths
+R4 helmet-only inpaint output exists and scored **100/100 PASS**.
 
-- `reports/MIKAGE_CHARACTER_ANCHOR_V1_R5_SCORE_REPORT.md`
-- `reports/MIKAGE_CHARACTER_ANCHOR_V1_R4_HELMET_INPAINT_PREP.md`
-- `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
+The usable Anchor V1 candidate is:
 
-## 5. Files Created Or Modified
+```text
+docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png
+```
 
-- Created `reports/MIKAGE_CHARACTER_ANCHOR_V1_R4_HELMET_INPAINT_PREP.md`
-- Updated `reports/MIKAGE_CHARACTER_ANCHOR_V1_R5_SCORE_REPORT.md`
-- Updated `reports/MIKAGE_NEXT_SAFE_ACTION_V1.md`
-- Updated `docs/handoff/00_LATEST_CODEX_HANDOFF.md`
+The inpaint preserved body, shoulders/pauldrons, armor, sword, hair, pose, lighting, palette, and background. The helmet contains exactly two separate ultra-thin horizontal void-black sensor slits with a visible white porcelain gap.
 
-## 6. Gate Status
+No canon lock or asset lock has been claimed.
+
+## 4. Current Decision State
 
 | Field | Value |
 |---|---|
-| CANON_LOCKED | NO |
-| ASSET_LOCKED | NO |
-| PUBLIC_READY | NO |
-| ANCHOR_STATUS | REVISE - no Anchor V1 locked |
-| CURRENT_BEST_BASE | `P3A_R4_001_STRONG_CANDIDATE.png` |
-| R4_STATUS | Best body/base candidate; preserve completely except helmet faceplate |
-| R5_STATUS | Not selected; marginal helmet improvement, pauldron regression |
-| NEXT_SAFE_TASK | `MIKAGE_CHARACTER_ANCHOR_V1_R4_HELMET_ONLY_INPAINT` |
+| CURRENT_BEST_BASE | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
+| ANCHOR_V1_STATUS | `PASS_AS_USABLE_CANDIDATE` |
+| FULL_BODY_R6_ALLOWED | NO |
+| NEXT_SAFE_TASK | `PREPARE_ANCHOR_V1_LOCK_REVIEW` |
+| CANON_LOCK_STATUS | `NOT_LOCKED` |
+| ASSET_LOCK_STATUS | `NOT_LOCKED` |
 
-## 7. Next Safe Task
+## 5. Latest Report Paths
 
-```
-MIKAGE_CHARACTER_ANCHOR_V1_R4_HELMET_ONLY_INPAINT
-```
+- `reports/SCORE_P3A_R4_HELMET_INPAINT_ANCHOR_CANDIDATE.md`
+- `reports/MIKAGE_CHARACTER_ANCHOR_V1_PASS_DECISION_REPORT.md`
 
-Base image:
+## 6. Next Safe Task
 
-```
-docs/character/anchor_v1_candidates/P3A_R4_001_STRONG_CANDIDATE.png
+```text
+PREPARE_ANCHOR_V1_LOCK_REVIEW
 ```
 
-Edit scope: helmet face area only.
+Prepare a lock review package using `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` as the current best base. Do not run full-body R6 generation.
 
-Required correction: exactly two separate ultra-thin horizontal void-black sensor slits, spanning about 70% of helmet width, with a visible white porcelain gap between slits.
+## 7. Forbidden Until Lock Review
 
-Manual mask instruction:
-
-```
-Mask only the central helmet faceplate area where the two slits should appear.
-Do not mask hair, neck, shoulders, pauldrons, body, sword, or background.
-```
-
-Preserve: pauldrons, body, armor, sword, hair, pose, lighting, palette, and background.
-
-Reject if the result changes body, shoulders, sword, or hair; leaves the helmet blank; creates one slit; creates a merged visor; or adds a mouth-like/logo-like mark.
-
-## 8. Forbidden
-
-- Do not render agent-side.
-- Do not generate a new full-body R6.
-- Do not overwrite R4.
-- Do not approve canon.
-- Do not asset-lock anything.
+- Do not claim canon lock.
+- Do not claim asset lock.
+- Do not run full-body R6.
+- Do not replace the current best base with R5.
 - Do not change source pack or silhouette lock spec.
