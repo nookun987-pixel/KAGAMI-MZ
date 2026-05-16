@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
+`CORRECT_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_ROUTE_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
 
 ## 2. Confirmed State
 
@@ -20,7 +20,7 @@
 | ROUTE_RESUME_ALLOWED_NEXT_ROUTE | `PREPARE_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_FROM_LOCKED_BLOCKOUT_V0_2` |
 | ROUTE_RESUME_FORBIDDEN_DRIFT | `CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT / MATERIAL_TOPOLOGY_FINAL_CLAIM` |
 | PRODUCTION_ACTOR_RIG_PLANNING_DECISION_STATUS | PREPARED |
-| PRODUCTION_ACTOR_RIG_PLANNING_DECISION_RESULT | `PREPARE_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2` |
+| PRODUCTION_ACTOR_RIG_PLANNING_DECISION_RESULT | `PREPARE_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2` |
 | PRODUCTION_ACTOR_RIG_PLANNING_DECISION_REVIEW_STATUS | FAIL |
 | PRODUCTION_ACTOR_RIG_PLANNING_DECISION_REVIEW_RESULT | `ROUTE_STRING_MISMATCH` |
 | RIG_PLANNING_SOURCE_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
@@ -31,7 +31,7 @@
 | PRODUCTION_ACTOR_V0_2_SCORE | 93/100 |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `CORRECT_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_ROUTE_FROM_LOCKED_BLOCKOUT_V0_2` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_ROUTE_CORRECTION_FROM_LOCKED_BLOCKOUT_V0_2` |
 
 ## 3. Latest Result
 
@@ -58,7 +58,7 @@ PRODUCTION_ACTOR_RIG_PLANNING_DECISION_REVIEW_RESULT = ROUTE_STRING_MISMATCH
 RIG_PLANNING_SOURCE_ASSET = production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
 ```
 
-The decision is planning-only and uses the locked registered V0.2 blockout as source, but it routes to `PREPARE_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2` instead of the required `PREPARE_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2`. The next safe task is to correct the decision route string. Rig execution remains blocked.
+The decision route string has been corrected to `PREPARE_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2`. The previous review result remains `FAIL` until a separate review task is performed. Rig execution remains blocked.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -72,13 +72,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may correct the rig planning decision report only by replacing the incorrect route string with:
+The next stage may review the route correction only. The corrected route string is:
 
 ```text
 PREPARE_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
-The correction must remain documentation-only. It must not prepare the rig planning specification itself, modify the locked `.blend`, create an armature, start rigging, create motion tests, or claim final rig/cinematic readiness.
+The review must remain documentation-only. It must not prepare the rig planning specification itself, modify the locked `.blend`, create an armature, start rigging, create motion tests, or claim final rig/cinematic readiness.
 
 ## 5. Required Review Before Rig Execution
 
@@ -111,7 +111,7 @@ Before any rig execution can begin, a separate review must confirm:
 ## 7. Next Safe Task
 
 ```text
-CORRECT_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_ROUTE_FROM_LOCKED_BLOCKOUT_V0_2
+REVIEW_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_ROUTE_CORRECTION_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
 ## 8. Forbidden
