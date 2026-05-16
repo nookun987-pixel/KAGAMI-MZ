@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1` - complete.
+`PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `c09714c1419dd63ebf7c5d9eb8d4b6fef031a1f1` |
+| START_HEAD | `8fc087e1d7af8c9af4c3dfc5e4ae7597404509f0` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -76,6 +76,9 @@
 | PRODUCTION_ACTOR_ASSET_CANDIDATE_REVIEW_STATUS | PASS_ASSET_CANDIDATE |
 | PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_RESULT | `APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW` |
+| PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_PREP_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SOURCE | `V0_2` |
+| PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SCORE_BASELINE | 93/100 |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
@@ -87,32 +90,38 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the Production Actor Asset Candidate package from Anchor V1:
+Prepared the Production Actor Asset Lock Review package from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1.md
 ```
 
-Package review status:
+Preparation status:
 
 ```text
-PASS
+PREPARED
 ```
 
-Package review result:
+Lock review source and score baseline:
 
 ```text
-APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW
+PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SOURCE = V0_2
+PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SCORE_BASELINE = 93/100
 ```
 
-The review confirms:
+Candidate basis:
 
-- `PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_STATUS = PREPARED`
-- candidate source is `V0_2`
-- candidate score is `93/100`
-- candidate review status is `PASS_ASSET_CANDIDATE`
-- V0.2 blend, notes, build report, review report, preview paths, and comparison preview are listed
-- evidence confirms V0.2 opened successfully, object count is 34, exactly two sensor slit mesh objects exist, required components are present, V0.2 improved over V0.1, and score exceeded `92_PLUS`
+- `PRODUCTION_ACTOR_ASSET_CANDIDATE_SOURCE = V0_2`
+- `PRODUCTION_ACTOR_ASSET_CANDIDATE_SCORE = 93/100`
+- `PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_RESULT = APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW`
+
+The package identifies the V0.2 blend, notes, build report, review report, V0.2 preview paths, and V0.1 vs V0.2 comparison preview as the lock review subject evidence.
+
+The next review is constrained to these possible outcomes:
+
+- `PASS_ASSET_LOCK_REVIEW_READY`
+- `NEEDS_REVISION_BEFORE_LOCK_REVIEW`
+- `FAIL_LOCK_REVIEW_PREP`
 
 Protected boundaries:
 
@@ -124,7 +133,7 @@ CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 
 Anchor V1 remains unchanged. V0.1 was not overwritten. Proxy files were not overwritten. V0.2 was not modified during packaging. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed.
 
-The package is approved only to prepare asset lock review. It does not create final asset lock.
+This is preparation for asset lock review only. It does not create final asset lock.
 
 ## 4. Current Route State
 
@@ -193,9 +202,12 @@ The package is approved only to prepare asset lock review. It does not create fi
 | PRODUCTION_ACTOR_ASSET_CANDIDATE_REVIEW_STATUS | PASS_ASSET_CANDIDATE |
 | PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_RESULT | `APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW` |
+| PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_PREP_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SOURCE | `V0_2` |
+| PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SCORE_BASELINE | 93/100 |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -203,6 +215,7 @@ The package is approved only to prepare asset lock review. It does not create fi
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_2_REVIEW_FROM_ANCHOR_V1.md`
@@ -259,7 +272,7 @@ The package is approved only to prepare asset lock review. It does not create fi
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1
+REVIEW_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -299,5 +312,6 @@ PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1
 - Do not replace the source anchor with R5.
 - Do not claim final asset lock.
 - Do not treat asset lock review preparation as final asset lock.
+- Do not treat prepared asset lock review evidence as human lock approval.
 - Do not claim cinematic readiness.
 - Do not change the Anchor V1 locked reference.
