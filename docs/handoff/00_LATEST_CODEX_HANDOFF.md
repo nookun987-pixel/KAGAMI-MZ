@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_NEXT_STAGE_DECISION_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1` - complete.
+`PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `d8b9289fb324f1b3cba36076a39e299d2e75d486` |
+| START_HEAD | `6230d77f8e4f0ab55961e4f6758137aaa8682de5` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -40,6 +40,9 @@
 | NEXT_STAGE_DECISION_RESULT | `PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` |
 | NEXT_STAGE_DECISION_REVIEW_STATUS | PASS |
 | NEXT_STAGE_DECISION_REVIEW_RESULT | `APPROVED_TO_PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_ONLY` |
+| PRODUCTION_ACTOR_ROUTE_PLAN_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ROUTE_PLAN_SCOPE | `PLANNING_ONLY` |
+| PRODUCTION_ACTOR_EXECUTION_STATUS | `NOT_STARTED` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -49,23 +52,23 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the neutral next-stage decision after internal proxy rig package usage baseline review:
+Prepared the production actor route plan from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_NEXT_STAGE_DECISION_REVIEW_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1.md
 ```
 
-Review status: PASS.
+Route plan status: PREPARED.
 
-Review result:
+Route plan scope:
 
 ```text
-APPROVED_TO_PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_ONLY
+PLANNING_ONLY
 ```
 
-The next-stage decision remains `PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` and is approved for planning only. The review confirms the decision does not force cinematic proof, does not claim final rig readiness, does not claim final asset lock, does not claim cinematic readiness, does not approve production animation, and does not treat the proxy as a final character asset.
+The plan defines a gated path from Anchor V1 and proxy evidence toward a future production actor pipeline. It includes source audit, requirement specification, modeling strategy, topology and silhouette planning, material and canon detail planning, rigging requirement planning, and review checklist gates. This is planning only and does not start production actor execution.
 
-No `.blend` file was modified. No new motion was created. No render, video, image, cinematic output, or final video was rendered. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. Production actor execution was not started. The Anchor V1 locked reference was not modified.
+No `.blend` file was modified. No actor was built. No rig was created. No new motion was created. No render, video, image, cinematic output, or final video was rendered. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
 
 ## 4. Current Route State
 
@@ -98,7 +101,10 @@ No `.blend` file was modified. No new motion was created. No render, video, imag
 | NEXT_STAGE_DECISION_RESULT | `PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` |
 | NEXT_STAGE_DECISION_REVIEW_STATUS | PASS |
 | NEXT_STAGE_DECISION_REVIEW_RESULT | `APPROVED_TO_PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_ONLY` |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` |
+| PRODUCTION_ACTOR_ROUTE_PLAN_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ROUTE_PLAN_SCOPE | `PLANNING_ONLY` |
+| PRODUCTION_ACTOR_EXECUTION_STATUS | `NOT_STARTED` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -106,6 +112,7 @@ No `.blend` file was modified. No new motion was created. No render, video, imag
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_NEXT_STAGE_DECISION_REVIEW_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_NEXT_STAGE_DECISION_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_NEXT_SAFE_TASK_CORRECTION_AFTER_USAGE_BASELINE_REVIEW_FROM_ANCHOR_V1.md`
@@ -137,7 +144,7 @@ No `.blend` file was modified. No new motion was created. No render, video, imag
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1
+REVIEW_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -157,6 +164,8 @@ PREPARE_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1
 - Do not force the next route toward cinematic proof.
 - Do not start production actor execution without review of the next-stage decision.
 - Do not treat the production actor route plan as production actor execution.
+- Do not build a production actor before the route plan is reviewed and a separate execution task is approved.
+- Do not modify `.blend` files during route planning or route review.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
