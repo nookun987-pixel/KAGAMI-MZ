@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_RIG_EXECUTION_TASK_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
+`PREPARE_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
 
 ## 2. Confirmed State
 
@@ -32,6 +32,8 @@
 | PRODUCTION_ACTOR_RIG_EXECUTION_TASK_STATUS | PREPARED |
 | PRODUCTION_ACTOR_RIG_EXECUTION_TASK_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_RIG_EXECUTION_TASK_REVIEW_RESULT | `APPROVED_FOR_ACTUAL_RIG_EXECUTION_PREP` |
+| PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_STATUS | PREPARED |
+| IMPLEMENTATION_AUTHORIZATION_STATUS | `NOT_EXPLICITLY_AUTHORIZED_IN_HANDOFF` |
 | RIG_PLANNING_SOURCE_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
 | ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
 | PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_STATUS | REGISTERED |
@@ -43,14 +45,14 @@
 | ARMATURE_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_FROM_LOCKED_BLOCKOUT_V0_2` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_FROM_LOCKED_BLOCKOUT_V0_2` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only rig execution task from the locked registered Production Actor V0.2 blockout:
+Prepared the documentation-only actual rig execution prep report from the locked registered Production Actor V0.2 blockout:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_EXECUTION_TASK_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_FROM_LOCKED_BLOCKOUT_V0_2.md
 ```
 
 The spec confirms:
@@ -62,18 +64,18 @@ ROUTE_RESUME_CHECKPOINT_STATUS = ACTIVE
 PRODUCTION_ACTOR_LOCKED_ASSET_TYPE = PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK
 ```
 
-Review result:
+Prep result:
 
 ```text
-PRODUCTION_ACTOR_RIG_EXECUTION_TASK_REVIEW_STATUS = PASS
-PRODUCTION_ACTOR_RIG_EXECUTION_TASK_REVIEW_RESULT = APPROVED_FOR_ACTUAL_RIG_EXECUTION_PREP
+PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_STATUS = PREPARED
+IMPLEMENTATION_AUTHORIZATION_STATUS = NOT_EXPLICITLY_AUTHORIZED_IN_HANDOFF
 RIG_EXECUTION_STATUS = NOT_STARTED
 ARMATURE_STATUS = NOT_CREATED
 MOTION_TEST_STATUS = NOT_CREATED
 RIG_PLANNING_SOURCE_ASSET = production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
 ```
 
-The execution task passes review for preparation of actual rig execution. This does not perform rig execution. No `.blend` files were modified, no derivative `.blend` was created, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created.
+The source handoff authorizes actual rig execution preparation, but it does not explicitly authorize implementation. This task is prep-only. No `.blend` files were modified, no derivative `.blend` was created, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -87,13 +89,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may prepare the actual rig execution from the locked registered V0.2 blockout. The next task is:
+The next stage may review the actual rig execution prep report and decide whether the implementation boundary is explicit enough for a later execution task. The review target is:
 
 ```text
-PREPARE_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_FROM_LOCKED_BLOCKOUT_V0_2
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_FROM_LOCKED_BLOCKOUT_V0_2.md
 ```
 
-Actual rig execution preparation must still preserve the locked source boundary. It must not overwrite the locked `.blend`, and it must keep cinematic proof, public output, final rig readiness, final topology claims, and final material claims out of scope.
+The review must confirm that implementation was not performed and that the locked source remains unchanged. It must not modify the locked `.blend`, create a derivative `.blend`, create an armature, start rigging, create controls, weights, constraints, drivers, deformation tests, motion tests, or claim final rig/cinematic readiness.
 
 ## 5. Required Review Before Rig Execution
 
@@ -128,12 +130,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Rig execution plan review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_EXECUTION_PLAN_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
 | Rig execution task | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_EXECUTION_TASK_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
 | Rig execution task review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_EXECUTION_TASK_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
+| Actual rig execution prep | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_FROM_LOCKED_BLOCKOUT_V0_2
+REVIEW_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
 ## 8. Forbidden
