@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
+`REVIEW_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
 
 ## 2. Confirmed State
 
@@ -24,6 +24,8 @@
 | PRODUCTION_ACTOR_RIG_PLANNING_DECISION_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_RIG_PLANNING_DECISION_REVIEW_RESULT | `ROUTE_STRING_CORRECTION_APPROVED` |
 | PRODUCTION_ACTOR_RIG_PLANNING_SPEC_STATUS | PREPARED |
+| PRODUCTION_ACTOR_RIG_PLANNING_SPEC_REVIEW_STATUS | PASS |
+| PRODUCTION_ACTOR_RIG_PLANNING_SPEC_REVIEW_RESULT | `APPROVED_FOR_RIG_EXECUTION_PLAN_PREP` |
 | RIG_PLANNING_SOURCE_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
 | ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
 | PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_STATUS | REGISTERED |
@@ -31,15 +33,18 @@
 | PRODUCTION_ACTOR_LOCKED_ASSET_TYPE | `PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK` |
 | PRODUCTION_ACTOR_V0_2_SCORE | 93/100 |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
+| RIG_EXECUTION_STATUS | `NOT_STARTED` |
+| ARMATURE_STATUS | `NOT_CREATED` |
+| MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2` |
+| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_RIG_EXECUTION_PLAN_FROM_LOCKED_BLOCKOUT_V0_2` |
 
 ## 3. Latest Result
 
-Prepared the documentation-only rig planning specification from the locked registered Production Actor V0.2 blockout:
+Reviewed the documentation-only rig planning specification from the locked registered Production Actor V0.2 blockout:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md
 ```
 
 The spec confirms:
@@ -51,14 +56,15 @@ ROUTE_RESUME_CHECKPOINT_STATUS = ACTIVE
 PRODUCTION_ACTOR_LOCKED_ASSET_TYPE = PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK
 ```
 
-Spec result:
+Review result:
 
 ```text
-PRODUCTION_ACTOR_RIG_PLANNING_SPEC_STATUS = PREPARED
+PRODUCTION_ACTOR_RIG_PLANNING_SPEC_REVIEW_STATUS = PASS
+PRODUCTION_ACTOR_RIG_PLANNING_SPEC_REVIEW_RESULT = APPROVED_FOR_RIG_EXECUTION_PLAN_PREP
 RIG_PLANNING_SOURCE_ASSET = production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
 ```
 
-The rig planning spec defines future control zones, derivative file rules, output naming, deformation risks, topology/material limitations, and pass/fail criteria for a later rig execution approval. It is documentation-only. No `.blend` files were modified, no armature was created, rigging was not started, and no motion tests were created.
+The rig planning spec passes review for preparation of a separate rig execution plan. This does not approve rig execution. No `.blend` files were modified, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -72,13 +78,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may review the production actor rig planning specification from the locked registered V0.2 blockout. The review target is:
+The next stage may prepare a production actor rig execution plan from the locked registered V0.2 blockout. The next task is:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2.md
+PREPARE_PRODUCTION_ACTOR_RIG_EXECUTION_PLAN_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
-The review must remain documentation-only. It must not modify the locked `.blend`, create an armature, start rigging, create motion tests, or claim final rig/cinematic readiness.
+The execution plan preparation must remain documentation-only. It must not modify the locked `.blend`, create an armature, start rigging, create controls, weights, constraints, drivers, deformation tests, motion tests, or claim final rig/cinematic readiness.
 
 ## 5. Required Review Before Rig Execution
 
@@ -108,12 +114,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Rig planning decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_FROM_LOCKED_BLOCKOUT_V0_2_REVIEW.md` - FAIL, historical route mismatch |
 | Rig planning decision route correction review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_DECISION_ROUTE_CORRECTION_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
 | Rig planning specification | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
+| Rig planning specification review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-REVIEW_PRODUCTION_ACTOR_RIG_PLANNING_SPEC_FROM_LOCKED_BLOCKOUT_V0_2
+PREPARE_PRODUCTION_ACTOR_RIG_EXECUTION_PLAN_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
 ## 8. Forbidden
