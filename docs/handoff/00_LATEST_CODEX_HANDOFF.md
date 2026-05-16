@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1` - complete.
+`CORRECT_NEXT_SAFE_TASK_AFTER_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `aad0d11ffbd70f48522f410c285331c0d9a7e6a3` |
+| START_HEAD | `0f1db1dc9f39e6d142b209773749dc1e307e9cca` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -34,6 +34,8 @@
 | INTERNAL_PROXY_RIG_PACKAGE_USAGE_SCOPE | `INTERNAL_PROXY_REVIEW_PLANNING_ONLY` |
 | INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_STATUS | PASS |
 | INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_RESULT | `APPROVED_FOR_INTERNAL_PROXY_REVIEW_PLANNING_BASELINE_ONLY` |
+| NEXT_SAFE_TASK_CORRECTION_STATUS | COMPLETE |
+| CORRECTION_REASON | `REMOVE_PREMATURE_CINEMATIC_DIRECTION_FROM_NEXT_SAFE_TASK` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -43,15 +45,15 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the internal proxy rig package usage baseline:
+Corrected the next safe task after internal proxy rig package usage baseline review:
 
 ```text
-reports/MIKAGE_CHARACTER_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_NEXT_SAFE_TASK_CORRECTION_AFTER_USAGE_BASELINE_REVIEW_FROM_ANCHOR_V1.md
 ```
 
-Review result: `APPROVED_FOR_INTERNAL_PROXY_REVIEW_PLANNING_BASELINE_ONLY`.
+Correction status: COMPLETE.
 
-The baseline is valid and strict enough. Approved internal use is limited to proxy review, planning reference, technical discussion of proxy rig and controlled motion evidence, and downstream planning checkpoint only. Forbidden use and protected state values are complete, and wording does not promote the package beyond limited/internal/proxy/non-final scope.
+The baseline review remains PASS. The previous next safe task was corrected because it was too directional toward cinematic proof. The corrected next safe task is neutral and does not force a cinematic direction.
 
 No `.blend` file was modified. No new motion was created. No cinematic output or final video was rendered. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
 
@@ -80,7 +82,9 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 | INTERNAL_PROXY_RIG_PACKAGE_USAGE_SCOPE | `INTERNAL_PROXY_REVIEW_PLANNING_ONLY` |
 | INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_STATUS | PASS |
 | INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_RESULT | `APPROVED_FOR_INTERNAL_PROXY_REVIEW_PLANNING_BASELINE_ONLY` |
-| NEXT_SAFE_TASK | `PREPARE_NEXT_STAGE_PROXY_TO_CINEMATIC_PROOF_PLANNING_DECISION_FROM_ANCHOR_V1` |
+| NEXT_SAFE_TASK_CORRECTION_STATUS | COMPLETE |
+| CORRECTION_REASON | `REMOVE_PREMATURE_CINEMATIC_DIRECTION_FROM_NEXT_SAFE_TASK` |
+| NEXT_SAFE_TASK | `PREPARE_NEXT_STAGE_DECISION_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -88,6 +92,7 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_NEXT_SAFE_TASK_CORRECTION_AFTER_USAGE_BASELINE_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_INTERNAL_PROXY_RIG_PACKAGE_USAGE_BASELINE_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PROXY_RIG_REVIEW_PACKAGE_RELEASE_DECISION_REVIEW_FROM_ANCHOR_V1.md`
@@ -116,7 +121,7 @@ No `.blend` file was modified. No new motion was created. No cinematic output or
 ## 6. Next Safe Task
 
 ```text
-PREPARE_NEXT_STAGE_PROXY_TO_CINEMATIC_PROOF_PLANNING_DECISION_FROM_ANCHOR_V1
+PREPARE_NEXT_STAGE_DECISION_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
