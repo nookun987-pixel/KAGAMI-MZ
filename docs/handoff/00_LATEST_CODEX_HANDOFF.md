@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1` - complete.
+`PREPARE_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `a2144e045ad78b58cb37acfc242bd760f2feb5f5` |
+| START_HEAD | `d5701fb0527839c87df64bc815e451bbd1fb461b` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -47,6 +47,8 @@
 | PRODUCTION_ACTOR_ROUTE_PLAN_REVIEW_RESULT | `APPROVED_WITH_COMPRESSED_BUILD_PATH_TO_VISIBLE_ASSET_V0_1` |
 | VISIBLE_ASSET_TARGET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1.blend` |
 | MAX_DOC_STEPS_BEFORE_VISIBLE_ASSET | 2 |
+| PRODUCTION_ACTOR_BUILD_SPEC_STATUS | PREPARED |
+| DOC_STEP_BEFORE_VISIBLE_ASSET | `1_OF_2` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -56,36 +58,30 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the production actor route plan from Anchor V1:
+Prepared the production actor build spec from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1.md
 ```
 
-Route plan review status:
+Build spec status:
 
 ```text
-PASS_WITH_REQUIRED_COMPRESSION
+PREPARED
 ```
 
-Review result:
+Documentation step before visible asset:
 
 ```text
-APPROVED_WITH_COMPRESSED_BUILD_PATH_TO_VISIBLE_ASSET_V0_1
+1_OF_2
 ```
 
-The route plan is valid on protected-state and non-final boundaries, but it does not explicitly cap documentation steps before visible asset output. The route is approved with required compression: after this review, the only allowed documentation steps before visible asset build are `PREPARE_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` and `REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1`; then the next task must be `EXECUTE_PRODUCTION_ACTOR_BUILD_V0_1_FROM_ANCHOR_V1`.
+The build spec defines the HYBRID route for V0.1: use the proxy actor as proportion/logic reference, use the rig-prep blockout as rig logic reference, and build a cleaner production actor V0.1 structure without treating proxy geometry as final or claiming final topology.
 
 Visible asset target:
 
 ```text
 production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1.blend
-```
-
-Maximum documentation steps before visible asset:
-
-```text
-2
 ```
 
 No `.blend` file was modified. No actor was built. No rig was created. No new motion was created. No render, video, image, cinematic output, or final video was rendered. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed. The Anchor V1 locked reference was not modified.
@@ -128,7 +124,9 @@ No `.blend` file was modified. No actor was built. No rig was created. No new mo
 | PRODUCTION_ACTOR_ROUTE_PLAN_REVIEW_RESULT | `APPROVED_WITH_COMPRESSED_BUILD_PATH_TO_VISIBLE_ASSET_V0_1` |
 | VISIBLE_ASSET_TARGET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1.blend` |
 | MAX_DOC_STEPS_BEFORE_VISIBLE_ASSET | 2 |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` |
+| PRODUCTION_ACTOR_BUILD_SPEC_STATUS | PREPARED |
+| DOC_STEP_BEFORE_VISIBLE_ASSET | `1_OF_2` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -136,6 +134,7 @@ No `.blend` file was modified. No actor was built. No rig was created. No new mo
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_NEXT_STAGE_DECISION_REVIEW_AFTER_INTERNAL_PROXY_RIG_BASELINE_FROM_ANCHOR_V1.md`
@@ -169,7 +168,7 @@ No `.blend` file was modified. No actor was built. No rig was created. No new mo
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1
+REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -193,6 +192,7 @@ PREPARE_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1
 - Do not modify `.blend` files during route planning or route review.
 - Do not add extra planning gates before the production actor build spec.
 - Do not exceed two documentation steps before visible asset build execution.
+- Do not add extra planning gates between build spec review and visible V0.1 build execution.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
