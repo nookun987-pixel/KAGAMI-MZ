@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1` - complete.
+`PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
@@ -81,6 +81,9 @@
 | PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SCORE_BASELINE | 93/100 |
 | PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_STATUS | PASS_ASSET_LOCK_REVIEW_READY |
 | PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_RESULT | `READY_FOR_ASSET_LOCK_DECISION` |
+| PRODUCTION_ACTOR_ASSET_LOCK_DECISION_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ASSET_LOCK_DECISION_RESULT | `APPROVE_ASSET_LOCK_PENDING_REVIEW` |
+| PRODUCTION_ACTOR_ASSET_LOCK_SOURCE | `V0_2` |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
@@ -92,32 +95,33 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the Production Actor Asset Lock Review package from Anchor V1:
+Prepared the Production Actor Asset Lock Decision from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_RESULT_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1.md
 ```
 
-Review status:
+Decision status:
 
 ```text
-PASS_ASSET_LOCK_REVIEW_READY
+PREPARED
 ```
 
-Review result:
+Decision result:
 
 ```text
-READY_FOR_ASSET_LOCK_DECISION
+APPROVE_ASSET_LOCK_PENDING_REVIEW
 ```
 
-The review confirms:
+The prepared decision confirms:
 
-- `PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_PREP_STATUS = PREPARED`
-- `PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SOURCE = V0_2`
-- `PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SCORE_BASELINE = 93/100`
-- candidate package review result is `APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW`
-- V0.2 blend, notes, build report, review report, preview paths, and V0.1 vs V0.2 comparison preview are present
-- the checklist covers identity preservation, two sensor slits, full-body structure, helmet, pauldrons, hair, sword, stronger silhouette than V0.1, evidence completeness, no overwrites, Anchor V1 unchanged, and no final rig/cinematic readiness claims
+- Decision subject is `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend`
+- V0.2 score = 93/100; V0.2 review status = PASS_ASSET_CANDIDATE
+- Candidate package review result = `APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW`
+- Asset lock review result = `READY_FOR_ASSET_LOCK_DECISION`
+- All three required gates passed (V0.2 review, candidate package review, asset lock review)
+- Prepared decision recommends approving V0.2 for asset lock, pending a separate decision review
+- Allowed next decision review outcomes: `APPROVE_ASSET_LOCK`, `HOLD_ASSET_LOCK_FOR_REVISION`, `REJECT_ASSET_LOCK_DECISION`
 
 Protected boundaries:
 
@@ -127,9 +131,7 @@ RIG_STATUS = PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 ```
 
-Anchor V1 remains unchanged. V0.1 was not overwritten. Proxy files were not overwritten. V0.2 was not modified during packaging. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed.
-
-The package is ready for a separate asset lock decision task. This review does not claim final asset lock, human approval, final rig readiness, or cinematic readiness.
+This is a prepared lock decision only. `ASSET_LOCK_STATUS` remains `NOT_LOCKED` until a decision review passes and a human approves with documented evidence. No final rig readiness is claimed. No cinematic readiness is claimed. No canon registry update occurred. No human approval is claimed. No `.blend` file was modified.
 
 ## 4. Current Route State
 
@@ -203,9 +205,12 @@ The package is ready for a separate asset lock decision task. This review does n
 | PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_SCORE_BASELINE | 93/100 |
 | PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_STATUS | PASS_ASSET_LOCK_REVIEW_READY |
 | PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_RESULT | `READY_FOR_ASSET_LOCK_DECISION` |
+| PRODUCTION_ACTOR_ASSET_LOCK_DECISION_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ASSET_LOCK_DECISION_RESULT | `APPROVE_ASSET_LOCK_PENDING_REVIEW` |
+| PRODUCTION_ACTOR_ASSET_LOCK_SOURCE | `V0_2` |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -213,6 +218,7 @@ The package is ready for a separate asset lock decision task. This review does n
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_RESULT_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_REVIEW_FROM_ANCHOR_V1.md`
@@ -271,7 +277,7 @@ The package is ready for a separate asset lock decision task. This review does n
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1
+REVIEW_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -315,3 +321,8 @@ PREPARE_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1
 - Do not treat asset lock review readiness as final asset lock or human approval.
 - Do not claim cinematic readiness.
 - Do not change the Anchor V1 locked reference.
+- Do not treat the prepared lock decision as a final asset lock.
+- Do not update the canon registry until the decision review passes and human approval is documented.
+- Do not claim human approval from the prepared lock decision.
+- Do not begin rigging from the prepared lock decision.
+- Do not begin cinematic proof work from the prepared lock decision.
