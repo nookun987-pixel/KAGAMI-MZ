@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_V0_1_FROM_ANCHOR_V1` - complete.
+`PREPARE_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `a255196732795258e10a6e1a659c4eb2bf7482be` |
+| START_HEAD | `868f604876a4e21915deb7457d76da4b51b2b324` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -59,6 +59,10 @@
 | PRODUCTION_ACTOR_V0_1_REVIEW_STATUS | PASS_TO_REFINE |
 | PRODUCTION_ACTOR_V0_1_SCORE | 89/100 |
 | VISIBLE_ASSET_REVIEWED | YES |
+| PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_STATUS | PREPARED |
+| PRODUCTION_ACTOR_V0_2_EXECUTION_STATUS | `NOT_STARTED` |
+| SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
+| PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -68,41 +72,46 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the visible Production Actor V0.1 asset from Anchor V1:
+Prepared the Production Actor V0.2 refinement spec from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_1_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1.md
 ```
 
-Review status:
+Refinement spec status:
 
 ```text
-PASS_TO_REFINE
+PREPARED
 ```
 
-Score:
+Source baseline:
 
 ```text
-89/100
+V0_1_PASS_TO_REFINE
 ```
 
-The `.blend` was opened directly in Blender headless during review. It contains 33 objects, 1 inspection camera, 1 inspection light, zero armatures, and exactly two separate sensor slit objects: `helmet_sensor_slit_upper_void_black` and `helmet_sensor_slit_lower_void_black`.
-
-Review previews:
+Target score:
 
 ```text
-production/character/production_actor/review_previews/
+92_PLUS
 ```
 
-The previews are non-cinematic Blender Workbench viewport inspection artifacts only. V0.1 is approved to refine, not rebuild, and remains a visible asset candidate only.
+The spec defines a V0.2 refinement path from the reviewed V0.1 baseline, preserving Anchor V1 identity, exactly two sensor slits, full-body structure, left-side hair mass, right-side rectangular sword slab, broad pauldrons, and non-final status.
 
-Visible asset target:
+Required V0.2 output target:
 
 ```text
-production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1.blend
+production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
 ```
 
-No `.blend` file was modified during review. No proxy `.blend` file was overwritten. Anchor V1 was not modified. No AI image render, cinematic output, final video, or motion output was created. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed.
+Required V0.2 notes/report:
+
+```text
+production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2_NOTES.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_V0_2_REPORT_FROM_ANCHOR_V1.md
+```
+
+No `.blend` file was modified. V0.2 was not built. Anchor V1 was not modified. No render, AI image, cinematic output, or motion output was created. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed.
 
 ## 4. Current Route State
 
@@ -154,7 +163,11 @@ No `.blend` file was modified during review. No proxy `.blend` file was overwrit
 | PRODUCTION_ACTOR_V0_1_REVIEW_STATUS | PASS_TO_REFINE |
 | PRODUCTION_ACTOR_V0_1_SCORE | 89/100 |
 | VISIBLE_ASSET_REVIEWED | YES |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1` |
+| PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_STATUS | PREPARED |
+| PRODUCTION_ACTOR_V0_2_EXECUTION_STATUS | `NOT_STARTED` |
+| SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
+| PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -162,6 +175,7 @@ No `.blend` file was modified during review. No proxy `.blend` file was overwrit
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_1_REVIEW_FROM_ANCHOR_V1.md`
 - `production/character/production_actor/review_previews/MIKAGE_PRODUCTION_ACTOR_V0_1_FRONT_REVIEW.png`
 - `production/character/production_actor/review_previews/MIKAGE_PRODUCTION_ACTOR_V0_1_SIDE_REVIEW.png`
@@ -205,7 +219,7 @@ No `.blend` file was modified during review. No proxy `.blend` file was overwrit
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1
+REVIEW_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -235,6 +249,8 @@ PREPARE_PRODUCTION_ACTOR_V0_2_REFINEMENT_SPEC_FROM_ANCHOR_V1
 - Do not claim V0.1 as final rig readiness.
 - Do not claim V0.1 as cinematic ready.
 - Do not treat V0.1 review previews as cinematic output or final artwork.
+- Do not overwrite V0.1 during V0.2 refinement.
+- Do not claim V0.2 as final asset lock, final rig readiness, or cinematic ready without separate review.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
