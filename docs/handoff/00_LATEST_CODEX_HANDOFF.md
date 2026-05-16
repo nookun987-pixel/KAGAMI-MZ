@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
+`PREPARE_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
 
 ## 2. Confirmed State
 
@@ -40,6 +40,7 @@
 | PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_RESULT | `APPROVED_FOR_DERIVATIVE_RIG_IMPLEMENTATION_PREP_PACKAGE` |
 | IMPLEMENTATION_AUTHORIZATION_STATUS | `PREP_ONLY_DECISION_PREPARED` |
+| PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_STATUS | PREPARED |
 | RIG_PLANNING_SOURCE_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
 | ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
 | PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_STATUS | REGISTERED |
@@ -51,14 +52,14 @@
 | ARMATURE_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `PREPARE_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2` |
+| NEXT_SAFE_TASK | `REVIEW_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only rig implementation authorization decision from the locked registered Production Actor V0.2 blockout:
+Prepared the documentation-only derivative rig implementation package from the locked registered Production Actor V0.2 blockout:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2.md
 ```
 
 The spec confirms:
@@ -70,19 +71,18 @@ ROUTE_RESUME_CHECKPOINT_STATUS = ACTIVE
 PRODUCTION_ACTOR_LOCKED_ASSET_TYPE = PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK
 ```
 
-Review result:
+Package result:
 
 ```text
 IMPLEMENTATION_AUTHORIZATION_DECISION = AUTHORIZE_DERIVATIVE_RIG_IMPLEMENTATION_PREP_ONLY
-PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_STATUS = PASS
-PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_RESULT = APPROVED_FOR_DERIVATIVE_RIG_IMPLEMENTATION_PREP_PACKAGE
+PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_STATUS = PREPARED
 RIG_EXECUTION_STATUS = NOT_STARTED
 ARMATURE_STATUS = NOT_CREATED
 MOTION_TEST_STATUS = NOT_CREATED
 RIG_PLANNING_SOURCE_ASSET = production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
 ```
 
-The decision review passes and approves preparation of a derivative rig implementation package. This does not perform rig implementation. No `.blend` files were modified, no derivative `.blend` was created, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created.
+The package defines the locked source boundary, future derivative path, source overwrite prohibition, no-derivative rule for this package task, later derivative creation task name, later review gate before armature/rigging, allowed future implementation boundaries, forbidden scope, failure conditions, and future derivative inspection checklist. This does not perform rig implementation. No `.blend` files were modified, no derivative `.blend` was created, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -96,13 +96,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may prepare the derivative rig implementation package from the locked registered V0.2 blockout. The next task is:
+The next stage may review the derivative rig implementation package from the locked registered V0.2 blockout. The review target is:
 
 ```text
-PREPARE_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2.md
 ```
 
-The package preparation must stay within the approved prep-only boundary unless a later reviewed task explicitly authorizes implementation. Do not modify the locked `.blend`, create a derivative `.blend`, create an armature, start rigging, create controls, weights, constraints, drivers, deformation tests, motion tests, or claim final rig/cinematic readiness.
+The review must confirm the package is documentation-only and does not create the derivative `.blend`. Do not modify the locked `.blend`, create a derivative `.blend`, create an armature, start rigging, create controls, weights, constraints, drivers, deformation tests, motion tests, or claim final rig/cinematic readiness.
 
 ## 5. Required Review Before Rig Execution
 
@@ -141,12 +141,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Actual rig execution prep review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_RIG_EXECUTION_PREP_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
 | Rig implementation authorization decision | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
 | Rig implementation authorization decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
+| Derivative rig implementation package | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-PREPARE_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2
+REVIEW_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
 ## 8. Forbidden
