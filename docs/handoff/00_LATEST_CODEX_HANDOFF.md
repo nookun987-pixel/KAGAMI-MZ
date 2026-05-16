@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` - complete.
+`REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `d5701fb0527839c87df64bc815e451bbd1fb461b` |
+| START_HEAD | `2c00f875e4928e0f359388df727db024d7e10f83` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -48,7 +48,9 @@
 | VISIBLE_ASSET_TARGET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1.blend` |
 | MAX_DOC_STEPS_BEFORE_VISIBLE_ASSET | 2 |
 | PRODUCTION_ACTOR_BUILD_SPEC_STATUS | PREPARED |
-| DOC_STEP_BEFORE_VISIBLE_ASSET | `1_OF_2` |
+| PRODUCTION_ACTOR_BUILD_SPEC_REVIEW_STATUS | PASS |
+| PRODUCTION_ACTOR_BUILD_SPEC_REVIEW_RESULT | `APPROVED_FOR_VISIBLE_ASSET_BUILD_V0_1` |
+| DOC_STEP_BEFORE_VISIBLE_ASSET | `2_OF_2` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -58,25 +60,31 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Prepared the production actor build spec from Anchor V1:
+Reviewed the production actor build spec from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_SPEC_REVIEW_FROM_ANCHOR_V1.md
 ```
 
-Build spec status:
+Build spec review status:
 
 ```text
-PREPARED
+PASS
+```
+
+Review result:
+
+```text
+APPROVED_FOR_VISIBLE_ASSET_BUILD_V0_1
 ```
 
 Documentation step before visible asset:
 
 ```text
-1_OF_2
+2_OF_2
 ```
 
-The build spec defines the HYBRID route for V0.1: use the proxy actor as proportion/logic reference, use the rig-prep blockout as rig logic reference, and build a cleaner production actor V0.1 structure without treating proxy geometry as final or claiming final topology.
+The build spec is approved for visible Production Actor V0.1 build execution. The compressed path has consumed both allowed documentation steps before visible asset output, so the next safe task must be `EXECUTE_PRODUCTION_ACTOR_BUILD_V0_1_FROM_ANCHOR_V1`.
 
 Visible asset target:
 
@@ -125,8 +133,10 @@ No `.blend` file was modified. No actor was built. No rig was created. No new mo
 | VISIBLE_ASSET_TARGET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1.blend` |
 | MAX_DOC_STEPS_BEFORE_VISIBLE_ASSET | 2 |
 | PRODUCTION_ACTOR_BUILD_SPEC_STATUS | PREPARED |
-| DOC_STEP_BEFORE_VISIBLE_ASSET | `1_OF_2` |
-| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1` |
+| PRODUCTION_ACTOR_BUILD_SPEC_REVIEW_STATUS | PASS |
+| PRODUCTION_ACTOR_BUILD_SPEC_REVIEW_RESULT | `APPROVED_FOR_VISIBLE_ASSET_BUILD_V0_1` |
+| DOC_STEP_BEFORE_VISIBLE_ASSET | `2_OF_2` |
+| NEXT_SAFE_TASK | `EXECUTE_PRODUCTION_ACTOR_BUILD_V0_1_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -134,6 +144,7 @@ No `.blend` file was modified. No actor was built. No rig was created. No new mo
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_SPEC_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ROUTE_PLAN_FROM_ANCHOR_V1.md`
@@ -168,7 +179,7 @@ No `.blend` file was modified. No actor was built. No rig was created. No new mo
 ## 6. Next Safe Task
 
 ```text
-REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1
+EXECUTE_PRODUCTION_ACTOR_BUILD_V0_1_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -193,6 +204,7 @@ REVIEW_PRODUCTION_ACTOR_BUILD_SPEC_FROM_ANCHOR_V1
 - Do not add extra planning gates before the production actor build spec.
 - Do not exceed two documentation steps before visible asset build execution.
 - Do not add extra planning gates between build spec review and visible V0.1 build execution.
+- Do not add extra review tasks before visible V0.1 build execution.
 - Do not render new AI images.
 - Do not run full-body R6.
 - Do not replace the source anchor with R5.
