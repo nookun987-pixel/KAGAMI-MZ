@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1` - complete.
+`REGISTER_PRODUCTION_ACTOR_ASSET_LOCK_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
@@ -87,9 +87,12 @@
 | PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_RESULT | `APPROVE_ASSET_LOCK` |
 | PRODUCTION_ACTOR_ASSET_LOCK_APPROVAL_SOURCE | `DECISION_REVIEW` |
+| PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_STATUS | REGISTERED |
+| PRODUCTION_ACTOR_LOCKED_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
+| PRODUCTION_ACTOR_LOCKED_ASSET_TYPE | `PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK` |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
-| ASSET_LOCK_STATUS | `APPROVED_PENDING_REGISTRY_ENTRY` |
+| ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
@@ -98,40 +101,33 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the Production Actor Asset Lock Decision from Anchor V1:
+Registered the Production Actor Asset Lock from Anchor V1:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_ENTRY_FROM_ANCHOR_V1.md
+docs/pipeline/01_CANON_ASSET_REGISTRY.md  (Section G added)
 ```
 
-Decision review status:
+Registry status:
 
 ```text
-PASS
+REGISTERED
 ```
 
-Decision review result:
+The registry entry confirms:
 
-```text
-APPROVE_ASSET_LOCK
-```
-
-The decision review confirms:
-
-- All 23 required checks PASS
-- Complete four-gate evidence chain is intact and consistent: V0.2 review → candidate package review → asset lock review → asset lock decision
-- Decision subject is `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend`
-- V0.2 score = 93/100; V0.2 review status = PASS_ASSET_CANDIDATE
-- Candidate package review result = `APPROVED_TO_PREPARE_ASSET_LOCK_REVIEW`
-- Asset lock review result = `READY_FOR_ASSET_LOCK_DECISION`
-- Decision status = PREPARED; decision result = `APPROVE_ASSET_LOCK_PENDING_REVIEW`
-- All evidence paths confirmed: V0.2 blend, notes, build report, review report, four previews, V0.1 vs V0.2 comparison
-- Decision correctly makes no final lock claim, no human approval claim, no registry update, no rig readiness claim, no cinematic claim, no .blend modifications
+- Both required conditions met: `ASSET_LOCK_STATUS = APPROVED_PENDING_REGISTRY_ENTRY` and `PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_RESULT = APPROVE_ASSET_LOCK`
+- Locked asset: `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend`
+- Asset type: `PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK`
+- Score: 93/100; full five-gate evidence chain passed
+- Section G-01 added to canon asset registry with status `LOCKED_REGISTERED`
+- Locked for: production actor 3D blockout baseline, downstream planning, future rig planning reference
+- Not locked for: final rig execution, cinematic proof shot, animation, final material/topology polish, public output
 
 `ASSET_LOCK_STATUS` advances:
 
 ```text
-ASSET_LOCK_STATUS = APPROVED_PENDING_REGISTRY_ENTRY
+ASSET_LOCK_STATUS = LOCKED_REGISTERED
 ```
 
 Protected boundaries unchanged:
@@ -141,7 +137,7 @@ RIG_STATUS = PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 ```
 
-The canon registry was not updated. Registry update and final human lock approval remain as separate required steps. No `.blend` file was modified. No rig or cinematic work was started.
+No `.blend` file was modified. No rig or cinematic work was started. Anchor V1 unchanged.
 
 ## 4. Current Route State
 
@@ -221,16 +217,21 @@ The canon registry was not updated. Registry update and final human lock approva
 | PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_RESULT | `APPROVE_ASSET_LOCK` |
 | PRODUCTION_ACTOR_ASSET_LOCK_APPROVAL_SOURCE | `DECISION_REVIEW` |
+| PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_STATUS | REGISTERED |
+| PRODUCTION_ACTOR_LOCKED_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
+| PRODUCTION_ACTOR_LOCKED_ASSET_TYPE | `PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK` |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
-| NEXT_SAFE_TASK | `REGISTER_PRODUCTION_ACTOR_ASSET_LOCK_FROM_ANCHOR_V1` |
-| ASSET_LOCK_STATUS | `APPROVED_PENDING_REGISTRY_ENTRY` |
+| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_FINAL_HANDOFF_FROM_ANCHOR_V1` |
+| ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_ENTRY_FROM_ANCHOR_V1.md`
+- `docs/pipeline/01_CANON_ASSET_REGISTRY.md` (Section G-01 added)
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_REVIEW_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_DECISION_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_LOCK_REVIEW_RESULT_FROM_ANCHOR_V1.md`
@@ -291,7 +292,7 @@ The canon registry was not updated. Registry update and final human lock approva
 ## 6. Next Safe Task
 
 ```text
-REGISTER_PRODUCTION_ACTOR_ASSET_LOCK_FROM_ANCHOR_V1
+PREPARE_PRODUCTION_ACTOR_FINAL_HANDOFF_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -322,10 +323,4 @@ REGISTER_PRODUCTION_ACTOR_ASSET_LOCK_FROM_ANCHOR_V1
 - Do not claim V0.1 as cinematic ready.
 - Do not treat V0.1 review previews as cinematic output or final artwork.
 - Do not overwrite V0.1 during V0.2 refinement.
-- Do not claim V0.2 as final asset lock, final rig readiness, or cinematic ready without separate review.
-- Do not treat V0.2 PASS_ASSET_CANDIDATE as final asset lock.
-- Do not treat the V0.2 asset candidate package as final asset lock.
-- Do not add extra planning gates before V0.2 execution.
-- Do not render new AI images.
-- Do not run full-body R6.
-- Do not replace the source anchor with
+- Do not claim V0.2 as final asset lock

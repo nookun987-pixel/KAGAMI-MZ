@@ -304,11 +304,14 @@ Statuses:
 
 ---
 
-## Registry Maintenance Rules
+## Section G — Production Actor 3D Blockout Lock (LOCKED_REGISTERED)
 
-1. Every new generation attempt must create or update a registry entry before submission.
-2. Any output that fails Quick-Pass Gate must be immediately set to FAILED_DO_NOT_USE.
-3. LOCKED_CANON status may only be assigned by a human with documented evidence.
-4. MISSING_REQUIRED slots block all downstream phases until filled.
-5. DEPRECATED entries are retained for audit trail; they must not influence active decisions.
-6. UNKNOWN_NEEDS_REVIEW must be resolved within one task cycle.
+### G-01 Production Actor V0.2 from Anchor V1 — LOCKED_REGISTERED
+
+| Field | Value |
+|---|---|
+| Asset name | `MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2` |
+| Asset type | `PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK` |
+| Path | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
+| Notes | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2_NOTES.md` |
+| Build report | `report
