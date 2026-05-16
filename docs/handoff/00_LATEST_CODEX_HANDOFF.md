@@ -2,13 +2,13 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_PRODUCTION_ACTOR_V0_2_FROM_ANCHOR_V1` - complete.
+`PREPARE_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1` - complete.
 
 ## 2. Confirmed State
 
 | Field | Value |
 |---|---|
-| START_HEAD | `6560b65747dec71e91e4c2fd43cfdfe604373de3` |
+| START_HEAD | `9be1895df586a3c8d02b9329b762b73956facb6e` |
 | COMPLETED_COMMIT | CURRENT_COMMIT (this handoff update; see git log top entry) |
 | CURRENT_ROUTE | `CHARACTER_PRODUCTION_FROM_ANCHOR_V1` |
 | SOURCE_ANCHOR | `docs/character/anchor_v1_candidates/P3A_R4_HELMET_INPAINT_001.png` |
@@ -70,6 +70,10 @@
 | PRODUCTION_ACTOR_V0_2_REVIEW_STATUS | PASS_ASSET_CANDIDATE |
 | PRODUCTION_ACTOR_V0_2_SCORE | 93/100 |
 | VISIBLE_ASSET_V0_2_REVIEWED | YES |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_SOURCE | `V0_2` |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_SCORE | 93/100 |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_REVIEW_STATUS | PASS_ASSET_CANDIDATE |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
@@ -81,43 +85,65 @@ Note: `reports/MIKAGE_CHARACTER_PROXY_RIG_PREP_FROM_ANCHOR_V1.md` lists `Confirm
 
 ## 3. Latest Result
 
-Reviewed the Production Actor V0.2 visible asset from Anchor V1:
+Prepared the Production Actor Asset Candidate package from the reviewed V0.2 asset:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_2_REVIEW_FROM_ANCHOR_V1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1.md
 ```
 
-Review status:
+Package status:
 
 ```text
-PASS_ASSET_CANDIDATE
+PREPARED
 ```
 
-Score:
+Candidate source and score:
+
+```text
+PRODUCTION_ACTOR_ASSET_CANDIDATE_SOURCE = V0_2
+PRODUCTION_ACTOR_ASSET_CANDIDATE_REVIEW_STATUS = PASS_ASSET_CANDIDATE
+PRODUCTION_ACTOR_ASSET_CANDIDATE_SCORE = 93/100
+```
+
+Candidate source files:
+
+- `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend`
+- `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2_NOTES.md`
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_BUILD_V0_2_REPORT_FROM_ANCHOR_V1.md`
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_2_REVIEW_FROM_ANCHOR_V1.md`
+
+Candidate review evidence:
+
+- V0.2 opened successfully in review.
+- Object count is 34.
+- Exactly two sensor slit mesh objects are present.
+- Required components are present.
+- Review preview images were created.
+- V0.2 improved over V0.1.
+- Score exceeded the target `92_PLUS`.
+
+Allowed meaning:
+
+- approved as asset candidate for lock review preparation
+- suitable for candidate package review
+- suitable to prepare asset lock review next if the package review passes
+- not final asset lock yet
+
+Protected boundaries:
+
+```text
+ASSET_LOCK_STATUS = NOT_LOCKED
+RIG_STATUS = PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL
+CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
+```
+
+Anchor V1 remains unchanged. V0.1 was not overwritten. Proxy files were not overwritten. V0.2 was not modified during packaging. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed.
+
+Prior V0.2 review score:
 
 ```text
 93/100
 ```
-
-Direct Blender inspection confirmed:
-
-- V0.2 opens successfully.
-- Object count is 34.
-- Camera count is 1.
-- Light count is 1.
-- Armature count is 0.
-- Exactly two sensor slit mesh objects are present: `helmet_sensor_slit_upper_void_black` and `helmet_sensor_slit_lower_void_black`.
-- Required components are present: full-body actor, faceless porcelain helmet, black underlayer, broad pauldrons, tapered torso, columnar legs, left-side hair mass, right-side rectangular sword slab, and violet accents.
-
-Review previews were created under:
-
-```text
-production/character/production_actor/review_previews_v0_2/
-```
-
-V0.2 improves on V0.1 in helmet form, pauldron balance, torso/leg readability, hair/sword placement, material placeholder organization, and object grouping while preserving the Anchor V1 identity and exactly two sensor slits.
-
-V0.2 was not modified during review. V0.1 was not overwritten. Proxy `.blend` files were not overwritten. Anchor V1 was not modified. No AI image render or cinematic output was created. No final rig readiness is claimed. No final asset lock is claimed. No cinematic readiness is claimed.
 
 ## 4. Current Route State
 
@@ -180,9 +206,13 @@ V0.2 was not modified during review. V0.1 was not overwritten. Proxy `.blend` fi
 | PRODUCTION_ACTOR_V0_2_REVIEW_STATUS | PASS_ASSET_CANDIDATE |
 | PRODUCTION_ACTOR_V0_2_SCORE | 93/100 |
 | VISIBLE_ASSET_V0_2_REVIEWED | YES |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_STATUS | PREPARED |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_SOURCE | `V0_2` |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_SCORE | 93/100 |
+| PRODUCTION_ACTOR_ASSET_CANDIDATE_REVIEW_STATUS | PASS_ASSET_CANDIDATE |
 | SOURCE_BASELINE | `V0_1_PASS_TO_REFINE` |
 | PRODUCTION_ACTOR_V0_2_TARGET_SCORE | `92_PLUS` |
-| NEXT_SAFE_TASK | `PREPARE_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1` |
+| NEXT_SAFE_TASK | `REVIEW_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1` |
 | ASSET_LOCK_STATUS | `NOT_LOCKED` |
 | 3D_ACTOR_STATUS | `PROXY_BLOCKOUT_CREATED` |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
@@ -190,6 +220,7 @@ V0.2 was not modified during review. V0.1 was not overwritten. Proxy `.blend` fi
 
 ## 5. Latest Report Paths
 
+- `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1.md`
 - `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_V0_2_REVIEW_FROM_ANCHOR_V1.md`
 - `production/character/production_actor/review_previews_v0_2/MIKAGE_PRODUCTION_ACTOR_V0_2_FRONT_REVIEW.png`
 - `production/character/production_actor/review_previews_v0_2/MIKAGE_PRODUCTION_ACTOR_V0_2_SIDE_REVIEW.png`
@@ -244,7 +275,7 @@ V0.2 was not modified during review. V0.1 was not overwritten. Proxy `.blend` fi
 ## 6. Next Safe Task
 
 ```text
-PREPARE_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1
+REVIEW_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1
 ```
 
 ## 7. Forbidden
@@ -277,6 +308,7 @@ PREPARE_PRODUCTION_ACTOR_ASSET_CANDIDATE_PACKAGE_FROM_ANCHOR_V1
 - Do not overwrite V0.1 during V0.2 refinement.
 - Do not claim V0.2 as final asset lock, final rig readiness, or cinematic ready without separate review.
 - Do not treat V0.2 PASS_ASSET_CANDIDATE as final asset lock.
+- Do not treat the V0.2 asset candidate package as final asset lock.
 - Do not add extra planning gates before V0.2 execution.
 - Do not render new AI images.
 - Do not run full-body R6.
