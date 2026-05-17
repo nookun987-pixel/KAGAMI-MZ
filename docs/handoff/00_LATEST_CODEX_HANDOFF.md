@@ -6,7 +6,9 @@ REMOTE = origin https://github.com/nookun987-pixel/KAGAMI-MZ.git
 BRANCH = main
 
 ## LATEST VERIFIED STATE
-LATEST_COMPLETED_TASK = CREATE_FIRST_CONSTRAINT_DRIVER_PASS_FROM_FIRST_CONTROL_PASS_V0_1
+LATEST_COMPLETED_TASK = REVIEW_FIRST_CONSTRAINT_DRIVER_PASS_FROM_FIRST_CONTROL_PASS_V0_1
+FIRST_CONSTRAINT_DRIVER_PASS_REVIEW_STATUS = PASS
+FIRST_CONSTRAINT_DRIVER_PASS_REVIEW_RESULT = APPROVED_FOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_PREP
 CONSTRAINT_DRIVER_STATUS = CREATED_FIRST_PASS
 CONSTRAINT_DRIVER_PASS = FIRST_CONTROL_PASS_V0_1
 
@@ -15,7 +17,7 @@ LOCKED_SOURCE_BLEND = production/character/production_actor/MIKAGE_PRODUCTION_AC
 TARGET_DERIVATIVE_BLEND = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 
 LOCKED_SOURCE_MODIFIED = NO
-DERIVATIVE_BLEND_MODIFIED = YES
+DERIVATIVE_BLEND_MODIFIED_DURING_REVIEW = NO
 LOCKED_SOURCE_ASSET_STATUS = UNMODIFIED
 DERIVATIVE_RIG_FILE_STATUS = CREATED
 
@@ -37,7 +39,7 @@ CONTROLS:
 - foot.L_ctrl
 - foot.R_ctrl
 
-## CONSTRAINTS CREATED
+## VERIFIED CONSTRAINTS
 - `root` <- `global_ctrl`: `FIRST_PASS_COPY_LOCATION_global_ctrl_to_root` (Copy Location)
 - `root` <- `global_ctrl`: `FIRST_PASS_COPY_ROTATION_global_ctrl_to_root` (Copy Rotation)
 - `pelvis` <- `pelvis_ctrl`: `FIRST_PASS_COPY_LOCATION_pelvis_ctrl_to_pelvis` (Copy Location)
@@ -53,7 +55,7 @@ CONTROLS:
 - `foot.R` <- `foot.R_ctrl`: `FIRST_PASS_COPY_LOCATION_foot.R_ctrl_to_foot.R` (Copy Location)
 - `foot.R` <- `foot.R_ctrl`: `FIRST_PASS_COPY_ROTATION_foot.R_ctrl_to_foot.R` (Copy Rotation)
 
-## DRIVERS CREATED
+## DRIVERS VERIFIED
 NONE
 
 ## GATES
@@ -66,25 +68,27 @@ CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 FINAL_RIG_READINESS = NOT_CLAIMED
 CINEMATIC_READINESS_CLAIMED = NO
 
-## CREATION RESULT
-CREATION_REPORT = reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONSTRAINT_DRIVER_PASS_CREATION_FROM_FIRST_CONTROL_PASS_V0_1.md
-CREATION_STATUS = COMPLETE
-CREATION_RESULT = FIRST_PASS_CONSTRAINTS_CREATED_NO_DRIVERS
+## REVIEW RESULT
+REVIEW_REPORT = reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONSTRAINT_DRIVER_PASS_REVIEW_FROM_FIRST_CONTROL_PASS_V0_1.md
+REVIEW_STATUS = PASS
+REVIEW_RESULT = APPROVED_FOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_PREP
 
 ## NEXT SAFE TASK
-NEXT_SAFE_TASK = REVIEW_FIRST_CONSTRAINT_DRIVER_PASS_FROM_FIRST_CONTROL_PASS_V0_1
+NEXT_SAFE_TASK = PREPARE_WEIGHT_OR_DEFORMATION_GATE_DECISION_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
 
 ## NEXT TASK RULES
-The next task must review the first constraint / driver pass before any weights, vertex groups, armature modifiers, deformation tests, motion tests, animation, final rig readiness claim, or cinematic readiness claim.
+The next task may prepare a gate decision for whether the route proceeds toward weight preparation or deformation gate preparation.
 
-The next task must confirm the locked source .blend remains unmodified:
+The next task must not create weights, vertex groups, armature modifiers, deformation tests, motion tests, animation, final rig readiness claims, or cinematic readiness claims unless a later reviewed task explicitly authorizes them.
+
+The locked source .blend must remain unmodified:
 production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
 
-The next task must inspect only the approved derivative .blend:
+The approved derivative .blend is:
 production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 
 ## EXPECTED NEXT REPORT
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONSTRAINT_DRIVER_PASS_REVIEW_FROM_FIRST_CONTROL_PASS_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1.md
 
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
