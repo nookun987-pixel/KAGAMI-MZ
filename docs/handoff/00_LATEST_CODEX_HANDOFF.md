@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1` - complete.
+`PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1` - complete.
 
 ## 2. Confirmed State
 
@@ -68,6 +68,7 @@
 | CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION | `AUTHORIZE_CONSTRAINT_DRIVER_IMPLEMENTATION_PREP_ONLY` |
 | CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_STATUS | PASS |
 | CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_RESULT | `APPROVED_FOR_CONSTRAINT_DRIVER_CREATION_PREP_PACKAGE` |
+| CONSTRAINT_DRIVER_CREATION_PACKAGE_STATUS | PREPARED |
 | CONTROL_COUNT | 8 |
 | ARMATURE_OBJECT_COUNT | 1 |
 | BONE_COUNT | 23 |
@@ -87,21 +88,20 @@
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 | FINAL_RIG_READINESS | `NOT_CLAIMED` |
-| NEXT_SAFE_TASK | `PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1` |
+| NEXT_SAFE_TASK | `REVIEW_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only constraint / driver implementation decision from the reviewed first control pass:
+Prepared the documentation-only constraint / driver creation package from the reviewed first control pass:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_FROM_FIRST_CONTROL_PASS_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1.md
 ```
 
-Review result:
+Package result:
 
 ```text
-CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
-CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_RESULT = APPROVED_FOR_CONSTRAINT_DRIVER_CREATION_PREP_PACKAGE
+CONSTRAINT_DRIVER_CREATION_PACKAGE_STATUS = PREPARED
 ```
 
 Current rig state retained:
@@ -116,6 +116,7 @@ CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_STATUS = PREPARED
 CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION = AUTHORIZE_CONSTRAINT_DRIVER_IMPLEMENTATION_PREP_ONLY
 CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
 CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_RESULT = APPROVED_FOR_CONSTRAINT_DRIVER_CREATION_PREP_PACKAGE
+CONSTRAINT_DRIVER_CREATION_PACKAGE_STATUS = PREPARED
 CONTROL_RIG_IMPLEMENTATION_DECISION_STATUS = PREPARED
 CONTROL_RIG_IMPLEMENTATION_DECISION = AUTHORIZE_CONTROL_RIG_IMPLEMENTATION_PREP_ONLY
 CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
@@ -142,7 +143,7 @@ CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 FINAL_RIG_READINESS = NOT_CLAIMED
 ```
 
-The review confirms the decision report exists, is prepared, authorizes prep only, preserves the exact derivative and locked source paths, keeps the locked source unmodified, retains the created control and armature state, keeps constraints / drivers and weights uncreated, defines required next tasks and reviews, and defines failure conditions.
+The package defines the target derivative file, locked source protection rule, exact current rig state, first constraint / driver pass boundary, exact allowed first-pass constraint candidates, driver policy, forbidden scope, required later creation task, required review before creation, required separate reviews before weights / vertex groups and deformation / motion tests, failure conditions, and inspection checklist.
 
 No `.blend` files were modified. The locked source `.blend` remains unmodified. No weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
 
@@ -158,13 +159,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may prepare the constraint / driver creation package from the reviewed first control pass:
+The next stage may review the constraint / driver creation package from the reviewed first control pass:
 
 ```text
-PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1
+REVIEW_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1
 ```
 
-That package must remain documentation-only unless a later reviewed task explicitly authorizes constraints or drivers. It must keep weights / vertex groups, deformation tests, motion tests, final rig readiness, and cinematic readiness excluded.
+That review must confirm the package remains documentation-only, keeps constraints / drivers uncreated, keeps weights / vertex groups and armature modifiers excluded, preserves the locked source, and does not claim final rig or cinematic readiness.
 
 ## 5. Required Review Before Rig Execution
 
@@ -220,12 +221,13 @@ Before any rig execution can begin, a separate review must confirm:
 | First control rig pass review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONTROL_RIG_PASS_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md` - PASS |
 | Constraint / driver implementation decision | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1.md` - PREPARED |
 | Constraint / driver implementation decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_FROM_FIRST_CONTROL_PASS_V0_1.md` - PASS |
+| Constraint / driver creation package | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1.md` - PREPARED |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1
+REVIEW_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1
 ```
 
 ## 8. Forbidden
