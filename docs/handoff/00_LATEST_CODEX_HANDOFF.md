@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_CONTROL_RIG_IMPLEMENTATION_DECISION_FROM_INITIAL_ARMATURE_V0_1` - complete.
+`PREPARE_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1` - complete.
 
 ## 2. Confirmed State
 
@@ -58,6 +58,7 @@
 | CONTROL_RIG_IMPLEMENTATION_DECISION | `AUTHORIZE_CONTROL_RIG_IMPLEMENTATION_PREP_ONLY` |
 | CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_STATUS | PASS |
 | CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_RESULT | `APPROVED_FOR_CONTROL_RIG_CREATION_PREP_PACKAGE` |
+| CONTROL_RIG_CREATION_PACKAGE_STATUS | PREPARED |
 | ARMATURE_OBJECT_COUNT | 1 |
 | BONE_COUNT | 23 |
 | LOCKED_SOURCE_ASSET_STATUS | UNMODIFIED |
@@ -75,23 +76,23 @@
 | CONSTRAINT_DRIVER_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `PREPARE_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1` |
+| NEXT_SAFE_TASK | `REVIEW_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only control rig implementation decision from the reviewed initial armature:
+Prepared the documentation-only control rig creation package from the reviewed initial armature:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1.md
 ```
 
-Reviewed decision report:
+Package status:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_IMPLEMENTATION_DECISION_FROM_INITIAL_ARMATURE_V0_1.md
+CONTROL_RIG_CREATION_PACKAGE_STATUS = PREPARED
 ```
 
-Review result:
+Authorization chain:
 
 ```text
 CONTROL_RIG_IMPLEMENTATION_DECISION_STATUS = PREPARED
@@ -120,7 +121,7 @@ MOTION_TEST_STATUS = NOT_CREATED
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 ```
 
-The review confirms the decision report exists, is `PREPARED`, uses `AUTHORIZE_CONTROL_RIG_IMPLEMENTATION_PREP_ONLY`, names the exact derivative target, names the exact locked source, keeps the locked source unmodified, keeps controls, weights, constraints, drivers, motion tests, and cinematic proof uncreated, does not authorize control creation yet, defines first control pass scope, requires separate prep/review before controls are created, requires separate review before weights / constraints / drivers, and makes no final rig readiness or cinematic readiness claim.
+The package defines the target derivative file, locked source protection rule, first control pass scope, exact allowed controls (`global_ctrl`, `pelvis_ctrl`, `chest_ctrl`, `head_ctrl`, `hand.L_ctrl`, `hand.R_ctrl`, `foot.L_ctrl`, `foot.R_ctrl`), forbidden controls, exclusion of weights / constraints / drivers, required later task to actually create controls, required review before control creation, required review before weights / constraints / drivers, failure conditions, and inspection checklist.
 
 No `.blend` files were modified. The locked source `.blend` remains unmodified. No controls, weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
 
@@ -136,13 +137,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may prepare the control rig creation package from the reviewed initial armature:
+The next stage may review the control rig creation package from the reviewed initial armature:
 
 ```text
-PREPARE_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1.md
 ```
 
-That package must remain documentation-only unless a later reviewed task explicitly authorizes control creation.
+That review must confirm the package is documentation-only, controls remain uncreated, weights / constraints / drivers remain uncreated, the locked source remains unchanged, and no final rig or cinematic readiness is claimed.
 
 ## 5. Required Review Before Rig Execution
 
@@ -192,12 +193,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Initial armature review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_REVIEW_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - PASS |
 | Control rig implementation decision | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_IMPLEMENTATION_DECISION_FROM_INITIAL_ARMATURE_V0_1.md` - PREPARED |
 | Control rig implementation decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md` - PASS |
+| Control rig creation package | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1.md` - PREPARED |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-PREPARE_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1
+REVIEW_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1
 ```
 
 ## 8. Forbidden
