@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
+`PREPARE_ACTUAL_DERIVATIVE_RIG_FILE_FROM_LOCKED_BLOCKOUT_V0_2` - complete.
 
 ## 2. Confirmed State
 
@@ -43,6 +43,10 @@
 | PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_STATUS | PREPARED |
 | PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_REVIEW_RESULT | `APPROVED_FOR_ACTUAL_DERIVATIVE_RIG_FILE_PREP` |
+| PRODUCTION_ACTOR_ACTUAL_DERIVATIVE_RIG_FILE_PREP_STATUS | PREPARED |
+| DERIVATIVE_RIG_FILE_STATUS | CREATED |
+| DERIVATIVE_RIG_FILE_PATH | `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend` |
+| LOCKED_SOURCE_ASSET_STATUS | UNMODIFIED |
 | RIG_PLANNING_SOURCE_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
 | ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
 | PRODUCTION_ACTOR_ASSET_LOCK_REGISTRY_STATUS | REGISTERED |
@@ -54,38 +58,38 @@
 | ARMATURE_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `PREPARE_ACTUAL_DERIVATIVE_RIG_FILE_FROM_LOCKED_BLOCKOUT_V0_2` |
+| NEXT_SAFE_TASK | `REVIEW_ACTUAL_DERIVATIVE_RIG_FILE_FROM_LOCKED_BLOCKOUT_V0_2` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only derivative rig implementation package from the locked registered Production Actor V0.2 blockout:
+Prepared the actual derivative rig file from the locked registered Production Actor V0.2 blockout:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md
+production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 ```
 
-Review result:
+Prep report:
 
 ```text
-PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_REVIEW_STATUS = PASS
-PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_REVIEW_RESULT = APPROVED_FOR_ACTUAL_DERIVATIVE_RIG_FILE_PREP
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_DERIVATIVE_RIG_FILE_PREP_FROM_LOCKED_BLOCKOUT_V0_2.md
 ```
 
-The review confirms:
+Preparation result:
 
 ```text
-IMPLEMENTATION_AUTHORIZATION_DECISION = AUTHORIZE_DERIVATIVE_RIG_IMPLEMENTATION_PREP_ONLY
-PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_STATUS = PREPARED
-RIG_PLANNING_SOURCE_ASSET = production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
+PRODUCTION_ACTOR_ACTUAL_DERIVATIVE_RIG_FILE_PREP_STATUS = PREPARED
+DERIVATIVE_RIG_FILE_STATUS = CREATED
+DERIVATIVE_RIG_FILE_PATH = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
+LOCKED_SOURCE_ASSET_STATUS = UNMODIFIED
 RIG_EXECUTION_STATUS = NOT_STARTED
 ARMATURE_STATUS = NOT_CREATED
 MOTION_TEST_STATUS = NOT_CREATED
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 ```
 
-The package exists, is `PREPARED`, defines the locked source boundary, keeps the locked source as `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend`, defines the exact future derivative path `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend`, does not create the derivative `.blend`, does not modify the locked source `.blend`, does not create an armature, does not start rigging, defines the later task `PREPARE_ACTUAL_DERIVATIVE_RIG_FILE_FROM_LOCKED_BLOCKOUT_V0_2`, and blocks motion test, cinematic proof, public output, final rig readiness, final topology, and final material claims.
+The derivative `.blend` was created only at the approved derivative path by direct copy from the locked source asset. The locked source remains `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` and was not overwritten, resaved, or modified.
 
-No `.blend` files were modified, no derivative `.blend` was created, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created.
+No armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -99,13 +103,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may prepare the actual derivative rig file from the locked registered V0.2 blockout. The approved future derivative path is:
+The next stage may review the actual derivative rig file from the locked registered V0.2 blockout. The derivative path is:
 
 ```text
 production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 ```
 
-That task may create the derivative `.blend` only at the approved path and must keep the locked source unchanged. Do not create an armature, start rigging, create controls, weights, constraints, drivers, deformation tests, motion tests, or claim final rig/cinematic readiness unless a later task explicitly authorizes that scope.
+That review must confirm the derivative exists only at the approved path, the locked source remains unchanged, and no armature, rigging, controls, weights, constraints, drivers, deformation tests, motion tests, final rig readiness, or cinematic readiness were introduced.
 
 ## 5. Required Review Before Rig Execution
 
@@ -146,12 +150,14 @@ Before any rig execution can begin, a separate review must confirm:
 | Rig implementation authorization decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_RIG_IMPLEMENTATION_AUTHORIZATION_DECISION_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
 | Derivative rig implementation package | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
 | Derivative rig implementation package review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_DERIVATIVE_RIG_IMPLEMENTATION_PACKAGE_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
+| Actual derivative rig file prep | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_DERIVATIVE_RIG_FILE_PREP_FROM_LOCKED_BLOCKOUT_V0_2.md` - PREPARED |
+| Derivative rig file | `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend` - CREATED |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-PREPARE_ACTUAL_DERIVATIVE_RIG_FILE_FROM_LOCKED_BLOCKOUT_V0_2
+REVIEW_ACTUAL_DERIVATIVE_RIG_FILE_FROM_LOCKED_BLOCKOUT_V0_2
 ```
 
 ## 8. Forbidden
