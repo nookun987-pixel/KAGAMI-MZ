@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1` - complete.
+`CREATE_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1` - complete.
 
 ## 2. Confirmed State
 
@@ -61,6 +61,8 @@
 | CONTROL_RIG_CREATION_PACKAGE_STATUS | PREPARED |
 | CONTROL_RIG_CREATION_PACKAGE_REVIEW_STATUS | PASS |
 | CONTROL_RIG_CREATION_PACKAGE_REVIEW_RESULT | `APPROVED_FOR_FIRST_CONTROL_RIG_PASS_CREATION` |
+| FIRST_CONTROL_RIG_PASS_STATUS | CREATED |
+| CONTROL_COUNT | 8 |
 | ARMATURE_OBJECT_COUNT | 1 |
 | BONE_COUNT | 23 |
 | LOCKED_SOURCE_ASSET_STATUS | UNMODIFIED |
@@ -73,33 +75,34 @@
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
 | RIG_EXECUTION_STATUS | `ARMATURE_SCAFFOLD_CREATED_NOT_RIGGED` |
 | ARMATURE_STATUS | `CREATED` |
-| CONTROL_STATUS | `NOT_CREATED` |
+| CONTROL_STATUS | `CREATED` |
 | WEIGHT_STATUS | `NOT_CREATED` |
 | CONSTRAINT_DRIVER_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `CREATE_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1` |
+| FINAL_RIG_READINESS | `NOT_CLAIMED` |
+| NEXT_SAFE_TASK | `REVIEW_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only control rig creation package from the reviewed initial armature:
+Created the first control rig pass in the approved derivative `.blend`:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md
+production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 ```
 
-Reviewed package:
+Creation report:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONTROL_RIG_PASS_CREATION_FROM_INITIAL_ARMATURE_V0_1.md
 ```
 
-Review result:
+Creation result:
 
 ```text
-CONTROL_RIG_CREATION_PACKAGE_STATUS = PREPARED
-CONTROL_RIG_CREATION_PACKAGE_REVIEW_STATUS = PASS
-CONTROL_RIG_CREATION_PACKAGE_REVIEW_RESULT = APPROVED_FOR_FIRST_CONTROL_RIG_PASS_CREATION
+FIRST_CONTROL_RIG_PASS_STATUS = CREATED
+CONTROL_STATUS = CREATED
+CONTROL_COUNT = 8
 CONTROL_RIG_IMPLEMENTATION_DECISION_STATUS = PREPARED
 CONTROL_RIG_IMPLEMENTATION_DECISION = AUTHORIZE_CONTROL_RIG_IMPLEMENTATION_PREP_ONLY
 CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
@@ -119,16 +122,16 @@ DERIVATIVE_RIG_FILE_STATUS = CREATED
 DERIVATIVE_RIG_FILE_PATH = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 LOCKED_SOURCE_ASSET_STATUS = UNMODIFIED
 RIG_EXECUTION_STATUS = ARMATURE_SCAFFOLD_CREATED_NOT_RIGGED
-CONTROL_STATUS = NOT_CREATED
 WEIGHT_STATUS = NOT_CREATED
 CONSTRAINT_DRIVER_STATUS = NOT_CREATED
 MOTION_TEST_STATUS = NOT_CREATED
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
+FINAL_RIG_READINESS = NOT_CLAIMED
 ```
 
-The review confirms the package exists, is `PREPARED`, names the exact derivative target, names the exact locked source, keeps the locked source unmodified, keeps controls, weights, constraints, drivers, motion tests, and cinematic proof uncreated, defines first control pass scope, lists exact allowed controls (`global_ctrl`, `pelvis_ctrl`, `chest_ctrl`, `head_ctrl`, `hand.L_ctrl`, `hand.R_ctrl`, `foot.L_ctrl`, `foot.R_ctrl`), lists forbidden controls, excludes weights / constraints / drivers, sets required later task `CREATE_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1`, defines required reviews before controls and before weights / constraints / drivers, and makes no final rig readiness or cinematic readiness claim.
+The derivative now contains exactly eight first-pass controls: `global_ctrl`, `pelvis_ctrl`, `chest_ctrl`, `head_ctrl`, `hand.L_ctrl`, `hand.R_ctrl`, `foot.L_ctrl`, and `foot.R_ctrl`. No extra controls were created.
 
-No `.blend` files were modified. The locked source `.blend` remains unmodified. No controls, weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
+Only the approved derivative `.blend` was modified. The locked source `.blend` remains unmodified. No weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -142,13 +145,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may create the first control rig pass from the reviewed initial armature:
+The next stage may review the first control rig pass from the reviewed initial armature:
 
 ```text
-CREATE_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONTROL_RIG_PASS_CREATION_FROM_INITIAL_ARMATURE_V0_1.md
 ```
 
-That task may modify only the approved derivative `.blend` to create the exact first-pass controls. It must not create weights, vertex groups, constraints, drivers, deformation tests, motion tests, final rig readiness, or cinematic readiness.
+That review must confirm the exact eight controls, no extra controls, locked source unchanged, no weights, no vertex groups, no constraints, no drivers, no animation, no deformation tests, no motion tests, and no final rig or cinematic readiness claim.
 
 ## 5. Required Review Before Rig Execution
 
@@ -200,12 +203,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Control rig implementation decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md` - PASS |
 | Control rig creation package | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_FROM_INITIAL_ARMATURE_V0_1.md` - PREPARED |
 | Control rig creation package review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONTROL_RIG_CREATION_PACKAGE_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md` - PASS |
+| First control rig pass creation | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONTROL_RIG_PASS_CREATION_FROM_INITIAL_ARMATURE_V0_1.md` - CREATED |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-CREATE_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1
+REVIEW_FIRST_CONTROL_RIG_PASS_FROM_INITIAL_ARMATURE_V0_1
 ```
 
 ## 8. Forbidden
