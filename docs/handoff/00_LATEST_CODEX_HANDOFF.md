@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`PREPARE_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1` - complete.
+`REVIEW_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1` - complete.
 
 ## 2. Confirmed State
 
@@ -66,6 +66,8 @@
 | FIRST_CONTROL_RIG_PASS_REVIEW_RESULT | `APPROVED_FOR_CONSTRAINT_DRIVER_PREP_DECISION` |
 | CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_STATUS | PREPARED |
 | CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION | `AUTHORIZE_CONSTRAINT_DRIVER_IMPLEMENTATION_PREP_ONLY` |
+| CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_STATUS | PASS |
+| CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_RESULT | `APPROVED_FOR_CONSTRAINT_DRIVER_CREATION_PREP_PACKAGE` |
 | CONTROL_COUNT | 8 |
 | ARMATURE_OBJECT_COUNT | 1 |
 | BONE_COUNT | 23 |
@@ -85,21 +87,21 @@
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
 | FINAL_RIG_READINESS | `NOT_CLAIMED` |
-| NEXT_SAFE_TASK | `REVIEW_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1` |
+| NEXT_SAFE_TASK | `PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1` |
 
 ## 3. Latest Result
 
-Prepared the documentation-only constraint / driver implementation decision from the reviewed first control pass:
+Reviewed the documentation-only constraint / driver implementation decision from the reviewed first control pass:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_FROM_FIRST_CONTROL_PASS_V0_1.md
 ```
 
-Decision result:
+Review result:
 
 ```text
-CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_STATUS = PREPARED
-CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION = AUTHORIZE_CONSTRAINT_DRIVER_IMPLEMENTATION_PREP_ONLY
+CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
+CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_RESULT = APPROVED_FOR_CONSTRAINT_DRIVER_CREATION_PREP_PACKAGE
 ```
 
 Current rig state retained:
@@ -110,6 +112,10 @@ FIRST_CONTROL_RIG_PASS_REVIEW_STATUS = PASS
 FIRST_CONTROL_RIG_PASS_REVIEW_RESULT = APPROVED_FOR_CONSTRAINT_DRIVER_PREP_DECISION
 CONTROL_STATUS = CREATED
 CONTROL_COUNT = 8
+CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_STATUS = PREPARED
+CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION = AUTHORIZE_CONSTRAINT_DRIVER_IMPLEMENTATION_PREP_ONLY
+CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
+CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_RESULT = APPROVED_FOR_CONSTRAINT_DRIVER_CREATION_PREP_PACKAGE
 CONTROL_RIG_IMPLEMENTATION_DECISION_STATUS = PREPARED
 CONTROL_RIG_IMPLEMENTATION_DECISION = AUTHORIZE_CONTROL_RIG_IMPLEMENTATION_PREP_ONLY
 CONTROL_RIG_IMPLEMENTATION_DECISION_REVIEW_STATUS = PASS
@@ -136,7 +142,7 @@ CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 FINAL_RIG_READINESS = NOT_CLAIMED
 ```
 
-The decision defines whether constraints / drivers implementation should proceed, the exact approved derivative target, locked source protection rule, constraint / driver boundary, allowed first constraint / driver prep scope, forbidden scope, required next task if approved, required review before actual constraints / drivers are created, required separate review before weights / vertex groups, required separate review before deformation or motion tests, failure conditions, and inspection checklist.
+The review confirms the decision report exists, is prepared, authorizes prep only, preserves the exact derivative and locked source paths, keeps the locked source unmodified, retains the created control and armature state, keeps constraints / drivers and weights uncreated, defines required next tasks and reviews, and defines failure conditions.
 
 No `.blend` files were modified. The locked source `.blend` remains unmodified. No weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
 
@@ -152,13 +158,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may review the constraint / driver implementation decision from the reviewed first control pass:
+The next stage may prepare the constraint / driver creation package from the reviewed first control pass:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1.md
+PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1
 ```
 
-That review must confirm the decision is prep-only, keeps constraints / drivers uncreated, keeps weights / vertex groups uncreated, preserves the locked source, and does not claim final rig or cinematic readiness.
+That package must remain documentation-only unless a later reviewed task explicitly authorizes constraints or drivers. It must keep weights / vertex groups, deformation tests, motion tests, final rig readiness, and cinematic readiness excluded.
 
 ## 5. Required Review Before Rig Execution
 
@@ -213,12 +219,13 @@ Before any rig execution can begin, a separate review must confirm:
 | First control rig pass creation | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONTROL_RIG_PASS_CREATION_FROM_INITIAL_ARMATURE_V0_1.md` - CREATED |
 | First control rig pass review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_FIRST_CONTROL_RIG_PASS_REVIEW_FROM_INITIAL_ARMATURE_V0_1.md` - PASS |
 | Constraint / driver implementation decision | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1.md` - PREPARED |
+| Constraint / driver implementation decision review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_REVIEW_FROM_FIRST_CONTROL_PASS_V0_1.md` - PASS |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-REVIEW_CONSTRAINT_DRIVER_IMPLEMENTATION_DECISION_FROM_FIRST_CONTROL_PASS_V0_1
+PREPARE_CONSTRAINT_DRIVER_CREATION_PACKAGE_FROM_FIRST_CONTROL_PASS_V0_1
 ```
 
 ## 8. Forbidden
