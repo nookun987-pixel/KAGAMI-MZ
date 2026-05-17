@@ -6,11 +6,11 @@ REMOTE = origin https://github.com/nookun987-pixel/KAGAMI-MZ.git
 BRANCH = main
 
 ## LATEST VERIFIED STATE
-LATEST_COMPLETED_TASK = PREPARE_WEIGHT_OR_DEFORMATION_GATE_DECISION_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
+LATEST_COMPLETED_TASK = REVIEW_WEIGHT_OR_DEFORMATION_GATE_DECISION_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
 WEIGHT_OR_DEFORMATION_GATE_DECISION_STATUS = PREPARED
 WEIGHT_OR_DEFORMATION_GATE_DECISION_RESULT = PREPARE_WEIGHT_PLANNING_PACKAGE_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
-FIRST_CONSTRAINT_DRIVER_PASS_REVIEW_STATUS = PASS
-FIRST_CONSTRAINT_DRIVER_PASS_REVIEW_RESULT = APPROVED_FOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_PREP
+WEIGHT_OR_DEFORMATION_GATE_DECISION_REVIEW_STATUS = PASS
+WEIGHT_OR_DEFORMATION_GATE_DECISION_REVIEW_RESULT = APPROVED_FOR_WEIGHT_PLANNING_PACKAGE_PREP
 CONSTRAINT_DRIVER_STATUS = CREATED_FIRST_PASS
 CONSTRAINT_DRIVER_PASS = FIRST_CONTROL_PASS_V0_1
 
@@ -43,23 +43,18 @@ CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 FINAL_RIG_READINESS = NOT_CLAIMED
 CINEMATIC_READINESS_CLAIMED = NO
 
-## DECISION RESULT
-DECISION_REPORT = reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1.md
-DECISION_STATUS = PREPARED
-DECISION_RESULT = PREPARE_WEIGHT_PLANNING_PACKAGE_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
-
-## ROUTE DECISION
-The next implementation route should prepare weight / vertex group planning first.
-
-Reason: the rig has reviewed first-pass controls and constraints, but mesh binding, weights, vertex groups, and armature modifier policy are still not created and not authorized. Deformation or motion tests would be premature until weight planning is prepared and reviewed.
+## REVIEW RESULT
+REVIEW_REPORT = reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_REVIEW_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1.md
+REVIEW_STATUS = PASS
+REVIEW_RESULT = APPROVED_FOR_WEIGHT_PLANNING_PACKAGE_PREP
 
 ## NEXT SAFE TASK
-NEXT_SAFE_TASK = REVIEW_WEIGHT_OR_DEFORMATION_GATE_DECISION_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
+NEXT_SAFE_TASK = PREPARE_WEIGHT_PLANNING_PACKAGE_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1
 
 ## NEXT TASK RULES
-The next task must review this weight-or-deformation gate decision before any weight planning package is prepared.
+The next task may prepare a documentation-only weight planning package from the reviewed first constraint / driver pass.
 
-No task may create weights, vertex groups, armature modifiers, deformation tests, motion tests, animation, final rig readiness claims, or cinematic readiness claims until a later reviewed task explicitly authorizes that scope.
+The next task must not create weights, vertex groups, armature modifiers, deformation tests, motion tests, animation, final rig readiness claims, or cinematic readiness claims.
 
 The locked source .blend must remain unmodified:
 production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
@@ -68,7 +63,7 @@ The approved derivative .blend is:
 production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 
 ## EXPECTED NEXT REPORT
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_WEIGHT_OR_DEFORMATION_GATE_DECISION_REVIEW_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_WEIGHT_PLANNING_PACKAGE_FROM_FIRST_CONSTRAINT_DRIVER_PASS_V0_1.md
 
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
