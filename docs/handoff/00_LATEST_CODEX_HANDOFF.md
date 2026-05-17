@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`REVIEW_ARMATURE_IMPLEMENTATION_PREP_FROM_DERIVATIVE_RIG_FILE_V0_1` - complete.
+`CREATE_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1` - complete.
 
 ## 2. Confirmed State
 
@@ -51,6 +51,9 @@
 | PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_STATUS | PREPARED |
 | PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_RESULT | `APPROVED_FOR_INITIAL_ARMATURE_CREATION` |
+| INITIAL_ARMATURE_CREATION_STATUS | COMPLETE |
+| ARMATURE_OBJECT_COUNT | 1 |
+| BONE_COUNT | 23 |
 | LOCKED_SOURCE_ASSET_STATUS | UNMODIFIED |
 | RIG_PLANNING_SOURCE_ASSET | `production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend` |
 | ASSET_LOCK_STATUS | `LOCKED_REGISTERED` |
@@ -59,44 +62,50 @@
 | PRODUCTION_ACTOR_LOCKED_ASSET_TYPE | `PRODUCTION_ACTOR_3D_BLOCKOUT_LOCK` |
 | PRODUCTION_ACTOR_V0_2_SCORE | 93/100 |
 | RIG_STATUS | `PROXY_CONTROLLED_MOTION_TEST_REVIEW_PASSED_NOT_FINAL` |
-| RIG_EXECUTION_STATUS | `NOT_STARTED` |
-| ARMATURE_STATUS | `NOT_CREATED` |
+| RIG_EXECUTION_STATUS | `ARMATURE_SCAFFOLD_CREATED_NOT_RIGGED` |
+| ARMATURE_STATUS | `CREATED` |
+| CONTROL_STATUS | `NOT_CREATED` |
+| WEIGHT_STATUS | `NOT_CREATED` |
+| CONSTRAINT_DRIVER_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `CREATE_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1` |
+| NEXT_SAFE_TASK | `REVIEW_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1` |
 
 ## 3. Latest Result
 
-Reviewed the documentation-only armature implementation prep from the reviewed derivative rig file:
+Created the initial armature scaffold in the approved derivative rig file:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_FROM_DERIVATIVE_RIG_FILE_V0_1.md
+production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 ```
 
-Reviewed prep report:
+Creation report:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_FROM_DERIVATIVE_RIG_FILE_V0_1.md
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_CREATION_FROM_DERIVATIVE_RIG_FILE_V0_1.md
 ```
 
-Review result:
+Creation result:
 
 ```text
-PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_STATUS = PREPARED
-PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_STATUS = PASS
-PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_RESULT = APPROVED_FOR_INITIAL_ARMATURE_CREATION
+INITIAL_ARMATURE_CREATION_STATUS = COMPLETE
+ARMATURE_STATUS = CREATED
+ARMATURE_OBJECT_COUNT = 1
+BONE_COUNT = 23
 DERIVATIVE_RIG_FILE_STATUS = CREATED
 DERIVATIVE_RIG_FILE_PATH = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
 LOCKED_SOURCE_ASSET_STATUS = UNMODIFIED
-RIG_EXECUTION_STATUS = NOT_STARTED
-ARMATURE_STATUS = NOT_CREATED
+RIG_EXECUTION_STATUS = ARMATURE_SCAFFOLD_CREATED_NOT_RIGGED
+CONTROL_STATUS = NOT_CREATED
+WEIGHT_STATUS = NOT_CREATED
+CONSTRAINT_DRIVER_STATUS = NOT_CREATED
 MOTION_TEST_STATUS = NOT_CREATED
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 ```
 
-The review confirms the prep report exists, is `PREPARED`, names the exact target derivative path, names the exact locked source path, keeps the locked source unmodified, keeps `ARMATURE_STATUS = NOT_CREATED`, keeps `RIG_EXECUTION_STATUS = NOT_STARTED`, modifies no `.blend` files, defines the bone naming plan, defines the minimal skeleton plan, excludes controls and constraints, and sets the required next actual armature creation task to `CREATE_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1`.
+The derivative now contains one neutral rest-pose armature scaffold named `MIKAGE_initial_armature_scaffold` with 23 bones: `root`, `pelvis`, `spine_01`, `spine_02`, `chest`, `neck`, `head`, `clavicle.L`, `upper_arm.L`, `forearm.L`, `hand.L`, `clavicle.R`, `upper_arm.R`, `forearm.R`, `hand.R`, `thigh.L`, `shin.L`, `foot.L`, `toe.L`, `thigh.R`, `shin.R`, `foot.R`, and `toe.R`.
 
-No `.blend` files were modified, no armature was created, rigging was not started, and no controls, weights, constraints, drivers, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
+Only the approved derivative `.blend` was modified. The locked source `.blend` remains unmodified. No controls, weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -110,13 +119,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may create the initial armature in the approved derivative rig file:
+The next stage may review the initial armature in the approved derivative rig file:
 
 ```text
-production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_CREATION_FROM_DERIVATIVE_RIG_FILE_V0_1.md
 ```
 
-That task may modify only the approved derivative `.blend` to create the initial armature scaffold. It must not modify the locked source and must not create controls, weights, constraints, drivers, deformation tests, motion tests, final rig readiness, or cinematic readiness.
+That review must confirm exactly one armature object, the approved bone list, locked source unchanged, no controls, no weights or vertex groups, no constraints, no drivers, no animation, no deformation tests, no motion tests, and no final rig or cinematic readiness claim.
 
 ## 5. Required Review Before Rig Execution
 
@@ -162,12 +171,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Actual derivative rig file review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ACTUAL_DERIVATIVE_RIG_FILE_REVIEW_FROM_LOCKED_BLOCKOUT_V0_2.md` - PASS |
 | Armature implementation prep | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - PREPARED |
 | Armature implementation prep review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - PASS |
+| Initial armature creation | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_CREATION_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - COMPLETE |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-CREATE_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1
+REVIEW_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1
 ```
 
 ## 8. Forbidden
@@ -175,7 +185,7 @@ CREATE_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1
 - Do not modify `.blend` files.
 - Do not update geometry.
 - Do not start rigging.
-- Do not create armature.
+- Do not create additional armatures before review.
 - Do not create motion tests.
 - Do not claim final rig readiness.
 - Do not claim cinematic readiness.
