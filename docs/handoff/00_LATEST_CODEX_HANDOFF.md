@@ -2,7 +2,7 @@
 
 ## 1. Latest Completed Task
 
-`CREATE_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1` - complete.
+`REVIEW_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1` - complete.
 
 ## 2. Confirmed State
 
@@ -52,6 +52,8 @@
 | PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_STATUS | PASS |
 | PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_RESULT | `APPROVED_FOR_INITIAL_ARMATURE_CREATION` |
 | INITIAL_ARMATURE_CREATION_STATUS | COMPLETE |
+| INITIAL_ARMATURE_REVIEW_STATUS | PASS |
+| INITIAL_ARMATURE_REVIEW_RESULT | `APPROVED_FOR_CONTROL_RIG_IMPLEMENTATION_DECISION_PREP` |
 | ARMATURE_OBJECT_COUNT | 1 |
 | BONE_COUNT | 23 |
 | LOCKED_SOURCE_ASSET_STATUS | UNMODIFIED |
@@ -69,26 +71,28 @@
 | CONSTRAINT_DRIVER_STATUS | `NOT_CREATED` |
 | MOTION_TEST_STATUS | `NOT_CREATED` |
 | CINEMATIC_PROOF_SHOT_STATUS | `NOT_STARTED` |
-| NEXT_SAFE_TASK | `REVIEW_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1` |
+| NEXT_SAFE_TASK | `PREPARE_CONTROL_RIG_IMPLEMENTATION_DECISION_FROM_INITIAL_ARMATURE_V0_1` |
 
 ## 3. Latest Result
 
-Created the initial armature scaffold in the approved derivative rig file:
+Reviewed the initial armature scaffold in the approved derivative rig file:
 
 ```text
-production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_FROM_LOCKED_BLOCKOUT_V0_2_V0_1.blend
+reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_REVIEW_FROM_DERIVATIVE_RIG_FILE_V0_1.md
 ```
 
-Creation report:
+Reviewed creation report:
 
 ```text
 reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_CREATION_FROM_DERIVATIVE_RIG_FILE_V0_1.md
 ```
 
-Creation result:
+Review result:
 
 ```text
 INITIAL_ARMATURE_CREATION_STATUS = COMPLETE
+INITIAL_ARMATURE_REVIEW_STATUS = PASS
+INITIAL_ARMATURE_REVIEW_RESULT = APPROVED_FOR_CONTROL_RIG_IMPLEMENTATION_DECISION_PREP
 ARMATURE_STATUS = CREATED
 ARMATURE_OBJECT_COUNT = 1
 BONE_COUNT = 23
@@ -103,9 +107,9 @@ MOTION_TEST_STATUS = NOT_CREATED
 CINEMATIC_PROOF_SHOT_STATUS = NOT_STARTED
 ```
 
-The derivative now contains one neutral rest-pose armature scaffold named `MIKAGE_initial_armature_scaffold` with 23 bones: `root`, `pelvis`, `spine_01`, `spine_02`, `chest`, `neck`, `head`, `clavicle.L`, `upper_arm.L`, `forearm.L`, `hand.L`, `clavicle.R`, `upper_arm.R`, `forearm.R`, `hand.R`, `thigh.L`, `shin.L`, `foot.L`, `toe.L`, `thigh.R`, `shin.R`, `foot.R`, and `toe.R`.
+The review confirms the derivative contains exactly one armature object named `MIKAGE_initial_armature_scaffold` with 23 bones: `root`, `pelvis`, `spine_01`, `spine_02`, `chest`, `neck`, `head`, `clavicle.L`, `upper_arm.L`, `forearm.L`, `hand.L`, `clavicle.R`, `upper_arm.R`, `forearm.R`, `hand.R`, `thigh.L`, `shin.L`, `foot.L`, `toe.L`, `thigh.R`, `shin.R`, `foot.R`, and `toe.R`.
 
-Only the approved derivative `.blend` was modified. The locked source `.blend` remains unmodified. No controls, weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests were created. No final rig readiness or cinematic readiness is claimed.
+No `.blend` files were modified during review. The locked source `.blend` remains unmodified. No controls, weights, vertex groups, constraints, drivers, animation, deformation tests, or motion tests exist. No final rig readiness or cinematic readiness is claimed.
 
 ## ROUTE RESUME CHECKPOINT
 
@@ -119,13 +123,13 @@ ROUTE_RESUME_FORBIDDEN_DRIFT = CINEMATIC_PROOF / FINAL_RIG_CLAIM / PUBLIC_OUTPUT
 
 ## 4. Allowed Next Stage Scope
 
-The next stage may review the initial armature in the approved derivative rig file:
+The next stage may prepare the control rig implementation decision from the reviewed initial armature:
 
 ```text
-reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_CREATION_FROM_DERIVATIVE_RIG_FILE_V0_1.md
+PREPARE_CONTROL_RIG_IMPLEMENTATION_DECISION_FROM_INITIAL_ARMATURE_V0_1
 ```
 
-That review must confirm exactly one armature object, the approved bone list, locked source unchanged, no controls, no weights or vertex groups, no constraints, no drivers, no animation, no deformation tests, no motion tests, and no final rig or cinematic readiness claim.
+That decision prep must remain documentation-only unless a later reviewed task explicitly authorizes control creation.
 
 ## 5. Required Review Before Rig Execution
 
@@ -172,12 +176,13 @@ Before any rig execution can begin, a separate review must confirm:
 | Armature implementation prep | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - PREPARED |
 | Armature implementation prep review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_ARMATURE_IMPLEMENTATION_PREP_REVIEW_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - PASS |
 | Initial armature creation | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_CREATION_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - COMPLETE |
+| Initial armature review | `reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_INITIAL_ARMATURE_REVIEW_FROM_DERIVATIVE_RIG_FILE_V0_1.md` - PASS |
 | Registry section | `docs/pipeline/01_CANON_ASSET_REGISTRY.md` Section G-01 |
 
 ## 7. Next Safe Task
 
 ```text
-REVIEW_INITIAL_ARMATURE_IN_DERIVATIVE_RIG_FILE_V0_1
+PREPARE_CONTROL_RIG_IMPLEMENTATION_DECISION_FROM_INITIAL_ARMATURE_V0_1
 ```
 
 ## 8. Forbidden
