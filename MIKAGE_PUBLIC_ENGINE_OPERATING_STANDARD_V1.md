@@ -76,8 +76,16 @@ Required:
 
 Role boundary:
 
-- GPT renders only from canonical ZIP.
-- Claude/local agent packages only.
+- Local/Claude builds structured archive packages.
+- Local/Claude stores canonical track metadata.
+- Local/Claude stores hook timelines.
+- Local/Claude stores captions / CTA state.
+- Local/Claude stores GPT Web output records.
+- Local/Claude stores verify reports after output exists.
+- Local/Claude does not force local PC render for short-cut videos unless the operator explicitly requests PC/local rendering.
+- GPT Web directly performs short-cut render/edit operation when the operator provides source/audio/output request.
+- GPT Web returns output file and metadata.
+- Local archive records the final GPT Web result after output exists.
 
 Not allowed:
 
@@ -93,6 +101,8 @@ Rules:
 
 - One render task = one canonical ZIP.
 - Manifest is source of truth.
+- Canonical ZIPs may be archive packages and are not mandatory for local render.
+- Short-cut render execution mode defaults to GPT Web direct unless the operator explicitly requests PC/local rendering.
 - `render-ready` does not mean MP4 rendered.
 - MP4 output may only be called `MP4_RENDERED` after the MP4 exists.
 - `5-sub` means sequential timed text blocks or production manifest, not five static lines on screen.
@@ -105,6 +115,7 @@ Banned render behavior:
 - Rendering from memory.
 - Rendering from alternate package layouts.
 - Treating `render-ready` as rendered output.
+- Forcing local PC render for short-cut videos without explicit operator request.
 
 ## 6. PUBLISH PACKAGE LAYER
 
