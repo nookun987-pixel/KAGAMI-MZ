@@ -1,0 +1,8 @@
+# AUDIO_SOURCE
+
+TRACK_ID: T04
+TRACK_TITLE: SINGULAR HEART
+AUDIO_FILE: CHUA_XAC_NHAN
+AUDIO_WINDOW: 1:31 -> 2:01
+AUDIO_SOURCE_STATUS: CHUA_XAC_NHAN
+NOTES: No master WAV or confirmed audio path was present in the Track Package.

@@ -1,0 +1,8 @@
+# AUDIO_SOURCE
+
+TRACK_ID: T07
+TRACK_TITLE: THE ROOT ARCHITECT
+AUDIO_FILE: CHUA_XAC_NHAN
+AUDIO_WINDOW: 0:00 -> 0:36 / 0:37 -> 1:10
+AUDIO_SOURCE_STATUS: CHUA_XAC_NHAN
+NOTES: No master WAV or confirmed audio path was present in the Track Package.

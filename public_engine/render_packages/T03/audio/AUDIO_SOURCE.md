@@ -1,0 +1,8 @@
+# AUDIO_SOURCE
+
+TRACK_ID: T03
+TRACK_TITLE: THE BREACH
+AUDIO_FILE: CHUA_XAC_NHAN
+AUDIO_WINDOW: 0:35 -> 1:05 + 1:12 -> 1:14
+AUDIO_SOURCE_STATUS: CHUA_XAC_NHAN
+NOTES: No master WAV or confirmed audio path was present in the Track Package.

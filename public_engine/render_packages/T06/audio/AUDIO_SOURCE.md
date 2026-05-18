@@ -1,0 +1,8 @@
+# AUDIO_SOURCE
+
+TRACK_ID: T06
+TRACK_TITLE: THE THEOREM
+AUDIO_FILE: CHUA_XAC_NHAN
+AUDIO_WINDOW: 0:36 -> 1:15
+AUDIO_SOURCE_STATUS: CHUA_XAC_NHAN
+NOTES: No master WAV or confirmed audio path was present in the Track Package.

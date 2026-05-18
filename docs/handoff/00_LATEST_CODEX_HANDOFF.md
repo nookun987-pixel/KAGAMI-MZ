@@ -115,6 +115,14 @@ TRACK_PACKAGE_T01_T07_COUNT = 7
 TRACK_PACKAGE_T01_T07_RENDER_ZIP_CREATED = NO
 TRACK_PACKAGE_T01_T07_MP4_RENDERED = NO
 TRACK_PACKAGE_T01_T07_PUBLIC_OUTPUT_CREATED = NO
+RENDER_PACKAGE_T01_T07_STATUS = PACKAGE_BUILT
+RENDER_PACKAGE_T01_T07_RESULT = CANONICAL_RENDER_PACKAGE_ZIPS_CREATED_WITH_CHUA_XAC_NHAN_FOR_MISSING_AUDIO_PROOF_LINK_STATUS
+RENDER_PACKAGE_T01_T07_DIR = public_engine/render_packages
+RENDER_PACKAGE_T01_T07_COUNT = 7
+RENDER_PACKAGE_T01_T07_MP4_RENDERED = NO
+RENDER_PACKAGE_T01_T07_VIDEO_OUTPUT_CREATED = NO
+RENDER_PACKAGE_T01_T07_PUBLIC_OUTPUT_CREATED = NO
+RENDER_PACKAGE_T01_T07_READY_FOR_GPT_RENDER = NO_AUDIO_SOURCE_CHUA_XAC_NHAN
 DEFORMATION_SMOKE_TEST_FAILURE_REVIEW_STATUS = PASS
 DEFORMATION_SMOKE_TEST_FAILURE_REVIEW_RESULT = APPROVED_FOR_TARGETED_LEFT_HAND_BIND_REPAIR
 TARGETED_LEFT_HAND_BIND_REPAIR_STATUS = CREATED
@@ -355,13 +363,30 @@ TRACK_PACKAGE_T05_HOOK_WINDOW = 0:00 -> 0:30 / 0:33 -> 1:17
 TRACK_PACKAGE_T06_HOOK_WINDOW = 0:36 -> 1:15
 TRACK_PACKAGE_T07_HOOK_WINDOW = 0:00 -> 0:36 / 0:37 -> 1:10
 
+## PUBLIC ENGINE RENDER PACKAGES T01-T07
+RENDER_PACKAGE_T01_T07_STATUS = PACKAGE_BUILT
+RENDER_PACKAGE_T01_T07_RESULT = CANONICAL_RENDER_PACKAGE_ZIPS_CREATED_WITH_CHUA_XAC_NHAN_FOR_MISSING_AUDIO_PROOF_LINK_STATUS
+RENDER_PACKAGE_T01_T07_DIR = public_engine/render_packages
+RENDER_PACKAGE_T01_T07_COUNT = 7
+RENDER_PACKAGE_T01_T07_MP4_RENDERED = NO
+RENDER_PACKAGE_T01_T07_VIDEO_OUTPUT_CREATED = NO
+RENDER_PACKAGE_T01_T07_PUBLIC_OUTPUT_CREATED = NO
+RENDER_PACKAGE_T01_T07_READY_FOR_GPT_RENDER = NO_AUDIO_SOURCE_CHUA_XAC_NHAN
+RENDER_PACKAGE_T01_ZIP = public_engine/render_packages/MIKAGE_T01_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+RENDER_PACKAGE_T02_ZIP = public_engine/render_packages/MIKAGE_T02_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+RENDER_PACKAGE_T03_ZIP = public_engine/render_packages/MIKAGE_T03_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+RENDER_PACKAGE_T04_ZIP = public_engine/render_packages/MIKAGE_T04_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+RENDER_PACKAGE_T05_ZIP = public_engine/render_packages/MIKAGE_T05_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+RENDER_PACKAGE_T06_ZIP = public_engine/render_packages/MIKAGE_T06_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+RENDER_PACKAGE_T07_ZIP = public_engine/render_packages/MIKAGE_T07_RELEASE_SIGNAL_SHORT_V2_RENDER_PACKAGE_FOR_GPT.zip
+
 ## NEXT SAFE TASK
-NEXT_SAFE_TASK = BUILD_RENDER_PACKAGE_T01_T07_FROM_CANONICAL_TRACK_PACKAGES
+NEXT_SAFE_TASK = VERIFY_RENDER_PACKAGE_T01_T07_FROM_CANONICAL_ZIPS
 
 ## NEXT TASK RULES
 The next task must read the active public engine standard before any market scout, track package, render package, publish package, verify report, or control board update work.
 
-The next task may prepare render packages from the canonical track packages only. It must not create renders, create MP4 output, change hook timelines, rewrite track creative, invent release links, invent UPC, invent live status, invent proof status, deploy website/social assets, make cinematic readiness claims, make final trailer claims, make public readiness claims, or make character completion claims.
+The next task may verify the canonical render package ZIPs only. It must not create renders, create MP4 output, change hook timelines, rewrite track creative, invent release links, invent UPC, invent live status, invent proof status, invent website status, deploy website/social assets, make cinematic readiness claims, make final trailer claims, make public readiness claims, or make character completion claims.
 
 The locked source .blend must remain unmodified:
 production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
@@ -461,6 +486,9 @@ D:\KAGAMI-MZ_SYNC_PUSH_V2\MIKAGE_PUBLIC_ENGINE_OPERATING_STANDARD_V1.md
 
 ## LATEST PUBLIC ENGINE TRACK PACKAGES
 public_engine/track_packages
+
+## LATEST PUBLIC ENGINE RENDER PACKAGES
+public_engine/render_packages
 
 ## FAILURE FLAGS
 FAIL_WRONG_REPO

@@ -1,0 +1,8 @@
+# AUDIO_SOURCE
+
+TRACK_ID: T02
+TRACK_TITLE: DIGITAL ASH
+AUDIO_FILE: CHUA_XAC_NHAN
+AUDIO_WINDOW: 0:48 -> 1:20
+AUDIO_SOURCE_STATUS: CHUA_XAC_NHAN
+NOTES: No master WAV or confirmed audio path was present in the Track Package.
