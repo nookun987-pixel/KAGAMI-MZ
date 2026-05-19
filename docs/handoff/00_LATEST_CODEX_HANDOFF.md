@@ -6,7 +6,7 @@ REMOTE = origin https://github.com/nookun987-pixel/KAGAMI-MZ.git
 BRANCH = main
 
 ## LATEST VERIFIED STATE
-LATEST_COMPLETED_TASK = PREPARE_LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_FROM_APPROVED_GATE_V0_1
+LATEST_COMPLETED_TASK = REVIEW_LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_FROM_APPROVED_GATE_V0_1
 DEFORMATION_GATE_STATUS = PREPARED
 DEFORMATION_GATE_RESULT = READY_FOR_REVIEW
 DEFORMATION_GATE_REVIEW_STATUS = PASS
@@ -518,6 +518,20 @@ LEFT_HAND_FIXED_CLAIMED = NO
 ASSET_MODIFICATION_APPROVED = NO
 PRODUCTION_REOPENED = NO
 
+## LEFT HAND PLACEHOLDER REPAIR REPLACEMENT DECISION PLANNING REVIEW
+LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_REVIEW_STATUS = PASS
+LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_REVIEW_RESULT = APPROVED_FOR_REPAIR_REPLACEMENT_PATH_SELECTION_PLANNING_ONLY_NO_ASSET_MODIFICATION
+LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_REVIEW_REPORT = reports/MIKAGE_CHARACTER_PRODUCTION_ACTOR_LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_REVIEW_FROM_APPROVED_GATE_V0_1.md
+PUBLIC_OUTPUT_CREATED = NO
+CINEMATIC_READINESS_CLAIMED = NO
+CHARACTER_COMPLETION_CLAIMED = NO
+FINAL_HAND_ART_CLAIMED = NO
+LEFT_HAND_FIXED_CLAIMED = NO
+ASSET_MODIFICATION_APPROVED = NO
+PRODUCTION_REOPENED = NO
+REPAIR_PATH_SELECTED = NO
+REPLACEMENT_PATH_SELECTED = NO
+
 ## PUBLIC ENGINE STANDARD
 PUBLIC_ENGINE_STANDARD_FILE = D:\KAGAMI-MZ_SYNC_PUSH_V2\MIKAGE_PUBLIC_ENGINE_OPERATING_STANDARD_V1.md
 PUBLIC_ENGINE_STANDARD_STATUS = ACTIVE_CONTENT_VERIFIED_FROM_OPERATOR_UPLOAD
@@ -596,12 +610,12 @@ VERIFY_STATUS = NOT_STARTED
 PUBLIC_OUTPUT_CREATED = NO
 
 ## NEXT SAFE TASK
-NEXT_SAFE_TASK = REVIEW_LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_FROM_APPROVED_GATE_V0_1
+NEXT_SAFE_TASK = PREPARE_LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_PATH_SELECTION_PLANNING_FROM_APPROVED_DECISION_PLANNING_V0_1
 
 ## NEXT TASK RULES
-The next task may review the repair/replacement decision planning for the left-hand placeholder limitation before reopening any character asset production work.
+The next task may prepare documentation-only repair/replacement path selection planning for the left-hand placeholder limitation before reopening any character asset production work.
 
-The next task may review documentation-only decision planning criteria and safety boundaries only. It must not modify locked source blend, modify derivative blend, create renders, edit PNG files, create public output, deploy website/social assets, touch the Public Engine or GPT Web shortcut lane, make cinematic readiness claims, make final trailer claims, make public readiness claims, approve diagnostic stills as public assets, open production work, approve asset modification, claim final hand art, claim the left hand fixed, or make character completion claims.
+The next task may prepare documentation-only path selection planning criteria and safety boundaries only. It must not modify locked source blend, modify derivative blend, create renders, edit PNG files, create public output, deploy website/social assets, touch the Public Engine or GPT Web shortcut lane, make cinematic readiness claims, make final trailer claims, make public readiness claims, approve diagnostic stills as public assets, open production work, approve asset modification, claim final hand art, claim the left hand fixed, make character completion claims, select the repair path, or select the replacement path.
 
 The locked source .blend must remain unmodified:
 production/character/production_actor/MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_2.blend
