@@ -2,9 +2,11 @@ READ FIRST — MIKAGE OPERATOR MEMORY
 
 Before doing any Mikage task, read:
 docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
+docs/handoff/00_LATEST_CODEX_HANDOFF.md
 
 Rules:
 - Do not ask for facts already recorded there.
+- Current short audio repair lock is recorded under "CURRENT MIKAGE STATUS — SHORT AUDIO REPAIR LOCK — 2026-05-24"; do not reopen it unless the operator explicitly selects one of the 4 policy items.
 - Do not claim DONE without checking output.
 - Delivered means TooLost delivery, not public/live before release date.
 - Before release use "Pre-save:" only.

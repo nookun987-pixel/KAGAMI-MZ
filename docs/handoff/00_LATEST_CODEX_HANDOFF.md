@@ -5,6 +5,52 @@ CWD = D:\KAGAMI-MZ_SYNC_PUSH_V2
 REMOTE = origin https://github.com/nookun987-pixel/KAGAMI-MZ.git
 BRANCH = main
 
+## CURRENT MIKAGE STATUS — SHORT AUDIO REPAIR LOCK — 2026-05-24
+
+STATUS:
+- ACTIVE_SHORT_AUDIO_REPAIR_PHASE = CLOSED
+- ACTIVE_SHORT_CLEANUP_PHASE = CLOSED_WITH_4_POLICY_ITEMS_OPEN
+- SHORT_AUDIO_REPAIR_FINAL_LOCK_REPORT = D:\MIKAGE ZENITH AUDIO\SHORT_AUDIO_REPAIR_FINAL_LOCK_REPORT.md
+
+FINAL_LOCK_SUMMARY:
+- 26 repaired outputs PASS
+- 15 remux duplicates archived
+- 4 policy items kept untouched
+- locked files touched = 0
+- files deleted = 0
+- audio repair batch must not be reopened unless operator explicitly selects one of the 4 policy items
+
+DO_NOT_REOPEN:
+- Do not rerun the 26-file audio repair batch.
+- Do not rescan archived remux duplicates as active work.
+- Do not touch locked Batch 2 files.
+- Do not touch approved AAC320K_30FPS finals.
+- Do not use compressed MP4 audio as source.
+- Do not delete any media file.
+
+REMAINING_POLICY_BACKLOG:
+1. D:\MIKAGE ZENITH AUDIO\08. GLASS SKIN\short\GLASS_SKIN_SHORT1_WITH_ENDCARD_REMUXED.mp4
+   STATUS = STILL_OPEN
+
+2. D:\MIKAGE ZENITH AUDIO\08. GLASS SKIN\short\GLASS_SKIN_SHORT1_WITH_ENDCARD.mp4
+   STATUS = NEED_OPERATOR_TIMECODE
+
+3. D:\MIKAGE ZENITH AUDIO\17. NIGHT BITE\NIGHT_BITE_SHORT_10S_COVER_VERTICAL.mp4
+   STATUS = NEED_OPERATOR_TIMECODE
+
+4. D:\MIKAGE ZENITH AUDIO\DON'T LOOK BACK\SHORT1_DONT_LOOK_BACK_final.mp4
+   STATUS = SOURCE_OR_ARCHIVE_DECISION_REQUIRED
+
+OPTIONAL_OPEN_TASK:
+- SINGULAR_HEART_0201_0245 visual rebuild remains optional.
+- Previous wrong visual file was quarantined.
+- Contact sheet exists but Japanese subtitle font rendering was blocked.
+- Do not render final MP4 until operator approves corrected contact sheet.
+
+NEXT_SAFE_TASK:
+Move to next production lane.
+Do not reopen audio repair unless operator explicitly selects one of the 4 policy items.
+
 ## LATEST VERIFIED STATE
 LATEST_COMPLETED_TASK = REVIEW_LEFT_HAND_PLACEHOLDER_REPAIR_REPLACEMENT_DECISION_PLANNING_FROM_APPROVED_GATE_V0_1
 DEFORMATION_GATE_STATUS = PREPARED
