@@ -1,0 +1,24 @@
+READ FIRST — MIKAGE OPERATOR MEMORY
+
+Before doing any Mikage task, read:
+docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
+
+Rules:
+- Do not ask for facts already recorded there.
+- Do not claim DONE without checking output.
+- Delivered means TooLost delivery, not public/live before release date.
+- Before release use "Pre-save:" only.
+- After confirmed live use "Listen now:".
+- If uncertain use "Link:".
+- Never use "Pre-save / listen".
+- One song/version = one language unless explicitly requested.
+- Do not show lyrics in shorts unless explicitly requested.
+- Do not bake 5 subtitles on screen simultaneously.
+- Keep THE LANDAUER PARADOX as website hero before launch unless user explicitly asks to change it.
+
+After working, update the memory file with:
+- affected track
+- before status
+- after status
+- evidence source
+- next action
