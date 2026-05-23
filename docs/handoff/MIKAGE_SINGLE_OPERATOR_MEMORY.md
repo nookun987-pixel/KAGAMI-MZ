@@ -1,49 +1,65 @@
 # MIKAGE SINGLE OPERATOR MEMORY
 
-Last updated: 2026-05-17  
-Source workbook read: `MIKAGE_TRACK_CATALOG_DATABASE_V1_LOCKED_21(3).xlsx`  
-Purpose: one-person operating memory for Mikage Zenith IP. Every ChatGPT / Codex / Claude / local agent job should read this file before working.
+Last updated: 2026-05-23
+Purpose: one-person operating memory for Mikage Zenith IP. Every ChatGPT / Codex / Claude / local agent job should read this file before doing Mikage work.
 
 ---
 
 ## 0. HARD RULE
 
-Do not ask again for information already present in this file unless the file says `CHUA_XAC_NHAN`.
+Do not ask again for information already present in this file unless the field says `CHUA_XAC_NHAN`.
 
 Required workflow:
 
 ```text
-READ THIS FILE FIRST
+READ docs/handoff/MIKAGE_AGENT_READ_FIRST_PROMPT.txt
+READ docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
 DO THE TASK
 UPDATE THIS FILE AFTER STATUS CHANGES
 DO NOT CLAIM SUCCESS WITHOUT CHECKING OUTPUT
 ```
 
----
-
-## 1. CURRENT RELEASE MODE
-
-Current date in operator discussion: **2026-05-17**  
-Primary public launch date: **2026-05-21**  
-Primary release: **01 — THE LANDAUER PARADOX**
-
-Current state:
+Read-first source remains:
 
 ```text
-Track 01 TooLost status: Delivered
-Public/live status before 2026-05-21: Not expected to appear publicly yet
-Reason: release date has not arrived
-Action now: wait for official release date, use pre-save wording only
+docs/handoff/MIKAGE_AGENT_READ_FIRST_PROMPT.txt
+docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
 ```
+
+---
+
+## 1. CURRENT OPERATING BASELINE
+
+Current operator baseline date: **2026-05-23**
+
+Catalog status:
+
+```text
+Catalog total: 29 tracks
+TooLost delivered: 28
+TooLost pending: 1
+```
+
+Live confirmed tracks:
+
+```text
+THE LANDAUER PARADOX
+DIGITAL ASH
+THE BREACH
+```
+
+Do not claim unverified links live. A track can be `Delivered` in TooLost without a confirmed public/listenable platform link.
 
 Terminology:
 
 | Term | Meaning |
 |---|---|
 | Delivered | TooLost has delivered the release to stores/services |
+| Pending | TooLost setup/delivery is not complete or not confirmed complete |
 | Public / Live / Searchable | Users can see/listen to the track on a platform |
-| Pre-save | Correct wording before release date |
+| Pre-save | Correct wording before release date or before live confirmation |
 | Listen now | Only after release date and platform link is confirmed live |
+| CHUA_XAC_NHAN | Not confirmed; do not infer |
 
 Caption/link rule:
 
@@ -58,101 +74,90 @@ Never write: Pre-save / listen
 
 ## 2. CATALOG BASELINE
 
-Catalog total: **21 tracks**  
-TooLost status count: **Delivered: 21**  
-Language count: **Chinese: 1, English: 15, Japanese: 3, Korean: 1, Vietnamese: 1**  
-Latest catalog baseline date inside workbook: **2026-05-15**
+Current catalog total is **29 tracks**.
 
-Important: `Delivered` for all tracks means distributor/store delivery state, not automatically public availability before release dates.
+TooLost summary:
+
+```text
+Delivered: 28
+Pending: 1
+```
+
+Track 29 current record:
+
+| # | Title | TooLost | UPC | Link | Notes |
+|---:|---|---|---|---|---|
+| 29 | 夜瓷回声 (PORCELAIN ECHO) | Pending | CHUA_XAC_NHAN | CHUA_XAC_NHAN | Do not claim UPC or public/pre-save link until confirmed |
+
+Known live confirmations as of 2026-05-23:
+
+| Title | Live status |
+|---|---|
+| THE LANDAUER PARADOX | Confirmed live |
+| DIGITAL ASH | Confirmed live |
+| THE BREACH | Confirmed live |
+
+Important:
+
+```text
+Delivered count is distributor/store delivery state.
+Live confirmed count is public availability state.
+Do not convert pending, UPC, link, store log, or platform live fields to confirmed without direct evidence.
+```
 
 ---
 
-## 3. AUDIO TRACK TABLE — SOURCE OF TRUTH
+## 3. SPOTIFY OPERATING STATUS
 
-| # | Title | Lang | Release date | TooLost | Link | Notes |
-|---:|---|---|---|---|---|---|
-| 01 | THE LANDAUER PARADOX | English | 2026-05-21 | Delivered | https://too.fm/b46pqy9 | First May launch arc track |
-| 02 | DIGITAL ASH | English | 2026-05-22 | Delivered | https://too.fm/n47vjyb | May launch arc |
-| 03 | THE BREACH | English | 2026-05-23 | Delivered | https://too.fm/b1mpe0n | May launch arc |
-| 04 | SINGULAR HEART | English | 2026-05-24 | Delivered | https://too.fm/dxbjxl | May launch arc |
-| 05 | PORCELAIN ASCENSION | English | 2026-05-25 | Delivered | https://too.fm/ddq2yma | May launch arc |
-| 06 | THE THEOREM | English | 2026-05-26 | Delivered | https://too.fm/zbajdz2 | May launch arc |
-| 07 | THE ROOT ARCHITECT | English | 2026-05-26 | Delivered | https://too.fm/kap5jm4 | May launch arc |
-| 08 | GLASS SKIN | English | 2026-06-05 | Delivered | https://too.fm/6ab5ny9 | June release |
-| 09 | ガラスの肌 (GLASS SKIN Japanese Version) | Japanese | 2026-06-05 | Delivered | https://too.fm/aeabl88 | Japanese version |
-| 10 | SLOW ORBIT | English | 2026-06-06 | Delivered | https://too.fm/o2wykod | Delivered; do not suggest as next track to make |
-| 11 | NO TOUCHDOWN | English | 2026-06-12 | Delivered | https://too.fm/yj8kgda | June release |
-| 12 | HUSH / SAY LESS | English | 2026-06-13 | Delivered | https://too.fm/xdkxqxe | June release |
-| 13 | GLASS SKIN (Anime Version) | English | 2026-06-14 | Delivered | https://too.fm/x3rogpp | Anime version |
-| 14 | SIGNAL THIEF | English | 2026-06-19 | Delivered | https://too.fm/dxadgdn | June release |
-| 15 | BLACK SAND FEVER | English | 2026-06-20 | Delivered | https://too.fm/mpxl7r | June release |
-| 16 | NIGHT BITE | English | 2026-06-21 | Delivered | https://too.fm/kyy9dln | Metadata verified from TooLost dashboard screenshot; store logs/direct store links/Amazon ASIN/proof pack not fully verified. |
-| 17 | 黒雨信號 (BLACK RAIN SIGNAL) | Chinese | 2026-06-26 | Delivered | https://too.fm/oyey90b | Chinese track |
-| 18 | 검은 유리 (BLACK GLASS) | Korean | 2026-06-27 | Delivered | https://too.fm/vodnk8p | Korean track |
-| 19 | ネオン心拍 (NEON HEARTBEAT) | Japanese | 2026-06-28 | Delivered | https://too.fm/11anb52 | Japanese track; corrected link |
-| 20 | 触れたらアウト (TOUCH AND YOU LOSE) | Japanese | 2026-06-28 | Delivered | https://too.fm/1yze1z5 | Japanese track; corrected link |
-| 21 | DÙ BẦU TRỜI TẮT NẮNG | Vietnamese | 2026-07-03 | Delivered | https://too.fm/bxnbbae | Track 21 added; Vietnamese July opener. Store logs/direct store links/Amazon ASIN/proof pack not fully verified. |
+Spotify for Artists:
+
+```text
+Access granted: YES
+```
+
+Spotify profile setup completed:
+
+```text
+Banner: DONE
+Bio: DONE
+Social links: DONE
+Artist Pick: DONE
+```
+
+Spotify account security:
+
+```text
+2FA enabled: YES
+2FA method: authenticator app
+```
+
+Do not publish or store authenticator backup codes, passwords, or account secrets in this repo.
 
 ---
 
-## 4. SCREENSHOT OBSERVATIONS — 2026-05-17
+## 4. CODEGRAPH STATUS
 
-### TooLost delivery log — Track 01
-
-Observed from user screenshot:
+CodeGraph test status:
 
 ```text
-Release: THE LANDAUER PARADOX
-Artist: Mikage Zenith
-TooLost status: Delivered
-Delivery Log page: 10
-Visible store/service index: 68
-Visible #68: Curve
-Visible status: Completed
+Finalized: YES
+Pushed: YES
+Report: docs/handoff/CODEGRAPH_MIKAGE_TEST_REPORT_V0.md
 ```
 
-Safe conclusion:
+CodeGraph role:
 
 ```text
-Track 01 has a delivery log visible up to store/service number 68.
-Do not claim every one of the 68 is publicly live until checked after release date.
+Use CodeGraph for code navigation only.
+Do not rely on CodeGraph alone for Mikage operating truth, catalog truth, release truth, public/live status, or handoff memory.
+For operating memory, read this file and docs/handoff/MIKAGE_AGENT_READ_FIRST_PROMPT.txt first.
 ```
 
-### YouTube Studio Shorts
-
-Observed from user screenshot:
+Observed limitation:
 
 ```text
-Channel: Mikage Zenith Music
-Tab: Shorts
-Several public shorts exist from 2026-05-09 to 2026-05-16
-Visible shorts include THE LANDAUER PARADOX, DIGITAL ASH, PORCELAIN ASCENSION, SINGULAR HEART.
-Some captions/descriptions used "Pre-save / listen" style wording.
-```
-
-Correction rule:
-
-```text
-For unreleased tracks, descriptions must use "Pre-save:" only.
-Do not use "Listen now" or "Pre-save / listen" before release/live confirmation.
-```
-
-### Website
-
-Observed from user screenshot:
-
-```text
-Site: mikagezenith.com
-Top/hero area keeps THE LANDAUER PARADOX as primary launch focus.
-Launch Arc section shows 7 core tracks dated 21–26/05.
-Next Archive / Tháng 6 section shows locked-file style upcoming cards.
-```
-
-Website rule:
-
-```text
-Unlocking another track must not replace THE LANDAUER PARADOX at the top unless user explicitly asks.
-The header/hero remains Track 01 during launch countdown.
+CodeGraph is useful for JS/Python/YAML symbol discovery.
+It did not reliably answer Markdown operating-doc questions during the V0 test.
 ```
 
 ---
@@ -183,7 +188,7 @@ Store delivery log status
 Public/live status
 ```
 
-Known stable label from workbook:
+Known stable label:
 
 ```text
 Mikage Zenith STUDIO
@@ -196,6 +201,8 @@ Proof pack complete
 Website complete
 Store live
 Direct Spotify/Apple/YouTube links live
+UPC for pending tracks
+Release link for pending tracks
 ```
 
 unless checked.
@@ -215,12 +222,12 @@ If using text-only visual direction: void black, white text, electric violet acc
 If exact text matters, render text deterministically; do not rely on image generation for text accuracy.
 ```
 
-Caption rule for unreleased tracks:
+Caption rule:
 
 ```text
-Use Pre-save:
-Never use Listen now:
-Never use Pre-save / listen
+Use Pre-save: only before release date or before live confirmation.
+Use Listen now: only after the platform link is confirmed live.
+Never use Pre-save / listen.
 ```
 
 ---
@@ -245,17 +252,13 @@ A track must be remembered by melody/hook, not just noise, screaming, lore, or b
 
 ## 8. WEBSITE / PUBLICATION RULES
 
-Track 01 launch rule:
+Publication rule:
 
 ```text
-Before 2026-05-21:
-- THE LANDAUER PARADOX remains the top launch focus.
-- Use pre-save and countdown wording.
-- Store not visible yet is not an error.
-
-On or after 2026-05-21:
-- Check major platforms.
-- Only switch to Listen now when live link is confirmed.
+Only switch a public page, caption, or CTA to Listen now when the relevant live link is confirmed.
+Do not claim future or pending tracks are live.
+Do not replace current launch focus unless the user explicitly asks.
+Do not modify website production files unless the task explicitly targets them.
 ```
 
 Core platforms to check after release date:
@@ -275,43 +278,40 @@ Tidal
 
 ## 9. UNKNOWN / CHUA_XAC_NHAN ZONE
 
-The uploaded workbook still marks these columns as `CHUA_XAC_NHAN` for most/all tracks:
+Keep these fields as `CHUA_XAC_NHAN` unless direct evidence is provided:
 
 ```text
-proof_pack_status
-website_status
-store_delivery_log_status
-```
-
-Do not convert these to `DONE` without direct evidence.
-
-Known partial update from screenshots:
-
-```text
-Track 01 store_delivery_log_status: delivery log screenshot seen up to #68, page 10.
-Track 01 website_status: website screenshot shows Track 01 hero and Launch Arc section.
-YouTube shorts: public shorts observed, but full video inventory is not audited.
+Track 29 UPC
+Track 29 release/pre-save/listen link
+Unverified direct Spotify links
+Unverified Apple Music links
+Unverified YouTube Music links
+Unverified store delivery logs
+Unverified public/live status for tracks other than THE LANDAUER PARADOX, DIGITAL ASH, THE BREACH
+Proof pack completion where not directly checked
+Website completion where not directly checked
 ```
 
 ---
 
 ## 10. NEXT ACTIONS
 
-Immediate single-operator fix:
+Immediate single-operator rule:
 
 ```text
-1. Put this file in repo:
-   docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
+Every agent task must start by reading:
+1. docs/handoff/MIKAGE_AGENT_READ_FIRST_PROMPT.txt
+2. docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
+```
 
-2. Every agent task must start with:
-   READ docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
+Every status-changing task must end by updating:
 
-3. Every status-changing task must end by updating:
-   - affected track
-   - before status
-   - after status
-   - evidence source
-   - next action
+```text
+Affected track
+Before status
+After status
+Evidence source
+Next action
 ```
 
 Do not let chat history be the only memory.
