@@ -1021,6 +1021,22 @@ public_engine/render_packages
 - FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 2519373; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
 - NEXT_SAFE_TASK = Operator review color-patched SHORT1 contact sheet/final MP4.
 
+## REAL_NAME_SHORT1_3M42_4M22_END_COVER_FIX_STATUS
+
+- TASK_STATUS = PASS
+- TARGET_FILE_FIXED = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_JP_MAIN_EN_SUB_WITH_COVER_AAC320K_30FPS.mp4
+- CHECK_OUTPUT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT1_END_COVER_FIXED_39_40_41_42.png
+- VERIFY_REPORT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_END_COVER_FIX_VERIFY_REPORT.md
+- FIX = Cover card now appears immediately at 40.000s; 39s remains final lyric; 40s/41s/42s show cover card.
+- BODY_TIMELINE_CHANGED = NO
+- END_COVER_DURATION = 3.000s
+- SHORT2_TOUCHED = NO
+- SOURCE_AUDIO = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\本当の名前 (REAL NAME).wav
+- SOURCE_AUDIO_IS_WAV = YES
+- COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
+- FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 2502969; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
+- NEXT_SAFE_TASK = Operator review final MP4 end card from 40.000s to 43.000s.
+
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
 FAIL_LOCKED_SOURCE_BLEND_MODIFIED
