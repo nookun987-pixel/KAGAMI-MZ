@@ -903,7 +903,7 @@ public_engine/render_packages
 
 ## REAL_NAME_SHORT_HOOK_3M42_4M22_STATUS
 
-- TASK_STATUS = PASS
+- TASK_STATUS = PASS_REPLACED_BY_MOTION_V2
 - TRACK = 本当の名前 (REAL NAME)
 - OUTPUT_MP4 = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_WITH_COVER_CARD_AAC320K_30FPS.mp4
 - CONTACT_SHEET = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_CONTACT_SHEET_TIMED.png
@@ -914,7 +914,25 @@ public_engine/render_packages
 - COVER_CARD_VISUAL = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\cover card\REAL_NAME_COVER_CARD_AESTHETIC_LOCK_1080x1920.png
 - COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
 - FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
-- NEXT_SAFE_TASK = Operator review REAL NAME short hook output and contact sheet.
+- REPLACEMENT_REASON = Body visual was too static; operator requested no still-image style.
+- NEXT_SAFE_TASK = Use Motion V2 output for operator review.
+
+## REAL_NAME_SHORT_HOOK_3M42_4M22_MOTION_V2_STATUS
+
+- TASK_STATUS = PASS
+- TRACK = 本当の名前 (REAL NAME)
+- OUTPUT_MP4 = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_MOTION_V2_WITH_COVER_CARD_AAC320K_30FPS.mp4
+- CONTACT_SHEET = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_MOTION_V2_CONTACT_SHEET_TIMED.png
+- VERIFY_REPORT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_MOTION_V2_VERIFY_REPORT.md
+- SOURCE_AUDIO = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\本当の名前 (REAL NAME).wav
+- AUDIO_TIMELINE_USED = 3m42s-4m25s
+- BODY_VISUAL_TIMELINE = 3m42s-4m22s
+- BODY_VISUAL = Motion V2 with camera drift/zoom, dynamic noise, scan-line motion, signal sweep, pulse overlays.
+- STATIC_BODY_IMAGE = NO
+- COVER_CARD_VISUAL = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\cover card\REAL_NAME_COVER_CARD_AESTHETIC_LOCK_1080x1920.png
+- COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
+- FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 14189386; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
+- NEXT_SAFE_TASK = Operator review REAL NAME Motion V2 short hook output and contact sheet.
 
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
