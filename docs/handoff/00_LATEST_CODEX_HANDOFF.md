@@ -1037,6 +1037,24 @@ public_engine/render_packages
 - FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 2502969; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
 - NEXT_SAFE_TASK = Operator review final MP4 end card from 40.000s to 43.000s.
 
+## REAL_NAME_SHORT1_3M42_4M22_FOLDER_COVER_CARD_FIX_STATUS
+
+- TASK_STATUS = PASS
+- TARGET_FILE_FIXED = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_JP_MAIN_EN_SUB_WITH_COVER_AAC320K_30FPS.mp4
+- COVER_CARD_IMAGE_USED = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\cover card\REAL_NAME_COVER_CARD_AESTHETIC_LOCK_1080x1920.png
+- CHECK_OUTPUT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT1_FOLDER_COVER_CARD_FIXED_39_40_41_42.png
+- VERIFY_REPORT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_FOLDER_COVER_CARD_FIX_VERIFY_REPORT.md
+- FIX = End card now uses the actual folder cover card image full-frame from 40.000s to 43.000s; previous procedural card interpretation replaced.
+- FRAME_CHECK = 39s lyric body; 40s folder cover card; 41s folder cover card; 42s folder cover card.
+- BODY_TIMELINE_CHANGED = NO
+- END_COVER_DURATION = 3.000s
+- SHORT2_TOUCHED = NO
+- SOURCE_AUDIO = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\本当の名前 (REAL NAME).wav
+- SOURCE_AUDIO_IS_WAV = YES
+- COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
+- FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 2389902; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
+- NEXT_SAFE_TASK = Operator review final MP4; cover card is now the actual image from the cover card folder.
+
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
 FAIL_LOCKED_SOURCE_BLEND_MODIFIED
