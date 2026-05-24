@@ -22,9 +22,22 @@ Use recorded facts from memory, catalog, and handoff. Do not ask again for infor
 
 ## Lanes
 
-Lane A is public/release-facing work: captions, links, promotion, discovery, short videos, music visualizers, and final deliverables.
+Lane A is system / build / control work:
+- repo handoff
+- Codex tasks
+- control board updates
+- automation/system structure
+- verification documents
+- internal operating standards
 
-Lane B is internal production work: character pipeline, asset planning, diagnostics, gates, review reports, and repository handoffs.
+Lane B is music / public production work:
+- song creation
+- release status
+- TooLost / platform links
+- captions
+- short videos
+- discovery campaigns
+- website/social public output
 
 Keep Lane A and Lane B separate unless the operator explicitly bridges them.
 

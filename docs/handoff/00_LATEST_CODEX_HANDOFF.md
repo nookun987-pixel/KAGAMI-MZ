@@ -771,6 +771,9 @@ public_engine/render_packages
 - AGENT_CREATED = NO
 - SKILL_PACK_PATH = MIKAGE_SKILLS_V1/
 - REQUIRED_USE = Before Mikage work, read 00_READ_FIRST/SKILL.md and the relevant task skill.
+- LANE_DEFINITION_PATCHED = YES
+- LANE_A = SYSTEM_BUILD_CONTROL
+- LANE_B = MUSIC_PUBLIC_PRODUCTION
 - NEXT_SAFE_TASK = Review MIKAGE_SKILLS_V1 baseline and then create focused task-specific skills only when needed.
 
 ## FAILURE FLAGS
