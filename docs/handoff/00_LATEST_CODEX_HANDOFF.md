@@ -937,7 +937,7 @@ public_engine/render_packages
 
 ## REAL_NAME_SHORT_HOOK_3M42_4M22_MOTION_V3_STATUS
 
-- TASK_STATUS = PASS
+- TASK_STATUS = PASS_REPLACED_BY_OPERATOR_SPEC_FINAL
 - TRACK = 本当の名前 (REAL NAME)
 - OUTPUT_MP4 = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_MOTION_V3_NO_STILL_BODY_WITH_COVER_CARD_AAC320K_30FPS.mp4
 - CONTACT_SHEET = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT_HOOK_3m42_4m22_MOTION_V3_CONTACT_SHEET_TIMED.png
@@ -951,7 +951,29 @@ public_engine/render_packages
 - COVER_CARD_VISUAL = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\cover card\REAL_NAME_COVER_CARD_AESTHETIC_LOCK_1080x1920.png
 - COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
 - FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 124050504; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
-- NEXT_SAFE_TASK = Operator review REAL NAME Motion V3 short hook output and contact sheet.
+- REPLACEMENT_REASON = Operator provided strict final task requiring exact filename and procedural animated cover card text, not previous cover-card visual.
+- NEXT_SAFE_TASK = Use operator-spec final output for review.
+
+## REAL_NAME_SHORT1_3M42_4M22_OPERATOR_SPEC_FINAL_STATUS
+
+- TASK_STATUS = PASS
+- TRACK = 本当の名前 (REAL NAME)
+- OUTPUT_MP4 = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_JP_MAIN_EN_SUB_WITH_COVER_AAC320K_30FPS.mp4
+- CONTACT_SHEET = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_CONTACT_SHEET.png
+- VERIFY_REPORT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_VERIFY_REPORT.md
+- SOURCE_AUDIO = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\本当の名前 (REAL NAME).wav
+- SOURCE_AUDIO_IS_WAV = YES
+- AUDIO_TIMELINE_USED = 03:42.000-04:25.000
+- BODY_TIMELINE = 03:42.000-04:22.000
+- BODY_DURATION = 40.000s
+- END_COVER_CARD_DURATION = 3.000s
+- VISUAL_BASE = Procedural animated visualizer; no cover image in body.
+- COVER_CARD = Procedural animated end card with 本当の名前 / REAL NAME / MIKAGE ZENITH.
+- COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
+- FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 2022578; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
+- FONT_RENDER_STATUS = PASS
+- VISUAL_MOTION_STATUS = PASS
+- NEXT_SAFE_TASK = Operator review operator-spec final MP4 and contact sheet.
 
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
