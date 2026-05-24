@@ -776,6 +776,14 @@ public_engine/render_packages
 - LANE_B = MUSIC_PUBLIC_PRODUCTION
 - NEXT_SAFE_TASK = Review MIKAGE_SKILLS_V1 baseline and then create focused task-specific skills only when needed.
 
+## MIKAGE_DISCOVERY_ENGINE_LIVE_TRACK_BOARD_V0_1_STATUS
+
+- DISCOVERY_BOARD_CREATED = YES
+- DISCOVERY_BOARD_PATH = public_engine/discovery/MIKAGE_DISCOVERY_ENGINE_LIVE_TRACK_BOARD_V0_1.md
+- SKILL_PACK_USED = MIKAGE_SKILLS_V1
+- LIVE_ONLY_RULE = YES
+- NEXT_SAFE_TASK = Create platform-ready captions for live-confirmed tracks only.
+
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
 FAIL_LOCKED_SOURCE_BLEND_MODIFIED
