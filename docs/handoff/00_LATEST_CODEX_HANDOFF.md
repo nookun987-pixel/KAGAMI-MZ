@@ -765,6 +765,14 @@ public_engine/track_packages
 ## LATEST PUBLIC ENGINE RENDER PACKAGES
 public_engine/render_packages
 
+## MIKAGE_SKILLS_V1_STATUS
+
+- SKILL_SYSTEM_CREATED = YES
+- AGENT_CREATED = NO
+- SKILL_PACK_PATH = MIKAGE_SKILLS_V1/
+- REQUIRED_USE = Before Mikage work, read 00_READ_FIRST/SKILL.md and the relevant task skill.
+- NEXT_SAFE_TASK = Review MIKAGE_SKILLS_V1 baseline and then create focused task-specific skills only when needed.
+
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
 FAIL_LOCKED_SOURCE_BLEND_MODIFIED
