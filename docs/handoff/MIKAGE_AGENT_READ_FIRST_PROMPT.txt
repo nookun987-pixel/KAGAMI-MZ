@@ -10,6 +10,14 @@ Before doing Mikage work, also read:
 
 Do not invent missing data. Mark unknowns as CHUA_XAC_NHAN.
 
+GitHub is the Mikage meeting point.
+After every state-changing Mikage task:
+- update docs/handoff/00_LATEST_CODEX_HANDOFF.md
+- commit
+- push to origin/main
+- final report should be short
+- do not require the operator to copy long logs into ChatGPT.
+
 Rules:
 - Do not ask for facts already recorded there.
 - Current short audio repair lock is recorded under "CURRENT MIKAGE STATUS — SHORT AUDIO REPAIR LOCK — 2026-05-24"; do not reopen it unless the operator explicitly selects one of the 4 policy items.
