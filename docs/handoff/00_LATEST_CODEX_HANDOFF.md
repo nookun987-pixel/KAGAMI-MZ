@@ -1092,11 +1092,13 @@ public_engine/render_packages
 - PREVIEW_MP4 = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT2_2m18_2m46_FULL_HOOK_PREVIEW_JP_MAIN_EN_SUB_WITH_COVER.mp4
 - CONTACT_SHEET = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT2_2m18_2m46_FULL_HOOK_PREVIEW_CONTACT_SHEET.png
 - VERIFY_REPORT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\REAL_NAME_SHORT2_2m18_2m46_FULL_HOOK_PREVIEW_VERIFY_REPORT.md
+- COVER_CARD_IMAGE_USED = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\cover card\REAL_NAME_COVER_CARD_AESTHETIC_LOCK_1080x1920.png
+- COVER_CARD_RULE_RECONFIRMED = Add cover card means insert the actual track folder cover-card asset full-frame at the end unless operator explicitly says otherwise.
 - VISUAL_CONCEPT_USED = PORCELAIN_SIGNAL_BLOOM_V1
 - SOURCE_AUDIO = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\本当の名前 (REAL NAME).wav
 - SOURCE_AUDIO_IS_WAV = YES
 - COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
-- PREVIEW_FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; audio aac; sample_rate 48000; channels 2; duration 31.000000
+- PREVIEW_FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; audio aac; sample_rate 48000; channels 2; duration 31.000000; cover card actual folder asset at 28s-31s
 - NEXT_SAFE_TASK = Wait for operator approval before final locked export.
 
 ## FAILURE FLAGS
