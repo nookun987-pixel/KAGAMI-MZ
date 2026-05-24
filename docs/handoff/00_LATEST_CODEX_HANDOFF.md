@@ -852,6 +852,14 @@ public_engine/render_packages
 - SHORT2_FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; audio aac; audio_bitrate 340286; sample_rate 48000; channels 2; duration 24.000000
 - NEXT_SAFE_TASK = Operator preview Short 1 / Short 2 outputs and contact sheets.
 
+## MIKAGE_READ_FIRST_WEBSITE_SOUND_IDENTITY_RULE_V1
+
+- TASK_STATUS = PASS
+- RELATED_GITHUB_ISSUE = #7
+- READ_FIRST_PROMPT_UPDATED = YES
+- REQUIRED_EXTRA_READ_FOR_WEBSITE_SOUND_IDENTITY_LEAD_OUTREACH_MONETIZATION_PUBLIC_PROOF = docs/handoff/MIKAGE_WEBSITE_SOUND_IDENTITY_STATUS_2026-05-24.md
+- NEXT_SAFE_TASK = Use read-first prompt and GitHub handoff as source of truth for website / Sound Identity / lead outreach / monetization / public proof tasks.
+
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
 FAIL_LOCKED_SOURCE_BLEND_MODIFIED

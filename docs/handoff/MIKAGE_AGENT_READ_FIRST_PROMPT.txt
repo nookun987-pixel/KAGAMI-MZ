@@ -8,6 +8,9 @@ Before doing Mikage work, also read:
 - MIKAGE_SKILLS_V1/00_READ_FIRST/SKILL.md
 - The relevant skill folder for the task
 
+Before website / Sound Identity / lead outreach / monetization / public proof tasks, also read:
+docs/handoff/MIKAGE_WEBSITE_SOUND_IDENTITY_STATUS_2026-05-24.md
+
 Do not invent missing data. Mark unknowns as CHUA_XAC_NHAN.
 
 GitHub is the Mikage meeting point.
