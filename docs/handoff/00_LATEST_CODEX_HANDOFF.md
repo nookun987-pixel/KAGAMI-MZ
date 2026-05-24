@@ -1003,6 +1003,24 @@ public_engine/render_packages
 - COVER_CARD_STATUS = PASS
 - NEXT_SAFE_TASK = Operator review rebuilt SHORT1 MP4/contact sheet; do not touch SHORT2 unless explicitly requested.
 
+## REAL_NAME_SHORT1_3M42_4M22_COLOR_PATCH_STATUS
+
+- TASK_STATUS = PASS
+- TARGET_FILE_FIXED = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_JP_MAIN_EN_SUB_WITH_COVER_AAC320K_30FPS.mp4
+- CONTACT_SHEET = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_COLOR_PATCH_CONTACT_SHEET.png
+- VERIFY_REPORT = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\short\本当の名前_REAL_NAME_SHORT1_3m42_4m22_COLOR_PATCH_VERIFY_REPORT.md
+- PATCH_SCOPE = COLOR_ONLY
+- LAYOUT_CHANGED = NO
+- TEXT_CHANGED = NO
+- MOTIF_STRUCTURE_CHANGED = NO
+- SHORT2_TOUCHED = NO
+- SOURCE_AUDIO = D:\MIKAGE ZENITH AUDIO\本当の名前 (REAL NAME)\本当の名前 (REAL NAME).wav
+- SOURCE_AUDIO_IS_WAV = YES
+- COMPRESSED_MP4_AUDIO_USED_AS_SOURCE = NO
+- COLOR_RESULT = Black-dominant premium Mikage; violet retained as controlled signal accent; no full-screen blue wash.
+- FFPROBE_VERIFY = width 1080; height 1920; fps 30/1; video h264; video_bitrate 2519373; audio aac; audio_bitrate 323179; sample_rate 48000; channels 2; duration 43.000000
+- NEXT_SAFE_TASK = Operator review color-patched SHORT1 contact sheet/final MP4.
+
 ## FAILURE FLAGS
 FAIL_WRONG_REPO
 FAIL_LOCKED_SOURCE_BLEND_MODIFIED
