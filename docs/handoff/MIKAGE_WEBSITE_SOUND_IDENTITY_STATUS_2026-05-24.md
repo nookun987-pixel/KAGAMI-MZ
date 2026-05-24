@@ -41,14 +41,33 @@ Dedicated VTuber/Cyber audio demo = CHUA_XAC_NHAN
 Two short mockup previews = CHUA_XAC_NHAN
 ```
 
-## Homepage status
+## Homepage mobile verification update
 
-Homepage screenshot confirms a public service CTA block:
+Operator mobile screenshots confirm:
+
+```text
+HOMEPAGE_MOBILE_NO_PITCH_DECK = PASS
+HOMEPAGE_SERVICE_CTA_VISIBLE = PASS
+HOMEPAGE_VIEW_SERVICE_PAGE_BUTTON_VISIBLE = PASS
+HOMEPAGE_REQUEST_PILOT_SLOT_BUTTON_VISIBLE = PASS
+HOMEPAGE_FOLLOW_TRANSMISSION_BLOCK_VISIBLE = PASS
+BUSINESS_BLOCK_LABEL_VERIFICATION_ONLY_VISIBLE = PASS
+PUBLIC_VIEW_PITCH_DECK_BUTTON_VISIBLE_ON_MOBILE_SCREENSHOT = NO
+```
+
+Visible homepage service CTA text:
 
 ```text
 Custom sound identity for visual projects.
-View Services Page
+View Service Page
 Request Pilot Slot
+```
+
+Visible footer/business block:
+
+```text
+Business / Licensing / Collaboration
+Label Verification
 ```
 
 ## Label verification status
@@ -69,13 +88,18 @@ THE LANDAUER PARADOX = https://open.spotify.com/album/7hx2NpZ7mSPD8O2wBh5rfp
 DIGITAL ASH = https://open.spotify.com/album/2wywYYPhjgjO9ASscGjbkT
 ```
 
-## Public pitch deck link decision
+## Public pitch deck link decision and current evidence
 
 ```text
 PUBLIC_PITCH_DECK_LINK_SHOULD_BE_HIDDEN = YES
 PITCH_DECK_FILE_DELETE_REQUESTED = NO
-FULL_SITE_PITCH_DECK_LINK_VERIFY = CHUA_XAC_NHAN
+HOMEPAGE_MOBILE_NO_PITCH_DECK = PASS
+LABEL_VERIFICATION_NO_PITCH_DECK_FROM_SCREENSHOT = PASS
+FULL_SITE_PITCH_DECK_LINK_VERIFY = PARTIAL
+PDF_DIRECT_LINK_VERIFY = CHUA_XAC_NHAN
 ```
+
+Do not add public Pitch Deck links back until the operator explicitly approves it.
 
 ## Lead / monetization status
 
@@ -92,8 +116,8 @@ China rows = manual logged-in research backlog.
 ```text
 VERIFY ONLY:
 1. Check /sound-identity live page.
-2. Confirm $49 pilot block is visible.
-3. Confirm Request a pilot slot CTA works.
-4. Confirm public Pitch Deck link is not visible on homepage, sound-identity, label-verification.
+2. Confirm Request a pilot slot CTA works.
+3. Confirm public Pitch Deck link is not visible on homepage, sound-identity, label-verification.
+4. Check /files/pitch-deck.pdf direct link only if operator wants direct-file removal confirmed.
 5. If issue is found, patch only that issue.
 ```
