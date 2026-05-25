@@ -5,6 +5,13 @@ CWD = D:\KAGAMI-MZ_SYNC_PUSH_V2
 REMOTE = origin https://github.com/nookun987-pixel/KAGAMI-MZ.git
 BRANCH = main
 
+## ACTIVE GOVERNANCE LAYER
+- FILE: docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
+- STATUS: ACTIVE
+- USE_RULE: All future Codex/local-agent mutation tasks must read this governance layer before mutation tasks.
+- REGISTRATION_REPORT: docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1_REGISTRATION_REPORT.md
+- NEXT_SAFE_TASK: Use governance layer for all future Mikage agent tasks.
+
 ## CURRENT MIKAGE STATUS — SHORT AUDIO REPAIR LOCK — 2026-05-24
 
 STATUS:
