@@ -1,6 +1,6 @@
 # MIKAGE_AGENT_GOVERNANCE_LAYER_V1_REGISTRATION_REPORT
 
-RESULT: PARTIAL
+RESULT: PASS
 
 CREATED:
 - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
@@ -15,13 +15,26 @@ USE_RULE:
 - All future Codex/local-agent mutation tasks must read docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md before mutation.
 
 DIRECTLY_VERIFIED:
-- YES, governance file was fetched after creation.
+- YES, governance file exists on GitHub main.
+- YES, docs/handoff/00_LATEST_CODEX_HANDOFF.md contains the ACTIVE GOVERNANCE LAYER section on GitHub main.
 
 HANDOFF_UPDATE_STATUS:
-- NOT_UPDATED
+- UPDATED_IN_00_LATEST_CODEX_HANDOFF
 
-REASON:
-- docs/handoff/00_LATEST_CODEX_HANDOFF.md is very large. The connector returned truncated full content. To avoid unsafe full-file overwrite, this report records the active governance registration separately.
+HANDOFF_COMMIT:
+- bf1dec3 Register Mikage agent governance layer in handoff
+
+GITHUB_DIRECT_CHECK_STATUS:
+- PASS
+
+FINAL_STATE:
+- GOVERNANCE_LAYER_STATUS = ACTIVE
+- HANDOFF_REGISTERED = YES
+- REGISTRATION_REPORT_STATUS = PASS
+
+SAFETY_NOTE:
+- Registration report was updated after handoff patch verification.
+- No media, catalog, audio, video, or out-of-scope files were modified by this report update.
 
 NEXT_SAFE_TASK:
-- Patch docs/handoff/00_LATEST_CODEX_HANDOFF.md from local repo/Codex with a narrow insertion referencing the governance layer, then commit and push.
+- Use governance layer for all future Mikage agent tasks.
