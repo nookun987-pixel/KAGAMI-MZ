@@ -1,0 +1,89 @@
+{
+  "task": "RESOLVE_DIRTY_REPO_BEFORE_MIKAGE_CHARACTER_CANON_SYNC_V1",
+  "date": "2026-05-27",
+  "repo": "D:\\KAGAMI-MZ_SYNC_PUSH_V2",
+  "source_command": "git status --porcelain=v1",
+  "pre_existing_untracked_count": 18,
+  "original_files_moved": false,
+  "original_files_deleted": false,
+  "mikage_character_canon_sync_run": false,
+  "classification": [
+    "PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED",
+    "DO_NOT_DELETE",
+    "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"
+  ],
+  "files": [
+    {
+      "path": "character_workflow/CLEAN_BODY_CANDIDATE__P3A_R4_001_STRONG_CANDIDATE.png",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/HEIGHT_SCALE_PROVISIONAL.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/LORA_ENTITY_RECORD_V0_1.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_PRODUCTION_BIBLE_V0_1.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_1.csv",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_1.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_1.png",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_2_LORA_PATCH.csv",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_2_LORA_PATCH.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_2_LORA_PATCH.png",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/MIKAGE_TURNAROUND_V2_CURRENT_REFERENCE.png",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/PACKAGE_MANIFEST.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/READ_FIRST.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/REFERENCE_BOARD_ONLY__P3A_R3_001_SPEC_BOARD_STRONG.png",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/TURNAROUND_V2_OPERATOR_APPROVAL.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/model_sheet_v1_1_clean_package/MIKAGE_TURNAROUND_V2_CURRENT_REFERENCE.png",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "character_workflow/model_sheet_v1_1_clean_package/TURNAROUND_V2_OPERATOR_APPROVAL.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    },
+    {
+      "path": "docs/handoff/MIKAGE_MV_PILOT_01_THE_ROOT_ARCHITECT_TASK.md",
+      "classifications": ["PRE_EXISTING_UNTRACKED_REVIEW_REQUIRED", "DO_NOT_DELETE", "NOT_PART_OF_MIKAGE_CHARACTER_CANON_SYNC_YET"]
+    }
+  ]
+}
