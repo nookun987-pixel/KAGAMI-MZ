@@ -1,6 +1,6 @@
 # MIKAGE SINGLE OPERATOR MEMORY
 
-Last updated: 2026-05-24
+Last updated: 2026-05-27
 Purpose: one-person operating memory for Mikage Zenith IP. Every ChatGPT / Codex / Claude / local agent job should read this file before doing Mikage work.
 
 ---
@@ -30,13 +30,13 @@ docs/handoff/MIKAGE_SINGLE_OPERATOR_MEMORY.md
 
 ## 1. CURRENT OPERATING BASELINE
 
-Current operator baseline date: **2026-05-23**
+Current operator baseline date: **2026-05-27**
 
 Catalog status:
 
 ```text
-Catalog total: 29 tracks
-TooLost delivered: 28
+Catalog total: 30 tracks
+TooLost delivered: 29
 TooLost pending: 1
 ```
 
@@ -74,12 +74,12 @@ Never write: Pre-save / listen
 
 ## 2. CATALOG BASELINE
 
-Current catalog total is **29 tracks**.
+Current catalog total is **30 tracks**.
 
 TooLost summary:
 
 ```text
-Delivered: 28
+Delivered: 29
 Pending: 1
 ```
 
@@ -88,6 +88,34 @@ Track 29 current record:
 | # | Title | TooLost | UPC | Link | Notes |
 |---:|---|---|---|---|---|
 | 29 | 夜瓷回声 (PORCELAIN ECHO) | Pending | CHUA_XAC_NHAN | CHUA_XAC_NHAN | Do not claim UPC or public/pre-save link until confirmed |
+
+Track 30 current record:
+
+| # | Title | TooLost | UPC | Link | Release date | Notes |
+|---:|---|---|---|---|---|---|
+| 30 | 本当の名前 (REAL NAME) | Delivered | 0672896424194 | https://too.fm/pdvxoew | July 24th 2026 | Use `Pre-save:` until release/live confirmation. Direct Spotify/Apple/YouTube platform live status remains `CHUA_XAC_NHAN`. |
+
+Track 30 TooLost metadata confirmed from operator screenshots on 2026-05-27:
+
+```text
+Title: 本当の名前 (REAL NAME)
+Artist: Mikage Zenith
+Status: Delivered
+UPC: 0672896424194
+Release date: July 24th 2026
+Pre-order date: Not set
+Catalog number: TOOLOST3001121021
+Release format: Single
+Language: Japanese
+Genre: Pop
+Secondary genre: Pop/J-Pop
+Label: Mikage Zenith STUDIO
+C-Line: Mikage Zenith Studio © 2026
+P-Line: Mikage Zenith Studio © 2026
+Release / smart link: https://too.fm/pdvxoew
+Public/live platform links: CHUA_XAC_NHAN
+Correct CTA before live confirmation: Pre-save:
+```
 
 Known live confirmations as of 2026-05-23:
 
@@ -331,6 +359,10 @@ Keep these fields as `CHUA_XAC_NHAN` unless direct evidence is provided:
 ```text
 Track 29 UPC
 Track 29 release/pre-save/listen link
+Track 30 direct Spotify link
+Track 30 direct Apple Music link
+Track 30 direct YouTube Music link
+Track 30 public/live platform status
 Unverified direct Spotify links
 Unverified Apple Music links
 Unverified YouTube Music links
