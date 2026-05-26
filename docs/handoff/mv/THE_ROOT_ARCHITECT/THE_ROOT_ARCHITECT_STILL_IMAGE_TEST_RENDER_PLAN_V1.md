@@ -1,0 +1,45 @@
+# THE ROOT ARCHITECT - STILL IMAGE TEST RENDER PLAN V1
+
+RESULT: PREPARED
+
+SOURCE_PROMPT_PACK:
+`D:\KAGAMI-MZ_SYNC_PUSH_V2\docs\handoff\mv\THE_ROOT_ARCHITECT\THE_ROOT_ARCHITECT_CLAUDE_KEYFRAME_PROMPT_PACK_V1.md`
+
+## SELECTED_TEST_FRAMES
+
+1. KF03_ROOT_ACCESS_TOWER
+2. KF06_DEPENDENCY_GRAPH_CITY
+3. KF12_FINAL_ARCHITECT_SYMBOL
+
+## WHY_SELECTED
+
+- KF03 tests the main root tower identity and core Mikage architectural scale.
+- KF06 tests complex graph/city structure and checks whether the prompt avoids fake text/map labels.
+- KF12 tests the clean final emblem frame, symmetry, negative space, and low-glyph-risk ending image.
+
+## PLAN_SCOPE
+
+- Planning only.
+- No image generation.
+- No video generation.
+- No fal.ai call.
+- No Seedance call.
+- No paid model call.
+- No batch 8 image render.
+- No MV render.
+- No public-ready claim.
+
+## STATUS
+
+THE_ROOT_ARCHITECT_STILL_IMAGE_TEST_RENDER_PLAN_V1_STATUS = PREPARED
+SOURCE_PROMPT_PACK = THE_ROOT_ARCHITECT_CLAUDE_KEYFRAME_PROMPT_PACK_V1.md
+SELECTED_TEST_FRAME_COUNT = 3
+SELECTED_TEST_FRAMES = KF03_ROOT_ACCESS_TOWER; KF06_DEPENDENCY_GRAPH_CITY; KF12_FINAL_ARCHITECT_SYMBOL
+PAID_MODEL_USED = NO
+SAFE_TO_RENDER_IMAGES = NO_UNTIL_OPERATOR_APPROVAL
+SAFE_TO_RENDER_MV = NO
+SAFE_TO_BATCH_SEEDANCE = NO
+
+## NEXT_SAFE_TASK
+
+OPERATOR_APPROVE_RENDER_3_STILL_KEYFRAMES_OR_KEEP_AS_PROMPT_ONLY
