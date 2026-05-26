@@ -1,0 +1,43 @@
+{
+  "registry_entry": "MIKAGE_CHARACTER_REGISTRY_ENTRY_V1",
+  "created_at": "2026-05-26T18:08:23",
+  "asset_family": "MIKAGE_FULL_BODY_CHARACTER_IDENTITY",
+  "canonical_reference": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1",
+  "canon_status": "CANON_LOCKED_REFERENCE_V1",
+  "identity_status": "STABLE_3_POSES_PASS",
+  "core_canon_assets": {
+    "PRIMARY_V2": "PRIMARY_CANDIDATE_PASS",
+    "POSE_TEST_01": "STABLE_POSE_PASS",
+    "POSE_TEST_03": "PASS_AS_CORE_POSE_CANDIDATE"
+  },
+  "variant_assets": {
+    "POSE_TEST_02": "CONDITIONAL_PASS_AS_DRAMATIC_VARIANT_NOT_CORE_CANON"
+  },
+  "locked_rules": {
+    "helmet": "Smooth faceless white porcelain helmet",
+    "face": "No human eyes, mouth, nose, lips, skin, or expression",
+    "sensor": "Two thin horizontal black sensor slits only",
+    "hair": "Long heavy black hair mass",
+    "armor": "White angular armor with black underlayer",
+    "accent": "Minimal electric violet accents",
+    "weapon": "Massive straight rectangular slab sword, not katana",
+    "background": "Void black / premium dark lighting"
+  },
+  "banned_drift": [
+    "anime eyes",
+    "human face",
+    "mouth / nose / lips / visible skin",
+    "katana / curved sword",
+    "samurai cues",
+    "fantasy queen core pose",
+    "over-cluttered armor",
+    "AI infographic used as proof"
+  ],
+  "proof_files": [
+    "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT.jpg",
+    "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md",
+    "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.json",
+    "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_OPERATOR_PASS_RECORD.md"
+  ],
+  "change_control": "Do not modify or supersede without explicit operator request and a new versioned registry entry."
+}

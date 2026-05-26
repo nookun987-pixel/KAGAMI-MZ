@@ -1,0 +1,747 @@
+﻿{
+    "task":  "RERUN_MIKAGE_CHARACTER_CANON_SYNC_TO_REPO_V1",
+    "repo":  "D:\\KAGAMI-MZ_SYNC_PUSH_V2",
+    "source_folder":  "C:\\Users\\THIS PC\\Desktop\\Mikage full-body",
+    "target_path":  "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\character_workflow\\mikage_full_body_canon_v1",
+    "canon_status":  {
+                         "MIKAGE_CHARACTER_REFERENCE_SHEET_V1":  "CANON_LOCKED_REFERENCE_V1",
+                         "IDENTITY_STATUS":  "STABLE_3_POSES_PASS",
+                         "CANON_LOCK":  "LOCKED"
+                     },
+    "files_scanned":  48,
+    "files_copied":  42,
+    "copied_files":  [
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.md",
+                             "target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.md",
+                             "classification":  "PROOF",
+                             "group":  "READ_FIRST",
+                             "sha256":  "858AC5D38069171A8BBD31B692E4FC41292837C20018A3EB0C289554E4D44F8D",
+                             "bytes":  1653
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.json",
+                             "target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.json",
+                             "classification":  "PROOF",
+                             "group":  "READ_FIRST",
+                             "sha256":  "35081F6234DC7729BFDC235E15EB96CB9FA6C439B7DE0BE495D8625A6F5407F0",
+                             "bytes":  1689
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.md",
+                             "target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.md",
+                             "classification":  "PROOF",
+                             "group":  "READ_FIRST",
+                             "sha256":  "41918275B8AF1E2C29EA5BA7A737BFF461A5A039D1DF09C51129B38CD4D49EE1",
+                             "bytes":  1762
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.json",
+                             "target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.json",
+                             "classification":  "PROOF",
+                             "group":  "READ_FIRST",
+                             "sha256":  "55E87AC5F7E3032DC3698D6A276E9FCDB7D6A660B66A048B4554ED51BE0A35F1",
+                             "bytes":  1147
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md",
+                             "target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md",
+                             "classification":  "PROOF",
+                             "group":  "CANON_LOCK",
+                             "sha256":  "C3A21C326A1315B52E2AFCE6159D61FC6E3611A6C25527E7685CAF28E817B816",
+                             "bytes":  2589
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.json",
+                             "target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.json",
+                             "classification":  "PROOF",
+                             "group":  "CANON_LOCK",
+                             "sha256":  "347F92D8428AA4B176261041B7EBF59B629C7C330D866A87717821A1005F0A51",
+                             "bytes":  2333
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_OPERATOR_PASS_RECORD.md",
+                             "target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_OPERATOR_PASS_RECORD.md",
+                             "classification":  "PROOF",
+                             "group":  "CANON_LOCK",
+                             "sha256":  "96AC206D9F9B48DEDF85573A21FF913F9ED8CECE137384603E95E11C702FD73C",
+                             "bytes":  991
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED_PACKAGE.zip",
+                             "target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED_PACKAGE.zip",
+                             "classification":  "PROOF",
+                             "group":  "CANON_LOCK",
+                             "sha256":  "B329D703B50906C8EAB5A7CB7B5FD12909CB6207A4A189BB4CCB9F59844139FC",
+                             "bytes":  665041
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT.jpg",
+                             "target_relative_path":  "02_REFERENCE_SHEET/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT.jpg",
+                             "classification":  "PROOF",
+                             "group":  "REFERENCE_SHEET",
+                             "sha256":  "73BECD5B617D407D5060C5AE92F3A1F8D683B831EE228CFBA72185EAF0B3A85F",
+                             "bytes":  733650
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT_REPORT.json",
+                             "target_relative_path":  "02_REFERENCE_SHEET/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT_REPORT.json",
+                             "classification":  "PROOF",
+                             "group":  "REFERENCE_SHEET",
+                             "sha256":  "2F31D50BE1875DE81D79F73DDFA99527679D73A462C8D5C0B88155E91468D80D",
+                             "bytes":  1580
+                         },
+                         {
+                             "source_relative_path":  "a_highly_detailed_ultra_clean_concept_art_chara.png",
+                             "target_relative_path":  "03_CORE_ASSETS/PRIMARY_V2/a_highly_detailed_ultra_clean_concept_art_chara.png",
+                             "classification":  "CORE_CANON",
+                             "group":  "PRIMARY_V2",
+                             "sha256":  "998DCACA768E09193019AE1B6C8409212C1A82E865F9C609C68753382954F264",
+                             "bytes":  1590075
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_CONTACT_SHEET.jpg",
+                             "target_relative_path":  "03_CORE_ASSETS/PRIMARY_V2/MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_CONTACT_SHEET.jpg",
+                             "classification":  "PROOF",
+                             "group":  "PRIMARY_V2",
+                             "sha256":  "F3EA846C62716898D03BFFF7293D5B7B80A6935E90B31F1280A80FDAA86CE29C",
+                             "bytes":  438711
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_REPORT.json",
+                             "target_relative_path":  "03_CORE_ASSETS/PRIMARY_V2/MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_REPORT.json",
+                             "classification":  "PROOF",
+                             "group":  "PRIMARY_V2",
+                             "sha256":  "9A5C2500EFE15ABB03531DFCDE76CA5D878CDA414FD6CF47936AE1B4046503E0",
+                             "bytes":  1227
+                         },
+                         {
+                             "source_relative_path":  "sources\\POSE_TEST_01_chiến_binh_máy_trong_bóng_tối.png",
+                             "target_relative_path":  "03_CORE_ASSETS/POSE_TEST_01/chiến_binh_máy_trong_bóng_tối.png",
+                             "classification":  "CORE_CANON",
+                             "group":  "POSE_TEST_01",
+                             "sha256":  "EF1AA21F3FED230A24F16C7ACAAA0B2AED633FE855E89E902DD0386B5085A644",
+                             "bytes":  1281191
+                         },
+                         {
+                             "source_relative_path":  "a_dramatic_high_detail_sci_fi_character_portrait.png",
+                             "target_relative_path":  "03_CORE_ASSETS/POSE_TEST_03/a_dramatic_high_detail_sci_fi_character_portrait.png",
+                             "classification":  "CORE_CANON",
+                             "group":  "POSE_TEST_03",
+                             "sha256":  "8BBB52CFE84E94BC98B1CE145B09250AE2CC9E5C8D76682D06DF469DFF1C76AD",
+                             "bytes":  2081864
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_POSE_TEST_03_READABILITY_TEST_CONTACT_SHEET.jpg",
+                             "target_relative_path":  "03_CORE_ASSETS/POSE_TEST_03/MIKAGE_POSE_TEST_03_READABILITY_TEST_CONTACT_SHEET.jpg",
+                             "classification":  "PROOF",
+                             "group":  "POSE_TEST_03",
+                             "sha256":  "588620FB6247247AD1AE67A98F420D4A10EDA62BCCFC8CB71813D60C82E4E65B",
+                             "bytes":  430699
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_POSE_TEST_03_READABILITY_TEST_REPORT.json",
+                             "target_relative_path":  "03_CORE_ASSETS/POSE_TEST_03/MIKAGE_POSE_TEST_03_READABILITY_TEST_REPORT.json",
+                             "classification":  "PROOF",
+                             "group":  "POSE_TEST_03",
+                             "sha256":  "B3DADEFA9B34FB2B4F4AAC07E81BBE89DC7D355951B6AC8453B64E049483F27F",
+                             "bytes":  1264
+                         },
+                         {
+                             "source_relative_path":  "a_dark_studio_character_concept_art_scene_a_full.png",
+                             "target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/a_dark_studio_character_concept_art_scene_a_full.png",
+                             "classification":  "VARIANT_ONLY",
+                             "group":  "POSE_TEST_02",
+                             "sha256":  "779F56ECC5AAEF3364D022EB81487A4949A3916354E190E7F7082E2E17ACA822",
+                             "bytes":  1456871
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_POSE_TEST_02_READABILITY_TEST_CONTACT_SHEET.jpg",
+                             "target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/MIKAGE_POSE_TEST_02_READABILITY_TEST_CONTACT_SHEET.jpg",
+                             "classification":  "PROOF",
+                             "group":  "POSE_TEST_02",
+                             "sha256":  "5B7A2EFBE53C39D406D984F838DB9220C71053A88D88F4856EE79E4033D81260",
+                             "bytes":  426316
+                         },
+                         {
+                             "source_relative_path":  "MIKAGE_POSE_TEST_02_READABILITY_TEST_REPORT.json",
+                             "target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/MIKAGE_POSE_TEST_02_READABILITY_TEST_REPORT.json",
+                             "classification":  "PROOF",
+                             "group":  "POSE_TEST_02",
+                             "sha256":  "89285EC994219DF2F7E8893BEB06D885118A060E4A9FCE01B260056192F74CD5",
+                             "bytes":  1207
+                         },
+                         {
+                             "source_relative_path":  "01_FULL_BODY_9x16.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/01_FULL_BODY_9x16.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "DE82DD852D6499BB75CD7E336109885BC4D7F8A905A400FD9D09BC80BA7A8DC0",
+                             "bytes":  81098
+                         },
+                         {
+                             "source_relative_path":  "02_UPPER_BODY_1x1.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/02_UPPER_BODY_1x1.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "1413012BCFCEE385CBD7D3C6ABF7509EC22C40ADB11FDCA3E87B2A6970961F44",
+                             "bytes":  53483
+                         },
+                         {
+                             "source_relative_path":  "03_THUMBNAIL_100x175_UPSCALED.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/03_THUMBNAIL_100x175_UPSCALED.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "5A7C6C62D969E2CB7D81864B695017D78EAC71DD20A58340B8AC1BA751EF6447",
+                             "bytes":  40272
+                         },
+                         {
+                             "source_relative_path":  "04_ICON_300x300_UPSCALED.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/04_ICON_300x300_UPSCALED.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "A57ED90A029C5E43EE8ECE17D2C3F772F8623F06F45094CDEBD4C85E392B9792",
+                             "bytes":  51714
+                         },
+                         {
+                             "source_relative_path":  "SCALE_100x175.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/SCALE_100x175.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "41AE8306002D74BC11221404D9798A9F4F99787F37CA80FDD483B2D86E0D9D24",
+                             "bytes":  7348
+                         },
+                         {
+                             "source_relative_path":  "SCALE_150x267.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/SCALE_150x267.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "C60A3FDA7ED6E639C730FF75CC0F6FFC09F87AD35D9F7A6BAC4FE0461BA72F8C",
+                             "bytes":  14340
+                         },
+                         {
+                             "source_relative_path":  "SCALE_300x533.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/SCALE_300x533.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "30776A8552648E5A3D9DABF24C4A2CC82DD4329ACB396E5B5A0D8693DCD4416C",
+                             "bytes":  47964
+                         },
+                         {
+                             "source_relative_path":  "SCALE_50x89.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/SCALE_50x89.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "32901332021FC6B10470599284B4CBE584D9CA93723B8DE0D65A0C53C1736D93",
+                             "bytes":  2869
+                         },
+                         {
+                             "source_relative_path":  "SCALE_512x910.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/SCALE_512x910.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "74C9EE062F9B081509EE0C41591231EC0004CE3E7A6A16A4620C2FEB4311B5E8",
+                             "bytes":  125972
+                         },
+                         {
+                             "source_relative_path":  "SCALE_75x133.jpg",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/SCALE_75x133.jpg",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "427362086A434CD846A6A830E06080FB9F2EBFF9E53A7408CC8A684EE66476BA",
+                             "bytes":  4778
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_26_27 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_27 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "8BBB52CFE84E94BC98B1CE145B09250AE2CC9E5C8D76682D06DF469DFF1C76AD",
+                             "bytes":  2081864
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_26_39 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_39 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "935B03C7FB6F884F90BBD757C013AF4492A6A7BD061C6A6480CC580A4242A155",
+                             "bytes":  1629378
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_26_44 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_44 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "779F56ECC5AAEF3364D022EB81487A4949A3916354E190E7F7082E2E17ACA822",
+                             "bytes":  1456871
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_26_51 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_51 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "74DF3661F97297AAF93245EFFD93E8C7790FC7C7D661B328F0D6BDAC73E29388",
+                             "bytes":  1662051
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_26_56 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_56 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "EF1AA21F3FED230A24F16C7ACAAA0B2AED633FE855E89E902DD0386B5085A644",
+                             "bytes":  1281191
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_27_05 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_27_05 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "998DCACA768E09193019AE1B6C8409212C1A82E865F9C609C68753382954F264",
+                             "bytes":  1590075
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 00_27_14 27 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_27_14 27 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "C3D839F91F490C479F2CA9F1BD69100D0AAB75170C665F24B6310CE9DC476F64",
+                             "bytes":  1689722
+                         },
+                         {
+                             "source_relative_path":  "ChatGPT Image 22_10_33 26 thg 5, 2026.png",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 22_10_33 26 thg 5, 2026.png",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "04FD45EA32EA47EFB825FC64C2D62C7380BCFD9552C53647BC9CAEC2E1854B4B",
+                             "bytes":  1721077
+                         },
+                         {
+                             "source_relative_path":  "GENERATED_README",
+                             "target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/README_VARIANT_ONLY.md",
+                             "classification":  "VARIANT_ONLY",
+                             "group":  "POSE_TEST_02",
+                             "sha256":  "BB4606D035CE755615619AF5E7C7D3B9887165C5568C4045C959CBF790ECCAE8",
+                             "bytes":  162
+                         },
+                         {
+                             "source_relative_path":  "GENERATED_README",
+                             "target_relative_path":  "05_PRESENTATION_ONLY/README_PRESENTATION_ONLY.md",
+                             "classification":  "PRESENTATION_ONLY",
+                             "group":  "PRESENTATION_ONLY",
+                             "sha256":  "1824C204D1EC135A45DBEF6787B8908214CD05F8001B437DDE918DFA88754EFA",
+                             "bytes":  186
+                         },
+                         {
+                             "source_relative_path":  "GENERATED_MANIFEST",
+                             "target_relative_path":  "99_AUDIT/MIKAGE_CHARACTER_CANON_SYNC_FILE_MANIFEST_V1.json",
+                             "classification":  "PROOF",
+                             "group":  "99_AUDIT",
+                             "sha256":  "2400F7769D7F57BA44B58A012B776688C7D2A8C82D2B01BCE2B59EE775E68958",
+                             "bytes":  55715
+                         },
+                         {
+                             "source_relative_path":  "GENERATED_AUDIT",
+                             "target_relative_path":  "99_AUDIT/MIKAGE_CHARACTER_CANON_SYNC_AUDIT_V1.md",
+                             "classification":  "PROOF",
+                             "group":  "99_AUDIT",
+                             "sha256":  "7B6C681CB3FF558DDD553F7C494481EC8B07206584F21E832DD3024DDB9001EB",
+                             "bytes":  9500
+                         }
+                     ],
+    "source_classification":  [
+                                  {
+                                      "source_relative_path":  "01_FULL_BODY_9x16.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/01_FULL_BODY_9x16.jpg",
+                                      "sha256":  "DE82DD852D6499BB75CD7E336109885BC4D7F8A905A400FD9D09BC80BA7A8DC0",
+                                      "bytes":  81098
+                                  },
+                                  {
+                                      "source_relative_path":  "02_UPPER_BODY_1x1.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/02_UPPER_BODY_1x1.jpg",
+                                      "sha256":  "1413012BCFCEE385CBD7D3C6ABF7509EC22C40ADB11FDCA3E87B2A6970961F44",
+                                      "bytes":  53483
+                                  },
+                                  {
+                                      "source_relative_path":  "03_THUMBNAIL_100x175_UPSCALED.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/03_THUMBNAIL_100x175_UPSCALED.jpg",
+                                      "sha256":  "5A7C6C62D969E2CB7D81864B695017D78EAC71DD20A58340B8AC1BA751EF6447",
+                                      "bytes":  40272
+                                  },
+                                  {
+                                      "source_relative_path":  "04_ICON_300x300_UPSCALED.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/04_ICON_300x300_UPSCALED.jpg",
+                                      "sha256":  "A57ED90A029C5E43EE8ECE17D2C3F772F8623F06F45094CDEBD4C85E392B9792",
+                                      "bytes":  51714
+                                  },
+                                  {
+                                      "source_relative_path":  "a_dark_studio_character_concept_art_scene_a_full.png",
+                                      "classification":  "VARIANT_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/a_dark_studio_character_concept_art_scene_a_full.png",
+                                      "sha256":  "779F56ECC5AAEF3364D022EB81487A4949A3916354E190E7F7082E2E17ACA822",
+                                      "bytes":  1456871
+                                  },
+                                  {
+                                      "source_relative_path":  "a_dramatic_high_detail_sci_fi_character_portrait.png",
+                                      "classification":  "CORE_CANON",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/POSE_TEST_03/a_dramatic_high_detail_sci_fi_character_portrait.png",
+                                      "sha256":  "8BBB52CFE84E94BC98B1CE145B09250AE2CC9E5C8D76682D06DF469DFF1C76AD",
+                                      "bytes":  2081864
+                                  },
+                                  {
+                                      "source_relative_path":  "a_highly_detailed_ultra_clean_concept_art_chara.png",
+                                      "classification":  "CORE_CANON",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/PRIMARY_V2/a_highly_detailed_ultra_clean_concept_art_chara.png",
+                                      "sha256":  "998DCACA768E09193019AE1B6C8409212C1A82E865F9C609C68753382954F264",
+                                      "bytes":  1590075
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_26_27 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_27 27 thg 5, 2026.png",
+                                      "sha256":  "8BBB52CFE84E94BC98B1CE145B09250AE2CC9E5C8D76682D06DF469DFF1C76AD",
+                                      "bytes":  2081864
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_26_39 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_39 27 thg 5, 2026.png",
+                                      "sha256":  "935B03C7FB6F884F90BBD757C013AF4492A6A7BD061C6A6480CC580A4242A155",
+                                      "bytes":  1629378
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_26_44 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_44 27 thg 5, 2026.png",
+                                      "sha256":  "779F56ECC5AAEF3364D022EB81487A4949A3916354E190E7F7082E2E17ACA822",
+                                      "bytes":  1456871
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_26_51 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_51 27 thg 5, 2026.png",
+                                      "sha256":  "74DF3661F97297AAF93245EFFD93E8C7790FC7C7D661B328F0D6BDAC73E29388",
+                                      "bytes":  1662051
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_26_56 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_26_56 27 thg 5, 2026.png",
+                                      "sha256":  "EF1AA21F3FED230A24F16C7ACAAA0B2AED633FE855E89E902DD0386B5085A644",
+                                      "bytes":  1281191
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_27_05 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_27_05 27 thg 5, 2026.png",
+                                      "sha256":  "998DCACA768E09193019AE1B6C8409212C1A82E865F9C609C68753382954F264",
+                                      "bytes":  1590075
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 00_27_14 27 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 00_27_14 27 thg 5, 2026.png",
+                                      "sha256":  "C3D839F91F490C479F2CA9F1BD69100D0AAB75170C665F24B6310CE9DC476F64",
+                                      "bytes":  1689722
+                                  },
+                                  {
+                                      "source_relative_path":  "ChatGPT Image 22_10_33 26 thg 5, 2026.png",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/ChatGPT Image 22_10_33 26 thg 5, 2026.png",
+                                      "sha256":  "04FD45EA32EA47EFB825FC64C2D62C7380BCFD9552C53647BC9CAEC2E1854B4B",
+                                      "bytes":  1721077
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.json",
+                                      "sha256":  "55E87AC5F7E3032DC3698D6A276E9FCDB7D6A660B66A048B4554ED51BE0A35F1",
+                                      "bytes":  1147
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.md",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_FINAL_HANDOFF_REPORT_V1.md",
+                                      "sha256":  "41918275B8AF1E2C29EA5BA7A737BFF461A5A039D1DF09C51129B38CD4D49EE1",
+                                      "bytes":  1762
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.json",
+                                      "sha256":  "347F92D8428AA4B176261041B7EBF59B629C7C330D866A87717821A1005F0A51",
+                                      "bytes":  2333
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md",
+                                      "sha256":  "C3A21C326A1315B52E2AFCE6159D61FC6E3611A6C25527E7685CAF28E817B816",
+                                      "bytes":  2589
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED_PACKAGE.zip",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED_PACKAGE.zip",
+                                      "sha256":  "B329D703B50906C8EAB5A7CB7B5FD12909CB6207A4A189BB4CCB9F59844139FC",
+                                      "bytes":  665041
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT.jpg",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "02_REFERENCE_SHEET/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT.jpg",
+                                      "sha256":  "73BECD5B617D407D5060C5AE92F3A1F8D683B831EE228CFBA72185EAF0B3A85F",
+                                      "bytes":  733650
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT_REPORT.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "02_REFERENCE_SHEET/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT_REPORT.json",
+                                      "sha256":  "2F31D50BE1875DE81D79F73DDFA99527679D73A462C8D5C0B88155E91468D80D",
+                                      "bytes":  1580
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_LOCK_CANDIDATE.json",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "2FB104E8B8D53A85205026FB7D7946F5027E4FE07F39E35CA9062495E808AB47",
+                                      "bytes":  2046
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_LOCK_CANDIDATE.md",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "0F05A259485A032AD200DCA2C788D3A6A2DAD76A6168540569E1253B5329C08B",
+                                      "bytes":  2373
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_OPERATOR_PASS_RECORD.md",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_OPERATOR_PASS_RECORD.md",
+                                      "sha256":  "96AC206D9F9B48DEDF85573A21FF913F9ED8CECE137384603E95E11C702FD73C",
+                                      "bytes":  991
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_OPERATOR_REVIEW_CHECKLIST.md",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "8FC162D18A429EC2C9D5073D28ED9A137945C3446AE6F7C79E9A9AEE379D6E88",
+                                      "bytes":  1092
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.json",
+                                      "sha256":  "35081F6234DC7729BFDC235E15EB96CB9FA6C439B7DE0BE495D8625A6F5407F0",
+                                      "bytes":  1689
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.md",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "00_READ_FIRST/MIKAGE_CHARACTER_REGISTRY_ENTRY_V1.md",
+                                      "sha256":  "858AC5D38069171A8BBD31B692E4FC41292837C20018A3EB0C289554E4D44F8D",
+                                      "bytes":  1653
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_STATUS_LOCK_V0_1.json",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "8AE764A947663983B73FE503CB62AA16D8D2CE29620DE3CD340371AD67821CFA",
+                                      "bytes":  2110
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_CHARACTER_STATUS_LOCK_V0_1.md",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "AC9504BA45D61151A8DC257C69B738B4B45F02AC3C9EC8E62EC4FDFB75333ED7",
+                                      "bytes":  3527
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_FULL_BODY_CANDIDATE_V1_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "3D99BCE412F62E57218E13CDC477C719A95D8FEC61F9B04A7EABCD4056ECEEE9",
+                                      "bytes":  379641
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_FULL_BODY_CANDIDATE_V1_READABILITY_TEST_REPORT.json",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Older candidate/checklist/status material, not current locked V1 proof.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "CA658C52E5804886CB229A9B04EE86D78764294472C7FBAD357AA9F9AC629A3F",
+                                      "bytes":  533
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/PRIMARY_V2/MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "sha256":  "F3EA846C62716898D03BFFF7293D5B7B80A6935E90B31F1280A80FDAA86CE29C",
+                                      "bytes":  438711
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_REPORT.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/PRIMARY_V2/MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_REPORT.json",
+                                      "sha256":  "9A5C2500EFE15ABB03531DFCDE76CA5D878CDA414FD6CF47936AE1B4046503E0",
+                                      "bytes":  1227
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_POSE_TEST_02_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/MIKAGE_POSE_TEST_02_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "sha256":  "5B7A2EFBE53C39D406D984F838DB9220C71053A88D88F4856EE79E4033D81260",
+                                      "bytes":  426316
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_POSE_TEST_02_READABILITY_TEST_REPORT.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "04_VARIANT_ONLY/POSE_TEST_02/MIKAGE_POSE_TEST_02_READABILITY_TEST_REPORT.json",
+                                      "sha256":  "89285EC994219DF2F7E8893BEB06D885118A060E4A9FCE01B260056192F74CD5",
+                                      "bytes":  1207
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_POSE_TEST_03_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/POSE_TEST_03/MIKAGE_POSE_TEST_03_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                      "sha256":  "588620FB6247247AD1AE67A98F420D4A10EDA62BCCFC8CB71813D60C82E4E65B",
+                                      "bytes":  430699
+                                  },
+                                  {
+                                      "source_relative_path":  "MIKAGE_POSE_TEST_03_READABILITY_TEST_REPORT.json",
+                                      "classification":  "PROOF",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/POSE_TEST_03/MIKAGE_POSE_TEST_03_READABILITY_TEST_REPORT.json",
+                                      "sha256":  "B3DADEFA9B34FB2B4F4AAC07E81BBE89DC7D355951B6AC8453B64E049483F27F",
+                                      "bytes":  1264
+                                  },
+                                  {
+                                      "source_relative_path":  "SCALE_100x175.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/SCALE_100x175.jpg",
+                                      "sha256":  "41AE8306002D74BC11221404D9798A9F4F99787F37CA80FDD483B2D86E0D9D24",
+                                      "bytes":  7348
+                                  },
+                                  {
+                                      "source_relative_path":  "SCALE_150x267.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/SCALE_150x267.jpg",
+                                      "sha256":  "C60A3FDA7ED6E639C730FF75CC0F6FFC09F87AD35D9F7A6BAC4FE0461BA72F8C",
+                                      "bytes":  14340
+                                  },
+                                  {
+                                      "source_relative_path":  "SCALE_300x533.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/SCALE_300x533.jpg",
+                                      "sha256":  "30776A8552648E5A3D9DABF24C4A2CC82DD4329ACB396E5B5A0D8693DCD4416C",
+                                      "bytes":  47964
+                                  },
+                                  {
+                                      "source_relative_path":  "SCALE_50x89.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/SCALE_50x89.jpg",
+                                      "sha256":  "32901332021FC6B10470599284B4CBE584D9CA93723B8DE0D65A0C53C1736D93",
+                                      "bytes":  2869
+                                  },
+                                  {
+                                      "source_relative_path":  "SCALE_512x910.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/SCALE_512x910.jpg",
+                                      "sha256":  "74C9EE062F9B081509EE0C41591231EC0004CE3E7A6A16A4620C2FEB4311B5E8",
+                                      "bytes":  125972
+                                  },
+                                  {
+                                      "source_relative_path":  "SCALE_75x133.jpg",
+                                      "classification":  "PRESENTATION_ONLY",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "05_PRESENTATION_ONLY/SCALE_75x133.jpg",
+                                      "sha256":  "427362086A434CD846A6A830E06080FB9F2EBFF9E53A7408CC8A684EE66476BA",
+                                      "bytes":  4778
+                                  },
+                                  {
+                                      "source_relative_path":  "sources\\POSE_TEST_01_chiến_binh_máy_trong_bóng_tối.png",
+                                      "classification":  "CORE_CANON",
+                                      "reason":  "Copied to approved target structure.",
+                                      "copied_target_relative_path":  "03_CORE_ASSETS/POSE_TEST_01/chiến_binh_máy_trong_bóng_tối.png",
+                                      "sha256":  "EF1AA21F3FED230A24F16C7ACAAA0B2AED633FE855E89E902DD0386B5085A644",
+                                      "bytes":  1281191
+                                  },
+                                  {
+                                      "source_relative_path":  "sources\\POSE_TEST_02_VARIANT_a_dark_studio_character_concept_art_scene_a_full.png",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Prefixed source duplicate retained in Desktop source; unprefixed approved copy was used where applicable.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "779F56ECC5AAEF3364D022EB81487A4949A3916354E190E7F7082E2E17ACA822",
+                                      "bytes":  1456871
+                                  },
+                                  {
+                                      "source_relative_path":  "sources\\POSE_TEST_03_CORE_a_dramatic_high_detail_sci_fi_character_portrait.png",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Prefixed source duplicate retained in Desktop source; unprefixed approved copy was used where applicable.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "8BBB52CFE84E94BC98B1CE145B09250AE2CC9E5C8D76682D06DF469DFF1C76AD",
+                                      "bytes":  2081864
+                                  },
+                                  {
+                                      "source_relative_path":  "sources\\PRIMARY_V2_a_highly_detailed_ultra_clean_concept_art_chara.png",
+                                      "classification":  "DUPLICATE_OR_TEMP",
+                                      "reason":  "Prefixed source duplicate retained in Desktop source; unprefixed approved copy was used where applicable.",
+                                      "copied_target_relative_path":  null,
+                                      "sha256":  "998DCACA768E09193019AE1B6C8409212C1A82E865F9C609C68753382954F264",
+                                      "bytes":  1590075
+                                  }
+                              ],
+    "missing_expected_files_not_found_in_source":  [
+                                                       "02_REFERENCE_SHEET/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT_PACKAGE.zip",
+                                                       "03_CORE_ASSETS/PRIMARY_V2/MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_PACKAGE.zip",
+                                                       "03_CORE_ASSETS/POSE_TEST_01/MIKAGE_POSE_TEST_01_READABILITY_TEST_CONTACT_SHEET.jpg",
+                                                       "03_CORE_ASSETS/POSE_TEST_01/MIKAGE_POSE_TEST_01_READABILITY_TEST_REPORT.json",
+                                                       "03_CORE_ASSETS/POSE_TEST_01/MIKAGE_POSE_TEST_01_READABILITY_TEST_PACKAGE.zip",
+                                                       "03_CORE_ASSETS/POSE_TEST_03/MIKAGE_POSE_TEST_03_READABILITY_TEST_PACKAGE.zip",
+                                                       "04_VARIANT_ONLY/POSE_TEST_02/MIKAGE_POSE_TEST_02_READABILITY_TEST_PACKAGE.zip"
+                                                   ],
+    "proof_rule":  "AI infographic files are presentation/moodboard only and are not proof."
+}

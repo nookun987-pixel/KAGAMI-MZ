@@ -1,0 +1,38 @@
+{
+  "status": "CREATED",
+  "source_file": "a_dramatic_high_detail_sci_fi_character_portrait.png",
+  "source_size": "1024x1536",
+  "verdict": "PASS_AS_CORE_POSE_CANDIDATE_READY_FOR_REFERENCE_SHEET",
+  "known": {
+    "helmet": "readable",
+    "sensor_slits": "visible",
+    "hair_mass": "strong but can become noise below 75px",
+    "slab_sword": "distinct and readable",
+    "pose": "neutral/core, less theatrical than pose test 02",
+    "identity": "consistent with clean candidate V2 and pose test 01"
+  },
+  "unconfirmed": [
+    "canon_lock",
+    "formal reference sheet",
+    "social platform compression result"
+  ],
+  "risks": [
+    "hair detail can become noise below 75px",
+    "armor remains slightly ornamental/female-mecha",
+    "shoulder form still has mild fantasy-knight signal"
+  ],
+  "next_action": "Update status to STABLE_3_POSES_PASS. Build MIKAGE_CHARACTER_REFERENCE_SHEET_V1 next.",
+  "files": [
+    "01_FULL_BODY_9x16.jpg",
+    "02_UPPER_BODY_1x1.jpg",
+    "03_THUMBNAIL_100x175_UPSCALED.jpg",
+    "04_ICON_300x300_UPSCALED.jpg",
+    "SCALE_512x910.jpg",
+    "SCALE_300x533.jpg",
+    "SCALE_150x267.jpg",
+    "SCALE_100x175.jpg",
+    "SCALE_75x133.jpg",
+    "SCALE_50x89.jpg",
+    "MIKAGE_POSE_TEST_03_READABILITY_TEST_CONTACT_SHEET.jpg"
+  ]
+}

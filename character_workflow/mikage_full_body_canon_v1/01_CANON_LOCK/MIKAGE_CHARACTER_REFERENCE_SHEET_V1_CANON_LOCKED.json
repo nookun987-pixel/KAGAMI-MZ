@@ -1,0 +1,54 @@
+{
+  "document": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED",
+  "created_at": "2026-05-26T17:58:26",
+  "source_reference_sheet": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT.jpg",
+  "source_reference_report": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT_REPORT.json",
+  "source_lock_candidate_md": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_LOCK_CANDIDATE.md",
+  "source_lock_candidate_json": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_LOCK_CANDIDATE.json",
+  "operator_decision": "PASS_TO_CANON_LOCK_PACKAGE",
+  "operator_basis": "Quick Check 10/10 PASS provided by operator in conversation",
+  "overall_status": "CANON_LOCKED_REFERENCE_V1",
+  "canon_lock": "LOCKED",
+  "identity_status": "STABLE_3_POSES_PASS",
+  "core_assets": {
+    "PRIMARY_V2": {
+      "status": "PRIMARY_CANDIDATE_PASS",
+      "canon_role": "Core reference"
+    },
+    "POSE_TEST_01": {
+      "status": "STABLE_POSE_PASS",
+      "canon_role": "Stable support pose"
+    },
+    "POSE_TEST_03": {
+      "status": "PASS_AS_CORE_POSE_CANDIDATE",
+      "canon_role": "Core reference pose"
+    }
+  },
+  "variant_assets": {
+    "POSE_TEST_02": {
+      "status": "CONDITIONAL_PASS_AS_DRAMATIC_VARIANT",
+      "canon_role": "Variant only / not core canon"
+    }
+  },
+  "locked_identity_rules": [
+    "Smooth faceless white porcelain helmet",
+    "Two thin horizontal black sensor slits only",
+    "No human eyes, mouth, nose, lips, skin, or face expression",
+    "Long heavy black hair mass",
+    "White angular armor with black underlayer",
+    "Minimal electric violet accents",
+    "Massive straight rectangular slab sword, not katana",
+    "Void black background / premium dark lighting"
+  ],
+  "known_risks_still_noted": [
+    "Hair detail can become noise at very small size",
+    "Armor still carries mild ornamental/female-mecha signal",
+    "Shoulders still carry mild fantasy-knight signal"
+  ],
+  "locked_policy": {
+    "infographic_proof_rule": "AI infographic images are presentation-only and must not replace real contact sheets or source-based reference sheets.",
+    "variant_rule": "Pose Test 02 must remain variant-only and must not be substituted as core canon."
+  },
+  "next_safe_task": "CREATE_CHARACTER_REGISTRY_ENTRY_AND_FINAL_HANDOFF_REPORT",
+  "change_control": "Future changes must patch specific assets/rules and must not silently override this lock."
+}

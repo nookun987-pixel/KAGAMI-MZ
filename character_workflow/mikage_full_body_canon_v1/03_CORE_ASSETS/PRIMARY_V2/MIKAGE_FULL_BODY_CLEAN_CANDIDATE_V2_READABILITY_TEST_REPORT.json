@@ -1,0 +1,37 @@
+{
+  "status": "CREATED",
+  "source_file": "a_highly_detailed_ultra_clean_concept_art_chara.png",
+  "source_size": "1024x1536",
+  "verdict": "PASS_AS_PRIMARY_CLEAN_CANDIDATE_NOT_CANON_LOCKED",
+  "known": {
+    "helmet": "readable",
+    "sensor_slits": "visible",
+    "hair_mass": "strong but may become dark noise at very small scale",
+    "slab_sword": "distinct in full-body and thumbnail",
+    "palette": "black_white_violet"
+  },
+  "unconfirmed": [
+    "canon_lock",
+    "multi-pose consistency",
+    "social platform compression result"
+  ],
+  "risks": [
+    "hair detail can become noise at very small size",
+    "armor remains slightly ornamental",
+    "shoulder form still carries fantasy-knight signal"
+  ],
+  "next_action": "Keep as primary clean candidate. Run one more pose consistency test or simplify hair/shoulders before canon lock.",
+  "files": [
+    "01_FULL_BODY_9x16.jpg",
+    "02_UPPER_BODY_1x1.jpg",
+    "03_THUMBNAIL_100x175_UPSCALED.jpg",
+    "04_ICON_300x300_UPSCALED.jpg",
+    "SCALE_512x910.jpg",
+    "SCALE_300x533.jpg",
+    "SCALE_150x267.jpg",
+    "SCALE_100x175.jpg",
+    "SCALE_75x133.jpg",
+    "SCALE_50x89.jpg",
+    "MIKAGE_FULL_BODY_CLEAN_CANDIDATE_V2_READABILITY_TEST_CONTACT_SHEET.jpg"
+  ]
+}

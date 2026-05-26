@@ -1,0 +1,42 @@
+{
+  "status": "CREATED",
+  "document": "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_DRAFT",
+  "created_at": "2026-05-26T17:46:08",
+  "important_note": "This reference sheet is assembled from real source assets/crops. It is not an AI-generated infographic proof.",
+  "overall_status": "STABLE_3_POSES_PASS",
+  "canon_lock": "NOT_LOCKED",
+  "assets": {
+    "PRIMARY_V2": {
+      "file": "a_highly_detailed_ultra_clean_concept_art_chara.png",
+      "status": "PRIMARY_CANDIDATE_PASS"
+    },
+    "POSE_TEST_01": {
+      "file": "chiến_binh_máy_trong_bóng_tối.png",
+      "status": "STABLE_POSE_PASS"
+    },
+    "POSE_TEST_02_VARIANT": {
+      "file": "a_dark_studio_character_concept_art_scene_a_full.png",
+      "status": "CONDITIONAL_PASS_AS_DRAMATIC_VARIANT"
+    },
+    "POSE_TEST_03_CORE": {
+      "file": "a_dramatic_high_detail_sci_fi_character_portrait.png",
+      "status": "PASS_AS_CORE_POSE_CANDIDATE"
+    }
+  },
+  "known_pass_features": [
+    "Smooth faceless white porcelain helmet",
+    "Two thin horizontal black sensor slits only",
+    "Long heavy black hair mass",
+    "White angular armor with black underlayer",
+    "Minimal electric violet accents",
+    "Massive straight rectangular slab sword",
+    "Void black / premium dark lighting"
+  ],
+  "remaining_risks": [
+    "Hair can become noise below 75px",
+    "Armor remains slightly ornamental/female-mecha",
+    "Shoulders still carry mild fantasy-knight signal",
+    "Formal canon lock requires operator approval and/or final reference cleanup"
+  ],
+  "next_safe_task": "OPERATOR_REVIEW_REFERENCE_SHEET_V1_DRAFT"
+}

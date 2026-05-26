@@ -1,0 +1,37 @@
+{
+  "status": "CREATED",
+  "source_file": "a_dark_studio_character_concept_art_scene_a_full.png",
+  "source_size": "1023x1537",
+  "verdict": "CONDITIONAL_PASS_AS_DRAMATIC_VARIANT_NOT_CORE_CANON",
+  "known": {
+    "helmet": "readable",
+    "sensor_slits": "visible",
+    "hair_mass": "strong but noisy at very small scale",
+    "slab_sword": "readable",
+    "identity": "compatible with clean candidate V2 family"
+  },
+  "unconfirmed": [
+    "canon_lock",
+    "social platform compression result"
+  ],
+  "risks": [
+    "open hand makes pose theatrical/dramatic",
+    "sword tassel/decor remains non-minimal",
+    "fantasy-queen/fantasy-knight signal stronger than core pose",
+    "hair strands may become noise at small scale"
+  ],
+  "next_action": "Keep as dramatic variant only. Do not use as canon bible/core identity pose unless simplified.",
+  "files": [
+    "01_FULL_BODY_9x16.jpg",
+    "02_UPPER_BODY_1x1.jpg",
+    "03_THUMBNAIL_100x175_UPSCALED.jpg",
+    "04_ICON_300x300_UPSCALED.jpg",
+    "SCALE_512x910.jpg",
+    "SCALE_300x533.jpg",
+    "SCALE_150x267.jpg",
+    "SCALE_100x175.jpg",
+    "SCALE_75x133.jpg",
+    "SCALE_50x89.jpg",
+    "MIKAGE_POSE_TEST_02_READABILITY_TEST_CONTACT_SHEET.jpg"
+  ]
+}
