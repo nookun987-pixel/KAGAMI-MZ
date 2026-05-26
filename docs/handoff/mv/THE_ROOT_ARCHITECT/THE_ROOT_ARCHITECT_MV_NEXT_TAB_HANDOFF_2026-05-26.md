@@ -1,7 +1,8 @@
 # THE ROOT ARCHITECT MV — NEXT TAB HANDOFF — 2026-05-26
 
 ## SOURCE CONTEXT
-This handoff records the current state after operator/ChatGPT visual review of the V2 clean-text keyframe contact sheet.
+
+This handoff records the current state after GPT Web still-image keyframe rendering and operator/ChatGPT review for `THE ROOT ARCHITECT` MV prototype work.
 
 Repo: `D:\KAGAMI-MZ_SYNC_PUSH_V2`
 Track audio folder: `D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT`
@@ -18,178 +19,201 @@ THE_ROOT_ARCHITECT_SEEDANCE_CLEAN_TEXT_SMOKE_TEST_OUTPUT_DIR = D:\MIKAGE ZENITH 
 KF03_ROOT_ACCESS_TOWER_CLEAN_TEXT = PASS_LOCKED_FOR_SMOKE_BASELINE
 KF07_COMMAND_EXECUTION_CHAMBER_GEOMETRIC_CLEAN_V3 = CREATED_PENDING_OPERATOR_REVIEW
 THE_ROOT_ARCHITECT_SEEDANCE_KF07_V3_STATUS = BLOCKED_FAL_EXHAUSTED_BALANCE
+
 THE_ROOT_ARCHITECT_CLAUDE_KEYFRAME_PROMPT_PACK_V1_STATUS = REGISTERED
 THE_ROOT_ARCHITECT_CLAUDE_KEYFRAME_PROMPT_PACK_V1_FILE = docs/handoff/mv/THE_ROOT_ARCHITECT/THE_ROOT_ARCHITECT_CLAUDE_KEYFRAME_PROMPT_PACK_V1.md
 PROMPT_COUNT = 8
 PROMPT_MODE = STILL_IMAGE_ONLY
-PAID_MODEL_USED = NO
 VIDEO_MODEL_ALLOWED = NO
 SEEDANCE_ALLOWED = NO
 PAID_VIDEO_MODEL_ALLOWED = NO
+
 THE_ROOT_ARCHITECT_STILL_IMAGE_TEST_RENDER_PLAN_V1_STATUS = PREPARED
 THE_ROOT_ARCHITECT_STILL_IMAGE_TEST_RENDER_PLAN_V1_FILE = docs/handoff/mv/THE_ROOT_ARCHITECT/THE_ROOT_ARCHITECT_STILL_IMAGE_TEST_RENDER_PLAN_V1.md
 SOURCE_PROMPT_PACK = THE_ROOT_ARCHITECT_CLAUDE_KEYFRAME_PROMPT_PACK_V1.md
 SELECTED_TEST_FRAME_COUNT = 3
 SELECTED_TEST_FRAMES = KF03_ROOT_ACCESS_TOWER; KF06_DEPENDENCY_GRAPH_CITY; KF12_FINAL_ARCHITECT_SYMBOL
+
 THE_ROOT_ARCHITECT_3_STILL_KEYFRAME_TEST_RENDER_STATUS = CREATED_PENDING_OPERATOR_REVIEW
 THE_ROOT_ARCHITECT_3_STILL_KEYFRAME_TEST_OUTPUT_DIR = D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_still_keyframe_tests_v1
 STILL_IMAGE_TEST_MODEL_USED = LOCAL_PROCEDURAL_PILLOW_RENDERER
-PAID_MODEL_USED = NO
-ESTIMATED_OR_ACTUAL_COST = 0
+LOCAL_PROCEDURAL_TEST_RESULT = PASS_AS_LAYOUT_PROTOTYPE_ONLY
+
+THE_ROOT_ARCHITECT_GPT_STILL_KEYFRAME_TESTS_V1_STATUS = PASS_FOR_LOW_COST_MV_PROTOTYPE
+GPT_STILL_RENDER_SOURCE = GPT_WEB_IMAGE_GENERATION_IN_CHATGPT_TAB
+GPT_STILL_KEYFRAME_COUNT = 3
+GPT_STILL_KEYFRAMES_REVIEWED = KF03_ROOT_ACCESS_TOWER_GPT_RENDER_V1; KF06_DEPENDENCY_GRAPH_CITY_GPT_RENDER_V1; KF12_FINAL_ARCHITECT_SYMBOL_GPT_RENDER_V1
+KF03_ROOT_ACCESS_TOWER_GPT_RENDER_V1 = PASS_AS_HIGH_QUALITY_STILL_KEYFRAME_CANDIDATE
+KF06_DEPENDENCY_GRAPH_CITY_GPT_RENDER_V1 = PASS_AS_HIGH_QUALITY_STILL_KEYFRAME_CANDIDATE
+KF12_FINAL_ARCHITECT_SYMBOL_GPT_RENDER_V1 = PASS_AS_HIGH_QUALITY_STILL_KEYFRAME_CANDIDATE
+SAFE_TO_USE_GPT_STILLS_FOR_LOW_COST_MV_PROTOTYPE = YES
+SAFE_TO_PUBLIC_FINAL_ARTWORK = NO
+PAID_MODEL_USED = NO_FOR_CODEX_LOCAL_TASKS
+ESTIMATED_OR_ACTUAL_CODEX_COST = 0
 SAFE_TO_RENDER_IMAGES = NO_UNTIL_OPERATOR_APPROVAL
-SAFE_TO_SEEDANCE_SMOKE_TEST = YES
+SAFE_TO_SEEDANCE_SMOKE_TEST = NO_PAUSED_DUE_TO_COST
 SAFE_TO_BATCH_SEEDANCE = NO
 SAFE_TO_RENDER_MV = NO
 SAFE_TO_RENDER_FINAL = NO
 
-## VERIFIED / REPORTED INPUTS
+## GPT STILL KEYFRAME REVIEW SUMMARY
 
-V1 candidate folder:
-`D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_keyframes_v1\candidate_keyframes_fal_v1`
+### KF03_ROOT_ACCESS_TOWER_GPT_RENDER_V1
 
-V2 clean-text candidate folder:
-`D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_keyframes_v1\candidate_keyframes_fal_v2_clean_text`
-
-V2 report files:
-- `CONTACT_SHEET_12_KEYFRAMES_V2_CLEAN_TEXT.png`
-- `FAL_REGEN_TEXT_CLEAN_REPORT.md`
-- `KEYFRAME_REVIEW_CANDIDATE_LIST_V2.md`
-- `_regen_status.json`
-
-Latest reported commit from local Codex:
-`709a6e6`
-
-## OPERATOR / CHATGPT REVIEW RESULT
-
-Overall visual direction: PASS.
-The V2 set is good enough for a Seedance motion smoke test, but not final MV render.
-
-Keep/pass candidates:
-- KF01_DEAD_SYSTEM_TEMPLE.png — PASS
-- KF02_DORMANT_TERMINAL_SPINE.png — PASS
-- KF03_ROOT_ACCESS_TOWER.png — PASS
-- KF04_ROOT_TOWER_GATE.png — PASS_WITH_EDGE_CROP_OR_REVIEW
-- KF05_NODE_EMPIRE.png — PASS
-- KF06_DEPENDENCY_GRAPH_CITY.png — PASS
-- KF07_COMMAND_EXECUTION_CHAMBER.png — PASS
-- KF08_TERMINAL_SPINE_WAVEFORM.png — PASS_WITH_EDGE_CROP_OR_REVIEW
-- KF09_MEMORY_FRACTURE_VAULT.png — PASS_WITH_EDGE_CROP_OR_REVIEW
-- KF10_PORCELAIN_ROOT_RELIC.png — PASS
-- KF11_GRAPH_OVERLOAD_FIELD.png — PASS
-- KF12_FINAL_ARCHITECT_SYMBOL.png — PASS
-
-Known caution:
-Some regenerated frames may still contain tiny edge marks or pseudo-symbols. Do not use them as final public assets without later crop/cleanup review. For the immediate next task, use only KF03 and KF07 as smoke-test sources.
-
-## APPROVED FOR NEXT TASK ONLY
-
-Approved Seedance smoke-test keyframes:
-1. `D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_keyframes_v1\candidate_keyframes_fal_v1\KF03_ROOT_ACCESS_TOWER.png`
-2. `D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_keyframes_v1\candidate_keyframes_fal_v2_clean_text\KF07_COMMAND_EXECUTION_CHAMBER.png`
+Review result: PASS.
 
 Reason:
-- KF03 tests root tower reveal / tower stability.
-- KF07 tests command chamber / pulse motion / energy stability.
+- Strong monolithic root-access tower identity.
+- Clean black / cold white / electric violet palette.
+- No visible text, logo, watermark, UI glyphs, human face, anime figure, or warm color drift.
+- Strong cinematic scale, reflective plane, and violet root-current core.
+
+Use: high-quality still keyframe candidate for low-cost MV prototype.
+
+### KF06_DEPENDENCY_GRAPH_CITY_GPT_RENDER_V1
+
+Review result: PASS.
+
+Reason:
+- Strong dependency graph city read.
+- Clean node/tower network and violet connection paths.
+- No visible text, map labels, logo, watermark, UI glyphs, human face, anime figure, or warm color drift.
+- Good overhead cinematic composition and Mikage black/violet identity.
+
+Use: high-quality still keyframe candidate for low-cost MV prototype.
+
+### KF12_FINAL_ARCHITECT_SYMBOL_GPT_RENDER_V1
+
+Review result: PASS.
+
+Reason:
+- Strong final architect core / seal composition.
+- Clean symmetrical mechanical ring and violet central pulse.
+- No visible text, logo, watermark, UI glyphs, human face, anime figure, or warm color drift.
+- Best production-looking still among the three GPT still keyframes.
+
+Use: high-quality still keyframe candidate for low-cost MV prototype ending frame.
+
+## IMPORTANT COST / MODEL DECISION
+
+Seedance / fal.ai video generation is paused because earlier smoke tests consumed too much balance relative to output quality.
+
+DO NOT:
+- Do not top up fal.ai only to retry Seedance blindly.
+- Do not call Seedance.
+- Do not batch 12 Seedance clips.
+- Do not render full MV with paid video model.
+- Do not use WAV/audio in the next prototype task unless operator explicitly approves.
+
+Preferred path:
+- Use the 3 GPT still keyframes as high-quality sources.
+- Build deterministic local MV prototype with pan/zoom/glow/pulse only.
+- Cost target: 0.
 
 ## NEXT SAFE TASK
 
-NEXT_SAFE_TASK = OPERATOR_REVIEW_3_STILL_KEYFRAME_TESTS_V1
+NEXT_SAFE_TASK = CREATE_LOW_COST_MV_PROTOTYPE_FROM_GPT_STILL_KEYFRAMES_V1
 
 ## TASK BOUNDARIES FOR NEXT TAB / CODEX
 
 Allowed:
 - Read governance layer first.
-- Load `FAL_KEY` from `D:\KAGAMI-MZ\.env` only if needed.
-- Generate 2 Seedance motion smoke-test clips from KF03 and KF07 only.
-- Create report/contact sheet for those 2 clips.
-- Update handoff after smoke-test creation.
+- Use only local deterministic tools such as Python/OpenCV/ffmpeg/Pillow.
+- Use the 3 GPT still keyframe images as approved prototype sources if they are available in the local output folder.
+- Create a visual-only low-cost MV prototype.
+- Create contact sheet and report.
+- Commit/push metadata/report/handoff updates only unless media commit policy explicitly allows media files.
 
 Not allowed:
-- Do not batch Seedance 12 clips yet.
-- Do not render full MV.
+- Do not call Seedance.
+- Do not call fal.ai.
+- Do not call any paid video model.
+- Do not batch AI video.
 - Do not use WAV/audio yet.
-- Do not create final MP4.
+- Do not create final public MV.
+- Do not claim public-ready/final/canon.
 - Do not touch short-video outputs.
-- Do not mark assets canon/final.
 - Do not set SAFE_TO_RENDER_MV = YES.
+- Do not set SAFE_TO_RENDER_FINAL = YES.
 
 ## CODEX TASK TO RUN NEXT
 
 ```text
 TASK:
-Run Seedance motion smoke test for THE ROOT ARCHITECT MV using 2 approved keyframes only.
+CREATE_LOW_COST_MV_PROTOTYPE_FROM_GPT_STILL_KEYFRAMES_V1
 
 READ_FIRST_REQUIRED:
-Read and follow:
 D:\KAGAMI-MZ_SYNC_PUSH_V2\docs\handoff\MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
+D:\KAGAMI-MZ_SYNC_PUSH_V2\docs\handoff\mv\THE_ROOT_ARCHITECT\THE_ROOT_ARCHITECT_MV_NEXT_TAB_HANDOFF_2026-05-26.md
 
-APPROVED_KEYFRAMES_FOR_SMOKE_TEST:
-1. D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_keyframes_v1\candidate_keyframes_fal_v1\KF03_ROOT_ACCESS_TOWER.png
-2. D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_keyframes_v1\candidate_keyframes_fal_v2_clean_text\KF07_COMMAND_EXECUTION_CHAMBER.png
+OPERATOR_REVIEW_RESULT:
+THE_ROOT_ARCHITECT_GPT_STILL_KEYFRAME_TESTS_V1_STATUS = PASS_FOR_LOW_COST_MV_PROTOTYPE
 
-AUTH:
-Use FAL_KEY from:
-D:\KAGAMI-MZ\.env
-Do not print, copy, commit, or expose the key.
+APPROVED_SOURCE_STILLS:
+1. KF03_ROOT_ACCESS_TOWER_GPT_RENDER_V1
+2. KF06_DEPENDENCY_GRAPH_CITY_GPT_RENDER_V1
+3. KF12_FINAL_ARCHITECT_SYMBOL_GPT_RENDER_V1
 
-MODEL:
-Use fal.ai Seedance image-to-video or reference-to-video endpoint.
+SOURCE_IMAGE_NOTE:
+Use the locally saved copies of the three GPT-rendered still images. If the exact local file paths are not known, stop and ask operator to place/provide them. Do not substitute failed Seedance clips. Do not use local procedural Pillow test images unless GPT stills are unavailable and operator approves fallback.
+
+METHOD:
+Use local Python/OpenCV or ffmpeg only.
+No Seedance.
+No fal.ai.
+No paid model.
+No AI video generation.
 
 OUTPUT_FOLDER:
-D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_motion_tests_seedance_v1\
+D:\MIKAGE ZENITH AUDIO\07. THE ROOT ARCHITECT\mv_low_cost_prototype_from_gpt_stills_v1\
 
 CREATE:
-1. SEEDANCE_TEST_KF03_ROOT_ACCESS_TOWER.mp4
-2. SEEDANCE_TEST_KF07_COMMAND_EXECUTION_CHAMBER.mp4
-3. SEEDANCE_MOTION_TEST_CONTACT_SHEET.png
-4. SEEDANCE_MOTION_TEST_REPORT.md
+1. THE_ROOT_ARCHITECT_LOW_COST_MV_PROTOTYPE_FROM_GPT_STILLS_V1.mp4
+2. THE_ROOT_ARCHITECT_LOW_COST_MV_PROTOTYPE_FROM_GPT_STILLS_V1_CONTACT_SHEET.png
+3. THE_ROOT_ARCHITECT_LOW_COST_MV_PROTOTYPE_FROM_GPT_STILLS_V1_REPORT.md
 
-RULES:
-- 16:9
-- 5–8 seconds each
-- no audio required
-- no lyric text
-- no title text
+FORMAT:
+1920x1080
+30fps
+20–30 seconds
+visual-only prototype
+
+EDIT STRUCTURE:
+00:00–00:08  KF03 tower slow push-in
+00:08–00:18  KF06 graph city slow overhead scan / slight zoom
+00:18–00:26  KF12 final core hold with subtle pulse
+
+VISUAL EFFECTS:
+- subtle violet glow pulse
+- very light grain/noise
+- slight vignette
+- optional slow parallax/zoom
+- no text
+- no logo
 - no CTA
-- no human face
-- no anime character
-- no warm color drift
-- no fake UI text
-- preserve keyframe identity
-- do not render full MV
-- do not use WAV
-- do not set SAFE_TO_RENDER_MV = YES
+- no audio needed
 
-PASS CRITERIA:
-- architecture remains stable
-- camera motion feels cinematic
-- violet root-current animates cleanly
-- no text/logo appears
-- no scene identity drift
-- no ugly morphing
-
-UPDATE HANDOFF:
-If both clips are created, update:
-THE_ROOT_ARCHITECT_SEEDANCE_SMOKE_TEST_STATUS = CREATED_PENDING_OPERATOR_REVIEW
+SAFETY:
+SAFE_TO_PUBLIC_ARTWORK = NO
+SAFE_TO_RENDER_FINAL_MV = NO
 SAFE_TO_BATCH_SEEDANCE = NO
-SAFE_TO_RENDER_MV = NO
-NEXT_SAFE_TASK = OPERATOR_REVIEW_SEEDANCE_SMOKE_TEST_KF03_KF07
-
-GIT:
-Commit and push reports/handoff/metadata only unless repo policy allows media commit.
 
 FINAL REPORT:
-Return:
 - RESULT
-- MODEL_USED
-- CREATED_CLIPS
-- FAILED_CLIPS
+- METHOD_USED
+- PAID_MODEL_USED
+- SOURCE_IMAGES_USED
+- OUTPUT_FILE
 - CONTACT_SHEET_CREATED
-- HANDOFF_UPDATED
-- COMMIT_HASH
-- PUSH_STATUS
-- SAFE_TO_BATCH_SEEDANCE
-- SAFE_TO_RENDER_MV
+- DURATION
+- FPS
+- RESOLUTION
+- SAFE_TO_REVIEW
+- SAFE_TO_PUBLIC_ARTWORK
+- SAFE_TO_RENDER_FINAL_MV
 - NEXT_SAFE_TASK
 - BLOCKERS
+
+EXPECTED NEXT_SAFE_TASK:
+OPERATOR_REVIEW_LOW_COST_MV_PROTOTYPE_FROM_GPT_STILLS_V1
 ```
