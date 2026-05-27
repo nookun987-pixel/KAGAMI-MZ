@@ -95,7 +95,7 @@ Track 30 current record:
 |---:|---|---|---|---|---|---|
 | 30 | 本当の名前 (REAL NAME) | Delivered | 0672896424194 | https://too.fm/pdvxoew | July 24th 2026 | Use `Pre-save:` until release/live confirmation. Direct Spotify/Apple/YouTube platform live status remains `CHUA_XAC_NHAN`. |
 
-Track 30 TooLost metadata confirmed from operator screenshots on 2026-05-27:
+Track 30 TooLost metadata confirmed from operator screenshot on 2026-05-28:
 
 ```text
 Title: 本当の名前 (REAL NAME)
@@ -115,9 +115,10 @@ P-Line: Mikage Zenith Studio © 2026
 Release / smart link: https://too.fm/pdvxoew
 Public/live platform links: CHUA_XAC_NHAN
 Correct CTA before live confirmation: Pre-save:
+Evidence source: operator-uploaded TooLost release information screenshot showing Delivered status and matching metadata.
 ```
 
-Known live confirmations as of 2026-05-23:
+Known live confirmations as of GitHub baseline:
 
 | Title | Live status |
 |---|---|
