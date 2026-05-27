@@ -12,6 +12,15 @@ BRANCH = main
 - REGISTRATION_REPORT: docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1_REGISTRATION_REPORT.md
 - NEXT_SAFE_TASK: Use governance layer for all future Mikage agent tasks.
 
+## MIKAGE HARD GATE V1 ACTIVE RULE
+- `.mikage/tasks/active_task.yaml` is the required active task file.
+- `python .mikage\tools\validate_task.py` must PASS before Codex performs a task.
+- `python .mikage\tools\verify_output.py` must PASS after Codex performs a task.
+- Codex/GPT may not claim task PASS unless `verify_output.py` prints PASS.
+- Task output outside `output_files_allowed` is FAIL.
+- For `CONTACT_SHEET_ONLY`, any `.mp4` output is FAIL.
+- Push is not approved in this task.
+
 ## THE ROOT ARCHITECT MV KEYFRAME PROMPTS
 THE_ROOT_ARCHITECT_MV_KEYFRAME_PROMPTS_STATUS = CREATED
 SAFE_TO_GENERATE_KEYFRAMES = YES
