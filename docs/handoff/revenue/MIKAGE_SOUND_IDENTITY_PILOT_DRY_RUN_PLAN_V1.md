@@ -1,9 +1,22 @@
 # MIKAGE SOUND IDENTITY PILOT DRY-RUN PLAN V1
 
-Status: PLANNED
+Status: LOCKED_FOR_TOMORROW_EXECUTION
 Mode: INTERNAL_DRY_RUN
 Purpose: Test the Sound Identity pilot workflow before accepting real market briefs.
 Created: 2026-05-28
+Execution lock: Run tomorrow before any public post, market brief intake, or soft-launch outreach.
+
+---
+
+## 0. Operator decision lock
+
+```text
+OPERATOR_DECISION = APPROVED_TO_RUN_INTERNAL_DRY_RUN_TOMORROW
+MARKET_BRIEF_INTAKE_ALLOWED = NO_UNTIL_DRY_RUN_PASS
+PUBLIC_X_POST_ALLOWED = NO_UNTIL_DRY_RUN_PASS
+REAL_CLIENT_ACCEPTANCE_ALLOWED = NO_UNTIL_DRY_RUN_PASS
+NEXT_SAFE_ACTION = OPEN_SOUND_IDENTITY_PAGE_DESKTOP_AND_MOBILE_AT_09_00
+```
 
 ---
 
@@ -336,7 +349,7 @@ No new pipeline
 ## 7. Next safe action
 
 ```text
-Open /sound-identity on desktop and mobile.
+Open /sound-identity on desktop and mobile at 09:00.
 Check CTA, $49 offer, package scope, delivery time, and proof links.
 Do not post on X yet.
 Do not accept real briefs yet.
