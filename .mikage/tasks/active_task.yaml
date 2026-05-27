@@ -1,0 +1,51 @@
+task_id: GLASS_SKIN_JP_SHORT_CONTACT_SHEET_ONLY_V1
+track_id: GLASS_SKIN_JP
+task_type: CONTACT_SHEET_ONLY
+current_step: VISUAL_REVIEW_PREVIEW
+input_files_allowed:
+  - final WAV
+  - final lyric
+  - locked timeline
+  - locked timed text
+  - locked visual motif
+  - approved cover/end card rule
+output_folder_allowed: .mikage\test_output\GLASS_SKIN_JP\short_review
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+read_only_files:
+  - original WAV
+  - original lyric
+  - previous approved finals
+  - catalog/memory files
+allowed_actions:
+  - create contact sheet only
+  - create review report only
+  - report missing input
+forbidden_actions:
+  - do not render final MP4
+  - do not change timeline
+  - do not invent new text
+  - do not replace visual identity
+  - do not batch other tracks
+  - do not mark final PASS
+  - do not modify catalog
+  - do not modify public files
+pass_conditions:
+  - contact sheet exists
+  - text visible
+  - no karaoke full lyrics
+  - no debug label
+  - no wrong static image
+  - visual matches track motif
+  - report lists exact files created
+stop_conditions:
+  - missing input
+  - broken font
+  - unreadable text
+  - looks like another track
+  - output outside allowed folder
+  - any final MP4 created
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: operator review
+next_step_if_fail: stop and report reason only
