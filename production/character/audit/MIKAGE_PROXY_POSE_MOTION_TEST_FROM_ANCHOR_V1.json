@@ -1,0 +1,370 @@
+{
+  "blend_file": "MIKAGE_PROXY_POSE_MOTION_TEST_FROM_ANCHOR_V1",
+  "object_count": 44,
+  "objects": [
+    {
+      "name": "ARM_proxy_review_minimal_from_anchor_v1",
+      "type": "ARMATURE",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "central_dark_underlayer_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_arm_L_simple_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_arm_R_simple_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_body_root_pelvis_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_foot_L_planted_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_foot_R_planted_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_hair_mass_L_guide_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_head_helmet_rigid_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_leg_L_simple_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_leg_R_simple_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_pauldron_L_rigid_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_pauldron_R_rigid_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_root_world_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_spine_low_count_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "CTRL_sword_root_rigid_proxy_review",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "foot_left_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "foot_right_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "forearm_left_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "forearm_right_proxy_sword_hand",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hair_left_mass_shell_black_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "helmet_ovoid_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "helmet_sensor_slit_lower_void_black",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "helmet_sensor_slit_upper_void_black",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hip_block_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hip_skirt_panel_center",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hip_skirt_panel_left",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hip_skirt_panel_right",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "leg_left_column",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "leg_right_column",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "neck_dark_connector",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "pauldron_left_block_wide_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "pauldron_right_block_wide_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "proxy_origin_marker",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "review_area_light_nonfinal",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "review_camera_front_nonfinal",
+      "type": "CAMERA",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "SOURCE_ANCHOR_REFERENCE_PLANE_DO_NOT_RENDER_AS_ASSET",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": true
+    },
+    {
+      "name": "sword_guard_bar_horizontal",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "sword_rectangular_slab_right_side",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "sword_violet_accent_proxy_nonfinal",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "torso_tapered_core_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "upper_arm_left_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "upper_arm_right_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "waist_narrow_proxy",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    }
+  ],
+  "armature_count": 1,
+  "armatures": [
+    {
+      "name": "ARM_proxy_review_minimal_from_anchor_v1",
+      "bone_count": 18,
+      "bones": [
+        {
+          "name": "root_world",
+          "parent": null
+        },
+        {
+          "name": "body_root_pelvis",
+          "parent": "root_world"
+        },
+        {
+          "name": "spine_01_low_count",
+          "parent": "body_root_pelvis"
+        },
+        {
+          "name": "spine_02_low_count",
+          "parent": "spine_01_low_count"
+        },
+        {
+          "name": "neck_01_simple",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "head_helmet_rigid",
+          "parent": "neck_01_simple"
+        },
+        {
+          "name": "hair_mass_L_guide",
+          "parent": "head_helmet_rigid"
+        },
+        {
+          "name": "pauldron_L_rigid",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "pauldron_R_rigid",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "upper_arm_L_simple",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "forearm_L_simple",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "upper_arm_R_simple",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "forearm_R_sword_side_simple",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "sword_root_rigid",
+          "parent": "spine_02_low_count"
+        },
+        {
+          "name": "leg_L_simple",
+          "parent": "body_root_pelvis"
+        },
+        {
+          "name": "leg_R_simple",
+          "parent": "body_root_pelvis"
+        },
+        {
+          "name": "foot_L_planted",
+          "parent": "body_root_pelvis"
+        },
+        {
+          "name": "foot_R_planted",
+          "parent": "body_root_pelvis"
+        }
+      ]
+    }
+  ],
+  "arm_bone_candidates": [
+    "upper_arm_L_simple",
+    "forearm_L_simple",
+    "upper_arm_R_simple",
+    "forearm_R_sword_side_simple"
+  ],
+  "leg_bone_candidates": [
+    "leg_L_simple",
+    "leg_R_simple",
+    "foot_L_planted",
+    "foot_R_planted"
+  ],
+  "arm_bone_rotated": "upper_arm_L_simple",
+  "leg_bone_rotated": "leg_L_simple",
+  "pose_applied": true,
+  "screenshot_neutral": "MIKAGE_PROXY_POSE_MOTION_TEST_FROM_ANCHOR_V1__NEUTRAL.png",
+  "screenshot_pose": "MIKAGE_PROXY_POSE_MOTION_TEST_FROM_ANCHOR_V1__POSE.png",
+  "classification": "PROXY_RIG_USABLE",
+  "errors": []
+}

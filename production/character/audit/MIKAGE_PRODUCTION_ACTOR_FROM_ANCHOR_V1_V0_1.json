@@ -1,0 +1,217 @@
+{
+  "blend_file": "MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1",
+  "object_count": 33,
+  "objects": [
+    {
+      "name": "accent_violet_chest_center_placeholder",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "accent_violet_left_pauldron_placeholder",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "accent_violet_right_pauldron_placeholder",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "arm_left_simple_black_column",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "arm_right_simple_black_column",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "body_black_underlayer_full_body_base",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "foot_left_planted_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "foot_right_planted_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "forearm_left_porcelain_plate",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "forearm_right_porcelain_plate",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hair_left_lower_weight_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hair_left_side_black_mass_shell",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "hand_right_sword_hold_marker",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "helmet_faceless_white_porcelain_ovoid",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "helmet_sensor_slit_lower_void_black",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "helmet_sensor_slit_upper_void_black",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "inspection_area_light_key_only",
+      "type": "LIGHT",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "inspection_camera_front_full_body_only",
+      "type": "CAMERA",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "inspection_marker_full_body_actor_v0_1",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "inspection_marker_two_separate_sensor_slits",
+      "type": "EMPTY",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "leg_left_columnar_black",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "leg_right_columnar_black",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "neck_matte_black_underlayer",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "pauldron_left_broad_porcelain_slab",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "pauldron_right_broad_porcelain_slab",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "pelvis_porcelain_armor_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "reference_anchor_v1_plane_hidden_from_render",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": true
+    },
+    {
+      "name": "shin_left_porcelain_front_plate",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "shin_right_porcelain_front_plate",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "sword_right_heavy_rectangular_slab",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "sword_right_simple_hilt_block",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "torso_porcelain_upper_armor_tapered",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    },
+    {
+      "name": "torso_tapered_black_core",
+      "type": "MESH",
+      "hide_viewport": false,
+      "hide_render": false
+    }
+  ],
+  "armature_count": 0,
+  "armatures": [],
+  "arm_bone_candidates": [],
+  "leg_bone_candidates": [],
+  "arm_bone_rotated": null,
+  "leg_bone_rotated": null,
+  "pose_applied": false,
+  "screenshot_neutral": "MIKAGE_PRODUCTION_ACTOR_FROM_ANCHOR_V1_V0_1__NEUTRAL.png",
+  "screenshot_pose": null,
+  "classification": "BLOCKOUT_ONLY",
+  "errors": [
+    "POSE_SKIPPED_NO_ARMATURE"
+  ]
+}
