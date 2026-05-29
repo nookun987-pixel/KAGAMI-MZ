@@ -1,0 +1,28 @@
+<!-- @dsCard group="Colors" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);font-family:var(--font-mono);padding:26px;box-sizing:border-box;min-height:240px}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:18px}
+  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .sw{display:flex;flex-direction:column;gap:8px}
+  .chip{height:74px;border:1px solid var(--hairline)}
+  .nm{font-size:11px;letter-spacing:0.1em;color:var(--porcelain)}
+  .hex{font-size:10px;letter-spacing:0.06em;color:var(--silver-dim)}
+  .use{font-size:9px;letter-spacing:0.04em;color:var(--silver-dim)}
+</style>
+</head>
+<body>
+  <div class="hd">Porcelain &amp; Silver — identity / foreground</div>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:#f2eeea"></div><span class="nm">porcelain</span><span class="hex">#F2EEEA</span><span class="use">primary text · marks</span></div>
+    <div class="sw"><div class="chip" style="background:#c8c4be"></div><span class="nm">porcelain-dim</span><span class="hex">#C8C4BE</span><span class="use">secondary text</span></div>
+    <div class="sw"><div class="chip" style="background:#a0a0b0"></div><span class="nm">silver</span><span class="hex">#A0A0B0</span><span class="use">mono labels</span></div>
+    <div class="sw"><div class="chip" style="background:#6b6b78"></div><span class="nm">silver-dim</span><span class="hex">#6B6B78</span><span class="use">faint metadata</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<svg width="260" height="320" viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mikage Zenith — faceless porcelain helmet, canon-locked">
+  <defs>
+    <radialGradient id="mzPorc" cx="42%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f6f3ef"></stop>
+      <stop offset="52%" stop-color="#ded9d2"></stop>
+      <stop offset="100%" stop-color="#a7a39c"></stop>
+    </radialGradient>
+    <radialGradient id="mzHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8f00ff" stop-opacity="0.30"></stop>
+      <stop offset="55%" stop-color="#9d7fd0" stop-opacity="0.08"></stop>
+      <stop offset="100%" stop-color="#8f00ff" stop-opacity="0"></stop>
+    </radialGradient>
+    <linearGradient id="mzNeck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfcbc4"></stop>
+      <stop offset="100%" stop-color="#7e7b75"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <ellipse cx="130" cy="150" rx="120" ry="150" fill="url(#mzHalo)"></ellipse>
+
+  
+  <path d="M104 250 L100 300 L160 300 L156 250 Z" fill="#0d0d14"></path>
+  <path d="M110 252 L108 298 M150 252 L152 298" stroke="url(#mzNeck)" stroke-width="1.4" opacity="0.5"></path>
+
+  
+  <path d="M40 132 Q36 50 130 36 Q224 48 220 132 Q228 196 208 244 Q184 296 130 304 Q76 296 52 244 Q32 196 40 132 Z" fill="url(#mzPorc)" stroke="rgba(160,160,176,0.35)" stroke-width="1.2"></path>
+
+  
+  <path d="M80 44 Q130 26 180 44" stroke="rgba(246,243,239,0.7)" stroke-width="2" fill="none" stroke-linecap="round"></path>
+  
+  <path d="M130 36 L130 150" stroke="rgba(160,160,176,0.16)" stroke-width="1" fill="none"></path>
+  
+  <path d="M54 96 Q66 80 84 88" stroke="rgba(246,243,239,0.55)" stroke-width="2" fill="none" stroke-linecap="round"></path>
+
+  
+  <rect x="72" y="150" width="52" height="5" rx="2.5" fill="#050508"></rect>
+  <rect x="136" y="150" width="52" height="5" rx="2.5" fill="#050508"></rect>
+
+  
+  <rect x="72" y="150" width="52" height="5" rx="2.5" fill="#8f00ff" opacity="0.10"></rect>
+  <rect x="136" y="150" width="52" height="5" rx="2.5" fill="#8f00ff" opacity="0.10"></rect>
+</svg>

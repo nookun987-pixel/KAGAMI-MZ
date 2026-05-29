@@ -1,0 +1,237 @@
+/* ============================================================
+   MIKAGE ZENITH — Core Color & Type System
+   Dark signal identity · void black / porcelain white / electric violet
+   Source canon: KAGAMI-MZ codebase (character prompt library, world core,
+   character production bible) + uploaded logo direction reference.
+   ============================================================ */
+
+/* ----- Fonts -----
+   Cinzel        — engraved Roman serif. The WORDMARK voice: wide-tracked
+                   capitals matching the logo direction reference.
+   Shippori Mincho — editorial serif w/ full Japanese (CJK) support.
+                   Headlines, release titles, poetic lines, kanji (鏡).
+   Space Mono    — technical monospace. Labels, metadata, UI chrome,
+                   catalog numbers, captions, the "signal" voice.
+   NOTE: These are Google Fonts. No proprietary brand font file exists in
+   the source repo (the studio's own pages use these exact families). If a
+   custom wordmark font is later licensed, swap --font-wordmark.            */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* ---------- VOID (backgrounds, ascending elevation) ---------- */
+  --void:         #050508;  /* primary canvas — the void */
+  --void-mid:     #0d0d14;  /* raised surface / panel */
+  --void-light:   #1a1a28;  /* card surface / hairline base */
+  --void-line:    #242436;  /* structural divider on dark */
+
+  /* ---------- PORCELAIN (identity / foreground) ---------- */
+  --porcelain:      #f2eeea;  /* primary identity white — text, marks */
+  --porcelain-dim:  #c8c4be;  /* secondary text */
+  --silver:         #a0a0b0;  /* tertiary text, mono labels, structure catch */
+  --silver-dim:     #6b6b78;  /* faint metadata, disabled */
+
+  /* ---------- ELECTRIC VIOLET (signal accent — used sparingly) ---------- */
+  --violet:       #8f00ff;  /* primary signal accent (canon-locked) */
+  --violet-ui:    #7b2fff;  /* interactive / UI + video overlay variant */
+  --violet-glow:  #9d7fd0;  /* halo highlight, soft glow */
+  --violet-dim:   #3d2e55;  /* hairline accents, low-emphasis borders */
+  --violet-haze:  rgba(143,0,255,0.10); /* ambient wash */
+
+  /* ---------- SEMANTIC SURFACES ---------- */
+  --bg:            var(--void);
+  --bg-raised:     var(--void-mid);
+  --bg-card:       var(--void-light);
+  --fg:            var(--porcelain);
+  --fg-2:          var(--porcelain-dim);
+  --fg-3:          var(--silver);
+  --fg-4:          var(--silver-dim);
+  --accent:        var(--violet);
+  --accent-soft:   var(--violet-glow);
+  --hairline:      rgba(160,160,176,0.14); /* default thin divider on void */
+  --hairline-accent: rgba(143,0,255,0.30);
+
+  /* ---------- STATUS (signal states for the canon/proof console) ---------- */
+  --signal-live:    #9d7fd0;  /* live / confirmed — violet glow, never green */
+  --signal-pending: #c2a85a;  /* pending review — restrained amber */
+  --signal-fail:    #c8536b;  /* hard fail / rejected — restrained crimson */
+  --signal-void:    var(--silver-dim); /* unconfirmed / CHUA_XAC_NHAN */
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-wordmark: 'Cinzel', 'Shippori Mincho', serif;
+  --font-serif:    'Shippori Mincho', 'Cinzel', serif;
+  --font-mono:     'Space Mono', ui-monospace, monospace;
+
+  /* ---------- TYPE SCALE (1.250 major-third, base 16) ---------- */
+  --t-mono-xs: 10px;   /* micro labels, corner ticks */
+  --t-mono-sm: 12px;   /* metadata, captions */
+  --t-mono-md: 14px;   /* UI body, controls */
+  --t-body:    16px;   /* serif body */
+  --t-lead:    20px;   /* lead paragraph */
+  --t-h4:      24px;
+  --t-h3:      33px;
+  --t-h2:      52px;
+  --t-h1:      80px;   /* hero / wordmark */
+  --t-display: 128px;  /* full-bleed display */
+
+  /* ---------- TRACKING (wide spacing is core to the brand) ---------- */
+  --track-wordmark: 0.42em;  /* the logo lockup */
+  --track-label:    0.34em;  /* uppercase mono labels */
+  --track-title:    0.14em;  /* serif headlines */
+  --track-body:     0.01em;
+
+  /* ---------- SPACE (8pt base) ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px; --s-11: 192px;
+
+  /* ---------- RADIUS (near-zero; sacred-tech is sharp) ---------- */
+  --r-0: 0px;   /* default — hard edges */
+  --r-1: 1px;
+  --r-2: 2px;   /* max for chips / inputs */
+  --r-pill: 999px; /* only for signal dots / waveform nodes */
+
+  /* ---------- MOTION (slow, controlled, no bounce) ---------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 0.25s;
+  --dur:      0.6s;
+  --dur-slow: 1.4s;
+
+  /* ---------- GLOW (controlled violet emission) ---------- */
+  --glow-violet: 0 0 24px rgba(143,0,255,0.35), 0 0 4px rgba(157,127,208,0.5);
+  --glow-soft:   0 0 40px rgba(143,0,255,0.18);
+}
+
+/* ============================================================
+   SEMANTIC TYPE PRIMITIVES
+   Apply these classes directly, or copy the rules into components.
+   ============================================================ */
+
+.mz-wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 600;
+  letter-spacing: var(--track-wordmark);
+  text-transform: uppercase;
+  color: var(--porcelain);
+  line-height: 1;
+}
+
+.mz-h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(40px, 8vw, var(--t-h1));
+  letter-spacing: var(--track-title);
+  line-height: 1.02;
+  color: var(--porcelain);
+}
+
+.mz-h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, var(--t-h2));
+  letter-spacing: var(--track-title);
+  line-height: 1.08;
+  color: var(--porcelain);
+}
+
+.mz-h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: var(--t-h3);
+  letter-spacing: var(--track-title);
+  line-height: 1.15;
+  color: var(--porcelain);
+}
+
+.mz-h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--t-h4);
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  color: var(--porcelain);
+}
+
+.mz-lead {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--t-lead);
+  line-height: 1.6;
+  color: var(--porcelain-dim);
+}
+
+.mz-body {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--t-body);
+  line-height: 1.75;
+  letter-spacing: var(--track-body);
+  color: var(--porcelain-dim);
+}
+
+/* The "signal" voice — technical, monospace, wide-tracked uppercase. */
+.mz-label {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+.mz-label-xs {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-xs);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--silver-dim);
+}
+
+.mz-meta {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: 0.08em;
+  color: var(--silver);
+}
+
+.mz-kanji {
+  font-family: var(--font-serif);
+  letter-spacing: 0.4em;
+  color: var(--silver);
+}
+
+/* Violet signal accent for inline emphasis — use rarely. */
+.mz-signal { color: var(--violet-glow); }
+
+/* ============================================================
+   SURFACE & MOTIF UTILITIES
+   ============================================================ */
+
+/* Film-grain overlay — apply to any full-bleed surface via ::after,
+   or drop <div class="mz-grain"></div> as a fixed sibling. */
+.mz-grain::after,
+.mz-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Corner registration ticks — frame marks on a card or canvas. */
+.mz-frame { position: relative; }
+.mz-frame::before,
+.mz-frame::after {
+  content: ''; position: absolute; width: 14px; height: 14px;
+  pointer-events: none;
+}
+.mz-frame::before {
+  top: 8px; left: 8px;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+.mz-frame::after {
+  bottom: 8px; right: 8px;
+  border-bottom: 1px solid var(--hairline);
+  border-right: 1px solid var(--hairline);
+}
+
+/* Violet radial halo — controlled ambient emission behind a subject. */
+.mz-halo {
+  background: radial-gradient(circle, rgba(143,0,255,0.18) 0%, rgba(157,127,208,0.06) 40%, transparent 72%);
+}

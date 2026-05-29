@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:28px 32px;box-sizing:border-box;min-height:220px}
+  .hd{font-family:var(--font-mono);font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:8px}
+  .sub{font-family:var(--font-serif);font-size:13px;color:var(--porcelain-dim);margin-bottom:22px}
+  .row{display:flex;gap:26px;align-items:flex-end}
+  .sw{display:flex;flex-direction:column;gap:10px;align-items:center}
+  .box{width:78px;height:78px;background:var(--void-light);border:1px solid var(--violet-dim)}
+  .nm{font-family:var(--font-mono);font-size:10px;color:var(--silver)}
+  .nm b{color:var(--porcelain);font-weight:400}
+</style>
+</head>
+<body>
+  <div class="hd">Radius — sacred-tech is sharp</div>
+  <div class="sub">Near-zero corners. Rounding is reserved for signal dots &amp; waveform nodes only.</div>
+  <div class="row">
+    <div class="sw"><div class="box" style="border-radius:0"></div><span class="nm">r-0 · <b>0</b> default</span></div>
+    <div class="sw"><div class="box" style="border-radius:1px"></div><span class="nm">r-1 · <b>1</b></span></div>
+    <div class="sw"><div class="box" style="border-radius:2px"></div><span class="nm">r-2 · <b>2</b> input max</span></div>
+    <div class="sw"><div class="box" style="border-radius:999px;width:78px;height:78px"></div><span class="nm">pill · <b>dots only</b></span></div>
+  </div>
+</body>
+</html>

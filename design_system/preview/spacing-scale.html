@@ -1,0 +1,33 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:28px 32px;box-sizing:border-box;min-height:250px}
+  .hd{font-family:var(--font-mono);font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:8px}
+  .sub{font-family:var(--font-serif);font-size:13px;color:var(--porcelain-dim);margin-bottom:20px}
+  .row{display:flex;flex-direction:column;gap:11px}
+  .item{display:flex;align-items:center;gap:16px}
+  .bar{height:12px;background:linear-gradient(90deg,var(--violet),var(--violet-dim));border-left:1px solid var(--violet-glow)}
+  .tk{font-family:var(--font-mono);font-size:10px;color:var(--silver);width:120px;flex:none}
+  .tk b{color:var(--porcelain);font-weight:400}
+</style>
+</head>
+<body>
+  <div class="hd">Spacing — 8pt base</div>
+  <div class="sub">Generous negative space is canon. Tighten only inside dense console rows.</div>
+  <div class="row">
+    <div class="item"><span class="tk">s-2 · <b>8</b></span><div class="bar" style="width:8px"></div></div>
+    <div class="item"><span class="tk">s-4 · <b>16</b></span><div class="bar" style="width:16px"></div></div>
+    <div class="item"><span class="tk">s-5 · <b>24</b></span><div class="bar" style="width:24px"></div></div>
+    <div class="item"><span class="tk">s-6 · <b>32</b></span><div class="bar" style="width:32px"></div></div>
+    <div class="item"><span class="tk">s-7 · <b>48</b></span><div class="bar" style="width:48px"></div></div>
+    <div class="item"><span class="tk">s-8 · <b>64</b></span><div class="bar" style="width:64px"></div></div>
+    <div class="item"><span class="tk">s-9 · <b>96</b></span><div class="bar" style="width:96px"></div></div>
+    <div class="item"><span class="tk">s-10 · <b>128</b></span><div class="bar" style="width:128px"></div></div>
+  </div>
+</body>
+</html>

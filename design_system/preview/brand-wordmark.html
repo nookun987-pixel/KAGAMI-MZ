@@ -1,0 +1,33 @@
+<!-- @dsCard group="Brand" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);color:var(--porcelain);font-family:var(--font-mono);
+    display:flex;align-items:center;justify-content:center;min-height:340px;padding:28px;box-sizing:border-box;position:relative;overflow:hidden}
+  .halo{position:absolute;width:560px;height:300px;left:50%;top:46%;transform:translate(-50%,-50%);
+    background:radial-gradient(circle,rgba(143,0,255,0.12),transparent 70%);pointer-events:none}
+  .lockup{display:flex;flex-direction:column;align-items:center;gap:18px;z-index:2}
+  .star{width:6px;height:6px;background:var(--porcelain);border-radius:50%;box-shadow:var(--glow-violet);position:relative}
+  .star::before,.star::after{content:'';position:absolute;background:var(--violet-glow)}
+  .star::before{width:1px;height:64px;left:50%;top:-29px;transform:translateX(-50%);
+    background:linear-gradient(var(--violet-glow),transparent)}
+  .star::after{width:120px;height:1px;left:-57px;top:50%;transform:translateY(-50%);
+    background:linear-gradient(90deg,transparent,var(--violet-glow),transparent)}
+  .wm{font-family:var(--font-wordmark);font-weight:600;font-size:40px;letter-spacing:0.42em;
+    text-indent:0.42em;color:var(--porcelain);text-shadow:0 0 30px rgba(143,0,255,0.25)}
+  .sig{width:520px;max-width:80%;opacity:0.9}
+</style>
+</head>
+<body>
+  <div class="halo"></div>
+  <div class="lockup">
+    <div class="star"></div>
+    <div class="wm">MIKAGE&nbsp;&nbsp;ZENITH</div>
+    <img class="sig" src="../assets/brand/signal_line.svg" alt="signal line">
+  </div>
+</body>
+</html>

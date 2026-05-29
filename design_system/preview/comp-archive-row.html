@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:26px 30px;box-sizing:border-box;min-height:300px;font-family:var(--font-mono)}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:14px}
+  .row{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:18px;padding:16px 8px;border-top:1px solid var(--hairline);transition:background var(--dur-fast) var(--ease)}
+  .row:last-child{border-bottom:1px solid var(--hairline)}
+  .row:hover{background:var(--void-mid)}
+  .no{font-family:var(--font-mono);font-size:13px;color:var(--silver-dim)}
+  .ttl{font-family:var(--font-serif);font-size:18px;letter-spacing:0.06em;color:var(--porcelain)}
+  .sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.16em;color:var(--silver-dim);margin-top:3px}
+  .cta{font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase}
+  .live{color:var(--porcelain)}
+  .pre{color:var(--silver-dim)}
+  .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--violet-glow);box-shadow:0 0 8px var(--violet-glow);margin-right:7px;vertical-align:middle}
+</style>
+</head>
+<body>
+  <div class="hd">Launch Arc — archive rows</div>
+  <div class="row"><span class="no">07</span><div><div class="ttl">The Root Architect</div><div class="sub">HIP-HOP/RAP · REL 26.05.2026</div></div><span class="cta live"><span class="dot"></span>Listen now</span></div>
+  <div class="row"><span class="no">05</span><div><div class="ttl">Porcelain Ascension</div><div class="sub">ROCK · ALTERNATIVE · REL 25.05.2026</div></div><span class="cta live"><span class="dot"></span>Listen now</span></div>
+  <div class="row"><span class="no">08</span><div><div class="ttl">Glass Skin</div><div class="sub">POP · REL 05.06.2026</div></div><span class="cta pre">Pre-save</span></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:30px 32px;box-sizing:border-box;min-height:220px;font-family:var(--font-mono)}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:22px}
+  .grid{display:flex;flex-wrap:wrap;gap:14px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;padding:7px 14px;border:1px solid}
+  .dot{width:7px;height:7px;border-radius:50%}
+  .live{color:var(--violet-glow);border-color:rgba(157,127,208,0.35)}
+  .live .dot{background:var(--violet-glow);box-shadow:0 0 8px var(--violet-glow)}
+  .pend{color:var(--signal-pending);border-color:rgba(194,168,90,0.35)}
+  .pend .dot{background:var(--signal-pending)}
+  .fail{color:var(--signal-fail);border-color:rgba(200,83,107,0.35)}
+  .fail .dot{background:var(--signal-fail)}
+  .void{color:var(--silver-dim);border-color:var(--hairline)}
+  .void .dot{background:var(--silver-dim)}
+</style>
+</head>
+<body>
+  <div class="hd">Signal status badges</div>
+  <div class="grid">
+    <span class="badge live"><span class="dot"></span>Live · confirmed</span>
+    <span class="badge pend"><span class="dot"></span>Pending review</span>
+    <span class="badge fail"><span class="dot"></span>Canon · hard fail</span>
+    <span class="badge void"><span class="dot"></span>Unconfirmed</span>
+  </div>
+</body>
+</html>

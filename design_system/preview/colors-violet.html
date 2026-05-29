@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);font-family:var(--font-mono);padding:26px;box-sizing:border-box;min-height:260px}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:6px}
+  .sub{font-family:var(--font-serif);font-size:13px;color:var(--porcelain-dim);margin-bottom:18px}
+  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .sw{display:flex;flex-direction:column;gap:8px}
+  .chip{height:74px;border:1px solid var(--hairline)}
+  .nm{font-size:11px;letter-spacing:0.1em;color:var(--porcelain)}
+  .hex{font-size:10px;letter-spacing:0.06em;color:var(--silver-dim)}
+  .use{font-size:9px;letter-spacing:0.04em;color:var(--silver-dim)}
+  .glow{box-shadow:var(--glow-violet);border-color:transparent}
+</style>
+</head>
+<body>
+  <div class="hd">Electric Violet — the signal accent</div>
+  <div class="sub">Used sparingly. Never a fill — only signal: halo, glyph, trace, focus.</div>
+  <div class="row">
+    <div class="sw"><div class="chip glow" style="background:#8f00ff"></div><span class="nm">violet</span><span class="hex">#8F00FF</span><span class="use">primary signal</span></div>
+    <div class="sw"><div class="chip" style="background:#7b2fff"></div><span class="nm">violet-ui</span><span class="hex">#7B2FFF</span><span class="use">interactive · video</span></div>
+    <div class="sw"><div class="chip" style="background:#9d7fd0"></div><span class="nm">violet-glow</span><span class="hex">#9D7FD0</span><span class="use">halo · highlight</span></div>
+    <div class="sw"><div class="chip" style="background:#3d2e55"></div><span class="nm">violet-dim</span><span class="hex">#3D2E55</span><span class="use">hairline accent</span></div>
+  </div>
+</body>
+</html>

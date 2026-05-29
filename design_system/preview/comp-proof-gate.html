@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:26px 30px;box-sizing:border-box;min-height:260px;font-family:var(--font-mono)}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:16px}
+  .gate{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:var(--void-mid);border:1px solid var(--hairline);border-left:2px solid var(--violet);padding:14px 16px;margin-bottom:10px}
+  .code{font-size:11px;letter-spacing:0.12em;color:var(--porcelain)}
+  .desc{font-size:9px;letter-spacing:0.08em;color:var(--silver-dim);margin-top:4px}
+  .verdict{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+  .dot{width:7px;height:7px;border-radius:50%}
+  .pass{color:var(--violet-glow)} .pass .dot{background:var(--violet-glow);box-shadow:0 0 8px var(--violet-glow)}
+  .fail{color:var(--signal-fail)} .fail .dot{background:var(--signal-fail)}
+  .hold{color:var(--signal-pending)} .hold .dot{background:var(--signal-pending)}
+</style>
+</head>
+<body>
+  <div class="hd">Canon proof gate — console row</div>
+  <div class="gate"><div><div class="code">D-01 · HELMET SENSOR SLITS</div><div class="desc">Exactly two ultra-thin void-black horizontal slits</div></div><div class="verdict pass"><span class="dot"></span>Pass</div></div>
+  <div class="gate" style="border-left-color:var(--signal-pending)"><div><div class="code">D-09 · VIOLET USAGE</div><div class="desc">Accent only — halo, glyph, mist. Never primary fill</div></div><div class="verdict hold"><span class="dot"></span>Hold</div></div>
+  <div class="gate" style="border-left-color:var(--signal-fail)"><div><div class="code">D-12 · AESTHETIC AXIS</div><div class="desc">Sacred-tech — not anime, mech, fantasy, samurai</div></div><div class="verdict fail"><span class="dot"></span>Hard fail</div></div>
+</body>
+</html>

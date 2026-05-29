@@ -1,0 +1,31 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:0;box-sizing:border-box;min-height:160px;font-family:var(--font-mono)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;border-bottom:1px solid var(--hairline)}
+  .wm{font-family:var(--font-wordmark);font-weight:600;font-size:17px;letter-spacing:0.34em;color:var(--porcelain);text-indent:0.34em}
+  .links{display:flex;gap:30px}
+  .links a{font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--silver);text-decoration:none;transition:color var(--dur-fast)}
+  .links a:hover{color:var(--porcelain)}
+  .links a.active{color:var(--violet-glow)}
+  .hint{font-family:var(--font-mono);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--silver-dim);padding:18px 32px}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wm">MIKAGE ZENITH</div>
+    <div class="links">
+      <a class="active" href="#">Transmissions</a>
+      <a href="#">Character</a>
+      <a href="#">Canon</a>
+      <a href="#">Studio</a>
+    </div>
+  </nav>
+  <div class="hint">Site header · hairline divider · wide-tracked mono nav</div>
+</body>
+</html>

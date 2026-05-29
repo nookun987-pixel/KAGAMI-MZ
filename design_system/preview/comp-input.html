@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:30px 32px;box-sizing:border-box;min-height:240px;font-family:var(--font-mono)}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:22px}
+  .field{margin-bottom:22px}
+  label{display:block;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:9px}
+  .inp{width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid var(--hairline);
+    color:var(--porcelain);font-family:var(--font-mono);font-size:14px;letter-spacing:0.08em;padding:10px 2px;outline:none;transition:border-color var(--dur-fast)}
+  .inp::placeholder{color:var(--silver-dim)}
+  .inp:focus{border-bottom-color:var(--violet)}
+  .focus{border-bottom:1px solid var(--violet);box-shadow:0 1px 0 0 var(--violet)}
+  .focus-cap{font-size:9px;letter-spacing:0.2em;color:var(--violet-glow);margin-top:8px}
+</style>
+</head>
+<body>
+  <div class="hd">Form fields</div>
+  <div class="field">
+    <label>Signal address</label>
+    <input class="inp" placeholder="name@transmission.mz">
+  </div>
+  <div class="field">
+    <label>Search the archive</label>
+    <input class="inp focus" value="porcelain">
+    <div class="focus-cap">— focus · violet underline + emission</div>
+  </div>
+</body>
+</html>

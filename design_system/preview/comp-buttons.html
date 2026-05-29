@@ -1,0 +1,30 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:30px 32px;box-sizing:border-box;min-height:240px;font-family:var(--font-mono)}
+  .hd{font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:22px}
+  .grid{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn{font-family:var(--font-mono);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;padding:13px 26px;border:1px solid;cursor:pointer;transition:all var(--dur-fast) var(--ease);background:transparent}
+  .primary{background:var(--porcelain);color:var(--void);border-color:var(--porcelain)}
+  .primary:hover{background:var(--violet);color:var(--porcelain);border-color:var(--violet);box-shadow:var(--glow-violet)}
+  .ghost{color:var(--silver);border-color:var(--hairline)}
+  .ghost:hover{color:var(--porcelain);border-color:var(--violet-glow)}
+  .link{font-size:12px;letter-spacing:0.14em;color:var(--violet-glow);text-decoration:none;border-bottom:1px solid var(--violet-dim);padding-bottom:3px}
+  .lab{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--silver-dim);width:100%;margin-top:6px}
+</style>
+</head>
+<body>
+  <div class="hd">Actions</div>
+  <div class="grid">
+    <button class="btn primary">Listen now →</button>
+    <button class="btn ghost">Pre-save</button>
+    <a class="link" href="#">Enter the archive</a>
+  </div>
+  <div class="lab">Primary = live transmission · Ghost = unreleased · never "Pre-save / Listen"</div>
+</body>
+</html>

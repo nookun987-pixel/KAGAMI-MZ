@@ -1,0 +1,32 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:28px 32px;box-sizing:border-box;min-height:230px}
+  .hd{font-family:var(--font-mono);font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:8px}
+  .sub{font-family:var(--font-serif);font-size:13px;color:var(--porcelain-dim);margin-bottom:22px}
+  .row{display:flex;gap:18px}
+  .lvl{flex:1;height:90px;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;box-sizing:border-box}
+  .nm{font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:var(--silver)}
+  .nm b{color:var(--porcelain);font-weight:400}
+  .l0{background:#050508;border:1px solid var(--hairline)}
+  .l1{background:#0d0d14;border:1px solid var(--hairline)}
+  .l2{background:#1a1a28;border:1px solid var(--hairline)}
+  .l3{background:#1a1a28;border:1px solid var(--hairline-accent);box-shadow:var(--glow-soft)}
+</style>
+</head>
+<body>
+  <div class="hd">Elevation — light, not shadow</div>
+  <div class="sub">Depth ascends through the void. The only "shadow" is a controlled violet emission.</div>
+  <div class="row">
+    <div class="lvl l0"><span class="nm">00 · <b>void</b></span></div>
+    <div class="lvl l1"><span class="nm">01 · <b>panel</b></span></div>
+    <div class="lvl l2"><span class="nm">02 · <b>card</b></span></div>
+    <div class="lvl l3"><span class="nm">03 · <b>signal</b></span></div>
+  </div>
+</body>
+</html>

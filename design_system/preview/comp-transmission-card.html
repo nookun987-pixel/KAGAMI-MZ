@@ -1,0 +1,28 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{background:var(--void);padding:26px;box-sizing:border-box;min-height:300px;display:flex;align-items:center;justify-content:center}
+  .card{width:380px;border:1px solid var(--hairline);background:var(--void-mid);padding:26px;position:relative;overflow:hidden}
+  .card::before{content:'';position:absolute;width:260px;height:260px;right:-80px;top:-90px;background:radial-gradient(circle,rgba(143,0,255,0.16),transparent 70%);pointer-events:none}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--violet-glow);position:relative}
+  .ttl{font-family:var(--font-serif);font-weight:700;font-size:34px;letter-spacing:0.08em;color:var(--porcelain);margin:14px 0 10px;line-height:1.05;position:relative}
+  .poem{font-family:var(--font-serif);font-size:15px;color:var(--porcelain-dim);line-height:1.6;position:relative}
+  .meta{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;color:var(--silver-dim);margin-top:18px;display:flex;justify-content:space-between;position:relative}
+  .cta{font-family:var(--font-mono);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--void);background:var(--porcelain);display:inline-block;padding:11px 22px;margin-top:18px;position:relative}
+</style>
+</head>
+<body>
+  <div class="card mz-frame">
+    <div class="lab">Current Transmission</div>
+    <div class="ttl">Porcelain<br>Ascension</div>
+    <div class="poem">A white shell rises from the void.</div>
+    <div class="cta">Listen now →</div>
+    <div class="meta"><span>05 / LAUNCH ARC</span><span>REL 25.05.2026</span></div>
+  </div>
+</body>
+</html>
