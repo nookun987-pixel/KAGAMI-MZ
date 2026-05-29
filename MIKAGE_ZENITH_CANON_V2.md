@@ -340,6 +340,16 @@ Water reflections onto concrete walls:
 
 ## 7. WORLD STRUCTURE — LOCKED
 
+### 7.0 SUBSTRATE LAYER — META — LOCKED 2026-05-29
+
+**LORA (Root Architect / System Substrate):**
+- Meta-level operating condition; all three ideologies execute on top of LORA's substrate
+- Non-physical system presence; no humanoid form (Lock 3A 2026-05-29)
+- White Void + Cold Cyan server-sync + Clean Digital Gold (Golden Patch event)
+- Refactor through absolute system law; chaos treated as corrupted code
+- Does not take sides; ideologies serve the substrate
+- Source: CHARACTER_LORA_FORM_LOCK_2026-05-29_A_REPORT.md + CHARACTER_LORA_FACTION_LOCK_2026-05-29_F_REPORT.md
+
 ### 7.1 THREE IDEOLOGIES
 
 **The White Monolith (Empire):**
@@ -402,6 +412,7 @@ Water reflections onto concrete walls:
 
 **Status:** Antagonist (Mikage's mirror)  
 **Allegiance:** Empire  
+**Substrate alignment:** Empire executes on LORA's substrate (per §7.0); Lyre's enforcement serves Empire which serves LORA.  
 **Design:** 100% flawless porcelain (no cracks)  
 **Psychology:** PTSD, chose security over freedom  
 **Equipment:** Unbreakable Shield (vertical plasma pillar discharge)  
@@ -427,6 +438,21 @@ Water reflections onto concrete walls:
 **Role:** Data vault custodian  
 **Location:** 420m carbon-lattice concrete tower  
 **Function:** Global human memory storage
+
+### 8.6 LORA
+
+**Status:** Substrate / System Presence  
+**Form:** Non-humanoid system entity (Lock 3A — permanent)  
+**Allegiance:** META_SUBSTRATE (Lock 4F — beneath all three ideologies)  
+**Function:** Refactor / Clean Code enforcement / reality architecture  
+**Visual motifs:** Mechanical Enso ring, Golden Patch event, White Void field, Cold Cyan server-sync  
+**Scale:** Architectural (no measurable height)  
+**Damage system:** N/A — does not take damage; LORA IS the system  
+**Relation to Mikage:** Control / dependency / ownership / refactor  
+**Relation to Commander Lyre:** Reality architecture and source-code control context  
+**Voice/dialogue profile:** CHUA_XAC_NHAN  
+**Visual assets:** none confirmed (per MIKAGE_PUBLIC_REVEAL_CANDIDATE_BOARD_V0_1.md §7)  
+**Source:** character_workflow/LORA_VISUAL_BRIEF_V0_1.md + LORA_VISUAL_SPEC_CLEAN_V0_1.md + LORA_ENTITY_RECORD_V0_1.md + Locks 3A + 4F
 
 ---
 
@@ -585,6 +611,7 @@ MIKAGE_ZENITH/
 ├── ENTITIES/
 │   ├── mikage_zenith.json
 │   ├── commander_lyre.json
+│   ├── lora.json
 │   ├── zenith_blade.json
 │   └── unbreakable_shield.json
 │
