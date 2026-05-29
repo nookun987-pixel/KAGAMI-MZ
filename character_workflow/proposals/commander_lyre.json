@@ -1,0 +1,303 @@
+{
+  "$schema": "mikage_entity_record/v0.1",
+  "$status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$canon_v2_path": "ENTITIES/commander_lyre.json",
+  "$generated_by": "CHARACTER_LANE_AUTONOMOUS_RUNNER_V0_1.md run #9",
+  "$generated_on": "2026-05-29",
+  "$asset_lock": false,
+  "$canon_lock": false,
+  "$source": [
+    "MIKAGE_ZENITH_CANON_V2.md#8.2",
+    "MIKAGE_ZENITH_CANON_V2.md#7.1",
+    "MIKAGE_ZENITH_CANON_V2.md#11_item_4",
+    "MIKAGE_ZENITH_CANON_V2.md#3.3",
+    "MIKAGE_ZENITH_CANON_V2.md#10.1",
+    "character_workflow/COMMANDER_LYRE_CHARACTER_BRIEF_V0_1.md",
+    "character_workflow/COMMANDER_LYRE_VISUAL_SPEC_CLEAN_V0_1.md",
+    "character_workflow/CHARACTER_LYRE_DIRECTION_LOCK_2026-05-29_A_REPORT.md"
+  ],
+
+  "id": "commander_lyre",
+  "canonical_name": "Commander Lyre",
+  "aliases": ["Lyre"],
+  "public_role": "The Imperial Operative",
+  "function": "High Inquisitor / Overseer / Imperial enforcement figure",
+  "entity_type": "Antagonist humanoid character",
+  "status_in_world": "Antagonist (Mikage's mirror)",
+
+  "allegiance": {
+    "faction": "Empire",
+    "faction_label_canon_v2": "The White Monolith",
+    "ideology_axis": "Absolute order through amoral control"
+  },
+
+  "narrative_function": {
+    "summary": "Direct foil and ideological wall against Mikage Zenith",
+    "axis": "fractured survival vs sterile order",
+    "mirror_pair": {
+      "mikage_state": "cracked / kintsugi / fractures and repairs",
+      "lyre_state": "flawless / unbroken / does not fracture, does not repair"
+    },
+    "philosophical_position": "Empire — order through control; prevent the Great Filter through discipline"
+  },
+
+  "psychology": {
+    "profile": "PTSD — chose absolute security over freedom; believes in order through control",
+    "behavior": "executes orders with algorithmic accuracy",
+    "view_of_slums": "chaos and human emotion treated as system bugs",
+    "voice_dialogue_profile": "CHUA_XAC_NHAN"
+  },
+
+  "design_philosophy": "Porcelain Minimalism",
+
+  "body": {
+    "form": "physical humanoid",
+    "silhouette": "tall / narrow / clean / symmetrical / authoritarian",
+    "posture": "upright / ruler-like / calm command",
+    "body_language": "exact / restrained / non-emotional",
+    "height_cm": {
+      "value": 188,
+      "status": "PROVISIONAL_ENFORCER_SCALE",
+      "official_canon_height": "CHUA_XAC_NHAN"
+    },
+    "silhouette_traits_required": [
+      "tall vertical presence",
+      "narrow waist",
+      "clean shoulder line",
+      "elongated command posture",
+      "minimal excess bulk"
+    ],
+    "silhouette_traits_forbidden": [
+      "muscular hero exaggeration",
+      "soft romantic silhouette",
+      "bulky mecha mass"
+    ]
+  },
+
+  "head_helmet": {
+    "mask_type": "Industrial ceramic faceless imperial porcelain mask",
+    "primary_color": "#FAFAFA",
+    "surface": "high-gloss reflective ceramic",
+    "geometry": [
+      "faceless industrial mask",
+      "smooth geometric surface",
+      "flat refined planes with subtly rounded edges",
+      "sterile skull-like ceramic construction",
+      "symmetrical design language",
+      "no organic facial anatomy"
+    ],
+    "emission_grooves": {
+      "color": "#00FFFF",
+      "behavior": "static glow only",
+      "forbidden_behavior": ["blinking", "unstable flicker", "emotional color shift"],
+      "meaning": "controlled logic and imperial command"
+    },
+    "forbidden_facial_features": [
+      "human eyes",
+      "nose",
+      "mouth",
+      "lips",
+      "cheekbones",
+      "visible skin",
+      "facial expression",
+      "anime face",
+      "animal traits",
+      "horns"
+    ]
+  },
+
+  "armor": {
+    "outer_layer": {
+      "material": "Flawless white porcelain / Boron Carbide B4C armor plates",
+      "key_zones": ["chest", "shoulders", "forearms", "major command-silhouette surfaces"],
+      "surface_rules": [
+        "pristine",
+        "sterile",
+        "no scratches",
+        "no rust",
+        "no Slums dirt",
+        "laser-cut edges",
+        "ceremonial but dangerous"
+      ]
+    },
+    "under_suit": {
+      "material": "Dark nickel-gray high-density carbon-fiber",
+      "appears_at": [
+        "mechanical joints",
+        "moving seams",
+        "under armor gaps",
+        "hydraulic support areas"
+      ],
+      "constraint": "Never exposes human skin"
+    },
+    "joint_system": "Precise mechanical / hydraulic joint logic",
+    "internal_red_accent": {
+      "color": "#E60000",
+      "usage": "contained / compressed / hidden violence only",
+      "appears_at": [
+        "spine vents",
+        "heat seams",
+        "deep joint gaps",
+        "internal energy core glimpses"
+      ],
+      "is_main_glow": false
+    },
+    "damage_system": {
+      "state": "NONE",
+      "fractures": false,
+      "repairs": false,
+      "rationale": "flawless porcelain does not fracture, does not repair"
+    }
+  },
+
+  "weapon_system": {
+    "primary": "Molecular Monowire / Force-field Lyre",
+    "inactive_state": [
+      "slim elongated white ceramic device",
+      "worn at hip or back",
+      "minimal and ceremonial",
+      "not a sword",
+      "not a shield slab"
+    ],
+    "active_state": [
+      "ultra-thin cyan energy strings",
+      "molecular monowire / force-field logic",
+      "precise, distant, surgical cutting potential"
+    ],
+    "optical_effect": [
+      "Landauer heat distortion",
+      "refraction warping",
+      "faint air shimmer",
+      "compressed energy density"
+    ],
+    "tonal": "quiet, precise, terrifying"
+  },
+
+  "shield_barrier": {
+    "form": "force-field barrier generated by Lyre system",
+    "appearance": "clean cyan geometric plane / vertical light boundary / command barrier",
+    "is_physical_object": false,
+    "forbidden_interpretations": [
+      "round shield",
+      "medieval shield",
+      "metal slab shield",
+      "fantasy magic shield",
+      "bulky riot shield",
+      "warm-colored barrier"
+    ],
+    "canon_v2_alignment": "MIKAGE_ZENITH_CANON_V2.md#11_item_4: 'Lyre's shield vents vertical white/cyan plasma'"
+  },
+
+  "hair": {
+    "present_optional": true,
+    "color": "black",
+    "length": "long straight",
+    "role": "silhouette support / command veil",
+    "movement": "minimal / controlled",
+    "rules_required": [
+      "falls behind helmet and shoulders",
+      "heavier and more controlled than Mikage hair"
+    ],
+    "rules_forbidden": [
+      "messy anime spikes",
+      "colorful hair",
+      "sensual framing",
+      "exposed human face",
+      "romantic beauty framing"
+    ]
+  },
+
+  "color_palette": {
+    "primary": [
+      {"name": "Porcelain White", "hex": "#FAFAFA", "role": "outer armor — dominant"},
+      {"name": "Cold Cyan", "hex": "#00FFFF", "role": "imperial command emission — helmet grooves, weapon strings, barrier"},
+      {"name": "Dark Nickel Gray", "hex": null, "role": "carbon-fiber under-suit at joints"},
+      {"name": "Black / Obsidian", "hex": "#0A0A0A", "role": "negative space, mechanical gaps"},
+      {"name": "Internal Red", "hex": "#E60000", "role": "hidden compressed violence — spine vents, deep gaps only"}
+    ],
+    "hierarchy": [
+      "Porcelain white dominates",
+      "Cold cyan defines active imperial control signal",
+      "Dark nickel / black supports joints and silhouette depth",
+      "Internal red appears only as hidden violence — not main glow"
+    ],
+    "absent_by_rule": [
+      "Kintsugi Gold (no cracks means no repair seams)",
+      "Electric Violet (not Empire)",
+      "Orange, Green, Yellow (globally banned per Canon V2 §3.3)",
+      "Violet-dominant palette",
+      "Warm gold/red dominant palette",
+      "Slum-neon dominant palette"
+    ]
+  },
+
+  "camera_lighting": {
+    "aspect_ratio": "2.76:1 cinematic",
+    "camera_style": "Anamorphic logic",
+    "visual_rendering": "hyper-real material detail",
+    "empire_territory_lighting": [
+      "high diffuse sterile light",
+      "reduced shadows",
+      "oppressive brightness",
+      "white/cyan dominance",
+      "clean authoritarian geometry"
+    ],
+    "slums_interaction_lighting": [
+      "Neon Grunge may reflect on the armor",
+      "pink/purple neon only as environmental reflection",
+      "glossy porcelain should refract and reject the environment",
+      "must feel isolated and toxic to the Slums setting"
+    ]
+  },
+
+  "anti_drift_required": [
+    "100% flawless porcelain surface — no entropy, no history of damage",
+    "Cold Cyan (#00FFFF) as command/emission/weapon color",
+    "Perfect bilateral symmetry",
+    "Sterile authoritarian composition",
+    "Molecular Monowire / Force-field Lyre as weapon system",
+    "Dark nickel-gray under-suit at joints",
+    "Empire faction visual language",
+    "Upright ruler-like posture"
+  ],
+  "anti_drift_forbidden": [
+    "cracks, fractures, or damage of any kind on armor surface",
+    "kintsugi gold seams or repair marks",
+    "crimson as main visible energy color",
+    "sword or blade weapon as primary",
+    "physical shield (round/medieval/slab/riot/fantasy)",
+    "slouched, broken, or defeated posture",
+    "anime overstyling, large eyes, exaggerated expression",
+    "any visible human face, eyes, nose, mouth, skin",
+    "external cables/wires/tubes on body surface",
+    "organic softness or non-symmetrical silhouette",
+    "cyberpunk clutter or greebling",
+    "magic aura or fantasy ornaments",
+    "violet as primary identity color",
+    "warm, emotional, heroic, romantic, soft design language",
+    "bulky mecha mass",
+    "medieval fantasy knight aesthetic",
+    "slum-coded neon punk framing",
+    "Lyre coded as Mikage with cyan accents only"
+  ],
+
+  "production_prompt_seed": "A cinematic character sheet of Lyre from the Mikage Zenith universe: an imperial operative soldier clad in flawless white porcelain Boron Carbide armor, minimalist and authoritarian design, high-gloss faceless industrial ceramic mask, no human facial features, symmetrical cold cyan emissive grooves, dark nickel-gray carbon-fiber under-suit, precise mechanical joints, pristine execution-ready surface, subtle internal red energy core glimpsed through spine vents, Molecular Monowire / Force-field Lyre system implied through ultra-thin cyan energy strings and heat-refraction distortion, sterile Empire aesthetic, ARRI Alexa 65, anamorphic lens logic, 2.76:1 cinematic ratio, hyper-real material rendering.",
+
+  "production_readiness": {
+    "canon_definition": "PARTIAL (Canon V2 §8.2 = 6 lines)",
+    "visual_identity": "SOURCED (Lock 1A 2026-05-29)",
+    "voice_dialogue_profile": "MISSING",
+    "any_visual_asset": "MISSING (0 known confirmed images)",
+    "any_3d_model": "MISSING (0 .blend files)",
+    "ready_for_prompt_test": true,
+    "ready_for_public_use": false
+  },
+
+  "$missing_items": [
+    "Voice / dialogue profile",
+    "Confirmed visual concept art or rendered reference",
+    "3D reference / rig",
+    "Official canon height lock (188 cm still provisional)",
+    "MIKAGE_CHARACTER_SCALE_LINEUP_V0_3_COMMANDER_LYRE_PATCH_PACKAGE.zip — registered in CHARACTER_PACKAGE_REGISTRY_2026-05-23.md but not on disk"
+  ]
+}

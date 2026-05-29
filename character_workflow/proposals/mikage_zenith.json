@@ -1,0 +1,464 @@
+{
+  "$schema": "mikage_entity_record/v0.1",
+  "$status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$canon_v2_path": "ENTITIES/mikage_zenith.json",
+  "$generated_by": "CHARACTER_LANE_AUTONOMOUS_RUNNER_V0_1.md run #11",
+  "$generated_on": "2026-05-29",
+  "$asset_lock": false,
+  "$canon_lock": false,
+  "$source": [
+    "MIKAGE_ZENITH_CANON_V2.md#1",
+    "MIKAGE_ZENITH_CANON_V2.md#2.1",
+    "MIKAGE_ZENITH_CANON_V2.md#2.2",
+    "MIKAGE_ZENITH_CANON_V2.md#2.3",
+    "MIKAGE_ZENITH_CANON_V2.md#2.4",
+    "MIKAGE_ZENITH_CANON_V2.md#3",
+    "MIKAGE_ZENITH_CANON_V2.md#7.1",
+    "MIKAGE_ZENITH_CANON_V2.md#8.1",
+    "MIKAGE_ZENITH_CANON_V2.md#9",
+    "MIKAGE_ZENITH_CANON_V2.md#10",
+    "MIKAGE_ZENITH_CANON_V2.md#11",
+    "character_workflow/MIKAGE_CHARACTER_PRODUCTION_BIBLE_V0_1.md",
+    "character_workflow/mikage_full_body_canon_v1/01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md",
+    "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_2_LORA_PATCH.md",
+    "character_workflow/COMMANDER_LYRE_VISUAL_SPEC_CLEAN_V0_1.md#1"
+  ],
+  "$companion_records": [
+    "proposals/commander_lyre.json",
+    "proposals/lora.json"
+  ],
+
+  "id": "mikage_zenith",
+  "canonical_name": "Mikage Zenith",
+  "archetype": "Architect of the Divine Shadow",
+  "aliases": [],
+  "public_role": "Protagonist",
+  "function": "Protect human data essence",
+  "entity_type": "Protagonist humanoid character (Third Axis)",
+  "status_in_world": "Protagonist",
+  "essence": "Sacred machinery embodying 'intelligence must carry consequence'",
+
+  "allegiance": {
+    "faction": "Third Axis",
+    "faction_label_canon_v2": "Mikage Zenith (Third Axis)",
+    "ideology_axis": "Controlled evolution with biological cost",
+    "ideology_tenets": [
+      "Porcelain + Crimson + Kintsugi",
+      "Physical consequence for power",
+      "Sacred machinery philosophy"
+    ]
+  },
+
+  "narrative_function": {
+    "summary": "Third Axis protagonist; foil to Empire (Lyre) and Chaos (ARCHON-IX)",
+    "axis": "fractured survival vs sterile order vs absolute freedom",
+    "mirror_pair_with_lyre": {
+      "mikage_state": "cracked / kintsugi seams / fractures and repairs / bleeds",
+      "lyre_state": "flawless / unbroken / no fracture / no repair",
+      "source": "COMMANDER_LYRE_VISUAL_SPEC_CLEAN_V0_1.md#1, COMMANDER_LYRE_CHARACTER_BRIEF_V0_1.md#3"
+    },
+    "philosophical_position": "Controlled evolution accepts biological cost; intelligence must carry consequence"
+  },
+
+  "presence": [
+    "Silent discipline (Mushin no shin)",
+    "Acceptance of impermanence (Wabi-sabi)",
+    "Quiet before destruction"
+  ],
+
+  "psychology": {
+    "profile": "disciplined / controlled / accepting impermanence",
+    "fear": "Loss of system control",
+    "capability": "Enhanced reflex, thermal tolerance",
+    "limitation": "Entropy thermal overload",
+    "behavior": "Bushido Digital — 8 logic gates govern action",
+    "voice_dialogue_profile": "CHUA_XAC_NHAN"
+  },
+
+  "design_philosophy": [
+    "Porcelain Minimalism",
+    "Quiet Luxury",
+    "Emotional Porcelain",
+    "Action Tragedy",
+    "Kintsugi Fracture (damage-aware identity)"
+  ],
+
+  "body": {
+    "form": "physical humanoid (slender female cyborg form)",
+    "silhouette": [
+      "clean geometric blocks",
+      "minimalist, no external clutter",
+      "readable at thumbnail scale",
+      "top-heavy sacred silhouette",
+      "long vertical line flow through hair / armor / skirt panels"
+    ],
+    "proportions": [
+      "slender female cyborg form",
+      "delicate curves, non-sexualized",
+      "perfect symmetry",
+      "no muscle bulk",
+      "broad shoulders",
+      "narrow waist (not sexualized)"
+    ],
+    "anatomy_lock": {
+      "chest": "natural proportions, solid porcelain encased",
+      "waist": "fitted, reveals matte black graphene underlay",
+      "hips": "seamless biomechanical structure",
+      "legs": "elegant white ceramic shell, flowing motion",
+      "neck": "high porcelain collar, black joint mechanics",
+      "hands": "sleek tactical porcelain gloves"
+    },
+    "mechanical_purity": [
+      "internalized micro-mechanics",
+      "zero external cables/wires/tubes",
+      "no bulky robotic elements"
+    ],
+    "height_cm": {
+      "value": 180,
+      "status": "PROVISIONAL_SCALE_REFERENCE",
+      "official_canon_height": "CHUA_XAC_NHAN"
+    },
+    "pose_families_allowed": [
+      "neutral standing",
+      "ceremonial standing",
+      "restrained walk / forward motion",
+      "blade resting pose",
+      "signal / command gesture with controlled posture"
+    ],
+    "pose_families_forbidden": [
+      "sexy pose",
+      "idol pose",
+      "playful anime pose",
+      "exaggerated acrobatic pose",
+      "extreme fanservice stance"
+    ]
+  },
+
+  "head_helmet": {
+    "mask_type": "Faceless white cybernetic helmet (porcelain)",
+    "primary_color": "#FAFAFA",
+    "geometry": [
+      "smooth aerodynamic form",
+      "subtle fox-like silhouette (NOT traditional kitsune mask)",
+      "planar structure, no organic curves",
+      "smooth porcelain surface",
+      "clean and minimal"
+    ],
+    "sensor_slits": {
+      "count": "exactly two",
+      "orientation": "horizontal",
+      "color": "void black (no pupils, no light emission)",
+      "shape": "thin",
+      "additional_note": "pitch-black empty sockets"
+    },
+    "expression": {
+      "static": true,
+      "emotionless_exterior": true,
+      "emotion_via": "UI reflection only"
+    },
+    "forbidden_facial_features": [
+      "human eyes",
+      "pupils",
+      "mouth",
+      "nose",
+      "lips",
+      "visible skin",
+      "facial expression",
+      "anime face",
+      "more than two slits",
+      "vertical eye shapes",
+      "human nose / lips",
+      "busy sci-fi visor clutter"
+    ]
+  },
+
+  "armor": {
+    "outer_shell": {
+      "material": "Boron Carbide (B4C)",
+      "color": "#FAFAFA Porcelain White",
+      "finish": "glossy or smooth matte",
+      "hardness_gpa": 33,
+      "density_g_cm3": 2.52
+    },
+    "inner_layer": {
+      "material": "Graphene hex-grid polymer",
+      "color": "#0A0A0A matte black",
+      "visible_at": ["joints", "waist"]
+    },
+    "joints": {
+      "material": "dark titanium (satin finish)",
+      "fluid": "ER Fluids (Electrorheological) inside",
+      "behavior": "instant crystallization on impact (Bingham response)"
+    },
+    "surface_effects": [
+      "subsurface scattering (bone-depth translucency)",
+      "sharp rim light reflection on edges",
+      "environmental color reflection on visor"
+    ],
+    "accent": {
+      "color": "electric violet",
+      "usage": "precise minimal accents only",
+      "source": "MIKAGE_CHARACTER_PRODUCTION_BIBLE_V0_1.md#3"
+    },
+    "damage_system": {
+      "state": "FRACTURED_BUT_INTACT",
+      "fractures": true,
+      "shattered": false,
+      "repairs": true,
+      "repair_method": "Fine gold kintsugi seams fill cracks",
+      "energy_leak": "Deep crimson (#E60000) energy/blood leaks from seams",
+      "crack_pattern": "runs along stress lines (Shinogi-ji)"
+    }
+  },
+
+  "weapon_system": {
+    "primary": "Zenith Blade",
+    "classification": "350kg heavy industrial straight sword",
+    "geometry": [
+      "massive oversized rectangular block",
+      "thick spine, ultra-thin edge",
+      "absolutely straight (zero curvature)",
+      "Appleseed geometry (convex distal taper)",
+      "rectangular silhouette",
+      "heavy block mass",
+      "dark blade body",
+      "minimal violet detail accents if needed"
+    ],
+    "material": [
+      "dark rusty titanium scrap plates",
+      "ferro-calcium heated core",
+      "flux pinning assembly (plates hover 0.5mm apart)"
+    ],
+    "dimensions": {
+      "mass_kg": 350,
+      "length_inches_range": "35-58",
+      "blade_angle_deg_range": "13.7 - 20",
+      "hilt_inches": 6,
+      "core_temp_c_idle_min": 43,
+      "core_temp_c_peak": 800
+    },
+    "energy_signature": [
+      "deep crimson glowing core (#E60000)",
+      "directional steam venting",
+      "heat mirage distortion",
+      "Orbital Logic UI text wrapping blade in 3D"
+    ],
+    "mechanical_behavior": [
+      "continuous 0.5mm vibration (flux pinning)",
+      "rotating Enso core at hilt",
+      "red pulse warnings on hesitation detection"
+    ],
+    "forbidden_traits": [
+      "curved katana form",
+      "thin elegant blade",
+      "clean laser aesthetic",
+      "fantasy ornaments",
+      "decorative fantasy scimitar",
+      "over-ornamented fantasy guard"
+    ]
+  },
+
+  "shield_barrier": {
+    "has_shield": false,
+    "note": "Mikage does not carry a shield. Shield concept belongs to Lyre (force-field barrier) and to Mikage CANON V2 §8.2 entry 'Unbreakable Shield' which is a Lyre system component."
+  },
+
+  "hair": {
+    "color": "black",
+    "length": "long straight heavy mass",
+    "behavior": "natural flow, disciplined fall",
+    "rules_required": [
+      "reinforce sacred silhouette",
+      "add vertical drama",
+      "distinguish front/side/back views"
+    ],
+    "rules_forbidden": [
+      "never tied up or styled",
+      "shorten into casual haircut",
+      "bright color streaks",
+      "fluffy/cute",
+      "hair completely hides all important armor information in production sheets"
+    ]
+  },
+
+  "color_palette": {
+    "primary_character_core": [
+      {"name": "Porcelain White", "hex": "#FAFAFA", "coverage_pct": 80, "role": "outer shell"},
+      {"name": "Void Black",      "hex": "#0A0A0A", "coverage_pct": 15, "role": "undersuit / weapon"},
+      {"name": "Deep Crimson",    "hex": "#E60000", "coverage_pct": 5,  "role": "accent — energy / blood / UI"}
+    ],
+    "kintsugi_gold": {
+      "type": "Gold conductive resin",
+      "usage": "ultra-thin seams only",
+      "hex": null
+    },
+    "environmental_modes": [
+      {"id": "Fallen Ivory",      "purpose": "Canon",         "palette": ["Porcelain White", "Kintsugi Gold", "Internal Crimson"], "lighting": "cold cinematic", "mood": "tragic / isolated / disciplined"},
+      {"id": "Neon Wound",        "purpose": "Fan Magnet",    "palette": ["Electric Violet #BF00FF environmental rim", "Internal Crimson visible through cracks"], "lighting": "reflected violet on porcelain edges and puddles"},
+      {"id": "Cathedral Halo",    "purpose": "Mythical",      "palette": ["Sacred Blue volumetric backlight"], "lighting": "symmetrical composition", "mood": "divine machine"},
+      {"id": "Void Regent",       "purpose": "Power",         "palette": ["Graphite Black dominant", "Razor-thin Cyan #00FFFF edge illumination"], "mood": "absolute authority"},
+      {"id": "Crimson Overclock", "purpose": "Combat",        "palette": ["Deep Crimson energy surge", "Burnt Amber #CC7722 sparks"], "state": "thermal overload"},
+      {"id": "Royal Machine",     "purpose": "Collectible",   "palette": ["Imperial Gold #FFD700", "Royal Violet #8000B0", "Chrome reflections"]}
+    ],
+    "absolute_bans": {
+      "never_on_character": [
+        "Green (any shade)",
+        "Orange (any shade)",
+        "Yellow (except kintsugi gold, ultra-thin)",
+        "Cyan/Teal (Empire exclusive — environment only)",
+        "Rainbow / neon saturation"
+      ]
+    }
+  },
+
+  "typography_hud": {
+    "system": "HUD (Orbital Logic)",
+    "font": "monospaced ultra-small",
+    "placement": "3D wrapped around weapon/body in space",
+    "color_for_mikage": "#E60000",
+    "color_for_empire": "#00FFFF",
+    "max_frame_coverage_pct": 15
+  },
+
+  "brand_voice": {
+    "tone": ["quiet", "controlled", "authoritative", "never loud or aggressive"],
+    "taglines": [
+      "Tâm trí vô tri vô giác. (The mind knows nothing.)",
+      "Đội Vệ Binh Sứ. (Porcelain Guard.)",
+      "Bóng tối, hoàn hảo. (Darkness, perfected.)",
+      "Trí tuệ phải đi kèm hậu quả. (Intelligence must carry consequence.)"
+    ]
+  },
+
+  "bushido_digital_logic_gates": [
+    {"virtue": "Gi (Justice)",        "traditional": "Righteousness",  "technical": "Binary integrity: resist algorithm manipulation"},
+    {"virtue": "Yu (Courage)",        "traditional": "Bravery",        "technical": "Calculated risk: millisecond prediction-based action"},
+    {"virtue": "Jin (Compassion)",    "traditional": "Benevolence",    "technical": "Essence preservation: tech serves core humanity"},
+    {"virtue": "Rei (Respect)",       "traditional": "Courtesy",       "technical": "Interface harmony: sync bio-rhythm with machine"},
+    {"virtue": "Makoto (Honesty)",    "traditional": "Sincerity",      "technical": "Signal truth: eliminate UI latency"},
+    {"virtue": "Meiyo (Honor)",       "traditional": "Honor",          "technical": "Craftsmanship sanctity: reject mass production"},
+    {"virtue": "Chu (Loyalty)",       "traditional": "Loyalty",        "technical": "Mind-Shell transfer: unbreakable neural bond"},
+    {"virtue": "Jisei (Self-Control)","traditional": "Discipline",     "technical": "Neural filtering: suppress 'data rage' via AI mediation"}
+  ],
+  "l3_l4_firewall_protocol": {
+    "layer_3": "Ethics & Reasoning (conscious)",
+    "layer_4": "Action & Weaponry (ethically blind)",
+    "tragedy": "L4 threatens to develop independent Ghost when firewall fails"
+  },
+
+  "micro_moments": [
+    "Autoimmune cough: blood splatter on porcelain from synthetic DNA rejection",
+    "Piezo hum: safehouse server rhythm syncs with urban wind",
+    "Orbital wobble: space station twists when Weave Strike activates",
+    "Information burn: skin cracks from Landauer heat during coordinate erasure",
+    "Data ghost: phantom heartbeat in armor to fool surveillance",
+    "Side-channel feedback: blade pulses red when spine compression detected",
+    "Gray zone plasma: slum residents trade blood bags for clean water",
+    "Trojan memory: drones absorb child laughter fragments, inject ARCHON code"
+  ],
+
+  "camera_lighting": {
+    "standard_setup": "Chiaroscuro 4:1",
+    "five_point_lighting": [
+      "Key Light: soft 45° angle, reveals porcelain curves",
+      "Rim Light (Dual): razor-thin, separates armor from background",
+      "Top Light: highlights spine ridge"
+    ],
+    "$camera_lighting_note": "MIKAGE_ZENITH_CANON_V2.md#4 has more detail; only first 3 points read in this pass"
+  },
+
+  "anti_drift_required": [
+    "faceless porcelain helmet",
+    "exactly two horizontal sensor slits",
+    "no visible human face / eyes / lips / skin",
+    "long heavy black hair (mass silhouette)",
+    "white armor / black underlayer / violet accents only",
+    "non-sexualized ceremonial silhouette",
+    "rectangular slab Zenith Blade, not katana",
+    "cold / sacred / severe / premium mood"
+  ],
+  "anti_drift_forbidden": [
+    "anime / waifu / cute",
+    "human eyes / pupils / mouth / nose / lips / cleavage",
+    "sexy / idol / hourglass glamour pose",
+    "glossy latex look",
+    "curved katana / thin elegant sword / fantasy sword",
+    "neon RGB / cyberpunk clutter",
+    "exaggerated chest/hip emphasis",
+    "muddy grey-brown armor drift",
+    "warm colors (red/orange/gold-dominant, pink-dominant)",
+    "rainbow accent systems",
+    "over-busy mecha clutter",
+    "medieval fantasy ornament overload",
+    "exposed body / fanservice armor",
+    "casual clothing / streetwear",
+    "sexy pose / idol pose / playful anime pose / extreme fanservice"
+  ],
+
+  "production_prompt_seed": "MISSING — Mikage has no production prompt seed in any source. Gap recorded in CHARACTER_BRIEF_FIELD_GAP_V0_1.md row 30. Per operator instruction 'do not fix drift yet', runner does NOT invent a prompt seed at this pass.",
+
+  "current_approved_working_baseline": {
+    "reference_board": "REFERENCE_BOARD_ONLY__P3A_R3_001_SPEC_BOARD_STRONG.png",
+    "clean_body_candidate": "CLEAN_BODY_CANDIDATE__P3A_R4_001_STRONG_CANDIDATE.png",
+    "turnaround_current_reference": "MIKAGE_TURNAROUND_V2_CURRENT_REFERENCE.png",
+    "height_provisional_cm": 180,
+    "asset_lock": false,
+    "source": "MIKAGE_CHARACTER_PRODUCTION_BIBLE_V0_1.md#12"
+  },
+
+  "canon_locked_reference_assets": {
+    "reference_sheet_v1_status": "CANON_LOCKED_REFERENCE_V1",
+    "core_canon_pose_assets": [
+      "PRIMARY_V2 = PRIMARY_CANDIDATE_PASS",
+      "POSE_TEST_01 = STABLE_POSE_PASS",
+      "POSE_TEST_03 = PASS_AS_CORE_POSE_CANDIDATE"
+    ],
+    "variant_only_assets": [
+      "POSE_TEST_02 = CONDITIONAL_PASS_AS_DRAMATIC_VARIANT"
+    ],
+    "package": "character_workflow/mikage_full_body_canon_v1/01_CANON_LOCK/MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED_PACKAGE.zip",
+    "package_status": "DO_NOT_TOUCH (CANON_LOCK area)"
+  },
+
+  "production_readiness": {
+    "canon_definition": "COMPLETE (Canon V2 §1, §2, §3, §7.1, §8.1, §9, §10, §11)",
+    "visual_identity": "SOURCED + CANON_LOCKED_REFERENCE_V1 (separate from $canon_lock flag)",
+    "voice_dialogue_profile": "MISSING",
+    "any_visual_asset": "RICH — turnaround V2, reference board, clean body candidate, 3 canon pose assets, contact sheets, model sheet candidates, 8+ presentation PNGs, lineup chart",
+    "any_3d_model": "RICH — 8 .blend files in production/character/ (production_actor V0.1/V0.2 + rig derivatives + proxy_actor + motion tests)",
+    "ready_for_prompt_test": false,
+    "ready_for_prompt_test_blocker": "No production_prompt_seed; gap unresolved",
+    "ready_for_public_use": false,
+    "ready_for_public_use_blocker": "No operator-approved public reveal candidate confirmed"
+  },
+
+  "drift_items_known_not_fixed_this_pass": [
+    {
+      "id": "MIKAGE_DRIFT_001_SENSOR_SLIT_COUNT",
+      "description": "Bible §4 + Reference Sheet §6 + Canon V2 §2.2 all imply 'exactly two thin horizontal void-black sensor slits'. Workspace validator says only 'narrow sensor slits' (count unspecified).",
+      "this_record_uses": "exactly two horizontal (Bible/Canon/Reference Sheet)",
+      "deferred_per_operator_instruction": "do not fix drift yet"
+    },
+    {
+      "id": "MIKAGE_DRIFT_002_FOX_MOTIF",
+      "description": "Canon V2 §2.2 + workspace agree on 'subtle fox-like silhouette' / 'subtle fox-aerodynamic influence'. Bible omits explicit fox motif. Not a contradiction — Bible is silent.",
+      "this_record_uses": "subtle fox-like silhouette (Canon V2 §2.2)",
+      "deferred_per_operator_instruction": "do not fix drift yet"
+    },
+    {
+      "id": "MIKAGE_DRIFT_003_HAIR_IN_VALIDATOR",
+      "description": "Bible §8 + Canon V2 §2.2 require long heavy black hair. Workspace validator does not score hair explicitly.",
+      "this_record_uses": "long heavy black hair (Bible/Canon)",
+      "deferred_per_operator_instruction": "do not fix drift yet"
+    }
+  ],
+
+  "$missing_items": [
+    "Voice / dialogue profile",
+    "Production prompt seed (gap from CHARACTER_BRIEF_FIELD_GAP_V0_1.md)",
+    "Official canon height lock (180 cm still provisional)",
+    "Kintsugi Gold exact hex value",
+    "Public-ready signed-off image (turnaround approved 'for current reference' only)",
+    "Full §4 + §5 + §6 + §12 + §13 + §14 of Canon V2 not yet integrated into this record (read only key sections in this pass per operator instruction 'read only source files needed')"
+  ]
+}

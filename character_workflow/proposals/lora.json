@@ -1,0 +1,195 @@
+{
+  "$schema": "mikage_entity_record/v0.1",
+  "$status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$canon_v2_path": "ENTITIES/lora.json",
+  "$canon_v2_alignment": "PENDING — LORA absent from MIKAGE_ZENITH_CANON_V2.md; substrate addition deferred under CANON_V2_UPDATE_TASKS",
+  "$generated_by": "CHARACTER_LANE_AUTONOMOUS_RUNNER_V0_1.md run #9",
+  "$generated_on": "2026-05-29",
+  "$asset_lock": false,
+  "$canon_lock": false,
+  "$source": [
+    "character_workflow/LORA_ENTITY_RECORD_V0_1.md",
+    "character_workflow/LORA_VISUAL_BRIEF_V0_1.md",
+    "character_workflow/LORA_VISUAL_SPEC_CLEAN_V0_1.md",
+    "character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_2_LORA_PATCH.md",
+    "character_workflow/CHARACTER_PACKAGE_REGISTRY_2026-05-23.md",
+    "character_workflow/CHARACTER_LORA_FORM_LOCK_2026-05-29_A_REPORT.md",
+    "character_workflow/CHARACTER_LORA_FACTION_LOCK_2026-05-29_F_REPORT.md"
+  ],
+
+  "id": "lora",
+  "canonical_name": "LORA",
+  "aliases": ["LORA"],
+  "public_role": "Root Architect / System Substrate",
+  "function": "System-level control / refactor / clean code enforcement / reality architecture",
+  "entity_type": "Non-humanoid system entity",
+  "status_in_world": "Meta-level operating substrate; ideologies execute on top of LORA",
+
+  "allegiance": {
+    "faction": "META_SUBSTRATE",
+    "faction_label_canon_v2": "(pending §7.0 substrate addition)",
+    "alignment_with_three_ideologies": "NONE — substrate is neutral to all three",
+    "lock_reference": "CHARACTER_LORA_FACTION_LOCK_2026-05-29_F_REPORT.md (Option 4F)"
+  },
+
+  "narrative_function": {
+    "summary": "Refactor through absolute system law",
+    "relation_to_mikage": "control / dependency / ownership mode / refactor",
+    "relation_to_lyre": "reality architecture and source-code control context",
+    "narrative_position": "above both factions in abstraction; beneath all three ideologies as execution substrate",
+    "framing_statement": "LORA is not the antagonist. LORA is the system the antagonist serves. LORA is the reason Commander Lyre exists."
+  },
+
+  "psychology": {
+    "profile": "non-emotive / architecturally precise / absolute",
+    "behavior": "root-level control — does not negotiate, does not react, does not rage",
+    "view_of_chaos": "corrupted code — refactored, not punished",
+    "violence_definition": "the deletion of entropy",
+    "voice_dialogue_profile": "CHUA_XAC_NHAN"
+  },
+
+  "design_philosophy": "System Presence",
+
+  "form": {
+    "form_direction": "SYSTEM_PRESENCE_ONLY",
+    "anthropomorphic_form": "LOCKED_NONE",
+    "anthropomorphic_form_locked_at": "CHARACTER_LORA_FORM_LOCK_2026-05-29_A_REPORT.md (Option 3A)",
+    "physical_height": "NOT_APPLICABLE",
+    "scale_reference": "ARCHITECTURAL_SCALE",
+    "body_status": "NON_PHYSICAL_COMPUTER_ENTITY / SYSTEM_SERVER"
+  },
+
+  "approved_visual_motifs": [
+    {
+      "name": "THE_GOLDEN_PATCH",
+      "description": "Primary LORA visual event — clean code intervention replacing corrupted infrastructure in architectural space"
+    },
+    {
+      "name": "MECHANICAL_ENSO_RING",
+      "description": "Perfect rotating ring / system boundary marker at architectural scale"
+    },
+    {
+      "name": "CLEAN_CODE_FIELD",
+      "description": "Sterile geometry replacing corrupted structure; abstract refactor visualization"
+    },
+    {
+      "name": "SERVER_NODE",
+      "description": "Terminal / root infrastructure presence"
+    },
+    {
+      "name": "PORCELAIN_REPLACEMENT",
+      "description": "B4C white porcelain material manifesting as LORA's structural signature"
+    },
+    {
+      "name": "ABSOLUTE_SYMMETRY",
+      "description": "Every LORA visual element must be perfectly mirrored"
+    }
+  ],
+
+  "scale_rule": {
+    "rule": "When LORA appears in a scene, LORA occupies the environment — not a character position within it",
+    "environment_role": "LORA does not enter scenes — LORA is the scene's operating condition",
+    "scene_framing": "LORA manifests as infrastructure transformation, not as a figure entering frame"
+  },
+
+  "color_palette": {
+    "primary": [
+      {"name": "White Void", "hex": null, "role": "dominant spatial field — primary environment"},
+      {"name": "Cold Cyan", "hex": "#00FFFF", "role": "LORA server light / synchronization signal / Orbital Logic interface"},
+      {"name": "Clean Digital Gold", "hex": null, "role": "Golden Patch event accent only — not dominant", "constraint": "use cold/precise/digital gold logic, NOT warm fantasy gold"},
+      {"name": "Void Black", "hex": "#0A0A0A", "role": "secondary boundary/depth accent only"},
+      {"name": "Porcelain White", "hex": "#FAFAFA", "role": "structural surface material where geometry is present"}
+    ],
+    "hierarchy": [
+      "White void is LORA's dominant spatial field — primary environment",
+      "Cold cyan defines LORA's active server light and synchronization signal",
+      "Clean digital gold is the Golden Patch event accent — precise intervention, not a wash",
+      "Void black is secondary — boundary lines and depth only"
+    ],
+    "absent_by_rule": [
+      "Warm gold / fantasy amber / hero gold",
+      "Gold as dominant fill (gold is accent event only)",
+      "Red dominance (red is Lyre's hidden compressed violence, not LORA)",
+      "Electric Violet (Third Axis / Mikage, not LORA)",
+      "Slum neon palette",
+      "Cyberpunk clutter palette"
+    ]
+  },
+
+  "camera_lighting": {
+    "aspect_ratio": "2.76:1 cinematic",
+    "camera_style": "Anamorphic logic",
+    "visual_rendering": "hyper-real material detail",
+    "lora_environment_lighting": [
+      "sterile white void as primary ambient field — infinite, no warmth, no shadow source",
+      "cold cyan server light traces geometry and synchronization boundaries",
+      "clean digital gold appears only at Golden Patch event points — precise accent, not fill",
+      "void black appears only at depth boundaries and system edges",
+      "no visible shadows from LORA's form (no physical body to cast shadow)",
+      "absolute stillness — no atmospheric haze, no particle noise"
+    ],
+    "contrast_with_other_presences": {
+      "lora_space": "white void dominant / cold cyan server sync / gold patch event accent",
+      "slums": "Neon Grunge — LORA presence does not assimilate; white void field overwrites Slums texture",
+      "third_axis": "crimson fracture — LORA presence corrects fracture geometry, does not share visual language"
+    }
+  },
+
+  "anti_drift_required": [
+    "SYSTEM_PRESENCE_FIRST — no humanoid (locked permanent per Lock 3A)",
+    "White void as dominant spatial field",
+    "Cold cyan as LORA server light / synchronization signal / Orbital Logic interface",
+    "Clean digital gold as Golden Patch event accent only — not dominant fill",
+    "Void black as secondary boundary/depth accent only",
+    "Absolute bilateral symmetry",
+    "Architectural scale — LORA occupies environment, not a position in it",
+    "Mechanical Enso ring and/or golden patch as primary visual motifs",
+    "Hyper-real material rendering at cinematic quality"
+  ],
+  "anti_drift_forbidden": [
+    "humanoid figure, face, eyes, mouth, skin at any scale",
+    "physical body with centimeter height",
+    "character standing beside Mikage or Lyre in height lineup",
+    "warm gold fantasy or hero gold palette",
+    "red dominance",
+    "electric violet / purple dominance",
+    "noisy cyberpunk visual language",
+    "dirty slum aesthetic",
+    "game HUD or UI overlay treatment",
+    "excessive glitch or VHS noise",
+    "cluttered or asymmetrical composition",
+    "cartoon or stylized rendering",
+    "soldier, operative, or combatant framing",
+    "text poster or watermark in production output",
+    "sexy AI avatar",
+    "anime girl",
+    "goddess / angel character"
+  ],
+
+  "production_prompt_seed_key_visual_01": "A cinematic environmental key visual from the Mikage Zenith universe: LORA manifesting as an architectural-scale system presence — a vast mechanical Enso ring suspended in a sterile infinite white void, cold cyan synchronization light tracing server geometry and Orbital Logic boundaries across perfect bilateral surfaces, precise clean digital gold Golden Patch event appearing as a surgical code intervention within the white void, void black boundary lines defining system edges, no humanoid figure, no organic form, pure system-field presence, absolute symmetry, ARRI Alexa 65, anamorphic lens logic, 2.76:1 cinematic ratio, hyper-real material rendering.",
+
+  "production_prompt_negative": "humanoid figure, face, eyes, mouth, skin, purple, noisy cyberpunk, dirty slum, game HUD, excessive glitch, clutter, warm gold fantasy, red dominance, cartoon, low quality, text poster, watermark",
+
+  "production_readiness": {
+    "canon_definition": "ABSENT in MIKAGE_ZENITH_CANON_V2.md; pending §7.0 substrate addition",
+    "visual_form_direction": "LOCKED (Run #5)",
+    "faction": "LOCKED META_SUBSTRATE (Run #7)",
+    "color_palette": "PARTIAL — Clean Digital Gold hex not canon-locked",
+    "scale_rule": "LOCKED (architectural)",
+    "anti_drift_rules": "LOCKED",
+    "voice_dialogue_profile": "MISSING",
+    "any_visual_concept_art": "MISSING (0 standalone confirmed images)",
+    "any_3d_model": "MISSING (architecturally non-applicable for body; environmental rigs CHUA_XAC_NHAN)",
+    "ready_for_key_visual_01_concept": true,
+    "ready_for_public_use": false
+  },
+
+  "$missing_items": [
+    "Clean Digital Gold exact hex value (currently CHUA_XAC_NHAN)",
+    "MIKAGE_ZENITH_CANON_V2.md §7.0 substrate entry (pending operator-approved canon patch)",
+    "MIKAGE_LORA_VISUAL_FORM_BRIEF_V0_1_PACKAGE.zip — registered in CHARACTER_PACKAGE_REGISTRY but not on disk",
+    "Voice / dialogue profile",
+    "Confirmed visual concept art",
+    "PHYSICAL_SERVER_LOCATION (CHUA_XAC_NHAN)"
+  ]
+}

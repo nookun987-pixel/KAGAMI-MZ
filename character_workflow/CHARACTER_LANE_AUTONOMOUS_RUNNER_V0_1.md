@@ -200,18 +200,34 @@ Unknown tokens are ignored. Partial / lower-case / paraphrased forms are ignored
 | 13 | 2026-05-29 | PROMOTE_PLAN (text-only) | `CHARACTER_ENTITY_JSON_PROMOTION_PLAN_V0_1.md` | Operator Q_NEXT=PROMOTE with all "do not" constraints. Drafted 13-section promotion plan: preconditions (P1–P10, 4 unmet), 6-step execution sequence, required approval token bundle, rollback plan, side effects, recommended sequencing per §9 (resolve D6 → CANON → DRIFT_FIX → BACKFILL → EXECUTE_PROMOTE). No moves, copies, folder creation, status changes, locks, commits. |
 | 14 | 2026-05-29 | STATE_NEEDS_OPERATOR_DECISION | `CHARACTER_OPERATOR_DECISION_BOARD_V0_6.md` | Operator Q_NEXT=6. Focused board on Decision 6 (registry ZIP mismatch). Surfaced May 23 handoff §5 7-ZIP list (2 unregistered ZIPs exist in AUDIO Downloads). Critical new finding: locks 1A/3A/4F SUPERSEDE most ZIP content — recovery yields mostly redundant data. Added options 6E (acknowledge superseded) and 6F (registry rewrite V0_2). |
 | 15 | 2026-05-29 | OUT_OF_LANE_INTEGRATION (operator-authorized one-off) | `design_system/AUDIT_REPORT_2026-05-29.md` + `design_system/` folder (40 files copied from operator-uploaded ZIP) | Operator directed Design System ZIP audit + integration. Lane stays CHARACTER_CAST_LANE; integration is one-off, not a lane change. All 6 operator-required audit checks PASS. design_system/ at repo root. No redesign, no visual direction change. Commit blocked: git worktree unreachable from sandbox — operator must commit manually. |
+| 16 | 2026-05-29 | OPERATOR_APPROVED_MUTATION (text-only — new files only, V0.1 untouched) | `CHARACTER_PACKAGE_REGISTRY_V0_2_2026-05-29.md` + `CHARACTER_REGISTRY_REWRITE_2026-05-29_F_REPORT.md` | Operator DECISION_6_OPTION=6F with OPERATOR_APPROVED=YES in V0_6. Created V0.2 registry as new file capturing post-lock truth: 5 V0.1 entries individually superseded with pointers to lock reports + current source-of-truth files; 3 unregistered AUDIO ZIPs documented for provenance; 5 entity drafts + 3 locks + design_system + 5 drift items + pending canon tasks all recorded. D6 SOFT-RESOLVED via rewrite. 2 decisions remain (D2, D5). |
+| 17 | 2026-05-29 | CANON_PATCH_PROPOSAL (text-only proposal; canon V2 unchanged) | `CHARACTER_CANON_V2_LORA_SUBSTRATE_PATCH_PROPOSAL_V0_1.md` | Operator Q_NEXT=CANON. Drafted §7.0 LORA substrate patch proposal with 2 levels: LEVEL_A minimal (+10 lines, §7.0 only) or LEVEL_B full (+28 lines across 5 insertions in §7.0/§8.2/§8.6/§11/§15). Approval token bundle defined. Diff-file gate before any canon byte change. Canon V2 mtime unchanged at this pass. |
+| 18 | 2026-05-29 | CANON_PATCH_DIFF (HALT — canon V2 unchanged) | `CHARACTER_CANON_V2_LORA_SUBSTRATE_PATCH_DIFF_V0_1.md` | Operator CANON_PATCH_OPTION=LEVEL_B with OPERATOR_APPROVED=YES. Pre-flight confirmed §7.1=343, §8.2=401, §8.5 ends 429, §15 ENTITIES=585-589. CONFLICT FOUND in §11: header reads "(10 Required Details)" + item 10 already exists ("Mechanical tick"). Diff file surfaces sub-decisions for Change 4 (4-OPT-X/Y/Z) and Change 5 (5-OPT-P/Q/R). Runner-recommended path: 1+2+3+4-OPT-X+5-OPT-Q = +27 lines pure addition. HALTED for second-gate approval. |
+| 19 | 2026-05-29 | CANON_PATCH_APPLIED (4 surgical edits to canon V2) | `MIKAGE_ZENITH_CANON_V2.md` updated in-place | Operator DIFF_APPROVED=YES, CHANGE_4=4-OPT-X (skip), CHANGE_5=5-OPT-Q (after Lyre), BUMP_LAST_VERIFIED=NO. Applied Change 1 (§7.0 at line 343), Change 2 (§8.2 substrate alignment at line 415), Change 3 (§8.6 LORA at line 442), Change 5-OPT-Q (lora.json at line 614). §11 micro-moment list unchanged. §16 Last Verified stays at 2026-03-19. Net +27 lines, no deletions. Post-flight verified all 4 insertions at expected positions; END OF CANON at line 643. Sandbox bash stat shows stale cached size (18495) but Read tool confirms new content. |
+| 20 | 2026-05-29 | PHASE_CLOSEOUT (STOP — operator paused) | `CHARACTER_LANE_PHASE_CLOSEOUT_2026-05-29.md` | 19-run summary + canonical state inventory + 5 unresolved items + 5 deferred drift items + operator action items (commit-everything + choose next Q_NEXT) + invariants check + resume greeting. State preserved for resume. |
 
 ---
 
 ## 8. POINTER
 
 ```text
-LATEST_RUN_OUTPUT = character_workflow/CHARACTER_OPERATOR_DECISION_BOARD_V0_6.md (active runner output unchanged by Run #15 out-of-lane integration)
+LATEST_RUN_OUTPUT = character_workflow/CHARACTER_LANE_PHASE_CLOSEOUT_2026-05-29.md
 LATEST_RUN_DATE   = 2026-05-29
-LATEST_RUN_STATE  = STATE_NEEDS_OPERATOR_DECISION (3 decisions remain: 2,5,6 — 6 still on focused board)
-NEXT_INVOCATION_PRECONDITION = operator fills DECISION_6_OPTION + DECISION_6_APPROVAL in V0_6 board
+LATEST_RUN_STATE  = PHASE_PAUSED — operator paused; resume any time with Q_NEXT
+NEXT_INVOCATION_PRECONDITION = operator issues Q_NEXT (CANON_FOLLOWUP / EXECUTE_PROMOTE / 2 / 5 / DRIFT_FIX / MORE_ENTITIES recommended) OR a fresh directive
+ACTIVE_REGISTRY       = character_workflow/CHARACTER_PACKAGE_REGISTRY_V0_2_2026-05-29.md (V0.2)
+HISTORICAL_REGISTRY   = character_workflow/CHARACTER_PACKAGE_REGISTRY_2026-05-23.md (V0.1)
+LYRE_DIRECTION_LOCKED = OPTION_1A_PORCELAIN_MINIMALISM_2026-05-29
+LORA_FORM_LOCKED      = OPTION_3A_SYSTEM_PRESENCE_ONLY_2026-05-29
+LORA_FACTION_LOCKED   = OPTION_4F_META_SUBSTRATE_BELOW_2026-05-29
+REGISTRY_STATE        = LOCKED to V0.2
+CANON_V2_UPDATE_TASKS = LORA_SUBSTRATE_§7_PATCH (APPLIED 2026-05-29 — §7.0 + §8.2 + §8.6 + §15 lora.json) + ENTITIES_FOLDER_§15_RECONCILE (pending — flat-layout deviation still informal) + ENTITY_JSON_PROMOTION (PLAN DRAFTED, EXECUTION BLOCKED) + CANON_FOLLOWUP (side-effect file updates pending: V0.2 registry §5, proposals/lora.json $canon_v2_alignment, proposals/commander_lyre.json substrate_alignment)
+ENTITY_JSONS_DRAFTED  = 5 JSONs in proposals/ (all DRAFT_PROPOSAL_NOT_CANON)
+CANON_V2_§15_COVERAGE = COMPLETE (drafts only)
 DESIGN_SYSTEM_DRAFT_INTEGRATED = design_system/ (40 files, audit PASS, NOT committed)
-DESIGN_SYSTEM_COMMIT_PENDING = YES (sandbox cannot reach git worktree; operator action required)
+DESIGN_SYSTEM_COMMIT_PENDING = YES (operator action required)
+DRIFT_ITEMS_DEFERRED  = 5 total (3 Mikage + 1 weapon + 1 design system)
+PROMOTION_PLAN_STATE  = DRAFTED — pending PROMOTE_* token bundle
 LYRE_DIRECTION_LOCKED = OPTION_1A_PORCELAIN_MINIMALISM_2026-05-29
 LORA_FORM_LOCKED      = OPTION_3A_SYSTEM_PRESENCE_ONLY_2026-05-29
 LORA_FACTION_LOCKED   = OPTION_4F_META_SUBSTRATE_BELOW_2026-05-29

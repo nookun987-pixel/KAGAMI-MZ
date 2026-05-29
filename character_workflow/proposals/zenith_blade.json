@@ -1,0 +1,122 @@
+{
+  "$schema": "mikage_entity_record/v0.1",
+  "$entity_kind": "weapon",
+  "$status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$canon_v2_path": "ENTITIES/zenith_blade.json",
+  "$generated_by": "CHARACTER_LANE_AUTONOMOUS_RUNNER_V0_1.md run #12",
+  "$generated_on": "2026-05-29",
+  "$asset_lock": false,
+  "$canon_lock": false,
+  "$source": [
+    "MIKAGE_ZENITH_CANON_V2.md#2.4",
+    "MIKAGE_ZENITH_CANON_V2.md#8.1",
+    "MIKAGE_ZENITH_CANON_V2.md#10.1",
+    "MIKAGE_ZENITH_CANON_V2.md#11_item_7",
+    "character_workflow/MIKAGE_CHARACTER_PRODUCTION_BIBLE_V0_1.md#6"
+  ],
+  "$companion_records": [
+    "proposals/mikage_zenith.json",
+    "proposals/commander_lyre.json",
+    "proposals/lora.json",
+    "proposals/unbreakable_shield.json"
+  ],
+
+  "id": "zenith_blade",
+  "canonical_name": "Zenith Blade",
+  "aliases": [],
+  "entity_type": "weapon — heavy industrial straight sword",
+  "wielded_by": "mikage_zenith",
+  "wielder_record": "proposals/mikage_zenith.json",
+  "narrative_role": "Mikage's primary weapon; embodiment of 'brute consequence' contrasted against Lyre's surgical Molecular Monowire",
+
+  "classification": "350kg heavy industrial straight sword",
+
+  "geometry": [
+    "massive oversized rectangular block",
+    "thick spine, ultra-thin edge",
+    "absolutely straight (zero curvature)",
+    "Appleseed geometry (convex distal taper)",
+    "rectangular silhouette",
+    "monolithic and heavy",
+    "dark blade body",
+    "minimal violet detail accents if needed"
+  ],
+
+  "material": {
+    "plates": "dark rusty titanium scrap plates",
+    "core": "ferro-calcium heated core",
+    "assembly": "flux pinning assembly (plates hover 0.5mm apart)"
+  },
+
+  "dimensions": {
+    "mass_kg": 350,
+    "length_inches_range": "35-58",
+    "blade_angle_deg_range": "13.7 - 20",
+    "hilt_inches": 6,
+    "core_temp_c_idle_min": 43,
+    "core_temp_c_peak": 800
+  },
+
+  "energy_signature": [
+    "deep crimson glowing core (#E60000)",
+    "directional steam venting",
+    "heat mirage distortion",
+    "Orbital Logic UI text wrapping blade in 3D"
+  ],
+
+  "mechanical_behavior": [
+    "continuous 0.5mm vibration (flux pinning)",
+    "rotating Enso core at hilt",
+    "red pulse warnings on hesitation detection"
+  ],
+
+  "micro_moment_link": {
+    "id": "MIKAGE_ZENITH_CANON_V2.md#11_item_7",
+    "text": "Side-channel feedback: blade pulses red when spine compression detected"
+  },
+
+  "color_palette": {
+    "blade_body": "dark (dark rusty titanium)",
+    "core_glow": "#E60000 Deep Crimson",
+    "ui_text": "#E60000 (Mikage HUD per Canon V2 §10.1)",
+    "accent_optional": "minimal violet (per Bible §6)"
+  },
+
+  "anti_drift_forbidden": [
+    "curved katana form",
+    "thin elegant blade",
+    "clean laser aesthetic",
+    "fantasy ornaments",
+    "decorative fantasy scimitar",
+    "over-ornamented fantasy guard",
+    "tiny/light sword proportions"
+  ],
+  "anti_drift_required": [
+    "rectangular silhouette preserved at all angles",
+    "absolutely straight (zero curvature)",
+    "heavy block mass readable at thumbnail",
+    "dark blade body with crimson core glow only",
+    "steam venting + heat mirage when active"
+  ],
+
+  "wielder_dependency": {
+    "always_paired_with": "mikage_zenith",
+    "never_wielded_by": ["commander_lyre", "lora", "archon_ix", "lyra_0", "dr_aris", "tai_vane"],
+    "rationale": "Canon V2 §8.1 lists Zenith Blade as Mikage's equipment exclusively. Lyre's weapon is Molecular Monowire / Force-field Lyre (different language: brute consequence vs surgical precision)."
+  },
+
+  "production_readiness": {
+    "canon_definition": "COMPLETE (Canon V2 §2.4 fully specced)",
+    "visual_identity": "SOURCED",
+    "any_visual_asset": "CHUA_XAC_NHAN at this pass (Mikage turnaround + 3D blockouts may include blade — not separately audited at this draft)",
+    "any_3d_model": "CHUA_XAC_NHAN (likely embedded in Mikage .blend files; standalone blade .blend not confirmed)",
+    "ready_for_prompt_test": "PARTIAL (rich technical spec; no standalone prompt seed)",
+    "ready_for_public_use": false
+  },
+
+  "$missing_items": [
+    "Standalone production prompt seed for Zenith Blade isolated render",
+    "Confirmed standalone 3D / .blend file (vs embedded in Mikage rig)",
+    "Operator-approved public reveal status"
+  ]
+}
