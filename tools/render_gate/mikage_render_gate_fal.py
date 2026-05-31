@@ -116,6 +116,79 @@ COMPACT_NEGATIVE_V0_1 = (
     "halo, purple light, red light, gold trim, text, UI, logo, watermark"
 )
 
+# -----------------------------------------------------------------------------
+# V0.2 compact prompts — PATH_A revision after attempt_004 verification failed
+# 6 of 10 checks (F1/F2/F3/SHIELD/MONOWIRE/ANCHOR). Diagnostic root cause:
+# flux/dev model bias dominant — negation alone did not override model defaults.
+# V0.2 strategy: front-load POSITIVE shape cues (silhouette / helmet / pose /
+# shield / weapon / material / anti-mecha) before any narrative language, and
+# strengthen the negative list with the specific failure modes observed.
+# -----------------------------------------------------------------------------
+
+COMPACT_PROMPT_V0_2_COMMANDER_LYRE_PHASE_1 = (
+    "Genderless industrial command figure. Straight vertical column body. Flat rectangular "
+    "chest plate. No chest contour. No waist taper. No hip flare. No thigh emphasis. Slab "
+    "ceramic armor plates over black graphene underlayer.\n"
+    "Fully sealed smooth white industrial helmet. No face geometry. No eye points. No amber "
+    "glow. No facial muscles. Only one ultra-thin horizontal cyan visor slit edge-to-edge "
+    "across where eyes would be.\n"
+    "Both hands clasped strictly behind the back. No weapon in hands. Motionless symmetrical "
+    "command stance. Upright vertical axis. No action pose. No contrapposto.\n"
+    "Left forearm: one small flat white ceramic circular disc emitter, approximately 15cm "
+    "diameter, folded dormant flat against the forearm, recessed Empire sigil etched in thin "
+    "cold-cyan lines. No plasma. No barrier field. No glowing dome. No kite-shape shield.\n"
+    "Right hip: one slim black cylindrical monowire hilt, holstered against the hip. No blade "
+    "visible. No pistol. No gun. No firearm silhouette in either hand.\n"
+    "Material: brushed B4C ceramic surface. Matte low-specular white ceramic plates. Subtle "
+    "micro-grain. Shallow subsurface scattering. Not glossy plastic. Not vinyl. Not action "
+    "figure finish.\n"
+    "Armor construction: clean medical-industrial slab armor. Minimal recessed seams only. No "
+    "gundam panels. No decorative greebles. No knee lights. No orange accents. No amber accents.\n"
+    "Environment: vast Imperial Spire interior. Ghost-white monolith plates. Matte black void "
+    "gaps. Polished black reflective floor. Cold overhead interrogation key light. Hard rim "
+    "light from behind. Silent severe atmosphere. Cyan accent only. No purple. No red. No gold. "
+    "No warm light anywhere.\n"
+    "Composition: cinematic 2.35:1 anamorphic. Centered frontal three-quarter. Vertical axis "
+    "through figure. Monumental architectural scale. Premium quiet luxury rendering."
+)
+
+COMPACT_NEGATIVE_V0_2 = (
+    "female body emphasis, sexy armor, breasts, chest cups, cleavage, hourglass waist, "
+    "waist taper, wide hips, hip flare, thigh focus, thigh emphasis, slim curvy body, "
+    "android girl, bodysuit, swimsuit armor, pin-up pose, fashion pose, contrapposto, "
+    "action pose, hands forward, hands at sides, holding weapon, holding shield, holding pistol, "
+    "holding gun, firearm, pistol silhouette, gun in hand, large shield, active shield, "
+    "plasma shield, energy dome, glowing barrier, kite-shape shield, sword, blade, hair, "
+    "visible face, eye points, glowing eyes, amber eyes, orange eyes, mouth, nose, lips, "
+    "human skin, porcelain doll face, chin transition, anime girl, gacha character, cosplay, "
+    "glossy plastic, action figure finish, vinyl, chrome, latex, mecha clutter, gundam panels, "
+    "decorative greebles, knee lights, orange accent, amber accent, gold trim, hero gold, "
+    "fantasy armor, samurai armor, cape, robe, crown, halo, purple light, violet glitch, "
+    "red light, crimson, text, UI, logo, watermark"
+)
+
+
+def select_compact_prompt(brief_id: str) -> tuple:
+    """
+    Route brief_id -> (compact_prompt, compact_negative, prompt_mode_label).
+
+    V0.1 path is preserved unchanged. V0.2 brief_id triggers the redesigned
+    front-loaded-positive compact prompt + strengthened negative.
+
+    Unknown brief_ids fall back to V0.1 (legacy default).
+    """
+    if brief_id == "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2":
+        return (
+            COMPACT_PROMPT_V0_2_COMMANDER_LYRE_PHASE_1,
+            COMPACT_NEGATIVE_V0_2,
+            "compact_prompt_v0_2_lyre_p1",
+        )
+    return (
+        COMPACT_PROMPT_V0_1_COMMANDER_LYRE_PHASE_1,
+        COMPACT_NEGATIVE_V0_1,
+        "compact_prompt_v0_1",
+    )
+
 
 # -----------------------------------------------------------------------------
 # Utility
@@ -264,14 +337,16 @@ def build_fal_request(
     height: int,
     aspect_ratio: str,
     model_id: str,
+    prompt_mode: str = "compact_prompt_v0_1",
 ) -> Dict[str, Any]:
     """
-    V0.1 request shape. FAL models differ in accepted keys; this shape covers
-    the most common image-gen endpoints. Operator may need to adjust per model.
+    FAL models differ in accepted keys; this shape covers the most common image-gen
+    endpoints. Operator may need to adjust per model. prompt_mode is recorded as
+    metadata only — FAL ignores the $-prefixed fields.
     """
     return {
         "$mikage_tool": f"{TOOL_NAME}/{TOOL_VERSION}",
-        "$compact_prompt_mode": "compact_prompt_v0_1",
+        "$compact_prompt_mode": prompt_mode,
         "$intended_model_id": model_id,
         "prompt": compact_prompt,
         "negative_prompt": compact_negative,
@@ -570,17 +645,20 @@ def main(argv: Optional[list] = None) -> int:
         sys.stderr.write(f"ERROR: failed to allocate run folder: {e}\n")
         return 2
 
-    # Compact prompt + negative.
-    # V0.1 ships a single Lyre Phase 1 compact prompt; if a different brief
-    # shows up, we still write the V0.1 compact (operator's explicit V0.1 spec)
-    # and record a note. Future versions can route per brief_id.
-    compact_prompt = COMPACT_PROMPT_V0_1_COMMANDER_LYRE_PHASE_1
-    compact_negative = COMPACT_NEGATIVE_V0_1
-    if brief_id != "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1":
+    # Compact prompt + negative — routed by brief_id via select_compact_prompt().
+    # V0.1 path preserved for legacy briefs; V0.2 brief_id routes to redesigned
+    # front-loaded-positive compact prompt. Unknown brief_ids fall back to V0.1
+    # and a note is recorded.
+    compact_prompt, compact_negative, prompt_mode_label = select_compact_prompt(brief_id)
+    known_brief_ids = {
+        "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1",
+        "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2",
+    }
+    if brief_id not in known_brief_ids:
         notes.append(
-            f"V0.1 compact prompt is hardcoded for Commander Lyre Phase 1 "
-            f"but brief_id is '{brief_id}'. Compact prompt was NOT regenerated from "
-            f"the sidecar's long primary_prompt — V0.2 should add per-brief routing."
+            f"brief_id '{brief_id}' is not a known compact-prompt routing target. "
+            f"Falling back to V0.1 Lyre Phase 1 compact prompt. Add a new branch in "
+            f"select_compact_prompt() for this brief in a future tool revision."
         )
 
     width, height = _aspect_ratio_to_size(
@@ -595,6 +673,7 @@ def main(argv: Optional[list] = None) -> int:
         height=height,
         aspect_ratio=fields["aspect_ratio"] or "2.35:1",
         model_id=model_id,
+        prompt_mode=prompt_mode_label,
     )
 
     write_text(run_folder / "prompt_compact.txt", compact_prompt + "\n")
@@ -707,7 +786,7 @@ def main(argv: Optional[list] = None) -> int:
         "fal_api_key_env_present": fal_key_present,
         "dry_run": bool(args.dry_run),
         "api_called": api_called,
-        "prompt_mode": cfg.get("compact_prompt_mode", "compact_prompt_v0_1"),
+        "prompt_mode": prompt_mode_label,
         "aspect_ratio": fields["aspect_ratio"],
         "resolution_target_px": fields["resolution_target_px"],
         "resolved_width": width,

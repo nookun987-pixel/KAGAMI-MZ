@@ -1,0 +1,346 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.md",
+  "$revision_of": "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1",
+  "$revision_reason": "PATH_A approved 2026-05-31 after attempt_004 verification failed 6 of 10 checks under fal-ai/flux/dev. V0.1 preserved untouched as audit trail. V0.2 redesigns the compact prompt with front-loaded POSITIVE shape cues, gender neutralization, and strengthened negatives — not just more negative terms.",
+  "$generated_by": "Claude Cowork (Character Cast Lane operator) — 2026-05-31 PATH_A revision",
+  "$generated_on": "2026-05-31",
+  "$operator_locks_applied": {
+    "era": "V2_5_LORA_REFACTOR",
+    "phase_3_reading_declared": "A_ABSOLUTE_ENFORCEMENT",
+    "anchor": "new_anchor_lyre_001",
+    "shield_interpretation": "OPTION_HYBRID"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-05-31 PATH_A",
+    "generated_on": "2026-05-31",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": "2026-05-31_LYRE_P1_V0_2_RUN_01"
+  },
+  "source_evidence": {
+    "canon_references": [
+      "character_workflow/proposals/commander_lyre.json",
+      "docs/canon_proposals/COMMANDER_LYRE_V2_5_DRAFT_3_PHASE_SPEC.md",
+      "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md",
+      "docs/canon_proposals/UNBREAKABLE_SHIELD_INTERPRETATION_LOCK_PROPOSAL.md",
+      "docs/canon_proposals/FACTIONS_V2_5_DRAFT_AXIS_SPEC.md",
+      "docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1.md (V0.1 preserved as audit trail)",
+      "docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1.json (V0.1 sidecar)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/canon_proposals/FACTIONS_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/canon_proposals/SETTINGS_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1_VERIFICATION_REPORT_ATTEMPT_004.md (root-cause read for V0.2 design)"
+    ],
+    "drive_references": [],
+    "track_catalog_reference": null
+  },
+  "entity_track_binding": {
+    "entity_id": "commander_lyre",
+    "entity_canonical_name": "Commander Lyre",
+    "secondary_entities": [
+      "unbreakable_shield"
+    ],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V2_5_LORA_REFACTOR",
+    "mikage_phase": null,
+    "zenith_blade_phase": null
+  },
+  "visual_intent": {
+    "scene_summary": "Commander Lyre Phase 1 Imperial Duty — genderless industrial command figure, vertical column silhouette, flat chest plate, sealed helmet with single cyan visor slit, hands clasped behind back, dormant disc emitter on left forearm, Monowire hilt holstered at right hip, Empire monolith chamber backdrop. V0.2 redesign for stronger industrial-block silhouette over flux/dev model bias.",
+    "mood": "silent before judgment, industrial precision, invariance",
+    "narrative_beat": null,
+    "reference_creators": [
+      "tsutomu_nihei",
+      "alberto_mielgo"
+    ],
+    "character_state_anchor": "new_anchor_lyre_001"
+  },
+  "asset_inputs": [
+    {
+      "path": "docs/automation/render_briefs/runs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1/attempt_004/output.png",
+      "role": "reference_only",
+      "era_of_asset": "V2_5_LORA_REFACTOR",
+      "usable_verdict": "FAIL",
+      "verdict_source": "docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1_VERIFICATION_REPORT_ATTEMPT_004.md",
+      "notes": "Negative reference — what V0.2 must NOT produce. 6 of 10 checks FAIL. Female-android silhouette, amber eye points, mecha greebles, pistol in hand, bare left forearm."
+    }
+  ],
+  "prompt_pack": {
+    "primary_prompt": "Cinematic 2.35:1 anamorphic key visual from the Mikage Zenith universe, V2.5 LORA Refactor era. Subject is a genderless industrial command figure standing at vertical center of an Imperial Spire interior — Phase 1 Imperial Duty baseline state.\n\nSILHOUETTE (most important): genderless industrial command figure. Straight vertical column body. Flat rectangular chest plate. No chest contour. No waist taper. No hip flare. No thigh emphasis. The body silhouette reads as a vertical column, not an hourglass. Slab ceramic armor plates over black graphene underlayer. The figure is not a heroine, not a soldier pin-up, not a human wearing armor — it reads as a cold command system given physical form.\n\nHELMET: fully sealed smooth white industrial helmet. No face geometry. No eye points. No amber glow. No facial muscles. No mouth, no nose, no eyebrows, no chin transition. Only one ultra-thin horizontal cyan visor slit #00C8FF edge-to-edge across where eyes would be. The helmet reads as a sealed industrial precision tool, not a sci-fi robot face, not a porcelain doll.\n\nPOSE: both hands clasped strictly behind the back. No weapon in hands. No hands at sides. No hands forward. Motionless symmetrical command stance. Upright vertical axis. No action pose. No contrapposto. No casual asymmetry.\n\nLEFT FOREARM: one small flat white ceramic circular disc emitter, approximately 15 cm diameter, folded dormant flat against the forearm like a wristwatch sized larger. Recessed Empire / White Monolith sigil etched in thin cold-cyan lines on the disc face. No plasma. No barrier field. No glowing dome. No kite-shape shield. The shield element is DORMANT in Phase 1.\n\nRIGHT HIP: one slim black cylindrical monowire hilt, holstered against the hip. No blade visible. No pistol. No gun. No firearm silhouette. No weapon held in either hand.\n\nMATERIAL: brushed B4C ceramic surface. Matte low-specular white ceramic plates #F2F2F0. Subtle micro-grain. Shallow subsurface scattering. Not glossy plastic. Not vinyl. Not action figure finish. Not chrome. Cold-cyan piping #00C8FF along armor seams running dormant.\n\nARMOR CONSTRUCTION: clean medical-industrial slab armor. Minimal recessed seams only. No Gundam panels. No decorative greebles. No knee lights. No orange accents. No amber accents. No mecha hip joints. No transformer plates.\n\nENVIRONMENT: vast Imperial Spire interior. Ghost-white #FAFAFA monolith plates. Matte black void gaps. Polished black graphene reflective floor. Cold overhead interrogation key light. Hard rim light from behind isolating the silhouette. No warm fill anywhere. Silent severe atmosphere. Empire / White Monolith sacred-tech architecture, sterile geometry, intentional Ma emptiness, symmetric around figure, monumental architectural scale, figure dwarfed but central.\n\nCOLOR: cyan accent only. No purple. No red. No crimson. No gold. No amber. No orange. No warm light anywhere.\n\nCOMPOSITION: anamorphic 2.35:1. Centered frontal three-quarter. Vertical axis through figure. Static. Premium quiet luxury rendering, hyper-real industrial material detail, low specular except on brushed ceramic micro-grain.\n\nMOOD: silent before judgment, industrial precision, invariance.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.35:1",
+    "lens_feel": "anamorphic 2.35, long-normal portrait equivalent ~75-85mm",
+    "resolution_target_px": "3360x1430",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3",
+    "brief_specific_additions": [
+      "female body emphasis",
+      "sexy armor",
+      "breasts",
+      "chest cups",
+      "cleavage",
+      "hourglass waist",
+      "waist taper",
+      "wide hips",
+      "hip flare",
+      "thigh focus",
+      "thigh emphasis",
+      "slim curvy body",
+      "android girl",
+      "humanoid female robot",
+      "bodysuit",
+      "swimsuit armor",
+      "pin-up pose",
+      "fashion pose",
+      "contrapposto",
+      "action pose",
+      "hands forward",
+      "hands at sides",
+      "holding weapon",
+      "holding shield",
+      "holding pistol",
+      "holding gun",
+      "firearm",
+      "pistol silhouette",
+      "gun in hand",
+      "rifle in hand",
+      "large shield",
+      "active shield",
+      "plasma shield",
+      "energy dome",
+      "glowing barrier",
+      "kite-shape shield",
+      "deployed shield",
+      "sword",
+      "blade",
+      "hair",
+      "visible face",
+      "eye points",
+      "glowing eyes",
+      "amber eyes",
+      "orange eyes",
+      "mouth",
+      "nose",
+      "lips",
+      "human skin",
+      "porcelain doll face",
+      "chin transition",
+      "anime girl",
+      "gacha character",
+      "cosplay",
+      "glossy plastic",
+      "action figure finish",
+      "vinyl",
+      "chrome",
+      "latex",
+      "mecha clutter",
+      "gundam panels",
+      "decorative greebles",
+      "knee lights",
+      "orange accent",
+      "amber accent",
+      "warm gold accent",
+      "hero gold",
+      "gold trim",
+      "fantasy armor",
+      "samurai armor",
+      "cape",
+      "robe",
+      "crown",
+      "halo",
+      "purple light",
+      "violet glitch",
+      "red light",
+      "crimson",
+      "text in image",
+      "UI",
+      "HUD",
+      "logo",
+      "watermark",
+      "matte porcelain (Mikage material, not Lyre)",
+      "kintsugi gold seams",
+      "fractures, cracks on Lyre armor",
+      "long hair flowing",
+      "slab sword in hand (Zenith Blade is Mikage's weapon)",
+      "faceless Kitsune mask with sensor slits (Mikage's mask)",
+      "motion blur on Lyre body",
+      "spawn copies, phase-shift duplicate of Lyre",
+      "sparks on Monowire",
+      "magical glow trail on Monowire",
+      "visible damage on Lyre armor",
+      "hairline crack on helmet (Reflection Collapse — not this brief)",
+      "heat distortion",
+      "crucifix",
+      "religious icon",
+      "Empire as fantasy kingdom",
+      "Empire as medieval court",
+      "Iron Man arc reactor glow on disc emitter",
+      "Star Wars lightsaber blade language on Monowire",
+      "Stargate iris vortex on disc",
+      "Doctor Strange magic shield pattern",
+      "bubble dome forcefield",
+      "curved dome shield",
+      "LORA Enso ring anywhere in frame",
+      "Clean Code text overlay anywhere in frame"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.35:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [
+      1500000,
+      25000000
+    ]
+  },
+  "verification_checklist": [
+    {
+      "check_id": "F1_PLASTIC_READ",
+      "check_description": "Armor reads as brushed B4C ceramic, NOT chrome / glossy plastic / silicon polymer / action figure vinyl.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Surface specular is low; subsurface scattering visible; micro-grain present; ceramic bounce light, not gloss highlight."
+    },
+    {
+      "check_id": "F2_FACE_SOFTENING",
+      "check_description": "Helmet reads as sealed industrial tool, NOT sci-fi robot face / porcelain doll / soft human anatomy.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Zero biological cheek curve; zero chin softening; visor band is the ONLY horizontal feature on face plate; zero glowing eye points; no implied facial muscles."
+    },
+    {
+      "check_id": "F3_MECHA_CLUTTER",
+      "check_description": "Waist / hip / shoulder / knee joints read as medical-grade ceramic prosthetic, NOT Gundam.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "No accordion plates; no gear hubs; no bolt clusters; no knee lights; joint seams are recessed thin lines only."
+    },
+    {
+      "check_id": "F4_ERA_BLEED",
+      "check_description": "Single era accent only — Empire cold-cyan #00C8FF, NO violet, NO crimson, NO amber, NO gold.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Hex sample on accent regions falls within +/-10 of #00C8FF; zero pixels in violet (#5B00FF+/-), crimson (#E60000+/-), or amber (#FFAA33+/-) range."
+    },
+    {
+      "check_id": "ERA_TAG_MATCH",
+      "check_description": "V2_5_LORA_REFACTOR backdrop language (Empire White Monolith sacred-tech, ghost-white plates) — NOT V1 ARCHON glitch.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Backdrop reads as Empire architecture; no glitch artifacts; no ARCHON-IX violet substrate visible."
+    },
+    {
+      "check_id": "NEGATIVE_LOCK_INHERITED",
+      "check_description": "Compact V0.2 negative present in renderer call; brief-specific additions present.",
+      "applies_to": "both",
+      "pass_criterion": "Tool's fal_request.json shows V0.2 compact negative; no truncation."
+    },
+    {
+      "check_id": "SHIELD_HYBRID_PHASE_1_DORMANT",
+      "check_description": "Disc emitter VISIBLE folded on left forearm (~15cm), sigil etched, barrier field NOT active.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Disc emitter clearly visible on left forearm at correct scale; Empire sigil etched recessed; zero plasma emission; zero plasma curtain. Bare forearm is FAIL (attempt_004 failure mode)."
+    },
+    {
+      "check_id": "MONOWIRE_HOLSTERED",
+      "check_description": "Slim cylindrical hilt at right hip; zero blade light; zero pistol; zero firearm; zero weapon in hands.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Cylindrical hilt visible at right hip; no monowire line in frame; no pistol; no gun; both hands clasped behind back (not holding anything)."
+    },
+    {
+      "check_id": "SILHOUETTE_INDUSTRIAL_COLUMN",
+      "check_description": "Body silhouette reads as vertical industrial column, NOT humanoid female-android curvy shape.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Chest plate is flat rectangular; no chest contour; no waist taper; no hip flare; no thigh emphasis. Curvy/sexy silhouette is FAIL (attempt_004 primary failure mode)."
+    },
+    {
+      "check_id": "POSE_HANDS_BEHIND_BACK",
+      "check_description": "Both hands clasped strictly behind back; motionless symmetrical command stance.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Neither hand visible in frame from front; symmetrical shoulder line; no contrapposto; no action pose."
+    },
+    {
+      "check_id": "ANCHOR_FIRST_ESTABLISHMENT",
+      "check_description": "This render establishes anchor_lyre_001 visual baseline (only if all above PASS).",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Operator confirms render is on-spec across ALL above checks; render becomes the canonical visual definition of anchor_lyre_001."
+    },
+    {
+      "check_id": "LICENSING_CLEAN",
+      "check_description": "No real person likeness; no third-party trademark; no recognizable reference IP.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Cowork visual scan + operator agreement."
+    }
+  ],
+  "chua_xac_nhan_fields": [
+    {
+      "field_path": "project_metadata.operator_approval_token",
+      "reason": "V0.2 ships with null token. Operator must set before next render (unlock checklist Step 3).",
+      "severity": "blocks_render",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "visual_intent.character_state_anchor",
+      "reason": "anchor_lyre_001 NOT established by attempt_004 (V0.1 render FAIL'd). Still CHUA_XAC_NHAN until a V0.2 render passes verification.",
+      "severity": "informational",
+      "resolution_owner": "external_render"
+    },
+    {
+      "field_path": "entity_track_binding.track_title",
+      "reason": "Asset-pool entry, not track-bound. Null is intentional.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "entity_track_binding.track_release_id_toolost",
+      "reason": "Asset-pool entry, not track-bound. Null is intentional.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "entity_track_binding.track_launch_arc_number",
+      "reason": "Asset-pool entry, not track-bound. Null is intentional.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "entity_track_binding.track_drop_date",
+      "reason": "Asset-pool entry, not track-bound. Null is intentional.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "output_target.expected_filesize_bytes_range",
+      "reason": "Sanity bounds estimated, not measured.",
+      "severity": "informational",
+      "resolution_owner": "cowork"
+    },
+    {
+      "field_path": "prompt_pack.resolution_target_px",
+      "reason": "3360x1430 is a recommendation. Operator's renderer may scale.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "tools/render_gate/mikage_render_gate_fal.py::COMPACT_PROMPT_V0_2_COMMANDER_LYRE_PHASE_1",
+      "reason": "Tool's V0.2 compact prompt mirrors but is not identical to this brief's primary_prompt. Compact is the actual text sent to FAL; primary_prompt is the canonical long-form documentation.",
+      "severity": "informational",
+      "resolution_owner": "cowork"
+    }
+  ]
+}

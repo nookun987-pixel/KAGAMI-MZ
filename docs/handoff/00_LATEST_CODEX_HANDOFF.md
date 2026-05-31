@@ -1693,3 +1693,36 @@ RENDER_BY_COWORK = NO
 CONTROL_RENDER_PLAN_DRAFTED = NO (deferred per operator)
 CONFIG_MODEL_ID_CHANGED = NO (preserved at fal-ai/flux-pro/v1.1)
 NEXT_SAFE_TASK = UNCHANGED (OPERATOR_REVIEWS_LYRE_CONTROL_REFERENCE_V0_1_BEFORE_ANY_NEXT_RENDER)
+
+## REMAINING_GIT_STATUS_AUDIT_AFTER_LYRE_CONTROL_COMMIT — 2026-05-31
+TASK = AUDIT_REMAINING_GIT_STATUS_READ_ONLY (operator)
+TASK_STATUS = AUDIT_COMPLETE_OPERATOR_REVIEWS_FROM_WINDOWS_BEFORE_ANY_STAGE_OR_COMMIT
+SCOPE = Filesystem-based enumeration of every path Cowork touched this session, classified into 5 buckets. No git invoked (sandbox cannot resolve Windows worktree pointer). No staging. No commit. No push. No delete. No modification of classified files.
+AUDIT_REPORT_PATH = docs/handoff/REMAINING_GIT_STATUS_AUDIT_AFTER_LYRE_CONTROL_COMMIT.md
+TOTAL_PATHS_ENUMERATED = 72
+BUCKET_COUNTS:
+  BUCKET_1_SHOULD_COMMIT_NOW          = 14 (tool + config + 4 briefs + 5 docs + 3 verification + 1 pointer)
+  BUCKET_2_KEEP_UNTRACKED_AUDIT_TRAIL = 35 (7 dry-run/blocked attempt folders × 5 generated artifacts each)
+  BUCKET_3_SHOULD_IGNORE_OR_ARCHIVE   = 1 (__pycache__/*.pyc)
+  BUCKET_4_NEED_OPERATOR_DECISION     = 12 (LYRE_CONTROL_REFERENCE_V0_1 follow-up · 3 REJECTED render output.png + fal_response.json pairs · attempt_006 text artifacts companion)
+  BUCKET_5_DO_NOT_TOUCH               = 0 (confirmed canon_proposals/ + character_workflow/proposals/ + exports/ UNTOUCHED this session)
+TOOL_HEALTH = py_compile PASS; only additive changes (V0.1+V0.2 compact-prompt constants, select_compact_prompt() dispatcher, build_fal_request(prompt_mode=) param, main routing); no unrelated drift
+CONFIG_HEALTH = model_id=fal-ai/flux-pro/v1.1 (PATH_F operator pick — PRESERVE; do NOT revert to flux/dev or CHUA_XAC_NHAN)
+RECOMMENDED_NEXT_SAFE_COMMIT_GROUP = COMMIT_GROUP_A (14 BUCKET_1 paths) as single coherent "infra + briefs + verification audit trail" commit
+COMMIT_GROUP_B = LYRE_CONTROL_REFERENCE_V0_1.md follow-up (only if prior push predated LOCK_01 minor fix — operator checks git log first)
+COMMIT_GROUP_C = REJECTED render outputs (operator decides commit-as-audit-reference vs gitignore-and-document-in-pointer)
+NO_RENDER = TRUE
+NO_PROMOTION = TRUE
+NO_ASSET_LOCK = TRUE
+NO_CANON_EDIT = TRUE
+NO_MODIFY_OF_CLASSIFIED_FILES = TRUE
+COMMIT_HASH = none (sandbox cannot git push)
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+NEXT_SAFE_TASK = OPERATOR_RUNS_REAL_GIT_STATUS_FROM_WINDOWS_AND_STAGES_COMMIT_GROUP_A:
+  1. cd D:\KAGAMI-MZ_SYNC_PUSH_V2
+  2. git status --short  (validate Cowork's enumeration)
+  3. Verify .gitignore covers __pycache__/ and pick policy for runs/ subtree
+  4. git add <14 BUCKET_1 paths> ; git commit ; git push
+  5. Decide BUCKET_4 #4.1 (LYRE_CONTROL_REFERENCE_V0_1 follow-up Y/N) via git log
+  6. Decide BUCKET_4 #4.2-4.4 (REJECTED outputs commit vs gitignore)
+NEXT_SAFE_TASK_GUARD = DO_NOT_STAGE_FROM_COWORK · DO_NOT_AUTO_MODIFY_GITIGNORE · DO_NOT_AUTO_DELETE_RUN_ARTIFACTS · DO_NOT_PROMOTE_OUTPUT · DO_NOT_AUTO_REVERT_MODEL_ID · DO_NOT_AUTO_DRAFT_V0_3_OR_CONTROL_RENDER_PLAN · DO_NOT_TREAT_AUDIT_AS_CANON
