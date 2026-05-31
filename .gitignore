@@ -57,3 +57,5 @@ service-account-key.json
 key user.txt
 *.key.json
 .env
+
+.env
