@@ -1,0 +1,40 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$generated_by": "Claude Cowork — render_gate_fal V0.1 — 2026-05-31",
+  "$generated_on": "2026-05-31",
+  "$purpose": "Configuration for tools/render_gate/mikage_render_gate_fal.py. Operator-editable. V0.1 ships with model_id=CHUA_XAC_NHAN as a deliberate safety stop — tool will refuse to call FAL until operator sets a concrete model_id.",
+
+  "provider": "fal",
+  "model_id": "CHUA_XAC_NHAN",
+  "output_root": "docs/automation/render_briefs/runs",
+  "default_attempt_count": 1,
+  "dry_run_default": true,
+
+  "fal_endpoint_template": "https://fal.run/{model_id}",
+  "fal_timeout_seconds": 120,
+  "fal_request_user_agent": "mikage-render-gate/0.1",
+
+  "compact_prompt_mode": "compact_prompt_v0_1",
+
+  "$operator_unlock_procedure": [
+    "1. Operator sets project_metadata.operator_approval_token in the target brief JSON (separate edit; not done by this tool).",
+    "2. Operator edits this config and replaces model_id 'CHUA_XAC_NHAN' with a concrete FAL model id (e.g. 'fal-ai/flux/dev' or whatever model is approved for Mikage).",
+    "3. Operator exports FAL_KEY (or FAL_API_KEY) in their shell.",
+    "4. Operator runs: python tools/render_gate/mikage_render_gate_fal.py --brief <brief.json>   (omit --dry-run to actually call FAL).",
+    "5. After the run, Cowork drafts a verification report against the brief's verification_checklist (separate task — never automatic)."
+  ],
+
+  "$safety_invariants": [
+    "Tool MUST NOT call FAL when operator_approval_token is null in the brief.",
+    "Tool MUST NOT call FAL when model_id is CHUA_XAC_NHAN.",
+    "Tool MUST NOT call FAL when FAL_KEY / FAL_API_KEY env var is missing.",
+    "Tool MUST NOT modify the source brief JSON.",
+    "Tool MUST NOT mark any output PASS for visual quality.",
+    "Tool MUST NOT establish anchor_lyre_001 or any other anchor.",
+    "Tool MUST NOT edit any canon file.",
+    "Tool MUST NOT asset-lock any output."
+  ]
+}
