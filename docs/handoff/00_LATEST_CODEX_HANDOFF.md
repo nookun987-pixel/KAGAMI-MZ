@@ -1337,3 +1337,359 @@ COMMIT_HASH = none
 PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED_WINDOWS_WORKTREE_POINTER_UNREACHABLE
 NEXT_SAFE_TASK = OPERATOR_FOLLOWS_UNLOCK_CHECKLIST_STEP_1_THROUGH_STEP_7 (at own pace)
 NEXT_SAFE_TASK_GUARD = SAME_AS_PRIOR_FAL_GATE_GUARDS
+
+## LYRE_PHASE_1_BRIEF_V0_1_ATTEMPT_004_VERIFICATION — 2026-05-31
+TASK = COWORK_DRAFT_VERIFICATION_REPORT_FOR_ATTEMPT_004
+TASK_STATUS = VERIFICATION_DRAFT_COMPLETE_RENDER_FAILS_6_OF_10_CHECKS
+OPERATOR_UNLOCK_COMPLETED:
+  STEP_1_MODEL_ID_PICKED = fal-ai/flux/dev
+  STEP_2_CONFIG_EDITED = YES
+  STEP_3_APPROVAL_TOKEN_SET = "2026-05-31_LYRE_P1_RUN_01"
+  STEP_4_FAL_KEY_EXPORTED = YES (operator pulled from D:\KAGAMI-MZ\.env)
+  STEP_5_DRY_RUN = PASS (attempt_003 status=DRY_RUN_PASS_NO_API_CALL)
+  STEP_6_REAL_RENDER = COMPLETED (attempt_004 status=RENDER_OUTPUT_CREATED_VERIFY_NOT_STARTED, api_called=true)
+ATTEMPT_004_RENDER_GATE_STATE:
+  source_brief_sha256_before = 7a47e705c5b9556cffa384e8dd0adefd9f61ea7489887db8f27c5f9c5ff0a22e
+  source_brief_sha256_after  = 7a47e705c5b9556cffa384e8dd0adefd9f61ea7489887db8f27c5f9c5ff0a22e (UNCHANGED — tool didn't mutate brief)
+  output_png_exists = YES (docs/automation/render_briefs/runs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1/attempt_004/output.png)
+  output_png_copied_to_brief_output_path = NO (correct — operator promotes only after verification)
+  anchor_established = NO
+  asset_lock = NO
+  canon_lock = NO
+VERIFICATION_REPORT_PATH = docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1_VERIFICATION_REPORT_ATTEMPT_004.md
+PER_CHECK_VERDICTS:
+  F1_PLASTIC_READ                    = FAIL (gacha plastic finish, no SSS, no micro-grain)
+  F2_FACE_SOFTENING                  = FAIL (orb head + amber eye points + chin transition)
+  F3_MECHA_CLUTTER                   = FAIL (panel-line greebles at shoulders/hips/knees/calves)
+  F4_ERA_BLEED                       = PASS_WITH_NOTE (no V1/V2.5 bleed; unintended amber accents)
+  ERA_TAG_MATCH                      = PASS (Empire monolith backdrop on-spec)
+  NEGATIVE_LOCK_INHERITED            = PASS_WITH_NOTE (compact negative used; model ignored core terms)
+  SHIELD_HYBRID_PHASE_1_DORMANT      = FAIL (forearm completely bare; no disc emitter)
+  MONOWIRE_HOLSTERED                 = FAIL (pistol in hand, wrong weapon, not holstered)
+  ANCHOR_FIRST_ESTABLISHMENT         = FAIL (operator signal + 6 core fails)
+  LICENSING_CLEAN                    = PASS_WITH_NOTE (no IP; aesthetic derivative of sci-fi android tropes)
+TOTALS = 1 PASS · 3 PASS_WITH_NOTE · 6 FAIL
+COWORK_OVERALL_PASS_CLAIM = NOT_MADE (operator decides next path)
+ANCHOR_LYRE_001_STATUS = STILL_CHUA_XAC_NHAN (not established by attempt_004)
+ROOT_CAUSE_READ_DIAGNOSTIC = (A) flux/dev model bias dominant — ignored female-body and mecha-clutter negatives; (B) compact prompt V0.1 leans on negation, weaker positive shape cues
+NEXT_SAFE_TASK = OPERATOR_PICKS_PATH (A=reject+revise brief V0.2 · B=swap model · C=both · D=defer Lyre lane)
+NEXT_SAFE_TASK_GUARD = DO_NOT_ESTABLISH_ANCHOR_LYRE_001 · DO_NOT_PROMOTE_ATTEMPT_004_TO_BRIEF_OUTPUT_PATH · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON · DO_NOT_REUSE_AS_POSITIVE_REFERENCE · DO_NOT_AUTO_DRAFT_V0_2_OR_SWAP_MODEL_WITHOUT_OPERATOR_PICK
+
+## LYRE_PHASE_1_BRIEF_V0_2_PATH_A_REVISION — 2026-05-31
+TASK = PATH_A_APPROVED_REJECT_ATTEMPT_004_CREATE_V0_2_REVISION_PACKAGE
+TASK_STATUS = V0_2_PACKAGE_BUILT_AND_VERIFIED_PENDING_OPERATOR_REVIEW
+OPERATOR_DECISION = PATH_A_APPROVED (REJECT attempt_004; preserve V0.1 untouched as audit trail; create V0.2 with redesigned compact prompt — positive shape cues front-loaded, not just more negatives)
+V0_1_BRIEF_STATUS = PRESERVED_UNTOUCHED_AS_AUDIT_TRAIL
+V0_1_BRIEF_SHA256 = 1f9d66fc1da42d2a3e874161e71b76d7e082b61ceb7f78d4d2598c6f791ee50f (post-token-edit; operator's "2026-05-31_LYRE_P1_RUN_01" preserved)
+V0_1_BRIEF_DISK_REPAIR = COMPLETED (linter side-effect had truncated config + V0.1 JSON on disk; rewritten via direct python; operator's intentional edits — model_id=fal-ai/flux/dev and token — preserved)
+ATTEMPT_004_OUTPUT_PNG_DISPOSITION = LEFT_IN_PLACE_AS_NEGATIVE_REFERENCE_ONLY (not promoted, not asset-locked, anchor_lyre_001 NOT established)
+V0_2_BRIEF_MD_PATH = docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.md
+V0_2_BRIEF_JSON_PATH = docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json
+V0_2_BRIEF_STATUS = DRAFT_PROPOSAL_NOT_CANON
+V0_2_OPERATOR_APPROVAL_TOKEN = null (operator must set before next render — gate enforces)
+V0_2_VERIFICATION_CHECKLIST_COUNT = 12 (V0.1 had 10; V0.2 adds SILHOUETTE_INDUSTRIAL_COLUMN + POSE_HANDS_BEHIND_BACK)
+V0_2_CHUA_XAC_NHAN_FIELDS_COUNT = 9
+V0_2_NEGATIVE_PROMPT_BRIEF_SPECIFIC_COUNT = 108 (V0.1 had 30)
+V0_2_PRIMARY_PROMPT_LEN_CHARS = 3196
+TOOL_MODIFIED = YES (additive)
+TOOL_MODIFICATIONS:
+  - Added COMPACT_PROMPT_V0_2_COMMANDER_LYRE_PHASE_1 constant
+  - Added COMPACT_NEGATIVE_V0_2 constant
+  - Added select_compact_prompt(brief_id) dispatcher
+  - build_fal_request now accepts prompt_mode param
+  - main() routes by brief_id via dispatcher
+  - report.prompt_mode now dynamic (no longer hardcoded compact_prompt_v0_1)
+  - V0.1 brief routing path preserved unchanged (additive only)
+TOOL_PY_COMPILE = PASS
+TOOL_DRY_RUN_ON_V0_2_VERIFICATION:
+  STATUS = DRY_RUN_PASS_NO_API_CALL
+  BRIEF_ID = BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2
+  ATTEMPT = 1 (folder docs/automation/render_briefs/runs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2/attempt_001/)
+  API_CALLED = false
+  PROMPT_MODE_IN_REPORT = compact_prompt_v0_2_lyre_p1 (router confirmed working)
+  PROMPT_MODE_IN_FAL_REQUEST = compact_prompt_v0_2_lyre_p1
+  SOURCE_BRIEF_UNCHANGED = true (post-run sha = 1f9d66fc... unchanged)
+  RUN_FOLDER_FILES = prompt_compact.txt + negative_compact.txt + fal_request.json + render_attempt_report.json + render_attempt_report.md (no fal_response.json, no output.png)
+ANY_NEW_IMAGE_CREATED_BY_THIS_TASK = NO (find runs/ -name "*.png" returns only attempt_004/output.png pre-existing from operator's earlier real render)
+CONFIG_MODEL_ID = fal-ai/flux/dev (UNCHANGED — operator's pick preserved)
+COMMIT_HASH = none (sandbox cannot git push; operator commits from Windows)
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+NEXT_SAFE_RENDER_COMMAND:
+  Step A (operator): set "operator_approval_token" in docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json
+  Step B (operator): ensure FAL_KEY exported
+  Step C (operator): dry-run
+    python tools/render_gate/mikage_render_gate_fal.py --brief docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json --dry-run
+  Step D (operator, only after C looks clean): real render
+    python tools/render_gate/mikage_render_gate_fal.py --brief docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json
+  Step E (Cowork, after output.png exists): draft V0.2 verification report against 12-check checklist
+NEXT_SAFE_TASK_GUARD = DO_NOT_RENDER_BY_COWORK · DO_NOT_PROMOTE_ATTEMPT_004 · DO_NOT_PROMOTE_ANY_V0_2_OUTPUT_BEFORE_VERIFICATION · DO_NOT_MARK_RENDER_PASS · DO_NOT_ESTABLISH_ANCHOR_LYRE_001 · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON · DO_NOT_SWAP_MODEL_ID_WITHOUT_OPERATOR_PICK · DO_NOT_CREATE_V0_3_OR_FURTHER_REVISIONS_WITHOUT_OPERATOR_DECISION
+
+## LYRE_V0_2_RENDER_TEST_APPROVED_AND_WIRED — 2026-05-31
+TASK = APPROVE_V0_2_RENDER_TEST (operator)
+TASK_STATUS = WIRING_VERIFIED_AWAITING_OPERATOR_WINDOWS_REAL_RENDER
+V0_2_BRIEF_TOKEN_SET = "2026-05-31_LYRE_P1_V0_2_RUN_01" (operator-issued; written to docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json)
+V0_2_BRIEF_SHA256_POST_TOKEN = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697
+ATTEMPT_001_V0_2_STATUS = DRY_RUN_PASS_NO_API_CALL (pre-token-set, prior session — token was null at that time)
+ATTEMPT_002_V0_2_STATUS = DRY_RUN_PASS_NO_API_CALL (post-token-set wiring verification)
+ATTEMPT_002_V0_2_VERIFICATION = ALL 15 WIRING CHECKS PASS:
+  - prompt_mode == compact_prompt_v0_2_lyre_p1                              PASS
+  - intended_model_id == fal-ai/flux/dev                                    PASS
+  - prompt contains "Genderless industrial command"                         PASS
+  - prompt contains "Flat rectangular chest plate"                          PASS
+  - prompt contains "hands clasped strictly behind the back"                PASS
+  - prompt contains "disc emitter"                                          PASS
+  - prompt contains "No pistol"                                             PASS
+  - negative contains "hourglass waist"                                     PASS
+  - negative contains "amber eyes"                                          PASS
+  - negative contains "eye points"                                          PASS
+  - negative contains "holding pistol"                                      PASS
+  - negative contains "gundam panels"                                       PASS
+  - aspect_ratio == 2.35:1                                                  PASS
+  - image_size.width == 3360                                                PASS
+  - image_size.height == 1430                                               PASS
+  - operator_approval_token_present == True                                 PASS (token "2026-05-31_LYRE_P1_V0_2_RUN_01")
+  - api_called == false                                                     PASS
+  - source_brief_unchanged == true                                          PASS
+  - no png/jpg/webp in V0.2 run folder                                      PASS
+ATTEMPT_003_V0_2_STATUS = FAL_API_KEY_MISSING (Cowork sandbox attempted real render; gate #4 stopped at FAL_KEY env-var check)
+ATTEMPT_003_V0_2_INFO:
+  - status = FAL_API_KEY_MISSING
+  - operator_approval_token_present = True (approval gate #2 passed)
+  - model_id = fal-ai/flux/dev (model gate #3 passed)
+  - fal_api_key_env_present = False (gate #4 STOPPED — Cowork sandbox does not have FAL_KEY; operator's key lives in D:\KAGAMI-MZ\.env on Windows side only)
+  - api_called = false
+  - source_brief_unchanged = true
+  - no png/jpg/webp created
+  - next_safe_task per tool = "OPERATOR_EXPORT_FAL_KEY_OR_FAL_API_KEY — set the env var before retry."
+COWORK_REAL_RENDER_FROM_SANDBOX = NOT_POSSIBLE (no FAL_KEY in Linux sandbox env; intentional per operator's secret-management pattern)
+OPERATOR_RUN_REQUIRED_FROM_WINDOWS:
+  cd D:\KAGAMI-MZ_SYNC_PUSH_V2
+  # Re-source FAL_KEY from .env (same flow used for attempt_004 on V0.1):
+  $line = Get-Content "D:\KAGAMI-MZ\.env" | Where-Object { $_ -match '^\s*(FAL_KEY|FAL_API_KEY)\s*=' } | Select-Object -First 1
+  if ($line) { $name,$value = $line -split '=',2; Set-Item -Path "Env:$($name.Trim())" -Value $value.Trim() }
+  python tools/render_gate/mikage_render_gate_fal.py --brief docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json
+EXPECTED_OPERATOR_RUN_OUTCOME = attempt_004 (V0.2 folder) status=RENDER_OUTPUT_CREATED_VERIFY_NOT_STARTED with output.png present
+COWORK_NEXT_DELIVERABLE_WHEN_OUTPUT_PNG_LANDS:
+  Draft docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2_VERIFICATION_REPORT_ATTEMPT_<NNN>.md
+  Apply ALL 12 checks (F1/F2/F3/F4/ERA_TAG/NEG_LOCK/SHIELD/MONOWIRE/SILHOUETTE_INDUSTRIAL_COLUMN/POSE_HANDS_BEHIND_BACK/ANCHOR/LICENSING)
+  Per-check verdict PASS/FAIL/PASS_WITH_NOTE only — Cowork does NOT mark overall PASS.
+COMMIT_HASH = none (sandbox cannot git push)
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+NEXT_SAFE_TASK = OPERATOR_RUNS_REAL_RENDER_FROM_WINDOWS_SHELL_WITH_FAL_KEY_SOURCED · THEN_ASK_COWORK_FOR_V0_2_VERIFICATION_REPORT
+NEXT_SAFE_TASK_GUARD = DO_NOT_PROMOTE_OUTPUT · DO_NOT_MARK_PASS · DO_NOT_ESTABLISH_ANCHOR · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON
+
+## LYRE_V0_2_ATTEMPT_004_VERIFICATION — 2026-05-31
+TASK = VERIFY_V0_2_ATTEMPT_004
+TASK_STATUS = VERIFICATION_DRAFT_COMPLETE_RENDER_FAILS_5_OF_12_CHECKS_WITH_3_IMPROVEMENTS_VS_V0_1
+OPERATOR_RAN_REAL_RENDER_FROM_WINDOWS = YES (FAL_KEY sourced from D:\KAGAMI-MZ\.env)
+ATTEMPT_004_V0_2_OUTPUT_PNG_EXISTS = YES (docs/automation/render_briefs/runs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2/attempt_004/output.png)
+ATTEMPT_004_V0_2_RENDER_GATE_STATE:
+  status = RENDER_OUTPUT_CREATED_VERIFY_NOT_STARTED
+  api_called = true
+  prompt_mode = compact_prompt_v0_2_lyre_p1 (V0.2 router confirmed end-to-end)
+  source_brief_sha256_before = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697
+  source_brief_sha256_after  = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697 (UNCHANGED)
+  output_path_copied_to_brief = NO (correct — operator promotes only after verification)
+  anchor_established = NO
+  asset_lock = NO
+  canon_lock = NO
+VERIFICATION_REPORT_PATH = docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2_VERIFICATION_REPORT_ATTEMPT_004.md
+PER_CHECK_VERDICTS_V0_2_ATTEMPT_004:
+  F1_PLASTIC_READ                = PASS_WITH_NOTE  (improvement from V0.1 FAIL — less gloss, some SSS)
+  F2_FACE_SOFTENING              = PASS_WITH_NOTE  (improvement from V0.1 FAIL — no amber eye points; visor still curved not flat slit)
+  F3_MECHA_CLUTTER               = PASS_WITH_NOTE  (improvement from V0.1 FAIL — no knee lights, less greebles)
+  F4_ERA_BLEED                   = FAIL            (amber hip inserts violate V0.2's explicit amber #FFAA33 ban)
+  ERA_TAG_MATCH                  = PASS            (Empire monolith backdrop strong, consistent with V0.1)
+  NEGATIVE_LOCK_INHERITED        = PASS            (V0.2 compact negative wired end-to-end; up from V0.1 PASS_WITH_NOTE)
+  SHIELD_HYBRID_PHASE_1_DORMANT  = FAIL            (forearm bare again; flux/dev small-detail omission)
+  MONOWIRE_HOLSTERED             = FAIL            (no hilt at right hip; improvement: no pistol)
+  SILHOUETTE_INDUSTRIAL_COLUMN   = PASS_WITH_NOTE  (NEW V0.2 check; dramatic shift from V0.1 female-android; subtle waist/chest contour remains)
+  POSE_HANDS_BEHIND_BACK         = FAIL            (NEW V0.2 check; hands hang at sides — flux/dev pose default)
+  ANCHOR_FIRST_ESTABLISHMENT     = FAIL            (5 hard fails block anchor)
+  LICENSING_CLEAN                = PASS_WITH_NOTE  (consistent with V0.1; stylistically derivative of sci-fi android)
+TOTALS_V0_2 = 2 PASS · 5 PASS_WITH_NOTE · 5 FAIL
+TOTALS_V0_1_BASELINE = 1 PASS · 3 PASS_WITH_NOTE · 6 FAIL
+NET_DIFF_V0_2_vs_V0_1 = +1 PASS · +2 PASS_WITH_NOTE · -1 FAIL (excluding the 2 new V0.2 checks)
+COWORK_OVERALL_PASS_CLAIM = NOT_MADE
+ANCHOR_LYRE_001_STATUS = STILL_CHUA_XAC_NHAN
+ROOT_CAUSE_READ_DIAGNOSTIC:
+  - flux/dev pose default (hands-at-sides) overrode V0.2 explicit positive+negative pose cues
+  - flux/dev small-detail omission: 15cm disc emitter + slim Monowire hilt both dropped (known limitation)
+  - flux/dev amber-embellishment habit: hip inserts replace V0.1's knee lights (location varies, behavior persists)
+  - V0.2 redesign successfully addressed character body (F1/F2/F3 + silhouette) and prompt-lock infrastructure (NEG_LOCK now PASS)
+NEXT_SAFE_TASK = OPERATOR_PICKS_PATH:
+  PATH_E = REJECT + V0.3 brief revision (re-emphasize pose + shield/weapon scale anchors + explicit no-warm-accent hip ban)
+  PATH_F = REJECT + swap model_id (try flux-pro/v1.1, sd3.5-large, etc. on V0.2 brief)
+  PATH_G = E + F combined
+  PATH_H = ACCEPT_PARTIAL (V0.2 attempt_004 as exploratory reference only, NOT canonical anchor; parallel-track other Cast Lane subjects)
+  PATH_I = DEFER Lyre lane entirely
+NEXT_SAFE_TASK_GUARD = DO_NOT_PROMOTE_ATTEMPT_004 · DO_NOT_MARK_PASS · DO_NOT_ESTABLISH_ANCHOR_LYRE_001 · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON · DO_NOT_REUSE_AS_POSITIVE_REFERENCE_FOR_LORA_LYRA_MIKAGE · DO_NOT_AUTO_DRAFT_V0_3_OR_SWAP_MODEL_WITHOUT_OPERATOR_PICK
+COMMIT_HASH = none
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+
+## LYRE_V0_2_PATH_F_MODEL_SWAP_DISPATCHED — 2026-05-31
+TASK = PATH_F_APPROVED_SWAP_MODEL_ID_TO_FLUX_PRO_V1_1 (operator)
+TASK_STATUS = DRY_RUN_VERIFIED_AWAITING_OPERATOR_WINDOWS_REAL_RENDER
+OPERATOR_DECISION = PATH_F_APPROVED (REJECT V0.2 attempt_004 for canonical anchor; isolate model fitness by running existing V0.2 brief on different FAL model)
+V0_2_ATTEMPT_004_DISPOSITION = REJECTED_LEFT_IN_PLACE_AS_AUDIT_REFERENCE (not promoted, not asset-locked, anchor_lyre_001 NOT established)
+V0_2_BRIEF_STATUS = UNCHANGED (sha = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697; operator's token "2026-05-31_LYRE_P1_V0_2_RUN_01" preserved)
+V0_2_BRIEF_MD_STATUS = UNCHANGED
+TOOL_STATUS = UNCHANGED (V0.2 compact prompt + V0.2 negative + select_compact_prompt() dispatcher unchanged)
+CONFIG_CHANGE:
+  FIELD: tools/render_gate/mikage_render_gate_config.json model_id
+  BEFORE: "fal-ai/flux/dev"
+  AFTER:  "fal-ai/flux-pro/v1.1"
+  ALL_OTHER_FIELDS = PRESERVED (provider, output_root, default_attempt_count, dry_run_default, fal_endpoint_template, fal_timeout_seconds, fal_request_user_agent, compact_prompt_mode, $operator_unlock_procedure, $safety_invariants — all UNCHANGED)
+  CONFIG_SHA_BEFORE = 4851fdaa33bc430f4b3f4b07a52dbb1b9c6f8da6e105a301d3ffd42017ef0be9
+  CONFIG_SHA_AFTER  = 8ab9939e46bc25d00bce2e7be8686c47601ed9077e69c42804bfe6ae59b40a75
+ATTEMPT_005_V0_2_FLUX_PRO_DRY_RUN_VERIFICATION:
+  STATUS = DRY_RUN_PASS_NO_API_CALL                            PASS
+  BRIEF_ID = BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2   PASS (target brief preserved)
+  PROMPT_MODE = compact_prompt_v0_2_lyre_p1                    PASS (V0.2 router still firing)
+  MODEL_ID = fal-ai/flux-pro/v1.1                              PASS (new model picked up via config)
+  SOURCE_BRIEF_UNCHANGED = true                                PASS
+  API_CALLED = false                                           PASS
+  OPERATOR_APPROVAL_TOKEN_PRESENT = True                       PASS (token preserved from PATH_F unlock)
+  ASPECT_RATIO = 2.35:1                                        PASS
+  IMAGE_SIZE = 3360x1430                                       PASS
+  NO_IMAGES_IN_ATTEMPT_005_FOLDER                              PASS (only prompt_compact.txt + negative_compact.txt + fal_request.json + report .json + report .md)
+  ATTEMPT_005_RUN_FOLDER = docs/automation/render_briefs/runs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2/attempt_005/
+COWORK_REAL_RENDER_FROM_SANDBOX = NOT_POSSIBLE (sandbox has no FAL_KEY by design)
+OPERATOR_RUN_REQUIRED_FROM_WINDOWS:
+  cd D:\KAGAMI-MZ_SYNC_PUSH_V2
+  # Re-source FAL_KEY from .env (same flow as attempts 004):
+  $line = Get-Content "D:\KAGAMI-MZ\.env" | Where-Object { $_ -match '^\s*(FAL_KEY|FAL_API_KEY)\s*=' } | Select-Object -First 1
+  if ($line) { $name,$value = $line -split '=',2; Set-Item -Path "Env:$($name.Trim())" -Value $value.Trim() }
+  python tools/render_gate/mikage_render_gate_fal.py --brief docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2.json
+EXPECTED_OPERATOR_RUN_OUTCOME = attempt_006 (V0.2 folder) status=RENDER_OUTPUT_CREATED_VERIFY_NOT_STARTED with output.png present, model_id stamped as fal-ai/flux-pro/v1.1
+COWORK_NEXT_DELIVERABLE_WHEN_OUTPUT_PNG_LANDS:
+  Draft docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2_VERIFICATION_REPORT_ATTEMPT_<NNN>_FLUX_PRO.md
+  Apply same 12 V0.2 checks (F1/F2/F3/F4/ERA_TAG/NEG_LOCK/SHIELD/MONOWIRE/SILHOUETTE_INDUSTRIAL_COLUMN/POSE_HANDS_BEHIND_BACK/ANCHOR/LICENSING)
+  Cross-reference vs V0.2/flux/dev attempt_004 to isolate model-fitness deltas
+  Per-check verdict only — Cowork does NOT mark overall PASS · does NOT establish anchor · does NOT promote · does NOT asset-lock
+COMMIT_HASH = none (sandbox cannot git push)
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+NEXT_SAFE_TASK = OPERATOR_RUNS_REAL_RENDER_FROM_WINDOWS_FLUX_PRO_V1_1_THEN_ASK_COWORK_VERIFICATION
+NEXT_SAFE_TASK_GUARD = DO_NOT_RENDER_BY_COWORK · DO_NOT_PROMOTE_OUTPUT · DO_NOT_MARK_PASS · DO_NOT_ESTABLISH_ANCHOR · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON · DO_NOT_REVERT_TO_FLUX_DEV_WITHOUT_OPERATOR_DECISION · DO_NOT_EDIT_V0_2_BRIEF · DO_NOT_AUTO_DRAFT_V0_3
+
+## LYRE_V0_2_ATTEMPT_006_FLUX_PRO_VERIFICATION — 2026-05-31
+TASK = VERIFY_V0_2_ATTEMPT_006_FLUX_PRO
+TASK_STATUS = VERIFICATION_DRAFT_COMPLETE_RENDER_FAILS_6_OF_12_WITH_MODEL_TRADE_OFFS_ISOLATED
+OPERATOR_RAN_REAL_RENDER_FROM_WINDOWS = YES (FAL_KEY sourced from D:\KAGAMI-MZ\.env)
+ATTEMPT_006_V0_2_OUTPUT_PNG_EXISTS = YES (docs/automation/render_briefs/runs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2/attempt_006/output.png)
+ATTEMPT_006_V0_2_RENDER_GATE_STATE:
+  status = RENDER_OUTPUT_CREATED_VERIFY_NOT_STARTED
+  api_called = true
+  prompt_mode = compact_prompt_v0_2_lyre_p1 (V0.2 router still firing under new model)
+  model_id = fal-ai/flux-pro/v1.1 (PATH_F swap effective)
+  source_brief_sha256_before = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697
+  source_brief_sha256_after  = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697 (UNCHANGED)
+  anchor_established = NO
+  asset_lock = NO
+  canon_lock = NO
+V0_2_BRIEF_SHA256 = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697 (UNCHANGED end-to-end across PATH_F flow)
+VERIFICATION_REPORT_PATH = docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2_VERIFICATION_REPORT_ATTEMPT_006_FLUX_PRO.md
+PER_CHECK_VERDICTS_V0_2_ATTEMPT_006_FLUX_PRO:
+  F1_PLASTIC_READ                = PASS            (improvement vs flux/dev attempt_004 PASS_WITH_NOTE — proper ceramic finish)
+  F2_FACE_SOFTENING              = PASS_WITH_NOTE  (visor more horizontal; side helmet cyan accents are extras not in spec)
+  F3_MECHA_CLUTTER               = FAIL            (regression vs flux/dev attempt_004 PASS_WITH_NOTE — cyan knee lights present)
+  F4_ERA_BLEED                   = PASS            (improvement vs flux/dev attempt_004 FAIL — no amber accents anywhere)
+  ERA_TAG_MATCH                  = FAIL            (regression vs flux/dev attempt_004 PASS — studio backdrop replaces Empire monolith)
+  NEGATIVE_LOCK_INHERITED        = PASS            (consistent; wiring identical to attempt_004)
+  SHIELD_HYBRID_PHASE_1_DORMANT  = FAIL            (model-family-independent — forearm bare both flux variants)
+  MONOWIRE_HOLSTERED             = FAIL            (model-family-independent — no hip hilt both flux variants)
+  SILHOUETTE_INDUSTRIAL_COLUMN   = PASS_WITH_NOTE  (different gap from flux/dev — hex chest not rectangular; burlier industrial reading)
+  POSE_HANDS_BEHIND_BACK         = FAIL            (model-family-independent — hands at sides both flux variants)
+  ANCHOR_FIRST_ESTABLISHMENT     = FAIL            (6 hard fails block anchor)
+  LICENSING_CLEAN                = PASS_WITH_NOTE  (consistent; aesthetic derivative of sci-fi soldier suit family)
+TOTALS_V0_2_ATTEMPT_006 = 3 PASS · 3 PASS_WITH_NOTE · 6 FAIL
+TOTALS_V0_2_ATTEMPT_004_BASELINE = 2 PASS · 5 PASS_WITH_NOTE · 5 FAIL
+COWORK_OVERALL_PASS_CLAIM = NOT_MADE
+ANCHOR_LYRE_001_STATUS = STILL_CHUA_XAC_NHAN
+MODEL_FAMILY_INDEPENDENT_FAILS_CONFIRMED:
+  POSE_HANDS_BEHIND_BACK         (both flux/dev and flux-pro default to hands-at-sides; prompt-only approach insufficient)
+  SHIELD_HYBRID_PHASE_1_DORMANT  (both drop wrist-scale attachments)
+  MONOWIRE_HOLSTERED             (both drop hip-scale attachments)
+MODEL_TRADE_OFF_MATRIX:
+  flux/dev advantages = Empire architectural backdrop respected
+  flux-pro advantages = matte ceramic material; clean palette (no amber); burlier industrial silhouette
+  flux-pro regressions vs flux/dev = lost Empire backdrop (defaults to studio product framing); adds cyan knee-light indicators
+  neither model solves POSE/SHIELD/MONOWIRE under prompt-only approach
+NEXT_SAFE_TASK = OPERATOR_PICKS_PATH:
+  PATH_J = Build V0.3 brief targeted at POSE/SHIELD/MONOWIRE on flux-pro (rescale shield + hilt to "small dinner plate" / "flashlight" scale; add explicit architectural backdrop reinforcement; add knee-indicator + side-helmet-accent negatives)
+  PATH_K = Switch model family (SD3.5-large on FAL · SDXL+ControlNet pose conditioning · other)
+  PATH_L = ACCEPT_PARTIAL — keep attempt_006 as material/color exploratory ref and attempt_004 as backdrop exploratory ref; anchor stays CHUA_XAC_NHAN; move other Cast Lane subjects in parallel
+  PATH_M = PAUSE Lyre lane; document model-family limitations
+  PATH_N = HYBRID — build LORA brief V0.1 to validate render-gate generalization on a different entity before returning to Lyre
+NEXT_SAFE_TASK_GUARD = DO_NOT_PROMOTE_ATTEMPT_006 · DO_NOT_MARK_PASS · DO_NOT_ESTABLISH_ANCHOR_LYRE_001 · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON · DO_NOT_REUSE_AS_POSITIVE_REFERENCE_FOR_LORA_LYRA_MIKAGE · DO_NOT_AUTO_REVERT_MODEL_ID · DO_NOT_AUTO_DRAFT_V0_3 · DO_NOT_AUTO_SWITCH_MODEL_FAMILY
+COMMIT_HASH = none
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+
+## LYRE_TEXT_ONLY_RENDER_LANE_HALTED_CONTROL_REFERENCE_DISPATCHED — 2026-05-31
+TASK = STOP_TEXT_ONLY_LYRE_RENDERS_CREATE_LYRE_CONTROL_REFERENCE_V0_1 (operator)
+TASK_STATUS = CONTROL_REFERENCE_WRITTEN_PENDING_OPERATOR_REVIEW
+OPERATOR_DECISION = HALT_TEXT_ONLY_LYRE_LANE (after 4 real renders across V0.1/V0.2 + flux-dev/flux-pro confirmed 3 model-family-independent fails — POSE/SHIELD/MONOWIRE)
+LANE_HALT_TARGET = LYRE_PHASE_1_TEXT_ONLY_RENDER_SUB_LANE (Cast Lane itself remains active)
+CONTROL_REFERENCE_PATH = docs/handoff/LYRE_CONTROL_REFERENCE_V0_1.md
+CONTROL_REFERENCE_STATUS = DRAFT_PROPOSAL_NOT_CANON
+ELEVEN_LOCKS_RECORDED:
+  LOCK_01 = HANDS_BEHIND_BACK
+  LOCK_02 = NO_VISIBLE_HANDS_FROM_FRONT
+  LOCK_03 = FLAT_RECTANGULAR_COLUMN_TORSO
+  LOCK_04 = LEFT_FOREARM_DISC_EMITTER_LEGIBLE (revision: rescale to ~25-30cm prop, ~5-8% frame height)
+  LOCK_05 = RIGHT_HIP_MONOWIRE_HILT_LEGIBLE (revision: rescale to ~20-25cm prop, ~4-6% frame height)
+  LOCK_06 = EMPIRE_MONOLITH_BACKDROP
+  LOCK_07 = MATTE_B4C_CERAMIC
+  LOCK_08 = SINGLE_THIN_CYAN_VISOR (strict horizontal thin geometry)
+  LOCK_09 = NO_KNEE_LIGHTS (color-independent ban)
+  LOCK_10 = NO_AMBER (zero warm color anywhere on figure)
+  LOCK_11 = NO_STUDIO_GRAY_BACKGROUND (companion to LOCK_06)
+ATTEMPT_USAGE_RULES:
+  V0_1_ATTEMPT_004_FLUX_DEV    = BACKDROP_REFERENCE_ONLY (Empire monolith framing for LOCK_06)
+  V0_2_ATTEMPT_004_FLUX_DEV    = BACKDROP_REFERENCE_ONLY (Empire monolith framing for LOCK_06)
+  V0_2_ATTEMPT_006_FLUX_PRO    = MATERIAL_COLOR_REFERENCE_ONLY (LOCK_07 ceramic + LOCK_10 cyan palette)
+  NEITHER_USED_AS_POSITIVE_CHARACTER_ANCHOR = TRUE
+  NEITHER_USED_AS_POSE_REFERENCE = TRUE
+  NEITHER_USED_AS_SHIELD_OR_MONOWIRE_REFERENCE = TRUE
+NO_RENDER_BY_COWORK = TRUE
+NO_V0_3_PROMPT_ONLY_BRIEF = TRUE
+NO_MODEL_SWAP = TRUE (config preserved: model_id=fal-ai/flux-pro/v1.1)
+NO_PROMOTION = TRUE
+NO_ASSET_LOCK = TRUE
+NO_CANON_LOCK = TRUE
+NO_ANCHOR_ESTABLISHED = TRUE (anchor_lyre_001 stays CHUA_XAC_NHAN)
+PRESERVED_END_TO_END:
+  V0_1_BRIEF_SHA = 1f9d66fc1da42d2a3e874161e71b76d7e082b61ceb7f78d4d2598c6f791ee50f
+  V0_2_BRIEF_SHA = 6bbce9598d7f6c143078bbe982382d3ee5471dccd46c826a97a4eb62dcc7e697
+  CONFIG_SHA     = 8ab9939e46bc25d00bce2e7be8686c47601ed9077e69c42804bfe6ae59b40a75 (flux-pro/v1.1)
+  TOOL_PY_FILE   = UNCHANGED
+  ALL_ATTEMPT_FOLDERS_001_THROUGH_006 = LEFT_IN_PLACE_AS_AUDIT_TRAIL
+COMMIT_HASH = none
+PUSH_STATUS = NO_PUSH_SANDBOX_BLOCKED
+NEXT_SAFE_TASK = OPERATOR_REVIEWS_LYRE_CONTROL_REFERENCE_V0_1_BEFORE_ANY_NEXT_RENDER:
+  After review, operator picks control approach (operator-only decision):
+    - ControlNet (pose / Canny / depth / scribble)
+    - IP-Adapter (style / reference / shape)
+    - LoRA fine-tune
+    - Manual inpaint + img2img low-denoise
+    - Photo-reference stitch
+    - 3D-rendered placeholder composite
+    - Or any combination
+    - Or PAUSE Lyre and move to LORA / LYRA / Mikage refresh
+  Then Cowork drafts the corresponding control-render PLAN as a NEW deliverable (NOT another prompt-only brief).
+NEXT_SAFE_TASK_GUARD = DO_NOT_RENDER_NEXT_LYRE_PROMPT_ONLY_ON_FLUX_FAMILY · DO_NOT_PROMOTE_ANY_V0_X_OUTPUT · DO_NOT_ESTABLISH_ANCHOR_LYRE_001 · DO_NOT_MARK_PASS · DO_NOT_ASSET_LOCK · DO_NOT_PATCH_CANON · DO_NOT_REUSE_V0_X_OUTPUTS_AS_POSITIVE_REFERENCES_FOR_OTHER_ENTITIES · DO_NOT_AUTO_DRAFT_V0_3 · DO_NOT_AUTO_SWITCH_MODEL_ID · DO_NOT_TREAT_LYRE_CONTROL_REFERENCE_V0_1_AS_CANON
+
+## LYRE_CONTROL_REFERENCE_V0_1_MINOR_FIX — 2026-05-31
+TASK = REVISE_LYRE_CONTROL_REFERENCE_V0_1_MINOR_FIX_ONLY (operator)
+TASK_STATUS = APPLIED
+SCOPE = Single-line wording correction inside LOCK_01 UNACCEPTABLE_FALLBACKS bullet
+FILE_TOUCHED = docs/handoff/LYRE_CONTROL_REFERENCE_V0_1.md (this minor fix only)
+EXACT_LINE_BEFORE = "Frame the figure from behind (this breaks LOCK 11 frontal three-quarter composition)"
+EXACT_LINE_AFTER  = "Frame the figure from behind (this breaks the required frontal / controlled three-quarter composition and weakens LOCK_02_NO_VISIBLE_HANDS_FROM_FRONT validation)"
+RATIONALE = LOCK_11 = NO_STUDIO_GRAY_BACKGROUND, NOT frontal-three-quarter composition. The composition requirement lives in the brief, not in any of the 11 locks. The corrected wording attributes the constraint to the brief's framing requirement AND adds the actual related lock linkage (LOCK_02).
+LOCKS_UNCHANGED = TRUE (all 11 locks identical)
+NEW_STRATEGY_ADDED = NONE
+RENDER_BY_COWORK = NO
+CONTROL_RENDER_PLAN_DRAFTED = NO (deferred per operator)
+CONFIG_MODEL_ID_CHANGED = NO (preserved at fal-ai/flux-pro/v1.1)
+NEXT_SAFE_TASK = UNCHANGED (OPERATOR_REVIEWS_LYRE_CONTROL_REFERENCE_V0_1_BEFORE_ANY_NEXT_RENDER)
