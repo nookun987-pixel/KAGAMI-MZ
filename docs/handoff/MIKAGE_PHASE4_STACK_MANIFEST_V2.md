@@ -92,7 +92,7 @@ These items remain outside the included stack. Decisions recorded in `docs/hando
 
 | Requirement | Current state | Spec / path | Blocking effect |
 |---|---|---|---|
-| Bust / upper-body bridge | MISSING_REQUIRED_ASSET — spec defined; candidate not yet generated | `docs/handoff/MIKAGE_BUST_UPPER_BODY_BRIDGE_ASSET_REQUEST_SPEC_V1.md` | Phase 5 cannot start; generate via Codex / local ComfyUI |
+| Bust / upper-body bridge | INCLUDED_AS_PHASE4_REFERENCE — smooth monocoque porcelain bust accepted (V4 REFINE "Ảnh 1", 2026-05-31) under amended material standard | `docs/handoff/ASSET-BRIDGE-DECISION_AND_AR14_S9_REVIEW_BUST_UPPER_BODY_V1.md` | Slot filled at Phase 4 reference level; NOT canon-locked, NOT Phase 5 entry |
 | Body continuity / full-character constraint | Requirement defined only | `docs/handoff/MIKAGE_MISSING_BODY_BUST_ENVIRONMENT_ASSET_REQUESTS_V1.md` | Phase 6 cannot start; ASSET-RESET-15 blocked until bust bridge accepted |
 | Environment / world plate | Requirement defined only | `docs/handoff/MIKAGE_MISSING_BODY_BUST_ENVIRONMENT_ASSET_REQUESTS_V1.md` | Film/video/shotlist/render remain blocked |
 | Motion readiness manifest | Missing | — | Phase 7 cannot start |
@@ -124,10 +124,10 @@ PHASE5_ALLOWED: NO
 | Held candidates have documented human decisions | MET — ASSET-RESET-12 complete; decisions on record |
 | Phase 4 stack manifest updated with decisions | MET — this V2 manifest (ASSET-RESET-13 complete) |
 | Bust / upper-body bridge spec exists | MET — ASSET-RESET-14 complete |
-| Bust / upper-body bridge candidate accepted | NOT MET — candidate not yet generated |
-| Phase 5 readiness re-review PASS | NOT MET — gate not yet reached |
+| Bust / upper-body bridge candidate accepted | MET — V4 REFINE smooth bust INCLUDED_AS_PHASE4_REFERENCE (2026-05-31; see ASSET-BRIDGE-DECISION_AND_AR14_S9_REVIEW_BUST_UPPER_BODY_V1.md) |
+| Phase 5 readiness re-review PASS | MET — ASSET-RESET-16 gate returned PASS (2026-05-31); see docs/handoff/ASSET-RESET-16_PHASE5_READINESS_RE_REVIEW_GATE_NO_RENDER_V1_REPORT.md |
 
-PHASE5_ALLOWED remains NO until all five conditions above are met. Completing this manifest satisfies condition 2 of 5.
+As of 2026-05-31, all 5 of 5 conditions are MET. PHASE5_ALLOWED_TO_BE_PROPOSED: YES — Phase 5 (internal upper-body consistency + motion-READINESS review only) may be proposed. Film / video / short / shotlist remain OUT OF SCOPE and are NOT unlocked. No motion render, canon lock, or asset lock authorized by this status.
 
 ---
 

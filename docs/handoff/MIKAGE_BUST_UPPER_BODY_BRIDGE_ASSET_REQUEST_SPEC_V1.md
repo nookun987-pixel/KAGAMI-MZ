@@ -145,6 +145,8 @@ The following existing assets must not be used as positive source or starting po
 
 Generation must follow the constraints in Sections 4, 5, and 6 exactly. The output must be reviewed using the evaluation process in Section 9 before it can be assigned any stack status.
 
+> GOVERNANCE PRECEDENCE NOTE (added later): `CLAUDE.md` → "RENDER GOVERNANCE PRECEDENCE" now overrides Section 8 (generation authority) and Section 13 (`ASSET_GENERATED_BY_CLAUDE: NO`) of this spec for the active bust / upper-body bridge render task ONLY, when the user explicitly requests render/generate. Under that override, Claude Code MAY generate this asset. All other constraints of this spec — Sections 4, 5, 6, 7, and 9 — remain fully in force and are NOT overridden. Any rendered output is a REVIEW_CANDIDATE only and must still pass the Section 9 evaluation gate before receiving any positive label.
+
 ---
 
 ## 9. Candidate Evaluation Process (When A Candidate Exists)
