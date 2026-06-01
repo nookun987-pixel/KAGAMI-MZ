@@ -1,157 +1,119 @@
 # MIKAGE_ZENITH_BLADE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1
 
 ## ── PACKET STATUS ──────────────────────────────────────────────
-
 PACKET_TYPE: RUNPOD / CLOUD COMFYUI EXECUTION PACKET — NO RENDER BY CLAUDE
-RENDER_ALLOWED_BY_CLAUDE: NO
-EXECUTED_BY: Operator on a RunPod 24 GB GPU (RTX 4090 / A5000 / 3090)
-SCOPE: SEPARATE WEAPON ASSET — Zenith Blade / PrimeTool. NOT prompt-injected into the figure.
-CANON_APPROVED: NO · ASSET_LOCKED: NO · PRODUCTION_READY: NO · LANE_CHANGED: NO
-DATE: 2026-06-01 (revised 2026-06-01c — operator master device spec; blade = REST + COMBAT-ACTIVE; "3 Pha" are ENTITY-level, not blade modes)
+EXECUTED_BY: Operator on a RunPod 24 GB GPU
+SCOPE: SEPARATE WEAPON ASSET — Zenith Blade / PrimeTool, rendered across the LOCKED 3 phases
+ALIGNED TO: 🔒 STRUCTURE CANON LOCKED 2026-06-02 (synced P1/P2/P3; B4C outer / Ti inner)
+CANON_APPROVED (structure): YES (operator-locked) · RENDER/3D PRODUCTION_READY: NO (review-candidate) · DATE: 2026-06-02
 
-Governed by `MIKAGE_ZENITH_BLADE_SPEC_V1.md` (device spec §1) + `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` (the 3 entity phases). Claude produced this packet; Claude does NOT execute it. Reuses the proven RunPod SDXL + IP-Adapter + canny ControlNet stack.
+Governed by `MIKAGE_ZENITH_BLADE_SPEC_V1.md` (🔒 locked) + `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` §0.5. Claude produced this packet; Claude does NOT execute it.
 
 ---
 
 ## 0. AUTHORITATIVE SOURCES
-
 | Document | Purpose |
 |---|---|
-| `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md` §1 | Device spec: floating Ti plates around red Ferro-calcium core, flux-pinning 0.5mm, Orbital-Logic UI, pH1.2 acid-vapor |
-| `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` | Entity 3 phases (Imperial Clean / Fallen-Exile / Execution) — character-side; blade core glow intensifies with phase |
-| `docs/handoff/SESSION_RESUME_NOTE_20260601.md` §2–§3 | RunPod / ControlNet recipe + pod setup block |
-| Drive `MIKAGE/zenith`, `MIKAGE/zenith V2` | Operator MidJourney refs — non-combat ornate form + technical blueprint |
+| `MIKAGE_ZENITH_BLADE_SPEC_V1.md` (locked) | Device spec, materials, phase definitions |
+| `design/zenith_blade_clean_v1/MIKAGE_ZENITH_BLADE_REST_CLEAN_V1.svg` | **ControlNet source for P1** (clean line art) |
+| `design/zenith_blade_clean_v1/MIKAGE_ZENITH_BLADE_COMBAT_ACTIVE_CLEAN_V1.svg` | **ControlNet source for P2/P3** |
+| `SESSION_RESUME_NOTE_20260601.md` §3 | RunPod / ComfyUI setup block |
+
+**ControlNet prep:** rasterize each locked blueprint SVG → PNG at 832×1216 (e.g. open in browser / Inkscape / `cairosvg` export). Use the PNG as the ControlNet canny/lineart input — these are deterministic line drawings, ideal control images.
 
 ---
 
-## 0b. KEY CORRECTION (2026-06-01c)
-The "3 Pha" are the ENTITY's appearance phases, NOT blade thermal modes. The earlier ST2/ST3/ST4 Silent/Pulse/Overload blade states are RETIRED. The blade has **2 states**: REST (ornate, flux-pinned to back) and COMBAT-ACTIVE (PrimeTool fully lit). Compact-idle/mini = deprecated (not canon). Outputs = REVIEW_CANDIDATE only.
-
----
-
-## 1. STATES TO RENDER (2 blade states — each a separate render group)
-
-Render as an **isolated object on a neutral background** (product/turnaround), no hand, no wielder, no scene.
-
-| State | Form | Geometry / source | Signature |
+## 1. THE 3 PHASES TO RENDER (locked synced model)
+| Phase | Weapon state | ControlNet source | Core / UI |
 |---|---|---|---|
-| ST1 | **Non-combat ornate** (rest, flux-pinned to back) | canny + IPA from operator MJ ref (Drive `zenith` / `zenith V2`) | mechanical ornate sword; no UI; core dim |
-| ST2 | **Combat-active PrimeTool** | canny from locked blade ref + MJ blueprint structure | floating black-Ti plates around glowing **#E60000** Ferro-calcium core; **red Orbital-Logic monospaced UI text wrapping the blade, 3° offset**; pH1.2 acid-vapor on edge; thermal mirage (Execution-tier max) |
+| **P1** | `Compact-Idle` — closed B4C white block, plates contracted, flux-pinned | REST blueprint | core dim 43°C · no UI |
+| **P2** | `Brutal Industrial Activation` — B4C shell splitting (Kintsugi), Ti frame begins to show | COMBAT blueprint (reduce glow) | core warming · no UI yet |
+| **P3** | `Tri-Phase Final / Overdrive` — shell fully split, Ti frame + core #E60000 max | COMBAT blueprint | core max · Orbital-Logic UI 3° · acid vapor · mirage |
 
-Default run plan: **2–3 candidates per state, 2 states = 4–6 outputs**. Run ST1 + ST2 and review the transformation pair first.
-
----
-
-## 2. POD SETUP
-
-Use the one-shot setup block from `SESSION_RESUME_NOTE_20260601.md` §3 verbatim. Confirm `PORT=200`, `IPADAPTER_COUNT>0`. Use a **Network Volume** so models persist. UI = `https://<podid>-8188.proxy.runpod.net/`.
-
-## 3. MODELS (resume-note §3 set, ~13 GB)
-`realvisxlV50.safetensors` → checkpoints/ · `ip-adapter_sdxl.safetensors` → ipadapter/ · `clip_vision_g.safetensors` → clip_vision/ · `diffusers_xl_canny_mid.safetensors` → controlnet/
+Render each as an isolated object on neutral background, no hand/wielder/scene. Default: 2–3 seeds/phase = 6–9 candidates.
 
 ---
 
-## 4. INPUT IMAGES (to pod `input/`) — weapon prop only, NO character/body/helmet asset
-
-**ST1 (non-combat ornate):** operator MJ PNG(s) from Drive `MIKAGE/zenith` / `MIKAGE/zenith V2` (clearest full-sword view as canny + IPA ~0.7; hilt close-up as 2nd IPA ~0.4; blueprint as low-weight style ref).
-
-**ST2 (combat-active):** `MIKAGE_ZENITH_BLADE_V2_POLISH_ONE_SHOT_00001_.png` (canny + IPA ~0.7) + `MIKAGE_COMP_07B_ZENITH_BLADE_CLEAN_MONOLITH_REVIEW_CANDIDATE.png` (IPA ~0.4) + optionally the MJ blueprint for the floating-plate / circular-mechanism structure.
-
-Paths (CHUA_XAC_NHAN — verify before upload):
-```
-Google Drive: MIKAGE/zenith , MIKAGE/zenith V2   (operator selects exact files)
-D:\workspace\ComfyUI\MIKAGE_CANON\08_CHARACTER_REVIEW_CANDIDATES\MIKAGE_ZENITH_BLADE_V2_POLISH_ONE_SHOT_00001_.png
-D:\workspace\ComfyUI\MIKAGE_CANON\...\MIKAGE_COMP_07B_ZENITH_BLADE_CLEAN_MONOLITH_REVIEW_CANDIDATE.png
-```
-DO NOT load: any character/body/helmet asset; CLAUDE.md excluded sources (08B/05B/06C); any video/film frame.
+## 2. POD + MODELS
+Run `SESSION_RESUME_NOTE_20260601.md` §3 setup (RealVisXL V5.0 + ip-adapter_sdxl + clip_vision_g + diffusers_xl_canny_mid; Network Volume). Confirm PORT=200, IPADAPTER_COUNT>0.
 
 ---
 
-## 5. PROMPTS (copy exactly)
-
-### NEGATIVE — both states
+## 3. MATERIAL DOCTRINE (locked — hold every phase)
 ```
-character, person, hand, arm, wielder, glove, body, helmet, face,
-background scene, environment, room, landscape, floor, props,
-katana curve, curved scimitar, fantasy magic blade, glowing runes, jewels,
-laser sword, lightsaber, plasma, chrome glossy mirror polish,
-text watermark logo signature (except the intended red Orbital-Logic UI in ST2),
-anime, cartoon, low quality, blurry, jpeg artifact, production ready, canon, final, locked
-```
-
-### ST1 — Non-combat ornate (POSITIVE)
-```
-isolated futuristic mechanical straight sword, slender pointed blade with fine engraved data-lines,
-elaborate hilt with a central CIRCULAR drive mechanism, telescoping segmented metal column,
-machined precision panels, bolt and seam detail, dark brushed gunmetal and steel,
-ferro-calcium core indicator dim at the hilt, ready idle state, no glowing UI,
-single object centered vertical, neutral grey product background, flat diffuse studio lighting, clean turnaround
-```
-
-### ST2 — Combat-active PrimeTool (POSITIVE)
-```
-isolated heavy industrial greatsword (di dao), massive 350kg, black rusty titanium armor plates
-ASSEMBLED FLOATING around a glowing red-hot ferro-calcium core skeleton (#E60000) with thin 0.5mm flux-pinning gaps,
-a band of RED MONOSPACED code text ("orbital logic" data) wrapping helically around the blade along its axis, slight 3 degree offset,
-red-hot core bloom, faint thermal-mirage heat distortion in the surrounding air, acidic steam vapor flashing off the edge,
-brutalist execution weapon, single object centered vertical, neutral dark background, flat diffuse lighting
+OUTER  = Boron Carbide (B4C) porcelain shell, matte white #FAFAFA — the only visible surface in P1
+INNER  = black rusty Titanium load-bearing frame + Ferro-calcium core (#E60000), exposed when shell splits (P2/P3)
+LINK   = Flux Pinning, 0.5 mm micro-vibration at magnetic joints
+350 KG · industrial đại đao · brutal block, NEVER slender/katana/fantasy/ornate-thin
 ```
 
 ---
 
-## 6. GENERATION SETTINGS
+## 4. PROMPTS (copy per phase)
+
+### NEGATIVE (all phases)
 ```
-Model: realvisxlV50.safetensors · IP-Adapter: ip-adapter_sdxl · CLIP: clip_vision_g · ControlNet: diffusers_xl_canny_mid
-ControlNet strength: 0.5 (ST1 canny from MJ ornate ref; ST2 canny from blade ref)
-IPA: ST1 → MJ ornate 0.7 (+hilt 0.4) ; ST2 → blade ref 0.7 (+07B 0.4)
-Sampler dpmpp_2m · Scheduler karras · Steps 34 · CFG 7.0 · Denoise 1.0 from empty latent
-Resolution 832 x 1216 · Batch 2–3 seeds/state · 2 states (ST1, ST2)
+character, person, hand, arm, wielder, body, face, scene, environment, floor, props,
+katana curve, curved scimitar, thin elegant blade, slender, fantasy ornament, glowing runes,
+laser sword, lightsaber, plasma, chrome glossy mirror, anime, cartoon,
+low quality, blurry, jpeg artifact, production ready, final, watermark
 ```
-Node map: Load Checkpoint → CLIP encode pos/neg → IPAdapterAdvanced → `Canny` on the state's geometry ref → `ControlNetApplyAdvanced` → KSampler → VAEDecode → SaveImage.
 
----
-
-## 7. OUTPUT SPEC + NAMING
+### P1 — Compact-Idle (POSITIVE)
 ```
-OUTPUT_DIR: D:\workspace\ComfyUI\MIKAGE_CANON\13_ZENITH_BLADE_CANDIDATES_V1\
-NAME: MIKAGE_ZENITH_BLADE_[ST1_ORNATE|ST2_COMBAT]_REVIEW_CANDIDATE_[YYYYMMDD]_[NN].png
+isolated heavy industrial greatsword in a CLOSED COMPACT BLOCK form, massive 350kg,
+smooth matte white Boron Carbide porcelain shell (#FAFAFA), square brutal monolithic block,
+chamfered edges, sealed seams, sterile clean surface, dim hidden core, no glow, no text,
+single object centered vertical, neutral dark background, flat diffuse product lighting, clean turnaround
 ```
-Forbidden filename tokens: PASS · CANON · LOCKED · APPROVED · PRODUCTION · FINAL.
 
----
-
-## 8. QUICK-PASS GATE (per output)
+### P2 — Brutal Industrial Activation (POSITIVE)
 ```
-ST1: [ ] slender mechanical sword, circular hilt mechanism + telescoping segments; no glowing UI; reads "ready idle"
-ST2: [ ] floating black-Ti plates around a glowing #E60000 ferro-calcium core (NOT a plain solid slab)
-     [ ] red monospaced code-text wrapping the blade at a slight offset (Orbital-Logic UI present)
-     [ ] thermal mirage / acidic vapor cue; reads heavy/industrial 350kg
-ALL: [ ] isolated object, no hand/wielder/scene/face; no katana-curve / laser / chrome drift
+isolated heavy industrial greatsword, 350kg, white B4C porcelain SHELL SPLITTING OPEN along Kintsugi cracks,
+black rusty titanium internal frame beginning to show through the gaps, ferro-calcium core warming faint red,
+0.5mm flux-pinning gaps between plates, brutal industrial geometry, no UI text yet,
+single object centered vertical, neutral dark background, flat diffuse lighting
 ```
-Fail on wrong silhouette for the state, or character leak → DISCARD.
 
----
-
-## 9. AFTER RENDER — RETURN FOR SCORING
-1. Download to §7 folder; record seed/steps/CFG/denoise/resolution/state/date.
-2. Bring path(s) into Cowork → Claude scores per state vs spec §1 + entity-phase tie-in → INCLUDE_AS_PHASE4_REFERENCE / HOLD / REJECT.
-3. No PASS/CANON/LOCKED/PRODUCTION/FINAL label from this render. Reference candidate only — not canon, not asset-lock, not Phase 5, not film/video.
-
----
-
-## 10. STOP RULES
+### P3 — Tri-Phase Final / Overdrive (POSITIVE)
 ```
-STOP — Combat (ST2) renders as a plain solid slab with NO floating plates / NO visible red core / NO Orbital-Logic UI
-STOP — A hand / wielder / character / body / face / scene appears (blade must be isolated)
-STOP — Katana-curve / laser-sword / chrome-glossy drift not eliminable
-STOP — Output to wrong dir or with a forbidden token
-STOP — Any output labeled production-ready / canon / asset-locked / final
-STOP — Film / video / short / shotlist / motion task created from this output
-STOP — Phase 5 or any new lane declared started from this output
-STOP — API key committed to the repository
+isolated heavy industrial greatsword, 350kg, B4C porcelain shell FULLY SPLIT and floating outward,
+exposed black rusty titanium frame assembled around a blazing red-hot ferro-calcium core (#E60000),
+a band of RED MONOSPACED code text ("orbital logic" data) wrapping helically around the blade, slight 3 degree offset,
+thermal-mirage heat distortion in the air, acidic steam vapor flashing off the edge, max overload,
+single object centered vertical, neutral dark background, flat diffuse lighting
 ```
 
 ---
 
-## 11. PROHIBITED ACTIONS CONFIRMED
-RENDER_BY_CLAUDE: NO · COMFYUI_RUNTIME_BY_CLAUDE: NO · BLENDER_USED: NO · IMAGE_GENERATED_BY_CLAUDE: NO · VIDEO_GENERATED: NO · FILM/SHOTLIST_CREATED: NO · CANON_APPROVAL: NO · ASSET_LOCK: NO · CALLED_PRODUCTION_READY: NO · COMPACT_IDLE_USED: NO (deprecated) · LANE_CHANGED: NO · ASSET_GENERATED_BY_CLAUDE: NO
+## 5. SETTINGS
+```
+Model realvisxlV50 · IP-Adapter ip-adapter_sdxl · CLIP clip_vision_g · ControlNet diffusers_xl_canny_mid
+ControlNet strength 0.55 (canny from the phase's blueprint PNG) · IPA 0.6 from prior-phase render for continuity
+dpmpp_2m / karras · 34 steps · CFG 7 · denoise 1.0 from empty latent · 832×1216 · 2–3 seeds/phase
+```
+
+---
+
+## 6. OUTPUT + GATE
+```
+DIR: D:\workspace\ComfyUI\MIKAGE_CANON\13_ZENITH_BLADE_CANDIDATES_V1\
+NAME: MIKAGE_ZENITH_BLADE_[P1|P2|P3]_REVIEW_CANDIDATE_[YYYYMMDD]_[NN].png
+```
+Quick-pass: P1 = closed white B4C brutal block (no curve/slender); P2 = shell splitting + Ti frame partial; P3 = full split + red core + Orbital-Logic UI + mirage; all = isolated object, brutal industrial, no character/scene. Fail → DISCARD.
+
+---
+
+## 7. STOP RULES
+```
+STOP — any phase renders slender / curved / katana / fantasy-ornate / laser
+STOP — P1 not a closed block; P3 missing core glow or Orbital-Logic UI
+STOP — hand / wielder / character / face / scene appears
+STOP — output labeled production-ready / final / canon (renders = review-candidate only)
+STOP — film / video / short / shotlist task created · API key committed
+```
+
+---
+
+## 8. PROHIBITED ACTIONS CONFIRMED
+RENDER_BY_CLAUDE: NO · COMFYUI/BLENDER_BY_CLAUDE: NO · IMAGE_GENERATED_BY_CLAUDE: NO · RENDER_PRODUCTION_READY: NO (review-candidate) · STRUCTURE_CANON: LOCKED (operator) · LANE_CHANGED: NO
