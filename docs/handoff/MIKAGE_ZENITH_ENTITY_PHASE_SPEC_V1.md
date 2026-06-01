@@ -8,6 +8,18 @@ SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT HỆ THỐNG MIKAGE ZENIT
 ## 0. Correction recorded
 "3 Pha" = the ENTITY's 3 structural appearance phases (below), driven by **dramatic-error (sai số bi kịch)** and **Landauer heat debt**. This is NOT the weapon's mode set. Earlier blade-mode mapping (Silent/Pulse/Overload) was a wrong fill and is retired.
 
+## 0.5 SYNCED WEAPON ↔ ENTITY PHASE MODEL — OPERATOR-APPROVED 2026-06-02
+
+The operator formally approved one synchronized 3-phase progression (weapon activation state and entity appearance are the SAME phase, driven together by the energy Driver + Landauer heat limit):
+
+| Phase | Weapon (Zenith Blade) | Entity (Mikage) | Read |
+|---|---|---|---|
+| **P1** | `Compact-Idle` — closed B4C block, plates contracted, flux-pinned to back, core dim/idle 43°C | `Imperial Clean` | sterile, closed, radiation-suppressed |
+| **P2** | `Brutal Industrial Activation` — B4C shell splits, near threshold, industrial wear/cracks | `Fallen / Exile` | heating, Kintsugi cracks appear |
+| **P3** | `Tri-Phase Final / Overdrive` — full energy release, core #E60000 max, Orbital-Logic UI, acid vapor | `Execution` | exceeds 43°C, max visual violence |
+
+NOTE on terminology: **`Compact-Idle` is reinstated as the OFFICIAL P1 name**, but REDEFINED — it means the weapon is a *closed / compact BLOCK* (B4C shell shut, plates contracted), NOT the earlier deprecated "shrunk mini module" idea. The full weapon stays full-size, flux-pinned to the back.
+
 ## 1. The 03 appearance phases
 
 ### Pha 1 — Imperial Clean (Nguyên bản)

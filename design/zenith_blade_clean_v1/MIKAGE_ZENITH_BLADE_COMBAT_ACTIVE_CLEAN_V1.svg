@@ -8,105 +8,86 @@
     </style>
     <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer></filter>
     <radialGradient id="violetHalo" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#8f00ff" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#8f00ff" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#8f00ff" stop-opacity="0.12"/><stop offset="100%" stop-color="#8f00ff" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ff2a2a" stop-opacity="0.55"/>
-      <stop offset="35%" stop-color="#e60000" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#e60000" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#ff2a2a" stop-opacity="0.55"/><stop offset="35%" stop-color="#e60000" stop-opacity="0.28"/><stop offset="100%" stop-color="#e60000" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="coreBar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#e60000"/>
-      <stop offset="50%" stop-color="#ff8a6a"/>
-      <stop offset="100%" stop-color="#e60000"/>
+      <stop offset="0%" stop-color="#e60000"/><stop offset="50%" stop-color="#ff8a6a"/><stop offset="100%" stop-color="#e60000"/>
     </linearGradient>
     <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
   </defs>
 
-  <!-- void canvas -->
   <rect width="1000" height="1414" fill="#050508"/>
   <rect width="1000" height="1414" filter="url(#grain)" opacity="0.5"/>
-  <!-- red overload bloom (film canon) -->
   <ellipse cx="430" cy="700" rx="300" ry="520" fill="url(#redGlow)"/>
-  <!-- single violet signal halo (frame only, top) -->
   <circle cx="500" cy="60" r="160" fill="url(#violetHalo)"/>
 
-  <!-- corner registration ticks -->
   <g stroke="#a0a0b0" stroke-opacity="0.5" stroke-width="1" fill="none">
-    <path d="M34 54 H64 M34 54 V84"/>
-    <path d="M966 54 H936 M966 54 V84"/>
-    <path d="M34 1360 H64 M34 1360 V1330"/>
-    <path d="M966 1360 H936 M966 1360 V1330"/>
+    <path d="M34 54 H64 M34 54 V84"/><path d="M966 54 H936 M966 54 V84"/>
+    <path d="M34 1360 H64 M34 1360 V1330"/><path d="M966 1360 H936 M966 1360 V1330"/>
   </g>
 
-  <!-- header -->
   <text class="mono" x="60" y="64" font-size="11" letter-spacing="3" fill="#a0a0b0">MIKAGE ZENITH STUDIO</text>
   <text class="mono" x="60" y="82" font-size="10" letter-spacing="3" fill="#6b6b78">CHARACTER CAST LANE · WEAPON</text>
   <text class="word" x="500" y="76" font-size="27" letter-spacing="11" text-anchor="middle" fill="#f2eeea">MIKAGE ZENITH</text>
   <text class="mono" x="940" y="64" font-size="11" letter-spacing="3" text-anchor="end" fill="#a0a0b0">REV V2.5</text>
-  <text class="mono" x="940" y="82" font-size="10" letter-spacing="3" text-anchor="end" fill="#6b6b78">REFERENCE ONLY · NOT ASSET-LOCKED</text>
+  <text class="mono" x="940" y="82" font-size="10" letter-spacing="3" text-anchor="end" fill="#6b6b78">STRUCTURE CANON · OPERATOR-APPROVED</text>
   <line x1="60" y1="100" x2="940" y2="100" stroke="#242436"/>
 
-  <!-- title block -->
   <text class="serif" x="500" y="150" font-size="24" letter-spacing="3" text-anchor="middle" fill="#f2eeea">ZENITH BLADE · PRIMETOOL</text>
-  <circle cx="286" cy="176" r="4" fill="#e60000"/>
-  <text class="mono" x="500" y="181" font-size="13" letter-spacing="5" text-anchor="middle" fill="#c8c4be">STATE 02 — COMBAT-ACTIVE · EXECUTE()</text>
+  <circle cx="246" cy="176" r="4" fill="#e60000"/>
+  <text class="mono" x="500" y="181" font-size="13" letter-spacing="4" text-anchor="middle" fill="#c8c4be">P2/P3 · ACTIVATION → OVERDRIVE — EXECUTE()</text>
 
-  <!-- ================= BLADE (COMBAT-ACTIVE) ================= -->
-  <!-- massive di dao silhouette guide -->
+  <!-- ================= BLADE (shell split → Ti frame + core) ================= -->
   <g transform="rotate(-1.5 430 700)">
-
-    <!-- thermal mirage (behind) -->
+    <!-- thermal mirage (P3) -->
     <g stroke="#ff8a6a" stroke-opacity="0.18" stroke-width="1" fill="none">
       <path d="M300 320 q20 30 0 60 q-20 30 0 60 q20 30 0 60 q-20 30 0 60"/>
       <path d="M560 340 q-20 30 0 60 q20 30 0 60 q-20 30 0 60 q20 30 0 60"/>
     </g>
 
-    <!-- floating titanium plates (left + right), offset from core with gaps -->
+    <!-- B4C shell fragments peeling outward (white, splitting away) -->
+    <g stroke="#cfcbc4" stroke-width="1.2" fill="#e7e3dc" fill-opacity="0.85" stroke-linejoin="round">
+      <path d="M520 330 L556 312 L560 396 L524 410 Z"/>
+      <path d="M528 560 L566 548 L572 636 L534 644 Z"/>
+      <path d="M340 330 L304 312 L300 396 L336 410 Z"/>
+      <path d="M332 560 L294 548 L288 636 L326 644 Z"/>
+    </g>
+
+    <!-- exposed black Titanium frame plates -->
     <g stroke="#c8c4be" stroke-width="1.6" fill="#0d0d14" stroke-linejoin="round">
-      <!-- right plates -->
       <path d="M442 300 L506 360 L506 470 L442 440 Z"/>
       <path d="M442 452 L514 500 L514 640 L442 600 Z"/>
       <path d="M442 612 L520 660 L520 820 L442 770 Z"/>
       <path d="M442 782 L512 826 L500 960 L442 922 Z"/>
-      <!-- left plates -->
       <path d="M418 300 L354 360 L354 470 L418 440 Z"/>
       <path d="M418 452 L346 500 L346 640 L418 600 Z"/>
       <path d="M418 612 L340 660 L340 820 L418 770 Z"/>
       <path d="M418 782 L348 826 L360 960 L418 922 Z"/>
     </g>
-    <!-- plate seam detail -->
     <g stroke="#6b6b78" stroke-width="0.7" fill="none">
-      <line x1="460" y1="360" x2="498" y2="392"/><line x1="460" y1="520" x2="506" y2="556"/>
-      <line x1="460" y1="676" x2="512" y2="712"/>
-      <line x1="400" y1="360" x2="362" y2="392"/><line x1="400" y1="520" x2="354" y2="556"/>
-      <line x1="400" y1="676" x2="348" y2="712"/>
+      <line x1="460" y1="360" x2="498" y2="392"/><line x1="460" y1="520" x2="506" y2="556"/><line x1="460" y1="676" x2="512" y2="712"/>
+      <line x1="400" y1="360" x2="362" y2="392"/><line x1="400" y1="520" x2="354" y2="556"/><line x1="400" y1="676" x2="348" y2="712"/>
     </g>
 
-    <!-- glowing ferro-calcium core skeleton (#E60000) -->
+    <!-- glowing ferro-calcium core (#E60000) -->
     <rect x="421" y="288" width="18" height="700" rx="6" fill="url(#redGlow)" filter="url(#soft)"/>
     <rect x="425" y="296" width="10" height="690" rx="5" fill="url(#coreBar)"/>
     <line x1="430" y1="300" x2="430" y2="982" stroke="#fff0e6" stroke-width="2" stroke-opacity="0.85"/>
-    <!-- core node rings -->
     <g stroke="#ff8a6a" stroke-width="1" fill="none" stroke-opacity="0.8">
       <circle cx="430" cy="430" r="9"/><circle cx="430" cy="620" r="9"/><circle cx="430" cy="810" r="9"/>
     </g>
-    <!-- pointed tip -->
     <path d="M421 296 L430 232 L439 296 Z" fill="#e60000" stroke="#ff8a6a" stroke-width="1"/>
 
-    <!-- hilt / mechanism -->
     <circle cx="430" cy="1030" r="58" stroke="#c8c4be" stroke-width="2" fill="#0d0d14"/>
     <circle cx="430" cy="1030" r="40" stroke="#6b6b78" stroke-width="1" fill="none"/>
     <circle cx="430" cy="1030" r="20" fill="#e60000" fill-opacity="0.85" stroke="#ff8a6a" stroke-width="1.5"/>
-    <!-- grip -->
-    <g stroke="#c8c4be" stroke-width="1.5" fill="#0d0d14">
-      <rect x="410" y="1088" width="40" height="44"/>
-      <rect x="404" y="1132" width="52" height="34"/>
-    </g>
+    <g stroke="#c8c4be" stroke-width="1.5" fill="#0d0d14"><rect x="410" y="1088" width="40" height="44"/><rect x="404" y="1132" width="52" height="34"/></g>
   </g>
 
-  <!-- ORBITAL LOGIC UI — red monospaced text wrapping the blade, 3° offset -->
+  <!-- ORBITAL LOGIC UI — red monospaced, 3° wrap (P3) -->
   <g class="mono" fill="#ff3a2a" font-size="12" letter-spacing="2" opacity="0.92">
     <text transform="rotate(3 430 700)" x="486" y="380">EXECUTE() · 0xE6</text>
     <text transform="rotate(3 430 700)" x="300" y="470" text-anchor="end">LANDAUER E≥kᵦT·ln2</text>
@@ -116,7 +97,6 @@
     <text transform="rotate(3 430 700)" x="300" y="828" text-anchor="end">FLUX-PIN 0.5mm</text>
   </g>
 
-  <!-- acid-rain flash vapor at edge -->
   <g stroke="#9d7fd0" stroke-opacity="0.35" stroke-width="1" fill="none">
     <path d="M520 560 q24 -10 18 -34 M520 560 q30 4 40 -14"/>
     <path d="M345 600 q-24 -10 -18 -34 M345 600 q-30 4 -40 -14"/>
@@ -124,58 +104,51 @@
 
   <!-- ================= ANNOTATIONS ================= -->
   <g class="mono" fill="#c8c4be" font-size="12" letter-spacing="1.5">
-    <!-- 01 orbital logic -->
     <line x1="556" y1="386" x2="700" y2="360" stroke="#3d2e55" stroke-width="1"/>
     <circle cx="556" cy="386" r="3" fill="#e60000" stroke="none"/>
-    <text x="710" y="356" fill="#a0a0b0" font-size="10" letter-spacing="3">01</text>
+    <text x="710" y="356" fill="#a0a0b0" font-size="10" letter-spacing="3">01 · P3</text>
     <text x="710" y="372">ORBITAL LOGIC UI</text>
     <text x="710" y="389" fill="#6b6b78" font-size="11">red monospace · wraps blade · 3° offset</text>
 
-    <!-- 02 floating plates -->
-    <line x1="520" y1="700" x2="700" y2="690" stroke="#3d2e55" stroke-width="1"/>
-    <circle cx="520" cy="700" r="3" fill="#9d7fd0" stroke="none"/>
-    <text x="710" y="686" fill="#a0a0b0" font-size="10" letter-spacing="3">02</text>
-    <text x="710" y="702">FLOATING Ti PLATES</text>
-    <text x="710" y="719" fill="#6b6b78" font-size="11">assembled around core · 0.5mm flux gap</text>
+    <line x1="560" y1="600" x2="700" y2="600" stroke="#3d2e55" stroke-width="1"/>
+    <circle cx="560" cy="600" r="3" fill="#9d7fd0" stroke="none"/>
+    <text x="710" y="588" fill="#a0a0b0" font-size="10" letter-spacing="3">02 · P2</text>
+    <text x="710" y="604">B4C SHELL SPLIT → Ti FRAME</text>
+    <text x="710" y="621" fill="#6b6b78" font-size="11">white shell peels (Kintsugi) · 0.5mm flux gap</text>
 
-    <!-- 03 core (left) -->
     <line x1="402" y1="540" x2="250" y2="520" stroke="#3d2e55" stroke-width="1"/>
     <circle cx="402" cy="540" r="3" fill="#e60000" stroke="none"/>
-    <text x="246" y="508" text-anchor="end" fill="#a0a0b0" font-size="10" letter-spacing="3">03</text>
+    <text x="246" y="508" text-anchor="end" fill="#a0a0b0" font-size="10" letter-spacing="3">03 · P3</text>
     <text x="246" y="524" text-anchor="end">FERRO-CALCIUM CORE</text>
-    <text x="246" y="541" text-anchor="end" fill="#6b6b78" font-size="11">#E60000 · overload glow</text>
+    <text x="246" y="541" text-anchor="end" fill="#6b6b78" font-size="11">#E60000 · overload glow (max)</text>
 
-    <!-- 04 thermal mirage (left) -->
     <line x1="330" y1="760" x2="250" y2="780" stroke="#3d2e55" stroke-width="1"/>
     <circle cx="330" cy="760" r="3" fill="#ff8a6a" stroke="none"/>
-    <text x="246" y="768" text-anchor="end" fill="#a0a0b0" font-size="10" letter-spacing="3">04</text>
+    <text x="246" y="768" text-anchor="end" fill="#a0a0b0" font-size="10" letter-spacing="3">04 · P3</text>
     <text x="246" y="784" text-anchor="end">THERMAL MIRAGE</text>
-    <text x="246" y="801" text-anchor="end" fill="#6b6b78" font-size="11">air distortion &gt; 43°C</text>
+    <text x="246" y="801" text-anchor="end" fill="#6b6b78" font-size="11">air distortion &gt; 43°C (Landauer)</text>
 
-    <!-- 05 acid vapor -->
-    <line x1="560" y1="546" x2="700" y2="540" stroke="#3d2e55" stroke-width="1"/>
-    <circle cx="560" cy="546" r="3" fill="#9d7fd0" stroke="none"/>
-    <text x="710" y="536" fill="#a0a0b0" font-size="10" letter-spacing="3">05</text>
-    <text x="710" y="552">ACID-RAIN FLASH VAPOR</text>
-    <text x="710" y="569" fill="#6b6b78" font-size="11">pH 1.2 vaporizes on contact</text>
+    <line x1="572" y1="592" x2="700" y2="700" stroke="#3d2e55" stroke-width="1"/>
+    <circle cx="572" cy="592" r="3" fill="#9d7fd0" stroke="none"/>
+    <text x="710" y="690" fill="#a0a0b0" font-size="10" letter-spacing="3">05 · P3</text>
+    <text x="710" y="706">ACID-RAIN FLASH VAPOR</text>
+    <text x="710" y="723" fill="#6b6b78" font-size="11">pH 1.2 vaporizes on contact</text>
   </g>
 
-  <!-- mass tag -->
   <text class="serif" x="250" y="300" font-size="34" text-anchor="end" fill="#f2eeea">350</text>
   <text class="mono" x="250" y="318" font-size="11" letter-spacing="3" text-anchor="end" fill="#a0a0b0">KILOGRAMS</text>
 
-  <!-- bottom spec strip -->
   <line x1="60" y1="1240" x2="940" y2="1240" stroke="#242436"/>
   <g class="mono" font-size="11" letter-spacing="1.5">
     <text x="60" y="1276" fill="#a0a0b0">STRUCTURE</text>
-    <text x="60" y="1294" fill="#6b6b78" font-size="10">Black Ti plates floating around red core</text>
-    <text x="340" y="1276" fill="#a0a0b0">UI · ORBITAL LOGIC</text>
-    <text x="340" y="1294" fill="#6b6b78" font-size="10">Red monospace · 3° wrap · ON</text>
-    <text x="620" y="1276" fill="#a0a0b0">THERMODYNAMICS</text>
-    <text x="620" y="1294" fill="#6b6b78" font-size="10">Landauer &gt;43°C · pH 1.2</text>
-    <text x="940" y="1276" fill="#a0a0b0" text-anchor="end">CORE</text>
-    <text x="940" y="1294" fill="#e60000" font-size="10" text-anchor="end">#E60000 · overload</text>
+    <text x="60" y="1294" fill="#6b6b78" font-size="10">B4C shell split → black Ti frame + red core</text>
+    <text x="360" y="1276" fill="#a0a0b0">UI · ORBITAL LOGIC</text>
+    <text x="360" y="1294" fill="#6b6b78" font-size="10">Red monospace · 3° wrap · ON (P3)</text>
+    <text x="640" y="1276" fill="#a0a0b0">THERMODYNAMICS</text>
+    <text x="640" y="1294" fill="#6b6b78" font-size="10">Landauer &gt;43°C · pH 1.2 vapor</text>
+    <text x="940" y="1276" fill="#a0a0b0" text-anchor="end">PHASE</text>
+    <text x="940" y="1294" fill="#e60000" font-size="10" text-anchor="end">P2 → P3 OVERDRIVE</text>
   </g>
   <text class="mono" x="60" y="1340" font-size="9" letter-spacing="2" fill="#6b6b78">CLEAN VECTOR BLUEPRINT · DETERMINISTIC · NOT AN AI RENDER</text>
-  <text class="mono" x="940" y="1340" font-size="9" letter-spacing="2" fill="#6b6b78" text-anchor="end">REFERENCE-ONLY · NO CANON/ASSET-LOCK</text>
+  <text class="mono" x="940" y="1340" font-size="9" letter-spacing="2" fill="#6b6b78" text-anchor="end">STRUCTURE CANON · RENDERS = REVIEW-CANDIDATE</text>
 </svg>
