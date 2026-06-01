@@ -39,5 +39,15 @@ Net: the operator's memory of "3 states" was correct; the files just had a term 
 2. Operator selects the exact MJ non-combat ornate PNG(s) from Drive `zenith` / `zenith V2`.
 3. Figure-lane reconciliation of the Kitsune-mask + 3 appearance variants (§0.4).
 
+## ADDENDUM 2026-06-01c — operator supplied the full per-phase spec
+Operator provided "ĐẶC TẢ KỸ THUẬT: BIẾN THỂ THỰC THỂ MIKAGE ZENITH VÀ THIẾT BỊ CHẤP HÀNH". Key correction:
+- The "3 Pha" are the **ENTITY's 3 appearance phases** (Imperial Clean / Fallen-Exile / Execution), NOT blade thermal modes. Recorded in NEW `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`. The earlier Silent/Pulse/Overload blade-mode mapping is RETIRED.
+- The **Zenith Blade / PrimeTool** device spec is now precise: 350 kg; black rusty Ti plates FLOATING around a red-hot Ferro-calcium core (#E60000); Flux-Pinning 0.5 mm micro-vibration; entropy heat flash-vaporizes pH 1.2 acid rain; control UI = red Monospaced "Orbital Logic" text wrapping the blade on a 3D axis at 3° offset. Folded into blade spec §1.
+- Blade now has 2 states (REST ornate / COMBAT-ACTIVE); packet revised to ST1+ST2.
+- ⚠ Entity spec uses a **Kitsune mask WITH eye slits** → conflicts with recent faceless figure work. Flag carried in entity spec §2; figure-lane reconciliation still needs an operator ruling.
+
+ADDED FILES (this round): docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+MODIFIED (this round): MIKAGE_ZENITH_BLADE_SPEC_V1.md (§0.2/§0.4/§0b/§1/§2/§4), MIKAGE_ZENITH_BLADE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1.md (ST1+ST2), 00_LATEST_CODEX_HANDOFF.md (pointer)
+
 ## Prohibited actions confirmed
 CANON_LOCK_CREATED: NO · ASSET_LOCK_CREATED: NO · PRODUCTION_READY: NO · RENDER_BY_CLAUDE: NO · FILM_VIDEO_SHORT_SHOTLIST: NO · LANE_CHANGED: NO · FIGURE_CANON_CHANGED: NO (flag only)
