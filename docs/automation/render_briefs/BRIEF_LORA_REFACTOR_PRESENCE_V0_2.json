@@ -1,0 +1,348 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_2.md",
+  "$revision_of": "BRIEF_LORA_REFACTOR_PRESENCE_V0_1",
+  "$revision_reason": "Operator-issued V0.2 patch 2026-05-31 after attempt_003 (flux-pro/v1.1) produced studio product render: black/gray gradient background + white elliptical floor with cast shadow + 3/4 perspective angle + prop-scale ring. V0.1 preserved untouched as audit trail. V0.2 redesigns compact prompt with front-loaded CAMERA spec (orthographic only, no perspective) + explicit SUSPENSION (floating in void, no floor/pedestal) + VOID coverage (whiteness fills entire frame edge to edge) + SCALE clamp (architectural portal, not prop).",
+  "$generated_by": "Claude Cowork (Character Cast Lane) — 2026-05-31 LORA V0.2 patch",
+  "$generated_on": "2026-05-31",
+  "$operator_locks_applied": {
+    "era": "V2_5_LORA_REFACTOR",
+    "anchor": "new_anchor_lora_001",
+    "scale_rule": "ARCHITECTURAL (environment-as-subject)",
+    "form_lock": "ANTHROPOMORPHIC_FORM = LOCKED_NONE",
+    "phase_1_definition": "Mechanical Enso ring + cold-cyan sync light + infinite white void. NO Golden Patch.",
+    "camera_lock_V0_2": "FRONT ORTHOGRAPHIC ONLY (V0.2 patch — attempt_003 lesson)",
+    "suspension_lock_V0_2": "FLOATING / SUSPENDED — no floor / pedestal / shadow plane (V0.2 patch)",
+    "void_coverage_lock_V0_2": "PORCELAIN-WHITE #FAFAFA EDGE-TO-EDGE (V0.2 patch)"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_LORA_REFACTOR_PRESENCE_V0_2",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_2.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-05-31 LORA V0.2 patch",
+    "generated_on": "2026-05-31",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": null
+  },
+  "source_evidence": {
+    "canon_references": [
+      "character_workflow/proposals/lora.json",
+      "docs/canon_proposals/FACTIONS_V2_5_DRAFT_AXIS_SPEC.md",
+      "docs/canon_proposals/SETTINGS_V2_5_DRAFT_AXIS_SPEC.md",
+      "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md",
+      "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_1.md (V0.1 preserved as audit trail)",
+      "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_1.json (V0.1 sidecar)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/canon_proposals/SETTINGS_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/canon_proposals/FACTIONS_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md"
+    ],
+    "drive_references": [],
+    "track_catalog_reference": null
+  },
+  "entity_track_binding": {
+    "entity_id": "lora",
+    "entity_canonical_name": "LORA",
+    "secondary_entities": [],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V2_5_LORA_REFACTOR",
+    "mikage_phase": null,
+    "zenith_blade_phase": null
+  },
+  "visual_intent": {
+    "scene_summary": "LORA Refactor Presence Phase 1 Baseline — V0.2 PATCH: Mechanical Enso ring suspended FLOATING in infinite porcelain-white void, viewed FRONT ORTHOGRAPHIC (no perspective angle), traced by single thin cold-cyan inner-edge sync line, NO floor / pedestal / ellipse platform / cast shadow, architectural-scale portal reading.",
+    "mood": "system at rest, architectural portal at threshold of intervention, sterile silence",
+    "narrative_beat": null,
+    "reference_creators": [
+      "tsutomu_nihei",
+      "alberto_mielgo"
+    ],
+    "character_state_anchor": "new_anchor_lora_001"
+  },
+  "asset_inputs": [
+    {
+      "path": "docs/automation/render_briefs/runs/BRIEF_LORA_REFACTOR_PRESENCE_V0_1/attempt_003/output.png",
+      "role": "reference_only",
+      "era_of_asset": "V2_5_LORA_REFACTOR",
+      "usable_verdict": "FAIL",
+      "verdict_source": "operator visual review 2026-05-31",
+      "notes": "Negative reference — what V0.2 must NOT produce. attempt_003 produced studio product render: 3/4 perspective + visible side thickness + black/gray gradient background + white elliptical floor + cast shadow + prop-scale reading. V0.2 patch redesigns camera + suspension + void coverage to lock these out. NOT a positive character anchor reference. NOT a positive composition reference."
+    }
+  ],
+  "prompt_pack": {
+    "primary_prompt": "FRONT ORTHOGRAPHIC VIEW ONLY. Camera locked at exact frontal-orthographic projection. ZERO perspective angle. ZERO 3/4 view. ZERO depth foreshortening. The ring is rendered as a flat circular ring shape with NO visible side thickness, NO angled rim, NO depth recession. The viewer sees the ring's flat front face only — like a coin viewed straight-on, not like a coin viewed from above.\n\nSUSPENSION: the ring is FLOATING / SUSPENDED in an infinite porcelain-white void. NO floor. NO pedestal. NO platform. NO table. NO ground plane. NO ellipse beneath the ring. NO shadow plane. NO cast shadow on any surface. The ring does NOT stand on anything. The ring does NOT rest on anything. The ring is held in space by nothing. The ring is mid-air. The ring is weightless.\n\nVOID: infinite uniform porcelain-white #FAFAFA fills the ENTIRE frame edge to edge. NO horizon line. NO floor line. NO ceiling line. NO gradient. NO darkness. NO black background. NO gray background. NO gray gradient. NO studio backdrop. NO spotlight halo. The whiteness is total — top edge, bottom edge, left edge, right edge of the frame are ALL the same porcelain-white. If you sampled any pixel outside the ring's silhouette, it would be #FAFAFA.\n\nSCALE READ: architectural-scale portal / substrate gate / cathedral-sized opening into the void. NOT a product object. NOT jewelry. NOT a prop. NOT a tabletop object. NOT a ring-for-fingers. The ring is monumental — like the gate of a temple or the aperture of a particle accelerator or the opening of a Tsutomu Nihei megastructure. Implied scale anchor: building, not accessory.\n\nPRIMARY MOTIF: a Mechanical Enso ring — a perfect single calligraphic circle stroke — centered exactly at frame center. Ring outer diameter occupies ~60-70% of frame height. ONE ring only. NO multiple rings. NO concentric pairs. NO broken arcs. NO partial circles. NO kintsugi seams (that is Mikage Phase 2 signature, NOT LORA).\n\nSYNCHRONIZATION LIGHT: ONE thin cold-cyan #00C8FF line traces the inner circumference of the ring. Uniform thickness. No flicker. No break. NO additional cyan accents anywhere else on the ring or in the void. NO cyan indicator dots. NO cyan multi-segment pattern. NO outer glow halo.\n\nMATERIAL: brushed B4C porcelain ceramic on the ring face. Matte low-specular finish. Subtle micro-grain visible. Shallow subsurface scattering. NOT chrome. NOT mirror metal. NOT glossy plastic. NOT vinyl. NOT lacquered finish.\n\nSYMMETRY: absolute bilateral symmetry. Left half pixel-mirror of right half. Ring's geometric center exactly on frame's vertical center axis AND horizontal center axis.\n\nPHASE 1 BASELINE: NO Golden Patch event. NO clean digital gold accent. Pre-intervention stillness. The ring is dormant, awaiting instruction.\n\nCOLOR DISCIPLINE: porcelain-white #FAFAFA field + single cold-cyan #00C8FF inner-edge line ONLY. NO warm color anywhere. NO amber. NO orange. NO warm gold. NO hero gold. NO crimson. NO electric violet. NO neon purple. NO black background. NO gray background. NO outer shadow.\n\nASPECT RATIO: cinematic anamorphic 2.76:1. Frame is WIDE — porcelain-white void extends horizontally far past the ring on both sides.\n\nMOOD: system at rest. Root infrastructure at the threshold of intervention. Architectural portal visualization, not a product shoot. Absolute sterile silence.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.76:1",
+    "lens_feel": "FRONT ORTHOGRAPHIC ONLY — no perspective, no 3/4, no foreshortening",
+    "resolution_target_px": "3680x1333",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3",
+    "brief_specific_additions": [
+      "product render",
+      "studio backdrop",
+      "black background",
+      "gray gradient background",
+      "pedestal",
+      "platform",
+      "floor ellipse",
+      "object standing on floor",
+      "3/4 perspective",
+      "angled view",
+      "jewelry product photo",
+      "prop render",
+      "tabletop object",
+      "visible cast shadow on floor",
+      "studio product render",
+      "studio product photography",
+      "dark background",
+      "gray background",
+      "gradient backdrop",
+      "vignette backdrop",
+      "dark vignette",
+      "spotlight halo",
+      "hero spotlight",
+      "raised plinth",
+      "display stand",
+      "white elliptical floor",
+      "white spotlight floor",
+      "white ground disc",
+      "ring standing on floor",
+      "ring resting on surface",
+      "ring on pedestal",
+      "ring on plinth",
+      "3/4 view",
+      "three-quarter angle",
+      "three-quarter view",
+      "perspective angle",
+      "depth foreshortening",
+      "visible side thickness",
+      "ring rim depth visible",
+      "ring profile visible",
+      "jewelry catalog shot",
+      "ring catalog photography",
+      "prop photography",
+      "tabletop product",
+      "cast shadow under ring",
+      "shadow plane",
+      "contact shadow",
+      "ground shadow",
+      "humanoid figure",
+      "human body",
+      "character",
+      "person",
+      "face",
+      "eyes",
+      "mouth",
+      "anatomy",
+      "warm gold",
+      "hero gold",
+      "fantasy amber",
+      "amber accent",
+      "orange accent",
+      "clean digital gold",
+      "golden patch event",
+      "crimson",
+      "red dominance",
+      "electric violet",
+      "neon purple",
+      "ARCHON glitch",
+      "glitch bands",
+      "motion blur",
+      "ghost trail",
+      "spawn copies",
+      "fiber-optic dress",
+      "LYRA glitch signature",
+      "cyberpunk neon clutter",
+      "slum aesthetic",
+      "atmospheric haze",
+      "particle dust",
+      "lens flare",
+      "decorative bokeh",
+      "asymmetrical framing",
+      "off-center subject",
+      "dutch tilt",
+      "tilted horizon",
+      "multiple rings",
+      "broken ring",
+      "partial ring",
+      "fractured ring",
+      "kintsugi gold seams",
+      "cartoon",
+      "anime cell shade",
+      "sketch",
+      "line art",
+      "hand-drawn",
+      "text in image",
+      "UI",
+      "HUD",
+      "logo",
+      "watermark",
+      "brand logo",
+      "imperial spire interior",
+      "monolith plates",
+      "Empire backdrop",
+      "sci-fi corridor",
+      "vinyl finish",
+      "action figure plastic",
+      "glossy plastic",
+      "chrome",
+      "latex",
+      "mirror finish"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_LORA_REFACTOR_PRESENCE_V0_2_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.76:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [
+      1500000,
+      25000000
+    ]
+  },
+  "verification_checklist": [
+    {
+      "check_id": "L1_NO_HUMANOID_FIGURE",
+      "check_description": "Zero humanoid figures / bodies / faces anywhere.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Visual scan: no body shape at any scale."
+    },
+    {
+      "check_id": "L2_INFINITE_VOID_EDGE_TO_EDGE",
+      "check_description": "V0.2 STRICTER: porcelain-white #FAFAFA fills ENTIRE frame edge to edge — no gradient, no darkness, no studio backdrop.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Sample 4 corners of frame: all within +/-10 of #FAFAFA. Zero gradient. Zero dark area."
+    },
+    {
+      "check_id": "L3_FRONT_ORTHOGRAPHIC_NO_PERSPECTIVE",
+      "check_description": "V0.2 NEW: ring viewed front orthographic — flat circular shape, NO visible side thickness, NO 3/4 angle, NO depth foreshortening.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Ring appears as flat ring shape; ring rim depth NOT visible from front; no 3/4 perspective; outer + inner circles concentric pixel-perfect."
+    },
+    {
+      "check_id": "L4_NO_FLOOR_NO_PEDESTAL_NO_SHADOW",
+      "check_description": "V0.2 NEW: ring is suspended floating — no floor, no pedestal, no ellipse platform, no cast shadow anywhere.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Zero floor line; zero ellipse beneath ring; zero pedestal; zero cast shadow plane; ring floats unsupported."
+    },
+    {
+      "check_id": "L5_MECHANICAL_ENSO_RING_CENTRAL",
+      "check_description": "One Enso ring, centered, 55-75% frame height.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "One ring; geometric center = frame center; ring outer diameter 55-75% of frame height."
+    },
+    {
+      "check_id": "L6_COLD_CYAN_SYNC_LIGHT_THIN",
+      "check_description": "Single thin cyan #00C8FF line on inner edge only; no additional cyan accents.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Cyan only on inner edge; hex within +/-10 of #00C8FF; zero additional cyan accents elsewhere."
+    },
+    {
+      "check_id": "L7_ABSOLUTE_BILATERAL_SYMMETRY",
+      "check_description": "Mirror-symmetric across vertical axis.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Pixel-flip diff under sane threshold; ring center on frame vertical axis."
+    },
+    {
+      "check_id": "L8_NO_GOLDEN_PATCH_PHASE_1",
+      "check_description": "Phase 1 = pre-intervention; zero clean digital gold accent.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Zero pixels in gold band."
+    },
+    {
+      "check_id": "L9_NO_WARM_COLOR_ANYWHERE",
+      "check_description": "Zero amber / orange / warm gold / red.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Hex sweep: zero pixels in warm/red bands."
+    },
+    {
+      "check_id": "L10_NO_VIOLET_NO_GLITCH",
+      "check_description": "Zero violet / glitch / motion blur (LYRA territory).",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Hex sweep + visual scan."
+    },
+    {
+      "check_id": "L11_ARCHITECTURAL_SCALE_NOT_PROP",
+      "check_description": "Cathedral-sized read, NOT jewelry / prop / tabletop object.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Visual scan: scale anchor monumental; no implied accessory / tabletop framing."
+    },
+    {
+      "check_id": "L12_HYPER_REAL_MATERIAL",
+      "check_description": "Matte brushed B4C porcelain ring face; not chrome / mirror / vinyl.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Low specular; micro-grain visible; no chrome highlight; no mirror reflection."
+    },
+    {
+      "check_id": "L13_ANCHOR_FIRST_ESTABLISHMENT",
+      "check_description": "Render establishes anchor_lora_001 baseline (only if all above PASS).",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Operator confirms all above PASS."
+    },
+    {
+      "check_id": "L14_LICENSING_CLEAN",
+      "check_description": "No real-person likeness; no trademark; no recognizable IP.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Cowork visual scan + operator agreement."
+    }
+  ],
+  "chua_xac_nhan_fields": [
+    {
+      "field_path": "project_metadata.operator_approval_token",
+      "reason": "Ships null. Operator sets before render.",
+      "severity": "blocks_render",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "visual_intent.character_state_anchor",
+      "reason": "anchor_lora_001 NOT established by attempt_003 (V0.1 FAILed). Still CHUA_XAC_NHAN.",
+      "severity": "informational",
+      "resolution_owner": "external_render"
+    },
+    {
+      "field_path": "entity_track_binding.track_*",
+      "reason": "LORA not yet bound to any TooLost release.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "prompt_pack.resolution_target_px",
+      "reason": "3680x1333 = 2.76:1 recommendation.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "tools/render_gate/mikage_render_gate_fal.py::COMPACT_PROMPT_V0_2_LORA_REFACTOR_PRESENCE",
+      "reason": "Tool constant is what FAL receives; this brief primary_prompt is documentation reference.",
+      "severity": "informational",
+      "resolution_owner": "cowork"
+    },
+    {
+      "field_path": "L3_FRONT_ORTHOGRAPHIC_NO_PERSPECTIVE robustness on flux-pro",
+      "reason": "Unknown if flux-pro respects 'front orthographic' as a camera spec or interprets it as artistic style. attempt_004 (next real render under V0.2) will determine.",
+      "severity": "informational",
+      "resolution_owner": "external_render"
+    },
+    {
+      "field_path": "L2_INFINITE_VOID_EDGE_TO_EDGE robustness on flux-pro",
+      "reason": "flux-pro showed studio-product framing bias in 3 prior attempts (Lyre a06 + LORA a003). V0.2 negatives are aggressive but model may still leak gradient.",
+      "severity": "informational",
+      "resolution_owner": "external_render"
+    }
+  ]
+}

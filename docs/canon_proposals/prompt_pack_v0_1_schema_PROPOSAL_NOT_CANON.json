@@ -1,0 +1,579 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$generated_by": "Cowork session 2026-05-31 (operator decision OPERATOR_DECISION = β; patched description for chua_xac_nhan_fields)",
+  "$generated_on": "2026-05-31",
+  "$generated_from": [
+    "docs/handoff/POST_P1_P2_OPERATOR_DECISION_EXECUTION_REPORT_V0_1.md",
+    "docs/automation/render_briefs/GOOGLE_DRIVE_MIKAGE_AUDIT_V0_2.md (§5 Cinematic Adaptation Pack summary)",
+    "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md (§3 Era Tagging Convention)",
+    "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (§3 universal negative prompt lock)",
+    "character_workflow/proposals/lyra.json (field convention reference)",
+    "character_workflow/proposals/lora.json (field convention reference)"
+  ],
+  "$intent": "Minimum-viable JSON sidecar shape paired with a .md render brief under operator Q-B = C (bridge format). Designed for FIRST use by a catch-up MV brief. Future versions may add fields; v0.1 keeps the surface small enough to fill by hand without tooling.",
+  "$purpose_one_line": "One brief = one .md + one JSON sidecar that conforms to this schema.",
+  "$not_a_substitute_for": [
+    "MIKAGE_ZENITH_CANON_V2.md (canon)",
+    "MIKAGE_CHARACTER_REFERENCE_SHEET_V1_CANON_LOCKED.md (V1 character lock)",
+    "MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (universal negatives — schema references it, does not override)"
+  ],
+  "$next_version_candidates": [
+    "Add scene_beat_map.schema.json compatibility (per CINEMATIC_ADAPTATION_LAYER_PACK §4)",
+    "Add shot_grammar.json compatibility (per CINEMATIC_ADAPTATION_LAYER_PACK §5)",
+    "Add cinematic_state_map.schema.json compatibility (per CINEMATIC_ADAPTATION_LAYER_PACK §6)",
+    "Add character_state_snapshot.schema.json inheritance (per CHARACTER_STATE_TRACKER_PACK §7.1 — inherit anchor_leia_041 state values automatically)",
+    "Add trailer_plan.schema.json for trailer briefs (per CINEMATIC_ADAPTATION_LAYER_PACK §10)"
+  ],
+  "title": "PromptPackV0_1",
+  "description": "JSON sidecar shape for a single Mikage Zenith render brief in bridge format (.md brief + this JSON sidecar). One brief = one entity-track-era binding = one output target.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_metadata",
+    "source_evidence",
+    "entity_track_binding",
+    "era_tag",
+    "visual_intent",
+    "asset_inputs",
+    "prompt_pack",
+    "negative_prompt",
+    "output_target",
+    "verification_checklist"
+  ],
+  "properties": {
+    "project_metadata": {
+      "type": "object",
+      "description": "Section 1 — brief identification and provenance.",
+      "additionalProperties": false,
+      "required": [
+        "brief_id",
+        "brief_md_path",
+        "schema_version",
+        "generated_by",
+        "generated_on",
+        "status"
+      ],
+      "properties": {
+        "brief_id": {
+          "type": "string",
+          "pattern": "^BRIEF_[A-Z0-9_]+_V[0-9]+_[0-9]+$",
+          "description": "e.g. BRIEF_DIGITAL_ASH_MV_V0_1. Must be unique repo-wide."
+        },
+        "brief_md_path": {
+          "type": "string",
+          "description": "Repo-relative path to the paired .md brief file. e.g. docs/automation/render_briefs/DIGITAL_ASH_MV_BRIEF_V0_1.md"
+        },
+        "schema_version": {
+          "type": "string",
+          "const": "prompt_pack/v0.1",
+          "description": "Locks this sidecar to v0.1 of the prompt_pack schema."
+        },
+        "generated_by": {
+          "type": "string"
+        },
+        "generated_on": {
+          "type": "string",
+          "description": "ISO 8601 date or datetime."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "DRAFT_PROPOSAL_NOT_CANON",
+            "OPERATOR_REVIEW_PENDING",
+            "OPERATOR_APPROVED_FOR_RENDER",
+            "RENDERED_PENDING_REVIEW",
+            "VERIFIED_INTERNAL_ONLY",
+            "SUPERSEDED",
+            "REJECTED"
+          ]
+        },
+        "operator_approval_token": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Only present once operator explicitly issues OPERATOR_APPROVED = YES with the matching brief_id. Null until then."
+        }
+      }
+    },
+    "source_evidence": {
+      "type": "object",
+      "description": "Section 2 — every document this brief leans on. Anti-Hard-Rule-#1 guard: render briefs must cite the existing canon they inherit from.",
+      "additionalProperties": false,
+      "required": [
+        "canon_references",
+        "anti_drift_references"
+      ],
+      "properties": {
+        "canon_references": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Repo-relative paths to canon files this brief inherits from.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "anti_drift_references": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Repo-relative paths to drift audits / negative prompt locks this brief obeys.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "drive_references": {
+          "type": "array",
+          "description": "Optional. Drive file IDs or paths cited.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "track_catalog_reference": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional. Path or ID for the TooLost catalog row backing entity_track_binding.track_release_id."
+        }
+      }
+    },
+    "entity_track_binding": {
+      "type": "object",
+      "description": "Section 3 — which entity, which track, which release. Catch-up MV briefs MUST bind to a live track.",
+      "additionalProperties": false,
+      "required": [
+        "entity_id",
+        "entity_canonical_name"
+      ],
+      "properties": {
+        "entity_id": {
+          "type": "string",
+          "description": "Matches character_workflow/proposals/<entity>.json id field. e.g. mikage_zenith / lora / lyra / commander_lyre / zenith_blade / unbreakable_shield."
+        },
+        "entity_canonical_name": {
+          "type": "string"
+        },
+        "secondary_entities": {
+          "type": "array",
+          "description": "Optional. Other entities appearing in this brief (e.g. weapon used by primary entity).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "track_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "track_release_id_toolost": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "TooLost release ID. Null if brief is not track-bound."
+        },
+        "track_launch_arc_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "01–07 = LIVE; 08+ = pending. Null if brief is not track-bound."
+        },
+        "track_drop_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ISO 8601 date. Null if brief is not track-bound."
+        },
+        "track_live_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "LIVE",
+            "PENDING",
+            "DRAFT"
+          ]
+        }
+      }
+    },
+    "era_tag": {
+      "type": "object",
+      "description": "Section 4 — Timeline Progression Layer era binding (per MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md §3).",
+      "additionalProperties": false,
+      "required": [
+        "era"
+      ],
+      "properties": {
+        "era": {
+          "type": "string",
+          "enum": [
+            "V1_ARCHON_GLITCH",
+            "V2_5_LORA_REFACTOR",
+            "V1_TO_V2_5_TRANSITION",
+            "PRE_EVENT_IMPERIAL_CLEAN"
+          ],
+          "description": "Determines accent palette + backdrop language. V1 = electric violet glitch; V2.5 = crimson #E60000; transition = Mikage Phase 2 only; pre-event = Mikage Phase 1 Imperial Clean."
+        },
+        "mikage_phase": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "enum": [
+            null,
+            1,
+            2,
+            3
+          ],
+          "description": "Only meaningful when entity_id = mikage_zenith. 1 = Imperial Clean, 2 = Fallen/Exile, 3 = Execution/LORA Ownership."
+        },
+        "zenith_blade_phase": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "silent_blade",
+            "side_channel_pulse",
+            "thermal_overload"
+          ],
+          "description": "Only meaningful when zenith_blade visible in frame."
+        }
+      }
+    },
+    "visual_intent": {
+      "type": "object",
+      "description": "Section 5 — what the frame is for, narratively + visually.",
+      "additionalProperties": false,
+      "required": [
+        "scene_summary",
+        "mood"
+      ],
+      "properties": {
+        "scene_summary": {
+          "type": "string",
+          "description": "One-sentence summary of what this frame depicts."
+        },
+        "mood": {
+          "type": "string",
+          "description": "One-line emotional anchor. e.g. 'silent before the strike', 'fractured but unbroken'."
+        },
+        "narrative_beat": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional. Reference to a scene_beat_map entry once that schema lands."
+        },
+        "reference_creators": {
+          "type": "array",
+          "description": "Optional. Style anchors from CANON_RESEARCH §4. Allowed: tsutomu_nihei, alberto_mielgo, sun_wolf, naoki_urasawa, makoto_shinkai, tatsuki_fujimoto.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tsutomu_nihei",
+              "alberto_mielgo",
+              "sun_wolf",
+              "naoki_urasawa",
+              "makoto_shinkai",
+              "tatsuki_fujimoto"
+            ]
+          }
+        },
+        "character_state_anchor": {
+          "type": "string",
+          "default": "anchor_leia_041",
+          "description": "Default per operator Q-D. Brief overrides only if explicitly declared."
+        }
+      }
+    },
+    "asset_inputs": {
+      "type": "array",
+      "description": "Section 6 — existing repo / Drive assets reused by this brief (catch-up workflow). Empty array allowed for from-scratch renders.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "role",
+          "usable_verdict"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Repo-relative path, OR 'drive://<drive_id>' for Drive-hosted assets."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "primary_subject",
+              "secondary_subject",
+              "backplate",
+              "reference_only",
+              "audio_master",
+              "cover_art",
+              "ownership_proof"
+            ],
+            "description": "How the asset is used in this brief."
+          },
+          "era_of_asset": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "V1_ARCHON_GLITCH",
+              "V2_5_LORA_REFACTOR",
+              "V1_TO_V2_5_TRANSITION",
+              "PRE_EVENT_IMPERIAL_CLEAN"
+            ]
+          },
+          "usable_verdict": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "PASS_WITH_NOTE",
+              "FAIL",
+              "CHUA_XAC_NHAN"
+            ],
+            "description": "Result of failure-mode test (F1-F4) per drift audit §2."
+          },
+          "verdict_source": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Reference to the audit / report that produced this verdict."
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "prompt_pack": {
+      "type": "object",
+      "description": "Section 7 — the actual prompts the operator pastes into image / video tool.",
+      "additionalProperties": false,
+      "required": [
+        "primary_prompt",
+        "aspect_ratio"
+      ],
+      "properties": {
+        "primary_prompt": {
+          "type": "string",
+          "minLength": 50,
+          "description": "Renderer-ready positive prompt block. Should embed era anchors, palette anchors, and explicit anti-drift language."
+        },
+        "secondary_prompts": {
+          "type": "array",
+          "description": "Optional. Alternate prompts for multi-shot briefs.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "enum": [
+            "9:16",
+            "1:1",
+            "4:5",
+            "2.35:1",
+            "2.76:1",
+            "16:9",
+            "3:4",
+            "4:3"
+          ]
+        },
+        "lens_feel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional. e.g. 'anamorphic 2.35', 'long-normal portrait 85mm', 'handheld micro-jitter'."
+        },
+        "resolution_target_px": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional. e.g. '1672x941' or '3000x3000'."
+        },
+        "seed_policy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "operator_picks_at_render_time",
+            "fixed_seed_for_reproducibility",
+            "swept_seed_with_picks"
+          ]
+        }
+      }
+    },
+    "negative_prompt": {
+      "type": "object",
+      "description": "Section 8 — anti-drift. Universal lock from drift audit + brief-specific additions only.",
+      "additionalProperties": false,
+      "required": [
+        "universal_lock_inherited",
+        "universal_lock_source"
+      ],
+      "properties": {
+        "universal_lock_inherited": {
+          "type": "boolean",
+          "const": true,
+          "description": "Every brief MUST inherit the universal negative prompt lock. Cannot be false in v0.1."
+        },
+        "universal_lock_source": {
+          "type": "string",
+          "const": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3"
+        },
+        "brief_specific_additions": {
+          "type": "array",
+          "description": "Optional. Extra negative terms scoped to this brief only.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "output_target": {
+      "type": "object",
+      "description": "Section 9 — where the rendered output lands once operator renders externally.",
+      "additionalProperties": false,
+      "required": [
+        "output_path",
+        "output_format"
+      ],
+      "properties": {
+        "output_path": {
+          "type": "string",
+          "description": "Repo-relative path where operator must save the rendered file. e.g. docs/automation/render_briefs/raw/DIGITAL_ASH_MV_KEY_01.png"
+        },
+        "output_format": {
+          "type": "string",
+          "enum": [
+            "png",
+            "jpg",
+            "webp",
+            "mp4",
+            "mov",
+            "webm"
+          ]
+        },
+        "expected_aspect_ratio": {
+          "type": "string"
+        },
+        "expected_duration_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Only for video outputs."
+        },
+        "expected_filesize_bytes_range": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "Optional sanity bounds [min, max]."
+        }
+      }
+    },
+    "verification_checklist": {
+      "type": "array",
+      "description": "Section 10 — per-output PASS/FAIL gate Cowork applies post-render before packaging. Must include at minimum F1-F4 failure modes + era tag check + universal negative lock check.",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "check_id",
+          "check_description",
+          "applies_to"
+        ],
+        "properties": {
+          "check_id": {
+            "type": "string",
+            "description": "Short ID. Recommended set for v0.1: F1_PLASTIC_READ, F2_FACE_SOFTENING, F3_MECHA_CLUTTER, F4_ERA_BLEED, ERA_TAG_MATCH, NEGATIVE_LOCK_INHERITED."
+          },
+          "check_description": {
+            "type": "string"
+          },
+          "applies_to": {
+            "type": "string",
+            "enum": [
+              "asset_input",
+              "rendered_output",
+              "both"
+            ]
+          },
+          "pass_criterion": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "chua_xac_nhan_fields": {
+      "type": "array",
+      "description": "Section 11 — optional but recommended explicit list of fields the brief cannot fully resolve at draft time. Use this to declare known unknowns; leave absent only when the brief has no unresolved fields.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field_path",
+          "reason"
+        ],
+        "properties": {
+          "field_path": {
+            "type": "string",
+            "description": "Dotted path within this sidecar, e.g. prompt_pack.secondary_prompts or entity_track_binding.track_drop_date"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "informational",
+              "blocks_render",
+              "blocks_public_use"
+            ],
+            "default": "informational"
+          },
+          "resolution_owner": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              null,
+              "operator",
+              "cowork",
+              "external_render"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

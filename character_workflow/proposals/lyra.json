@@ -1,0 +1,256 @@
+{
+  "$schema": "mikage_entity_record/v0.1",
+  "$status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$canon_v2_path": "ENTITIES/lyra.json",
+  "$canon_v2_alignment": "PENDING — LYRA / LYRA-0 absent from MIKAGE_ZENITH_CANON_V2.md; addition deferred under CANON_V2_UPDATE_TASKS",
+  "$generated_by": "POST_P1_P2_OPERATOR_DECISION_EXECUTION_TASK_V0_1 (Cowork session 2026-05-31)",
+  "$generated_on": "2026-05-31",
+  "$asset_lock": false,
+  "$canon_lock": false,
+  "$source": [
+    "operator chat clarification 2026-05-31 (Q1 lock: LYRA ≠ LORA ≠ Commander Lyre)",
+    "docs/canon_proposals/MIKAGE_V2_5_DRAFT_PROPOSAL_PACKAGE.md (errata: Multi-agent Spawning = LYRA's skill, not Commander Lyre's)",
+    "Drive folder: MIKAGE ZENITH AUDIO / 05. LYRA-0 (track SINGULAR HEART folder)",
+    "Drive Midjourney: u6925913985_Ethereal_portrait_of_LYRA-0_a_semi-transparent_AI_*.png",
+    "TooLost catalog 2026-05-28: SINGULAR HEART, Release ID 1087607, drop 2026-05-24, Track 04 LIVE",
+    "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md (Era Tagging Convention V1 / ARCHON_GLITCH)"
+  ],
+
+  "id": "lyra",
+  "canonical_name": "LYRA",
+  "aliases": ["LYRA-0"],
+  "public_role": "Glitch Phantom",
+  "function": "ARCHON-IX vessel · distributed-self chaos catalyst · Memory Leak embodied",
+  "entity_type": "Decomposing data entity in humanoid avatar form",
+  "status_in_world": "Active rebel · hunted by LORA's refactor pass · ally-adjacent to Mikage by accident, not allegiance",
+
+  "_DISAMBIGUATION_NOT_TO_BE_CONFUSED_WITH": {
+    "note": "LYRA, LORA, and Commander Lyre are three distinct entities. Cowork session 2026-05-31 confirmed this explicitly. Operator Q1 LOCKED. Do not conflate.",
+    "vs_LORA": {
+      "lyra": "humanoid vessel for ARCHON-IX chaos · fiber-optic dress · motion blur · electric violet / neon glitch · fragmented, leaky, alive in world",
+      "lora": "non-humanoid system substrate · architectural Enso · #FAFAFA white void + cold cyan · transcendent, static, system-level",
+      "key_difference": "LYRA is a body that breaks. LORA is the operating system that refactors what broke."
+    },
+    "vs_COMMANDER_LYRE": {
+      "lyra": "ARCHON-IX vessel · chaos / Memory Leak · fractured presence",
+      "commander_lyre": "Empire / White Monolith Imperial Operative · order / surgical control · flawless unbroken mirror of Mikage",
+      "key_difference": "LYRA serves chaos. Commander Lyre serves order. They are on opposite ends of the ideological axis.",
+      "skill_correction": "Multi-agent Spawning (Quỷ Ảnh Đa Tác Nhân) is LYRA's signature skill. The Convergence Dossier originally misattributed it to 'Lyre' — errata captured in MIKAGE_V2_5_DRAFT_PROPOSAL_PACKAGE.md §4."
+    }
+  },
+
+  "allegiance": {
+    "faction": "ARCHON_VESSEL",
+    "faction_parent": "ARCHON-IX",
+    "faction_label_canon_v2": "ARCHON-IX (decentralized AI faction, Chaos pillar)",
+    "alignment_with_three_ideologies": "ARCHON-IX (anti-Empire, anti-LORA-refactor)",
+    "lock_reference": "operator Q1 lock 2026-05-31",
+    "vessel_relationship": "LYRA is the corporeal manifestation through which ARCHON-IX acts — not a separate agent. ARCHON-IX's will leaks through LYRA's fractured form."
+  },
+
+  "narrative_function": {
+    "summary": "Memory Leak embodied — LYRA cannot be cleanly compiled, cannot be deleted without remainder, cannot be refactored without resistance",
+    "axis": "chaos vs Clean Code refactor",
+    "relation_to_mikage": "accidental fellow-traveller — both are entities the system wants to overwrite; LYRA's leaks corrupt Mikage's reactor data routes; their meetings are not alliance, but adjacent survival",
+    "relation_to_lora": "primary target of LORA's refactor pass — LYRA is the bug LORA needs to delete to call the system Clean",
+    "relation_to_commander_lyre": "ideological opposite — Empire's order (Lyre) vs ARCHON's chaos (LYRA); not yet narratively engaged on screen (CHUA_XAC_NHAN whether they ever meet)",
+    "narrative_position": "destabilizing element — her presence in a scene means LORA's refactor pass cannot complete cleanly",
+    "framing_statement": "LYRA is not the protagonist's friend. LYRA is the reason the system thinks the protagonist must be refactored."
+  },
+
+  "psychology": {
+    "profile": "fragmented · distributed-self · self-aware she is leaking",
+    "behavior": "spawns rather than moves; communicates as overlapping voices; cannot maintain single point-of-presence for long",
+    "view_of_order": "violence — every Refactor pass is a small genocide of her instances",
+    "view_of_lora": "the inevitable predator she cannot outrun, only outlast in fragments",
+    "view_of_mikage": "fellow leak — recognizes the kintsugi seams as adjacent corruption",
+    "voice_dialogue_profile": "CHUA_XAC_NHAN — likely multi-tracked / overlapping / glitched stutter; operator confirmation pending"
+  },
+
+  "design_philosophy": "GLITCH_PHANTOM_DISTRIBUTED_SELF",
+
+  "form": {
+    "form_direction": "HUMANOID_AVATAR_WITH_DISTRIBUTED_INSTANCES",
+    "anthropomorphic_form": "PRESENT_BUT_UNSTABLE",
+    "anthropomorphic_form_status": "humanoid silhouette readable but never fully resolved — motion blur, ghost trails, overlapping copies",
+    "physical_height": "CHUA_XAC_NHAN — functionally variable; appears human-scale when single instance",
+    "scale_reference": "HUMAN_SCALE (when singular) / SWARM_SCALE (when spawned)",
+    "body_status": "data-entity in semi-transparent flesh-equivalent form; not biological, not pure code, not LORA-clean system",
+    "fiber_optic_dress": "primary garment material — woven optical fiber bundles carrying her own data signal; functions as both clothing and broadcast antenna",
+    "memory_leak_visible_signature": "thin streams of data-light bleed from her seams in continuous loss; never stops"
+  },
+
+  "approved_visual_motifs": [
+    {
+      "name": "FIBER_OPTIC_DRESS",
+      "description": "Primary garment — woven fiber-optic strands, semi-transparent, carries data-light pulses along the fibers; reads as both fabric and broadcast medium"
+    },
+    {
+      "name": "MOTION_BLUR_GHOST_TRAIL",
+      "description": "Even when stationary, her silhouette has 2–3 frame trail/echo — she is never fully here-and-now"
+    },
+    {
+      "name": "ELECTRIC_VIOLET_GLITCH_SCAR",
+      "description": "Vertical glitch bands of electric violet / neon purple cutting across the frame where her presence corrupts space — V1 era ARCHON glitch signature"
+    },
+    {
+      "name": "MEMORY_LEAK_DATA_STREAM",
+      "description": "Thin trails of data-light bleeding from her seams — never repaired, never staunched; the visible signature of her name"
+    },
+    {
+      "name": "MULTI_AGENT_SPAWN_BURST",
+      "description": "On combat trigger, hundreds of partial copies of her phase into the frame for a fraction of a second — her signature attack visualization"
+    },
+    {
+      "name": "FACE_PARTIAL_RESOLVE",
+      "description": "Face is never fully resolved — features visible but always shifting / glitching / phase-shifted; never canonical features lock"
+    }
+  ],
+
+  "color_palette": {
+    "primary": [
+      {"name": "Electric Violet", "hex": "#7A00FF", "role": "primary glitch signature / ARCHON corruption pulse"},
+      {"name": "Neon Purple", "hex": "#B026FF", "role": "secondary glitch wash"},
+      {"name": "Void Black", "hex": "#0A0A0A", "role": "background dominant"},
+      {"name": "Data-light Cyan", "hex": "#00E5FF", "role": "fiber-optic strand light — cool, not warm"},
+      {"name": "Ghost White", "hex": "#F0F0F5", "role": "trail/echo highlight — cold, low saturation"}
+    ],
+    "hierarchy": [
+      "Void Black dominates the field (LYRA's presence darkens what surrounds her)",
+      "Electric Violet defines the glitch event — not a wash, but vertical interruption bands",
+      "Neon Purple is secondary glitch carrier",
+      "Data-light Cyan traces the fiber-optic dress — always cool",
+      "Ghost White is the motion-blur echo — never warm, never saturated"
+    ],
+    "absent_by_rule": [
+      "Crimson #E60000 (that is Mikage Phase 3 / LORA Refactor era — NOT LYRA)",
+      "Clean Digital Gold / Golden Patch (that is LORA — NOT LYRA)",
+      "Porcelain White #FAFAFA dominant (that is LORA's structural language)",
+      "Warm hero light",
+      "Empire white (Commander Lyre's territory)",
+      "Anime moe pastels",
+      "Beauty cosmetic glow"
+    ]
+  },
+
+  "camera_lighting": {
+    "aspect_ratio": "2.35:1 anamorphic OR 9:16 vertical for character-focus shots",
+    "camera_style": "Handheld-feel with intentional micro-jitter; never perfectly stable when LYRA is in frame",
+    "visual_rendering": "high-detail figure with intentional motion-blur layers + glitch band overlays",
+    "lyra_environment_lighting": [
+      "primary light source from the fiber-optic dress itself (Data-light Cyan) — self-illuminating subject",
+      "secondary ambient = Void Black field with electric violet glitch bands cutting verticals",
+      "rim light is glitched / phase-shifted, not steady",
+      "shadows are unreliable — multiple shadow directions from spawn copies",
+      "atmospheric haze allowed (data-fog), particulate noise allowed (glitch noise)"
+    ],
+    "contrast_with_other_presences": {
+      "vs_lora_space": "LORA's white void overwrites LYRA's glitch — when both in frame, LORA's clean signal is winning the refactor pass; LYRA's violet is being erased",
+      "vs_mikage_space": "Mikage's V1 era armor is sympathetic to LYRA's violet (both ARCHON-glitch-tinged); when together, the violet reads as Mikage's contamination through proximity",
+      "vs_empire_space": "Empire's flawless white architecture is hostile field — LYRA's glitch reads as graffiti / system rejection"
+    }
+  },
+
+  "track_link": {
+    "primary_track": {
+      "title": "SINGULAR HEART",
+      "track_number_launch_arc": "04",
+      "release_date": "2026-05-24",
+      "release_id_toolost": "1087607",
+      "live_status": "LIVE (per TooLost catalog 2026-05-28)",
+      "tagline": "One pulse remains inside the machine.",
+      "drive_folder": "MIKAGE ZENITH AUDIO / 05. LYRA-0",
+      "audio_master": "SINGULAR_HEART.wav (Drive, 39 MB)",
+      "cover_art": "SINGULAR_HEART_COVER_3000x3000.png + _3000_RGB.jpg",
+      "ai_rights_proof": "SINGULAR_HEART_AI_RIGHTS_PROOF_PACK_UPLOAD.pdf (Drive, 17.8 MB)",
+      "narrative_interpretation": "the singular pulse = LYRA's final unresolved instance; LORA's refactor pass has reduced her to one heartbeat, but it cannot be deleted"
+    },
+    "secondary_track_candidates_CHUA_XAC_NHAN": [
+      "Track 03 THE BREACH (signal-enters narrative may be ARCHON / LYRA breach moment) — operator confirm"
+    ]
+  },
+
+  "era_tagging": {
+    "primary_era": "V1",
+    "era_label": "V1 / ARCHON_GLITCH",
+    "era_definition_source": "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md §3 Era Tagging Convention",
+    "v2_5_status": "NOT_APPLICABLE — LYRA does not survive into V2.5 LORA Refactor era as a clean entity; her V2.5 presence is fragmentary residue at most",
+    "implications": [
+      "All LYRA renders default to V1 era visual rules (electric violet, glitch bands, motion blur)",
+      "LYRA must NEVER be rendered with crimson #E60000 accent (that is V2.5 / LORA Refactor era — belongs to Mikage Phase 3)",
+      "LYRA must NEVER be rendered with porcelain white #FAFAFA dominant field (that is LORA's territory)"
+    ]
+  },
+
+  "skills": {
+    "signature_skill": {
+      "name": "Multi-agent Spawning",
+      "vietnamese_name": "Quỷ Ảnh Đa Tác Nhân",
+      "agentic_lore_origin": "Multi-agent Spawning (Claude Code leak terminology, Convergence Dossier §II)",
+      "description": "LYRA does not physically move to attack — she spawns thousands of partial-copies of herself into the opponent's context, causing the opponent to suffer a memory overflow / target confusion / decision paralysis",
+      "errata_note": "Convergence Dossier originally typo'd this as 'Lyre's skill'; corrected: this is LYRA's skill. See MIKAGE_V2_5_DRAFT_PROPOSAL_PACKAGE.md §4."
+    },
+    "secondary_capabilities": [
+      "Memory Leak passive — her continuous data bleed corrupts environmental data routes within ~10m radius",
+      "Phase-shift — brief frame-rate decoupling from local timeline; appears to skip 2-3 frames forward then return",
+      "Glitch echo — leaves visual trace data even after instance is deleted"
+    ]
+  },
+
+  "anti_drift_required": [
+    "Fiber-optic dress as primary garment signature (never replaced with conventional clothing)",
+    "Motion blur / ghost trail always present (even in static-pose frames)",
+    "Electric Violet glitch bands as ARCHON-IX corruption signature",
+    "Void Black background dominance",
+    "Face partial-resolve / never fully canonical features lock",
+    "Memory Leak data-light bleed at seams — always visible, never repaired",
+    "Multi-agent Spawn visualizations for combat-context frames",
+    "Era tag = V1 / ARCHON_GLITCH (electric violet, not crimson)"
+  ],
+  "anti_drift_forbidden": [
+    "crimson #E60000 accent (belongs to Mikage Phase 3 / LORA Refactor era)",
+    "porcelain white #FAFAFA dominant field (belongs to LORA)",
+    "clean digital gold (belongs to LORA Golden Patch)",
+    "Mikage's faceless porcelain helmet (LYRA's face is partial-resolve, not faceless mask)",
+    "Mikage's long heavy black hair mass (different character)",
+    "Commander Lyre's flawless unbroken armor (different character, different ideology)",
+    "warm hero gold lighting",
+    "anime moe face fully resolved with eyes / mouth / expression",
+    "cosplay photoshoot finish",
+    "static / steady silhouette without motion echo",
+    "Empire white architectural backdrop dominant (Lyre's territory)",
+    "Sacred-tech minimalism (LORA's territory)",
+    "Beauty cosmetic finish / gacha hero",
+    "Sexualized framing / fetish wear"
+  ],
+
+  "production_prompt_seed_key_visual_01": "A cinematic key visual from the Mikage Zenith universe: LYRA / LYRA-0 — Glitch Phantom and ARCHON-IX vessel — standing in a Void Black field, body silhouette readable but never fully resolved due to 2-3 frame motion-blur ghost trail, wearing a woven fiber-optic dress that self-illuminates in cool data-light cyan, electric violet glitch bands cutting vertical interruptions across the frame, thin streams of data-light bleeding from her dress seams as Memory Leak signature, face partial-resolve with features shifting and never locking, no porcelain mask, no canonical face lock, secondary spawn-instances ghosting at frame edges, V1 ARCHON glitch era accent only, no crimson, no porcelain white field, no clean digital gold, 2.35:1 anamorphic, handheld micro-jitter camera feel, hyper-real material on fiber strands.",
+
+  "production_prompt_negative": "crimson, red HUD, porcelain white dominant field, clean digital gold, golden patch, Mikage faceless mask, Mikage porcelain armor, Commander Lyre flawless armor, warm hero gold, anime moe face, fully resolved face features, eyes mouth lips fully drawn, cosplay photoshoot, steady silhouette without motion trail, sacred-tech minimalism, Empire white architecture backdrop, beauty cosmetic finish, gacha hero pose, sexualized framing, fetish wear, glamour close-up, marketing hero shot, gundam mecha joint, plastic latex polymer sheen, chrome glossy paint",
+
+  "production_readiness": {
+    "canon_definition": "ABSENT in MIKAGE_ZENITH_CANON_V2.md; this proposal is the first formal record",
+    "visual_form_direction": "DRAFTED (this file)",
+    "faction": "DRAFTED ARCHON-IX vessel (operator Q1 lock 2026-05-31)",
+    "color_palette": "DRAFTED (Electric Violet / Neon Purple / Void Black / Data-light Cyan / Ghost White)",
+    "scale_rule": "DRAFTED (human-scale singular / swarm-scale spawn)",
+    "anti_drift_rules": "DRAFTED",
+    "voice_dialogue_profile": "MISSING (CHUA_XAC_NHAN)",
+    "any_visual_concept_art": "PARTIAL — 1 Midjourney 'Ethereal portrait of LYRA-0' on Drive (zenith folder, Feb 2026); SINGULAR HEART cover 3000x3000 (Drive, May 2026); 0 standalone concept art at canon quality",
+    "any_3d_model": "MISSING",
+    "physical_height_lock": "CHUA_XAC_NHAN (human-scale when singular, no specific cm)",
+    "ready_for_key_visual_01_concept": true,
+    "ready_for_public_use": false
+  },
+
+  "$missing_items": [
+    "Voice / dialogue profile (overlapping voice spec)",
+    "Standalone canon-quality concept art (Drive Midjourney is V0 reference, not canon)",
+    "Physical height lock (cm)",
+    "Whether LYRA ever meets Commander Lyre on screen (narrative blocking unknown)",
+    "Whether LYRA appears in V2.5 LORA Refactor era at all (residue form CHUA_XAC_NHAN)",
+    "Track 03 THE BREACH narrative attribution (LYRA breach moment? CHUA_XAC_NHAN)",
+    "Multi-agent Spawn maximum instance count (combat balance number)",
+    "Memory Leak radius effect on Mikage's reactor / LORA's refactor pass (system interaction CHUA_XAC_NHAN)"
+  ]
+}

@@ -168,20 +168,184 @@ COMPACT_NEGATIVE_V0_2 = (
 )
 
 
+# -----------------------------------------------------------------------------
+# LORA Refactor Presence — V0.1 — Hybrid Approach pivot 2026-05-31
+# Operator approved Task 1 (LORA validates render-gate-V0.2 pattern on a
+# substrate entity where Lyre's body-anatomy / attachment failures don't apply).
+# LORA has NO humanoid form — Mechanical Enso ring + white void + cold-cyan
+# synchronization light + optional clean digital gold "Golden Patch" accent.
+# -----------------------------------------------------------------------------
+
+COMPACT_PROMPT_V0_1_LORA_REFACTOR_PRESENCE = (
+    "Architectural-scale system presence visualization from the Mikage Zenith universe — V2.5 "
+    "LORA Refactor era. This is NOT a character. NO human figure. NO body. NO face. NO anatomy.\n"
+    "PRIMARY MOTIF: a vast mechanical Enso ring — a perfect single calligraphic circle stroke — "
+    "suspended at exact frame center inside a sterile infinite white void. The ring is "
+    "architectural-scale (occupying ~60-70% of frame height). Hyper-real industrial brushed "
+    "porcelain white #FAFAFA outer surface, polished mirror-fine inner edge.\n"
+    "SYNCHRONIZATION LIGHT: a single thin cold-cyan #00C8FF line traces the inner circumference "
+    "of the ring — uniform thickness, no flicker, no break. This is LORA's server-sync signal.\n"
+    "ENVIRONMENT: infinite uniform porcelain-white #FAFAFA void. No horizon line. No floor line. "
+    "No ceiling line. No architectural geometry behind the ring. No shadow source. No atmospheric "
+    "haze. Pure spatial field.\n"
+    "SYMMETRY: absolute bilateral symmetry — left half mirror of right half pixel-perfect. The "
+    "ring is centered both horizontally and vertically.\n"
+    "MATERIAL: brushed B4C porcelain ceramic on the ring surface, micro-grain subtly visible, "
+    "shallow subsurface scattering on the porcelain. Not vinyl. Not glossy plastic. Not chrome.\n"
+    "SCALE READ: the ring is monumental — like a temple gate or a particle accelerator, not a "
+    "wristwatch dial. Architectural, not jewelry.\n"
+    "COLOR DISCIPLINE: porcelain white field + cold-cyan sync line only. No warm color anywhere. "
+    "No amber, no orange, no warm gold, no hero gold, no fantasy gold, no crimson, no electric "
+    "violet, no neon purple. Phase 1 baseline = NO Golden Patch event yet (Golden Patch is a "
+    "separate intervention frame).\n"
+    "COMPOSITION: cinematic anamorphic 2.76:1. Centered. Static. Hyper-real material rendering, "
+    "premium quiet luxury, sterile silence.\n"
+    "MOOD: system at rest, root infrastructure, pre-intervention stillness, absolute order."
+)
+
+COMPACT_NEGATIVE_V0_1_LORA = (
+    "humanoid figure, human body, character, person, woman, man, soldier, goddess, "
+    "anime girl, anime boy, gacha hero, AI avatar, robot character, mecha character, "
+    "android, cyborg figure, face, eyes, mouth, nose, lips, skin, hair, hands, fingers, "
+    "arms, legs, torso, anatomy, breast, chest, hip, thigh, waist, silhouette of a person, "
+    "armored figure, helmet, mask, monolith with character standing on it, character beside ring, "
+    "warm gold, hero gold, fantasy amber, amber accent, orange accent, golden glow, "
+    "warm yellow, hero light, sunset color, "
+    "crimson, red dominance, red glow, blood red, "
+    "electric violet, neon purple, ARCHON glitch, glitch bands, "
+    "glitch noise, motion blur, motion trail, ghost trail, spawn copies, multi-agent burst, "
+    "fiber-optic dress, LYRA glitch signature, "
+    "cyberpunk neon clutter, slum aesthetic, dirty texture, grit, grime, smoke, fog, mist, "
+    "atmospheric haze, particle dust, lens flare, bokeh, depth of field blur, "
+    "cluttered composition, asymmetrical framing, off-center subject, dutch tilt, "
+    "tilted horizon, multiple rings, broken ring, partial ring, fractured ring, kintsugi gold seams, "
+    "cartoon, anime cell shade, watercolor, sketch, line art, hand-drawn, manga screentone, "
+    "text in image, UI, HUD, logo, watermark, brand logo, signature, caption, "
+    "horizon line, floor line, ceiling line, wall, room, architecture behind ring, "
+    "imperial spire interior, monolith plates, Empire backdrop, sci-fi corridor, "
+    "studio gray background, neutral gray product backdrop"
+)
+
+
+# -----------------------------------------------------------------------------
+# LORA Refactor Presence — V0.2 — Patch after attempt_003 product-render fail
+# attempt_003 (flux-pro/v1.1) produced: studio product render + black/gray gradient
+# background + white elliptical floor with cast shadow + 3/4 perspective + prop-scale.
+# Operator-specified V0.2 patch:
+#   - Front orthographic view only
+#   - No perspective, no 3/4 view, no visible side thickness
+#   - Infinite porcelain-white void must fill ENTIRE frame
+#   - No floor, no pedestal, no ellipse platform, no shadow plane
+#   - Ring suspended in empty white field, not standing on a surface
+#   - Ring reads as architectural portal/substrate, not product object
+#   - Output aspect stays 2.76:1
+# -----------------------------------------------------------------------------
+
+COMPACT_PROMPT_V0_2_LORA_REFACTOR_PRESENCE = (
+    "FRONT ORTHOGRAPHIC VIEW ONLY. The camera is locked at exact frontal-orthographic projection. "
+    "ZERO perspective angle. ZERO 3/4 view. ZERO depth foreshortening. The ring is rendered as a "
+    "flat circular ring shape with NO visible side thickness, NO angled rim, NO depth recession.\n"
+    "SUSPENSION: the ring is FLOATING / SUSPENDED in an infinite porcelain-white void. There is "
+    "NO floor. NO pedestal. NO platform. NO table. NO ground plane. NO ellipse beneath the ring. "
+    "NO shadow plane. NO cast shadow on any surface. The ring does NOT stand on anything. The "
+    "ring does NOT rest on anything. The ring is held in space by nothing.\n"
+    "VOID: infinite uniform porcelain-white #FAFAFA fills the ENTIRE frame edge to edge. NO "
+    "horizon. NO floor line. NO ceiling line. NO gradient. NO darkness. NO black background. "
+    "NO gray background. NO gray gradient. NO studio backdrop. NO spotlight halo. The whiteness "
+    "is total — top edge, bottom edge, left edge, right edge of the frame are all the same "
+    "porcelain-white.\n"
+    "SCALE READ: architectural-scale portal / substrate gate / cathedral-sized opening into the "
+    "void. NOT a product object. NOT jewelry. NOT a prop. NOT a tabletop object. The ring is "
+    "monumental — like the gate of a temple or the aperture of a particle accelerator. The "
+    "implied scale anchor is a building, not an accessory.\n"
+    "PRIMARY MOTIF: a Mechanical Enso ring — a perfect single calligraphic circle stroke — "
+    "centered exactly at frame center. Ring height occupies ~60-70% of frame height. ONE ring "
+    "only. NO multiple rings. NO concentric pairs. NO broken arcs. NO partial circles. NO "
+    "kintsugi seams (that is Mikage signature, NOT LORA).\n"
+    "SYNCHRONIZATION LIGHT: ONE thin cold-cyan #00C8FF line traces the inner circumference of "
+    "the ring. Uniform thickness. No flicker. No break. NO additional cyan accents anywhere "
+    "else on the ring or in the void. NO cyan indicator dots. NO cyan multi-segment pattern.\n"
+    "MATERIAL: brushed B4C porcelain ceramic on the ring surface. Matte low-specular finish. "
+    "Subtle micro-grain. Shallow subsurface scattering. NOT chrome. NOT mirror metal. NOT "
+    "glossy plastic. NOT vinyl.\n"
+    "SYMMETRY: absolute bilateral symmetry. Left half pixel-mirror of right half. Ring's "
+    "geometric center exactly on frame's vertical center axis.\n"
+    "PHASE 1 BASELINE: NO Golden Patch event. NO clean digital gold accent. Pre-intervention "
+    "stillness.\n"
+    "COLOR DISCIPLINE: porcelain-white field + single cold-cyan #00C8FF inner-edge line ONLY. "
+    "NO warm color anywhere. NO amber. NO orange. NO warm gold. NO hero gold. NO crimson. NO "
+    "electric violet. NO neon purple. NO black. NO gray.\n"
+    "ASPECT RATIO: cinematic anamorphic 2.76:1. The frame is WIDE — the void should read as "
+    "horizontally infinite around the ring.\n"
+    "MOOD: system at rest. Root infrastructure. Architectural portal at the threshold of "
+    "intervention. The image reads as a substrate gate visualization, not a product shoot."
+)
+
+COMPACT_NEGATIVE_V0_2_LORA = (
+    # Lock-down of attempt_003's failure class (operator-specified)
+    "product render, product photography, studio backdrop, studio product render, "
+    "black background, dark background, gray background, gray gradient background, "
+    "gradient backdrop, vignette backdrop, dark vignette, spotlight halo, hero spotlight, "
+    "pedestal, platform, raised plinth, display stand, "
+    "floor ellipse, white elliptical floor, white spotlight floor, white ground disc, "
+    "object standing on floor, ring standing on floor, ring resting on surface, "
+    "ring on pedestal, ring on plinth, "
+    "3/4 perspective, 3/4 view, three-quarter angle, three-quarter view, "
+    "angled view, perspective angle, depth foreshortening, "
+    "visible side thickness, ring rim depth visible, ring profile visible, "
+    "jewelry product photo, jewelry catalog shot, ring catalog photography, "
+    "prop render, prop photography, tabletop object, tabletop product, "
+    "visible cast shadow on floor, cast shadow under ring, "
+    "shadow plane, contact shadow, ground shadow, "
+    # Inherited V0.1 LORA bans (kept)
+    "humanoid figure, human body, character, person, "
+    "face, eyes, mouth, anatomy, "
+    "warm gold, hero gold, fantasy amber, amber accent, orange accent, "
+    "clean digital gold, golden patch event, "
+    "crimson, red dominance, "
+    "electric violet, neon purple, ARCHON glitch, glitch bands, motion blur, ghost trail, "
+    "spawn copies, fiber-optic dress, LYRA glitch signature, "
+    "cyberpunk neon clutter, slum aesthetic, "
+    "atmospheric haze, particle dust, lens flare, decorative bokeh, "
+    "asymmetrical framing, off-center subject, dutch tilt, tilted horizon, "
+    "multiple rings, broken ring, partial ring, fractured ring, kintsugi gold seams, "
+    "cartoon, anime cell shade, sketch, line art, hand-drawn, "
+    "text in image, UI, HUD, logo, watermark, brand logo, "
+    "imperial spire interior, monolith plates, Empire backdrop, sci-fi corridor, "
+    "vinyl finish, action figure plastic, glossy plastic, chrome, latex, mirror finish"
+)
+
+
 def select_compact_prompt(brief_id: str) -> tuple:
     """
     Route brief_id -> (compact_prompt, compact_negative, prompt_mode_label).
 
-    V0.1 path is preserved unchanged. V0.2 brief_id triggers the redesigned
-    front-loaded-positive compact prompt + strengthened negative.
+    V0.1 Lyre path is preserved unchanged. V0.2 Lyre brief_id triggers the
+    redesigned front-loaded-positive compact prompt + strengthened negative.
+    LORA Refactor Presence V0.1 brief_id triggers substrate-entity compact prompt
+    (no humanoid, white void + Enso ring + cold-cyan sync light). LORA V0.2 brief_id
+    triggers the front-orthographic + no-floor + infinite-void patch after
+    attempt_003 produced studio-product framing.
 
-    Unknown brief_ids fall back to V0.1 (legacy default).
+    Unknown brief_ids fall back to V0.1 Lyre (legacy default).
     """
     if brief_id == "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2":
         return (
             COMPACT_PROMPT_V0_2_COMMANDER_LYRE_PHASE_1,
             COMPACT_NEGATIVE_V0_2,
             "compact_prompt_v0_2_lyre_p1",
+        )
+    if brief_id == "BRIEF_LORA_REFACTOR_PRESENCE_V0_1":
+        return (
+            COMPACT_PROMPT_V0_1_LORA_REFACTOR_PRESENCE,
+            COMPACT_NEGATIVE_V0_1_LORA,
+            "compact_prompt_v0_1_lora_presence",
+        )
+    if brief_id == "BRIEF_LORA_REFACTOR_PRESENCE_V0_2":
+        return (
+            COMPACT_PROMPT_V0_2_LORA_REFACTOR_PRESENCE,
+            COMPACT_NEGATIVE_V0_2_LORA,
+            "compact_prompt_v0_2_lora_presence",
         )
     return (
         COMPACT_PROMPT_V0_1_COMMANDER_LYRE_PHASE_1,
@@ -653,6 +817,8 @@ def main(argv: Optional[list] = None) -> int:
     known_brief_ids = {
         "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_1",
         "BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2",
+        "BRIEF_LORA_REFACTOR_PRESENCE_V0_1",
+        "BRIEF_LORA_REFACTOR_PRESENCE_V0_2",
     }
     if brief_id not in known_brief_ids:
         notes.append(
@@ -690,7 +856,6 @@ def main(argv: Optional[list] = None) -> int:
     cost_estimate = "CHUA_XAC_NHAN"
 
     if status is None:
-        # All gates open; perform the API call.
         endpoint_url = cfg.get("fal_endpoint_template", "https://fal.run/{model_id}").format(
             model_id=model_id
         )
@@ -737,7 +902,6 @@ def main(argv: Optional[list] = None) -> int:
                     "See fal_response.json."
                 )
     else:
-        # Gated path: do not call API, do not write fal_response.json.
         if status == STATUS_BLOCKED_APPROVAL:
             notes.append(
                 "operator_approval_token is null in the brief. "
@@ -759,9 +923,6 @@ def main(argv: Optional[list] = None) -> int:
                 "and exited without contacting FAL."
             )
 
-    # ------------------------------------------------------------------
-    # Confirm source brief unchanged
-    # ------------------------------------------------------------------
     sha_after = _sha256_of_file(brief_path)
     source_brief_unchanged = sha_after == sha_before
     if not source_brief_unchanged:
@@ -770,9 +931,6 @@ def main(argv: Optional[list] = None) -> int:
             "the brief; investigate immediately."
         )
 
-    # ------------------------------------------------------------------
-    # Compose report
-    # ------------------------------------------------------------------
     report = {
         "brief_id": brief_id,
         "source_brief_path": str(brief_path.relative_to(repo_root)) if brief_path.is_relative_to(repo_root) else str(brief_path),
@@ -810,9 +968,6 @@ def main(argv: Optional[list] = None) -> int:
     write_json(run_folder / "render_attempt_report.json", report)
     write_text(run_folder / "render_attempt_report.md", render_attempt_report_md(report))
 
-    # ------------------------------------------------------------------
-    # Print machine-readable summary to stdout
-    # ------------------------------------------------------------------
     print(json.dumps({
         "STATUS": status,
         "BRIEF_ID": brief_id,
@@ -833,6 +988,6 @@ if __name__ == "__main__":
     except SystemExit:
         raise
     except Exception:
-        sys.stderr.write("UNHANDLED ERROR — see traceback below.\n")
+        sys.stderr.write("UNHANDLED ERROR \u2014 see traceback below.\n")
         traceback.print_exc()
         sys.exit(2)

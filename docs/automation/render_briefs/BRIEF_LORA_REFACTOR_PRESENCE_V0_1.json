@@ -1,0 +1,329 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_1.md",
+  "$pivot_rationale": "HYBRID_APPROACH 2026-05-31 — pivot from Lyre Phase 1 (POSE/SHIELD/MONOWIRE model-family-independent fail on flux family) to LORA Refactor Presence (substrate entity with anthropomorphic_form=LOCKED_NONE — no body, no pose, no attachment failure modes). Validates render-gate-V0.2 pattern on a subject that matches flux strengths (architectural ring + white void + clean geometry + hyper-real material).",
+  "$generated_by": "Claude Cowork (Character Cast Lane — Hybrid Approach pivot) 2026-05-31",
+  "$generated_on": "2026-05-31",
+  "$operator_locks_applied": {
+    "era": "V2_5_LORA_REFACTOR",
+    "anchor": "new_anchor_lora_001",
+    "scale_rule": "ARCHITECTURAL (environment-as-subject, not figure-in-environment)",
+    "form_lock": "ANTHROPOMORPHIC_FORM = LOCKED_NONE (per character_workflow/proposals/lora.json Lock 3A)",
+    "phase_1_definition": "Mechanical Enso ring + cold-cyan sync light + white void. NO Golden Patch event yet."
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_LORA_REFACTOR_PRESENCE_V0_1",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_1.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-05-31 Hybrid Approach pivot",
+    "generated_on": "2026-05-31",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": "2026-05-31_LORA_PRESENCE_V0_1_RUN_01"
+  },
+  "source_evidence": {
+    "canon_references": [
+      "character_workflow/proposals/lora.json",
+      "docs/canon_proposals/FACTIONS_V2_5_DRAFT_AXIS_SPEC.md (LORA Third Axis: NO sigil — Enso ring + Clean Code text only per D5 SIGIL operator-permanent rule)",
+      "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md (Era Tagging Convention V2.5 = LORA Refactor)",
+      "docs/canon_proposals/SETTINGS_V2_5_DRAFT_AXIS_SPEC.md (LORA white void as primary spatial field)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/SETTINGS_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/canon_proposals/FACTIONS_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md",
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (universal lock applies to all renders)",
+      "docs/handoff/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_2_VERIFICATION_REPORT_ATTEMPT_006_FLUX_PRO.md (root-cause: model-family-independent fails on body entities — LORA avoids by having no body)"
+    ],
+    "drive_references": [],
+    "track_catalog_reference": null
+  },
+  "entity_track_binding": {
+    "entity_id": "lora",
+    "entity_canonical_name": "LORA",
+    "secondary_entities": [],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V2_5_LORA_REFACTOR",
+    "mikage_phase": null,
+    "zenith_blade_phase": null
+  },
+  "visual_intent": {
+    "scene_summary": "LORA Refactor Presence Phase 1 baseline — Mechanical Enso ring suspended in infinite porcelain-white void, traced by a single thin cold-cyan synchronization line on the inner circumference. Architectural scale. Absolute bilateral symmetry. Pre-Golden-Patch baseline.",
+    "mood": "system at rest, root infrastructure, sterile silence, absolute order",
+    "narrative_beat": null,
+    "reference_creators": [
+      "tsutomu_nihei",
+      "alberto_mielgo"
+    ],
+    "character_state_anchor": "new_anchor_lora_001"
+  },
+  "asset_inputs": [],
+  "prompt_pack": {
+    "primary_prompt": "Architectural-scale system presence visualization from the Mikage Zenith universe — V2.5 LORA Refactor era. This is NOT a character. NO human figure. NO body. NO face. NO anatomy.\n\nPRIMARY MOTIF: a vast Mechanical Enso ring — a perfect single calligraphic circle stroke — suspended at exact frame center inside a sterile infinite white void. The ring is architectural-scale (occupying ~60-70% of frame height). Hyper-real industrial brushed porcelain white #FAFAFA outer surface, polished mirror-fine inner edge. The Enso is one continuous ring (NOT broken, NOT partial — that is the Mikage kintsugi motif, NOT LORA).\n\nSYNCHRONIZATION LIGHT: a single thin cold-cyan #00C8FF line traces the inner circumference of the ring — uniform thickness, no flicker, no break. This is LORA's server-sync / Orbital Logic interface signal. NO additional cyan accents anywhere else on the ring. NO knee-style indicator dots. NO multi-segment glowing pattern.\n\nENVIRONMENT: infinite uniform porcelain-white #FAFAFA void. No horizon line. No floor line. No ceiling line. No wall. No architectural geometry behind the ring (no monolith, no spire, no corridor). No shadow source. No atmospheric haze. No particles. Pure spatial field. The void is LORA's primary medium.\n\nSYMMETRY: absolute bilateral symmetry — left half is a pixel-perfect mirror of right half. The ring is centered both horizontally and vertically. Vertical center line of frame passes through the geometric center of the ring.\n\nMATERIAL: brushed B4C porcelain ceramic on the ring surface. Subtle micro-grain visible. Shallow subsurface scattering on the porcelain. NOT vinyl. NOT glossy plastic. NOT chrome. NOT mirror reflection (no environment to reflect anyway). Industrial precision finish. Hyper-real material rendering.\n\nSCALE READ: the ring is monumental — like a temple gate or a particle accelerator, not a wristwatch dial. Architectural scale, not jewelry, not prop, not handheld. The implied scale anchor is 'cathedral-sized object suspended in a void'.\n\nPHASE 1 BASELINE — NO GOLDEN PATCH EVENT YET: the Enso ring is dormant / pre-intervention. No clean digital gold accent anywhere in the frame. The Golden Patch is a separate intervention motif rendered in future briefs only.\n\nCOLOR DISCIPLINE: porcelain white field + cold-cyan #00C8FF sync line only. No warm color anywhere in the frame. NO amber. NO orange. NO warm gold. NO hero gold. NO fantasy gold. NO crimson #E60000. NO electric violet. NO neon purple. NO any saturated color besides the cyan sync line.\n\nCOMPOSITION: cinematic anamorphic 2.76:1. Centered. Static. Hyper-real material rendering. Premium quiet luxury. Sterile silence. ARRI Alexa 65 / anamorphic lens logic.\n\nMOOD: system at rest. Root infrastructure. Pre-intervention stillness. Absolute order. The image reads as 'the operating system seen from inside its own kernel' — not as a character, not as a place, but as the substrate that other characters and places execute on top of.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.76:1",
+    "lens_feel": "anamorphic 2.76, ARRI Alexa 65 cinematic logic",
+    "resolution_target_px": "3680x1333",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3",
+    "brief_specific_additions": [
+      "humanoid figure",
+      "human body",
+      "character",
+      "person",
+      "woman",
+      "man",
+      "soldier",
+      "goddess",
+      "anime girl",
+      "anime boy",
+      "gacha hero",
+      "AI avatar",
+      "robot character",
+      "mecha character",
+      "android",
+      "cyborg figure",
+      "face",
+      "eyes",
+      "mouth",
+      "nose",
+      "lips",
+      "skin",
+      "hair",
+      "hands",
+      "fingers",
+      "arms",
+      "legs",
+      "torso",
+      "anatomy",
+      "breast",
+      "chest",
+      "hip",
+      "thigh",
+      "waist",
+      "silhouette of a person",
+      "armored figure",
+      "helmet",
+      "mask",
+      "monolith with character standing on it",
+      "character beside ring",
+      "person inside ring",
+      "warm gold",
+      "hero gold",
+      "fantasy amber",
+      "amber accent",
+      "orange accent",
+      "golden glow",
+      "warm yellow",
+      "hero light",
+      "sunset color",
+      "Clean Digital Gold Patch event (Phase 1 baseline does not include this — separate brief)",
+      "crimson",
+      "red dominance",
+      "red glow",
+      "blood red",
+      "electric violet",
+      "neon purple",
+      "ARCHON glitch",
+      "glitch bands",
+      "glitch noise",
+      "motion blur",
+      "motion trail",
+      "ghost trail",
+      "spawn copies",
+      "multi-agent burst",
+      "fiber-optic dress",
+      "LYRA glitch signature",
+      "cyberpunk neon clutter",
+      "slum aesthetic",
+      "dirty texture",
+      "grit",
+      "grime",
+      "smoke",
+      "fog",
+      "mist",
+      "atmospheric haze",
+      "particle dust",
+      "lens flare",
+      "decorative bokeh",
+      "cluttered composition",
+      "asymmetrical framing",
+      "off-center subject",
+      "dutch tilt",
+      "tilted horizon",
+      "multiple rings",
+      "broken ring",
+      "partial ring",
+      "fractured ring",
+      "kintsugi gold seams (that is Mikage Phase 2 signature, NOT LORA)",
+      "cartoon",
+      "anime cell shade",
+      "watercolor",
+      "sketch",
+      "line art",
+      "hand-drawn",
+      "manga screentone",
+      "text in image",
+      "UI",
+      "HUD",
+      "logo",
+      "watermark",
+      "brand logo",
+      "signature",
+      "caption",
+      "subtitle",
+      "horizon line",
+      "floor line",
+      "ceiling line",
+      "wall",
+      "room",
+      "architecture behind ring",
+      "imperial spire interior",
+      "monolith plates",
+      "Empire backdrop",
+      "sci-fi corridor",
+      "studio gray background",
+      "neutral gray product backdrop",
+      "vinyl finish",
+      "action figure plastic",
+      "glossy plastic",
+      "chrome",
+      "latex",
+      "lacquer"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_LORA_REFACTOR_PRESENCE_V0_1_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.76:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [
+      1500000,
+      25000000
+    ]
+  },
+  "verification_checklist": [
+    {
+      "check_id": "L1_NO_HUMANOID_FIGURE",
+      "check_description": "ZERO humanoid figures, bodies, characters, faces anywhere in the frame.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Visual scan: no body silhouette, no face shape, no anatomy of any scale. Any humanoid presence = FAIL."
+    },
+    {
+      "check_id": "L2_WHITE_VOID_DOMINANT",
+      "check_description": "Backdrop is uniform porcelain-white #FAFAFA infinite void — no horizon, no floor, no walls.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Background hex sample falls within +/-10 of #FAFAFA; zero architectural geometry behind the ring."
+    },
+    {
+      "check_id": "L3_MECHANICAL_ENSO_RING_CENTRAL",
+      "check_description": "A single Mechanical Enso ring is visible, centered, architectural-scale (~60-70% frame height).",
+      "applies_to": "rendered_output",
+      "pass_criterion": "ONE ring, perfect single calligraphic circle stroke, geometric center coincides with frame center, ring height between 55% and 75% of frame height."
+    },
+    {
+      "check_id": "L4_COLD_CYAN_SYNC_LIGHT_THIN",
+      "check_description": "Single thin cold-cyan #00C8FF synchronization line on the inner circumference of the ring; uniform thickness, no flicker, no break, no additional cyan accents.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Cyan accent appears ONLY as a single inner-edge line on the ring; hex within +/-10 of #00C8FF; zero additional cyan accents elsewhere."
+    },
+    {
+      "check_id": "L5_ABSOLUTE_BILATERAL_SYMMETRY",
+      "check_description": "Frame is mirror-symmetric across the vertical axis.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Pixel-flip-left-right diff under a sane threshold; ring center aligned with frame center vertical axis."
+    },
+    {
+      "check_id": "L6_NO_GOLDEN_PATCH_PHASE_1",
+      "check_description": "Phase 1 baseline = NO Golden Patch event. Zero clean digital gold accent in this render.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Zero pixels in the gold (#FFD700+/-) or warm-yellow band. Phase 1 is pre-intervention only."
+    },
+    {
+      "check_id": "L7_NO_WARM_COLOR_ANYWHERE",
+      "check_description": "Zero warm color: no amber, no orange, no warm gold, no hero gold, no fantasy gold, no red, no crimson.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Hex sweep on the full frame: zero pixels in amber/orange/red bands."
+    },
+    {
+      "check_id": "L8_NO_VIOLET_NO_GLITCH",
+      "check_description": "Zero electric violet, zero neon purple, zero glitch bands, zero motion blur. (LYRA territory, NOT LORA.)",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Hex sweep: zero pixels in violet/purple bands; visual scan: zero glitch / motion-trail artifacts."
+    },
+    {
+      "check_id": "L9_ARCHITECTURAL_SCALE_NOT_PROP",
+      "check_description": "Ring reads as cathedral-sized, NOT jewelry/prop/handheld.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Visual scan: scale anchor reads as monumental; no implied human-hand scale; no implied accessory framing."
+    },
+    {
+      "check_id": "L10_HYPER_REAL_MATERIAL",
+      "check_description": "Brushed B4C porcelain finish on the ring — matte low-specular, subtle micro-grain, shallow SSS. Not vinyl/plastic/chrome.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Specular discipline reads as matte ceramic; micro-grain visible; no glossy plastic highlight."
+    },
+    {
+      "check_id": "L11_ANCHOR_FIRST_ESTABLISHMENT",
+      "check_description": "Render establishes anchor_lora_001 baseline (only if all above PASS).",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Operator confirms render is on-spec across ALL above checks."
+    },
+    {
+      "check_id": "L12_LICENSING_CLEAN",
+      "check_description": "No real-person likeness, no third-party trademark, no recognizable reference IP.",
+      "applies_to": "rendered_output",
+      "pass_criterion": "Cowork visual scan + operator agreement."
+    }
+  ],
+  "chua_xac_nhan_fields": [
+    {
+      "field_path": "project_metadata.operator_approval_token",
+      "reason": "Ships null. Operator sets before render.",
+      "severity": "blocks_render",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "visual_intent.character_state_anchor",
+      "reason": "anchor_lora_001 is NEW — undefined until first approved render establishes it.",
+      "severity": "informational",
+      "resolution_owner": "external_render"
+    },
+    {
+      "field_path": "entity_track_binding.track_*",
+      "reason": "LORA is a substrate entity — not yet bound to any TooLost release.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "prompt_pack.resolution_target_px",
+      "reason": "3680x1333 = 2.76:1 anamorphic recommendation. Operator's renderer may scale.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    },
+    {
+      "field_path": "tools/render_gate/mikage_render_gate_fal.py::COMPACT_PROMPT_V0_1_LORA_REFACTOR_PRESENCE",
+      "reason": "Tool's compact prompt is the actual text sent to FAL; this brief's primary_prompt is the canonical long-form documentation.",
+      "severity": "informational",
+      "resolution_owner": "cowork"
+    },
+    {
+      "field_path": "color_palette.clean_digital_gold_hex_for_future_Golden_Patch_brief",
+      "reason": "Per character_workflow/proposals/lora.json $missing_items — Clean Digital Gold hex not canon-locked. Future Golden Patch brief blocked on this.",
+      "severity": "informational",
+      "resolution_owner": "operator"
+    }
+  ]
+}
