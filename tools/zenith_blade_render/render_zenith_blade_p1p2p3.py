@@ -65,7 +65,7 @@ def graph(phase, ctrl, pos, cn_str, seed):
                 "model":["4",0],"positive":["22",0],"negative":["22",1],"latent_image":["14",0]}},
       "16": {"class_type":"VAEDecode","inputs":{"samples":["15",0],"vae":["4",2]}},
       "17": {"class_type":"SaveImage","inputs":{"images":["16",0],
-                "filename_prefix":"MIKAGE_ZENITH_BLADE_%s_REVIEW_CANDIDATE_%s"%(phase,DATE)}},
+                "filename_prefix":"ZBLADE_%s_s%d_RC"%(phase,seed)}},
     }
 
 ids=[]
