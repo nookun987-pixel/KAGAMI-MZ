@@ -49,5 +49,13 @@ Operator provided "ĐẶC TẢ KỸ THUẬT: BIẾN THỂ THỰC THỂ MIKAGE ZE
 ADDED FILES (this round): docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
 MODIFIED (this round): MIKAGE_ZENITH_BLADE_SPEC_V1.md (§0.2/§0.4/§0b/§1/§2/§4), MIKAGE_ZENITH_BLADE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1.md (ST1+ST2), 00_LATEST_CODEX_HANDOFF.md (pointer)
 
+## ADDENDUM 2026-06-02 — V2.5 + mask figure ruling RESOLVED
+Operator issued "ĐẶC TẢ KỸ THUẬT HỆ THỐNG MIKAGE ZENITH V2.5" and RULED the figure-lane mask conflict = **option (c) Dung hòa**:
+- Keep B4C Kitsune mask **planar geometry** (brand identity).
+- **Seal the 0.7" eye slits** (sealed monocoque, LORA "Clean Code").
+- Visual data via **Graphene matrix + Side-Channel BMF** beneath the shell; logic = submission to LORA, kills bio-spectrum noise.
+- Result: recent faceless monocoque work is **COMPATIBLE** with canon if it keeps the Kitsune silhouette. No faceless-principle rework needed; VERIFY existing assets carry Kitsune form (not a blocker).
+Entity spec bumped to V2.5; §2 conflict flag replaced with the resolved ruling; blade spec §0.4 updated; pointer updated.
+
 ## Prohibited actions confirmed
 CANON_LOCK_CREATED: NO · ASSET_LOCK_CREATED: NO · PRODUCTION_READY: NO · RENDER_BY_CLAUDE: NO · FILM_VIDEO_SHORT_SHOTLIST: NO · LANE_CHANGED: NO · FIGURE_CANON_CHANGED: NO (flag only)

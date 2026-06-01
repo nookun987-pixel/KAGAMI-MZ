@@ -25,8 +25,8 @@ Operator cross-checked the master Drive files. This corrects two earlier confusi
 ### 0.3 NOT IN ANY SOURCE FILE — deprecate
 - **`COMPACT_IDLE` / "mini stored module" (the old ST0): NOT CANON.** It appears in no Drive file; it was inferred in recent chats to brief the image-gen AI. **Removed.** The canon rest state is Flux-Pinning carry on the back (§0.1), not a shrunk module.
 
-### 0.4 ENTITY PHASES → moved to dedicated spec (figure lane)
-The 03 entity appearance phases (Imperial Clean / Fallen-Exile / Execution), now fully specified by the operator, live in **`docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`**. ⚠ That spec defines a **Kitsune mask WITH eye slits (khe mắt)** + B4C #FAFAFA shell, which CONFLICTS with the recent "faceless sealed monocoque, no eye slits" figure work — operator must reconcile in the figure lane (flag carried there). Out of scope for this blade spec.
+### 0.4 ENTITY PHASES → dedicated spec (figure lane) — MASK CONFLICT RESOLVED
+The 03 entity appearance phases (Imperial Clean / Fallen-Exile / Execution) live in **`docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`** (V2.5). The Kitsune-vs-faceless conflict is **RESOLVED 2026-06-02 (option c)**: keep the Kitsune **planar-geometry** mask silhouette, but **seal the 0.7" eye slits** (Clean Code) with Graphene + Side-Channel BMF beneath the shell. Faceless work is compatible if it keeps the Kitsune form. Out of scope for this blade spec beyond the cross-reference.
 
 ## 0b. OPERATOR FORM RULING 2026-06-01b (refined by §0 above)
 

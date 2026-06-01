@@ -1,9 +1,9 @@
 # MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1
 
-STATUS: OPERATOR-SUPPLIED CANON SPEC (recorded verbatim-faithful 2026-06-01c). NOT asset-locked / NOT production-ready by Claude; this is the source-of-truth text the operator provided from the master Drive files.
+STATUS: OPERATOR-SUPPLIED CANON SPEC — "MIKAGE ZENITH V2.5" (recorded 2026-06-02; mask figure-lane conflict RESOLVED by operator option (c), §2). NOT asset-locked by Claude; source-of-truth text from the operator's master (Master Bible V2.0, 248-source NotebookLM "MIKAGE ZENITH BIBLE").
 LANE: CHARACTER_CAST_LANE / Mikage
-SCOPE: the 03 appearance phases of the ENTITY Mikage Zenith. (The weapon is specified separately in `MIKAGE_ZENITH_BLADE_SPEC_V1.md`.)
-SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT: BIẾN THỂ THỰC THỂ MIKAGE ZENITH VÀ THIẾT BỊ CHẤP HÀNH" (2026-06-01c), cross-checked against `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `Mikage Zenith Core`, `Mikage Copywriter`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO`.
+SCOPE: the 03 appearance phases of the ENTITY Mikage Zenith + the mask canon ruling. (The weapon is specified separately in `MIKAGE_ZENITH_BLADE_SPEC_V1.md`.)
+SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT HỆ THỐNG MIKAGE ZENITH V2.5" (2026-06-02), cross-checked against `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `Mikage Zenith Core`, `Mikage Copywriter`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO`.
 
 ## 0. Correction recorded
 "3 Pha" = the ENTITY's 3 structural appearance phases (below), driven by **dramatic-error (sai số bi kịch)** and **Landauer heat debt**. This is NOT the weapon's mode set. Earlier blade-mode mapping (Silent/Pulse/Overload) was a wrong fill and is retired.
@@ -16,8 +16,7 @@ SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT: BIẾN THỂ THỰC TH�
 - No micro-cracks, no physical wear/abrasion.
 
 ### Pha 2 — Fallen / Exile (Phân rã)
-- Ceramic reaches fracture limit **K_Ic**; **Kintsugi cracks** appear, cutting across the **eye slits of the Kitsune mask (khe mắt mask Kitsune)**.
-- Self-repair via conductive resin + **quantum blood (huyết lượng tử) #E60000** when dramatic-error oscillates **2–4%**.
+- B4C structure reaches fracture limit **K_Ic**; **Kintsugi cracks** appear, filled with **conductive resin + quantum blood (huyết lượng tử) #E60000**.
 - **Ensō ring** displays an "ashes / ember (tàn tro)" state.
 
 ### Pha 3 — Execution (Hành quyết)
@@ -26,14 +25,16 @@ SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT: BIẾN THỂ THỰC TH�
 - A mechanical **Ensō ring glows red behind the nape (sau gáy)**.
 - Surrounding air distorts from **thermal mirage** as energy flux exceeds **43°C**.
 
-## 2. ⚠ CANON CONFLICT FLAG — Kitsune mask vs recent "faceless" figure work
-- This master spec defines Mikage with a **Kitsune mask that HAS eye slits (khe mắt)**, white B4C #FAFAFA shell, dark-red symmetric pattern, Ensō ring.
-- The recent figure lane (ASSET-RESET / bust / upper-body / full-body work) was built to a **"faceless sealed monocoque porcelain, NO eye slits, NO visor"** standard.
-- These are in DIRECT CONFLICT on the face/eye-slit question. Operator must rule which is canon:
-  - (a) master Kitsune-mask-with-eye-slits wins → recent faceless work is off-canon and needs rework; OR
-  - (b) faceless monocoque is the current canon → master text predates it and should be updated; OR
-  - (c) reconcile (e.g., Kitsune mask form but sealed/implied eye slits).
-- Claude has NOT changed any figure file and is NOT ruling this. Recorded as a flag for the figure-lane reconciliation task.
+## 2. MASK CANON — RESOLVED 2026-06-02 (operator ruling: option (c) Dung hòa)
+
+The earlier Kitsune-vs-faceless conflict is RESOLVED. Canon standard:
+
+- **Structure:** keep the **planar geometry of the B4C ceramic Kitsune mask** (brand-identity silhouette).
+- **Visual treatment:** the **eye slits (0.7")** are **SEALED (sealed monocoque)** per LORA's "Clean Code" standard — no open eye holes.
+- **Transmission:** all visual data is processed through a **Graphene matrix + Side-Channel biomechanical-feedback (BMF) sensor beneath the porcelain shell** (no optical eye opening needed).
+- **System logic:** sealing the eye slits reflects Mikage's submission to LORA's operating structure, eliminating biological-spectrum noise variables.
+
+IMPLICATION for the figure lane: the recent **"faceless sealed monocoque"** work is **COMPATIBLE with canon** — provided each asset retains the **Kitsune planar-geometry mask silhouette**. No rework of the faceless principle is needed; only verify that existing faceless assets carry the Kitsune mask form (verify item, not a blocker).
 
 ## 3. Status limits
-NOT asset-locked by Claude · NOT production-ready · NO render by Claude · NO film/video/short/shotlist · LANE unchanged (CHARACTER_CAST_LANE). This file records operator canon text + one conflict flag. Formal asset-lock / figure rework requires explicit operator instruction.
+NOT asset-locked by Claude · NOT production-ready · NO render by Claude · NO film/video/short/shotlist · LANE unchanged (CHARACTER_CAST_LANE). Records operator canon text + the resolved mask ruling. Formal asset-lock / any figure rework requires explicit operator instruction.
