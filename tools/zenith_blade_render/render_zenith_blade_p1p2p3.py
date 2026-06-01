@@ -21,15 +21,19 @@ DATE = "20260602"
 NEG = ("character, person, hand, arm, wielder, body, face, scene, environment, floor, props, "
        "katana curve, curved scimitar, thin elegant blade, slender, fantasy ornament, glowing runes, "
        "laser sword, lightsaber, plasma, chrome glossy mirror, anime, cartoon, "
+       "popsicle, ice cream, ice cream bar, lollipop, candy, dessert, food, toy, miniature, cute, "
        "low quality, blurry, jpeg artifact, watermark, text labels, ui frame")
 
 # phase -> (control image, positive prompt, controlnet strength)
 PHASES = {
   "P1": ("ZBLADE_CTRL_P1.png",
-    "isolated heavy industrial greatsword in a CLOSED COMPACT BLOCK form, massive 350kg, "
-    "smooth matte white Boron Carbide porcelain shell #FAFAFA, square brutal monolithic block, "
-    "chamfered edges, sealed seams, sterile clean surface, dim hidden core, no glow, "
-    "single object centered vertical, neutral dark background, flat diffuse product lighting", 0.62),
+    "isolated MASSIVE 350kg monolithic obelisk weapon, brutalist architecture, a long faceted dense ceramic beam "
+    "with a decisive flat-cut top, sharp square edges, NO pointed tip, NO crossguard, NO wrapped grip, NOT a sword, "
+    "looks like a frozen reactor core block, smooth matte white Boron Carbide #FAFAFA that swallows light, sterile cold luxurious, "
+    "ultra-thin pressure grooves down the body, a faint blurred deep red #E60000 imprisoned far beneath the white ceramic, no glow no LED, "
+    "rectangular hydraulic drive-hub with flush concentric mechanical rings, flat titanium flux-pinning base, "
+    "heavy industrial hardware, silent dormant, single object centered vertical, neutral dark background, flat diffuse lighting",
+    0.74),
   "P2": ("ZBLADE_CTRL_OPEN.png",
     "isolated heavy industrial greatsword 350kg, white B4C porcelain shell SPLITTING OPEN along kintsugi cracks, "
     "black rusty titanium internal frame beginning to show through gaps, ferro-calcium core warming faint red, "

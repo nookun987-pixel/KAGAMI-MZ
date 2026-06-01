@@ -65,6 +65,13 @@ Final resolution: the 3 Pha are the **weapon's 3 activation stages** (P1 Compact
 
 `COMPACT_IDLE` is reinstated as the OFFICIAL P1 name, but REDEFINED: it means a **closed / compact BLOCK** — the B4C shell shut, Titanium plates contracted tight, smooth square brutal block, core dim (43°C), flux-pinned to Mikage's back. It is NOT the earlier-deprecated "shrunk mini module" (that interpretation stays dead). The weapon is full-size; "compact" = closed geometry, not miniaturized.
 
+### P1 visual concept — "The Silent Monolith / Khối Trụ Vô Khẩu" (operator brief 2026-06-02)
+- Form = **monolithic obelisk / brutalist architecture beam**, NOT a sword: a long faceted dense ceramic block with a **decisive flat-cut top**, sharp square edges. **No pointed tip, no crossguard, no wrapped/leather grip.** Reads like a frozen reactor-core block / a fallen Imperial-architecture fragment.
+- Visual weight = extremely dense/solid; must convey the 350 kg pressing on the armour's hydraulics.
+- Material = B4C #FAFAFA matte that SWALLOWS light (sterile, cold, luxurious Imperial), with ultra-thin pressure grooves down the body. **No LED, totally silent**; only a faint blurred **#E60000** imprisoned deep beneath the white ceramic ("hot blood frozen in sterile ice").
+- Interface = industrial hardware: a **rectangular hydraulic Drive Hub + flush concentric mechanical rings (0.0mm tolerance)** instead of a guard; a **flat Titanium Flux-Pinning base** with magnetic ports instead of a pommel — hovers 0.5mm off the back armour, no sheath, no strap.
+- Control image: `tools/zenith_blade_render/inputs/ZBLADE_CTRL_P1.png` (v4, monolith).
+
 ## 4. Open Flags — RESOLVED (§0b ruling + §0 audit)
 
 1. ~~Naming~~ → SAME weapon (Zenith Blade = Thanh Đại Đao 3 Pha).

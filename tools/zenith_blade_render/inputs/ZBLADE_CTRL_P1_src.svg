@@ -1,22 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 1216" width="832" height="1216">
   <rect width="832" height="1216" fill="#ffffff"/>
-  <g stroke="#000000" fill="none" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-    <!-- closed B4C brutal block, chamfered tip -->
-    <path d="M416 150 L536 290 L536 820 L296 820 L296 290 Z"/>
-    <path d="M416 150 L536 290 L296 290"/>
-    <!-- dormant split-seams -->
-    <g stroke-width="2.5">
-      <line x1="296" y1="420" x2="536" y2="420"/>
-      <line x1="296" y1="560" x2="536" y2="560"/>
-      <line x1="296" y1="700" x2="536" y2="700"/>
-      <line x1="416" y1="290" x2="416" y2="820"/>
+  <g stroke="#000000" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+    <!-- MONOLITHIC OBELISK body: faceted ceramic beam, slanted flat-cut top, NO point/NO guard -->
+    <path d="M352 165 L496 235 L486 842 L346 842 L336 235 Z" stroke-width="6"/>
+    <!-- slanted flat-cut top facet -->
+    <line x1="392" y1="190" x2="452" y2="219" stroke-width="3"/>
+    <!-- prism facet division lines (3 faces) -->
+    <line x1="392" y1="205" x2="398" y2="838" stroke-width="3"/>
+    <line x1="450" y1="222" x2="446" y2="840" stroke-width="3"/>
+    <!-- ultra-thin pressure grooves -->
+    <g stroke-width="1.6">
+      <line x1="366" y1="250" x2="372" y2="832"/><line x1="378" y1="250" x2="383" y2="832"/>
+      <line x1="462" y1="262" x2="458" y2="834"/><line x1="474" y1="262" x2="470" y2="834"/>
+      <line x1="416" y1="232" x2="416" y2="838"/>
     </g>
-    <!-- collar / guard -->
-    <rect x="356" y="820" width="120" height="34"/>
-    <!-- grip block -->
-    <rect x="372" y="854" width="88" height="180"/>
-    <g stroke-width="2.5"><line x1="372" y1="914" x2="460" y2="914"/><line x1="372" y1="974" x2="460" y2="974"/></g>
-    <!-- pommel -->
-    <path d="M380 1034 L452 1034 L440 1090 L392 1090 Z"/>
+    <!-- subtle plate seams -->
+    <g stroke-width="3">
+      <line x1="342" y1="400" x2="490" y2="400"/>
+      <line x1="344" y1="560" x2="488" y2="560"/>
+      <line x1="345" y1="710" x2="487" y2="710"/>
+    </g>
+    <!-- DRIVE HUB: rectangular hydraulic box + concentric mechanical rings (replaces guard) -->
+    <rect x="318" y="842" width="196" height="84" stroke-width="6"/>
+    <circle cx="416" cy="884" r="27" stroke-width="4"/><circle cx="416" cy="884" r="15" stroke-width="3"/><circle cx="416" cy="884" r="6" stroke-width="2.5"/>
+    <rect x="338" y="872" width="22" height="24" stroke-width="2.5"/><rect x="472" y="872" width="22" height="24" stroke-width="2.5"/>
+    <!-- short lower stub -->
+    <rect x="386" y="926" width="60" height="86" stroke-width="5"/>
+    <!-- FLUX-PINNING flat Ti base plate + magnetic ports (replaces pommel/grip) -->
+    <path d="M338 1012 L494 1012 L494 1058 L338 1058 Z" stroke-width="6"/>
+    <g stroke-width="3"><circle cx="372" cy="1035" r="8"/><circle cx="416" cy="1035" r="8"/><circle cx="460" cy="1035" r="8"/></g>
   </g>
 </svg>
