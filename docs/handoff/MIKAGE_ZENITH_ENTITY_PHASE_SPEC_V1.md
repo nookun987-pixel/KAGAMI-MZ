@@ -48,5 +48,8 @@ The earlier Kitsune-vs-faceless conflict is RESOLVED. Canon standard:
 
 IMPLICATION for the figure lane: the recent **"faceless sealed monocoque"** work is **COMPATIBLE with canon** — provided each asset retains the **Kitsune planar-geometry mask silhouette**. No rework of the faceless principle is needed; only verify that existing faceless assets carry the Kitsune mask form (verify item, not a blocker).
 
+### Brand layer ↔ Film layer = ONE identity, two fidelities (operator-confirmed 2026-06-02)
+The brand/UI mark (faceless porcelain helmet + **2 sensor slits** + violet signal, from the mikage-zenith-design system) and the film/IP entity (Kitsune mask with **sealed 0.7" eye slits**, B4C #FAFAFA) are **NOT two conflicting designs** — they are the SAME identity at two fidelities. The brand "2 sensor slits" ARE the film mask's 2 sealed eye-slits (sealed monocoque). Brand mark = simplified for logo/web; film = full Kitsune detail. They must stay consistent (one identity); "keep layers separate" means only: do not let brand/web work invent new film-character canon, and vice-versa — not that they look different.
+
 ## 3. Status limits
 NOT asset-locked by Claude · NOT production-ready · NO render by Claude · NO film/video/short/shotlist · LANE unchanged (CHARACTER_CAST_LANE). Records operator canon text + the resolved mask ruling. Formal asset-lock / any figure rework requires explicit operator instruction.
