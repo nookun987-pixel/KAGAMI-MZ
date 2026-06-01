@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 1216" width="832" height="1216">
+  <rect width="832" height="1216" fill="#ffffff"/>
+  <g stroke="#000000" fill="none" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- central core spine -->
+    <rect x="404" y="200" width="24" height="640" rx="6"/>
+    <!-- pointed tip -->
+    <path d="M404 206 L416 150 L428 206"/>
+    <!-- core node rings -->
+    <circle cx="416" cy="340" r="12"/><circle cx="416" cy="520" r="12"/><circle cx="416" cy="700" r="12"/>
+    <!-- exposed Ti frame plates (right) -->
+    <path d="M430 230 L500 290 L500 400 L430 372 Z"/>
+    <path d="M430 384 L512 432 L512 560 L430 524 Z"/>
+    <path d="M430 540 L520 588 L520 740 L430 700 Z"/>
+    <!-- exposed Ti frame plates (left) -->
+    <path d="M402 230 L332 290 L332 400 L402 372 Z"/>
+    <path d="M402 384 L320 432 L320 560 L402 524 Z"/>
+    <path d="M402 540 L312 588 L312 740 L402 700 Z"/>
+    <!-- B4C shell fragments peeling outward -->
+    <path d="M508 250 L548 232 L552 320 L514 332 Z" stroke-width="3"/>
+    <path d="M324 250 L284 232 L280 320 L318 332 Z" stroke-width="3"/>
+    <!-- hilt mechanism -->
+    <circle cx="416" cy="900" r="60"/>
+    <circle cx="416" cy="900" r="40"/>
+    <circle cx="416" cy="900" r="20"/>
+    <!-- grip -->
+    <rect x="394" y="960" width="44" height="120"/>
+  </g>
+</svg>

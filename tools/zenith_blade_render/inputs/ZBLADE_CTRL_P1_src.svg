@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 1216" width="832" height="1216">
+  <rect width="832" height="1216" fill="#ffffff"/>
+  <g stroke="#000000" fill="none" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- closed B4C brutal block, chamfered tip -->
+    <path d="M416 150 L536 290 L536 820 L296 820 L296 290 Z"/>
+    <path d="M416 150 L536 290 L296 290"/>
+    <!-- dormant split-seams -->
+    <g stroke-width="2.5">
+      <line x1="296" y1="420" x2="536" y2="420"/>
+      <line x1="296" y1="560" x2="536" y2="560"/>
+      <line x1="296" y1="700" x2="536" y2="700"/>
+      <line x1="416" y1="290" x2="416" y2="820"/>
+    </g>
+    <!-- collar / guard -->
+    <rect x="356" y="820" width="120" height="34"/>
+    <!-- grip block -->
+    <rect x="372" y="854" width="88" height="180"/>
+    <g stroke-width="2.5"><line x1="372" y1="914" x2="460" y2="914"/><line x1="372" y1="974" x2="460" y2="974"/></g>
+    <!-- pommel -->
+    <path d="M380 1034 L452 1034 L440 1090 L392 1090 Z"/>
+  </g>
+</svg>
