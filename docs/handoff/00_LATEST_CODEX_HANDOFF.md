@@ -1337,6 +1337,7 @@ ZENITH_BLADE_STATE_MODEL = blade has 2 states: REST (ornate mechanical sword, MJ
 ZENITH_BLADE_RUNPOD_PACKET_STATUS = EXECUTION_PACKET_READY (2026-06-01c; NOT rendered; 2 states ST1 ornate + ST2 combat-active; 2-3 seeds/state)
 MIKAGE_MASK_CANON = RESOLVED 2026-06-02 (operator option (c) Dung hòa): keep B4C Kitsune mask PLANAR GEOMETRY (brand identity) + SEAL the 0.7" eye slits (sealed monocoque, LORA "Clean Code") + Graphene matrix + Side-Channel BMF beneath shell. Recent faceless monocoque work = COMPATIBLE if it keeps Kitsune silhouette. Spec: MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md §2. VERIFY ITEM (not blocker): confirm existing faceless assets carry Kitsune planar-geometry form.
 MIKAGE_SYSTEM_SPEC_VERSION = V2.5 (operator master 2026-06-02; entity 3-phase + PrimeTool blade device + mask ruling)
+ZENITH_BLADE_CLEAN_BLUEPRINTS = CREATED 2026-06-02 (deterministic vector SVG, NOT AI render, reference-only) — design/zenith_blade_clean_v1/MIKAGE_ZENITH_BLADE_REST_CLEAN_V1.svg + MIKAGE_ZENITH_BLADE_COMBAT_ACTIVE_CLEAN_V1.svg. On-brand (void/porcelain/violet signal + film-canon #E60000 core). Built from spec V2.5; render-verified. Usable as clean canon reference + ControlNet/control-image source for the RunPod packet. NOT canon/asset-lock.
 PRIOR_NEXT_TASK_DONE5 = RECORD_ZENITH_BLADE_OPERATOR_RULING_AND_REVISE_PACKET (2026-06-01b)
 PRIOR_NEXT_TASK_DONE6 = RECONCILE_ZENITH_BLADE_WITH_DRIVE_MASTER_AUDIT (2026-06-01c)
 PRIOR_NEXT_TASK_DONE7 = RECORD_ENTITY_3PHASE_SPEC_AND_FIX_BLADE_DEVICE_SPEC (2026-06-01c)
