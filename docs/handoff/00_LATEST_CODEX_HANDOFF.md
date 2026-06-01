@@ -1302,6 +1302,19 @@ PHASE5_ALLOWED_TO_BE_PROPOSED = YES (internal upper-body consistency + motion-RE
 PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_STATUS = PLANNING_DEFINED (2026-06-01)
 PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_FILE = docs/handoff/MIKAGE_PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_V1.md
 PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_REPORT = docs/handoff/PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_NO_RENDER_V1_REPORT.md
-CURRENT_NEXT_TASK = OPERATOR_REVIEW_PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_V1 (internal review only; NO film/video/short/shotlist; NO motion render; NO canon lock; NO asset lock)
-PRIOR_NEXT_TASK_DONE = PHASE5_UPPER_BODY_CONSISTENCY_PLANNING_NO_RENDER_V1 (2026-06-01; planning doc + report created, pointer updated)
-PENDING_OPERATOR = git commit/push handoff changes for AR-15 and the Phase 5 upper-body consistency planning task (git not operable from Cowork sandbox); optional flatten of nested 09\09 bust folder
+PHASE5_STARTED = YES (2026-06-01; INTERNAL_NO_RENDER_ONLY — upper-body consistency + motion-readiness review; film/video/short/shotlist/motion-render/ComfyUI/Blender/canon-lock/asset-lock all CLOSED)
+PHASE5_SCOPE = INTERNAL_NO_RENDER_ONLY
+PHASE5_INTERNAL_REVIEW_STATUS = CRITERIA_AND_BASELINE_READY_AWAITING_CANDIDATE
+PHASE5_INITIATION_FILE = docs/handoff/MIKAGE_PHASE5_INITIATION_INTERNAL_NO_RENDER_V1.md
+PHASE5_INITIATION_REPORT = docs/handoff/PHASE5_INITIATION_INTERNAL_NO_RENDER_V1_REPORT.md
+PHASE5_UPPER_BODY_CANDIDATE_RENDER_REQUEST_STATUS = RENDER_REQUEST_DEFINED (2026-06-01; NOT rendered)
+PHASE5_UPPER_BODY_CANDIDATE_RENDER_REQUEST_FILE = docs/handoff/MIKAGE_UPPER_BODY_CONTINUITY_CANDIDATE_RENDER_REQUEST_SPEC_V1.md
+PHASE5_UPPER_BODY_CANDIDATE_RENDER_REQUEST_REPORT = docs/handoff/PHASE5_UPPER_BODY_CONTINUITY_CANDIDATE_RENDER_REQUEST_SPEC_V1_REPORT.md
+PHASE5_UPPER_BODY_CANDIDATE_GENERATED = NO (authority = Codex / local ComfyUI; NOT Claude / NOT Cowork)
+PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_PACKET_STATUS = EXECUTION_PACKET_READY (2026-06-01; NOT rendered)
+PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_PACKET_FILE = docs/handoff/MIKAGE_UPPER_BODY_CONTINUITY_CANDIDATE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1.md
+PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_PACKET_REPORT = docs/handoff/MIKAGE_UPPER_BODY_CONTINUITY_CANDIDATE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1_REPORT.md
+PHASE5_UPPER_BODY_RENDER_STACK = RunPod RTX 4090 + ComfyUI; juggernautXL_v8 + ip-adapter_sdxl + clip_vision_g + diffusers_xl_canny_mid; base = bust 09A; 768x1152 upper-body crop (local GTX 1660 6GB insufficient)
+CURRENT_NEXT_TASK = RUNPOD_RENDER_THEN_SCORE — operator rents RunPod RTX 4090, runs the execution packet to produce ONE upper-body candidate (4 seeds), applies quick-pass gate, returns selected candidate path to Cowork for UB-1..UB-10 + AR-15 §9 + AR-14 §9 scoring. NO render in Cowork; film/video/short/shotlist remain CLOSED.
+PRIOR_NEXT_TASK_DONE = PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_EXECUTION_PACKET_V1 (2026-06-01; RunPod/ComfyUI execution packet created from proven bust stack, no render performed)
+PENDING_OPERATOR = (1) run the upper-body render-request spec on local/Codex and return candidate; (2) git commit/push handoff changes for AR-15, Phase 5 planning, Phase 5 initiation, and this render-request spec (git not operable from Cowork sandbox); (3) optional flatten of nested 09\09 bust folder
