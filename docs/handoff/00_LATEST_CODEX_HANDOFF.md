@@ -1310,11 +1310,15 @@ PHASE5_INITIATION_REPORT = docs/handoff/PHASE5_INITIATION_INTERNAL_NO_RENDER_V1_
 PHASE5_UPPER_BODY_CANDIDATE_RENDER_REQUEST_STATUS = RENDER_REQUEST_DEFINED (2026-06-01; NOT rendered)
 PHASE5_UPPER_BODY_CANDIDATE_RENDER_REQUEST_FILE = docs/handoff/MIKAGE_UPPER_BODY_CONTINUITY_CANDIDATE_RENDER_REQUEST_SPEC_V1.md
 PHASE5_UPPER_BODY_CANDIDATE_RENDER_REQUEST_REPORT = docs/handoff/PHASE5_UPPER_BODY_CONTINUITY_CANDIDATE_RENDER_REQUEST_SPEC_V1_REPORT.md
-PHASE5_UPPER_BODY_CANDIDATE_GENERATED = NO (authority = Codex / local ComfyUI; NOT Claude / NOT Cowork)
+PHASE5_UPPER_BODY_CANDIDATE_GENERATED = YES (operator, RunPod RTX 4000 Ada + ComfyUI; realvisxlV50 + IP-Adapter anchored to bust 09A; NOT Claude / NOT Cowork)
+PHASE5_UPPER_BODY_CANDIDATE_EVALUATION_FILE = docs/handoff/PHASE5_UPPER_BODY_CONTINUITY_CANDIDATE_V2_EVALUATION_V1.md
+PHASE5_UPPER_BODY_CONTINUITY_REFERENCE = MIKAGE_UPPER_BODY_CONT_CAND_V2_REVIEW_CANDIDATE_20260601_00003_.png (INCLUDE_AS_PHASE4_REFERENCE; reference only; NOT canon; NOT asset-lock)
+PHASE5_UPPER_BODY_CANDIDATE_V2_DECISIONS = 00003 INCLUDE_AS_PHASE4_REFERENCE; 00002 REJECT (eye slit); 00001 HOLD (fabric); 00004 HOLD (black dot)
+PHASE5_UPPER_BODY_REFERENCE_ONDISK = CHUA_XAC_NHAN (still on RunPod pod output; operator must copy to D:\workspace\ComfyUI\MIKAGE_CANON\10_COMPONENT_CANDIDATE_SET_V1\10_UPPER_BODY_CONTINUITY\)
 PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_PACKET_STATUS = EXECUTION_PACKET_READY (2026-06-01; NOT rendered)
 PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_PACKET_FILE = docs/handoff/MIKAGE_UPPER_BODY_CONTINUITY_CANDIDATE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1.md
 PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_PACKET_REPORT = docs/handoff/MIKAGE_UPPER_BODY_CONTINUITY_CANDIDATE_RUNPOD_COMFYUI_EXECUTION_PACKET_V1_REPORT.md
 PHASE5_UPPER_BODY_RENDER_STACK = RunPod RTX 4090 + ComfyUI; juggernautXL_v8 + ip-adapter_sdxl + clip_vision_g + diffusers_xl_canny_mid; base = bust 09A; 768x1152 upper-body crop (local GTX 1660 6GB insufficient)
-CURRENT_NEXT_TASK = RUNPOD_RENDER_THEN_SCORE — operator rents RunPod RTX 4090, runs the execution packet to produce ONE upper-body candidate (4 seeds), applies quick-pass gate, returns selected candidate path to Cowork for UB-1..UB-10 + AR-15 §9 + AR-14 §9 scoring. NO render in Cowork; film/video/short/shotlist remain CLOSED.
-PRIOR_NEXT_TASK_DONE = PHASE5_UPPER_BODY_CANDIDATE_RUNPOD_EXECUTION_PACKET_V1 (2026-06-01; RunPod/ComfyUI execution packet created from proven bust stack, no render performed)
+CURRENT_NEXT_TASK = PHASE5_UPPER_BODY_CLEAN_CONSTRUCTION_PASS_V3 — operator runs a clean multi-view pass on RunPod using 00003 as continuity base (front/3-4/side/back, fully sealed faceless porcelain, remove fabric/dot/slit risk, graphite only in joints), then return for re-score. NO render in Cowork; film/video/short/shotlist remain CLOSED; reference stays INCLUDE_AS_PHASE4_REFERENCE only.
+PRIOR_NEXT_TASK_DONE = PHASE5_UPPER_BODY_CONTINUITY_CANDIDATE_V2_EVALUATION_V1 (2026-06-01; V2 batch scored; 00003 = INCLUDE_AS_PHASE4_REFERENCE reference-only; 00002 REJECT; 00001/00004 HOLD)
 PENDING_OPERATOR = (1) run the upper-body render-request spec on local/Codex and return candidate; (2) git commit/push handoff changes for AR-15, Phase 5 planning, Phase 5 initiation, and this render-request spec (git not operable from Cowork sandbox); (3) optional flatten of nested 09\09 bust folder
