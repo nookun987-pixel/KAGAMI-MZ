@@ -1,6 +1,6 @@
 # MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1
 
-STATUS: OPERATOR-SUPPLIED CANON SPEC — "MIKAGE ZENITH V2.5" (recorded 2026-06-02; mask figure-lane conflict RESOLVED by operator option (c), §2). NOT asset-locked by Claude; source-of-truth text from the operator's master (Master Bible V2.0, 248-source NotebookLM "MIKAGE ZENITH BIBLE").
+STATUS: 🔒 STRUCTURE CANON LOCKED 2026-06-02 (operator command "lock") — "MIKAGE ZENITH V2.5". Synced 3-phase model (§0.5) + mask ruling option (c) (§2) are ABSOLUTE INVARIANT. Source-of-truth from operator master (Master Bible V2.0). Rendered/3D assets remain review-candidate (not covered by lock).
 LANE: CHARACTER_CAST_LANE / Mikage
 SCOPE: the 03 appearance phases of the ENTITY Mikage Zenith + the mask canon ruling. (The weapon is specified separately in `MIKAGE_ZENITH_BLADE_SPEC_V1.md`.)
 SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT HỆ THỐNG MIKAGE ZENITH V2.5" (2026-06-02), cross-checked against `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `Mikage Zenith Core`, `Mikage Copywriter`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO`.

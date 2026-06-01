@@ -39,8 +39,9 @@ Official device-spec wording (operator): *"Gốm Boron Carbide (B4C) cấu thàn
 - WHAT CLAUDE DID NOT DO (per operating rules): did not stamp CANON_APPROVED / ASSET_LOCK / PRODUCTION_READY on its own; did not call any rendered/3D asset production-ready.
 - BOUNDARY: the blueprints are deterministic 2D structure references — fine to lock as structural canon on the operator's command. Any actual rendered image / 3D build still passes its own render gate before "production-ready".
 
-## To press the lock (operator)
-On explicit operator instruction ("LOCK"), Claude will set STRUCTURE_CANON = LOCKED in the spec headers + pointer, and freeze the synced-phase + materials + REST-form definitions as Absolute Invariant. Renders stay review-candidate.
+## 🔒 LOCK EXECUTED 2026-06-02 (operator command "oki lock")
+STRUCTURE_CANON = LOCKED. The synced 3-phase model + B4C-outer/Titan-inner materials + Compact-Idle REST block form are now ABSOLUTE INVARIANT. Stamped in: MIKAGE_ZENITH_BLADE_SPEC_V1.md (STATUS + §6), MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (STATUS), 00_LATEST_CODEX_HANDOFF.md (pointer), and both blueprint headers.
+SCOPE: structural / 2D design canon only. Rendered images / 3D builds remain REVIEW-CANDIDATE (NOT production-ready). To change a locked invariant requires an explicit operator UNLOCK.
 
 ## Prohibited actions confirmed
 RENDER_BY_CLAUDE: NO · ASSET_LOCK_STAMPED_BY_CLAUDE: NO (awaiting operator press) · PRODUCTION_READY: NO · FILM_VIDEO_SHORT_SHOTLIST: NO · LANE_CHANGED: NO

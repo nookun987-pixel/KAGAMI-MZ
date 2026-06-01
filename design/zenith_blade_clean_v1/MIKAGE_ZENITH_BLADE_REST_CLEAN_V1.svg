@@ -34,7 +34,7 @@
   <text class="mono" x="60" y="82" font-size="10" letter-spacing="3" fill="#6b6b78">CHARACTER CAST LANE · WEAPON</text>
   <text class="word" x="500" y="76" font-size="27" letter-spacing="11" text-anchor="middle" fill="#f2eeea">MIKAGE ZENITH</text>
   <text class="mono" x="940" y="64" font-size="11" letter-spacing="3" text-anchor="end" fill="#a0a0b0">REV V2.5</text>
-  <text class="mono" x="940" y="82" font-size="10" letter-spacing="3" text-anchor="end" fill="#6b6b78">STRUCTURE CANON · OPERATOR-APPROVED</text>
+  <text class="mono" x="940" y="82" font-size="10" letter-spacing="3" text-anchor="end" fill="#6b6b78">STRUCTURE CANON · LOCKED V2.5</text>
   <line x1="60" y1="100" x2="940" y2="100" stroke="#242436"/>
 
   <!-- title block -->

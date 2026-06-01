@@ -1,6 +1,6 @@
 # MIKAGE_ZENITH_BLADE_SPEC_V1
 
-STATUS: STRUCTURE DESIGN OPERATOR-APPROVED 2026-06-02 (synced 3-phase model + B4C/Titan two-layer + Compact-Idle block — formally approved 🔒 by operator). Structural/2D design canon is operator-approved; a repo ASSET-LOCK entry awaits the operator's explicit lock press. Rendered / 3D assets remain REVIEW-CANDIDATE until they pass their render gate (NOT production-ready).
+STATUS: 🔒 STRUCTURE CANON LOCKED 2026-06-02 (operator command "lock"). The synced 3-phase model + B4C-outer/Titan-inner two-layer materials + Compact-Idle REST block form are now ABSOLUTE INVARIANT — do not alter without an explicit operator unlock. SCOPE OF LOCK: structural / 2D design canon only. Rendered images / 3D builds remain REVIEW-CANDIDATE until they pass their own render gate (NOT production-ready; not covered by this lock).
 DATE: 2026-06-01 (ruling §0b added 2026-06-01b; Drive master audit §0 added 2026-06-01c)
 SOURCES: operator Drive master files — `Mikage Copywriter`, `Mikage Zenith Core`, `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO` (operator audit 2026-06-01c — AUTHORITATIVE); `character_workflow/proposals/zenith_blade.json` (DRAFT_PROPOSAL_NOT_CANON); `docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md` §1.6/§3; `docs/automation/render_briefs/GOOGLE_DRIVE_MIKAGE_AUDIT_V0_1.md`; operator MidJourney reference set in Drive `MIKAGE/zenith` and `MIKAGE/zenith V2`.
 
@@ -81,4 +81,4 @@ Remaining to supply / decide: (a) ✅ DONE — synced 3-phase + materials operat
 
 ## 6. Prohibited Actions Confirmed
 
-CANON_LOCK_CREATED: NO · ASSET_LOCK_CREATED: NO · PRODUCTION_READY: NO · RENDER_DONE_BY_CLAUDE: NO · LANE_CHANGED: NO
+STRUCTURE_CANON_LOCKED: YES (operator command 2026-06-02; structural/2D design only) · RENDER/3D_PRODUCTION_READY: NO (still review-candidate) · RENDER_DONE_BY_CLAUDE: NO · LANE_CHANGED: NO · LOCK_STAMPED_ON_OPERATOR_COMMAND: YES
