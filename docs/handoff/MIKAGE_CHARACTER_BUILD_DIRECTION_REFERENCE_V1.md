@@ -3,7 +3,7 @@
 STATUS: REFERENCE NOTE — operator design-direction captured 2026-06-02. NOT canon-approved · NOT asset-locked · NOT production-ready · NO render by Claude · NO film/video/short/shotlist. LANE = CHARACTER_CAST_LANE / Mikage (unchanged).
 SOURCE: operator message 2026-06-02 ("hướng dựng nhân vật Mikage cho đúng").
 RECONCILED AGAINST: `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` (🔒 STRUCTURE CANON LOCKED 2026-06-02, "MIKAGE ZENITH V2.5") and `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`.
-PURPOSE: record build-direction so the cast briefs / RunPod kit can read one consistent intent. Where this direction diverges from LOCKED canon, the divergence is flagged `CHUA_XAC_NHAN` for operator decision — this note does NOT override the lock.
+PURPOSE: record build-direction so the cast briefs / RunPod kit can read one consistent intent. All prior divergences vs LOCKED canon were RESOLVED 2026-06-02 by operator ruling (defer ALL to LOCKED) — see §8. This note no longer diverges and does NOT override the lock.
 
 ---
 
@@ -21,20 +21,17 @@ Mikage = **Vessel** — a porcelain shell containing an ancient consciousness th
 
 **RECONCILE vs LOCKED canon (§2 of entity spec):**
 - Locked: the 2 sensor slits ARE the film mask's 2 eye-slits, and they are **SEALED (sealed monocoque, 0.7", no open holes)**; vision routes through a graphene + side-channel BMF sensor beneath the shell. ✅ Compatible — "violet pulse" is read as a **brand/signal light treatment over sealed slits**, not an open optical aperture. Keep slits sealed; violet is emitted signal, not a hole.
-- Kitsune mask: locked canon keeps the **Kitsune planar-geometry silhouette** as the mask form itself. Operator direction here treats Kitsune-mask as a possible **film-layer overlay/halo**. → HOW the Kitsune mask integrates (the mask's own geometry vs an added overlay) is an open item — see §7 UNCONFIRMED #3.
+- Kitsune mask: RESOLVED 2026-06-02 → the **Kitsune planar-geometry IS the mask form itself** (not an overlay). The cinematic halo = **violet orbital ring only**. See §8 D4.
 
 ---
 
 ## 2. MATERIAL / SURFACE
 
-- Porcelain shell matte→satin.
-- **Kintsugi cracks** = where the ancient consciousness shows through (track tag: KINTSUGI). Operator note: described as **gold**, and as "the only warm note permitted."
+- Porcelain shell matte→satin; physical shell render hex = **#FAFAFA** (B4C, LOCKED).
+- **Kintsugi cracks** = where the ancient consciousness shows through (track tag: KINTSUGI). LOCKED treatment: **#E60000 crimson (conductive resin + quantum blood)**, **film-layer only, FORBIDDEN in Canvas/UI**, and present **only in Phase 2 (Fallen/Exile) and Phase 3** — **Phase 1 Imperial Clean is sterile, NO cracks, NO kintsugi.**
 - Beneath the porcelain: dark woven **graphene**, exposed at slits / joints / neck.
 
-**RECONCILE vs LOCKED canon — DIVERGENCE, `CHUA_XAC_NHAN` (operator decision required):**
-- **Kintsugi colour:** operator direction = **gold (vàng)**. LOCKED entity spec §1 Pha 2 = Kintsugi cracks filled with **conductive resin + quantum blood #E60000 (crimson)**. These disagree on colour. NOT resolved here.
-- **Kintsugi phase-gating:** operator direction reads kintsugi as a general/always-allowed warm note. LOCKED canon gates cracks to **Phase 2 (Fallen/Exile) and Phase 3**; **Phase 1 (Imperial Clean) = sterile, NO micro-cracks, NO kintsugi.** If the direction is "P1 clean / cracks only P2–P3," it matches canon; if "kintsugi visible in P1," it conflicts. NOT resolved here.
-- Porcelain shell hex: operator palette uses porcelain **#f2eeea** (see §4); LOCKED shell = B4C matte white **#FAFAFA**. Minor divergence, flagged.
+(Resolved 2026-06-02 — the earlier "gold / warm note" reading is withdrawn; see §8.)
 
 ---
 
@@ -48,11 +45,9 @@ Mikage = **Vessel** — a porcelain shell containing an ancient consciousness th
 
 ## 4. PALETTE
 
-- Ground: void `#050508` + porcelain `#f2eeea`.
+- Ground: void `#050508` + porcelain. **Porcelain is 2-layer scope (LOCKED 2026-06-02):** physical shell render = `#FAFAFA` (B4C); brand-UI / Canvas token = `#f2eeea`. Same identity, two registers — not a conflict.
 - Signal: violet `#8F00FF` (slit, orbital ring, "consciousness" glow) — **accent only, never a full wash.**
-- **Film layer only** may add **Z-Blue / cold cyan** (Empire / Neon Grid side) and **crimson core** (entropy / danger). These two colours are **forbidden in Canvas / UI**.
-
-(See §2 note on porcelain hex divergence vs canon `#FAFAFA`.)
+- **Film layer only** may add **Z-Blue / cold cyan** (Empire / Neon Grid side) and **crimson `#E60000`** (kintsugi P2–P3 / entropy / danger). These are **forbidden in Canvas / UI**.
 
 ---
 
@@ -76,24 +71,28 @@ Mikage = **Vessel** — a porcelain shell containing an ancient consciousness th
 
 ---
 
-## 7. UNCONFIRMED — OPERATOR DECISIONS (logged, not decided here)
+## 7. UNCONFIRMED — RESOLVED 2026-06-02
 
-1. **Whether the Vessel's original human face is ever revealed.** Default = **never, helmet only**. If revealed → tie to a **name reveal**. `CHUA_XAC_NHAN`.
-2. **Pre-Vessel name:** Rin / Koharu / Hana — not chosen. `CHUA_XAC_NHAN`.
-3. **How the Kitsune mask integrates** — overlay on the helmet, or replaces it? (Interacts with locked canon, which treats Kitsune as the mask's own planar geometry.) `CHUA_XAC_NHAN`.
+1. **Vessel's original human face** — RESOLVED: **NEVER in the cast kit (helmet-only).** Any reveal is reserved for the **REAL NAME finale**, not now.
+2. **Pre-Vessel name** (Rin / Koharu / Hana) — RESOLVED: **deferred to community vote**; NOT a visual blocker.
+3. **Kitsune mask integration** (= D4) — RESOLVED: **mask's own planar geometry** (NOT an overlay); halo = **violet orbital ring only**.
 
 ---
 
-## 8. OPEN DIVERGENCES TO RESOLVE BEFORE THIS FEEDS ANY RENDER
+## 8. DIVERGENCES — RESOLVED 2026-06-02 (operator: defer ALL to LOCKED canon)
 
-| # | Item | Operator direction | LOCKED canon | Status |
-|---|---|---|---|---|
-| D1 | Kintsugi colour | gold | #E60000 crimson (quantum blood) | `CHUA_XAC_NHAN` |
-| D2 | Kintsugi phase | reads as general/warm note | P2–P3 only; P1 sterile/no cracks | `CHUA_XAC_NHAN` |
-| D3 | Porcelain hex | #f2eeea | #FAFAFA (B4C) | `CHUA_XAC_NHAN` |
-| D4 | Kitsune mask integration | film-layer overlay/halo | mask's own planar geometry | `CHUA_XAC_NHAN` (= UNCONFIRMED #3) |
+Operator ruling 2026-06-02: every divergence below defers to the LOCKED `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1`. The earlier operator-direction values (gold kintsugi, #f2eeea-as-shell, kitsune-as-overlay) are **withdrawn** and must NOT be used. This note no longer diverges.
 
-Until D1–D4 are resolved by the operator, the LOCKED `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1` values remain authoritative for any render brief.
+| # | Item | RESOLVED → LOCKED value |
+|---|---|---|
+| D1 | Kintsugi colour | **#E60000 crimson (quantum blood)** — film-layer only; FORBIDDEN in Canvas/UI. (Gold withdrawn.) |
+| D2 | Kintsugi phase | **P2 & P3 only**; P1 Imperial Clean = sterile, NO cracks. (General/warm reading withdrawn.) |
+| D3 | Porcelain hex | **2-layer scope:** physical shell render = **#FAFAFA** (B4C); brand-UI/Canvas token = **#f2eeea**. (Not a conflict — two registers.) |
+| D4 | Kitsune mask | **mask's own planar geometry** (NOT an overlay); halo = **violet orbital ring only**. (Overlay reading withdrawn.) |
+
+UNCONFIRMED resolved 2026-06-02: **U1 human face = NEVER in the cast kit** (helmet-only); any reveal reserved for the REAL NAME finale, not now. **U2 pre-Vessel name** = deferred to community vote; NOT a visual blocker.
+
+The LOCKED `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1` values are authoritative for all render briefs.
 
 ---
 
