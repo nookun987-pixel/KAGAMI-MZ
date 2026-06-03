@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1560" width="1680" height="1560" font-family="ui-monospace, 'Space Mono', monospace">
   <defs>
     <style>.mono{font-family:ui-monospace,'Space Mono',monospace;} text{fill:#3a3a42;}</style>
-    <!-- masks -->
     <path id="mk" d="M0,-52 L20,-44 L34,-22 L33,2 L24,24 L12,42 L0,52 L-12,42 L-24,24 L-33,2 L-34,-22 L-20,-44 Z"/>
     <g id="mkf" fill="none"><path d="M0,-46 L0,50"/><path d="M-30,-20 L30,-20"/><path d="M-34,-22 L-22,8"/><path d="M34,-22 L22,8"/><path d="M-22,26 L0,46"/><path d="M22,26 L0,46"/></g>
     <g id="mks" fill="none" stroke="#3a3a42" stroke-width="2.4" stroke-linecap="round"><path d="M-17,-5 L-5,-2.5"/><path d="M17,-5 L5,-2.5"/></g>
@@ -10,8 +9,6 @@
     <g id="mbf" fill="none"><path d="M0,-48 L0,42"/><path d="M-30,-18 L30,-18"/><path d="M-26,28 Q0,34 26,28"/></g>
     <path id="m34" d="M1258,166 L1240,170 L1226,194 L1228,220 L1240,242 L1252,258 L1264,256 L1284,238 L1296,210 L1294,186 L1278,168 Z"/>
     <g id="m34s" fill="none" stroke="#3a3a42" stroke-width="2" stroke-linecap="round"><path d="M1232,200 L1244,197"/><path d="M1258,199 L1249,197"/></g>
-
-    <!-- bodies (fill-less; mask added separately) -->
     <g id="bF">
       <polygon points="372,512 422,520 418,668 380,672"/><polygon points="382,680 418,676 412,816 392,818"/>
       <polygon points="488,512 438,520 442,668 480,672"/><polygon points="478,680 442,676 448,816 468,818"/>
@@ -45,8 +42,6 @@
       <path d="M1192,346 L1178,372 L1174,414 L1176,452 L1182,458 L1183,514 L1192,548 L1201,560 L1211,558 L1210,548 L1204,510 L1202,456 L1198,450 L1196,408 L1194,366 Z"/>
       <path d="M1188,556 L1208,556 L1208,561 L1215,565 L1215,572 L1207,577 L1206,584 Q1197,590 1188,583 L1186,560 Z"/>
     </g>
-
-    <!-- coat silhouettes (fill-less) -->
     <g id="cF">
       <path d="M338,302 L342,440 L338,560 L344,662 L516,662 L522,560 L518,440 L522,302 Z"/>
       <path d="M334,304 L322,360 L320,452 L326,540 L350,548 L353,452 L350,360 L346,308 Z"/>
@@ -64,7 +59,6 @@
       <path d="M1338,306 L1346,374 L1348,456 L1342,545 L1320,550 L1316,456 L1318,372 L1326,310 Z"/>
       <path d="M1196,302 L1216,242 L1236,238 L1250,260 L1278,260 L1292,240 L1306,246 L1322,302 L1300,302 L1280,272 L1244,272 L1222,300 Z"/>
     </g>
-
     <g id="grF" fill="#24242b"><rect x="339" y="543" width="24" height="7" rx="3"/><rect x="499" y="543" width="24" height="7" rx="3"/><rect x="390" y="808" width="24" height="7" rx="3"/><rect x="446" y="808" width="24" height="7" rx="3"/></g>
     <g id="grMat" fill="#24242b">
       <path d="M404,310 L456,310 L452,322 Q430,328 408,322 Z"/>
@@ -86,7 +80,6 @@
   <line x1="44" y1="66" x2="1636" y2="66" stroke="#1a1a22" stroke-width="0.8"/>
   <text class="mono" x="44" y="86" font-size="10.5" letter-spacing="2" fill="#6a6a74">One-sheet index of the locked DRAFT character system: base form (V1.4) + surface material rules + high-collar executor coat (V1.1) · grayscale · NO violet · NO redraw</text>
 
-  <!-- ============ BAND 1 : BASE TURNAROUND ============ -->
   <text class="mono" x="44" y="118" font-size="12" letter-spacing="2" fill="#1a1a22">1 · BASE TURNAROUND — form source MIKAGE_MODEL_SHEET_BASE_V1_4 (locked)</text>
   <g transform="translate(435,40) scale(0.48)" fill="#15151c">
     <use href="#bF"/><use href="#mk" transform="translate(430,214) scale(0.92)"/>
@@ -103,9 +96,7 @@
   </g>
   <line x1="44" y1="498" x2="1636" y2="498" stroke="#e0ddd6"/>
 
-  <!-- ============ BAND 2 : SURFACE / MATERIAL ============ -->
   <text class="mono" x="44" y="538" font-size="12" letter-spacing="2" fill="#1a1a22">2 · SURFACE / MATERIAL — ref MIKAGE_SURFACE_MATERIAL_STUDY_V1 (STUDY_DRAFT)</text>
-  <!-- material front figure -->
   <g transform="translate(90,470) scale(0.55)">
     <use href="#bF" fill="#c4c0b8"/><use href="#mk" transform="translate(430,214) scale(0.92)" fill="#c4c0b8"/>
     <use href="#grMat"/>
@@ -115,13 +106,11 @@
     </g>
     <use href="#mkf" transform="translate(430,214) scale(0.92)" stroke="#8a877f" stroke-width="0.9"/>
     <use href="#mks" transform="translate(430,214) scale(0.92)"/>
-    <!-- highlight plane -->
     <path d="M412,178 L430,170 L444,180 L438,250 L430,262 L422,250 Z" fill="#e7e4de"/>
     <use href="#mkf" transform="translate(430,214) scale(0.92)" stroke="#8a877f" stroke-width="0.9"/>
   </g>
   <text class="mono" x="240" y="918" font-size="11" letter-spacing="1" text-anchor="middle" fill="#6a6a74">MATERIAL ZONE MAP</text>
 
-  <!-- material key -->
   <g class="mono">
     <rect x="470" y="556" width="1150" height="356" fill="#f4f2ee" stroke="#1a1a22" stroke-width="1"/>
     <text x="490" y="582" font-size="11" letter-spacing="2" fill="#1a1a22">VALUE / MATERIAL KEY</text>
@@ -149,21 +138,16 @@
   </g>
   <line x1="44" y1="940" x2="1636" y2="940" stroke="#e0ddd6"/>
 
-  <!-- ============ BAND 3 : COAT 4-VIEW ============ -->
   <text class="mono" x="44" y="978" font-size="12" letter-spacing="2" fill="#1a1a22">3 · HIGH-COLLAR EXECUTOR COAT — source MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW (STUDY_DRAFT_LOCKED)</text>
   <g transform="translate(435,900) scale(0.48)">
-    <!-- front -->
     <use href="#bF" fill="#c4c0b8"/><use href="#grF"/><use href="#cF" fill="#837f76"/>
     <use href="#mk" transform="translate(430,214) scale(0.92)" fill="#c4c0b8"/><use href="#mks" transform="translate(430,214) scale(0.92)"/>
     <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M430,274 L430,662"/><path d="M344,656 L516,656"/><path d="M386,300 Q430,290 478,300"/></g>
-    <!-- side -->
     <use href="#bS" fill="#c4c0b8"/><use href="#cS" fill="#837f76"/><use href="#mp" transform="translate(636,214) scale(0.92)" fill="#c4c0b8"/>
     <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M606,310 L604,650"/><path d="M604,656 L692,656"/></g>
-    <!-- back -->
     <use href="#bF" transform="translate(520,0)" fill="#c4c0b8"/><use href="#grF" transform="translate(520,0)"/><use href="#cF" transform="translate(520,0)" fill="#837f76"/>
     <use href="#mb" transform="translate(950,214) scale(0.92)" fill="#c4c0b8"/>
     <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M950,300 L950,662"/><path d="M864,656 L1036,656"/></g>
-    <!-- 3/4 -->
     <use href="#b34" fill="#c4c0b8"/><use href="#c34" fill="#837f76"/>
     <path d="M1258,166 L1240,170 L1226,194 L1228,220 L1240,242 L1252,258 L1264,256 L1284,238 L1296,210 L1294,186 L1278,168 Z" fill="#c4c0b8"/>
     <use href="#m34s"/>
@@ -174,7 +158,6 @@
   </g>
   <line x1="44" y1="1356" x2="1636" y2="1356" stroke="#1a1a22" stroke-width="0.6"/>
 
-  <!-- ============ STATUS BLOCK ============ -->
   <g class="mono">
     <text x="44" y="1382" font-size="11" letter-spacing="2" fill="#1a1a22">STATUS</text>
     <text x="44" y="1402" font-size="9.5" fill="#444">CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET   ·   CURRENT_COAT_SOURCE = MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW</text>

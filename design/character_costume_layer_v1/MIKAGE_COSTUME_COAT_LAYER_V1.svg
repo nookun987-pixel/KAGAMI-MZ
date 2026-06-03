@@ -10,19 +10,16 @@
   <rect x="20" y="20" width="1640" height="1000" fill="none" stroke="#1a1a22" stroke-width="1.5"/>
 
   <text class="mono" x="44" y="50" font-size="12" letter-spacing="3" fill="#3a3a42">MIKAGE ZENITH STUDIO  ·  CHARACTER CAST LANE</text>
-  <text class="mono" x="840" y="50" font-size="15" letter-spacing="4" text-anchor="middle" fill="#1a1a22">MIKAGE — COSTUME COAT LAYER V1 · HIGH-COLLAR EXECUTOR</text>
+  <text class="mono" x="840" y="50" font-size="14" letter-spacing="4" text-anchor="middle" fill="#1a1a22">MIKAGE — COSTUME COAT LAYER V1 · HIGH-COLLAR EXECUTOR</text>
   <text class="mono" x="1636" y="50" font-size="11" letter-spacing="2" text-anchor="end" fill="#b03a2e">STUDY DRAFT · NOT CANON · NOT ASSET-LOCKED · NO RENDER</text>
   <line x1="44" y1="66" x2="1636" y2="66" stroke="#1a1a22" stroke-width="0.8"/>
   <text class="mono" x="44" y="86" font-size="10.5" letter-spacing="2" fill="#6a6a74">FORM = MIKAGE_MODEL_SHEET_BASE_V1_4 (locked, UNCHANGED, shown as porcelain ghost) · coat layer only · grayscale · NO violet · NO cape · NO armor overload · NO fashion detail</text>
 
-  <!-- legend: porcelain ghost vs coat -->
   <g class="mono" font-size="9">
     <rect x="44" y="100" width="22" height="13" fill="#c4c0b8"/><text x="72" y="110" fill="#6a6a74">LOCKED PORCELAIN/GRAPHENE FORM (V1.4)</text>
     <rect x="360" y="100" width="22" height="13" fill="#837f76"/><text x="388" y="110" fill="#6a6a74">EXECUTOR COAT LAYER (this study)</text>
   </g>
 
-  <!-- ============================== FRONT ============================== -->
-  <!-- 1. porcelain ghost body (V1.4 front) -->
   <g fill="#c4c0b8">
     <polygon points="372,512 422,520 418,668 380,672"/>
     <polygon points="382,680 418,676 412,816 392,818"/>
@@ -38,28 +35,21 @@
     <path d="M384,308 L394,266 L414,248 Q430,243 446,248 L466,266 L476,308 L456,320 Q430,326 404,320 Z"/>
     <use href="#maskKitsune" transform="translate(430,214) scale(0.92)"/>
   </g>
-  <!-- graphene hint at exposed wrists + ankles -->
   <g fill="#24242b">
     <rect x="339" y="543" width="24" height="7" rx="3"/><rect x="499" y="543" width="24" height="7" rx="3"/>
     <rect x="390" y="808" width="24" height="7" rx="3"/><rect x="446" y="808" width="24" height="7" rx="3"/>
   </g>
 
-  <!-- 2. EXECUTOR COAT (mid-grey) over the form -->
   <g fill="#837f76">
-    <!-- coat body + skirt to knee -->
     <path d="M338,302 L342,440 L338,560 L344,662 L516,662 L522,560 L518,440 L522,302 Z"/>
-    <!-- sleeves to wrist -->
     <path d="M334,304 L322,360 L320,452 L326,540 L350,548 L353,452 L350,360 L346,308 Z"/>
     <path d="M526,304 L538,360 L540,452 L534,540 L510,548 L507,452 L510,360 L514,308 Z"/>
-    <!-- high standing collar (mask emerges through V opening) -->
     <path d="M356,302 L378,240 L398,236 L416,260 L446,260 L464,236 L484,240 L506,302 L478,302 L452,274 L412,274 L386,302 Z"/>
   </g>
-  <!-- 3. mask redrawn ON TOP so the head emerges above the collar -->
   <use href="#maskKitsune" transform="translate(430,214) scale(0.92)" fill="#c4c0b8"/>
   <use href="#maskFacets" transform="translate(430,214) scale(0.92)" stroke="#8a877f" stroke-width="0.9" fill="none"/>
   <g fill="none" stroke="#3a3a42" stroke-width="2.4" stroke-linecap="round"><path d="M413,209 L425,211.5"/><path d="M447,209 L435,211.5"/></g>
 
-  <!-- 4. coat seams: closure + hem + collar + cuffs (minimal) -->
   <g fill="none" stroke="#56534c" stroke-width="1.3" stroke-linecap="round">
     <path d="M430,274 L430,662"/>
     <path d="M439,282 L439,656" stroke-width="0.9" stroke-opacity="0.7"/>
@@ -73,9 +63,7 @@
   <text class="mono" x="430" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">FRONT — COAT OVER LOCKED FORM</text>
   <text class="mono" x="430" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">closed center seam · sleeves to wrist · hem at knee</text>
 
-  <!-- ============================== SIDE ============================== -->
   <g transform="translate(124,0)">
-    <!-- porcelain ghost side body (V1.4) -->
     <g fill="#c4c0b8">
       <polygon points="612,518 628,520 624,668 610,664"/>
       <polygon points="620,516 672,520 666,668 628,672"/>
@@ -88,7 +76,6 @@
       <use href="#maskProfile" transform="translate(636,214) scale(0.92)"/>
     </g>
     <g fill="#24242b"><rect x="651" y="544" width="24" height="7" rx="3"/><rect x="632" y="808" width="26" height="7" rx="3"/></g>
-    <!-- coat profile: straight back (NOT a cape), hem at knee -->
     <g fill="#837f76">
       <path d="M606,302 L598,440 L602,560 L604,662 L692,662 L694,560 L696,452 L690,360 L676,308 Z"/>
       <path d="M650,310 L642,420 L646,540 L668,545 L672,430 L668,320 Z"/>
@@ -96,47 +83,36 @@
     </g>
     <use href="#maskProfile" transform="translate(636,214) scale(0.92)" fill="#c4c0b8"/>
     <g fill="none" stroke="#56534c" stroke-width="1.3" stroke-linecap="round">
-      <path d="M606,310 L604,650"/>
-      <path d="M604,656 L692,656"/>
-      <path d="M642,540 L668,545"/>
-      <path d="M610,300 Q628,292 646,300"/>
+      <path d="M606,310 L604,650"/><path d="M604,656 L692,656"/><path d="M642,540 L668,545"/><path d="M610,300 Q628,292 646,300"/>
     </g>
   </g>
   <text class="mono" x="760" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">SIDE — PROFILE / LENGTH</text>
   <text class="mono" x="760" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">hangs straight &amp; heavy · not a cape</text>
 
-  <!-- ============================== NOTES PANEL ============================== -->
   <g class="mono">
     <rect x="980" y="130" width="640" height="470" fill="#f4f2ee" stroke="#1a1a22" stroke-width="1"/>
     <text x="1000" y="160" font-size="12" letter-spacing="2" fill="#1a1a22">EXECUTOR COAT — LANGUAGE</text>
     <line x1="1000" y1="170" x2="1600" y2="170" stroke="#c9c6c0"/>
-
     <text x="1000" y="194" font-size="10" fill="#1a1a22">1 · HIGH COLLAR</text>
     <text x="1000" y="208" font-size="9" fill="#444">Tall standing collar rises from the shoulders, framing the mask in a clean V;</text>
     <text x="1000" y="221" font-size="9" fill="#444">head/helmet emerges above it. No drape, no lapel fashion.</text>
-
     <text x="1000" y="245" font-size="10" fill="#1a1a22">2 · HOW IT SITS</text>
     <text x="1000" y="259" font-size="9" fill="#444">Heavy structured shell over the torso; follows the monolith mass, adds bulk</text>
     <text x="1000" y="272" font-size="9" fill="#444">not curves. Skirt hangs straight to the KNEE (no flare, no train).</text>
-
     <text x="1000" y="296" font-size="10" fill="#1a1a22">3 · CLOSURE</text>
     <text x="1000" y="310" font-size="9" fill="#444">Single closed CENTER seam with a slight overlap edge; 3 minimal closure ticks.</text>
     <text x="1000" y="323" font-size="9" fill="#444">No buttons row, no zippers, no clutter. Sealed/austere.</text>
-
     <text x="1000" y="347" font-size="10" fill="#1a1a22">4 · SLEEVES / HEM</text>
     <text x="1000" y="361" font-size="9" fill="#444">Straight sleeves to the wrist (hands exposed below the cuff). Hem is a single</text>
     <text x="1000" y="374" font-size="9" fill="#444">straight heavy line at the knee. One seam each — no cuffs detail, no pleats.</text>
-
     <text x="1000" y="398" font-size="10" fill="#1a1a22">5 · WHAT STAYS EXPOSED (porcelain / graphene)</text>
     <text x="1000" y="412" font-size="9" fill="#444">ABOVE COLLAR → full Kitsune mask + sealed slits (porcelain).</text>
     <text x="1000" y="425" font-size="9" fill="#444">BELOW CUFF → mitten hands + graphene wrist band.</text>
     <text x="1000" y="438" font-size="9" fill="#444">BELOW HEM → shins, ankle graphene, sealed boots.</text>
     <text x="1000" y="451" font-size="9" fill="#444">Coat covers the mid-mass; shell reads at head, hands, lower legs only.</text>
-
     <text x="1000" y="475" font-size="10" fill="#1a1a22">6 · TONE</text>
-    <text x="1000" y="489" font-size="9" fill="#444">Coat = matte mid-grey, one value step darker than porcelain shell, clearly</text>
+    <text x="1000" y="489" font-size="9" fill="#444">Coat = matte mid-grey, one value step darker than porcelain, clearly</text>
     <text x="1000" y="502" font-size="9" fill="#444">distinct from graphene charcoal. Calm, heavy, minimal, monolith.</text>
-
     <line x1="1000" y1="516" x2="1600" y2="516" stroke="#c9c6c0"/>
     <text x="1000" y="536" font-size="9" fill="#6a6a74">EXPLICIT NEGATIVES: no cape / no train / no flare · no decorative armor · no anime</text>
     <text x="1000" y="549" font-size="9" fill="#6a6a74">fashion · no sensual tailoring · no busy seams · no violet · no buttons/zippers clutter.</text>
@@ -144,7 +120,6 @@
     <text x="1000" y="586" font-size="9" fill="#9a9790">All coat geometry PROPOSED / UNCONFIRMED vs master Bible.</text>
   </g>
 
-  <!-- footer -->
   <g class="mono">
     <line x1="44" y1="936" x2="1636" y2="936" stroke="#1a1a22" stroke-width="0.6"/>
     <text x="44" y="956" font-size="9.5" letter-spacing="1" fill="#3a3a42">COAT LANGUAGE = high standing collar + closed center seam + straight sleeves-to-wrist + heavy knee hem · covers mid-mass · head/hands/lower-legs stay porcelain · form UNCHANGED</text>

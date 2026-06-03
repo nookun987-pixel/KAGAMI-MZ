@@ -115,7 +115,6 @@
     <text x="44" y="160" font-size="9" fill="#6a6a74">HEAD UNITS</text>
   </g>
 
-  <!-- 1 · FRONT -->
   <use href="#bodyNoHelmet" transform="translate(-100,0)"/>
   <use href="#maskKitsune" transform="translate(330,214) scale(0.92)" fill="#15151c"/>
   <use href="#frontBodySeams" transform="translate(-100,0)"/>
@@ -124,7 +123,6 @@
   <text class="mono" x="330" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">1 · FRONT</text>
   <text class="mono" x="330" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">mitten hands · sealed boots</text>
 
-  <!-- 2 · SIDE -->
   <g fill="#15151c">
     <polygon points="612,518 628,520 624,668 610,664"/>
     <polygon points="620,516 672,520 666,668 628,672"/>
@@ -152,7 +150,6 @@
   <text class="mono" x="650" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">2 · SIDE</text>
   <text class="mono" x="650" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">hand thickness · boot toe + sole</text>
 
-  <!-- 3 · BACK -->
   <use href="#bodyNoHelmet" transform="translate(520,0)"/>
   <use href="#maskKitsuneBack" transform="translate(950,214) scale(0.92)" fill="#15151c"/>
   <use href="#backBodySeams" transform="translate(520,0)"/>
@@ -160,7 +157,6 @@
   <text class="mono" x="950" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">3 · BACK</text>
   <text class="mono" x="950" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">mitten hands · sealed boots · no slits</text>
 
-  <!-- 4 · 3/4 -->
   <g fill="#15151c">
     <polygon points="1268,520 1318,518 1320,668 1282,672"/>
     <polygon points="1284,680 1318,676 1322,816 1302,818"/>

@@ -45,7 +45,7 @@
   #8d8a83 · PORCELAIN MID #c4c0b8 (dominant) · PORCELAIN HIGHLIGHT #ece9e3 (raking-light planes
   only, sparing, matte) · SLIT GROOVE #3a3a42.
 - BLACK = graphene + recesses + slit cores. WHITE = sparing raking-light porcelain planes only.
-  GREY = dominant matte shell. Soft slow falloff; no hard rim unless a raking key light.
+  GREY = dominant matte porcelain shell. Soft slow falloff; no hard rim unless a raking key light.
 
 ## 6. COAT CONSTRAINTS (high-collar executor)
 - Tall standing collar framing the mask (head emerges above it).

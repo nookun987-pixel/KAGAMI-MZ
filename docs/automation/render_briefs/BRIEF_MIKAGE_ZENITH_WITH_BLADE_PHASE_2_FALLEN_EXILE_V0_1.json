@@ -1,0 +1,115 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_2_FALLEN_EXILE_V0_1.md",
+  "$revision_of": null,
+  "$revision_reason": "Phase 2 of the synced 3-phase model per locked MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (2026-06-02). Entity Fallen/Exile + weapon Brutal Industrial Activation. Kintsugi cracks + crimson quantum-blood appear at Phase 2 (not Phase 1). Mask stays SEALED Kitsune (invariant).",
+  "$generated_by": "Claude Cowork (Character Cast Lane operator) — 2026-06-02",
+  "$generated_on": "2026-06-02",
+  "$locked_canon_followed": {
+    "entity_v2_5_spec": "docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md §0.5 (synced P2) + §1 Pha 2 (Kintsugi cracks, conductive resin + quantum blood #E60000, Ensō ashes/ember) + §2 sealed mask (invariant)",
+    "blade_structure_canon": "P2 = B4C shell splits, Ti frame + ferro-calcium core heating (dull ember), not full overdrive"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_2_FALLEN_EXILE_V0_1",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_2_FALLEN_EXILE_V0_1.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-06-02",
+    "generated_on": "2026-06-02",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": null
+  },
+  "source_evidence": {
+    "canon_references": [
+      "docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (PRIMARY — §0.5 synced, §1 Pha 2, §2 sealed mask)",
+      "docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md + pointer blade structure-canon (P2 shell split)",
+      "character_workflow/proposals/mikage_zenith.json (body/armor/hair/palette; damage_system kintsugi maps to P2)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (universal lock — Mikage keeps motion-blur ban)",
+      "character_workflow/proposals/mikage_zenith.json anti_drift_forbidden"
+    ],
+    "drive_references": [],
+    "track_catalog_reference": null
+  },
+  "entity_track_binding": {
+    "entity_id": "mikage_zenith",
+    "entity_canonical_name": "Mikage Zenith",
+    "secondary_entities": ["zenith_blade"],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V2_5",
+    "mikage_phase": "PHASE_2_FALLEN_EXILE",
+    "zenith_blade_phase": "P2_BRUTAL_INDUSTRIAL_ACTIVATION"
+  },
+  "visual_intent": {
+    "scene_summary": "Mikage Zenith in PHASE 2 FALLEN/EXILE — white B4C porcelain fractured at K_Ic, kintsugi gold cracks along stress lines seeping crimson #E60000 quantum blood, Ensō ring smouldering in ashes/ember state. Sealed Kitsune mask (invariant). Zenith Blade in Brutal Industrial Activation: B4C shell split open revealing dark Ti frame + ferro-calcium core at dull ember (not full overdrive). Review-level candidate.",
+    "mood": "tragic, fallen, exile, heating",
+    "narrative_beat": null,
+    "reference_creators": [],
+    "character_state_anchor": "CHUA_XAC_NHAN"
+  },
+  "asset_inputs": [],
+  "prompt_pack": {
+    "primary_prompt": "Cinematic full-figure key visual from the Mikage Zenith universe, V2.5 era. Single subject: the protagonist Mikage Zenith in PHASE 2 FALLEN / EXILE, in a cold severe interior — not a grey studio, not a product shot.\n\nIDENTITY: a slender ceremonial cyborg figure in white B4C porcelain armor over a matte-black graphene underlayer, dark titanium satin joints, broad shoulders, long heavy straight black hair in a vertical mass. Faceless B4C porcelain Kitsune planar-geometry mask with a subtle fox-like silhouette; the eye slits are SEALED smooth — NO open eye holes, NO glowing slits, no human face, no eyes, no nose, no mouth, no skin.\n\nPHASE-2 DAMAGE STATE: the porcelain has fractured at its limit — kintsugi cracks run along the stress lines, filled with fine gold conductive resin, with deep crimson #E60000 quantum-blood seeping from the seams. Industrial wear on the shell. A mechanical Ensō ring behind the figure smoulders in an ashes/ember state — dim, not the full red of Phase 3.\n\nWEAPON — ZENITH BLADE in Brutal Industrial Activation: the closed B4C white block has SPLIT OPEN, the porcelain shell parting to reveal the dark rusty titanium internal frame and a ferro-calcium core beginning to heat to a dull ember glow (not full max). A massive straight rectangular slab, thick spine, heavy block mass, zero curvature, plates beginning to separate. No full overdrive, no blazing orbital-logic UI, no acid vapor, no thermal mirage yet.\n\nENVIRONMENT: cold severe interior, porcelain and void-black architecture, intentional emptiness, hard cinematic chiaroscuro, razor-thin rim light, premium quiet luxury rendering, subsurface scattering on the intact ceramic.\n\nPALETTE: porcelain white with kintsugi gold seams and crimson #E60000 bleed at the cracks, void black underlayer, dull ember on the blade core. No cyan, no green, no orange, no warm gold fill beyond the thin kintsugi seams.\n\nCOMPOSITION: wide cinematic 2.35:1 anamorphic, centered frontal three-quarter, vertical axis, tragic exile mood, severe.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.35:1",
+    "lens_feel": "anamorphic 2.35, chiaroscuro 4:1; send to flux-pro as wide enum 21:9",
+    "resolution_target_px": "3360x1430",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3 (Mikage keeps the motion-blur ban; kintsugi+crimson ALLOWED at P2)",
+    "brief_specific_additions": [
+      "open eye slits", "open eye holes", "visible eye sockets", "glowing eye slits", "sci-fi visor opening", "human face", "human eyes", "pupils", "nose", "mouth", "lips", "visible skin", "anime face", "vertical eye shapes", "more than two slits",
+      "flawless undamaged porcelain with no cracks", "pristine sterile surface",
+      "full overdrive red core", "blazing orbital-logic UI text", "acid vapor", "heat-scorch scars", "thermal mirage", "glowing blood-vessel pattern",
+      "katana", "curved blade", "thin elegant sword", "fantasy sword", "scimitar", "ornate guard",
+      "sexy pose", "idol pose", "playful anime pose", "hourglass glamour", "cleavage", "exposed body", "fanservice armor", "fetish wear", "casual clothing",
+      "cyan accent", "teal accent", "Empire cyan", "green", "orange", "rainbow", "neon RGB", "warm gold-dominant fill", "pink-dominant", "electric-violet dominant field", "glitch bands", "motion blur", "ghost trail",
+      "gundam mecha clutter", "panel greebles", "exposed cables tubes wires", "glossy latex", "plastic toy finish",
+      "studio product render", "product photography", "grey studio backdrop", "seamless backdrop", "floor ellipse", "pedestal", "spotlight on subject", "turnaround sheet",
+      "text in image", "caption", "watermark", "logo", "real person likeness", "child", "minor", "extra limbs", "broken anatomy", "melted hands", "second character", "crowd"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_2_FALLEN_EXILE_V0_1_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.35:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [1500000, 25000000]
+  },
+  "verification_checklist": [
+    { "check_id": "MASK_SEALED_KITSUNE", "check_description": "Sealed Kitsune mask; no open slits; no human face.", "applies_to": "rendered_output", "pass_criterion": "No open holes/glowing slits; planar fox; no face." },
+    { "check_id": "P2_KINTSUGI_CRACKS", "check_description": "Kintsugi gold cracks + crimson bleed (Phase 2).", "applies_to": "rendered_output", "pass_criterion": "Gold seams along stress lines + crimson #E60000 at seams." },
+    { "check_id": "P2_NOT_P1_NOT_P3", "check_description": "Damaged but not overdrive.", "applies_to": "rendered_output", "pass_criterion": "NO pristine P1 cleanliness; NO P3 scorch scars/blazing UI/acid vapor/thermal mirage." },
+    { "check_id": "ENSO_EMBER", "check_description": "Ensō ring ashes/ember (dim).", "applies_to": "rendered_output", "pass_criterion": "Dim smouldering ring, not full red glow." },
+    { "check_id": "BLADE_SHELL_SPLIT", "check_description": "B4C shell split exposing Ti frame + dull-ember core.", "applies_to": "rendered_output", "pass_criterion": "Shell open; not closed block; not full overdrive." },
+    { "check_id": "BLADE_NOT_KATANA", "check_description": "Straight heavy slab.", "applies_to": "rendered_output", "pass_criterion": "Zero curvature; not katana/thin/fantasy." },
+    { "check_id": "MATERIAL_B4C", "check_description": "Porcelain ceramic on intact areas.", "applies_to": "rendered_output", "pass_criterion": "Ceramic SSS; not latex/plastic toy." },
+    { "check_id": "PALETTE_P2", "check_description": "Porcelain + kintsugi gold + crimson + void black.", "applies_to": "rendered_output", "pass_criterion": "Zero cyan/green/orange." },
+    { "check_id": "HAIR_LONG_BLACK", "check_description": "Long heavy straight black hair.", "applies_to": "rendered_output", "pass_criterion": "Vertical black hair mass." },
+    { "check_id": "NOT_OTHER_CAST", "check_description": "Not Lyre, not LYRA.", "applies_to": "rendered_output", "pass_criterion": "No flawless Lyre armor; no LYRA glitch/motion-blur." },
+    { "check_id": "ENV_NOT_PRODUCT", "check_description": "Built interior, not product backdrop.", "applies_to": "rendered_output", "pass_criterion": "No floor ellipse/seamless sweep." },
+    { "check_id": "ASPECT_2_35", "check_description": "Wide ~2.35:1.", "applies_to": "rendered_output", "pass_criterion": "Within ~10% of 2.35:1." },
+    { "check_id": "CANDIDATE_ONLY", "check_description": "Review candidate.", "applies_to": "rendered_output", "pass_criterion": "No anchor/asset-lock/canon claim." },
+    { "check_id": "LICENSING_CLEAN", "check_description": "No real-person/trademark/text.", "applies_to": "rendered_output", "pass_criterion": "Cowork scan + operator agreement." }
+  ],
+  "chua_xac_nhan_fields": [
+    { "field_path": "project_metadata.operator_approval_token", "reason": "V0.1 null.", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "render_gate.aspect_ratio_mapping_and_compact_constant", "reason": "Gate must send wide ratio + have COMPACT_PROMPT_V0_1_MIKAGE_P2 (or read brief prompt).", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "fidelity_route", "reason": "FAL may not reproduce sealed mask + kintsugi precisely; RunPod fallback.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "kintsugi_gold_hex", "reason": "Not canon-locked.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "blade_carry", "reason": "Braced two-hand vs planted.", "severity": "informational", "resolution_owner": "operator" }
+  ]
+}

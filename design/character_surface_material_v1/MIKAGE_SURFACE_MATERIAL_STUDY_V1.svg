@@ -18,7 +18,6 @@
   <line x1="44" y1="66" x2="1636" y2="66" stroke="#1a1a22" stroke-width="0.8"/>
   <text class="mono" x="44" y="86" font-size="10.5" letter-spacing="2" fill="#6a6a74">FORM SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4 (locked, UNCHANGED) · material language only · grayscale · NO violet signal yet · NO costume/coat · NO decorative armor · NO skin/eyes/mouth/nose</text>
 
-  <!-- ================= MATERIAL ZONE MAP — front form (V1.4), recoloured by material ================= -->
   <!-- base porcelain shell (matte mid-grey) -->
   <g fill="#c4c0b8">
     <polygon points="372,512 422,520 418,668 380,672"/>
@@ -36,41 +35,30 @@
     <use href="#maskKitsune" transform="translate(430,214) scale(0.92)"/>
   </g>
 
-  <!-- porcelain SHADOW accents (form value, matte — not specular) -->
   <g fill="#9d9a92" opacity="0.85">
     <path d="M484,524 L500,518 C508,506 510,492 509,470 C508,452 508,432 509,416 L498,420 C500,452 498,486 492,508 Z"/>
     <path d="M325,414 L331,456 L332,500 L327,470 Z"/>
     <use href="#maskKitsune" transform="translate(430,214) scale(0.92)" fill="#9d9a92"/>
   </g>
-  <!-- restore lit porcelain over shadow on mask (keep mid + a near-white raking plane) -->
   <use href="#maskKitsune" transform="translate(430,214) scale(0.92)" fill="#c4c0b8"/>
-  <path d="M430,166 L450,176 L444,-0" fill="none"/>
   <path d="M412,178 L430,170 L444,180 L438,250 L430,262 L422,250 Z" fill="#e7e4de"/>
 
   <!-- GRAPHENE underlayer / joints (matte charcoal) -->
   <g fill="#24242b">
-    <!-- neck / gorget base -->
     <path d="M404,310 L456,310 L452,322 Q430,328 408,322 Z"/>
-    <!-- shoulders -->
     <rect x="340" y="344" width="18" height="12" rx="4"/>
     <rect x="502" y="344" width="18" height="12" rx="4"/>
-    <!-- elbows -->
     <rect x="323" y="444" width="32" height="15" rx="5"/>
     <rect x="505" y="444" width="32" height="15" rx="5"/>
-    <!-- wrists -->
     <rect x="337" y="541" width="26" height="10" rx="4"/>
     <rect x="497" y="541" width="26" height="10" rx="4"/>
-    <!-- hip articulation -->
     <path d="M366,510 L494,510 L494,520 L430,523 L366,520 Z"/>
-    <!-- knees -->
     <rect x="378" y="666" width="42" height="16" rx="5"/>
     <rect x="440" y="666" width="42" height="16" rx="5"/>
-    <!-- ankles -->
     <rect x="389" y="807" width="26" height="10" rx="4"/>
     <rect x="445" y="807" width="26" height="10" rx="4"/>
   </g>
 
-  <!-- minimal recessed panel SEAMS (porcelain) -->
   <g fill="none" stroke="#74716a" stroke-width="1.1" stroke-linecap="round">
     <path d="M356,332 Q430,322 504,332"/>
     <path d="M360,400 Q430,418 500,400"/>
@@ -80,10 +68,6 @@
   </g>
   <use href="#maskFacets" transform="translate(430,214) scale(0.92)" stroke="#8a877f" stroke-width="0.9" fill="none"/>
 
-  <!-- SEALED slit grooves -->
-  <g fill="none" stroke="#3a3a42" stroke-width="2.2" stroke-linecap="round">
-    <path d="M430,214 m-17.5,-5.5 l12.9,2.8" transform=""/>
-  </g>
   <g fill="none" stroke="#3a3a42" stroke-width="2.4" stroke-linecap="round">
     <path d="M413,209 L425,211.5"/>
     <path d="M447,209 L435,211.5"/>
@@ -92,7 +76,6 @@
   <text class="mono" x="430" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">MATERIAL ZONE MAP — FRONT</text>
   <text class="mono" x="430" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">form = V1.4 locked · fills = material, not render</text>
 
-  <!-- ================= CALLOUTS ================= -->
   <g class="mono" font-size="9.5" fill="#3a3a42">
     <g stroke="#9a978f" stroke-width="0.8" fill="none">
       <path d="M430,210 L600,150"/>
@@ -113,7 +96,6 @@
     <text x="606" y="699" fill="#6a6a74">(breastplate · abdominal · plane-breaks); no decoration.</text>
   </g>
 
-  <!-- ================= VALUE / MATERIAL KEY ================= -->
   <g class="mono">
     <rect x="1066" y="120" width="572" height="470" fill="#f4f2ee" stroke="#1a1a22" stroke-width="1"/>
     <text x="1086" y="150" font-size="12" letter-spacing="2" fill="#1a1a22">VALUE / MATERIAL KEY</text>
@@ -157,7 +139,6 @@
     <text x="1086" y="566" font-size="9" fill="#9a9790">All values PROPOSED / UNCONFIRMED vs master Bible · STUDY DRAFT only.</text>
   </g>
 
-  <!-- footer -->
   <g class="mono">
     <line x1="44" y1="936" x2="1636" y2="936" stroke="#1a1a22" stroke-width="0.6"/>
     <text x="44" y="956" font-size="9.5" letter-spacing="1" fill="#3a3a42">MATERIAL LANGUAGE = matte porcelain shell (grey) + graphene underlayer at joints (charcoal) + sealed slit grooves + recessed gorget/panel seams · form UNCHANGED from V1.4</text>

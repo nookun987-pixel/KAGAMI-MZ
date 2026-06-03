@@ -1,0 +1,120 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_3_EXECUTION_V0_1.md",
+  "$revision_of": null,
+  "$revision_reason": "Phase 3 of the synced 3-phase model per locked MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (2026-06-02). Entity Execution + weapon Tri-Phase Overdrive. Carries two scoped universal-lock exceptions (Orbital-Logic UI red text + thermal-mirage/acid-vapor/steam) because they are canon-required at Execution. Mask stays SEALED Kitsune (invariant).",
+  "$generated_by": "Claude Cowork (Character Cast Lane operator) — 2026-06-02",
+  "$generated_on": "2026-06-02",
+  "$universal_lock_exception": {
+    "scope": "mikage_phase_3_only",
+    "not_inherited_terms": ["thermal mirage", "heat distortion", "steam", "acid vapor", "vapor", "embers", "orbital-logic UI red monospaced text wrapping the blade"],
+    "reason": "Entity spec §1 Pha 3 + blade device spec require thermal mirage, acid-rain flash-vapor, and red Orbital-Logic UI at Execution.",
+    "still_inherited": "real-person likeness, watermark, arbitrary caption/poster text, logo, sexualized framing, extra limbs/broken anatomy, child/minor, etc. (UI exception covers ONLY the canonical blade-wrapping text, <=15% frame)"
+  },
+  "$locked_canon_followed": {
+    "entity_v2_5_spec": "docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md §0.5 (synced P3) + §1 Pha 3 (Erythema ab igne scorch, blood-vessel crimson glow, Ensō glows red at nape, thermal mirage >43C) + §2 sealed mask (invariant)",
+    "blade_device_spec": "PrimeTool: floating Ti plates around red-hot ferro-calcium core #E60000 max, flux-pinning, pH1.2 acid flash-vapor, red monospaced Orbital-Logic UI 3deg offset",
+    "typography_hud": "red #E60000 monospaced, <=15% frame coverage"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_3_EXECUTION_V0_1",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_3_EXECUTION_V0_1.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-06-02",
+    "generated_on": "2026-06-02",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": null
+  },
+  "source_evidence": {
+    "canon_references": [
+      "docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (PRIMARY — §0.5 synced, §1 Pha 3, §2 sealed mask)",
+      "docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md + pointer blade device spec (overdrive, Orbital-Logic UI, acid vapor)",
+      "character_workflow/proposals/mikage_zenith.json (body/armor/hair/palette; weapon energy_signature crimson core/UI)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (universal lock — inherited EXCEPT $universal_lock_exception; Mikage keeps motion-blur ban)",
+      "character_workflow/proposals/mikage_zenith.json anti_drift_forbidden"
+    ],
+    "drive_references": [],
+    "track_catalog_reference": null
+  },
+  "entity_track_binding": {
+    "entity_id": "mikage_zenith",
+    "entity_canonical_name": "Mikage Zenith",
+    "secondary_entities": ["zenith_blade"],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V2_5",
+    "mikage_phase": "PHASE_3_EXECUTION",
+    "zenith_blade_phase": "P3_TRI_PHASE_FINAL_OVERDRIVE"
+  },
+  "visual_intent": {
+    "scene_summary": "Mikage Zenith in PHASE 3 EXECUTION — thermodynamic overload: heat-scorch scars (erythema ab igne), crack pattern glowing like blood vessels in crimson #E60000, mechanical Ensō ring glowing red behind the nape, thermal mirage from heat >43C. Sealed Kitsune mask (invariant). Zenith Blade in Tri-Phase Overdrive: floating Ti plates around a max-glow #E60000 core, steam + pH1.2 acid flash-vapor, red Orbital-Logic UI text wrapping the blade. Max visual violence. Review-level candidate.",
+    "mood": "apex, execution, max violence, overwhelming",
+    "narrative_beat": null,
+    "reference_creators": [],
+    "character_state_anchor": "CHUA_XAC_NHAN"
+  },
+  "asset_inputs": [],
+  "prompt_pack": {
+    "primary_prompt": "Cinematic full-figure key visual from the Mikage Zenith universe, V2.5 era. Single subject: the protagonist Mikage Zenith in PHASE 3 EXECUTION, in a cold severe interior at maximum thermal overload — not a grey studio, not a product shot.\n\nIDENTITY: a slender ceremonial cyborg figure in white B4C porcelain armor over a matte-black graphene underlayer, dark titanium joints, broad shoulders, long heavy straight black hair. Faceless B4C porcelain Kitsune planar-geometry mask with a subtle fox-like silhouette; the eye slits are SEALED smooth — NO open eye holes, NO glowing slits, no human face, no eyes, no nose, no mouth, no skin.\n\nPHASE-3 EXECUTION STATE: thermodynamic overload. Heat-scorch scars (erythema ab igne) mark the ceramic; the crack pattern glows like incandescent blood vessels in deep crimson #E60000; a mechanical Ensō ring glows red behind the nape; the air around the figure distorts with thermal mirage from heat exceeding 43 degrees. Maximum visual violence.\n\nWEAPON — ZENITH BLADE in Tri-Phase Overdrive: black rusty titanium plates floating apart around a red-hot ferro-calcium core glowing crimson #E60000 at maximum, directional steam venting, pH1.2 acid rain flash-vaporizing into vapor, red monospaced Orbital-Logic UI text wrapping the blade on a 3D axis at a slight offset, thermal mirage around the blade. A massive straight rectangular slab, thick spine, zero curvature.\n\nENVIRONMENT: cold severe interior, porcelain and void-black architecture, the only warmth is the crimson overload glow, hard cinematic chiaroscuro, premium quiet luxury rendering.\n\nPALETTE: porcelain white base overtaken by crimson #E60000 glow (vessels, core, UI), kintsugi gold seams, void black, heat-scorch marks. No cyan, no green, no orange, no warm gold fill beyond kintsugi.\n\nCOMPOSITION: wide cinematic 2.35:1 anamorphic, centered frontal three-quarter, vertical axis through the figure, apex execution mood, severe and overwhelming.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.35:1",
+    "lens_feel": "anamorphic 2.35, chiaroscuro 4:1; send to flux-pro as wide enum 21:9",
+    "resolution_target_px": "3360x1430",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3 (inherited EXCEPT $universal_lock_exception; Mikage keeps motion-blur ban)",
+    "brief_specific_additions": [
+      "open eye slits", "open eye holes", "visible eye sockets", "glowing eye slits", "sci-fi visor opening", "human face", "human eyes", "pupils", "nose", "mouth", "lips", "visible skin", "anime face", "vertical eye shapes", "more than two slits",
+      "pristine flawless porcelain with no damage", "undamaged clean surface", "dim dormant blade", "closed blade block", "shell shut", "dull-only ember with no max glow",
+      "katana", "curved blade", "thin elegant sword", "fantasy sword", "scimitar", "ornate guard",
+      "sexy pose", "idol pose", "playful anime pose", "hourglass glamour", "cleavage", "exposed body", "fanservice armor", "fetish wear", "casual clothing",
+      "cyan accent", "teal accent", "Empire cyan", "green", "orange", "rainbow", "neon RGB", "warm gold-dominant fill", "pink-dominant", "electric-violet dominant field", "glitch bands", "motion blur", "ghost trail",
+      "gundam mecha clutter", "panel greebles", "exposed cables tubes wires", "glossy latex", "plastic toy finish",
+      "studio product render", "product photography", "grey studio backdrop", "seamless backdrop", "floor ellipse", "pedestal", "spotlight on subject", "turnaround sheet",
+      "caption", "watermark", "logo", "poster text", "real person likeness", "child", "minor", "extra limbs", "broken anatomy", "melted hands", "second character", "crowd"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_3_EXECUTION_V0_1_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.35:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [1500000, 25000000]
+  },
+  "verification_checklist": [
+    { "check_id": "MASK_SEALED_KITSUNE", "check_description": "Sealed Kitsune mask; no open slits; no human face.", "applies_to": "rendered_output", "pass_criterion": "No open holes/glowing slits; planar fox; no face." },
+    { "check_id": "P3_EXECUTION_STATE", "check_description": "Scorch scars + blood-vessel crimson glow + Ensō red at nape + thermal mirage.", "applies_to": "rendered_output", "pass_criterion": "All Phase-3 overload signatures present." },
+    { "check_id": "P3_NOT_P1_NOT_P2", "check_description": "Full overdrive, not pristine/dull-ember.", "applies_to": "rendered_output", "pass_criterion": "NOT P1 clean; NOT merely P2 dull ember." },
+    { "check_id": "BLADE_OVERDRIVE", "check_description": "Floating Ti plates + max #E60000 core + steam/acid vapor + Orbital-Logic UI.", "applies_to": "rendered_output", "pass_criterion": "Plates float, core max glow, vapor present, red UI text wraps blade." },
+    { "check_id": "ORBITAL_UI_BOUNDED", "check_description": "UI text red monospaced, wraps blade only, <=~15% frame.", "applies_to": "rendered_output", "pass_criterion": "No arbitrary captions/logos/watermark; UI bounded to blade." },
+    { "check_id": "BLADE_NOT_KATANA", "check_description": "Straight heavy slab.", "applies_to": "rendered_output", "pass_criterion": "Zero curvature; not katana/thin/fantasy." },
+    { "check_id": "PALETTE_P3", "check_description": "Porcelain + crimson dominant glow + kintsugi gold + void black.", "applies_to": "rendered_output", "pass_criterion": "Zero cyan/green/orange." },
+    { "check_id": "HAIR_LONG_BLACK", "check_description": "Long heavy straight black hair.", "applies_to": "rendered_output", "pass_criterion": "Vertical black hair mass." },
+    { "check_id": "NOT_OTHER_CAST", "check_description": "Not Lyre, not LYRA.", "applies_to": "rendered_output", "pass_criterion": "No cyan/Empire; no electric-violet glitch/motion-blur." },
+    { "check_id": "ENV_NOT_PRODUCT", "check_description": "Built interior, not product backdrop.", "applies_to": "rendered_output", "pass_criterion": "No floor ellipse/seamless sweep." },
+    { "check_id": "ASPECT_2_35", "check_description": "Wide ~2.35:1.", "applies_to": "rendered_output", "pass_criterion": "Within ~10% of 2.35:1." },
+    { "check_id": "CANDIDATE_ONLY", "check_description": "Review candidate.", "applies_to": "rendered_output", "pass_criterion": "No anchor/asset-lock/canon claim." },
+    { "check_id": "LICENSING_CLEAN", "check_description": "No real-person/trademark; only canonical UI text.", "applies_to": "rendered_output", "pass_criterion": "Cowork scan + operator agreement." }
+  ],
+  "chua_xac_nhan_fields": [
+    { "field_path": "project_metadata.operator_approval_token", "reason": "V0.1 null.", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "render_gate.aspect_ratio_mapping_and_compact_constant", "reason": "Gate must send wide ratio + have COMPACT_PROMPT_V0_1_MIKAGE_P3 (or read brief prompt).", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "fidelity_route", "reason": "P3 is the hardest for FAL (sealed mask + overdrive VFX + bounded UI); RunPod anchored route recommended.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "orbital_logic_ui_text_content", "reason": "Placeholder glyphs acceptable; no real readable claims; keep <=15% frame.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "blade_carry", "reason": "Raised/executing vs held high.", "severity": "informational", "resolution_owner": "operator" }
+  ]
+}

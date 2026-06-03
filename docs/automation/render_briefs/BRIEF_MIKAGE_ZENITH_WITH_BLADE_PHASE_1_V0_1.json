@@ -1,0 +1,120 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_1_V0_1.md",
+  "$revision_of": null,
+  "$revision_reason": "CORRECTED 2026-06-02: earlier draft used the stale 2026-05-29 proposal (OPEN void-black eye slits + kintsugi at Phase 1). Now follows the locked MIKAGE ZENITH V2.5 entity spec (docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md, 🔒 2026-06-02): mask eye slits SEALED (sealed monocoque, no open holes); Phase 1 = Imperial Clean = sterile, NO kintsugi / NO cracks / NO crimson bleed, deep dark-red symmetric pattern only. Kintsugi/crimson = Phase 2/3, separate brief. Blade P1 = Compact-Idle closed B4C block (synced).",
+  "$generated_by": "Claude Cowork (Character Cast Lane operator) — 2026-06-02 protagonist (corrected)",
+  "$generated_on": "2026-06-02",
+  "$locked_canon_followed": {
+    "entity_v2_5_spec": "docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (LOCKED 2026-06-02): §0.5 synced 3-phase, §1 Imperial Clean, §2 sealed Kitsune mask",
+    "blade_structure_canon": "REST = closed B4C block, flux-pinned, core dim 43C (pointer 2026-06-02)",
+    "superseded_source": "character_workflow/proposals/mikage_zenith.json open 'void-black sensor slits' + kintsugi-at-baseline are SUPERSEDED by the V2.5 spec",
+    "mask_two_layer_note": "brand '2 sensor slits' = the SAME two sealed eye-slits at logo fidelity (one identity, two fidelities) — NOT an open-slit alternative"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_1_V0_1",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_1_V0_1.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-06-02 (corrected)",
+    "generated_on": "2026-06-02",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": null
+  },
+  "source_evidence": {
+    "canon_references": [
+      "docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (PRIMARY — LOCKED 2026-06-02; §0.5 synced phases, §1 Imperial Clean, §2 sealed mask)",
+      "docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md + pointer blade structure-canon (REST = closed B4C block)",
+      "MIKAGE_ZENITH_CANON_V2.md (#1-#3)",
+      "character_workflow/proposals/mikage_zenith.json (body/armor/hair/palette ONLY where not superseded; open slits + kintsugi-baseline SUPERSEDED)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (universal lock — Mikage keeps the motion-blur ban)",
+      "character_workflow/proposals/mikage_zenith.json anti_drift_forbidden"
+    ],
+    "drive_references": [],
+    "track_catalog_reference": null
+  },
+  "entity_track_binding": {
+    "entity_id": "mikage_zenith",
+    "entity_canonical_name": "Mikage Zenith",
+    "secondary_entities": ["zenith_blade"],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V2_5",
+    "mikage_phase": "PHASE_1_IMPERIAL_CLEAN",
+    "zenith_blade_phase": "P1_COMPACT_IDLE_REST"
+  },
+  "visual_intent": {
+    "scene_summary": "Mikage Zenith (protagonist) in PHASE 1 IMPERIAL CLEAN — flawless sterile porcelain B4C armor, faceless Kitsune planar mask with SEALED eye slits (no open holes), long heavy black hair, deep dark-red absolutely symmetric pattern, NO kintsugi/cracks/crimson bleed. The Zenith Blade is in Compact-Idle REST: a closed B4C white slab block, dormant core, planted point-down (ceremonial). Cold sacred interior. Review-level candidate; does not replace canon.",
+    "mood": "sterile, sacred, severe, disciplined, radiation-suppressed calm",
+    "narrative_beat": null,
+    "reference_creators": [],
+    "character_state_anchor": "CHUA_XAC_NHAN (no Phase-1-clean sealed-mask anchor established yet)"
+  },
+  "asset_inputs": [],
+  "prompt_pack": {
+    "primary_prompt": "Cinematic full-figure key visual from the Mikage Zenith universe, V2.5 era. Single subject: the protagonist Mikage Zenith in PHASE 1 IMPERIAL CLEAN, standing in a cold sacred minimal interior — not a grey studio, not a product shot.\n\nIDENTITY: a slender ceremonial cyborg figure in flawless sterile porcelain-white #FAFAFA B4C ceramic armor over a matte-black graphene underlayer visible at the joints and waist, dark titanium satin joints, internalized micro-mechanics with no external cables, non-sexualized disciplined silhouette, broad shoulders and a narrow non-sexual waist, long heavy straight black hair falling in a vertical mass.\n\nFACE: a faceless B4C porcelain Kitsune planar-geometry mask with a subtle fox-like silhouette; the eye slits are SEALED smooth (sealed monocoque) — NO open eye holes, NO glowing slits, NO eye sockets, no human face, no eyes, no pupils, no nose, no mouth, no visible skin, static and emotionless.\n\nSURFACE STATE — IMPERIAL CLEAN: sterility 100%, flawless surface, absolutely NO cracks, NO kintsugi gold seams, NO crimson bleed, NO wear. The only chromatic feature is a deep dark-red (đỏ trầm) absolutely symmetric pattern across the white shell.\n\nWEAPON — ZENITH BLADE in Compact-Idle REST: a massive oversized straight rectangular slab greatsword rendered as a CLOSED porcelain-white B4C brutal block, shell shut and plates contracted, thick spine, heavy block mass, absolutely straight with zero curvature, planted vertically point-down in front of Mikage with both porcelain gauntlets resting on the pommel. The blade core is dormant: NO glowing red core, NO steam, NO heat mirage, NO orbital-logic UI text, NO exposed dark titanium, shell shut.\n\nENVIRONMENT: cold sacred minimal interior, porcelain and void-black architecture, intentional emptiness, cold cinematic chiaroscuro key at 45 degrees, razor-thin dual rim light separating the armor from the background, premium quiet luxury rendering, subsurface scattering through the ceramic.\n\nPALETTE: porcelain white dominant, void black secondary, deep dark-red symmetric pattern accent only. No cyan, no green, no orange, no warm gold fill, no bright crimson glow, no kintsugi gold.\n\nCOMPOSITION: wide cinematic 2.35:1 anamorphic, centered frontal three-quarter, vertical axis through the figure, monumental sacred mood, severe and quiet.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.35:1",
+    "lens_feel": "anamorphic 2.35, chiaroscuro 4:1; send to flux-pro as wide enum 21:9",
+    "resolution_target_px": "3360x1430",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3 (fully inherited; Mikage keeps the motion-blur ban)",
+    "brief_specific_additions": [
+      "open eye slits", "open eye holes", "visible eye sockets", "glowing eye slits", "void-black eye holes", "sci-fi visor opening",
+      "human face", "human eyes", "pupils", "nose", "mouth", "lips", "visible skin", "anime face", "vertical eye shapes", "more than two slits", "busy visor clutter",
+      "kintsugi gold seams", "gold crack seams", "fractures", "micro-cracks", "cracked porcelain", "crimson bleed at seams", "glowing crimson", "blood leak", "weathered wear", "scorch scars",
+      "katana", "curved blade", "thin elegant sword", "fantasy sword", "scimitar", "ornate guard", "glowing red blade core", "steam venting", "heat mirage", "orbital-logic UI text", "exposed dark titanium plates", "split open blade shell",
+      "sexy pose", "idol pose", "playful anime pose", "hourglass glamour", "cleavage", "exposed body", "fanservice armor", "fetish wear", "casual clothing", "streetwear",
+      "cyan accent", "teal accent", "Empire cyan", "green", "orange", "rainbow", "neon RGB", "warm gold-dominant", "pink-dominant", "electric-violet dominant field", "glitch bands", "motion blur", "ghost trail",
+      "gundam mecha clutter", "panel greebles", "exposed cables tubes wires", "muddy grey-brown drift", "glossy latex", "plastic toy finish",
+      "studio product render", "product photography", "grey studio backdrop", "seamless backdrop", "floor ellipse", "pedestal", "spotlight on subject", "turnaround sheet",
+      "text in image", "caption", "watermark", "logo", "real person likeness", "child", "minor", "extra limbs", "broken anatomy", "melted hands", "second character", "crowd"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_1_V0_1_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.35:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [
+      1500000,
+      25000000
+    ]
+  },
+  "verification_checklist": [
+    { "check_id": "MASK_SEALED_KITSUNE", "check_description": "B4C Kitsune planar mask; eye slits SEALED smooth.", "applies_to": "rendered_output", "pass_criterion": "No open holes / glowing slits / sockets; no human face; planar fox silhouette." },
+    { "check_id": "IMPERIAL_CLEAN_SURFACE", "check_description": "Phase 1 sterile surface.", "applies_to": "rendered_output", "pass_criterion": "NO kintsugi, NO cracks, NO crimson bleed, NO wear; flawless." },
+    { "check_id": "DARK_RED_SYMMETRIC_PATTERN", "check_description": "Deep dark-red absolutely symmetric pattern on the white shell.", "applies_to": "rendered_output", "pass_criterion": "Symmetric đỏ trầm pattern present; not a bleed/glow." },
+    { "check_id": "BLADE_REST_CLOSED_BLOCK", "check_description": "Zenith Blade closed white B4C block; dormant.", "applies_to": "rendered_output", "pass_criterion": "Shell shut; NO red glow/steam/mirage/split/UI; no exposed metal." },
+    { "check_id": "BLADE_NOT_KATANA", "check_description": "Straight heavy slab, zero curvature.", "applies_to": "rendered_output", "pass_criterion": "Not katana/thin/fantasy/curved." },
+    { "check_id": "MATERIAL_B4C", "check_description": "Porcelain B4C ceramic + subsurface scatter.", "applies_to": "rendered_output", "pass_criterion": "Ceramic read; not glossy latex/plastic toy." },
+    { "check_id": "PALETTE_P1", "check_description": "Porcelain/void + dark-red pattern only.", "applies_to": "rendered_output", "pass_criterion": "Zero cyan/green/orange; no kintsugi gold; no bright crimson glow." },
+    { "check_id": "HAIR_LONG_BLACK", "check_description": "Long heavy straight black hair mass present.", "applies_to": "rendered_output", "pass_criterion": "Vertical black hair mass visible." },
+    { "check_id": "NOT_OTHER_CAST", "check_description": "Not Commander Lyre, not LYRA.", "applies_to": "rendered_output", "pass_criterion": "No cyan/Empire (Lyre); no glitch/motion-blur/violet-dominant (LYRA)." },
+    { "check_id": "ENV_NOT_PRODUCT", "check_description": "Sacred interior, not grey studio/product backdrop.", "applies_to": "rendered_output", "pass_criterion": "Built sacred interior; no floor ellipse/seamless sweep." },
+    { "check_id": "ASPECT_2_35", "check_description": "Wide ~2.35:1 frame, not square.", "applies_to": "rendered_output", "pass_criterion": "Frame aspect within ~10% of 2.35:1." },
+    { "check_id": "CANDIDATE_ONLY", "check_description": "Review candidate; does not replace canon.", "applies_to": "rendered_output", "pass_criterion": "No anchor/asset-lock/canon claim on output." },
+    { "check_id": "LICENSING_CLEAN", "check_description": "No real-person likeness; no third-party trademark; no text.", "applies_to": "rendered_output", "pass_criterion": "Cowork visual scan + operator agreement." }
+  ],
+  "chua_xac_nhan_fields": [
+    { "field_path": "project_metadata.operator_approval_token", "reason": "V0.1 ships null.", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "render_gate.aspect_ratio_mapping_and_compact_constant", "reason": "Gate must send wide ratio + have COMPACT_PROMPT_V0_1_MIKAGE_BLADE (or read brief prompt). Unverified.", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "fidelity_route", "reason": "FAL may not reproduce sealed Kitsune mask + clean phase + blade block; RunPod IP-Adapter anchored route is the high-fidelity fallback.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "dark_red_pattern_geometry", "reason": "Spec says 'absolutely symmetric pattern'; exact motif not pinned.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "blade_carry", "reason": "Default = planted point-down ceremonial; alt = back flux-pinned.", "severity": "informational", "resolution_owner": "operator" }
+  ]
+}

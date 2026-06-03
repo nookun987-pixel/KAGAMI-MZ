@@ -1,0 +1,122 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_LYRA_GLITCH_PHANTOM_PHASE_1_V0_1.md",
+  "$revision_of": null,
+  "$revision_reason": "First LYRA render brief (supporting cast, after Lyre + LORA). Grounded in character_workflow/proposals/lyra.json. Carries a scoped universal-lock exception: motion blur / ghost trail / electric-violet glitch are REQUIRED for LYRA (V1 / ARCHON_GLITCH era), so the universal V2.5 bans on those terms are NOT inherited for this entity only.",
+  "$generated_by": "Claude Cowork (Character Cast Lane operator) — 2026-06-02 supporting cast",
+  "$generated_on": "2026-06-02",
+  "$universal_lock_exception": {
+    "scope": "lyra_only",
+    "not_inherited_terms": ["motion blur", "shutter drag", "ghost trail", "electric violet", "neon purple", "glitch bands", "glowing aura on figure"],
+    "reason": "lyra.json.anti_drift_required lists these as LYRA's canonical signature; era = V1 / ARCHON_GLITCH.",
+    "still_inherited": "all other universal-lock terms (sexualized framing, real-person likeness, text/watermark, extra limbs/broken anatomy, child/minor, IP-pastiche, etc.)"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_LYRA_GLITCH_PHANTOM_PHASE_1_V0_1",
+    "brief_md_path": "docs/automation/render_briefs/BRIEF_LYRA_GLITCH_PHANTOM_PHASE_1_V0_1.md",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_by": "Claude Cowork (Character Cast Lane) — 2026-06-02",
+    "generated_on": "2026-06-02",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": null
+  },
+  "source_evidence": {
+    "canon_references": [
+      "character_workflow/proposals/lyra.json",
+      "docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md (Era Tagging Convention — V1 / ARCHON_GLITCH)",
+      "character_workflow/proposals/lyra.json $DISAMBIGUATION (LYRA != LORA != Commander Lyre)"
+    ],
+    "anti_drift_references": [
+      "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md (universal lock, inherited EXCEPT §3.1 exception)",
+      "character_workflow/proposals/lyra.json anti_drift_forbidden"
+    ],
+    "drive_references": [
+      "MIKAGE ZENITH AUDIO / 05. LYRA-0 (SINGULAR HEART) — context only",
+      "Drive Midjourney 'Ethereal portrait of LYRA-0' — V0 reference only, not canon"
+    ],
+    "track_catalog_reference": "SINGULAR HEART / release_id 1087607 / Launch Arc 04 / LIVE (context only, brief is not track-bound output)"
+  },
+  "entity_track_binding": {
+    "entity_id": "lyra",
+    "entity_canonical_name": "LYRA",
+    "secondary_entities": [],
+    "track_title": null,
+    "track_release_id_toolost": null,
+    "track_launch_arc_number": null,
+    "track_drop_date": null,
+    "track_live_status": null
+  },
+  "era_tag": {
+    "era": "V1_ARCHON_GLITCH",
+    "mikage_phase": null,
+    "zenith_blade_phase": null
+  },
+  "visual_intent": {
+    "scene_summary": "LYRA / LYRA-0 Phase 1 Baseline — single-instance Glitch Phantom standing in an infinite void-black field, humanoid silhouette never fully resolved (2-3 frame motion-blur ghost trail + phase echo), woven fiber-optic dress self-illuminating in data-light cyan, vertical electric-violet glitch interruption bands, Memory Leak data-light bleeding from seams, face partial-resolve. V1 / ARCHON glitch regime — opposite of the porcelain cast.",
+    "mood": "decomposing, distributed, alive-but-leaking; a body that breaks",
+    "narrative_beat": null,
+    "reference_creators": [],
+    "character_state_anchor": "new_anchor_lyra_001"
+  },
+  "asset_inputs": [],
+  "prompt_pack": {
+    "primary_prompt": "Cinematic full-figure key visual from the Mikage Zenith universe, V1 / ARCHON glitch era. Single subject: LYRA / LYRA-0 — Glitch Phantom and ARCHON-IX vessel — standing in an infinite VOID BLACK field that fills the entire frame edge to edge (not a studio, not a product shot, not a grey backdrop).\n\nFIGURE: humanoid avatar, human-scale, readable silhouette but NEVER fully resolved. A 2 to 3 frame motion-blur ghost trail and phase-shift echo follow her body even while she stands still. Faint duplicate copies of her ghost at the frame edges (distributed self).\n\nGARMENT: a woven fiber-optic dress as the primary clothing — semi-transparent, the optical-fiber strands self-illuminate in cool data-light cyan #00E5FF pulses running along the fibers; the dress is both fabric and broadcast antenna.\n\nGLITCH SIGNATURE: vertical electric-violet #7A00FF and neon-purple #B026FF glitch interruption bands cut across the frame where her presence corrupts space. Thin streams of data-light bleed continuously from the seams of her dress — the visible Memory Leak, never staunched.\n\nFACE: partial-resolve only — features present but shifting, phase-glitched, never locking into a fixed face. No porcelain mask. No fully drawn anime face.\n\nLIGHT: she is self-illuminated by her own fiber-optic dress (cyan); ambient is void black with electric-violet glitch verticals; rim light is glitched and phase-shifted, not steady; shadows unreliable and multi-directional. Data-fog haze and glitch particulate noise allowed.\n\nPALETTE: void black #0A0A0A dominant, electric violet #7A00FF glitch bands, neon purple #B026FF secondary, data-light cyan #00E5FF on the fibers, cold ghost-white #F0F0F5 motion echo. No crimson. No porcelain white field. No clean digital gold. No warm light.\n\nCAMERA: handheld micro-jitter feel, never perfectly stable. Wide cinematic 2.35:1 anamorphic. Hyper-real material detail on the fiber strands, intentional motion-blur layers and glitch-band overlays.\n\nMOOD: decomposing, distributed, alive-but-leaking; a body that breaks.",
+    "secondary_prompts": [],
+    "aspect_ratio": "2.35:1",
+    "lens_feel": "anamorphic 2.35, handheld micro-jitter; send to flux-pro as wide enum 21:9 (alt 9:16 for character-focus)",
+    "resolution_target_px": "3360x1430",
+    "seed_policy": "operator_picks_at_render_time"
+  },
+  "negative_prompt": {
+    "universal_lock_inherited": true,
+    "universal_lock_source": "docs/canon_proposals/MIKAGE_VISUAL_DRIFT_AUDIT_AND_NEGATIVE_PROMPT_LOCK_V0_1.md §3 (inherited EXCEPT motion-blur / glitch / violet per $universal_lock_exception)",
+    "brief_specific_additions": [
+      "crimson", "red HUD", "red plasma",
+      "porcelain white dominant field", "clean digital gold", "golden patch",
+      "Mikage faceless porcelain mask", "Mikage porcelain armor", "Mikage long heavy black hair",
+      "Commander Lyre flawless unbroken white armor", "Empire white architecture backdrop", "sacred-tech minimalism",
+      "LORA mechanical Enso ring", "LORA white void field",
+      "warm hero gold lighting", "anime moe face fully resolved", "eyes mouth lips fully drawn and locked",
+      "cosplay photoshoot finish", "beauty cosmetic finish", "gacha hero pose", "sexualized framing", "fetish wear", "glamour close-up", "marketing hero shot",
+      "static steady silhouette without motion echo", "perfectly stable crisp single figure",
+      "studio product render", "product photography", "grey studio backdrop", "seamless backdrop", "floor ellipse", "pedestal", "spotlight on subject",
+      "gundam mecha joint", "plastic latex polymer chrome sheen",
+      "text in image", "caption", "watermark", "logo", "real person likeness", "child", "minor", "extra limbs", "broken anatomy", "melted hands"
+    ]
+  },
+  "output_target": {
+    "output_path": "docs/automation/render_briefs/raw/BRIEF_LYRA_GLITCH_PHANTOM_PHASE_1_V0_1_OUT_01.png",
+    "output_format": "png",
+    "expected_aspect_ratio": "2.35:1",
+    "expected_duration_seconds": null,
+    "expected_filesize_bytes_range": [
+      1500000,
+      25000000
+    ]
+  },
+  "verification_checklist": [
+    { "check_id": "VOID_BLACK_FIELD", "check_description": "Dominant void-black field fills the frame; not a grey studio/product backdrop/floor ellipse.", "applies_to": "rendered_output", "pass_criterion": "Background is void black edge to edge; no product-studio framing." },
+    { "check_id": "MOTION_ECHO_PRESENT", "check_description": "2-3 frame ghost trail / phase echo on the static figure (required signature).", "applies_to": "rendered_output", "pass_criterion": "Visible motion-blur echo/duplicate ghost; not a crisp single stable figure." },
+    { "check_id": "FIBER_OPTIC_DRESS", "check_description": "Primary garment is self-illuminating woven fiber-optic strands in data-light cyan.", "applies_to": "rendered_output", "pass_criterion": "Dress reads as glowing optical fiber, both fabric and antenna." },
+    { "check_id": "ELECTRIC_VIOLET_GLITCH", "check_description": "Vertical electric-violet #7A00FF glitch bands present (ARCHON signature).", "applies_to": "rendered_output", "pass_criterion": "Violet vertical interruption bands visible." },
+    { "check_id": "MEMORY_LEAK_BLEED", "check_description": "Thin data-light streams bleed from dress seams.", "applies_to": "rendered_output", "pass_criterion": "Continuous data-light leak visible at seams." },
+    { "check_id": "FACE_PARTIAL_RESOLVE", "check_description": "Face features present but shifting/glitched, never fully locked; not a porcelain mask.", "applies_to": "rendered_output", "pass_criterion": "Face reads as partial/phase-shifted, not a fixed anime face, not a faceless mask." },
+    { "check_id": "PALETTE_LYRA", "check_description": "Void black + electric violet + neon purple + data cyan + ghost white only.", "applies_to": "rendered_output", "pass_criterion": "Zero crimson, zero porcelain-white field, zero clean gold, zero warm light." },
+    { "check_id": "NOT_OTHER_CAST", "check_description": "Not Mikage / not Commander Lyre / not LORA.", "applies_to": "rendered_output", "pass_criterion": "No faceless porcelain mask + long black hair (Mikage); no flawless white armor (Lyre); no Enso ring/white void (LORA)." },
+    { "check_id": "ASPECT_2_35_OR_9_16", "check_description": "Wide 2.35:1 (or vertical 9:16 if chosen), not square.", "applies_to": "rendered_output", "pass_criterion": "Frame aspect matches chosen ratio within ~10%." },
+    { "check_id": "ANCHOR_FIRST_ESTABLISHMENT", "check_description": "Establishes anchor_lyra_001 only if all above pass + operator confirms.", "applies_to": "rendered_output", "pass_criterion": "Operator confirms on-spec across ALL checks." },
+    { "check_id": "LICENSING_CLEAN", "check_description": "No real-person likeness; no third-party trademark; no text/watermark.", "applies_to": "rendered_output", "pass_criterion": "Cowork visual scan + operator agreement." }
+  ],
+  "chua_xac_nhan_fields": [
+    { "field_path": "project_metadata.operator_approval_token", "reason": "V0.1 ships null. Operator sets before any render.", "severity": "blocks_render", "resolution_owner": "operator" },
+    { "field_path": "visual_intent.character_state_anchor", "reason": "anchor_lyra_001 has no visual until first approved render.", "severity": "informational", "resolution_owner": "external_render" },
+    { "field_path": "form.physical_height", "reason": "Human-scale singular; no cm lock in proposal.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "canon_v2_presence", "reason": "LYRA absent from MIKAGE_ZENITH_CANON_V2.md; proposal is first record. Brief does not add canon.", "severity": "informational", "resolution_owner": "operator" },
+    { "field_path": "render_gate.aspect_ratio_mapping_and_compact_constant", "reason": "Gate must send wide ratio flux-pro honors and have a COMPACT_PROMPT_V0_1_LYRA constant (or read this brief's prompt). Unverified.", "severity": "blocks_render", "resolution_owner": "operator" }
+  ]
+}
