@@ -1579,7 +1579,7 @@ NEXT_SAFE_TASK = OPERATOR_CHOOSE_NEXT_AFTER_COMBINED_REFERENCE_LOCK (master-Bibl
 SESSION = Cowork 2026-06-03 cont. (operator: distill a render-safe anti-drift brief from the locked one-sheet, then register it). Lane = CHARACTER_CAST_LANE. Markdown brief only. NO redraw / NO render / NO image prompts / NO new design / NO SVG change / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
 RENDER_SAFE_BRIEF_FILE = docs/character/MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1.md — anti-drift must-read for future character render/image/prompt tasks. Covers: source files (authority order) · draft-lock status · what must not change · visual-identity constraints (faceless B4C Kitsune planar mask, 2 SEALED flush slits, segmented porcelain shell, mitten hands, sealed boots, 7.1 heavy monolith) · material constraints (matte lock + value map) · coat constraints (high collar/center seam/sleeves-to-wrist/knee hem/exposed zones) · hard negatives · CHUA_XAC_NHAN · render gating · next safe task.
 CURRENT_RENDER_SAFE_CHARACTER_BRIEF = MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1
-USE_RULE = read MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1 before ANY Mikage image/render/prompt task.
+USE_RULE = read MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1 before ANY Mikage image/render/prompt task. (handoff re-synced to disk 2026-06-03)
 COMBINED_REFERENCE_STATUS = STUDY_DRAFT_LOCKED
 CURRENT_COMBINED_REFERENCE = MIKAGE_COMBINED_CHARACTER_REFERENCE_V1
 CANON_LOCK = NO
