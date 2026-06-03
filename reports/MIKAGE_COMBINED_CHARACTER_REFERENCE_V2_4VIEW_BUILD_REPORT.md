@@ -22,7 +22,11 @@
 
 ## 4-View Status
 
-4VIEW_STATUS = PATCHED_AFTER_OPERATOR_VISUAL_REVIEW
+4VIEW_STATUS = STRUCTURE_PASS_VISUAL_FAIL
+OPERATOR_VISUAL_REVIEW_COMBINED_REFERENCE_V2_4VIEW = FAIL_VISUAL_QUALITY
+COMBINED_REFERENCE_V2_4VIEW_STATUS = STRUCTURE_PASS_VISUAL_FAIL
+RENDER_BRIEF_ALLOWED = NO
+RENDER_EXECUTION_APPROVED = NO
 
 Verified view markers:
 
@@ -31,12 +35,19 @@ Verified view markers:
 - BACK
 - 3/4
 
-Patch verification:
+Operator visual review status:
 
-- FRONT_STATUS = PRESERVED_PASS
-- SIDE_STATUS = PATCHED: increased readable hair mass behind helmet/shoulder, clarified coat/skirt layering, added lower panel separation.
-- BACK_STATUS = PATCHED: made long heavy black hair the main back silhouette, added subtle edge/layer separation, kept one small controlled upper-back Enso, clarified vertical skirt panels.
-- THREE_QUARTER_STATUS = PATCHED: rebuilt to show rotated mask angle, shoulder depth, side hair mass, coat side plane, and skirt panel depth without extra ornaments or extra violet.
+- FRONT_STATUS = HOLD_VISUAL_REVIEW
+- SIDE_STATUS = FAIL_VISUAL_READABILITY
+- BACK_STATUS = FAIL_HAIR_AND_ENSO_INTEGRATION
+- THREE_QUARTER_STATUS = FAIL_NOT_TRUE_3_4_VOLUME
+- SKIRT_FLOW_STATUS = HOLD_NEEDS_CLEARER_PANEL_DESIGN
+
+Correction:
+
+- The current 4-view SVG passes structure/canon markers but fails visual reference quality by operator review.
+- It must not be used to prepare or execute a render brief.
+- No SVG geometry was edited in this status correction task.
 
 ## Hard Status
 
@@ -52,7 +63,9 @@ V2_5_FIGURE_LANE_AUDIT = PASS
 FULL_MASTER_CANON_AUDIT = PASS_WITH_CHUA_XAC_NHAN
 PHASE_COLOR_INTERPRETATION = CURRENT_4VIEW_IS_NEUTRAL_DRAFT_REFERENCE_NOT_PHASE_RENDER
 PRIMETOOL_INTERPRETATION = ZENITH_BLADE_NOT_INCLUDED_IN_BODY_SHEET
-COMBINED_REFERENCE_V2_4VIEW_STATUS = PASS_AS_DRAFT_REFERENCE
+COMBINED_REFERENCE_V2_4VIEW_STATUS = STRUCTURE_PASS_VISUAL_FAIL
+RENDER_BRIEF_ALLOWED = NO
+RENDER_EXECUTION_APPROVED = NO
 CANON_LOCK = NO
 ASSET_LOCK = NO
 RENDER_ALLOWED = NO
@@ -81,7 +94,7 @@ Recorded from ChatGPT-audited Google Drive findings:
 
 Audit result:
 
-- Current 4-view is consistent with the repo-local V2.5 Figure Lane mask ruling: planar B4C Kitsune geometry, sealed 0.7 inch slits, sealed monocoque logic, and graphene matrix/underlayer logic.
+- Current 4-view is consistent with the repo-local V2.5 Figure Lane mask ruling at structure/canon-marker level: planar B4C Kitsune geometry, sealed 0.7 inch slits, sealed monocoque logic, and graphene matrix/underlayer logic.
 - Current 4-view is treated as a neutral draft body/mask reference, not a P1/P2/P3 phase render. V2.5 dark red / #E60000 phase details are not applied unless the operator selects an exact phase render.
 - Zenith Blade remains PrimeTool / weapon canon and is not included in this body sheet.
 - Google Drive master sources are imported and readable: Master Bible V2.0 export, Mikage Zenith Core, Mikage Copywriter, and Studio Operation Training.
@@ -90,8 +103,8 @@ Audit result:
 
 ## CHUA_XAC_NHAN
 
-- Combined V2 4-view remains a draft integration pending operator review.
-- Side/Back/3-4 patch remains pending operator visual review.
+- Combined V2 4-view is rejected by operator visual review and must be rebuilt or replaced before render-brief use.
+- Front visual status is HOLD; Side fails visual readability; Back fails hair/Enso integration; 3/4 fails true rotated volume; skirt flow needs clearer panel design.
 - Google Drive master source import is now complete, but source interpretation remains CHUA_XAC_NHAN where older Master Bible language conflicts with the V2.5 neutral draft body-sheet interpretation.
 - Phase color interpretation remains operator-level until an exact phase render is requested.
 - Final palette/value tuning remains pending.
@@ -101,4 +114,4 @@ Audit result:
 
 ## Next Safe Task
 
-NEXT_SAFE_TASK = PREPARE_CONTROLLED_RENDER_TEST_BRIEF_FROM_APPROVED_DRAFT_REFERENCE_V2_4VIEW_WITH_COLOR_CANON_GUARDRAILS
+NEXT_SAFE_TASK = DECIDE_REBUILD_METHOD_FOR_COMBINED_REFERENCE_V2_4VIEW_VISUAL_QUALITY
