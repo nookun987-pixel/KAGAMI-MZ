@@ -1357,7 +1357,9 @@ ZENITH_BLADE_P1_CONCEPT_SKETCH = (2026-06-02) operator supplied a CONCEPT ART SK
 ZENITH_BLADE_RENDER_SCORING_STATUS = CLOSED at reference level 2026-06-02. P1 = "Silent Monolith" CONCEPT SKETCH accepted as PRIMARY design reference (operator-supplied; tools/zenith_blade_render/inputs/ZBLADE_CTRL_P1.png) + pod monolith renders 00004-00006 as supporting render candidates. P3 00001/00002 = INCLUDE_AS_PHASE4_REFERENCE. P2 = HOLD (best grey-bg seed). All reference-only; NOT canon/asset-lock/production-ready (structure canon already LOCKED separately). POD = TERMINATED by operator 2026-06-02.
 ZENITH_BLADE_P1_REWORK = control image ZBLADE_CTRL_P1 redrawn to a SHEATHED GREATSWORD silhouette (long blade + guard + wrapped grip, not a fat cube); P1 prompt → "sheathed greatsword encased in white B4C, menacing dormant weapon"; shared NEG += popsicle/ice cream/candy/toy/cute; ControlNet strength 0.7. Re-run needed.
 PRIOR_NEXT_TASK_DONE13 = ZENITH_BLADE_P1P2P3_RENDER_PASS (2026-06-02; P1 Silent Monolith concept-sketch reference accepted + P3 00001/00002 INCLUDE + P2 HOLD; pod TERMINATED by operator). Zenith Blade weapon = COMPLETE at reference level.
-CURRENT_NEXT_TASK = OPERATOR_RENDER_CAST_RUNPOD_KIT_V1 — operator resolved all build-direction divergences 2026-06-02 (defer ALL to LOCKED canon). 12-cell prompt matrix kit built: docs/handoff/CAST_RUNPOD_KIT_V1.md (Phase {P1,P2,P3} × Angle {front,three-quarter,side,full-body}; per-phase palette lock from LOCKED entity+blade specs; shared negative; identity-anchor ControlNet/IP-Adapter note). Operator picks ComfyUI model (UNCONFIRMED), renders via RunPod, hands ~24 candidates back for Cowork verify. NO render/canon/asset-lock by Claude. See "## CAST RUNPOD KIT V1 — 12-CELL MATRIX — 2026-06-02".
+CURRENT_NEXT_TASK = OPERATOR_CHOOSE_NEXT_AFTER_RENDER_SAFE_BRIEF_LOCK — MIKAGE render-safe anti-drift brief is registered (2026-06-03) as the current must-read for any future character render/image task. CURRENT_RENDER_SAFE_CHARACTER_BRIEF = MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1 (docs/character/MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1.md). Read it before any image/render/prompt work so the character does not drift. CURRENT_COMBINED_REFERENCE = MIKAGE_COMBINED_CHARACTER_REFERENCE_V1 (STUDY_DRAFT_LOCKED) · CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET · CURRENT_COAT_SOURCE = MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW · SURFACE_MATERIAL_STATUS = STUDY_DRAFT · COSTUME_COAT_STATUS = STUDY_DRAFT_LOCKED · PROPORTION_TARGET_DECISION = ACCEPT_7_1_HEAVY_DRAFT. CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED=NO. NO render/canon/asset-lock by Claude. See "## MIKAGE RENDER-SAFE CHARACTER BRIEF — V1 REGISTERED — 2026-06-03".
+PRIOR_NEXT_TASK_DONE_SKETCH = MIKAGE foundation-form built + iterated (operator redirect 2026-06-03): BASIC_BODY_SKETCH V0 → V0.5 (V0 blockout; V0.1 monolith helmet; V0.2 sealed-porcelain helmet+gorget neck integration; V0.3 smooth shell; V0.4 silhouette rebalance; V0.5 segmented armored-shell polish), then MODEL_SHEET_BASE V1 → V1.1 (side depth + true 3/4) → V1.2 (3/4 stabilized front-dominant). All monochrome deterministic SVG, NO render. See sections below.
+PARKED_PENDING_TASK = OPERATOR_RENDER_CAST_RUNPOD_KIT_V1_WITH_IDENTITY_ANCHORS — build the 12-cell kit (docs/handoff/CAST_RUNPOD_KIT_V1.md) wiring the in-repo identity anchors from docs/handoff/MIKAGE_ASSET_ANCHOR_INDEX_V1.md: A1 (SHOT_02 helmet, 2 sealed slits + violet halo) = head IP-Adapter ref, A2 (P3A_R4_HELMET_INPAINT_001, 100/100 full Vessel) = body ref, A3 (SHOT_03 blade LOCKED) = blade ref. This fixes the FLUX P1-front slit/violet drift. Operator picks ComfyUI model (UNCONFIRMED), renders via RunPod, hands candidates back for Cowork verify. NO render/canon/asset-lock by Claude. See "## ASSET ANCHOR INDEX V1 — 2026-06-02" + "## CAST RUNPOD KIT V1 — 12-CELL MATRIX — 2026-06-02".
 ALSO_PENDING_FILING = upper-body 4-view _NORM set into canon \10 (from earlier).
 PRIOR_NEXT_TASK_DONE2 = PHASE5_UPPER_BODY_REFERENCE_FILING (2026-06-01; _00001_ + _00002_ filed in canon \10; _00003_ slit and _00004_ fabric excluded)
 PRIOR_NEXT_TASK_DONE = PHASE5_UPPER_BODY_CONTINUITY_CANDIDATE_V2_EVALUATION_V1 (2026-06-01; V2 batch scored; 00003 = INCLUDE_AS_PHASE4_REFERENCE reference-only; 00002 REJECT; 00001/00004 HOLD)
@@ -1435,3 +1437,155 @@ SESSION_REPORT = docs/handoff/SESSION_REPORT_CAST_RUNPOD_KIT_V1_20260602.md
 COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
 PUSH_SUCCEEDED = NO (operator-side push required)
 NEXT_SAFE_TASK = OPERATOR_RENDER_CAST_RUNPOD_KIT_V1 (pick ComfyUI model, render 12-cell matrix via RunPod, hand ~24 candidates back) → Cowork verifies (no PASS/anchor/asset-lock without operator agreement).
+
+## ASSET ANCHOR INDEX V1 — 2026-06-02
+SESSION = Cowork 2026-06-02 cont. (operator: tài nguyên đầy trên máy nhưng mỗi phiên AI không mò ra cái nào dùng tiếp / cái nào bỏ). Lane = CHARACTER_CAST_LANE. Index/triage level. NO render / NO canon-lock / NO asset-lock / NO file move/rename/delete by Claude. Git not operable from Cowork sandbox; push = operator-side.
+ROOT_CAUSE_FOUND = (1) best canon assets live OUTSIDE the synced repo (D:\MIKAGE ZENITH AUDIO\…) so agent/git cannot reach them; (2) cataloging fragmented across ~40 ASSET-BUILD files + stale CAST_VISUAL_LEDGER_V0_1. No single KEEP/DROP sheet existed.
+INDEX_CREATED = docs/handoff/MIKAGE_ASSET_ANCHOR_INDEX_V1.md — single grab-and-go sheet; supersedes CAST_VISUAL_LEDGER_V0_1 for anchor-selection (ledger kept as history).
+KEEP_IN_REPO_REACHABLE = 6 anchors confirmed inside repo: A1 SHOT_02 helmet (UNIFIED_KEY_VISUAL_V4 LOCKED, 2 sealed slits + violet halo — VIEWED/verified) = head IP-Adapter ref; A2 P3A_R4_HELMET_INPAINT_001 (Anchor V1 full Vessel, score 100/100 — VIEWED/verified) = body ref (+ _MASK); A3 SHOT_03 ZENITH_BLADE_V2 LOCKED+film-proof-approved = blade ref; A4 REF_SP002 blade ref; A5 SHOT_01 AUDIO_SHORT_VISUAL_CANON_V4 LOCKED; A6 REF_SP001 V4 mask+body silhouette.
+IMPORT_OFF_REPO = faceplate sensor-slit sources, _NORM upper-body 4-view turnaround, FULLBODY_V3CN, Zenith Blade ortho sheet, V4 LOCKED master PNGs, APPROVED_IMG material/environment — all off-repo (paths CHUA_XAC_NHAN); recommend copying into a new in-repo canon_anchors/ folder (operator runs copy).
+HOLD = bust-bridge CAND 00001-00007 (AR-14 §9 gate, HOLD); FLUX P1-front v2 today (proposed P1 anchor, pending operator OK); cinematic LYRA-adjacent candidates. DROP(ignore-not-delete) = UNIFIED_KEY_VISUAL V1/V2/V3 + _POLISH/_RETRY (superseded by V4), layout/contact-sheet/video-loop artifacts, ~740 calibration_* PNGs (not character assets), COMP_08B (REJECT_DO_NOT_USE).
+FLUX_FIX = wire A1(head)+A2(body)+A3(blade) as IP-Adapter/ControlNet refs in CAST_RUNPOD_KIT_V1 → fixes the P1-front missing-slit/missing-violet drift.
+SESSION_REPORT = docs/handoff/SESSION_REPORT_ASSET_ANCHOR_INDEX_V1_20260602.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_RENDER_CAST_RUNPOD_KIT_V1_WITH_IDENTITY_ANCHORS (use A1/A2/A3) + optionally create canon_anchors/ and import the off-repo §3 files → bump index to V2.
+
+## P1-FRONT v3 MATTE WORKFLOW — 2026-06-02
+SESSION = Cowork 2026-06-02 cont. (operator: chất gốm sứ ra giống nhựa quá — yêu cầu file JSON kéo thả). Lane = CHARACTER_CAST_LANE. NO render by Claude (Claude only authored the workflow file). Git not operable from sandbox; push = operator-side.
+WORKFLOW_CREATED = tools/cast_render_kit/workflows/mikage_P1_front_v3_matte_flux.json — ComfyUI drag-drop UI workflow matching operator's exact FLUX graph (UNETLoader flux1-dev.sft fp8 + DualCLIPLoader t5xxl_fp8/clip_l/flux + VAELoader ae.sft + EmptySD3LatentImage 832x1216 + FluxGuidance + KSampler + VAEDecode + SaveImage). JSON validated (10 nodes / 10 links). Bakes MATERIAL LOCK: positive prompt = matte B4C/unglazed porcelain bisque/ceramic micro-grain/light-absorbing/non-reflective/pressure grooves + raking key light; negative = plastic/glossy/vinyl/toy/specular/glazed/subsurface + P1 sterile (cracks/kintsugi/crimson). FluxGuidance lowered to 2.8; seed FIXED 1051908761815282 (apples-to-apples material iteration); 28 steps.
+FLUX_CAVEAT = at KSampler cfg 1.0 FLUX largely ignores the negative; material control is driven by POSITIVE tokens + FluxGuidance. Negative kept for SDXL/raised-cfg compatibility.
+SCOPE = P1-front only; duplicate the positive CLIPTextEncode + swap text for the other 11 cells. Output = review candidate; NOT canon/asset-lock. Best material lever still = IP-Adapter off A1 helmet (already matte) + import APPROVED material board (index I6).
+NEXT_SAFE_TASK = OPERATOR runs workflow → compare matte vs plastic → if good, request the other 11 cells as drag-drop JSONs (or a batch).
+
+## MIKAGE BASIC BODY SKETCH V0 — 2026-06-03
+SESSION = Cowork 2026-06-03 (operator redirect: stop going wide on IP/platform/render — Mikage character still has NO foundation form: no body block, no proportion lock, no clean silhouette, no model-sheet base. Make a dead-simple BASIC BODY SKETCH V0, form/proportion only). Lane = CHARACTER_CAST_LANE. Foundation-form draft level. NO render / NO ComfyUI / NO Blender / NO color / NO canon-lock / NO asset-lock / NO film-short-shotlist by Claude. Git not operable from Cowork sandbox (worktree path not mountable); push = operator-side.
+OPERATOR_DECISIONS = deliverable = SVG blockout + spec (Claude draws V0); pointer = REPOINT CURRENT_NEXT_TASK to body-sketch lane (RunPod render PARKED, not deleted).
+SKETCH_CREATED = design/character_basic_sketch_v0/MIKAGE_BASIC_BODY_SKETCH_V0.svg — deterministic hand-authored vector (render-verified to PNG via cairosvg, internal raster only). Monochrome black/white, NO color/violet. 3 panels: A Silhouette (mass at a glance) · B Construction Blockout (head egg + ribcage + pelvis bucket + limb capsules + joint dots + centerline) · C Stick Pose (balance plumb-line + skeleton); plus a 0.0–7.5 HEAD-UNIT proportion ruler with landmark names (crown/chin/shoulder/chest/waist/hip-crotch/knee/ankle/sole) and a faceless HELMET-FORM inset (planar Kitsune geometry, 2 SEALED slits, no eyes, no glow) and a FAIL→FIX-ONE-LAYER ladder.
+WORKING_BLOCK = 7.5 head units · mid-line at hip/crotch (~3.9) · broad shoulder (~2 heads) · mild taper. ALL PROPOSED / UNCONFIRMED (sourced from FULLBODY_PROPORTION_REFINE_SPEC_V1, itself CHUA_XAC_NHAN) — a block to react to, NOT a confirmed rig.
+IDENTITY_HELD = faceless (no human face/eyes/skin), 2 SEALED sensor slits as form only (per MIKAGE_MASK_CANON 2026-06-02), planar helmet silhouette, neutral genderless mass. NO costume/coat, NO blade, NO background, NO lore in V0.
+SPEC_CREATED = docs/handoff/MIKAGE_BASIC_BODY_SKETCH_V0_SPEC.md (goal · included/excluded · working block · invariants · expected read · fail→fix table).
+SESSION_REPORT = reports/SESSION_REPORT_MIKAGE_BASIC_BODY_SKETCH_V0_20260603.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git worktree not mountable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_REVIEW_MIKAGE_BASIC_BODY_SKETCH_V0 — look-and-react; if a layer is off, request a SINGLE-layer V0.1 fix (pose→STICK / proportion→BLOCKOUT / helmet→HELMET inset / limb→capsule). No color/costume/blade/render until the block passes. Then resume PARKED OPERATOR_RENDER_CAST_RUNPOD_KIT_V1 when ready.
+
+## MIKAGE MODEL SHEET BASE — DRAFT LOCK — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (operator iterated the foundation sketch to V0.5, then promoted it to a 4-view model-sheet base and approved V1.2 on visual review). Lane = CHARACTER_CAST_LANE. Deterministic monochrome SVG only. NO render / NO color / NO costume / NO weapon / NO lore / NO ComfyUI / NO Blender / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+SKETCH_PROGRESSION = design/character_basic_sketch_v0/MIKAGE_BASIC_BODY_SKETCH_V0..V0_5.svg (foundation blockout → segmented sealed-porcelain-shell, faceless helmet + gorget, 2 ultra-thin mechanical slits, monolith calm). V0.5 = front-view source of truth. Spec: docs/handoff/MIKAGE_BASIC_BODY_SKETCH_V0_SPEC.md.
+MODEL_SHEET_FILE = design/character_model_sheet_base_v1/MIKAGE_MODEL_SHEET_BASE_V1_2.svg — 4 views (Front=V0.5 · Side=depth shell+faceted mask+arm break · Back=no slits, spine/scapula seams · 3/4=stabilized front-dominant + secondary side plane, foreshortened slits), shared head-unit guides, status text on-sheet. V1→V1.1 (side depth + true 3/4) → V1.2 (3/4 stabilized).
+MODEL_SHEET_PREVIEW = design/character_model_sheet_base_v1/MIKAGE_MODEL_SHEET_BASE_V1_2_PREVIEW.png (preview export only, NOT an art render).
+MODEL_SHEET_BASE_STATUS = DRAFT_LOCKED_FOR_NEXT_STAGE
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+CHUA_XAC_NHAN = proportions (7.5 heads / mass / side depth) unconfirmed vs master · side+3/4 constructed not canon-checked vs LOCKED MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1 · hands/feet schematic · material/slit/gorget geometry placeholder.
+LOCK_REPORT = reports/SESSION_REPORT_MIKAGE_MODEL_SHEET_BASE_V1_2_LOCK.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_DEFINE_NEXT_CHARACTER_STAGE (canon reconciliation vs master spec / surface-material pass / hands-feet pass). No render/canon/asset-lock until operator directs.
+
+## MIKAGE MODEL SHEET BASE — V1.3 DRAFT LOCK — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (canon reconciliation review found the V1.2 mask was a smooth rounded simplification missing the locked B4C Kitsune planar geometry; operator authorized a mask-only fix, then approved V1.3 to replace V1.2). Lane = CHARACTER_CAST_LANE. Deterministic monochrome SVG only. NO render / NO color / NO costume / NO weapon / NO lore / NO ComfyUI / NO Blender / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+CANON_RECONCILIATION_REPORT = reports/MIKAGE_MODEL_SHEET_BASE_V1_2_CANON_RECONCILIATION.md (REVIEW_ONLY; no hard fail; item 4 mask-planar-geometry = top HOLD; item 2b slit-seal).
+MASK_FIX = V1.3 restores B4C KITSUNE PLANAR GEOMETRY (faceted faceplate + muzzle wedge + planar cheeks) on FRONT/SIDE/BACK/3-4; slits → SEALED flush engraved grooves (not open apertures); SIDE = planar fox-snout profile; BACK = planar occiput, no slits; 3-4 = front plane + side plane, 2 sealed slits foreshortened. BODY/PROPORTIONS = V1.2 UNCHANGED.
+CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_3_MASK_ONLY (SUPERSEDES V1.2; V1.2 retained as history, not deleted).
+MODEL_SHEET_FILE = design/character_model_sheet_base_v1/MIKAGE_MODEL_SHEET_BASE_V1_3_MASK_ONLY.svg
+MODEL_SHEET_PREVIEW = design/character_model_sheet_base_v1/MIKAGE_MODEL_SHEET_BASE_V1_3_PREVIEW.png (preview export only, NOT an art render)
+MODEL_SHEET_BASE_STATUS = DRAFT_LOCKED_FOR_NEXT_STAGE
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+CHUA_XAC_NHAN = planar mask is a DRAFT reconciliation (not canon/asset lock) · facet language/muzzle depth vs master Bible unconfirmed · slit groove geometry unconfirmed · proportions unconfirmed · side/3-4 depth constructed · hands/feet schematic · surface/material + graphene-joints + high-collar coat unaddressed.
+LOCK_REPORT = reports/SESSION_REPORT_MIKAGE_MODEL_SHEET_BASE_V1_3_LOCK.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_CHOOSE_NEXT_POST-TURNAROUND_PASS (proportion confirm vs master Bible / surface-material study / hands-feet pass / costume-coat layer). No render/canon/asset-lock until operator directs.
+
+## MIKAGE MODEL SHEET BASE — V1.3 PROPORTION TARGET DECISION — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (proportion confirmation review → operator decision). Lane = CHARACTER_CAST_LANE. REVIEW + DECISION level. NO redraw / NO SVG edit / NO V1.4 / NO render / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+PROPORTION_CONFIRMATION_REPORT = reports/MIKAGE_MODEL_SHEET_BASE_V1_3_PROPORTION_CONFIRMATION.md (REVIEW_ONLY; measured head unit 96px vs ruler 90px/unit → true height ≈7.1 heads; no hard fail; HOLDs = 7.5-vs-7.1 gap, slightly short arms/legs, side chest forward).
+PROPORTION_DECISION_REPORT = reports/MIKAGE_MODEL_SHEET_BASE_V1_3_PROPORTION_TARGET_DECISION.md
+PROPORTION_TARGET_DECISION = ACCEPT_7_1_HEAVY_DRAFT (operator accepts ~7.1 heads + broad/heavy shoulders + compact arm reach + short/heavy legs + current side chest depth as the DRAFT target; do NOT correct to true 7.5 at this stage).
+DECISION_SCOPE = DRAFT acceptance only — NOT canon/asset lock; targets remain UNCONFIRMED vs master Bible and re-openable at a future canon/asset stage.
+CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_3_MASK_ONLY
+MODEL_SHEET_BASE_STATUS = DRAFT_LOCKED_FOR_NEXT_STAGE
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = HANDS_FEET_PASS_V1 (refine schematic hands + feet/boots on V1.3; monochrome; no render/canon/asset-lock).
+
+## MIKAGE MODEL SHEET BASE — V1.4 DRAFT LOCK — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (hands/feet pass on V1.3 → operator approved V1.4 to replace V1.3). Lane = CHARACTER_CAST_LANE. Deterministic monochrome SVG only. NO render / NO color / NO costume / NO weapon / NO lore / NO ComfyUI / NO Blender / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+HANDS_FEET_FIX = V1.4 refines HANDS → sealed-shell mitten / segmented ceramic gloves (rounded mass + thumb nub + knuckle/thumb seams; NO fingers/nails/skin) on FRONT/BACK/3-4, blunt mitten thickness on SIDE; FEET → heavy sealed boots with sole-edge seam + simple toe direction (grounded; no heel/sneaker/decoration). MASK (Kitsune planar) / BODY / 7.1-HEAVY PROPORTION = V1.3 UNCHANGED.
+CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET (SUPERSEDES V1.3; V1.2/V1.3 retained as history, not deleted).
+MODEL_SHEET_FILE = design/character_model_sheet_base_v1/MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET.svg
+MODEL_SHEET_PREVIEW = design/character_model_sheet_base_v1/MIKAGE_MODEL_SHEET_BASE_V1_4_PREVIEW.png (preview export only, NOT an art render)
+MODEL_SHEET_BASE_STATUS = DRAFT_LOCKED_FOR_NEXT_STAGE
+PROPORTION_TARGET_DECISION = ACCEPT_7_1_HEAVY_DRAFT
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+CHUA_XAC_NHAN = hands/feet blockout-refined (not canon/asset lock; glove segmentation + boot sole placeholder) · Kitsune mask facet/muzzle depth vs master Bible unconfirmed · proportions accepted DRAFT-only unconfirmed vs master · surface/material + graphene-joints + high-collar coat unaddressed.
+LOCK_REPORT = reports/SESSION_REPORT_MIKAGE_MODEL_SHEET_BASE_V1_4_LOCK.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_CHOOSE_NEXT_POST-HANDS_FEET_PASS (surface/material study / costume-coat layer / phase variants / master-Bible canon reconciliation). No render/canon/asset-lock until operator directs.
+
+## MIKAGE COSTUME COAT LAYER — V1.1 STUDY LOCK — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (post-hands/feet, operator chose costume-coat pass: surface material study → coat study V1 front+side → coat study V1.1 4-view → operator approved V1.1 lock). Lane = CHARACTER_CAST_LANE. Deterministic grayscale SVG studies only. NO render / NO color beyond grayscale / NO weapon / NO lore / NO form change / NO ComfyUI / NO Blender / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+SURFACE_MATERIAL_STUDY = design/character_surface_material_v1/MIKAGE_SURFACE_MATERIAL_STUDY_V1.svg (STUDY_DRAFT; matte porcelain shell grey + graphene charcoal at joints + sealed slit grooves + recessed gorget/panel seams + black/white/grey value rules; report reports/SESSION_REPORT_MIKAGE_SURFACE_MATERIAL_STUDY_V1.md). NOT operator-locked — reference study.
+COAT_STUDY_V1 = design/character_costume_layer_v1/MIKAGE_COSTUME_COAT_LAYER_V1.svg (front+side; high-collar executor; report reports/SESSION_REPORT_MIKAGE_COSTUME_COAT_LAYER_V1.md) — retained as history.
+COAT_STUDY_FILE = design/character_costume_layer_v1/MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW.svg — 4 views (FRONT/SIDE/BACK/3-4) of the high-collar executor coat over the locked V1.4 porcelain ghost. High standing collar framing mask · closed center seam (FRONT/3-4) + minimal ticks · single center-back seam (BACK, no slits) · straight sleeves-to-wrist · heavy knee hem · calm/heavy/monolith, no cape/train/flare. Exposed: mask+slits / mitten hands+graphene wrist / shins+ankle graphene+boots. Coat tone = matte mid-grey (1 step darker than porcelain, distinct from graphene). FORM UNCHANGED (coat = added overlay).
+COAT_STUDY_PREVIEW = design/character_costume_layer_v1/MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW_PREVIEW.png (preview export only, NOT an art render)
+COSTUME_COAT_STATUS = STUDY_DRAFT_LOCKED
+CURRENT_COAT_SOURCE = MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW (SUPERSEDES coat study V1; V1 retained as history)
+CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET
+SURFACE_MATERIAL_STATUS = STUDY_DRAFT
+PROPORTION_TARGET_DECISION = ACCEPT_7_1_HEAVY_DRAFT
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+CHUA_XAC_NHAN = coat geometry (collar height/hem/closure/sleeve-bulk/back-vent) STUDY proposal unconfirmed vs master · coat material/weight/lining undefined · surface-material + coat both STUDY_DRAFT (not asset-approved) · phase (P2/P3) + blade-carry out of scope.
+LOCK_REPORT = reports/SESSION_REPORT_MIKAGE_COSTUME_COAT_LAYER_V1_1_LOCK.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_CHOOSE_NEXT_POST-COAT_PASS (combined form+material+coat turnaround / phase-variant exploration / master-Bible canon reconciliation / operator-run render). No render/canon/asset-lock until operator directs.
+
+## MIKAGE COMBINED CHARACTER REFERENCE — V1 ONE-SHEET LOCK — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (operator chose the combined turnaround; built + operator approved the one-sheet lock). Lane = CHARACTER_CAST_LANE. Deterministic grayscale SVG only (index/overview; reuses locked geometry, NO redraw). NO render / NO color beyond grayscale / NO violet / NO weapon / NO lore / NO ComfyUI / NO Blender / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+COMBINED_REFERENCE_FILE = design/character_combined_reference_v1/MIKAGE_COMBINED_CHARACTER_REFERENCE_V1.svg — one tall sheet: BAND 1 base turnaround (V1.4 front/side/back/3-4) · BAND 2 surface/material zone figure + VALUE/MATERIAL KEY (void black / graphene charcoal / porcelain shadow-mid-highlight / executor coat / slit groove + black-white-grey rules + matte lock + coat-exposes) · BAND 3 coat 4-view (V1.1) · STATUS block. Assembled via shared defs + use of the three locked studies' exact geometry.
+COMBINED_REFERENCE_PREVIEW = design/character_combined_reference_v1/MIKAGE_COMBINED_CHARACTER_REFERENCE_V1_PREVIEW.png (preview export only, NOT an art render)
+COMBINED_REFERENCE_STATUS = STUDY_DRAFT_LOCKED
+CURRENT_COMBINED_REFERENCE = MIKAGE_COMBINED_CHARACTER_REFERENCE_V1
+CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET
+CURRENT_COAT_SOURCE = MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW
+SURFACE_MATERIAL_STATUS = STUDY_DRAFT
+COSTUME_COAT_STATUS = STUDY_DRAFT_LOCKED
+PROPORTION_TARGET_DECISION = ACCEPT_7_1_HEAVY_DRAFT
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+CHUA_XAC_NHAN = combined sheet is a hand-off reference (not an approved master) · all proportions/material tones/coat geometry DRAFT, unconfirmed vs master Bible · base DRAFT_LOCKED / material STUDY_DRAFT / coat STUDY_DRAFT_LOCKED — none canon/asset locked · no phase (P2/P3) · no weapon · no violet · no render spec.
+LOCK_REPORT = reports/SESSION_REPORT_MIKAGE_COMBINED_CHARACTER_REFERENCE_V1_LOCK.md
+BUILD_REPORT = reports/SESSION_REPORT_MIKAGE_COMBINED_CHARACTER_REFERENCE_V1.md
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_CHOOSE_NEXT_AFTER_COMBINED_REFERENCE_LOCK (master-Bible canon reconciliation / phase-variant exploration / operator-run render). No render/canon/asset-lock until operator directs.
+
+## MIKAGE RENDER-SAFE CHARACTER BRIEF — V1 REGISTERED — 2026-06-03
+SESSION = Cowork 2026-06-03 cont. (operator: distill a render-safe anti-drift brief from the locked one-sheet, then register it). Lane = CHARACTER_CAST_LANE. Markdown brief only. NO redraw / NO render / NO image prompts / NO new design / NO SVG change / NO canon-lock / NO asset-lock by Claude. Git not operable from Cowork sandbox; push = operator-side.
+RENDER_SAFE_BRIEF_FILE = docs/character/MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1.md — anti-drift must-read for future character render/image/prompt tasks. Covers: source files (authority order) · draft-lock status · what must not change · visual-identity constraints (faceless B4C Kitsune planar mask, 2 SEALED flush slits, segmented porcelain shell, mitten hands, sealed boots, 7.1 heavy monolith) · material constraints (matte lock + value map) · coat constraints (high collar/center seam/sleeves-to-wrist/knee hem/exposed zones) · hard negatives · CHUA_XAC_NHAN · render gating · next safe task.
+CURRENT_RENDER_SAFE_CHARACTER_BRIEF = MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1
+USE_RULE = read MIKAGE_RENDER_SAFE_CHARACTER_BRIEF_V1 before ANY Mikage image/render/prompt task.
+COMBINED_REFERENCE_STATUS = STUDY_DRAFT_LOCKED
+CURRENT_COMBINED_REFERENCE = MIKAGE_COMBINED_CHARACTER_REFERENCE_V1
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+CHUA_XAC_NHAN = brief reflects DRAFT studies (base DRAFT_LOCKED / material STUDY_DRAFT / coat STUDY_DRAFT_LOCKED) unconfirmed vs master Bible · no phase/weapon/violet/lighting spec · render stays gated until operator sets RENDER_ALLOWED = YES.
+COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
+PUSH_SUCCEEDED = NO (operator-side push required)
+NEXT_SAFE_TASK = OPERATOR_CHOOSE_NEXT_AFTER_RENDER_SAFE_BRIEF_LOCK (master-Bible canon reconciliation / phase-variant exploration / operator authorizes an operator-run render). No render/canon/asset-lock until operator directs.

@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1560" width="1680" height="1560" font-family="ui-monospace, 'Space Mono', monospace">
+  <defs>
+    <style>.mono{font-family:ui-monospace,'Space Mono',monospace;} text{fill:#3a3a42;}</style>
+    <!-- masks -->
+    <path id="mk" d="M0,-52 L20,-44 L34,-22 L33,2 L24,24 L12,42 L0,52 L-12,42 L-24,24 L-33,2 L-34,-22 L-20,-44 Z"/>
+    <g id="mkf" fill="none"><path d="M0,-46 L0,50"/><path d="M-30,-20 L30,-20"/><path d="M-34,-22 L-22,8"/><path d="M34,-22 L22,8"/><path d="M-22,26 L0,46"/><path d="M22,26 L0,46"/></g>
+    <g id="mks" fill="none" stroke="#3a3a42" stroke-width="2.4" stroke-linecap="round"><path d="M-17,-5 L-5,-2.5"/><path d="M17,-5 L5,-2.5"/></g>
+    <path id="mp" d="M-8,-52 L10,-50 L26,-34 L34,-16 L40,2 L34,18 L20,34 L6,46 L-8,48 L-24,34 L-36,10 L-40,-16 L-30,-42 Z"/>
+    <path id="mb" d="M0,-52 L20,-44 L33,-22 L34,4 L26,28 L14,42 L0,46 L-14,42 L-26,28 L-34,4 L-33,-22 L-20,-44 Z"/>
+    <g id="mbf" fill="none"><path d="M0,-48 L0,42"/><path d="M-30,-18 L30,-18"/><path d="M-26,28 Q0,34 26,28"/></g>
+    <path id="m34" d="M1258,166 L1240,170 L1226,194 L1228,220 L1240,242 L1252,258 L1264,256 L1284,238 L1296,210 L1294,186 L1278,168 Z"/>
+    <g id="m34s" fill="none" stroke="#3a3a42" stroke-width="2" stroke-linecap="round"><path d="M1232,200 L1244,197"/><path d="M1258,199 L1249,197"/></g>
+
+    <!-- bodies (fill-less; mask added separately) -->
+    <g id="bF">
+      <polygon points="372,512 422,520 418,668 380,672"/><polygon points="382,680 418,676 412,816 392,818"/>
+      <polygon points="488,512 438,520 442,668 480,672"/><polygon points="478,680 442,676 448,816 468,818"/>
+      <path d="M376,812 L414,812 L414,834 L410,846 L362,846 L362,836 L376,834 Z"/>
+      <path d="M484,812 L446,812 L446,834 L450,846 L498,846 L498,836 L484,834 Z"/>
+      <path d="M344,348 L329,372 L325,414 L326,450 L331,456 L332,512 L341,548 L350,561 L360,560 L361,549 L355,510 L352,456 L347,450 L344,408 L343,368 Z"/>
+      <path d="M516,348 L531,372 L535,414 L534,450 L529,456 L528,512 L519,548 L510,561 L500,560 L499,549 L505,510 L508,456 L513,450 L516,408 L517,368 Z"/>
+      <path d="M340,548 L360,548 L360,553 L367,557 L367,564 L359,569 L358,576 Q349,582 340,575 L338,552 Z"/>
+      <path d="M520,548 L500,548 L500,553 L493,557 L493,564 L501,569 L502,576 Q511,582 520,575 L522,552 Z"/>
+      <path d="M400,302 C376,306 356,320 346,348 C350,392 352,432 351,470 C350,492 352,506 360,518 L430,521 L500,518 C508,506 510,492 509,470 C508,432 510,392 514,348 C504,320 484,306 460,302 Z"/>
+      <path d="M384,308 L394,266 L414,248 Q430,243 446,248 L466,266 L476,308 L456,320 Q430,326 404,320 Z"/>
+    </g>
+    <g id="bS">
+      <polygon points="612,518 628,520 624,668 610,664"/><polygon points="620,516 672,520 666,668 628,672"/>
+      <polygon points="630,680 664,676 658,816 638,818"/>
+      <path d="M634,812 L660,812 L662,832 L700,840 L700,848 L626,848 L626,832 Z"/>
+      <path d="M612,300 C604,330 602,360 604,392 C606,430 608,470 610,500 C611,510 612,516 616,520 L686,521 C694,500 690,470 686,452 C698,430 700,408 694,388 C690,352 680,318 662,304 Z"/>
+      <path d="M612,312 L614,280 L624,264 Q636,258 648,263 L666,276 L670,302 L660,318 Q636,324 616,318 Z"/>
+      <path d="M650,312 L672,322 L676,360 L674,420 L678,430 L676,500 L670,540 L660,556 L650,554 L652,508 L650,432 L646,424 L648,360 L646,326 Z"/>
+      <path d="M650,548 L674,548 L678,553 L676,562 L672,576 Q662,582 652,576 L648,558 Z"/>
+    </g>
+    <g id="b34">
+      <polygon points="1268,520 1318,518 1320,668 1282,672"/><polygon points="1284,680 1318,676 1322,816 1302,818"/>
+      <path d="M1298,812 L1320,812 L1326,832 L1336,846 L1296,846 L1294,832 Z"/>
+      <path d="M1322,350 L1334,374 L1336,416 L1334,456 L1330,512 L1322,548 L1314,558 L1306,552 L1310,510 L1312,456 L1314,410 L1314,366 Z"/>
+      <path d="M1304,554 L1324,554 L1327,560 L1324,576 Q1316,582 1307,576 L1303,562 Z"/>
+      <polygon points="1208,516 1258,520 1254,668 1216,672"/><polygon points="1218,680 1252,676 1246,816 1226,818"/>
+      <path d="M1212,812 L1250,812 L1252,832 L1246,846 L1206,846 L1206,832 Z"/>
+      <path d="M1242,300 C1216,304 1200,318 1192,346 C1196,390 1198,432 1197,470 C1196,492 1199,506 1208,518 L1268,521 L1322,517 C1330,500 1330,474 1328,450 C1330,412 1330,372 1326,348 C1318,322 1302,306 1278,302 Z"/>
+      <path d="M1218,316 L1224,278 L1240,260 Q1258,254 1276,260 L1294,278 L1300,316 L1280,326 Q1256,332 1232,326 Z"/>
+      <path d="M1192,346 L1178,372 L1174,414 L1176,452 L1182,458 L1183,514 L1192,548 L1201,560 L1211,558 L1210,548 L1204,510 L1202,456 L1198,450 L1196,408 L1194,366 Z"/>
+      <path d="M1188,556 L1208,556 L1208,561 L1215,565 L1215,572 L1207,577 L1206,584 Q1197,590 1188,583 L1186,560 Z"/>
+    </g>
+
+    <!-- coat silhouettes (fill-less) -->
+    <g id="cF">
+      <path d="M338,302 L342,440 L338,560 L344,662 L516,662 L522,560 L518,440 L522,302 Z"/>
+      <path d="M334,304 L322,360 L320,452 L326,540 L350,548 L353,452 L350,360 L346,308 Z"/>
+      <path d="M526,304 L538,360 L540,452 L534,540 L510,548 L507,452 L510,360 L514,308 Z"/>
+      <path d="M356,302 L378,240 L398,236 L416,260 L446,260 L464,236 L484,240 L506,302 L478,302 L452,274 L412,274 L386,302 Z"/>
+    </g>
+    <g id="cS">
+      <path d="M606,302 L598,440 L602,560 L604,662 L692,662 L694,560 L696,452 L690,360 L676,308 Z"/>
+      <path d="M650,310 L642,420 L646,540 L668,545 L672,430 L668,320 Z"/>
+      <path d="M610,300 L604,246 L624,236 L644,250 L648,300 L634,300 L622,266 Z"/>
+    </g>
+    <g id="c34">
+      <path d="M1188,302 L1190,440 L1186,560 L1192,662 L1330,662 L1336,560 L1332,440 L1334,302 Z"/>
+      <path d="M1186,304 L1172,372 L1170,452 L1176,545 L1200,550 L1203,452 L1200,366 L1198,308 Z"/>
+      <path d="M1338,306 L1346,374 L1348,456 L1342,545 L1320,550 L1316,456 L1318,372 L1326,310 Z"/>
+      <path d="M1196,302 L1216,242 L1236,238 L1250,260 L1278,260 L1292,240 L1306,246 L1322,302 L1300,302 L1280,272 L1244,272 L1222,300 Z"/>
+    </g>
+
+    <g id="grF" fill="#24242b"><rect x="339" y="543" width="24" height="7" rx="3"/><rect x="499" y="543" width="24" height="7" rx="3"/><rect x="390" y="808" width="24" height="7" rx="3"/><rect x="446" y="808" width="24" height="7" rx="3"/></g>
+    <g id="grMat" fill="#24242b">
+      <path d="M404,310 L456,310 L452,322 Q430,328 408,322 Z"/>
+      <rect x="340" y="344" width="18" height="12" rx="4"/><rect x="502" y="344" width="18" height="12" rx="4"/>
+      <rect x="323" y="444" width="32" height="15" rx="5"/><rect x="505" y="444" width="32" height="15" rx="5"/>
+      <rect x="337" y="541" width="26" height="10" rx="4"/><rect x="497" y="541" width="26" height="10" rx="4"/>
+      <path d="M366,510 L494,510 L494,520 L430,523 L366,520 Z"/>
+      <rect x="378" y="666" width="42" height="16" rx="5"/><rect x="440" y="666" width="42" height="16" rx="5"/>
+      <rect x="389" y="807" width="26" height="10" rx="4"/><rect x="445" y="807" width="26" height="10" rx="4"/>
+    </g>
+  </defs>
+
+  <rect width="1680" height="1560" fill="#fbfaf8"/>
+  <rect x="20" y="20" width="1640" height="1520" fill="none" stroke="#1a1a22" stroke-width="1.5"/>
+
+  <text class="mono" x="44" y="50" font-size="12" letter-spacing="3" fill="#3a3a42">MIKAGE ZENITH STUDIO  ·  CHARACTER CAST LANE</text>
+  <text class="mono" x="840" y="50" font-size="14" letter-spacing="3" text-anchor="middle" fill="#1a1a22">MIKAGE — COMBINED CHARACTER REFERENCE V1</text>
+  <text class="mono" x="1636" y="50" font-size="11" letter-spacing="2" text-anchor="end" fill="#b03a2e">DRAFT · NOT CANON · NOT ASSET-LOCKED · NO RENDER</text>
+  <line x1="44" y1="66" x2="1636" y2="66" stroke="#1a1a22" stroke-width="0.8"/>
+  <text class="mono" x="44" y="86" font-size="10.5" letter-spacing="2" fill="#6a6a74">One-sheet index of the locked DRAFT character system: base form (V1.4) + surface material rules + high-collar executor coat (V1.1) · grayscale · NO violet · NO redraw</text>
+
+  <!-- ============ BAND 1 : BASE TURNAROUND ============ -->
+  <text class="mono" x="44" y="118" font-size="12" letter-spacing="2" fill="#1a1a22">1 · BASE TURNAROUND — form source MIKAGE_MODEL_SHEET_BASE_V1_4 (locked)</text>
+  <g transform="translate(435,40) scale(0.48)" fill="#15151c">
+    <use href="#bF"/><use href="#mk" transform="translate(430,214) scale(0.92)"/>
+    <use href="#bS"/><use href="#mp" transform="translate(636,214) scale(0.92)"/>
+    <use href="#bF" transform="translate(520,0)"/><use href="#mb" transform="translate(950,214) scale(0.92)"/>
+    <use href="#b34"/><use href="#m34"/>
+  </g>
+  <g transform="translate(435,40) scale(0.48)">
+    <use href="#mks" transform="translate(430,214) scale(0.92)"/>
+    <use href="#m34s"/>
+  </g>
+  <g class="mono" font-size="11" fill="#6a6a74" text-anchor="middle">
+    <text x="641" y="470">FRONT</text><text x="740" y="470">SIDE</text><text x="891" y="470">BACK</text><text x="1039" y="470">3/4</text>
+  </g>
+  <line x1="44" y1="498" x2="1636" y2="498" stroke="#e0ddd6"/>
+
+  <!-- ============ BAND 2 : SURFACE / MATERIAL ============ -->
+  <text class="mono" x="44" y="538" font-size="12" letter-spacing="2" fill="#1a1a22">2 · SURFACE / MATERIAL — ref MIKAGE_SURFACE_MATERIAL_STUDY_V1 (STUDY_DRAFT)</text>
+  <!-- material front figure -->
+  <g transform="translate(90,470) scale(0.55)">
+    <use href="#bF" fill="#c4c0b8"/><use href="#mk" transform="translate(430,214) scale(0.92)" fill="#c4c0b8"/>
+    <use href="#grMat"/>
+    <g fill="none" stroke="#74716a" stroke-width="1.4" stroke-linecap="round">
+      <path d="M356,332 Q430,322 504,332"/><path d="M360,400 Q430,418 500,400"/><path d="M430,360 L430,400"/>
+      <path d="M364,440 Q430,446 496,440"/><path d="M372,478 Q430,483 488,478"/>
+    </g>
+    <use href="#mkf" transform="translate(430,214) scale(0.92)" stroke="#8a877f" stroke-width="0.9"/>
+    <use href="#mks" transform="translate(430,214) scale(0.92)"/>
+    <!-- highlight plane -->
+    <path d="M412,178 L430,170 L444,180 L438,250 L430,262 L422,250 Z" fill="#e7e4de"/>
+    <use href="#mkf" transform="translate(430,214) scale(0.92)" stroke="#8a877f" stroke-width="0.9"/>
+  </g>
+  <text class="mono" x="240" y="918" font-size="11" letter-spacing="1" text-anchor="middle" fill="#6a6a74">MATERIAL ZONE MAP</text>
+
+  <!-- material key -->
+  <g class="mono">
+    <rect x="470" y="556" width="1150" height="356" fill="#f4f2ee" stroke="#1a1a22" stroke-width="1"/>
+    <text x="490" y="582" font-size="11" letter-spacing="2" fill="#1a1a22">VALUE / MATERIAL KEY</text>
+    <g>
+      <rect x="490" y="596" width="34" height="22" fill="#050508"/><text x="534" y="606" font-size="9.5" fill="#1a1a22">VOID BLACK #050508</text><text x="534" y="617" font-size="8.5" fill="#6a6a74">deep recesses · plate gaps · slit core</text>
+      <rect x="490" y="626" width="34" height="22" fill="#24242b"/><text x="534" y="636" font-size="9.5" fill="#1a1a22">GRAPHENE CHARCOAL #24242b</text><text x="534" y="647" font-size="8.5" fill="#6a6a74">matte substrate at joints / underlayer</text>
+      <rect x="490" y="656" width="34" height="22" fill="#8d8a83"/><text x="534" y="666" font-size="9.5" fill="#1a1a22">PORCELAIN SHADOW #8d8a83</text>
+      <rect x="490" y="686" width="34" height="22" fill="#c4c0b8"/><text x="534" y="696" font-size="9.5" fill="#1a1a22">PORCELAIN MID #c4c0b8</text><text x="534" y="707" font-size="8.5" fill="#6a6a74">dominant matte shell midtone</text>
+      <rect x="490" y="716" width="34" height="22" fill="#ece9e3"/><text x="534" y="726" font-size="9.5" fill="#1a1a22">PORCELAIN HIGHLIGHT #ece9e3</text><text x="534" y="737" font-size="8.5" fill="#6a6a74">raking-light plane · matte, no hotspot</text>
+      <rect x="490" y="746" width="34" height="22" fill="#837f76"/><text x="534" y="756" font-size="9.5" fill="#1a1a22">EXECUTOR COAT #837f76</text><text x="534" y="767" font-size="8.5" fill="#6a6a74">1 value step darker than porcelain</text>
+      <rect x="490" y="776" width="34" height="22" fill="#3a3a42"/><text x="534" y="786" font-size="9.5" fill="#1a1a22">SLIT GROOVE #3a3a42</text><text x="534" y="797" font-size="8.5" fill="#6a6a74">sealed engraved slit (flush, closed)</text>
+    </g>
+    <line x1="1010" y1="596" x2="1010" y2="800" stroke="#c9c6c0"/>
+    <text x="1030" y="608" font-size="10" fill="#1a1a22">RULES</text>
+    <text x="1030" y="624" font-size="9" fill="#444">MATTE LOCK — no gloss / chrome / subsurface / specular.</text>
+    <text x="1030" y="640" font-size="9" fill="#444">BLACK = graphene joints + recesses + slit cores.</text>
+    <text x="1030" y="656" font-size="9" fill="#444">WHITE = sparing raking-light porcelain planes only.</text>
+    <text x="1030" y="672" font-size="9" fill="#444">GREY = dominant matte porcelain shell.</text>
+    <text x="1030" y="688" font-size="9" fill="#444">VIOLET = later SIGNAL only, NOT a material (absent).</text>
+    <text x="1030" y="712" font-size="10" fill="#1a1a22">COAT EXPOSES</text>
+    <text x="1030" y="728" font-size="9" fill="#444">above collar → mask + sealed slits</text>
+    <text x="1030" y="744" font-size="9" fill="#444">below cuff → mitten hands + graphene wrist</text>
+    <text x="1030" y="760" font-size="9" fill="#444">below hem → shins + ankle graphene + boots</text>
+    <text x="1030" y="784" font-size="9" fill="#9a9790">All tones PROPOSED / UNCONFIRMED vs master Bible.</text>
+  </g>
+  <line x1="44" y1="940" x2="1636" y2="940" stroke="#e0ddd6"/>
+
+  <!-- ============ BAND 3 : COAT 4-VIEW ============ -->
+  <text class="mono" x="44" y="978" font-size="12" letter-spacing="2" fill="#1a1a22">3 · HIGH-COLLAR EXECUTOR COAT — source MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW (STUDY_DRAFT_LOCKED)</text>
+  <g transform="translate(435,900) scale(0.48)">
+    <!-- front -->
+    <use href="#bF" fill="#c4c0b8"/><use href="#grF"/><use href="#cF" fill="#837f76"/>
+    <use href="#mk" transform="translate(430,214) scale(0.92)" fill="#c4c0b8"/><use href="#mks" transform="translate(430,214) scale(0.92)"/>
+    <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M430,274 L430,662"/><path d="M344,656 L516,656"/><path d="M386,300 Q430,290 478,300"/></g>
+    <!-- side -->
+    <use href="#bS" fill="#c4c0b8"/><use href="#cS" fill="#837f76"/><use href="#mp" transform="translate(636,214) scale(0.92)" fill="#c4c0b8"/>
+    <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M606,310 L604,650"/><path d="M604,656 L692,656"/></g>
+    <!-- back -->
+    <use href="#bF" transform="translate(520,0)" fill="#c4c0b8"/><use href="#grF" transform="translate(520,0)"/><use href="#cF" transform="translate(520,0)" fill="#837f76"/>
+    <use href="#mb" transform="translate(950,214) scale(0.92)" fill="#c4c0b8"/>
+    <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M950,300 L950,662"/><path d="M864,656 L1036,656"/></g>
+    <!-- 3/4 -->
+    <use href="#b34" fill="#c4c0b8"/><use href="#c34" fill="#837f76"/>
+    <path d="M1258,166 L1240,170 L1226,194 L1228,220 L1240,242 L1252,258 L1264,256 L1284,238 L1296,210 L1294,186 L1278,168 Z" fill="#c4c0b8"/>
+    <use href="#m34s"/>
+    <g fill="none" stroke="#56534c" stroke-width="1.6" stroke-linecap="round"><path d="M1252,272 L1252,662"/><path d="M1192,656 L1330,656"/><path d="M1222,300 Q1258,290 1300,300"/></g>
+  </g>
+  <g class="mono" font-size="11" fill="#6a6a74" text-anchor="middle">
+    <text x="641" y="1330">FRONT</text><text x="740" y="1330">SIDE</text><text x="891" y="1330">BACK</text><text x="1039" y="1330">3/4</text>
+  </g>
+  <line x1="44" y1="1356" x2="1636" y2="1356" stroke="#1a1a22" stroke-width="0.6"/>
+
+  <!-- ============ STATUS BLOCK ============ -->
+  <g class="mono">
+    <text x="44" y="1382" font-size="11" letter-spacing="2" fill="#1a1a22">STATUS</text>
+    <text x="44" y="1402" font-size="9.5" fill="#444">CURRENT_TURNAROUND_SOURCE = MIKAGE_MODEL_SHEET_BASE_V1_4_HANDS_FEET   ·   CURRENT_COAT_SOURCE = MIKAGE_COSTUME_COAT_LAYER_V1_1_4VIEW</text>
+    <text x="44" y="1418" font-size="9.5" fill="#444">SURFACE_MATERIAL_STATUS = STUDY_DRAFT   ·   COSTUME_COAT_STATUS = STUDY_DRAFT_LOCKED   ·   PROPORTION_TARGET = ACCEPT_7_1_HEAVY_DRAFT</text>
+    <text x="44" y="1434" font-size="9.5" fill="#b03a2e">CANON_LOCK = NO   ·   ASSET_LOCK = NO   ·   RENDER_ALLOWED = NO</text>
+    <text x="44" y="1456" font-size="9" fill="#6a6a74">CHUA_XAC_NHAN: all proportions/material tones/coat geometry are DRAFT proposals, unconfirmed vs master Bible · no phase (P2/P3) · no weapon · no violet · form unchanged across all three studies.</text>
+    <text x="44" y="1472" font-size="9" fill="#6a6a74">COMBINED = index/overview only; it reuses the three locked studies' exact geometry (no redraw). NOT CANON · NOT ASSET-LOCKED · NO RENDER.</text>
+  </g>
+</svg>
