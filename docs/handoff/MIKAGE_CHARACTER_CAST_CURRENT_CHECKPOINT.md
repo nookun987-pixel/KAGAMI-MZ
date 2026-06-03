@@ -16,6 +16,13 @@ FULL_MASTER_CANON_AUDIT = PASS_WITH_CHUA_XAC_NHAN
 PHASE_COLOR_INTERPRETATION = CURRENT_4VIEW_IS_NEUTRAL_DRAFT_REFERENCE_NOT_PHASE_RENDER
 PRIMETOOL_INTERPRETATION = ZENITH_BLADE_NOT_INCLUDED_IN_BODY_SHEET
 COMBINED_REFERENCE_V2_4VIEW_STATUS = PASS_AS_DRAFT_REFERENCE
+JAPAN_REFERENCE_FOLDER_FOUND = YES
+JAPAN_REFERENCE_USE = RENDER_BRIEF_COLOR_AND_VISUAL_GRAMMAR_ONLY
+COLOR_CANON_SOURCE_FOUND = YES
+COLOR_CANON_AUDIT = PASS_FOR_RENDER_BRIEF_GUARDRAILS
+USE_FOR_CANON_LOCK = NO
+CURRENT_4VIEW_COLOR_STATUS = NEUTRAL_DRAFT_REFERENCE_WHITE_BLACK_VIOLET
+CRIMSON_RED_STATUS = RESERVED_FOR_PHASE_RENDER_SEAM_CORE_OR_PRIMETOOL
 NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
 
 ## Verification
@@ -27,6 +34,8 @@ NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
 - Operator-provided V2.5 technical system spec was recorded under `docs/canon_imports/operator_provided/`.
 - Google Drive master files are now imported and readable from `docs/canon_imports/google_drive_master_sources_2026_06_03/`.
 - Full master canon audit found no body-sheet contradiction in the current 4-view draft, but phase color / older master source interpretation remains CHUA_XAC_NHAN before any render brief.
+- ChatGPT-audited japan_reference / color canon findings are recorded as render-brief guardrails only, not canon-lock evidence.
+- Color guardrails: porcelain/gofun/shino-like matte mineral white, dense sumi/soot/shadow black, controlled violet signal only, crimson/red reserved for phase render/seam/core/PrimeTool, no random Japanese ornaments.
 - This checkpoint does not canon-lock, asset-lock, or render-enable the character reference.
 
 ## Hard Stop

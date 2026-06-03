@@ -57,6 +57,28 @@ CANON_LOCK = NO
 ASSET_LOCK = NO
 RENDER_ALLOWED = NO
 
+## Japan Reference / Color Canon Guardrails
+
+JAPAN_REFERENCE_FOLDER_FOUND = YES
+JAPAN_REFERENCE_USE = RENDER_BRIEF_COLOR_AND_VISUAL_GRAMMAR_ONLY
+COLOR_CANON_SOURCE_FOUND = YES
+COLOR_CANON_AUDIT = PASS_FOR_RENDER_BRIEF_GUARDRAILS
+USE_FOR_CANON_LOCK = NO
+CURRENT_4VIEW_COLOR_STATUS = NEUTRAL_DRAFT_REFERENCE_WHITE_BLACK_VIOLET
+CRIMSON_RED_STATUS = RESERVED_FOR_PHASE_RENDER_SEAM_CORE_OR_PRIMETOOL
+RENDER_ALLOWED = NO
+
+Recorded from ChatGPT-audited Google Drive findings:
+
+- `japanese_visual_knowledge_master.md` is structured art-direction intelligence for Mikage / Tokyo Future, used for references, presets, compile flow, motif tagging, and color mode selection.
+- Mikage application rules include porcelain/fracture, silence/negative space, limited palette discipline, rejection of generic cyberpunk drift, and rejection of anime clone behavior.
+- `Mikage Zenith Color Canon Specification` uses Material Determinism: color must come from material, light, chemical state, and surface history.
+- White must read as porcelain / gofun / shino-like matte mineral white, not flat digital `#FFFFFF`; `#FAFAFA` remains character albedo but must not render flat/plastic.
+- Black must read as dense sumi / soot / shadow mass, not modern plastic black.
+- Violet remains controlled signal only: slit halo plus subtle upper-back Enso.
+- Crimson/red is reserved for phase render, seams, cores, sacred objects, or PrimeTool; do not add red to the neutral 4-view.
+- Avoid high-saturation neon drift and random Japanese ornaments: no sakura, koi, dragon, yokai, calligraphy, random Edo ornament, or neon signage added to the character unless the operator explicitly selects that design layer.
+
 Audit result:
 
 - Current 4-view is consistent with the repo-local V2.5 Figure Lane mask ruling: planar B4C Kitsune geometry, sealed 0.7 inch slits, sealed monocoque logic, and graphene matrix/underlayer logic.
@@ -79,4 +101,4 @@ Audit result:
 
 ## Next Safe Task
 
-NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
+NEXT_SAFE_TASK = PREPARE_CONTROLLED_RENDER_TEST_BRIEF_FROM_APPROVED_DRAFT_REFERENCE_V2_4VIEW_WITH_COLOR_CANON_GUARDRAILS
