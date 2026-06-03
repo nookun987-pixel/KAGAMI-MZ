@@ -1600,3 +1600,8 @@ CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO (gated until Brief V2 
 COMMIT_HASH = CHUA_XAC_NHAN (shell sandbox git not operable — operator commits from Windows)
 PUSH_SUCCEEDED = NO (operator-side push required)
 NEXT_SAFE_TASK = BUILD_MIKAGE_REFERENCE_V2_FROM_OPERATOR_RULINGS (add hair / female-coded / controlled violet / skirt-flow / #FAFAFA into Combined Reference V2 + finalize Brief V2; geometric, no lore) → OPERATOR_REVIEW → only then consider render. RENDER_ALLOWED stays NO.
+## MIKAGE CHARACTER CAST CURRENT CHECKPOINT - 2026-06-03
+Read docs/handoff/MIKAGE_CHARACTER_CAST_CURRENT_CHECKPOINT.md before any character cast work.
+Do not render.
+Do not use RunPod.
+Do not set RENDER_ALLOWED = YES.
