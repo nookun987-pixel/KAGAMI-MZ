@@ -87,6 +87,37 @@ OPERATOR_CHOOSE_NEXT_AFTER_COMBINED_REFERENCE_LOCK — e.g. master-Bible canon r
 phase-variant exploration, or operator authorizes an operator-run render using the locked one-sheet.
 No render / canon / asset-lock until the operator directs.
 
+## 11. OPERATOR RULINGS — 2026-06-03 (REQUIRED; supersedes the "deferred/omitted" notes above; build into V2)
+> Operator design ruling resolving the 5 canon gaps. Technical only — no lore phrasing.
+> Record: reports/MIKAGE_OPERATOR_RULING_HAIR_FEMALE_VIOLET_SACRED_FLOW_V1.md.
+
+```text
+HAIR_RULE = REQUIRED
+Hair must be long, heavy, black, and flow vertically behind the sealed helmet.
+
+FEMALE_CODED = REQUIRED_NON_SEXUAL
+Silhouette must read female-coded without glamor, fanservice, breast emphasis,
+waist emphasis, or sensual anatomy.
+
+VIOLET_ACCENTS = CONTROLLED
+Violet may appear only as:
+1) ultra-thin slit halo from the two sealed sensor slits
+2) minimal Ensō signal mark on coat back or shoulder zone
+No broad violet fill across armor plates.
+
+SACRED_FLOW = REQUIRED
+Keep the structured knee-length executor coat, but integrate vertical skirt
+panels extending lower to create ceremonial long-line flow.
+
+ALBEDO_BASE = #FAFAFA
+HEAD_RATIO_MASTER = 7.1
+```
+
+NOTE: keep this brief technical/geometric. Lore/dramatic phrasing (e.g. executor titles,
+weapon weight narration) lives in the World Bible, NOT here — render models over-anchor on it.
+These rulings are operator design decisions at DRAFT level: CANON_LOCK = NO · ASSET_LOCK = NO ·
+RENDER_ALLOWED = NO until Brief V2 + Combined Reference V2 are rebuilt with them and reviewed.
+
 ## STATUS
 COMBINED_REFERENCE_STATUS = STUDY_DRAFT_LOCKED
 CURRENT_COMBINED_REFERENCE = MIKAGE_COMBINED_CHARACTER_REFERENCE_V1
