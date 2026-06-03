@@ -1633,3 +1633,16 @@ ASSET_LOCK = NO
 RENDER_ALLOWED = NO
 SUMMARY = ChatGPT-audited japan_reference / color canon findings are recorded only as render-brief color/material/visual-grammar guardrails. White must read as porcelain/gofun/shino-like matte mineral white, black as dense sumi/soot/shadow mass, violet as controlled signal only, and crimson/red stays reserved for phase render/seam/core/PrimeTool. No random Japanese ornaments or high-saturation neon drift.
 NEXT_SAFE_TASK = PREPARE_CONTROLLED_RENDER_TEST_BRIEF_FROM_APPROVED_DRAFT_REFERENCE_V2_4VIEW_WITH_COLOR_CANON_GUARDRAILS
+
+## MIKAGE CONTROLLED RENDER TEST BRIEF V2 NEUTRAL DRAFT - 2026-06-04
+CONTROLLED_RENDER_TEST_BRIEF_STATUS = PREPARED
+CONTROLLED_RENDER_TEST_BRIEF_FILE = docs/handoff/character_render/MIKAGE_CONTROLLED_RENDER_TEST_BRIEF_V2_4VIEW_NEUTRAL_DRAFT.md
+RENDER_EXECUTION_APPROVED = NO
+COMBINED_REFERENCE_V2_4VIEW_STATUS = PASS_AS_DRAFT_REFERENCE
+FULL_MASTER_CANON_AUDIT = PASS_WITH_CHUA_XAC_NHAN
+COLOR_CANON_AUDIT = PASS_FOR_RENDER_BRIEF_GUARDRAILS
+CANON_LOCK = NO
+ASSET_LOCK = NO
+RENDER_ALLOWED = NO
+SUMMARY = Controlled neutral still test brief prepared only for operator review. No render, RunPod, ComfyUI, AI art, 3D, public output, canon lock, asset lock, red/crimson phase treatment, Zenith Blade, Kintsugi cracks, heat scars, or combat mode is approved.
+NEXT_SAFE_TASK = OPERATOR_REVIEW_CONTROLLED_RENDER_TEST_BRIEF_BEFORE_RENDER_PERMISSION

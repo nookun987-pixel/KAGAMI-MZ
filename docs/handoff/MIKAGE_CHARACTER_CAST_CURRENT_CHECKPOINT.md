@@ -23,7 +23,10 @@ COLOR_CANON_AUDIT = PASS_FOR_RENDER_BRIEF_GUARDRAILS
 USE_FOR_CANON_LOCK = NO
 CURRENT_4VIEW_COLOR_STATUS = NEUTRAL_DRAFT_REFERENCE_WHITE_BLACK_VIOLET
 CRIMSON_RED_STATUS = RESERVED_FOR_PHASE_RENDER_SEAM_CORE_OR_PRIMETOOL
-NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
+CONTROLLED_RENDER_TEST_BRIEF_STATUS = PREPARED
+CONTROLLED_RENDER_TEST_BRIEF_FILE = docs/handoff/character_render/MIKAGE_CONTROLLED_RENDER_TEST_BRIEF_V2_4VIEW_NEUTRAL_DRAFT.md
+RENDER_EXECUTION_APPROVED = NO
+NEXT_SAFE_TASK = OPERATOR_REVIEW_CONTROLLED_RENDER_TEST_BRIEF_BEFORE_RENDER_PERMISSION
 
 ## Verification
 
@@ -36,6 +39,7 @@ NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
 - Full master canon audit found no body-sheet contradiction in the current 4-view draft, but phase color / older master source interpretation remains CHUA_XAC_NHAN before any render brief.
 - ChatGPT-audited japan_reference / color canon findings are recorded as render-brief guardrails only, not canon-lock evidence.
 - Color guardrails: porcelain/gofun/shino-like matte mineral white, dense sumi/soot/shadow black, controlled violet signal only, crimson/red reserved for phase render/seam/core/PrimeTool, no random Japanese ornaments.
+- Controlled render test brief is prepared for operator review only; render execution remains unapproved.
 - This checkpoint does not canon-lock, asset-lock, or render-enable the character reference.
 
 ## Hard Stop
