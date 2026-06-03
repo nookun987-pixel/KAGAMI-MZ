@@ -9,6 +9,13 @@ CURRENT_4VIEW_DRAFT = design/character_combined_reference_v2/MIKAGE_COMBINED_CHA
 SIDE_STATUS = PATCHED_AFTER_OPERATOR_HOLD
 BACK_STATUS = PATCHED_AFTER_OPERATOR_HOLD
 THREE_QUARTER_STATUS = PATCHED_AFTER_OPERATOR_REVIEW
+GOOGLE_DRIVE_MASTER_IMPORT_STATUS = BLOCKED_NEEDS_OPERATOR_TO_DOWNLOAD_DRIVE_FILES
+OPERATOR_PROVIDED_V2_5_SPEC_RECORDED = YES
+V2_5_FIGURE_LANE_AUDIT = PASS_WITH_NOTES
+FULL_MASTER_CANON_AUDIT = PASS_WITH_CHUA_XAC_NHAN
+PHASE_COLOR_INTERPRETATION = CURRENT_4VIEW_IS_NEUTRAL_DRAFT_REFERENCE_NOT_PHASE_RENDER
+PRIMETOOL_INTERPRETATION = ZENITH_BLADE_NOT_INCLUDED_IN_BODY_SHEET
+COMBINED_REFERENCE_V2_4VIEW_STATUS = PASS_AS_DRAFT_REFERENCE
 NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
 
 ## Verification
@@ -17,6 +24,8 @@ NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
 - Current 4-view draft exists and contains FRONT, SIDE, BACK, and 3/4 view markers.
 - Front view remains preserved as PASS.
 - Side/Back/3-4 were patched after operator visual review; they remain draft until operator review.
+- Operator-provided V2.5 technical system spec was recorded under `docs/canon_imports/operator_provided/`.
+- Full master canon audit found no contradiction in the current 4-view draft, but Google Drive master files still require operator download/export before full master PASS can be claimed.
 - This checkpoint does not canon-lock, asset-lock, or render-enable the character reference.
 
 ## Hard Stop
