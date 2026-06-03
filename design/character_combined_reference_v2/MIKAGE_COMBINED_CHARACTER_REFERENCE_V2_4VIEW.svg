@@ -44,10 +44,15 @@
 
     <!-- ============ SIDE (faces right; hair + back to the left) ============ -->
     <g id="figSide">
-      <!-- hair: heavy black down the back (left) -->
+      <!-- hair: heavy vertical sheet behind helmet and shoulder -->
       <g fill="#0d0d12">
-        <path d="M414,206 C390,214 376,256 372,330 C368,448 374,596 392,712 L420,702 C408,592 406,452 414,346 C419,286 428,236 434,214 Z"/>
-        <path d="M404,250 C388,330 386,470 398,624 L420,616 C410,474 412,344 422,270 Z"/>
+        <path d="M424,198 C386,202 360,238 350,318 C338,430 346,594 374,732 L428,716 C412,594 408,456 418,340 C424,274 438,222 448,202 Z"/>
+        <path d="M398,238 C366,294 356,438 370,610 C376,684 386,728 402,744 L430,718 C414,594 410,452 420,314 C424,270 430,242 436,224 Z"/>
+        <path d="M370,360 C354,462 360,628 386,780 L416,770 C398,628 394,482 404,354 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M390,238 C372,360 374,592 402,752" stroke="#34343e" stroke-width="1.4"/>
+        <path d="M424,286 C412,430 414,600 432,708" stroke="#050509" stroke-width="3"/>
       </g>
       <!-- leg: white shin + dark boot (toe forward) -->
       <polygon points="420,724 440,724 436,812 422,812" fill="#fafafa"/>
@@ -55,11 +60,19 @@
       <g fill="#2a2a33"><rect x="418" y="804" width="20" height="7" rx="3"/></g>
       <!-- coat profile (black) + skirt panels -->
       <g fill="#16161c">
-        <path d="M418,310 C410,360 412,420 418,460 C414,490 416,512 424,522 L474,522 C484,500 482,460 478,440 C488,410 490,360 482,316 Z"/>
-        <path d="M420,522 L410,664 L414,724 L480,724 L484,664 L476,522 Z"/>
-        <path d="M410,648 L401,768 L405,794 L436,794 L438,768 L436,648 Z"/>
+        <path d="M418,310 C408,362 410,422 418,462 C414,492 416,512 424,522 L482,522 C494,494 492,454 486,432 C496,402 496,356 484,316 Z"/>
+        <path d="M420,522 L408,664 L412,724 L486,724 L492,664 L480,522 Z"/>
+        <path d="M408,648 L398,768 L402,794 L432,794 L436,768 L434,648 Z"/>
+        <path d="M438,646 L438,768 L444,794 L474,794 L472,768 L462,646 Z"/>
       </g>
-      <g fill="none" stroke-linecap="round"><path d="M444,534 L446,720" stroke="#08080c" stroke-width="2"/><path d="M448,540 L450,716" stroke="#34343e" stroke-width="1.2"/><path d="M436,652 L436,790" stroke="#34343e" stroke-width="1.2"/></g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M430,532 L428,722" stroke="#08080c" stroke-width="2.4"/>
+        <path d="M458,532 L464,722" stroke="#08080c" stroke-width="2"/>
+        <path d="M436,540 L434,716" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M468,540 L474,716" stroke="#34343e" stroke-width="1.2"/>
+        <path d="M434,650 L432,790" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M462,650 L474,790" stroke="#34343e" stroke-width="1.3"/>
+      </g>
       <!-- arm sleeve black + white hand -->
       <path d="M448,316 L460,360 L462,452 L456,544 L436,548 L438,452 L440,360 L442,320 Z" fill="#16161c"/>
       <path d="M436,548 L458,548 L458,576 Q447,582 436,576 Z" fill="#fafafa"/>
@@ -84,7 +97,19 @@
       <path d="M402,808 L424,808 L430,845 L396,845 Z" fill="#16161c"/>
       <path d="M458,808 L436,808 L430,845 L464,845 Z" fill="#16161c"/>
       <g fill="#2a2a33"><rect x="406" y="804" width="18" height="7" rx="3"/><rect x="436" y="804" width="18" height="7" rx="3"/></g>
-      <!-- coat back (black) + skirt + center-back seam -->
+      <!-- heavy black hair as the dominant back silhouette -->
+      <g fill="#09090d">
+        <path d="M386,226 C352,272 340,414 352,590 C360,704 380,776 408,800 C416,648 412,470 420,316 C422,270 424,240 426,228 Z"/>
+        <path d="M474,226 C508,272 520,414 508,590 C500,704 480,776 452,800 C444,648 448,470 440,316 C438,270 436,240 434,228 Z"/>
+        <path d="M392,224 Q430,204 468,224 L462,390 Q430,372 398,390 Z"/>
+        <path d="M402,360 C392,476 396,650 418,810 L442,810 C464,650 468,476 458,360 Q430,344 402,360 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M388,260 C372,410 378,646 408,790" stroke="#34343e" stroke-width="1.4"/>
+        <path d="M472,260 C488,410 482,646 452,790" stroke="#34343e" stroke-width="1.4"/>
+        <path d="M430,318 L430,800" stroke="#050509" stroke-width="3"/>
+      </g>
+      <!-- coat back (black) + skirt panels layered under hair -->
       <g fill="#16161c">
         <path d="M348,310 L334,360 L330,452 L338,545 L360,548 L362,452 L360,360 L356,314 Z"/>
         <path d="M512,310 L526,360 L530,452 L522,545 L500,548 L498,452 L500,360 L504,314 Z"/>
@@ -93,14 +118,18 @@
         <path d="M362,648 L353,768 L357,794 L390,794 L392,768 L390,648 Z"/>
         <path d="M498,648 L507,768 L503,794 L470,794 L468,768 L470,648 Z"/>
       </g>
-      <!-- long black hair covering back along vertical axis (dominant) -->
-      <g fill="#0d0d12">
-        <path d="M398,248 C372,300 366,440 380,612 C388,700 402,720 414,700 C408,560 406,420 410,320 C412,286 414,262 416,250 Z"/>
-        <path d="M462,248 C488,300 494,440 480,612 C472,700 458,720 446,700 C452,560 454,420 450,320 C448,286 446,262 444,250 Z"/>
-        <path d="M404,236 Q430,224 456,236 L452,360 Q430,350 408,360 Z"/>
+      <!-- hair overlay keeps back silhouette readable, separated from coat -->
+      <g fill="#09090d">
+        <path d="M402,270 C392,410 396,622 416,758 L430,802 L444,758 C464,622 468,410 458,270 Q430,252 402,270 Z"/>
       </g>
-      <!-- center-back seam over hair/coat -->
-      <g fill="none" stroke="#34343e" stroke-width="1.4"><path d="M430,330 L430,720"/></g>
+      <!-- skirt panel separations remain visible below hair mass -->
+      <g fill="none" stroke-linecap="round">
+        <path d="M398,536 L396,724" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M430,520 L430,800" stroke="#34343e" stroke-width="1.2"/>
+        <path d="M462,536 L464,724" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M390,650 L390,790" stroke="#2f2f38" stroke-width="1.2"/>
+        <path d="M470,650 L470,790" stroke="#2f2f38" stroke-width="1.2"/>
+      </g>
       <!-- white pauldrons -->
       <g fill="#fafafa"><path d="M340,306 C326,316 322,338 332,352 L362,346 L360,310 Z"/><path d="M520,306 C534,316 538,338 528,352 L498,346 L500,310 Z"/></g>
       <!-- collar black -->
@@ -109,41 +138,60 @@
       <use href="#helm" transform="translate(430,214) scale(0.92)" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
       <g fill="none" stroke="#b8b4ad" stroke-width="0.9"><path d="M430,168 L430,260"/><path d="M404,240 Q430,248 456,240"/></g>
       <!-- Ensō violet ring at upper back / nape -->
-      <circle cx="430" cy="300" r="16" fill="none" stroke="#8F00FF" stroke-width="2.6"/>
-      <path d="M421,289 A16 16 0 1 1 419,309" fill="none" stroke="#8F00FF" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="430" cy="306" r="13" fill="none" stroke="#8F00FF" stroke-width="2.2"/>
+      <path d="M423,296 A13 13 0 1 1 421,312" fill="none" stroke="#8F00FF" stroke-width="2.2" stroke-linecap="round"/>
     </g>
 
     <!-- ============ 3/4 ============ -->
     <g id="fig34">
+      <!-- rotated hair mass, visible behind far shoulder and side plane -->
       <g fill="#0d0d12">
-        <path d="M412,200 C374,208 350,252 342,334 C336,432 342,576 366,706 L400,694 C388,562 384,430 392,346 C398,288 414,232 424,208 Z"/>
-        <path d="M448,202 C486,210 512,254 520,336 C526,436 520,580 498,704 L466,694 C478,564 482,432 474,348 C468,290 446,234 438,208 Z"/>
-        <path d="M404,192 Q432,180 458,192 L454,250 Q430,240 408,250 Z"/>
+        <path d="M412,198 C372,204 346,248 338,330 C330,432 338,584 366,724 L408,708 C394,572 392,438 402,342 C408,284 424,230 438,204 Z"/>
+        <path d="M442,202 C474,214 496,258 504,336 C512,450 504,600 484,726 L454,710 C466,574 468,438 460,344 C454,286 442,238 432,208 Z"/>
+        <path d="M402,194 Q432,178 464,194 L458,258 Q430,244 406,258 Z"/>
       </g>
+      <path d="M394,250 C380,388 384,598 412,752" fill="none" stroke="#34343e" stroke-width="1.3" stroke-linecap="round"/>
       <polygon points="408,720 426,720 423,812 410,812" fill="#fafafa"/>
-      <polygon points="458,720 440,720 443,812 456,812" fill="#fafafa"/>
+      <polygon points="458,718 440,722 446,812 460,812" fill="#fafafa"/>
       <path d="M404,808 L426,808 L430,845 L398,845 Z" fill="#16161c"/>
       <path d="M462,808 L440,808 L434,845 L468,845 Z" fill="#16161c"/>
+      <!-- rotated coat volume: front plane plus visible right side plane -->
       <g fill="#16161c">
         <path d="M350,310 L336,360 L332,452 L340,545 L362,548 L364,452 L362,360 L358,314 Z"/>
         <path d="M516,312 L530,360 L532,452 L524,545 L502,548 L500,452 L504,362 L508,316 Z"/>
-        <path d="M352,308 L358,360 L368,450 L364,500 L374,520 L492,520 L502,500 L498,450 L508,360 L514,308 Z"/>
-        <path d="M374,520 L364,664 L368,724 L496,724 L500,664 L490,520 Z"/>
+        <path d="M354,308 L360,360 L370,450 L366,500 L378,520 L470,520 L482,500 L480,450 L488,360 L500,312 Z"/>
+        <path d="M470,322 L508,350 L506,470 L492,520 L470,520 L478,452 Z" fill="#101017"/>
+        <path d="M378,520 L364,664 L368,724 L474,724 L482,664 L470,520 Z"/>
+        <path d="M474,522 L500,548 L508,666 L496,724 L474,724 L482,664 Z" fill="#101017"/>
         <path d="M364,648 L355,768 L359,794 L392,794 L394,768 L392,648 Z"/>
-        <path d="M500,648 L509,768 L505,794 L472,794 L470,768 L472,648 Z"/>
+        <path d="M468,648 L472,768 L482,794 L508,794 L500,768 L492,648 Z"/>
       </g>
-      <g fill="none" stroke-linecap="round"><path d="M404,534 L406,720" stroke="#08080c" stroke-width="2"/><path d="M434,532 L434,722" stroke="#08080c" stroke-width="2"/><path d="M466,534 L464,720" stroke="#08080c" stroke-width="2"/><path d="M438,538 L438,718" stroke="#34343e" stroke-width="1.2"/></g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M404,534 L406,720" stroke="#08080c" stroke-width="2"/>
+        <path d="M436,532 L434,722" stroke="#08080c" stroke-width="2.2"/>
+        <path d="M474,534 L490,720" stroke="#08080c" stroke-width="2"/>
+        <path d="M440,538 L438,718" stroke="#34343e" stroke-width="1.2"/>
+        <path d="M482,548 L496,718" stroke="#34343e" stroke-width="1.2"/>
+      </g>
       <g fill="#fafafa">
-        <path d="M396,330 L470,330 L474,392 Q432,408 392,392 Z"/>
+        <path d="M396,330 L464,330 L476,350 L472,392 Q432,408 392,392 Z"/>
+        <path d="M464,330 L488,348 L486,388 L472,392 L476,350 Z" fill="#e8e5df"/>
         <path d="M344,306 C330,316 326,338 336,352 L366,346 L364,310 Z"/><path d="M522,308 C536,318 540,340 530,354 L500,348 L502,312 Z"/>
         <path d="M342,548 L364,548 L364,576 Q353,582 342,576 Z"/><path d="M524,548 L502,548 L502,576 Q513,582 524,576 Z"/>
       </g>
-      <path d="M402,308 L396,262 L414,248 Q434,242 454,248 L470,262 L464,308 Z" fill="#16161c"/>
-      <!-- 3/4 helmet white + 2 slits foreshortened + violet halo -->
-      <use href="#helm" transform="translate(432,214) scale(0.9,0.92)" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
-      <use href="#helmFacets" transform="translate(432,214) scale(0.9,0.92)" stroke="#b8b4ad" stroke-width="0.9"/>
-      <g fill="none" stroke="#8F00FF" stroke-width="4.5" stroke-linecap="round" opacity="0.45"><path d="M418,209 L429,211"/><path d="M449,210 L440,211.5"/></g>
-      <g fill="none" stroke="#26262c" stroke-width="2.2" stroke-linecap="round"><path d="M418,209 L429,211"/><path d="M449,210 L440,211.5"/></g>
+      <path d="M402,308 L396,262 L414,248 Q436,242 456,250 L476,270 L470,308 Z" fill="#16161c"/>
+      <!-- 3/4 helmet angled: front plane plus visible side volume, 2 sealed slits only -->
+      <path d="M410,168 L438,164 L464,178 L482,204 L476,232 L454,256 L420,260 L396,240 L386,210 L392,184 Z" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
+      <path d="M438,164 L464,178 L482,204 L476,232 L454,256 L444,214 Z" fill="#ece9e3" stroke="#cbc7c0" stroke-width="0.8"/>
+      <g fill="none" stroke="#b8b4ad" stroke-width="0.9">
+        <path d="M426,170 L430,258"/>
+        <path d="M400,198 L476,204"/>
+        <path d="M394,184 L410,214 L398,238"/>
+        <path d="M464,178 L454,214 L454,256"/>
+        <path d="M410,246 L430,258 L454,256"/>
+      </g>
+      <g fill="none" stroke="#8F00FF" stroke-width="4.2" stroke-linecap="round" opacity="0.45"><path d="M414,209 L426,211"/><path d="M450,207 L439,211"/></g>
+      <g fill="none" stroke="#26262c" stroke-width="2.2" stroke-linecap="round"><path d="M414,209 L426,211"/><path d="M450,207 L439,211"/></g>
     </g>
   </defs>
 

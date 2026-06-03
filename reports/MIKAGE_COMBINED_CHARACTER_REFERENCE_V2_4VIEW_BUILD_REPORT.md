@@ -22,7 +22,7 @@
 
 ## 4-View Status
 
-4VIEW_STATUS = PASS
+4VIEW_STATUS = PATCHED_AFTER_OPERATOR_VISUAL_REVIEW
 
 Verified view markers:
 
@@ -30,6 +30,13 @@ Verified view markers:
 - SIDE
 - BACK
 - 3/4
+
+Patch verification:
+
+- FRONT_STATUS = PRESERVED_PASS
+- SIDE_STATUS = PATCHED: increased readable hair mass behind helmet/shoulder, clarified coat/skirt layering, added lower panel separation.
+- BACK_STATUS = PATCHED: made long heavy black hair the main back silhouette, added subtle edge/layer separation, kept one small controlled upper-back Enso, clarified vertical skirt panels.
+- THREE_QUARTER_STATUS = PATCHED: rebuilt to show rotated mask angle, shoulder depth, side hair mass, coat side plane, and skirt panel depth without extra ornaments or extra violet.
 
 ## Hard Status
 
@@ -40,6 +47,7 @@ RENDER_ALLOWED = NO
 ## CHUA_XAC_NHAN
 
 - Combined V2 4-view remains a draft integration pending operator review.
+- Side/Back/3-4 patch remains pending operator visual review.
 - Final palette/value tuning remains pending.
 - Master-Bible numeric confirmation remains pending where not already operator-ruled.
 - `tools/cast_render_kit/` tracking status remains CHUA_XAC_NHAN.

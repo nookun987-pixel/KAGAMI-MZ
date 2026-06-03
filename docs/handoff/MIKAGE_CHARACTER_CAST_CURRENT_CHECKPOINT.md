@@ -6,12 +6,17 @@ ASSET_LOCK = NO
 RENDER_ALLOWED = NO
 APPROVED_SOURCE = design/character_combined_reference_v2/MIKAGE_COMBINED_CHARACTER_REFERENCE_V2_FRONT.svg
 CURRENT_4VIEW_DRAFT = design/character_combined_reference_v2/MIKAGE_COMBINED_CHARACTER_REFERENCE_V2_4VIEW.svg
+SIDE_STATUS = PATCHED_AFTER_OPERATOR_HOLD
+BACK_STATUS = PATCHED_AFTER_OPERATOR_HOLD
+THREE_QUARTER_STATUS = PATCHED_AFTER_OPERATOR_REVIEW
 NEXT_SAFE_TASK = OPERATOR_REVIEW_COMBINED_REFERENCE_V2_4VIEW_BEFORE_ANY_RENDER
 
 ## Verification
 
 - Front V2.1 source exists and contains the V2.1 label, upper-back Enso routing note, and hard status flags.
 - Current 4-view draft exists and contains FRONT, SIDE, BACK, and 3/4 view markers.
+- Front view remains preserved as PASS.
+- Side/Back/3-4 were patched after operator visual review; they remain draft until operator review.
 - This checkpoint does not canon-lock, asset-lock, or render-enable the character reference.
 
 ## Hard Stop
