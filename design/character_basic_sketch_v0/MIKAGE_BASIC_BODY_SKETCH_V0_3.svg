@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1010" width="1500" height="1010" font-family="ui-monospace, 'Space Mono', monospace">
+  <defs>
+    <style>
+      .mono{font-family:ui-monospace,'Space Mono',monospace;}
+      text{fill:#3a3a42;}
+    </style>
+    <path id="helmetPath" d="M0,-52 C18,-52 33,-40 36,-20 C38,-4 35,12 29,24 C23,36 13,46 0,50 C-13,46 -23,36 -29,24 C-35,12 -38,-4 -36,-20 C-33,-40 -18,-52 0,-52 Z"/>
+    <g id="helmetSeam" fill="none">
+      <path d="M0,-48 L0,30"/>
+      <path d="M-30,-18 Q0,-10 30,-18"/>
+    </g>
+    <g id="helmetSlits">
+      <rect x="-19" y="-3.2" width="15" height="2.2"/>
+      <rect x="-20" y="-5.4" width="1.2" height="6"/>
+      <rect x="-5.2" y="-5.4" width="1.2" height="6"/>
+      <rect x="4" y="-3.2" width="15" height="2.2"/>
+      <rect x="18.8" y="-5.4" width="1.2" height="6"/>
+      <rect x="4" y="-5.4" width="1.2" height="6"/>
+    </g>
+  </defs>
+
+  <rect width="1500" height="1010" fill="#fbfaf8"/>
+  <rect x="20" y="20" width="1460" height="970" fill="none" stroke="#1a1a22" stroke-width="1.5"/>
+
+  <!-- header -->
+  <text class="mono" x="44" y="50" font-size="12" letter-spacing="3" fill="#3a3a42">MIKAGE ZENITH STUDIO  ·  CHARACTER CAST LANE</text>
+  <text class="mono" x="750" y="50" font-size="15" letter-spacing="6" text-anchor="middle" fill="#1a1a22">MIKAGE — BASIC BODY SKETCH  V0.3</text>
+  <text class="mono" x="1456" y="50" font-size="12" letter-spacing="3" text-anchor="end" fill="#3a3a42">REV V0.3 · DRAFT</text>
+  <line x1="44" y1="66" x2="1456" y2="66" stroke="#1a1a22" stroke-width="0.8"/>
+  <text class="mono" x="44" y="86" font-size="10.5" letter-spacing="2" fill="#6a6a74">V0.3 FIX = SILHOUETTE REFINE · SMOOTH SEALED PORCELAIN SHELL · ROUNDED SHOULDERS · ARMS MERGED INTO BODY MASS · CLEANER BOOTS · HELMET+GORGET KEPT (V0.2) · NO WEAPON/COSTUME/COLOR/RENDER</text>
+
+  <!-- ================= PROPORTION RULER ================= -->
+  <g class="mono" font-size="10" fill="#6a6a74">
+    <line x1="150" y1="170" x2="150" y2="845" stroke="#9a978f" stroke-width="1"/>
+    <g stroke="#9a978f" stroke-width="0.8">
+      <line x1="142" y1="170" x2="1320" y2="170" stroke="#e0ddd6"/>
+      <line x1="142" y1="260" x2="1320" y2="260" stroke="#e0ddd6"/>
+      <line x1="142" y1="350" x2="1320" y2="350" stroke="#e0ddd6"/>
+      <line x1="142" y1="440" x2="1320" y2="440" stroke="#e0ddd6"/>
+      <line x1="142" y1="521" x2="1320" y2="521" stroke="#d2cfc7" stroke-dasharray="5 4"/>
+      <line x1="142" y1="530" x2="1320" y2="530" stroke="#e0ddd6"/>
+      <line x1="142" y1="620" x2="1320" y2="620" stroke="#e0ddd6"/>
+      <line x1="142" y1="674" x2="1320" y2="674" stroke="#e0ddd6"/>
+      <line x1="142" y1="710" x2="1320" y2="710" stroke="#e0ddd6"/>
+      <line x1="142" y1="800" x2="1320" y2="800" stroke="#e0ddd6"/>
+      <line x1="142" y1="822" x2="1320" y2="822" stroke="#e0ddd6"/>
+      <line x1="142" y1="845" x2="1320" y2="845" stroke="#9a978f"/>
+    </g>
+    <g text-anchor="end" fill="#3a3a42">
+      <text x="138" y="174">0.0</text><text x="138" y="264">1.0</text><text x="138" y="354">2.0</text>
+      <text x="138" y="444">3.0</text><text x="138" y="534">4.0</text><text x="138" y="624">5.0</text>
+      <text x="138" y="714">6.0</text><text x="138" y="804">7.0</text><text x="138" y="849">7.5</text>
+    </g>
+    <g fill="#6a6a74" font-size="9.5">
+      <text x="60" y="186">CROWN</text><text x="60" y="256">CHIN</text><text x="60" y="300">SHOULDER</text>
+      <text x="60" y="354">CHEST</text><text x="60" y="444">WAIST</text><text x="60" y="517">MID · HIP/CROTCH</text>
+      <text x="60" y="678">KNEE</text><text x="60" y="826">ANKLE</text><text x="60" y="858">SOLE</text>
+    </g>
+    <text x="60" y="170" font-size="9.5" fill="#6a6a74">HEAD UNITS</text>
+  </g>
+
+  <!-- ================= PANEL A — REFINED SILHOUETTE cx=430 ================= -->
+  <g>
+    <text class="mono" x="430" y="900" font-size="11" letter-spacing="2" text-anchor="middle" fill="#1a1a22">A · SILHOUETTE — MONOLITH</text>
+    <text class="mono" x="430" y="918" font-size="9" letter-spacing="1" text-anchor="middle" fill="#6a6a74">smooth porcelain shell · arms merged</text>
+
+    <g fill="#15151c">
+      <!-- legs: heavy columnar (kept) -->
+      <polygon points="372,512 422,520 418,668 380,672"/>
+      <polygon points="382,680 418,676 412,816 392,818"/>
+      <polygon points="488,512 438,520 442,668 480,672"/>
+      <polygon points="478,680 442,676 448,816 468,818"/>
+      <!-- boots: clean simple intentional -->
+      <path d="M382,814 L416,814 L416,834 L426,847 L372,847 L372,834 Z"/>
+      <path d="M478,814 L444,814 L444,834 L434,847 L488,847 L488,834 Z"/>
+      <!-- UPPER BODY: one continuous sealed shell — torso + arms merged (no floating limbs) -->
+      <path d="M400,300
+               C366,303 348,328 344,364
+               C341,405 340,455 341,498
+               C342,524 346,546 352,564
+               C355,575 366,577 372,569
+               C378,552 380,534 381,520
+               L430,521 L479,520
+               C480,534 482,552 488,569
+               C494,577 505,575 508,564
+               C514,546 518,524 519,498
+               C520,455 519,405 516,364
+               C512,328 494,303 460,300 Z"/>
+      <!-- GORGET shell (kept from V0.2) -->
+      <path d="M384,308 L394,266 L414,248 Q430,243 446,248 L466,266 L476,308 L456,320 Q430,326 404,320 Z"/>
+      <!-- helmet (porcelain mask, kept) -->
+      <use href="#helmetPath" transform="translate(430,214) scale(0.92)"/>
+    </g>
+
+    <!-- porcelain shell seams (paper hairlines) — arms shown as seams, not gaps -->
+    <g stroke="#fbfaf8" stroke-width="1.3" fill="none" stroke-linecap="round">
+      <path d="M362,332 C358,420 360,500 366,556"/>
+      <path d="M498,332 C502,420 500,500 494,556"/>
+      <path d="M362,330 Q430,320 498,330"/>
+      <path d="M372,382 Q430,376 488,382"/>
+      <path d="M430,362 L430,452"/>
+      <path d="M378,452 Q430,457 482,452"/>
+      <path d="M404,504 L456,504"/>
+      <path d="M404,300 Q430,308 456,300"/>
+    </g>
+    <use href="#helmetSeam" transform="translate(430,214) scale(0.92)" stroke="#fbfaf8" stroke-width="1.1" stroke-opacity="0.3"/>
+    <use href="#helmetSlits" transform="translate(430,214) scale(0.92)" fill="#fbfaf8"/>
+  </g>
+
+  <!-- ================= PANEL B — BLOCKOUT (kept from V0.2) cx=790 ================= -->
+  <g>
+    <text class="mono" x="790" y="900" font-size="11" letter-spacing="2" text-anchor="middle" fill="#1a1a22">B · BLOCKOUT</text>
+    <text class="mono" x="790" y="918" font-size="9" letter-spacing="1" text-anchor="middle" fill="#6a6a74">volumes · joints · centerline</text>
+    <line x1="790" y1="168" x2="790" y2="525" stroke="#c2bfb7" stroke-width="1" stroke-dasharray="4 4"/>
+    <g stroke="#d2cfc7" stroke-linecap="round" fill="none">
+      <line x1="758" y1="520" x2="760" y2="674" stroke-width="44"/>
+      <line x1="760" y1="674" x2="762" y2="820" stroke-width="30"/>
+      <line x1="822" y1="520" x2="820" y2="674" stroke-width="44"/>
+      <line x1="820" y1="674" x2="818" y2="820" stroke-width="30"/>
+      <line x1="708" y1="306" x2="698" y2="440" stroke-width="26"/>
+      <line x1="698" y1="440" x2="706" y2="560" stroke-width="24"/>
+      <line x1="872" y1="306" x2="882" y2="440" stroke-width="26"/>
+      <line x1="882" y1="440" x2="874" y2="560" stroke-width="24"/>
+    </g>
+    <g stroke="#1a1a22" stroke-width="1.6" fill="none">
+      <use href="#helmetPath" transform="translate(790,214) scale(0.92)" stroke-width="1.7"/>
+      <use href="#helmetSeam" transform="translate(790,214) scale(0.92)" stroke="#8a8780" stroke-width="0.9"/>
+      <path d="M766,308 L776,272 L804,272 L814,308 Z"/>
+      <ellipse cx="790" cy="374" rx="64" ry="82"/>
+      <path d="M744 470 L836 470 L822 530 L758 530 Z"/>
+      <line x1="790" y1="304" x2="790" y2="470"/>
+    </g>
+    <use href="#helmetSlits" transform="translate(790,214) scale(0.92)" fill="#1a1a22"/>
+    <g fill="#1a1a22">
+      <circle cx="708" cy="306" r="6"/><circle cx="872" cy="306" r="6"/>
+      <circle cx="698" cy="440" r="5.5"/><circle cx="882" cy="440" r="5.5"/>
+      <circle cx="706" cy="560" r="5"/><circle cx="874" cy="560" r="5"/>
+      <circle cx="758" cy="520" r="6.5"/><circle cx="822" cy="520" r="6.5"/>
+      <circle cx="760" cy="674" r="6"/><circle cx="820" cy="674" r="6"/>
+      <circle cx="762" cy="820" r="5.5"/><circle cx="818" cy="820" r="5.5"/>
+    </g>
+    <g stroke="#1a1a22" stroke-width="1.6" fill="none">
+      <path d="M744,808 L778,808 L780,828 L786,842 L740,844 L740,828 Z"/>
+      <path d="M836,808 L802,808 L800,828 L794,842 L840,844 L840,828 Z"/>
+    </g>
+  </g>
+
+  <!-- ================= PANEL C — STICK / SKELETON (kept) cx=1140 ================= -->
+  <g>
+    <text class="mono" x="1140" y="900" font-size="11" letter-spacing="2" text-anchor="middle" fill="#1a1a22">C · STICK POSE</text>
+    <text class="mono" x="1140" y="918" font-size="9" letter-spacing="1" text-anchor="middle" fill="#6a6a74">balance line · skeleton</text>
+    <line x1="1140" y1="170" x2="1140" y2="845" stroke="#c2bfb7" stroke-width="1" stroke-dasharray="3 5"/>
+    <g stroke="#1a1a22" stroke-width="3" fill="none" stroke-linecap="round">
+      <use href="#helmetPath" transform="translate(1140,212) scale(0.64)" stroke-width="4.3"/>
+      <line x1="1140" y1="246" x2="1140" y2="306"/>
+      <line x1="1058" y1="306" x2="1222" y2="306"/>
+      <line x1="1140" y1="306" x2="1140" y2="500"/>
+      <line x1="1076" y1="500" x2="1204" y2="500"/>
+      <line x1="1058" y1="306" x2="1046" y2="440"/>
+      <line x1="1046" y1="440" x2="1056" y2="560"/>
+      <line x1="1222" y1="306" x2="1234" y2="440"/>
+      <line x1="1234" y1="440" x2="1224" y2="560"/>
+      <line x1="1076" y1="500" x2="1084" y2="674"/>
+      <line x1="1084" y1="674" x2="1090" y2="822"/>
+      <line x1="1204" y1="500" x2="1196" y2="674"/>
+      <line x1="1196" y1="674" x2="1190" y2="822"/>
+      <line x1="1090" y1="822" x2="1116" y2="836"/>
+      <line x1="1190" y1="822" x2="1164" y2="836"/>
+    </g>
+    <g fill="#1a1a22">
+      <circle cx="1058" cy="306" r="5"/><circle cx="1222" cy="306" r="5"/>
+      <circle cx="1046" cy="440" r="4.5"/><circle cx="1234" cy="440" r="4.5"/>
+      <circle cx="1076" cy="500" r="5"/><circle cx="1204" cy="500" r="5"/>
+      <circle cx="1084" cy="674" r="4.5"/><circle cx="1196" cy="674" r="4.5"/>
+    </g>
+  </g>
+
+  <!-- ================= HELMET DETAIL INSET (kept) ================= -->
+  <g>
+    <rect x="1300" y="150" width="158" height="206" fill="#f4f2ee" stroke="#1a1a22" stroke-width="1.2"/>
+    <text class="mono" x="1379" y="172" font-size="9.5" letter-spacing="1" text-anchor="middle" fill="#1a1a22">HELMET + GORGET</text>
+    <path d="M1352,330 L1360,292 L1398,292 L1406,330 Z" fill="#dedbd4" stroke="#1a1a22" stroke-width="0.9"/>
+    <use href="#helmetPath" transform="translate(1379,250) scale(1.5)" fill="#e9e7e1" stroke="#1a1a22" stroke-width="0.95"/>
+    <use href="#helmetSeam" transform="translate(1379,250) scale(1.5)" stroke="#8a8780" stroke-width="0.55"/>
+    <use href="#helmetSlits" transform="translate(1379,250) scale(1.5)" fill="#1a1a22"/>
+    <text class="mono" x="1379" y="346" font-size="7.5" letter-spacing="0.3" text-anchor="middle" fill="#6a6a74">FACELESS · NO EYES/MOUTH/NOSE</text>
+    <text class="mono" x="1379" y="356" font-size="7.5" letter-spacing="0.3" text-anchor="middle" fill="#6a6a74">MASK NESTED IN GORGET SHELL</text>
+  </g>
+
+  <!-- ================= NOTES ================= -->
+  <g class="mono">
+    <line x1="44" y1="936" x2="1456" y2="936" stroke="#1a1a22" stroke-width="0.6"/>
+    <text x="44" y="956" font-size="9.5" letter-spacing="1" fill="#3a3a42">WORKING BLOCK: 7.5 HEADS · MID-LINE AT HIP/CROTCH · HEAVY/MONOLITH CALM MASS — PROPOSED / UNCONFIRMED vs MASTER CANON</text>
+    <text x="44" y="972" font-size="9.5" letter-spacing="1" fill="#6a6a74">SILHOUETTE: smooth sealed porcelain shell · rounded shoulders (de-boxed) · arms MERGED into body mass (seam not gap) · cleaner boots · helmet+gorget kept.   NOT A RENDER · NOT CANON · NOT ASSET-LOCKED.</text>
+  </g>
+</svg>

@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1040" width="1680" height="1040" font-family="ui-monospace, 'Space Mono', monospace">
+  <defs>
+    <style>
+      .mono{font-family:ui-monospace,'Space Mono',monospace;}
+      text{fill:#3a3a42;}
+    </style>
+
+    <!-- sealed porcelain mask (front/back/3-4) from V0.5 -->
+    <path id="helmetPath" d="M0,-52 C18,-52 33,-40 36,-20 C38,-4 35,12 29,24 C23,36 13,46 0,50 C-13,46 -23,36 -29,24 C-35,12 -38,-4 -36,-20 C-33,-40 -18,-52 0,-52 Z"/>
+    <g id="helmetSeam" fill="none">
+      <path d="M0,-48 L0,30"/>
+      <path d="M-30,-18 Q0,-10 30,-18"/>
+    </g>
+    <g id="helmetSlits">
+      <rect x="-19" y="-3.2" width="15" height="2.2"/>
+      <rect x="-20" y="-5.4" width="1.2" height="6"/>
+      <rect x="-5.2" y="-5.4" width="1.2" height="6"/>
+      <rect x="4" y="-3.2" width="15" height="2.2"/>
+      <rect x="18.8" y="-5.4" width="1.2" height="6"/>
+      <rect x="4" y="-5.4" width="1.2" height="6"/>
+    </g>
+    <!-- sealed porcelain mask PROFILE (side): flatter face front (+x), rounded occiput (-x) -->
+    <path id="helmetProfile" d="M2,-52 C16,-52 26,-42 30,-24 C32,-8 31,10 27,24 C22,38 12,48 2,51 C-10,49 -22,40 -29,25 C-37,10 -40,-12 -35,-32 C-30,-46 -14,-52 2,-52 Z"/>
+
+    <!-- ===== V0.5 BODY (source of truth) authored at cx=430; reused for front/back/3-4 ===== -->
+    <g id="frontBody" fill="#15151c">
+      <polygon points="372,512 422,520 418,668 380,672"/>
+      <polygon points="382,680 418,676 412,816 392,818"/>
+      <polygon points="488,512 438,520 442,668 480,672"/>
+      <polygon points="478,680 442,676 448,816 468,818"/>
+      <path d="M382,814 L416,814 L416,834 L426,847 L372,847 L372,834 Z"/>
+      <path d="M478,814 L444,814 L444,834 L434,847 L488,847 L488,834 Z"/>
+      <path d="M344,348 L329,372 L325,414 L326,450 L331,456 L332,512 L341,548 L350,561 L360,560 L361,549 L355,510 L352,456 L347,450 L344,408 L343,368 Z"/>
+      <path d="M516,348 L531,372 L535,414 L534,450 L529,456 L528,512 L519,548 L510,561 L500,560 L499,549 L505,510 L508,456 L513,450 L516,408 L517,368 Z"/>
+      <path d="M400,302 C376,306 356,320 346,348 C350,392 352,432 351,470 C350,492 352,506 360,518 L430,521 L500,518 C508,506 510,492 509,470 C508,432 510,392 514,348 C504,320 484,306 460,302 Z"/>
+      <path d="M384,308 L394,266 L414,248 Q430,243 446,248 L466,266 L476,308 L456,320 Q430,326 404,320 Z"/>
+      <use href="#helmetPath" transform="translate(430,214) scale(0.92)"/>
+    </g>
+
+    <!-- FRONT detail (paper seams + slit cuts) at cx=430 -->
+    <g id="frontDetail" fill="none" stroke="#fbfaf8" stroke-width="1.3" stroke-linecap="round">
+      <path d="M356,332 Q430,322 504,332"/>
+      <path d="M360,400 Q430,418 500,400"/>
+      <path d="M430,360 L430,400"/>
+      <path d="M364,440 Q430,446 496,440"/>
+      <path d="M372,478 Q430,483 488,478"/>
+      <path d="M398,506 L462,506"/>
+      <path d="M337,402 L341,452 L341,510"/>
+      <path d="M523,402 L519,452 L519,510"/>
+      <path d="M329,452 L350,452"/>
+      <path d="M531,452 L510,452"/>
+      <path d="M404,300 Q430,308 456,300"/>
+      <use href="#helmetSeam" transform="translate(430,214) scale(0.92)" stroke="#fbfaf8" stroke-width="1.1" stroke-opacity="0.3"/>
+      <use href="#helmetSlits" transform="translate(430,214) scale(0.92)" fill="#fbfaf8" stroke="none"/>
+    </g>
+
+    <!-- BACK detail (paper seams; NO slits; spine + shoulder blades) at cx=430 -->
+    <g id="backDetail" fill="none" stroke="#fbfaf8" stroke-width="1.3" stroke-linecap="round">
+      <path d="M356,332 Q430,322 504,332"/>
+      <path d="M430,332 L430,512"/>
+      <path d="M372,360 Q392,394 392,432"/>
+      <path d="M488,360 Q468,394 468,432"/>
+      <path d="M372,452 Q430,447 488,452"/>
+      <path d="M398,506 L462,506"/>
+      <path d="M337,402 L341,452 L341,510"/>
+      <path d="M523,402 L519,452 L519,510"/>
+      <path d="M404,300 Q430,308 456,300"/>
+      <use href="#helmetSeam" transform="translate(430,214) scale(0.92)" stroke="#fbfaf8" stroke-width="1.0" stroke-opacity="0.5"/>
+    </g>
+  </defs>
+
+  <!-- paper -->
+  <rect width="1680" height="1040" fill="#fbfaf8"/>
+  <rect x="20" y="20" width="1640" height="1000" fill="none" stroke="#1a1a22" stroke-width="1.5"/>
+
+  <!-- header -->
+  <text class="mono" x="44" y="50" font-size="12" letter-spacing="3" fill="#3a3a42">MIKAGE ZENITH STUDIO  ·  CHARACTER CAST LANE</text>
+  <text class="mono" x="840" y="50" font-size="15" letter-spacing="5" text-anchor="middle" fill="#1a1a22">MIKAGE — MODEL SHEET BASE  V1</text>
+  <text class="mono" x="1636" y="50" font-size="11" letter-spacing="2" text-anchor="end" fill="#b03a2e">DRAFT · NOT CANON · NOT ASSET-LOCKED · NO RENDER</text>
+  <line x1="44" y1="66" x2="1636" y2="66" stroke="#1a1a22" stroke-width="0.8"/>
+  <text class="mono" x="44" y="86" font-size="10.5" letter-spacing="2" fill="#6a6a74">SOURCE OF TRUTH = MIKAGE_BASIC_BODY_SKETCH_V0_5 (front) · faceless sealed porcelain shell · 2 ultra-thin mechanical slits (front/3-4) · monochrome · NO COLOR/COSTUME/WEAPON/LORE</text>
+
+  <!-- ===== shared head-unit guide lines (all four views) ===== -->
+  <g class="mono" font-size="10" fill="#6a6a74">
+    <g stroke="#e3e0d9" stroke-width="0.8">
+      <line x1="120" y1="170" x2="1456" y2="170"/>
+      <line x1="120" y1="260" x2="1456" y2="260"/>
+      <line x1="120" y1="350" x2="1456" y2="350"/>
+      <line x1="120" y1="440" x2="1456" y2="440"/>
+      <line x1="120" y1="521" x2="1456" y2="521" stroke="#d2cfc7" stroke-dasharray="5 4"/>
+      <line x1="120" y1="530" x2="1456" y2="530"/>
+      <line x1="120" y1="620" x2="1456" y2="620"/>
+      <line x1="120" y1="710" x2="1456" y2="710"/>
+      <line x1="120" y1="800" x2="1456" y2="800"/>
+      <line x1="120" y1="847" x2="1456" y2="847" stroke="#9a978f"/>
+    </g>
+    <line x1="96" y1="170" x2="96" y2="847" stroke="#9a978f" stroke-width="1"/>
+    <g text-anchor="end" fill="#3a3a42">
+      <text x="90" y="174">0.0</text><text x="90" y="264">1.0</text><text x="90" y="354">2.0</text>
+      <text x="90" y="444">3.0</text><text x="90" y="534">4.0</text><text x="90" y="624">5.0</text>
+      <text x="90" y="714">6.0</text><text x="90" y="804">7.0</text><text x="90" y="851">7.5</text>
+    </g>
+    <g fill="#9a9790" font-size="8.5">
+      <text x="44" y="174">CROWN</text><text x="44" y="263">CHIN</text>
+      <text x="44" y="519">HIP</text><text x="44" y="851">SOLE</text>
+    </g>
+    <text x="44" y="160" font-size="9" fill="#6a6a74">HEAD UNITS</text>
+  </g>
+
+  <!-- ===== 1 · FRONT (cx=330) ===== -->
+  <use href="#frontBody" transform="translate(-100,0)"/>
+  <use href="#frontDetail" transform="translate(-100,0)"/>
+  <text class="mono" x="330" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">1 · FRONT</text>
+  <text class="mono" x="330" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">source of truth (V0.5)</text>
+
+  <!-- ===== 2 · SIDE (cx=640) — profile ===== -->
+  <g fill="#15151c">
+    <!-- far leg sliver (depth) -->
+    <polygon points="612,518 632,520 628,668 612,665"/>
+    <!-- near leg -->
+    <polygon points="616,516 664,520 660,668 624,672"/>
+    <polygon points="626,680 658,676 654,816 636,818"/>
+    <!-- boot, toe forward (+x) -->
+    <path d="M634,814 L660,814 L690,836 L690,848 L628,848 L628,832 Z"/>
+    <!-- torso profile -->
+    <path d="M612,300 C606,342 606,384 609,422 C611,454 613,486 616,518 L664,520 C672,494 670,462 665,452 C675,430 678,404 675,386 C672,352 663,320 646,304 Z"/>
+    <!-- arm profile (over front of torso) -->
+    <path d="M650,316 C640,358 638,418 642,468 C644,498 650,520 656,540 L668,538 C672,510 670,468 668,428 C666,388 664,348 662,320 Z"/>
+    <!-- gorget profile -->
+    <path d="M624,308 L626,272 L648,260 Q660,258 668,266 L672,292 L666,312 Q645,318 628,314 Z"/>
+    <!-- helmet profile -->
+    <use href="#helmetProfile" transform="translate(640,214) scale(0.92)"/>
+  </g>
+  <g fill="none" stroke="#fbfaf8" stroke-width="1.3" stroke-linecap="round">
+    <path d="M620,392 Q650,402 676,392"/>
+    <path d="M618,440 Q648,447 672,440"/>
+    <path d="M620,478 Q648,483 668,478"/>
+    <path d="M646,360 C644,430 648,500 654,536"/>
+    <path d="M628,306 Q648,312 666,304"/>
+  </g>
+  <text class="mono" x="648" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">2 · SIDE</text>
+  <text class="mono" x="648" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">profile · slits edge-on (omitted)</text>
+
+  <!-- ===== 3 · BACK (cx=950) ===== -->
+  <use href="#frontBody" transform="translate(520,0)"/>
+  <use href="#backDetail" transform="translate(520,0)"/>
+  <text class="mono" x="950" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">3 · BACK</text>
+  <text class="mono" x="950" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">no slits · spine + scapula seams</text>
+
+  <!-- ===== 4 · 3/4 (cx=1260) — front body foreshortened (scaleX 0.8) ===== -->
+  <use href="#frontBody" transform="translate(916,0) scale(0.8,1)"/>
+  <use href="#frontDetail" transform="translate(916,0) scale(0.8,1)"/>
+  <text class="mono" x="1260" y="892" font-size="12" letter-spacing="2" text-anchor="middle" fill="#1a1a22">4 · 3/4</text>
+  <text class="mono" x="1260" y="909" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="#6a6a74">turned · 2 slits foreshortened</text>
+
+  <!-- ===== status / notes ===== -->
+  <g class="mono">
+    <line x1="44" y1="936" x2="1636" y2="936" stroke="#1a1a22" stroke-width="0.6"/>
+    <text x="44" y="956" font-size="9.5" letter-spacing="1" fill="#3a3a42">WORKING BLOCK: 7.5 HEADS · HEAVY/MONOLITH CALM · SEGMENTED SEALED PORCELAIN SHELL (not human mannequin, not robot armor, not mascot blob) — PROPOSED / UNCONFIRMED vs MASTER CANON</text>
+    <text x="44" y="972" font-size="9.5" letter-spacing="1" fill="#6a6a74">CHUA_XAC_NHAN: side/back/3-4 are DERIVED from the front blockout (not separately operator-approved) · proportions unconfirmed · hands/feet schematic.   DRAFT · NOT CANON · NOT ASSET-LOCKED · NO RENDER.</text>
+  </g>
+</svg>
