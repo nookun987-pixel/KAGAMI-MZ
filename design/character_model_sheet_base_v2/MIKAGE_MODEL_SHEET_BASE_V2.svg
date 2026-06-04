@@ -255,6 +255,27 @@
 <use href="#figSide" transform="translate(315,16) scale(0.78)"/>
 <use href="#figBack" transform="translate(665,16) scale(0.78)"/>
 <use href="#fig34" transform="translate(1015,16) scale(0.78)"/>
+<!-- ===== REFINEMENT OVERLAY (vector hairlines only; figure defs UNCHANGED) ===== -->
+<!-- clarity strokes drawn in each figure's own coordinate space via matched use-transforms -->
+<g id="refineFront" transform="translate(-35,16) scale(0.78)" fill="none" stroke-linecap="round">
+  <path d="M430,398 L430,520" stroke="#08080c" stroke-width="1.6"/><!-- coat closed center seam -->
+  <path d="M398,845 L430,845" stroke="#050509" stroke-width="1.4"/><!-- L boot sole edge -->
+  <path d="M436,845 L462,845" stroke="#050509" stroke-width="1.4"/><!-- R boot sole edge -->
+  <path d="M356,554 L356,572" stroke="#cbc7c0" stroke-width="1"/><!-- L mitten thumb-nub -->
+  <path d="M504,554 L504,572" stroke="#cbc7c0" stroke-width="1"/><!-- R mitten thumb-nub -->
+</g>
+<g id="refineSide" transform="translate(315,16) scale(0.78)" fill="none" stroke-linecap="round">
+  <path d="M414,846 L472,846" stroke="#050509" stroke-width="1.4"/><!-- boot sole edge -->
+</g>
+<g id="refineBack" transform="translate(665,16) scale(0.78)" fill="none" stroke-linecap="round">
+  <path d="M398,845 L428,845" stroke="#050509" stroke-width="1.4"/><!-- L boot sole edge -->
+  <path d="M436,845 L462,845" stroke="#050509" stroke-width="1.4"/><!-- R boot sole edge -->
+</g>
+<g id="refine34" transform="translate(1015,16) scale(0.78)" fill="none" stroke-linecap="round">
+  <path d="M436,398 L436,520" stroke="#08080c" stroke-width="1.6"/><!-- coat closed center seam -->
+  <path d="M400,845 L428,845" stroke="#050509" stroke-width="1.4"/><!-- L boot sole edge -->
+  <path d="M436,845 L466,845" stroke="#050509" stroke-width="1.4"/><!-- R boot sole edge -->
+</g>
 <g class="mono" font-size="11" font-weight="bold">
 <circle cx="300" cy="150" r="10" fill="#1a1a22"/>
 <text x="300" y="154" text-anchor="middle" fill="#fafafa">1</text>
