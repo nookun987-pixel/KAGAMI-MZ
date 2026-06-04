@@ -48,3 +48,8 @@ produce static HTML files the user can view. For production code, copy assets an
 rules here to design as a brand expert. If invoked with no other guidance, ask what the user
 wants to build, ask a few focused questions, then act as an expert designer outputting HTML
 artifacts or production code. Do not invent or redesign the Mikage canon.
+
+## See also
+See also: mikage-taste-module.md (brand anti-slop) and mikage-cine-color-contract.md
+(cine color, LOCKED). Load both and run their pre-flight checks before any color output.
+Never blend brand and cine palettes — one layer per asset.

@@ -1,5 +1,30 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
+## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
+```
+STATUS: OPERATOR_COLOR_CONTRACT_LOCKED
+LOCKED_AT: 2026-06-04
+LOCKED_BY: Operator (BOOS BỚP)
+
+LOCKED ARTIFACTS:
+- mikage-taste-module.md            (brand/UI anti-slop module)
+- mikage-cine-color-contract.md     (cine color contract — LOCKED)
+
+CINE COLOR — LOCKED VALUES:
+- VIOLET #8F00FF  -> sole emissive exception: Slit Halo / P3 Overdrive core only
+- Z-BLUE  #4B5866 -> muted Ao-zumi steel-oxide (non-emissive); replaces "cold cyan"
+- KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
+
+CURRENT_NEXT_TASK:
+  Place both contract files into the repo design-system path; have all agents load
+  them and run the pre-flight checks before any color output. No further canon
+  changes without a new explicit operator ruling.
+
+CANON GUARD:
+  Agents must not blend brand and cine palettes. One layer per asset.
+  Nothing may be re-marked or modified without explicit operator approval.
+```
+
 ## REPO
 CWD = D:\KAGAMI-MZ_SYNC_PUSH_V2
 REMOTE = origin https://github.com/nookun987-pixel/KAGAMI-MZ.git
