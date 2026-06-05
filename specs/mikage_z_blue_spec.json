@@ -1,27 +1,32 @@
 {
   "spec_name": "mikage_z_blue_spec",
-  "version": "0.1.0-provisional",
-  "status": "PROVISIONAL",
-  "final_lock_required_from": "Art Director",
+  "version": "1.0.0-locked",
+  "status": "LOCKED",
+  "source_of_truth": "design_system/mikage-cine-color-contract.md",
+  "layer": "cine / film / MV / world-art only",
+  "meaning": "Ao-zumi / Steel Oxide",
+  "emissive": false,
+  "replaces": "cold cyan",
+  "forbidden": [
+    "spectral blue",
+    "neon blue",
+    "#0000* blue range as Z-Blue",
+    "brand/UI surface usage"
+  ],
   "master_swatch": {
-    "hex": "#0000C8",
-    "rgb": { "r": 0, "g": 0, "b": 200 },
-    "cie_xy": { "x": 0.15, "y": 0.06 }
+    "hex": "#4B5866",
+    "rgb": { "r": 75, "g": 88, "b": 102 },
+    "cie_xy": null
   },
   "usage_zones": [
     {
-      "zone": "garment_base",
-      "description": "Base brand color on garment or protected material region",
-      "protection_level": "ABSOLUTE"
-    },
-    {
-      "zone": "rim_light",
-      "description": "Silhouette rim-light only",
+      "zone": "cine_material_temperature",
+      "description": "Muted non-emissive cool steel / low-temp oxidized titanium read",
       "protection_level": "CRITICAL"
     },
     {
-      "zone": "emissive_accent",
-      "description": "Small controlled accent only, never primary key",
+      "zone": "rim_or_shadow_temperature",
+      "description": "Subtractive cool-steel edge or shadow temperature only, never neon or primary key",
       "protection_level": "CRITICAL"
     }
   ],

@@ -9,12 +9,12 @@ const sharp = require("sharp");
 const path = require("path");
 const fs = require("fs");
 
-// Z-Blue master swatch from spec (provisional)
-const Z_BLUE_MASTER = { r: 0, g: 0, b: 200 }; // #0000C8
-const Z_BLUE_HUE_CENTER = 240; // degrees
-const Z_BLUE_HUE_TOLERANCE = 30; // +-30 degrees
-const Z_BLUE_SAT_MIN = 0.5;
-const Z_BLUE_VALUE_MIN = 0.3;
+// Z-Blue locked cine swatch: #4B5866 Ao-zumi / Steel Oxide, muted and non-emissive.
+const Z_BLUE_MASTER = { r: 75, g: 88, b: 102 }; // #4B5866
+const Z_BLUE_HUE_CENTER = 211; // degrees
+const Z_BLUE_HUE_TOLERANCE = 25; // +-25 degrees
+const Z_BLUE_SAT_MIN = 0.18;
+const Z_BLUE_VALUE_MIN = 0.22;
 
 function rgbToHsv(r, g, b) {
   r /= 255; g /= 255; b /= 255;

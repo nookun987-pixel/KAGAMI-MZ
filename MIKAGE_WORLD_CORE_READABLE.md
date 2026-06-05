@@ -68,7 +68,7 @@ Recovered zone model:
 - `Product Safe Zone` — full clarity, protected center
 - `Distortion Zone` — strongest controlled error
 - `Transition Zone` — only light contamination gradient
-- `Protected Z-Blue Zones` — garment base, rim light, emissive accent
+- `Protected Z-Blue Zones` — cine material temperature, rim or shadow temperature
 
 ## Weapon System
 The strongest recovered weapon is the `Zenith Blade`.
@@ -88,14 +88,19 @@ Recovered palette:
 - Kintsugi gold
 - Protected Z-Blue
 
-Recovered Z-Blue doctrine:
-- protected in governed zones
+Recovered Z-Blue doctrine, current locked resolution:
+- Z-Blue is locked to `#4B5866`
+- Meaning: Ao-zumi / Steel Oxide
+- Layer: cine / film / MV / world-art only
+- Muted and non-emissive; replaces cold cyan
+- protected in governed cine zones
 - no shift, no cast contamination, no distortion contact
-- allowed as rim or emissive accent, not as uncontrolled fill
+- allowed only as material / rim / shadow temperature, not as uncontrolled fill and not as interface color
+- spectral / neon blue in the `#0000*` range is forbidden for Z-Blue
 
 Recovered conflict:
-- Some files provide provisional `#0000C8`
-- Another validation source says the exact final lock still requires Art Director confirmation
+- Some recovery sources provided provisional `#0000C8`
+- That value is now deprecated / stale; the current cine color contract locks `#4B5866`
 
 ## Language Doctrine
 Recovered outward voice:
@@ -161,5 +166,5 @@ These were not recovered as an explicit formal taxonomy, so this section is part
 ## Recovery Note
 This reconstruction is based on strong local evidence, not a blank rewrite. The weakest areas are:
 - explicit entity taxonomy
-- a final Art-Director-locked Z-Blue value
+- historical source provenance around the deprecated provisional Z-Blue value
 - any formal “zone system” beyond the recovered production-safe-zone model

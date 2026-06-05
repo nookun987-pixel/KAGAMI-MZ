@@ -116,8 +116,10 @@ Conflict:
 - `Mikage_PreProduction_Validation_Framework.docx` says the exact final lock still requires Art Director confirmation
 
 Resolution:
-- kept provisional value in the reconstructed core
-- explicitly marked the section as partially recovered
+- preserved the provisional value as recovery history only
+- current live resolution is `#4B5866` Z-Blue (Ao-zumi / Steel Oxide), `LOCKED` by `design_system/mikage-cine-color-contract.md`
+- Z-Blue is cine / film / MV / world-art layer only, muted, non-emissive, and replaces cold cyan
+- spectral / neon blue in the `#0000*` range is forbidden for Z-Blue
 
 ### World framing: broad aesthetic universe vs strict mechanical canon
 Conflict:
@@ -146,7 +148,7 @@ Resolution:
 | weapon_system | Medium-High | `Zenith Blade` is explicit in mapper and reinforced by blade-straightness rules |
 | zones | High | strong evidence from 30-40-30 and geometry/location docs |
 | visual_dna | High | strong repeated evidence across pack, mapper, context, and geometry docs |
-| color_doctrine | Medium-High | strong structure found, but final Z-Blue lock remains provisional |
+| color_doctrine | Medium-High | strong structure found; Z-Blue current lock updated to `#4B5866` from cine color contract while preserving recovery provenance |
 | language_doctrine | Medium-High | strong community/growth context plus internal doctrine voice |
 | community_doctrine | Medium | strongest evidence is from growth-engine material rather than world-core docs |
 | canon_lock | High | directly supported by multiple doctrine and validator sources |
@@ -165,7 +167,7 @@ Partially reconstructed:
 - entity classes
 - weapon system terminology beyond `Zenith Blade`
 - community doctrine as a formal canon module
-- final Z-Blue master lock
+- archived source provenance around the former provisional Z-Blue value
 
 ## Recovery Outcome
 Recovery succeeded.

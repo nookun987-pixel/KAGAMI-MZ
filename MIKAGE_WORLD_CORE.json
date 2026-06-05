@@ -36,7 +36,7 @@
     "The subject silhouette must remain iconic and uninterrupted from the background.",
     "Porcelain / ceramic outer surfaces must read matte, precise, and material-honest.",
     "Internal structural regions must read engineered, not soft, organic, or decorative.",
-    "Z-Blue is protected as a controlled brand-color system and cannot be contaminated by grading or distortion.",
+    "Z-Blue is protected as a locked cine-layer Ao-zumi / Steel Oxide color and cannot be contaminated by grading or distortion.",
     "Crimson appears only as internal energy or disciplined accent, never as chaotic cyberpunk spill.",
     "A failing frame is discarded rather than justified by taste or artistic argument."
   ],
@@ -126,8 +126,8 @@
     {
       "name": "Protected Z-Blue Usage Zones",
       "ratio": "material-specific",
-      "position": "garment base / rim light / emissive accent",
-      "purpose": "brand-color governance with different protection levels"
+      "position": "cine material temperature / rim or shadow temperature",
+      "purpose": "locked non-emissive cine color governance with different protection levels"
     }
   ],
   "visual_dna": {
@@ -201,21 +201,27 @@
       "protected Z-Blue"
     ],
     "protected_z_blue": {
-      "status": "partially recovered",
-      "provisional_hex": "#0000C8",
+      "status": "LOCKED",
+      "hex": "#4B5866",
+      "meaning": "Ao-zumi / Steel Oxide",
+      "layer": "cine / film / MV / world-art only",
+      "emissive": false,
+      "deprecated_hex": "#0000C8",
+      "deprecated_hex_status": "stale provisional recovery value",
       "usage_zones": [
-        "garment_base",
-        "rim_light",
-        "emissive_accent"
+        "cine_material_temperature",
+        "rim_or_shadow_temperature"
       ],
       "hard_rules": [
         "no hue shift",
         "no saturation drift beyond tolerance",
         "no distortion contact",
         "no uncontrolled bloom",
-        "not a primary key light"
+        "not a primary key light",
+        "not an interface color",
+        "spectral / neon blue in the #0000* range is forbidden"
       ],
-      "contradiction_note": "Some sources provide a provisional #0000C8 swatch, while the validation framework says exact final lock still requires Art Director confirmation."
+      "current_resolution": "The cine color contract locks Z-Blue to #4B5866 as muted, non-emissive Ao-zumi / Steel Oxide and replaces cold cyan."
     },
     "forbidden_subject_colors": [
       "green",
@@ -290,7 +296,7 @@
     "Product / subject integrity is untouchable.",
     "The Mikage subject is non-human and mask-locked.",
     "30-40-30 frame logic is a core structural law, not a stylistic option.",
-    "Z-Blue protection is absolute in governed zones, though exact final swatch lock remains partially unresolved.",
+    "Z-Blue protection is absolute in governed cine zones; current locked swatch is #4B5866 Ao-zumi / Steel Oxide, non-emissive and not interface-layer.",
     "Controlled distortion is allowed only outside protected zones and only when it follows geometry.",
     "Anime/cute drift, plastic surface read, and weapon ornament drift are canon-breaking.",
     "A failed frame is rejected rather than taste-justified."
