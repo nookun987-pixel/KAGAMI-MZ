@@ -17,10 +17,36 @@
 2. Do ONLY the `CURRENT_NEXT_TASK` in that handoff. Nothing else.
 3. If the handoff is missing or ambiguous, STOP and ask the operator. Do not guess a task.
 
+## Two active operator lanes
+- Lane A = system / build / control / character rig pipeline.
+  - Owns repo/system/control files, character production pipeline, Blender / rig /
+    deformation / motion-test work, source-of-truth audits, and build/control tasks.
+- Lane B = music / public / short / website / public engine.
+  - Owns music/public production, short-hook videos, captions/release/public engine,
+    website/public pages, and public launch packages.
+
+## Local folder truth
+- `D:\KAGAMI-MZ_SYNC_PUSH_V2` = active working repo.
+- `D:\KAGAMI-MZ` = original repo, not clean, HOLD only, do not use as main.
+- `D:\MIKAGE ZENITH AUDIO` = external audio / short-hook root, currently unstructured.
+- `D:\workspace` = experiments only.
+
 ## Lane discipline (hard rules — never violate)
 - Follow `CURRENT_NEXT_TASK` only. Never change lanes without explicit operator authorization.
-- Do NOT create film / video / short / shotlist tasks.
-- Do NOT render. Do NOT use ComfyUI runtime. Do NOT use Blender.
+- Claude must not invent film / video / short / shotlist tasks.
+- Claude may assist Lane B only when the operator explicitly requests a specific
+  short-hook audit, mapping, package, verification, or render-prep task.
+- Do not let Lane B handoff files redirect into Lane A unless the task explicitly
+  says character rig / Blender / deformation.
+- Do not let Lane A tasks touch Lane B short/audio/release/website files unless
+  explicitly instructed.
+- Character page public/reference belongs to Lane B.
+- Character rig/mesh/Blender belongs to Lane A.
+- Claude must not render unless the operator explicitly authorizes the exact render task.
+- Claude must not use ComfyUI, Blender, Seedance, FAL, or any video/image runtime
+  unless explicitly approved for the exact task.
+- Claude must not modify `D:\MIKAGE ZENITH AUDIO` unless the operator explicitly
+  targets that folder.
 - Do NOT approve canon. Do NOT asset-lock anything.
 - Do NOT call any candidate "production-ready", "final", "PASS", or "verified".
 
