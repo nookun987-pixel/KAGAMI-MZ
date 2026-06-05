@@ -19,8 +19,9 @@
 
 ## 5. Z-BLUE CALIBRATION
 - Neutral white key protects original garment and skin values
-- Z-Blue is allowed only as rim/emissive accent under system rules
-- Z-Blue must not become dominant fill light
+- Z-Blue is locked to `#4B5866` (Ao-zumi / Steel Oxide) for cine / film / MV / world-art layer use only
+- Z-Blue is muted and non-emissive; it may support rim/material temperature under the cine color contract but must not become dominant fill light
+- Spectral / neon blue in the `#0000*` range is forbidden for Z-Blue
 
 ## 6. COMMERCIAL FIT
 - Character and garment must read in under 1 second

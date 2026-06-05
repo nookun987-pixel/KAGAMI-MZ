@@ -19,7 +19,7 @@ MIKAGE_WORLD_RECONCILIATION_OPERATOR_DECISION_V0_1
 7.  TWO_CANON_MODEL                   = CONFIRMED
 8.  ART_IMAGE_CANON_GOVERNS           = RENDER / CHARACTER / FILM / IMAGE / BLADE / MATERIAL / COMPOSITION
 9.  INTERFACE_CANON_GOVERNS           = WEBSITE / UI / SOCIAL / RELEASE PAGES / DESIGN SYSTEM
-10. Z_BLUE_STATUS                     = CHUA_XAC_NHAN / AD_LOCK_PENDING
+10. Z_BLUE_STATUS                     = LOCKED_CINE_LAYER / #4B5866 / AO_ZUMI_STEEL_OXIDE
 11. NEXT_SAFE_TASK                    = PATCH_ALIGNMENT_DOC (this file)
 ```
 
@@ -38,7 +38,7 @@ Mikage is experienced, not lore-explained-first — through: **void space · por
 |---|---|---|
 | Source | `MIKAGE_WORLD_CORE_READABLE.md` | Design System (zip) |
 | Governs | render · character · film · image · blade · material · composition | website · UI · social · release pages |
-| Palette | porcelain · void · **controlled crimson** · **kintsugi gold** · **Z-Blue** (`CHUA_XAC_NHAN`) | void `#050508` · porcelain `#f2eeea` · **violet `#8F00FF` only** |
+| Palette | porcelain · void · **controlled crimson** · **kintsugi gold** · **Z-Blue `#4B5866`** (Ao-zumi / Steel Oxide, cine layer locked) | void `#050508` · porcelain `#f2eeea` · **violet `#8F00FF` only** |
 | Extras | 30-40-30 frame · Product Safe Zone · geometry library · material stack · Zenith Blade | high negative space · hairlines · grain · slow motion |
 
 **Rule:** the two do not mix. Gold / Z-Blue / crimson never enter interface; violet-only stays interface.
@@ -52,7 +52,7 @@ Mikage is experienced, not lore-explained-first — through: **void space · por
 - **ELECTRIC VIOLET** — correct/live signal. → CTA focus, signal line, live dot, halo, underline. **Never full-screen fill.**
 - **SILVER** — infrastructure, mechanical order. → metadata, mono labels, dividers.
 - **CRIMSON** — **controlled internal energy** (premium, restrained; Mikage core, Zenith Blade core). → **ART canon only**. In INTERFACE: not a public color — internal proof/fail-state only. ❌ Crimson = leakage/entropy is **rejected**.
-- **KINTSUGI GOLD · Z-BLUE** — **ART canon only** (Z-Blue `#0000C8` `CHUA_XAC_NHAN`, AD-lock pending). Never in interface.
+- **KINTSUGI GOLD · Z-BLUE** — **ART / CINE canon only**. Z-Blue is locked to `#4B5866` (Ao-zumi / Steel Oxide), muted and non-emissive. Never in interface. Spectral / neon blue in the `#0000*` range is forbidden for Z-Blue.
 
 ---
 
@@ -109,4 +109,4 @@ Mikage stops being "music + nice images" → an IP system with: a subject + visu
 - This is the shared law for **website · lore-drip · short package · canon console**. Once you're happy, drop into repo; the Design System skill enforces the INTERFACE side automatically.
 - ⚠ **Follow-up patch needed:** the earlier **Lore-Drip series** has a post ("THE WORLD") that references megacity/undercity + "power that leaks" — that now conflicts with decisions 3/4/6. That drip is on **HOLD**; lore-drip should pull only from confirmed material (Mikage-as-subject, visual doctrine, transmission framing), not the held city geography.
 
-*End ALIGNMENT V0_2 — DRAFT. City lore held & not published; crimson = controlled internal energy; two canons separate; Z-Blue CHUA_XAC_NHAN.*
+*End ALIGNMENT V0_2 — DRAFT. City lore held & not published; crimson = controlled internal energy; two canons separate; Z-Blue locked to cine layer `#4B5866` (Ao-zumi / Steel Oxide).*

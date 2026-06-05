@@ -29,7 +29,8 @@ Direction: Clean Void & Geometry
 
 ### Forbidden
 - Any background line cutting neck / shoulder / logo
-- Any environmental color overpowering Z-Blue
+- Any environmental color overpowering locked cine Z-Blue `#4B5866` (Ao-zumi / Steel Oxide)
+- Any spectral / neon blue in the `#0000*` range as Z-Blue
 - Any background that beats product hierarchy
 
 ## 4. DISTORTION MAPPING
