@@ -133,8 +133,8 @@ Character-system constraints carried forward from Steps 1–2:
 | §8.2 Design | 100% flawless porcelain (no cracks) |
 | §8.2 Psychology | PTSD, chose security over freedom |
 | §8.2 Equipment | Unbreakable Shield (vertical plasma pillar discharge) — see §11 object section for interpretive tension |
-| §8.2 UI Color | Cold Cyan |
-| Direction Lock 1A | Porcelain Minimalism: porcelain white #FAFAFA outer + dark nickel-gray carbon-fiber under-suit + cold cyan #00FFFF emission (static glow only) + Molecular Monowire / Force-field Lyre weapon system + internal red #E60000 (hidden, spine vents only) |
+| §8.2 UI Color | Cyan |
+| Direction Lock 1A | Porcelain Minimalism: porcelain white #FAFAFA outer + dark nickel-gray carbon-fiber under-suit + cyan #00FFFF emission (static glow only; not Z-Blue) + Molecular Monowire / Force-field Lyre weapon system + internal red #E60000 (hidden, spine vents only) |
 | Damage system | NONE — flawless porcelain does not fracture, does not repair |
 | Mirror pairing | Mikage cracked / kintsugi vs Lyre flawless / unbroken |
 
@@ -157,7 +157,7 @@ Character-system constraints carried forward from Steps 1–2:
 | §8.6 Form | Non-humanoid system entity (Lock 3A — permanent, no humanoid avatar) |
 | §8.6 Allegiance | META_SUBSTRATE (Lock 4F — beneath all three ideologies) |
 | §8.6 Function | Refactor / Clean Code enforcement / reality architecture |
-| §8.6 Visual motifs | Mechanical Enso ring, Golden Patch event, White Void field, Cold Cyan server-sync |
+| §8.6 Visual motifs | Mechanical Enso ring, Golden Patch event, White Void field, cyan server-sync |
 | §8.6 Scale | Architectural (no measurable height) |
 | §8.6 Damage system | N/A — does not take damage; LORA IS the system |
 | Relation to Mikage | Control / dependency / ownership / refactor |

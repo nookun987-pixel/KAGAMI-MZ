@@ -147,7 +147,7 @@ Three system layers may be referenced at Step 2. Each is `[CONFIRMED_SOURCE]` at
 - Meta-level operating condition.
 - All three ideologies execute on top of LORA's substrate.
 - Non-physical system presence; no humanoid form (Lock 3A 2026-05-29 — permanent).
-- White Void + Cold Cyan server-sync + Clean Digital Gold (Golden Patch event).
+- White Void + cyan server-sync + Clean Digital Gold (Golden Patch event).
 - Refactor through absolute system law; chaos treated as corrupted code.
 - Does not take sides; ideologies serve the substrate.
 ```
@@ -204,7 +204,7 @@ Presented as **abstract axes only** — orientation, palette signature, philosop
 
 | Axis | Locked label | Locked aesthetic signature | Locked philosophical position |
 |---|---|---|---|
-| Order | The White Monolith (Empire) | Porcelain Minimalism · Cold Cyan lighting · sterile brutalist architecture | "Absolute order through amoral control; prevent Great Filter through discipline." |
+| Order | The White Monolith (Empire) | Porcelain Minimalism · cyan lighting · sterile brutalist architecture | "Absolute order through amoral control; prevent Great Filter through discipline." |
 | Chaos | ARCHON-IX | Fractal non-Euclidean structures · Neon Pink/Purple/Orange · Glitch-Serif typography | "Absolute freedom without responsibility; evolution without limits." |
 | Third Axis | Mikage Zenith | Porcelain + Crimson + Kintsugi · physical consequence for power | "Controlled evolution with biological cost; sacred machinery philosophy." |
 
@@ -235,7 +235,7 @@ Presented as **abstract axes only** — orientation, palette signature, philosop
 | Crimson = leakage / entropy / failure | REJECTED_FOR_CANON (alignment V0_2 §0.6) |
 | Public crimson | REJECTED (ART canon only; never interface) |
 | Public kintsugi gold | REJECTED (ART canon only; never interface) |
-| Z-Blue in any layer | CHUA_XAC_NHAN / AD_LOCK_PENDING |
+| Z-Blue in any layer | LOCKED cine-layer `#4B5866`; public/interface use forbidden |
 | WORLD page (#6) | DEFERRED |
 | Place names of any kind | OUT_OF_SCOPE_AT_STEP_2 |
 | A map | OUT_OF_SCOPE_AT_STEP_2 |

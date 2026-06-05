@@ -247,7 +247,7 @@ Carried forward (key items relevant to this overlay):
 - Release status of T30 本当の名前 — locked `uncertain` (overlay does NOT change).
 - Logo asset / wordmark final art — `UNCONFIRMED` / `DRAFT` per `data.js`.
 - LORA "Root Architect" PUBLIC framing — `CHUA_XAC_NHAN` (overlay does NOT introduce it into public copy).
-- Z-Blue hex / use case — `CHUA_XAC_NHAN` / `AD_LOCK_PENDING`.
+- Z-Blue public/interface use — forbidden; Z-Blue itself is LOCKED cine-layer `#4B5866`.
 - All other read-first §9 items.
 
 Added at Step 7:

@@ -96,7 +96,7 @@ System rules (carried forward from Steps 1–3 + alignment V0_2):
 | Short hook (video clip) | A public fragment of one transmission | `short` (operator's existing folder convention `short/`, `short_reels_tasks/`); status fields like `*_SHORT*_VERIFY_REPORT.*` | inventory references via cross-repo grep V0_1 + handoff snapshot |
 | Caption (text) | The public decode of a transmission for a specific platform | `caption`, `CLEAN_LYRIC_TOOLOST`, `platform captions` | inventory references (e.g., `GLASS_SKIN_SHORT1_PLATFORM_CAPTIONS.md`) — file existence confirmed; content per-track CHUA_XAC_NHAN until verified |
 | Website (5 sections) | The archive interface | `HOME / TRANSMISSIONS / CHARACTER / MUSIC VISUAL / CANON` | alignment §F |
-| HUD / typography | The signal voice across surfaces | `Cinzel` wordmark · `Shippori Mincho` headlines+CJK · `Space Mono` labels · canon V2 §10.1 Empire UI = Cold Cyan · Mikage HUD = `#E60000` (3D-wrapped, ≤15% frame) | design_system `colors_and_type.css` + canon V2 §10 |
+| HUD / typography | The signal voice across surfaces | `Cinzel` wordmark · `Shippori Mincho` headlines+CJK · `Space Mono` labels · canon V2 §10.1 Empire UI = cyan · Mikage HUD = `#E60000` (3D-wrapped, ≤15% frame) | design_system `colors_and_type.css` + canon V2 §10 |
 
 `[OUTLINE_ONLY]` — the mapping table is a Step 4 structural recap. It does not promote any field to canon; canon V2 §15 + design_system already lock the lower-level facts.
 

@@ -47,7 +47,7 @@ Mikage = **Vessel** — a porcelain shell containing an ancient consciousness th
 
 - Ground: void `#050508` + porcelain. **Porcelain is 2-layer scope (LOCKED 2026-06-02):** physical shell render = `#FAFAFA` (B4C); brand-UI / Canvas token = `#f2eeea`. Same identity, two registers — not a conflict.
 - Signal: violet `#8F00FF` (slit, orbital ring, "consciousness" glow) — **accent only, never a full wash.**
-- **Film layer only** may add **Z-Blue / cold cyan** (Empire / Neon Grid side) and **crimson `#E60000`** (kintsugi P2–P3 / entropy / danger). These are **forbidden in Canvas / UI**.
+- **Film layer only** may add **Z-Blue `#4B5866`** (Empire / Neon Grid side) and **crimson `#E60000`** (kintsugi P2–P3 / entropy / danger). These are **forbidden in Canvas / UI**.
 
 ---
 

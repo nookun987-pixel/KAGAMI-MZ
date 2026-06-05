@@ -72,7 +72,7 @@ Shared rules for all 5 frames:
 | Rule | Constraint |
 |---|---|
 | Canon layer | ART canon only (render context). NEVER INTERFACE canon palette in render. |
-| Palette | Porcelain `#FAFAFA` + Void Black `#0A0A0A` + Deep Crimson `#E60000` (controlled internal energy ONLY, ultra-restrained accent ≤5%) + Kintsugi Gold (ultra-thin seams only). Z-Blue `CHUA_XAC_NHAN` → **not used at V0.1**. |
+| Palette | Porcelain `#FAFAFA` + Void Black `#0A0A0A` + Deep Crimson `#E60000` (controlled internal energy ONLY, ultra-restrained accent <=5%) + Kintsugi Gold (ultra-thin seams only). Z-Blue `#4B5866` (LOCKED_CINE_LAYER) -> **not used at V0.1**. |
 | Interface violet `#8F00FF` | **Forbidden as ART fill** (Step 6 Seed Rules + Two-Canon boundary). |
 | Characters | **No humans, no humanoid figures, no character body in any frame.** These are world/background keyframes. |
 | LORA humanoid | **Forbidden** (Lock 3A permanent). LORA renders only as SYSTEM_PRESENCE (Enso ring / Golden Patch / Clean Code field / White Void field). |
@@ -568,7 +568,7 @@ LORA humanoid avatar, LORA character body, Lyre character body (DOES_NOT_EXIST),
 
 crimson leakage, crimson entropy, crimson failure, crimson dominance (crimson
 controlled accent ≤5% only), kintsugi gold dominance (gold seams ultra-thin only),
-Z-Blue (CHUA_XAC_NHAN — do not use at V0.1),
+Z-Blue (#4B5866 locked cine layer - do not use at V0.1),
 
 interface violet #8F00FF fill, interface violet wash, interface violet glow on
 ART subject,
@@ -640,7 +640,7 @@ After all 5 frames pass review and per-frame render approval, the rendered keyfr
 - ✗ Add LORA as a humanoid avatar in any frame
 - ✗ Add Lyre / LORA character bodies (both still `DOES_NOT_EXIST`)
 - ✗ Use interface violet `#8F00FF` as ART fill in any prompt
-- ✗ Use Z-Blue (`CHUA_XAC_NHAN` / `AD_LOCK_PENDING`) in any prompt
+- ✗ Use Z-Blue (`#4B5866` locked cine layer) in any V0.1 prompt
 - ✗ Commit anything
 - ✗ Push anything
 - ✗ Write more than one file

@@ -99,7 +99,7 @@ The gate applies to **every** expansion proposal in **all** of the following cla
 | New track tagline | any per-track line beyond T05 PORCELAIN ASCENSION | `CHUA_XAC_NHAN` per lore-drip patch §5 |
 | New lore-drip post | any 7th drip beyond DRIP 1–6 | The 6 are `APPROVED_FOR_CADENCE`; no new drips authorized |
 | Canon-lock | any move to `ASSET_LOCK = YES` or `CANON_LOCK = YES` | `CLAUDE.md` "Do not approve canon" + "Do not asset-lock anything" |
-| Resolution of any `CHUA_XAC_NHAN` item | `WEAPON_DRIFT_001`, LORA public "Root Architect" framing, Z-Blue hex, voice profiles, etc. | Each item requires per-item operator approval |
+| Resolution of unresolved operator-gated items | `WEAPON_DRIFT_001`, LORA public "Root Architect" framing, voice profiles, etc. | Each item requires per-item operator approval; Z-Blue is already resolved as LOCKED cine-layer `#4B5866` |
 | Crimson framing change | any reframing of crimson | `REJECTED_FOR_CANON` for leakage; controlled internal energy only |
 
 `[OUTLINE_ONLY]` — the table enumerates classes, not proposals. No expansion is proposed at this step.
@@ -153,7 +153,7 @@ A proposal is **rejected** by this gate, without further review, if it introduce
 - treating Public Reveal Board entries as public approval
 - crimson as a public interface color                (ART canon only; never interface)
 - kintsugi gold as a public interface color          (ART canon only)
-- Z-Blue as a public interface color                 (ART canon only + AD_LOCK_PENDING)
+- Z-Blue as a public interface color                 (forbidden; LOCKED cine layer only)
 - public "out now" copy for not-live-confirmed tracks
 - "AI banger" / "viral hit" / "new drop!!!" / hype punctuation
 - emoji in any brand-voice copy
@@ -180,7 +180,7 @@ Every proposal MUST declare, **verbatim**, which canon layer it sits in:
 ```text
 CANON_LAYER = ART_IMAGE_CANON
               ↳ governs: render / character / film / image / blade / material / composition
-              ↳ palette: porcelain + void + controlled crimson + kintsugi gold + Z-Blue (CHUA_XAC_NHAN)
+              ↳ palette: porcelain + void + controlled crimson + kintsugi gold + Z-Blue #4B5866 (LOCKED_CINE_LAYER)
 
 OR
 

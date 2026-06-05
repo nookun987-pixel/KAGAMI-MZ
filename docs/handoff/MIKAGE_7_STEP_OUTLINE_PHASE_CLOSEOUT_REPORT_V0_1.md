@@ -125,7 +125,7 @@ Strict invariants preserved across the entire V0.1 outline phase:
 - ✓ **5 entity drafts** in `character_workflow/proposals/` — untouched.
 - ✓ **Registry V0.2** (committed `254d029`) — untouched.
 - ✓ **Track release statuses** (per `data.js`) — unchanged. T30 still `uncertain`. Live tracks still T01–T07. Future tracks still T08+.
-- ✓ **Z-Blue** — still `CHUA_XAC_NHAN` / `AD_LOCK_PENDING`.
+- ✓ **Z-Blue** — `LOCKED_CINE_LAYER` / `#4B5866` / Ao-zumi Steel Oxide; not interface.
 - ✓ **All voice / dialogue profiles** — still MISSING (gap recorded).
 - ✓ **Mikage / Lyre official heights** — still provisional (180 cm / 188 cm).
 - ✓ **Production prompt seed for Mikage** — still MISSING (no invention).
@@ -144,7 +144,7 @@ Consolidated from the 7 outline files. Nothing promoted by the outline phase.
 - City geography / human society structure / class structure
 - Factions beyond Three Ideologies
 - WORLD page (#6)
-- Z-Blue hex / use case
+- Z-Blue public/interface use remains forbidden; hex/use case resolved as LOCKED cine-layer `#4B5866`
 
 **Characters**:
 - Mikage / Lyre official height lock (both provisional)

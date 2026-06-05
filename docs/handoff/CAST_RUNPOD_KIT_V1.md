@@ -34,7 +34,7 @@ Mikage = **Vessel** — an ordered porcelain shell containing an ancient conscio
 | **P2 Fallen / Exile** | **#FAFAFA** base, fracturing | symmetric pattern degrading | **Kintsugi cracks ON** = conductive resin + quantum blood **#E60000**; Ensō ring in "ashes / ember" state | slit + orbital | black rusty Ti frame begins to show through splits |
 | **P3 Execution** | **#FAFAFA** scarred | pattern **glows like blood vessels** | **#E60000** at max; heat-scorch scars (Erythema ab igne); mechanical Ensō ring **glows red behind the nape** | slit + orbital | **thermal mirage** (air distortion) as flux exceeds **43°C** |
 
-Crimson `#E60000` is **film-layer only — FORBIDDEN in Canvas/UI**. Violet is **accent only, never a full wash**. Z-Blue/cold cyan is film-layer Empire-side only (not used in these character cells).
+Crimson `#E60000` is **film-layer only — FORBIDDEN in Canvas/UI**. Violet is **accent only, never a full wash**. Z-Blue `#4B5866` is film-layer Empire-side only (not used in these character cells).
 
 ---
 

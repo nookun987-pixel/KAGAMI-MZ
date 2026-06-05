@@ -50,7 +50,7 @@ Extracted only confirmed operator decisions. Anything below has source authority
 | `TWO_CANON_MODEL` | `CONFIRMED` (ART_IMAGE vs INTERFACE; they do not mix) | Alignment V0_2 §0 decision 7 + §B |
 | `ART_IMAGE_CANON_GOVERNS` | render / character / film / image / blade / material / composition | Alignment V0_2 §0 decision 8 |
 | `INTERFACE_CANON_GOVERNS` | website / UI / social / release pages / design system | Alignment V0_2 §0 decision 9 |
-| `Z_BLUE_STATUS` | `CHUA_XAC_NHAN` / `AD_LOCK_PENDING` (hex `#0000C8` provisional) | Alignment V0_2 §0 decision 10 + §C |
+| `Z_BLUE_STATUS` | `LOCKED_CINE_LAYER` / `#4B5866` / Ao-zumi Steel Oxide (non-emissive; replaces cold cyan; never interface) | Cine color contract + Alignment V0_2 patched source |
 | `WORLD_PAGE_#6_STATUS` | `DEFERRED` ("Narrative geography is HOLD/PROPOSAL_ONLY — do not build or publish a world/city page now") | Alignment V0_2 §F |
 | `PUBLIC_CTA_GRAMMAR_LIVE` | exactly `Listen now` | Alignment V0_2 §D + Lore Drip patch §3 DRIP 6 + handoff |
 | `PUBLIC_CTA_GRAMMAR_FUTURE` | exactly `Pre-save` | Alignment V0_2 §D |
@@ -59,7 +59,7 @@ Extracted only confirmed operator decisions. Anything below has source authority
 | `UNKNOWN_TAGLINE_DISPLAY` | `Tagline — UNCONFIRMED` | Alignment V0_2 §D |
 | `PUBLIC_REVEAL_APPROVED_COUNT` | **0 of 23 inventoried assets** | Public Reveal Board §8 |
 | `LORE_DRIP_V0_2_STATUS` | `APPROVED_FOR_CADENCE` (6 drips operator-approved) | Handoff `LORE_DRIP_V0_2_OPERATOR_APPROVAL` block |
-| `LYRE_DIRECTION_LOCK` | `OPTION_1A_PORCELAIN_MINIMALISM_2026-05-29` (porcelain white + cold cyan + Molecular Monowire / Force-field Lyre) | Lyre Direction Lock §2 |
+| `LYRE_DIRECTION_LOCK` | `OPTION_1A_PORCELAIN_MINIMALISM_2026-05-29` (porcelain white + cyan + Molecular Monowire / Force-field Lyre; cyan is not Z-Blue) | Lyre Direction Lock §2 |
 | `LORA_FORM_LOCK` | `OPTION_3A_SYSTEM_PRESENCE_ONLY_2026-05-29` (no humanoid avatar — permanent) | Registry V0.2 §1 |
 | `LORA_FACTION_LOCK` | `OPTION_4F_META_SUBSTRATE_BELOW_2026-05-29` (substrate beneath all three ideologies) | Registry V0.2 §1 + Canon V2 §7.0 |
 | `MIKAGE_PRIMARY_PALETTE` (ART canon) | `#FAFAFA porcelain white (80%) + #0A0A0A void black (15%) + #E60000 deep crimson (5%) + kintsugi gold (ultra-thin seams only)` | Canon V2 §3.1 |
@@ -105,7 +105,7 @@ Status of each named entity at audit time:
 | Field | Status |
 |---|---|
 | Direction Lock | `OPTION_1A_PORCELAIN_MINIMALISM_2026-05-29` |
-| Locked parameters | porcelain white #FAFAFA outer; cold cyan #00FFFF emission; Molecular Monowire / Force-field Lyre; dark nickel-gray carbon-fiber under-suit; internal red #E60000 (hidden, spine vents only); NO damage system (does not fracture) |
+| Locked parameters | porcelain white #FAFAFA outer; cyan #00FFFF emission (not Z-Blue); Molecular Monowire / Force-field Lyre; dark nickel-gray carbon-fiber under-suit; internal red #E60000 (hidden, spine vents only); NO damage system (does not fracture) |
 | Height | 188 cm `PROVISIONAL_ENFORCER_SCALE` (no official lock) |
 | Superseded direction | May 23 graphite / black technical / electric violet (annotated SUPERSEDED in Lock 1A report; May 23 handoff file untouched) |
 | Brief + visual spec | both committed |
@@ -220,7 +220,7 @@ Tab Web MUST mark each of the following as `CHUA_XAC_NHAN` whenever it appears i
 | **City geography** | `NOT_CANON / DO_NOT_PUBLISH` per Alignment V0_2 §G + §0.3 |
 | **Factions** beyond Three Ideologies | Heights/Undercity/Platforms/factions = `NOT_CANON / DO_NOT_PUBLISH` |
 | **WORLD page (#6)** | `DEFERRED` per Alignment V0_2 §F |
-| **Z-Blue** hex / use case | `CHUA_XAC_NHAN` / `AD_LOCK_PENDING` per Alignment V0_2 §0.10 + §C |
+| **Z-Blue** hex / use case | `LOCKED_CINE_LAYER` / `#4B5866` / Ao-zumi Steel Oxide; resolved by cine color contract |
 | **Mikage production prompt seed** | Acknowledged MISSING in canon V2 / gap report |
 | **Voice / dialogue profiles** (all three: Mikage, Lyre, LORA) | All MISSING |
 | **Commander Lyre / LORA visual assets** | `DOES_NOT_EXIST` per board §6, §7 |
@@ -252,7 +252,7 @@ Tab Web MUST NOT introduce or reference any of the following as canon, lore, pub
 - treating Public Reveal Board entries as public approval
 - crimson as a public interface color              (ART canon only; never interface)
 - kintsugi gold as a public interface color        (ART canon only)
-- Z-Blue as a public interface color               (ART canon only + AD_LOCK_PENDING)
+- Z-Blue as a public interface color               (forbidden; LOCKED cine layer only)
 - public "out now" copy for not-live-confirmed tracks
 - "AI banger" / "viral hit" / "new drop!!!" / hype punctuation
 - emoji in any brand-voice copy

@@ -40,7 +40,7 @@ These are constraints. Do not derive new constraints from them. Do not redefine.
 - **Two-Canon Model** — ART_IMAGE canon vs INTERFACE canon; they do not mix.
 - **Crimson** = controlled internal energy; ART canon only; never interface; **never leakage** (REJECTED_FOR_CANON).
 - **Public palette** = void `#050508` + porcelain `#f2eeea` + electric violet `#8F00FF` (signal only).
-- **ART palette** = porcelain + void black + deep crimson `#E60000` + kintsugi gold (seams only); Z-Blue `CHUA_XAC_NHAN`.
+- **ART palette** = porcelain + void black + deep crimson `#E60000` + kintsugi gold (seams only); Z-Blue `#4B5866` (Ao-zumi / Steel Oxide, cine layer only, non-emissive).
 - **Three Ideologies** (Canon V2 §7.1 LOCKED): Empire / ARCHON-IX Chaos / Mikage Zenith Third Axis.
 - **LORA Substrate** (Canon V2 §7.0 LOCKED): META_SUBSTRATE beneath all three ideologies; no humanoid avatar (Lock 3A permanent).
 - **Lyre Direction** (Lock 1A): Porcelain Minimalism — white + cyan + Molecular Monowire.
@@ -207,7 +207,7 @@ All read-first §9 items remain `CHUA_XAC_NHAN`. This plan does not promote any 
 - City geography
 - Factions beyond Three Ideologies
 - WORLD page (#6)
-- Z-Blue hex / use case
+- Z-Blue public/interface use remains forbidden; hex/use case resolved as LOCKED cine-layer `#4B5866`
 - Mikage production prompt seed
 - Voice/dialogue profiles (Mikage, Lyre, LORA)
 - Lyre / LORA visual assets (`DOES_NOT_EXIST`)

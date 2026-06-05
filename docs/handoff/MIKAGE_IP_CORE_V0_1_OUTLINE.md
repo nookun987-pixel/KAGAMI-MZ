@@ -179,11 +179,11 @@ The IP-core operates on a **strict, non-mixing two-layer split**. Crossing the b
 |---|---|---|
 | Source authority | `MIKAGE_ZENITH_CANON_V2.md` + Mikage Production Bible + character_workflow/ locks | `design_system/` (committed) + alignment V0_2 §B–D |
 | Governs | render / character / film / image / blade / material / composition | website / UI / social / release pages / design system |
-| Palette | porcelain `#FAFAFA` + void black `#0A0A0A` + deep crimson `#E60000` (controlled internal energy) + kintsugi gold (ultra-thin seams) + Z-Blue `CHUA_XAC_NHAN` | void `#050508` + porcelain `#f2eeea` + electric violet `#8F00FF` (signal only, never fill) |
+| Palette | porcelain `#FAFAFA` + void black `#0A0A0A` + deep crimson `#E60000` (controlled internal energy) + kintsugi gold (ultra-thin seams) + Z-Blue `#4B5866` (Ao-zumi / Steel Oxide; cine layer only, non-emissive) | void `#050508` + porcelain `#f2eeea` + electric violet `#8F00FF` (signal only, never fill) |
 | Extras | 30-40-30 frame discipline · Product Safe Zone · geometry library · material stack · Zenith Blade | high negative space · hairlines · grain · slow motion |
 | Crimson | YES, controlled internal energy (Mikage core, Zenith Blade core) | NO, never |
 | Kintsugi gold | YES, ultra-thin seams only | NO, never |
-| Z-Blue | reserved (`CHUA_XAC_NHAN`, AD-lock pending) | NO, never |
+| Z-Blue | LOCKED cine-layer `#4B5866`, never interface | NO, never |
 | Electric violet | NO (Mikage's ART canon accent is restrained violet only at Bible level; Lyre uses cyan; LORA uses cyan + clean digital gold) | YES, signal accent — never full-screen fill |
 | Cyan (cold) | LIMITED — Lyre identity (Lock 1A); LORA server-sync; never on Mikage's body (Canon V2 §3.3) | LIMITED — Empire UI text token (Canon V2 §10.1) |
 
@@ -204,7 +204,7 @@ Preserved verbatim from `MIKAGE_TAB_WEB_READ_FIRST_IP_WORLD_CONTEXT_V0_1.md` §9
 - City geography
 - Factions beyond Three Ideologies
 - WORLD page (#6)
-- Z-Blue hex / use case
+- Z-Blue public/interface use remains forbidden; hex/use case resolved as LOCKED cine-layer `#4B5866`
 - Mikage production prompt seed
 - Voice / dialogue profiles (Mikage, Lyre, LORA)
 - Commander Lyre / LORA visual assets (`DOES_NOT_EXIST`)
