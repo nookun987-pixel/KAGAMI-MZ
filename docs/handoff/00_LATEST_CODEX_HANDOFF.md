@@ -16,23 +16,30 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
+  MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN
+  MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+  MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN
   Rest Mode remains closed for broad work. This exception allows only the named
-  Mikage formal material/silhouette review report task.
+  Mikage public hero render candidate proof task.
   Source/reference files:
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
   - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-  Allowed output:
   - production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
-  No `.blend` edits. No render creation. No Lane B. No website / HTML. No roster
-  / queue. No Z-Blue archive/history cleanup. No push. Production rig ready = NO.
-  Public render ready = NO. Asset lock = NO.
+  - docs/mikage_character_visual_spec.md
+  - docs/mikage_universe_visual_system.md
+  - design_system/mikage-cine-color-contract.md
+  Allowed outputs:
+  - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md
+  Candidate proof only. No `.blend` edits. No asset lock. No public render ready
+  claim. No production rig ready claim. No website/public deployment. No Lane B.
+  No website / HTML. No roster / queue. No Z-Blue archive/history cleanup. No push.
+  Production rig ready = NO. Public render ready = NO. Asset lock = NO.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.

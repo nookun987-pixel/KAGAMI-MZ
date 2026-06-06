@@ -76,18 +76,28 @@ If Windsurf command output is incomplete but external Windows CMD output has bee
 - One controlled exception is open:
   - `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET`
   - `MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET`
-  - `MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN`
-  - Only allowed next task: `MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1`
-  - Only allowed output:
-    - `production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md`
+  - `MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET`
+  - `MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN`
+  - Only allowed next task: `MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1`
+  - Only allowed outputs:
+    - `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md`
   - Source/reference files for the allowed task:
+    - `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend`
     - `production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md`
     - `production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png`
-    - `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend`
+    - `production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md`
+    - `docs/mikage_character_visual_spec.md`
+    - `docs/mikage_universe_visual_system.md`
+    - `design_system/mikage-cine-color-contract.md`
   - Source V0.1 must not be overwritten.
   - Source V0.3 must not be overwritten.
   - No `.blend` edits.
-  - No render creation.
+  - Candidate proof only.
+  - No asset lock.
+  - No public render ready claim.
+  - No production rig ready claim.
+  - No website/public deployment.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -147,7 +157,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Verify repo state.
 - Use external CMD evidence only when Windsurf stdout is unreliable.
 - Update one explicitly declared governance file if approved.
-- Execute the single controlled exception `MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN` only when the task is exactly `MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1` and the output set is exactly the one listed formal review report.
+- Execute the single controlled exception `MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN` only when the task is exactly `MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1` and the output set is exactly the two listed candidate proof files.
 - Report next safe action.
 - Write structured status back to the requested target.
 

@@ -1,33 +1,45 @@
-task_id: MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE
-target_lane: Mikage formal material/silhouette review / controlled report
+task_id: MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE
+target_lane: Mikage public hero render candidate / controlled proof package
 status: ACTIVE
-current_step: MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1
+current_step: MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1
 
 goal: >
-  Reopen one controlled Mikage review/report exception so the next task can create
-  the formal material/silhouette review report from the completed Completion Lookdev
-  V0.2 proof package. Rest Mode remains closed for broad work.
+  Reopen one controlled Mikage public hero render candidate proof exception so the
+  next task can create the candidate contact sheet and proof report from Completion
+  Lookdev V0.2 and the formal material/silhouette review. Rest Mode remains closed
+  for broad work.
 
 next_safe_task: >
-  MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
+  MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: OPEN
+  MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+  MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   source_references:
+    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
     - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
     - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+    - production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+    - docs/mikage_character_visual_spec.md
+    - docs/mikage_universe_visual_system.md
+    - design_system/mikage-cine-color-contract.md
   no_v0_1_overwrite: true
   no_v0_3_overwrite: true
   no_blend_edits: true
-  no_render_creation: true
+  candidate_proof_only: true
+  no_public_render_ready_claim: true
+  no_production_rig_ready_claim: true
+  no_asset_lock: true
+  no_website_public_deployment: true
+  no_push: true
 
 output_files_allowed:
-  - production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+  - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -44,8 +56,12 @@ forbidden_actions:
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
   - do not edit any .blend file
-  - do not create renders
+  - do not create files outside candidate proof outputs
   - do not create files outside output_files_allowed
+  - do not claim public render ready
+  - do not claim production rig ready
+  - do not asset-lock
+  - do not deploy website or public page
   - do not run Lane B
   - do not touch website or HTML files
   - do not touch roster files
@@ -66,9 +82,9 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - formal material/silhouette review report exists
+  - public hero render candidate contact sheet exists
+  - public hero render candidate proof report exists
   - no .blend files edited
-  - no render files created
   - no Lane B files touched
   - no website or HTML files touched
   - no roster or queue files touched

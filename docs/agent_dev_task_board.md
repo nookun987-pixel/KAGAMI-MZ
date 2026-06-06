@@ -6,21 +6,28 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage review/report exception
-- STATUS = MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE_OPEN
+- PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage public hero candidate proof exception
+- STATUS = MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE_OPEN
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-- MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN
-- ONLY_ALLOWED_NEXT_TASK = MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
-- SOURCE_REFERENCE_1 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
-- SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-- SOURCE_REFERENCE_3 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-- ONLY_ALLOWED_OUTPUT_1 = production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+- MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+- MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN
+- ONLY_ALLOWED_NEXT_TASK = MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
+- SOURCE_REFERENCE_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+- SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- SOURCE_REFERENCE_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+- SOURCE_REFERENCE_4 = production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+- SOURCE_REFERENCE_5 = docs/mikage_character_visual_spec.md
+- SOURCE_REFERENCE_6 = docs/mikage_universe_visual_system.md
+- SOURCE_REFERENCE_7 = design_system/mikage-cine-color-contract.md
+- ONLY_ALLOWED_OUTPUT_1 = production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png
+- ONLY_ALLOWED_OUTPUT_2 = production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md
 - V0_1_OVERWRITE_ALLOWED = NO
 - V0_3_OVERWRITE_ALLOWED = NO
 - BLEND_EDIT_ALLOWED = NO
-- RENDER_CREATION_ALLOWED = NO
+- CANDIDATE_PROOF_ONLY = YES
+- WEBSITE_PUBLIC_DEPLOYMENT_ALLOWED = NO
 - PRODUCTION_RIG_READY = NO
 - PUBLIC_RENDER_READY = NO
 - ASSET_LOCK = NO
@@ -38,13 +45,13 @@
 - NONE
 
 ## 5. Next Safe Action
-- MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
-- Review/report work is allowed only for `MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN`.
-- The next task may create exactly the one formal review report listed above and must not edit `.blend` files or create renders.
+- MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
+- Candidate proof work is allowed only for `MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN`.
+- The next task may create exactly the two candidate proof outputs listed above and must not edit `.blend` files, claim public render ready, claim production rig ready, asset-lock, deploy website/public pages, or push.
 
 ## 6. Forbidden Actions
 - No push.
-- No runtime except the single controlled Mikage formal review/report task listed above.
+- No runtime except the single controlled Mikage public hero candidate proof task listed above.
 - No RENT/GARA/Image/Call lane run.
 - No sync/GSheet/Telegram.
 - No touching D:\KAGAMI-MZ.
