@@ -1,14 +1,15 @@
-task_id: MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE
-target_lane: Mikage hero real lookdev / controlled A2 chain
-status: COMPLETED_ACCEPTED_AS_PROOF
-current_step: HOLD_FOR_OPERATOR_DECISION_AFTER_A2
+task_id: MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE
+target_lane: Mikage production rig readiness audit / controlled report
+status: ACTIVE
+current_step: MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
 
 goal: >
-  Close the controlled A2 real lookdev chain for Mikage as accepted proof.
-  RENDER_ALLOWED is returned to NO. Rest Mode remains closed for broad work.
+  Open the controlled production rig readiness audit for Mikage after accepted
+  A2 proof. This is audit/report only. RENDER_ALLOWED remains NO. Rest Mode
+  remains closed for broad work.
 
 next_safe_task: >
-  HOLD_FOR_OPERATOR_DECISION_AFTER_A2
+  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -16,42 +17,37 @@ runtime_phase:
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
+  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
   render_allowed: false
-  current_next_task: HOLD_FOR_OPERATOR_DECISION_AFTER_A2
-  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+  current_task: MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
+  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   source_references:
-    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-    - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
-    - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-    - production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+    - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
+    - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
+    - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
     - docs/mikage_character_visual_spec.md
     - docs/mikage_universe_visual_system.md
     - design_system/mikage-cine-color-contract.md
   no_v0_1_overwrite: true
   no_v0_3_overwrite: true
-  no_source_blend_edits: true
-  candidate_proof_only: true
+  no_blend_edits: true
+  audit_report_only: true
   no_public_render_ready_claim: true
   no_production_rig_ready_claim: true
   no_asset_lock: true
   no_website_public_deployment: true
+  no_deformation_test: true
   no_push: true
   scope: >
-    MIKAGE_HERO_REAL_LOOKDEV_V0_1 scope: fix proportion; attach hands to body;
-    add hair per operator ruling; real material + lighting; candidate proof only;
-    no public-ready claim; no production-rig-ready claim; no asset lock; no
-    website/public deployment.
-  next_decision_note: >
-    A2 proof accepted only. No public-ready claim. No production-rig-ready claim.
-    No asset lock. Next requires operator decision: 1. production rig readiness
-    audit; 2. public presentation polish; 3. website/public page update; 4.
-    stop/hold.
+    MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1 scope: inspect readiness risks
+    from the A2 hero real lookdev source; create one audit report only; do not
+    edit .blend; do not run deformation test; do not claim production rig ready,
+    public render ready, or asset lock.
 
 output_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -67,8 +63,10 @@ forbidden_actions:
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
-  - do not edit source .blend files
-  - do not create files outside A2 output files
+  - do not edit production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+  - do not edit any .blend files
+  - do not run deformation smoke test
+  - do not create files outside the rig readiness audit output file
   - do not create files outside output_files_allowed
   - do not claim public render ready
   - do not claim production rig ready
@@ -94,17 +92,17 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE is COMPLETED_ACCEPTED_AS_PROOF
+  - MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE is OPEN
   - RENDER_ALLOWED is NO
   - production rig ready remains NO
   - public render ready remains NO
   - asset lock remains NO
-  - no source .blend files edited
+  - no .blend files edited
   - no Lane B files touched
   - no website or HTML files touched
   - no roster or queue files touched
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: operator decision
+next_step_if_pass: create rig readiness audit report
 next_step_if_fail: stop and report reason only

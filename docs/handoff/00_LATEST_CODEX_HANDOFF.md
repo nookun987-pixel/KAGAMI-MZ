@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  HOLD_FOR_OPERATOR_DECISION_AFTER_A2
+  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -24,32 +24,27 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
+  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE = OPEN
   RENDER_ALLOWED = NO
-  Rest Mode remains closed for broad work. A2 real lookdev proof is accepted
-  only; no further render/runtime work is authorized by this handoff.
+  Rest Mode remains closed for broad work. The only authorized next task is the
+  production rig readiness audit report. No render/runtime/deformation test is
+  authorized by this handoff.
   Source/reference files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
-  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
   - docs/mikage_character_visual_spec.md
   - docs/mikage_universe_visual_system.md
   - design_system/mikage-cine-color-contract.md
   Allowed outputs:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
-  Scope: fix proportion, attach hands to body, add hair per operator ruling, real
-  material + lighting. Candidate proof only. No asset lock. No public render ready
-  claim. No production rig ready claim. No website/public deployment. No Lane B.
-  No website / HTML. No roster / queue. No Z-Blue archive/history cleanup. No push.
-  Production rig ready = NO. Public render ready = NO. Asset lock = NO.
-  A2 proof accepted only. No public-ready claim. No production-rig-ready claim.
-  No asset lock. Next requires operator decision:
-  1. production rig readiness audit
-  2. public presentation polish
-  3. website/public page update
-  4. stop/hold
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
+  Scope: inspect rig-readiness risks from the A2 hero real lookdev source; create
+  one audit report only; do not edit .blend; do not run deformation test; do not
+  claim public render ready, production rig ready, asset lock, or final completion.
+  No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
+  cleanup. No push. Production rig ready = NO. Public render ready = NO. Asset
+  lock = NO.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.

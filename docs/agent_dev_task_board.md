@@ -6,36 +6,35 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with controlled A2 real lookdev chain completed as accepted proof
-- STATUS = MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE_COMPLETED_ACCEPTED_AS_PROOF
+- PHASE = Operator Rest Mode / Governance Handoff with controlled production rig readiness audit open
+- STATUS = MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE_OPEN
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
-- CURRENT_NEXT_TASK = HOLD_FOR_OPERATOR_DECISION_AFTER_A2
 - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
+- CURRENT_TASK = MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
+- MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE = OPEN
 - RENDER_ALLOWED = NO
-- SOURCE_REFERENCE_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-- SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
-- SOURCE_REFERENCE_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-- SOURCE_REFERENCE_4 = production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
+- SOURCE_REFERENCE_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+- SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
+- SOURCE_REFERENCE_3 = production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
+- SOURCE_REFERENCE_4 = production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
 - SOURCE_REFERENCE_5 = docs/mikage_character_visual_spec.md
 - SOURCE_REFERENCE_6 = docs/mikage_universe_visual_system.md
 - SOURCE_REFERENCE_7 = design_system/mikage-cine-color-contract.md
-- ONLY_ALLOWED_OUTPUT_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-- ONLY_ALLOWED_OUTPUT_2 = production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
-- ONLY_ALLOWED_OUTPUT_3 = production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
+- ONLY_ALLOWED_OUTPUT_1 = production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
 - V0_1_OVERWRITE_ALLOWED = NO
 - V0_3_OVERWRITE_ALLOWED = NO
-- SOURCE_BLEND_EDIT_ALLOWED = NO
-- CANDIDATE_PROOF_ONLY = YES
+- BLEND_EDIT_ALLOWED = NO
+- DEFORMATION_TEST_ALLOWED = NO
+- AUDIT_REPORT_ONLY = YES
 - WEBSITE_PUBLIC_DEPLOYMENT_ALLOWED = NO
 - PRODUCTION_RIG_READY = NO
 - PUBLIC_RENDER_READY = NO
 - ASSET_LOCK = NO
-- A2_SCOPE_NOTE = MIKAGE_HERO_REAL_LOOKDEV_V0_1 scope: fix proportion; attach hands to body; add hair per operator ruling; real material + lighting; candidate proof only; no public-ready claim; no production-rig-ready claim; no asset lock; no website/public deployment.
-- A2_NEXT_DECISION_NOTE = A2 proof accepted only. No public-ready claim. No production-rig-ready claim. No asset lock. Next requires operator decision: 1. production rig readiness audit; 2. public presentation polish; 3. website/public page update; 4. stop/hold.
+- RIG_AUDIT_SCOPE_NOTE = MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1 scope: inspect readiness risks from the A2 hero real lookdev source; create one audit report only; do not edit .blend; do not run deformation test; do not claim production rig ready, public render ready, or asset lock.
 
 ## 3. Completed Items
 - AUTOPILOT_GUARD_BASELINE = DONE
@@ -50,9 +49,10 @@
 - NONE
 
 ## 5. Next Safe Action
-- Hold for operator decision after accepted A2 proof.
+- Run exactly `MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1`.
 - `RENDER_ALLOWED = NO`.
-- Next requires operator decision: production rig readiness audit, public presentation polish, website/public page update, or stop/hold.
+- Create only `production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md`.
+- Do not edit `.blend`, do not run deformation test, and do not claim production rig ready, public render ready, or asset lock.
 
 ## 6. Forbidden Actions
 - No push.
