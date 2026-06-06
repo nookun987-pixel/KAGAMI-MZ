@@ -6,16 +6,16 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with controlled A2 real lookdev chain open
-- STATUS = MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE_OPEN
+- PHASE = Operator Rest Mode / Governance Handoff with controlled A2 real lookdev chain completed as accepted proof
+- STATUS = MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE_COMPLETED_ACCEPTED_AS_PROOF
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
-- CURRENT_TASK = MIKAGE_HERO_REAL_LOOKDEV_V0_1
-- MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = OPEN
-- RENDER_ALLOWED = YES
+- CURRENT_NEXT_TASK = HOLD_FOR_OPERATOR_DECISION_AFTER_A2
+- MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
+- RENDER_ALLOWED = NO
 - SOURCE_REFERENCE_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
 - SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
 - SOURCE_REFERENCE_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
@@ -35,6 +35,7 @@
 - PUBLIC_RENDER_READY = NO
 - ASSET_LOCK = NO
 - A2_SCOPE_NOTE = MIKAGE_HERO_REAL_LOOKDEV_V0_1 scope: fix proportion; attach hands to body; add hair per operator ruling; real material + lighting; candidate proof only; no public-ready claim; no production-rig-ready claim; no asset lock; no website/public deployment.
+- A2_NEXT_DECISION_NOTE = A2 proof accepted only. No public-ready claim. No production-rig-ready claim. No asset lock. Next requires operator decision: 1. production rig readiness audit; 2. public presentation polish; 3. website/public page update; 4. stop/hold.
 
 ## 3. Completed Items
 - AUTOPILOT_GUARD_BASELINE = DONE
@@ -49,9 +50,9 @@
 - NONE
 
 ## 5. Next Safe Action
-- Run exactly `MIKAGE_HERO_REAL_LOOKDEV_V0_1` under the controlled A2 chain.
-- `RENDER_ALLOWED = YES` only for this controlled chain.
-- Scope: fix proportion, attach hands to body, add hair per operator ruling, real material + lighting. Candidate only. No public-ready claim. No production-rig-ready claim. No asset lock. No public deployment.
+- Hold for operator decision after accepted A2 proof.
+- `RENDER_ALLOWED = NO`.
+- Next requires operator decision: production rig readiness audit, public presentation polish, website/public page update, or stop/hold.
 
 ## 6. Forbidden Actions
 - No push.

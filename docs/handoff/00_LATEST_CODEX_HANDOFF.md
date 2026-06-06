@@ -16,17 +16,17 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1
+  HOLD_FOR_OPERATOR_DECISION_AFTER_A2
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = OPEN
-  RENDER_ALLOWED = YES
-  Rest Mode remains closed for broad work. A2 real lookdev is authorized only for
-  this controlled chain.
+  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
+  RENDER_ALLOWED = NO
+  Rest Mode remains closed for broad work. A2 real lookdev proof is accepted
+  only; no further render/runtime work is authorized by this handoff.
   Source/reference files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
@@ -44,6 +44,12 @@ CONTROLLED_RUNTIME_EXCEPTION:
   claim. No production rig ready claim. No website/public deployment. No Lane B.
   No website / HTML. No roster / queue. No Z-Blue archive/history cleanup. No push.
   Production rig ready = NO. Public render ready = NO. Asset lock = NO.
+  A2 proof accepted only. No public-ready claim. No production-rig-ready claim.
+  No asset lock. Next requires operator decision:
+  1. production rig readiness audit
+  2. public presentation polish
+  3. website/public page update
+  4. stop/hold
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.

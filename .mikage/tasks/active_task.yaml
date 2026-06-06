@@ -1,24 +1,24 @@
 task_id: MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE
 target_lane: Mikage hero real lookdev / controlled A2 chain
-status: ACTIVE
-current_step: MIKAGE_HERO_REAL_LOOKDEV_V0_1
+status: COMPLETED_ACCEPTED_AS_PROOF
+current_step: HOLD_FOR_OPERATOR_DECISION_AFTER_A2
 
 goal: >
-  Open the controlled A2 real lookdev chain for Mikage. RENDER_ALLOWED is YES
-  only for this chain. Rest Mode remains closed for broad work.
+  Close the controlled A2 real lookdev chain for Mikage as accepted proof.
+  RENDER_ALLOWED is returned to NO. Rest Mode remains closed for broad work.
 
 next_safe_task: >
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1
+  HOLD_FOR_OPERATOR_DECISION_AFTER_A2
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: OPEN
+  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   rest_mode_broad_lock: RETAINED
-  render_allowed: true
-  current_task: MIKAGE_HERO_REAL_LOOKDEV_V0_1
+  render_allowed: false
+  current_next_task: HOLD_FOR_OPERATOR_DECISION_AFTER_A2
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   source_references:
     - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
@@ -42,6 +42,11 @@ runtime_phase:
     add hair per operator ruling; real material + lighting; candidate proof only;
     no public-ready claim; no production-rig-ready claim; no asset lock; no
     website/public deployment.
+  next_decision_note: >
+    A2 proof accepted only. No public-ready claim. No production-rig-ready claim.
+    No asset lock. Next requires operator decision: 1. production rig readiness
+    audit; 2. public presentation polish; 3. website/public page update; 4.
+    stop/hold.
 
 output_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
@@ -89,8 +94,8 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE is OPEN
-  - RENDER_ALLOWED is YES only for this controlled A2 chain
+  - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE is COMPLETED_ACCEPTED_AS_PROOF
+  - RENDER_ALLOWED is NO
   - production rig ready remains NO
   - public render ready remains NO
   - asset lock remains NO
@@ -101,5 +106,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: operator review
+next_step_if_pass: operator decision
 next_step_if_fail: stop and report reason only
