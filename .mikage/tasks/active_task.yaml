@@ -1,12 +1,11 @@
-task_id: MIKAGE_HERO_CANDIDATE_V0_1_GATE_CLOSE
-target_lane: Mikage hero candidate gate close / controlled governance
+task_id: MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE
+target_lane: Mikage hero real lookdev / controlled A2 chain
 status: ACTIVE
-current_step: MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_GATE_CLOSED
+current_step: MIKAGE_HERO_REAL_LOOKDEV_V0_1
 
 goal: >
-  Close the Mikage public hero render candidate proof gate as accepted proof and
-  hold the next real lookdev task behind explicit operator render permission.
-  Rest Mode remains closed for broad work.
+  Open the controlled A2 real lookdev chain for Mikage. RENDER_ALLOWED is YES
+  only for this chain. Rest Mode remains closed for broad work.
 
 next_safe_task: >
   MIKAGE_HERO_REAL_LOOKDEV_V0_1
@@ -16,9 +15,10 @@ runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1: GATED
+  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
-  render_allowed: false
+  render_allowed: true
+  current_task: MIKAGE_HERO_REAL_LOOKDEV_V0_1
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   source_references:
     - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
@@ -30,23 +30,23 @@ runtime_phase:
     - design_system/mikage-cine-color-contract.md
   no_v0_1_overwrite: true
   no_v0_3_overwrite: true
-  no_blend_edits: true
+  no_source_blend_edits: true
   candidate_proof_only: true
   no_public_render_ready_claim: true
   no_production_rig_ready_claim: true
   no_asset_lock: true
   no_website_public_deployment: true
   no_push: true
-  next_scope_note: >
-    MIKAGE_HERO_REAL_LOOKDEV_V0_1 is gated. RENDER_ALLOWED = NO until operator
-    explicitly sets YES. Scope when opened: fix proportion, attach hands to body,
-    add hair per operator ruling, real material + lighting. Candidate only. No
-    public-ready claim. No production-rig-ready claim. No asset lock. No public
-    deployment.
+  scope: >
+    MIKAGE_HERO_REAL_LOOKDEV_V0_1 scope: fix proportion; attach hands to body;
+    add hair per operator ruling; real material + lighting; candidate proof only;
+    no public-ready claim; no production-rig-ready claim; no asset lock; no
+    website/public deployment.
 
 output_files_allowed:
-  - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -62,8 +62,8 @@ forbidden_actions:
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
-  - do not edit any .blend file
-  - do not create files outside candidate proof outputs
+  - do not edit source .blend files
+  - do not create files outside A2 output files
   - do not create files outside output_files_allowed
   - do not claim public render ready
   - do not claim production rig ready
@@ -89,17 +89,16 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - public hero render candidate phase is completed accepted as proof
-  - next task pointer is MIKAGE_HERO_REAL_LOOKDEV_V0_1
-  - RENDER_ALLOWED remains NO
-  - no .blend files edited
+  - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE is OPEN
+  - RENDER_ALLOWED is YES only for this controlled A2 chain
+  - production rig ready remains NO
+  - public render ready remains NO
+  - asset lock remains NO
+  - no source .blend files edited
   - no Lane B files touched
   - no website or HTML files touched
   - no roster or queue files touched
   - no Z-Blue archive/history files touched
-  - production rig ready remains NO
-  - public render ready remains NO
-  - asset lock remains NO
 
 verify_command: python .mikage/tools/verify_output.py
 next_step_if_pass: operator review

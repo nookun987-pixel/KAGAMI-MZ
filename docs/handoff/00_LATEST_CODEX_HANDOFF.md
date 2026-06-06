@@ -23,11 +23,10 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1 = GATED
-  RENDER_ALLOWED = NO
-  Rest Mode remains closed for broad work. The public hero render candidate proof
-  is accepted as proof. The next real lookdev task is gated until operator
-  explicitly sets RENDER_ALLOWED = YES.
+  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = OPEN
+  RENDER_ALLOWED = YES
+  Rest Mode remains closed for broad work. A2 real lookdev is authorized only for
+  this controlled chain.
   Source/reference files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
@@ -36,13 +35,15 @@ CONTROLLED_RUNTIME_EXCEPTION:
   - docs/mikage_character_visual_spec.md
   - docs/mikage_universe_visual_system.md
   - design_system/mikage-cine-color-contract.md
-  Candidate proof only. No `.blend` edits. No asset lock. No public render ready
+  Allowed outputs:
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
+  Scope: fix proportion, attach hands to body, add hair per operator ruling, real
+  material + lighting. Candidate proof only. No asset lock. No public render ready
   claim. No production rig ready claim. No website/public deployment. No Lane B.
   No website / HTML. No roster / queue. No Z-Blue archive/history cleanup. No push.
   Production rig ready = NO. Public render ready = NO. Asset lock = NO.
-  Scope when opened: fix proportion, attach hands to body, add hair per operator
-  ruling, real material + lighting. Candidate only. No public-ready claim. No
-  production-rig-ready claim. No asset lock. No public deployment.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
