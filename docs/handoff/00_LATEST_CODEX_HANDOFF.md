@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  HOLD_FOR_OPERATOR_REVIEW_MESH_PREP_BEFORE_DEFORMATION_TEST
+  MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -26,14 +26,18 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE = COMPLETED_NEEDS_MESH_PREP
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE = COMPLETED_READY_FOR_OPERATOR_REVIEW
+  MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE = OPEN
+  CURRENT_CONTROLLER = MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
+  MESH_PREP_OPERATOR_REVIEW_GATE_OPEN = YES
   MESH_PREP_GATE_OPEN = NO
   MESH_PREP_COMPLETED = YES
   MESH_PREP_DECISION = MESH_PREP_COMPLETE_READY_FOR_OPERATOR_REVIEW
   RENDER_ALLOWED = NO
   DEFORMATION_TEST_ALLOWED = NO
-  Rest Mode remains closed for broad work. Mesh prep is complete for operator
-  review only. No deformation smoke test, rig test, animation, render, or public
-  output is authorized by this handoff.
+  Rest Mode remains closed for broad work. Only read-only operator review of
+  mesh prep is authorized. No .blend modification or creation, deformation smoke
+  test, rig test, animation, render, or public output is authorized by this
+  handoff.
   Source/reference files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
@@ -43,14 +47,13 @@ CONTROLLED_RUNTIME_EXCEPTION:
   - docs/mikage_universe_visual_system.md
   - design_system/mikage-cine-color-contract.md
   Allowed outputs:
+  - production/character/reviews/MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1.md
+  Review input blend:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  - production/character/reviews/MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PROOF.md
-  Scope completed: audit-driven mesh prep only. Created a new derivative from the
-  A2 source without overwriting it. Addressed only audit-named risks around arm/hand
-  connection, shoulder/upper-arm continuity, hair attachment intent, helmet/body
-  rigidity, Zenith Blade attachment intent, and presentation overlay deformation
-  blockers. Do not run deformation test, rig test, animation, or render. Do not
-  claim public render ready, production rig ready, asset lock, or final completion.
+  Scope: read-only operator review of mesh prep before any deformation test gate.
+  Do not run deformation test, rig test, animation, or render. Do not modify or
+  create any .blend file. Do not claim public render ready, production rig ready,
+  asset lock, or final completion.
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = NO. Public render ready = NO. Asset
   lock = NO.
