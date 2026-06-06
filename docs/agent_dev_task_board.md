@@ -6,8 +6,8 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with controlled production rig readiness audit completed
-- STATUS = MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE_COMPLETED_NEEDS_MESH_PREP
+- PHASE = Operator Rest Mode / Governance Handoff with controlled mesh prep before rig test open
+- STATUS = MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE_OPEN
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -16,6 +16,9 @@
 - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
 - CURRENT_NEXT_TASK = HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
 - MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE = COMPLETED_NEEDS_MESH_PREP
+- CURRENT_CONTROLLER = MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
+- MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE = OPEN
+- MESH_PREP_GATE_OPEN = YES
 - RENDER_ALLOWED = NO
 - DEFORMATION_TEST_ALLOWED = NO
 - SOURCE_REFERENCE_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
@@ -25,7 +28,8 @@
 - SOURCE_REFERENCE_5 = docs/mikage_character_visual_spec.md
 - SOURCE_REFERENCE_6 = docs/mikage_universe_visual_system.md
 - SOURCE_REFERENCE_7 = design_system/mikage-cine-color-contract.md
-- ONLY_ALLOWED_OUTPUT_1 = production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
+- OUTPUT_BLEND_ALLOWED = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
+- OUTPUT_REPORT_ALLOWED = production/character/reviews/MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PROOF.md
 - V0_1_OVERWRITE_ALLOWED = NO
 - V0_3_OVERWRITE_ALLOWED = NO
 - BLEND_EDIT_ALLOWED = NO
@@ -37,6 +41,7 @@
 - RIG_AUDIT_SCOPE_NOTE = MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1 scope: inspect readiness risks from the A2 hero real lookdev source; create one audit report only; do not edit .blend; do not run deformation test; do not claim production rig ready, public render ready, or asset lock.
 - RIG_AUDIT_DECISION = NEEDS_MESH_PREP_BEFORE_RIG_TEST
 - RIG_AUDIT_NEXT_DECISION_NOTE = Audit completed and found the A2 lookdev source should not enter deformation smoke test yet. Next requires operator-scoped mesh prep; no deformation test is allowed until a later explicit gate.
+- MESH_PREP_SCOPE_NOTE = Audit-driven mesh prep only; new derivative allowed; source blend must not be overwritten; no deformation smoke test, rig test, animation, render, production-ready claim, public-ready claim, or asset lock.
 
 ## 3. Completed Items
 - AUTOPILOT_GUARD_BASELINE = DONE
@@ -51,10 +56,11 @@
 - NONE
 
 ## 5. Next Safe Action
-- Hold for operator mesh-prep scope after production rig readiness audit.
+- Run exactly `MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1`.
 - `RENDER_ALLOWED = NO`.
 - `DEFORMATION_TEST_ALLOWED = NO`.
-- Next requires operator-scoped mesh prep before any deformation smoke test.
+- Create only the allowed derivative blend and proof report.
+- Preserve exactly two violet sensor slits, Zenith Blade, black vertical mass, porcelain helmet identity, and A2 material direction.
 
 ## 6. Forbidden Actions
 - No push.

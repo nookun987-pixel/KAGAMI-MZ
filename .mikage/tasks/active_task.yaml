@@ -1,15 +1,15 @@
-task_id: MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE
-target_lane: Mikage production rig readiness audit / controlled report
-status: COMPLETED_NEEDS_MESH_PREP
-current_step: HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
+task_id: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
+target_lane: Mikage mesh prep before rig/deformation test
+status: ACTIVE
+current_step: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
 
 goal: >
-  Close the controlled production rig readiness audit for Mikage. The audit
-  decision requires mesh prep before rig/deformation testing. RENDER_ALLOWED
-  remains NO. Rest Mode remains closed for broad work.
+  Open the controlled mesh-prep phase required by the production rig readiness
+  audit. This phase may create one new derivative blend and one proof report.
+  DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain NO.
 
 next_safe_task: >
-  HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
+  MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -18,10 +18,12 @@ runtime_phase:
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
+  MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
   render_allowed: false
   deformation_test_allowed: false
-  current_next_task: HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
+  current_controller: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
+  mesh_prep_gate_open: true
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   source_references:
     - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
@@ -42,10 +44,12 @@ runtime_phase:
   no_deformation_test: true
   no_push: true
   scope: >
-    MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1 scope: inspect readiness risks
-    from the A2 hero real lookdev source; create one audit report only; do not
-    edit .blend; do not run deformation test; do not claim production rig ready,
-    public render ready, or asset lock.
+    MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1 scope: audit-driven mesh prep only.
+    Create a new derivative from the A2 source without overwriting it. Address
+    only audit-named risks around arm/hand connection, shoulder/upper-arm
+    continuity, hair attachment intent, helmet/body rigidity, Zenith Blade
+    attachment intent, and presentation overlay deformation blockers. Do not run
+    deformation test, rig test, animation, or render.
   audit_decision: NEEDS_MESH_PREP_BEFORE_RIG_TEST
   next_decision_note: >
     Audit completed and found the A2 lookdev source should not enter deformation
@@ -55,7 +59,8 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
+  - production/character/reviews/MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PROOF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -71,10 +76,12 @@ forbidden_actions:
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
-  - do not edit production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-  - do not edit any .blend files
+  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+  - do not modify production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - do not run deformation smoke test
-  - do not create files outside the rig readiness audit output file
+  - do not create rig test output
+  - do not create animation output
+  - do not create PNG/MP4/contact sheet/render output
   - do not create files outside output_files_allowed
   - do not claim public render ready
   - do not claim production rig ready
@@ -100,7 +107,8 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE is COMPLETED_NEEDS_MESH_PREP
+  - MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE is OPEN
+  - MESH_PREP_GATE_OPEN is YES
   - RENDER_ALLOWED is NO
   - DEFORMATION_TEST_ALLOWED is NO
   - production rig ready remains NO
@@ -113,5 +121,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: operator mesh prep scope
+next_step_if_pass: create mesh prep derivative and proof report
 next_step_if_fail: stop and report reason only
