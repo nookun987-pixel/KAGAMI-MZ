@@ -6,14 +6,16 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage public hero candidate proof exception
-- STATUS = MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE_OPEN
+- PHASE = Operator Rest Mode / Governance Handoff with Mikage public hero candidate proof accepted and next real lookdev gated
+- STATUS = MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE_COMPLETED_ACCEPTED_AS_PROOF
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-- MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN
-- ONLY_ALLOWED_NEXT_TASK = MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
+- MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
+- CURRENT_NEXT_TASK = MIKAGE_HERO_REAL_LOOKDEV_V0_1
+- MIKAGE_HERO_REAL_LOOKDEV_V0_1 = GATED
+- RENDER_ALLOWED = NO
 - SOURCE_REFERENCE_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
 - SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
 - SOURCE_REFERENCE_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
@@ -31,6 +33,7 @@
 - PRODUCTION_RIG_READY = NO
 - PUBLIC_RENDER_READY = NO
 - ASSET_LOCK = NO
+- NEXT_SCOPE_NOTE = MIKAGE_HERO_REAL_LOOKDEV_V0_1 is gated. RENDER_ALLOWED = NO until operator explicitly sets YES. Scope when opened: fix proportion, attach hands to body, add hair per operator ruling, real material + lighting. Candidate only. No public-ready claim. No production-rig-ready claim. No asset lock. No public deployment.
 
 ## 3. Completed Items
 - AUTOPILOT_GUARD_BASELINE = DONE
@@ -45,13 +48,13 @@
 - NONE
 
 ## 5. Next Safe Action
-- MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
-- Candidate proof work is allowed only for `MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN`.
-- The next task may create exactly the two candidate proof outputs listed above and must not edit `.blend` files, claim public render ready, claim production rig ready, asset-lock, deploy website/public pages, or push.
+- Hold `MIKAGE_HERO_REAL_LOOKDEV_V0_1` for operator authorization.
+- `RENDER_ALLOWED = NO` until operator explicitly sets YES.
+- When opened, scope is: fix proportion, attach hands to body, add hair per operator ruling, real material + lighting. Candidate only. No public-ready claim. No production-rig-ready claim. No asset lock. No public deployment.
 
 ## 6. Forbidden Actions
 - No push.
-- No runtime except the single controlled Mikage public hero candidate proof task listed above.
+- No runtime or render until operator explicitly sets `RENDER_ALLOWED = YES` for `MIKAGE_HERO_REAL_LOOKDEV_V0_1`.
 - No RENT/GARA/Image/Call lane run.
 - No sync/GSheet/Telegram.
 - No touching D:\KAGAMI-MZ.

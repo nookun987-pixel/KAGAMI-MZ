@@ -1,23 +1,24 @@
-task_id: MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE
-target_lane: Mikage public hero render candidate / controlled proof package
+task_id: MIKAGE_HERO_CANDIDATE_V0_1_GATE_CLOSE
+target_lane: Mikage hero candidate gate close / controlled governance
 status: ACTIVE
-current_step: MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1
+current_step: MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_GATE_CLOSED
 
 goal: >
-  Reopen one controlled Mikage public hero render candidate proof exception so the
-  next task can create the candidate contact sheet and proof report from Completion
-  Lookdev V0.2 and the formal material/silhouette review. Rest Mode remains closed
-  for broad work.
+  Close the Mikage public hero render candidate proof gate as accepted proof and
+  hold the next real lookdev task behind explicit operator render permission.
+  Rest Mode remains closed for broad work.
 
 next_safe_task: >
-  MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
+  MIKAGE_HERO_REAL_LOOKDEV_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: OPEN
+  MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
+  MIKAGE_HERO_REAL_LOOKDEV_V0_1: GATED
   rest_mode_broad_lock: RETAINED
+  render_allowed: false
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   source_references:
     - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
@@ -36,6 +37,12 @@ runtime_phase:
   no_asset_lock: true
   no_website_public_deployment: true
   no_push: true
+  next_scope_note: >
+    MIKAGE_HERO_REAL_LOOKDEV_V0_1 is gated. RENDER_ALLOWED = NO until operator
+    explicitly sets YES. Scope when opened: fix proportion, attach hands to body,
+    add hair per operator ruling, real material + lighting. Candidate only. No
+    public-ready claim. No production-rig-ready claim. No asset lock. No public
+    deployment.
 
 output_files_allowed:
   - production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png
@@ -82,8 +89,9 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - public hero render candidate contact sheet exists
-  - public hero render candidate proof report exists
+  - public hero render candidate phase is completed accepted as proof
+  - next task pointer is MIKAGE_HERO_REAL_LOOKDEV_V0_1
+  - RENDER_ALLOWED remains NO
   - no .blend files edited
   - no Lane B files touched
   - no website or HTML files touched
