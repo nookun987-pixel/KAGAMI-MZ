@@ -28,7 +28,9 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE = COMPLETED_READY_FOR_OPERATOR_REVIEW
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE = COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
   MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE = COMPLETED_PASS_READY_FOR_RIG_REVIEW
-  CURRENT_CONTROLLER = MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE = OPEN
+  CURRENT_CONTROLLER = MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+  POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN = YES
   DEFORMATION_SMOKE_TEST_GATE_OPEN = NO
   DEFORMATION_SMOKE_TEST_COMPLETED = YES
   DEFORMATION_SMOKE_TEST_DECISION = SMOKE_TEST_PASS_READY_FOR_RIG_REVIEW
@@ -40,10 +42,10 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MESH_PREP_DECISION = MESH_PREP_COMPLETE_READY_FOR_OPERATOR_REVIEW
   RENDER_ALLOWED = NO
   DEFORMATION_TEST_ALLOWED = NO
-  Rest Mode remains closed for broad work. The controlled first deformation smoke
-  test passed and is ready for post-smoke rig review. No final rig, production
-  weight pass, animation, render, public output, production-ready claim,
-  public-ready claim, or asset lock is authorized by this handoff.
+  Rest Mode remains closed for broad work. Only read-only post-smoke rig review
+  is authorized. No .blend edit, new .blend, deformation test, animation, render,
+  public output, production-ready claim, public-ready claim, or asset lock is
+  authorized by this handoff.
   Source/reference files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
@@ -53,14 +55,13 @@ CONTROLLED_RUNTIME_EXCEPTION:
   - docs/mikage_universe_visual_system.md
   - design_system/mikage-cine-color-contract.md
   Allowed outputs:
+  - production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
+  Review input blend:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  - production/character/reviews/MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PROOF.md
-  Source blend:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  Scope: limited first deformation smoke test only. Do not overwrite source
-  blend. Do not create final/public/cinematic render, MP4, animation cycle, final
-  rig, production weight pass, or redesign. Do not claim public render ready,
-  production rig ready, asset lock, or final completion.
+  Scope: read-only post-smoke-test rig review. Do not edit or create .blend
+  files. Do not run deformation test, create animation, render, PNG, MP4, contact
+  sheet, final rig, production weight pass, or redesign. Do not claim public
+  render ready, production rig ready, asset lock, or final completion.
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = NO. Public render ready = NO. Asset
   lock = NO.

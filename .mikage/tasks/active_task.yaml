@@ -1,12 +1,12 @@
-task_id: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
-target_lane: Mikage controlled deformation smoke test
-status: COMPLETED_PASS_READY_FOR_RIG_REVIEW
+task_id: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+target_lane: Mikage post-smoke-test rig review
+status: ACTIVE
 current_step: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
 
 goal: >
-  Close the controlled deformation smoke test gate. The limited smoke test passed
-  and is ready for post-smoke rig review. DEFORMATION_TEST_ALLOWED and
-  RENDER_ALLOWED are returned to NO.
+  Open read-only post-smoke-test rig review. No blend edit, new blend,
+  deformation test, render, production-ready claim, public-ready claim, or asset
+  lock is allowed. DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain NO.
 
 next_safe_task: >
   MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
@@ -21,10 +21,14 @@ runtime_phase:
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
   MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE: COMPLETED_PASS_READY_FOR_RIG_REVIEW
+  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
   render_allowed: false
   deformation_test_allowed: false
-  current_controller: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+  current_controller: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+  post_smoke_test_rig_review_gate_open: true
+  review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
+  output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   deformation_smoke_test_gate_open: false
   deformation_smoke_test_completed: true
   deformation_smoke_test_decision: SMOKE_TEST_PASS_READY_FOR_RIG_REVIEW
@@ -70,8 +74,7 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  - production/character/reviews/MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PROOF.md
+  - production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -95,6 +98,9 @@ forbidden_actions:
   - do not create production weight pass
   - do not create animation output
   - do not create PNG/MP4/final render/cinematic render output
+  - do not create any .blend file
+  - do not modify any .blend file
+  - do not run another deformation test
   - do not create files outside output_files_allowed
   - do not claim public render ready
   - do not claim production rig ready
@@ -120,9 +126,8 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE is COMPLETED_PASS_READY_FOR_RIG_REVIEW
-  - DEFORMATION_SMOKE_TEST_GATE_OPEN is NO
-  - DEFORMATION_SMOKE_TEST_COMPLETED is YES
+  - MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE is OPEN
+  - POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN is YES
   - RENDER_ALLOWED is NO
   - DEFORMATION_TEST_ALLOWED is NO
   - production rig ready remains NO
@@ -135,5 +140,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: post-smoke rig review
+next_step_if_pass: create post-smoke rig review report
 next_step_if_fail: stop and report reason only
