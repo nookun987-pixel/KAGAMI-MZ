@@ -1,15 +1,15 @@
 task_id: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
 target_lane: Mikage mesh prep before rig/deformation test
-status: ACTIVE
-current_step: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
+status: COMPLETED_READY_FOR_OPERATOR_REVIEW
+current_step: HOLD_FOR_OPERATOR_REVIEW_MESH_PREP_BEFORE_DEFORMATION_TEST
 
 goal: >
-  Open the controlled mesh-prep phase required by the production rig readiness
-  audit. This phase may create one new derivative blend and one proof report.
+  Close the controlled mesh-prep phase required by the production rig readiness
+  audit. Mesh prep derivative and proof are complete for operator review.
   DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain NO.
 
 next_safe_task: >
-  MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
+  HOLD_FOR_OPERATOR_REVIEW_MESH_PREP_BEFORE_DEFORMATION_TEST
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -18,12 +18,15 @@ runtime_phase:
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
-  MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: OPEN
+  MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
   rest_mode_broad_lock: RETAINED
   render_allowed: false
   deformation_test_allowed: false
   current_controller: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
-  mesh_prep_gate_open: true
+  mesh_prep_gate_open: false
+  mesh_prep_completed: true
+  mesh_prep_decision: MESH_PREP_COMPLETE_READY_FOR_OPERATOR_REVIEW
+  current_next_task: HOLD_FOR_OPERATOR_REVIEW_MESH_PREP_BEFORE_DEFORMATION_TEST
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   source_references:
     - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
@@ -107,8 +110,9 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE is OPEN
-  - MESH_PREP_GATE_OPEN is YES
+  - MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE is COMPLETED_READY_FOR_OPERATOR_REVIEW
+  - MESH_PREP_GATE_OPEN is NO
+  - MESH_PREP_COMPLETED is YES
   - RENDER_ALLOWED is NO
   - DEFORMATION_TEST_ALLOWED is NO
   - production rig ready remains NO
@@ -121,5 +125,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: create mesh prep derivative and proof report
+next_step_if_pass: operator review mesh prep before deformation test
 next_step_if_fail: stop and report reason only

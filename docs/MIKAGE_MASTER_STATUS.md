@@ -2,7 +2,7 @@
 
 ## Current Verified Baseline
 
-- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with controlled mesh prep before rig test open
+- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with controlled mesh prep before rig test completed
 - REST_MODE_BROAD_LOCK: RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -11,9 +11,11 @@
 - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
 - CURRENT_NEXT_TASK: HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
 - MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
-- CURRENT_CONTROLLER: MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1
-- MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: OPEN
-- MESH_PREP_GATE_OPEN: YES
+- CURRENT_NEXT_TASK: HOLD_FOR_OPERATOR_REVIEW_MESH_PREP_BEFORE_DEFORMATION_TEST
+- MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
+- MESH_PREP_GATE_OPEN: NO
+- MESH_PREP_COMPLETED: YES
+- MESH_PREP_DECISION: MESH_PREP_COMPLETE_READY_FOR_OPERATOR_REVIEW
 - RENDER_ALLOWED: NO
 - DEFORMATION_TEST_ALLOWED: NO
 - SOURCE_REFERENCE_1: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
@@ -98,11 +100,10 @@
 
 ## Next Safe Action
 
-- Run exactly `MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1`.
+- Hold for operator review of mesh prep before deformation test.
 - RENDER_ALLOWED = NO.
 - DEFORMATION_TEST_ALLOWED = NO.
-- Create only the allowed derivative blend and proof report.
-- Preserve exactly two violet sensor slits, Zenith Blade, black vertical mass, porcelain helmet identity, and A2 material direction.
+- Deformation test remains closed until a later explicit operator gate.
 - Do not run or touch Lane B, website / HTML, roster / queue, Z-Blue archive/history cleanup, sync, Telegram, GSheet, or push.
 
 ## Root Cleanup Closeout
