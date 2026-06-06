@@ -6,18 +6,21 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage asset-runtime exception
-- STATUS = MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE_OPEN
+- PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage review/report exception
+- STATUS = MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE_OPEN
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-- MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = OPEN
-- ONLY_ALLOWED_RUNTIME_TASK = MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
-- SOURCE_BASE_FOR_NEXT_TASK = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
-- ONLY_ALLOWED_OUTPUT_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-- ONLY_ALLOWED_OUTPUT_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-- ONLY_ALLOWED_OUTPUT_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+- MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN
+- ONLY_ALLOWED_NEXT_TASK = MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
+- SOURCE_REFERENCE_1 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- SOURCE_REFERENCE_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+- SOURCE_REFERENCE_3 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+- ONLY_ALLOWED_OUTPUT_1 = production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
 - V0_1_OVERWRITE_ALLOWED = NO
 - V0_3_OVERWRITE_ALLOWED = NO
+- BLEND_EDIT_ALLOWED = NO
+- RENDER_CREATION_ALLOWED = NO
 - PRODUCTION_RIG_READY = NO
 - PUBLIC_RENDER_READY = NO
 - ASSET_LOCK = NO
@@ -35,13 +38,13 @@
 - NONE
 
 ## 5. Next Safe Action
-- MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
-- Runtime is allowed only for `MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = OPEN`.
-- The next task may create exactly the three Lookdev V0.2 output files listed above and must not overwrite V0.1 or V0.3.
+- MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
+- Review/report work is allowed only for `MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = OPEN`.
+- The next task may create exactly the one formal review report listed above and must not edit `.blend` files or create renders.
 
 ## 6. Forbidden Actions
 - No push.
-- No runtime except the single controlled Mikage Lookdev V0.2 runtime task listed above.
+- No runtime except the single controlled Mikage formal review/report task listed above.
 - No RENT/GARA/Image/Call lane run.
 - No sync/GSheet/Telegram.
 - No touching D:\KAGAMI-MZ.

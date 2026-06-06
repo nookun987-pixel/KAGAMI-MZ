@@ -1,28 +1,33 @@
-task_id: MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE
-target_lane: Mikage Completion Lookdev / controlled 3D asset runtime
+task_id: MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE
+target_lane: Mikage formal material/silhouette review / controlled report
 status: ACTIVE
-current_step: MIKAGE_COMPLETION_LOOKDEV_V0_2_TARGETED_POLISH
+current_step: MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1
 
 goal: >
-  Reopen one controlled Mikage asset-runtime exception so the next task can create
-  Completion Lookdev V0.2 from the completed V0.1 derivative. Rest Mode remains
-  closed for broad work.
+  Reopen one controlled Mikage review/report exception so the next task can create
+  the formal material/silhouette review report from the completed Completion Lookdev
+  V0.2 proof package. Rest Mode remains closed for broad work.
 
 next_safe_task: >
-  MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
+  MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: OPEN
+  MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+  MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
-  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+  source_references:
+    - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+    - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   no_v0_1_overwrite: true
   no_v0_3_overwrite: true
+  no_blend_edits: true
+  no_render_creation: true
 
 output_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+  - production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -36,7 +41,10 @@ inactive_tasks:
 
 forbidden_actions:
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
+  - do not edit any .blend file
+  - do not create renders
   - do not create files outside output_files_allowed
   - do not run Lane B
   - do not touch website or HTML files
@@ -58,12 +66,9 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - new Completion Lookdev V0.2 blend exists
-  - V0.1 source derivative still exists and was not overwritten
-  - V0.3 source derivative still exists and was not overwritten
-  - proof contact sheet exists
-  - proof report exists
-  - no .blend1 backup remains
+  - formal material/silhouette review report exists
+  - no .blend files edited
+  - no render files created
   - no Lane B files touched
   - no website or HTML files touched
   - no roster or queue files touched

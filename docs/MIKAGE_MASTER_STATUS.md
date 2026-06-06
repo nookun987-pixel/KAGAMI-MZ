@@ -2,17 +2,20 @@
 
 ## Current Verified Baseline
 
-- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with one controlled Mikage asset-runtime exception
+- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with one controlled Mikage review/report exception
 - REST_MODE_BROAD_LOCK: RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-- MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: OPEN
-- ONLY_ALLOWED_RUNTIME_TASK: MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
-- SOURCE_BASE_FOR_NEXT_TASK: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
-- ONLY_ALLOWED_OUTPUT_1: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-- ONLY_ALLOWED_OUTPUT_2: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
-- ONLY_ALLOWED_OUTPUT_3: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+- MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: OPEN
+- ONLY_ALLOWED_NEXT_TASK: MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1
+- SOURCE_REFERENCE_1: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- SOURCE_REFERENCE_2: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+- SOURCE_REFERENCE_3: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+- ONLY_ALLOWED_OUTPUT_1: production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md
 - V0_1_OVERWRITE_ALLOWED: NO
 - V0_3_OVERWRITE_ALLOWED: NO
+- BLEND_EDIT_ALLOWED: NO
+- RENDER_CREATION_ALLOWED: NO
 - LANE_B_ALLOWED: NO
 - WEBSITE_HTML_ALLOWED: NO
 - ROSTER_QUEUE_ALLOWED: NO
@@ -77,9 +80,9 @@
 
 ## Next Safe Action
 
-- Run exactly `MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH`.
-- The next task may create exactly the three Lookdev V0.2 output files listed above.
-- Do not overwrite the V0.1 source derivative or the V0.3 source derivative.
+- Run exactly `MIKAGE FORMAL MATERIAL / SILHOUETTE REVIEW V0.1`.
+- The next task may create exactly the one formal material/silhouette review report listed above.
+- Do not edit `.blend` files and do not create renders.
 - Do not run or touch Lane B, website / HTML, roster / queue, Z-Blue archive/history cleanup, sync, Telegram, GSheet, or push.
 
 ## Root Cleanup Closeout
@@ -102,7 +105,7 @@
 - Do not run Call.
 - Do not sync.
 - Do not push unless explicitly approved.
-- Do not push during `MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE`.
+- Do not push during `MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE`.
 - Do not run Lane B.
 - Do not touch website / HTML.
 - Do not touch roster / queue.
