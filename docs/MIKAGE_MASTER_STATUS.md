@@ -2,16 +2,17 @@
 
 ## Current Verified Baseline
 
-- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with controlled production rig readiness audit open
+- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with controlled production rig readiness audit completed
 - REST_MODE_BROAD_LOCK: RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
 - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
-- CURRENT_TASK: MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
-- MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: OPEN
+- CURRENT_NEXT_TASK: HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
+- MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
 - RENDER_ALLOWED: NO
+- DEFORMATION_TEST_ALLOWED: NO
 - SOURCE_REFERENCE_1: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
 - SOURCE_REFERENCE_2: production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
 - SOURCE_REFERENCE_3: production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
@@ -23,7 +24,6 @@
 - V0_1_OVERWRITE_ALLOWED: NO
 - V0_3_OVERWRITE_ALLOWED: NO
 - BLEND_EDIT_ALLOWED: NO
-- DEFORMATION_TEST_ALLOWED: NO
 - AUDIT_REPORT_ONLY: YES
 - WEBSITE_PUBLIC_DEPLOYMENT_ALLOWED: NO
 - LANE_B_ALLOWED: NO
@@ -35,6 +35,8 @@
 - PUBLIC_RENDER_READY: NO
 - ASSET_LOCK: NO
 - RIG_AUDIT_SCOPE_NOTE: MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1 scope: inspect readiness risks from the A2 hero real lookdev source; create one audit report only; do not edit .blend; do not run deformation test; do not claim production rig ready, public render ready, or asset lock.
+- RIG_AUDIT_DECISION: NEEDS_MESH_PREP_BEFORE_RIG_TEST
+- RIG_AUDIT_NEXT_DECISION_NOTE: Audit completed and found the A2 lookdev source should not enter deformation smoke test yet. Next requires operator-scoped mesh prep; no deformation test is allowed until a later explicit gate.
 - CLEAN_WORKSPACE: D:\KAGAMI-MZ_SYNC_PUSH_V2
 - CURRENT_BRANCH: main
 - CURRENT_HEAD: f611c37
@@ -91,10 +93,10 @@
 
 ## Next Safe Action
 
-- Run exactly `MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1`.
+- Hold for operator mesh-prep scope after production rig readiness audit.
 - RENDER_ALLOWED = NO.
-- Create only `production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md`.
-- Do not edit `.blend`, do not run deformation test, and do not claim production rig ready, public render ready, or asset lock.
+- DEFORMATION_TEST_ALLOWED = NO.
+- Next requires operator-scoped mesh prep before any deformation smoke test.
 - Do not run or touch Lane B, website / HTML, roster / queue, Z-Blue archive/history cleanup, sync, Telegram, GSheet, or push.
 
 ## Root Cleanup Closeout

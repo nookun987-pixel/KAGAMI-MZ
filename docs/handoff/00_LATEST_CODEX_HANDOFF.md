@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1
+  HOLD_FOR_OPERATOR_MESH_PREP_SCOPE
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -24,11 +24,12 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
   MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE = OPEN
+  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE = COMPLETED_NEEDS_MESH_PREP
   RENDER_ALLOWED = NO
-  Rest Mode remains closed for broad work. The only authorized next task is the
-  production rig readiness audit report. No render/runtime/deformation test is
-  authorized by this handoff.
+  DEFORMATION_TEST_ALLOWED = NO
+  Rest Mode remains closed for broad work. The production rig readiness audit
+  found mesh prep is required before rig/deformation testing. No render/runtime/
+  deformation test is authorized by this handoff.
   Source/reference files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
@@ -45,6 +46,10 @@ CONTROLLED_RUNTIME_EXCEPTION:
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = NO. Public render ready = NO. Asset
   lock = NO.
+  Audit decision: NEEDS_MESH_PREP_BEFORE_RIG_TEST.
+  Next requires operator-scoped mesh prep before any deformation smoke test:
+  define deforming vs rigid parts, clean arm/hand topology, define hair attachment
+  behavior, and define Zenith Blade attachment/constraint intent.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
