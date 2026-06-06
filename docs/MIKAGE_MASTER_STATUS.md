@@ -4,11 +4,14 @@
 
 - ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with one controlled Mikage asset-runtime exception
 - REST_MODE_BROAD_LOCK: RETAINED
-- MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: OPEN
-- ONLY_ALLOWED_RUNTIME_TASK: MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
-- ONLY_ALLOWED_OUTPUT_1: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
-- ONLY_ALLOWED_OUTPUT_2: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
-- ONLY_ALLOWED_OUTPUT_3: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
+- MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+- MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: OPEN
+- ONLY_ALLOWED_RUNTIME_TASK: MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
+- SOURCE_BASE_FOR_NEXT_TASK: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+- ONLY_ALLOWED_OUTPUT_1: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+- ONLY_ALLOWED_OUTPUT_2: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+- ONLY_ALLOWED_OUTPUT_3: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- V0_1_OVERWRITE_ALLOWED: NO
 - V0_3_OVERWRITE_ALLOWED: NO
 - LANE_B_ALLOWED: NO
 - WEBSITE_HTML_ALLOWED: NO
@@ -74,9 +77,9 @@
 
 ## Next Safe Action
 
-- Run exactly `MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3`.
-- The next task may create exactly the three Lookdev V0.1 output files listed above.
-- Do not overwrite the V0.3 source derivative.
+- Run exactly `MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH`.
+- The next task may create exactly the three Lookdev V0.2 output files listed above.
+- Do not overwrite the V0.1 source derivative or the V0.3 source derivative.
 - Do not run or touch Lane B, website / HTML, roster / queue, Z-Blue archive/history cleanup, sync, Telegram, GSheet, or push.
 
 ## Root Cleanup Closeout
@@ -99,7 +102,7 @@
 - Do not run Call.
 - Do not sync.
 - Do not push unless explicitly approved.
-- Do not push during `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE`.
+- Do not push during `MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE`.
 - Do not run Lane B.
 - Do not touch website / HTML.
 - Do not touch roster / queue.

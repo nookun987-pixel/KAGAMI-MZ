@@ -1,26 +1,28 @@
-task_id: MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE
+task_id: MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE
 target_lane: Mikage Completion Lookdev / controlled 3D asset runtime
 status: ACTIVE
-current_step: MIKAGE_COMPLETION_PHASE_1_LOOKDEV_GEOMETRY_POLISH_FROM_V0_3
+current_step: MIKAGE_COMPLETION_LOOKDEV_V0_2_TARGETED_POLISH
 
 goal: >
   Reopen one controlled Mikage asset-runtime exception so the next task can create
-  Completion Lookdev V0.1 from the accepted Mikage V0.3 visible character preview.
-  Rest Mode remains closed for broad work.
+  Completion Lookdev V0.2 from the completed V0.1 derivative. Rest Mode remains
+  closed for broad work.
 
 next_safe_task: >
-  MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
+  MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
 
 runtime_phase:
-  MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: OPEN
+  MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+  MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
-  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
+  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+  no_v0_1_overwrite: true
   no_v0_3_overwrite: true
 
 output_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
-  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -33,6 +35,7 @@ inactive_tasks:
     reason: Registered in git. Not the active lane. Do not continue unless explicitly reactivated.
 
 forbidden_actions:
+  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
   - do not create files outside output_files_allowed
   - do not run Lane B
@@ -55,7 +58,8 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - new Completion Lookdev V0.1 blend exists
+  - new Completion Lookdev V0.2 blend exists
+  - V0.1 source derivative still exists and was not overwritten
   - V0.3 source derivative still exists and was not overwritten
   - proof contact sheet exists
   - proof report exists

@@ -7,13 +7,16 @@
 
 ## 2. Current Phase
 - PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage asset-runtime exception
-- STATUS = MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE_OPEN
+- STATUS = MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE_OPEN
 - REST_MODE_BROAD_LOCK = RETAINED
-- MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN
-- ONLY_ALLOWED_RUNTIME_TASK = MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
-- ONLY_ALLOWED_OUTPUT_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
-- ONLY_ALLOWED_OUTPUT_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
-- ONLY_ALLOWED_OUTPUT_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
+- MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
+- MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = OPEN
+- ONLY_ALLOWED_RUNTIME_TASK = MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
+- SOURCE_BASE_FOR_NEXT_TASK = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+- ONLY_ALLOWED_OUTPUT_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
+- ONLY_ALLOWED_OUTPUT_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png
+- ONLY_ALLOWED_OUTPUT_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md
+- V0_1_OVERWRITE_ALLOWED = NO
 - V0_3_OVERWRITE_ALLOWED = NO
 - PRODUCTION_RIG_READY = NO
 - PUBLIC_RENDER_READY = NO
@@ -32,13 +35,13 @@
 - NONE
 
 ## 5. Next Safe Action
-- MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
-- Runtime is allowed only for `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN`.
-- The next task may create exactly the three Lookdev V0.1 output files listed above and must not overwrite V0.3.
+- MIKAGE COMPLETION LOOKDEV V0.2 - TARGETED POLISH
+- Runtime is allowed only for `MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = OPEN`.
+- The next task may create exactly the three Lookdev V0.2 output files listed above and must not overwrite V0.1 or V0.3.
 
 ## 6. Forbidden Actions
 - No push.
-- No runtime except the single controlled Mikage Lookdev V0.1 runtime task listed above.
+- No runtime except the single controlled Mikage Lookdev V0.2 runtime task listed above.
 - No RENT/GARA/Image/Call lane run.
 - No sync/GSheet/Telegram.
 - No touching D:\KAGAMI-MZ.
