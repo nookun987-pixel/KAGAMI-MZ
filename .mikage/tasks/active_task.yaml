@@ -1,15 +1,15 @@
 task_id: MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
 target_lane: Mikage mesh prep operator review before deformation test
-status: ACTIVE
-current_step: MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
+status: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
+current_step: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
 
 goal: >
-  Open read-only operator review of the completed mesh-prep derivative before
-  any deformation smoke test. DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain
-  NO.
+  Close read-only operator review of the completed mesh-prep derivative. The
+  review approves opening a later deformation smoke test gate, but
+  DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain NO until separately opened.
 
 next_safe_task: >
-  MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
+  MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -19,12 +19,15 @@ runtime_phase:
   MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
   MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
-  MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: OPEN
+  MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
   rest_mode_broad_lock: RETAINED
   render_allowed: false
   deformation_test_allowed: false
   current_controller: MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
-  mesh_prep_operator_review_gate_open: true
+  mesh_prep_operator_review_gate_open: false
+  mesh_prep_operator_review_completed: true
+  mesh_prep_operator_review_decision: APPROVE_OPEN_DEFORMATION_SMOKE_TEST_GATE
+  current_next_task: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
   source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   source_references:
@@ -110,8 +113,9 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE is OPEN
-  - MESH_PREP_OPERATOR_REVIEW_GATE_OPEN is YES
+  - MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE is COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
+  - MESH_PREP_OPERATOR_REVIEW_GATE_OPEN is NO
+  - MESH_PREP_OPERATOR_REVIEW_COMPLETED is YES
   - RENDER_ALLOWED is NO
   - DEFORMATION_TEST_ALLOWED is NO
   - production rig ready remains NO
@@ -124,5 +128,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: create mesh prep operator review report
+next_step_if_pass: operator may explicitly open deformation smoke test gate
 next_step_if_fail: stop and report reason only
