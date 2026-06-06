@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+  MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -28,9 +28,11 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE = COMPLETED_READY_FOR_OPERATOR_REVIEW
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE = COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
   MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE = COMPLETED_PASS_READY_FOR_RIG_REVIEW
-  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE = OPEN
+  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE = COMPLETED_APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
   CURRENT_CONTROLLER = MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
-  POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN = YES
+  POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN = NO
+  POST_SMOKE_TEST_RIG_REVIEW_COMPLETED = YES
+  POST_SMOKE_TEST_RIG_REVIEW_DECISION = APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
   DEFORMATION_SMOKE_TEST_GATE_OPEN = NO
   DEFORMATION_SMOKE_TEST_COMPLETED = YES
   DEFORMATION_SMOKE_TEST_DECISION = SMOKE_TEST_PASS_READY_FOR_RIG_REVIEW
@@ -42,10 +44,10 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MESH_PREP_DECISION = MESH_PREP_COMPLETE_READY_FOR_OPERATOR_REVIEW
   RENDER_ALLOWED = NO
   DEFORMATION_TEST_ALLOWED = NO
-  Rest Mode remains closed for broad work. Only read-only post-smoke rig review
-  is authorized. No .blend edit, new .blend, deformation test, animation, render,
-  public output, production-ready claim, public-ready claim, or asset lock is
-  authorized by this handoff.
+  Rest Mode remains closed for broad work. Post-smoke rig review completed and
+  approved opening a separate production rig finalization gate. No .blend edit,
+  new .blend, deformation test, animation, render, public output, production-ready
+  claim, public-ready claim, or asset lock is authorized by this handoff.
   Source/reference files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
@@ -58,17 +60,18 @@ CONTROLLED_RUNTIME_EXCEPTION:
   - production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   Review input blend:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  Scope: read-only post-smoke-test rig review. Do not edit or create .blend
-  files. Do not run deformation test, create animation, render, PNG, MP4, contact
-  sheet, final rig, production weight pass, or redesign. Do not claim public
-  render ready, production rig ready, asset lock, or final completion.
+  Scope: post-smoke rig review accepted the deformation smoke test as proof only.
+  Next task is the separate production rig finalization gate. Do not edit or
+  create .blend files, run deformation test, create animation, render, PNG, MP4,
+  contact sheet, final rig, production weight pass, or redesign unless a later
+  explicit gate authorizes it. Do not claim public render ready, production rig
+  ready, asset lock, or final completion here.
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = NO. Public render ready = NO. Asset
   lock = NO.
-  Audit decision: NEEDS_MESH_PREP_BEFORE_RIG_TEST.
-  Next requires operator-scoped mesh prep before any deformation smoke test:
-  define deforming vs rigid parts, clean arm/hand topology, define hair attachment
-  behavior, and define Zenith Blade attachment/constraint intent.
+  Post-smoke review decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE.
+  Next safe task: MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1. Production rig
+  ready remains NO until that finalization gate explicitly sets it.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
