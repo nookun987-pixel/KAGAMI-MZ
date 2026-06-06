@@ -1,12 +1,12 @@
-task_id: MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
-target_lane: Mikage mesh prep operator review before deformation test
-status: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
+task_id: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+target_lane: Mikage controlled deformation smoke test
+status: ACTIVE
 current_step: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
 
 goal: >
-  Close read-only operator review of the completed mesh-prep derivative. The
-  review approves opening a later deformation smoke test gate, but
-  DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain NO until separately opened.
+  Open the controlled deformation smoke test gate approved by mesh-prep operator
+  review. DEFORMATION_TEST_ALLOWED is YES only inside this gated task.
+  RENDER_ALLOWED remains NO.
 
 next_safe_task: >
   MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
@@ -20,24 +20,26 @@ runtime_phase:
   MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
+  MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE: OPEN
   rest_mode_broad_lock: RETAINED
   render_allowed: false
-  deformation_test_allowed: false
-  current_controller: MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1
+  deformation_test_allowed: true
+  current_controller: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+  deformation_smoke_test_gate_open: true
   mesh_prep_operator_review_gate_open: false
   mesh_prep_operator_review_completed: true
   mesh_prep_operator_review_decision: APPROVE_OPEN_DEFORMATION_SMOKE_TEST_GATE
-  current_next_task: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
+  output_blend_allowed: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
+  output_report_allowed: production/character/reviews/MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PROOF.md
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   source_references:
-    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
+    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
+    - production/character/reviews/MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1.md
+    - production/character/reviews/MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PROOF.md
+    - production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
     - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
     - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
-    - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_CONTACT_SHEET.png
-    - docs/mikage_character_visual_spec.md
-    - docs/mikage_universe_visual_system.md
-    - design_system/mikage-cine-color-contract.md
   no_v0_1_overwrite: true
   no_v0_3_overwrite: true
   no_blend_edits: true
@@ -46,7 +48,8 @@ runtime_phase:
   no_production_rig_ready_claim: true
   no_asset_lock: true
   no_website_public_deployment: true
-  no_deformation_test: true
+  no_final_rig: true
+  limited_deformation_smoke_test_only: true
   no_push: true
   scope: >
     MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1 scope: audit-driven mesh prep only.
@@ -64,7 +67,8 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
-  - production/character/reviews/MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
+  - production/character/reviews/MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PROOF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -83,11 +87,11 @@ forbidden_actions:
   - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - do not modify production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
   - do not modify production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  - do not create any .blend file
-  - do not run deformation smoke test
-  - do not create rig test output
+  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
+  - do not create final rig
+  - do not create production weight pass
   - do not create animation output
-  - do not create PNG/MP4/contact sheet/render output
+  - do not create PNG/MP4/final render/cinematic render output
   - do not create files outside output_files_allowed
   - do not claim public render ready
   - do not claim production rig ready
@@ -113,11 +117,10 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE is COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
-  - MESH_PREP_OPERATOR_REVIEW_GATE_OPEN is NO
-  - MESH_PREP_OPERATOR_REVIEW_COMPLETED is YES
+  - MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE is OPEN
+  - DEFORMATION_SMOKE_TEST_GATE_OPEN is YES
   - RENDER_ALLOWED is NO
-  - DEFORMATION_TEST_ALLOWED is NO
+  - DEFORMATION_TEST_ALLOWED is YES only inside this gated task
   - production rig ready remains NO
   - public render ready remains NO
   - asset lock remains NO
@@ -128,5 +131,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: operator may explicitly open deformation smoke test gate
+next_step_if_pass: run controlled deformation smoke test and proof report
 next_step_if_fail: stop and report reason only
