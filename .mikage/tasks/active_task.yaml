@@ -1,19 +1,26 @@
-task_id: MIKAGE_CHARACTER_CAST_LANE_INIT
-target_lane: Character Cast Lane / 3D character / rig asset work
+task_id: MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE
+target_lane: Mikage Completion Lookdev / controlled 3D asset runtime
 status: ACTIVE
-current_step: CHARACTER_CAST_STATE_CORRECTION
+current_step: MIKAGE_COMPLETION_PHASE_1_LOOKDEV_GEOMETRY_POLISH_FROM_V0_3
 
 goal: >
-  Make Mikage IP characters visible and producible beyond Mikage only.
-  Priority order: Commander Lyre, LORA, then supporting cast.
+  Reopen one controlled Mikage asset-runtime exception so the next task can create
+  Completion Lookdev V0.1 from the accepted Mikage V0.3 visible character preview.
+  Rest Mode remains closed for broad work.
 
 next_safe_task: >
-  Read and extract Commander Lyre + LORA specs from existing canon docs.
-  Source files:
-    - MIKAGE_ZENITH_CANON_V2.md (Section 8.2 Commander Lyre)
-    - character_workflow/LORA_ENTITY_RECORD_V0_1.md
-    - character_workflow/MIKAGE_CHARACTER_SCALE_LINEUP_V0_3_COMMANDER_LYRE_PATCH_PACKAGE.zip
-    - MIKAGE_LORA_VISUAL_FORM_BRIEF_V0_1_PACKAGE.zip
+  MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
+
+runtime_phase:
+  MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: OPEN
+  rest_mode_broad_lock: RETAINED
+  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
+  no_v0_3_overwrite: true
+
+output_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -26,6 +33,16 @@ inactive_tasks:
     reason: Registered in git. Not the active lane. Do not continue unless explicitly reactivated.
 
 forbidden_actions:
+  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
+  - do not create files outside output_files_allowed
+  - do not run Lane B
+  - do not touch website or HTML files
+  - do not touch roster files
+  - do not touch queue files
+  - do not touch Z-Blue archive/history files
+  - do not claim production rig ready
+  - do not claim public render ready
+  - do not claim asset lock
   - do not continue SAMPLE_01 composite
   - do not generate SAMPLE_01.png
   - do not create SAMPLE_01 verify report
@@ -38,10 +55,18 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - Commander Lyre visual brief exists
-  - LORA visual brief confirmed or extracted
-  - Character cast registry reflects all named IP characters
-  - At least one non-Mikage character has a production-ready brief
+  - new Completion Lookdev V0.1 blend exists
+  - V0.3 source derivative still exists and was not overwritten
+  - proof contact sheet exists
+  - proof report exists
+  - no .blend1 backup remains
+  - no Lane B files touched
+  - no website or HTML files touched
+  - no roster or queue files touched
+  - no Z-Blue archive/history files touched
+  - production rig ready remains NO
+  - public render ready remains NO
+  - asset lock remains NO
 
 verify_command: python .mikage/tools/verify_output.py
 next_step_if_pass: operator review

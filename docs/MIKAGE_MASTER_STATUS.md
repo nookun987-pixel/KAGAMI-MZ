@@ -2,7 +2,22 @@
 
 ## Current Verified Baseline
 
-- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0
+- ACTIVE_PHASE: GOVERNANCE / OPERATOR_REST_MODE_V0 with one controlled Mikage asset-runtime exception
+- REST_MODE_BROAD_LOCK: RETAINED
+- MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: OPEN
+- ONLY_ALLOWED_RUNTIME_TASK: MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
+- ONLY_ALLOWED_OUTPUT_1: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+- ONLY_ALLOWED_OUTPUT_2: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
+- ONLY_ALLOWED_OUTPUT_3: production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
+- V0_3_OVERWRITE_ALLOWED: NO
+- LANE_B_ALLOWED: NO
+- WEBSITE_HTML_ALLOWED: NO
+- ROSTER_QUEUE_ALLOWED: NO
+- ZBLUE_ARCHIVE_HISTORY_CLEANUP_ALLOWED: NO
+- PUSH_ALLOWED: NO
+- PRODUCTION_RIG_READY: NO
+- PUBLIC_RENDER_READY: NO
+- ASSET_LOCK: NO
 - CLEAN_WORKSPACE: D:\KAGAMI-MZ_SYNC_PUSH_V2
 - CURRENT_BRANCH: main
 - CURRENT_HEAD: f611c37
@@ -59,12 +74,10 @@
 
 ## Next Safe Action
 
-- Re-run `continue Mikage`.
-- Agent must read AGENTS.md, task board, Butler Map, Autopilot Guard, and this master status file.
-- Agent must verify repo state.
-- Agent must propose one next safe action only.
-- Phase 9A: trace the safe GARA command contract before any smoke attempt.
-- Then standardize a single central execution lock file at `docs\agent_skills\MIKAGE_AGENT_EXECUTION_LOCK_V1.md` or `docs\governance\MIKAGE_AGENT_EXECUTION_LOCK_V1.md`.
+- Run exactly `MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3`.
+- The next task may create exactly the three Lookdev V0.1 output files listed above.
+- Do not overwrite the V0.3 source derivative.
+- Do not run or touch Lane B, website / HTML, roster / queue, Z-Blue archive/history cleanup, sync, Telegram, GSheet, or push.
 
 ## Root Cleanup Closeout
 
@@ -86,6 +99,11 @@
 - Do not run Call.
 - Do not sync.
 - Do not push unless explicitly approved.
+- Do not push during `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE`.
+- Do not run Lane B.
+- Do not touch website / HTML.
+- Do not touch roster / queue.
+- Do not touch Z-Blue archive/history cleanup.
 - Do not touch D:\KAGAMI-MZ.
 - Do not inspect .env or secret files.
 - Do not use GSheet or Telegram unless explicitly approved.

@@ -71,12 +71,29 @@ If Windsurf command output is incomplete but external Windows CMD output has bee
 
 ## Current Scope Lock
 
-- Active work is `GOVERNANCE / OPERATOR_REST_MODE_V0`.
+- Active work is `GOVERNANCE / OPERATOR_REST_MODE_V0` for broad work.
+- Rest Mode remains closed for broad runtime/sync/lane work.
+- One controlled exception is open:
+  - `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN`
+  - Only allowed runtime task: `MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3`
+  - Only allowed outputs:
+    - `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend`
+    - `production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md`
+  - Source V0.3 must not be overwritten.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
 - Current clean branch baseline is `main`.
 - Do not touch `D:\KAGAMI-MZ` unless the task is explicitly read-only classification.
+- No Lane B.
+- No website / HTML.
+- No roster / queue.
+- No Z-Blue archive/history cleanup.
+- No push.
+- Production rig remains `NO`.
+- Public render ready remains `NO`.
+- Asset lock remains `NO`.
 
 ## ROOT ARTIFACT CREATION LOCK
 
@@ -123,6 +140,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Verify repo state.
 - Use external CMD evidence only when Windsurf stdout is unreliable.
 - Update one explicitly declared governance file if approved.
+- Execute the single controlled exception `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN` only when the task is exactly `MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3` and the output set is exactly the three listed Lookdev V0.1 files.
 - Report next safe action.
 - Write structured status back to the requested target.
 

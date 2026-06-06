@@ -6,8 +6,18 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff
-- STATUS = PHASE 0 COMPLETE
+- PHASE = Operator Rest Mode / Governance Handoff with one controlled Mikage asset-runtime exception
+- STATUS = MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE_OPEN
+- REST_MODE_BROAD_LOCK = RETAINED
+- MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN
+- ONLY_ALLOWED_RUNTIME_TASK = MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
+- ONLY_ALLOWED_OUTPUT_1 = production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+- ONLY_ALLOWED_OUTPUT_2 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
+- ONLY_ALLOWED_OUTPUT_3 = production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
+- V0_3_OVERWRITE_ALLOWED = NO
+- PRODUCTION_RIG_READY = NO
+- PUBLIC_RENDER_READY = NO
+- ASSET_LOCK = NO
 
 ## 3. Completed Items
 - AUTOPILOT_GUARD_BASELINE = DONE
@@ -22,16 +32,22 @@
 - NONE
 
 ## 5. Next Safe Action
-- One-file governance/doc task only; no runtime/sync unless explicitly approved.
+- MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
+- Runtime is allowed only for `MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN`.
+- The next task may create exactly the three Lookdev V0.1 output files listed above and must not overwrite V0.3.
 
 ## 6. Forbidden Actions
 - No push.
-- No runtime.
+- No runtime except the single controlled Mikage Lookdev V0.1 runtime task listed above.
 - No RENT/GARA/Image/Call lane run.
 - No sync/GSheet/Telegram.
 - No touching D:\KAGAMI-MZ.
 - No git add .
 - No secret/env inspection.
+- No Lane B.
+- No website / HTML.
+- No roster / queue.
+- No Z-Blue archive/history cleanup.
 
 ## 7. Phase Exit Criteria
 - AGENTS.md exists and is committed.

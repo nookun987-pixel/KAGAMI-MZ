@@ -16,9 +16,19 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  Place both contract files into the repo design-system path; have all agents load
-  them and run the pre-flight checks before any color output. No further canon
-  changes without a new explicit operator ruling.
+  MIKAGE COMPLETION PHASE 1 — LOOKDEV + GEOMETRY POLISH FROM V0.3
+
+CONTROLLED_RUNTIME_EXCEPTION:
+  MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = OPEN
+  Rest Mode remains closed for broad work. This exception allows only the named
+  Mikage Completion Lookdev V0.1 task.
+  Allowed outputs:
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
+  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_1_PROOF.md
+  No V0.3 overwrite. No Lane B. No website / HTML. No roster / queue. No Z-Blue
+  archive/history cleanup. No push. Production rig ready = NO. Public render
+  ready = NO. Asset lock = NO.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
