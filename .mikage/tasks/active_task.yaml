@@ -1,15 +1,15 @@
 task_id: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
 target_lane: Mikage controlled deformation smoke test
-status: ACTIVE
-current_step: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+status: COMPLETED_PASS_READY_FOR_RIG_REVIEW
+current_step: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
 
 goal: >
-  Open the controlled deformation smoke test gate approved by mesh-prep operator
-  review. DEFORMATION_TEST_ALLOWED is YES only inside this gated task.
-  RENDER_ALLOWED remains NO.
+  Close the controlled deformation smoke test gate. The limited smoke test passed
+  and is ready for post-smoke rig review. DEFORMATION_TEST_ALLOWED and
+  RENDER_ALLOWED are returned to NO.
 
 next_safe_task: >
-  MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
+  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -20,12 +20,15 @@ runtime_phase:
   MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
   MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
-  MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE: OPEN
+  MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE: COMPLETED_PASS_READY_FOR_RIG_REVIEW
   rest_mode_broad_lock: RETAINED
   render_allowed: false
-  deformation_test_allowed: true
+  deformation_test_allowed: false
   current_controller: MIKAGE_DEFORMATION_SMOKE_TEST_V0_1
-  deformation_smoke_test_gate_open: true
+  deformation_smoke_test_gate_open: false
+  deformation_smoke_test_completed: true
+  deformation_smoke_test_decision: SMOKE_TEST_PASS_READY_FOR_RIG_REVIEW
+  current_next_task: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
   mesh_prep_operator_review_gate_open: false
   mesh_prep_operator_review_completed: true
   mesh_prep_operator_review_decision: APPROVE_OPEN_DEFORMATION_SMOKE_TEST_GATE
@@ -117,10 +120,11 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE is OPEN
-  - DEFORMATION_SMOKE_TEST_GATE_OPEN is YES
+  - MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE is COMPLETED_PASS_READY_FOR_RIG_REVIEW
+  - DEFORMATION_SMOKE_TEST_GATE_OPEN is NO
+  - DEFORMATION_SMOKE_TEST_COMPLETED is YES
   - RENDER_ALLOWED is NO
-  - DEFORMATION_TEST_ALLOWED is YES only inside this gated task
+  - DEFORMATION_TEST_ALLOWED is NO
   - production rig ready remains NO
   - public render ready remains NO
   - asset lock remains NO
@@ -131,5 +135,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: run controlled deformation smoke test and proof report
+next_step_if_pass: post-smoke rig review
 next_step_if_fail: stop and report reason only
