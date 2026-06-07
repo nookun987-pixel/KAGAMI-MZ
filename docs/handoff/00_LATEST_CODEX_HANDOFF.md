@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  OWNER_DEFINE_NEXT_POST_RIG_READY_GATE
+  OWNER_DEFINE_PUBLIC_RENDER_READINESS_PREP_OR_REVIEW
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -32,7 +32,9 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1_PHASE = COMPLETED_HOLD_FOR_FINAL_OPERATOR_RIG_SIGNOFF
   MIKAGE_FINAL_OPERATOR_RIG_SIGNOFF_GOVERNANCE_V0_1_PHASE = COMPLETED_HOLD_FOR_OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY
   MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1_PHASE = COMPLETED
-  CURRENT_CONTROLLER = MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1
+  MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1_PHASE = COMPLETED_OPENED
+  PUBLIC_RENDER_READINESS_GATE_DECISION = PUBLIC_RENDER_READINESS_GATE_OPENED
+  CURRENT_CONTROLLER = MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1
   OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY = YES
   POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN = NO
   POST_SMOKE_TEST_RIG_REVIEW_COMPLETED = YES
@@ -67,18 +69,18 @@ CONTROLLED_RUNTIME_EXCEPTION:
   - production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   Review input blend:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  Scope: owner explicitly approved the exact governance/status update that sets
-  PRODUCTION_RIG_READY = YES after the final operator rig signoff hold. Do not
-  edit or create .blend files, run deformation test, create animation, render,
-  PNG, MP4, contact sheet, public output, production weight pass, or redesign
-  unless a later explicit gate authorizes it. Do not claim public render ready,
-  asset lock, render permission, or final public completion here.
+  Scope: public render readiness gate is opened after owner-approved production
+  rig readiness. Do not edit or create .blend files, run deformation test, create
+  animation, render, PNG, MP4, contact sheet, public output, production weight
+  pass, or redesign unless a later explicit gate authorizes it. Do not claim
+  public render ready, asset lock, render permission, or final public completion
+  here.
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = YES. Public render ready = NO. Asset
   lock = NO.
   Post-smoke review decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE.
-  Next safe task: OWNER_DEFINE_NEXT_POST_RIG_READY_GATE. Render remains forbidden
-  until a later explicit gate changes the render lock.
+  Next safe task: OWNER_DEFINE_PUBLIC_RENDER_READINESS_PREP_OR_REVIEW. Render
+  remains forbidden until a later explicit gate changes the render lock.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
