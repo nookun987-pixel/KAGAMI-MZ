@@ -1,15 +1,16 @@
-task_id: MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1
-target_lane: Mikage public render readiness gate
+task_id: MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1
+target_lane: Mikage public render preparation review
 status: COMPLETED
-current_step: MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1
+current_step: MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1
 
 goal: >
-  Open a controlled post-rig-ready public render readiness gate. No render,
-  public-ready claim, asset lock, push, website/public page update, or .blend
-  edit is allowed. PUBLIC_RENDER_READY, ASSET_LOCK, and RENDER_ALLOWED remain NO.
+  Review whether Mikage is ready to request a future render permission gate.
+  No render, public-ready claim, asset lock, push, website/public page update,
+  or .blend edit is allowed. PUBLIC_RENDER_READY, ASSET_LOCK, and
+  RENDER_ALLOWED remain NO.
 
 next_safe_task: >
-  OWNER_DEFINE_PUBLIC_RENDER_READINESS_PREP_OR_REVIEW
+  OWNER_OPEN_BOUNDED_RENDER_PERMISSION_GATE
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -26,7 +27,9 @@ runtime_phase:
   MIKAGE_FINAL_OPERATOR_RIG_SIGNOFF_GOVERNANCE_V0_1_PHASE: COMPLETED_HOLD_FOR_OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY
   MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1_PHASE: COMPLETED
   MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1_PHASE: COMPLETED_OPENED
+  MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1_PHASE: COMPLETED_READY_TO_REQUEST_RENDER_PERMISSION_GATE
   PUBLIC_RENDER_READINESS_GATE_DECISION: PUBLIC_RENDER_READINESS_GATE_OPENED
+  PUBLIC_RENDER_PREPARATION_REVIEW_DECISION: READY_TO_REQUEST_RENDER_PERMISSION_GATE
   OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY: YES
   owner_approval_to_set_production_rig_ready: true
   production_rig_ready: true
@@ -35,11 +38,11 @@ runtime_phase:
   rest_mode_broad_lock: RETAINED
   render_allowed: false
   deformation_test_allowed: false
-  current_controller: MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1
+  current_controller: MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1
   post_smoke_test_rig_review_gate_open: false
   post_smoke_test_rig_review_completed: true
   post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  current_next_task: OWNER_DEFINE_PUBLIC_RENDER_READINESS_PREP_OR_REVIEW
+  current_next_task: OWNER_OPEN_BOUNDED_RENDER_PERMISSION_GATE
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
   output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   deformation_smoke_test_gate_open: false
@@ -86,6 +89,7 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
+  - production/character/reviews/MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1.md
   - .mikage/tasks/active_task.yaml
   - docs/MIKAGE_MASTER_STATUS.md
@@ -142,6 +146,8 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
+  - MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1_PHASE is COMPLETED_READY_TO_REQUEST_RENDER_PERMISSION_GATE
+  - PUBLIC_RENDER_PREPARATION_REVIEW_DECISION is READY_TO_REQUEST_RENDER_PERMISSION_GATE
   - MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1_PHASE is COMPLETED_OPENED
   - PUBLIC_RENDER_READINESS_GATE_DECISION is PUBLIC_RENDER_READINESS_GATE_OPENED
   - OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY is YES
@@ -159,5 +165,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: OWNER_DEFINE_PUBLIC_RENDER_READINESS_PREP_OR_REVIEW
+next_step_if_pass: OWNER_OPEN_BOUNDED_RENDER_PERMISSION_GATE
 next_step_if_fail: stop and report reason only
