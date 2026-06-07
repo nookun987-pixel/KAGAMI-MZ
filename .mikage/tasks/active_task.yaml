@@ -1,15 +1,16 @@
-task_id: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
-target_lane: Mikage post-smoke-test rig review
+task_id: MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1
+target_lane: Mikage owner-approved production rig ready status update
 status: COMPLETED
-current_step: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+current_step: MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1
 
 goal: >
-  Open read-only post-smoke-test rig review. No blend edit, new blend,
-  deformation test, render, production-ready claim, public-ready claim, or asset
-  lock is allowed. DEFORMATION_TEST_ALLOWED and RENDER_ALLOWED remain NO.
+  Apply owner-approved governance/status update to set PRODUCTION_RIG_READY to
+  YES. No render, public-ready claim, asset lock, push, website/public page
+  update, or .blend edit is allowed. DEFORMATION_TEST_ALLOWED and
+  RENDER_ALLOWED remain NO.
 
 next_safe_task: >
-  MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1
+  OWNER_DEFINE_NEXT_POST_RIG_READY_GATE
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -22,14 +23,22 @@ runtime_phase:
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
   MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE: COMPLETED_PASS_READY_FOR_RIG_REVIEW
   MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE: COMPLETED_APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
+  MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1_PHASE: COMPLETED_HOLD_FOR_FINAL_OPERATOR_RIG_SIGNOFF
+  MIKAGE_FINAL_OPERATOR_RIG_SIGNOFF_GOVERNANCE_V0_1_PHASE: COMPLETED_HOLD_FOR_OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY
+  MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1_PHASE: COMPLETED
+  OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY: YES
+  owner_approval_to_set_production_rig_ready: true
+  production_rig_ready: true
+  public_render_ready: false
+  asset_lock: false
   rest_mode_broad_lock: RETAINED
   render_allowed: false
   deformation_test_allowed: false
-  current_controller: MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+  current_controller: MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1
   post_smoke_test_rig_review_gate_open: false
   post_smoke_test_rig_review_completed: true
   post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  current_next_task: MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1
+  current_next_task: OWNER_DEFINE_NEXT_POST_RIG_READY_GATE
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
   output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   deformation_smoke_test_gate_open: false
@@ -54,7 +63,7 @@ runtime_phase:
   no_blend_edits: true
   audit_report_only: true
   no_public_render_ready_claim: true
-  no_production_rig_ready_claim: true
+  no_production_rig_ready_claim: false
   no_asset_lock: true
   no_website_public_deployment: true
   no_final_rig: true
@@ -76,7 +85,10 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
-  - production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
+  - .mikage/tasks/active_task.yaml
+  - docs/MIKAGE_MASTER_STATUS.md
+  - docs/agent_dev_task_board.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
 
 cancelled_tasks:
   - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
@@ -105,7 +117,7 @@ forbidden_actions:
   - do not run another deformation test
   - do not create files outside output_files_allowed
   - do not claim public render ready
-  - do not claim production rig ready
+  - do not claim public render ready
   - do not asset-lock
   - do not deploy website or public page
   - do not run Lane B
@@ -113,7 +125,7 @@ forbidden_actions:
   - do not touch roster files
   - do not touch queue files
   - do not touch Z-Blue archive/history files
-  - do not claim production rig ready
+  - do not claim render permission
   - do not claim public render ready
   - do not claim asset lock
   - do not continue SAMPLE_01 composite
@@ -128,12 +140,13 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
-  - MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE is COMPLETED_APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
+  - MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1_PHASE is COMPLETED
+  - OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY is YES
   - POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN is NO
   - POST_SMOKE_TEST_RIG_REVIEW_COMPLETED is YES
   - RENDER_ALLOWED is NO
   - DEFORMATION_TEST_ALLOWED is NO
-  - production rig ready remains NO
+  - production rig ready is YES
   - public render ready remains NO
   - asset lock remains NO
   - no .blend files edited
@@ -143,5 +156,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1
+next_step_if_pass: OWNER_DEFINE_NEXT_POST_RIG_READY_GATE
 next_step_if_fail: stop and report reason only

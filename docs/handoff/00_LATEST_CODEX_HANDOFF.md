@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1
+  OWNER_DEFINE_NEXT_POST_RIG_READY_GATE
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -29,7 +29,11 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE = COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
   MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE = COMPLETED_PASS_READY_FOR_RIG_REVIEW
   MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE = COMPLETED_APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  CURRENT_CONTROLLER = MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1
+  MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1_PHASE = COMPLETED_HOLD_FOR_FINAL_OPERATOR_RIG_SIGNOFF
+  MIKAGE_FINAL_OPERATOR_RIG_SIGNOFF_GOVERNANCE_V0_1_PHASE = COMPLETED_HOLD_FOR_OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY
+  MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1_PHASE = COMPLETED
+  CURRENT_CONTROLLER = MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1
+  OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY = YES
   POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN = NO
   POST_SMOKE_TEST_RIG_REVIEW_COMPLETED = YES
   POST_SMOKE_TEST_RIG_REVIEW_DECISION = APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
@@ -42,6 +46,9 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MESH_PREP_GATE_OPEN = NO
   MESH_PREP_COMPLETED = YES
   MESH_PREP_DECISION = MESH_PREP_COMPLETE_READY_FOR_OPERATOR_REVIEW
+  PRODUCTION_RIG_READY = YES
+  PUBLIC_RENDER_READY = NO
+  ASSET_LOCK = NO
   RENDER_ALLOWED = NO
   DEFORMATION_TEST_ALLOWED = NO
   Rest Mode remains closed for broad work. Post-smoke rig review completed and
@@ -60,18 +67,18 @@ CONTROLLED_RUNTIME_EXCEPTION:
   - production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   Review input blend:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  Scope: post-smoke rig review accepted the deformation smoke test as proof only.
-  Next task is the separate production rig finalization gate. Do not edit or
-  create .blend files, run deformation test, create animation, render, PNG, MP4,
-  contact sheet, final rig, production weight pass, or redesign unless a later
-  explicit gate authorizes it. Do not claim public render ready, production rig
-  ready, asset lock, or final completion here.
+  Scope: owner explicitly approved the exact governance/status update that sets
+  PRODUCTION_RIG_READY = YES after the final operator rig signoff hold. Do not
+  edit or create .blend files, run deformation test, create animation, render,
+  PNG, MP4, contact sheet, public output, production weight pass, or redesign
+  unless a later explicit gate authorizes it. Do not claim public render ready,
+  asset lock, render permission, or final public completion here.
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
-  cleanup. No push. Production rig ready = NO. Public render ready = NO. Asset
+  cleanup. No push. Production rig ready = YES. Public render ready = NO. Asset
   lock = NO.
   Post-smoke review decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE.
-  Next safe task: MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1. Production rig
-  ready remains NO until that finalization gate explicitly sets it.
+  Next safe task: OWNER_DEFINE_NEXT_POST_RIG_READY_GATE. Render remains forbidden
+  until a later explicit gate changes the render lock.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
