@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  OPEN_BOUNDED_RENDER_CANDIDATE_FIX_TASK
+  OPEN_READ_ONLY_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_TASK
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -40,6 +40,10 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1_PHASE = COMPLETED_HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
   PUBLIC_RENDER_CANDIDATE_REVIEW_DECISION = HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
   PUBLIC_RENDER_CANDIDATE_REVIEW_BLOCKER = VISIBLE_EXTRA_FACE_LIKE_RECTANGULAR_MARKS_BEYOND_TWO_SENSOR_SLITS
+  MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PHASE = COMPLETED_CREATED_FOR_REVIEW
+  PUBLIC_RENDER_CANDIDATE_FIX_DECISION = PUBLIC_RENDER_CANDIDATE_FIX_CREATED_FOR_REVIEW
+  PUBLIC_RENDER_CANDIDATE_FIX_OUTPUT = production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
+  PUBLIC_RENDER_CANDIDATE_FIX_PROOF = production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PROOF.md
   PUBLIC_RENDER_CANDIDATE_OUTPUT = production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1.png
   PUBLIC_RENDER_CANDIDATE_PROOF = production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PROOF.md
   PUBLIC_RENDER_CANDIDATE_REVIEW = production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1.md
@@ -47,7 +51,7 @@ CONTROLLED_RUNTIME_EXCEPTION:
   PUBLIC_RENDER_PREPARATION_REVIEW_DECISION = READY_TO_REQUEST_RENDER_PERMISSION_GATE
   RENDER_PERMISSION_GATE_DECISION = RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
   GOVERNANCE_ALLOWS_RENDER_PERMISSION = YES
-  CURRENT_CONTROLLER = MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1
+  CURRENT_CONTROLLER = MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1
   OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY = YES
   POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN = NO
   POST_SMOKE_TEST_RIG_REVIEW_COMPLETED = YES
@@ -87,14 +91,15 @@ CONTROLLED_RUNTIME_EXCEPTION:
   deformation test, create animation, create additional PNG/MP4/contact sheet
   variants, public output pages, production weight pass, or redesign unless a
   later explicit gate authorizes it. Candidate review found extra visible
-  face-like rectangular marks beyond the intended two sensor slit cues, so hold
-  for a bounded candidate fix. Do not claim public render ready, asset lock, or
-  final public completion here.
+  face-like rectangular marks beyond the intended two sensor slit cues. A single
+  bounded fixed candidate was created for review with those face-like marks
+  removed or clearly suppressed. Do not claim public render ready, asset lock,
+  or final public completion here.
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = YES. Public render ready = NO. Asset
   lock = NO.
   Post-smoke review decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE.
-  Next safe task: OPEN_BOUNDED_RENDER_CANDIDATE_FIX_TASK.
+  Next safe task: OPEN_READ_ONLY_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_TASK.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.
