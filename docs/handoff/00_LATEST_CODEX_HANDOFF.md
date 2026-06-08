@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
+  Verify deployed/live site if deployment is automatic, or hold.
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -53,6 +53,7 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1_PHASE = OPEN
   MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1_PHASE = COMPLETED_PUBLIC_RENDER_PAGE_UPDATE_APPLIED
   MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1_PHASE = OPEN
+  MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1_PHASE = COMPLETED_PUSHED
   PAGE_UPDATE_GATE = OPEN
   PAGE_UPDATE_DONE = YES
   PUSH_GATE = OPEN
@@ -61,6 +62,7 @@ CONTROLLED_RUNTIME_EXCEPTION:
   PUBLIC_RENDER_PAGE_UPDATE_GATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
   PUBLIC_RENDER_PAGE_UPDATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1.md
   PUBLIC_RENDER_PAGE_PUSH_GATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1.md
+  PUBLIC_RENDER_PAGE_PUSH_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_APPROVAL_REPORT = production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_GATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
   PUBLIC_RENDER_CANDIDATE_FIX_OUTPUT = production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
@@ -90,7 +92,7 @@ CONTROLLED_RUNTIME_EXCEPTION:
   PUBLIC_RENDER_READY = YES
   ASSET_LOCK = YES
   RENDER_ALLOWED = YES
-  PUSH_DONE = NO
+  PUSH_DONE = YES
   DEFORMATION_TEST_ALLOWED = NO
   Rest Mode remains closed for broad work. Post-smoke rig review completed and
   approved opening a separate production rig finalization gate. No .blend edit,
@@ -126,8 +128,8 @@ CONTROLLED_RUNTIME_EXCEPTION:
   Page update gate was used for the bounded public render page update task. The
   authorized reveal pages now reference the locked public render asset.
   Post-smoke review decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE.
-  Next safe task: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1.
-  NEXT_REAL_ACTION: Run controlled push task, or hold.
+  Next safe task: Verify deployed/live site if deployment is automatic, or hold.
+  NEXT_REAL_ACTION: Verify deployed/live site if deployment is automatic, or hold.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.

@@ -1,7 +1,7 @@
-task_id: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1
-target_lane: Mikage public render page push gate
+task_id: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
+target_lane: Mikage public render page push
 status: COMPLETED
-current_step: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1
+current_step: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
 
 goal: >
   Open a controlled gate for the next bounded task to update Mikage public
@@ -9,7 +9,7 @@ goal: >
   Do not update website or page content in this gate-opening task.
 
 next_safe_task: >
-  MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
+  Verify deployed/live site if deployment is automatic, or hold.
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -38,6 +38,7 @@ runtime_phase:
   MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1_PHASE: OPEN
   MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1_PHASE: COMPLETED_PUBLIC_RENDER_PAGE_UPDATE_APPLIED
   MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1_PHASE: OPEN
+  MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1_PHASE: COMPLETED_PUSHED
   PAGE_UPDATE_GATE: OPEN
   PAGE_UPDATE_DONE: YES
   PUSH_GATE: OPEN
@@ -46,6 +47,7 @@ runtime_phase:
   PUBLIC_RENDER_PAGE_UPDATE_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
   PUBLIC_RENDER_PAGE_UPDATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1.md
   PUBLIC_RENDER_PAGE_PUSH_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1.md
+  PUBLIC_RENDER_PAGE_PUSH_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_APPROVAL_REPORT: production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
   PUBLIC_RENDER_CANDIDATE_DECISION: PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
@@ -67,13 +69,13 @@ runtime_phase:
   production_rig_ready: true
   public_render_ready: true
   asset_lock: true
-  push_done: false
+  push_done: true
   rest_mode_broad_lock: RETAINED
   render_allowed: true
   deformation_test_allowed: false
-  current_controller: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1
-  current_next_task: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
-  next_real_action: Run controlled push task, or hold.
+  current_controller: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
+  current_next_task: Verify deployed/live site if deployment is automatic, or hold.
+  next_real_action: Verify deployed/live site if deployment is automatic, or hold.
   page_update_done: true
   push_gate: OPEN
   post_smoke_test_rig_review_gate_open: false
@@ -224,5 +226,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1
+next_step_if_pass: Verify deployed/live site if deployment is automatic, or hold.
 next_step_if_fail: stop and report reason only
