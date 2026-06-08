@@ -1,15 +1,15 @@
-task_id: MIKAGE_RENDER_PERMISSION_GATE_V0_1
-target_lane: Mikage render permission gate
+task_id: MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1
+target_lane: Mikage public render candidate
 status: COMPLETED
-current_step: MIKAGE_RENDER_PERMISSION_GATE_V0_1
+current_step: MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1
 
 goal: >
-  Grant render permission for the next separately scoped render task. No render,
-  public-ready claim, asset lock, push, website/public page update, or .blend
-  edit is allowed in this gate. PUBLIC_RENDER_READY and ASSET_LOCK remain NO.
+  Create one bounded public render candidate from the approved production rig
+  state. No public-ready claim, asset lock, push, website/public page update,
+  source .blend edit, or additional render variant is allowed.
 
 next_safe_task: >
-  OWNER_OPEN_SEPARATE_BOUNDED_RENDER_TASK
+  OWNER_REVIEW_PUBLIC_RENDER_CANDIDATE_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -28,6 +28,8 @@ runtime_phase:
   MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1_PHASE: COMPLETED_OPENED
   MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1_PHASE: COMPLETED_READY_TO_REQUEST_RENDER_PERMISSION_GATE
   MIKAGE_RENDER_PERMISSION_GATE_V0_1_PHASE: COMPLETED_GRANTED_FOR_NEXT_RENDER_TASK
+  MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_CREATED_FOR_REVIEW
+  PUBLIC_RENDER_CANDIDATE_DECISION: PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
   PUBLIC_RENDER_READINESS_GATE_DECISION: PUBLIC_RENDER_READINESS_GATE_OPENED
   PUBLIC_RENDER_PREPARATION_REVIEW_DECISION: READY_TO_REQUEST_RENDER_PERMISSION_GATE
   RENDER_PERMISSION_GATE_DECISION: RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
@@ -40,11 +42,11 @@ runtime_phase:
   rest_mode_broad_lock: RETAINED
   render_allowed: true
   deformation_test_allowed: false
-  current_controller: MIKAGE_RENDER_PERMISSION_GATE_V0_1
+  current_controller: MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1
   post_smoke_test_rig_review_gate_open: false
   post_smoke_test_rig_review_completed: true
   post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  current_next_task: OWNER_OPEN_SEPARATE_BOUNDED_RENDER_TASK
+  current_next_task: OWNER_REVIEW_PUBLIC_RENDER_CANDIDATE_V0_1
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
   output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   deformation_smoke_test_gate_open: false
@@ -91,6 +93,8 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
+  - production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1.png
+  - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PROOF.md
   - production/character/reviews/MIKAGE_RENDER_PERMISSION_GATE_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1.md
@@ -120,7 +124,7 @@ forbidden_actions:
   - do not create final rig
   - do not create production weight pass
   - do not create animation output
-  - do not create PNG/MP4/final render/cinematic render output
+  - do not create PNG/MP4/final render/cinematic render output outside the exact allowed candidate PNG
   - do not create any .blend file
   - do not modify any .blend file
   - do not run another deformation test
@@ -149,6 +153,8 @@ forbidden_actions:
   - do not force push
 
 pass_conditions:
+  - MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PHASE is COMPLETED_CREATED_FOR_REVIEW
+  - PUBLIC_RENDER_CANDIDATE_DECISION is PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
   - MIKAGE_RENDER_PERMISSION_GATE_V0_1_PHASE is COMPLETED_GRANTED_FOR_NEXT_RENDER_TASK
   - RENDER_PERMISSION_GATE_DECISION is RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
   - GOVERNANCE_ALLOWS_RENDER_PERMISSION is YES
@@ -171,5 +177,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: OWNER_OPEN_SEPARATE_BOUNDED_RENDER_TASK
+next_step_if_pass: OWNER_REVIEW_PUBLIC_RENDER_CANDIDATE_V0_1
 next_step_if_fail: stop and report reason only

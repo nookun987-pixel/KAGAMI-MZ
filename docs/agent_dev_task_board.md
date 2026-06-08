@@ -6,15 +6,19 @@
 - ACTIVE_BRANCH = main
 
 ## 2. Current Phase
-- PHASE = Operator Rest Mode / Governance Handoff with render permission gate granted
-- STATUS = MIKAGE_RENDER_PERMISSION_GATE_V0_1_COMPLETED
+- PHASE = Operator Rest Mode / Governance Handoff with public render candidate created for review
+- STATUS = MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_COMPLETED
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
 - MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE = COMPLETED_ACCEPTED_AS_PROOF
-- CURRENT_NEXT_TASK = OWNER_OPEN_SEPARATE_BOUNDED_RENDER_TASK
+- CURRENT_NEXT_TASK = OWNER_REVIEW_PUBLIC_RENDER_CANDIDATE_V0_1
+- MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PHASE = COMPLETED_CREATED_FOR_REVIEW
+- PUBLIC_RENDER_CANDIDATE_DECISION = PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
+- PUBLIC_RENDER_CANDIDATE_OUTPUT = production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1.png
+- PUBLIC_RENDER_CANDIDATE_PROOF = production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PROOF.md
 - MIKAGE_RENDER_PERMISSION_GATE_V0_1_PHASE = COMPLETED_GRANTED_FOR_NEXT_RENDER_TASK
 - RENDER_PERMISSION_GATE_DECISION = RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
 - GOVERNANCE_ALLOWS_RENDER_PERMISSION = YES
@@ -93,12 +97,12 @@
 - NONE
 
 ## 5. Next Safe Action
-- Owner may open a separate bounded render task.
+- Owner may review `MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1`.
 - `PRODUCTION_RIG_READY = YES`.
 - `RENDER_ALLOWED = YES`.
 - `DEFORMATION_TEST_ALLOWED = NO`.
 - Public render ready and asset lock remain NO.
-- No render may run until the next task declares exact render inputs, exact output files, and success checks. Public image, website/public page, roster, queue, Lane B, Z-Blue archive/history cleanup, push, and `.blend` edit remain forbidden.
+- Public-ready claim, website/public page, roster, queue, Lane B, Z-Blue archive/history cleanup, push, asset lock, and source `.blend` edit remain forbidden.
 
 ## 6. Forbidden Actions
 - No push.
