@@ -1,7 +1,7 @@
-task_id: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1
-target_lane: Mikage public render page update gate
+task_id: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
+target_lane: Mikage public render page update
 status: COMPLETED
-current_step: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1
+current_step: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
 
 goal: >
   Open a controlled gate for the next bounded task to update Mikage public
@@ -9,7 +9,7 @@ goal: >
   Do not update website or page content in this gate-opening task.
 
 next_safe_task: >
-  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
+  Owner chooses push gate or hold.
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -36,10 +36,13 @@ runtime_phase:
   MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1_PHASE: COMPLETED_SUPERSEDED_BY_OWNER_ASSET_LOCK_APPROVAL
   MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1_PHASE: COMPLETED_ASSET_LOCK_APPROVED_BY_OWNER
   MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1_PHASE: OPEN
+  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1_PHASE: COMPLETED_PUBLIC_RENDER_PAGE_UPDATE_APPLIED
   PAGE_UPDATE_GATE: OPEN
+  PAGE_UPDATE_DONE: YES
   PUBLIC_RENDER_ASSET_LOCK_DECISION: PUBLIC_RENDER_ASSET_LOCK_APPROVED_BY_OWNER
   PUBLIC_RENDER_PAGE_UPDATE_GATE_DECISION: PAGE_UPDATE_GATE_OPENED
   PUBLIC_RENDER_PAGE_UPDATE_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
+  PUBLIC_RENDER_PAGE_UPDATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_APPROVAL_REPORT: production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
   PUBLIC_RENDER_CANDIDATE_DECISION: PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
@@ -66,6 +69,7 @@ runtime_phase:
   render_allowed: true
   deformation_test_allowed: false
   current_controller: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1
+  page_update_done: true
   post_smoke_test_rig_review_gate_open: false
   post_smoke_test_rig_review_completed: true
   post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
@@ -214,5 +218,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
+next_step_if_pass: Owner chooses push gate or hold.
 next_step_if_fail: stop and report reason only

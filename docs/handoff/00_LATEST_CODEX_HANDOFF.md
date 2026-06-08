@@ -16,7 +16,7 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
+  Owner chooses push gate or hold.
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -51,10 +51,13 @@ CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1_PHASE = COMPLETED_SUPERSEDED_BY_OWNER_ASSET_LOCK_APPROVAL
   MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1_PHASE = COMPLETED_ASSET_LOCK_APPROVED_BY_OWNER
   MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1_PHASE = OPEN
+  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1_PHASE = COMPLETED_PUBLIC_RENDER_PAGE_UPDATE_APPLIED
   PAGE_UPDATE_GATE = OPEN
+  PAGE_UPDATE_DONE = YES
   PUBLIC_RENDER_ASSET_LOCK_DECISION = PUBLIC_RENDER_ASSET_LOCK_APPROVED_BY_OWNER
   PUBLIC_RENDER_PAGE_UPDATE_GATE_DECISION = PAGE_UPDATE_GATE_OPENED
   PUBLIC_RENDER_PAGE_UPDATE_GATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
+  PUBLIC_RENDER_PAGE_UPDATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_APPROVAL_REPORT = production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_GATE_REPORT = production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
   PUBLIC_RENDER_CANDIDATE_FIX_OUTPUT = production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
@@ -117,10 +120,10 @@ CONTROLLED_RUNTIME_EXCEPTION:
   No Lane B. No website / HTML. No roster / queue. No Z-Blue archive/history
   cleanup. No push. Production rig ready = YES. Public render ready = YES. Asset
   lock = YES for production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png.
-  Page update gate is OPEN for the next bounded task only; this gate-opening task
-  did not update website/public page content.
+  Page update gate was used for the bounded public render page update task. The
+  authorized reveal pages now reference the locked public render asset.
   Post-smoke review decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE.
-  Next safe task: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1.
+  Next safe task: Owner chooses push gate or hold.
 
 CANON GUARD:
   Agents must not blend brand and cine palettes. One layer per asset.

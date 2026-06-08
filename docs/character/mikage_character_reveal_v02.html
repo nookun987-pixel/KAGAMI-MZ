@@ -255,6 +255,19 @@
     font-size:8px; letter-spacing:0.25em; color:rgba(10,10,10,0.25);
     text-align:center; margin-top:14px; text-transform:uppercase;
   }
+
+  .public-render {
+    width:100%; max-width:500px; margin-top:28px;
+    border-top:1px solid var(--sketch); padding-top:22px;
+  }
+  .public-render img {
+    display:block; width:100%; height:auto;
+    background:var(--void); border:1px solid rgba(10,10,10,0.14);
+  }
+  .public-render figcaption {
+    font-size:8px; letter-spacing:0.25em; color:rgba(10,10,10,0.28);
+    text-align:center; margin-top:10px; text-transform:uppercase;
+  }
 </style>
 </head>
 <body>
@@ -485,6 +498,15 @@
     </div><!-- /canvas-frame -->
     <div id="progress-bar"><div id="progress-fill"></div></div>
   </div><!-- /canvas-area -->
+
+  <figure class="public-render">
+    <img
+      src="../../production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png"
+      alt="Mikage public render - asset locked"
+      data-locked-render="production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png"
+      data-locked-render-sha256="61EACD1F52A71EA92DD135C8835C921A00BCB6B2651F28ABF4CB412F9671512F">
+    <figcaption>Public render asset locked</figcaption>
+  </figure>
 
   <!-- INFO PANEL -->
   <div class="info-panel">
