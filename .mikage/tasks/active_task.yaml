@@ -1,16 +1,15 @@
-task_id: MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1
-target_lane: Mikage public render asset lock status update
+task_id: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1
+target_lane: Mikage public render page update gate
 status: COMPLETED
-current_step: MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1
+current_step: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1
 
 goal: >
-  Record owner approval and set asset lock for the approved fixed public render
-  candidate. No render, PNG edit, push, website/public page update,
-  source .blend edit, final locked asset, deployment, or additional render
-  variant is allowed.
+  Open a controlled gate for the next bounded task to update Mikage public
+  character/page references to the owner-approved locked public render asset.
+  Do not update website or page content in this gate-opening task.
 
 next_safe_task: >
-  OWNER_CHOOSES_WEBSITE_PUBLIC_PAGE_UPDATE_GATE_ROSTER_PAGE_PUBLISHING_GATE_PUSH_GATE_OR_HOLD
+  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -36,7 +35,11 @@ runtime_phase:
   MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1_PHASE: COMPLETED_PUBLIC_RENDER_READY_APPROVED
   MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1_PHASE: COMPLETED_SUPERSEDED_BY_OWNER_ASSET_LOCK_APPROVAL
   MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1_PHASE: COMPLETED_ASSET_LOCK_APPROVED_BY_OWNER
+  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1_PHASE: OPEN
+  PAGE_UPDATE_GATE: OPEN
   PUBLIC_RENDER_ASSET_LOCK_DECISION: PUBLIC_RENDER_ASSET_LOCK_APPROVED_BY_OWNER
+  PUBLIC_RENDER_PAGE_UPDATE_GATE_DECISION: PAGE_UPDATE_GATE_OPENED
+  PUBLIC_RENDER_PAGE_UPDATE_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_APPROVAL_REPORT: production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
   PUBLIC_RENDER_ASSET_LOCK_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
   PUBLIC_RENDER_CANDIDATE_DECISION: PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
@@ -62,11 +65,11 @@ runtime_phase:
   rest_mode_broad_lock: RETAINED
   render_allowed: true
   deformation_test_allowed: false
-  current_controller: MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1
+  current_controller: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1
   post_smoke_test_rig_review_gate_open: false
   post_smoke_test_rig_review_completed: true
   post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  current_next_task: OWNER_CHOOSES_WEBSITE_PUBLIC_PAGE_UPDATE_GATE_ROSTER_PAGE_PUBLISHING_GATE_PUSH_GATE_OR_HOLD
+  current_next_task: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
   output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   deformation_smoke_test_gate_open: false
@@ -122,6 +125,7 @@ output_files_allowed:
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
   - production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
+  - production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
   - production/character/reviews/MIKAGE_RENDER_PERMISSION_GATE_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1.md
@@ -202,6 +206,7 @@ pass_conditions:
   - production rig ready is YES
   - public render ready is YES
   - asset lock is YES for production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
+  - PAGE_UPDATE_GATE is OPEN
   - no .blend files edited
   - no Lane B files touched
   - no website or HTML files touched
@@ -209,5 +214,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: OWNER_CHOOSES_WEBSITE_PUBLIC_PAGE_UPDATE_GATE_ROSTER_PAGE_PUBLISHING_GATE_PUSH_GATE_OR_HOLD
+next_step_if_pass: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
 next_step_if_fail: stop and report reason only
