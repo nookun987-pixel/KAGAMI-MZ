@@ -1,17 +1,16 @@
-task_id: MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1
-target_lane: Mikage public render candidate fix review
+task_id: MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1
+target_lane: Mikage public render ready gate
 status: COMPLETED
-current_step: MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1
+current_step: MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1
 
 goal: >
-  Run a read-only review of the bounded fixed public render candidate. Check
-  whether the fixed candidate is acceptable for a future public-render-ready
-  gate. No render, PNG edit, public-ready claim, asset lock, push,
-  website/public page update, source .blend edit, final locked asset, or
-  additional render variant is allowed.
+  Run a controlled public-render-ready gate for the accepted fixed public render
+  candidate. No render, PNG edit, asset lock, push, website/public page update,
+  source .blend edit, final locked asset, deployment, or additional render
+  variant is allowed.
 
 next_safe_task: >
-  OPEN_PUBLIC_RENDER_READY_GATE
+  OWNER_CHOOSES_ASSET_LOCK_GATE_WEBSITE_PAGE_UPDATE_GATE_OR_HOLD
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -34,12 +33,15 @@ runtime_phase:
   MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1_PHASE: COMPLETED_HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
   MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PHASE: COMPLETED_CREATED_FOR_REVIEW
   MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1_PHASE: COMPLETED_ACCEPTED_FOR_READY_GATE
+  MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1_PHASE: COMPLETED_PUBLIC_RENDER_READY_APPROVED
   PUBLIC_RENDER_CANDIDATE_DECISION: PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
   PUBLIC_RENDER_CANDIDATE_REVIEW_DECISION: HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
   PUBLIC_RENDER_CANDIDATE_REVIEW_BLOCKER: VISIBLE_EXTRA_FACE_LIKE_RECTANGULAR_MARKS_BEYOND_TWO_SENSOR_SLITS
   PUBLIC_RENDER_CANDIDATE_FIX_DECISION: PUBLIC_RENDER_CANDIDATE_FIX_CREATED_FOR_REVIEW
   PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_DECISION: FIXED_PUBLIC_RENDER_CANDIDATE_ACCEPTED_FOR_READY_GATE
   PUBLIC_RENDER_CANDIDATE_FIX_REVIEW: production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1.md
+  PUBLIC_RENDER_READY_GATE_DECISION: PUBLIC_RENDER_READY_APPROVED
+  PUBLIC_RENDER_READY_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1.md
   PUBLIC_RENDER_CANDIDATE_FIX_OUTPUT: production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
   PUBLIC_RENDER_CANDIDATE_FIX_PROOF: production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PROOF.md
   PUBLIC_RENDER_READINESS_GATE_DECISION: PUBLIC_RENDER_READINESS_GATE_OPENED
@@ -49,16 +51,16 @@ runtime_phase:
   OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY: YES
   owner_approval_to_set_production_rig_ready: true
   production_rig_ready: true
-  public_render_ready: false
+  public_render_ready: true
   asset_lock: false
   rest_mode_broad_lock: RETAINED
   render_allowed: true
   deformation_test_allowed: false
-  current_controller: MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1
+  current_controller: MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1
   post_smoke_test_rig_review_gate_open: false
   post_smoke_test_rig_review_completed: true
   post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  current_next_task: OPEN_PUBLIC_RENDER_READY_GATE
+  current_next_task: OWNER_CHOOSES_ASSET_LOCK_GATE_WEBSITE_PAGE_UPDATE_GATE_OR_HOLD
   review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
   output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
   deformation_smoke_test_gate_open: false
@@ -82,7 +84,7 @@ runtime_phase:
   no_v0_3_overwrite: true
   no_blend_edits: true
   audit_report_only: true
-  no_public_render_ready_claim: true
+  no_public_render_ready_claim: false
   no_production_rig_ready_claim: false
   no_asset_lock: true
   no_website_public_deployment: true
@@ -111,6 +113,7 @@ output_files_allowed:
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PROOF.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1.md
+  - production/character/reviews/MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1.md
   - production/character/reviews/MIKAGE_RENDER_PERMISSION_GATE_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1.md
   - production/character/reviews/MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1.md
@@ -145,8 +148,7 @@ forbidden_actions:
   - do not modify any .blend file
   - do not run another deformation test
   - do not create files outside output_files_allowed
-  - do not claim public render ready
-  - do not claim public render ready
+  - do not claim asset lock
   - do not asset-lock
   - do not deploy website or public page
   - do not run Lane B
@@ -155,7 +157,6 @@ forbidden_actions:
   - do not touch queue files
   - do not touch Z-Blue archive/history files
   - do not render without a separately scoped render task
-  - do not claim public render ready
   - do not claim asset lock
   - do not continue SAMPLE_01 composite
   - do not generate SAMPLE_01.png
@@ -177,6 +178,8 @@ pass_conditions:
   - PUBLIC_RENDER_CANDIDATE_FIX_DECISION is PUBLIC_RENDER_CANDIDATE_FIX_CREATED_FOR_REVIEW
   - MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1_PHASE is COMPLETED_ACCEPTED_FOR_READY_GATE
   - PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_DECISION is FIXED_PUBLIC_RENDER_CANDIDATE_ACCEPTED_FOR_READY_GATE
+  - MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1_PHASE is COMPLETED_PUBLIC_RENDER_READY_APPROVED
+  - PUBLIC_RENDER_READY_GATE_DECISION is PUBLIC_RENDER_READY_APPROVED
   - MIKAGE_RENDER_PERMISSION_GATE_V0_1_PHASE is COMPLETED_GRANTED_FOR_NEXT_RENDER_TASK
   - RENDER_PERMISSION_GATE_DECISION is RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
   - GOVERNANCE_ALLOWS_RENDER_PERMISSION is YES
@@ -190,7 +193,7 @@ pass_conditions:
   - RENDER_ALLOWED is YES
   - DEFORMATION_TEST_ALLOWED is NO
   - production rig ready is YES
-  - public render ready remains NO
+  - public render ready is YES
   - asset lock remains NO
   - no .blend files edited
   - no Lane B files touched
@@ -199,5 +202,5 @@ pass_conditions:
   - no Z-Blue archive/history files touched
 
 verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: OPEN_PUBLIC_RENDER_READY_GATE
+next_step_if_pass: OWNER_CHOOSES_ASSET_LOCK_GATE_WEBSITE_PAGE_UPDATE_GATE_OR_HOLD
 next_step_if_fail: stop and report reason only
