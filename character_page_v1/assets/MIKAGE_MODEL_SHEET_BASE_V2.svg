@@ -1,0 +1,344 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1180" width="1680" height="1180" font-family="ui-monospace, 'Space Mono', monospace">
+<defs>
+    <style>.mono{font-family:ui-monospace,'Space Mono',monospace;} text{fill:#3a3a42;}</style>
+    <path id="helm" d="M0,-52 L20,-44 L34,-22 L33,2 L24,24 L12,42 L0,52 L-12,42 L-24,24 L-33,2 L-34,-22 L-20,-44 Z"/>
+    <g id="helmFacets" fill="none"><path d="M0,-46 L0,50"/><path d="M-30,-20 L30,-20"/><path d="M-34,-22 L-22,8"/><path d="M34,-22 L22,8"/><path d="M-22,26 L0,46"/><path d="M22,26 L0,46"/></g>
+    <path id="helmP" d="M-8,-52 L10,-50 L26,-34 L34,-16 L40,2 L34,18 L20,34 L6,46 L-8,48 L-24,34 L-36,10 L-40,-16 L-30,-42 Z"/>
+
+    <!-- ============ FRONT ============ -->
+    <g id="figFront">
+      <g fill="#0d0d12">
+        <path d="M410,200 C368,206 342,250 332,332 C325,430 332,572 360,706 L398,692 C384,560 380,428 388,344 C394,284 412,228 422,206 Z"/>
+        <path d="M450,200 C492,206 518,250 528,332 C535,430 528,572 500,706 L462,692 C476,560 480,428 472,344 C466,284 448,228 438,206 Z"/>
+        <path d="M402,190 Q430,178 458,190 L454,250 Q430,240 406,250 Z"/>
+      </g>
+      <polygon points="406,720 424,720 421,812 408,812" fill="#fafafa"/>
+      <polygon points="454,720 436,720 439,812 452,812" fill="#fafafa"/>
+      <path d="M402,808 L424,808 L426,830 L432,845 L396,845 L396,828 Z" fill="#16161c"/>
+      <path d="M458,808 L436,808 L434,830 L428,845 L464,845 L464,828 Z" fill="#16161c"/>
+      <g fill="#2a2a33"><rect x="406" y="804" width="18" height="7" rx="3"/><rect x="436" y="804" width="18" height="7" rx="3"/></g>
+      <g fill="#16161c">
+        <path d="M348,310 L334,360 L330,452 L338,545 L360,548 L362,452 L360,360 L356,314 Z"/>
+        <path d="M512,310 L526,360 L530,452 L522,545 L500,548 L498,452 L500,360 L504,314 Z"/>
+        <path d="M348,308 L356,360 L366,450 L362,500 L372,520 L488,520 L498,500 L494,450 L504,360 L512,308 Z"/>
+        <path d="M372,520 L362,664 L366,724 L494,724 L498,664 L488,520 Z"/>
+        <path d="M362,648 L353,768 L357,794 L390,794 L392,768 L390,648 Z"/>
+        <path d="M498,648 L507,768 L503,794 L470,794 L468,768 L470,648 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M398,534 L400,720" stroke="#08080c" stroke-width="2"/><path d="M430,532 L430,722" stroke="#08080c" stroke-width="2"/><path d="M462,534 L460,720" stroke="#08080c" stroke-width="2"/>
+        <path d="M403,540 L405,716" stroke="#34343e" stroke-width="1.2"/><path d="M434,538 L434,718" stroke="#34343e" stroke-width="1.2"/><path d="M467,540 L465,716" stroke="#34343e" stroke-width="1.2"/>
+      </g>
+      <g fill="#fafafa">
+        <path d="M392,330 L468,330 L472,392 Q430,408 388,392 Z"/>
+        <path d="M340,306 C326,316 322,338 332,352 L362,346 L360,310 Z"/><path d="M520,306 C534,316 538,338 528,352 L498,346 L500,310 Z"/>
+        <path d="M338,548 L360,548 L360,576 Q349,582 338,576 Z"/><path d="M522,548 L500,548 L500,576 Q511,582 522,576 Z"/>
+      </g>
+      <g fill="#2a2a33"><rect x="337" y="544" width="24" height="7" rx="3"/><rect x="499" y="544" width="24" height="7" rx="3"/></g>
+      <path d="M398,308 L392,262 L410,248 Q430,242 450,248 L468,262 L462,308 Z" fill="#16161c"/>
+      <use href="#helm" transform="translate(430,214) scale(0.92)" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
+      <use href="#helmFacets" transform="translate(430,214) scale(0.92)" stroke="#b8b4ad" stroke-width="0.9"/>
+      <g fill="none" stroke="#8F00FF" stroke-width="5" stroke-linecap="round" opacity="0.45"><path d="M413,209 L425,211.5"/><path d="M447,209 L435,211.5"/></g>
+      <g fill="none" stroke="#26262c" stroke-width="2.2" stroke-linecap="round"><path d="M413,209 L425,211.5"/><path d="M447,209 L435,211.5"/></g>
+    </g>
+
+    <!-- ============ SIDE (faces right; hair + back to the left) ============ -->
+    <g id="figSide">
+      <!-- hair: heavy vertical sheet behind helmet and shoulder -->
+      <g fill="#0d0d12">
+        <path d="M424,198 C386,202 360,238 350,318 C338,430 346,594 374,732 L428,716 C412,594 408,456 418,340 C424,274 438,222 448,202 Z"/>
+        <path d="M398,238 C366,294 356,438 370,610 C376,684 386,728 402,744 L430,718 C414,594 410,452 420,314 C424,270 430,242 436,224 Z"/>
+        <path d="M370,360 C354,462 360,628 386,780 L416,770 C398,628 394,482 404,354 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M390,238 C372,360 374,592 402,752" stroke="#34343e" stroke-width="1.4"/>
+        <path d="M424,286 C412,430 414,600 432,708" stroke="#050509" stroke-width="3"/>
+      </g>
+      <!-- leg: white shin + dark boot (toe forward) -->
+      <polygon points="420,724 440,724 436,812 422,812" fill="#fafafa"/>
+      <path d="M416,808 L442,808 L474,830 L474,846 L412,846 L412,828 Z" fill="#16161c"/>
+      <g fill="#2a2a33"><rect x="418" y="804" width="20" height="7" rx="3"/></g>
+      <!-- coat profile (black) + skirt panels -->
+      <g fill="#16161c">
+        <path d="M418,310 C408,362 410,422 418,462 C414,492 416,512 424,522 L482,522 C494,494 492,454 486,432 C496,402 496,356 484,316 Z"/>
+        <path d="M420,522 L408,664 L412,724 L486,724 L492,664 L480,522 Z"/>
+        <path d="M408,648 L398,768 L402,794 L432,794 L436,768 L434,648 Z"/>
+        <path d="M438,646 L438,768 L444,794 L474,794 L472,768 L462,646 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M430,532 L428,722" stroke="#08080c" stroke-width="2.4"/>
+        <path d="M458,532 L464,722" stroke="#08080c" stroke-width="2"/>
+        <path d="M436,540 L434,716" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M468,540 L474,716" stroke="#34343e" stroke-width="1.2"/>
+        <path d="M434,650 L432,790" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M462,650 L474,790" stroke="#34343e" stroke-width="1.3"/>
+      </g>
+      <!-- arm sleeve black + white hand -->
+      <path d="M448,316 L460,360 L462,452 L456,544 L436,548 L438,452 L440,360 L442,320 Z" fill="#16161c"/>
+      <path d="M436,548 L458,548 L458,576 Q447,582 436,576 Z" fill="#fafafa"/>
+      <g fill="#2a2a33"><rect x="436" y="544" width="22" height="7" rx="3"/></g>
+      <!-- white chest plate (front edge) -->
+      <path d="M470,332 L490,340 L492,392 L468,398 Z" fill="#fafafa"/>
+      <!-- collar black -->
+      <path d="M418,308 L414,262 L428,250 Q444,248 456,256 L462,300 L450,310 Q432,314 420,310 Z" fill="#16161c"/>
+      <!-- helmet profile white -->
+      <use href="#helmP" transform="translate(430,214) scale(0.92)" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
+      <g fill="none" stroke="#b8b4ad" stroke-width="0.9"><path d="M454,186 L462,202 L468,218"/><path d="M448,236 L460,224"/></g>
+      <!-- one faint violet slit edge (near eye) -->
+      <path d="M452,206 L466,203" stroke="#8F00FF" stroke-width="4" opacity="0.4" stroke-linecap="round"/>
+      <path d="M452,206 L466,203" stroke="#26262c" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- ============ BACK ============ -->
+    <g id="figBack">
+      <!-- legs white + boots -->
+      <polygon points="406,720 424,720 421,812 408,812" fill="#fafafa"/>
+      <polygon points="454,720 436,720 439,812 452,812" fill="#fafafa"/>
+      <path d="M402,808 L424,808 L430,845 L396,845 Z" fill="#16161c"/>
+      <path d="M458,808 L436,808 L430,845 L464,845 Z" fill="#16161c"/>
+      <g fill="#2a2a33"><rect x="406" y="804" width="18" height="7" rx="3"/><rect x="436" y="804" width="18" height="7" rx="3"/></g>
+      <!-- heavy black hair as the dominant back silhouette -->
+      <g fill="#09090d">
+        <path d="M386,226 C352,272 340,414 352,590 C360,704 380,776 408,800 C416,648 412,470 420,316 C422,270 424,240 426,228 Z"/>
+        <path d="M474,226 C508,272 520,414 508,590 C500,704 480,776 452,800 C444,648 448,470 440,316 C438,270 436,240 434,228 Z"/>
+        <path d="M392,224 Q430,204 468,224 L462,390 Q430,372 398,390 Z"/>
+        <path d="M402,360 C392,476 396,650 418,810 L442,810 C464,650 468,476 458,360 Q430,344 402,360 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M388,260 C372,410 378,646 408,790" stroke="#34343e" stroke-width="1.4"/>
+        <path d="M472,260 C488,410 482,646 452,790" stroke="#34343e" stroke-width="1.4"/>
+        <path d="M430,318 L430,800" stroke="#050509" stroke-width="3"/>
+      </g>
+      <!-- coat back (black) + skirt panels layered under hair -->
+      <g fill="#16161c">
+        <path d="M348,310 L334,360 L330,452 L338,545 L360,548 L362,452 L360,360 L356,314 Z"/>
+        <path d="M512,310 L526,360 L530,452 L522,545 L500,548 L498,452 L500,360 L504,314 Z"/>
+        <path d="M348,308 L356,360 L366,450 L362,500 L372,520 L488,520 L498,500 L494,450 L504,360 L512,308 Z"/>
+        <path d="M372,520 L362,664 L366,724 L494,724 L498,664 L488,520 Z"/>
+        <path d="M362,648 L353,768 L357,794 L390,794 L392,768 L390,648 Z"/>
+        <path d="M498,648 L507,768 L503,794 L470,794 L468,768 L470,648 Z"/>
+      </g>
+      <!-- hair overlay keeps back silhouette readable, separated from coat -->
+      <g fill="#09090d">
+        <path d="M402,270 C392,410 396,622 416,758 L430,802 L444,758 C464,622 468,410 458,270 Q430,252 402,270 Z"/>
+      </g>
+      <!-- skirt panel separations remain visible below hair mass -->
+      <g fill="none" stroke-linecap="round">
+        <path d="M398,536 L396,724" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M430,520 L430,800" stroke="#34343e" stroke-width="1.2"/>
+        <path d="M462,536 L464,724" stroke="#34343e" stroke-width="1.3"/>
+        <path d="M390,650 L390,790" stroke="#2f2f38" stroke-width="1.2"/>
+        <path d="M470,650 L470,790" stroke="#2f2f38" stroke-width="1.2"/>
+      </g>
+      <!-- white pauldrons -->
+      <g fill="#fafafa"><path d="M340,306 C326,316 322,338 332,352 L362,346 L360,310 Z"/><path d="M520,306 C534,316 538,338 528,352 L498,346 L500,310 Z"/></g>
+      <!-- collar black -->
+      <path d="M398,308 L392,262 L410,250 Q430,244 450,250 L468,262 L462,308 Z" fill="#16161c"/>
+      <!-- helmet back (white, NO slits) -->
+      <use href="#helm" transform="translate(430,214) scale(0.92)" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
+      <g fill="none" stroke="#b8b4ad" stroke-width="0.9"><path d="M430,168 L430,260"/><path d="M404,240 Q430,248 456,240"/></g>
+      <!-- Ensō violet ring at upper back / nape -->
+      <circle cx="430" cy="306" r="13" fill="none" stroke="#8F00FF" stroke-width="2.2"/>
+      <path d="M423,296 A13 13 0 1 1 421,312" fill="none" stroke="#8F00FF" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- ============ 3/4 ============ -->
+    <g id="fig34">
+      <!-- rotated hair mass, visible behind far shoulder and side plane -->
+      <g fill="#0d0d12">
+        <path d="M412,198 C372,204 346,248 338,330 C330,432 338,584 366,724 L408,708 C394,572 392,438 402,342 C408,284 424,230 438,204 Z"/>
+        <path d="M442,202 C474,214 496,258 504,336 C512,450 504,600 484,726 L454,710 C466,574 468,438 460,344 C454,286 442,238 432,208 Z"/>
+        <path d="M402,194 Q432,178 464,194 L458,258 Q430,244 406,258 Z"/>
+      </g>
+      <path d="M394,250 C380,388 384,598 412,752" fill="none" stroke="#34343e" stroke-width="1.3" stroke-linecap="round"/>
+      <polygon points="408,720 426,720 423,812 410,812" fill="#fafafa"/>
+      <polygon points="458,718 440,722 446,812 460,812" fill="#fafafa"/>
+      <path d="M404,808 L426,808 L430,845 L398,845 Z" fill="#16161c"/>
+      <path d="M462,808 L440,808 L434,845 L468,845 Z" fill="#16161c"/>
+      <!-- rotated coat volume: front plane plus visible right side plane -->
+      <g fill="#16161c">
+        <path d="M350,310 L336,360 L332,452 L340,545 L362,548 L364,452 L362,360 L358,314 Z"/>
+        <path d="M516,312 L530,360 L532,452 L524,545 L502,548 L500,452 L504,362 L508,316 Z"/>
+        <path d="M354,308 L360,360 L370,450 L366,500 L378,520 L470,520 L482,500 L480,450 L488,360 L500,312 Z"/>
+        <path d="M470,322 L508,350 L506,470 L492,520 L470,520 L478,452 Z" fill="#101017"/>
+        <path d="M378,520 L364,664 L368,724 L474,724 L482,664 L470,520 Z"/>
+        <path d="M474,522 L500,548 L508,666 L496,724 L474,724 L482,664 Z" fill="#101017"/>
+        <path d="M364,648 L355,768 L359,794 L392,794 L394,768 L392,648 Z"/>
+        <path d="M468,648 L472,768 L482,794 L508,794 L500,768 L492,648 Z"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M404,534 L406,720" stroke="#08080c" stroke-width="2"/>
+        <path d="M436,532 L434,722" stroke="#08080c" stroke-width="2.2"/>
+        <path d="M474,534 L490,720" stroke="#08080c" stroke-width="2"/>
+        <path d="M440,538 L438,718" stroke="#34343e" stroke-width="1.2"/>
+        <path d="M482,548 L496,718" stroke="#34343e" stroke-width="1.2"/>
+      </g>
+      <g fill="#fafafa">
+        <path d="M396,330 L464,330 L476,350 L472,392 Q432,408 392,392 Z"/>
+        <path d="M464,330 L488,348 L486,388 L472,392 L476,350 Z" fill="#e8e5df"/>
+        <path d="M344,306 C330,316 326,338 336,352 L366,346 L364,310 Z"/><path d="M522,308 C536,318 540,340 530,354 L500,348 L502,312 Z"/>
+        <path d="M342,548 L364,548 L364,576 Q353,582 342,576 Z"/><path d="M524,548 L502,548 L502,576 Q513,582 524,576 Z"/>
+      </g>
+      <path d="M402,308 L396,262 L414,248 Q436,242 456,250 L476,270 L470,308 Z" fill="#16161c"/>
+                  <!-- 3/4 helmet — TRUE 3/4 PROJECTION (operator-approved 2026-06-04); @ translate(430,214) scale(0.92): crown/chin aligned, head NOT resized -->
+      <g transform="translate(430,214) scale(0.92)">
+        <path d="M6,-52 L16,-44 L23,-22 L22.5,2 L18,24 L12,42 L6,52 L-5.5,42 L-17,24 L-25.7,2 L-26.6,-22 L-13.2,-44 Z" fill="#fafafa" stroke="#cbc7c0" stroke-width="1"/>
+        <path d="M6,-52 L16,-44 L23,-22 L22.5,2 L18,24 L12,42 L6,52 L8,40 L13,8 L12,-20 Z" fill="#e8e5df" stroke="#cbc7c0" stroke-width="0.7"/>
+        <g fill="none" stroke="#b8b4ad" stroke-width="0.9"><path d="M6,-50 L12,-20 L13,8 L8,40 L6,50"/><path d="M-25,-16 L20,-12"/><path d="M-26,-20 L-6,6"/><path d="M-6,40 L6,50 L18,38"/></g>
+        <g fill="none" stroke="#8F00FF" stroke-width="5.4" stroke-linecap="round" opacity="0.45"><path d="M-20,-6 L-6,-3"/><path d="M4,-4 L13,-2"/></g>
+        <g fill="none" stroke="#26262c" stroke-width="2.4" stroke-linecap="round"><path d="M-20,-6 L-6,-3"/><path d="M4,-4 L13,-2"/></g>
+      </g>
+    </g>
+  </defs>
+<rect width="1680" height="1180" fill="#fbfaf8"/>
+<rect x="20" y="20" width="1640" height="1140" fill="none" stroke="#1a1a22" stroke-width="1.5"/>
+<text class="mono" x="44" y="48" font-size="12" letter-spacing="3" fill="#3a3a42">MIKAGE ZENITH STUDIO  ·  CHARACTER CAST LANE</text>
+<text class="mono" x="840" y="48" font-size="14" letter-spacing="3" text-anchor="middle" fill="#1a1a22">MIKAGE — MODEL SHEET BASE V2.5 · 4-VIEW</text>
+<text class="mono" x="1636" y="48" font-size="11" letter-spacing="2" text-anchor="end" fill="#6a2db0">CANON_STATUS = LOCKED_V2.5 · NO RENDER IN THIS FILE</text>
+<line x1="44" y1="62" x2="1636" y2="62" stroke="#1a1a22" stroke-width="0.8"/>
+<text class="mono" x="44" y="82" font-size="11" letter-spacing="2" fill="#6a6a74">7.5-head LOCKED · head/mask UNIFORM &amp; UNDISTORTED across all 4 views (identical #helm scale) · 7.5 reached by LOWER-BODY elongation, head scale unchanged · ankle tail · violet = signal only</text>
+<g>
+<rect x="158" y="126" width="284" height="590" rx="7" fill="#585863"/>
+<rect x="508" y="126" width="284" height="590" rx="7" fill="#585863"/>
+<rect x="858" y="126" width="284" height="590" rx="7" fill="#585863"/>
+<rect x="1208" y="126" width="284" height="590" rx="7" fill="#585863"/>
+</g>
+<g class="mono" font-size="9.5">
+<line x1="130" y1="146" x2="1500" y2="146" stroke="#b94a8f" stroke-width="0.9"/>
+<text x="1512" y="149" fill="#6a6a74">CROWN</text>
+<line x1="130" y1="220" x2="1500" y2="220" stroke="#b94a8f" stroke-width="0.9"/>
+<text x="1512" y="223" fill="#6a6a74">CHIN</text>
+<line x1="130" y1="256" x2="1500" y2="256" stroke="#d2cfc7" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="1512" y="259" fill="#6a6a74">SHOULDER</text>
+<line x1="130" y1="300" x2="1500" y2="300" stroke="#d2cfc7" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="1512" y="303" fill="#6a6a74">CHEST</text>
+<line x1="130" y1="392" x2="1500" y2="392" stroke="#d2cfc7" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="1512" y="395" fill="#6a6a74">WAIST</text>
+<line x1="130" y1="436" x2="1500" y2="436" stroke="#d2cfc7" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="1512" y="439" fill="#6a6a74">HIP</text>
+<line x1="130" y1="560" x2="1500" y2="560" stroke="#d2cfc7" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="1512" y="563" fill="#6a6a74">KNEE</text>
+<line x1="130" y1="688" x2="1500" y2="688" stroke="#d2cfc7" stroke-width="0.9" stroke-dasharray="5 4"/>
+<text x="1512" y="691" fill="#6a6a74">SKIRT-HEM</text>
+<line x1="130" y1="705" x2="1500" y2="705" stroke="#d2cfc7" stroke-width="0.9"/>
+<text x="1512" y="708" fill="#6a6a74">SOLE</text>
+</g>
+<g class="mono" font-size="10" fill="#9a9790">
+<line x1="110" y1="145" x2="110" y2="705" stroke="#9a978f" stroke-width="1"/>
+<line x1="103" y1="145.6" x2="117" y2="145.6" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="148.6" text-anchor="end">0.0</text>
+<line x1="103" y1="220.2" x2="117" y2="220.2" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="223.2" text-anchor="end">1.0</text>
+<line x1="103" y1="294.8" x2="117" y2="294.8" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="297.8" text-anchor="end">2.0</text>
+<line x1="103" y1="369.4" x2="117" y2="369.4" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="372.4" text-anchor="end">3.0</text>
+<line x1="103" y1="443.9" x2="117" y2="443.9" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="446.9" text-anchor="end">4.0</text>
+<line x1="103" y1="518.5" x2="117" y2="518.5" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="521.5" text-anchor="end">5.0</text>
+<line x1="103" y1="593.1" x2="117" y2="593.1" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="596.1" text-anchor="end">6.0</text>
+<line x1="103" y1="667.7" x2="117" y2="667.7" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="665.7" text-anchor="end">7.0</text>
+<line x1="103" y1="705.0" x2="117" y2="705.0" stroke="#9a978f" stroke-width="0.9"/>
+<text x="96" y="718.0" text-anchor="end" font-weight="bold" fill="#6a6a74">7.5</text>
+<text x="74" y="135" fill="#6a6a74" font-size="9.5">HEAD</text>
+<text x="74" y="147" fill="#6a6a74" font-size="9.5">UNITS</text>
+<text x="44" y="724" fill="#9a9790" font-size="9">7.5 = LOCKED · head = 1 unit</text>
+</g>
+<use href="#figFront" transform="translate(-35,16) scale(0.78)"/>
+<use href="#figSide" transform="translate(315,16) scale(0.78)"/>
+<use href="#figBack" transform="translate(665,16) scale(0.78)"/>
+<use href="#fig34" transform="translate(1015,16) scale(0.78)"/>
+<!-- ===== LOWER-BODY ELONGATION OVERLAY: long tail to ~862 + boots 862-883 (head untouched) ===== -->
+<g id="tailFront" transform="translate(-35,16) scale(0.78)">
+<path d="M362,722 L362,820 L498,820 L498,722 Z" fill="#16161c"/>
+<path d="M361,818 L369,862 L491,862 L499,818 Z" fill="#16161c"/>
+<g fill="none" stroke="#34343e" stroke-width="1.3" stroke-linecap="round">
+<path d="M400,724 L400,858"/>
+<path d="M430,724 L430,858"/>
+<path d="M460,724 L460,858"/>
+</g>
+<path d="M369,862 L491,862" stroke="#08080c" stroke-width="1.4"/>
+<g fill="#16161c"><path d="M398,862 L426,862 L428,883 L396,883 Z"/><path d="M436,862 L464,862 L466,883 L434,883 Z"/></g><g fill="#2a2a33"><rect x="400" y="859" width="24" height="5" rx="2"/><rect x="438" y="859" width="24" height="5" rx="2"/></g><g fill="none" stroke="#050509" stroke-width="1.4"><path d="M396,882 L428,882"/><path d="M434,882 L466,882"/></g>
+</g>
+<g id="tailSide" transform="translate(315,16) scale(0.78)">
+<path d="M410,722 L410,820 L490,820 L490,722 Z" fill="#16161c"/>
+<path d="M409,818 L417,862 L483,862 L491,818 Z" fill="#16161c"/>
+<g fill="none" stroke="#34343e" stroke-width="1.3" stroke-linecap="round">
+<path d="M430,724 L430,858"/>
+<path d="M450,724 L450,858"/>
+<path d="M470,724 L470,858"/>
+</g>
+<path d="M417,862 L483,862" stroke="#08080c" stroke-width="1.4"/>
+<g fill="#16161c"><path d="M412,862 L470,862 L476,878 L476,883 L410,883 Z"/></g><g fill="#2a2a33"><rect x="414" y="859" width="22" height="5" rx="2"/></g><path d="M410,882 L476,882" stroke="#050509" stroke-width="1.4"/>
+</g>
+<g id="tailBack" transform="translate(665,16) scale(0.78)">
+<path d="M362,722 L362,820 L498,820 L498,722 Z" fill="#16161c"/>
+<path d="M361,818 L369,862 L491,862 L499,818 Z" fill="#16161c"/>
+<g fill="none" stroke="#34343e" stroke-width="1.3" stroke-linecap="round">
+<path d="M398,724 L398,858"/>
+<path d="M430,724 L430,858"/>
+<path d="M462,724 L462,858"/>
+</g>
+<path d="M369,862 L491,862" stroke="#08080c" stroke-width="1.4"/>
+<g fill="#16161c"><path d="M398,862 L426,862 L428,883 L396,883 Z"/><path d="M436,862 L464,862 L466,883 L434,883 Z"/></g><g fill="#2a2a33"><rect x="400" y="859" width="24" height="5" rx="2"/><rect x="438" y="859" width="24" height="5" rx="2"/></g><g fill="none" stroke="#050509" stroke-width="1.4"><path d="M396,882 L428,882"/><path d="M434,882 L466,882"/></g>
+</g>
+<g id="tail34" transform="translate(1015,16) scale(0.78)">
+<path d="M364,722 L364,820 L474,820 L470,722 Z" fill="#16161c"/>
+<path d="M363,818 L370,862 L468,862 L474,818 Z" fill="#16161c"/>
+<path d="M474,724 L496,724 L506,856 L478,862 Z" fill="#101017"/>
+<g fill="none" stroke="#34343e" stroke-width="1.3" stroke-linecap="round"><path d="M404,724 L405,858"/><path d="M436,724 L436,860"/><path d="M468,724 L470,858"/></g>
+<path d="M370,862 L468,862" stroke="#08080c" stroke-width="1.4"/>
+<g fill="#16161c"><path d="M400,862 L428,862 L430,883 L398,883 Z"/><path d="M438,862 L468,862 L470,883 L436,883 Z"/></g><g fill="#2a2a33"><rect x="402" y="859" width="24" height="5" rx="2"/><rect x="440" y="859" width="24" height="5" rx="2"/></g><g fill="none" stroke="#050509" stroke-width="1.4"><path d="M398,882 L428,882"/><path d="M436,882 L468,882"/></g>
+</g>
+<g id="refineFront" transform="translate(-35,16) scale(0.78)" fill="none" stroke-linecap="round"><path d="M430,398 L430,520" stroke="#08080c" stroke-width="1.6"/><path d="M356,554 L356,572" stroke="#cbc7c0" stroke-width="1"/><path d="M504,554 L504,572" stroke="#cbc7c0" stroke-width="1"/></g>
+<g id="refine34" transform="translate(1015,16) scale(0.78)" fill="none" stroke-linecap="round"><path d="M436,398 L436,520" stroke="#08080c" stroke-width="1.6"/></g>
+<g class="mono" font-size="11" font-weight="bold">
+<circle cx="300" cy="150" r="10" fill="#1a1a22"/>
+<text x="300" y="154" text-anchor="middle" fill="#fafafa">1</text>
+<circle cx="306" cy="180" r="10" fill="#1a1a22"/>
+<text x="306" y="184" text-anchor="middle" fill="#fafafa">2</text>
+<circle cx="228" cy="310" r="10" fill="#1a1a22"/>
+<text x="228" y="314" text-anchor="middle" fill="#fafafa">3</text>
+<circle cx="300" cy="292" r="10" fill="#1a1a22"/>
+<text x="300" y="296" text-anchor="middle" fill="#fafafa">4</text>
+<circle cx="300" cy="432" r="10" fill="#1a1a22"/>
+<text x="300" y="436" text-anchor="middle" fill="#fafafa">5</text>
+<circle cx="300" cy="560" r="10" fill="#1a1a22"/>
+<text x="300" y="564" text-anchor="middle" fill="#fafafa">6</text>
+<circle cx="272" cy="448" r="10" fill="#1a1a22"/>
+<text x="272" y="452" text-anchor="middle" fill="#fafafa">7</text>
+<circle cx="300" cy="697" r="10" fill="#1a1a22"/>
+<text x="300" y="701" text-anchor="middle" fill="#fafafa">8</text>
+</g>
+<g class="mono" font-size="11" letter-spacing="1" text-anchor="middle" fill="#1a1a22">
+<text x="300" y="734">1 · FRONT</text>
+<text x="650" y="734">2 · SIDE</text>
+<text x="1000" y="734">3 · BACK</text>
+<text x="1350" y="734">4 · 3/4</text>
+</g>
+<g class="mono" font-size="9.5" text-anchor="middle" fill="#6a6a74">
+<text x="300" y="750">mask · 2 sealed slits · violet halo · ankle tail</text>
+<text x="650" y="750">hair down back · coat depth · ankle tail</text>
+<text x="1000" y="750">Ensō upper-back · NO slits · hair + ankle tail</text>
+<text x="1350" y="750">mask (unified) + ankle tail + violet check</text>
+</g>
+<line x1="44" y1="772" x2="1636" y2="772" stroke="#1a1a22" stroke-width="0.6"/>
+<text class="mono" x="44" y="794" font-size="11" letter-spacing="2" fill="#1a1a22">HEAD/MASK FIX: 3/4 head re-unified to the canonical #helm mask — identical scale &amp; shape to FRONT/BACK; CROWN+CHIN guides aligned across all 4 views (magenta lines).</text>
+<text class="mono" x="44" y="812" font-size="10.5" fill="#1a1a22">7.5-HEAD via LOWER-BODY elongation only: head/mask scale UNCHANGED (translate(430,214) scale 0.92 everywhere); legs + skirt/tail extended down so head = exactly 1/7.5. NO vertical head stretch.</text>
+<g class="mono">
+<rect x="44" y="826" width="30" height="20" fill="#fafafa" stroke="#c9c6c0"/>
+<text x="82" y="840" font-size="10" fill="#1a1a22">PORCELAIN #FAFAFA</text>
+<rect x="420" y="826" width="30" height="20" fill="#16161c"/>
+<text x="458" y="840" font-size="10" fill="#1a1a22">BLACK — coat·tail·hair</text>
+<rect x="760" y="826" width="30" height="20" fill="#24242b"/>
+<text x="798" y="840" font-size="10" fill="#1a1a22">GRAPHENE — joints</text>
+<rect x="1110" y="826" width="30" height="20" fill="#8F00FF"/>
+<text x="1148" y="840" font-size="10" fill="#1a1a22">VIOLET — signal only</text>
+</g>
+<text class="mono" x="44" y="868" font-size="10" fill="#6a6a74">KEPT: faceless Kitsune mask · exactly 2 sealed slits front/3-4, none back · no eyes/mouth/nose/skin · long black hair · high collar · layered ankle skirt · matte porcelain · graphene joints · controlled violet.</text>
+<text class="mono" x="44" y="888" font-size="10.5" fill="#6a2db0">CANON_STATUS = LOCKED_V2.5 (Operator BOOS BỚP · 2026-06-04) · PHASE = HIGH-POLY SCULPT (Lane A) · this SVG = vector reference; no render / no PNG here.</text>
+<text class="mono" x="44" y="907" font-size="9.5" fill="#9a9790">Note: figure defs were byte-identical through prior commits (no head distortion introduced); only the 3/4 head is now changed — re-unified to the canonical mask. Limb-elongation is vector blockout; exact 7.5 metrics finalized in high-poly.</text>
+</svg>
