@@ -1,16 +1,17 @@
-task_id: MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1
+task_id: MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1
 target_lane: Mikage character final completion preparation
-status: OPEN
-current_step: MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1
+status: OPEN_BLOCKED_SCOPE_RISK
+current_step: MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1
 
 goal: >
-  Open a scoped governance gate for Mikage final character completion
-  preparation based on the completed gap audit. Do not build, render, edit
-  .blend files, create derivative .blend files, update public pages, update
+  Open a governance-only input lock gate for Mikage character final build.
+  Lock exact build inputs before any derivative .blend or final build task is
+  allowed. Do not build, render, edit .blend files, update public pages, update
   roster, push, or claim CHARACTER_FINAL_COMPLETE.
 
 next_safe_task: >
-  MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1.
+  MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1 remains blocked until input
+  lock scope risk is resolved.
 
 runtime_phase:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -42,10 +43,21 @@ runtime_phase:
   MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1_PHASE: COMPLETED_PUSHED
   MIKAGE_CHARACTER_FINAL_COMPLETION_GAP_AUDIT_V0_1_PHASE: COMPLETED_FINAL_COMPLETE_NOT_READY_GAPS_FOUND
   MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1_PHASE: OPEN
+  MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1_PHASE: COMPLETED_READY_FOR_INPUT_LOCK_GATE
+  MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1_PHASE: OPEN_BLOCKED_SCOPE_RISK
   FINAL_COMPLETION_PREP_GATE: OPEN
+  INPUT_LOCK_GATE: OPEN_BLOCKED_SCOPE_RISK
   CHARACTER_FINAL_COMPLETE: NOT_CLAIMED
+  CANONICAL_FINAL_BLEND_STATUS: MISSING
+  FINAL_BUILD_ALLOWED: NO
+  INPUT_LOCK_DECISION: INPUT_LOCK_BLOCKED_SCOPE_RISK
+  INPUT_SOURCE_BLEND_CANDIDATE: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
+  VISUAL_REFERENCE_SHEET: CHUA_XAC_NHAN
+  LOCKED_PUBLIC_RENDER_REFERENCE: production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
   CHARACTER_FINAL_COMPLETION_GAP_AUDIT_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_GAP_AUDIT_V0_1.md
   CHARACTER_FINAL_COMPLETION_PREP_GATE_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1.md
+  CHARACTER_FINAL_COMPLETION_PREP_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1.md
+  CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1.md
   PAGE_UPDATE_GATE: OPEN
   PAGE_UPDATE_DONE: YES
   PUSH_GATE: OPEN
@@ -81,10 +93,12 @@ runtime_phase:
   rest_mode_broad_lock: RETAINED
   render_allowed: true
   deformation_test_allowed: false
-  current_controller: MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1
-  current_next_task: MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1
-  next_real_action: MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1
+  current_controller: MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1
+  current_next_task: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1
+  next_real_action: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1
   final_completion_prep_gate: OPEN
+  input_lock_gate: OPEN_BLOCKED_SCOPE_RISK
+  final_build_allowed: false
   character_final_complete: NOT_CLAIMED
   page_update_done: true
   push_gate: OPEN
@@ -138,6 +152,7 @@ runtime_phase:
     allowed until a later explicit gate.
 
 output_files_allowed:
+  - production/character/reviews/MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1.md
   - production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1.md
   - production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1.png
   - production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
