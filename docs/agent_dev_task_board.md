@@ -8,6 +8,13 @@
 ## 2. Current Phase
 - PHASE = Operator Rest Mode / Governance Handoff with public render page push completed
 - STATUS = MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1_COMPLETED
+- MIKAGE_CHARACTER_FINAL_COMPLETION_GAP_AUDIT_V0_1 = OPEN
+- CHARACTER_FINAL_COMPLETE = NOT_CLAIMED
+- PUBLIC_RENDER_COMPLETE_NOTE = PUBLIC_RENDER_COMPLETE / PUBLIC_RENDER_READY has prior governance evidence, but live/deploy/visual verification remains separate if needed.
+- PRODUCTION_RIG_READY_NOTE = PRODUCTION_RIG_READY has prior governance evidence, but final character completion is not the same thing.
+- ASSET_LOCK_NOTE = ASSET_LOCK has prior governance evidence for the locked public render asset only.
+- CHARACTER_FINAL_COMPLETION_GAP_AUDIT_REQUIRED_BEFORE = any final build, rig derivative, render, runtime, or animation-production claim.
+- CHARACTER_FINAL_COMPLETION_GAP_AUDIT_MUST_CHECK = final rig controls; weight/deformation pass; hair/helmet/blade attachment stability; canonical final .blend candidate; material/texture manifest; animation/deformation proof; final validation proof; canonical asset list.
 - REST_MODE_BROAD_LOCK = RETAINED
 - MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
 - MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
