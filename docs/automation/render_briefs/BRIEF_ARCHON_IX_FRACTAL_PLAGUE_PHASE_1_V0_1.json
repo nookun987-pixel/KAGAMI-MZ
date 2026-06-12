@@ -1,0 +1,39 @@
+{
+  "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+  "$mikage_canon_lock": false,
+  "$mikage_asset_lock": false,
+  "$mikage_production_lock": false,
+  "$schema_reference": "docs/canon_proposals/prompt_pack_v0_1_schema_PROPOSAL_NOT_CANON.json",
+  "$conforms_to": "prompt_pack/v0.1",
+  "$paired_md_brief": "docs/automation/render_briefs/BRIEF_ARCHON_IX_FRACTAL_PLAGUE_PHASE_1_V0_1.md",
+  "$revision_of": null,
+  "$revision_reason": "First ARCHON-IX render brief, opened after operator ruling 2026-06-10: ARCHON-IX = CHARACTER_ONLY (not a faction). Grounded in Canon V2 §7.1 + §8.3 + Master Bible V2.0 §I + THE BREACH lyric. Scoped universal-lock exception: glitch/fractal/neon-pink are ARCHON-IX's mandatory signature (era V1/ARCHON_GLITCH).",
+  "$generated_by": "Claude Cowork (Character Cast Lane) — 2026-06-10",
+  "$generated_on": "2026-06-10",
+  "$universal_lock_exception": {
+    "scope": "archon_ix_only",
+    "not_inherited_terms": ["glitch bands", "datamosh", "neon pink", "neon purple", "fractal recursion clutter"],
+    "reason": "Canon V2 §8.3 visual = Neon Pink glitch corruption; §7.1 aesthetic = fractal non-Euclidean + Glitch-Serif; era V1/ARCHON_GLITCH.",
+    "still_inherited": "child/minor likeness, real-person likeness, sexualized framing, readable text/watermark, anime-moe, Mikage palette bleed (no #8F00FF violet, no #FAFAFA porcelain armor in ARCHON solo frames)"
+  },
+  "project_metadata": {
+    "brief_id": "BRIEF_ARCHON_IX_FRACTAL_PLAGUE_PHASE_1_V0_1",
+    "schema_version": "prompt_pack/v0.1",
+    "generated_on": "2026-06-10",
+    "status": "DRAFT_PROPOSAL_NOT_CANON",
+    "operator_approval_token": null
+  },
+  "entity": {
+    "entity_id": "archon_ix",
+    "ruling": "CHARACTER_ONLY (operator 2026-06-10)",
+    "pair_bond": "lyra (LYRA-0) — rendered separately",
+    "era": "V1 / ARCHON_GLITCH",
+    "state_anchor": "new_anchor_archon_001 (CHUA_XAC_NHAN)"
+  },
+  "prompt_pack": {
+    "positive": "non-euclidean fractal architecture entity blooming out of a fracture in a clean white grid wall, recursive mirror shards repeating themselves at every scale, distorted reflections inside the shards, neon pink dominant glow with purple and burnt orange accents on void black #0A0A0A, glitch corruption and datamosh tearing at shard edges, broken serif glyph fragments scattering along mirror seams (unreadable), a thin abstract audio-waveform ribbon being swallowed into the fractal core, cinematic chiaroscuro, anamorphic 2.39:1, hard sci-fi, no human form",
+    "negative": "human face, human eyes, skin, anime character, cute mascot, readable text, watermark, children, photoreal person, porcelain white armor, electric violet, kintsugi gold, katana, skull demon, tentacle horror, low quality",
+    "aspect_variants": ["21:9", "9:16"],
+    "seeds_per_job": 2
+  }
+}

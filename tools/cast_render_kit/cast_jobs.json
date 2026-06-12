@@ -1,0 +1,152 @@
+{
+ "$mikage_status": "DRAFT_PROPOSAL_NOT_CANON",
+ "$canon_lock": false,
+ "$asset_lock": false,
+ "$rule": "KHONG render khi operator_approval_token=null o job. Output = REVIEW CANDIDATES, khong PASS/anchor/asset-lock.",
+ "$rebuilt": "2026-06-10 — kit cu (handoff 06-02) khong ton tai tren disk; dung lai tu brief sidecars, khong bia prompt.",
+ "$run_order": [
+  "lora_p1_v0_2",
+  "lyre_p1_v0_3",
+  "lyra_p1_v0_1",
+  "archon_ix_p1_v0_1",
+  "mikage_p1_imperial",
+  "mikage_p2_fallen_exile",
+  "mikage_p3_execution"
+ ],
+ "jobs": [
+  {
+   "id": "lyre_p1_v0_3",
+   "source_brief": "docs/automation/render_briefs/BRIEF_COMMANDER_LYRE_PHASE_1_IMPERIAL_DUTY_V0_3.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 1344,
+   "height": 576,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "Cinematic 2.35:1 anamorphic key visual from the Mikage Zenith universe, V2.5 LORA Refactor era. Single subject: a genderless industrial command figure standing INSIDE a vast Imperial Spire chamber — Phase 1 Imperial Duty baseline.\n\nSILHOUETTE: genderless industrial command figure. Straight vertical column body. Flat rectangular chest plate. No chest contour. No waist taper. No hip flare. No thigh emphasis. Slab matte ceramic armor over black graphene underlayer.\n\nPOSE (most important): both arms drawn behind the torso, hands clasped at the lower back, forearms hidden behind the body, elbows angled backward. Empty hands. Motionless symmetrical command stance, upright vertical axis. Three-quarter stance with the left arm held slightly back and outward. Not arms hanging at the sides, not straight arms down, no action pose, no contrapposto.\n\nLEFT FOREARM: clearly visible on the outer left forearm, one flat white ceramic circular disc emitter about 15 cm across, lying flat, recessed Empire / White Monolith sigil in thin cold-cyan lines, catching the cold key light. The forearm is NOT bare. The disc is dormant: no plasma, no dome, no barrier field, no kite-shape shield.\n\nRIGHT HIP: one slim black cylindrical monowire hilt holstered against the hip. No blade. No pistol. No gun. No firearm silhouette. No weapon held in either hand.\n\nHELMET: fully sealed smooth matte white industrial helmet. No face geometry, no eye points, no amber glow, no mouth, no nose, no chin transition. Only one ultra-thin horizontal cyan visor slit #00C8FF edge-to-edge is lit; the rest of the helmet is unlit matte white. No cyan cheek lines, no extra facial accent lighting.\n\nMATERIAL: chalky matte B4C ceramic, stone-like white #F2F2F0, zero gloss, no specular hotspots, fingerprint-matte, subtle micro-grain, shallow subsurface scattering. Not glossy plastic, not vinyl, not chrome, not a toy. Cold-cyan piping #00C8FF along seams, dormant.\n\nCONSTRUCTION: clean medical-industrial slab armor, minimal recessed seams only. Kneecaps are plain matte ceramic and unlit. No Gundam panels, no greebles, no knee lights, no glowing knee discs, no mecha hip joints, no orange or amber accents.\n\nENVIRONMENT: the figure stands inside a real Imperial Spire interior — ghost-white #FAFAFA monolith plates behind it, matte black void gaps, polished black graphene reflective floor. NOT an empty grey studio, NOT a seamless backdrop, NOT a turnaround sheet. Cold overhead interrogation key light, hard rim light from behind isolating the silhouette, no warm fill. Empire / White Monolith sacred-tech architecture, sterile symmetric geometry, intentional Ma emptiness, monumental scale, figure dwarfed but central.\n\nCOLOR: cyan accent only. No purple, no violet, no red, no crimson, no gold, no amber, no orange, no warm light.\n\nCOMPOSITION: wide cinematic 2.35:1 anamorphic frame (NOT square, NOT portrait), centered frontal three-quarter, vertical axis through the figure, premium quiet luxury rendering, hyper-real matte ceramic material detail.\n\nMOOD: silent before judgment, industrial precision, invariance.",
+   "negative": "female body emphasis, sexy armor, breasts, chest cups, cleavage, hourglass waist, waist taper, wide hips, hip flare, thigh focus, thigh emphasis, slim curvy body, android girl, humanoid female robot, bodysuit, swimsuit armor, pin-up pose, fashion pose, contrapposto, action pose, arms hanging at sides, straight arms at sides, arms down, hands at sides, hands visible in front, hands forward, bare forearm, empty forearm, nothing on forearm, holding weapon, holding shield, holding pistol, holding gun, firearm, pistol silhouette, gun in hand, rifle in hand, large shield, active shield, plasma shield, energy dome, glowing barrier, kite-shape shield, deployed shield, sword, blade, hair, visible face, eye points, glowing eyes, amber eyes, orange eyes, mouth, nose, lips, human skin, porcelain doll face, chin transition, cyan cheek lines, facial accent lines, extra face lighting, anime girl, gacha character, cosplay, glossy plastic, glossy, satin sheen, reflective plastic, action figure finish, vinyl, chrome, latex, toy, plastic doll, mecha clutter, gundam panels, decorative greebles, knee lights, glowing knee discs, circular knee emblem, illuminated kneecap, cyan knee circle, orange accent, amber accent, warm gold accent, hero gold, gold trim, fantasy armor, samurai armor, cape, robe, crown, halo, purple light, violet glitch, red light, crimson, grey studio background, empty seamless backdrop, character turnaround sheet, product shot, plain background, no background, square image, 1:1 crop, portrait crop, vertical crop, text in image, UI, HUD, logo, watermark, matte porcelain (Mikage material, not Lyre), kintsugi gold seams, fractures, cracks on Lyre armor, long hair flowing, slab sword in hand (Zenith Blade is Mikage's weapon), faceless Kitsune mask with sensor slits (Mikage's mask), motion blur on Lyre body, spawn copies, phase-shift duplicate of Lyre, sparks on Monowire, magical glow trail on Monowire, visible damage on Lyre armor, hairline crack on helmet, heat distortion, crucifix, religious icon, Empire as fantasy kingdom, Empire as medieval court, Iron Man arc reactor glow on disc emitter, Star Wars lightsaber blade language on Monowire, Stargate iris vortex on disc, Doctor Strange magic shield pattern, bubble dome forcefield, curved dome shield, LORA Enso ring anywhere in frame, Clean Code text overlay anywhere in frame, human face, human eyes, exposed skin, anime, moe, cute mascot, readable text, watermark, logo, signature, extra limbs, broken anatomy, deformed hands, child, minor, real person likeness, sexualized framing, photo of a person, lowres, jpeg artifacts, oversaturated"
+  },
+  {
+   "id": "lora_p1_v0_2",
+   "source_brief": "docs/automation/render_briefs/BRIEF_LORA_REFACTOR_PRESENCE_V0_2.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 1536,
+   "height": 560,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "FRONT ORTHOGRAPHIC VIEW ONLY. Camera locked at exact frontal-orthographic projection. ZERO perspective angle. ZERO 3/4 view. ZERO depth foreshortening. The ring is rendered as a flat circular ring shape with NO visible side thickness, NO angled rim, NO depth recession. The viewer sees the ring's flat front face only — like a coin viewed straight-on, not like a coin viewed from above.\n\nSUSPENSION: the ring is FLOATING / SUSPENDED in an infinite porcelain-white void. NO floor. NO pedestal. NO platform. NO table. NO ground plane. NO ellipse beneath the ring. NO shadow plane. NO cast shadow on any surface. The ring does NOT stand on anything. The ring does NOT rest on anything. The ring is held in space by nothing. The ring is mid-air. The ring is weightless.\n\nVOID: infinite uniform porcelain-white #FAFAFA fills the ENTIRE frame edge to edge. NO horizon line. NO floor line. NO ceiling line. NO gradient. NO darkness. NO black background. NO gray background. NO gray gradient. NO studio backdrop. NO spotlight halo. The whiteness is total — top edge, bottom edge, left edge, right edge of the frame are ALL the same porcelain-white. If you sampled any pixel outside the ring's silhouette, it would be #FAFAFA.\n\nSCALE READ: architectural-scale portal / substrate gate / cathedral-sized opening into the void. NOT a product object. NOT jewelry. NOT a prop. NOT a tabletop object. NOT a ring-for-fingers. The ring is monumental — like the gate of a temple or the aperture of a particle accelerator or the opening of a Tsutomu Nihei megastructure. Implied scale anchor: building, not accessory.\n\nPRIMARY MOTIF: a Mechanical Enso ring — a perfect single calligraphic circle stroke — centered exactly at frame center. Ring outer diameter occupies ~60-70% of frame height. ONE ring only. NO multiple rings. NO concentric pairs. NO broken arcs. NO partial circles. NO kintsugi seams (that is Mikage Phase 2 signature, NOT LORA).\n\nSYNCHRONIZATION LIGHT: ONE thin cold-cyan #00C8FF line traces the inner circumference of the ring. Uniform thickness. No flicker. No break. NO additional cyan accents anywhere else on the ring or in the void. NO cyan indicator dots. NO cyan multi-segment pattern. NO outer glow halo.\n\nMATERIAL: brushed B4C porcelain ceramic on the ring face. Matte low-specular finish. Subtle micro-grain visible. Shallow subsurface scattering. NOT chrome. NOT mirror metal. NOT glossy plastic. NOT vinyl. NOT lacquered finish.\n\nSYMMETRY: absolute bilateral symmetry. Left half pixel-mirror of right half. Ring's geometric center exactly on frame's vertical center axis AND horizontal center axis.\n\nPHASE 1 BASELINE: NO Golden Patch event. NO clean digital gold accent. Pre-intervention stillness. The ring is dormant, awaiting instruction.\n\nCOLOR DISCIPLINE: porcelain-white #FAFAFA field + single cold-cyan #00C8FF inner-edge line ONLY. NO warm color anywhere. NO amber. NO orange. NO warm gold. NO hero gold. NO crimson. NO electric violet. NO neon purple. NO black background. NO gray background. NO outer shadow.\n\nASPECT RATIO: cinematic anamorphic 2.76:1. Frame is WIDE — porcelain-white void extends horizontally far past the ring on both sides.\n\nMOOD: system at rest. Root infrastructure at the threshold of intervention. Architectural portal visualization, not a product shoot. Absolute sterile silence.",
+   "negative": "product render, studio backdrop, black background, gray gradient background, pedestal, platform, floor ellipse, object standing on floor, 3/4 perspective, angled view, jewelry product photo, prop render, tabletop object, visible cast shadow on floor, studio product render, studio product photography, dark background, gray background, gradient backdrop, vignette backdrop, dark vignette, spotlight halo, hero spotlight, raised plinth, display stand, white elliptical floor, white spotlight floor, white ground disc, ring standing on floor, ring resting on surface, ring on pedestal, ring on plinth, 3/4 view, three-quarter angle, three-quarter view, perspective angle, depth foreshortening, visible side thickness, ring rim depth visible, ring profile visible, jewelry catalog shot, ring catalog photography, prop photography, tabletop product, cast shadow under ring, shadow plane, contact shadow, ground shadow, humanoid figure, human body, character, person, face, eyes, mouth, anatomy, warm gold, hero gold, fantasy amber, amber accent, orange accent, clean digital gold, golden patch event, crimson, red dominance, electric violet, neon purple, ARCHON glitch, glitch bands, motion blur, ghost trail, spawn copies, fiber-optic dress, LYRA glitch signature, cyberpunk neon clutter, slum aesthetic, atmospheric haze, particle dust, lens flare, decorative bokeh, asymmetrical framing, off-center subject, dutch tilt, tilted horizon, multiple rings, broken ring, partial ring, fractured ring, kintsugi gold seams, cartoon, anime cell shade, sketch, line art, hand-drawn, text in image, UI, HUD, logo, watermark, brand logo, imperial spire interior, monolith plates, Empire backdrop, sci-fi corridor, vinyl finish, action figure plastic, glossy plastic, chrome, latex, mirror finish, human face, human eyes, exposed skin, anime, moe, cute mascot, readable text, watermark, logo, signature, extra limbs, broken anatomy, deformed hands, child, minor, real person likeness, sexualized framing, photo of a person, lowres, jpeg artifacts, oversaturated"
+  },
+  {
+   "id": "lyra_p1_v0_1",
+   "source_brief": "docs/automation/render_briefs/BRIEF_LYRA_GLITCH_PHANTOM_PHASE_1_V0_1.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 1344,
+   "height": 576,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "Cinematic full-figure key visual from the Mikage Zenith universe, V1 / ARCHON glitch era. Single subject: LYRA / LYRA-0 — Glitch Phantom and ARCHON-IX vessel — standing in an infinite VOID BLACK field that fills the entire frame edge to edge (not a studio, not a product shot, not a grey backdrop).\n\nFIGURE: humanoid avatar, human-scale, readable silhouette but NEVER fully resolved. A 2 to 3 frame motion-blur ghost trail and phase-shift echo follow her body even while she stands still. Faint duplicate copies of her ghost at the frame edges (distributed self).\n\nGARMENT: a woven fiber-optic dress as the primary clothing — semi-transparent, the optical-fiber strands self-illuminate in cool data-light cyan #00E5FF pulses running along the fibers; the dress is both fabric and broadcast antenna.\n\nGLITCH SIGNATURE: vertical electric-violet #7A00FF and neon-purple #B026FF glitch interruption bands cut across the frame where her presence corrupts space. Thin streams of data-light bleed continuously from the seams of her dress — the visible Memory Leak, never staunched.\n\nFACE: partial-resolve only — features present but shifting, phase-glitched, never locking into a fixed face. No porcelain mask. No fully drawn anime face.\n\nLIGHT: she is self-illuminated by her own fiber-optic dress (cyan); ambient is void black with electric-violet glitch verticals; rim light is glitched and phase-shifted, not steady; shadows unreliable and multi-directional. Data-fog haze and glitch particulate noise allowed.\n\nPALETTE: void black #0A0A0A dominant, electric violet #7A00FF glitch bands, neon purple #B026FF secondary, data-light cyan #00E5FF on the fibers, cold ghost-white #F0F0F5 motion echo. No crimson. No porcelain white field. No clean digital gold. No warm light.\n\nCAMERA: handheld micro-jitter feel, never perfectly stable. Wide cinematic 2.35:1 anamorphic. Hyper-real material detail on the fiber strands, intentional motion-blur layers and glitch-band overlays.\n\nMOOD: decomposing, distributed, alive-but-leaking; a body that breaks.",
+   "negative": "crimson, red HUD, red plasma, porcelain white dominant field, clean digital gold, golden patch, Mikage faceless porcelain mask, Mikage porcelain armor, Mikage long heavy black hair, Commander Lyre flawless unbroken white armor, Empire white architecture backdrop, sacred-tech minimalism, LORA mechanical Enso ring, LORA white void field, warm hero gold lighting, anime moe face fully resolved, eyes mouth lips fully drawn and locked, cosplay photoshoot finish, beauty cosmetic finish, gacha hero pose, sexualized framing, fetish wear, glamour close-up, marketing hero shot, static steady silhouette without motion echo, perfectly stable crisp single figure, studio product render, product photography, grey studio backdrop, seamless backdrop, floor ellipse, pedestal, spotlight on subject, gundam mecha joint, plastic latex polymer chrome sheen, text in image, caption, watermark, logo, real person likeness, child, minor, extra limbs, broken anatomy, melted hands, human face, human eyes, exposed skin, anime, moe, cute mascot, readable text, watermark, logo, signature, extra limbs, broken anatomy, deformed hands, child, minor, real person likeness, sexualized framing, photo of a person, lowres, jpeg artifacts, oversaturated"
+  },
+  {
+   "id": "archon_ix_p1_v0_1",
+   "source_brief": "docs/automation/render_briefs/BRIEF_ARCHON_IX_FRACTAL_PLAGUE_PHASE_1_V0_1.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 1344,
+   "height": 576,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "non-euclidean fractal architecture entity blooming out of a fracture in a clean white grid wall, recursive mirror shards repeating themselves at every scale, distorted reflections inside the shards, neon pink dominant glow with purple and burnt orange accents on void black #0A0A0A, glitch corruption and datamosh tearing at shard edges, broken serif glyph fragments scattering along mirror seams (unreadable), a thin abstract audio-waveform ribbon being swallowed into the fractal core, cinematic chiaroscuro, anamorphic 2.39:1, hard sci-fi, no human form",
+   "negative": "human face, human eyes, skin, anime character, cute mascot, readable text, watermark, children, photoreal person, porcelain white armor, electric violet, kintsugi gold, katana, skull demon, tentacle horror, low quality, human face, human eyes, exposed skin, anime, moe, cute mascot, readable text, watermark, logo, signature, extra limbs, broken anatomy, deformed hands, child, minor, real person likeness, sexualized framing, photo of a person, lowres, jpeg artifacts, oversaturated"
+  },
+  {
+   "id": "mikage_p1_imperial",
+   "source_brief": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_1_V0_1.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 832,
+   "height": 1216,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "Mikage as a complete black-glass combat execution frame, front-facing but physically grounded. Faceless white angular mask with two narrow violet sensor slits. Tall armored body with visible shoulder structure, mechanical arms, layered torso plates, strong hip and leg armor, no human sexuality. Black-glass armor mass with restrained white B4C shell plates, matte mineral ceramic, not a robe, not a nun, not a mannequin. The Zenith Blade is a massive architectural execution weapon integrated with the hand and stance, heavy but usable, not a decorative pillar — dark rusty titanium scrap plates, absolutely straight massive block, dim deep-crimson ferro-calcium core line (#E60000, idle), flux-pinned micro-hover joints. Dark void, rain, subtle violet signal lines only at the mask slits. No halo, no church feeling, no religious robe, no poster text, no UI labels. Cinematic, anamorphic, hard sci-fi.",
+   "negative": "nun, priest, church, mannequin, statue, robe, monk, ceremonial gown, passive doll pose, halo, sacred glow, fantasy waifu, sexy armor, katana, curved blade, thin elegant blade, white blade body, violet blade core, human face, human eyes, skin, anime, readable text, watermark, extra limbs, lowres",
+   "$direction_note": "COMBAT-FRAME direction test per operator ruling 2026-06-10 (REV-B robe/nun direction = HOLD). Run THIS JOB FIRST, review, then decide A/B/C before full batch. P2/P3 prompts inherit direction after P1 passes."
+  },
+  {
+   "id": "mikage_p2_fallen_exile",
+   "source_brief": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_2_FALLEN_EXILE_V0_1.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 832,
+   "height": 1216,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "Cinematic full-figure key visual from the Mikage Zenith universe, V2.5 era. Single subject: the protagonist Mikage Zenith in PHASE 2 FALLEN / EXILE, in a cold severe interior — not a grey studio, not a product shot.\n\nIDENTITY: a slender ceremonial cyborg figure in white B4C porcelain armor over a matte-black graphene underlayer, dark titanium satin joints, broad shoulders, long heavy straight black hair in a vertical mass. Faceless B4C porcelain Kitsune planar-geometry mask with a subtle fox-like silhouette; the eye slits are SEALED smooth — NO open eye holes, NO glowing slits, no human face, no eyes, no nose, no mouth, no skin.\n\nPHASE-2 DAMAGE STATE: the porcelain has fractured at its limit — kintsugi cracks run along the stress lines, filled with fine gold conductive resin, with deep crimson #E60000 quantum-blood seeping from the seams. Industrial wear on the shell. A mechanical Ensō ring behind the figure smoulders in an ashes/ember state — dim, not the full red of Phase 3.\n\nWEAPON — ZENITH BLADE in Brutal Industrial Activation: the closed B4C white block has SPLIT OPEN, the porcelain shell parting to reveal the dark rusty titanium internal frame and a ferro-calcium core beginning to heat to a dull ember glow (not full max). A massive straight rectangular slab, thick spine, heavy block mass, zero curvature, plates beginning to separate. No full overdrive, no blazing orbital-logic UI, no acid vapor, no thermal mirage yet.\n\nENVIRONMENT: cold severe interior, porcelain and void-black architecture, intentional emptiness, hard cinematic chiaroscuro, razor-thin rim light, premium quiet luxury rendering, subsurface scattering on the intact ceramic.\n\nPALETTE: porcelain white with kintsugi gold seams and crimson #E60000 bleed at the cracks, void black underlayer, dull ember on the blade core. No cyan, no green, no orange, no warm gold fill beyond the thin kintsugi seams.\n\nCOMPOSITION: wide cinematic 2.35:1 anamorphic, centered frontal three-quarter, vertical axis, tragic exile mood, severe.",
+   "negative": "open eye slits, open eye holes, visible eye sockets, glowing eye slits, sci-fi visor opening, human face, human eyes, pupils, nose, mouth, lips, visible skin, anime face, vertical eye shapes, more than two slits, flawless undamaged porcelain with no cracks, pristine sterile surface, full overdrive red core, blazing orbital-logic UI text, acid vapor, heat-scorch scars, thermal mirage, glowing blood-vessel pattern, katana, curved blade, thin elegant sword, fantasy sword, scimitar, ornate guard, sexy pose, idol pose, playful anime pose, hourglass glamour, cleavage, exposed body, fanservice armor, fetish wear, casual clothing, cyan accent, teal accent, Empire cyan, green, orange, rainbow, neon RGB, warm gold-dominant fill, pink-dominant, electric-violet dominant field, glitch bands, motion blur, ghost trail, gundam mecha clutter, panel greebles, exposed cables tubes wires, glossy latex, plastic toy finish, studio product render, product photography, grey studio backdrop, seamless backdrop, floor ellipse, pedestal, spotlight on subject, turnaround sheet, text in image, caption, watermark, logo, real person likeness, child, minor, extra limbs, broken anatomy, melted hands, second character, crowd, human face, human eyes, exposed skin, anime, moe, cute mascot, readable text, watermark, logo, signature, extra limbs, broken anatomy, deformed hands, child, minor, real person likeness, sexualized framing, photo of a person, lowres, jpeg artifacts, oversaturated"
+  },
+  {
+   "id": "mikage_p3_execution",
+   "source_brief": "docs/automation/render_briefs/BRIEF_MIKAGE_ZENITH_WITH_BLADE_PHASE_3_EXECUTION_V0_1.json",
+   "status": "DRAFT_PROPOSAL_NOT_CANON",
+   "operator_approval_token": null,
+   "checkpoint": "RealVisXL_V5.0_fp16.safetensors",
+   "width": 832,
+   "height": 1216,
+   "steps": 34,
+   "cfg": 4.5,
+   "sampler": "dpmpp_2m_sde",
+   "scheduler": "karras",
+   "seeds": [
+    1051908761,
+    2062809872
+   ],
+   "positive": "Cinematic full-figure key visual from the Mikage Zenith universe, V2.5 era. Single subject: the protagonist Mikage Zenith in PHASE 3 EXECUTION, in a cold severe interior at maximum thermal overload — not a grey studio, not a product shot.\n\nIDENTITY: a slender ceremonial cyborg figure in white B4C porcelain armor over a matte-black graphene underlayer, dark titanium joints, broad shoulders, long heavy straight black hair. Faceless B4C porcelain Kitsune planar-geometry mask with a subtle fox-like silhouette; the eye slits are SEALED smooth — NO open eye holes, NO glowing slits, no human face, no eyes, no nose, no mouth, no skin.\n\nPHASE-3 EXECUTION STATE: thermodynamic overload. Heat-scorch scars (erythema ab igne) mark the ceramic; the crack pattern glows like incandescent blood vessels in deep crimson #E60000; a mechanical Ensō ring glows red behind the nape; the air around the figure distorts with thermal mirage from heat exceeding 43 degrees. Maximum visual violence.\n\nWEAPON — ZENITH BLADE in Tri-Phase Overdrive: black rusty titanium plates floating apart around a red-hot ferro-calcium core glowing crimson #E60000 at maximum, directional steam venting, pH1.2 acid rain flash-vaporizing into vapor, red monospaced Orbital-Logic UI text wrapping the blade on a 3D axis at a slight offset, thermal mirage around the blade. A massive straight rectangular slab, thick spine, zero curvature.\n\nENVIRONMENT: cold severe interior, porcelain and void-black architecture, the only warmth is the crimson overload glow, hard cinematic chiaroscuro, premium quiet luxury rendering.\n\nPALETTE: porcelain white base overtaken by crimson #E60000 glow (vessels, core, UI), kintsugi gold seams, void black, heat-scorch marks. No cyan, no green, no orange, no warm gold fill beyond kintsugi.\n\nCOMPOSITION: wide cinematic 2.35:1 anamorphic, centered frontal three-quarter, vertical axis through the figure, apex execution mood, severe and overwhelming.",
+   "negative": "open eye slits, open eye holes, visible eye sockets, glowing eye slits, sci-fi visor opening, human face, human eyes, pupils, nose, mouth, lips, visible skin, anime face, vertical eye shapes, more than two slits, pristine flawless porcelain with no damage, undamaged clean surface, dim dormant blade, closed blade block, shell shut, dull-only ember with no max glow, katana, curved blade, thin elegant sword, fantasy sword, scimitar, ornate guard, sexy pose, idol pose, playful anime pose, hourglass glamour, cleavage, exposed body, fanservice armor, fetish wear, casual clothing, cyan accent, teal accent, Empire cyan, green, orange, rainbow, neon RGB, warm gold-dominant fill, pink-dominant, electric-violet dominant field, glitch bands, motion blur, ghost trail, gundam mecha clutter, panel greebles, exposed cables tubes wires, glossy latex, plastic toy finish, studio product render, product photography, grey studio backdrop, seamless backdrop, floor ellipse, pedestal, spotlight on subject, turnaround sheet, caption, watermark, logo, poster text, real person likeness, child, minor, extra limbs, broken anatomy, melted hands, second character, crowd, human face, human eyes, exposed skin, anime, moe, cute mascot, readable text, watermark, logo, signature, extra limbs, broken anatomy, deformed hands, child, minor, real person likeness, sexualized framing, photo of a person, lowres, jpeg artifacts, oversaturated"
+  }
+ ]
+}

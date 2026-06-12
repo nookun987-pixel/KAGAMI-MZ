@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" width="900" height="1500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="32%" r="80%">
+      <stop offset="0%" stop-color="#15151c"/><stop offset="55%" stop-color="#0a0a10"/><stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d8d5d1" stop-opacity="0.30"/><stop offset="60%" stop-color="#d8d5d1" stop-opacity="0.10"/><stop offset="100%" stop-color="#cfccc8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="porc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#ece9e5"/><stop offset="100%" stop-color="#c9c5bf"/>
+    </linearGradient>
+    <linearGradient id="porcV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbfaf8"/><stop offset="100%" stop-color="#cfccc6"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#23232c"/><stop offset="55%" stop-color="#15151c"/><stop offset="100%" stop-color="#0b0b10"/>
+    </linearGradient>
+    <linearGradient id="hairL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#08080b"/><stop offset="65%" stop-color="#121218"/><stop offset="100%" stop-color="#1d1d26"/>
+    </linearGradient>
+    <linearGradient id="hairR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#08080b"/><stop offset="65%" stop-color="#121218"/><stop offset="100%" stop-color="#1d1d26"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a22" stop-opacity="0.55"/><stop offset="100%" stop-color="#050508" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#17171c"/><stop offset="18%" stop-color="#2b2a2e"/><stop offset="50%" stop-color="#1d1c21"/><stop offset="82%" stop-color="#2f2d30"/><stop offset="100%" stop-color="#141318"/>
+    </linearGradient>
+    <linearGradient id="bladeV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34323a" stop-opacity="0.9"/><stop offset="100%" stop-color="#0e0d12" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="soft2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+
+  <rect width="900" height="1500" fill="url(#bg)"/>
+  <ellipse cx="450" cy="560" rx="360" ry="640" fill="url(#halo)"/>
+  <ellipse cx="450" cy="1182" rx="210" ry="18" fill="#000" opacity="0.5" filter="url(#soft)"/>
+
+  <!-- ===== FIGURE (geometry tu pack, scale 1.55, goc front) ===== -->
+  <g transform="translate(-216.5,-140) scale(1.55)">
+    <!-- ZENITH BLADE — P1 Compact-Idle: khoi B4C/titan dong kin, flux-pinned sau lung, core mo -->
+    <g>
+      <rect x="378" y="118" width="104" height="576" rx="4" fill="url(#blade)" stroke="#3c3a40" stroke-width="1"/>
+      <rect x="378" y="118" width="104" height="576" rx="4" fill="url(#bladeV)" opacity="0.25"/>
+      <!-- plate seams titan -->
+      <g stroke="#0c0b10" stroke-width="2"><path d="M378,196 L482,196"/><path d="M378,300 L482,300"/><path d="M378,452 L482,452"/><path d="M378,580 L482,580"/></g>
+      <g stroke="#4a474e" stroke-width="0.9" opacity="0.8"><path d="M378,200 L482,200"/><path d="M378,304 L482,304"/><path d="M378,456 L482,456"/></g>
+      <!-- ranh tan nhiet giua + core ferro-calcium MO (P1 idle 43°C) -->
+      <rect x="426" y="128" width="8" height="554" fill="#0a090d"/>
+      <rect x="428.5" y="132" width="3" height="546" fill="#4a1410" opacity="0.8"/>
+      <rect x="428.5" y="132" width="3" height="546" fill="#7a1d14" opacity="0.35"/>
+      <!-- Enso co khi o doc kiem (duoi) -->
+      <circle cx="430" cy="652" r="17" fill="none" stroke="#4a474e" stroke-width="3"/>
+      <circle cx="430" cy="652" r="17" fill="none" stroke="#5a1612" stroke-width="1.2" opacity="0.7" stroke-dasharray="88 18"/>
+      <!-- top bevel -->
+      <path d="M378,130 L430,118 L482,130" fill="none" stroke="#4a474e" stroke-width="1.2"/>
+      <!-- flux hover shadow giua blade va lung -->
+      <rect x="386" y="688" width="88" height="8" fill="#000" opacity="0.5"/>
+    </g>
+    <!-- HAIR back masses -->
+    <path d="M410,200 C368,206 342,250 332,332 C325,430 332,572 360,706 L398,692 C384,560 380,428 388,344 C394,284 412,228 422,206 Z" fill="url(#hairL)"/>
+    <path d="M450,200 C492,206 518,250 528,332 C535,430 528,572 500,706 L462,692 C476,560 480,428 472,344 C466,284 448,228 438,206 Z" fill="url(#hairR)"/>
+    <path d="M402,190 Q430,178 458,190 L454,250 Q430,240 406,250 Z" fill="#0b0b0f"/>
+    <g fill="none" stroke="#55555f" stroke-width="1.6">
+      <path d="M332,332 C325,430 332,572 360,706"/>
+      <path d="M528,332 C535,430 528,572 500,706"/>
+      <path d="M398,692 C384,560 380,428 388,344"/>
+      <path d="M462,692 C476,560 480,428 472,344"/>
+    </g>
+    <!-- hair sheen strands -->
+    <g stroke="#3a3a46" stroke-width="1.1" fill="none" opacity="0.8">
+      <path d="M352,290 C346,400 350,540 368,668"/><path d="M508,290 C514,400 510,540 492,668"/>
+      <path d="M370,260 C362,380 364,520 380,660" opacity="0.5"/><path d="M490,260 C498,380 496,520 480,660" opacity="0.5"/>
+    </g>
+    <!-- legs -->
+    <polygon points="406,720 424,720 421,812 408,812" fill="url(#porcV)"/>
+    <polygon points="454,720 436,720 439,812 452,812" fill="url(#porcV)"/>
+    <path d="M402,808 L424,808 L426,830 L432,845 L396,845 L396,828 Z" fill="#101016"/>
+    <path d="M458,808 L436,808 L434,830 L428,845 L464,845 L464,828 Z" fill="#1a1a23"/>
+    <g fill="#30303c"><rect x="406" y="804" width="18" height="7" rx="3"/><rect x="436" y="804" width="18" height="7" rx="3"/></g>
+    <!-- coat -->
+    <g fill="url(#coat)">
+      <path d="M348,310 L334,360 L330,452 L338,545 L360,548 L362,452 L360,360 L356,314 Z"/>
+      <path d="M512,310 L526,360 L530,452 L522,545 L500,548 L498,452 L500,360 L504,314 Z"/>
+      <path d="M348,308 L356,360 L366,450 L362,500 L372,520 L488,520 L498,500 L494,450 L504,360 L512,308 Z"/>
+      <path d="M372,520 L362,664 L366,724 L494,724 L498,664 L488,520 Z"/>
+      <path d="M362,648 L353,768 L357,794 L390,794 L392,768 L390,648 Z"/>
+      <path d="M498,648 L507,768 L503,794 L470,794 L468,768 L470,648 Z"/>
+    </g>
+    <!-- skirt slits + edges -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M398,534 L400,720" stroke="#06060a" stroke-width="2.4"/><path d="M430,532 L430,722" stroke="#06060a" stroke-width="2.4"/><path d="M462,534 L460,720" stroke="#06060a" stroke-width="2.4"/>
+      <path d="M403,540 L405,716" stroke="#3c3c48" stroke-width="1.1"/><path d="M434,538 L434,718" stroke="#3c3c48" stroke-width="1.1"/><path d="M467,540 L465,716" stroke="#3c3c48" stroke-width="1.1"/>
+      <path d="M390,652 L390,790" stroke="#3c3c48" stroke-width="1.1"/><path d="M470,652 L470,790" stroke="#3c3c48" stroke-width="1.1"/>
+    </g>
+    <!-- coat rim light -->
+    <path d="M348,310 L334,360 L330,452 L338,545" stroke="#4a4a58" stroke-width="1.4" fill="none"/>
+    <path d="M512,310 L526,360 L530,452 L522,545" stroke="#5a5a6a" stroke-width="1.6" fill="none"/>
+    <!-- chest plate + pauldrons + hands -->
+    <g>
+      <path d="M392,330 L468,330 L472,392 Q430,408 388,392 Z" fill="url(#porc)"/>
+      <path d="M340,306 C326,316 322,338 332,352 L362,346 L360,310 Z" fill="url(#porcV)"/>
+      <path d="M520,306 C534,316 538,338 528,352 L498,346 L500,310 Z" fill="url(#porc)"/>
+      <path d="M338,548 L360,548 L360,576 Q349,582 338,576 Z" fill="url(#porcV)"/>
+      <path d="M522,548 L500,548 L500,576 Q511,582 522,576 Z" fill="url(#porcV)"/>
+    </g>
+    <g fill="#262630"><rect x="337" y="544" width="24" height="7" rx="3"/><rect x="499" y="544" width="24" height="7" rx="3"/></g>
+    <path d="M356,318 L392,334 M504,318 L468,334" stroke="#0c0c12" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <g fill="none" stroke="#b8b4ad" stroke-width="1"><path d="M392,360 Q430,366 468,360"/><path d="M430,332 L430,400"/></g>
+    <path d="M392,332 L398,392" stroke="#fdfdfc" stroke-width="1.4" fill="none" opacity="0.9"/>
+    <!-- collar -->
+    <path d="M398,308 L392,262 L410,248 Q430,242 450,248 L468,262 L462,308 Z" fill="url(#coat)"/>
+    <path d="M398,308 L392,262 L410,248" stroke="#4a4a58" stroke-width="1.2" fill="none"/>
+    <!-- HELMET -->
+    <path d="M0,-52 L20,-44 L34,-22 L33,2 L24,24 L12,42 L0,52 L-12,42 L-24,24 L-33,2 L-34,-22 L-20,-44 Z" transform="translate(430,214) scale(0.92)" fill="url(#porc)" stroke="#b8b4ad" stroke-width="0.8"/>
+    <g transform="translate(430,214) scale(0.92)" fill="none" stroke="#a9a59e" stroke-width="0.8" opacity="0.85">
+      <path d="M0,-46 L0,50"/><path d="M-30,-20 L30,-20"/><path d="M-34,-22 L-22,8"/><path d="M34,-22 L22,8"/><path d="M-22,26 L0,46"/><path d="M22,26 L0,46"/>
+    </g>
+    <path d="M-20,-44 L-34,-22 L-33,2" transform="translate(430,214) scale(0.92)" stroke="#fdfdfc" stroke-width="1.2" fill="none" opacity="0.9"/>
+    <!-- violet slit halo -->
+    <g fill="none" stroke="#8F00FF" stroke-width="6" stroke-linecap="round" opacity="0.34" filter="url(#soft2)"><path d="M413,209 L425,211.5"/><path d="M447,209 L435,211.5"/></g>
+    <g fill="none" stroke="#8F00FF" stroke-width="3.4" stroke-linecap="round" opacity="0.5"><path d="M413,209 L425,211.5"/><path d="M447,209 L435,211.5"/></g>
+    <g fill="none" stroke="#1c1c24" stroke-width="2.2" stroke-linecap="round"><path d="M413,209 L425,211.5"/><path d="M447,209 L435,211.5"/></g>
+  </g>
+
+  <!-- floor reflection -->
+  <g transform="translate(-216.5,2876) scale(1.55,-1.55)" opacity="0.14">
+    <path d="M410,200 C368,206 342,250 332,332 C325,430 332,572 360,706 L398,692 C384,560 380,428 388,344 C394,284 412,228 422,206 Z" fill="#15151b"/>
+    <path d="M450,200 C492,206 518,250 528,332 C535,430 528,572 500,706 L462,692 C476,560 480,428 472,344 C466,284 448,228 438,206 Z" fill="#15151b"/>
+    <path d="M372,520 L362,664 L366,724 L494,724 L498,664 L488,520 Z" fill="#101016"/>
+    <polygon points="406,720 424,720 421,812 408,812" fill="#8a8881"/>
+    <polygon points="454,720 436,720 439,812 452,812" fill="#8a8881"/>
+  </g>
+  <rect x="0" y="1352" width="900" height="148" fill="url(#floor)" opacity="0.6"/>
+
+  <text x="450" y="1452" font-family="ui-monospace,'Space Mono',monospace" font-size="13" letter-spacing="6" text-anchor="middle" fill="#6a6a74">M I K A G E   Z E N I T H   ·   P 1   I M P E R I A L   C L E A N</text>
+  <text x="450" y="1476" font-family="ui-monospace,'Space Mono',monospace" font-size="9" letter-spacing="2" text-anchor="middle" fill="#4a4a54">PACK V0.1 + BLADE_SPEC 🔒 · P1 COMPACT-IDLE (blade flux-pinned sau lung) · NOT CANON · NOT A FINAL RENDER</text>
+</svg>

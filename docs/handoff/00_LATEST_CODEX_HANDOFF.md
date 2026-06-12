@@ -1817,3 +1817,147 @@ ASSET_LOCK = NO
 RENDER_ALLOWED = NO
 SUMMARY = Operator visual review rejects the current Combined Reference V2 4-view for visual reference quality. It passes structure/canon markers but must not be used to prepare or execute a render brief. No render, RunPod, ComfyUI, AI art, 3D, public output, canon lock, asset lock, or render permission is approved.
 NEXT_SAFE_TASK = DECIDE_REBUILD_METHOD_FOR_COMBINED_REFERENCE_V2_4VIEW_VISUAL_QUALITY
+
+## WORLD BIBLE V0.1 + ARCHON-IX RULING — 2026-06-10
+SESSION = Cowork 2026-06-10 (operator: quay về Lane B — thế giới/nhân vật/phe phái; picked World Bible first). Lane = WORLD_LORE_LANE. Assembly/markdown only. NO render / NO canon-lock / NO asset-lock / NO publish by Claude.
+OPERATOR_RULING_ARCHON_IX = CHARACTER_ONLY (KHONG phai phe phai) — dong cau hoi treo tu 2026-06-02. He tu tuong "Hon loan Tuyet doi" do 1 thuc the dai dien; "break one spawn nine" = power set tu nhan ban cua chinh no, khong phai quan doan.
+WORLD_BIBLE_V0_1 = CREATED → docs/world/MIKAGE_WORLD_BIBLE_V0_1.md (assembly NOT_CANON: premise + 3 truc tu tuong tu MASTER BIBLE V2.0; physics no-magic; cast registry 8 muc + trang thai asset; Vane/Root Architect/Lyra-0/Forty-three = CHUA_XAC_NHAN; geography narrative GIU HOLD/DO_NOT_PUBLISH, chi ghi nhan 2 context-lock Master Bible; two-canon palette law; 6 Lore Drip approved = lop public duy nhat; transmission↔lore map V0.1; 8 cau hoi mo; change control).
+WORLD_BIBLE_V0_1_STATUS = PROPOSAL_ASSEMBLY / NOT_CANON / NO_PUBLISH
+SESSION_REPORT = reports/SESSION_REPORT_WORLD_BIBLE_V0_1_20260610.md
+CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO
+CURRENT_NEXT_TASK = OPERATOR_REVIEW_WORLD_BIBLE_V0_1
+NEXT_SAFE_TASK = OPERATOR_REVIEW_WORLD_BIBLE_V0_1 + tra loi §8 (mo BRIEF_ARCHON_IX_V0_1? dinh danh Vane/Root Architect/Lyra-0? "Lyre online" = Commander Lyre?)
+
+## WORLD BIBLE V0.2 — SELF-AUDIT RESOLUTION — 2026-06-10
+SESSION = Cowork 2026-06-10 cont. (operator: "tu audit cac thong tin du lieu, dung co cau nao cung hoi — moi thong tin da co tren repo. luc di"). Lane = WORLD_LORE_LANE. Assembly/audit level. NO render / NO canon-lock / NO asset-lock / NO publish.
+SELF_AUDIT = grep + doc toan repo (MIKAGE_ZENITH_CANON_V2.md root + character_workflow locks + outlines Step 1-7 + transmission outline). KET QUA: 5/6 cau hoi mo cua V0.1 GIAI XONG bang nguon co san:
+- VANE (THE THEOREM) = TAI VANE (Canon V2 §8.5 Archive Tower AI 420m) — MATCH_PROPOSED
+- ROOT ARCHITECT (track T07) = LORA (Canon V2 §7.0/§8.6 nhan noi bo "Root Architect / System Substrate") — MATCH_STRONG; nhan public van CHUA_XAC_NHAN
+- LYRA-0 (SINGULAR HEART) = LYRA-0 cap voi ARCHON-IX (Canon V2 §8.3) — MATCH_STRONG
+- FORTY-THREE = motif nguong 43°C Landauer, khong phai nhan vat — RESOLVED_AS_MOTIF
+- "LYRE ONLINE" (NO TOUCHDOWN) = Commander Lyre theo mac dinh ten — DEFAULT_PROPOSED noi bo
+- ARCHON-IX design da du nguon de soan brief (Canon V2 §8.3: fractal non-Euclidean, neon pink glitch, trojan tieng cuoi tre em)
+DRIFT PHAT HIEN (2 muc, cho operator tick khi tien — KHONG chan viec khac):
+- DRIFT_COLOR_001: contract 06-04 "Z-Blue replaces cold cyan" vs Lyre Lock 1A cyan #00FFFF "not Z-Blue" vs Canon V2 §10.1 Empire UI cyan. De xuat mac dinh: Z-Blue = moi truong/cine wash; cyan #00FFFF = emission UI Lyre/Empire.
+- WEAPON_DRIFT_001: Unbreakable Shield vat the roi (Canon V2) vs force-field tu weapon system (Lyre spec §7 + Lock 1A, moi hon).
+CAST REGISTRY = bo sung Dr. Aris §8.4 + Tai Vane §8.5 (V0.1 thieu). Phe phai = DA DONG tu Canon V2 (3 ideology + LORA substrate + non-faction; faction moi = FORBIDDEN DRIFT).
+WORLD_BIBLE_V0_2 = CREATED → docs/world/MIKAGE_WORLD_BIBLE_V0_2.md (supersedes V0_1, giu lich su)
+CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO
+CURRENT_NEXT_TASK = OPERATOR_SKIM_WORLD_BIBLE_V0_2 (tick 2 drift khi tien)
+NEXT_SAFE_TASK = BRIEF_ARCHON_IX_V0_1 (nguon du) / character sheet mo rong / transmission map du 37 track — khong bi chan boi cau hoi nao
+
+## LANE B BUILD BATCH 2 — ARCHON-IX BRIEF + CAST SHEETS + TRANSMISSION MAP — 2026-06-10
+SESSION = Cowork 2026-06-10 cont. (operator: "thi chay tiep di e"). Lane = WORLD_LORE_LANE + CHARACTER_CAST_LANE. Markdown only. NO render / NO canon-lock / NO asset-lock / NO publish.
+BRIEF_ARCHON_IX = CREATED → docs/automation/render_briefs/BRIEF_ARCHON_IX_FRACTAL_PLAGUE_PHASE_1_V0_1.md (+ .json sidecar prompt_pack/v0.1, operator_approval_token=null). Grounded Canon V2 §7.1+§8.3 + ruling 06-10 CHARACTER_ONLY. Concept: fractal non-Euclidean bloom tu vet nut, mirror-recursion ("virus made of mirrors"), neon pink zone-lock, waveform tieng cuoi tre em truu tuong hoa (KHONG render tre em), doi am voi grid trang bi an dan. Scoped exception: glitch/fractal/neon-pink REQUIRED (era V1/ARCHON_GLITCH); van giu ban child/real-person/text/Mikage-palette-bleed.
+CAST_SHEETS_V0_1 = CREATED → docs/world/MIKAGE_CAST_SHEETS_V0_1.md — ho so chuan hoa 6 entity + 2 object (read-first khi dung nhan vat): Mikage / Lyre / LORA / ARCHON-IX / LYRA-0 / Dr. Aris / Tai Vane / Blade+Shield, kem quan he, lyric-voice, asset status, drift flags.
+TRANSMISSION_LORE_MAP_V0_1 = CREATED → docs/world/MIKAGE_TRANSMISSION_LORE_MAP_V0_1.md — map du 35 track audio folder → giong ke/truc, flag LYRIC_CHECKED/UNITS_DERIVED/TITLE_ONLY; narrative arc 6 hoi (interpretive); FINDINGS: CATALOG_DRIFT data.js (a38f89a) so cu vs audio renumber — registry TooLost = authority, can re-export khi dung website lane; SIGNAL THIEF = OPEN duy nhat chua khop entity.
+CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO
+CURRENT_NEXT_TASK = OPERATOR_REVIEW_LANE_B_BATCH_2 (ARCHON-IX brief concept §3 + 2 drift tick khi tien)
+NEXT_SAFE_TASK = (a) Lyre V0.3 review van treo · (b) rebuild method 4-view Mikage van treo · (c) khi BOOS muon render cast: set token + chay cast_render_kit operator-run
+
+## LANE B BATCH 3 — LYRE V0.3 VERIFIED + MIKAGE 4-VIEW V2.2 REBUILD — 2026-06-10
+SESSION = Cowork 2026-06-10 cont. (operator: "oki chay het di"). Lane = CHARACTER_CAST_LANE. SVG + review markdown. NO render-art / NO canon-lock / NO asset-lock.
+LYRE_V0_3_VERIFICATION = reports/LYRE_BRIEF_V0_3_VERIFICATION_REVIEW_20260610.md — VERDICT: BRIEF_V0_3_CONSISTENT, READY_FOR_OPERATOR_TOKEN. Aspect blocker cu da het (RunPod kit honors WxH). DRIFT_COLOR_001 khong chan (cyan = emission UI theo Lock 1A).
+REBUILD_METHOD_DECISION = thuc thi theo uy quyen operator "chay het di": Cowork redraw SVG per-view tu FRONT V2.1 (PASS-anchor) + V1.4 body lock.
+MIKAGE_4VIEW_V2_2 = CREATED → design/character_combined_reference_v2/MIKAGE_COMBINED_CHARACTER_REFERENCE_V2_2_4VIEW.svg (+ _PREVIEW.png, preview export only).
+FIXES vs V2 fail review: SIDE = 3 khoi lon de doc (hair fall sau / coat front edge / fox-snout profile + 1 slit foreshortened) · BACK = toc tach 2 dai quanh SPINE CORRIDOR, 1 Enso violet r26 (dash gap = mieng but) nam giua khong bi che, rim line #3e3e48 tach toc/coat · 3/4 = center line lech, near>far planes, 2 slit foreshortened dai/ngan, chan truoc sau, ground shadow · SKIRT = he 3 tang (outer->ankle / mid->mid-shin / center->knee) dong nhat 3 view.
+SELF_QC = 2 vong preview (cairosvg): da sua header/caption overlap + slit lech + value-separation toc-vs-coat truoc khi nop.
+V2_4VIEW cu (VISUAL_FAIL) giu nguyen lam history.
+CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO
+CURRENT_NEXT_TASK = OPERATOR_VISUAL_REVIEW_MIKAGE_4VIEW_V2_2 (fail layer nao -> bao 1 layer, Cowork va layer do)
+NEXT_SAFE_TASK = sau khi V2.2 pass: Brief V2 render-safe rebuild + (khi operator muon) set token chay cast RunPod batch (Lyre/LORA/LYRA/ARCHON-IX/Mikage P1-P3)
+
+## OPERATOR REVIEW RESULT + V2.2 REV-C TARGETED FIX — 2026-06-10
+OPERATOR_REVIEW (2 danh gia, BOOS chot):
+- LYRE_V0_3 = ACCEPT_AS_READY_FOR_OPERATOR_TOKEN (chua phai render-pass; token GIU lai, kich hoat 1 me RunPod khi gom du batch LORA/LYRA/ARCHON-IX/Mikage)
+- MIKAGE_4VIEW_V2_2: FRONT PASS · SIDE PASS · BACK PASS (Enso corridor "sua xuat sac") · 3/4 = HOLD_FOR_ONE_TARGETED_FIX (mang nguc/under-suit dep, chua xoay theo truc 3/4 — can bo bien xa vao trong, om khoi tru) + 4 y phu (near/far shoulder, clean nguc-than-tay gan, mask bot cung, chan gan/xa ro hon). Side cleanup optional, front/back preserve.
+REV_C_FIX (co lap dung scope, KHONG dap bo):
+- 3/4: chest plate redraw thanh khoi cong om tru (bien xa C-curve gom vao, bien gan loi), 2 duong seam cong theo wrap; far pauldron thu nho lui sau; coat center seam bow; helm34 path bat doi xung manh (far cheek gom ve tam), slits cum ve ben gan dai/ngan; far shin toi #e6e4df + ngan lai, near boot to hon.
+- SIDE (secondary): bung/mep ao truoc smooth C-curve (bo notch), sleeve tang contrast + rim #3a3a46, boot thon mui vat + heel line.
+- BACK (secondary): rim tach toc/ao tang #52525e w1.8.
+SELF_QC = preview REV-C da soi: nguc het det, mask doc ra huong xoay, chan xa chim dung lop. FRONT untouched.
+FILES = ...V2_2_4VIEW.svg + ...V2_2_PREVIEW.png (overwrite, REV-C)
+CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO
+CURRENT_NEXT_TASK = OPERATOR_RECHECK_V2_2_THREE_QUARTER (cham lai diem 3/4; pass -> DONG LANE B, chuyen sang kich no batch render RunPod)
+PUSH = van operator-side (sandbox khong cham duoc git worktree); BOOS gom commit Windows.
+
+## LANE B VISUAL REVIEW CLOSED + RUNPOD BATCH PREP — 2026-06-10
+OPERATOR_RECHECK_V2_2_THREE_QUARTER = DONE (2 danh gia thong nhat):
+  FRONT = PASS · SIDE = PASS · BACK = PASS · 3/4 REV-C = PASS
+  MIKAGE_4VIEW_V2_2_REV_C = OPERATOR_VISUAL_PASS · DO_NOT_EDIT_FURTHER
+  LANE_B_VISUAL_REVIEW = CLOSED (visual standpoint)
+  Van la DRAFT / NOT CANON / NO RENDER theo block chi thi agent cua operator.
+ASSET_LOCK_DISCREPANCY_FLAG = chat operator ghi "ASSET_LOCKED" nhung agent-block cung phien ghi "NOT ASSET-LOCKED" -> theo data-safety rule, Cowork GHI OPERATOR_VISUAL_PASS va de ASSET_LOCK = CHUA_XAC_NHAN cho operator xac nhan 1 chu (khong tu lock).
+LYRE_V0_3 = ACCEPT_AS_READY_FOR_OPERATOR_TOKEN (khong phai render-pass; token giu, kich hoat chung batch).
+KIT_FINDING = tools/cast_render_kit/ mo ta trong handoff 06-02 KHONG ton tai tren disk (chi co deploy/runpod_bootstrap.sh Fooocus-generic). KIT REBUILT 06-10 tu brief sidecars (khong bia prompt):
+- tools/cast_render_kit/cast_jobs.json — 7 job (lora_p1_v0_2, lyre_p1_v0_3, lyra_p1_v0_1, archon_ix_p1_v0_1, mikage_p1/p2/p3) = primary_prompt + brief_specific_additions + universal-neg core; RealVisXL V5.0; 34 steps cfg4.5 dpmpp_2m_sde/karras; 2 seeds/job; operator_approval_token=null TUNG JOB.
+- tools/cast_render_kit/render_cast_batch.py — ComfyUI API renderer stdlib, GATE: skip job token=null; --dry-run/--only.
+- tools/cast_render_kit/RUNPOD_OPERATOR_RUNBOOK.md — A-Z paste-and-go.
+DRY_RUN_PROOF = 7 job x 2 seeds = 14 workflow build OK, executed=0 (gate chan dung khi token null).
+CANON_LOCK = NO · ASSET_LOCK = CHUA_XAC_NHAN (cho confirm) · RENDER_ALLOWED = NO (Claude); render = operator-run RunPod sau token.
+CURRENT_NEXT_TASK = OPERATOR_COMMIT_AND_BATCH_RENDER (operator: gom commit/push Windows -> thue pod -> set token -> chay runbook -> mang ~14 PNG ve cho Cowork verify, khong PASS tu dong)
+
+## MIKAGE IDENTITY LOCK PACK V0.1 — ASSEMBLED — 2026-06-10
+SESSION = Cowork 2026-06-10 cont. (operator chuyen huong: dung san "anh dep cuoi", build Character Identity Lock Pack; phien ban ke hoach da qua external review chong overclaim — Cowork tuan thu: khong goi final, khong claim canon-lock, 3/4 pass phai co record file).
+PASS_RECORD = reports/MIKAGE_V2_2_REV_C_OPERATOR_VISUAL_PASS_RECORD_20260610.md — luu nguyen van operator block (FRONT/SIDE/BACK/3-4 = PASS, OPERATOR_VISUAL_PASS, van DRAFT/NOT CANON/NOT ASSET-LOCKED; ASSET_LOCK = CHUA_XAC_NHAN cho confirm rieng).
+PACK_DIR = design/character_identity_lock_pack_v0_1/
+PACK_CONTENTS = (1) COVER/SSOT declaration .md · (2) 4-view = tham chieu V2.2 REV-C + pass record · (3) MIKAGE_PROPORTION_SHEET_V0_1.svg (7.1 heavy + landmark + cam-lech) · (4) MIKAGE_HEAD_CANON_SHEET_V0_1.svg (4 goc helmet to + 6 khoa mask + anchor A1 + drift lich su) · (5) MIKAGE_OUTFIT_BREAKDOWN_SHEET_V0_1.svg (8 o tach lop: helmet/hair/collar+coat/chest+pauldron/skirt 3 tang/graphene+hands/shin+boots/blade-note; thu tu lop trong→ngoai) · (6) MIKAGE_DO_DONT_SHEET_V0_1.md (11 DO / 10 DON'T gom tu render-safe brief + drift audit, khong rule moi).
+SELF_QC = 3 sheet preview da soi bang mat (cairosvg) truoc khi nop.
+IDENTITY_LOCK_PACK_V0_1 = READY_FOR_OWNER_REVIEW (KHONG PHAI MIKAGE_FINAL_COMPLETE)
+CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO
+CURRENT_NEXT_TASK = OWNER_REVIEW_IDENTITY_LOCK_PACK_V0_1 (pass -> mo FINAL_VALIDATION_GATE -> operator ky lock tung mon; fail Case A/B/C -> sua dung mon do)
+NEXT_SAFE_TASK = sau pack pass + lock: batch render RunPod dung pack lam identity ref (A1/A2/A3 + 4-view REV-C).
+
+## LOCK PACK V0.1 — REVIEW SUBMISSION SET — 2026-06-10
+QC_EXTERNAL = pack cau truc DAT · ky luat trang thai DAT · du tu cach owner review · CHUA final.
+REVIEW_INDEX = CREATED → design/character_identity_lock_pack_v0_1/MIKAGE_IDENTITY_LOCK_PACK_V0_1_REVIEW_INDEX.md (muc dich · bang 6 mon + duong dan + trang thai · authority order · CHUA_XAC_NHAN gon · OWNER REVIEW CHECKLIST 5 dong · fail-case A/B/C/D · buoc sau pass).
+PACK_INTEGRITY_VERIFIED = 8/8 file ton tai tren disk (6 mon + review index + pass record) — kiem tra bang ls/wc, khong chi khai bao.
+MIKAGE_IDENTITY_LOCK_PACK_V0_1 = READY_FOR_OWNER_REVIEW
+CURRENT_NEXT_TASK = OWNER_REVIEW_IDENTITY_LOCK_PACK_V0_1 (tick checklist 5 dong trong REVIEW_INDEX)
+
+## WORDING FIX — 4VIEW STATUS LINE SYNC — 2026-06-10
+QC_EXTERNAL phat hien: dong day 4-view SVG con "awaiting recheck" (xuat truoc thoi diem operator pass) — lech voi pass record. FIX = doi dung 1 dong status thanh "REV-C operator visual review 2026-06-10: FRONT/SIDE/BACK PASS · 3/4 PASS — OPERATOR_VISUAL_PASS · CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED=NO". Khong dung hinh. Preview PNG re-export. Verify: "awaiting recheck" = 0 match.
+OWNER_REVIEW_PACKAGE = CLEAN_READY (4-view image + pass record + review index + cover noi cung 1 trang thai)
+CURRENT_NEXT_TASK = OWNER_REVIEW_IDENTITY_LOCK_PACK_V0_1 (tick 5 dong)
+
+## OPERATOR RULING — BO VONG ENSO TIM + 3 PROPOSAL SO — 2026-06-10
+RULING_VIOLET_BODY = operator: "BO CAI VONG TIM DI" → violet tren body = SLIT HALO ONLY. Vong Enso tim coat-back (Layer A muc 3b cu) = REMOVED khoi moi reference. Enso DO co khi sau gay van la chi tiet P3-only theo ENTITY_PHASE_SPEC 🔒 (khong ve tren reference trung tinh).
+APPLIED = 4VIEW REV-C (xoa ring + label, caption/footer sync, preview re-export, con dung 4 cum violet = slit halo cac goc) · FRONT V2.1 (xoa note text, khong dung hinh) · DO_DONT sheet rule 6 cap nhat.
+PROPOSALS_SUBMITTED (cho operator chot 3 so):
+- P1 TI_LE = GIU 7.1 heads heavy (da accept 06-03; 7.5 cua refine-spec lam thanh manh, lech dinh vi monolith 350kg). Cho phep dao dong ±0.1.
+- P2 MUZZLE_DEPTH = mom cao nho ra 0.20 head-unit tu mat phang ma (side view), goc song mom ~30° so truc doc mat, wedge 3 mat phang — du doc "fox" o side/3-4, khong cartoonish, khop anchor A1.
+- P3 SKIRT = GIU 3 tang (ngoai→mat ca / giua→giua ong chan / trong→goi). 2 tang mat sacred-flow; 5 tang ruom vi pham Porcelain Minimalism; 3 tang AI render de giu consistency.
+STATUS = 3 proposal o muc PROPOSAL (chua canon) — operator chot la khac vao proportion/head/outfit sheet + spec.
+CURRENT_NEXT_TASK = OWNER_REVIEW_IDENTITY_LOCK_PACK_V0_1 (pack da sach ring) + chot 3 proposal
+
+## 3 PROPOSAL CHOT (OPERATOR DELEGATE) + FINAL VERIFICATION PASS — 2026-06-10
+OPERATOR_DELEGATION = "may cai do em tu de xuat tu go" → 3 proposal duoc chot theo de xuat Cowork va khac vao sheet:
+- TI_LE = 7.1 heads ±0.1 (heavy) — de "7.5 refine-spec" cu bi superseded
+- MUZZLE = nho 0.20 head-unit tu mat phang ma (side) · song mom ~30° · wedge 3 mat phang
+- SKIRT = 3 tang (ngoai→mat ca / giua→giua ong chan / trong→goi)
+APPLIED_TO = proportion sheet · head canon sheet (muc 6 moi) · outfit breakdown · do/dont (rule 7+8) · cover + review index (CHUA_XAC_NHAN thu hep con: 180cm provisional · glove seg · boot sole · coat lining · ASSET_LOCK confirm).
+FINAL_VERIFICATION (buoc cuoi kiem tra, may + mat):
+- [1] FILES 10/10 ton tai (6 mon + index + 4view + preview + pass record + handoff)
+- [2] CONTRADICTIONS = 0: "awaiting recheck"=0 · violet 4view = 4 cum = slit halo only · enso circle = 0 · OPERATOR_VISUAL_PASS = 1
+- [3] CONSISTENCY: 3 so chot xuat hien dung cho o 5 file
+- [4] STATUS DISCIPLINE: khong claim FINAL_COMPLETE; READY_FOR_OWNER_REVIEW dung cho
+- [5] VISUAL QC: head sheet spec block 7 muc render sach, khong de chu
+VERIFICATION_RESULT = PASS → OWNER_REVIEW_PACKAGE = CLEAN_READY
+CURRENT_NEXT_TASK = OWNER_TICK_5_DONG_CHECKLIST (REVIEW_INDEX) → 5/5 = mo FINAL_VALIDATION_GATE ky lock tung mon → roi moi batch render RunPod.
+
+## FINISHED-LOOK DIRECTION RULING + PROMPT REBUILD — 2026-06-10
+OPERATOR_RULING = REV-B finished-look direction (robe/halo/passive) = HOLD. FAIL_REASON = TOO_NUN_MANNEQUIN / TOO_PASSIVE / NOT_ENOUGH_COMBAT_FRAME. KEEP = mask + violet slits + palette den/trang/tim. DISCARD = body language + robe + halo + blade-as-pillar. Dich = "dung yen nhung co the giet". Huong A/B/C: dang qua A, dich ve B (combat executor) — muc can cuoi chot sau direction test.
+RULING_FILE = reports/MIKAGE_FINISHED_LOOK_DIRECTION_RULING_20260610.md (keyword cam/tang + tieu chi pass + mau thuan Layer A can theo doi, KHONG tu giai).
+PROMPT_REBUILT = cast_jobs.json job `mikage_p1_imperial`: positive = combat-frame prompt operator-authored (+ canon guard: blade titan den + core crimson #E60000, violet chi o slit) · negative = nun/priest/church/mannequin/statue/robe/halo/katana/white-blade/violet-core lock. Dry-run 2 seeds PASS. $direction_note: CHAY JOB NAY RIENG TRUOC, review anh, chot A/B/C roi moi no full batch.
+FINISHED_IMPRESSION_V0_1 = DIRECTION_REJECTED (giu lam lich su; mask/slits/palette van dung).
+4VIEW_V2_2_REV_C = GIU OPERATOR_VISUAL_PASS (technical reference khong phai mood render); rework armor-structure = PENDING sau direction test, khong tu lam.
+CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (RunPod, set token job mikage_p1_imperial, 2 seeds) → mang anh ve Cowork verify theo 6 tieu chi pass → chot A/B/C → roi moi full batch + (neu can) rework reference.
+
+## IN-PROGRESS CHARACTER ASSET COMMITTED TO REPO — 2026-06-12
+SESSION = Cowork 2026-06-12 (operator: "buil nhan vat, check Lane B — tiep tuc asset character dang lam do"). Lane = CHARACTER_CAST_LANE / WORLD_LORE_LANE. NO render / NO canon-lock / NO asset-lock / NO final claim by Claude.
+FINDING = toan bo batch build 2026-06-10 (Identity Lock Pack V0.1, cast_render_kit, 4-view V2.2 REV-C, World Bible V0.1/V0.2, cast sheets, transmission lore map, ARCHON-IX brief, 06-10 reports) co tren disk nhung CHUA commit (untracked). CURRENT_NEXT_TASK la render operator-run (RunPod) — Claude khong render duoc. Hanh dong an toan dung pham vi = bao toan ban draft vao repo + verify integrity.
+INTEGRITY_RECHECK (read-only, may + grep) = "awaiting recheck"=0 · violet Enso coat-back ring = REMOVED tren 4-view (line 150 ghi ruling 06-10) · OPERATOR_VISUAL_PASS = 7 file · cast_jobs.json 7/7 operator_approval_token=null (render gate CLOSED).
+COMMITTED = design/character_identity_lock_pack_v0_1/ · design/character_combined_reference_v2/ · tools/cast_render_kit/ · docs/world/ · docs/automation/render_briefs/ · reports 06-10 + 06-12 session report · handoff blocks 06-10.
+STATUS = CANON_LOCK=NO · ASSET_LOCK=NO (CHUA_XAC_NHAN) · RENDER_ALLOWED(Claude)=NO · MIKAGE_FINAL_COMPLETE=NOT_CLAIMED. Commit chi bao toan draft, khong doi trang thai bat ky mon nao.
+SESSION_REPORT = reports/SESSION_REPORT_CHARACTER_ASSET_INPROGRESS_COMMIT_20260612.md
+CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (khong doi — van cho operator set token + RunPod render job mikage_p1_imperial, mang anh ve verify 6 tieu chi).

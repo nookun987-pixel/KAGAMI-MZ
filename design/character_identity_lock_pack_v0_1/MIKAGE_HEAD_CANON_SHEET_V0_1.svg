@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1040" width="1200" height="1040" font-family="ui-monospace,'Space Mono',monospace">
+  <defs>
+    <path id="hf" d="M0,-52 L20,-44 L34,-22 L33,2 L24,24 L12,42 L0,52 L-12,42 L-24,24 L-33,2 L-34,-22 L-20,-44 Z"/>
+    <path id="hs" d="M8,-52 L26,-44 L34,-22 L32,4 L24,26 L12,42 L0,50 L-10,46 L-20,34 L-26,20 L-44,8 L-44,2 L-28,-4 L-30,-20 L-22,-40 L-6,-50 Z"/>
+    <path id="h34" d="M-8,-52 L14,-46 L27,-24 L25,0 L18,22 L7,40 L-5,52 L-19,44 L-30,26 L-38,6 L-42,-10 L-36,-28 L-25,-45 Z"/>
+  </defs>
+  <rect width="1200" height="1040" fill="#fbfaf8"/>
+  <rect x="20" y="20" width="1160" height="1000" fill="none" stroke="#1a1a22" stroke-width="1.5"/>
+  <text x="44" y="50" font-size="13" letter-spacing="3" fill="#1a1a22">MIKAGE — HEAD CANON SHEET · IDENTITY LOCK PACK V0.1</text>
+  <text x="1156" y="50" font-size="10.5" letter-spacing="2" text-anchor="end" fill="#b03a2e">DRAFT · NOT CANON · NOT ASSET-LOCKED · NO RENDER</text>
+  <line x1="44" y1="64" x2="1156" y2="64" stroke="#1a1a22" stroke-width="0.8"/>
+  <text x="44" y="84" font-size="10" fill="#6a6a74">Nguồn: MASK CANON ruling 06-02 (option c) trong ENTITY_PHASE_SPEC_V1 🔒 + V1.3 mask-only fix + anchor render A1 SHOT_02 (UNIFIED_KEY_VISUAL_V4, LOCKED).</text>
+  <!-- FRONT big -->
+  <g transform="translate(220,330) scale(3.1)">
+    <use href="#hf" fill="#fafafa" stroke="#b8b4ad" stroke-width="0.5"/>
+    <g fill="none" stroke="#b8b4ad" stroke-width="0.35"><path d="M0,-46 L0,50"/><path d="M-30,-20 L30,-20"/><path d="M-34,-22 L-22,8"/><path d="M34,-22 L22,8"/><path d="M-22,26 L0,46"/><path d="M22,26 L0,46"/></g>
+    <g fill="none" stroke="#8F00FF" stroke-width="1.8" stroke-linecap="round" opacity="0.45"><path d="M-17,-5 L-5,-2.5"/><path d="M17,-5 L5,-2.5"/></g>
+    <g fill="none" stroke="#26262c" stroke-width="0.9" stroke-linecap="round"><path d="M-17,-5 L-5,-2.5"/><path d="M17,-5 L5,-2.5"/></g>
+  </g>
+  <text x="220" y="520" font-size="11" text-anchor="middle" letter-spacing="2" fill="#1a1a22">FRONT</text>
+  <!-- SIDE -->
+  <g transform="translate(520,330) scale(3.1)">
+    <use href="#hs" fill="#fafafa" stroke="#b8b4ad" stroke-width="0.5"/>
+    <g fill="none" stroke="#b8b4ad" stroke-width="0.35"><path d="M-8,-6 L8,-8"/><path d="M-14,8 L4,10"/><path d="M-4,-16 L-2,14"/></g>
+    <path d="M-12,-2 L-2,-0.5" stroke="#8F00FF" stroke-width="1.6" stroke-linecap="round" opacity="0.45" fill="none"/>
+    <path d="M-12,-2 L-2,-0.5" stroke="#26262c" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="520" y="520" font-size="11" text-anchor="middle" letter-spacing="2" fill="#1a1a22">SIDE — mõm cáo planar</text>
+  <!-- BACK -->
+  <g transform="translate(820,330) scale(3.1)">
+    <use href="#hf" fill="#fafafa" stroke="#b8b4ad" stroke-width="0.5"/>
+    <g fill="none" stroke="#b8b4ad" stroke-width="0.35"><path d="M0,-46 L0,50"/><path d="M-26,-18 L26,-18"/><path d="M-28,22 L28,22"/></g>
+  </g>
+  <text x="820" y="520" font-size="11" text-anchor="middle" letter-spacing="2" fill="#1a1a22">BACK — occiput, KHÔNG khe</text>
+  <!-- 3/4 -->
+  <g transform="translate(1080,330) scale(3.1)">
+    <use href="#h34" fill="#fafafa" stroke="#b8b4ad" stroke-width="0.5"/>
+    <g fill="none" stroke="#b8b4ad" stroke-width="0.35"><path d="M-7,-46 C-9,-14 -9,16 -7,46"/><path d="M-34,-18 L24,-21"/></g>
+    <g><path d="M-30,-6 L-12,-3.5" stroke="#8F00FF" stroke-width="1.8" stroke-linecap="round" opacity="0.45" fill="none"/>
+       <path d="M-1,-4 L8,-4.7" stroke="#8F00FF" stroke-width="1.4" stroke-linecap="round" opacity="0.45" fill="none"/>
+       <path d="M-30,-6 L-12,-3.5" stroke="#26262c" stroke-width="0.9" stroke-linecap="round" fill="none"/>
+       <path d="M-1,-4 L8,-4.7" stroke="#26262c" stroke-width="0.7" stroke-linecap="round" fill="none"/></g>
+  </g>
+  <text x="1080" y="520" font-size="11" text-anchor="middle" letter-spacing="2" fill="#1a1a22">3/4</text>
+  <!-- spec block -->
+  <g font-size="10.5" fill="#1a1a22">
+    <rect x="44" y="560" width="1112" height="380" fill="#f4f2ee" stroke="#1a1a22"/>
+    <text x="68" y="590" font-size="12" letter-spacing="2">MASK CANON — KHÓA (ENTITY_PHASE_SPEC §2, ruling 06-02)</text>
+    <line x1="68" y1="600" x2="1132" y2="600" stroke="#c9c6c0"/>
+    <text x="68" y="626">1. CẤU TRÚC = planar geometry mặt nạ Kitsune B4C (silhouette nhận diện thương hiệu) — KHÔNG phải overlay đắp lên.</text>
+    <text x="68" y="650">2. KHE MẮT = đúng 2 khe, 0.7", SEALED monocoque — rãnh khắc chìm phẳng, KHÔNG phải lỗ hở. Violet = tín hiệu PHÁT từ khe (Slit Halo), không phải ánh sáng lọt qua lỗ.</text>
+    <text x="68" y="674">3. KHÔNG mắt người · KHÔNG miệng · KHÔNG mũi hở · KHÔNG da · KHÔNG tóc che mặt nạ phía trước.</text>
+    <text x="68" y="698">4. TRUYỀN DẪN = Graphene matrix + Side-Channel BMF dưới lớp sứ (không cần lỗ quang học) — seal khe = quy phục chuẩn Clean Code của LORA.</text>
+    <text x="68" y="722">5. BRAND ↔ FILM = MỘT identity hai độ tinh: brand mark 2 sensor slits CHÍNH LÀ 2 khe sealed của mask film.</text>
+    <text x="68" y="742">6. MÕM (CHỐT 06-10, operator delegate): nhô 0.20 head-unit từ mặt phẳng má (side view), sống mõm ~30° so trục dọc mặt, wedge 3 mặt phẳng.</text>
+    <text x="68" y="758">7. SAU GÁY = vị trí Ensō cơ khí (chỉ hiện P3 glow đỏ; reference trung tính không vẽ glow).</text>
+    <line x1="68" y1="766" x2="1132" y2="766" stroke="#c9c6c0"/>
+    <text x="68" y="790" font-size="11" letter-spacing="2">ANCHOR ẢNH THẬT (IP-Adapter ref)</text>
+    <text x="68" y="812" font-size="9.5" fill="#444">A1 = SHOT_02 helmet (UNIFIED_KEY_VISUAL_V4, LOCKED, đã verify bằng mắt — 2 sealed slits + violet halo) → dùng làm head identity ref khi render.</text>
+    <text x="68" y="830" font-size="9.5" fill="#444">Lỗi từng dính (drift đã ghi nhận): mark chữ nhật thừa ngoài 2 khe (PUBLIC_RENDER blocker cũ) · cheek lines thừa · khe bị vẽ thành lỗ sáng.</text>
+    <line x1="68" y1="850" x2="1132" y2="850" stroke="#c9c6c0"/>
+    <text x="68" y="872" font-size="9" fill="#6a6a74">CHUA_XAC_NHAN còn lại: bán kính bo cạnh · tỉ lệ khe/chiều rộng mặt (đo từ A1 khi canon stage). Muzzle depth ĐÃ CHỐT 06-10.</text>
+    <text x="68" y="890" font-size="9" fill="#b03a2e">CANON_LOCK = NO · ASSET_LOCK = NO — sheet thuộc IDENTITY_LOCK_PACK_V0_1, chờ owner review (Case B của kế hoạch: nếu chưa đủ canon → review riêng sheet này).</text>
+  </g>
+</svg>
