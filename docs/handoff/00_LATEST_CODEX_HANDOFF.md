@@ -1972,3 +1972,16 @@ VERIFY = cast_jobs.json JSON hop le · 12/12 anti-toy token trong negative · 11
 SESSION_REPORT = reports/SESSION_REPORT_ANTITOY_GUARDRAIL_20260612.md
 STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · NOT_PRODUCTION_READY. Chi va prompt-layer + review criteria.
 CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (KHONG DOI; verify ve sau theo 7 tieu chi gom anti-toy moi).
+
+## NARRATIVE CORE LAYER REGISTERED — 2026-06-13
+SESSION = Cowork 2026-06-13 (operator-gated chain: audit → gap proposal → per-clause sign-off → locks → plan → scene treatment → voice profiles → pointer). Lane = WORLD_LORE / NARRATIVE layer. NO render / NO canon-V2 edit / NO asset-lock / NO public copy by Claude.
+NARRATIVE_CORE_LOCK = docs/handoff/MIKAGE_NARRATIVE_CORE_LOCK_V0_1.md (LOCKED 2026-06-13 — Core Question C · wound layer 6 clause · 3 mirrors · LOCK_Q1 reaffirmed: KHONG co arc Lyre→Lyra-0)
+FULL_7_STEP_PLAN = docs/handoff/MIKAGE_FULL_7_STEP_CHARACTER_WORLD_PLAN_V0_1.md (PLAN_DRAFT_FROM_LOCKED_CORE — assembly only, khong lore moi)
+SCENE_2_TREATMENT = docs/handoff/MIKAGE_SCENE_2_FORCED_CHOICE_TREATMENT_V0_1.md (SCENE_TREATMENT_REVIEWED — dual-branch, canonical outcome = KEEP_UNRESOLVED, KHONG phai canon event, script/board = HOLD)
+VOICE_PROFILE_PROPOSAL = docs/handoff/MIKAGE_VOICE_PROFILE_PROPOSAL_V0_1.md (PROPOSAL_REVIEWED — sign-off 7/7)
+VOICE_PROFILE_LOCK = docs/handoff/MIKAGE_VOICE_PROFILE_LOCK_V0_1.md (VOICE_PROFILE_LOCKED — 6 entities; HUD LORA + Tai Vane = HELD cho Clean Digital Gold hex + Archive Tower type spec; Dr. Aris = THIN_SOURCE floor; DIALOGUE_AUTHORIZED = NO, can script gate rieng)
+GAP_PROPOSAL_TRAIL = docs/handoff/MIKAGE_NARRATIVE_CORE_GAP_PROPOSAL_V0_1.md (sign-off per clause ghi tai §7)
+COMMITS_SO_FAR = 25ff455 (gap proposal + core lock + 7-step plan) · a314aea (scene 2 treatment draft) · 85f26a6 (scene 2 review recorded) · voice pair = operator commit pending/manual.
+SCENE_1_3_EXPANSION = NOT_OPENED. SCRIPT_GATE = NOT_OPENED. CANON_V2 = UNTOUCHED (§8.6 voice = CHUA_XAC_NHAN tren canon file; layer lock o file rieng).
+STATUS = NARRATIVE_CORE_LOCKED (layer) · CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · PUBLIC_COPY=NO.
+CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (KHONG DOI — block nay chi dang ky narrative layer, khong thay task Lane A).
