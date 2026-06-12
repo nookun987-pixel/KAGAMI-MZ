@@ -66,18 +66,17 @@ Nguồn lệch: Canon V2 §8.2 "Unbreakable Shield (vertical plasma pillar disch
 
 ---
 
-## Operator Answer Slot
+## Operator Answer Slot — DECIDED 2026-06-13 (BOOS: "2.1=C, 2.3=A, còn lại default")
 
 ```
-TRẢ LỜI CỦA BOOS (điền hoặc nhắn trong chat):
-2.1 = 
-2.2 = 
-2.3 = 
-2.4 = 
-2.5 = 
-2.6 = 
-2.7 = 
-(bỏ trống = default)
+2.1 = C  → Clean Digital Gold = #E6B800 [LOCKED — PROPOSAL_HEX được operator gật thành lock]
+2.2 = default → Tai Vane HUD GIỮ HELD
+2.3 = A  → WEAPON_DRIFT_001 RESOLVED: khiên Lyre = VẬT THỂ vật lý, mặt khắc được sigil,
+           xả cột plasma dọc trắng/cyan (thỏa Canon V2 §8.2 + §11.4 + FACTIONS_V2_5 D2-A)
+2.4 = default → LORA "Root Architect" GIỮ INTERNAL
+2.5 = default → Scene 2 canonical outcome = KEEP_UNRESOLVED
+2.6 = default → B-2 "The cost is mine." = CONFIRMED chính thức
+2.7 = default → heights GIỮ PROVISIONAL 180/188
 ```
 
 ## Sau khi có trả lời, em sẽ (1 lượt, không hỏi):

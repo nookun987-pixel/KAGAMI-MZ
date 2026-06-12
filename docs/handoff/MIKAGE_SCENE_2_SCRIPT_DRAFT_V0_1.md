@@ -104,7 +104,7 @@ Operator sign-off recorded 2026-06-13 ("gật go"):
 | Beats 1–7 HUD set | **APPROVED** | |
 | False-belief suppress device (Beat 5) | **APPROVED** | device chính thức của IP cho false belief |
 | Branch A: zero spoken line | **APPROVED** | im lặng = cái giá |
-| Branch B spoken line: B-1 / B-2 | **B-2 SELECTED (default-recommendation)** | "The cost is mine." — B-1 giữ làm ALTERNATE; operator có thể đảo bằng 1 lệnh |
+| Branch B spoken line: B-1 / B-2 | **B-2 CONFIRMED (operator, Phase 2 board 2.6 — 2026-06-13)** | "The cost is mine." — chính thức; B-1 lưu archive |
 | HUD language = EN (gloss VI internal) | **APPROVED** | |
 | Promote to board/storyboard | **HOLD** | gate riêng, chưa mở |
 

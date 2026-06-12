@@ -32,7 +32,7 @@ Register: thủ tục đế chế, chính xác, quyền uy từ sự đều đ�
 ## 3. LORA — LOCKED (voice rules) · HUD HELD
 
 Register: không phải hội thoại — LORA phát system status / refactor log / declarative không người nhận; không xưng hô, không hỏi. Rhythm: nhịp hệ thống, đều tuyệt đối, không nhấn nhá cảm xúc. Vocabulary: kiến trúc, mã, refactor, trạng thái, luật; chaos = "corrupted code". Never: không thuyết phục (Lock 4F — không đứng phe); không từ cảm xúc; không đe dọa — phán quyết là mô tả. Silence: LORA không im lặng — LORA vắng mặt hoặc hiện diện; khi hiện diện, môi trường thay đổi thay cho lời (White Void / Enso / Golden Patch).
-**Text/HUD: HELD — CHUA_XAC_NHAN cho tới khi Clean Digital Gold hex được lock.**
+**Text/HUD: UNLOCKED 2026-06-13 — Clean Digital Gold = #E6B800 (Phase 2 board 2.1=C, operator-locked). LORA text: màu #E6B800, xuất hiện như system-status overlay trong White Void / Golden Patch context; không dùng làm fill, không lẫn kintsugi #C39A52 (seams only) và Imperial Gold #FFD700 (collectible mode).**
 
 ## 4. ARCHON-IX & LYRA-0 (paired) — LOCKED
 
@@ -58,9 +58,9 @@ Register: thủ thư lưu trữ — truy xuất, trích dẫn, định danh bả
 | | Điền HUD cho LORA/Tai Vane (HELD) |
 | | Mở rộng Dr. Aris (THIN_SOURCE floor) |
 
-## 8. CARRIED GAPS
+## 8. CARRIED GAPS (cập nhật 2026-06-13 sau Phase 2 board)
 
-Clean Digital Gold hex (chặn §3 HUD) · Archive Tower type spec (chặn §6 HUD) · LORA public "Root Architect" framing (không dùng trong voice rules) · script gate cho thoại thật (chưa mở).
+~~Clean Digital Gold hex~~ → RESOLVED: #E6B800 (board 2.1=C) · Archive Tower type spec (chặn §6 HUD — board 2.2 giữ HELD) · LORA public "Root Architect" framing (board 2.4: GIỮ INTERNAL) · script gate Scene 1/3 cho thoại thật (Scene 2 script đã reviewed).
 
 ## 9. NEXT (locked order)
 
