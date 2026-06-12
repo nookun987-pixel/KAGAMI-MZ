@@ -1,7 +1,7 @@
 # MIKAGE_SCENE_2_FORCED_CHOICE_TREATMENT_V0_1
 
 ```
-STATUS: SCENE_TREATMENT_DRAFT — chờ operator review
+STATUS: SCENE_TREATMENT_REVIEWED — approved as unresolved treatment, not canon event
 GATE: TEST_SCENE_EXPANSION (operator-opened 2026-06-13, Scene 2 ONLY)
 SOURCE: MIKAGE_NARRATIVE_CORE_LOCK_V0_1.md §4 Scene 2 + FULL_7_STEP_PLAN Step 7
 CANON_PROMOTION: NO
@@ -11,7 +11,7 @@ SHOTLIST: NO (beats are narrative-level, no camera/lens/shot numbers)
 DIALOGUE_LINES: NONE (voice profiles ×6 still MISSING)
 PUBLIC_COPY: NO
 NEW_LORE: NONE — connective tissue labeled [TREATMENT_DRAFT]
-ENDING: NOT CHOSEN — dual branch, operator decides (§5)
+ENDING: KEEP_UNRESOLVED — dual branch, operator decision recorded 2026-06-13 (§5)
 ```
 
 ## 0. Source Boundaries
@@ -78,14 +78,16 @@ Both branches stay in the file. If a canonical outcome is ever needed (MV, story
 
 ## 5. Operator Decision Table
 
+Operator review recorded 2026-06-13.
+
 | Item | Decision | Notes |
 |---|---|---|
-| Beat structure (1–7) | PENDING | |
-| Mikage phase state = P2 baseline | PENDING | treatment suggestion only |
-| Branch A kept as written | PENDING | |
-| Branch B kept as written | PENDING | |
-| Canonical outcome (A / B / keep unresolved) | PENDING | default = keep unresolved |
-| Promote treatment to next stage (script/board) | PENDING | requires voice profiles for any dialogue |
+| Beat structure (1–7) | **APPROVED** | Narrative-level beats only; no shotlist/camera/lens/render instructions. |
+| Mikage phase state = P2 baseline | **APPROVED_AS_TREATMENT_BASELINE** | P2 fits "wound carried visibly"; this does not promote the scene into canon event. |
+| Branch A kept as written | **APPROVED** | Consent respected; Need practiced; pain remains private/internal. |
+| Branch B kept as written | **APPROVED** | Custody seized; essence saved but consent broken; visible step toward mirrors. |
+| Canonical outcome (A / B / keep unresolved) | **KEEP_UNRESOLVED** | Default preserved. No canonical ending chosen. Both branches remain as test branches. |
+| Promote treatment to next stage (script/board) | **HOLD** | Dialogue/script/board blocked until voice profiles ×6 are opened and approved. |
 
 ## 6. PASS Self-Check (against locked test)
 
