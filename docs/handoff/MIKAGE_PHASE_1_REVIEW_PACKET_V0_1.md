@@ -45,7 +45,7 @@ Font HUD chính thức · giọng thu âm Aris (chưa có voice asset) · board/
 
 | Hạng mục | Decision |
 |---|---|
-| 4 file deliverables + 3 điểm diễn giải (P1-a/b/c theo default) | PENDING — "gật phase 1 final" |
+| 4 file deliverables + 3 điểm diễn giải (P1-a/b/c theo default) | **APPROVED 2026-06-13** — operator committed toàn bộ deliverables lên remote (de facto sign-off); P1-a/b/c giữ theo default |
 
 ## 6. Commit (1 lệnh cho cả phase — gồm cả roadmap chưa commit)
 
