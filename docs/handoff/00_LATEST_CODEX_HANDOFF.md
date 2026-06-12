@@ -1961,3 +1961,14 @@ COMMITTED = design/character_identity_lock_pack_v0_1/ · design/character_combin
 STATUS = CANON_LOCK=NO · ASSET_LOCK=NO (CHUA_XAC_NHAN) · RENDER_ALLOWED(Claude)=NO · MIKAGE_FINAL_COMPLETE=NOT_CLAIMED. Commit chi bao toan draft, khong doi trang thai bat ky mon nao.
 SESSION_REPORT = reports/SESSION_REPORT_CHARACTER_ASSET_INPROGRESS_COMMIT_20260612.md
 CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (khong doi — van cho operator set token + RunPod render job mikage_p1_imperial, mang anh ve verify 6 tieu chi).
+
+## ANTI-TOY GUARDRAIL PATCH (prompt-layer + tieu chi review) — 2026-06-12
+SESSION = Cowork 2026-06-12 cont. (operator duyet: trien khai guardrail anti-toy da phan tich). Lane = CHARACTER_CAST_LANE (Lane B, GIU NGUYEN). EDIT FILE ONLY — NO render / NO set token / NO ComfyUI/Blender / NO canon-lock / NO asset-lock / NO production-ready claim.
+ROOT_CAUSE = 6 tieu chi + prompt cu chong nun/mannequin nhung KHONG chan loi "do choi con nit" (plastic/figurine/CGI sach). Fix re nhat = va negative + positive + them tieu chi pass material/scale TRUOC khi operator chay direction test.
+PATCH_1 NEGATIVE (cast_jobs.json job mikage_p1_imperial) += toy, plastic, figurine, action figure, vinyl, glossy plastic, smooth clean surface, CGI-clean, cartoon, chibi, miniature, model kit.
+PATCH_2 POSITIVE += weathered worn metal, scratched edges, grime, brushed anisotropic metal, PBR photoreal, monumental towering scale, low camera angle, 85mm, shallow depth of field, hard key light, bright rim light. Material spec loi (black-glass/B4C/blade titan den core crimson #E60000) + checkpoint/steps/cfg/sampler/seeds GIU NGUYEN.
+PATCH_3 = them TIEU CHI PASS THU 7 (ANTI-TOY) vao MIKAGE_FINISHED_LOOK_DIRECTION_RULING_20260610.md: surface kim loai/gom THAT co hao mon + cam giac KICH THUOC lon, KHONG nhu figurine nhua/do choi/model kit/CGI sach. 6 tieu chi goc giu nguyen (danh so 1-6).
+VERIFY = cast_jobs.json JSON hop le · 12/12 anti-toy token trong negative · 11/11 cue trong positive · mikage_p1_imperial token = null · 7/7 job token = null -> RENDER GATE VAN DONG.
+SESSION_REPORT = reports/SESSION_REPORT_ANTITOY_GUARDRAIL_20260612.md
+STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · NOT_PRODUCTION_READY. Chi va prompt-layer + review criteria.
+CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (KHONG DOI; verify ve sau theo 7 tieu chi gom anti-toy moi).

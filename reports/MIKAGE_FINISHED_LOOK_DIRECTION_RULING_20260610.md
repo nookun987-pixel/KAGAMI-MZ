@@ -19,7 +19,15 @@ DISCARD = BODY LANGUAGE + ROBE + HALO + BLADE PRESENTATION (blade dựng như c�
 5. Blade trong key visual: vũ khí TÍCH HỢP với tay/stance (heavy but usable) — không phải cột trang trí. Material giữ BLADE_SPEC 🔒: titan đen + lõi crimson #E60000 (KHÔNG trắng, KHÔNG lõi tím).
 
 ## TIÊU CHÍ PASS ẢNH KẾ TIẾP (operator đặt)
-Vai có lực · tay có cấu trúc · torso có giáp thật · chân đứng có trọng lượng · blade là vũ khí của Mikage · vẫn lạnh tối giản nhưng không "bà sơ robot".
+1. Vai có lực
+2. Tay có cấu trúc
+3. Torso có giáp thật
+4. Chân đứng có trọng lượng
+5. Blade là vũ khí của Mikage (tích hợp tay/stance, không phải cột trang trí)
+6. Vẫn lạnh tối giản nhưng không "bà sơ robot"
+7. **(ANTI-TOY — thêm 2026-06-12)** Surface đọc như kim loại/gốm THẬT có hao mòn (xước, grime, brushed metal, PBR) + có cảm giác KÍCH THƯỚC LỚN (monolith, không scale figurine) — **KHÔNG được nhìn như figurine nhựa / đồ chơi con nít / model kit / CGI sạch bóng**.
+
+> Lý do thêm tiêu chí 7: 6 tiêu chí gốc nhắm chống thụ động/combat-readability nhưng KHÔNG kiểm độ-thực-vật-liệu & cảm-giác-kích-thước → một ảnh có thể pass 6 mà vẫn ra "robot nhựa to". Tiêu chí 7 vá đúng lỗ hổng đó, đồng bộ với guardrail anti-toy đã vá vào prompt `mikage_p1_imperial` (xem reports/SESSION_REPORT_ANTITOY_GUARDRAIL_20260612.md).
 
 ## GHI CHÚ MÂU THUẪN CẦN THEO DÕI (không tự giải)
 Prompt combat-frame của operator không nhắc tóc dài/female-coded/skirt (Layer A 06-03). Direction test sẽ cho thấy operator muốn giữ bao nhiêu phần Layer A trong hướng B — KHÔNG tự bỏ Layer A khỏi spec cho tới khi operator phán sau test.
