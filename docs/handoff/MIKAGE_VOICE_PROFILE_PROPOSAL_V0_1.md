@@ -1,7 +1,7 @@
 # MIKAGE_VOICE_PROFILE_PROPOSAL_V0_1
 
 ```
-STATUS: PROPOSAL_ONLY — chờ operator review per entity
+STATUS: PROPOSAL_REVIEWED — operator sign-off 2026-06-13 (§7); flows to MIKAGE_VOICE_PROFILE_LOCK_V0_1.md
 SCOPE: VOICE_PROFILE_PROPOSAL ×6 (operator-opened 2026-06-13)
 SOURCE: MIKAGE_ZENITH_CANON_V2.md §1, §8, §9, §10.2 + MIKAGE_WORLD_CORE_READABLE.md (Language Doctrine) + MIKAGE_NARRATIVE_CORE_LOCK_V0_1.md
 CANON_PROMOTION: NO
@@ -93,15 +93,17 @@ Canon chỉ có 4 fact (analog doctor / safehouse medic / hammer-wrench / kintsu
 
 ## 7. Operator Approval Table
 
+Operator sign-off recorded 2026-06-13 ("nếu ổn thì go" — approve all, conditions kept):
+
 | Profile | Decision | Notes |
 |---|---|---|
-| §0 Shared Voice Law | PENDING | |
-| §1 Mikage Zenith | PENDING | |
-| §2 Commander Lyre | PENDING | |
-| §3 LORA | PENDING | Text/HUD chờ Clean Digital Gold hex |
-| §4 ARCHON-IX & LYRA-0 | PENDING | paired giữ nguyên theo §8.3 |
-| §5 Dr. Aris | PENDING | THIN_SOURCE — duyệt mức tối thiểu |
-| §6 Tai Vane | PENDING | |
+| §0 Shared Voice Law | **APPROVED** | |
+| §1 Mikage Zenith | **APPROVED** | HUD đỏ #E60000 ≤15% frame giữ nguyên |
+| §2 Commander Lyre | **APPROVED** | |
+| §3 LORA | **APPROVED — HUD HELD** | Luật giọng duyệt; Text/HUD treo chờ Clean Digital Gold hex |
+| §4 ARCHON-IX & LYRA-0 | **APPROVED** | paired giữ nguyên theo §8.3 |
+| §5 Dr. Aris | **APPROVED — THIN_SOURCE MINIMUM** | chỉ mức 4-fact, cấm mở rộng nhân thân |
+| §6 Tai Vane | **APPROVED — HUD HELD** | Type spec Archive Tower chưa có |
 
 Approved profiles flow to: `MIKAGE_VOICE_PROFILE_LOCK_V0_1.md` (chỉ sau per-row sign-off).
 Thoại thật vẫn cần thêm: VOICE_PROFILE_LOCK + gate script riêng (Scene 2 promotion đang HOLD).
