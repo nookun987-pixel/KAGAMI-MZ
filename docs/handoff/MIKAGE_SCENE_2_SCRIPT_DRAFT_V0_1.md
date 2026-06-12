@@ -1,7 +1,7 @@
 # MIKAGE_SCENE_2_SCRIPT_DRAFT_V0_1
 
 ```
-STATUS: SCRIPT_DRAFT — PROPOSAL_ONLY, chờ operator review §6
+STATUS: SCRIPT_REVIEWED — operator sign-off 2026-06-13 (§6); not canon event, board = HOLD
 GATE: SCRIPT_GATE Scene 2 (operator-opened 2026-06-13 — "Cửa 2")
 SOURCE: MIKAGE_SCENE_2_FORCED_CHOICE_TREATMENT_V0_1.md (reviewed) +
         MIKAGE_VOICE_PROFILE_LOCK_V0_1.md + MIKAGE_NARRATIVE_CORE_LOCK_V0_1.md
@@ -96,15 +96,17 @@ Ngôn ngữ HUD chính thức (EN đề xuất, chưa lock) · font HUD cụ th�
 
 ## 6. Operator Approval Table
 
+Operator sign-off recorded 2026-06-13 ("gật go"):
+
 | Item | Decision | Notes |
 |---|---|---|
-| Script rules §0 | PENDING | |
-| Beats 1–7 HUD set | PENDING | |
-| False-belief suppress device (Beat 5) | PENDING | điểm sáng tạo lớn nhất file — cần BOOS gật |
-| Branch A: zero spoken line | PENDING | |
-| Branch B spoken line: B-1 / B-2 | PENDING | chọn 1 hoặc reject cả 2 |
-| HUD language = EN (gloss VI internal) | PENDING | |
-| Promote to board/storyboard | HOLD mặc định | gate riêng, chưa mở |
+| Script rules §0 | **APPROVED** | |
+| Beats 1–7 HUD set | **APPROVED** | |
+| False-belief suppress device (Beat 5) | **APPROVED** | device chính thức của IP cho false belief |
+| Branch A: zero spoken line | **APPROVED** | im lặng = cái giá |
+| Branch B spoken line: B-1 / B-2 | **B-2 SELECTED (default-recommendation)** | "The cost is mine." — B-1 giữ làm ALTERNATE; operator có thể đảo bằng 1 lệnh |
+| HUD language = EN (gloss VI internal) | **APPROVED** | |
+| Promote to board/storyboard | **HOLD** | gate riêng, chưa mở |
 
 ## WHAT THIS PASS DID NOT DO
 
