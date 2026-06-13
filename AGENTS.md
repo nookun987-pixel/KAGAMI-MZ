@@ -98,6 +98,25 @@ If Windsurf command output is incomplete but external Windows CMD output has bee
   - No public render ready claim.
   - No production rig ready claim.
   - No website/public deployment.
+- Second controlled exception is open:
+  - `LANE_A_RIG_REPAIR_EXECUTION_V0_1 = OPEN`
+  - Only allowed next task: `LANE_A_RIG_REPAIR_EXECUTION_V0_1`
+  - Only allowed source blend:
+    - `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_FIRST_MOTION_TEST_FROM_APPROVED_GATE_V0_1.blend`
+  - Only allowed output blend:
+    - `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_RIG_REPAIR_PASS_V0_1_FROM_FIRST_MOTION_TEST_V0_1.blend`
+  - Only allowed proof report:
+    - `docs/reports/LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md`
+  - Inspect/repair only the 29 intended deforming meshes listed in `LANE_A_RIG_REPAIR_PLAN_V1.md`.
+  - Keep `hand_right_sword_hold_marker` unbound.
+  - Keep `reference_anchor_v1_plane_hidden_from_render` unbound.
+  - Save only the approved derivative output blend.
+  - Run metadata inspection and non-render in-memory pose check only.
+  - No render.
+  - No push.
+  - No deploy.
+  - No website/public/audio/short/release changes.
+  - No production rig ready claim.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -158,6 +177,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Use external CMD evidence only when Windsurf stdout is unreliable.
 - Update one explicitly declared governance file if approved.
 - Execute the single controlled exception `MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN` only when the task is exactly `MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1` and the output set is exactly the two listed candidate proof files.
+- Execute the controlled exception `LANE_A_RIG_REPAIR_EXECUTION_V0_1 = OPEN` only when the task is exactly `LANE_A_RIG_REPAIR_EXECUTION_V0_1` and the output set is exactly the approved derivative blend plus the approved proof report listed above.
 - Report next safe action.
 - Write structured status back to the requested target.
 
