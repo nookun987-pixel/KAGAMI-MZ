@@ -4,6 +4,12 @@
 **Last Updated:** 2026-03-19  
 **Authority:** Production Canon
 
+>
+> ⚠️ **COLOR OVERRIDE (2026-06-13, operator ruling):** Bảng màu trong file này KHÔNG còn là chuẩn cho public/brand.
+> Màu SSOT = **tím–đen–trắng** (`#8F00FF` / `#050508` / `#f2eeea`) — xem `MIKAGE_COLOR_SSOT_RULING_2026-06-13.md`.
+> Crimson #E60000 / violet #BF00FF / cyan #00FFFF trong file này = REFERENCE, không dùng làm màu brand.
+> Phần phi-màu (body / mask / weapon / physics / lighting ratio) vẫn hiệu lực.
+>
 ---
 
 ## 1. CORE IDENTITY
