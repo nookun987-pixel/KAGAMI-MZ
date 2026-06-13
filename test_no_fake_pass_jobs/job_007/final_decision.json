@@ -1,6 +1,0 @@
-{
-  "final_verdict": "REJECT",
-  "source_of_truth": "gemini",
-  "hard_reject_count": 2,
-  "reasoning": "Test validation for noise_07.png"
-}

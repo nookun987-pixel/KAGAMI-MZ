@@ -1,8 +1,0 @@
-{
-  "final_verdict": "ALLOW",
-  "source_of_truth": "gemini",
-  "hard_reject_count": 0,
-  "hard_rejects": [],
-  "timestamp": "D:\\KAGAMI-MZ",
-  "reasoning": "Hard reject validation: 0 rules triggered"
-}
