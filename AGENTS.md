@@ -14,6 +14,8 @@ Before any task starts, the agent must declare:
 - COMMAND_LIMIT: Maximum number of commands allowed.
 - STATUS_WRITEBACK_TARGET: Where the result/status must be written or reported.
 - SUCCESS_CHECK: Exact check required before claiming PASS.
+- CANON_SOURCE: Which SSOT file authorizes the canon used in this task, or `NONE` for non-canon/process tasks. (See Canon Source Discipline.)
+- DRAFT_INPUTS: Any draft/report/AI-research referenced. Must be labelled DRAFT. A draft may NOT be treated as canon.
 
 No task may proceed if any of these fields are missing.
 
@@ -68,6 +70,31 @@ If Windsurf command output is incomplete but external Windows CMD output has bee
 - External CMD fallback does not allow bypassing scope rules.
 - External CMD fallback does not allow runtime, sync, push, or secret inspection.
 - External CMD fallback only resolves repo-state verification issues caused by unreliable Windsurf stdout.
+
+## Canon Source Discipline
+
+Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching task.
+
+### SSOT — the ONLY canon (only the operator edits these)
+
+- `docs\handoff\MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`   (phase P1/P2/P3 + mask ruling)
+- `design_system\mikage-cine-color-contract.md`          (cine color; violet only at the 2 slits or a P3 core)
+- `docs\mikage_character_visual_spec.md`                  (character form spec)
+- `docs\mikage_universe_visual_system.md`                 (world/universe visual)
+- `mikage-zenith-design` skill                            (BRAND/UI canon — wins for web/UI)
+
+### Rules
+
+1. DRAFT != CANON. Any external report / deep-research / GPT-Gemini output = DRAFT. It may NOT override SSOT and may NOT be cited as canon. A draft becomes canon ONLY when the operator hand-writes the point into an SSOT file (plus a changelog line).
+2. No agent edits SSOT. Only the operator promotes draft -> canon.
+3. On layer conflict: BRAND/interface canon wins for web/UI; cine canon only for MV/world-art.
+
+### STOP and report blocker if:
+
+- An external/report doc claims "locked / Vx.x" but is NOT in the SSOT list above.
+- A task cites name-collision IPs (e.g. Reo Mikage/Blue Lock, Souji Mikage/Utena, Kamisama Kiss) OR borrows Evangelion mechanics (A.T. Field wings, Berserk mode, S2 auto-regen, Blood Type Blue) as Mikage canon.
+- Violet is used as fill / wash / ambient / halo (allowed ONLY at the two sensor slits or a P3 core).
+- Head ratio, hair, or Ensō position is changed without that change already existing in an SSOT file.
 
 ## Current Scope Lock
 
@@ -153,6 +180,7 @@ If Windsurf command output is incomplete but external Windows CMD output has bee
 The agent must read these files before proposing the next action:
 
 - `AGENTS.md`
+- `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md`
 - `docs\agent_dev_task_board.md`
 - `docs\architecture\MIKAGE_AUTOPILOT_GUARD_V0.md`
 - `docs\architecture\MIKAGE_REPO_BUTLER_MAP.md`
