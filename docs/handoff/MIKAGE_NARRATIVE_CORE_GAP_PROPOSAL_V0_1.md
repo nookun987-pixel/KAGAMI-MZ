@@ -175,7 +175,7 @@ Operator sign-off received 2026-06-13 (BOOS, in-session review):
 | §2.5 Extreme Action Risk | **APPROVED** | |
 | §2.6 Cost | **APPROVED** | physical + moral |
 | §3.1–3.3 Mirror readings | **APPROVED** | |
-| §3.4 LOCK_Q1 unlock for "hướng C"? | **REJECTED — KEEP LOCK_Q1** | Lyre / LYRA-0 / LORA remain 3 separate entities. No fall-rebirth arc. |
+| §3.4 LOCK_Q1 unlock for "hướng C"? | **REJECTED 2026-06-13 → SUPERSEDED: UNLOCKED 2026-06-14** | Historical: 13/06 kept lock. 14/06 operator UNLOCKED — Lyre & LYRA-0 = same entity across transformation (LORA still separate). See NARRATIVE_CORE_LOCK §3.4. |
 | §4 Scene 1 | **APPROVED — TEST_SCENE_ONLY** | world-law proof |
 | §4 Scene 2 | **APPROVED — CORE TEST SCENE** | strongest moral choice scene |
 | §4 Scene 3 | **APPROVED WITH CAUTION — TEST_SCENE_ONLY** | no new Dr. Aris details may be invented |

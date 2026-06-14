@@ -54,9 +54,13 @@ Under the false belief, Mikage's failure mode is seizing custody of human essenc
 | ARCHON-IX | Ideological | Consent without protection — frees human data and dissolves it. Proves "let go of control entirely" is not the Need. |
 | LORA | Systemic | Protection at infinite scale with zero consent. The false belief implemented perfectly — not a villain but a verdict: where "total control = zero loss" terminates. |
 
-### 3.4 LOCK_Q1 — REAFFIRMED
-Operator decision: **REJECTED** the "hướng C" (Lyre falls → reborn as Lyra-0) unlock.
-`LOCK_Q1_LYRA_vs_LORA_vs_LYRE = LOCKED — 3 separate entities` stands. No fall-rebirth arc may be created unless a separate LOCK_Q1 unlock gate is explicitly approved by the operator.
+### 3.4 LOCK_Q1 — UNLOCKED (operator BOOS, 2026-06-14 — supersedes 2026-06-13 reaffirm)
+Operator decision (2026-06-14): **APPROVED** the LOCK_Q1 unlock; reverses the 2026-06-13 reaffirmation.
+`LOCK_Q1_LYRA_vs_LORA_vs_LYRE = UNLOCKED` — still **3 names**, but **Lyre and LYRA-0 = the SAME entity across transformation**: Lyre (original Empire champion) → **erased by the Empire** (a champion that questions itself = "an unrefactorable bug", Canon V2 §7) → re-coalesces in the network as **LYRA-0** (the freed heart-signal). **LORA remains a separate entity.**
+- Fall→rebirth arc (Lyre→LYRA-0) is now PERMITTED. Source: Lane B `LYRE_LYRA0_ARC_V0_1_DRAFT.md`, operator-approved 2026-06-14.
+- LYRA-0 retains **FAINT memory** of being Lyre (the leftover "heart" — why LYRA-0 "mends" rather than reading as pure ARCHON).
+- **LYRA** = that heart-state while **worn/borrowed by ARCHON** (glitch vessel); **Lyra-∞** = ARCHON↔LYRA-0 assimilation at 100% (Logic Blackhole / Model Collapse).
+- Redemption/escape from ARCHON vs closed tragedy = **OPEN** (operator-deferred; do not close either direction).
 
 ## 4. THREE TEST SCENES — LOCKED AS TEST_SCENE_ONLY
 

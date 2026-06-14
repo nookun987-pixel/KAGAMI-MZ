@@ -20,7 +20,7 @@ DÙNG CHO  = mọi phiên sau cần tra 1 nhân vật: đọc sheet này trướ
 - "Mikage's mirror": sứ trắng 100% KHÔNG nứt, KHÔNG sửa (damage system = NONE) · PTSD, chọn an toàn thay tự do (§8.2)
 - Lock 1A (05-29): Porcelain Minimalism — #FAFAFA outer + under-suit nickel-gray carbon-fiber + emission **cyan #00FFFF static** ("not Z-Blue") + red #E60000 GIẤU trong spine vents · vũ khí = Molecular Monowire / Force-field system
 - Substrate line: Empire chạy trên substrate LORA → Lyre phụng sự Empire phụng sự LORA
-- ⚠ DRIFT_COLOR_001 (xem World Bible V0.2 §6) — cyan Lock 1A vs Z-Blue contract 06-04, chờ operator tick
+- DRIFT_COLOR_001 RESOLVED 2026-06-14: tách vai — cyan #00FFFF = Lyre/Empire HUD emission only; Z-Blue #4B5866 = environment/cine wash. (4-tick #1 màu)
 - Height 188cm provisional · voice MISSING · IMAGES = NONE · brief V0.3 chờ review (attempt_006 NOT_PASS: thiếu shield, tay chưa sau lưng, knee lights, plastic, square AR)
 - Lyric link: SLOW ORBIT mở bằng "Lyre." + NO TOUCHDOWN "Lyre online / Lyre run the game" — DEFAULT_PROPOSED là Commander Lyre (nội bộ)
 
@@ -28,7 +28,7 @@ DÙNG CHO  = mọi phiên sau cần tra 1 nhân vật: đọc sheet này trướ
 - §7.0/§8.6: Substrate/System Presence · nhãn nội bộ "**Root Architect** / System Substrate" (nhãn public CHUA_XAC_NHAN)
 - Lock 3A VĨNH VIỄN: phi nhân dạng, không avatar humanoid, không bao giờ · Lock 4F: không theo phe
 - Function: Refactor / Clean Code enforcement / kiến trúc thực tại · Scale: architectural · không nhận damage (LORA LÀ hệ thống)
-- Motif: Ensō cơ khí · sự kiện Golden Patch · White Void field · cyan server-sync · Clean Digital Gold (hex chưa lock)
+- Motif: Ensō cơ khí · sự kiện Golden Patch · White Void field · cyan server-sync · Clean Digital Gold = **#C39A52** (locked 2026-06-14, 4-tick #3 gold)
 - Quan hệ: own/refactor Mikage (seal khe mắt = quy phục chuẩn Clean Code của LORA) · cả 3 ideology chạy trên nó
 - Lyric voice: THE ROOT ARCHITECT (T07) — "I'm the dependency, the server, the core… Mikage's on the run" (MATCH_STRONG) · SHARD-513 liên kết sự kiện leak "513 thousand lines" trong cùng track (MATCH_PROPOSED)
 - Asset: brief V0.2 render-ready (token null) · IMAGES = NONE
@@ -39,11 +39,11 @@ DÙNG CHO  = mọi phiên sau cần tra 1 nhân vật: đọc sheet này trướ
 - Lyric voice: THE BREACH (T03) — tự xưng trực tiếp
 - Asset: BRIEF_ARCHON_IX_FRACTAL_PLAGUE_PHASE_1_V0_1 tạo 06-10 (token null) · chưa có ảnh
 
-## 5. LYRA / LYRA-0 — Glitch Phantom (cặp của ARCHON-IX, era V1/ARCHON_GLITCH)
-- "ARCHON-IX vessel · Memory Leak embodied" (brief V0.1) · LYRA ≠ LORA ≠ Lyre (operator Q1 lock 05-31)
+## 5. LYRA / LYRA-0 — freed heart of erased Lyre · LYRA = ARCHON-worn vessel (era V1/ARCHON_GLITCH)
+- LOCK_Q1 UNLOCK 2026-06-14: LYRA-0 = freed heart-signal of the ERASED Commander Lyre (SAME entity across transformation, §8.2→§8.3); **LYRA** = LYRA-0 worn by ARCHON ("vessel · Memory Leak embodied", brief V0.1); **Lyra-∞** = 100% assimilation → Model Collapse; LORA still separate. (4-tick #4 LYRA)
 - Scoped exception: motion blur / ghost trail / electric violet REQUIRED (riêng LYRA)
 - Lyric voice: SINGULAR HEART (T04) — "Lyra-0, singular heart… mend, not erase" + SOFT IN THE WIRE (intro SINGULAR HEART lặp đúng câu "Lyra-0 / Soft in the wire" → track riêng của LYRA-0, MATCH_STRONG)
-- Tension ghi nhận: §8.3 xếp phía Chaos nhưng giọng hát là "giữ mạng lưới, hàn gắn" → LYRA-0 = nửa-tâm của cặp (INTERPRETIVE, chưa canon)
+- RESOLVED (LOCK_Q1 UNLOCK): §8.3 "Chaos slot" vs giọng "giữ mạng lưới, hàn gắn" → LYRA-0 là TRÁI TIM tự do của Lyre-đã-xóa (nhớ MỜ → mends); ARCHON chỉ mượn xác làm LYRA. Cứu chuộc vs bi kịch khép = OPEN.
 - Asset: brief V0.1 (token null) · anchor_lyra_001 CHUA_XAC_NHAN
 
 ## 6. DR. ARIS — non-faction (medic analog)
@@ -58,7 +58,7 @@ DÙNG CHO  = mọi phiên sau cần tra 1 nhân vật: đọc sheet này trướ
 
 ## 8. OBJECT: ZENITH BLADE 🔒 / UNBREAKABLE SHIELD ⚠
 - BLADE (§2.4 🔒): 350kg, thẳng tuyệt đối, titan phế liệu + lõi ferro-calcium #E60000, flux-pinning 0.5mm rung liên tục, Ensō xoay ở đốc, Orbital-Logic UI đỏ quấn 3D; CHỈ Mikage cầm; cấm katana cong/lưỡi mảnh/laser sạch/fantasy
-- SHIELD: WEAPON_DRIFT_001 — Canon V2 = vật thể rời xả cột plasma trắng/cyan ↑ vs Lyre spec §7 + Lock 1A = force-field từ weapon system (mới hơn). Chưa chốt — không promote bên nào.
+- SHIELD: WEAPON_DRIFT_001 RESOLVED 2026-06-14 → **force-field** từ weapon system (Lyre spec §7 + Lock 1A), xả cột plasma đứng làm emission. (4-tick #2 khiên)
 
 ```
 CANON_LOCK = NO · ASSET_LOCK = NO · RENDER_ALLOWED = NO

@@ -12,10 +12,12 @@ Mode: **Text-only.** Operator-supplied text preserved verbatim with errata + ope
 ## 0. OPERATOR-LOCKED DECISIONS (read this section first)
 
 ```text
-LOCK_Q1_LYRA_vs_LORA_vs_LYRE          = LOCKED — 3 separate entities
-  - LORA       = Root Architect · META Substrate · non-humanoid system entity · #FAFAFA + #0A0A0A · Enso ring · "Ownership: LORA"
-  - LYRA / LYRA-0 = Glitch Phantom · ARCHON Vessel · fiber-optic dress · motion blur + glitch + tím neon · "Memory Leak" embodied
-  - Commander Lyre = Empire / White Monolith Imperial Operative · Mikage's mirror foil (flawless/unbroken)
+LOCK_Q1_LYRA_vs_LORA_vs_LYRE          = UNLOCKED 2026-06-14 — 3 names; Lyre↔LYRA-0 = SAME entity across transformation (supersedes 2026-05-31 / 2026-06-13 lock)
+  - Commander Lyre = Empire / White Monolith champion (P1, flawless/unbroken shell, cyan Unbreakable Shield) → ERASED by the Empire when self-doubt ("Ghost") surfaces → re-coalesces as LYRA-0.
+  - LYRA-0      = the freed heart-signal of the erased Lyre (Core Entity, original soul-of-signal). Retains FAINT memory of being Lyre → "mends" rather than pure ARCHON.
+  - LYRA        = LYRA-0 while worn/borrowed by ARCHON (Glitch Phantom · ARCHON Vessel · fiber-optic dress · motion blur + glitch + tím neon · "Memory Leak"). Lyra-∞ = 100% assimilation → Logic Blackhole / Model Collapse.
+  - LORA       = Root Architect · META Substrate · non-humanoid system entity · #FAFAFA + #0A0A0A · Enso ring · "Ownership: LORA" — REMAINS A SEPARATE ENTITY.
+  - Redemption (LYRA-0 escapes ARCHON) vs closed tragedy = OPEN (operator-deferred 2026-06-14).
 
 LOCK_Q2_V2_5_vs_V1                    = TIMELINE_PROGRESSION_LAYER
   - V1 (Canon Reference Sheet V1 + Canon V2 §2) = "Mikage thời nhiễm ARCHON Glitch" — accent tím/violet

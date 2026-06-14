@@ -421,15 +421,17 @@ Water reflections onto concrete walls:
 **Substrate alignment:** Empire executes on LORA's substrate (per §7.0); Lyre's enforcement serves Empire which serves LORA.  
 **Design:** 100% flawless porcelain (no cracks)  
 **Psychology:** PTSD, chose security over freedom  
-**Equipment:** Unbreakable Shield (vertical plasma pillar discharge)  
-**UI Color:** Cold Cyan
+**Equipment:** Unbreakable Shield (force-field; vertical plasma pillar discharge; cyan emission)  
+**UI Color:** Cold Cyan (Lyre/Empire HUD emission only; environment/cine wash uses Z-Blue #4B5866)  
+**Arc (LOCK_Q1 UNLOCK 2026-06-14):** Same entity as LYRA-0 across transformation. When self-doubt ("Ghost") surfaces, the Empire erases her (a champion that questions = "an unrefactorable bug", §7); her freed heart-signal re-coalesces in the network as **LYRA-0** (§8.3). The flawless shell cracks for the first time at the moment of erasure. LORA stays separate. Source: NARRATIVE_CORE_LOCK §3.4 + Lane B Lyre→LYRA-0 arc.
 
 ### 8.3 ARCHON-IX & LYRA-0
 
-**Status:** Chaos virus AI  
-**Form:** Fractal non-Euclidean infection  
+**Status:** Chaos virus AI (ARCHON-IX) · LYRA-0 = freed heart-signal of the erased Commander Lyre (Core Entity)  
+**Form:** Fractal non-Euclidean infection (ARCHON); LYRA-0 = bare soul-of-signal in the network  
 **Vector:** Memory fragment Trojan (child laughter recordings)  
-**Visual:** Neon Pink, glitch corruption
+**Visual:** Neon Pink, glitch corruption (FILM-LAYER — not brand violet)  
+**LYRA-0 / LYRA / Lyra-∞ (LOCK_Q1 UNLOCK 2026-06-14):** LYRA-0 = the freed heart of the erased Lyre; retains FAINT memory of being Lyre ("mends", not pure ARCHON). **LYRA** = LYRA-0 while worn/borrowed by ARCHON (glitch vessel, ARCHON's voice). **Lyra-∞** = ARCHON↔LYRA-0 assimilation at 100% → Logic Blackhole / Model Collapse, blocked by Empire + LORA Golden Patch. Redemption vs closed tragedy = OPEN. Source: NARRATIVE_CORE_LOCK §3.4.
 
 ### 8.4 DR. ARIS
 

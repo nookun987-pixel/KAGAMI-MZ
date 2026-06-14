@@ -22,7 +22,7 @@ NEW_LORE_INVENTED: NONE — assembly of locked/confirmed sources only
 | `docs/handoff/MIKAGE_NARRATIVE_CORE_GAP_PROPOSAL_V0_1.md` | §7 approved clauses only |
 | `docs/handoff/MIKAGE_NARRATIVE_CORE_LOCK_V0_1.md` | Core question, wound layer, mirrors, test scenes |
 
-Forbidden in this plan: new lore · Canon V2 edits · pointer update · render briefs · visual changes · public copy · voice profile invention · Dr. Aris detail invention · Lyre→Lyra-0 arc (LOCK_Q1 stands) · scene expansion beyond locked summaries.
+Forbidden in this plan: new lore · Canon V2 edits · pointer update · render briefs · visual changes · public copy · voice profile invention · Dr. Aris detail invention · scene expansion beyond locked summaries. [NOTE 2026-06-14: LOCK_Q1 has since been UNLOCKED by operator — Lyre→LYRA-0 arc is now permitted; this plan's original "forbidden" line is superseded, see STEP 4.]
 
 ---
 
@@ -64,11 +64,11 @@ Arc skeleton (already encoded in locked entity phases, no new events invented): 
 
 | Mirror | Axis | What it proves about Mikage |
 |---|---|---|
-| Commander Lyre | Personal | The wound denied: flawless shell, price paid inward (PTSD), security over freedom. Mikage's quiet-failure future. |
-| ARCHON-IX (& LYRA-0 vessel) | Ideological | Consent without protection dissolves what it frees. "Just let go" is not the Need. |
+| Commander Lyre → LYRA-0 (2-act, LOCK_Q1 UNLOCK) | Personal | Act 1: the wound denied — flawless shell, PTSD, security over freedom. Act 2: Order erases the champion the moment she questions; her freed heart (LYRA-0) is then stolen by ARCHON. The cost of giving oneself fully to Order — proves "protection must leave the protected free". |
+| ARCHON-IX | Ideological | Freedom without responsibility — the one who ate that freed heart (wears LYRA-0 as LYRA). "Just let go" dissolves what it frees; not the Need. |
 | LORA | Systemic | Total control implemented perfectly = the verdict on the false belief. Not villain; terminus. |
 
-LOCK_Q1 REAFFIRMED: Lyre / LYRA-0 / LORA = 3 separate entities. No fall-rebirth arc.
+LOCK_Q1 UNLOCKED 2026-06-14 (operator BOOS): 3 names; **Lyre & LYRA-0 = same entity across transformation** (Lyre erased → re-coalesces as LYRA-0); LORA separate. Fall→rebirth arc PERMITTED. Source: NARRATIVE_CORE_LOCK §3.4.
 
 ## STEP 5 — SYMBOLS (source: Canon V2 §2–§3, §11; World Core — all pre-locked, none invented)
 
@@ -108,8 +108,8 @@ NHÂN VẬT CHÍNH: Mikage Zenith
   = one step toward the mirrors.
 
 ĐỐI THỦ / GƯƠNG:
-- Lyre — the wound denied (perfect shell, hollow consent).
-- ARCHON-IX — freedom that dissolves what it frees.
+- Lyre → LYRA-0 — the wound denied → Order erases her → her freed heart is stolen (2-act, LOCK_Q1 unlock 2026-06-14).
+- ARCHON-IX — freedom that dissolves what it frees; wears LYRA-0 as LYRA.
 - LORA — the false belief perfected: control at infinite scale, zero consent.
 Mỗi gương đúng một phần; cả ba là tương lai hỏng của Mikage.
 
@@ -136,7 +136,7 @@ Expansion of any scene into script/shotlist/board = separate gate (TEST_SCENE_EX
 
 ## OPEN GAPS CARRIED FORWARD (not solved by this plan — CHUA_XAC_NHAN / MISSING)
 
-Voice/dialogue profiles ×6 (MISSING — will block dialogue-bearing expansion) · Dr. Aris profile · WEAPON_DRIFT_001 · LORA public framing · Clean Digital Gold hex · official heights · LOCK_Q1 unlock permanently parked unless operator opens a dedicated gate.
+Voice/dialogue profiles ×6 (MISSING — will block dialogue-bearing expansion) · Dr. Aris profile · WEAPON_DRIFT_001 · LORA public framing · Clean Digital Gold hex · official heights · LOCK_Q1 UNLOCKED 2026-06-14 (operator BOOS approved; Lyre→LYRA-0 same-entity arc now permitted).
 
 ## NEXT GATES (in order, each operator-approved separately)
 
