@@ -416,6 +416,8 @@ Water reflections onto concrete walls:
 
 ### 8.2 COMMANDER LYRE
 
+> ⚠️ **PARTIALLY SUPERSEDED — see §8-OVERRIDE (2026-06-21).** Lyre & LYRA-0 are now TWO characters (mask/reveal). The "same entity" Arc line below is HISTORY.
+
 **Status:** Antagonist (Mikage's mirror)  
 **Allegiance:** Empire  
 **Substrate alignment:** Empire executes on LORA's substrate (per §7.0); Lyre's enforcement serves Empire which serves LORA.  
@@ -426,6 +428,8 @@ Water reflections onto concrete walls:
 **Arc (LOCK_Q1 UNLOCK 2026-06-14):** Same entity as LYRA-0 across transformation. When self-doubt ("Ghost") surfaces, the Empire erases her (a champion that questions = "an unrefactorable bug", §7); her freed heart-signal re-coalesces in the network as **LYRA-0** (§8.3). The flawless shell cracks for the first time at the moment of erasure. LORA stays separate. Source: NARRATIVE_CORE_LOCK §3.4 + Lane B Lyre→LYRA-0 arc.
 
 ### 8.3 ARCHON-IX & LYRA-0
+
+> ⚠️ **PARTIALLY SUPERSEDED — see §8-OVERRIDE (2026-06-21).** LYRA-0 is now a SEPARATE character (Nhân vật 2). ARCHON-IX entry stays. LYRA-0 "same-entity-as-Lyre" framing moved to OVERRIDE.
 
 **Status:** Chaos virus AI (ARCHON-IX) · LYRA-0 = freed heart-signal of the erased Commander Lyre (Core Entity)  
 **Form:** Fractal non-Euclidean infection (ARCHON); LYRA-0 = bare soul-of-signal in the network  
@@ -441,6 +445,8 @@ Water reflections onto concrete walls:
 **Function:** Manually repairs ferro-calcium blade with kintsugi
 
 ### 8.5 TAI VANE
+
+> ⚠️ **SUPERSEDED — see §8-OVERRIDE (2026-06-21).** "Tai Vane = Archive Tower AI" is HISTORY. Vane is now a HUMAN Upper-Tier Commander; the archive role demoted to the un-named system "the Archive".
 
 **Status:** Archive Tower AI  
 **Role:** Data vault custodian  
@@ -461,6 +467,26 @@ Water reflections onto concrete walls:
 **Voice/dialogue profile:** CHUA_XAC_NHAN  
 **Visual assets:** none confirmed (per MIKAGE_PUBLIC_REVEAL_CANDIDATE_BOARD_V0_1.md §7)  
 **Source:** character_workflow/LORA_VISUAL_BRIEF_V0_1.md + LORA_VISUAL_SPEC_CLEAN_V0_1.md + LORA_ENTITY_RECORD_V0_1.md + Locks 3A + 4F
+
+---
+
+### 8-OVERRIDE — NARRATIVE CANON UPDATE (2026-06-21, operator-authorized BOOS)
+
+> SSOT source: `docs/world/MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md`. This block OVERRIDES the older
+> §8.2/§8.3/§8.5 framing above (old text kept as HISTORY). Roster 6 -> **7 entities**.
+> Brand/UI canon unchanged. ASSET_LOCK=NO. Render briefs (Lane A) sync per patch-map.
+
+**OVERRIDE 1 — Lyre & LYRA-0 = TWO characters (Tobi/Obito reveal).**
+- **8.2b COMMANDER LYRE / "historical mask":** champion under Commander **Vane**; public record = "honorable discharge / withdrew into the Monolith" (a MASK). Hidden truth: developed a "Ghost" (self-doubt) -> Empire SECRETLY ERASED her and fabricated the discharge cover.
+- **8.3b LYRA-0 / "present-day truth":** separate character; the freed heart of the erased Lyre, faint memory, instinct "mend, not erase". Audience meets her as an ARCHON-linked anomaly (via **LYRA** = ARCHON-worn vessel). **Reveal (E7):** LYRA-0 IS the erased Lyre — never discharged; the most loyal champion betrayed by Order. Ends E8 mercy-erase, no redemption.
+
+**OVERRIDE 2 — §8.5 TAI VANE -> VANE (human Upper-Tier Commander).**
+- **8.5b VANE:** a LIVING PERSON, top-tier Commander of the White Monolith, the present face of Absolute Order ("Tai Vane" kept only as an alias/record relic). Icy true-believer ("Order is mercy"); approved Lyre's erasure and authored the cover -> the central tragedy engine; the reveal indicts him; E8 "vindicates" him coldly. Stance vs ARCHON = blood-feud, NO alliance.
+- **"the Archive" (former Tai Vane archive role):** demoted to an UN-NAMED system (infrastructure, NOT a character, NOT in roster). Plot tool: ARCHON's vector food source -> controlling the Archive = vector starvation (canon win-condition vs ARCHON).
+
+**Dr. Aris (lock):** female, 27, atonement; her sibling was ASSIMILATED by ARCHON (E-pre), keeps the sibling's keepsake clock.
+**Timeline note:** internal timeline is RELATIVE; 2026-03-31 is only the public Lore-Drip marker. E-pre precedes E4 (Shard-513).
+**OPEN:** Vane appearance/age · Dr. Aris appearance detail · scene/track that stages reveal (E7) + E8.
 
 ---
 
