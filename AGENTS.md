@@ -144,6 +144,24 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - No deploy.
   - No website/public/audio/short/release changes.
   - No production rig ready claim.
+- Third controlled exception is open:
+  - `MIKAGE_HERO_MOUNT_EEVEE_V0_1 = OPEN`
+  - Lane B restriction waived for THIS task only (Lane A executes a Lane-B-originated render request).
+  - CANON NOTE: inputs below are DRAFT ART-DIRECTION REFERENCE ONLY, not canon. They do NOT override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins. "LOCK" in these filenames = Lane-B working status, not canon lock.
+  - Only allowed next task: `MIKAGE_HERO_MOUNT_EEVEE_V0_1`
+  - Allowed inputs (reference only):
+    - `production/character/keyart_candidates/MIKAGE_SOLO_BW_V0_4.png`
+    - `production/character/keyart_candidates/MIKAGE_STEED_SKELETON_BW_V0_5.png`
+    - `production/character/keyart_candidates/MIKAGE_HERO_MOUNT_V0_2.png`
+    - `production/character/keyart_candidates/LANEA_BLENDER_HANDOFF_BRIEF.md`
+  - Allowed outputs (candidate only):
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_1_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_1_PROOF.md`
+    - new `.blend` under `production/character/` (do NOT overwrite existing actor/proxy blends)
+  - Render permission GRANTED (Blender + Eevee, local, single still + clay).
+  - Build FRESH from blueprints. Do NOT reuse/modify `production_actor` or `proxy_actor` blends.
+  - No canon-lock. No asset-lock. No final/production-ready claim. No push. No deploy. Candidate proof only.
+  - On drift or SSOT conflict: stop and report.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -206,6 +224,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Update one explicitly declared governance file if approved.
 - Execute the single controlled exception `MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE = OPEN` only when the task is exactly `MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1` and the output set is exactly the two listed candidate proof files.
 - Execute the controlled exception `LANE_A_RIG_REPAIR_EXECUTION_V0_1 = OPEN` only when the task is exactly `LANE_A_RIG_REPAIR_EXECUTION_V0_1` and the output set is exactly the approved derivative blend plus the approved proof report listed above.
+- Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_1 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_1` and outputs are exactly the two listed candidate files (+ new blend).
 - Report next safe action.
 - Write structured status back to the requested target.
 
