@@ -1,264 +1,68 @@
-task_id: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1
-target_lane: Mikage character final completion preparation
-status: COMPLETED
-current_step: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1
+task_id: MIKAGE_HERO_MOUNT_STEED_SHAPE_CORRECTION_EEVEE_V0_10
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: VERIFY_REPORT_ONLY
+current_step: MIKAGE_HERO_MOUNT_STEED_SHAPE_CORRECTION_EEVEE_V0_10
 
-goal: >
-  Open a governance-only input lock gate for Mikage character final build.
-  Lock exact build inputs before any derivative .blend or final build task is
-  allowed. Do not build, render, edit .blend files, update public pages, update
-  roster, push, or claim CHARACTER_FINAL_COMPLETE.
-
-next_safe_task: >
-  MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1 remains blocked until input
-  lock scope risk is resolved.
-
-runtime_phase:
-  MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_COMPLETION_LOOKDEV_V0_2_RUNTIME_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1_PHASE: COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
-  MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_HERO_REAL_LOOKDEV_V0_1_PHASE: COMPLETED_ACCEPTED_AS_PROOF
-  MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1_PHASE: COMPLETED_NEEDS_MESH_PREP
-  MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PHASE: COMPLETED_READY_FOR_OPERATOR_REVIEW
-  MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1_PHASE: COMPLETED_APPROVED_OPEN_DEFORMATION_SMOKE_TEST_GATE
-  MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PHASE: COMPLETED_PASS_READY_FOR_RIG_REVIEW
-  MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1_PHASE: COMPLETED_APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  MIKAGE_PRODUCTION_RIG_FINALIZATION_GATE_V0_1_PHASE: COMPLETED_HOLD_FOR_FINAL_OPERATOR_RIG_SIGNOFF
-  MIKAGE_FINAL_OPERATOR_RIG_SIGNOFF_GOVERNANCE_V0_1_PHASE: COMPLETED_HOLD_FOR_OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY
-  MIKAGE_OWNER_APPROVED_PRODUCTION_RIG_READY_STATUS_UPDATE_V0_1_PHASE: COMPLETED
-  MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1_PHASE: COMPLETED_OPENED
-  MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1_PHASE: COMPLETED_READY_TO_REQUEST_RENDER_PERMISSION_GATE
-  MIKAGE_RENDER_PERMISSION_GATE_V0_1_PHASE: COMPLETED_GRANTED_FOR_NEXT_RENDER_TASK
-  MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PHASE: COMPLETED_CREATED_FOR_REVIEW
-  MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1_PHASE: COMPLETED_HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
-  MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PHASE: COMPLETED_CREATED_FOR_REVIEW
-  MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1_PHASE: COMPLETED_ACCEPTED_FOR_READY_GATE
-  MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1_PHASE: COMPLETED_PUBLIC_RENDER_READY_APPROVED
-  MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1_PHASE: COMPLETED_SUPERSEDED_BY_OWNER_ASSET_LOCK_APPROVAL
-  MIKAGE_OWNER_APPROVED_PUBLIC_RENDER_ASSET_LOCK_STATUS_UPDATE_V0_1_PHASE: COMPLETED_ASSET_LOCK_APPROVED_BY_OWNER
-  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1_PHASE: OPEN
-  MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1_PHASE: COMPLETED_PUBLIC_RENDER_PAGE_UPDATE_APPLIED
-  MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1_PHASE: OPEN
-  MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1_PHASE: COMPLETED_PUSHED
-  MIKAGE_CHARACTER_FINAL_COMPLETION_GAP_AUDIT_V0_1_PHASE: COMPLETED_FINAL_COMPLETE_NOT_READY_GAPS_FOUND
-  MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1_PHASE: OPEN
-  MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1_PHASE: COMPLETED_READY_FOR_INPUT_LOCK_GATE
-  MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1_PHASE: COMPLETED_READY_FOR_FINAL_BUILD_DERIVATIVE
-  MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_REOPEN_V0_1_PHASE: COMPLETED_READY_FOR_FINAL_BUILD_DERIVATIVE
-  MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1_PHASE: COMPLETED_READY_FOR_VALIDATION_REVIEW
-  FINAL_COMPLETION_PREP_GATE: OPEN
-  INPUT_LOCK_GATE: COMPLETED
-  CHARACTER_FINAL_COMPLETE: NOT_CLAIMED
-  CANONICAL_FINAL_BLEND_STATUS: MISSING
-  FINAL_BUILD_ALLOWED: YES_FOR_MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1_ONLY
-  FINAL_BUILD_DERIVATIVE_OUTPUT: production/character/production_actor/rig_derivatives/MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1.blend
-  FINAL_BUILD_DERIVATIVE_PROOF: production/character/reviews/MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1_PROOF.md
-  FINAL_BUILD_DERIVATIVE_DECISION: DERIVATIVE_CREATED_READY_FOR_VALIDATION_REVIEW
-  FINAL_BUILD_DERIVATIVE_READY_FOR_VALIDATION_REVIEW: YES
-  INPUT_LOCK_DECISION: INPUT_LOCK_READY_FOR_FINAL_BUILD_DERIVATIVE
-  INPUT_SOURCE_BLEND: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  VISUAL_REFERENCE_SHEET: character_page_v1/assets/MIKAGE_MODEL_SHEET_BASE_V2.svg
-  VISUAL_REFERENCE_SHA256: D5F260BCBA3F6842ACD782A8D27B38DF18B82DE0A8608A600C415171E109495D
-  LOCKED_PUBLIC_RENDER_REFERENCE: production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
-  CHARACTER_FINAL_COMPLETION_GAP_AUDIT_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_GAP_AUDIT_V0_1.md
-  CHARACTER_FINAL_COMPLETION_PREP_GATE_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1.md
-  CHARACTER_FINAL_COMPLETION_PREP_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_V0_1.md
-  CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1.md
-  CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_REOPEN_REPORT: production/character/reviews/MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_REOPEN_V0_1.md
-  PAGE_UPDATE_GATE: OPEN
-  PAGE_UPDATE_DONE: YES
-  PUSH_GATE: OPEN
-  PUBLIC_RENDER_ASSET_LOCK_DECISION: PUBLIC_RENDER_ASSET_LOCK_APPROVED_BY_OWNER
-  PUBLIC_RENDER_PAGE_UPDATE_GATE_DECISION: PAGE_UPDATE_GATE_OPENED
-  PUBLIC_RENDER_PAGE_UPDATE_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
-  PUBLIC_RENDER_PAGE_UPDATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1.md
-  PUBLIC_RENDER_PAGE_PUSH_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_PUSH_GATE_V0_1.md
-  PUBLIC_RENDER_PAGE_PUSH_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_PUSH_V0_1.md
-  PUBLIC_RENDER_ASSET_LOCK_APPROVAL_REPORT: production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
-  PUBLIC_RENDER_ASSET_LOCK_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
-  PUBLIC_RENDER_CANDIDATE_DECISION: PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
-  PUBLIC_RENDER_CANDIDATE_REVIEW_DECISION: HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
-  PUBLIC_RENDER_CANDIDATE_REVIEW_BLOCKER: VISIBLE_EXTRA_FACE_LIKE_RECTANGULAR_MARKS_BEYOND_TWO_SENSOR_SLITS
-  PUBLIC_RENDER_CANDIDATE_FIX_DECISION: PUBLIC_RENDER_CANDIDATE_FIX_CREATED_FOR_REVIEW
-  PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_DECISION: FIXED_PUBLIC_RENDER_CANDIDATE_ACCEPTED_FOR_READY_GATE
-  PUBLIC_RENDER_CANDIDATE_FIX_REVIEW: production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1.md
-  PUBLIC_RENDER_READY_GATE_DECISION: PUBLIC_RENDER_READY_APPROVED
-  PUBLIC_RENDER_READY_GATE_REPORT: production/character/reviews/MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1.md
-  PUBLIC_RENDER_CANDIDATE_FIX_OUTPUT: production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
-  PUBLIC_RENDER_CANDIDATE_FIX_PROOF: production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PROOF.md
-  PUBLIC_RENDER_READINESS_GATE_DECISION: PUBLIC_RENDER_READINESS_GATE_OPENED
-  PUBLIC_RENDER_PREPARATION_REVIEW_DECISION: READY_TO_REQUEST_RENDER_PERMISSION_GATE
-  RENDER_PERMISSION_GATE_DECISION: RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
-  GOVERNANCE_ALLOWS_RENDER_PERMISSION: YES
-  OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY: YES
-  owner_approval_to_set_production_rig_ready: true
-  production_rig_ready: true
-  public_render_ready: true
-  asset_lock: true
-  push_done: true
-  push_done_for_current_task: false
-  rest_mode_broad_lock: RETAINED
-  render_allowed: true
-  deformation_test_allowed: false
-  current_controller: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1
-  current_next_task: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1
-  next_real_action: MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1
-  final_completion_prep_gate: OPEN
-  input_lock_gate: COMPLETED
-  final_build_allowed: YES_FOR_MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_V0_1_ONLY
-  character_final_complete: NOT_CLAIMED
-  page_update_done: true
-  push_gate: OPEN
-  post_smoke_test_rig_review_gate_open: false
-  post_smoke_test_rig_review_completed: true
-  post_smoke_test_rig_review_decision: APPROVE_OPEN_PRODUCTION_RIG_FINALIZATION_GATE
-  previous_public_render_page_next_task: MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_V0_1
-  review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  output_report_allowed: production/character/reviews/MIKAGE_POST_SMOKE_TEST_RIG_REVIEW_V0_1.md
-  deformation_smoke_test_gate_open: false
-  deformation_smoke_test_completed: true
-  deformation_smoke_test_decision: SMOKE_TEST_PASS_READY_FOR_RIG_REVIEW
-  mesh_prep_operator_review_gate_open: false
-  mesh_prep_operator_review_completed: true
-  mesh_prep_operator_review_decision: APPROVE_OPEN_DEFORMATION_SMOKE_TEST_GATE
-  source_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  output_blend_allowed: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend
-  output_report_allowed: production/character/reviews/MIKAGE_DEFORMATION_SMOKE_TEST_V0_1_PROOF.md
-  review_input_blend: production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  source_references:
-    - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-    - production/character/reviews/MIKAGE_MESH_PREP_OPERATOR_REVIEW_V0_1.md
-    - production/character/reviews/MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1_PROOF.md
-    - production/character/reviews/MIKAGE_PRODUCTION_RIG_READINESS_AUDIT_V0_1.md
-    - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_REVIEW.md
-    - production/character/reviews/MIKAGE_HERO_REAL_LOOKDEV_V0_1_PROOF.md
-  no_v0_1_overwrite: true
-  no_v0_3_overwrite: true
-  no_blend_edits: true
-  audit_report_only: true
-  no_public_render_ready_claim: false
-  no_production_rig_ready_claim: false
-  no_asset_lock: false
-  no_website_public_deployment: true
-  no_final_rig: true
-  limited_deformation_smoke_test_only: true
-  no_push: true
-  scope: >
-    MIKAGE_MESH_PREP_BEFORE_RIG_TEST_V0_1 scope: audit-driven mesh prep only.
-    Create a new derivative from the A2 source without overwriting it. Address
-    only audit-named risks around arm/hand connection, shoulder/upper-arm
-    continuity, hair attachment intent, helmet/body rigidity, Zenith Blade
-    attachment intent, and presentation overlay deformation blockers. Do not run
-    deformation test, rig test, animation, or render.
-  audit_decision: NEEDS_MESH_PREP_BEFORE_RIG_TEST
-  next_decision_note: >
-    Audit completed and found the A2 lookdev source should not enter deformation
-    smoke test yet. Next requires operator-scoped mesh prep: define deforming vs
-    rigid parts, clean arm/hand topology, define hair attachment behavior, and
-    define Zenith Blade attachment/constraint intent. No deformation test is
-    allowed until a later explicit gate.
-
-output_files_allowed:
-  - production/character/reviews/MIKAGE_CHARACTER_FINAL_BUILD_INPUT_LOCK_GATE_V0_1.md
-  - production/character/reviews/MIKAGE_CHARACTER_FINAL_COMPLETION_PREP_GATE_V0_1.md
-  - production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1.png
-  - production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PROOF.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PROOF.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_ASSET_LOCK_GATE_V0_1.md
-  - production/character/reviews/MIKAGE_OWNER_PUBLIC_RENDER_ASSET_LOCK_APPROVAL_V0_1.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_PAGE_UPDATE_GATE_V0_1.md
-  - production/character/reviews/MIKAGE_RENDER_PERMISSION_GATE_V0_1.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1.md
-  - production/character/reviews/MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1.md
-  - .mikage/tasks/active_task.yaml
-  - docs/MIKAGE_MASTER_STATUS.md
-  - docs/agent_dev_task_board.md
+input_files_allowed:
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STEED_CORRECTION_V0_1.md
+  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_EEVEE_V0_9_DRIFT_CHECK.md
+  - production/character/keyart_candidates/MIKAGE_STEED_SKELETON_BW_V0_5.png
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
+  - AGENTS.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-cancelled_tasks:
-  - task_id: CREATE_MIKAGE_CORE_VISUAL_ASSET_SAMPLE_01
-    status: CANCELLED
-    reason: Operator corrected scope. Character cast lane is the real target.
+output_folder_allowed: _tmp/mikage_v0_10_gate
+output_files_allowed:
+  - gate_report.txt
 
-inactive_tasks:
-  - task_id: GLASS_SKIN_JP_SHORT_CONTACT_SHEET_ONLY_V1
-    status: CLEAN_BUT_NOT_CURRENT_TARGET
-    reason: Registered in git. Not the active lane. Do not continue unless explicitly reactivated.
+read_only_files:
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STEED_CORRECTION_V0_1.md
+  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_EEVEE_V0_9_DRIFT_CHECK.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+  - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
+
+allowed_actions:
+  - create derivative V0.10 blend from V0.9 base
+  - correct steed head wedge geometry only
+  - correct steed body chassis spine withers croup keel geometry only
+  - render one grayscale three-view contact sheet
+  - write V0.10 proof report
+  - run deterministic verification commands
+  - commit local changes only
 
 forbidden_actions:
-  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_1.blend
-  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend
-  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_PUBLIC_TARGET_BLOCKING_V0_3.blend
-  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-  - do not modify production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-  - do not modify production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  - do not overwrite production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_MESH_PREP_BEFORE_RIG_TEST_V0_1.blend
-  - do not create final rig
-  - do not create production weight pass
-  - do not create animation output
-  - do not create PNG/MP4/final render/cinematic render output outside the exact allowed candidate PNG
-  - do not create any .blend file
-  - do not modify any .blend file
-  - do not run another deformation test
-  - do not create files outside output_files_allowed
-  - do not asset-lock any asset other than production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
-  - do not deploy website or public page
-  - do not run Lane B
-  - do not touch website or HTML files
-  - do not touch roster files
-  - do not touch queue files
-  - do not touch Z-Blue archive/history files
-  - do not render without a separately scoped render task
-  - do not claim asset lock for any asset other than production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
-  - do not continue SAMPLE_01 composite
-  - do not generate SAMPLE_01.png
-  - do not create SAMPLE_01 verify report
-  - do not render MP4
-  - do not batch process files
-  - do not touch locked assets or approved finals without approval
-  - do not drift into music shorts, Spotify, TooLost, website, or service-sample work
-  - do not create new IP characters not already in canon
-  - do not commit contaminated SAMPLE_01 content
-  - do not force push
+  - do not modify rider armor hair mantle blade helmet or pose
+  - do not add violet signals
+  - do not change warm color halo flood or palette
+  - do not rig animate or create motion output
+  - do not claim canon lock asset lock final pass production ready or public ready
+  - do not push
+  - do not touch website roster queue Z-Blue archive history audio or external services
+  - do not overwrite prior V0.1 through V0.9 blends
 
 pass_conditions:
-  - MIKAGE_PUBLIC_RENDER_CANDIDATE_V0_1_PHASE is COMPLETED_CREATED_FOR_REVIEW
-  - PUBLIC_RENDER_CANDIDATE_DECISION is PUBLIC_RENDER_CANDIDATE_CREATED_FOR_REVIEW
-  - MIKAGE_PUBLIC_RENDER_CANDIDATE_REVIEW_V0_1_PHASE is COMPLETED_HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
-  - PUBLIC_RENDER_CANDIDATE_REVIEW_DECISION is HOLD_FOR_PUBLIC_RENDER_CANDIDATE_FIX
-  - MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1_PHASE is COMPLETED_CREATED_FOR_REVIEW
-  - PUBLIC_RENDER_CANDIDATE_FIX_DECISION is PUBLIC_RENDER_CANDIDATE_FIX_CREATED_FOR_REVIEW
-  - MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_V0_1_PHASE is COMPLETED_ACCEPTED_FOR_READY_GATE
-  - PUBLIC_RENDER_CANDIDATE_FIX_REVIEW_DECISION is FIXED_PUBLIC_RENDER_CANDIDATE_ACCEPTED_FOR_READY_GATE
-  - MIKAGE_PUBLIC_RENDER_READY_GATE_V0_1_PHASE is COMPLETED_PUBLIC_RENDER_READY_APPROVED
-  - PUBLIC_RENDER_READY_GATE_DECISION is PUBLIC_RENDER_READY_APPROVED
-  - MIKAGE_RENDER_PERMISSION_GATE_V0_1_PHASE is COMPLETED_GRANTED_FOR_NEXT_RENDER_TASK
-  - RENDER_PERMISSION_GATE_DECISION is RENDER_PERMISSION_GRANTED_FOR_NEXT_RENDER_TASK
-  - GOVERNANCE_ALLOWS_RENDER_PERMISSION is YES
-  - MIKAGE_PUBLIC_RENDER_PREPARATION_REVIEW_V0_1_PHASE is COMPLETED_READY_TO_REQUEST_RENDER_PERMISSION_GATE
-  - PUBLIC_RENDER_PREPARATION_REVIEW_DECISION is READY_TO_REQUEST_RENDER_PERMISSION_GATE
-  - MIKAGE_PUBLIC_RENDER_READINESS_GATE_V0_1_PHASE is COMPLETED_OPENED
-  - PUBLIC_RENDER_READINESS_GATE_DECISION is PUBLIC_RENDER_READINESS_GATE_OPENED
-  - OWNER_APPROVAL_TO_SET_PRODUCTION_RIG_READY is YES
-  - POST_SMOKE_TEST_RIG_REVIEW_GATE_OPEN is NO
-  - POST_SMOKE_TEST_RIG_REVIEW_COMPLETED is YES
-  - RENDER_ALLOWED is YES
-  - DEFORMATION_TEST_ALLOWED is NO
-  - production rig ready is YES
-  - public render ready is YES
-  - asset lock is YES for production/character/renders/MIKAGE_PUBLIC_RENDER_CANDIDATE_FIX_V0_1.png
-  - PAGE_UPDATE_GATE is OPEN
-  - no .blend files edited
-  - no Lane B files touched
-  - no website or HTML files touched
-  - no roster or queue files touched
-  - no Z-Blue archive/history files touched
+  - V0.10 derivative blend exists
+  - V0.10 three-view grayscale contact sheet exists
+  - V0.10 proof report exists and includes RESULT block
+  - V0.9 base blend remains unmodified
+  - no .blend1 file remains for V0.10
+  - python .mikage\tools\verify_output.py prints PASS
+  - output remains CANDIDATE only
 
-verify_command: python .mikage/tools/verify_output.py
-next_step_if_pass: Verify deployed/live site if deployment is automatic, or hold.
+stop_conditions:
+  - missing V0.9 source blend
+  - missing task brief or drift check
+  - validator or verification command cannot run
+  - unexpected output outside allowed task scope
+  - any rider object requires mutation
+  - any new violet signal is needed
+  - .blend1 backup remains after cleanup
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator/Lane B review of V0.10 candidate contact sheet for drift-check items 1 and 2.
 next_step_if_fail: stop and report reason only
