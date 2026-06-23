@@ -16,7 +16,10 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1.
+  MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11.
+  (IP-TO-SCREEN render line = ACTIVE. Brief: build_log/LANEA_CODEX_TASK_RIDER_SILHOUETTE_V0_1.md.
+   DONE: STEED_SHAPE_CORRECTION_V0_10 (commit a80bbc6, body NẮN ĐẠT, head built-read-weak → ghi nợ material pass).
+   PARKED (resume khi operator re-point): MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1 — Lane A rig validation.)
 
 CONTROLLED_RUNTIME_EXCEPTION:
   MIKAGE_COMPLETION_LOOKDEV_V0_1_RUNTIME_PHASE = COMPLETED_SUPERSEDED_AS_ACTIVE_OUTPUT_TARGET
@@ -1994,5 +1997,17 @@ PHASE_3 = PACKAGE: MIKAGE_NARRATIVE_PACKAGE_V1.md = master index + bible hop nha
 SCENE_2_SCRIPT = docs/handoff/MIKAGE_SCENE_2_SCRIPT_DRAFT_V0_1.md (REVIEWED — HUD-driven, suppress device Beat 5, B-2 confirmed, board HOLD).
 VOICE_LOCK_UPDATED = LORA Text/HUD unlocked #E6B800; Tai Vane HUD van HELD.
 PHASE_4 = NOT_OPENED (story-track mapping / board-prep / lore-drip schedule — can lenh operator rieng).
-STATUS = NARRATIVE_LAYER_V1_COMPLETE · CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · PUBLIC_COPY=NO.
-CURRENT_NEXT_TASK = OPERATOR_RUN_DIRECTION_TEST_MIKAGE_P1 (KHONG DOI — narrative layer khong thay the task Lane A).
+STATUS = NARRATI
+## IP-TO-SCREEN RENDER LINE REGISTERED — 2026-06-23 (Lane B)
+SESSION = Cowork 2026-06-23. Lane B QC + task brief. NO render by Claude · NO canon-lock · NO asset-lock · NO PASS/final.
+CONTEXT = BOOS chot pipeline = Lane A 3D Eevee (masterplan §6). Codex da chay EEVEE V0.2 -> V0.9 hom nay (hero+rider+motion). BAN MOI NHAT = MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION (1080x1920 h264 yuv420p 30fps 6.0s, tool-verified).
+LANE_B_DRIFT_CHECK = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_EEVEE_V0_9_DRIFT_CHECK.md (8-item: helmet 2-slit DAT, violet signal DAT, chan mã NAN MOT PHAN, rider armor NAN MOT PHAN; CON HO = dau equine wedge, spine cong+withers/croup+keel, toc+mantle, blade grip; CO DO = V0.9 motion under-exposed).
+NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_STEED_CORRECTION_V0_1.md (bounded, 1 render).
+CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_STEED_SHAPE_CORRECTION_EEVEE_V0_10 (sua dau equine wedge + spine cong/withers/croup/keel; grayscale clay; violet giU muc V0.9; KHONG dung rider; contact sheet + proof).
+PARKED = MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1 (Lane A rig validation
+## STEED V0.10 ACCEPTED + RIDER V0.11 QUEUED — 2026-06-23 (Lane B)
+V0.10_RESULT = STEED shape-correction DONE (Codex commit a80bbc6, local, no push). Body NẮN ĐẠT (barrel + withers/croup + keel, hết hộp phẳng). Head equine wedge BUILT đúng ràng buộc (graphite slit, no violet/eye) nhưng READ YẾU trong contact sheet (chassis+blade che) → ghi nợ "isolated head read + muzzle/jaw sharpen" cho vòng material steed.
+LANE_B_DRIFT_CHECK_V0_10 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_STEED_V0_10_DRIFT_CHECK.md
+NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_RIDER_SILHOUETTE_V0_1.md
+CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11 (rider only: armor breakdown #4 + hair mass #5 + mantle V-taper #6; grayscale clay; violet giU; KHONG dung steed/blade-pos; contact sheet + proof).
+STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=CANDIDATE.
