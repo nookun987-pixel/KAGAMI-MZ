@@ -43,28 +43,34 @@
 ## Render Evidence
 
 - RENDER_ENGINE = Blender 5.1 Eevee local render
+- RERENDER_SCOPE = re-render contact sheet only; no mesh/geometry change; existing V0.8 rider detail preserved.
 - IMAGE_DIMENSIONS_TARGET = `3600 x 1800`
 - IMAGE_DIMENSIONS_ACTUAL = `3600 x 1800`
 - LAYOUT = `3 views x 2 passes`
+- PANEL_PLAN =
+  - column 1: full-mount context view
+  - column 2: rider full-figure close view; mount crop allowed
+  - column 3: rider upper-body close view; mount crop allowed
 - PASS_1 = material, no violet signal objects rendered
 - PASS_2 = identical review with violet signal objects restored
-- VOID_BACKGROUND_CHECK = sampled contact sheet pixels: `20,20 = 1,1,2`; `1800,20 = 1,1,2`; `3580,20 = 1,1,2`
-- FULL_FRAME_CHECK = actual PNG opened and inspected; review sheet shows complete rider and mount across the three views and both passes without silhouette-critical cropping.
+- GEOMETRY_FINGERPRINT_UNCHANGED = `True`
+- STEED_FINGERPRINT_UNCHANGED = `True`
+- CLOSE_RIDER_PANEL_CHECK = actual PNG opened and inspected; sheet includes one full-mount context panel plus two rider close panels per pass exposing helmet two-slit area, pauldron/cuirass, hair, mantle, and blade-gauntlet relationship for operator review.
+- FULL_MOUNT_CONTEXT_CHECK = actual PNG opened and inspected; full-mount context appears in the first column for both material and material+violet passes.
 - VISUAL_APPROVAL = not claimed; final visual ruling belongs to operator
 
 ## Validation
 
-- SAVED_BLEND_REOPENED = yes, V0.8 blend was reopened after save before render.
+- SOURCE_BLEND_OPENED = yes, V0.8 blend was opened render-only; no save/write to the blend was performed for this rerender.
 - BLEND1_CHECK = no `.blend1` backup remains after explicit cleanup/check before commit.
 - FILES_CHANGED_EXPECTED =
   - `AGENTS.md`
-  - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_8_RIDER.blend`
   - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_8_RIDER_CONTACT_SHEET.png`
   - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_8_RIDER_PROOF.md`
 
 ## Closeout Fields
 
-- COMMANDS_RUN = governance reads; git status/branch/log; AGENTS diff verification; source checks; Blender V0.8 rider save/reopen/render; PNG dimension check; actual contact sheet inspection; `.blend1` cleanup/check; git stage/commit/final verification
+- COMMANDS_RUN = governance reads; git status/branch/log; AGENTS diff verification; source checks; Blender V0.8 render-only contact sheet pass; PNG dimension check; actual contact sheet inspection; `.blend1` cleanup/check; git stage/commit/final verification
 - EVIDENCE_SOURCE = local PowerShell stdout, Blender stdout, actual PNG visual inspection
 - REPO_STATUS = final clean status to be verified after commit
 - PASS_FAIL = candidate created for operator review only; no visual approval claim
