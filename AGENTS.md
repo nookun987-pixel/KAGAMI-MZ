@@ -179,6 +179,78 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - Fix only the 8 drift points in the drift-check. Do NOT redesign beyond them. Keep violet = signal only.
   - No canon-lock. No asset-lock. No final claim. No push. No deploy. `.blend1` backups must be deleted before final status. Candidate proof only.
   - On SSOT conflict: stop and report.
+- Fifth controlled exception is open:
+  - `MIKAGE_HERO_MOUNT_EEVEE_V0_3 = OPEN`
+  - Lane B restriction waived for THIS task only. This is a small silhouette-readability correction candidate, not a redesign. Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins.
+  - Only allowed next task: `MIKAGE_HERO_MOUNT_EEVEE_V0_3` (small silhouette-readability correction, continue from V0.2 blend)
+  - Allowed inputs:
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_2.blend`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_2_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_2_PROOF.md`
+    - `production/character/keyart_candidates/MIKAGE_SOLO_BW_V0_4.png`
+    - `production/character/keyart_candidates/MIKAGE_STEED_SKELETON_BW_V0_5.png`
+  - Allowed outputs (candidate only):
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_3.blend`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_3_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_3_PROOF.md`
+  - Render permission GRANTED (Blender + Eevee, local, full-frame clay + preserved violet-signal still).
+  - Allowed correction scope is limited to these three silhouette groups:
+    1. Equine readability:
+       - Add or strengthen a clearly readable equine head and neck.
+       - Raise withers and croup enough to create a readable curved equine topline instead of a flat platform.
+    2. Load-bearing legs:
+       - Correct all four legs with heavier upper-leg mass, controlled taper, readable hoof or terminal support, and a slightly wider stance only where required for weight readability.
+    3. Rider seating:
+       - Lower Mikage into the mount body.
+       - Reduce the visible stacked docking/platform mass beneath the rider so the silhouette reads as riding, not standing on a platform.
+  - Locked preservation:
+    - Preserve the current grayscale material treatment.
+    - Preserve the existing violet signal treatment exactly; violet remains signal only.
+    - Preserve Mikage identity, helmet language, weapon design, and the overall mount concept.
+  - Explicitly prohibited:
+    - No full mount redesign.
+    - No new armor language, decorative panels, cables, wings, horns, tail systems, or large secondary forms.
+    - No Mikage helmet, face-rule, body-identity, or canonical proportion changes beyond the minimum seating adjustment.
+    - No blade redesign.
+    - No new colors, crimson, red, gold, ambient violet, halo, or additional glow.
+    - No rigging, animation, UV work, production-finalization work, or unrelated cleanup.
+    - Do not overwrite V0.2.
+  - Required review render:
+    - Exact resolution: `3600 x 1800`.
+    - Exact layout: `3 views x 2 passes`.
+    - Pass 1: grayscale/clay readability.
+    - Pass 2: identical geometry with preserved violet signal.
+    - Every panel must be full-frame and show the complete rider and mount, including head, neck, topline, all four legs, and hoof/support terminals.
+    - No silhouette-critical cropping.
+  - Required validation before PASS:
+    - Reopen the saved V0.3 `.blend`.
+    - Confirm V0.2 was not modified.
+    - Confirm only whitelisted task files changed, plus `AGENTS.md` for this approved exception.
+    - Confirm the final PNG is exactly `3600 x 1800`.
+    - Open and inspect the actual rendered PNG; do not infer visual success from script completion.
+    - Confirm no `.blend1` remains.
+  - Required proof must record:
+    - source V0.2 file,
+    - output V0.3 file,
+    - exact three approved correction groups performed,
+    - confirmation that no redesign was performed,
+    - grayscale lock result,
+    - violet-signal lock result,
+    - image dimensions and full-frame result,
+    - `.blend1` result,
+    - files changed,
+    - commands run,
+    - evidence source,
+    - repository status,
+    - PASS/FAIL,
+    - blocker,
+    - next safe action,
+    - commit status and commit hash,
+    - push status.
+  - Stop after producing and committing the V0.3 candidate and its review evidence.
+  - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -243,6 +315,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Execute the controlled exception `LANE_A_RIG_REPAIR_EXECUTION_V0_1 = OPEN` only when the task is exactly `LANE_A_RIG_REPAIR_EXECUTION_V0_1` and the output set is exactly the approved derivative blend plus the approved proof report listed above.
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_1 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_1` and outputs are exactly the two listed candidate files (+ new blend).
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_2 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_2` and outputs are exactly the listed candidate files (+ new blend).
+- Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_3 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_3` and outputs are exactly the listed candidate files (+ new blend), with corrections limited to the three approved silhouette groups.
 - Report next safe action.
 - Write structured status back to the requested target.
 
