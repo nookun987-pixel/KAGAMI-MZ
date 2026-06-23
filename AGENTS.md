@@ -285,6 +285,39 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+- Seventh controlled exception is open:
+  - `MIKAGE_HERO_MOUNT_EEVEE_V0_5 = OPEN`
+  - Lane B restriction waived for THIS task only. This is a STEED DETAIL-REFINEMENT candidate (still grayscale clay; refine forms toward the sleek mechanical-equine read of `MIKAGE_STEED_SKELETON_BW_V0_5.png`). Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins.
+  - Only allowed next task: `MIKAGE_HERO_MOUNT_EEVEE_V0_5` (steed detail refinement, continue from V0.4 blend)
+  - Allowed inputs:
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_4.blend`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_4_CONTACT_SHEET.png`
+    - `production/character/keyart_candidates/MIKAGE_STEED_SKELETON_BW_V0_5.png`
+  - Allowed outputs (candidate only):
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_5.blend`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_5_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_5_PROOF.md`
+  - Render permission GRANTED (Blender + Eevee, local, full-frame clay + preserved violet-signal still).
+  - Detail-refinement scope is limited to the STEED only, keeping the V0.4 overall mass and proportions:
+    1. Sharpen the steed HEAD into a readable equine wedge (forehead, muzzle, jaw) instead of a rounded pod; graphite, no violet.
+    2. Slim the four legs into articulated PISTON legs (knee/hock joints + piston shafts) while keeping them load-bearing, with larger compressed hooves.
+    3. Add chassis PANEL PLANES / seams over the curved torso (flat plated surfaces, not a smooth blob), and VARY the torso mass — cinch the waist so it is not a uniform rounded lump — so the silhouette reads as a sleek machine with rhythm. Panel lines may reveal inner machine-frame structure. Preserve the curved topline / withers / croup.
+    4. Resolve the BODY-TO-LEG transition: add a hip shroud / armor plate and a minimal mechanical joint where the rounded torso meets each leg, so the join is not abrupt. Keep it monolithic and purposeful. NO loose cables, hoses, or decorative clutter (brand: no wasted ornament).
+  - Locked preservation:
+    - Preserve grayscale material treatment and the existing violet signal exactly (violet = rider two slits + hoof points only). NO material/shading change yet — still clay.
+    - Preserve Mikage rider identity, helmet language (exactly two slits), weapon/blade design, the rider seating, and the V0.4 mount mass.
+  - Explicitly prohibited:
+    - No rider, blade, or helmet redesign. No proportion change to the overall mount mass.
+    - No new colors, crimson, red, gold, ambient violet, halo, or added glow. No material/lookdev shading pass.
+    - No rigging, animation, UV, production-finalization, or unrelated cleanup.
+    - Do not overwrite V0.2, V0.3, or V0.4.
+  - Required review render: exact `3600 x 1800`, exact `3 views x 2 passes` (clay readability + identical geometry with preserved violet signal). Every panel full-frame showing the complete rider and mount — head, neck, topline, all four legs, hoof/support terminals. No silhouette-critical cropping.
+  - Required validation before PASS: reopen the saved V0.5 `.blend`; confirm V0.2/V0.3/V0.4 were not modified; confirm only whitelisted task files changed (plus `AGENTS.md` for this exception); confirm final PNG is exactly `3600 x 1800`; open and inspect the actual rendered PNG; confirm no `.blend1` remains.
+  - Required proof must record: source V0.4 file, output V0.5 file, the three refinement groups performed, confirmation that rider/blade/helmet/mass were not redesigned, grayscale lock result, violet-signal lock result, image dimensions and full-frame result, `.blend1` result, files changed, commands run, evidence source, repository status, PASS/FAIL, blocker, next safe action, commit status and hash, push status.
+  - Stop after producing and committing the V0.5 candidate and its review evidence.
+  - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -351,6 +384,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_2 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_2` and outputs are exactly the listed candidate files (+ new blend).
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_3 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_3` and outputs are exactly the listed candidate files (+ new blend), with corrections limited to the three approved silhouette groups.
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_4 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_4` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved steed re-mass scope (steed torso, head/neck, and leg blending only; rider, blade, and helmet not redesigned).
+- Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_5 = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_5` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved steed detail-refinement scope (equine wedge head, piston legs, torso chassis planes + waist rhythm, body-to-leg hip-joint shroud; no cables/clutter; still grayscale clay; rider, blade, helmet, and overall mount mass not changed).
 - Report next safe action.
 - Write structured status back to the requested target.
 
