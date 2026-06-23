@@ -1,72 +1,74 @@
-task_id: MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11
+task_id: MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11
+current_step: MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_STEED_SHAPE_CORRECTION_EEVEE_V0_10.blend
-  - production/character/build_log/LANEA_CODEX_TASK_RIDER_SILHOUETTE_V0_1.md
-  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_EEVEE_V0_9_DRIFT_CHECK.md
+  - production/character/MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11.blend
+  - production/character/build_log/LANEA_CODEX_TASK_BLADE_HEAD_V0_1.md
+  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_RIDER_V0_11_DRIFT_CHECK.md
+  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_STEED_V0_10_DRIFT_CHECK.md
   - production/character/keyart_candidates/MIKAGE_SOLO_BW_V0_4.png
+  - production/character/keyart_candidates/MIKAGE_STEED_SKELETON_BW_V0_5.png
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_11_gate
+output_folder_allowed: _tmp/mikage_v0_12_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_STEED_SHAPE_CORRECTION_EEVEE_V0_10.blend
-  - production/character/build_log/LANEA_CODEX_TASK_RIDER_SILHOUETTE_V0_1.md
-  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_EEVEE_V0_9_DRIFT_CHECK.md
+  - production/character/MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11.blend
+  - production/character/build_log/LANEA_CODEX_TASK_BLADE_HEAD_V0_1.md
+  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_RIDER_V0_11_DRIFT_CHECK.md
+  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_STEED_V0_10_DRIFT_CHECK.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.11 blend from V0.10 base
-  - correct rider armor silhouette breakdown only
-  - add rider graphite hair mass only
-  - add rider graphite V-taper mantle only
-  - render one grayscale V0.11 contact sheet
-  - write V0.11 proof report
+  - create derivative V0.12 blend from V0.11 base
+  - correct Zenith Blade grip and orientation only
+  - clarify steed equine wedge head only
+  - render one grayscale V0.12 contact sheet
+  - write V0.12 proof report
   - run deterministic verification commands
   - commit local changes only
 
 forbidden_actions:
-  - do not modify steed V0.10 geometry
+  - do not modify rider armor hair mantle V0.11
+  - do not modify steed body V0.10
   - do not modify helmet form or two slit rule
-  - do not move or redesign blade
   - do not add violet signals
   - do not change warm color halo flood or palette
   - do not rig animate or create motion output
   - do not claim canon lock asset lock final pass production ready or public ready
   - do not push
   - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.10 blends
+  - do not overwrite prior V0.1 through V0.11 blends
 
 pass_conditions:
-  - V0.11 derivative blend exists
-  - V0.11 grayscale contact sheet exists
-  - V0.11 proof report exists and includes RESULT block
-  - V0.10 base blend remains unmodified
-  - no .blend1 file remains for V0.11
+  - V0.12 derivative blend exists
+  - V0.12 grayscale contact sheet exists
+  - V0.12 proof report exists and includes RESULT block
+  - V0.11 base blend remains unmodified
+  - no .blend1 file remains for V0.12
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.10 source blend
-  - missing task brief or drift check
+  - missing V0.11 source blend
+  - missing task brief or drift checks
   - validator or verification command cannot run
   - unexpected output outside allowed task scope
-  - any steed V0.10 object requires mutation
-  - any helmet or blade position change is needed
+  - any rider armor hair mantle V0.11 object requires mutation
+  - any steed body V0.10 object requires mutation
   - any new violet signal is needed
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Operator/Lane B review of V0.11 candidate contact sheet for drift-check items 4, 5, and 6.
+next_step_if_pass: Operator/Lane B review of V0.12 candidate contact sheet for blade grip and steed head read.
 next_step_if_fail: stop and report reason only
