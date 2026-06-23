@@ -27,5 +27,10 @@ CONTACT_SHEET = production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_2_CONTAC
 - Steed head sensor slot is graphite, not violet, to satisfy the V0.2 user constraint.
 
 ## Render Evidence
-- Contact sheet contains two Eevee panels: clay/no-emission pass and violet-signal pass.
+- Re-render full-frame, no mesh change.
+- Contact sheet was overwritten in place for V0.2 review framing only.
+- Contact sheet contains three views: side full profile, 3/4 front, and back view for hair + mantle.
+- Each view contains two Eevee passes: clay grayscale and violet-signal.
+- Full-frame framing keeps the rider and mechanical mount visible from helmet top to hooves with margin.
+- Review coverage target: equine head, curved spine with shoulder/croup masses, Mikage armor/hair/mantle read, gauntlet-connected Zenith Blade, and four articulated load-bearing legs.
 - Render is local only; no push, deploy, public-ready, asset-lock, canon-lock, final, or production-ready claim.
