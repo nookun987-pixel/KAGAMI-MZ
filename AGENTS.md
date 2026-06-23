@@ -507,6 +507,35 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+- Fourteenth controlled exception is open:
+  - `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION = OPEN`
+  - Lane B restriction waived for THIS task only. Goal: assemble the UPGRADED V0.3 rider onto the steed (one hero mount) and render a correct-exposure MOTION clip that matches the approved THE FIRST FORM look. Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins.
+  - Only allowed next task: `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION`
+  - Allowed inputs:
+    - `production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend`
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_6.blend`
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_8_RIDER.blend`
+  - Allowed outputs (candidate only):
+    - `production/character/MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION.blend`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION.mp4`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION_KEYFRAMES.png`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION_PROOF.md`
+  - Render permission GRANTED (Blender + Eevee, local, animated clip).
+  - Assembly scope (combine, do NOT redesign geometry):
+    1. Bring the steed back (un-hide it in the V0.3 blend if its geometry is present, else append the steed objects from the V0.6 mount) and seat the UPGRADED V0.3 rider on the steed back per the V0.8 mount seating.
+    2. No new modeling beyond what seating/parenting requires; keep V0.3 rider and steed geometry as-is.
+  - Motion scope (animation of CAMERA, LIGHT, violet ONLY — static model, no rig/locomotion):
+    1. Breathing camera zoom 100 -> 104 -> 100 % cosine, framing the full rider+mount in a vertical frame.
+    2. Slow cool light-sweep; subtle violet pulse on the rider two slits + hoof points (signal only).
+  - Render quality (match THE FIRST FORM): LOWER exposure so porcelain holds form (no blown white); slits = controlled cool violet `#8F00FF`, low glow; subtle rim-light; background void black `#050508`.
+  - Frame spec (LOCKED): `1080 x 1920`, H.264, `yuv420p`, 30 fps, ~6-8 s, NO audio. No burned text/logo/lyrics.
+  - Locked preservation: palette void/porcelain/violet; violet = signal (exactly two slits) only; no warm color, no flood, no new colors; faceless helmet. Do not overwrite prior blends.
+  - Required validation before PASS: reopen the saved motion `.blend`; confirm prior blends not modified; confirm only whitelisted task files changed (plus `AGENTS.md`); confirm mp4 is exactly `1080 x 1920`, 30 fps, yuv420p, no audio; confirm highlights not clipped and background void black; open and inspect the keyframe sheet and mp4; confirm no `.blend1` remains.
+  - Required proof must record: source files, output motion files, assembly performed (steed restore + seating), camera/light/violet animation, exposure/slit/rim result, frame-spec result, palette/violet-signal lock, `.blend1` result, files changed, commands run, evidence source, repository status, PASS/FAIL, blocker, next safe action, commit status and hash, push status.
+  - Stop after producing and committing the motion candidate and its review evidence.
+  - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -580,6 +609,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Execute the controlled exception `MIKAGE_RIDER_SOLO_EEVEE_V0_1 = OPEN` only when the task is exactly `MIKAGE_RIDER_SOLO_EEVEE_V0_1` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to isolating the rider (hide steed/chassis), solo hero framing, void-black background, and render only (no rider/steed geometry redesign; materials + violet-signal locked).
 - Execute the controlled exception `MIKAGE_RIDER_SOLO_EEVEE_V0_2 = OPEN` only when the task is exactly `MIKAGE_RIDER_SOLO_EEVEE_V0_2` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved rider detail-build scope (hair mass, mantle, layered armor, helmet facets, blade-in-gauntlet, proportion refine to the V0.4 spec; solo isolation + void black + palette/violet-signal locked; no steed).
 - Execute the controlled exception `MIKAGE_RIDER_SOLO_EEVEE_V0_3 = OPEN` only when the task is exactly `MIKAGE_RIDER_SOLO_EEVEE_V0_3` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved rider geometry-upgrade scope (blade grip wrap, de-blocky/taper, hair, mantle) plus correct-exposure render (no blown porcelain, cool controlled-violet slits, subtle rim, void black); solo isolation, no steed, no pose change, palette/violet-signal locked.
+- Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION` and outputs are exactly the four listed candidate files (+ new motion blend), with changes limited to assembling the V0.3 rider onto the steed (no geometry redesign) and a camera/light/violet motion render (correct exposure, cool slits, rim, void black; 1080x1920 H.264 yuv420p 30fps no audio; no burned text).
 - Report next safe action.
 - Write structured status back to the requested target.
 
