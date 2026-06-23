@@ -16,9 +16,9 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11.
-  (IP-TO-SCREEN render line = ACTIVE. Brief: build_log/LANEA_CODEX_TASK_RIDER_SILHOUETTE_V0_1.md.
-   DONE: STEED_SHAPE_CORRECTION_V0_10 (commit a80bbc6, body NẮN ĐẠT, head built-read-weak → ghi nợ material pass).
+  MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.
+  (IP-TO-SCREEN render line = ACTIVE. Brief: build_log/LANEA_CODEX_TASK_BLADE_HEAD_V0_1.md.
+   DONE: STEED_V0_10 (commit a80bbc6) + RIDER_V0_11 (commit c10dabd) — silhouette clay cơ bản XONG (mục 2,3,4,5,6,7). V0.12 đóng nốt #8 blade + #1 head read → rồi MATERIAL LOOKDEV.
    PARKED (resume khi operator re-point): MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1 — Lane A rig validation.)
 
 CONTROLLED_RUNTIME_EXCEPTION:
@@ -2010,4 +2010,13 @@ V0.10_RESULT = STEED shape-correction DONE (Codex commit a80bbc6, local, no push
 LANE_B_DRIFT_CHECK_V0_10 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_STEED_V0_10_DRIFT_CHECK.md
 NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_RIDER_SILHOUETTE_V0_1.md
 CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_RIDER_SILHOUETTE_EEVEE_V0_11 (rider only: armor breakdown #4 + hair mass #5 + mantle V-taper #6; grayscale clay; violet giU; KHONG dung steed/blade-pos; contact sheet + proof).
+STATUS = CANON_LOCK=NO �
+## RIDER V0.11 ACCEPTED + V0.12 QUEUED + CATALOG RECONCILED — 2026-06-23 (Lane B)
+V0.11_RESULT = RIDER silhouette DONE (Codex commit c10dabd). Mục 4 armor breakdown / 5 tóc graphite dài / 6 mantle V-taper = NẮN ĐẠT. Steed V0.10 + helmet 2-slit + blade pos giữ nguyên; không thêm violet.
+LANE_B_DRIFT_CHECK_V0_11 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_RIDER_V0_11_DRIFT_CHECK.md
+SILHOUETTE_STATUS = clay cơ bản XONG (#2,3,4,5,6,7). Còn #8 blade grip + #1 head read → V0.12.
+NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_BLADE_HEAD_V0_1.md
+CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12 (blade gom về gauntlet + đầu mã đọc rõ; grayscale; violet giữ; KHÔNG material/motion; contact sheet 4 panel + proof). Sau đó: MATERIAL LOOKDEV.
+CATALOG_RECONCILED = docs/handoff/MIKAGE_CATALOG_SSOT_RECONCILED_2026-06-23.csv (43 track · 20 LIVE · 23 PRE-SAVE; nguồn TooLost export; boundary too.fm-verified). Old catalog files stale.
+IP_EXECUTION_PLAN = docs/handoff/MIKAGE_IP_EXECUTION_PLAN_V0_1.md (canon = A closed-author, BOOS chốt 23/06).
 STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=CANDIDATE.
