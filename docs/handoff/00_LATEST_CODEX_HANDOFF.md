@@ -16,10 +16,10 @@ CINE COLOR — LOCKED VALUES:
 - KINTSUGI GOLD #C39A52 -> matte aged urushi-gold, mineral grain, seams only
 
 CURRENT_NEXT_TASK:
-  MIKAGE_HERO_MOUNT_MATERIAL_EEVEE_V0_13.
-  (IP-TO-SCREEN render line = ACTIVE. Brief: build_log/LANEA_CODEX_TASK_MATERIAL_V0_1.md.
-   DONE: silhouette clay ĐÓNG — V0_10 steed (a80bbc6) + V0_11 rider (c10dabd) + V0_12 blade/head (1601620). 8/8 điểm drift nắn xong.
-   V0.13 = MATERIAL LOOKDEV (porcelain/graphite/cold-steel + rim + contact shadow; violet vẫn giữ). Sau: V0.14 violet pass → V0.15 motion.
+  MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14.
+  (IP-TO-SCREEN render line = ACTIVE. Brief: build_log/LANEA_CODEX_TASK_VIOLET_GRAIN_V0_1.md.
+   DONE: silhouette clay ĐÓNG (V0_10/11/12) + MATERIAL V0_13 (commit b68d721, porcelain/graphite/cold-steel ĐẠT, exposure fixed).
+   V0.14 = VIOLET signal pass (slit/core tiết chế) + anti-toy fine grain → REVEAL ảnh tĩnh. Sau: V0.15 motion (reveal short).
    PARKED (resume khi operator re-point): MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1 — Lane A rig validation.)
 
 CONTROLLED_RUNTIME_EXCEPTION:
@@ -2026,4 +2026,12 @@ LANE_B_DRIFT_CHECK_V0_12 = production/character/keyart_candidates/MIKAGE_HERO_MO
 SILHOUETTE_CLAY = ĐÓNG. 8/8 điểm drift (#1..#8) nắn xong.
 NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_MATERIAL_V0_1.md
 CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_MATERIAL_EEVEE_V0_13 (3 vật liệu: porcelain #f2eeea soft / graphite matte / cold-steel cạnh sắc + Z-Blue #4B5866 non-emissive; key+rim+contact shadow; KHÔNG đổi hình, violet giữ). Sau: V0.14 violet pass → V0.15 motion.
+STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=CANDIDATE.
+ 
+## V0.13 MATERIAL ACCEPTED + V0.14 VIOLET QUEUED — 2026-06-23 (Lane B)
+V0.13_RESULT = material lookdev DONE (Codex commit b68d721). Porcelain #f2eeea soft / graphite matte / cold-steel Z-Blue #4B5866 non-emissive = ĐẠT; geometry giữ (315 mesh match); exposure fixed.
+LANE_B_DRIFT_CHECK_V0_13 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md (cờ vàng anti-toy: bề mặt còn mịn → fine grain ở V0.14).
+NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_VIOLET_GRAIN_V0_1.md
+CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14 (violet signal slit/core TIẾT CHẾ + anti-toy fine grain; KHÔNG đổi hình; violet=signal không flood). → REVEAL ảnh tĩnh (Lane B crop+caption) → MOTION V0.15.
+TRACKER = docs/handoff/MIKAGE_LANEB_ROADMAP_TRACKER.md (đã cập nhật: material DONE, V0.14=reveal still, caption draft sẵn).
 STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=CANDIDATE.
