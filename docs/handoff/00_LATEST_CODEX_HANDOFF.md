@@ -1,11 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
-> ⟢ DISPATCH 2026-06-24 #6 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_18` (RENDER, 1 lần).**
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_MOTION_RERENDER_V0_2.md` (STATUS = AUTHORIZED).
-> Input khoá: `production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend`. Re-render motion (recipe V0.15): breathing zoom 100→104→100 + light-sweep + violet slit pulse trên mount đã refine. GIỮ geometry/pose/material/violet. Out: 1080×1920 h264/yuv420p 30fps **no audio** ~6–8s + poster + proof. KHÔNG text/logo/warm/flood. CANDIDATE. Dọn frame tạm + `.blend1`, KHÔNG push.
-> ✔ DONE: V0.14 (violet) · V0.14B (đèn) · V0.15 (motion v1→beat reveal+film V0_3) · V0.16 (bevel rider+helmet) · V0.17 (steed equine head + chân khớp — ĐẠT).
-> PARKED (chỉ khi BOOS re-point): re-sculpt rider premium · steed-body refine · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
-> Sau V0.18 ĐẠT → Lane B ghép nhạc → beat reveal v2 (thay bản cũ) + cập nhật film đầy đủ.
+> ⟢ DISPATCH 2026-06-24 #7 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19` (RENDER, 1 lần) — pass refine mount CUỐI.**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STEED_BODY_REFINE_V0_1.md` (STATUS = AUTHORIZED).
+> Input khoá: `production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend`. CHỈ sửa THÂN steed: blob trơn → barrel cơ khí có panel/segment + bevel nhỏ (như rider). GIỮ rider/blade/helmet/violet/material + đầu+chân (V0.17) + chỗ rider ngồi. Stylized, không realistic. Out: blend + contact + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
+> ✔ DONE: V0.14·V0.14B·V0.15·V0.16·V0.17·V0.18 (motion v2 trên mount refined — spec PASS; Lane B đã crop chặt + ghép nhạc = beat reveal V0_2).
+> PARKED (chỉ khi BOOS re-point): re-sculpt rider premium · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
+> Sau V0.19 ĐẠT → mount KHOÁ-CHO-DEV → re-render motion cuối + reveal; Codex chuyển world scene / rig.
 
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```
