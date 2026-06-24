@@ -1,68 +1,69 @@
-task_id: MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14
+task_id: MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14
+current_step: MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_MATERIAL_EEVEE_V0_13.blend
-  - production/character/build_log/LANEA_CODEX_TASK_VIOLET_GRAIN_V0_1.md
-  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md
+  - production/character/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ANTITOY_MATERIAL_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_14_gate
+output_folder_allowed: _tmp/mikage_v0_14b_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_MATERIAL_EEVEE_V0_13.blend
-  - production/character/build_log/LANEA_CODEX_TASK_VIOLET_GRAIN_V0_1.md
-  - production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md
+  - production/character/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ANTITOY_MATERIAL_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.14 blend from V0.13 base
-  - add controlled violet emissive signal only on helmet slits core and at most one seam
-  - add fine grain and subtle edge wear to reduce toy or model-kit read
-  - render one V0.14 contact sheet
-  - write V0.14 proof report
+  - create derivative V0.14B blend from V0.14 base
+  - adjust lighting exposure key fill rim and contact shadow only
+  - strengthen procedural fine grain roughness variation and subtle cavity or edge dust via materials only
+  - render one V0.14B contact sheet
+  - write V0.14B proof report
   - write gate report for verify_output.py
   - run deterministic verification commands
   - commit local changes only
 
 forbidden_actions:
-  - do not modify geometry silhouette pose rig or motion
-  - do not add mesh objects
-  - do not flood fill wash halo crimson gold or warm color
-  - do not add violet outside helmet slits core and at most one seam
+  - do not modify geometry silhouette pose rig motion or violet signal placement or strength
+  - do not add or remove mesh objects
+  - do not change porcelain void Z-Blue or violet hex values
+  - do not add warm color flood halo crimson or gold
   - do not claim canon lock asset lock final pass production ready or public ready
   - do not push
   - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.13 blends
+  - do not overwrite prior V0.1 through V0.14 blends
 
 pass_conditions:
-  - V0.14 derivative blend exists
-  - V0.14 contact sheet exists
-  - V0.14 proof report exists and includes RESULT block
-  - V0.13 base blend remains unmodified
-  - no .blend1 file remains for V0.14
+  - V0.14B derivative blend exists
+  - V0.14B contact sheet exists
+  - V0.14B proof report exists and includes RESULT block
+  - V0.14 base blend remains unmodified
+  - mesh object count is unchanged from V0.14 to V0.14B
+  - violet signal object/material assignment is unchanged from V0.14 to V0.14B
+  - no .blend1 file remains for V0.14B
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.13 source blend
-  - missing V0.14 task brief
+  - missing V0.14 source blend
+  - missing V0.14B task brief
   - validator or verification command cannot run
   - unexpected output outside allowed task scope
-  - any geometry or pose mutation is needed
-  - violet cannot be kept to signal-only scope
+  - any geometry pose or violet mutation is needed
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check of V0.14 candidate contact sheet; then BOOS approval before reveal crop or V0.15 motion.
+next_step_if_pass: Lane B drift-check of V0.14B anti-toy candidate contact sheet; then BOOS approval before reveal crop or V0.15 motion.
 next_step_if_fail: stop and report reason only
