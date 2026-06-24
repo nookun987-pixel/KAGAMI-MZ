@@ -1,70 +1,68 @@
-task_id: MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16
+task_id: MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16
+current_step: MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend
-  - production/character/build_log/LANEA_CODEX_TASK_GEOMETRY_REFINE_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STEED_REFINE_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_16_gate
+output_folder_allowed: _tmp/mikage_v0_17_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend
-  - production/character/build_log/LANEA_CODEX_TASK_GEOMETRY_REFINE_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STEED_REFINE_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.16 blend from V0.14B base
-  - add small bevel or chamfer to rider porcelain armor and blade edges only
-  - refine helmet mesh toward a cleaner ovoid while preserving faceless two-slit identity
-  - render one V0.16 contact sheet
-  - write V0.16 proof report
+  - create derivative V0.17 blend from V0.16 base
+  - refine steed head mesh toward stylized equine muzzle jaw and neck transition only
+  - refine steed leg meshes toward readable stylized joints and hoof contact only
+  - render one V0.17 contact sheet
+  - write V0.17 proof report
   - write gate report for verify_output.py
   - run deterministic verification commands
   - commit local changes only
 
 forbidden_actions:
-  - do not change overall silhouette proportion pose composition or rider steed blade layout
-  - do not add or remove mesh objects
-  - do not change material slots hex values or violet users
-  - do not add face eyes mouth extra slits or helmet facial details
-  - do not add warm color flood halo crimson or gold
+  - do not modify rider blade helmet material hex values or violet users
+  - do not change overall mount stance pose rider seating composition or scale
+  - do not add eyes nostrils mouth face details new colors warm flood halo crimson or gold
   - do not claim canon lock asset lock final pass production ready or public ready
   - do not push
   - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.14B blends
+  - do not overwrite prior V0.1 through V0.16 blends
 
 pass_conditions:
-  - V0.16 derivative blend exists
-  - V0.16 contact sheet exists
-  - V0.16 proof report exists and includes RESULT block
-  - V0.14B base blend remains unmodified
-  - mesh object count is unchanged from V0.14B to V0.16
-  - violet signal object/material assignment is unchanged from V0.14B to V0.16
-  - no .blend1 file remains for V0.16
+  - V0.17 derivative blend exists
+  - V0.17 contact sheet exists
+  - V0.17 proof report exists and includes RESULT block
+  - V0.16 base blend remains unmodified
+  - rider blade helmet material slots and transforms are unchanged
+  - violet signal object/material assignment is unchanged from V0.16 to V0.17
+  - no .blend1 file remains for V0.17
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.14B source blend
-  - missing V0.16 task brief
+  - missing V0.16 source blend
+  - missing V0.17 task brief
   - validator or verification command cannot run
   - unexpected output outside allowed task scope
-  - any pose material violet or broad silhouette mutation is needed
+  - any rider blade helmet material or violet mutation is needed
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check V0.16 geometry refine; then BOOS approval before hero-final reveal or re-rendered motion.
+next_step_if_pass: Lane B drift-check V0.17 steed refine; then BOOS approval before re-rendered motion on the refined mount.
 next_step_if_fail: stop and report reason only
