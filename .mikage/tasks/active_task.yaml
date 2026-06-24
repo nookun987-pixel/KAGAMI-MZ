@@ -1,69 +1,72 @@
-task_id: MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B
+task_id: MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B
+task_type: MP4_RENDER_ONLY
+current_step: MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ANTITOY_MATERIAL_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend
+  - production/character/build_log/LANEA_CODEX_TASK_MOTION_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_14b_gate
+output_folder_allowed: _tmp/mikage_v0_15_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ANTITOY_MATERIAL_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend
+  - production/character/build_log/LANEA_CODEX_TASK_MOTION_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.14B blend from V0.14 base
-  - adjust lighting exposure key fill rim and contact shadow only
-  - strengthen procedural fine grain roughness variation and subtle cavity or edge dust via materials only
-  - render one V0.14B contact sheet
-  - write V0.14B proof report
+  - render one V0.15 motion mp4 from V0.14B base
+  - animate camera breathing zoom only
+  - animate light sweep only
+  - animate controlled violet slit and core pulse only
+  - create one poster frame
+  - write V0.15 proof report
   - write gate report for verify_output.py
   - run deterministic verification commands
   - commit local changes only
 
 forbidden_actions:
-  - do not modify geometry silhouette pose rig motion or violet signal placement or strength
+  - do not modify geometry silhouette pose rig mesh or base materials
   - do not add or remove mesh objects
-  - do not change porcelain void Z-Blue or violet hex values
+  - do not add text lyrics logo watermark or audio
   - do not add warm color flood halo crimson or gold
   - do not claim canon lock asset lock final pass production ready or public ready
   - do not push
   - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.14 blends
+  - do not overwrite prior V0.1 through V0.14B blends
 
 pass_conditions:
-  - V0.14B derivative blend exists
-  - V0.14B contact sheet exists
-  - V0.14B proof report exists and includes RESULT block
-  - V0.14 base blend remains unmodified
-  - mesh object count is unchanged from V0.14 to V0.14B
-  - violet signal object/material assignment is unchanged from V0.14 to V0.14B
-  - no .blend1 file remains for V0.14B
+  - V0.15 mp4 exists
+  - V0.15 poster exists
+  - V0.15 proof report exists and includes RESULT block
+  - V0.14B base blend remains unmodified
+  - mp4 is 1080x1920 h264 yuv420p 30fps no audio and about 6 to 8 seconds
+  - mesh object count is unchanged from V0.14B to render scene
+  - no .blend1 file remains
+  - frame temp outputs are removed before final status
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.14 source blend
-  - missing V0.14B task brief
-  - validator or verification command cannot run
+  - missing V0.14B source blend
+  - missing V0.15 task brief
+  - validator ffmpeg ffprobe or verification command cannot run
   - unexpected output outside allowed task scope
-  - any geometry pose or violet mutation is needed
+  - any geometry pose mesh or material redesign is needed
+  - mp4 has audio or wrong dimensions fps codec or pixel format
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check of V0.14B anti-toy candidate contact sheet; then BOOS approval before reveal crop or V0.15 motion.
+next_step_if_pass: Lane B verify V0.15 motion spec and drift-check; then BOOS approval before music/caption assembly.
 next_step_if_fail: stop and report reason only
