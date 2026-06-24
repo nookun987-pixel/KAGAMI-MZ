@@ -1,11 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
-> ⟢ DISPATCH 2026-06-24 #5 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17` (RENDER, 1 lần).**
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_STEED_REFINE_V0_1.md` (STATUS = AUTHORIZED).
-> Input khoá: `production/character/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16.blend`. CHỈ sửa STEED: đầu → equine (muzzle thuôn, faceless, không màu mới) + chân → có khớp (vai/gối/hock, đế tiếp đất). GIỮ rider/blade/helmet/violet/material/tỉ lệ/pose. Stylized, không realistic. Out: blend + contact (steed head + leg close + hero-crop) + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
-> ✔ DONE: V0.14 (violet) · V0.14B (đèn) · V0.15 (motion→beat reveal+film V0_3) · V0.16 (bevel rider+helmet — chấp nhận; rider tới trần blockout).
-> PARKED (chỉ khi BOOS re-point): re-sculpt rider premium · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
-> Sau V0.17 ĐẠT → Lane B drift-check (steed "ngựa-máy"? rider/violet còn nguyên?) → re-render motion trên mount mới.
+> ⟢ DISPATCH 2026-06-24 #6 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_18` (RENDER, 1 lần).**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_MOTION_RERENDER_V0_2.md` (STATUS = AUTHORIZED).
+> Input khoá: `production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend`. Re-render motion (recipe V0.15): breathing zoom 100→104→100 + light-sweep + violet slit pulse trên mount đã refine. GIỮ geometry/pose/material/violet. Out: 1080×1920 h264/yuv420p 30fps **no audio** ~6–8s + poster + proof. KHÔNG text/logo/warm/flood. CANDIDATE. Dọn frame tạm + `.blend1`, KHÔNG push.
+> ✔ DONE: V0.14 (violet) · V0.14B (đèn) · V0.15 (motion v1→beat reveal+film V0_3) · V0.16 (bevel rider+helmet) · V0.17 (steed equine head + chân khớp — ĐẠT).
+> PARKED (chỉ khi BOOS re-point): re-sculpt rider premium · steed-body refine · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
+> Sau V0.18 ĐẠT → Lane B ghép nhạc → beat reveal v2 (thay bản cũ) + cập nhật film đầy đủ.
 
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```
