@@ -1,11 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
-> ⟢ DISPATCH 2026-06-24 #7 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19` (RENDER, 1 lần) — pass refine mount CUỐI.**
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_STEED_BODY_REFINE_V0_1.md` (STATUS = AUTHORIZED).
-> Input khoá: `production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend`. CHỈ sửa THÂN steed: blob trơn → barrel cơ khí có panel/segment + bevel nhỏ (như rider). GIỮ rider/blade/helmet/violet/material + đầu+chân (V0.17) + chỗ rider ngồi. Stylized, không realistic. Out: blend + contact + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
-> ✔ DONE: V0.14·V0.14B·V0.15·V0.16·V0.17·V0.18 (motion v2 trên mount refined — spec PASS; Lane B đã crop chặt + ghép nhạc = beat reveal V0_2).
-> PARKED (chỉ khi BOOS re-point): re-sculpt rider premium · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
-> Sau V0.19 ĐẠT → mount KHOÁ-CHO-DEV → re-render motion cuối + reveal; Codex chuyển world scene / rig.
+> ⟢ DISPATCH 2026-06-24 #8 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_STEED_CHASSIS_EEVEE_V0_20` (RENDER, 1 lần).**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STEED_CHASSIS_V0_1.md` (STATUS = AUTHORIZED).
+> Nguồn: REVIEW 3-ĐẦU round 01 (Lane B+GPT+Gemini) — đồng thuận. Input khoá: `production/character/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19.blend`. Thay 2 khối ovoid (ngực/hông) → MỘT barrel chassis liền faceted (2–3 mảng giáp lồng nhau), tích hợp panel "lửng lơ", bỏ profile blob. GIỮ rider/blade/helmet/violet/material/đầu/chân/tỉ lệ/chỗ rider ngồi. Out: blend + contact + **1 crop SẠCH không nhãn** (cho review) + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
+> ✔ DONE: V0.14→V0.19. V0.19 review 3-đầu = HOLD (premium 2/5, fix = chassis); brand PASS trên asset (Gemini 2 FAIL = lỗi ảnh review, không phải asset).
+> PARKED: re-sculpt rider premium · world scene · rig validation.
+> Sau V0.20 → Lane B drift-check + review 3-đầu round 02 (crop sạch) → BOOS chốt lock-for-dev → re-render motion cuối.
 
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```

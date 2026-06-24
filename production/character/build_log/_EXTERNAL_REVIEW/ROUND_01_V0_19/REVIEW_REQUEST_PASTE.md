@@ -57,5 +57,12 @@ DRIFT: không (rider/violet/đầu/chân giữ).
 #1 FIX: gộp/định hình lại 2 khối ovoid thân thành 1 barrel liền mạch (hoặc chấp nhận & khoá-cho-dev).
 CONFIDENCE: med.
 
-## STANDARD VERDICT (Lane B điền sau khi có GPT+Gemini):
-[[điền theo rubric trong MIKAGE_EXTERNAL_REVIEW_KIT_V0_1.md]]
+## STANDARD VERDICT (round 01, Hero Mount V0.19) — 2026-06-24
+3 đầu: Lane B + GPT + Gemini. Đồng thuận cao.
+- **Brand: PASS (asset thật).** Violet signal / palette / faceless-2-slit / no-text đều PASS.
+  - Gemini chấm 2 FAIL = lỗi ẢNH review, KHÔNG phải asset: (a) nhãn contact-sheet ("FULL MOUNT"...) — GPT xác nhận là overlay, asset không có text; (b) "slit không rõ/1 block" = do thumbnail nhỏ, asset có đúng 2 slit.
+  - PROCESS FIX vòng sau: gửi crop sạch (không nhãn) + giãn khe 2 slit cho legibility.
+- **Task goal (median): 3/5** — panel có thêm, 2 ovoid mass còn blob (cả 3 đồng ý).
+- **Premium (median): 2/5** — model-kit/clay read (cả 3 đồng ý). Quá thấp để lock làm hero.
+- **#1 FIX (3/3 trùng):** thay 2 ovoid mass (ngực/hông) bằng MỘT barrel chassis liền, faceted (2–3 mảng giáp lớn lồng nhau); tích hợp panel đang "lửng lơ" vào chassis; GIỮ tỉ lệ + chỗ rider ngồi + violet.
+- **ĐỀ NGHỊ: HOLD** — không lock-for-dev. Dispatch fix = V0.20 (chassis unify). Re-review sau. **BOOS chốt.**
