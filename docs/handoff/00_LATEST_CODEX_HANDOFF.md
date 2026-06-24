@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
+> ⟢ DISPATCH 2026-06-24 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14` (RENDER, 1 lần).**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_VIOLET_GRAIN_V0_1.md` (STATUS = AUTHORIZED).
+> Input khoá: `production/character/MIKAGE_HERO_MOUNT_MATERIAL_EEVEE_V0_13.blend`. Chỉ violet signal (slit/core/1 seam, tiết chế, KHÔNG fill) + anti-toy fine grain. KHÔNG đổi geometry/pose/motion. Output = CANDIDATE (KHÔNG canon-lock/PASS). Dọn `.blend1`, KHÔNG push.
+> PARKED (chỉ resume khi BOOS re-point): `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation) — KHÔNG chạy trong dispatch này.
+> Sau V0.14 ĐẠT → Lane B crop REVEAL + caption → rồi MOTION V0.15.
+
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```
 STATUS: OPERATOR_COLOR_CONTRACT_LOCKED

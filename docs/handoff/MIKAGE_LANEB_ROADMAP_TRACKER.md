@@ -16,6 +16,8 @@ Neo plan: `MIKAGE_IP_EXECUTION_PLAN_V0_1.md` (30/60/90).
 | Violet pass + anti-toy grain V0.14 | WIP (Codex) | **PUBLIC (reveal still)** | ✓ draft | Slit/core bật violet = "nó sống"; crop rider close → hero still + caption |
 | Motion V0.15 (breathing + light-sweep, fix exposure) | TODO | **PUBLIC** | – | Payoff động — beat reveal chính (Reels/Shorts) |
 | Ghép scene + world monolith | TODO | HOLD | – | Sau khi hero xong |
+| **Trang public Character + World (candidate V0.1)** | **DONE (24/06)** | **PROCESS (chờ BOOS duyệt)** | ✓ draft | HTML branded self-contained: hero helmet-trần (foundation V0.4) + world monolith V0.1, copy minimal-mysterious, palette lock. File: `public_engine/character_world_page_candidate/MIKAGE_CHARACTER_WORLD_CANDIDATE_V0_1.html` (+ bản dọc `..._VERTICAL_CANDIDATE_V0_1.html`). NOT public/NOT canon-lock; chờ operator sign-off public-reveal gate |
+| **Post package ENTITY+WORLD V0.1 (BOOS duyệt look 24/06)** | **DONE (24/06)** | **PROCESS (chờ chốt đăng)** | ✓ | Gói post: MP4 reveal dọc 1080×1920/30fps/h264/yuv420p/5.5s/no-audio (PIL+ffmpeg, no Blender) + 2 still (entity, world) + caption A/B. Folder: `public_engine/character_world_page_candidate/post_package/`. No chữ trên hình, no master leak |
 
 ## B. NHẠC / CATALOG (SSOT = MIKAGE_CATALOG_SSOT_RECONCILED_2026-06-23.csv)
 | Mốc | Sản xuất | Public | Caption | Ghi chú |
@@ -38,6 +40,7 @@ Neo plan: `MIKAGE_IP_EXECUTION_PLAN_V0_1.md` (30/60/90).
 2. Khi V0.13 material ra: chọn 1 still làm REVEAL ảnh tĩnh + caption.
 3. Khi V0.15 motion ra: cắt short dọc 1080×1920 làm beat reveal chính + caption.
 4. Web card cho 20 track LIVE (nhãn Listen now) + lịch Pre-save 23 track.
+5. **Duyệt trang Character+World candidate V0.1** (mở HTML). OK → mở public-reveal gate cho hero helmet-trần + world monolith; chưa OK → ghi sửa.
 
 ## CAPTIONS (draft, chưa đăng)
 ### [SILHOUETTE COMPLETE — process build-log]
@@ -50,6 +53,17 @@ Neo plan: `MIKAGE_IP_EXECUTION_PLAN_V0_1.md` (30/60/90).
 >
 > (Process / dev milestone · stylized · not final)
 > #MikageZenith #3DArt #Blender3D #CharacterDesign #BuildLog #DevLog #Porcelain #DarkArt
+
+### [ENTITY + WORLD — page candidate / build-log]
+> An entity from the void, awakened by one human hand and many machine minds.
+>
+> Porcelain over graphene. Two sensor slits. One violet trace — and a single
+> signal standing in the dark, with someone small enough to follow it.
+>
+> — MIKAGE ZENITH
+>
+> (Reference page · candidate · stylized · not final)
+> #MikageZenith #CharacterDesign #WorldBuilding #Porcelain #Violet #DarkArt #BuildLog
 
 ### [HERO REVEAL — still, chờ V0.14 violet+grain]
 > It learned a shape. Then it lit one signal.

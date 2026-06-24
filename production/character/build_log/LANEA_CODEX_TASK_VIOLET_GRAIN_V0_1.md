@@ -1,5 +1,5 @@
 # LANE A / CODEX TASK BRIEF — VIOLET SIGNAL + ANTI-TOY GRAIN (bounded, 1 render)
-Soạn bởi Lane B · 2026-06-23 · STATUS: DRAFT chờ BOOS authorize.
+Soạn bởi Lane B · 2026-06-23 · **STATUS: AUTHORIZED — BOOS duyệt 2026-06-24 (dispatch qua Lane B). Codex chạy đúng task này, 1 render.**
 Nối tiếp material V0.13 (đã chấp nhận). Task này bật violet signal + thêm grain anti-toy. KHÔNG đổi hình, KHÔNG motion.
 BOOS đặt CURRENT_NEXT_TASK trong handoff thì Codex chạy. Mỗi task = 1 render.
 
