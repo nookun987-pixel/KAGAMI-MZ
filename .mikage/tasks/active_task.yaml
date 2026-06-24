@@ -1,24 +1,24 @@
-task_id: MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15
+task_id: MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15
+task_type: VERIFY_REPORT_ONLY
+current_step: MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16
 
 input_files_allowed:
   - production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend
-  - production/character/build_log/LANEA_CODEX_TASK_MOTION_V0_1.md
+  - production/character/build_log/LANEA_CODEX_TASK_GEOMETRY_REFINE_V0_1.md
   - production/character/reviews/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_15_gate
+output_folder_allowed: _tmp/mikage_v0_16_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
   - production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend
-  - production/character/build_log/LANEA_CODEX_TASK_MOTION_V0_1.md
+  - production/character/build_log/LANEA_CODEX_TASK_GEOMETRY_REFINE_V0_1.md
   - production/character/reviews/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -26,20 +26,20 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - render one V0.15 motion mp4 from V0.14B base
-  - animate camera breathing zoom only
-  - animate light sweep only
-  - animate controlled violet slit and core pulse only
-  - create one poster frame
-  - write V0.15 proof report
+  - create derivative V0.16 blend from V0.14B base
+  - add small bevel or chamfer to rider porcelain armor and blade edges only
+  - refine helmet mesh toward a cleaner ovoid while preserving faceless two-slit identity
+  - render one V0.16 contact sheet
+  - write V0.16 proof report
   - write gate report for verify_output.py
   - run deterministic verification commands
   - commit local changes only
 
 forbidden_actions:
-  - do not modify geometry silhouette pose rig mesh or base materials
+  - do not change overall silhouette proportion pose composition or rider steed blade layout
   - do not add or remove mesh objects
-  - do not add text lyrics logo watermark or audio
+  - do not change material slots hex values or violet users
+  - do not add face eyes mouth extra slits or helmet facial details
   - do not add warm color flood halo crimson or gold
   - do not claim canon lock asset lock final pass production ready or public ready
   - do not push
@@ -47,26 +47,24 @@ forbidden_actions:
   - do not overwrite prior V0.1 through V0.14B blends
 
 pass_conditions:
-  - V0.15 mp4 exists
-  - V0.15 poster exists
-  - V0.15 proof report exists and includes RESULT block
+  - V0.16 derivative blend exists
+  - V0.16 contact sheet exists
+  - V0.16 proof report exists and includes RESULT block
   - V0.14B base blend remains unmodified
-  - mp4 is 1080x1920 h264 yuv420p 30fps no audio and about 6 to 8 seconds
-  - mesh object count is unchanged from V0.14B to render scene
-  - no .blend1 file remains
-  - frame temp outputs are removed before final status
+  - mesh object count is unchanged from V0.14B to V0.16
+  - violet signal object/material assignment is unchanged from V0.14B to V0.16
+  - no .blend1 file remains for V0.16
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
   - missing V0.14B source blend
-  - missing V0.15 task brief
-  - validator ffmpeg ffprobe or verification command cannot run
+  - missing V0.16 task brief
+  - validator or verification command cannot run
   - unexpected output outside allowed task scope
-  - any geometry pose mesh or material redesign is needed
-  - mp4 has audio or wrong dimensions fps codec or pixel format
+  - any pose material violet or broad silhouette mutation is needed
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B verify V0.15 motion spec and drift-check; then BOOS approval before music/caption assembly.
+next_step_if_pass: Lane B drift-check V0.16 geometry refine; then BOOS approval before hero-final reveal or re-rendered motion.
 next_step_if_fail: stop and report reason only
