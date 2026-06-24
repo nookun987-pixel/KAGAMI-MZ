@@ -1,11 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
-> ⟢ DISPATCH 2026-06-24 #4 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16` (RENDER, 1 lần).**
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_GEOMETRY_REFINE_V0_1.md` (STATUS = AUTHORIZED).
-> Input khoá: `production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend`. De-toy bằng HÌNH: bevel/bo cạnh nhỏ toàn cục (rider+blade) + helmet về ovoid sạch (faceless, đúng 2 slit). GIỮ silhouette/tỉ lệ/pose/material/violet. Out: blend + contact sheet (helmet close + edge before/after + hero-crop) + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
-> ✔ DONE: V0.14 (violet) · V0.14B (đèn/AO) · V0.15 (motion — Lane B đã ghép nhạc thành beat reveal + gom vào film V0_3).
-> PARKED (chỉ khi BOOS re-point): steed equine-head + khớp · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
-> Sau V0.16 ĐẠT → Lane B drift-check (hết model-kit? 2-slit còn?) → reveal "hero final" hoặc re-render motion trên hình mới.
+> ⟢ DISPATCH 2026-06-24 #5 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17` (RENDER, 1 lần).**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STEED_REFINE_V0_1.md` (STATUS = AUTHORIZED).
+> Input khoá: `production/character/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16.blend`. CHỈ sửa STEED: đầu → equine (muzzle thuôn, faceless, không màu mới) + chân → có khớp (vai/gối/hock, đế tiếp đất). GIỮ rider/blade/helmet/violet/material/tỉ lệ/pose. Stylized, không realistic. Out: blend + contact (steed head + leg close + hero-crop) + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
+> ✔ DONE: V0.14 (violet) · V0.14B (đèn) · V0.15 (motion→beat reveal+film V0_3) · V0.16 (bevel rider+helmet — chấp nhận; rider tới trần blockout).
+> PARKED (chỉ khi BOOS re-point): re-sculpt rider premium · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
+> Sau V0.17 ĐẠT → Lane B drift-check (steed "ngựa-máy"? rider/violet còn nguyên?) → re-render motion trên mount mới.
 
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```
