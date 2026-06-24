@@ -1,11 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
-> ⟢ DISPATCH 2026-06-24 #3 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15` (RENDER, 1 lần).**
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_MOTION_V0_1.md` (STATUS = AUTHORIZED).
-> Input khoá: `production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend`. Motion Canvas spec: breathing zoom 100→104→100 + light-sweep "awakening" + violet slit pulse (tiết chế). GIỮ geometry/pose/material/violet. Out: 1080×1920 h264/yuv420p 30fps **no audio** ~6–8s + poster + proof. KHÔNG text/logo/warm/flood. CANDIDATE. Dọn frame tạm + `.blend1`, KHÔNG push.
-> ✔ DONE: V0.14 (violet ĐẠT) · V0.14B (đèn/AO khá hơn; material chạm trần — phần "đồ chơi" còn lại là GEOMETRY, chấp nhận cho build-log).
-> PARKED (chỉ khi BOOS re-point): GEOMETRY REFINEMENT (hero final) · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
-> Sau V0.15 ĐẠT → Lane B ghép nhạc PORCELAIN ASCENSION + caption → beat reveal chính.
+> ⟢ DISPATCH 2026-06-24 #4 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16` (RENDER, 1 lần).**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_GEOMETRY_REFINE_V0_1.md` (STATUS = AUTHORIZED).
+> Input khoá: `production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend`. De-toy bằng HÌNH: bevel/bo cạnh nhỏ toàn cục (rider+blade) + helmet về ovoid sạch (faceless, đúng 2 slit). GIỮ silhouette/tỉ lệ/pose/material/violet. Out: blend + contact sheet (helmet close + edge before/after + hero-crop) + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.
+> ✔ DONE: V0.14 (violet) · V0.14B (đèn/AO) · V0.15 (motion — Lane B đã ghép nhạc thành beat reveal + gom vào film V0_3).
+> PARKED (chỉ khi BOOS re-point): steed equine-head + khớp · ghép scene/world monolith · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
+> Sau V0.16 ĐẠT → Lane B drift-check (hết model-kit? 2-slit còn?) → reveal "hero final" hoặc re-render motion trên hình mới.
 
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```
