@@ -1,68 +1,70 @@
-task_id: MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17
+task_id: MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_18
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17
+task_type: MP4_RENDER_ONLY
+current_step: MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_18
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STEED_REFINE_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend
+  - production/character/build_log/LANEA_CODEX_TASK_MOTION_RERENDER_V0_2.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17_PROOF.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_17_gate
+output_folder_allowed: _tmp/mikage_v0_18_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STEED_REFINE_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_GEOMETRY_REFINE_EEVEE_V0_16_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend
+  - production/character/build_log/LANEA_CODEX_TASK_MOTION_RERENDER_V0_2.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17_PROOF.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.17 blend from V0.16 base
-  - refine steed head mesh toward stylized equine muzzle jaw and neck transition only
-  - refine steed leg meshes toward readable stylized joints and hoof contact only
-  - render one V0.17 contact sheet
-  - write V0.17 proof report
+  - render one V0.18 motion MP4 from locked V0.17 blend
+  - use V0.15 motion recipe for camera breathing zoom light sweep and violet slit pulse
+  - create one V0.18 poster PNG
+  - write V0.18 proof report with ffprobe evidence
   - write gate report for verify_output.py
   - run deterministic verification commands
+  - clean temporary frames and blend backups
   - commit local changes only
 
 forbidden_actions:
-  - do not modify rider blade helmet material hex values or violet users
-  - do not change overall mount stance pose rider seating composition or scale
-  - do not add eyes nostrils mouth face details new colors warm flood halo crimson or gold
+  - do not modify geometry pose base materials material hex values or violet users
+  - do not add text lyrics logo watermark audio warm flood halo crimson or gold
   - do not claim canon lock asset lock final pass production ready or public ready
   - do not push
   - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.16 blends
+  - do not overwrite prior V0.1 through V0.17 blends
 
 pass_conditions:
-  - V0.17 derivative blend exists
-  - V0.17 contact sheet exists
-  - V0.17 proof report exists and includes RESULT block
-  - V0.16 base blend remains unmodified
-  - rider blade helmet material slots and transforms are unchanged
-  - violet signal object/material assignment is unchanged from V0.16 to V0.17
-  - no .blend1 file remains for V0.17
+  - V0.18 MP4 exists
+  - V0.18 poster PNG exists
+  - V0.18 proof report exists and includes RESULT block
+  - ffprobe reports h264 1080x1920 yuv420p 30fps no audio and duration about 6 seconds
+  - V0.17 base blend remains unmodified
+  - mesh object count and violet users remain unchanged during render
+  - no temporary frames remain
+  - no .blend1 file remains
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.16 source blend
-  - missing V0.17 task brief
-  - validator or verification command cannot run
+  - missing V0.17 source blend
+  - missing V0.18 task brief
+  - validator verification blender ffmpeg or ffprobe command cannot run
   - unexpected output outside allowed task scope
-  - any rider blade helmet material or violet mutation is needed
-  - .blend1 backup remains after cleanup
+  - any geometry pose base material or violet-user mutation is needed
+  - temporary frames or .blend1 backups remain after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check V0.17 steed refine; then BOOS approval before re-rendered motion on the refined mount.
+next_step_if_pass: Lane B verify V0.18 motion spec and drift-check, then music assembly for beat reveal v2.
 next_step_if_fail: stop and report reason only
