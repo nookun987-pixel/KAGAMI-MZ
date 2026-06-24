@@ -1,11 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
-> ⟢ DISPATCH 2026-06-24 #2 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B` (RENDER, 1 lần).**
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_ANTITOY_MATERIAL_V0_1.md` (STATUS = AUTHORIZED).
-> Input khoá: `production/character/MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14.blend`. Sửa "vẻ đồ chơi": đèn như vật thể (key+fill+rim, hạ blowout, contact shadow) + phá nhựa (grain rõ hơn, roughness biến thiên, chớm hao mòn cạnh/khe). GIỮ nguyên geometry/pose + violet (slit/core/1 seam). Palette canon, KHÔNG đổi hex porcelain, KHÔNG warm/flood. Output = CANDIDATE. Dọn `.blend1`, KHÔNG push.
-> ✔ DONE: `MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14` (violet ĐẠT; anti-toy chưa → task V0.14B này sửa).
-> PARKED (chỉ resume khi BOOS re-point): `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation) — KHÔNG chạy.
-> Sau V0.14B ĐẠT → Lane B crop REVEAL + caption → rồi MOTION V0.15.
+> ⟢ DISPATCH 2026-06-24 #3 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_MOTION_EEVEE_V0_15` (RENDER, 1 lần).**
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_MOTION_V0_1.md` (STATUS = AUTHORIZED).
+> Input khoá: `production/character/MIKAGE_HERO_MOUNT_ANTITOY_EEVEE_V0_14B.blend`. Motion Canvas spec: breathing zoom 100→104→100 + light-sweep "awakening" + violet slit pulse (tiết chế). GIỮ geometry/pose/material/violet. Out: 1080×1920 h264/yuv420p 30fps **no audio** ~6–8s + poster + proof. KHÔNG text/logo/warm/flood. CANDIDATE. Dọn frame tạm + `.blend1`, KHÔNG push.
+> ✔ DONE: V0.14 (violet ĐẠT) · V0.14B (đèn/AO khá hơn; material chạm trần — phần "đồ chơi" còn lại là GEOMETRY, chấp nhận cho build-log).
+> PARKED (chỉ khi BOOS re-point): GEOMETRY REFINEMENT (hero final) · `MIKAGE_CHARACTER_FINAL_BUILD_DERIVATIVE_VALIDATION_REVIEW_V0_1` (rig validation).
+> Sau V0.15 ĐẠT → Lane B ghép nhạc PORCELAIN ASCENSION + caption → beat reveal chính.
 
 ## OPERATOR COLOR CONTRACT — POINTER (merged 2026-06-04)
 ```

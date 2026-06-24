@@ -21,6 +21,7 @@ Neo plan: `MIKAGE_IP_EXECUTION_PLAN_V0_1.md` (30/60/90).
 | **Build-log gather/film + nhạc (24/06)** | **DONE (24/06)** | **PROCESS (chờ chốt đăng)** | ✓ | 2 bản trong `build_log/GATHER_REEL_V0_1/`: (a) `..._GATHER_PORCELAIN_V0_1.mp4` 29s tight cho Shorts/TikTok; (b) `..._FILM_FULL_V0_2.mp4` ~101s gom HẾT (4 clip + **6 episode**×8 slide trên nền void) cho YouTube/FB. Nhạc PORCELAIN ASCENSION (WAV gốc→AAC 1 lần), caption A/B/C |
 | **EPISODE_05 "SKIN & SIGNAL" (tạo mới 24/06)** | **DONE (24/06)** | **PROCESS** | ✓ | Mắt xích còn thiếu EP04(clay)→EP06(nhạc): clay có material V0.13 + violet slit V0.14. 8 slide đúng template + font brand, dùng review V0.13/V0.14 thật. Script `EPISODE_05/build_ep05.py`. Honest: ghi rõ anti-toy còn WIP, candidate |
 | **Drift-check V0.14 (Codex render 24/06)** | n/a | FILE | – | Violet ĐẠT (slit/core/1 seam, tiết chế, hoof hạ cold steel) ✅; anti-toy CHƯA đạt (porcelain còn đọc nhựa/clay sáng — albedo cao + light phẳng) ⚠; geometry giữ nguyên. → CHƯA crop reveal; cần micro-pass material trước |
+| **Drift-check V0.14B anti-toy (Codex 24/06)** | n/a | FILE | – | Đèn/AO/contact-shadow khá hơn ✅, violet+geometry giữ ✅; nhưng VẪN model-kit — gốc giờ là HÌNH KHỐI BLOCKOUT, không phải material → CHẠM TRẦN material. Quyết (operator): (1) chấp nhận look dev + đi MOTION V0.15, hoặc (2) dispatch GEOMETRY REFINEMENT trước reveal. Note: `reviews/..._V0_14B_LANEB_DRIFTCHECK.md` |
 
 ## B. NHẠC / CATALOG (SSOT = MIKAGE_CATALOG_SSOT_RECONCILED_2026-06-23.csv)
 | Mốc | Sản xuất | Public | Caption | Ghi chú |
