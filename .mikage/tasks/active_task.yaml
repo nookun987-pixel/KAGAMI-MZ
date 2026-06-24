@@ -1,36 +1,38 @@
-task_id: MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19
+task_id: MIKAGE_HERO_MOUNT_STEED_CHASSIS_EEVEE_V0_20
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19
+current_step: MIKAGE_HERO_MOUNT_STEED_CHASSIS_EEVEE_V0_20
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STEED_BODY_REFINE_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STEED_CHASSIS_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_19_gate
+output_folder_allowed: _tmp/mikage_v0_20_gate
 output_files_allowed:
   - gate_report.txt
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STEED_BODY_REFINE_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_REFINE_EEVEE_V0_17_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STEED_CHASSIS_V0_1.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.19 blend from V0.17 base
-  - refine steed torso only from smooth blob read into stylized mechanical barrel panels and segments
+  - create derivative V0.20 blend from V0.19 base
+  - refine steed torso only into one continuous faceted barrel chassis with interlocking armor planes
+  - integrate floating side panels into chassis read without changing rider seat
   - preserve rider blade helmet violet material head legs pose scale and rider seating
-  - render one V0.19 contact sheet
-  - write V0.19 proof report
+  - render one V0.20 contact sheet
+  - render one clean V0.20 review crop with no labels or text overlay
+  - write V0.20 proof report
   - write gate report for verify_output.py
   - run deterministic verification commands
   - clean temporary panels and blend backups
@@ -38,34 +40,35 @@ allowed_actions:
 
 forbidden_actions:
   - do not modify rider blade helmet material hex values or violet users
-  - do not modify V0.17 steed head or leg objects
+  - do not modify steed head or leg objects
   - do not change overall mount stance pose rider seating composition or scale
   - do not add realistic detail eyes nostrils mouth face details new colors warm flood halo crimson or gold
   - do not claim canon lock asset lock final pass production ready public ready or mount locked
   - do not push
   - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.18 outputs
+  - do not overwrite prior V0.1 through V0.19 outputs
 
 pass_conditions:
-  - V0.19 derivative blend exists
-  - V0.19 contact sheet exists
-  - V0.19 proof report exists and includes RESULT block
-  - V0.17 base blend remains unmodified
+  - V0.20 derivative blend exists
+  - V0.20 contact sheet exists
+  - V0.20 clean review crop exists with no labels or text overlay
+  - V0.20 proof report exists and includes RESULT block
+  - V0.19 base blend remains unmodified
   - rider blade helmet material slots and transforms are unchanged
-  - V0.17 steed head and leg object transforms material slots and meshes are unchanged
-  - violet signal object/material assignment is unchanged from V0.17 to V0.19
-  - no .blend1 file remains for V0.19
+  - steed head and leg object transforms material slots and meshes are unchanged
+  - violet signal object/material assignment is unchanged from V0.19 to V0.20
+  - no .blend1 file remains for V0.20
   - python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.17 source blend
-  - missing V0.19 task brief
+  - missing V0.19 source blend
+  - missing V0.20 task brief
   - validator or verification command cannot run
   - unexpected output outside allowed task scope
   - any rider blade helmet head leg material or violet mutation is needed
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check V0.19 steed body refine; then BOOS approval before mount lock-for-dev or final motion re-render.
+next_step_if_pass: Lane B drift-check V0.20 and review 3-head round 02 using clean crop; then BOOS decision on lock-for-dev.
 next_step_if_fail: stop and report reason only
