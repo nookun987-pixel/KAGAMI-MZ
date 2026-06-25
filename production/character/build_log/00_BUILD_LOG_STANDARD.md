@@ -47,9 +47,10 @@ same format, same captions updated by one beat. Plus the matching EPISODE_07 car
 if a carousel is wanted. Gate: V1.4 PASS — already met.
 
 ## 5. CLEANUP of the dump (do this, then stop scattering)
-- `D:\MIKAGE ZENITH AUDIO\MIKAGE_FORMATION_LOG\` — **WRONG / delete.** It used the wrong track
-  (ROOT ARCHITECT, not the locked PORCELAIN ASCENSION) and wrong location. Do not extend.
-  Operator: `rmdir /s "D:\MIKAGE ZENITH AUDIO\MIKAGE_FORMATION_LOG"`.
+- The ad-hoc `MIKAGE_FORMATION_LOG` folder in the external audio root (see CLAUDE.md "Local folder
+  truth") is **WRONG / to be removed by the operator.** It used the wrong track (ROOT ARCHITECT,
+  not the locked PORCELAIN ASCENSION) and the wrong location. Do not extend it. (Operator deletes
+  it manually on the local machine — not a repo action.)
 - `FORMATION_REEL_V0_1/` — earlier video attempts, SUPERSEDED by GATHER_REEL film. Keep as archive, don't extend.
 - All future build-log output goes ONLY to `GATHER_REEL_V0_1/` (film/hook) or `EPISODE_NN/` (carousel).
 
