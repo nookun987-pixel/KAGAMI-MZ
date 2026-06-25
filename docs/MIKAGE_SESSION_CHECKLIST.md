@@ -5,7 +5,7 @@
 > Pair with `docs/MIKAGE_SESSION_LESSONS.md` (mistakes already learned — do not repeat).
 
 ## 0. START-OF-SESSION ROUTINE (do in order)
-1. Read `D:\KAGAMI-MZ_SYNC_PUSH_V2\CLAUDE.md` (durable rules).
+1. Read `CLAUDE.md` at the repo root (durable rules; it defines the local folder truth).
 2. Read `docs/handoff/00_LATEST_CODEX_HANDOFF.md` — the CURRENT_NEXT_TASK + dispatch.
 3. Read this checklist + `docs/MIKAGE_SESSION_LESSONS.md`.
 4. Identify the lane (A = character/rig/KAGAMI · B = music/short/public/MIKAGE AUDIO).
@@ -18,10 +18,10 @@ type that already has one. The repeated "dump" came from skipping this.
 - Build-log / making-of? → `production/character/build_log/00_BUILD_LOG_STANDARD.md` is the index.
   Published flagship = GATHER_REEL film (PORCELAIN ASCENSION, Listen now). Do NOT make new
   "FORMATION_LOG / REEL" folders or pick a new track.
-- Short / hook for a track? → `D:\MIKAGE ZENITH AUDIO\MIKAGE_SHORT_HOOK_SYSTEM\00_STANDARD\MIKAGE_SHORT_STANDARD.md`.
+- Short / hook for a track? → the short standard in the external audio root: `MIKAGE_SHORT_HOOK_SYSTEM/00_STANDARD/MIKAGE_SHORT_STANDARD.md`.
 - Anything "public" → mikage-zenith-design skill is authoritative (void/porcelain/violet-signal, Cinzel/Shippori/Space Mono).
 
-## 2. LANE A — character / rig (repo: D:\KAGAMI-MZ_SYNC_PUSH_V2)
+## 2. LANE A — character / rig (this repo)
 | Task | Standard / source of truth | Notes |
 |---|---|---|
 | Do the next rig milestone | handoff `CURRENT_NEXT_TASK` + `.mikage/tasks/active_task.yaml` | Only this task. Codex runs Blender, not me. |
@@ -29,7 +29,7 @@ type that already has one. The repeated "dump" came from skipping this.
 | Verify a Codex result | physically: files exist + ffprobe mp4 + PNG dims | Can't verify git commit from sandbox (worktree .git on Windows). NEVER mark PASS/canon. |
 | Build-log film / episode | `production/character/build_log/00_BUILD_LOG_STANDARD.md` | Flagship FILM = GATHER_REEL. Music PORCELAIN ASCENSION from 0:00. Local-script build. |
 
-## 3. LANE B — music / short / public (root: D:\MIKAGE ZENITH AUDIO)
+## 3. LANE B — music / short / public (external audio root — see CLAUDE.md Local folder truth)
 | Task | Standard / source of truth | Notes |
 |---|---|---|
 | Hook audio cut | MIKAGE_SHORT_STANDARD §D | 3-4 segs ~28s from WAV master, 24-bit/48k. |
