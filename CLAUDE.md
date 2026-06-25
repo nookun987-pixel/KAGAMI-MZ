@@ -14,8 +14,13 @@
 
 ## Start here — every session
 1. Read `docs/handoff/00_LATEST_CODEX_HANDOFF.md` FIRST.
-2. Do ONLY the `CURRENT_NEXT_TASK` in that handoff. Nothing else.
-3. If the handoff is missing or ambiguous, STOP and ask the operator. Do not guess a task.
+2. Read `docs/MIKAGE_SESSION_CHECKLIST.md` (per-lane task formats + which standard governs each)
+   and `docs/MIKAGE_SESSION_LESSONS.md` (mistakes already learned — do not repeat). Append a new
+   lessons entry at the end of each session.
+3. Do ONLY the `CURRENT_NEXT_TASK` in that handoff. Nothing else.
+4. Before building any public/build-log asset, CHECK the existing published source + its standard
+   first (e.g. `production/character/build_log/00_BUILD_LOG_STANDARD.md`). Extend; never reinvent.
+5. If the handoff is missing or ambiguous, STOP and ask the operator. Do not guess a task.
 
 ## Two active operator lanes
 - Lane A = system / build / control / character rig pipeline.
