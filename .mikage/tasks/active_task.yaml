@@ -1,11 +1,12 @@
 task_id: MIKAGE_HERO_MOUNT_GAIT_V1_4
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: FOUR_STEP_MECHANICAL_GAIT_PROOF
+task_type: MP4_RENDER_ONLY
 current_step: MIKAGE_HERO_MOUNT_GAIT_V1_4
 # Dispatched by operator (BOOS) 2026-06-25 #10 via Lane B coordination.
-# Issued by GPT review after V1.3A; governance-validated by Lane B before gating.
-# V1.3A = ACCEPTED_FOR_OPERATOR_REVIEW (binding accepted for continued rig testing).
-# Output stays CANDIDATE. No canon-lock, no PASS claim, no push.
+# Gate mirrors the V0.20 pattern: verify_output.py polices ONLY the dedicated temp
+# gate folder (must contain just gate_report.txt). The four real V1.4 deliverables
+# are produced into production/character per the brief and reviewed by operator/Lane B.
+# V1.3A = ACCEPTED_FOR_OPERATOR_REVIEW. Output stays CANDIDATE. No canon-lock, no PASS, no push.
 
 input_files_allowed:
   - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend
@@ -16,12 +17,10 @@ input_files_allowed:
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: production/character
+output_folder_allowed: _tmp/mikage_v1_4_gait_gate
 output_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_REPORT.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_PROOF.mp4
+  - gate_report.txt
+  - .gitkeep
 
 read_only_files:
   - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend
@@ -31,6 +30,14 @@ read_only_files:
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
+
+# Real deliverables produced into production/character (governed by the brief, not by
+# verify_output.py which only checks the gate folder above):
+real_deliverables:
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_REPORT.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_PROOF.mp4
 
 allowed_actions:
   - create V1.4 gait-proof derivative blend from V1.3A binding-fixed base
@@ -42,9 +49,10 @@ allowed_actions:
   - keep rider, seat and docked Zenith Blade attached with no drift
   - keep all visible panels following their assigned rigid assemblies
   - add new controls ONLY if strictly required for stable foot planting, and document each addition
-  - render one V1.4 gait contact sheet (3600x1800, six labelled-by-phase panels)
-  - render one V1.4 gait proof mp4 (1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio, no on-screen text)
-  - write the V1.4 gait report with the required final-report fields
+  - render one V1.4 gait contact sheet (3600x1800, six labelled-by-phase panels) into production/character/reviews
+  - render one V1.4 gait proof mp4 (1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio, no on-screen text) into production/character/reviews
+  - write the V1.4 gait report with the required final-report fields into production/character/reviews
+  - write gate_report.txt into _tmp/mikage_v1_4_gait_gate for verify_output.py
   - run deterministic verification (Blender reopen, frame evaluation, mesh fingerprint, world-transform sampling, ffprobe, png dimension)
   - clean .blend1 backups
   - commit local changes only
@@ -82,6 +90,7 @@ pass_conditions:
   - contact sheet is exactly 3600x1800 with the six required phase panels
   - mp4 is 1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio
   - no .blend1 backup remains for V1.4
+  - gate_report.txt written and python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
 stop_conditions:
