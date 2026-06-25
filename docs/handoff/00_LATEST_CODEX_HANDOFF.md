@@ -1,3 +1,12 @@
+# MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
+
+> DISPATCH 2026-06-25 #11 (BOOS): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_V1_5` - Two-Cycle Continuous Mechanical Gait Proof.**
+> Baseline: commit `d45ccc4`; input `production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend`. V1.4 four-step world-space gait proof = PASS.
+> Task name: `MIKAGE HERO MOUNT V1.5 - TWO-CYCLE CONTINUOUS MECHANICAL GAIT PROOF`. Gate: `.mikage/tasks/active_task.yaml`.
+> Goal: two continuous mechanical gait cycles (192f@24fps, crawl gait >=3 feet grounded) with no geometry/binding edit, no accumulated foot slide, no phase-reset jump between frames 80-81, no drift, no major intersection.
+> Output 4 files: continuous gait blend + continuous gait report + contact sheet (3600x1800) + proof mp4 (1920x1080, 24fps, 192f, H264, yuv420p, no audio, no text).
+> GUARD: keep V1.4 geometry/binding/two violet slits/blade dock/chassis/palette/world-static references; no combat/weapon draw/VFX/run/jump/turn/terrain test/camera move; no new violet; no new controls unless an actual blocker is proven first; local commit only; NO push; NO .blend1.
+> NEXT after V1.5: Lane B drift-check + BOOS review of continuous gait evidence -> PASS/HOLD + push decision.
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
 > ⟢ DISPATCH 2026-06-25 #10 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_GAIT_V1_4` — Four-Step Mechanical Gait Proof.**

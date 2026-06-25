@@ -1,17 +1,17 @@
-task_id: MIKAGE_HERO_MOUNT_GAIT_V1_4
+task_id: MIKAGE_HERO_MOUNT_V1_5
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_HERO_MOUNT_GAIT_V1_4
-# Dispatched by operator (BOOS) 2026-06-25 #10 via Lane B coordination.
+current_step: MIKAGE_HERO_MOUNT_V1_5
+# Dispatched by operator (BOOS) 2026-06-25 #11.
 # Gate mirrors the V0.20 pattern: verify_output.py polices ONLY the dedicated temp
-# gate folder (must contain just gate_report.txt). The four real V1.4 deliverables
+# gate folder (must contain just gate_report.txt). The four real V1.5 deliverables
 # are produced into production/character per the brief and reviewed by operator/Lane B.
-# V1.3A = ACCEPTED_FOR_OPERATOR_REVIEW. Output stays CANDIDATE. No canon-lock, no PASS, no push.
+# Baseline commit d45ccc4. V1.4 four-step world-space gait proof = PASS.
+# Output stays CANDIDATE. No canon-lock, no PASS, no push.
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_3A_BINDING_AUDIT.md
-  - production/character/build_log/LANEA_CODEX_TASK_HERO_MOUNT_GAIT_V1_4.md
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_REPORT.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
@@ -23,9 +23,8 @@ output_files_allowed:
   - .gitkeep
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_3A_BINDING_AUDIT.md
-  - production/character/build_log/LANEA_CODEX_TASK_HERO_MOUNT_GAIT_V1_4.md
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_REPORT.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
@@ -34,24 +33,24 @@ read_only_files:
 # Real deliverables produced into production/character (governed by the brief, not by
 # verify_output.py which only checks the gate folder above):
 real_deliverables:
-  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_REPORT.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_PROOF.mp4
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_5_CONTINUOUS_GAIT_PROOF.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_REPORT.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_PROOF.mp4
 
 allowed_actions:
-  - create V1.4 gait-proof derivative blend from V1.3A binding-fixed base
-  - animate one 96-frame 24fps slow heavy mechanical four-leg walk (crawl gait, >=3 feet grounded per step)
+  - create V1.5 continuous-gait derivative blend from V1.4 gait-proof base
+  - animate one 192-frame 24fps slow heavy mechanical two-cycle four-leg walk
   - keep at least three feet grounded during each individual leg step
   - keep each planted foot fixed in world space until its own lift phase
-  - lift, clear, advance and forward-plant each of the four feet in the order FL, RR, FR, RL
-  - progress the chassis forward via weight transfer without bouncing
+  - lift, clear, advance and forward-plant each foot twice in the order FL, RR, FR, RL, FL, RR, FR, RL
+  - progress the chassis forward continuously with no cycle-transition jump
   - keep rider, seat and docked Zenith Blade attached with no drift
   - keep all visible panels following their assigned rigid assemblies
-  - add new controls ONLY if strictly required for stable foot planting, and document each addition
-  - render one V1.4 gait contact sheet (3600x1800, six labelled-by-phase panels) into production/character/reviews
-  - render one V1.4 gait proof mp4 (1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio, no on-screen text) into production/character/reviews
-  - write the V1.4 gait report with the required final-report fields into production/character/reviews
+  - do not add new controls unless an actual blocker is proven first
+  - render one V1.5 continuous gait contact sheet (3600x1800, labelled panels) into production/character/reviews
+  - render one V1.5 continuous gait proof mp4 (1920x1080, 24fps, 192 frames, H.264, yuv420p, no audio, no on-screen text) into production/character/reviews
+  - write the V1.5 continuous gait report with the required final-report fields into production/character/reviews
   - write gate_report.txt into _tmp/mikage_v1_4_gait_gate for verify_output.py
   - run deterministic verification (Blender reopen, frame evaluation, mesh fingerprint, world-transform sampling, ffprobe, png dimension)
   - clean .blend1 backups
@@ -59,7 +58,7 @@ allowed_actions:
 
 forbidden_actions:
   - do not remodel or edit any visible geometry mesh
-  - do not change V1.3A binding categories or control assignments
+  - do not change V1.4 geometry, binding categories or control assignments
   - do not change rider proportions, helmet, or the exactly two violet slits
   - do not change Zenith Blade docked binding
   - do not change main chassis or lower-structure design, palette, or violet placement
@@ -68,28 +67,29 @@ forbidden_actions:
   - do not create a gallop or fast run
   - do not hide foot slide by changing camera framing
   - do not add new violet objects or materials
-  - do not add controls for anything other than stable foot planting
+  - do not add new controls unless separately approved after a proven blocker
   - do not claim canon lock, asset lock, final pass, production ready, public ready, or mount locked
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
 
 pass_conditions:
-  - all four feet complete their required step (FL, RR, FR, RL)
-  - planted-foot world slide is effectively zero during each support phase
+  - all eight steps complete their required sequence across two cycles
+  - planted-foot world slide is effectively zero during every support phase
   - every moving foot clears the ground and replants forward of its previous world position
-  - chassis advances measurably relative to static world references
+  - no visible jump or phase reset between frames 80 and 81
+  - chassis advances continuously relative to static world references
   - rider, seat and docked weapon remain attached with no drift
   - no major armor intersection
   - no geometry edits were required
-  - frame 96 ends in a mechanically stable pose
+  - frame 192 ends in a mechanically stable neutral-compatible settled pose
   - original visible mesh fingerprints unchanged
   - environment objects bound to mount = 0
   - world-static reference transforms unchanged
-  - V1.4 blend reopens and plays back frames 1-96 after reopen
-  - contact sheet is exactly 3600x1800 with the six required phase panels
-  - mp4 is 1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio
-  - no .blend1 backup remains for V1.4
+  - V1.5 blend reopens and plays back frames 1-192 after reopen
+  - contact sheet is exactly 3600x1800
+  - mp4 is 1920x1080, 24fps, 192 frames, H.264, yuv420p, no audio
+  - no .blend1 backup remains for V1.5
   - gate_report.txt written and python .mikage\tools\verify_output.py prints PASS
   - output remains CANDIDATE only
 
@@ -97,11 +97,12 @@ stop_conditions:
   - any support foot must slide for the sequence to work
   - world-static references must move
   - a leg cannot complete its step within existing rotation limits
+  - a cycle-transition discontinuity is required for the sequence to work
   - rider, weapon, or visible panels drift
   - geometry changes are required
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check + operator review of four-step gait evidence (contact sheet + mp4 + report); then BOOS decides PASS/HOLD and whether to authorize push.
+next_step_if_pass: Lane B drift-check + operator review of V1.5 two-cycle gait evidence; then BOOS decides PASS/HOLD and whether to authorize push.
 next_step_if_fail: stop and report BLOCKER reason only

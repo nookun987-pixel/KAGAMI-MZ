@@ -40,11 +40,20 @@ The FILM and the EPISODE carousels tell the SAME arc. Keep them in sync.
 | — | THE FIRST FORM (film) | full reveal, 2D→form | PUBLISHED as FILM_FULL_V0_3 |
 | **07** | **It Learns to Walk** | **V1.4 four-step gait (PASS 2026-06-25)** | **NEXT** |
 
-## 4. NEXT deliverable (the only build-log work queued)
-**`MIKAGE_BUILDLOG_FILM_FULL_V0_4`** = V0_3 film + one new closing chapter **"IT LEARNS TO WALK"**
-(the V1.4 gait footage, graded dark to sit on void). Same music (PORCELAIN ASCENSION from 0:00),
-same format, same captions updated by one beat. Plus the matching EPISODE_07 carousel (8 slides)
-if a carousel is wanted. Gate: V1.4 PASS — already met.
+## 4. SCOPE RULE (the one that was missing — read it)
+A build-log entry covers **ONLY the NEW milestones produced in that session/day.**
+- **NEVER re-bundle already-published chapters.** The 2D→form story is already published
+  (`FILM_FULL_V0_3`) — leave it. Do not append to it or retell it.
+- Each session's PASSed work = its OWN new build-log entry, in the SAME editorial format
+  (void black, Cinzel chapter titles, framed render, Space Mono caption, PORCELAIN ASCENSION
+  from 0:00 for the reel, PROTOTYPE / NOT CANON-LOCKED).
+- Naming: `MIKAGE_BUILDLOG_<TOPIC>_V0_N` (new file per session), not a re-edit of the published film.
+
+### Queued now (today's NEW milestones only)
+- V0.8 RIDER DETAIL (rider seat / body panels / hero crop — PASS, commit 386dd44)
+- V1.4 GAIT — "It Learns to Walk" (PASS)
+→ one new build-log entry covering just these two, editorial format. Do NOT re-include the
+published 2D→form chapters.
 
 ## 5. CLEANUP of the dump (do this, then stop scattering)
 - The ad-hoc `MIKAGE_FORMATION_LOG` folder in the external audio root (see CLAUDE.md "Local folder
