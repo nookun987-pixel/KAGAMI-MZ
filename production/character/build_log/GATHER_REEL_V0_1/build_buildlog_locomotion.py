@@ -24,7 +24,7 @@ MUSIC = os.path.join(AUDIO, "LIVE", "06. PORCELAIN ASCENSION", "1_MASTER", "PORC
 OUT   = os.path.join(HERE, "MIKAGE_BUILDLOG_LOCOMOTION_V0_1.mp4")
 OUT_HOOK = os.path.join(HERE, "MIKAGE_BUILDLOG_LOCOMOTION_V0_1_HOOK.mp4")
 
-W,H,FR = 1080,1920,30
+W,H,FR = 1080,1920,24   # match the 24fps gait renders so motion plays smooth 1:1 (no frame-dup judder)
 VOID=(5,5,8); PORC=(242,238,234); SIL=(150,150,168); VIOLET=(143,0,255)
 CIN7=lambda s:ImageFont.truetype(os.path.join(FONTS,"cinzel700.ttf"),s)
 CIN4=lambda s:ImageFont.truetype(os.path.join(FONTS,"cinzel400.ttf"),s)
@@ -76,8 +76,8 @@ def clip_image(src, label, secs, w, out):
     for cx,cy in [(x0,y0),(x1,y0),(x0,y1),(x1,y1)]:
         d.line([cx-18,cy,cx+18,cy],fill=(130,126,140),width=1); d.line([cx,cy-18,cx,cy+18],fill=(130,126,140),width=1)
     base_png=os.path.join(w,"img.png"); grain(cv,3).save(base_png)
-    sh(["ffmpeg","-y","-v","error","-loop","1","-t",str(secs),"-i",base_png,"-i",ov,
-        "-filter_complex","[0:v][1:v]overlay=0:0:shortest=1,format=yuv420p","-r",str(FR),
+    sh(["ffmpeg","-y","-v","error","-loop","1","-t",str(secs),"-i",base_png,"-loop","1","-i",ov,
+        "-filter_complex","[0:v][1:v]overlay=0:0:shortest=1,format=yuv420p","-t",str(secs),"-r",str(FR),
         "-c:v","libx264","-preset","medium","-crf","19",out])
 
 def clip_footage(src, label, slow, w, out):
@@ -100,15 +100,19 @@ def main():
         # ch1 rider
         t1=os.path.join(w,"t1.png"); card(t1,"01  ·  THE RIDER","RIDER DETAIL","porcelain seat · two slits · one violet trace")
         st1=os.path.join(w,"st1.mp4"); sh(["ffmpeg","-y","-v","error","-loop","1","-t","2.4","-i",t1,"-vf","scale=1080:1920,format=yuv420p","-r",str(FR),"-c:v","libx264","-preset","medium","-crf","19",st1]); seg.append(st1)
-        sc1=os.path.join(w,"sc1.mp4"); clip_image(RIDER,"RIDER DETAIL",4.0,w,sc1); seg.append(sc1)
+        # rider chapter image = clean neutral mount+rider (V1.5 frame 1, graded) — not the technical contact sheet
+        rider_png=os.path.join(w,"rider.png")
+        sh(["ffmpeg","-y","-v","error","-i",CONT,"-frames:v","1",
+            "-vf","eq=brightness=-0.13:contrast=1.26:gamma=0.9,colorbalance=bs=0.06:bm=0.03",rider_png])
+        sc1=os.path.join(w,"sc1.mp4"); clip_image(rider_png,"RIDER · MOUNT",4.0,w,sc1); seg.append(sc1)
         # ch2 first gait (V1.4)
         t2=os.path.join(w,"t2.png"); card(t2,"02  ·  FIRST STEPS","IT LEARNS TO WALK","four steps · the ground held")
         st2=os.path.join(w,"st2.mp4"); sh(["ffmpeg","-y","-v","error","-loop","1","-t","2.4","-i",t2,"-vf","scale=1080:1920,format=yuv420p","-r",str(FR),"-c:v","libx264","-preset","medium","-crf","19",st2]); seg.append(st2)
-        sc2=os.path.join(w,"sc2.mp4"); clip_footage(GAIT,"IT LEARNS TO WALK","2.6",w,sc2); seg.append(sc2)
+        sc2=os.path.join(w,"sc2.mp4"); clip_footage(GAIT,"IT LEARNS TO WALK","1.0",w,sc2); seg.append(sc2)
         # ch3 continuous gait (V1.5) — climax
         t3=os.path.join(w,"t3.png"); card(t3,"03  ·  IT KEEPS WALKING","CONTINUOUS GAIT","two cycles · zero slide · it keeps moving")
         st3=os.path.join(w,"st3.mp4"); sh(["ffmpeg","-y","-v","error","-loop","1","-t","2.4","-i",t3,"-vf","scale=1080:1920,format=yuv420p","-r",str(FR),"-c:v","libx264","-preset","medium","-crf","19",st3]); seg.append(st3)
-        sc3=os.path.join(w,"sc3.mp4"); clip_footage(CONT,"CONTINUOUS GAIT","1.6",w,sc3); seg.append(sc3)
+        sc3=os.path.join(w,"sc3.mp4"); clip_footage(CONT,"CONTINUOUS GAIT","1.0",w,sc3); seg.append(sc3)
         # end card
         e=os.path.join(w,"e.png"); card(e,"MIKAGE ZENITH","FORMATION","Listen now  —  PORCELAIN ASCENSION")
         se=os.path.join(w,"se.mp4"); sh(["ffmpeg","-y","-v","error","-loop","1","-t","3.0","-i",e,"-vf","scale=1080:1920,format=yuv420p","-r",str(FR),"-c:v","libx264","-preset","medium","-crf","19",se]); seg.append(se)
