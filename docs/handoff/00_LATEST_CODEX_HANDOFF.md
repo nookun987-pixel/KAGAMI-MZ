@@ -1,5 +1,21 @@
 # MIKAGE / CHARACTER RIG PIPELINE — CURRENT HANDOFF
 
+> ⟢ DISPATCH 2026-06-25 #10 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_GAIT_V1_4` — Four-Step Mechanical Gait Proof.**
+> Nguồn: GPT review sau V1.3A giao task; Lane B đã soát khớp governance rồi mới set gate.
+> Input: `production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend` + `reviews/MIKAGE_HERO_MOUNT_V1_3A_BINDING_AUDIT.md`. Brief: `production/character/build_log/LANEA_CODEX_TASK_HERO_MOUNT_GAIT_V1_4.md`. Gate: `.mikage/tasks/active_task.yaml` đã cập nhật.
+> Mục tiêu: 1 chuỗi đi bộ cơ khí 4 chân (96f@24fps, crawl gait ≥3 chân chạm đất) — KHÔNG đổi geometry, KHÔNG trượt chân tích luỹ, KHÔNG drift, KHÔNG đâm xuyên lớn.
+> Output 4 file: gait-proof blend + gait report + contact sheet (3600×1800, 6 panel theo phase) + proof mp4 (1920×1080·24fps·96f·H264·yuv420p·no-audio·no-text).
+> GUARD: giữ geometry/binding V1.3A/2 khe violet/blade dock/chassis/palette/world-static · không gallop/combat/VFX/camera move · không thêm violet · thêm control CHỈ để foot-plant (ghi log) · KHÔNG push · KHÔNG .blend1 · local commit only. FAIL→STOP nếu phải cho chân trượt / phải dời world-static / chân vượt rotation limit / drift / cần sửa geometry.
+> V1.3A = `ACCEPTED_FOR_OPERATOR_REVIEW` (binding chấp nhận cho test rig tiếp; chưa canon-lock/PASS). NEXT sau V1.4: Lane B drift-check + BOOS review bằng chứng gait → PASS/HOLD + có push hay không.
+
+> ⟢ DISPATCH 2026-06-25 #9 (BOOS, hợp thức hoá qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_BINDING_V1_3A` (binding-isolation + world-space locomotion test).**
+> V0.20 STEED CHASSIS = **PARKED** (chưa thực thi — gate cũ giữ lại để resume sau).
+> Lý do: Codex đã thực thi V1.3A và commit local `9208ab2` (PUSH=no) trước khi có gate khớp; operator chốt hợp thức hoá V1.3A. `active_task.yaml` + brief đã cập nhật theo V1.3A.
+> Input base: `production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3_BOUND_RIG.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_HERO_MOUNT_BINDING_V1_3A.md`.
+> Output V1.3A (4 file): binding-fixed blend + binding audit + worldspace contact sheet (3600×1800) + locomotion test mp4 (1920×1080·24fps·48f·H264·yuv420p·no-audio).
+> Lane B điều phối đã xác minh: 4 file tồn tại; MP4 + contact khớp báo cáo. **CHƯA xác minh được commit/clean** (worktree `.git` nằm trên ổ Windows, sandbox không mount). **Rig quality CHƯA được coordinator xác nhận — KHÔNG canon-lock, KHÔNG PASS.**
+> TRẠNG THÁI: `ACCEPTED_FOR_OPERATOR_REVIEW`. NEXT: BOOS review bằng chứng world-space foot-plant (audit + contact + mp4) → chốt PASS/HOLD + có cho push hay không.
+
 > ⟢ DISPATCH 2026-06-24 #8 (BOOS qua Lane B): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_STEED_CHASSIS_EEVEE_V0_20` (RENDER, 1 lần).**
 > Brief: `production/character/build_log/LANEA_CODEX_TASK_STEED_CHASSIS_V0_1.md` (STATUS = AUTHORIZED).
 > Nguồn: REVIEW 3-ĐẦU round 01 (Lane B+GPT+Gemini) — đồng thuận. Input khoá: `production/character/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19.blend`. Thay 2 khối ovoid (ngực/hông) → MỘT barrel chassis liền faceted (2–3 mảng giáp lồng nhau), tích hợp panel "lửng lơ", bỏ profile blob. GIỮ rider/blade/helmet/violet/material/đầu/chân/tỉ lệ/chỗ rider ngồi. Out: blend + contact + **1 crop SẠCH không nhãn** (cho review) + proof. KHÔNG canon-lock/PASS. Dọn `.blend1`, KHÔNG push.

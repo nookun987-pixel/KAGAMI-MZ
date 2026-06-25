@@ -1,74 +1,98 @@
-task_id: MIKAGE_HERO_MOUNT_STEED_CHASSIS_EEVEE_V0_20
+task_id: MIKAGE_HERO_MOUNT_GAIT_V1_4
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_HERO_MOUNT_STEED_CHASSIS_EEVEE_V0_20
+task_type: FOUR_STEP_MECHANICAL_GAIT_PROOF
+current_step: MIKAGE_HERO_MOUNT_GAIT_V1_4
+# Dispatched by operator (BOOS) 2026-06-25 #10 via Lane B coordination.
+# Issued by GPT review after V1.3A; governance-validated by Lane B before gating.
+# V1.3A = ACCEPTED_FOR_OPERATOR_REVIEW (binding accepted for continued rig testing).
+# Output stays CANDIDATE. No canon-lock, no PASS claim, no push.
 
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STEED_CHASSIS_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_3A_BINDING_AUDIT.md
+  - production/character/build_log/LANEA_CODEX_TASK_HERO_MOUNT_GAIT_V1_4.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_v0_20_gate
+output_folder_allowed: production/character
 output_files_allowed:
-  - gate_report.txt
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_REPORT.md
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_4_GAIT_PROOF.mp4
 
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STEED_CHASSIS_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_MOUNT_STEED_BODY_REFINE_EEVEE_V0_19_PROOF.md
+  - production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_3A_BINDING_FIXED.blend
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_3A_BINDING_AUDIT.md
+  - production/character/build_log/LANEA_CODEX_TASK_HERO_MOUNT_GAIT_V1_4.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 allowed_actions:
-  - create derivative V0.20 blend from V0.19 base
-  - refine steed torso only into one continuous faceted barrel chassis with interlocking armor planes
-  - integrate floating side panels into chassis read without changing rider seat
-  - preserve rider blade helmet violet material head legs pose scale and rider seating
-  - render one V0.20 contact sheet
-  - render one clean V0.20 review crop with no labels or text overlay
-  - write V0.20 proof report
-  - write gate report for verify_output.py
-  - run deterministic verification commands
-  - clean temporary panels and blend backups
+  - create V1.4 gait-proof derivative blend from V1.3A binding-fixed base
+  - animate one 96-frame 24fps slow heavy mechanical four-leg walk (crawl gait, >=3 feet grounded per step)
+  - keep at least three feet grounded during each individual leg step
+  - keep each planted foot fixed in world space until its own lift phase
+  - lift, clear, advance and forward-plant each of the four feet in the order FL, RR, FR, RL
+  - progress the chassis forward via weight transfer without bouncing
+  - keep rider, seat and docked Zenith Blade attached with no drift
+  - keep all visible panels following their assigned rigid assemblies
+  - add new controls ONLY if strictly required for stable foot planting, and document each addition
+  - render one V1.4 gait contact sheet (3600x1800, six labelled-by-phase panels)
+  - render one V1.4 gait proof mp4 (1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio, no on-screen text)
+  - write the V1.4 gait report with the required final-report fields
+  - run deterministic verification (Blender reopen, frame evaluation, mesh fingerprint, world-transform sampling, ffprobe, png dimension)
+  - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not modify rider blade helmet material hex values or violet users
-  - do not modify steed head or leg objects
-  - do not change overall mount stance pose rider seating composition or scale
-  - do not add realistic detail eyes nostrils mouth face details new colors warm flood halo crimson or gold
-  - do not claim canon lock asset lock final pass production ready public ready or mount locked
+  - do not remodel or edit any visible geometry mesh
+  - do not change V1.3A binding categories or control assignments
+  - do not change rider proportions, helmet, or the exactly two violet slits
+  - do not change Zenith Blade docked binding
+  - do not change main chassis or lower-structure design, palette, or violet placement
+  - do not move the ground, background, or world-space reference markers
+  - do not add combat, weapon draw, enemy, VFX, or camera motion
+  - do not create a gallop or fast run
+  - do not hide foot slide by changing camera framing
+  - do not add new violet objects or materials
+  - do not add controls for anything other than stable foot planting
+  - do not claim canon lock, asset lock, final pass, production ready, public ready, or mount locked
   - do not push
-  - do not touch website roster queue Z-Blue archive history audio or external services
-  - do not overwrite prior V0.1 through V0.19 outputs
+  - do not modify unrelated files
+  - do not leave any .blend1 backup
 
 pass_conditions:
-  - V0.20 derivative blend exists
-  - V0.20 contact sheet exists
-  - V0.20 clean review crop exists with no labels or text overlay
-  - V0.20 proof report exists and includes RESULT block
-  - V0.19 base blend remains unmodified
-  - rider blade helmet material slots and transforms are unchanged
-  - steed head and leg object transforms material slots and meshes are unchanged
-  - violet signal object/material assignment is unchanged from V0.19 to V0.20
-  - no .blend1 file remains for V0.20
-  - python .mikage\tools\verify_output.py prints PASS
+  - all four feet complete their required step (FL, RR, FR, RL)
+  - planted-foot world slide is effectively zero during each support phase
+  - every moving foot clears the ground and replants forward of its previous world position
+  - chassis advances measurably relative to static world references
+  - rider, seat and docked weapon remain attached with no drift
+  - no major armor intersection
+  - no geometry edits were required
+  - frame 96 ends in a mechanically stable pose
+  - original visible mesh fingerprints unchanged
+  - environment objects bound to mount = 0
+  - world-static reference transforms unchanged
+  - V1.4 blend reopens and plays back frames 1-96 after reopen
+  - contact sheet is exactly 3600x1800 with the six required phase panels
+  - mp4 is 1920x1080, 24fps, 96 frames, H.264, yuv420p, no audio
+  - no .blend1 backup remains for V1.4
   - output remains CANDIDATE only
 
 stop_conditions:
-  - missing V0.19 source blend
-  - missing V0.20 task brief
+  - any support foot must slide for the sequence to work
+  - world-static references must move
+  - a leg cannot complete its step within existing rotation limits
+  - rider, weapon, or visible panels drift
+  - geometry changes are required
   - validator or verification command cannot run
-  - unexpected output outside allowed task scope
-  - any rider blade helmet head leg material or violet mutation is needed
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check V0.20 and review 3-head round 02 using clean crop; then BOOS decision on lock-for-dev.
-next_step_if_fail: stop and report reason only
+next_step_if_pass: Lane B drift-check + operator review of four-step gait evidence (contact sheet + mp4 + report); then BOOS decides PASS/HOLD and whether to authorize push.
+next_step_if_fail: stop and report BLOCKER reason only
