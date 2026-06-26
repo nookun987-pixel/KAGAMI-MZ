@@ -687,9 +687,15 @@ The agent must not say PASS unless the success check has visible evidence.
     ComfyUI with 1660-safe flags (`--use-pytorch-cross-attention --preview-method latent2rgb
     --reserve-vram 0.4`; do NOT force fp16), then render within the prompt-tuning budget above.
     (Create the `checkpoints` / `vae` folders if missing.)
-  - MODEL downloads still NOT granted beyond the two Phase-1 files (IP-Adapter SD1.5, CLIP vision,
-    ControlNet aux/models): LIST them for separate operator approval. (Pip/runtime deps above are
-    the only exception.)
+  - CHECKPOINT-SWAP DOWNLOAD GRANTED (operator-approved 2026-06-26): Realistic Vision is too
+    human-biased for a faceless object. Codex MAY download ONE additional SD1.5 checkpoint:
+    `DreamShaper 8` (SD1.5, pruned fp16 `.safetensors`, ~2 GB) into
+    `D:\workspace\ComfyUI\models\checkpoints\`, from Hugging Face (e.g. `Lykon/dreamshaper-8` or
+    `Lykon/DreamShaper`). If that exact file is unavailable, pick another versatile/object-capable
+    SD1.5 checkpoint and state which. Keep Realistic Vision on disk too.
+  - MODEL downloads still NOT granted beyond the files named above (IP-Adapter SD1.5, CLIP vision,
+    ControlNet aux/models): LIST them for separate operator approval. (Pip/runtime deps + the one
+    DreamShaper checkpoint above are the only exceptions.)
   - No `D:\MIKAGE ZENITH AUDIO` changes. No website/public/audio/short/release changes.
   - No canon-lock. No asset-lock. No final / production-ready / PASS / verified claim.
     No push. No deploy. SAMPLE label on all outputs. Candidate/test only.
