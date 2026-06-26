@@ -1,63 +1,59 @@
-task_id: MIKAGE_HELMET_HEAD_LOOKDEV_V0_1
+task_id: MIKAGE_RIDER_SOLO_LOOKDEV_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: BLEND_HEAD_LOOKDEV_RENDER
-current_step: MIKAGE_HELMET_HEAD_LOOKDEV_V0_1
-# Dispatched by operator (BOOS) 2026-06-26 #12.
-# Reason: AI 2D elevation of the blockout caps at "clay"; the HEAD needs a real Blender lookdev.
-# WARNING: unlike every prior gate, THIS task DELIBERATELY edits HELMET HEAD geometry
-#   (reshape proportions, rebuild facets, recess the two slits) — operator-authorized,
-#   HEAD ONLY. Body / armor-below-neck / mount / rig / blade stay untouched.
-# V1.5 gait (dispatch #11) = PARKED, resume after head lookdev passes.
+task_type: BLEND_RELIGHT_MATERIAL_RENDER
+current_step: MIKAGE_RIDER_SOLO_LOOKDEV_V0_1
+# Dispatched by operator (BOOS) 2026-06-26 #13.
+# Reason: head V2 lookdev landed; extend the proven method (Blender form -> relight + glazed
+#   material -> cinematic render) to the SOLO RIDER full body.
+# RELIGHT + MATERIAL ONLY. NO geometry / silhouette / rig / pose / framing change.
+# Head on the rider is the OLD head this pass; grafting the V2 head is the NEXT task.
 # Output stays CANDIDATE. No canon-lock, no PASS, no push.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_HELMET_HEAD_LOOKDEV_V0_1.md
+  - production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend
+  - production/character/build_log/LANEA_CODEX_TASK_RIDER_SOLO_LOOKDEV_V0_1.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_helmet_head_lookdev_gate
+output_folder_allowed: _tmp/mikage_rider_solo_lookdev_gate
 output_files_allowed:
   - gate_report.txt
   - .gitkeep
 
 read_only_files:
+  - production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-# Real deliverables produced into production/character (governed by the brief, not by
-# verify_output.py which only checks the gate folder above):
 real_deliverables:
-  - production/character/MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend
-  - production/character/reviews/MIKAGE_HELMET_HEAD_LOOKDEV_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_HELMET_HEAD_LOOKDEV_V0_1_PROOF.md
+  - production/character/MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend
+  - production/character/reviews/MIKAGE_RIDER_SOLO_LOOKDEV_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_RIDER_SOLO_LOOKDEV_V0_1_PROOF.md
 
 allowed_actions:
-  - create a new head-lookdev derivative blend from the HERO_REAL_LOOKDEV base
-  - isolate the helmet head (and head-attached hood/hair) for lookdev only
-  - reshape ONLY the helmet head - reduce height about 8 percent, widen temples about 5 percent, flatten and tidy the bottom edge
-  - rebuild helmet facets into larger deliberate planes following crown, temple and jaw - avoid many tiny triangles converging at the face center
-  - keep exactly two horizontal sensor slits, recess them into the porcelain (concave), about 20 percent thinner - DEFAULT state is BLACK and UNLIT (Mikage dormant)
-  - build the violet as a separate AWAKENED emissive state (material or light toggle) that is OFF by default, used only for the awakening reveal
-  - assign glazed semi-matte porcelain material (subtle subsurface plus thin clearcoat) to the shell and graphite matte to underlayer and hair
-  - light with one dominant side key plus a thin rim, opposite side falling into void 050508
-  - set a slight three-quarter camera, head hero framing cropped at the neck
-  - render one head-lookdev contact sheet with BOTH slit states - a three-quarter DORMANT hero (black unlit slits) and a three-quarter AWAKENED hero (violet slits) - plus close facet and material panels, into production/character/reviews
-  - write the head-lookdev proof report into production/character/reviews
+  - create a new rider-solo lookdev derivative blend from MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend
+  - RELIGHT only - replace lights with one dominant Rembrandt key (area, upper-left, angled down), fill near zero, far side falling into void black 050508, plus one thin rim carving the silhouette
+  - set world/background to pure void black 050508, film transparent off, no grey panel
+  - assign glazed sacred porcelain material to the white armor/shell (base f2eeea, subsurface ~0.2 random walk, coat 1.0 / coat roughness ~0.08, base roughness ~0.3 with noise variation, faint craquelure micro-bump)
+  - assign dark graphite matte to underlayer / graphene / hair, and cold sharp-edged metal to the slab blade
+  - keep the helmet two sensor slits - dormant BLACK default; render a separate AWAKENED violet state IF the helmet slit emissive can toggle, else render dormant and note it
+  - set a slight three-quarter low hero camera, full-body framing, keeping the current pose
+  - render one rider-solo lookdev contact sheet (3/4 full-body hero on void black, dormant + awakened if available, plus close armor/material panel) into production/character/reviews
+  - write the rider-solo lookdev proof report into production/character/reviews
   - write gate_report.txt into the temp gate folder for verify_output.py
   - run deterministic verification (Blender reopen, render dimension and inspection)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not touch body, armor below the neck, mount or steed, rig, bones, weights, or motion
-  - do not change the Zenith Blade
-  - do not change the number of slits (must stay exactly two) and do not add eyes, mouth, or a human face
-  - do not make violet the default or always-on look - dormant BLACK slits are the default; violet is only the separate awakened state; do not add new violet objects beyond the two slits; no halo, flood, or wash
+  - do not change ANY geometry, mesh, silhouette, proportions, rig, bones, weights, pose, or framing
+  - do not change the Zenith Blade geometry
+  - do not change the number of helmet slits (exactly two) and do not add eyes, mouth, or a human face
+  - do not make violet the default or always-on look - dormant BLACK slits are default; violet only as the separate awakened state; no halo, flood, or wash
   - do not introduce warm colors, bright cyan, gold seams, or any color outside the brand palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready
   - do not push
@@ -65,23 +61,20 @@ forbidden_actions:
   - do not leave any .blend1 backup
 
 pass_conditions:
-  - new head-lookdev blend reopens cleanly
-  - helmet reads tall/vertical, austere and deity-like (NOT round, egg, or toy), cranium-dominant with tapered jaw, real three-quarter volume (temple, jaw, back)
-  - every visible edge carries a consistent chamfer that catches a clean specular highlight - no razor 0-radius edges, no triangle fans pinching mid-face
-  - clear primary/secondary/tertiary form hierarchy; detail concentrated at focal points with calm rest planes on crown/cheeks
-  - exactly two recessed slits remain; default DORMANT render shows them BLACK and unlit; a separate AWAKENED render shows them violet, contained to the slits
-  - glazed porcelain material reads as sacred ceramic (subsurface edge translucency + coat glaze + roughness variation), NOT clay, foam, or plastic
-  - one dominant side key with void falloff on the opposite side is present
-  - body, mount and rig are untouched - only head geometry changed
+  - new rider-solo lookdev blend reopens cleanly
+  - geometry/silhouette/rig/pose/framing are UNCHANGED versus the source (relight + material only)
+  - background is pure void black 050508 (no grey)
+  - one dominant Rembrandt key with deep void falloff on the opposite side plus a thin rim is present
+  - glazed porcelain armor reads as sacred ceramic (subsurface + coat glaze + roughness variation), not clay/plastic
+  - helmet shows dormant black slits (and awakened violet if togglable), violet contained to the slits only
   - contact sheet rendered into reviews, output remains CANDIDATE only
   - gate_report.txt written and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
-  - the head reshape cannot keep the two-slit identity readable
-  - achieving the look requires touching body, mount, or rig
+  - achieving the look would require changing geometry, rig, or pose
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (silhouette, material, slit) plus operator review; if good, run an AI final sheen pass (fal Kontext low strength) on the three-quarter render for a public hero.
+next_step_if_pass: Lane B drift-check (form unchanged? material/light cinematic?) plus operator review; if good, graft the locked V2 wedge head onto the rider and re-render.
 next_step_if_fail: stop and report BLOCKER reason only

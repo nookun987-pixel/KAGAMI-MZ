@@ -1,5 +1,12 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-06-26 #13 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_RIDER_SOLO_LOOKDEV_V0_1` — Rider Solo Lookdev (relight void-black + glazed material + 3/4 full-body hero).**
+> Tiếp method đã thắng ở đầu V2: Blender giữ hình → relight + material → cinematic render. **RELIGHT + MATERIAL ONLY — KHÔNG đổi geometry/silhouette/rig/pose/framing.** Head trên rider = đầu cũ pass này; ghép đầu V2 là task kế.
+> Input base: `production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_RIDER_SOLO_LOOKDEV_V0_1.md`. Gate: `.mikage/tasks/active_task.yaml` (đã cập nhật).
+> Mục tiêu: 1 key Rembrandt trên-trái + rim + world void đen `#050508`; glazed porcelain giáp + graphite underlayer + kiếm kim loại lạnh; helmet khe đen dormant (+ violet awakened nếu toggle được); camera 3/4 low hero full-body.
+> Output 3 file: rider-solo-lookdev blend + contact sheet (3/4 hero) + proof.md. GUARD: KHÔNG đổi hình/rig/pose; violet chỉ trong 2 khe; KHÔNG warm/halo/flood/gold; KHÔNG canon-lock/PASS; CANDIDATE; dọn .blend1; NO push.
+> ✔ DONE: `MIKAGE_HELMET_HEAD_LOOKDEV` → HERO V2 LOCKED (dormant/awakened, void black, relit). Keyart: `keyart_candidates/MIKAGE_HELMET_HERO_V2_*`. NEXT sau rider: ghép đầu V2 lên rider → re-render → Hero Mount.
+
 > DISPATCH 2026-06-26 #12 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HELMET_HEAD_LOOKDEV_V0_1` — Helmet Head Lookdev (facet refine + glazed porcelain + recessed slits + 3/4 hero render).**
 > Lý do: AI 2D elevation kịch trần ở "clay" vì nguồn blockout; helmet cần lookdev THẬT ở HEAD. ⚠️ Task này CỐ Ý edit helmet HEAD geometry (ngược invariant "do not change helmet/two slits" của mọi gate trước) — HEAD ONLY, không đụng body/mount/rig/blade.
 > Input base: `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_HEAD_LOOKDEV_V0_1.md`. Gate: `.mikage/tasks/active_task.yaml` (đã cập nhật sang task này).
