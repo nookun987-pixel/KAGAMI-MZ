@@ -646,3 +646,35 @@ Every task must end with this report structure:
 - PUSH_DONE =
 
 The agent must not say PASS unless the success check has visible evidence.
+
+- Fifteenth controlled exception is open:
+  - `MZ_LANE_B_COMFYUI_FACELESS_TEST_WORKFLOW_V0_1 = OPEN`
+  - LANE NOTE: This is a Lane B image-gen task, operator-authorized. This exception opens
+    Lane B scope for THIS task only. The Lane A Blender scope lock above is unaffected.
+  - CANON NOTE: outputs are SAMPLE working assets. Image-gen canon = REFERENCE ONLY; it does
+    NOT override SSOT brand canon. On conflict, BRAND canon (mikage-zenith-design /
+    `docs/mikage_character_visual_spec.md`) wins. "TEST" status = working, not canon.
+  - Only allowed next task: `MZ_LANE_B_COMFYUI_FACELESS_TEST_WORKFLOW_V0_1`
+    (prepare a ComfyUI test workflow for the faceless porcelain character — NO batch render).
+  - Read-only inventory allowed (list, do not modify):
+    - `D:\workspace\ComfyUI\custom_nodes\`
+    - `D:\workspace\ComfyUI\models\` (checkpoints, controlnet, ipadapter, clip_vision, loras, vae)
+    - existing reference workflows under
+      `D:\workspace\MIKAGE_RUNPOD_COMFYUI_STATIC_CHARACTER_PACK_V1\` and any
+      `image_canon_gate` / `MIKAGE_CANON` standard in `D:\workspace\ComfyUI\`
+  - Only allowed NEW output files (create only; do NOT overwrite anything existing):
+    - `D:\workspace\MIKAGE_RUNPOD_COMFYUI_STATIC_CHARACTER_PACK_V1\MZ_FACELESS_TEST_V1.json`
+    - `D:\workspace\MIKAGE_RUNPOD_COMFYUI_STATIC_CHARACTER_PACK_V1\MZ_FACELESS_TEST_V1_REF.json`
+    - `D:\workspace\MIKAGE_RUNPOD_COMFYUI_STATIC_CHARACTER_PACK_V1\MZ_FACELESS_TEST_V1_REPORT.md`
+  - Existing workflow JSONs (`MIKAGE_COMFYUI_*`) must not be modified or overwritten.
+  - ComfyUI run permission GRANTED for THIS task only: at most ONE test image per workflow,
+    solely to confirm the graph executes; then stop. NO batch generation.
+  - Model downloads NOT granted in this exception. Missing nodes/models must be LISTED in the
+    report (name + link + size) for separate operator approval. Do not auto-download.
+  - No `D:\MIKAGE ZENITH AUDIO` changes. No website/public/audio/short/release changes.
+  - No canon-lock. No asset-lock. No final / production-ready / PASS / verified claim.
+    No push. No deploy. SAMPLE label on all outputs. Candidate/test only.
+  - Required validation before reporting done: confirm ONLY the three `MZ_FACELESS_*` files
+    above were created; confirm no existing workflow JSON was modified; if a test image was
+    rendered, open and inspect the actual PNG (do not infer success from script completion).
+  - On drift or SSOT conflict: stop and report.
