@@ -674,10 +674,18 @@ The agent must not say PASS unless the success check has visible evidence.
       from https://huggingface.co/SG161222/Realistic_Vision_V6.0_B1_noVAE
     - `vae-ft-mse-840000-ema-pruned.safetensors` (335 MB) -> `D:\workspace\ComfyUI\models\vae\`
       from https://huggingface.co/stabilityai/sd-vae-ft-mse-original
-  - After Phase-1 download: point `MZ_FACELESS_TEST_V1.json` to this checkpoint + VAE, run EXACTLY ONE
-    test image, then stop. (Create the `checkpoints` / `vae` folders if missing.)
-  - ALL OTHER downloads still NOT granted (IP-Adapter SD1.5, CLIP vision, ControlNet aux/models):
-    LIST them for separate operator approval. Do not auto-download anything beyond the two files above.
+  - ENV SETUP GRANTED (operator-approved 2026-06-26): the local ComfyUI Python runtime is not
+    installed. Codex MAY create a Python venv at `D:\workspace\ComfyUI\venv` and pip-install the
+    runtime deps to make ComfyUI start — specifically: PyTorch + torchvision with a CUDA build
+    appropriate for a GTX 1660 SUPER (Turing), then `requirements.txt` (and `manager_requirements`
+    if needed). These pip downloads (incl. torch ~2-3 GB) ARE allowed for THIS setup only.
+  - After env + Phase-1 models: point `MZ_FACELESS_TEST_V1.json` to the checkpoint + VAE, launch
+    ComfyUI with 1660-safe flags (`--use-pytorch-cross-attention --preview-method latent2rgb
+    --reserve-vram 0.4`; do NOT force fp16), run EXACTLY ONE test image, then stop.
+    (Create the `checkpoints` / `vae` folders if missing.)
+  - MODEL downloads still NOT granted beyond the two Phase-1 files (IP-Adapter SD1.5, CLIP vision,
+    ControlNet aux/models): LIST them for separate operator approval. (Pip/runtime deps above are
+    the only exception.)
   - No `D:\MIKAGE ZENITH AUDIO` changes. No website/public/audio/short/release changes.
   - No canon-lock. No asset-lock. No final / production-ready / PASS / verified claim.
     No push. No deploy. SAMPLE label on all outputs. Candidate/test only.
