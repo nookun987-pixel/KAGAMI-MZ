@@ -34,10 +34,14 @@ SP  =lambda s:ImageFont.truetype(os.path.join(FONTS,"spacemono400.ttf"),s)
 PRESET="veryfast"
 
 def sh(a): subprocess.run(a, check=True)
+_BASE=None
 def base():
-    img=Image.new("RGB",(W,H),VOID); halo=Image.new("RGB",(W,H),VOID)
-    ImageDraw.Draw(halo).ellipse([W//2-360,760,W//2+360,1240],fill=(20,5,32))
-    return Image.blend(img,halo.filter(ImageFilter.GaussianBlur(200)),0.7)
+    global _BASE
+    if _BASE is None:
+        img=Image.new("RGB",(W,H),VOID); halo=Image.new("RGB",(W,H),VOID)
+        ImageDraw.Draw(halo).ellipse([W//2-360,760,W//2+360,1240],fill=(20,5,32))
+        _BASE=Image.blend(img,halo.filter(ImageFilter.GaussianBlur(200)),0.7)
+    return _BASE.copy()
 def trk(d,y,t,f,fill,tr):
     x=W/2-(sum(d.textlength(c,font=f) for c in t)+tr*(len(t)-1))/2
     for c in t: d.text((x,y),c,font=f,fill=fill); x+=d.textlength(c,font=f)+tr
@@ -60,12 +64,10 @@ def card(path, header, title, sub):
     tf=fit(d,title,CIN7,108,46,6,W-150); trk(d,870,title,tf,PORC,6)
     img=vdiv(img,1010); d=ImageDraw.Draw(img)
     if sub: trk(d,1052,sub,SP(26),SIL,4)
-    trk(d,H-130,"PROTOTYPE  //  NOT CANON-LOCKED",SP(22),(150,122,180),3)
     grain(img,7).save(path)
 def label_overlay(path, label):
     img=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(img)
     trk(d,150,label,CIN4(40),PORC,8)
-    trk(d,1740,"PROTOTYPE  //  NOT CANON-LOCKED",SP(22),(150,122,180),3)
     img.save(path)
 def title_clip(w,name,header,title,sub,secs,seg):
     c=os.path.join(w,name+".png"); card(c,header,title,sub); s=os.path.join(w,name+".mp4")
