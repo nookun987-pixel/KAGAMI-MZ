@@ -5,6 +5,9 @@ Status: CANDIDATE ONLY.
 ## Source
 
 - Source blend: `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend`
+- Iterated blend: `production/character/MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend`
+- Sculpt target: `D:/workspace/MZ_FAL_CINEMATIC_OUT/SAMPLE_CONCEPT_01_seed7601.png`
+- Hero/light reference: `D:/workspace/MZ_FAL_CINEMATIC_OUT/SAMPLE_CONCEPT_06_seed7606.png`
 - Task brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_HEAD_LOOKDEV_V0_1.md`
 - Gate: `.mikage/tasks/active_task.yaml`
 
@@ -17,13 +20,14 @@ Status: CANDIDATE ONLY.
 
 ## Work Performed
 
-- Created a head-only derivative lookdev scene from the approved source blend.
-- Added `MIKAGE_HELMET_HEAD_LOOKDEV_V0_1_HEAD_ONLY` collection for the candidate head render.
-- Rebuilt the helmet head as a shorter, wider, large-plane faceted porcelain form with a flatter base.
+- Iterated the existing head-only lookdev blend.
+- Rebuilt only the `MIKAGE_HELMET_HEAD_LOOKDEV_V0_1_HEAD_ONLY` collection for the candidate head render.
+- Rebuilt the helmet head as a taller vertical wedge deity silhouette, cranium-dominant with pointed crown and tapering jaw, to approach `SAMPLE_CONCEPT_01_seed7601.png`.
+- Cleaned the helmet into larger deliberate planes with a consistent micro-chamfer and weighted normals.
 - Added exactly two recessed horizontal slit recesses with black dormant default state.
 - Added separate awakened violet slit objects, hidden by default in the saved blend and enabled only for awakened render panels.
-- Assigned semi-matte glazed porcelain, graphite neck crop, black recess material, and violet signal material.
-- Set single-side key light plus subtle rim light against void background.
+- Assigned glazed sacred porcelain, graphite neck crop, black recess material, and violet signal material.
+- Set Rembrandt side key, thin cool rim, void background, and a soft white crown halo/nimbus.
 - Rendered four head detail panels into one contact sheet: dormant black 3/4 hero, awakened violet 3/4 hero, close facet/slit panel, and glazed porcelain/rim panel.
 
 ## Scope Result
@@ -38,6 +42,9 @@ Status: CANDIDATE ONLY.
 
 - Output blend reopened: yes.
 - Head-only collection found: yes.
+- Helmet mesh found: `HEAD_LOOKDEV_V0_1_tall_wedge_deity_porcelain_helmet`.
+- Helmet dimensions: approximately `1.227 x 0.968 x 1.720`, visibly taller than the previous rounder blockout.
+- Dormant black slit recesses found: 2.
 - Awakened violet slit objects found: 2.
 - Saved blend default slit state: dormant black/unlit; awakened violet objects are separate and hidden by default.
 - Contact sheet inspected: yes.
@@ -47,7 +54,7 @@ Status: CANDIDATE ONLY.
 
 ## Visual Note
 
-The contact sheet shows a tight helmet-only candidate: broad faceted porcelain planes, no visible torso or shoulders, exactly two horizontal slit recesses, black dormant default state, separate contained violet awakened state, and slight 3/4 depth under one-sided lighting.
+The contact sheet shows a head-only tall-wedge candidate: the silhouette is much closer to `SAMPLE_CONCEPT_01_seed7601.png` than the earlier round/ball form, with a pointed crown, narrower lower jaw, large calm porcelain planes, exactly two black dormant slits, and a separate contained violet awakened state. It does not fully reach the Concept_01 obelisk severity yet; the back mass remains a little broad and the render is still more clean Blender lookdev than final cinematic sheen.
 
 ## Blocker
 
