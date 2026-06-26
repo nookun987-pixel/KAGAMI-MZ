@@ -22,12 +22,14 @@ Status: CANDIDATE ONLY.
 
 - Iterated the existing head-only lookdev blend.
 - Rebuilt only the `MIKAGE_HELMET_HEAD_LOOKDEV_V0_1_HEAD_ONLY` collection for the candidate head render.
-- Rebuilt the helmet head as a taller vertical wedge deity silhouette, cranium-dominant with pointed crown and tapering jaw, to approach `SAMPLE_CONCEPT_01_seed7601.png`.
-- Cleaned the helmet into larger deliberate planes with a consistent micro-chamfer and weighted normals.
+- Rebuilt the helmet head as a tighter tall-wedge deity silhouette, cranium-dominant with pointed crown, flatter/tauter side edges, and a jaw taper that stops before a teardrop point.
+- Cleaned the helmet into larger deliberate planes with a consistent small chamfer and weighted normals.
 - Added exactly two recessed horizontal slit recesses with black dormant default state.
 - Added separate awakened violet slit objects, hidden by default in the saved blend and enabled only for awakened render panels.
+- Removed the porcelain bridge/lip object between slit channels; the blend now has no `lip_between_slits` or `bridge` head-lookdev objects.
+- Replaced the visible stand-like neck with a narrow black neck crop sinking into the void.
 - Assigned glazed sacred porcelain, graphite neck crop, black recess material, and violet signal material.
-- Set Rembrandt side key, thin cool rim, void background, and a soft white crown halo/nimbus.
+- Set Rembrandt side key, thin cool rim, void background, and a reduced thinner soft white crown halo/nimbus.
 - Rendered four head detail panels into one contact sheet: dormant black 3/4 hero, awakened violet 3/4 hero, close facet/slit panel, and glazed porcelain/rim panel.
 
 ## Scope Result
@@ -42,10 +44,11 @@ Status: CANDIDATE ONLY.
 
 - Output blend reopened: yes.
 - Head-only collection found: yes.
-- Helmet mesh found: `HEAD_LOOKDEV_V0_1_tall_wedge_deity_porcelain_helmet`.
-- Helmet dimensions: approximately `1.227 x 0.968 x 1.720`, visibly taller than the previous rounder blockout.
+- Helmet mesh found: `HEAD_LOOKDEV_V0_1_fixed_tall_wedge_clean_slits_helmet`.
+- Helmet dimensions: approximately `1.022 x 0.828 x 1.700`, tighter and less bulgy than the prior wedge pass.
 - Dormant black slit recesses found: 2.
 - Awakened violet slit objects found: 2.
+- Bridge/lip objects between slits found: 0.
 - Saved blend default slit state: dormant black/unlit; awakened violet objects are separate and hidden by default.
 - Contact sheet inspected: yes.
 - Contact sheet dimensions: `3600 x 1800`.
@@ -54,7 +57,7 @@ Status: CANDIDATE ONLY.
 
 ## Visual Note
 
-The contact sheet shows a head-only tall-wedge candidate: the silhouette is much closer to `SAMPLE_CONCEPT_01_seed7601.png` than the earlier round/ball form, with a pointed crown, narrower lower jaw, large calm porcelain planes, exactly two black dormant slits, and a separate contained violet awakened state. It does not fully reach the Concept_01 obelisk severity yet; the back mass remains a little broad and the render is still more clean Blender lookdev than final cinematic sheen.
+The contact sheet shows a head-only fixed wedge candidate: the silhouette is tighter and less vase/egg-like, the jaw taper is clipped short instead of becoming a waterdrop point, the middle porcelain bridge is gone, and only two actual slit channels remain. Some recessed shadow still reads between the slits from the channel geometry, but there is no third straight bar object. The halo is thinner/dimmer and the neck now sinks into black instead of reading as a round product pedestal.
 
 ## Blocker
 
