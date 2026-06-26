@@ -699,8 +699,8 @@ The agent must not say PASS unless the success check has visible evidence.
   - FAL.AI IMAGE-GEN GRANTED (operator-approved 2026-06-26): Codex MAY call the fal.ai API to
     generate CINEMATIC variations of the Mikage character from a control image + prompt
     (img2img / ControlNet / Flux-style, keeping the faceted helmet + two violet "=" slits).
-    - API key: read from the operator's environment (e.g. `FAL_KEY`). NEVER print, log, or commit the key.
-    - Control input: `D:\workspace\...\keyart_candidates\MIKAGE_SOLO_VIOLET_V0_4.png` (or a crop of it).
+    - API key: load `FAL_KEY` from `D:\workspace\.env` (operator placed it there). NEVER print, log, or commit the key.
+    - Control input (read-only): `D:\KAGAMI-MZ_SYNC_PUSH_V2\production\character\keyart_candidates\MIKAGE_SOLO_VIOLET_V0_4.png` (or a crop of it).
     - SPEND CAP this round: at most 10 generated images (~under $2). Stop at 10 and report.
     - Output ONLY to: `D:\workspace\MZ_FAL_CINEMATIC_OUT\` (create it). Save each PNG SAMPLE-labelled.
     - Do NOT modify any canon/keyart source. Do NOT auto-escalate spend.
