@@ -696,6 +696,14 @@ The agent must not say PASS unless the success check has visible evidence.
   - MODEL downloads still NOT granted beyond the files named above (IP-Adapter SD1.5, CLIP vision,
     ControlNet aux/models): LIST them for separate operator approval. (Pip/runtime deps + the one
     DreamShaper checkpoint above are the only exceptions.)
+  - FAL.AI IMAGE-GEN GRANTED (operator-approved 2026-06-26): Codex MAY call the fal.ai API to
+    generate CINEMATIC variations of the Mikage character from a control image + prompt
+    (img2img / ControlNet / Flux-style, keeping the faceted helmet + two violet "=" slits).
+    - API key: read from the operator's environment (e.g. `FAL_KEY`). NEVER print, log, or commit the key.
+    - Control input: `D:\workspace\...\keyart_candidates\MIKAGE_SOLO_VIOLET_V0_4.png` (or a crop of it).
+    - SPEND CAP this round: at most 10 generated images (~under $2). Stop at 10 and report.
+    - Output ONLY to: `D:\workspace\MZ_FAL_CINEMATIC_OUT\` (create it). Save each PNG SAMPLE-labelled.
+    - Do NOT modify any canon/keyart source. Do NOT auto-escalate spend.
   - No `D:\MIKAGE ZENITH AUDIO` changes. No website/public/audio/short/release changes.
   - No canon-lock. No asset-lock. No final / production-ready / PASS / verified claim.
     No push. No deploy. SAMPLE label on all outputs. Candidate/test only.
