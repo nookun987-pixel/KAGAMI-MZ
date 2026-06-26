@@ -20,17 +20,13 @@ Status: CANDIDATE ONLY.
 
 ## Work Performed
 
-- Iterated the existing head-only lookdev blend.
-- Rebuilt only the `MIKAGE_HELMET_HEAD_LOOKDEV_V0_1_HEAD_ONLY` collection for the candidate head render.
-- Rebuilt the helmet head as a tighter tall-wedge deity silhouette, cranium-dominant with pointed crown, flatter/tauter side edges, and a jaw taper that stops before a teardrop point.
-- Cleaned the helmet into larger deliberate planes with a consistent small chamfer and weighted normals.
-- Added exactly two recessed horizontal slit recesses with black dormant default state.
-- Added separate awakened violet slit objects, hidden by default in the saved blend and enabled only for awakened render panels.
-- Removed the porcelain bridge/lip object between slit channels; the blend now has no `lip_between_slits` or `bridge` head-lookdev objects.
-- Replaced the visible stand-like neck with a narrow black neck crop sinking into the void.
-- Assigned glazed sacred porcelain, graphite neck crop, black recess material, and violet signal material.
-- Set Rembrandt side key, thin cool rim, void background, and a reduced thinner soft white crown halo/nimbus.
-- Rendered four head detail panels into one contact sheet: dormant black 3/4 hero, awakened violet 3/4 hero, close facet/slit panel, and glazed porcelain/rim panel.
+- Iterated the existing head-only lookdev blend for a relight/material pass only.
+- Did not edit helmet geometry, silhouette, slit placement, slit count, or camera framing.
+- Replaced the prior lighting with one upper-left Rembrandt-style area key and one thin rear/side rim light.
+- Set the world/background to void black and hid halo/nimbus objects from render; no halo ring is visible in the rendered contact sheet.
+- Updated the porcelain material to glazed sacred porcelain: `#f2eeea` base, subsurface approximately `0.2`, coat `1.0`, coat roughness approximately `0.08`, base roughness approximately `0.3`, subtle noise roughness variation, and faint micro-bump craquelure.
+- Kept graphite/black underlayer treatment and kept separate dormant black and awakened violet slit states.
+- Rendered dormant 3/4 hero and awakened 3/4 hero panels into a `3600 x 1800` contact sheet.
 
 ## Scope Result
 
@@ -45,19 +41,25 @@ Status: CANDIDATE ONLY.
 - Output blend reopened: yes.
 - Head-only collection found: yes.
 - Helmet mesh found: `HEAD_LOOKDEV_V0_1_fixed_tall_wedge_clean_slits_helmet`.
-- Helmet dimensions: approximately `1.022 x 0.828 x 1.700`, tighter and less bulgy than the prior wedge pass.
+- Helmet dimensions: approximately `1.022 x 0.828 x 1.700`.
+- Helmet vertex hash before material pass: `c68d2b813f75d66efca8e7ecf456446f3b9e950f3afc759cb2181e6913b7846e`.
+- Helmet vertex hash after material pass/reopen: `c68d2b813f75d66efca8e7ecf456446f3b9e950f3afc759cb2181e6913b7846e`.
+- Geometry unchanged: yes.
 - Dormant black slit recesses found: 2.
 - Awakened violet slit objects found: 2.
 - Bridge/lip objects between slits found: 0.
 - Saved blend default slit state: dormant black/unlit; awakened violet objects are separate and hidden by default.
+- Visible halo/nimbus objects: 0.
+- Relight objects: `HEAD_LOOKDEV_relight_single_rembrandt_key`, `HEAD_LOOKDEV_relight_thin_bright_rim`.
 - Contact sheet inspected: yes.
 - Contact sheet dimensions: `3600 x 1800`.
 - `.blend1` backup result: removed; none left under `production/character`.
 - Gate verifier command: `python .mikage\tools\verify_output.py`.
+- Gate verifier result: PASS.
 
 ## Visual Note
 
-The contact sheet shows a head-only fixed wedge candidate: the silhouette is tighter and less vase/egg-like, the jaw taper is clipped short instead of becoming a waterdrop point, the middle porcelain bridge is gone, and only two actual slit channels remain. Some recessed shadow still reads between the slits from the channel geometry, but there is no third straight bar object. The halo is thinner/dimmer and the neck now sinks into black instead of reading as a round product pedestal.
+The contact sheet shows the same head-only wedge geometry with a more sacred glazed porcelain read, stronger single-side key direction, and a thin rim edge without a halo ring. Dormant and awakened states preserve exactly two slit objects. The panel interiors still read as very dark gray in Eevee rather than absolute black, but the far side is reduced into deep shadow and the sheet background remains void black.
 
 ## Blocker
 
