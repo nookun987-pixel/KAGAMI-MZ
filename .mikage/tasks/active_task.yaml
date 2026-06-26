@@ -1,59 +1,58 @@
-task_id: MIKAGE_RIDER_SOLO_LOOKDEV_V0_1
+task_id: MIKAGE_RIDER_HEAD_GRAFT_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_RIDER_SOLO_LOOKDEV_V0_1
-# Dispatched by operator (BOOS) 2026-06-26 #13.
-# Reason: head V2 lookdev landed; extend the proven method (Blender form -> relight + glazed
-#   material -> cinematic render) to the SOLO RIDER full body.
-# RELIGHT + MATERIAL ONLY. NO geometry / silhouette / rig / pose / framing change.
-# Head on the rider is the OLD head this pass; grafting the V2 head is the NEXT task.
+current_step: MIKAGE_RIDER_HEAD_GRAFT_V0_1
+# Dispatched by operator (BOOS) 2026-06-26 #14.
+# Replace the rider's OLD round head with the LOCKED V2 wedge head. Body/rig/pose/blade UNCHANGED.
+# Geometry change allowed ONLY for: remove old head + import V2 head + transform to fit the neck.
 # Output stays CANDIDATE. No canon-lock, no PASS, no push.
 
 input_files_allowed:
-  - production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend
-  - production/character/build_log/LANEA_CODEX_TASK_RIDER_SOLO_LOOKDEV_V0_1.md
+  - production/character/MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend
+  - production/character/MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_RIDER_HEAD_GRAFT_V0_1.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_rider_solo_lookdev_gate
+output_folder_allowed: _tmp/mikage_rider_head_graft_gate
 output_files_allowed:
   - gate_report.txt
   - .gitkeep
 
 read_only_files:
-  - production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend
+  - production/character/MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend
+  - production/character/MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend
-  - production/character/reviews/MIKAGE_RIDER_SOLO_LOOKDEV_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_RIDER_SOLO_LOOKDEV_V0_1_PROOF.md
+  - production/character/MIKAGE_RIDER_HEAD_GRAFT_EEVEE_V0_1.blend
+  - production/character/reviews/MIKAGE_RIDER_HEAD_GRAFT_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_RIDER_HEAD_GRAFT_V0_1_PROOF.md
 
 allowed_actions:
-  - create a new rider-solo lookdev derivative blend from MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend
-  - RELIGHT only - replace lights with one dominant Rembrandt key (area, upper-left, angled down), fill near zero, far side falling into void black 050508, plus one thin rim carving the silhouette
-  - set world/background to pure void black 050508, film transparent off, no grey panel
-  - assign glazed sacred porcelain material to the white armor/shell (base f2eeea, subsurface ~0.2 random walk, coat 1.0 / coat roughness ~0.08, base roughness ~0.3 with noise variation, faint craquelure micro-bump)
-  - assign dark graphite matte to underlayer / graphene / hair, and cold sharp-edged metal to the slab blade
-  - keep the helmet two sensor slits - dormant BLACK default; render a separate AWAKENED violet state IF the helmet slit emissive can toggle, else render dormant and note it
-  - set a slight three-quarter low hero camera, full-body framing, keeping the current pose
-  - render one rider-solo lookdev contact sheet (3/4 full-body hero on void black, dormant + awakened if available, plus close armor/material panel) into production/character/reviews
-  - write the rider-solo lookdev proof report into production/character/reviews
+  - create a new graft derivative blend from MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend
+  - import the V2 wedge head mesh (helmet + two recessed slits + dormant/awakened states) from MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend
+  - position, scale and rotate the V2 head to fit the rider neck at the OLD head location (snap head base to the neck join)
+  - delete the rider OLD head completely (no duplicate heads, no z-fighting)
+  - keep the V2 head glazed porcelain material and dormant black / awakened violet states
+  - keep the existing void-black world and Rembrandt lighting
+  - render one full-body contact sheet (3/4 hero, dormant + awakened, plus a neck-join close) into production/character/reviews
+  - write the graft proof report into production/character/reviews
   - write gate_report.txt into the temp gate folder for verify_output.py
-  - run deterministic verification (Blender reopen, render dimension and inspection)
+  - run deterministic verification (Blender reopen, body mesh hashes unchanged vs source, render inspection)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not change ANY geometry, mesh, silhouette, proportions, rig, bones, weights, pose, or framing
-  - do not change the Zenith Blade geometry
+  - do not change ANY geometry, rig, bones, weights, or pose of the body below the neck
+  - do not change the Zenith Blade geometry, the camera, framing, or world
   - do not change the number of helmet slits (exactly two) and do not add eyes, mouth, or a human face
-  - do not make violet the default or always-on look - dormant BLACK slits are default; violet only as the separate awakened state; no halo, flood, or wash
+  - do not make violet the default or always-on look - dormant BLACK is default; violet only as the separate awakened state; no halo, flood, or wash
   - do not introduce warm colors, bright cyan, gold seams, or any color outside the brand palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready
   - do not push
@@ -61,20 +60,21 @@ forbidden_actions:
   - do not leave any .blend1 backup
 
 pass_conditions:
-  - new rider-solo lookdev blend reopens cleanly
-  - geometry/silhouette/rig/pose/framing are UNCHANGED versus the source (relight + material only)
-  - background is pure void black 050508 (no grey)
-  - one dominant Rembrandt key with deep void falloff on the opposite side plus a thin rim is present
-  - glazed porcelain armor reads as sacred ceramic (subsurface + coat glaze + roughness variation), not clay/plastic
-  - helmet shows dormant black slits (and awakened violet if togglable), violet contained to the slits only
+  - new graft blend reopens cleanly
+  - body-below-neck mesh hashes are UNCHANGED versus the rider source (only the head was replaced)
+  - exactly one head present (old head fully removed, no z-fighting)
+  - the V2 wedge head sits naturally on the neck at a believable scale
+  - helmet shows dormant black slits and awakened violet (contained to the slits)
+  - world stays void black and lighting unchanged
   - contact sheet rendered into reviews, output remains CANDIDATE only
   - gate_report.txt written and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
-  - achieving the look would require changing geometry, rig, or pose
+  - fitting the V2 head would require changing body geometry, rig, or pose
+  - the head cannot be scaled/placed to read naturally on the neck
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (form unchanged? material/light cinematic?) plus operator review; if good, graft the locked V2 wedge head onto the rider and re-render.
+next_step_if_pass: Lane B drift-check (body unchanged? head fits naturally?) plus operator review; if good, next is the BODY form-refinement pass (de-blockout), one area per round.
 next_step_if_fail: stop and report BLOCKER reason only

@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-06-26 #14 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_RIDER_HEAD_GRAFT_V0_1` — ghép đầu V2 (đã lock) lên rider, body giữ nguyên.**
+> Thay đầu cũ (tròn) bằng đầu V2 wedge (hash `c68d2b81...`). GEOMETRY chỉ ở phần đầu: import V2 head → định vị/scale/xoay khớp cổ → xoá đầu cũ. **KHÔNG đổi body/rig/pose/blade/camera/world.**
+> Input: rider `production/character/MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend` + head V2 `production/character/MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend`. Brief: `build_log/LANEA_CODEX_TASK_RIDER_HEAD_GRAFT_V0_1.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS).
+> Output 3 file: graft blend + contact sheet (3/4 dormant+awakened + close cổ-đầu) + proof (xác nhận body hash unchanged). GUARD: KHÔNG đụng body/rig/blade; violet chỉ trong 2 khe; CANDIDATE; dọn .blend1; NO push.
+> ✔ DONE #13: rider solo relight = CANDIDATE (void black + Rembrandt + material, form 267/267 hash unchanged). Thân vẫn blockout → pass nắn form THÂN là bước sau head-graft.
+
 > DISPATCH 2026-06-26 #13 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_RIDER_SOLO_LOOKDEV_V0_1` — Rider Solo Lookdev (relight void-black + glazed material + 3/4 full-body hero).**
 > Tiếp method đã thắng ở đầu V2: Blender giữ hình → relight + material → cinematic render. **RELIGHT + MATERIAL ONLY — KHÔNG đổi geometry/silhouette/rig/pose/framing.** Head trên rider = đầu cũ pass này; ghép đầu V2 là task kế.
 > Input base: `production/character/MIKAGE_RIDER_SOLO_EEVEE_V0_3.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_RIDER_SOLO_LOOKDEV_V0_1.md`. Gate: `.mikage/tasks/active_task.yaml` (đã cập nhật).
