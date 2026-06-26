@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
-r"""
-MIKAGE BUILD LOG — "FORGING THE MARK" (helmet, one-day forge).
-Built on the SAME engine as build_buildlog_locomotion.py (Cinzel + Space Mono, void+violet halo
-base, grain, editorial chapter cards, graded footage). Music = THE LANDAUER PARADOX from 0:00.
-Self-contained: all assets live in ./src . Run:  python build_buildlog_forging.py
-Output = PROTOTYPE / NOT CANON-LOCKED, local only.
-"""
+r"""MIKAGE BUILD LOG - FORGING THE MARK. Engine = build_buildlog_locomotion.py.
+Music = THE LANDAUER PARADOX from 1:27. Self-contained in ./src. PROTOTYPE / NOT CANON-LOCKED."""
 import os, subprocess, tempfile, shutil
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import numpy as np
@@ -19,6 +14,15 @@ MARK  = os.path.join(SRC, "01_mark.png")
 FORM  = os.path.join(SRC, "02_form.png")
 WAKE  = os.path.join(SRC, "awaken.mp4")
 MUSIC = os.path.join(SRC, "track.wav")
+MUSIC_START = 87
+ITER = [
+    (os.path.join(SRC,"iter","i1_blockout.png"),    "ITER 01  -  BLOCKOUT"),
+    (os.path.join(SRC,"iter","i2_wedge.png"),       "ITER 02  -  WEDGE"),
+    (os.path.join(SRC,"iter","i3_reshape.png"),     "ITER 03  -  RESHAPE"),
+    (os.path.join(SRC,"iter","i4_relight.png"),     "ITER 04  -  RELIGHT"),
+    (os.path.join(SRC,"iter","i5_reshape_awk.png"), "ITER 05  -  SLIT TEST"),
+    (os.path.join(SRC,"iter","i6_relight_awk.png"), "ITER 06  -  AWAKENED"),
+]
 OUT   = os.path.join(HERE, "MIKAGE_BUILDLOG_FORGING_THE_MARK_LANDAUER.mp4")
 OUT_HOOK = os.path.join(HERE, "MIKAGE_BUILDLOG_FORGING_HOOK.mp4")
 
@@ -27,8 +31,8 @@ VOID=(5,5,8); PORC=(242,238,234); SIL=(150,150,168); VIOLET=(143,0,255)
 CIN7=lambda s:ImageFont.truetype(os.path.join(FONTS,"cinzel700.ttf"),s)
 CIN4=lambda s:ImageFont.truetype(os.path.join(FONTS,"cinzel400.ttf"),s)
 SP  =lambda s:ImageFont.truetype(os.path.join(FONTS,"spacemono400.ttf"),s)
-
 PRESET="veryfast"
+
 def sh(a): subprocess.run(a, check=True)
 def base():
     img=Image.new("RGB",(W,H),VOID); halo=Image.new("RGB",(W,H),VOID)
@@ -64,8 +68,7 @@ def label_overlay(path, label):
     trk(d,1740,"PROTOTYPE  //  NOT CANON-LOCKED",SP(22),(150,122,180),3)
     img.save(path)
 def title_clip(w,name,header,title,sub,secs,seg):
-    c=os.path.join(w,name+".png"); card(c,header,title,sub)
-    s=os.path.join(w,name+".mp4")
+    c=os.path.join(w,name+".png"); card(c,header,title,sub); s=os.path.join(w,name+".mp4")
     sh(["ffmpeg","-y","-v","error","-loop","1","-t",str(secs),"-i",c,"-vf","scale=1080:1920,format=yuv420p","-r",str(FR),"-c:v","libx264","-preset",PRESET,"-crf","19",s]); seg.append(s)
 def clip_image(src, label, secs, w, seg):
     ov=os.path.join(w,"ov_"+label[:4]+".png"); label_overlay(ov,label)
@@ -74,39 +77,45 @@ def clip_image(src, label, secs, w, seg):
     d=ImageDraw.Draw(cv); x0,y0=(W-980)//2-6,(H-im.height)//2-6; x1,y1=x0+992,y0+im.height+12
     for cx,cy in [(x0,y0),(x1,y0),(x0,y1),(x1,y1)]:
         d.line([cx-18,cy,cx+18,cy],fill=(130,126,140),width=1); d.line([cx,cy-18,cx,cy+18],fill=(130,126,140),width=1)
-    bp=os.path.join(w,"i_"+label[:4]+".png"); grain(cv,3).save(bp)
-    out=os.path.join(w,"sc_"+label[:4]+".mp4")
-    sh(["ffmpeg","-y","-v","error","-loop","1","-t",str(secs),"-i",bp,"-loop","1","-i",ov,
-        "-filter_complex","[0:v]scale=1080:1920,zoompan=z='min(zoom+0.0007,1.07)':d=%d:s=1080x1920:fps=%d:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[z];[z][1:v]overlay=0:0:shortest=1,format=yuv420p"%(int(secs*FR),FR),
-        "-t",str(secs),"-r",str(FR),"-c:v","libx264","-preset",PRESET,"-crf","19",out]); seg.append(out)
+    bp=os.path.join(w,"i_"+label[:4]+".png"); grain(cv,3).save(bp); out=os.path.join(w,"sc_"+label[:4]+".mp4")
+    sh(["ffmpeg","-y","-v","error","-loop","1","-t",str(secs),"-i",bp,"-loop","1","-i",ov,"-filter_complex","[0:v][1:v]overlay=0:0:shortest=1,format=yuv420p","-t",str(secs),"-r",str(FR),"-c:v","libx264","-preset",PRESET,"-crf","19",out]); seg.append(out)
+def clip_montage(items, secs, w, seg):
+    for i,(src,lab) in enumerate(items):
+        ov=os.path.join(w,"ovm%d.png"%i); im0=Image.new("RGBA",(W,H),(0,0,0,0)); dd=ImageDraw.Draw(im0)
+        trk(dd,150,lab,CIN4(34),PORC,6); trk(dd,1740,"RAW 3D  //  WORK IN PROGRESS",SP(22),(150,122,180),3); im0.save(ov)
+        im=Image.open(src).convert("RGB"); r=820/im.width; im=im.resize((820,int(im.height*r)),Image.LANCZOS)
+        cv=base(); cv.paste(im,((W-820)//2,(H-im.height)//2))
+        d=ImageDraw.Draw(cv); x0,y0=(W-820)//2-6,(H-im.height)//2-6; x1,y1=x0+832,y0+im.height+12
+        for cx,cy in [(x0,y0),(x1,y0),(x0,y1),(x1,y1)]:
+            d.line([cx-16,cy,cx+16,cy],fill=(120,116,130),width=1); d.line([cx,cy-16,cx,cy+16],fill=(120,116,130),width=1)
+        bp=os.path.join(w,"m%d.png"%i); grain(cv,3+i).save(bp); out=os.path.join(w,"mclip%d.mp4"%i)
+        sh(["ffmpeg","-y","-v","error","-loop","1","-t",str(secs),"-i",bp,"-loop","1","-i",ov,"-filter_complex","[0:v][1:v]overlay=0:0:shortest=1,format=yuv420p","-t",str(secs),"-r",str(FR),"-c:v","libx264","-preset",PRESET,"-crf","19",out]); seg.append(out)
 def clip_vid(src, label, w, seg):
-    ov=os.path.join(w,"ovv.png"); label_overlay(ov,label)
-    out=os.path.join(w,"scwake.mp4")
-    sh(["ffmpeg","-y","-v","error","-i",src,"-loop","1","-i",ov,"-filter_complex",
-        "[0:v]scale=1080:1920,format=yuv420p[v];[v][1:v]overlay=0:0:shortest=1,format=yuv420p[o]",
-        "-map","[o]","-r",str(FR),"-c:v","libx264","-preset",PRESET,"-crf","19",out]); seg.append(out)
+    ov=os.path.join(w,"ovv.png"); label_overlay(ov,label); out=os.path.join(w,"scwake.mp4")
+    sh(["ffmpeg","-y","-v","error","-i",src,"-loop","1","-i",ov,"-filter_complex","[0:v]scale=1080:1920,format=yuv420p[v];[v][1:v]overlay=0:0:shortest=1,format=yuv420p[o]","-map","[o]","-r",str(FR),"-c:v","libx264","-preset",PRESET,"-crf","19",out]); seg.append(out)
 
 def main():
     for p in (MARK,FORM,WAKE,MUSIC):
         if not os.path.exists(p): print("!! MISSING:",p); return
     w=tempfile.mkdtemp(); seg=[]
     try:
-        title_clip(w,"open","BUILD LOG  //  THE MARK","FORGING THE MARK","2D MARK  ·  3D FORM  ·  RELIGHT  ·  IT WAKES",2.8,seg)
-        title_clip(w,"t1","01  ·  THE MARK","WHERE IT BEGINS","a porcelain helmet · two thin slits · faceless",2.4,seg)
-        clip_image(MARK,"THE MARK · 2D",4.2,w,seg)
-        title_clip(w,"t2","02  ·  THE FORM","FORGED IN LIGHT","tall wedge · void black · a single key",2.4,seg)
-        clip_image(FORM,"FINAL RELIGHT",4.2,w,seg)
-        title_clip(w,"t3","03  ·  THE SIGNAL","IT WAKES","black until it wakes — then violet",2.4,seg)
+        title_clip(w,"open","BUILD LOG  //  THE MARK","FORGING THE MARK","2D MARK . 3D ROUNDS . RELIGHT . IT WAKES",2.8,seg)
+        title_clip(w,"t1","01  -  THE MARK","WHERE IT BEGINS","a porcelain helmet . two thin slits . faceless",2.4,seg)
+        clip_image(MARK,"THE MARK - 2D",4.0,w,seg)
+        title_clip(w,"t2","02  -  THE FORGING","ROUND AFTER ROUND","blockout . wedge . reshape . relight",2.4,seg)
+        clip_montage(ITER,0.5,w,seg)
+        title_clip(w,"t3","03  -  THE FORM","FORGED IN LIGHT","tall wedge . void black . a single key",2.4,seg)
+        clip_image(FORM,"FINAL RELIGHT",3.6,w,seg)
+        title_clip(w,"t4","04  -  THE SIGNAL","IT WAKES","black until it wakes . then violet",2.4,seg)
         clip_vid(WAKE,"AWAKENING",w,seg)
-        title_clip(w,"end","MIKAGE ZENITH","THE MARK IS THE SILENCE","Listen now  —  THE LANDAUER PARADOX",3.2,seg)
-        cl=os.path.join(w,"cl.txt"); open(cl,"w").write("".join("file '%s'\n"%x for x in seg))
-        vid=os.path.join(w,"vid.mp4")
+        title_clip(w,"end","MIKAGE ZENITH","THE MARK IS THE SILENCE","Listen now  -  THE LANDAUER PARADOX",3.2,seg)
+        cl=os.path.join(w,"cl.txt"); open(cl,"w").write("".join("file '%s'\n"%x for x in seg)); vid=os.path.join(w,"vid.mp4")
         try: sh(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",cl,"-c","copy",vid])
         except subprocess.CalledProcessError:
             sh(["ffmpeg","-y","-v","error","-f","concat","-safe","0","-i",cl,"-c:v","libx264","-preset",PRESET,"-crf","19","-pix_fmt","yuv420p","-r",str(FR),vid])
         dur=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",vid]).decode().strip())
         au=os.path.join(w,"au.m4a"); fade=max(0.1,dur-2.0)
-        sh(["ffmpeg","-y","-v","error","-ss","0","-t","%.2f"%dur,"-i",MUSIC,"-af","afade=t=in:st=0:d=0.6,afade=t=out:st=%.2f:d=2.0"%fade,"-ar","48000","-ac","2","-c:a","aac","-b:a","320k",au])
+        sh(["ffmpeg","-y","-v","error","-ss",str(MUSIC_START),"-t","%.2f"%dur,"-i",MUSIC,"-af","afade=t=in:st=0:d=0.6,afade=t=out:st=%.2f:d=2.0"%fade,"-ar","48000","-ac","2","-c:a","aac","-b:a","320k",au])
         tmp=OUT+".tmp.mp4"; sh(["ffmpeg","-y","-v","error","-i",vid,"-i",au,"-map","0:v:0","-map","1:a:0","-c:v","copy","-c:a","copy","-shortest",tmp]); os.replace(tmp,OUT)
         print("BUILD LOG saved:",OUT,"dur=%.1fs"%dur)
         start=max(0,dur-16); th=OUT_HOOK+".tmp.mp4"
