@@ -1,5 +1,12 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-06-26 #12 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HELMET_HEAD_LOOKDEV_V0_1` — Helmet Head Lookdev (facet refine + glazed porcelain + recessed slits + 3/4 hero render).**
+> Lý do: AI 2D elevation kịch trần ở "clay" vì nguồn blockout; helmet cần lookdev THẬT ở HEAD. ⚠️ Task này CỐ Ý edit helmet HEAD geometry (ngược invariant "do not change helmet/two slits" của mọi gate trước) — HEAD ONLY, không đụng body/mount/rig/blade.
+> Input base: `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_REAL_LOOKDEV_V0_1.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_HEAD_LOOKDEV_V0_1.md`. Gate: `.mikage/tasks/active_task.yaml` (đã cập nhật sang task này).
+> Mục tiêu HEAD-only: hạ cao ~8% / mở temple ~5% / đáy phẳng; rebuild facet lớn có chủ đích; recess 2 khe (mảnh hơn ~20%, glow tiết chế); glazed porcelain bán mờ; 1 key-light một bên + rim, bên kia chìm void; camera 3/4; render HEAD hero.
+> Output 3 file: helmet-head-lookdev blend + contact sheet (3/4 hero + close) + proof.md. GUARD: violet chỉ trong 2 khe; KHÔNG đụng body/mount/rig/motion/blade; KHÔNG warm/halo/flood/cyan/gold; KHÔNG canon-lock/PASS/final; CANDIDATE; dọn .blend1; NO push.
+> V1.5 GAIT (dispatch #11) = **PARKED** (resume sau khi head lookdev đạt). NEXT: Lane B drift-check head → BOOS duyệt → AI final sheen (fal Kontext low) trên render 3/4 → hero public.
+
 > DISPATCH 2026-06-25 #11 (BOOS): **CURRENT_NEXT_TASK = `MIKAGE_HERO_MOUNT_V1_5` - Two-Cycle Continuous Mechanical Gait Proof.**
 > Baseline: commit `d45ccc4`; input `production/character/MIKAGE_HERO_MOUNT_EEVEE_V1_4_GAIT_PROOF.blend`. V1.4 four-step world-space gait proof = PASS.
 > Task name: `MIKAGE HERO MOUNT V1.5 - TWO-CYCLE CONTINUOUS MECHANICAL GAIT PROOF`. Gate: `.mikage/tasks/active_task.yaml`.
