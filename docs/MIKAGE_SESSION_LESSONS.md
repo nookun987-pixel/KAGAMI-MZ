@@ -94,21 +94,37 @@
 - Added `docs/MIKAGE_SESSION_CHECKLIST.md` (read at session start) +
   `build_log/00_BUILD_LOG_STANDARD.md` (one build-log system). This log to be appended each session.
 
-## Session 2026-06-26 — Character HERO lookdev (helmet V2): winning recipe + crawl lessons
-→ **Recipe locked in `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`. Start every new hero from there, not from scratch.**
+---
 
-### What worked (the quality nut)
-- The jump draft→hero is the **20% craft**: lighting, light/dark contrast, clean silhouette, slit/violet, bg cleanup. The lever was a **real Blender RELIGHT on a LOCKED form** (void black `#050508` + single Rembrandt key + thin rim + glazed porcelain), NOT more research and NOT 2D filters.
-- Order that works: **Blender form → Blender relight/material → 2D finish (slit signal + cleanup) → production.**
-- Slit rule that reads "alive": dormant = black recess; awakened = thin violet core (~38% slit height, ~-30% brightness), composited onto the SAME dormant master so the pair is pixel-identical (no morph on animation).
+## Session 2026-06-26 (cont.) — build-log FILM "FORGING THE MARK"
+### What worked
+- Build-log VIDEO = REUSE the existing engine (`build_log/GATHER_REEL_V0_1/build_buildlog_locomotion.py`:
+  Cinzel+Space Mono, void+violet-halo base, grain, editorial chapter cards, footage grade, music).
+  New entries = copy that pattern into a SELF-CONTAINED folder (`FORGING_THE_MARK_V0_1/` = script +
+  RUN.bat + src/ + caption). Never hand-glue a stills slideshow — operator called that "củ chúi".
+- Quick 3D-iteration montage beat ("THE FORGING") = `clip_montage()` of the real Blender CONTROL
+  renders (blockout -> wedge -> reshape -> relight), labelled RAW 3D, reads as intentional BTS.
 
-### Mistakes that cost the day (do NOT repeat)
-1. **txt2img to invent a character that was already canon-locked** -> wrong. Start from the locked canon asset; never regenerate an owned character from a prompt.
-2. **Didn't inventory existing assets first** -> burned hours on AI before finding the canon library (helmet sources, keyart, the MARK render). ALWAYS open + inventory existing refs first.
-3. **Served the wrong/old mask** (smooth faceplate) when operator pointed at THE MARK (blocky violet "="). Confirm the EXACT source file before working (it was `keyart_candidates/MIKAGE_SOLO_VIOLET_V0_4.png`, via `build_ep03.py` helmet_crop).
-4. **AI free-paint (fal Kontext, higher strength) DRIFTS a locked form** -> invented a 3rd bar, gold halo, round silhouette, even faces. For a locked form do NOT free-AI-relight; relight in Blender (respects facets). AI = concept/exploration only.
-5. **Composite/cleanup created NEW errors**: violet leaked past silhouette; an edge-trim walked through a slit and ate the helmet into black bars; grey-square seam on the Canvas. Always **clip to the silhouette mask + ZOOM-verify edges**; never full-remask; **revert** if cleanup damages the form.
-6. **Declared "same form / done" without pixel-checking** -> dormant & awakened were two different AI generations (would morph). For state pairs, composite the change onto ONE master; never generate states separately.
+### Mistakes not to repeat
+1. Don't reinvent a build-log clip when an engine already exists — read build_log/ first.
+2. `base()` runs GaussianBlur(200) PER frame; with ~16 frames it crawls and the bg process wedges.
+   CACHE base() (compute once, return .copy()). Big speedup.
+3. nohup python on the workspace VM gets ORPHANED/wedged when a bash call hits the 45s timeout
+   (segments stop progressing). Robust pattern: render segments to a STABLE mount dir, verify each
+   with ffprobe, rebuild only corrupt ones, then concat in a separate short foreground call.
+4. Editing source files on the Windows mount via the Edit tool can TRUNCATE (lost tail / unterminated
+   string). Write whole scripts via bash heredoc `cat > f <<'EOF'` and verify with `ast.parse`.
+5. `pkill -f <name>` can kill your OWN bash (its cmdline contains the name) — and matched PID 1 once.
+   Use `pgrep -x python3` and kill by real PID; never broad pkill -f on the script name.
+6. Public cut: strip `PROTOTYPE // NOT CANON-LOCKED` from card()/label_overlay() before posting
+   (operator decision). Keep narrative labels (RAW 3D). Repo canon status is unchanged by this.
+7. Match the beat to the film's subject: a head/helmet build-log -> the "2D mark" beat must be the
+   MASK/head crop, not the full-body figure.
+
+### Deliverables (CANDIDATE, operator commits/pushes)
+- `build_log/FORGING_THE_MARK_V0_1/` (mp4 32.2s + hook 16s + engine + src + caption), 2D mark=mask,
+  FORGING montage, music THE LANDAUER PARADOX from 1:27. Stamp removed for public. Body = next session.
+ange onto ONE master; never generate states separately.
 
 ### Process rule going forward
 - New hero = **start from V2 base**, **one error-group per round**, no full rebuild. Review must name the EXACT error + which layer fixes it: geometry->Blender, light/material->Blender relight, signal+bg->2D composite. No vague "make it better".
