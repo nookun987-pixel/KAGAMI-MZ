@@ -1,6 +1,6 @@
 task_id: MIKAGE_RIDER_SOLO_LOOKDEV_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
+task_type: VERIFY_REPORT_ONLY
 current_step: MIKAGE_RIDER_SOLO_LOOKDEV_V0_1
 # Dispatched by operator (BOOS) 2026-06-26 #13.
 # Reason: head V2 lookdev landed; extend the proven method (Blender form -> relight + glazed
