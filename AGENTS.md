@@ -669,8 +669,15 @@ The agent must not say PASS unless the success check has visible evidence.
   - Existing workflow JSONs (`MIKAGE_COMFYUI_*`) must not be modified or overwritten.
   - ComfyUI run permission GRANTED for THIS task only: at most ONE test image per workflow,
     solely to confirm the graph executes; then stop. NO batch generation.
-  - Model downloads NOT granted in this exception. Missing nodes/models must be LISTED in the
-    report (name + link + size) for separate operator approval. Do not auto-download.
+  - PHASE-1 DOWNLOAD GRANTED (operator-approved 2026-06-26) — ONLY these two files:
+    - `Realistic_Vision_V6.0_NV_B1_fp16.safetensors` (~2.13 GB) -> `D:\workspace\ComfyUI\models\checkpoints\`
+      from https://huggingface.co/SG161222/Realistic_Vision_V6.0_B1_noVAE
+    - `vae-ft-mse-840000-ema-pruned.safetensors` (335 MB) -> `D:\workspace\ComfyUI\models\vae\`
+      from https://huggingface.co/stabilityai/sd-vae-ft-mse-original
+  - After Phase-1 download: point `MZ_FACELESS_TEST_V1.json` to this checkpoint + VAE, run EXACTLY ONE
+    test image, then stop. (Create the `checkpoints` / `vae` folders if missing.)
+  - ALL OTHER downloads still NOT granted (IP-Adapter SD1.5, CLIP vision, ControlNet aux/models):
+    LIST them for separate operator approval. Do not auto-download anything beyond the two files above.
   - No `D:\MIKAGE ZENITH AUDIO` changes. No website/public/audio/short/release changes.
   - No canon-lock. No asset-lock. No final / production-ready / PASS / verified claim.
     No push. No deploy. SAMPLE label on all outputs. Candidate/test only.
