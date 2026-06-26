@@ -41,11 +41,12 @@ allowed_actions:
   - isolate the helmet head (and head-attached hood/hair) for lookdev only
   - reshape ONLY the helmet head - reduce height about 8 percent, widen temples about 5 percent, flatten and tidy the bottom edge
   - rebuild helmet facets into larger deliberate planes following crown, temple and jaw - avoid many tiny triangles converging at the face center
-  - keep exactly two horizontal sensor slits, recess them into the porcelain (concave plus inner emissive), about 20 percent thinner, restrained glow
+  - keep exactly two horizontal sensor slits, recess them into the porcelain (concave), about 20 percent thinner - DEFAULT state is BLACK and UNLIT (Mikage dormant)
+  - build the violet as a separate AWAKENED emissive state (material or light toggle) that is OFF by default, used only for the awakening reveal
   - assign glazed semi-matte porcelain material (subtle subsurface plus thin clearcoat) to the shell and graphite matte to underlayer and hair
   - light with one dominant side key plus a thin rim, opposite side falling into void 050508
   - set a slight three-quarter camera, head hero framing cropped at the neck
-  - render one head-lookdev contact sheet (three-quarter hero plus close facet, slit and material panels) into production/character/reviews
+  - render one head-lookdev contact sheet with BOTH slit states - a three-quarter DORMANT hero (black unlit slits) and a three-quarter AWAKENED hero (violet slits) - plus close facet and material panels, into production/character/reviews
   - write the head-lookdev proof report into production/character/reviews
   - write gate_report.txt into the temp gate folder for verify_output.py
   - run deterministic verification (Blender reopen, render dimension and inspection)
@@ -56,7 +57,7 @@ forbidden_actions:
   - do not touch body, armor below the neck, mount or steed, rig, bones, weights, or motion
   - do not change the Zenith Blade
   - do not change the number of slits (must stay exactly two) and do not add eyes, mouth, or a human face
-  - do not add new violet objects beyond the two recessed slits, and no halo, flood, or wash
+  - do not make violet the default or always-on look - dormant BLACK slits are the default; violet is only the separate awakened state; do not add new violet objects beyond the two slits; no halo, flood, or wash
   - do not introduce warm colors, bright cyan, gold seams, or any color outside the brand palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready
   - do not push
@@ -65,9 +66,11 @@ forbidden_actions:
 
 pass_conditions:
   - new head-lookdev blend reopens cleanly
-  - helmet reads as a deliberate hard-surface helmet with real three-quarter volume (temple, jaw, back), not a flat mask or egg
-  - exactly two recessed slits remain, glow restrained and contained to the slits
-  - glazed porcelain material reads (not clay, foam, or plastic)
+  - helmet reads tall/vertical, austere and deity-like (NOT round, egg, or toy), cranium-dominant with tapered jaw, real three-quarter volume (temple, jaw, back)
+  - every visible edge carries a consistent chamfer that catches a clean specular highlight - no razor 0-radius edges, no triangle fans pinching mid-face
+  - clear primary/secondary/tertiary form hierarchy; detail concentrated at focal points with calm rest planes on crown/cheeks
+  - exactly two recessed slits remain; default DORMANT render shows them BLACK and unlit; a separate AWAKENED render shows them violet, contained to the slits
+  - glazed porcelain material reads as sacred ceramic (subsurface edge translucency + coat glaze + roughness variation), NOT clay, foam, or plastic
   - one dominant side key with void falloff on the opposite side is present
   - body, mount and rig are untouched - only head geometry changed
   - contact sheet rendered into reviews, output remains CANDIDATE only
