@@ -675,10 +675,13 @@ The agent must not say PASS unless the success check has visible evidence.
     - `vae-ft-mse-840000-ema-pruned.safetensors` (335 MB) -> `D:\workspace\ComfyUI\models\vae\`
       from https://huggingface.co/stabilityai/sd-vae-ft-mse-original
   - ENV SETUP GRANTED (operator-approved 2026-06-26): the local ComfyUI Python runtime is not
-    installed. Codex MAY create a Python venv at `D:\workspace\ComfyUI\venv` and pip-install the
+    installed; the only system Python (3.14) has NO PyTorch CUDA wheel. Codex MAY install
+    `Python 3.12.x` (CPython, python.org / winget — interpreter only, no system-wide PATH hijack
+    needed), build a venv at `D:\workspace\ComfyUI\venv` FROM Python 3.12, and pip-install the
     runtime deps to make ComfyUI start — specifically: PyTorch + torchvision with a CUDA build
-    appropriate for a GTX 1660 SUPER (Turing), then `requirements.txt` (and `manager_requirements`
-    if needed). These pip downloads (incl. torch ~2-3 GB) ARE allowed for THIS setup only.
+    that supports a GTX 1660 SUPER (Turing, sm_75; e.g. cu124), then `requirements.txt`
+    (and `manager_requirements` if needed). These downloads (Python 3.12 + torch ~2-3 GB) ARE
+    allowed for THIS setup only. Verify `torch.cuda.is_available() == True` before rendering.
   - After env + Phase-1 models: point `MZ_FACELESS_TEST_V1.json` to the checkpoint + VAE, launch
     ComfyUI with 1660-safe flags (`--use-pytorch-cross-attention --preview-method latent2rgb
     --reserve-vram 0.4`; do NOT force fp16), run EXACTLY ONE test image, then stop.
