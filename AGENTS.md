@@ -667,8 +667,9 @@ The agent must not say PASS unless the success check has visible evidence.
     - `D:\workspace\MIKAGE_RUNPOD_COMFYUI_STATIC_CHARACTER_PACK_V1\MZ_FACELESS_TEST_V1_REF.json`
     - `D:\workspace\MIKAGE_RUNPOD_COMFYUI_STATIC_CHARACTER_PACK_V1\MZ_FACELESS_TEST_V1_REPORT.md`
   - Existing workflow JSONs (`MIKAGE_COMFYUI_*`) must not be modified or overwritten.
-  - ComfyUI run permission GRANTED for THIS task only: at most ONE test image per workflow,
-    solely to confirm the graph executes; then stop. NO batch generation.
+  - ComfyUI run permission GRANTED for THIS task only: PROMPT-TUNING render budget = up to 8
+    SAMPLE test images total per request (e.g. a few seeds of a reworded prompt), solely to dial
+    in the faceless-helmet look. NOT production batch; stop at 8 and report.
   - PHASE-1 DOWNLOAD GRANTED (operator-approved 2026-06-26) — ONLY these two files:
     - `Realistic_Vision_V6.0_NV_B1_fp16.safetensors` (~2.13 GB) -> `D:\workspace\ComfyUI\models\checkpoints\`
       from https://huggingface.co/SG161222/Realistic_Vision_V6.0_B1_noVAE
@@ -684,7 +685,7 @@ The agent must not say PASS unless the success check has visible evidence.
     allowed for THIS setup only. Verify `torch.cuda.is_available() == True` before rendering.
   - After env + Phase-1 models: point `MZ_FACELESS_TEST_V1.json` to the checkpoint + VAE, launch
     ComfyUI with 1660-safe flags (`--use-pytorch-cross-attention --preview-method latent2rgb
-    --reserve-vram 0.4`; do NOT force fp16), run EXACTLY ONE test image, then stop.
+    --reserve-vram 0.4`; do NOT force fp16), then render within the prompt-tuning budget above.
     (Create the `checkpoints` / `vae` folders if missing.)
   - MODEL downloads still NOT granted beyond the two Phase-1 files (IP-Adapter SD1.5, CLIP vision,
     ControlNet aux/models): LIST them for separate operator approval. (Pip/runtime deps above are
