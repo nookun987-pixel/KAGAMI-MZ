@@ -1,0 +1,125 @@
+<svg viewBox="0 0 1080 1620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl desc" font-family="'Space Mono','DejaVu Sans Mono',monospace">
+  <title id="ttl">Mikage — World Signal Key Art, V0.1 composition blockout</title>
+  <desc id="desc">Flat-shape proportion blockout. Mikage central as the only real material, Lyra-0 and Dr. Aris as translucent signal ghosts left and right, a single cold-white halo behind the helmet, an anonymous skyline horizon, a dark hero-mount silhouette under the feet, and one thin violet trace running from the left ghost through Mikage to the sensor slit. UNCONFIRMED — proportion test only, not render-ready.</desc>
+
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2eeea" stop-opacity="0.34"/>
+      <stop offset="45%" stop-color="#dcd8e6" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#f2eeea" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="porc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e7e2db"/>
+      <stop offset="100%" stop-color="#a7a39c"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b9b4ac"/>
+      <stop offset="100%" stop-color="#6f6c66"/>
+    </linearGradient>
+    <linearGradient id="vio" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8F00FF" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#8F00FF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#8F00FF" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+
+  <!-- L1 VOID -->
+  <rect x="0" y="0" width="1080" height="1620" fill="#050508"/>
+
+  <!-- proportion guides: center axis + thirds + height ticks -->
+  <g stroke="#8F00FF" stroke-opacity="0.18" stroke-width="1">
+    <line x1="540" y1="0" x2="540" y2="1620" stroke-dasharray="2 8"/>
+    <line x1="360" y1="0" x2="360" y2="1620" stroke-dasharray="2 12" stroke-opacity="0.10"/>
+    <line x1="720" y1="0" x2="720" y2="1620" stroke-dasharray="2 12" stroke-opacity="0.10"/>
+    <line x1="0" y1="540" x2="1080" y2="540" stroke-dasharray="2 12" stroke-opacity="0.10"/>
+    <line x1="0" y1="1080" x2="1080" y2="1080" stroke-dasharray="2 12" stroke-opacity="0.10"/>
+  </g>
+
+  <!-- L1 SKYLINE (anonymous horizon) -->
+  <g fill="#0c0c15">
+    <rect x="0" y="1090" width="1080" height="150"/>
+    <rect x="70" y="980" width="70" height="260"/>
+    <rect x="155" y="1030" width="44" height="210"/>
+    <rect x="210" y="940" width="56" height="300"/>
+    <rect x="300" y="1010" width="40" height="230"/>
+    <rect x="760" y="960" width="60" height="280"/>
+    <rect x="835" y="1020" width="46" height="220"/>
+    <rect x="892" y="900" width="64" height="340"/>
+    <rect x="968" y="1000" width="42" height="240"/>
+  </g>
+  <rect x="0" y="1090" width="1080" height="150" fill="#050508" opacity="0.45"/>
+
+  <!-- L5 HALO (single light source, cold white) -->
+  <ellipse cx="540" cy="430" rx="300" ry="330" fill="url(#halo)"/>
+
+  <!-- L2 HERO-MOUNT silhouette (test only — under feet) -->
+  <g fill="#0b0b13">
+    <path d="M470 1235 q-120 -40 -150 -150 q120 30 175 70 z"/>
+    <path d="M610 1235 q120 -40 150 -150 q-120 30 -175 70 z"/>
+    <ellipse cx="540" cy="1250" rx="230" ry="40"/>
+  </g>
+
+  <!-- L3 GHOST  Lyra-0 (left) translucent signal -->
+  <g opacity="0.22" fill="url(#porc)">
+    <circle cx="300" cy="700" r="48"/>
+    <path d="M300 748 q-78 16 -86 150 l16 320 q70 26 140 0 l16 -320 q-8 -134 -86 -150 z"/>
+    <rect x="220" y="900" width="34" height="220" rx="14"/>
+    <rect x="346" y="900" width="34" height="220" rx="14"/>
+  </g>
+  <!-- L3 GHOST  Dr. Aris (right) translucent signal -->
+  <g opacity="0.20" fill="url(#porc)">
+    <circle cx="784" cy="720" r="46"/>
+    <path d="M784 766 q-74 16 -82 144 l14 300 q66 24 134 0 l14 -300 q-6 -128 -80 -144 z"/>
+    <rect x="708" y="912" width="32" height="206" rx="13"/>
+    <rect x="826" y="912" width="32" height="206" rx="13"/>
+  </g>
+
+  <!-- L4 MIKAGE — only real material, tallest, center -->
+  <g>
+    <!-- coat / body -->
+    <path d="M540 470 q-150 14 -176 196 l-34 540 q104 40 210 40 q106 0 210 -40 l-34 -540 q-26 -182 -176 -196 z" fill="url(#coat)" stroke="#26242a" stroke-width="2"/>
+    <!-- coat opening hairline -->
+    <line x1="540" y1="540" x2="540" y2="1230" stroke="#050508" stroke-width="3" opacity="0.55"/>
+    <!-- shoulders accent -->
+    <path d="M364 690 q176 -70 352 0" stroke="#cfcbc4" stroke-width="2" fill="none" opacity="0.4"/>
+    <!-- neck -->
+    <path d="M508 452 l-6 56 l76 0 l-6 -56 z" fill="#0d0d14"/>
+    <!-- HELMET (faceless porcelain) -->
+    <path d="M452 300 q-6 -118 88 -132 q94 14 88 132 q10 96 -18 158 q-30 64 -70 70 q-40 -6 -70 -70 q-28 -62 -18 -158 z" fill="url(#porc)" stroke="#3a3840" stroke-width="2"/>
+    <path d="M498 268 q42 -20 84 0" stroke="#f2eeea" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <!-- exactly two sensor slits (near-black, violet 10%) -->
+    <rect x="476" y="372" width="50" height="6" rx="3" fill="#050508"/>
+    <rect x="554" y="372" width="50" height="6" rx="3" fill="#050508"/>
+    <rect x="476" y="372" width="50" height="6" rx="3" fill="#8F00FF" opacity="0.10"/>
+    <rect x="554" y="372" width="50" height="6" rx="3" fill="#8F00FF" opacity="0.10"/>
+  </g>
+
+  <!-- L6 VIOLET TRACE — one hairline: left ghost -> Mikage -> sensor slit -->
+  <g fill="none">
+    <circle cx="300" cy="760" r="5" fill="#8F00FF" opacity="0.8"/>
+    <path d="M300 760 C 360 900, 470 760, 526 376" stroke="url(#vio)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="526" cy="376" r="3.2" fill="#f2eeea"/>
+  </g>
+
+  <!-- L7 GRAIN -->
+  <rect x="0" y="0" width="1080" height="1620" filter="url(#grain)" opacity="0.5"/>
+
+  <!-- ===== ANNOTATION LEGEND (blockout meta, not part of art) ===== -->
+  <g font-size="20" fill="#8a8780" letter-spacing="1">
+    <text x="44" y="70" fill="#f2eeea" font-size="26" letter-spacing="3">MIKAGE — WORLD SIGNAL  ·  V0.1 BLOCKOUT</text>
+    <text x="44" y="100" fill="#7B2FFF">UNCONFIRMED · flat-shape proportion test · not render-ready</text>
+  </g>
+  <g font-size="17" fill="#9a968f" letter-spacing="1" text-anchor="end">
+    <text x="1036" y="430">halo — SOLE light</text>
+    <text x="1036" y="455" fill="#6f6c66">cold white only</text>
+    <text x="1036" y="980">hero-mount</text>
+    <text x="1036" y="1005" fill="#6f6c66">silhouette · cut if unreadable</text>
+  </g>
+  <g font-size="16" fill="#7a766f" letter-spacing="1">
+    <text x="186" y="640">Lyra-0 ghost ~22%</text>
+    <text x="700" y="660">Dr.Aris ghost ~20%</text>
+    <text x="44" y="1300">skyline — anonymous, horizon only</text>
+    <text x="560" y="392" fill="#8F00FF" fill-opacity="0.9">violet ends at slit</text>
+  </g>
+</svg>
