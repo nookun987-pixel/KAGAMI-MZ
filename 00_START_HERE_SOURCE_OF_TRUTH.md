@@ -55,23 +55,25 @@ That is the whole context load. Do **not** ask the operator to re-explain anythi
 
 ---
 
-## 4. LEGACY / PARKED — NOT CURRENT TRUTH (do not read as authoritative)
+## 4. LEGACY / ARCHIVED — NOT CURRENT TRUTH (do not read as authoritative)
 
-These describe an **older automated image-generation runtime** ("MIKAGE hub + modules + lanes",
-Drive-queue / Colab / Vertex / RAG / LoRA / ComfyUI / RunPod). They are **not** the current
-studio-production lanes and several mislabel the live docs. Treat as historical until the
-operator confirms archive. Detailed list + recommended action: see
-`docs/MIKAGE_REPO_AUDIT_AND_CLEANUP_REPORT_V0_1.md`.
+The old automated image-generation runtime ("MIKAGE hub + modules + lanes", Drive-queue /
+Colab / Vertex / RAG / LoRA / ComfyUI / RunPod) has been **archived** (2026-06-27, operator-run
+`git mv`, history preserved). It is historical only — nothing here drives current work.
+Audit detail: `docs/MIKAGE_REPO_AUDIT_AND_CLEANUP_REPORT_V0_1.md`.
 
-- `docs/ai_handoff/` (whole pack: `SOURCE_OF_TRUTH.md`, `SYSTEM_MAP.md`, `ACTIVE_FILES_INDEX.md`, …)
-  — describes the old hub runtime; its `SOURCE_OF_TRUTH.md` wrongly calls `docs/handoff` "legacy".
-  **The opposite is true for current work.**
-- Root status/lock/report files: `P0_*`, `P7_*`, `P8_*`, `RAG_*`, `REAL_VERTEX_*`, `VERTEX_*`,
-  `SYSTEM_*`, `ARCHITECTURE_*`, `IMAGE_*`, `VM_*`, `MODEL_*`, `STRICT_IMAGE_LOOP_SPEC.md`, etc.
-- Runtime code dirs (old stack): `MIKAGE/`, `control_plane/`, `control_core/`, `execution/`,
-  `evaluation/`, `critic/`, `memory/`, `runtime/`, `deploy/`, `lanes/`, `archive_legacy/`.
+Where the archived material now lives:
+- `_archive_legacy_runtime/` — the old runtime: `ai_handoff/` (the stale SOT pack that wrongly
+  called `docs/handoff` "legacy"), code dirs (`MIKAGE/`, `control_plane/`, `control_core/`,
+  `execution/`, `evaluation/`, `critic/`, `memory/`, `runtime/`, `deploy/`, `lanes/`), the old
+  entrypoints (`orchestrator.js`, `server.js`, `start_mikage.bat`), and `root_docs/` (all the old
+  `P0_*`, `P7_*`, `P8_*`, `RAG_*`, `VERTEX_*`, `SYSTEM_*`, `ARCHITECTURE_*`, `IMAGE_*`, `MODEL_*`
+  root reports).
+- `docs/handoff/_archive/` — the old asset-gen / render handoff chains (`ASSET-BUILD-*`,
+  `ASSET-RESET-*`, `PHASE4_*`/`PHASE5_*`, `FILM-*`, `*RUNPOD_COMFYUI*`, dated session logs, etc.).
 
-> NONE of the above is deleted or moved by this index. Archiving is an operator decision.
+> If you ever need something from an archive, it is still in git history — `git mv` it back; nothing
+> was deleted. The repo root and `docs/handoff/` now contain **only current studio files**.
 
 ---
 
