@@ -42,7 +42,7 @@ That is the whole context load. Do **not** ask the operator to re-explain anythi
 | Agent governance layer | `docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md` | Read before any mutation task. |
 | Hard gate (Codex tasks) | `.mikage/tasks/active_task.yaml` + `.mikage/tools/validate_task.py` / `verify_output.py` | Must PASS before/after a Codex task. |
 | Public engine standard | `MIKAGE_PUBLIC_ENGINE_OPERATING_STANDARD_V1.md` | Location UNCONFIRMED in this repo — may live in `D:\public_engine`. Confirm. |
-| Fanpage character + lore AD brief | `docs/character/MIKAGE_CHARACTER_LORE_AND_FANPAGE_AD_BRIEF_V0_1.md` | DRAFT. **Must be reconciled with the narrative-core lock above before publishing.** |
+| **Public lore + character standard** (fanpage / universe page) | `docs/character/MIKAGE_PUBLIC_LORE_STANDARD_V1.md` | The single feed for all public character/lore surfaces. Two-canon rule, public/internal boundary, voice, card template. Supersedes the old `..._FANPAGE_AD_BRIEF_V0_1.md`. |
 
 ---
 
