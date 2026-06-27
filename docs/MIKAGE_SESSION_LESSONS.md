@@ -25,6 +25,39 @@
   (commit ef445af) under `production/character/keyart_candidates/`.
 
 
+
+### What worked — no-Blender promo video (FUSE teaser, EN + JP)
+- **Tease/teaser video built fully by CODE (PIL overlays + ffmpeg), delivered finished mp4.** No
+  CapCut hand-assembly (operator opened it; code path = no fragile clicks, every beat controllable).
+- **Two-pass render is the reliable pattern:** PASS 1 = `zoompan` slow push on the single still →
+  `bg.mp4`; PASS 2 = overlay text/glow/grain + audio onto bg.mp4. zoompan MUST take a single input
+  image; mixing `-loop 1` + many looped overlays in one graph throws "reinitializing filters".
+- **Localized JP version > bilingual subs.** Shippori Mincho (`tools/mikage_short_toolkit/shippori500.ttf`)
+  renders kanji/kana clean. Keep brand chrome (wordmark/labels) Latin; localize body lines + date
+  (配信 = release, 事前保存 = pre-save). Real fonts already on disk in that toolkit (cinzel400/700,
+  spacemono400, shippori500, notoserif_sc500) — no download.
+- **Pick the music bed by RMS-per-2s scan** (sparse intro vs chorus plateau), then loudnorm + afade.
+- Media output lives in `D:\workspace` (not the repo), per convention.
+
+### Gotchas — do not repeat
+- **`geq` with a time expression (breathing-alpha halo) BREAKS the overlay chain** → "Failed to
+  inject frame into filter network: Invalid argument". Drop geq; use static overlay alpha
+  (`colorchannelmixer=aa=`) or a small looped glow PNG.
+- **Force `-framerate 30` on every looped PNG input** so fps matches the bg video, else overlay
+  frame injection fails mid-graph.
+- **Long renders time out the 45s bash call.** ~720 frames + 8 overlays = killed mid-encode. Split the
+  timeline into ≤~390-frame segments, encode each at `-preset ultrafast`, concat (demuxer, identical
+  params), then mux audio in a final `-c copy` pass. Do NOT `-c copy` split a CFR mp4 with `-ss` — it
+  gives wrong frame counts; re-encode each segment with `-ss/-t`.
+
+### Content state (UNCONFIRMED)
+- World-tease V0.2 motion → became a **FUSE single teaser** once operator added track name + date
+  (endcard "FUSE · SINGLE · OUT 20.07.2026"). Date 20.07.2026 is **operator-provided**.
+- **FUSE track itself: UPCOMING, no release date in its metadata, and a filename/version mismatch**
+  (`FUSE.wav` present = 2:30 but metadata labels it the 3:03 ALT; locked 2:30 master `FUSE__1_.wav`
+  not in folder). Operator to reconcile before any FUSE submit. Do not treat 20.07 as locked in the
+  release registry without confirmation.
+
 ## 2026-06-28 — Lane B PUBLIC: SOT cleanup · violet slit LOCK · AI-image breakthrough · no-Blender card/motion/promo (PHANTOM single shipped its visuals)
 
 ### What worked / upgrades (apply next time)
