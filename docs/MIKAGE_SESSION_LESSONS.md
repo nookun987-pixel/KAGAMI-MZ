@@ -3,6 +3,28 @@
 > One entry per session. Capture mistakes made + the rule to avoid repeating them, and any
 > upgrade discovered. Newest on top. Keep entries short and actionable.
 
+## 2026-06-28 (cont.) — Lane B: World Signal key art V0.2 + a canon-check correction
+
+### Mistake I made (do not repeat)
+- Flagged the PHANTOM cover/promo's dissolving-arm **crimson + kintsugi gold as a "warm-color BAN
+  violation." WRONG.** Per `character/MIKAGE_PUBLIC_LORE_STANDARD_V1.md` (LOCKED 2026-06-28, §ART
+  canon, lines ~97/105): on **character renders / covers / film**, crimson `#E60000` is canon for
+  damage/dissolve effects (≤15% frame) and **kintsugi gold = seams** is part of the design. The
+  "no warm" ban applies to **interface chrome + Spotify Canvas + the world-keyart draft spec ONLY**,
+  not character covers. → Before calling any cover/render off-brand, READ the §ART-canon block of the
+  lore standard first. Never conflate the two canon layers (brand-UI vs. ART/film).
+
+### What worked (apply next time)
+- **World key art via blockout → spec → prompt → one re-roll → lock.** Flat-SVG blockout (proportion
+  only) got operator sign-off on composition BEFORE any render, so the GPT pass nailed it in 2 rolls.
+- **Ghosts = featureless SIGNAL-MIST, phrased affirmatively** ("forms only barely suggested,
+  dissolving into void") — saying "no face" makes GPT draw a face. First roll gave human-faced
+  ghosts; affirmative re-phrase fixed it.
+- **Kintsugi gold on the world key art**: thin seams on the hairline cracks only, ≤15% frame, never a
+  light/wash; halo stays the single cold-white focus. Locked as `MIKAGE_WORLD_SIGNAL_KEYART_V0_2`
+  (commit ef445af) under `production/character/keyart_candidates/`.
+
+
 ## 2026-06-28 — Lane B PUBLIC: SOT cleanup · violet slit LOCK · AI-image breakthrough · no-Blender card/motion/promo (PHANTOM single shipped its visuals)
 
 ### What worked / upgrades (apply next time)
