@@ -3,6 +3,66 @@
 > One entry per session. Capture mistakes made + the rule to avoid repeating them, and any
 > upgrade discovered. Newest on top. Keep entries short and actionable.
 
+## 2026-06-28 — Lane B PUBLIC: SOT cleanup · violet slit LOCK · AI-image breakthrough · no-Blender card/motion/promo (PHANTOM single shipped its visuals)
+
+### What worked / upgrades (apply next time)
+- **One source of truth.** Repo had TWO contradicting "source of truth" systems (`docs/ai_handoff/`
+  described a dead image-gen runtime AND mislabeled the live `docs/handoff` as legacy) → that's WHY
+  every session re-explained context. Fix: created `00_START_HERE_SOURCE_OF_TRUTH.md` (the one
+  entry file: read order + authoritative file per topic). Archived the dead runtime to
+  `_archive_legacy_runtime/` and old asset-gen handoff chains to `docs/handoff/_archive/` (operator
+  `git mv`, history kept). Audit: `docs/MIKAGE_REPO_AUDIT_AND_CLEANUP_REPORT_V0_1.md`.
+- **SLIT COLOUR LOCKED = electric-violet `#8F00FF`** on EVERY surface incl. character renders
+  (operator decision — resolved the long crimson/violet ambiguity). Crimson `#E60000` = damage /
+  internal-energy only; kintsugi gold = seams. Updated in `MIKAGE_PUBLIC_LORE_STANDARD_V1.md`.
+- **AI image: ChatGPT (GPT-image) >> Midjourney for STRICT-canon character.** MJ chases a
+  pretty-face prior → kept rendering Noh masks WITH faces. GPT reasons + follows instructions, so
+  "faceless" sticks. The unlocks: (1) **affirmative framing** — "smooth blank porcelain where a face
+  would be, the only break is two slits"; never "no face/no eyes" (negation summons a face);
+  (2) explicit **"NO fox ears / NO kitsune"** (kitsune ears = canon ban). Winning anchor =
+  `cover_phantom.jpg` (faceless egg + violet slits + dissolving arm) → became the **PHANTOM** single
+  cover (real release, out Jul 14 2026).
+- **No-Blender public pipeline, proven end-to-end on a real release:**
+  - **Cards = PIL composite over the anchor + REAL fonts.** Download Cinzel + Space Mono TTF from
+    Google-Fonts github raw into /tmp and use in PIL. Serif fallback looks cheap (operator: "củ
+    chuối"); the real Cinzel = pro. Put the wordmark in the artwork's negative space (poster style).
+  - **Simple motion = CapCut via computer-use.** Grant by the exact process basename `capcut.exe`
+    (the Start-menu name didn't resolve / screenshots masked it). Use **Animation › Combo › Cam
+    Motion** preset (one click). **CapCut manual KEYFRAMES via pixel-driving kept COLLAPSING** (the
+    value applied to the whole clip, no start kf) — avoid; presets are reliable.
+  - **Kinetic promo (text reveals one-by-one + zoom in/out + END-on-poster + music) = build by CODE**
+    (PIL frames + ffmpeg), NOT CapCut hand-assembly. Every beat is controllable; CapCut hand-build of
+    this would be many fragile clicks. End frame == the announce poster exactly.
+  - **Combine a CapCut clip + a code promo** with ffmpeg `xfade` (same res/fps), audio from the hook
+    (operator picked 0:50). Result: `MIKAGE_PHANTOM_PROMO_v3_FINAL.mp4` (24s).
+
+### Gotchas (do not repeat)
+- **midjourney.com is BLOCKED for Claude-in-Chrome automation** (org policy) → I can't drive MJ.
+  ChatGPT image-gen is also browser/operator-driven. My value on AI images = prompt-craft +
+  post-processing (cards/motion), not driving the gen tool.
+- **Sandbox render: PNG save is the bottleneck** (~0.5s/frame, timed out at 600 PNGs). Use **JPG
+  (quality 90)** = ~10-20× faster. And **SPLIT render (frames) from encode (ffmpeg)** into separate
+  bash calls to fit the 45s timeout.
+- **Sandbox can't delete files in the mounted folder** (`rm` → "Operation not permitted"). Don't
+  drop temp/check files into the user's folder if you can't clean them.
+- **Honest IP caveat recorded** (`MIKAGE_AI_IMAGE_PIPELINE_DECISION_AND_PROMPT_SYSTEM_V1.md`):
+  pure-AI output is NOT copyrightable (US 2026) + active music-AI backlash → for the CORE canonical
+  hero, add human-refined input / train a LoRA on own art. Use AI for volume + nailing the look.
+
+### Deliverables (operator commits repo docs; media lives in D:\workspace)
+- Repo: `00_START_HERE_SOURCE_OF_TRUTH.md` · `MIKAGE_REPO_AUDIT_AND_CLEANUP_REPORT_V0_1.md` ·
+  `character/MIKAGE_PUBLIC_LORE_STANDARD_V1.md` · `MIKAGE_AI_IMAGE_PIPELINE_DECISION_AND_PROMPT_SYSTEM_V1.md` ·
+  `MIKAGE_2D_TO_FAKE_3D_MOTION_RESEARCH_V1.md` (+ violet-lock edits). Legacy archived.
+- D:\workspace (PHANTOM single): `cover_phantom.jpg` (anchor) · `MIKAGE_PHANTOM_COVER_card.png` ·
+  `MIKAGE_PHANTOM_ANNOUNCE_card.png` · `MIKAGE_PHANTOM_MOTION_v1.mp4` · `MIKAGE_PHANTOM_PROMO_v1.mp4` ·
+  `MIKAGE_PHANTOM_PROMO_v3_FINAL.mp4` (24s, music from 0:50).
+
+### Process rule going forward
+- **Strict-canon character art → GPT-image + affirmative framing**, not pure-prompt MJ. Lock ONE
+  anchor, reuse as reference; LoRA later for consistency.
+- **Kinetic / text / music video → CODE (PIL+ffmpeg)**, not CapCut hand-assembly. CapCut only for
+  quick one-click preset motion. Combine clips with ffmpeg `xfade`.
+
 ## 2026-06-25 (cont.) — build-log film, TỈNH onboarding, Codex V1.4/V1.5
 
 ### Mistakes I made (do not repeat)

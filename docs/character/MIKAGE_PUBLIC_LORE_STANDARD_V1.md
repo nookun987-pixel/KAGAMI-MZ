@@ -74,7 +74,7 @@ The universe page already presents entities in two tiers; standardize it:
 This is the `THE CANON RULING` card, formalized. Every public image of Mikage obeys all of it:
 
 1. **Armor first.** The silhouette reads as armor/mantle before any detail. It must be recognizable as Mikage in a thumbnail.
-2. **Faceless porcelain helmet — exactly two thin horizontal sensor slits.** No eyes, no mouth, no opening, no extra face-like marks. The slits are **void-black** in the figure itself (see colour rule §6).
+2. **Faceless porcelain helmet — exactly two thin horizontal sensor slits.** No eyes, no mouth, no opening, no extra face-like marks. The slits glow **electric-violet `#8F00FF`** — the live signal (LOCKED, every surface).
 3. **Subtle fox-like silhouette — NOT a kitsune mask.** The head shape may *suggest* a fox in profile; it must never become a painted/masked kitsune.
 4. **Long, heavy black hair — always visible.** It is part of the identity, not optional. (A faceless helmet with the hair *gone* reads as "not Mikage" — see the `THE STARTING POINT` build-log card.)
 5. **The Slab (Zenith Blade).** A massive, perfectly straight slab — **never a katana**, never elegant, never a laser, never fantasy-ornamented. Object of mass, not a weapon flourish.
@@ -94,15 +94,15 @@ This is the single most-broken rule, so it is stated hard. **There are two colou
 - **No** crimson, **no** kintsugi gold, **no** Z-Blue in interface chrome.
 
 **ART canon — character renders / covers / film only (NOT the page chrome):**
-- Porcelain + void + **crimson `#E60000`** (internal energy / HUD, kept ≤15% of frame) + **kintsugi gold** (seams only). The two slits are **void-black** here, not violet.
-- **No** interface-violet fill inside an ART render.
+- Porcelain + void + **the two slits glow electric-violet `#8F00FF`** (the live signal — LOCKED 2026-06-28, on EVERY surface including renders) + **kintsugi gold** (seams) + **crimson `#E60000`** reserved for damage / internal-energy effects only (wounds, dissolve), ≤15% of frame.
+- Violet lives in the two slits (the signal); never a full fill/wash anywhere.
 
 **Public meaning of each colour (DRIP 4, paste-ready):**
 > Void-black — the silence between transmissions.
 > Porcelain white — the shell that holds.
 > Electric violet — the live signal itself. When you see violet, something is transmitting.
 
-> Practical test: if it's the website or a fanpage card → INTERFACE (violet signal, no crimson/gold). If it's a render of Mikage's body/blade → ART (crimson + gold, black slits, no violet). A card that *contains* a render keeps the render ART inside and the chrome INTERFACE around it — never blended.
+> LOCKED: the two slits are ALWAYS electric-violet `#8F00FF` (the signal) — on renders, cards, and web alike. Crimson `#E60000` = damage/energy effects only. Kintsugi gold = seams only. Violet never becomes a full fill — it stays the slit signal.
 
 ---
 
