@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MIKAGE ZENITH — Zenith Blade · 3D Inspect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --void:#050508; --porc:#f2eeea; --silver:#a0a0b0; --silverdim:#6b6b78; --violet:#8f00ff; --line:rgba(160,160,176,.16); }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:var(--void);overflow:hidden;font-family:'Space Mono',monospace;color:var(--porc)}
+  #app{position:fixed;inset:0;background:radial-gradient(120% 90% at 50% 42%, #14141c 0%, #0a0a10 45%, #050508 100%)}
+  canvas{display:block;width:100%;height:100%;cursor:grab}
+  canvas:active{cursor:grabbing}
+  .frame{position:fixed;inset:18px;border:1px solid var(--line);pointer-events:none}
+  .tick{position:fixed;width:14px;height:14px;border:1px solid rgba(160,160,176,.4);pointer-events:none}
+  .tl{top:18px;left:18px;border-right:0;border-bottom:0}.tr{top:18px;right:18px;border-left:0;border-bottom:0}
+  .bl{bottom:18px;left:18px;border-right:0;border-top:0}.br{bottom:18px;right:18px;border-left:0;border-top:0}
+  .hdr{position:fixed;top:42px;left:46px;pointer-events:none}
+  .wm{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.34em;font-size:15px;color:var(--porc)}
+  .sub{margin-top:8px;font-size:11px;letter-spacing:.28em;color:var(--silver)}
+  .topright{position:fixed;top:44px;right:46px;text-align:right;font-size:11px;letter-spacing:.24em;color:var(--silver);pointer-events:none}
+  .panel{position:fixed;bottom:46px;left:46px;pointer-events:none}
+  .name{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.18em;font-size:26px}
+  .meta{margin-top:6px;font-size:11px;letter-spacing:.2em;color:var(--silver)}
+  .hint{position:fixed;bottom:48px;right:46px;text-align:right;font-size:11px;letter-spacing:.18em;color:var(--silverdim);pointer-events:none;line-height:1.9}
+  .hint b{color:var(--silver);font-weight:400}
+  .ctrls{position:fixed;bottom:46px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
+  .btn{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--silver);background:rgba(13,13,20,.7);
+       border:1px solid var(--line);padding:9px 16px;cursor:pointer;transition:.25s}
+  .btn:hover{color:var(--porc);border-color:rgba(143,0,255,.5);box-shadow:0 0 16px rgba(143,0,255,.18)}
+  .btn.on{color:var(--porc);border-color:rgba(143,0,255,.6)}
+  .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--violet);box-shadow:0 0 8px var(--violet);margin-right:7px;vertical-align:middle}
+  #err{position:fixed;inset:0;display:none;place-items:center;text-align:center;font-size:13px;color:var(--silver);padding:40px;line-height:1.8}
+</style>
+</head>
+<body>
+<div id="app"><canvas id="c"></canvas></div>
+<div class="frame"></div><div class="tick tl"></div><div class="tick tr"></div><div class="tick bl"></div><div class="tick br"></div>
+<div class="hdr"><div class="wm">MIKAGE ZENITH</div><div class="sub">CINE LAYER · 3D INSPECT</div></div>
+<div class="topright">V0.1 · LOCKED<br>THE EXECUTION CORE</div>
+<div class="panel"><div class="name">ZENITH BLADE</div><div class="meta"><span class="dot"></span>straight slab · point-down · core node</div></div>
+<div class="hint"><b>DRAG</b> — rotate<br><b>SCROLL</b> — zoom<br><b>R</b> — reset</div>
+<div class="ctrls">
+  <div class="btn on" id="auto">AUTO-SPIN</div>
+  <div class="btn" id="reset">RESET VIEW</div>
+</div>
+<div id="err">Couldn't load the 3D engine.<br>Open this file in a browser with internet (Chrome/Edge), or check your connection, then refresh.</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  if(!window.THREE){document.getElementById('err').style.display='grid';return;}
+  const canvas=document.getElementById('c');
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(38,1,0.1,100);
+
+  // ---------- materials ----------
+  const steel=new THREE.MeshStandardMaterial({color:0x55555c,metalness:0.96,roughness:0.32});
+  const steelDark=new THREE.MeshStandardMaterial({color:0x33333a,metalness:0.9,roughness:0.45});
+  const platinum=new THREE.MeshStandardMaterial({color:0xc6c8cc,metalness:0.98,roughness:0.18});
+  const crimson=new THREE.MeshStandardMaterial({color:0x9d2933,emissive:0x8e050f,emissiveIntensity:1.5,metalness:0.5,roughness:0.5});
+  const gold=new THREE.MeshStandardMaterial({color:0xc39a52,emissive:0x6e5526,emissiveIntensity:0.6,metalness:0.85,roughness:0.4});
+  const violet=new THREE.MeshStandardMaterial({color:0x8f00ff,emissive:0x8f00ff,emissiveIntensity:2.6,metalness:0.3,roughness:0.4});
+
+  const blade=new THREE.Group(); scene.add(blade);
+
+  // ---------- blade body (flat slab, tapering to a point at bottom) ----------
+  const shape=new THREE.Shape();
+  shape.moveTo(-0.13,1.55); shape.lineTo(0.13,1.55); shape.lineTo(0.13,-0.95);
+  shape.lineTo(0.0,-1.85); shape.lineTo(-0.13,-0.95); shape.lineTo(-0.13,1.55);
+  const body=new THREE.Mesh(new THREE.ExtrudeGeometry(shape,{depth:0.08,bevelEnabled:true,bevelThickness:0.02,bevelSize:0.018,bevelSegments:2}),steel);
+  body.geometry.center(); blade.add(body);
+  // central ridge (lighter)
+  const ridge=new THREE.Mesh(new THREE.BoxGeometry(0.02,3.2,0.13),platinum);
+  ridge.position.y=0.0; blade.add(ridge);
+  // crimson core seam on front face
+  const seam=new THREE.Mesh(new THREE.BoxGeometry(0.022,2.45,0.02),crimson);
+  seam.position.set(0,0.05,0.075); blade.add(seam);
+  const seam2=seam.clone(); seam2.position.z=-0.075; blade.add(seam2);
+
+  // ---------- pommel cap (top) ----------
+  const cap=new THREE.Mesh(new THREE.BoxGeometry(0.34,0.1,0.18),steelDark);
+  cap.position.y=1.62; blade.add(cap);
+  const capEdge=new THREE.Mesh(new THREE.BoxGeometry(0.34,0.02,0.18),new THREE.MeshStandardMaterial({color:0x4b5866,metalness:0.9,roughness:0.4}));
+  capEdge.position.y=1.67; blade.add(capEdge);
+
+  // ---------- grip node (ring + band) at mid-shaft ----------
+  const node=new THREE.Group(); node.position.y=0.2; blade.add(node);
+  const band=new THREE.Mesh(new THREE.BoxGeometry(0.34,0.34,0.20),steelDark); node.add(band);
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(0.235,0.028,16,40),platinum);
+  ring.rotation.x=Math.PI/2.0; ring.rotation.y=0; node.add(ring);
+  const ring2=ring.clone(); ring2.rotation.x=0; node.add(ring2);
+  // violet core sphere (P3) — single locus
+  const core=new THREE.Mesh(new THREE.SphereGeometry(0.075,28,28),violet); node.add(core);
+  const coreLight=new THREE.PointLight(0x8f00ff,2.2,4); node.add(coreLight);
+  // gold menuki dot
+  const menuki=new THREE.Mesh(new THREE.SphereGeometry(0.03,16,16),gold); menuki.position.set(0,0,0.13); node.add(menuki);
+
+  // ---------- kintsugi gold cracks (thin emissive) ----------
+  [[0.7,0.5,0.4],[ -0.55,0.9,-0.5]].forEach(c=>{
+    const k=new THREE.Mesh(new THREE.BoxGeometry(0.012,0.32,0.02),gold);
+    k.position.set(c[0]*0.13,c[1],0.078); k.rotation.z=c[2]; blade.add(k);
+  });
+
+  // ---------- violet glow sprite (fake bloom on core) ----------
+  function glowTex(){
+    const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const x=cv.getContext('2d');
+    const g=x.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+    g.addColorStop(0,'rgba(190,150,255,0.9)');g.addColorStop(.25,'rgba(143,0,255,0.55)');
+    g.addColorStop(.6,'rgba(110,0,200,0.15)');g.addColorStop(1,'rgba(143,0,255,0)');
+    x.fillStyle=g;x.fillRect(0,0,s,s);const t=new THREE.Texture(cv);t.needsUpdate=true;return t;
+  }
+  const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex(),blending:THREE.AdditiveBlending,depthWrite:false,transparent:true}));
+  glow.scale.set(1.5,1.5,1); glow.position.copy(node.position); blade.add(glow);
+
+  // ---------- lights ----------
+  scene.add(new THREE.AmbientLight(0x3a3a46,0.5));
+  const key=new THREE.DirectionalLight(0xffffff,1.15); key.position.set(2,3,2.5); scene.add(key);
+  const rim=new THREE.DirectionalLight(0x9d7fd0,0.9); rim.position.set(-2.5,1,-2); scene.add(rim);
+  const fill=new THREE.DirectionalLight(0x4b5866,0.5); fill.position.set(0,-2,1.5); scene.add(fill);
+
+  // faint ground glow plane
+  const floor=new THREE.Mesh(new THREE.CircleGeometry(3.4,48),new THREE.MeshBasicMaterial({color:0x0c0c14,transparent:true,opacity:0.6}));
+  floor.rotation.x=-Math.PI/2; floor.position.y=-2.2; scene.add(floor);
+
+  // ---------- manual orbit controls ----------
+  let theta=0.6, phi=1.45, radius=6.2, tRadius=6.2;
+  let dragging=false, px=0, py=0, autoSpin=true;
+  const target=new THREE.Vector3(0,0,0);
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+  function updateCam(){
+    radius+= (tRadius-radius)*0.12;
+    camera.position.x=target.x+radius*Math.sin(phi)*Math.sin(theta);
+    camera.position.y=target.y+radius*Math.cos(phi);
+    camera.position.z=target.z+radius*Math.sin(phi)*Math.cos(theta);
+    camera.lookAt(target);
+  }
+  canvas.addEventListener('pointerdown',e=>{dragging=true;px=e.clientX;py=e.clientY;canvas.setPointerCapture(e.pointerId);});
+  canvas.addEventListener('pointerup',e=>{dragging=false;});
+  canvas.addEventListener('pointermove',e=>{
+    if(!dragging)return;
+    theta-=(e.clientX-px)*0.008; phi=clamp(phi-(e.clientY-py)*0.008,0.25,2.85);
+    px=e.clientX;py=e.clientY;
+  });
+  canvas.addEventListener('wheel',e=>{e.preventDefault();tRadius=clamp(tRadius+e.deltaY*0.006,3.2,11);},{passive:false});
+  // touch pinch
+  let pd=0;
+  canvas.addEventListener('touchmove',e=>{ if(e.touches.length===2){const dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;const d=Math.hypot(dx,dy); if(pd)tRadius=clamp(tRadius+(pd-d)*0.01,3.2,11); pd=d;}},{passive:true});
+  canvas.addEventListener('touchend',()=>pd=0);
+
+  const autoBtn=document.getElementById('auto'), resetBtn=document.getElementById('reset');
+  autoBtn.onclick=()=>{autoSpin=!autoSpin;autoBtn.classList.toggle('on',autoSpin);};
+  function reset(){theta=0.6;phi=1.45;tRadius=6.2;}
+  resetBtn.onclick=reset;
+  window.addEventListener('keydown',e=>{if(e.key.toLowerCase()==='r')reset();});
+
+  function resize(){const w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+  window.addEventListener('resize',resize); resize();
+
+  let t=0;
+  (function loop(){
+    requestAnimationFrame(loop);
+    if(autoSpin && !dragging) theta+=0.0035;
+    t+=0.04; core.material.emissiveIntensity=2.2+Math.sin(t)*0.6; coreLight.intensity=1.8+Math.sin(t)*0.5;
+    glow.material.opacity=0.85+Math.sin(t)*0.12;
+    updateCam(); renderer.render(scene,camera);
+  })();
+})();
+</script>
+</body>
+</html>
