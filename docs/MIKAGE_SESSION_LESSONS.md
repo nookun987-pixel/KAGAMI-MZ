@@ -248,3 +248,24 @@ ange onto ONE master; never generate states separately.
 - New `task_type` MUST be in `validate_task.py` `LOCKED_TASK_TYPES` — use an existing one (e.g. `CONTACT_SHEET_ONLY`) instead of inventing.
 - Gate `output_folder_allowed` must EXIST before Codex runs -> create `_tmp/<gate>/.gitkeep`.
 - **Write-overwriting a file on the Windows mount pads trailing NULL bytes** -> breaks YAML/parsers. Strip with `tr -d '\000'`, or append via Edit instead of overwrite.
+
+---
+
+## 2026-06-29 — Zenith Blade IP, video format lock, site deploy V13b
+
+**Built**
+- **Zenith Blade** (new cine-layer IP, V0.1 locked): corrected from a wrong katana to canon — **straight monolithic slab, point-down, single violet P3 core, grip ring mid-shaft** (read from the operator's BUILD LOG "Foundation Lock" frame). Deliverables in `BLADE_V0.1/`: 2D poster, 360° turntable, 2D→3D build reveal, "3D INSPECT" showcase, interactive three.js viewer (HTML), and WAKE lyric videos (EN/JP) that concatenate build → lyric → inspect → end card on one continuous WAKE track.
+- **Character figure V0.4** (flat-graphic reproduction of the GPT "Foundation Lock" figure) + **World key art V0.4** matrix.
+- **Website deploy V13b** (`MIKAGEZENITH_SITE_DEPLOY_V13b_BLADE_WAKE.zip`): new `zenith-blade.html` (3D viewer + video gallery + poster), Universe "Cine Layer" section (World keyart + figure + Blade 2D tile linking to the 3D page), and **WAKE/FUSE/PHANTOM added to `releases.js`** (covers added; `fm` smartlinks left blank → backfill on TooLost assignment).
+
+**Locked**
+- `docs/MIKAGE_VIDEO_FORMAT_STANDARD_V1.md` — one consistent public-video standard (fonts Cinzel/Shippori/Space Mono; violet = signal never a wash; build slow enough to read; lyric text left column entering at vocal onset; fixed end card; Pre-save→Listen now). Stops the per-day style drift the operator flagged.
+
+**Lessons (technical)**
+- The Studio OS folder name has an **em dash (—)** → `cmd copy` fails ("cannot find path") and breaks `git add`. Fix: PowerShell + wildcard `*Studio OS`; `.bat` uses `%~dp0`.
+- ffmpeg **blend/screen must run in RGB (`format=gbrp`)** — on YUV it magenta-washes the whole frame.
+- Restricted sandbox network: fonts via `npm pack @fontsource/*` → woff2→ttf (fonttools). Noto Serif CJK ttc indices JP=0/KR=1/SC=2. Background ffmpeg does not survive across bash calls; keep encodes <45s or chunk.
+
+**State / pending**
+- WAKE lyric timing was hand-estimated (no .lrc) — vocals start 0:23; nudge if off. JP translations are UNCONFIRMED (native review before posting).
+- WAKE/FUSE/PHANTOM smartlinks PENDING in releases.js.
