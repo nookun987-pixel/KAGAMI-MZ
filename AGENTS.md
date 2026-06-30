@@ -870,3 +870,30 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). NO subdivision-final, NO lookdev. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-second controlled exception is open:
+  - `MIKAGE_HELMET_CONTROLLED_SUBDIV_V0_6 = OPEN`
+  - V0.5 helmet proportion/silhouette is APPROVED (BLOCKING APPROVED — no further scale or head/body proportion change). This task = one CONTROLLED SUBDIVISION geometry pass that smooths the blocking facets WITHOUT changing the V0.5 silhouette or restoring an egg. Still helmet-ONLY geometry. NO material/lookdev/kintsugi/hair/cinematic lighting. SSOT + 2D master win on conflict.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`) + locked helmet target `production/character/build_log/MIKAGE_HELMET_BLOCKING_SPEC_V0_1.md`. Codex MUST read both.
+  - Only allowed next task: `MIKAGE_HELMET_CONTROLLED_SUBDIV_V0_6`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_CONTROLLED_SUBDIV_V0_6.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_PROPORTION_REFINE_V0_5.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - PRESERVE byte-identical (verify hash + transform): robe, neck, halo, blade, camera scale, and all body geometry. Only the helmet mesh may change. The helmet's lower jaw must still SEAT into the existing graphene-neck opening (do NOT move the neck). If impossible without touching the neck, STOP and report.
+  - CONTROLLED SUBDIVISION — helmet ONLY:
+    1. Preserve the V0.5 proportions and silhouette exactly; smooth the polygon facets so the surface reads as shaped porcelain rather than low-poly.
+    2. Retain the broad near-flat front FACE-PLANE, the shallow CROWN ARC, the temple transition, and the narrowed WEDGE jaw. Add SUPPORT GEOMETRY (support loops) where needed so subdivision does NOT round the form back into an egg and does NOT inflate the jaw.
+    3. The CROWN must become ONE shallow continuous arc — NO central bump, NO multi-lobed / hair-like silhouette, NO three-lobe read.
+    4. Keep exactly two THIN, SHALLOW, FRAMELESS recessed slits.
+    5. Faceless porcelain only: no eyes/nose/mouth/anatomy, no fox/kitsune/samurai/anime/gaming-mask, no seams/vents/panels/decorative detail, not a box or mechanical helmet.
+  - Locked: violet ONLY in the two slits. Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No V0.4 (web prototype) geometry reuse. Helmet geometry changes (subdiv) — record BODY_HASH_AFTER, helmet-mesh hash + final vert/face count, confirm every preserved-region hash unchanged. Do NOT overwrite the base blend. NO material assignment change, NO lighting change.
+  - Render permission GRANTED (Blender, local). Required panels: front · STRICT side · three-quarter · NO-SLIT silhouette · WIREFRAME · before/after (V0.5 vs V0.6) comparison. Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST: surface reads smoother/porcelain; crown is one continuous shallow arc (no bump/lobes); temple not broken; jaw still crisp enough; not a low-poly robot AND not a re-rounded egg; V0.5 identity preserved.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_CONTROLLED_SUBDIV_V0_6.blend`
+    - `production/character/reviews/MIKAGE_HELMET_CONTROLLED_SUBDIV_V0_6_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HELMET_CONTROLLED_SUBDIV_V0_6_PROOF.md`
+  - FAIL = HELMET SCOPE DRIFT: if anything other than the helmet mesh changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = HELMET_SCOPE_DRIFT`, list what drifted.
+  - FALLBACK if subdivision rounds the form or loses the face-plane: revert to V0.5; ADD more support loops at crown / temple / jaw; do NOT use material or lighting to hide the issue. Report `PASS_FAIL = FAIL`, `BLOCKER = SUBDIV_ROUNDED_FORM`.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev/material/lighting. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
