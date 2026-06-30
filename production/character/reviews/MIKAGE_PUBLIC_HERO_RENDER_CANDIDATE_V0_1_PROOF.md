@@ -1,104 +1,72 @@
 # MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1 PROOF
 
-## Scope
+## Result
 
-- Task: MIKAGE PUBLIC HERO RENDER CANDIDATE V0.1
-- Proof type: public hero render candidate proof package
-- Candidate output type: contact-sheet proof assembled from the approved Completion Lookdev V0.2 proof source
-- This is candidate proof only. It is not a final cinematic render, not a website/public deployment, not a public-render-ready claim, not a production-rig-ready claim, and not an asset-lock claim.
+`PASS_FAIL = FAIL`
 
-## Source Files Used
+`OUTPUT_STATUS = CANDIDATE_EVIDENCE_ONLY`
 
-- `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend`
-- `production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF.md`
-- `production/character/reviews/MIKAGE_COMPLETION_LOOKDEV_V0_2_PROOF_CONTACT_SHEET.png`
-- `production/character/reviews/MIKAGE_FORMAL_MATERIAL_SILHOUETTE_REVIEW_V0_1.md`
-- `docs/mikage_character_visual_spec.md`
-- `docs/mikage_universe_visual_system.md`
-- `design_system/mikage-cine-color-contract.md`
+`BLOCKER = SSOT_TOY_LIKE_BLOCKY_SOURCE_READ`
 
-## Candidate Outputs
+`NEXT_SAFE_ACTION = operator opens a separately scoped geometry refinement gate from an approved non-toy public-figure base; do not promote this render`
 
-- Contact sheet: `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png`
-- Proof report: `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md`
+## Fresh Source Evidence
 
-## What The Candidate Is Trying To Prove
+- SOURCE_BLEND: `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend`
+- SOURCE_BLEND_SHA256: `C1FEE277C2B614E2E24CE6CA88E237973BFD84EE12DA2B2E2001BED63F01EC1B`
+- SOURCE_OBJECT_COUNT_BEFORE_RENDER: `122`
+- SOURCE_OBJECT_COUNT_AT_RENDER: `122`
+- RENDER_TIMESTAMP_START: `2026-06-30T16:02:43.622+07:00`
+- Blender: `5.1.2`
+- Render engine: `BLENDER_EEVEE`
+- Source loaded directly in background mode: YES
+- Source `.blend` saved or edited: NO
+- Geometry, rig, material, constraint, driver, or animation edit: NONE
 
-The candidate tests whether Mikage Completion Lookdev V0.2 has enough public-facing hero-read strength to enter a separately scoped presentation step. It focuses on fast recognition, material hierarchy, silhouette discipline, and canon preservation while keeping all readiness locks closed.
+The hash and object count were reported before the fresh render began. Blender then reported the same exact source path and object count while producing the six fresh panels.
 
-## Framing / Readability Assessment
+## Outputs
 
-PASS for candidate proof.
+- Plain contact sheet: `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png`
+- Proof: `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md`
+- Contact-sheet dimensions: `2160 x 1920`
+- Layout: plain `3 x 2`, six source-camera renders
+- Styled `FORMATION` poster treatment: NONE
+- Additional repository output: NONE
 
-- The primary contact-sheet panel presents Mikage as a full-body figure with the Zenith Blade beside the body.
-- Supporting panels isolate the helmet, front silhouette, three-quarter mass read, side/blade slab relationship, and arm/hand clarity.
-- The character reads as a faceless white porcelain helmet over a black vertical body mass, with the blade as a separate heavy slab.
-- The proof remains a candidate package, not a final public render.
+## Actual Render Inspection
 
-## Helmet / Material Read
+The final contact sheet was opened and inspected at original resolution after the fresh render.
 
-PASS for candidate proof.
-
-- Faceted porcelain helmet identity remains intact.
-- The helmet reads as matte white porcelain/gofun rather than plastic or glossy sci-fi armor.
-- Exactly two violet slit signals remain the only face-area focal points.
-- No human face, eyes, nose, mouth, horns, or ornament overload is introduced.
-
-## Body / Silhouette Read
-
-PASS for candidate proof.
-
-- The black vertical body mass remains dominant and uninterrupted.
-- V0.2 torso ribs and inset seams help the surface read as intentional rather than flat blockout.
-- Arms and hands read cleaner than V0.1 while staying simple, sealed, and non-organic.
-- The silhouette remains readable in full-body and reduced-size proof views.
-
-## Zenith Blade Read
-
-PASS for candidate proof.
-
-- Zenith Blade remains a vertical heavy slab beside the body.
-- The blade scale remains strong relative to Mikage.
-- The blade is visually separate from the body and supports the public hero silhouette without becoming a violet or neon focal point.
-
-## Canon Compliance Confirmation
-
-PASS for candidate proof.
-
-- Exactly 2 violet sensor slits: YES
-- Restrained slit-only violet signal: YES
-- Faceted porcelain helmet preserved: YES
-- Black vertical body mass preserved: YES
-- Zenith Blade slab preserved: YES
-- No human face, eyes, mouth, or nose: YES
-- No organic muscular body or sensual body language: YES
-- No fantasy armor drift: YES
-- No crimson introduced: YES
-- No old Z-Blue `#0000C8`: YES
-- Z-Blue, if visible, remains muted and non-emissive: YES
-
-## Candidate Strength For Next Presentation Step
-
-The candidate is strong enough to proceed to a separately scoped presentation step. The proof demonstrates a clear hero read, preserved canon signals, and enough material/silhouette polish to justify building a controlled presentation candidate package next.
-
-This does not claim public render readiness. The next step must still evaluate framing, lighting, final render quality, and presentation risk before any public-ready claim.
-
-## Top Issues If Any
-
-TOP_ISSUES_IF_ANY = NONE
-
-Remaining work belongs to separate gates: controlled presentation candidate creation/review, rig readiness audit, and any later asset-lock decision.
-
-## Decision
-
-DECISION = PASS_CANDIDATE_PROOF
+- Fresh source evidence: confirmed from V0.2 at the timestamp above.
+- Faceless helmet: visible.
+- Sensor slits: exactly two visible violet slits.
+- Violet wash/fill outside slits: not observed.
+- Blade: visible as a separate vertical slab.
+- Full-figure evidence: present in front, three-quarter, side, and full-body views.
+- Toy-like/blocky read: **FAIL**. The torso is a flat rectangular slab; arms/hands and attached pieces retain primitive proxy construction; the overall figure reads as a technical blockout rather than premium public-character form.
+- SSOT rule applied: `docs/mikage_character_visual_spec.md`, section `7. ABSOLUTE FORBIDDEN` — plastic/PVC/toy-like surface read is forbidden.
+- Commercial/public hero readiness: **FAIL**. The figure does not satisfy the SSOT requirement for a premium public-facing character read.
 
 ## Status Locks
 
-- PRODUCTION_RIG_READY = NO
-- PUBLIC_RENDER_READY = NO
-- ASSET_LOCK = NO
+- PUBLIC_RENDER_READY: NO
+- PRODUCTION_RIG_READY: NO
+- ASSET_LOCK: NO
+- CANON_LOCK: NO
+- VISUAL_APPROVAL: NO
+- PUSH_STATUS: NOT_PUSHED
+- DEPLOY_STATUS: NOT_DEPLOYED
 
-## Next Real Action
+## Files Changed
 
-Open a separately scoped public hero presentation candidate step from this proof package, or run a production rig readiness audit as a separate branch of work. Do not claim public render ready, production rig ready, or asset lock until the corresponding gate explicitly passes.
+- `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png`
+- `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_PROOF.md`
+
+## Evidence Source
+
+- `LOCAL_COMMAND_VERIFIED`
+- `FRESH_EEVEE_RENDER_FROM_EXACT_V0_2_SOURCE`
+- `ACTUAL_FINAL_PNG_VISUALLY_INSPECTED`
+
+This proof records candidate evidence only. It does not promote, approve, lock, or declare the rendered figure ready for public use.
