@@ -745,3 +745,24 @@ The agent must not say PASS unless the success check has visible evidence.
   - No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Candidate proof only.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Seventeenth controlled exception is open:
+  - `MIKAGE_MATCH_3D_TO_MASTER_V0_1 = OPEN`
+  - Lane B restriction waived for THIS task only. Purpose: pull the 3D production-actor draft toward the approved 2D canon design master so there is ONE 3D implementation of the master — NOT a new form. Unlike the Sixteenth exception (lookdev only), THIS task IS PERMITTED to edit geometry (helmet / chest panels / body-to-cloak mass / silhouette / proportions) for the sole purpose of matching the master. This is working status, NOT a canon-lock. SSOT wins on any conflict.
+  - SOURCE OF TRUTH (master) = the 2D design master `MIKAGE_CHARACTER_REFERENCE_16x9.png` (Studio OS FANDOM_KIT). Immutable identity marks: faceless porcelain helmet (no eyes/nose/mouth); exactly two sensor slits; violet `#8F00FF` emissive ONLY at the two slits; void-black body mass / draped robe; graphene neck; WHITE halo ring (white, not violet); official art = sculptural realism. The master does NOT pin a specific "wedge" helmet shape — it locks "faceless porcelain"; a wedge shape is only required if the operator explicitly pins it.
+  - Only allowed next task: `MIKAGE_MATCH_3D_TO_MASTER_V0_1`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_MATCH_3D_TO_MASTER_V0_1.md`.
+  - Allowed base input (PRODUCTION-ACTOR line ONLY): `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_FINISH_LOOKDEV_V0_1.blend` (or `_COMPLETION_LOOKDEV_V0_2.blend`). Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: NO geometry from the RIDER / HEAD-GRAFT / HERO-MOUNT / STEED lines or from the `FIGURE_V0.4` web prototype. No importing another scene.
+  - Allowed references: `docs/mikage_character_visual_spec.md`, `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`, `design_system/mikage-cine-color-contract.md`.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_MATCH_3D_TO_MASTER_V0_1.blend`
+    - `production/character/reviews/MIKAGE_MATCH_3D_TO_MASTER_V0_1_CONTACT_SHEET.png` (front · 3/4 · side · helmet+slits close)
+    - `production/character/reviews/MIKAGE_MATCH_3D_TO_MASTER_V0_1_PROOF.md`
+  - KEEP (already on-direction): dark vertical body; exactly two violet slits; vertical slab blade beside the body.
+  - FIX toward master: (1) helmet → faceless porcelain per master (drop the round/octagonal read; wedge only if operator pins it); (2) reduce robot/chest-panel/proxy-plate reading; (3) reshape body toward a closed draped void-cloak mass (no stack-block); (4) match master silhouette + proportions (tall, closed, slender); (5) preserve faceless absolutely; (6) add the WHITE halo ring per master.
+  - Locked: violet ONLY in the two slits (no violet halo / wash / flood / gold / crimson). Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No reuse of V0.4 foundation geometry. Geometry WILL change (this task edits form) — record BODY_HASH_AFTER and exactly what changed; do NOT overwrite the base blend.
+  - Render permission GRANTED (Blender, local; Cycles preferred; full-frame hero still + contact sheet). Inspect the actual rendered PNG before any PASS claim.
+  - FAIL = DESIGN DRIFT: if Codex invents another body form, reuses V0.4/RIDER geometry, or treats a development draft as an alternate canon form → stop and return `PASS_FAIL = FAIL`, `BLOCKER = DESIGN_DRIFT`, `SOURCE_OF_TRUTH = MIKAGE_CHARACTER_REFERENCE_16x9.png`, `EXPECTED = ONE 3D IMPLEMENTATION OF THE MASTER`.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Candidate proof only.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
