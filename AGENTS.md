@@ -766,3 +766,26 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Candidate proof only.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Eighteenth controlled exception is open:
+  - `MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2 = OPEN`
+  - Operator verdict on `MIKAGE_MATCH_3D_TO_MASTER_V0_1` = PASS_WITH_FIX. Body direction APPROVED (void-black draped robe, faceless porcelain helmet, exactly two violet slits, vertical blade, single standing public form). NOT yet canon-locked. Purpose of THIS task: one constrained MICRO geometry-correction pass on three named areas only, then re-review. NO lookdev finish in this task. SSOT + the 2D master win on any conflict.
+  - SOURCE OF TRUTH (master) = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`). Codex MUST open and read it.
+  - Only allowed next task: `MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_MICRO_GEOMETRY_CORRECTION_V0_2.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_MATCH_3D_TO_MASTER_V0_1.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - PRESERVE (do NOT change): current robe silhouette; current body proportions; exactly two slits (count + relative position); vertical Zenith Blade slab; overall ovoid helmet DIRECTION (do not return to the old pointed wedge); faceless (no eyes/nose/mouth).
+  - FIX ONLY these three areas:
+    1. HELMET — keep the ovoid direction but reduce the perfect egg/mannequin read: slightly narrow the lateral profile, give the crown and chin a little more direction, introduce restrained sculptural planar character + very slight planar asymmetry so it reads as porcelain sculpture, not a perfect egg or alien-egg/generic mask. No facial features. No pointed-wedge return. Keep exactly two slits.
+    2. HALO — reduce physical ring thickness markedly; separate it slightly further behind the helmet; make it read as luminous light (emission/bloom), NOT a solid white tube. Side view must NOT read as a vertical white slab/column. Halo must NOT be brighter than the helmet. Halo stays WHITE (no violet).
+    3. NECK / ROBE JOIN — soften the hard neck-post transition; let the dark robe mass receive the helmet base naturally into one continuous silhouette. Do NOT canon-lock "graphene neck"; neck material remains UNSPECIFIED pending operator ruling.
+  - Locked: violet ONLY in the two slits (no violet halo/wash/flood/gold/crimson). Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No V0.4 geometry reuse. Geometry WILL change in the three named areas only — record BODY_HASH_AFTER + exactly what changed; do NOT overwrite the base blend.
+  - Render permission GRANTED (Blender, local; full-frame hero still + contact sheet front/3-4/side/helmet-close). Inspect the actual PNG before any PASS claim. Side view MUST be shown (halo + neck join are judged there).
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2.blend`
+    - `production/character/reviews/MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2_PROOF.md`
+  - FAIL = MICRO-FIX SCOPE DRIFT: if anything outside the three named areas changes (robe silhouette, body proportions, slit count/position, blade, or a wholesale new helmet form) → stop and return `PASS_FAIL = FAIL`, `BLOCKER = MICRO_FIX_SCOPE_DRIFT`, listing what drifted.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev finish. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Candidate proof only.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
