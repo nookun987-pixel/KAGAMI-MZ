@@ -813,3 +813,31 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twentieth controlled exception is open:
+  - `MIKAGE_HELMET_REBUILD_FROM_BLOCKING_V0_4 = OPEN`
+  - V0.3 returned `HELMET_NEEDS_REBUILD_FROM_BLOCKING` (operator-confirmed). The helmet is REBUILT from primary blocking off a now-locked helmet design target — NOT a tweak of the V0.2/V0.3 oval mesh. Everything except the helmet stays byte-identical. NO lookdev/material. SSOT + 2D master win on conflict.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`) + the locked helmet design target `production/character/build_log/MIKAGE_HELMET_BLOCKING_SPEC_V0_1.md`. Codex MUST read both.
+  - Only allowed next task: `MIKAGE_HELMET_REBUILD_FROM_BLOCKING_V0_4`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_REBUILD_FROM_BLOCKING_V0_4.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2.blend` (the approved halo/neck/robe version). Report BASE_SELECTED + BODY_HASH_BEFORE. The V0.3 oval helmet mesh is DISCARDED, not edited.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - PRESERVE byte-identical (verify by hash + transform): robe, neck, halo, blade, camera scale, and all body geometry. The new helmet's wedge jaw must SEAT into the existing graphene-neck opening (adapt the helmet base to the preserved neck; do NOT move the neck). If seating is impossible without touching the neck, STOP and report rather than silently editing the neck.
+  - REBUILD the helmet from primary blocking per the locked spec:
+    1. A clear, wide, slightly CONCAVE front FACE-PLANE carrying the exactly-two sensor slits.
+    2. A readable CROWN/BROW BREAK separating the back skull from the face-plane (must read in three-quarter view).
+    3. Temples narrowed (not round-bulged); a WEDGE lower jaw tucking into the neck (no round chin).
+    4. Side profile clearly distinguishes the near-flat front from the curved back skull.
+    5. Overall LOWER and WIDER than V0.2/V0.3 — not vertically elongated.
+    6. Faceless porcelain only: no eyes/nose/mouth/anatomy; no fox/kitsune/samurai/anime/gaming-mask; no seams/vents/panels/decorative detail; not a box or mechanical helmet.
+  - Locked: violet ONLY in the two slits. Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No V0.4 (web prototype) geometry reuse. Helmet geometry is new — record BODY_HASH_AFTER, new helmet-mesh hash, and confirm every preserved-region hash is unchanged. Do NOT overwrite the base blend.
+  - Render permission GRANTED (Blender, local). Required panels: front · STRICT side · three-quarter · helmet close-up · silhouette comparison against V0.3. Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST (Codex self-checks before PASS; Lane B re-checks): with slits, material, and lighting conceptually OFF, the silhouette still reads as Mikage (face-plane + crown break + wedge jaw), not a mannequin/egg.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_REBUILD_FROM_BLOCKING_V0_4.blend`
+    - `production/character/reviews/MIKAGE_HELMET_REBUILD_FROM_BLOCKING_V0_4_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HELMET_REBUILD_FROM_BLOCKING_V0_4_PROOF.md`
+  - FAIL = HELMET SCOPE DRIFT: if anything other than the helmet mesh changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = HELMET_SCOPE_DRIFT`, list what drifted.
+  - FALLBACK if the free-built result STILL reads oval/egg: STOP free building. Report `PASS_FAIL = FAIL`, `BLOCKER = NEEDS_LOCKED_2D_PROFILE_GUIDE`, and recommend the operator lock a 2D front+side profile guide for the helmet, to be extruded to 3D. No further polish on the V0.3 form is permitted.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
