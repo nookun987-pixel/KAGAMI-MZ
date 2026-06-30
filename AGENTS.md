@@ -711,3 +711,37 @@ The agent must not say PASS unless the success check has visible evidence.
     above were created; confirm no existing workflow JSON was modified; if a test image was
     rendered, open and inspect the actual PNG (do not infer success from script completion).
   - On drift or SSOT conflict: stop and report.
+- Sixteenth controlled exception is open:
+  - `MIKAGE_V0_2_HERO_FINISH_LOOKDEV_V0_1 = OPEN`
+  - Lane B restriction waived for THIS task only. This is a LOOKDEV / MATERIAL / LIGHTING finish on the operator-accepted V0.2 standing figure. The FORM was accepted by the operator's eye = Lane-B/operator working status, NOT a canon-lock. Geometry is LOCKED and must NOT change — materials, shading, lighting only. Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` + `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md` win.
+  - Only allowed next task: `MIKAGE_V0_2_HERO_FINISH_LOOKDEV_V0_1` (lookdev finish, from the V0.2 completion-lookdev source)
+  - Allowed inputs:
+    - `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_COMPLETION_LOOKDEV_V0_2.blend`
+    - `production/character/reviews/MIKAGE_PUBLIC_HERO_RENDER_CANDIDATE_V0_1_CONTACT_SHEET.png`
+    - `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`
+    - `docs/mikage_character_visual_spec.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_HERO_FINISH_LOOKDEV_V0_1.blend`
+    - `production/character/reviews/MIKAGE_HERO_FINISH_LOOKDEV_V0_1_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HERO_FINISH_LOOKDEV_V0_1_PROOF.md`
+  - Render permission GRANTED (Blender, local; Cycles preferred for glazed-porcelain SSS/coat, Eevee allowed only if it achieves the recipe look; full-frame hero still + contact sheet).
+  - Lookdev scope (NO geometry/silhouette change — materials, shading, lighting only) per `MIKAGE_HERO_LOOKDEV_RECIPE_V1`:
+    1. Material: helmet/shell = glazed sacred porcelain (base `#f2eeea`, soft SSS, clear coat, subtle craquelure micro-bump — not flat plastic); body/underlayer = deep matte graphite / black mass; blade = cold metal.
+    2. Lighting: 1-key Rembrandt from upper-left angled down; thin restrained rim to separate the silhouette; fill near zero so ~2/3 sinks into the void; fine grain.
+    3. World/background = `#050508` absolute.
+  - Locked preservation:
+    - Do NOT change any geometry, silhouette, proportion, the faceted wedge helmet, the exactly two violet slits, the vertical blade position, or body mass. Materials + lights only.
+    - Confirm the V0.2 source mesh hashes are UNCHANGED in the output (geometry preserved).
+    - Palette LOCK: void `#050508`, porcelain `#f2eeea`, violet `#8F00FF`. Violet ONLY inside the two slits — no halo, wash, flood, neon, gold, crimson, or extra accent colour.
+  - Explicitly prohibited:
+    - No geometry edit, no silhouette / helmet / blade / body change, no rebuild, no rig, no animation, no UV redo beyond what material assignment strictly needs.
+    - No halo flood, neon wash, ambient violet, or extra colours.
+    - Do not overwrite the V0.2 source blend.
+  - Required review render: full-frame hero still + a contact sheet (front · 3/4 · side · helmet+slits close); show the complete figure, no silhouette-critical cropping.
+  - Required validation before PASS: reopen the saved finish `.blend`; confirm the V0.2 source was NOT modified and its mesh hashes are unchanged (geometry preserved); confirm only whitelisted task files changed (plus `AGENTS.md` for this exception); open and inspect the actual rendered PNG (do not infer success from script completion); confirm violet only in the two slits and void background; confirm no `.blend1` remains.
+  - Required proof must record: source V0.2 file + hash, output finish file, materials assigned, lighting added, confirmation geometry/mesh-hash unchanged, palette/violet-signal lock result, files changed, commands run, evidence source, repository status, PASS/FAIL, blocker, next safe action, commit status and hash, push status.
+  - Fallback if it still reads toy/clay after finish: do NOT touch geometry. In order — (1) lower fill further, (2) raise shadow/light contrast, (3) deepen porcelain material (less plastic), (4) thin the rim, (5) read body mass heavier in shadow, (6) keep violet small/contained. Only revisit silhouette if lookdev cannot fix it.
+  - No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Candidate proof only.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
