@@ -789,3 +789,27 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev finish. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Candidate proof only.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Nineteenth controlled exception is open:
+  - `MIKAGE_HELMET_ONLY_GEOMETRY_PASS_V0_3 = OPEN`
+  - Operator verdict on V0.2: halo + neck/robe + slits APPROVED; the HELMET still reads as an elongated mannequin/egg and is not yet hero-grade. This task = ONE final helmet-ONLY geometry pass, then stop for owner review. NO lookdev, NO material change. SSOT + the 2D master win on conflict.
+  - SOURCE OF TRUTH (master) = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`). Codex MUST open and read it.
+  - Only allowed next task: `MIKAGE_HELMET_ONLY_GEOMETRY_PASS_V0_3`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_ONLY_GEOMETRY_PASS_V0_3.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_MICRO_GEOMETRY_CORRECTION_V0_2.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - PRESERVE COMPLETELY UNCHANGED (verify by hash + transform): robe, neck, halo, blade, camera scale, and all body geometry. Only the helmet mesh may change.
+  - CORRECT ONLY the helmet:
+    1. Reduce the elongated egg impression: shorten total helmet height ~6–8%; widen the middle/lower mass ~4–6%; remove the pointed downward chin taper.
+    2. Strengthen the existing six-plane radial rhythm: broad, subtle sculptural planes; a clearer side-plane break in three-quarter view; a slightly flatter crown; a controlled lower termination instead of a smooth mannequin oval.
+    3. Preserve all locked identity rules: completely faceless porcelain shell; exactly two thin parallel recessed sensor slits; no eyes/nose/mouth or facial anatomy; no fox/kitsune/samurai/anime/gaming-mask language; no extra seams/vents/panels/decorative detail; do NOT turn it into a box or mechanical helmet.
+  - Locked: violet ONLY in the two slits. Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No V0.4 reuse. Helmet geometry WILL change — record BODY_HASH_AFTER, helmet-mesh hash before/after, and confirm every preserved region hash is unchanged. Do NOT overwrite the base blend.
+  - Render permission GRANTED (Blender, local). Required panels: front · three-quarter · STRICT side · helmet close-up · silhouette comparison against V0.2. Inspect the actual PNG before any PASS claim.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_ONLY_GEOMETRY_PASS_V0_3.blend`
+    - `production/character/reviews/MIKAGE_HELMET_ONLY_GEOMETRY_PASS_V0_3_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HELMET_ONLY_GEOMETRY_PASS_V0_3_PROOF.md`
+  - FAIL = HELMET SCOPE DRIFT: if anything other than the helmet mesh changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = HELMET_SCOPE_DRIFT`, list what drifted.
+  - FALLBACK if the result still reads generic/mannequin after this pass: STOP micro-fixing. Do NOT keep adding detail and do NOT use material/lookdev to hide geometry. Report `PASS_FAIL = FAIL`, `BLOCKER = HELMET_NEEDS_REBUILD_FROM_BLOCKING`, and recommend rebuilding the helmet from large primary blocking off the locked Mikage silhouette as a separate authorized task.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
