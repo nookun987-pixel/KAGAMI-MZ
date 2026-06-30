@@ -927,3 +927,31 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev/material/lighting. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-fourth controlled exception is open:
+  - `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8 = OPEN`
+  - V0.7 geometry is operator-APPROVED and now GEOMETRY-LOCKED. This is the first LOOKDEV pass: MATERIAL + LIGHTING only, NO geometry change (one narrow exception in the fallback below). Goal: turn the clean blocking into a premium porcelain hero render per `MIKAGE_HERO_LOOKDEV_RECIPE_V1`. SSOT + 2D master win on conflict.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`); references `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`, `docs/mikage_character_visual_spec.md`, `design_system/mikage-cine-color-contract.md`. Codex MUST read the master + recipe.
+  - Only allowed next task: `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HERO_LOOKDEV_PREMIUM_V0_8.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - GEOMETRY LOCKED: do NOT change proportions, silhouette, face-plane, crown, temple, jaw, slit placement, or any mesh. Confirm BODY_HASH is UNCHANGED at output (lookdev must not alter geometry). Only the narrow fallback below may touch perimeter normals/support.
+  - STAGE A — NEUTRAL CLAY VALIDATION (do this FIRST): render the locked figure in matte off-white clay, low specular, NO halo (hide the halo), one large soft studio light, neutral. Confirm the face-plane perimeter does NOT read as a separate mechanical faceplate / seam. Deliver this clay proof.
+  - STAGE B — FINAL PORCELAIN LOOKDEV (only after clay reads clean): 
+    - Helmet/shell = semi-matte glazed porcelain (base `#f2eeea`), subtle micro-surface only — NOT glossy plastic, NOT flat.
+    - Body/underlayer = deep matte graphite / void mass; blade = cold metal; halo = white, restrained, not brighter than the helmet.
+    - Exactly two thin violet recessed slits; violet `#8F00FF` intensity RESTRAINED; violet ONLY at the slits.
+    - No mechanical frames, no extra seams or panel lines, no decorative detail.
+    - Environment = void-black `#050508`; single directional key light (Rembrandt upper-left, angled down); soft controlled rim to separate the silhouette; fill near zero (~2/3 sinks into void); fine grain. NO cyberpunk/neon lighting, no colored wash.
+  - Render permission GRANTED (Blender, local; Cycles preferred for glazed-porcelain SSS/coat; Eevee only if it matches the recipe). Inspect actual PNGs before any PASS claim.
+  - SUCCESS TEST: reads as premium semi-matte porcelain (not plastic); V0.7 silhouette preserved; face-plane continuous with the shell (no faceplate seam); two restrained violet slits are the only signal; void-black, single-key cine read; not robot, not cyberpunk.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend`
+    - `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_CLAY_VALIDATION.png` (Stage A neutral clay proof)
+    - `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_CONTACT_SHEET.png` (Stage B premium lookdev: front · 3/4 · side · helmet close)
+    - `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_PROOF.md`
+  - FAIL = GEOMETRY DRIFT: if BODY_HASH changes outside the narrow perimeter fallback, or silhouette/proportion changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = GEOMETRY_CHANGED_IN_LOOKDEV`.
+  - NARROW FALLBACK: if the Stage-A clay proof still shows a seam-like line where the face-plane meets the shell, you MAY adjust ONLY the perimeter normals / local support at that seam — no silhouette, proportion, scale, or slit change. Record exactly what changed and the new BODY_HASH.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
