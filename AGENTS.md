@@ -897,3 +897,33 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev/material/lighting. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-third controlled exception is open:
+  - `MIKAGE_HELMET_SURFACE_CONTROL_V0_7 = OPEN`
+  - V0.6 kept the V0.5 proportions but SIMPLE subdivision left a stepped crown, broken temple transitions, and a forward visor-like projection of the upper face-plane (visible from elevated/low three-quarter). This task = one final SURFACE-CONTROL geometry pass using controlled Catmull–Clark + support loops to clean those defects WITHOUT changing proportions or silhouette. Still helmet-ONLY geometry. NO material/lookdev/lighting. SSOT + 2D master win on conflict.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`) + locked helmet target `production/character/build_log/MIKAGE_HELMET_BLOCKING_SPEC_V0_1.md`. Codex MUST read both.
+  - Only allowed next task: `MIKAGE_HELMET_SURFACE_CONTROL_V0_7`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_SURFACE_CONTROL_V0_7.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_CONTROLLED_SUBDIV_V0_6.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - PRESERVE LOCKED (do NOT change): helmet scale, jaw width, slit placement, overall silhouette + proportions, and byte-identical robe/neck/halo/blade/camera/all body geometry. Only the helmet SURFACE may change; the jaw must still seat into the existing neck (do NOT move the neck). If impossible without touching the neck, STOP and report.
+  - SURFACE-CONTROL pass — helmet ONLY:
+    1. Replace the visibly stepped crown contour with ONE clean shallow continuous arc.
+    2. Smooth the crown-to-temple transition WITHOUT rounding the helmet into an egg.
+    3. Reduce the forward visor-like projection of the upper face-plane, especially from elevated and low three-quarter angles.
+    4. Keep the face-plane broad and near-flat, but blend its perimeter into the shell with controlled support loops.
+    5. Preserve the narrowed wedge jaw.
+    6. Keep exactly two thin recessed slits; REMOVE any continuous brow-band / visor reading around them.
+    7. Use controlled Catmull–Clark + support geometry where needed — NOT SIMPLE subdivision alone.
+    8. NO material lookdev.
+  - Locked: violet ONLY in the two slits. Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No V0.4 (web prototype) geometry reuse. Helmet geometry changes — record BODY_HASH_AFTER, helmet-mesh hash + final vert/face count, confirm every preserved-region hash unchanged. Do NOT overwrite the base blend.
+  - Render permission GRANTED (Blender, local). Required panels: front · strict side · standard three-quarter · ELEVATED three-quarter · LOW three-quarter · WIREFRAME close-up · silhouette comparison vs V0.6. Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST: crown is one clean continuous arc; NO forward visor projection from high or low angles; reads as a sealed porcelain shell from elevated AND low three-quarter; face-plane still clear; not a robot, not an egg, no low-poly stepping; V0.6 proportions preserved.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend`
+    - `production/character/reviews/MIKAGE_HELMET_SURFACE_CONTROL_V0_7_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HELMET_SURFACE_CONTROL_V0_7_PROOF.md`
+  - FAIL = HELMET SCOPE DRIFT: if anything other than the helmet surface changes (proportion, scale, silhouette, or any non-helmet region) → stop, `PASS_FAIL = FAIL`, `BLOCKER = HELMET_SCOPE_DRIFT`, list what drifted.
+  - FALLBACK if Catmull–Clark rounds the form: revert to V0.6; add ONLY local support loops at crown / temple / face-plane perimeter; do NOT apply uncontrolled full subdivision; do NOT use material/lighting to hide it. Report `PASS_FAIL = FAIL`, `BLOCKER = CC_ROUNDED_FORM`.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev/material/lighting. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
