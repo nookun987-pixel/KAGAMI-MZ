@@ -10,7 +10,9 @@ Soạn: Lane B (Cowork) · 2026-06-30 · STATUS: DRAFT — KHÓA tới khi BOOS 
 > `PASS_FAIL = FAIL` / `BLOCKER = MATCH_3D_TO_MASTER_NOT_OPEN`.
 
 ## SOURCE OF TRUTH (master, chỉ 1)
-`MIKAGE_CHARACTER_REFERENCE_16x9.png` (Studio OS FANDOM_KIT). Mọi quyết định hình bám tấm này.
+IN-REPO: `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png`
+(sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`). PHẢI mở đọc tấm PNG này.
+Mọi quyết định hình bám tấm này.
 Immutable: faceless porcelain helmet · đúng 2 sensor slits · violet emissive CHỈ ở khe ·
 void-black body mass / draped robe · graphene neck · WHITE HALO RING · sculptural realism.
 
