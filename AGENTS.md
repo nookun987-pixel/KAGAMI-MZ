@@ -841,3 +841,32 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). NO lookdev. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-first controlled exception is open:
+  - `MIKAGE_HELMET_PROPORTION_REFINE_V0_5 = OPEN`
+  - V0.4 helmet blocking direction is APPROVED, but proportion + faceted hardness are not yet hero-grade. This task refines the helmet's SCALE and softens its hard chamfers so it reads as sculpted porcelain, NOT a low-poly robot — still a helmet-ONLY geometry pass. NO subdivision/smooth-final, NO lookdev/material. SSOT + 2D master win on conflict.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`) + locked helmet target `production/character/build_log/MIKAGE_HELMET_BLOCKING_SPEC_V0_1.md`. Codex MUST read both.
+  - Only allowed next task: `MIKAGE_HELMET_PROPORTION_REFINE_V0_5`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_PROPORTION_REFINE_V0_5.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_REBUILD_FROM_BLOCKING_V0_4.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - PRESERVE byte-identical (verify hash + transform): robe, neck, halo, blade, camera scale, and all body geometry. Only the helmet mesh may change. The helmet's lower jaw must still SEAT into the existing graphene-neck opening after rescale (adapt the helmet base; do NOT move the neck). If impossible without touching the neck, STOP and report.
+  - REFINE the helmet ONLY:
+    1. Increase the helmet scale ~15% relative to the shoulders and cloak (more visual weight).
+    2. Widen the UPPER helmet slightly, but keep the LOWER jaw narrow.
+    3. Soften the flat top into a shallow CROWN ARC; do NOT return to an egg.
+    4. Reduce the harsh TEMPLE and JAW chamfers so the silhouette reads as sculpted porcelain, not a low-poly robot.
+    5. Keep the front face-plane broad and nearly flat, but reduce the box-like width.
+    6. Make the two slit recesses THINNER and SHALLOWER; no mechanical frames or gaming-style sockets.
+    7. Keep faceless porcelain: no eyes/nose/mouth, no fox/kitsune/samurai/anime/gaming-mask, no seams/vents/panels/decorative detail, not a box or mechanical helmet. Keep exactly two slits.
+  - Locked: violet ONLY in the two slits. Palette LOCK void `#050508` / porcelain `#f2eeea` / violet `#8F00FF`. No second body form. No V0.4 (web prototype) geometry reuse. Helmet geometry changes — record BODY_HASH_AFTER, helmet-mesh hash before/after, confirm every preserved-region hash unchanged. Do NOT overwrite the base blend.
+  - Render permission GRANTED (Blender, local). Required panels: front · STRICT side · three-quarter · NO-SLIT silhouette. Produce this sheet BEFORE any subdivision or lookdev. Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST: head carries enough visual weight; silhouette still distinct with slits off; reads as shaped porcelain (one controlled mass), not many flat planes bolted together; not a low-poly robot.
+  - Allowed outputs (candidate only):
+    - new `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_PROPORTION_REFINE_V0_5.blend`
+    - `production/character/reviews/MIKAGE_HELMET_PROPORTION_REFINE_V0_5_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_HELMET_PROPORTION_REFINE_V0_5_PROOF.md`
+  - FAIL = HELMET SCOPE DRIFT: if anything other than the helmet mesh changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = HELMET_SCOPE_DRIFT`, list what drifted.
+  - FALLBACK if it still reads boxy/mechanical after rescale: lock V0.4-direction as base and fix the three zones SEPARATELY in order crown → temple → jaw. No lookdev/material/lighting may be used to hide the silhouette before those three zones pass.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). NO subdivision-final, NO lookdev. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
