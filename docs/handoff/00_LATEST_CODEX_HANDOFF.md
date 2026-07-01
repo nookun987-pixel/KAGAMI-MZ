@@ -1,5 +1,12 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #22 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_POLISH_V0_14` — POLISH 1 vòng xử 3 cờ V0.13: (1) khe về đúng violet #8F00FF, (2) blade đọc gắn, (3) cloak tách khối. CAMERA + ĐÈN + 1 khe hẹp material = CHỈ hue 2 khe.**
+> KHÓA: geometry, transform mọi object (KỂ CẢ blade — không dời), và mọi material NGOÀI hue 2 khe. Được: đặt emission 2 khe = #8F00FF (giảm bloom nếu lệch hồng), thêm cold rim mảnh cho blade + nudge camera cho blade giao silhouette (KHÔNG dời mesh), rim/bounce lạnh cực yếu tách cloak khỏi void (monolithic, không nếp giả). Halo không sáng hơn. Single-key void, grain.
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_13.blend` (giữ camera/đèn V0.13, chỉ thêm 3 fix). Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_14.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #31 OPEN.
+> VERIFY KHE bắt buộc = **pixel sample** vùng khe trên render (không chỉ node value): phải đọc violet gần #8F00FF, không magenta. Output: V0.14 blend + HERO + contact sheet (so V0.13) + proof (kèm SLIT_HUE_PIXEL_SAMPLE). Gate = 2 file.
+> FAIL: hash drift geometry/transform/material-ngoài-khe → HERO_POLISH_DRIFT, revert V0.13. Khe vẫn hồng → SLIT_HUE_FAIL. Blade vẫn như panel dù rim+camera → **DỪNG, BÁO BLADE_READS_PANEL, đừng dời mesh** → operator mở vòng COMPOSITION V0.15 có quyền transform blade. NO push/lock.
+> ✔ DONE #21 (V0.13 hero polish): kỹ thuật PASS (geometry/material/transform hash giữ, gate 2 file, .blend1=0) NHƯNG Lane B drift-check + BOOS ruling = **KHÔNG lock**: khe ngả magenta (fail #8F00FF), blade đọc như panel trôi, cloak phẳng → V0.14 xử.
+
 > DISPATCH 2026-07-01 #21 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_POLISH_V0_13` — HERO POLISH: rim tách thân khỏi void + key kịch tính + camera cho blade đọc gắn. CAMERA + ĐÈN ONLY.**
 > KHÔNG đổi geometry/material/transform (kể cả KHÔNG dời blade — xử bằng góc camera). Thêm rim lạnh (viền, không fill), đẩy Rembrandt key có chiều sâu, single-key void mood, không neon/warm. Full-body, grain.
 > Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_13.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #30 OPEN.

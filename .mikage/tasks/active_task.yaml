@@ -1,15 +1,17 @@
-task_id: MIKAGE_STANDING_HERO_POLISH_V0_13
+task_id: MIKAGE_STANDING_HERO_POLISH_V0_14
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_STANDING_HERO_POLISH_V0_13
-# Dispatched by operator (BOOS) 2026-07-01 #21, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Thirtieth controlled exception (MIKAGE_STANDING_HERO_POLISH_V0_13 = OPEN).
-# V0.12 standing candidate PASS. Hero polish for the 3 flags (detached blade, body merges into void, flat key).
-# CAMERA + LIGHTING ONLY. NO geometry edit, NO material edit, NO object transform change (blade handled by camera angle).
+current_step: MIKAGE_STANDING_HERO_POLISH_V0_14
+# Dispatched by operator (BOOS) 2026-07-01 #22, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Thirty-first controlled exception (MIKAGE_STANDING_HERO_POLISH_V0_14 = OPEN).
+# V0.13 hero polish = technical PASS, operator ruling = NOT LOCKED. 3 flags: (1) slits read MAGENTA not violet #8F00FF,
+# (2) blade reads as a detached panel, (3) cloak flat / merges into void.
+# CAMERA + LIGHTING ONLY, plus ONE narrow material exception = hue/emission of the TWO SLITS ONLY.
+# NO geometry edit, NO object-transform change (blade NOT moved), NO other material change.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_13.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_13.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_14.md
   - production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - design_system/mikage-cine-color-contract.md
@@ -18,13 +20,13 @@ input_files_allowed:
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_standing_hero_polish_v0_13_gate
+output_folder_allowed: _tmp/mikage_standing_hero_polish_v0_14_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_13.blend
   - production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - design_system/mikage-cine-color-contract.md
@@ -34,30 +36,34 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_13.blend
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_13_HERO.png
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_13_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_13_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend
+  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_HERO.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_PROOF.md
 
 allowed_actions:
-  - create a new presentation derivative blend from MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend (do not overwrite the base)
+  - create a new presentation derivative blend from MIKAGE_STANDING_HERO_POLISH_V0_13.blend (do not overwrite the base)
   - report BASE_SELECTED and BODY_HASH_BEFORE and BODY_HASH_AFTER (must be identical - no geometry edit)
-  - add a soft cold rim light (within palette) to separate the dark graphite body from the void - a rim edge, not a flood fill
-  - push the Rembrandt key to be more directional and dramatic with a deeper shadow side, keeping the single-key void mood (no neon, no warm, no color wash)
-  - frame the 3/4 hero camera so the blade reads as belonging to the figure (beside or behind the shoulder, within the silhouette flow) using camera angle and distance only
-  - keep fine grain and full-body framing
-  - render a polished hero money-shot and a small contact sheet (hero, front, compare vs V0.12) into production/character/reviews
+  - set the two-slit emission to exactly #8F00FF (linearize correctly; do not push sRGB into a linear socket), and reduce bloom/glare on the slits if bloom skews the hue toward pink - this is the ONLY material change permitted, limited to hue plus emission strength of the two slits
+  - add a very thin cold edge rim along ONE side of the blade so it reads as an object (rim light only - not material, not glow, no violet on the blade; blade stays near-black)
+  - nudge the hero camera (angle and distance only) so the blade touches or clearly intersects the body silhouette - do NOT move, rotate, or scale the blade mesh
+  - add a very faint cold rim/bounce (within palette) to reveal the shoulder, body edge, and cloak hem so the mass reads - do NOT add fake folds, do NOT edit the mesh; the cloak stays monolithic
+  - keep fine grain, full-body framing, and the single-key void mood; keep the halo no brighter than V0.13
+  - after render, pixel-sample the two-slit region on the hero and contact sheet PNGs and report the mean hex/RGB (SLIT_HUE_PIXEL_SAMPLE)
+  - render a polished hero money-shot and a small contact sheet (hero, front, compare vs V0.13) into production/character/reviews
   - write the two verify artifacts into the gate folder - contact_sheet.png and contact_sheet_review_report.md; the gate folder must contain ONLY these two files
-  - write the proof report (geometry + material + object-transform hashes unchanged; only camera and lighting changed) into production/character/reviews
-  - run deterministic verification (Blender reopen, geometry + material + transform hashes unchanged, render inspection)
+  - write the proof report (BODY/mesh + object-transform hashes unchanged; helmet/body/blade/halo material hashes unchanged; ONLY the slit-emission material changed, before/after documented, hue only; plus SLIT_HUE_PIXEL_SAMPLE) into production/character/reviews
+  - run deterministic verification (Blender reopen, geometry + transform hashes unchanged, non-slit material hashes unchanged, render inspection, slit pixel sample)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not change ANY geometry - BODY_HASH / mesh-state hash must be UNCHANGED versus V0.12
-  - do not change ANY material - helmet, body, blade, slits, halo all unchanged
-  - do not move or rotate any object, including the blade (handle the blade by camera angle only)
-  - do not add hair, props, armor, decorative panels, patterns, decals, or logos
+  - do not change ANY geometry - BODY_HASH / mesh-state hash must be UNCHANGED versus V0.13
+  - do not move, rotate, or scale any object, including the blade (handle the blade by camera angle and rim light only)
+  - do not change any material other than the two-slit emission hue/strength - helmet, body, blade, and halo materials must be UNCHANGED by hash
+  - do not add violet anywhere except the two slits; do not put violet or glow on the blade
+  - do not make the halo brighter than V0.13
+  - do not add hair, props, armor, decorative panels, patterns, decals, folds, or logos
   - do not add eyes, mouth, or a human face; keep exactly two slits
   - do not use neon/cyberpunk lighting, warm colors, or any color wash; keep single-key void mood; rim stays cold and within palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready (label CANDIDATE / NOT CANON-LOCKED)
@@ -68,18 +74,22 @@ forbidden_actions:
 
 pass_conditions:
   - new polish blend reopens cleanly
-  - BODY_HASH (geometry), all material hashes, and all object transforms are UNCHANGED versus V0.12 (only camera and lighting changed)
-  - the dark body is separated from the void by a cold rim; the key reads dramatic and directional with depth; the blade reads as belonging to the figure via composition
+  - BODY_HASH (geometry) and all object transforms are UNCHANGED versus V0.13 (blade not moved)
+  - helmet, body, blade, and halo material hashes are UNCHANGED; ONLY the two-slit emission material changed (hue to #8F00FF plus bloom reduction), documented before/after
+  - SLIT_HUE_PIXEL_SAMPLE reads violet (not red-dominant magenta) and near #8F00FF within reasonable tolerance
+  - the blade reads as belonging to the figure via a cold edge rim plus camera composition (blade mesh not moved)
+  - the dark body/cloak is separated from the void by a faint cold rim yet stays monolithic
   - still faceless porcelain head, graphite cloak, two violet slits, white halo, on void, single-key mood
-  - a polished hero money-shot and a compare-vs-V0.12 contact sheet rendered into reviews; output remains CANDIDATE only
+  - a polished hero money-shot and a compare-vs-V0.13 contact sheet rendered into reviews; output remains CANDIDATE only
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
-  - the blade cannot be made to read integrated by camera composition alone (report it - do not move the mesh)
-  - a good hero cannot be lit without changing geometry, a material, or a transform
+  - the slits still read magenta after the hue fix (report BLOCKER = SLIT_HUE_FAIL)
+  - the blade cannot be made to read integrated by rim + camera alone (report BLOCKER = BLADE_READS_PANEL - do NOT move the mesh; operator opens a separate V0.15 composition round with blade-transform rights)
+  - any geometry, object transform, or non-slit material would have to change to hit the look (report BLOCKER = HERO_POLISH_DRIFT; revert to V0.13)
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (rim separates body? key dramatic with depth? blade reads integrated? geometry/material/transform unchanged?) plus operator visual ruling; if approved, this polished hero replaces the V0.12 frame as the build-log video money-shot (step A).
-next_step_if_fail: stop and report BLOCKER reason only (revert to V0.12; e.g. HERO_POLISH_DRIFT)
+next_step_if_pass: Lane B drift-check (slits true violet by pixel sample? blade reads integrated? cloak separated yet monolithic? geometry/transform/non-slit-material unchanged?) plus operator visual ruling; if approved, this polished hero replaces the V0.13 frame as the build-log video money-shot (step A).
+next_step_if_fail: stop and report BLOCKER reason only (revert to V0.13; e.g. SLIT_HUE_FAIL / BLADE_READS_PANEL / HERO_POLISH_DRIFT)
