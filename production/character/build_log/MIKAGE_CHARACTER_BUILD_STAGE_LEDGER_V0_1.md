@@ -38,7 +38,12 @@ Dates = mtime của proof (xấp xỉ). Trạng thái ghi trung thực; chưa c�
 | Stage | Ngày | Làm gì | Trạng thái |
 |---|---|---|---|
 | BODY_FORM_DEBLOCKOUT V0.9 | 07-01 | Cone proxy → áo choàng cao-dọc, đáy thẳng (không loe) | PASS scope · **ruling = FORM HOLD** (đọc như "chuông latex", folds yếu) → dùng làm technical base |
-| **BODY_CLOAK_STRUCTURE V0.10** | 07-01 | Hạ phồng vai · 3–5 primary folds lớn bất đối xứng · thêm depth trước–sau · đáy nặng | **ĐANG CHẠY** (dispatch #18, exception #27) |
+| **BODY_CLOAK_STRUCTURE V0.10** | 07-01 | Hạ phồng vai · 4 primary folds bất đối xứng · thêm depth trước–sau · đáy nặng | **PASS thật** (dispatch #18) · **ruling = FREEZE body geometry ở V0.10** |
+
+## PHA 4 — Lookdev THÂN (chất liệu)
+| Stage | Ngày | Làm gì | Trạng thái |
+|---|---|---|---|
+| **BODY_LOOKDEV_MATTE V0.11** | 07-01 | Material tune thân → graphite matte / vải nặng, khử specular (latex); geometry V0.10 + helmet/blade/camera/đèn khoá | **ĐANG CHẠY** (dispatch #19, exception #28) |
 
 ## LANE SONG SONG (không thuộc line này)
 - HERO_MOUNT (rider + steed) V0.1→V1.5: nhánh nhân-mã cưỡi + motion/gait riêng, kho `reviews/MIKAGE_HERO_MOUNT_*`. Không trộn vào line character actor ở trên.
