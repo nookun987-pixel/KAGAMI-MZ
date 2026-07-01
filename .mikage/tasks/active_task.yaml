@@ -6,7 +6,7 @@ current_step: MIKAGE_STANDING_HERO_MOTION_V0_2
 # Governed by AGENTS.md Thirty-third controlled exception (MIKAGE_STANDING_HERO_MOTION_V0_2 = OPEN).
 # Motion V0.1 = PASS technical but operator ruled NOT approved (dormant->awakened contrast too weak).
 # This = re-curve the two-slit emission STRENGTH animation ONLY. NO change to model, camera framing, breathing zoom, duration, codec, or spec.
-# Target curve: dormant ~10-15% of peak, mid ~35-45%, awakened = current peak (no bloom increase), fast ignition at ~60-75% of clip, smooth loop.
+# Target curve: V0.1 dormant baseline = 5% -> new dormant ~2% (below 5%, faint ember), mid ~30-40%, awakened = current peak (no bloom increase), fast ignition at ~60-75% of clip, smooth loop.
 
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_MOTION_V0_1.blend
@@ -45,7 +45,7 @@ real_deliverables:
 allowed_actions:
   - create a new motion derivative blend from MIKAGE_STANDING_HERO_MOTION_V0_1.blend (do not overwrite the V0.1 base)
   - report BASE_SELECTED and BODY_HASH_BEFORE and BODY_HASH_AFTER (must be identical - no geometry edit)
-  - re-curve ONLY the two-slit emission STRENGTH animation - dormant approximately 10-15 percent of the awakened peak, mid approximately 35-45 percent, awakened equal to the current V0.1 peak (unchanged), with a fast ignition around 60-75 percent of the clip; keep the slit hue locked at #8F00FF (brightness only)
+  - re-curve ONLY the two-slit emission STRENGTH animation - BASELINE V0.1 dormant = 0.05 = 5 percent of peak; the new dormant must be DARKER, so set dormant approximately 2 percent of the awakened peak (range 0-3 percent, MUST be below V0.1's 5 percent; keep a faint violet ember so the loop stays alive), mid approximately 30-40 percent, awakened equal to the current V0.1 peak (unchanged), with a fast ignition around 60-75 percent of the clip; keep the slit hue locked at #8F00FF (brightness only)
   - keep a smooth loop (first frame approx last frame): mostly dormant, an ignition spike near 65 percent, brief awakened, quick decay back to dormant
   - keep the V0.1 camera framing and breathing zoom, duration, codec, and fps unchanged
   - report the emission level of each state as a percent of peak (dormant/mid/awakened) in the proof
@@ -76,7 +76,7 @@ pass_conditions:
   - BODY_HASH (geometry) and all object transforms are UNCHANGED versus V0.1
   - all material hue/structure UNCHANGED; only the two-slit emission STRENGTH curve changed (hue stays #8F00FF)
   - the mp4 equals V0.1 spec (1080x1920, 30fps, yuv420p, H.264, no audio, ~6.03s) with V0.1 camera framing and breathing zoom
-  - the pulse re-curve reads: dormant ~10-15% of peak (clearly off/asleep), mid ~35-45%, awakened = current peak, fast ignition at ~60-75%; smooth loop preserved
+  - the pulse re-curve reads: dormant ~2% of peak and below V0.1's 5% (clearly off/asleep, faint ember only), mid ~30-40%, awakened = current peak, fast ignition at ~60-75%; smooth loop preserved
   - awakened peak brightness and bloom are NOT increased vs V0.1 (contrast comes from a deeper dormant)
   - SLIT_HUE_PIXEL_SAMPLE at awakened is violet near #8F00FF, not magenta; no Canvas hard-ban
   - keyframe strip + proof (with per-state emission percent) written; output remains CANDIDATE only

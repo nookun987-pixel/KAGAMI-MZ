@@ -20,9 +20,10 @@ Governed by AGENTS.md "Thirty-third controlled exception" (MIKAGE_STANDING_HERO_
 - Asset khóa V0.14 KHÔNG đụng.
 
 ## ĐƯỢC LÀM (CHỈ đường cong emission STRENGTH của 2 khe)
+BASELINE (Codex xác nhận): V0.1 dormant đã = 0.05 = **5% peak**. Mục tiêu là dormant TỐI HƠN nữa → số phải DƯỚI 5%.
 Vẽ lại nhịp pulse (chỉ độ sáng khe, hue #8F00FF giữ):
-- **DORMANT:** gần như tắt — violet rất tối, **~10–15% mức awakened**. Đây là điểm chính: trạng thái ngủ phải đọc ĐÚNG là ngủ.
-- **MID:** **~35–45%**.
+- **DORMANT:** gần như tắt — **~2% mức awakened (khoảng 0–3%, BẮT BUỘC dưới 5% của V0.1)**, chỉ còn một ember violet mờ để loop sống. Đây là điểm chính: trạng thái ngủ phải đọc ĐÚNG là ngủ.
+- **MID:** **~30–40%**.
 - **AWAKENED:** **giữ nguyên peak hiện tại** (không tăng).
 - **Ignition nhanh hơn:** cú bật dormant→awakened xảy ra gọn ở khoảng **60–75% clip** (~3.6–4.5s), không rải đều cả clip.
 - **Loop mượt vẫn phải giữ:** frame đầu ≈ frame cuối. Sau peak, ease nhanh về dormant ở đoạn cuối để loop liền (mostly dormant → ignition spike ~65% → awakened ngắn → decay về dormant).
@@ -37,7 +38,7 @@ Vẽ lại nhịp pulse (chỉ độ sáng khe, hue #8F00FF giữ):
 ## VERIFY (bắt buộc)
 - Reopen V0.2 blend sạch; BODY_HASH + transform unchanged vs V0.1; material hue unchanged (chỉ slit-strength keyframe khác).
 - ffprobe: 1080x1920, 30fps, yuv420p, no audio, ~6.03s (khớp V0.1).
-- **Báo mức emission 3 trạng thái theo % của peak** (dormant/mid/awakened) để xác nhận đúng đường cong (dormant 10–15%, mid 35–45%, awakened 100%).
+- **Báo mức emission 3 trạng thái theo % của peak** (dormant/mid/awakened) để xác nhận đúng đường cong (dormant ~2% và DƯỚI 5% của V0.1, mid ~30–40%, awakened 100%).
 - Pixel-sample khe frame awakened: violet gần #8F00FF, không magenta.
 - Keyframes strip dormant/mid/awakened cho soi tương phản.
 
