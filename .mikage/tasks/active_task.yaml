@@ -21,8 +21,8 @@ input_files_allowed:
 
 output_folder_allowed: _tmp/mikage_hero_lookdev_premium_v0_8_gate
 output_files_allowed:
-  - gate_report.txt
-  - .gitkeep
+  - contact_sheet.png
+  - contact_sheet_review_report.md
 
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend
@@ -50,7 +50,7 @@ allowed_actions:
   - set void-black world #050508, single Rembrandt key (upper-left angled down), soft controlled rim, fill near zero, fine grain
   - render the clay validation and the Stage B contact sheet (front, three-quarter, side, helmet close) into production/character/reviews
   - write the lookdev proof report into production/character/reviews
-  - write gate_report.txt into the temp gate folder for verify_output.py
+  - write the two verify artifacts into the gate folder for verify_output.py - contact_sheet.png (the Stage B sheet) and contact_sheet_review_report.md (short review note); the gate folder must contain ONLY these two files
   - run deterministic verification (Blender reopen, BODY_HASH unchanged vs base, render inspection)
   - clean .blend1 backups
   - commit local changes only
@@ -66,6 +66,7 @@ forbidden_actions:
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder (no .gitkeep, no mp4)
 
 pass_conditions:
   - new lookdev blend reopens cleanly
@@ -74,7 +75,7 @@ pass_conditions:
   - reads as premium semi-matte porcelain (not plastic, not flat); V0.7 silhouette preserved
   - exactly two restrained violet slits are the only signal; world stays void black; single-key cine read
   - clay validation and Stage B contact sheet rendered into reviews, output remains CANDIDATE only
-  - gate_report.txt written and python .mikage\tools\verify_output.py prints PASS
+  - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
   - achieving the lookdev would require changing geometry beyond the narrow perimeter-normal fallback
