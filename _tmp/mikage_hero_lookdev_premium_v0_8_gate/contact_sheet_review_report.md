@@ -1,1 +1,0 @@
-﻿Lane B drift-check CANDIDATE: porcelain semi-matte (not plastic), void single-key, restrained white halo, 2 slits only signal. FLAG: verify slit hue = #8F00FF (reads slightly pink). Body still blockout (later pass). Owner ruling required. No canon/asset lock.
