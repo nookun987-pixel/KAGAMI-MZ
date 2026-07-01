@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #20 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12` — ráp + render HERO đứng full-body = final standing character CANDIDATE.**
+> KHÔNG đổi geometry, KHÔNG đổi material (đầu+thân+blade+halo khoá hash). CHỈ camera full-figure + đèn hero. Đầu sứ bóng + thân graphite matte + blade lạnh + 2 khe violet + halo trắng, void, single-key Rembrandt + rim, grain. CANDIDATE / NOT CANON-LOCKED.
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_CHARACTER_CANDIDATE_V0_12.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #29 OPEN.
+> Output: V0.12 blend + contact sheet full-body (hero 3/4 · front · side) + 1 HERO money-shot + proof. Gate = 2 file. FAIL=STANDING_CANDIDATE_DRIFT (đổi hình/material / thêm chi tiết / mất mood) → revert V0.11. NO push/lock.
+> ✔ DONE #19 (V0.11 body lookdev matte): PASS — khử latex, thân ra graphite matte vải nặng; đầu+thân look đã mạch lạc. → ráp standing candidate.
+
 > DISPATCH 2026-07-01 #19 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_BODY_LOOKDEV_MATTE_V0_11` — LOOKDEV thân: material tune về graphite matte/vải nặng, khử specular. Geometry thân FREEZE ở V0.10.**
 > THÂN MATERIAL ONLY. BODY_HASH (hình) KHÔNG đổi. Material helmet/blade/slit + camera + đèn khoá. Chỉ node material cloak đổi: tăng roughness/giảm specular → matte graphite lì, không latex/nhựa; giữ nhịp fold V0.10 bằng shading (không normal-map giả).
 > Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_BODY_CLOAK_STRUCTURE_V0_10.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_LOOKDEV_MATTE_V0_11.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #28 OPEN.

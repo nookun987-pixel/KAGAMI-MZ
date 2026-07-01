@@ -1022,3 +1022,19 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-ninth controlled exception is open:
+  - `MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12 = OPEN`
+  - Head (V0.7 geometry + V0.8 porcelain) and body (V0.10 geometry + V0.11 matte) are locked. This task ASSEMBLES and RENDERS a full-body STANDING hero as the final standing character CANDIDATE. NO geometry edit, NO material edit. Only camera framing and hero lighting change for presentation. CANDIDATE only - no canon/asset lock.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`); references `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`, `design_system/mikage-cine-color-contract.md`.
+  - Only allowed next task: `MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_CHARACTER_CANDIDATE_V0_12.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE + BODY_HASH_AFTER (must be identical - no geometry edit).
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 / older-version geometry; no scene import.
+  - LOCKED: ALL geometry (BODY_HASH unchanged) and ALL materials (helmet porcelain, body matte graphite, blade, slits, halo). Only camera framing and lighting may change.
+  - PRESENTATION (allowed): frame the camera full-body standing (whole figure from top of helmet to hem, headroom + void above/below) - deliver a hero three-quarter, a clean front, a strict side; tune hero lighting per recipe (single Rembrandt key upper-left angled down, soft rim to separate silhouette from void, fill near zero, fine grain); high-quality render (Cycles preferred for porcelain SSS/coat, Eevee if it matches the recipe). No neon/warm/color wash; keep single-key void mood.
+  - SUCCESS TEST: the full-body standing figure reads coherently - glossy porcelain head, matte graphite cloak, cold blade, two violet slits, white halo, on void, single-key cine; tall vertical silhouette; not a robot, not cyberpunk; no out-of-scope detail; geometry + materials identical to V0.11.
+  - Allowed outputs (candidate only): new `MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend` + `..._CONTACT_SHEET.png` (hero 3/4 · front · strict side, FULL BODY) + `..._HERO.png` (single hero 3/4 full-body money-shot) + `..._PROOF.md` in production/character/reviews; the gate folder `_tmp/mikage_standing_character_candidate_v0_12_gate/` holds ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - FAIL = STANDING_CANDIDATE_DRIFT: if any geometry or material changes (hash drift), or an out-of-scope detail / neon / warm color is added, or the single-key void mood is lost → stop, `PASS_FAIL = FAIL`, `BLOCKER = STANDING_CANDIDATE_DRIFT`, list what drifted; revert to V0.11.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim (label CANDIDATE / NOT CANON-LOCKED). No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
