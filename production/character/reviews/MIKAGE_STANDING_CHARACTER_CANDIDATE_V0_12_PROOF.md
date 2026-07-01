@@ -1,0 +1,75 @@
+# MIKAGE STANDING CHARACTER CANDIDATE V0.12 — Proof
+
+## Task and governance
+
+- TASK_ID: `MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12`
+- ACTIVE_LANE: `CHARACTER / STANDING PRESENTATION CANDIDATE`
+- GOVERNANCE: `AGENTS.md` controlled exception #29; handoff dispatch #20; `.mikage/tasks/active_task.yaml`
+- SOURCE_COMMIT: `431fd34 dispatch #20: final standing character candidate V0.12 (exception #29)`
+- OUTPUT_STATUS: CANDIDATE only
+- CANON_LOCK: NO
+- ASSET_LOCK: NO
+- COMMIT: NO
+- PUSH: NO
+
+## Sources and outputs
+
+- BASE_BLEND: `production/character/production_actor/rig_derivatives/MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend`
+- BASE_BLEND_SHA256: `CBF9F351257E91E3327ADCDCD43F49B49B4DAB2F2159AA6561A5B3145364AC23`
+- OUTPUT_BLEND: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend`
+- OUTPUT_BLEND_SHA256: `81D47C8AB587AECCCED07FD24394D4FFC0D08460CE7C6342E525B261D37B93A7`
+- CONTACT_SHEET_SHA256: `71813B7B14D80CA7D127E04C16E0638028394B6531A7C7B7EE872AA8AC1E9AC7`
+- HERO_SHA256: `85CBAC88F82A98FE4FEA5BEFCEDE17EAAD94509A74DF14F465E421D70EB121D5`
+- MASTER_REFERENCE_SHA256: `B86F6817...06429` (matched the immutable task mark)
+
+## Preservation evidence
+
+- BODY_HASH_BEFORE: `DC566BA1BFFEB657853F38C4ECF4029AB31D0BF221373E3ADEF9E360835B0C62`
+- BODY_HASH_AFTER: `DC566BA1BFFEB657853F38C4ECF4029AB31D0BF221373E3ADEF9E360835B0C62`
+- BODY_HASH_UNCHANGED: YES
+- ALL_MATERIAL_HASH_BEFORE: `D843BC4DB74CA9CF484950A67C97B733545B71DE08CE5E608121BD245541538E`
+- ALL_MATERIAL_HASH_AFTER: `D843BC4DB74CA9CF484950A67C97B733545B71DE08CE5E608121BD245541538E`
+- ALL_MATERIAL_HASHES_UNCHANGED: YES
+- MESH_STATE_HASH_BEFORE: `B635313DB404A8B9E83082F574FA59024C4AD4B0A4295B160315129D7FCB9E40`
+- MESH_STATE_HASH_AFTER: `B635313DB404A8B9E83082F574FA59024C4AD4B0A4295B160315129D7FCB9E40`
+- MESH_STATE_HASH_UNCHANGED: YES
+- REOPEN_VALIDATION: PASS
+- BLEND1_COUNT: 0
+
+## Presentation changes only
+
+- Added orthographic hero three-quarter, front, and strict-side full-body cameras.
+- Added a neutral upper-left Rembrandt area key and a restrained neutral rim.
+- Existing presentation lights were hidden in the derivative; world, materials, meshes, proportions, and silhouette were not edited.
+- HERO: `1440 x 1800`; CONTACT_SHEET: `2160 x 2700`, plain 2 x 2 layout.
+
+## Visual inspection
+
+- Full figure remains visible from helmet crown through cloak hem in all required views.
+- Glazed porcelain helmet, matte cloak, cold blade, white halo, and void presentation remain legible.
+- Violet is restricted to exactly the two sensor slits; no violet ambient, fill, halo, or wash was introduced.
+- No warm, neon, poster, typography, or styled-publicity treatment was introduced.
+- This is technical candidate evidence only. Final visual ruling belongs to the operator.
+
+## RESULT
+
+RESULT = PASS
+TASK_ID = MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12
+PASS_FAIL = PASS
+BLOCKER = NONE
+STANDING_CANDIDATE_DRIFT = NO
+BODY_HASH_UNCHANGED = YES
+ALL_MATERIAL_HASHES_UNCHANGED = YES
+MESH_STATE_HASH_UNCHANGED = YES
+FULL_BODY_FRAMING = PASS
+HERO_THREE_QUARTER = PASS
+FRONT_FULL_BODY = PASS
+STRICT_SIDE_FULL_BODY = PASS
+SINGLE_KEY_VOID_MOOD = PASS
+VIOLET_ONLY_TWO_SLITS = PASS
+OUTPUT_STATUS = CANDIDATE
+CANON_LOCK = NO
+ASSET_LOCK = NO
+COMMIT = NO
+PUSH = NO
+NEXT_SAFE_TASK = Lane B drift-check and operator visual ruling on V0.12 standing candidate
