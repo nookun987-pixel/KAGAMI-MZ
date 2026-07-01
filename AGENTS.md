@@ -1038,3 +1038,19 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim (label CANDIDATE / NOT CANON-LOCKED). No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Thirtieth controlled exception is open:
+  - `MIKAGE_STANDING_HERO_POLISH_V0_13 = OPEN`
+  - V0.12 standing candidate PASS. Hero polish for the three operator flags (blade reads detached, dark body merges into void, key is flat). CAMERA + LIGHTING ONLY. NO geometry edit, NO material edit, NO object transform change (the blade is handled by camera angle, not by moving it). CANDIDATE only.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`); references `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`, `design_system/mikage-cine-color-contract.md`.
+  - Only allowed next task: `MIKAGE_STANDING_HERO_POLISH_V0_13`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_13.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE + BODY_HASH_AFTER (must be identical).
+  - PROHIBITED inputs: any older-version / RIDER / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - LOCKED: ALL mesh geometry (BODY_HASH / mesh-state unchanged), ALL materials, and ALL object transforms (do NOT move or rotate any object, including the blade). Only camera and lighting may change.
+  - POLISH (allowed): add a soft cold rim light (within palette) to separate the dark graphite body from the void (a rim edge, not a flood fill); push the Rembrandt key more directional/dramatic with a deeper shadow side, keeping single-key void mood (no neon/warm/color wash); frame the 3/4 hero camera so the blade reads as belonging to the figure (beside/behind the shoulder) using camera angle and distance only; fine grain; full-body framing.
+  - SUCCESS TEST: dark body separated from void by a cold rim; key reads dramatic and directional with depth; blade reads integrated via composition; still faceless porcelain head, graphite cloak, two violet slits, white halo, on void, single-key; geometry + materials + transforms identical to V0.12.
+  - Allowed outputs (candidate only): new `MIKAGE_STANDING_HERO_POLISH_V0_13.blend` + `..._HERO.png` (polished full-body 3/4 money-shot) + `..._CONTACT_SHEET.png` (hero · front · compare vs V0.12) + `..._PROOF.md` in production/character/reviews; the gate folder `_tmp/mikage_standing_hero_polish_v0_13_gate/` holds ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - FAIL = HERO_POLISH_DRIFT: if any geometry, material, or transform changes (hash drift), or neon/warm/color wash is added, or the single-key void mood is lost → stop, `PASS_FAIL = FAIL`, `BLOCKER = HERO_POLISH_DRIFT`, list what drifted; revert to V0.12. If the blade cannot read integrated by camera alone, report it (do NOT move the mesh).
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim (label CANDIDATE / NOT CANON-LOCKED). No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.

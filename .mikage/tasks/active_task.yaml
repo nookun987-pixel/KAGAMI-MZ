@@ -1,16 +1,15 @@
-task_id: MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12
+task_id: MIKAGE_STANDING_HERO_POLISH_V0_13
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12
-# Dispatched by operator (BOOS) 2026-07-01 #20, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Twenty-ninth controlled exception (MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12 = OPEN).
-# Head (V0.7 geo + V0.8 porcelain) and body (V0.10 geo + V0.11 matte) are locked. This task assembles and renders
-# a full-body STANDING hero as the final standing character CANDIDATE. NO geometry edit, NO material edit.
-# Only camera framing and hero lighting change for presentation. CANDIDATE only - no canon/asset lock.
+current_step: MIKAGE_STANDING_HERO_POLISH_V0_13
+# Dispatched by operator (BOOS) 2026-07-01 #21, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Thirtieth controlled exception (MIKAGE_STANDING_HERO_POLISH_V0_13 = OPEN).
+# V0.12 standing candidate PASS. Hero polish for the 3 flags (detached blade, body merges into void, flat key).
+# CAMERA + LIGHTING ONLY. NO geometry edit, NO material edit, NO object transform change (blade handled by camera angle).
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STANDING_CHARACTER_CANDIDATE_V0_12.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_13.md
   - production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - design_system/mikage-cine-color-contract.md
@@ -19,13 +18,13 @@ input_files_allowed:
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_standing_character_candidate_v0_12_gate
+output_folder_allowed: _tmp/mikage_standing_hero_polish_v0_13_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend
   - production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - design_system/mikage-cine-color-contract.md
@@ -35,30 +34,32 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend
-  - production/character/reviews/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12_HERO.png
-  - production/character/reviews/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_13.blend
+  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_13_HERO.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_13_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_13_PROOF.md
 
 allowed_actions:
-  - create a new presentation derivative blend from MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend (do not overwrite the base)
+  - create a new presentation derivative blend from MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend (do not overwrite the base)
   - report BASE_SELECTED and BODY_HASH_BEFORE and BODY_HASH_AFTER (must be identical - no geometry edit)
-  - set the camera to a full-body standing framing (whole figure from top of helmet to hem, headroom and void above and below); provide a hero three-quarter, a clean front, and a strict side
-  - tune the hero lighting per the recipe - single Rembrandt key upper-left angled down, soft rim to separate the silhouette from the void, fill near zero, fine grain
-  - render a high-quality full-body contact sheet and a single hero three-quarter money-shot into production/character/reviews
+  - add a soft cold rim light (within palette) to separate the dark graphite body from the void - a rim edge, not a flood fill
+  - push the Rembrandt key to be more directional and dramatic with a deeper shadow side, keeping the single-key void mood (no neon, no warm, no color wash)
+  - frame the 3/4 hero camera so the blade reads as belonging to the figure (beside or behind the shoulder, within the silhouette flow) using camera angle and distance only
+  - keep fine grain and full-body framing
+  - render a polished hero money-shot and a small contact sheet (hero, front, compare vs V0.12) into production/character/reviews
   - write the two verify artifacts into the gate folder - contact_sheet.png and contact_sheet_review_report.md; the gate folder must contain ONLY these two files
-  - write the proof report (geometry + all material hashes unchanged; only camera and lighting changed) into production/character/reviews
-  - run deterministic verification (Blender reopen, geometry + material hashes unchanged, render inspection)
+  - write the proof report (geometry + material + object-transform hashes unchanged; only camera and lighting changed) into production/character/reviews
+  - run deterministic verification (Blender reopen, geometry + material + transform hashes unchanged, render inspection)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not change ANY geometry - BODY_HASH must be UNCHANGED versus V0.11
-  - do not change ANY material - helmet porcelain, body matte graphite, blade, slits, halo all unchanged
+  - do not change ANY geometry - BODY_HASH / mesh-state hash must be UNCHANGED versus V0.12
+  - do not change ANY material - helmet, body, blade, slits, halo all unchanged
+  - do not move or rotate any object, including the blade (handle the blade by camera angle only)
   - do not add hair, props, armor, decorative panels, patterns, decals, or logos
   - do not add eyes, mouth, or a human face; keep exactly two slits
-  - do not use neon/cyberpunk lighting, warm colors, or any color wash; keep single-key void mood
-  - do not introduce any color outside the brand palette; violet only at the two slits
+  - do not use neon/cyberpunk lighting, warm colors, or any color wash; keep single-key void mood; rim stays cold and within palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready (label CANDIDATE / NOT CANON-LOCKED)
   - do not push
   - do not modify unrelated files
@@ -66,18 +67,19 @@ forbidden_actions:
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - new presentation blend reopens cleanly
-  - BODY_HASH (all geometry) and all material hashes are UNCHANGED versus V0.11 (only camera and lighting changed)
-  - the full-body standing figure reads coherently - glossy porcelain head, matte graphite cloak, cold blade, two violet slits, white halo, on void, single-key cine
-  - the tall vertical silhouette reads; not a robot, not cyberpunk; no out-of-scope detail
-  - a full-body contact sheet (hero 3/4, front, strict side) and a hero money-shot rendered into reviews; output remains CANDIDATE only
+  - new polish blend reopens cleanly
+  - BODY_HASH (geometry), all material hashes, and all object transforms are UNCHANGED versus V0.12 (only camera and lighting changed)
+  - the dark body is separated from the void by a cold rim; the key reads dramatic and directional with depth; the blade reads as belonging to the figure via composition
+  - still faceless porcelain head, graphite cloak, two violet slits, white halo, on void, single-key mood
+  - a polished hero money-shot and a compare-vs-V0.12 contact sheet rendered into reviews; output remains CANDIDATE only
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
-  - a good standing hero cannot be framed without changing geometry or a material
+  - the blade cannot be made to read integrated by camera composition alone (report it - do not move the mesh)
+  - a good hero cannot be lit without changing geometry, a material, or a transform
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (full-body coherent? head+body+blade+halo consistent? geometry + materials unchanged?) plus operator visual ruling; if approved, this hero frame feeds the build-log video, then the awakening/motion pass.
-next_step_if_fail: stop and report BLOCKER reason only (revert to V0.11; e.g. STANDING_CANDIDATE_DRIFT)
+next_step_if_pass: Lane B drift-check (rim separates body? key dramatic with depth? blade reads integrated? geometry/material/transform unchanged?) plus operator visual ruling; if approved, this polished hero replaces the V0.12 frame as the build-log video money-shot (step A).
+next_step_if_fail: stop and report BLOCKER reason only (revert to V0.12; e.g. HERO_POLISH_DRIFT)

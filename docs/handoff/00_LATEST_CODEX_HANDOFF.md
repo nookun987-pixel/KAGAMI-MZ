@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #21 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_POLISH_V0_13` — HERO POLISH: rim tách thân khỏi void + key kịch tính + camera cho blade đọc gắn. CAMERA + ĐÈN ONLY.**
+> KHÔNG đổi geometry/material/transform (kể cả KHÔNG dời blade — xử bằng góc camera). Thêm rim lạnh (viền, không fill), đẩy Rembrandt key có chiều sâu, single-key void mood, không neon/warm. Full-body, grain.
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_POLISH_V0_13.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #30 OPEN.
+> Output: V0.13 blend + HERO money-shot polish + contact sheet (so V0.12) + proof. Gate = 2 file. FAIL=HERO_POLISH_DRIFT (đổi hình/material/transform / neon/warm / mất mood) → revert V0.12. Blade không đọc gắn được bằng camera thì BÁO, đừng dời mesh. NO push/lock.
+> ✔ DONE #20 (V0.12 standing candidate): PASS — final standing character CANDIDATE full-body, look mạch lạc; cờ polish = blade tách / thân tan void / key phẳng → V0.13 xử. Sau V0.13 PASS = bước A dựng video build-log.
+
 > DISPATCH 2026-07-01 #20 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_CHARACTER_CANDIDATE_V0_12` — ráp + render HERO đứng full-body = final standing character CANDIDATE.**
 > KHÔNG đổi geometry, KHÔNG đổi material (đầu+thân+blade+halo khoá hash). CHỈ camera full-figure + đèn hero. Đầu sứ bóng + thân graphite matte + blade lạnh + 2 khe violet + halo trắng, void, single-key Rembrandt + rim, grain. CANDIDATE / NOT CANON-LOCKED.
 > Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_CHARACTER_CANDIDATE_V0_12.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #29 OPEN.
