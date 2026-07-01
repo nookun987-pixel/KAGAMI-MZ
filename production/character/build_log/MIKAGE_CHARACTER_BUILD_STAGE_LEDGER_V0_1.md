@@ -43,7 +43,12 @@ Dates = mtime của proof (xấp xỉ). Trạng thái ghi trung thực; chưa c�
 ## PHA 4 — Lookdev THÂN (chất liệu)
 | Stage | Ngày | Làm gì | Trạng thái |
 |---|---|---|---|
-| **BODY_LOOKDEV_MATTE V0.11** | 07-01 | Material tune thân → graphite matte / vải nặng, khử specular (latex); geometry V0.10 + helmet/blade/camera/đèn khoá | **ĐANG CHẠY** (dispatch #19, exception #28) |
+| **BODY_LOOKDEV_MATTE V0.11** | 07-01 | Material tune thân → graphite matte / vải nặng, khử specular (latex); geometry V0.10 + helmet/blade/camera/đèn khoá | **PASS** (dispatch #19) — latex hết, đầu+thân look mạch lạc |
+
+## PHA 5 — Ráp HERO đứng (candidate)
+| Stage | Ngày | Làm gì | Trạng thái |
+|---|---|---|---|
+| **STANDING_CHARACTER_CANDIDATE V0.12** | 07-01 | Ráp full-body + render hero đứng (đầu sứ + thân graphite + blade + halo, void single-key); geometry+material khoá, chỉ camera+đèn | **ĐANG CHẠY** (dispatch #20, exception #29) — money-shot cho video build-log |
 
 ## LANE SONG SONG (không thuộc line này)
 - HERO_MOUNT (rider + steed) V0.1→V1.5: nhánh nhân-mã cưỡi + motion/gait riêng, kho `reviews/MIKAGE_HERO_MOUNT_*`. Không trộn vào line character actor ở trên.
