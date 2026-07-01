@@ -1005,3 +1005,20 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-eighth controlled exception is open:
+  - `MIKAGE_BODY_LOOKDEV_MATTE_V0_11 = OPEN`
+  - Body GEOMETRY is FROZEN at V0.10 (operator PASS). The remaining "latex/gloss" read is a MATERIAL problem. This task is a BODY LOOKDEV / MATERIAL TUNE ONLY: push the cloak toward deep matte graphite / heavy cloth and kill the specular. NO geometry edit. Helmet material, blade material, the two slits, camera, and lighting stay unchanged.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`); references `production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md`, `design_system/mikage-cine-color-contract.md`.
+  - Only allowed next task: `MIKAGE_BODY_LOOKDEV_MATTE_V0_11`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_LOOKDEV_MATTE_V0_11.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_BODY_CLOAK_STRUCTURE_V0_10.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE + BODY_HASH_AFTER (must be identical - no geometry edit).
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 / V0.8 / V0.9 geometry; no scene import.
+  - LOCKED: ALL geometry (BODY_HASH unchanged), the helmet material, the blade material, the two slits, camera/framing, world, and the lighting setup. Only the body/cloak material may change.
+  - MATERIAL TUNE (body only): raise roughness / reduce specular so the cloak reads as deep matte graphite heavy cloth (not latex, rubber, plastic, glossy, or wet); base = deep matte graphite within palette; keep the V0.10 fold rhythm readable via soft shading (no faked normal/bump fold map); no patterns, decals, metallic sheen, or logos.
+  - Render permission GRANTED (Blender, local; keep the V0.10 lighting). Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST: cloak reads deep matte heavy cloth with restrained specular (no latex/rubber); V0.10 silhouette + folds + heavy straight hem still read; helmet/blade/slit material, camera, and lighting identical to V0.10; palette locked; violet only at the two slits.
+  - Allowed outputs (candidate only): new `MIKAGE_BODY_LOOKDEV_MATTE_V0_11.blend` + `..._CONTACT_SHEET.png` (front · 3/4 · strict side · compare vs V0.10) + `..._PROOF.md` in production/character/reviews; the gate folder `_tmp/mikage_body_lookdev_matte_v0_11_gate/` holds ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - FAIL = BODY_MATERIAL_DRIFT: if the specular stays harsh, the cloak reads plastic/rubber, or any geometry / helmet / blade / camera / lighting changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = BODY_MATERIAL_DRIFT`, list what drifted; revert to V0.10 (NOT V0.9).
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.

@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #19 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_BODY_LOOKDEV_MATTE_V0_11` — LOOKDEV thân: material tune về graphite matte/vải nặng, khử specular. Geometry thân FREEZE ở V0.10.**
+> THÂN MATERIAL ONLY. BODY_HASH (hình) KHÔNG đổi. Material helmet/blade/slit + camera + đèn khoá. Chỉ node material cloak đổi: tăng roughness/giảm specular → matte graphite lì, không latex/nhựa; giữ nhịp fold V0.10 bằng shading (không normal-map giả).
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_BODY_CLOAK_STRUCTURE_V0_10.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_LOOKDEV_MATTE_V0_11.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #28 OPEN.
+> Output: V0.11 blend + contact sheet (front/3q/side + so V0.10) + proof. Gate = 2 file. FAIL=BODY_MATERIAL_DRIFT (bóng gắt / đọc nhựa / đụng hình-helmet-blade-camera-đèn) → revert V0.10. CANDIDATE; dọn .blend1; NO push/lock.
+> ✔ DONE #18 (V0.10 body cloak structure): PASS thật (không chỉ kỹ thuật) — 4 folds bất đối xứng, vai bớt phồng, side có depth; ruling = FREEZE body geometry ở V0.10. Latex còn lại = material → V0.11 lookdev.
+
 > DISPATCH 2026-07-01 #18 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_BODY_CLOAK_STRUCTURE_V0_10` — thêm STRUCTURE cho thân ra cloak vải nặng. Giữ silhouette V0.9. THÂN ONLY, không material.**
 > 6 điểm: (1) hạ phồng vai nhẹ (bỏ mái vòm), (2) 3–5 primary folds lớn dọc bất đối xứng, (3) nếp bắt đầu dưới vai (không chụm cổ), (4) mép ngoài gần thẳng (không loe), (5) tăng nhẹ depth trước–sau ở side (không slab), (6) đáy nặng ổn định (không sóng nhỏ). Helmet/slit/blade/camera/material hash-lock như V0.9.
 > Base ONLY (không quay lại V0.8): `production/character/production_actor/rig_derivatives/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_CLOAK_STRUCTURE_V0_10.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #27 OPEN.
