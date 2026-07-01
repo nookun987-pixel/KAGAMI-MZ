@@ -56,6 +56,12 @@ Dates = mtime của proof (xấp xỉ). Trạng thái ghi trung thực; chưa c�
 | **STANDING_HERO_POLISH V0.13** | 07-01 | Camera + đèn: thêm rim tách thân khỏi void, key kịch tính có chiều, khung cho blade đọc gắn; hình/material/transform khoá | **PASS kỹ thuật** (dispatch #21) — NHƯNG ruling = KHÔNG lock: khe ngả magenta, blade đọc như panel, cloak phẳng → V0.14 xử |
 | **STANDING_HERO_POLISH V0.14** | 07-02 | Camera + đèn + 1 khe hẹp material (hue 2 khe → #8F00FF, giảm bloom); cold rim cho blade; rim/bounce tách cloak; hình/transform/material-ngoài-khe khoá | **✅ ASSET-LOCKED — OFFICIAL STANDING HERO** (dispatch #22, operator ruling 07-02). Khe violet (Lane B sample #8220DF core #9F22FF, blue-trội), blade đọc gắn, cloak tách khối. Money-shot cuối cho video build-log. Lock record: `reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md`. Chưa push. |
 
+## PHA 7 — Awakening / Motion (Spotify Canvas)
+| Stage | Ngày | Làm gì | Trạng thái |
+|---|---|---|---|
+| **STANDING_HERO_MOTION V0.1** | 07-02 | Từ hero V0.14 khóa → clip Canvas dọc: camera breathing zoom + violet slit pulse; hình/transform/hue khoá | **PASS kỹ thuật** (dispatch #23) — NHƯNG ruling = KHÔNG approve: tương phản dormant→awakened quá nhẹ (dormant đã 5% vẫn sáng) → V0.2 re-curve. Giữ làm candidate history. |
+| **STANDING_HERO_MOTION V0.2** | 07-02 | Re-curve CHỈ đường cong sáng khe: dormant 2% (dưới baseline 5%), mid 35%, awakened 100% (peak giữ), ignition nhanh ~65–70%; loop mượt; mọi thứ khác = V0.1 | **✅ APPROVED — OFFICIAL STANDING HERO CANVAS** (dispatch #24, operator ruling 07-02). Ngủ ra ngủ, thức có lực, không tăng bloom, không drift, spec 1080×1920/30fps/yuv420p/6.03s/no-audio. Cặp với still V0.14. Approval record: `reviews/MIKAGE_STANDING_HERO_MOTION_V0_2_APPROVAL.md`. V0.2 thay V0.1. Chưa push. |
+
 ## LANE SONG SONG (không thuộc line này)
 - HERO_MOUNT (rider + steed) V0.1→V1.5: nhánh nhân-mã cưỡi + motion/gait riêng, kho `reviews/MIKAGE_HERO_MOUNT_*`. Không trộn vào line character actor ở trên.
 
