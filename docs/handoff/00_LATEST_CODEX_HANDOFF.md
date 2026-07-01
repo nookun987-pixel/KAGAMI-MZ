@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #18 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_BODY_CLOAK_STRUCTURE_V0_10` — thêm STRUCTURE cho thân ra cloak vải nặng. Giữ silhouette V0.9. THÂN ONLY, không material.**
+> 6 điểm: (1) hạ phồng vai nhẹ (bỏ mái vòm), (2) 3–5 primary folds lớn dọc bất đối xứng, (3) nếp bắt đầu dưới vai (không chụm cổ), (4) mép ngoài gần thẳng (không loe), (5) tăng nhẹ depth trước–sau ở side (không slab), (6) đáy nặng ổn định (không sóng nhỏ). Helmet/slit/blade/camera/material hash-lock như V0.9.
+> Base ONLY (không quay lại V0.8): `production/character/production_actor/rig_derivatives/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_CLOAK_STRUCTURE_V0_10.md`. Gate: active_task.yaml (validate PASS). AGENTS.md exception #27 OPEN.
+> Output: V0.10 blend + contact sheet (front/3q/side + so V0.9) + proof. Gate = 2 file. FAIL=CLOAK_STRUCTURE_DRIFT (nhiều nếp nhỏ / loe đáy / drift) → revert V0.9. CANDIDATE; dọn .blend1; NO push/lock.
+> ✔ DONE #17 (V0.9 body de-blockout): PASS scope/kỹ thuật, không drift; ruling = FORM HOLD (silhouette đúng nhưng đọc latex-shell, folds yếu). V0.9 = technical base cho V0.10.
+
 > DISPATCH 2026-07-01 #17 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9` — nắn form THÂN: de-blockout torso/robe → áo choàng cao-dọc. Helmet FREEZE ở V0.7+V0.8.**
 > THÂN ONLY. Giữ hash y hệt V0.8: helmet, 2 slit, blade, camera, MỌI material/đèn. Chỉ mesh thân đổi. Vai có khối + buông thẳng (không loe váy), cổ-vai tự nhiên, primary folds thôi (không micro-fold, không tóc/prop round này). Female-coded non-sexual, vertical flow. Giữ chiều cao trong envelope blockout.
 > Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_FORM_DEBLOCKOUT_V0_9.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS). AGENTS.md exception #26 OPEN.

@@ -1,15 +1,15 @@
-task_id: MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9
+task_id: MIKAGE_BODY_CLOAK_STRUCTURE_V0_10
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9
-# Dispatched by operator (BOOS) 2026-07-01 #17, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Twenty-sixth controlled exception (MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9 = OPEN).
-# Helmet FROZEN at V0.7 geometry + V0.8 lookdev. This task refines the BODY ONLY: de-blockout torso/robe
-# from a smooth proxy cone into a tall vertical cloak. Helmet, slits, blade, camera, materials all LOCKED.
+current_step: MIKAGE_BODY_CLOAK_STRUCTURE_V0_10
+# Dispatched by operator (BOOS) 2026-07-01 #18, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Twenty-seventh controlled exception (MIKAGE_BODY_CLOAK_STRUCTURE_V0_10 = OPEN).
+# V0.9 = technical base (FORM HOLD). This task adds cloak structure (heavy-fabric read) to the BODY ONLY
+# while keeping the V0.9 tall vertical silhouette. Helmet, slits, blade, camera, materials all LOCKED. No material edit.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend
-  - production/character/build_log/LANEA_CODEX_TASK_BODY_FORM_DEBLOCKOUT_V0_9.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend
+  - production/character/build_log/LANEA_CODEX_TASK_BODY_CLOAK_STRUCTURE_V0_10.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/mikage_character_visual_spec.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
@@ -17,13 +17,13 @@ input_files_allowed:
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_body_form_deblockout_v0_9_gate
+output_folder_allowed: _tmp/mikage_body_cloak_structure_v0_10_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend
+  - production/character/production_actor/rig_derivatives/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/mikage_character_visual_spec.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
@@ -32,18 +32,20 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend
-  - production/character/reviews/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_BODY_CLOAK_STRUCTURE_V0_10.blend
+  - production/character/reviews/MIKAGE_BODY_CLOAK_STRUCTURE_V0_10_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_BODY_CLOAK_STRUCTURE_V0_10_PROOF.md
 
 allowed_actions:
-  - create a new body-refine derivative blend from MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend (do not overwrite the base)
+  - create a new cloak-structure derivative blend from MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend (do not overwrite the base)
   - report BASE_SELECTED, BODY_HASH_BEFORE, HELMET_HASH_BEFORE, BLADE_HASH_BEFORE and the same AFTER
-  - edit ONLY the body mesh (torso, shoulders, neck-of-robe, cloak/skirt) - de-blockout the proxy cone into a tall vertical cloak with shoulder mass and a straight vertical fall
-  - keep the neck-to-shoulder transition natural (no tube pinch, no thick mechanical collar)
-  - establish primary fold structure only (no micro-folds this round); female-coded non-sexual, sacred vertical flow
-  - keep overall height and proportion within the current blockout envelope
-  - render a contact sheet (front, three-quarter, strict side, and a compare vs V0.8) into production/character/reviews
+  - edit ONLY the body mesh - reduce the shoulder dome slightly so shoulders read as mass not a balloon
+  - add 3 to 5 large vertical primary folds, slightly asymmetric (not mirrored, not evenly spaced), starting below the shoulder line (not all converging at the neck)
+  - keep the two outer edges nearly vertical (no trumpet, no flare)
+  - slightly increase front-to-back depth so the strict-side reads as a cloak wrapping the body, not a flat slab
+  - keep a heavy stable hem (no small waves, no micro-folds)
+  - preserve the V0.9 tall vertical silhouette and straight bottom
+  - render a contact sheet (front, three-quarter, strict side, compare vs V0.9) into production/character/reviews
   - write the two verify artifacts into the gate folder - contact_sheet.png and contact_sheet_review_report.md; the gate folder must contain ONLY these two files
   - write the proof report (helmet/slit/blade/camera/material hashes unchanged; body change valid) into production/character/reviews
   - run deterministic verification (Blender reopen, locked-component hashes unchanged, render inspection)
@@ -51,11 +53,13 @@ allowed_actions:
   - commit local changes only
 
 forbidden_actions:
-  - do not change the helmet geometry, the two slits (count or placement), the Zenith Blade, the camera/framing, the world, or ANY material/lighting (all must be hash-identical to V0.8)
+  - do not change the helmet geometry, the two slits, the Zenith Blade, the camera/framing, the world, or ANY material/lighting (all hash-identical to V0.9)
+  - do not edit any material in this geometry task
   - do not move the helmet neck join / jaw seat
-  - do not add hair, props, armor, clasps, or decorative panels this round
-  - do not add micro-fold detail this round (primary form only)
-  - do not flare the skirt into a trumpet; keep it a straight vertical fall
+  - do not add micro-folds, small hem waves, hair, props, armor, or decorative panels
+  - do not flare the hem into a trumpet or widen the outer edges
+  - do not make the folds symmetric or evenly spaced or all converging at the neck
+  - do not go back to the V0.8 base
   - do not add eyes, mouth, or a human face; keep exactly two slits
   - do not introduce warm colors, cyberpunk/neon lighting, or any color outside the brand palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready
@@ -65,19 +69,20 @@ forbidden_actions:
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - new body-refine blend reopens cleanly
-  - helmet, slit, blade, camera, and all material/lighting hashes are UNCHANGED versus the V0.8 base (only the body mesh changed)
-  - the body reads as a tall vertical cloak with shoulder mass and a straight fall - no smooth proxy cone, no trumpet flare
-  - neck-to-shoulder transition is natural; not a robot; no out-of-scope detail added
-  - contact sheet rendered into reviews with a V0.8 comparison; output remains CANDIDATE only
+  - new cloak-structure blend reopens cleanly
+  - helmet, slit, blade, camera, and all material/lighting hashes are UNCHANGED versus the V0.9 base (only the body mesh changed)
+  - the body reads as a heavy-fabric cloak - 3 to 5 large asymmetric vertical folds read clearly, shoulders are mass not a dome
+  - strict side shows front-back depth (a wrapping cloak, not a flat slab)
+  - the V0.9 tall vertical silhouette and straight heavy hem are preserved; no trumpet, no small hem waves
+  - contact sheet rendered into reviews with a V0.9 comparison; output remains CANDIDATE only
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
-  - refining the body would require touching the helmet neck join / jaw seat
+  - adding structure would require touching the helmet neck join / jaw seat
   - any locked component (helmet/slit/blade/camera/material) cannot be kept hash-identical
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (body tall vertical cloak? helmet/blade/camera/material identical to V0.8?) plus operator visual ruling; if approved, next is body micro-fold + hair pass, or full-figure lookdev refresh, or the awakening/motion pass.
-next_step_if_fail: stop and report BLOCKER reason only (e.g. BODY_SCOPE_DRIFT)
+next_step_if_pass: Lane B drift-check (heavy-fabric cloak? 3-5 asymmetric folds? shoulders reduced? side depth? silhouette + hem preserved? locked hashes?) plus operator visual ruling; if approved, freeze the body form, then full-figure lookdev refresh or the awakening/motion pass.
+next_step_if_fail: stop and report BLOCKER reason only (revert to V0.9, not V0.8; e.g. CLOAK_STRUCTURE_DRIFT)

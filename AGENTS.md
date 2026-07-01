@@ -988,3 +988,20 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-seventh controlled exception is open:
+  - `MIKAGE_BODY_CLOAK_STRUCTURE_V0_10 = OPEN`
+  - V0.9 is the technical base (FORM HOLD): its tall vertical silhouette and straight hem are correct, but the body reads like a smooth latex bell (shoulder dome, flat front, V0.8 primary folds erased, slab-thin side). This task adds CLOAK STRUCTURE (heavy-fabric read) to the BODY ONLY while keeping the V0.9 silhouette. NO material edit. Helmet, slits, blade, camera, lighting, materials stay hash-identical to V0.9.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`); reference `docs/mikage_character_visual_spec.md`.
+  - Only allowed next task: `MIKAGE_BODY_CLOAK_STRUCTURE_V0_10`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_CLOAK_STRUCTURE_V0_10.md`.
+  - Allowed base input (ONLY this; do NOT go back to V0.8): `production/character/production_actor/rig_derivatives/MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE + HELMET_HASH_BEFORE + BLADE_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 / V0.8 geometry; no scene import.
+  - LOCKED (hash-identical to V0.9): helmet geometry, the two slits, the Zenith Blade, camera/framing, world, and every material/lighting node. Only the body mesh may change. No material edit in this geometry task. Do NOT move the helmet neck join / jaw seat.
+  - CLOAK STRUCTURE (body only, the six operator points): (1) reduce the shoulder dome slightly so shoulders read as mass not a balloon; (2) add 3-5 large vertical primary folds, slightly asymmetric (not mirrored, not evenly spaced); (3) folds start below the shoulder line, not all converging at the neck; (4) keep the two outer edges nearly vertical, no trumpet return; (5) slightly increase front-to-back depth so the strict-side reads as a wrapping cloak, not a flat slab; (6) keep a heavy stable hem, no small waves, no micro-folds.
+  - Render permission GRANTED (Blender, local; keep the V0.9 materials/lighting). Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST: reads as a heavy-fabric cloak (3-5 asymmetric folds read clearly, shoulders are mass not a dome, strict side has front-back depth), the V0.9 tall vertical silhouette + straight heavy hem preserved, no trumpet, no small hem waves, no latex-shell; helmet/slit/blade/camera/material identical to V0.9.
+  - Allowed outputs (candidate only): new `MIKAGE_BODY_CLOAK_STRUCTURE_V0_10.blend` + `..._CONTACT_SHEET.png` (front · 3/4 · strict side · compare vs V0.9) + `..._PROOF.md` in production/character/reviews; the gate folder `_tmp/mikage_body_cloak_structure_v0_10_gate/` holds ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - FAIL = CLOAK_STRUCTURE_DRIFT: if V0.10 shows many micro-folds, a flared hem, or any helmet/blade/camera/material drift → stop, `PASS_FAIL = FAIL`, `BLOCKER = CLOAK_STRUCTURE_DRIFT`, list what drifted; revert to V0.9 (NOT V0.8), do not patch on the drifted file.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.
