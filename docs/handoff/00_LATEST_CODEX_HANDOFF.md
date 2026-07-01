@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #15 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8` — lookdev pass đầu: MATERIAL + ĐÈN only. Geometry V0.7 đã DUYỆT + KHÓA.**
+> KHÔNG đổi hình (BODY_HASH giữ nguyên). 2 STAGE: A) clay trung tính validate rìa face-plane không thành faceplate/seam → B) porcelain premium: semi-matte glazed `#f2eeea` + graphite underlayer + blade kim loại lạnh + halo trắng tiết chế (không sáng hơn helmet), 2 khe violet `#8F00FF` tiết chế (chỉ ở khe), void `#050508`, 1 key Rembrandt trên-trái + rim mềm, fill ~0, fine grain.
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_HERO_LOOKDEV_PREMIUM_V0_8.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS). AGENTS.md exception #24 OPEN.
+> Output 4 file: lookdev blend + clay validation png + contact sheet png + proof. GUARD: KHÔNG đổi geometry (trừ narrow perimeter-normal fallback + ghi rõ); violet chỉ 2 khe; CANDIDATE; dọn .blend1; NO push/lock/canon.
+> ✔ DONE #23 (V0.7 SURFACE_CONTROL): CANDIDATE PASS — Catmull–Clark L1 + support cage dọn visor/crown-step; non-helmet byte-identical; Lane B drift-check PASS. → geometry LOCK ở V0.7.
+
 > DISPATCH 2026-06-26 #14 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_RIDER_HEAD_GRAFT_V0_1` — ghép đầu V2 (đã lock) lên rider, body giữ nguyên.**
 > Thay đầu cũ (tròn) bằng đầu V2 wedge (hash `c68d2b81...`). GEOMETRY chỉ ở phần đầu: import V2 head → định vị/scale/xoay khớp cổ → xoá đầu cũ. **KHÔNG đổi body/rig/pose/blade/camera/world.**
 > Input: rider `production/character/MIKAGE_RIDER_SOLO_LOOKDEV_EEVEE_V0_1.blend` + head V2 `production/character/MIKAGE_HELMET_HEAD_LOOKDEV_EEVEE_V0_1.blend`. Brief: `build_log/LANEA_CODEX_TASK_RIDER_HEAD_GRAFT_V0_1.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS).
