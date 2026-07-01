@@ -955,3 +955,18 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-fifth controlled exception is open:
+  - `MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7 = OPEN`
+  - Diagnostic only: rotate one neutral area light around the crown and render four three-quarter angles to decide whether the horizontal highlight bands on the crown are lighting reflections (geometry clean) or residual surface waviness (geometry). NO geometry change, NO lookdev.
+  - Only allowed next task: `MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_CROWN_LIGHTROT_DIAG_V0_7.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend` (the geometry base, NOT the V0.8 lookdev). Report BASE_SELECTED + BODY_HASH_BEFORE + BODY_HASH_AFTER (must be identical).
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 / V0.8 geometry; no scene import.
+  - Method: set the helmet to a neutral matte clay for the test, hide the halo, keep the camera fixed on ONE three-quarter angle that shows the crown bands, and rotate ONE neutral area light in ~15-20 degree steps (four azimuths). Light only; do not move the camera or any mesh. Render the four frames into one contact sheet, each labeled with its light angle.
+  - GEOMETRY LOCKED: no geometry edit, no subdivision-level increase, no support-loop change in this task (any fix is a separate `MIKAGE_HELMET_CROWN_SUPPORT_FIX_V0_7_1`). Confirm BODY_HASH unchanged.
+  - Verdict rule (write it in the proof): bands TRACK the light across the four frames = surface clean = PASS, V0.7 confirmed as the geometry base; bands STAY FIXED on the same mesh location = LOCAL_FIX_NEEDED, recommend `MIKAGE_HELMET_CROWN_SUPPORT_FIX_V0_7_1` (local crown support / vertex flow only; no subdivision raise; no jaw / slit / dimension / silhouette change).
+  - Render permission GRANTED (Blender, local). Inspect the actual PNG before stating a verdict.
+  - Allowed outputs (candidate only): `production/character/reviews/MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7_CONTACT_SHEET.png` + `..._PROOF.md`; the gate folder `_tmp/mikage_helmet_crown_lightrot_diag_v0_7_gate/` must hold ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.

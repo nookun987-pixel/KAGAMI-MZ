@@ -1,88 +1,78 @@
-task_id: MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8
+task_id: MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8
-# Dispatched by operator (BOOS) 2026-07-01 #15, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Twenty-fourth controlled exception (MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8 = OPEN).
-# V0.7 geometry is operator-APPROVED and GEOMETRY-LOCKED. First LOOKDEV pass: MATERIAL + LIGHTING only.
-# Two stages: A) neutral clay validation, then B) final porcelain lookdev. Output stays CANDIDATE. No canon-lock, no PASS, no push.
+current_step: MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7
+# Dispatched by operator (BOOS) 2026-07-01 #16, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Twenty-fifth controlled exception (MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7 = OPEN).
+# DIAGNOSTIC ONLY: rotate one neutral area light around the crown, render 4 angles, decide if the crown
+# highlight bands are lighting (geometry clean) or residual surface waviness. NO geometry change, NO lookdev.
 
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend
-  - production/character/build_log/LANEA_CODEX_TASK_HERO_LOOKDEV_PREMIUM_V0_8.md
-  - production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md
+  - production/character/build_log/LANEA_CODEX_TASK_HELMET_CROWN_LIGHTROT_DIAG_V0_7.md
+  - production/character/build_log/MIKAGE_HELMET_BLOCKING_SPEC_V0_1.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
-  - docs/mikage_character_visual_spec.md
-  - design_system/mikage-cine-color-contract.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_hero_lookdev_premium_v0_8_gate
+output_folder_allowed: _tmp/mikage_helmet_crown_lightrot_diag_v0_7_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend
-  - production/character/MIKAGE_HERO_LOOKDEV_RECIPE_V1.md
+  - production/character/build_log/MIKAGE_HELMET_BLOCKING_SPEC_V0_1.md
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
-  - docs/mikage_character_visual_spec.md
-  - design_system/mikage-cine-color-contract.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend
-  - production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_CLAY_VALIDATION.png
-  - production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_PROOF.md
+  - production/character/reviews/MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7_PROOF.md
 
 allowed_actions:
-  - create a new lookdev derivative blend from MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend (do not overwrite the base)
-  - report BASE_SELECTED and BODY_HASH_BEFORE
-  - STAGE A - render a neutral off-white matte clay validation (low specular, halo hidden, one large soft studio light) to confirm the face-plane perimeter does not read as a separate mechanical faceplate or seam
-  - STAGE B (only after clay reads clean) - assign materials and lighting only - semi-matte glazed porcelain shell (base #f2eeea, subtle micro-surface), deep matte graphite/void underlayer, cold-metal blade, restrained white halo not brighter than the helmet
-  - keep exactly two thin recessed violet slits (#8F00FF restrained, violet only at the slits)
-  - set void-black world #050508, single Rembrandt key (upper-left angled down), soft controlled rim, fill near zero, fine grain
-  - render the clay validation and the Stage B contact sheet (front, three-quarter, side, helmet close) into production/character/reviews
-  - write the lookdev proof report into production/character/reviews
-  - write the two verify artifacts into the gate folder for verify_output.py - contact_sheet.png (the Stage B sheet) and contact_sheet_review_report.md (short review note); the gate folder must contain ONLY these two files
-  - run deterministic verification (Blender reopen, BODY_HASH unchanged vs base, render inspection)
+  - create a throwaway diagnostic scene from MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend (do not overwrite the base; a diag blend is optional and not a required deliverable)
+  - report BASE_SELECTED and BODY_HASH_BEFORE and BODY_HASH_AFTER (must be identical - diagnostic makes no geometry edit)
+  - set the helmet material to a neutral matte clay for the test and hide the halo
+  - keep the camera fixed on one three-quarter angle that shows the crown highlight bands, across all four frames
+  - rotate ONE neutral area light around the crown in ~15-20 degree steps (4 azimuths), light only - do not move the camera or any mesh
+  - render the four light-rotation frames into one contact sheet, label each frame with its light angle
+  - write the two verify artifacts into the gate folder - contact_sheet.png and contact_sheet_review_report.md; the gate folder must contain ONLY these two files
+  - write the diagnostic proof report with the verdict (bands move with light = geometry clean = PASS; bands fixed on mesh = LOCAL_FIX_NEEDED) into production/character/reviews
+  - run deterministic verification (Blender reopen, BODY_HASH unchanged, render inspection)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not change ANY geometry - proportions, silhouette, face-plane, crown, temple, jaw, slit placement, or any mesh (BODY_HASH must be UNCHANGED at output)
-  - do not add mechanical frames, extra seams, panel lines, or decorative detail
+  - do not change ANY geometry - proportions, silhouette, face-plane, crown, temple, jaw, slit placement, or any mesh (BODY_HASH must be UNCHANGED)
+  - do not raise the subdivision level or add support loops in this task (diagnostic only; any fix is a separate V0_7_1 task)
   - do not add eyes, mouth, or a human face; keep exactly two slits
-  - do not make violet a default, halo, flood, or wash - violet only at the two slits, restrained
-  - do not introduce warm colors, cyberpunk/neon lighting, gold seams, or any color outside the brand palette
-  - do not use lighting to hide a geometry seam except via the narrow perimeter-normal fallback, and record it if used
+  - do not do lookdev, porcelain material, or cinematic lighting - neutral clay + one light only
+  - do not introduce warm colors, cyberpunk/neon lighting, or any color outside the brand palette
   - do not claim canon lock, asset lock, final pass, production ready, or public ready
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
-  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder (no .gitkeep, no mp4)
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - new lookdev blend reopens cleanly
-  - BODY_HASH is UNCHANGED versus the V0.7 base (unless the narrow perimeter-normal fallback was used and recorded, with the new hash reported)
-  - Stage A clay proof shows the face-plane continuous with the shell (no separate faceplate/seam read)
-  - reads as premium semi-matte porcelain (not plastic, not flat); V0.7 silhouette preserved
-  - exactly two restrained violet slits are the only signal; world stays void black; single-key cine read
-  - clay validation and Stage B contact sheet rendered into reviews, output remains CANDIDATE only
+  - diagnostic runs and reopens cleanly
+  - BODY_HASH is UNCHANGED versus the V0.7 base (no geometry edit occurred)
+  - four frames rendered with the light rotated and the camera fixed, assembled into one contact sheet in reviews
+  - proof report states a clear verdict - PASS (bands track the light) or LOCAL_FIX_NEEDED (bands fixed on mesh)
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage\tools\verify_output.py prints PASS
+  - output remains CANDIDATE only
 
 stop_conditions:
-  - achieving the lookdev would require changing geometry beyond the narrow perimeter-normal fallback
-  - the Stage A clay proof cannot be made to read clean without changing silhouette or proportion
+  - the diagnostic cannot be rendered without altering geometry
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (clay clean? porcelain not plastic? violet restrained to two slits? void cine read? BODY_HASH unchanged?) plus operator visual ruling; if approved, next is the awakening/motion or body form-refinement pass.
+next_step_if_pass: Lane B reads the contact sheet (bands move or fixed?) then operator ruling; if PASS, V0.7 is confirmed the geometry base and V0.8 lookdev stands; if LOCAL_FIX_NEEDED, next is MIKAGE_HELMET_CROWN_SUPPORT_FIX_V0_7_1 (local crown only).
 next_step_if_fail: stop and report BLOCKER reason only

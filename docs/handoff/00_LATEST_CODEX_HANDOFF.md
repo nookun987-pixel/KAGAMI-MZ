@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #16 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7` — DIAGNOSTIC: xoay 1 đèn trung tính quanh crown, render 4 góc, phân định dải sáng ngang = đèn hay waviness.**
+> KHÔNG đổi geometry (BODY_HASH giữ nguyên), KHÔNG lookdev. Clay trung tính + TẮT halo + camera cố định 3/4 + 1 Area light xoay ~15–20°/bước (4 azimuth). Bands DI CHUYỂN theo đèn → geometry SẠCH = PASS, chốt V0.7 làm base. Bands ĐỨNG YÊN trên mesh → LOCAL_FIX_NEEDED → task kế `MIKAGE_HELMET_CROWN_SUPPORT_FIX_V0_7_1` (chỉ local crown, không tăng subdiv, không đụng jaw/slit/dims).
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend` (bản geometry, KHÔNG phải lookdev V0.8). Brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_CROWN_LIGHTROT_DIAG_V0_7.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS). AGENTS.md exception #25 (cần BOOS mở).
+> Output: contact sheet 4 góc đèn + proof (verdict PASS/LOCAL_FIX_NEEDED, BODY_HASH unchanged). Gate CONTACT_SHEET_ONLY = đúng 2 file. CANDIDATE; dọn .blend1; NO push/lock.
+> ✔ DONE #15 (V0.8 HERO_LOOKDEV_PREMIUM): CANDIDATE, verify PASS, commit 82d1fa2 — clay validate + porcelain premium; Lane B drift-check PASS (cờ: hue khe hơi hồng, soi #8F00FF). V0.7 visual review = PASS, chờ light-rot check này để chốt geometry base.
+
 > DISPATCH 2026-07-01 #15 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8` — lookdev pass đầu: MATERIAL + ĐÈN only. Geometry V0.7 đã DUYỆT + KHÓA.**
 > KHÔNG đổi hình (BODY_HASH giữ nguyên). 2 STAGE: A) clay trung tính validate rìa face-plane không thành faceplate/seam → B) porcelain premium: semi-matte glazed `#f2eeea` + graphite underlayer + blade kim loại lạnh + halo trắng tiết chế (không sáng hơn helmet), 2 khe violet `#8F00FF` tiết chế (chỉ ở khe), void `#050508`, 1 key Rembrandt trên-trái + rim mềm, fill ~0, fine grain.
 > Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_HERO_LOOKDEV_PREMIUM_V0_8.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS). AGENTS.md exception #24 OPEN.
