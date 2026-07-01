@@ -970,3 +970,21 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Twenty-sixth controlled exception is open:
+  - `MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9 = OPEN`
+  - Helmet is FROZEN at V0.7 geometry + V0.8 lookdev. This task refines the BODY ONLY: de-blockout the smooth proxy-cone torso/robe into a tall vertical cloak. Helmet, the two slits, the Zenith Blade, the camera, and ALL materials/lighting stay hash-identical to V0.8. SSOT + 2D master win on conflict.
+  - SOURCE OF TRUTH = `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png` (sha256 `b86f6817cbc4f7d6a861b8e9f111f78096ca173f5bf5c5966a378069c0e06429`); reference `docs/mikage_character_visual_spec.md`. Codex MUST read the master.
+  - Only allowed next task: `MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_FORM_DEBLOCKOUT_V0_9.md`.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend`. Report BASE_SELECTED + BODY_HASH_BEFORE + HELMET_HASH_BEFORE + BLADE_HASH_BEFORE.
+  - PROHIBITED inputs: any RIDER / HEAD-GRAFT / HERO-MOUNT / STEED / FIGURE_V0.4 geometry; no scene import.
+  - LOCKED (must stay hash-identical): helmet geometry, the two slits (count + placement), the Zenith Blade, camera/framing, world, and every material/lighting node from V0.8. Only the body mesh (torso, shoulders, neck-of-robe, cloak/skirt) may change. Do NOT move the helmet neck join / jaw seat.
+  - BODY DE-BLOCKOUT (one area group — the cloak silhouette): turn the proxy cone into a tall vertical cloak with shoulder mass, a natural neck-to-shoulder transition, and a straight vertical fall (no trumpet flare); establish PRIMARY folds only (no micro-fold detail this round); female-coded non-sexual, sacred vertical flow; keep overall height/proportion within the current blockout envelope; add NO hair, props, armor, or decorative panels this round.
+  - Render permission GRANTED (Blender, local; keep the V0.8 materials/lighting). Inspect the actual PNG before any PASS claim.
+  - SUCCESS TEST: body reads as a tall vertical cloak (shoulder mass + straight fall), no smooth proxy cone, no trumpet; natural neck-to-shoulder; helmet/slit/blade/camera/material identical to V0.8; not a robot; no out-of-scope detail.
+  - Allowed outputs (candidate only): new `MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9.blend` + `..._CONTACT_SHEET.png` (front · 3/4 · strict side · compare vs V0.8) + `..._PROOF.md` in production/character/reviews; the gate folder `_tmp/mikage_body_form_deblockout_v0_9_gate/` holds ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - FAIL = BODY_SCOPE_DRIFT: if the helmet, slits, blade, camera, or any material changes → stop, `PASS_FAIL = FAIL`, `BLOCKER = BODY_SCOPE_DRIFT`, list what drifted; revert, do NOT patch on the drifted file.
+  - FALLBACK if de-blockout breaks the head-neck seat: revert; refine from the shoulders down only; do not touch the neck join.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.

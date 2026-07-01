@@ -1,5 +1,11 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-01 #17 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9` — nắn form THÂN: de-blockout torso/robe → áo choàng cao-dọc. Helmet FREEZE ở V0.7+V0.8.**
+> THÂN ONLY. Giữ hash y hệt V0.8: helmet, 2 slit, blade, camera, MỌI material/đèn. Chỉ mesh thân đổi. Vai có khối + buông thẳng (không loe váy), cổ-vai tự nhiên, primary folds thôi (không micro-fold, không tóc/prop round này). Female-coded non-sexual, vertical flow. Giữ chiều cao trong envelope blockout.
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_BODY_FORM_DEBLOCKOUT_V0_9.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS). AGENTS.md exception #26 OPEN.
+> Output: V0.9 blend + contact sheet (front/3/4/side + so V0.8) + proof (helmet/blade/camera/material hash unchanged). Gate CONTACT_SHEET_ONLY = đúng 2 file. FAIL=BODY_SCOPE_DRIFT nếu đụng helmet/slit/blade/camera/material. CANDIDATE; dọn .blend1; NO push/lock.
+> ✔ DONE #16 (V0.7 crown light-rot diagnostic): PASS — bands chạy theo đèn, geometry crown SẠCH; commit a044931. V0.7 = CONFIRMED geometry base. V0.8 lookdev đứng vững (cờ: soi màu khe #8F00FF).
+
 > DISPATCH 2026-07-01 #16 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_HELMET_CROWN_LIGHTROT_DIAG_V0_7` — DIAGNOSTIC: xoay 1 đèn trung tính quanh crown, render 4 góc, phân định dải sáng ngang = đèn hay waviness.**
 > KHÔNG đổi geometry (BODY_HASH giữ nguyên), KHÔNG lookdev. Clay trung tính + TẮT halo + camera cố định 3/4 + 1 Area light xoay ~15–20°/bước (4 azimuth). Bands DI CHUYỂN theo đèn → geometry SẠCH = PASS, chốt V0.7 làm base. Bands ĐỨNG YÊN trên mesh → LOCAL_FIX_NEEDED → task kế `MIKAGE_HELMET_CROWN_SUPPORT_FIX_V0_7_1` (chỉ local crown, không tăng subdiv, không đụng jaw/slit/dims).
 > Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HELMET_SURFACE_CONTROL_V0_7.blend` (bản geometry, KHÔNG phải lookdev V0.8). Brief: `production/character/build_log/LANEA_CODEX_TASK_HELMET_CROWN_LIGHTROT_DIAG_V0_7.md`. Gate: `.mikage/tasks/active_task.yaml` (validate PASS). AGENTS.md exception #25 (cần BOOS mở).
