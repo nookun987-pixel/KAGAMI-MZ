@@ -48,7 +48,7 @@ Dates = mtime của proof (xấp xỉ). Trạng thái ghi trung thực; chưa c�
 ## PHA 5 — Ráp HERO đứng (candidate)
 | Stage | Ngày | Làm gì | Trạng thái |
 |---|---|---|---|
-| **STANDING_CHARACTER_CANDIDATE V0.12** | 07-01 | Ráp full-body + render hero đứng (đầu sứ + thân graphite + blade + halo, void single-key); geometry+material khoá, chỉ camera+đèn | **ĐANG CHẠY** (dispatch #20, exception #29) — money-shot cho video build-log |
+| **STANDING_CHARACTER_CANDIDATE V0.12** | 07-01 | Ráp full-body + render hero đứng (đầu sứ + thân graphite + blade + halo, void single-key); geometry+material khoá, chỉ camera+đèn | **PASS** (dispatch #20) — **final standing character CANDIDATE** đạt; có HERO frame cho video. Cờ polish sau: blade tách rời · thân tan vào void (thêm rim) · key hơi phẳng |
 
 ## LANE SONG SONG (không thuộc line này)
 - HERO_MOUNT (rider + steed) V0.1→V1.5: nhánh nhân-mã cưỡi + motion/gait riêng, kho `reviews/MIKAGE_HERO_MOUNT_*`. Không trộn vào line character actor ở trên.
