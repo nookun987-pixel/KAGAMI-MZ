@@ -53,7 +53,8 @@ Dates = mtime của proof (xấp xỉ). Trạng thái ghi trung thực; chưa c�
 ## PHA 6 — Hero polish (money-shot)
 | Stage | Ngày | Làm gì | Trạng thái |
 |---|---|---|---|
-| **STANDING_HERO_POLISH V0.13** | 07-01 | Camera + đèn: thêm rim tách thân khỏi void, key kịch tính có chiều, khung cho blade đọc gắn; hình/material/transform khoá | **PASS** (dispatch #21) — money-shot cho video build-log |
+| **STANDING_HERO_POLISH V0.13** | 07-01 | Camera + đèn: thêm rim tách thân khỏi void, key kịch tính có chiều, khung cho blade đọc gắn; hình/material/transform khoá | **PASS kỹ thuật** (dispatch #21) — NHƯNG ruling = KHÔNG lock: khe ngả magenta, blade đọc như panel, cloak phẳng → V0.14 xử |
+| **STANDING_HERO_POLISH V0.14** | 07-02 | Camera + đèn + 1 khe hẹp material (hue 2 khe → #8F00FF, giảm bloom); cold rim cho blade; rim/bounce tách cloak; hình/transform/material-ngoài-khe khoá | **✅ ASSET-LOCKED — OFFICIAL STANDING HERO** (dispatch #22, operator ruling 07-02). Khe violet (Lane B sample #8220DF core #9F22FF, blue-trội), blade đọc gắn, cloak tách khối. Money-shot cuối cho video build-log. Lock record: `reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md`. Chưa push. |
 
 ## LANE SONG SONG (không thuộc line này)
 - HERO_MOUNT (rider + steed) V0.1→V1.5: nhánh nhân-mã cưỡi + motion/gait riêng, kho `reviews/MIKAGE_HERO_MOUNT_*`. Không trộn vào line character actor ở trên.
@@ -70,4 +71,4 @@ Dates = mtime của proof (xấp xỉ). Trạng thái ghi trung thực; chưa c�
 ## GHI CHÚ TRUNG THỰC
 - Ngày = mtime proof, không phải commit-date chính xác → coi là xấp xỉ.
 - Version helmet không chạy tuyến tính 1→7 (V0.1 head-lookdev là nhánh sớm; V0.2 = micro-geo). Ledger sắp theo THỨ TỰ BUILD, không phải số.
-- Chưa stage nào canon-lock/asset-lock/final. Tất cả CANDIDATE tới khi operator ra ruling.
+- Cập nhật 07-02: **STANDING_HERO_POLISH V0.14 = ASSET-LOCKED** làm official standing hero theo operator ruling (không phải canon-lock toàn IP; chỉ khóa hero-asset đứng này). Các stage khác vẫn CANDIDATE tới khi operator ra ruling từng cái.
