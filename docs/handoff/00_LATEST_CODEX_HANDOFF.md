@@ -1,5 +1,13 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> APPROVED 2026-07-02 (BOOS ruling, qua Lane B): **MIKAGE_STANDING_HERO_TURNAROUND_V0_2 = TURNAROUND_REFERENCE_APPROVED = YES.** Figure fill 78.81-81.25% (target 80%, dat), 180/225/270 doc duoc form (thoat "silhouette den dac" cua V0.1). 8 goc nhat quan, blade/helmet giu dung tinh than, khong drift canon.
+> KHONG mo V0.3 — theo BOOS: "dung benh, dung thuoc", vong sua them khong tang gia tri that.
+> Verify doc lap (Lane B): proof hash truoc/sau khop, gate dung 2 file, khong .blend1, `verify_output.py` = PASS. Commit local `c02c5fc` (theo bao cao, sandbox khong doc duoc git worktree de tu kiem), CHUA push.
+> Status: TECHNICAL_STATUS = REPORTED_PASS · VISUAL_REFERENCE_GATE = PASS · TURNAROUND_REFERENCE_APPROVED = YES · KHONG canon-lock / KHONG asset-lock (chi la reference).
+> NEXT_SAFE_ACTION: freeze V0.2 lam turnaround reference chinh thuc cho Lane B / operator dung (page/roster reference, drift-check cac round sau, poster/blocking). CHUA co task moi duoc dispatch — cho BOOS quyet buoc tiep theo (vd close-up/detail sheet phu tro neu can, KHONG sua lai V0.2).
+> AGENTS.md exception #35 (Thirty-fifth) = CLOSED / delivered.
+
+
 > DISPATCH 2026-07-02 #26 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_TURNAROUND_V0_2` — sửa camera framing + fill/back light của turnaround V0.1 (KHÔNG mở lại model/material).**
 > V0.1 = TECHNICAL_VALIDATION PASS nhưng VISUAL_REFERENCE_GATE = HOLD_FOR_FIX: nhân vật chỉ chiếm ~26-27% panel; 180 BACK / 225 / 270 LEFT thiếu sáng, áo nhập vào nền.
 > Scope V0.2: (1) camera reframe cả 8 view -> figure fill 78-82% (target 80%), cùng scale/căn dọc, KHÔNG đổi rotation/angle; (2) fill/back light trung tính CHỈ cho 180/225/270, giữ void #050508, không cháy helmet, không đổi màu khe.
