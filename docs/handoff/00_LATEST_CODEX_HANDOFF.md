@@ -1,5 +1,15 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #27 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` - sua mau khe (SLIT HUE FIX) tren V0.8. MATERIAL 2 khe ONLY, khong dong geometry/camera/light-rig.**
+> Ly do: direct-PNG inspection cua V0.8 contact sheet xac nhan 2 khe doc MAGENTA/HONG, khong phai `#8F00FF` da lock; proof V0.8 cu cung tu bao FAIL vi gate-schema sai (active_task.yaml khong whitelist contact_sheet.png/report). V0.8 blend + render GIU NGUYEN, khong overwrite.
+> Scope: chi doi emission color 2 khe ve dung `#8F00FF` do tren PIXEL xuat ra (khong chi node value); duoc giam bloom/exposure cuc hep quanh khe neu can, khong duoc doi expo tong scene. Khong doi mesh/camera/light-rig/material khac.
+> LOCKED: geometry + transform + camera + light-rig + moi material NGOAI 2 khe. Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8.blend`.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_HERO_LOOKDEV_PREMIUM_V0_8_1.md`. Gate: `_tmp/mikage_hero_lookdev_premium_v0_8_1_gate/` - DUNG 2 file (contact_sheet.png + contact_sheet_review_report.md). AGENTS.md exception #35 (Thirty-fifth) OPEN.
+> FAIL: van magenta sau fix -> SLIT_HUE_FAIL · dong geometry/camera/light-rig/material khac -> LOOKDEV_FIX_DRIFT · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B drift-check (hash unchanged? hue sach tren pixel that? khong drift?) + BOOS review -> quyet dinh co thay the V0.8 lam premium lookdev candidate chinh khong.
+
+
+
 > FREEZE RECORD 2026-07-02: `MIKAGE_STANDING_HERO_TURNAROUND_V0_2` is approved for Lane B reference and controlled operator reference use. VISUAL_REFERENCE_GATE = PASS · BOOS_APPROVAL = YES · SOURCE_COMMIT = `c02c5fc` · RE_RENDER_REQUIRED = NO · ASSET_LOCK = NO · PRODUCTION_CANON_PROMOTION = NO · PUSH_DONE = NO.
 > Record: `production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_APPROVAL.md` · Proof: `production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_PROOF.md` · Sheet: `production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_SHEET.png`.
 
@@ -2181,8 +2191,4 @@ STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=C
  
 ## V0.13 MATERIAL ACCEPTED + V0.14 VIOLET QUEUED — 2026-06-23 (Lane B)
 V0.13_RESULT = material lookdev DONE (Codex commit b68d721). Porcelain #f2eeea soft / graphite matte / cold-steel Z-Blue #4B5866 non-emissive = ĐẠT; geometry giữ (315 mesh match); exposure fixed.
-LANE_B_DRIFT_CHECK_V0_13 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md (cờ vàng anti-toy: bề mặt còn mịn → fine grain ở V0.14).
-NEW_TASK_BRIEF = build_log/LANEA_CODEX_TASK_VIOLET_GRAIN_V0_1.md
-CURRENT_NEXT_TASK = MIKAGE_HERO_MOUNT_VIOLET_GRAIN_EEVEE_V0_14 (violet signal slit/core TIẾT CHẾ + anti-toy fine grain; KHÔNG đổi hình; violet=signal không flood). → REVEAL ảnh tĩnh (Lane B crop+caption) → MOTION V0.15.
-TRACKER = docs/handoff/MIKAGE_LANEB_ROADMAP_TRACKER.md (đã cập nhật: material DONE, V0.14=reveal still, caption draft sẵn).
-STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=CANDIDATE.
+LANE_B_DRIFT_CHECK_V0_13 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md (cờ v�
