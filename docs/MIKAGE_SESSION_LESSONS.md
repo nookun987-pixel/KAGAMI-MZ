@@ -269,3 +269,24 @@ ange onto ONE master; never generate states separately.
 **State / pending**
 - WAKE lyric timing was hand-estimated (no .lrc) — vocals start 0:23; nudge if off. JP translations are UNCONFIRMED (native review before posting).
 - WAKE/FUSE/PHANTOM smartlinks PENDING in releases.js.
+
+---
+
+## 2026-07-02 — Build-log entry: STANDING HERO (Lane B, step A)
+
+**Built**
+- `MIKAGE_BUILDLOG_STANDING_HERO_V0_1` build kit in `GATHER_REEL_V0_1/`: `build_buildlog_standing_hero.py` + `RUN_BUILDLOG_STANDINGHERO.bat` + `BUILDLOG_STANDING_HERO_CAPTION.txt` (A/B/C). Covers ONLY the new milestones: body V0.9–V0.11 → candidate V0.12 → ASSET-LOCK V0.14 → Canvas MOTION V0.2. Film ~46s + tail-18s hook. Operator runs the .bat locally (music + fonts live in the audio root).
+- `00_BUILD_LOG_STANDARD.md` index updated: ch07 (locomotion) marked BUILT/publish UNCONFIRMED, ch08 "It Stands" = NEXT; §4 queue refreshed.
+
+**Lessons (technical)**
+- MOTION V0.2 goes into the film **UNGRADED** — the eq/colorbalance grade used on older footage would shift the operator-approved slit violet (fix-at-export rule from the V0.14 lock). Any future build-log reusing approved Canvas clips: overlay label only, no color filters.
+- `clip_image` now fits sources inside 980×1500 (older version assumed wide sources; 1440×1800 hero stills would have overflowed 1920 height).
+- Smoke-test scripts in the sandbox with DejaVu substitutes for Cinzel/Space Mono — catches PIL/ffmpeg bugs without the operator's font kit.
+
+**State / pending**
+- Film NOT rendered yet (operator runs .bat). After render: verify hook, post per caption pack, update §3 publish status. Commit/push = operator (em-dash path → PowerShell wildcard).
+**Correction (same session, operator flag)**
+- V0_1 entry showed mostly finals → operator: build-log must show the PROCESS 0→final. Rebuilt as `build_buildlog_standing_hero_v0_2.py` (18 beats: blockout V0.1–0.3 → match-to-master → helmet V0.3–0.7 → lookdev V0.8 clay+porcelain → body V0.9–0.11 → assembly V0.12 → polish V0.13 → LOCK V0.14 → Canvas V0.2, ~78s). RULE going forward: a build-log entry = evolution arc with the rough early passes visible; "new milestones only" limits WHICH arc, not how much of its history to show. .bat now runs v0_2; V0_1 script kept, do not run.
+**Correction 2 (same session, operator flag)**
+- V0_2 still pasted contact sheets WHOLE into the vertical frame → panels unreadable ("đè 1 ảnh chèn nhạc"). LOOK AT the source images before designing a cut: they are multi-panel review boards (up to 2880×1920 / 3600×900) with printed per-panel labels. V0_3 = rostrum camera: sheet scaled near frame height (upscale cap 1.5×), eased horizontal pan across the panels, version chip top + bottom scrim carrying the REAL per-round notes (what the pass did / FLAG / RULING, transcribed from dispatch records — no invented status). ffmpeg gotcha: commas inside crop-x expressions (min(t,D)) must be escaped `\,` or the filtergraph parser splits on them.
+- Mount-sync gotcha again: a just-written file can appear TRUNCATED on the sandbox mount while the Windows original is complete — verify via the file tool, don't "fix" the original based on the stale mount copy.

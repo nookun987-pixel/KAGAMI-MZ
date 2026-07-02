@@ -38,7 +38,8 @@ The FILM and the EPISODE carousels tell the SAME arc. Keep them in sync.
 | 05 | (set title from slides) | UNCONFIRMED | EP05 in progress |
 | 06 | The transmissions | music / the voice | DONE (EP06) |
 | — | THE FIRST FORM (film) | full reveal, 2D→form | PUBLISHED as FILM_FULL_V0_3 |
-| **07** | **It Learns to Walk** | **V1.4 four-step gait (PASS 2026-06-25)** | **NEXT** |
+| 07 | It Learns to Walk | V0.8 rider · V1.4 gait · V1.5 continuous | BUILT (MIKAGE_BUILDLOG_LOCOMOTION_V0_1, publish status UNCONFIRMED) |
+| **08** | **It Stands** | **FULL 0→final arc: blockout → match-to-master → helmet V0.3–0.7 → lookdev V0.8 → body V0.9–0.11 → assembly V0.12 → LOCK V0.14 → Canvas MOTION V0.2** | **NEXT — operator runs RUN_BUILDLOG_STANDINGHERO.bat (= v0_3 script, ~110s + hook). Operator rulings 2026-07-02: (1) build-log shows the PROCESS, not only finals; (2) review sheets are multi-panel — rostrum-camera pan so panels read full-size, with the REAL per-round FLAG/RULING notes on a scrim. Never paste a sheet whole.** |
 
 ## 4. SCOPE RULE (the one that was missing — read it)
 A build-log entry covers **ONLY the NEW milestones produced in that session/day.**
@@ -49,11 +50,14 @@ A build-log entry covers **ONLY the NEW milestones produced in that session/day.
   from 0:00 for the reel, PROTOTYPE / NOT CANON-LOCKED).
 - Naming: `MIKAGE_BUILDLOG_<TOPIC>_V0_N` (new file per session), not a re-edit of the published film.
 
-### Queued now (today's NEW milestones only)
-- V0.8 RIDER DETAIL (rider seat / body panels / hero crop — PASS, commit 386dd44)
-- V1.4 GAIT — "It Learns to Walk" (PASS)
-→ one new build-log entry covering just these two, editorial format. Do NOT re-include the
-published 2D→form chapters.
+### Queued now (today's NEW milestones only — 2026-07-02)
+- STANDING HERO: body V0.9–V0.11 build · V0.12 candidate · **V0.14 ASSET-LOCKED official
+  standing hero** · **MOTION V0.2 approved Canvas** (operator rulings 2026-07-02).
+→ entry `MIKAGE_BUILDLOG_STANDING_HERO_V0_1` — script `build_buildlog_standing_hero.py` +
+`RUN_BUILDLOG_STANDINGHERO.bat` + `BUILDLOG_STANDING_HERO_CAPTION.txt` ready in
+`GATHER_REEL_V0_1/`; operator runs the .bat locally (needs the audio root for music + fonts).
+HUE-SAFETY: MOTION V0.2 goes in UNGRADED. Do NOT re-include published chapters.
+(Previous queue — rider V0.8 + gait V1.4/V1.5 — was built as MIKAGE_BUILDLOG_LOCOMOTION_V0_1.)
 
 ## 5. CLEANUP of the dump (do this, then stop scattering)
 - The ad-hoc `MIKAGE_FORMATION_LOG` folder in the external audio root (see CLAUDE.md "Local folder
