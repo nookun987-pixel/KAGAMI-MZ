@@ -1,5 +1,15 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-02 #25 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_TURNAROUND_V0_1` — turnaround 360° reference sheet quay quanh hero V0.14 ĐÃ LOCK. CAMERA RIG + neutral cold light rig trong derivative MỚI ONLY.**
+> Build-log video (bước A) = **HOLD** theo ruling BOOS 2026-07-02 — không làm, không đụng GATHER_REEL. Hướng đi tiếp = phát triển nhân vật: khóa reference đa góc trước khi mở pose mới / rig / close-up.
+> 8 camera azimuth đúng 45°/bước (000 front · 045 · 090 right · 135 · 180 back · 225 · 270 left · 315), CÙNG lens (85–135mm equiv) / height / distance / framing full-body cả 8. Light: even trung tính LẠNH (key+fill+rim) chỉ trong derivative — đọc form mọi góc kể cả lưng; không warm, halo không sáng hơn helmet.
+> LOCKED: geometry + transform mọi object (kể cả blade/halo) + MỌI material (khe #8F00FF tĩnh, KHÔNG animate) + void #050508. Asset V0.14 gốc không đụng. Lỗi mesh lộ ở góc MỚI (mọi review trước = 3/4-front) → KHÔNG tự sửa, render đủ 8 view + FLAG trong proof cho BOOS quyết.
+> Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend`. Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_TURNAROUND_V0_1.md`. Gate: active_task.yaml (validate PASS; gate folder đã tạo). AGENTS.md exception #34 OPEN.
+> Output: turnaround blend + SHEET 4×2 (nhãn góc, ≥900×1600/view) + proof + 8 view rời vào `production/character/reference/turnaround_v0_1/`. Gate = 2 file (contact_sheet.png = sheet + report).
+> FAIL: đổi hình/transform/material → TURNAROUND_DRIFT · khe magenta / violet tràn → SLIT_HUE_FAIL. NO push/lock. CANDIDATE only.
+> ✔ DONE #24 (Motion V0.2): PASS + operator APPROVED = official standing-hero Canvas (curve 2%/35%/100%, ignition ~65–70%, spec đúng). Bộ asset đứng = still V0.14 (LOCKED) + Canvas V0.2 (APPROVED).
+
+
 > 🔒 STATUS 2026-07-02 (operator ruling): **`MIKAGE_STANDING_HERO_POLISH_V0.14` = ASSET-LOCKED = OFFICIAL STANDING HERO.** V0.14 came back PASS (dispatch #22); operator APPROVED + LOCKED. Slit violet (Lane B sample #8220DF core #9F22FF), blade reads integrated, cloak separated, no drift. Lock record: `production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md`. Committed local, **NOT pushed** (awaiting separate push auth).
 > Do NOT reopen slit/emission polish on the locked V0.14 asset unless a downstream export visibly shifts the hue (fix at export/color-management, not the asset).
 > ✅ STATUS 2026-07-02 (operator ruling): **`MIKAGE_STANDING_HERO_MOTION_V0_2` = APPROVED = OFFICIAL STANDING HERO CANVAS.** Dispatch #24 came back PASS; operator APPROVED. Curve dormant 2% / mid 35% / awakened 100%, ignition ~65–70%, no drift, spec 1080×1920/30fps/yuv420p/6.03s/no-audio. V0.2 supersedes V0.1 (V0.1 kept as candidate history, not public). Approval record: `production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2_APPROVAL.md`. Pairs with locked still V0.14. To be committed local, **NOT pushed**.

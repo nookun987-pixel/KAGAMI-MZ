@@ -1106,3 +1106,18 @@ The agent must not say PASS unless the success check has visible evidence.
   - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim (label CANDIDATE / NOT CANON-LOCKED). No push. No deploy. Stop after proof delivery for owner review.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+  - RESULT 2026-07-02: V0.2 = PASS; operator APPROVED as the official standing-hero Spotify Canvas (supersedes V0.1; approval record `production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2_APPROVAL.md`). This exception is now CLOSED / delivered.
+
+- Thirty-fourth controlled exception is open:
+  - `MIKAGE_STANDING_HERO_TURNAROUND_V0_1 = OPEN`
+  - Standing hero V0.14 = ASSET-LOCKED official still; Canvas motion V0.2 = APPROVED; build-log video = HOLD by operator ruling 2026-07-02. This task = a 360-degree TURNAROUND REFERENCE SHEET orbiting the LOCKED V0.14 asset. CAMERA rig + a neutral cold light rig inside a NEW derivative ONLY. CANDIDATE only.
+  - Allowed base input (ONLY this): `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend`. Do NOT overwrite it. Report BASE_SELECTED + BODY_HASH_BEFORE/AFTER (identical).
+  - LOCKED: ALL geometry (BODY_HASH unchanged); ALL object transforms (incl. blade + halo); ALL material hue + structure (slits stay `#8F00FF`, static, no emission animation); void background `#050508`; violet only in the two slits; the locked V0.14 blend + renders untouched.
+  - ALLOWED: 8 azimuth cameras at exact 45° steps (000 front / 045 / 090 right / 135 / 180 back / 225 / 270 left / 315), same lens (85–135mm equiv) / height / distance / full-body framing for all 8; one neutral COLD even light rig (key+fill+rim) in the derivative only so the form reads at every angle including the back (no warm, halo not brighter than helmet); render 8 identical-size portrait views (≥900×1600) + assemble a 4×2 sheet with small angle labels (internal review artifact only).
+  - SUCCESS: 8 consistent views (silhouette height varies ≤2%); form readable at every angle; slit pixel sample on view 000 = violet near #8F00FF, not magenta; V0.14 hashes unchanged.
+  - Mesh issues discovered at NEW angles (all prior reviews were 3/4-front): do NOT fix — render all 8 views anyway and FLAG them in the proof for the operator to rule on.
+  - Allowed outputs (candidate only): `MIKAGE_STANDING_HERO_TURNAROUND_V0_1.blend` (rig_derivatives) + `..._V0_1_SHEET.png` + `..._V0_1_PROOF.md` (reviews) + 8 individual view PNGs in `production/character/reference/turnaround_v0_1/`; gate folder `_tmp/mikage_standing_hero_turnaround_v0_1_gate/` holds ONLY `contact_sheet.png` + `contact_sheet_review_report.md`.
+  - FAIL: any geometry/transform/material change → `BLOCKER = TURNAROUND_DRIFT`; magenta slits or violet outside the slits → `BLOCKER = SLIT_HUE_FAIL`.
+  - Clean-repo gate required before run (`git stash push -u` if dirty). No canon-lock. No asset-lock. No public-render-ready claim (label CANDIDATE / NOT CANON-LOCKED). No push. No deploy. Stop after proof delivery for owner review.
+  - Final visual ruling belongs to the operator.
+  - On SSOT conflict or scope drift: stop and report.

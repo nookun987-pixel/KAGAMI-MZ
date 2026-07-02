@@ -290,3 +290,8 @@ ange onto ONE master; never generate states separately.
 **Correction 2 (same session, operator flag)**
 - V0_2 still pasted contact sheets WHOLE into the vertical frame → panels unreadable ("đè 1 ảnh chèn nhạc"). LOOK AT the source images before designing a cut: they are multi-panel review boards (up to 2880×1920 / 3600×900) with printed per-panel labels. V0_3 = rostrum camera: sheet scaled near frame height (upscale cap 1.5×), eased horizontal pan across the panels, version chip top + bottom scrim carrying the REAL per-round notes (what the pass did / FLAG / RULING, transcribed from dispatch records — no invented status). ffmpeg gotcha: commas inside crop-x expressions (min(t,D)) must be escaped `\,` or the filtergraph parser splits on them.
 - Mount-sync gotcha again: a just-written file can appear TRUNCATED on the sandbox mount while the Windows original is complete — verify via the file tool, don't "fix" the original based on the stale mount copy.
+
+## 2026-07-02 — Session: push motion V0.1/V0.2 + dispatch #25 turnaround
+- Đọc `git status` thật trước khi soạn lệnh add: motion V0.1/V0.2 hóa ra ĐÃ commit (44 commit ahead), dirty thật = lessons + buildlog standard + GATHER_REEL untracked. Đừng suy từ handoff ("to be committed") — handoff có thể trễ hơn repo.
+- Build-log = HOLD nhưng file GATHER_REEL vẫn phải commit để sạch repo cho clean-repo gate của Codex; commit ≠ mở lại lane.
+- Dispatch #25 (TURNAROUND V0.1) mở kèm rule mới: lỗi mesh lộ ở góc mới = FLAG trong proof, KHÔNG tự sửa — mọi review trước chỉ soi 3/4-front.
