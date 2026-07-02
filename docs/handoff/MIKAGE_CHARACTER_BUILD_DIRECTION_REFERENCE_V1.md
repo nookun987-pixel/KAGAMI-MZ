@@ -1,5 +1,7 @@
 # MIKAGE_CHARACTER_BUILD_DIRECTION_REFERENCE_V1
 
+**SUPERSEDED 2026-07-03 — halo ring CHỐT TRẮNG (white), not violet; violet = 2 slits only. See `docs/handoff/HALO_RING_RULING_2026-07-03.md`. Every "violet orbital ring" / "D4" halo line below (2026-06-02) is overridden — kept for history, do not follow.**
+
 STATUS: REFERENCE NOTE — operator design-direction captured 2026-06-02. NOT canon-approved · NOT asset-locked · NOT production-ready · NO render by Claude · NO film/video/short/shotlist. LANE = CHARACTER_CAST_LANE / Mikage (unchanged).
 SOURCE: operator message 2026-06-02 ("hướng dựng nhân vật Mikage cho đúng").
 RECONCILED AGAINST: `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` (🔒 STRUCTURE CANON LOCKED 2026-06-02, "MIKAGE ZENITH V2.5") and `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`.

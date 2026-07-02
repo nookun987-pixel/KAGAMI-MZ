@@ -1,5 +1,7 @@
 # CAST_RUNPOD_KIT_V1
 
+**SUPERSEDED 2026-07-03 — halo ring CHỐT TRẮNG (white), not violet; violet = 2 slits only. See `docs/handoff/HALO_RING_RULING_2026-07-03.md`. The "D4 ... halo = violet orbital ring only" line below (2026-06-02) is overridden — kept for history, do not follow.**
+
 STATUS LIMITS: REFERENCE / PROMPT-KIT only. NOT canon-locked · NOT asset-locked · NOT production-ready. NO render / NO ComfyUI runtime / NO Blender by Claude. Outputs from this kit are REVIEW CANDIDATES; nothing here promotes, locks, or declares any asset final. LANE = CHARACTER_CAST_LANE (unchanged).
 DATE: 2026-06-02
 SOURCE OF TRUTH (exact values pulled, not invented):

@@ -1,5 +1,7 @@
 # MIKAGE_ASSET_ANCHOR_INDEX_V1
 
+**SUPERSEDED 2026-07-03 (halo color only) — halo ring CHỐT TRẮNG (white), not violet; violet = 2 slits only. See `docs/handoff/HALO_RING_RULING_2026-07-03.md`. Any "violet halo ring" line below is overridden — kept for history, do not follow. Rest of this index (anchor KEEP/DROP status) is unaffected.**
+
 STATUS: LIVING INDEX — the **single grab-and-go sheet** for "which assets to reuse, which to ignore." Records existing/derived status only. NOT canon-lock · NOT asset-lock · NOT production-ready · NO render by Claude. Items not directly verified this pass = `CHUA_XAC_NHAN`. DROP = *ignore / do not start from it* — **NOT delete** (no file is moved/renamed/deleted by this index).
 DATE: 2026-06-02
 SUPERSEDES (for anchor-selection purposes): `docs/automation/render_briefs/CAST_VISUAL_LEDGER_V0_1.md` (2026-05-31, now stale — predates V4 LOCKED, faceplate sources, bust-bridge candidates, blade ortho). That ledger stays as history; THIS file is the one to read first.
