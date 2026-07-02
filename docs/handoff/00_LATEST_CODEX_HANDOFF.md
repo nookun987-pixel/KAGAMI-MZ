@@ -1,5 +1,12 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> APPROVAL RECORD 2026-07-03 (BOOS ruling, qua Lane B): **`MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` = ACTIVE_PREMIUM_LOOKDEV_REFERENCE.** PREMIUM_LOOKDEV_GATE = PASS · BOOS_APPROVAL = YES · COLOR_TARGET_APPROVED = YES · SENSOR_COLOR_TARGET = blue-dominant violet (samples `#9D0CEB` front / `#9203E9` helmet close-up) · MAGENTA_DRIFT = NO.
+> V0_8_STATUS = SUPERSEDED (giu tren dia, khong xoa, khong sua lai lich su). RE_RENDER_REQUIRED = NO · ASSET_LOCK = NO · PRODUCTION_CANON_LOCK = NO · PUBLIC_DEPLOYMENT_AUTHORIZED = NO · PUSH_DONE = NO.
+> Record: `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_APPROVAL.md` · Proof: `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_PROOF.md` · Contact sheet: `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_CONTACT_SHEET.png`. Candidate creation commit (theo Codex): `5b4d7c4`.
+> NEXT_SAFE_ACTION: Lane A/Lane B ve sau dung `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` lam premium lookdev reference dang hoat dong, KHONG duoc chinh lai mau khe them ma khong co vong duyet moi. AGENTS.md exception #35 = CLOSED / delivered.
+
+
+
 > DISPATCH 2026-07-03 #27 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` - sua mau khe (SLIT HUE FIX) tren V0.8. MATERIAL 2 khe ONLY, khong dong geometry/camera/light-rig.**
 > Ly do: direct-PNG inspection cua V0.8 contact sheet xac nhan 2 khe doc MAGENTA/HONG, khong phai `#8F00FF` da lock; proof V0.8 cu cung tu bao FAIL vi gate-schema sai (active_task.yaml khong whitelist contact_sheet.png/report). V0.8 blend + render GIU NGUYEN, khong overwrite.
 > Scope: chi doi emission color 2 khe ve dung `#8F00FF` do tren PIXEL xuat ra (khong chi node value); duoc giam bloom/exposure cuc hep quanh khe neu can, khong duoc doi expo tong scene. Khong doi mesh/camera/light-rig/material khac.
