@@ -1,5 +1,8 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> FREEZE RECORD 2026-07-02: `MIKAGE_STANDING_HERO_TURNAROUND_V0_2` is approved for Lane B reference and controlled operator reference use. VISUAL_REFERENCE_GATE = PASS · BOOS_APPROVAL = YES · SOURCE_COMMIT = `c02c5fc` · RE_RENDER_REQUIRED = NO · ASSET_LOCK = NO · PRODUCTION_CANON_PROMOTION = NO · PUSH_DONE = NO.
+> Record: `production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_APPROVAL.md` · Proof: `production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_PROOF.md` · Sheet: `production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_SHEET.png`.
+
 > APPROVED 2026-07-02 (BOOS ruling, qua Lane B): **MIKAGE_STANDING_HERO_TURNAROUND_V0_2 = TURNAROUND_REFERENCE_APPROVED = YES.** Figure fill 78.81-81.25% (target 80%, dat), 180/225/270 doc duoc form (thoat "silhouette den dac" cua V0.1). 8 goc nhat quan, blade/helmet giu dung tinh than, khong drift canon.
 > KHONG mo V0.3 — theo BOOS: "dung benh, dung thuoc", vong sua them khong tang gia tri that.
 > Verify doc lap (Lane B): proof hash truoc/sau khop, gate dung 2 file, khong .blend1, `verify_output.py` = PASS. Commit local `c02c5fc` (theo bao cao, sandbox khong doc duoc git worktree de tu kiem), CHUA push.
