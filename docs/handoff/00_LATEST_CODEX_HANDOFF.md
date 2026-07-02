@@ -1,5 +1,14 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-02 #26 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_TURNAROUND_V0_2` — sửa camera framing + fill/back light của turnaround V0.1 (KHÔNG mở lại model/material).**
+> V0.1 = TECHNICAL_VALIDATION PASS nhưng VISUAL_REFERENCE_GATE = HOLD_FOR_FIX: nhân vật chỉ chiếm ~26-27% panel; 180 BACK / 225 / 270 LEFT thiếu sáng, áo nhập vào nền.
+> Scope V0.2: (1) camera reframe cả 8 view -> figure fill 78-82% (target 80%), cùng scale/căn dọc, KHÔNG đổi rotation/angle; (2) fill/back light trung tính CHỈ cho 180/225/270, giữ void #050508, không cháy helmet, không đổi màu khe.
+> LOCKED: geometry + pose + material (khe #8F00FF tĩnh) + blade position + helmet/slit geometry + 8 camera angles + labels + render dims + base hashes. Base ONLY: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_TURNAROUND_V0_1.blend` (KHÔNG overwrite).
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_TURNAROUND_V0_2.md`. AGENTS.md exception #35 OPEN. Gate: `_tmp/mikage_standing_hero_turnaround_v0_2_gate/` — ĐÚNG 2 file (contact_sheet.png + contact_sheet_review_report.md).
+> FAIL: đổi hình/transform/angle/material -> TURNAROUND_DRIFT · khe magenta -> SLIT_HUE_FAIL · vẫn không đạt fill/sáng -> FRAMING_LIGHT_FAIL (giữ HOLD_FOR_FIX, KHÔNG mở vòng hình mới). NO push/lock/claim final.
+> ✔ DONE #25 (Turnaround V0.1): TECHNICAL_VALIDATION PASS, VISUAL_REFERENCE_GATE = HOLD_FOR_FIX (lý do trên). APPROVED_AS_MASTER_REFERENCE = NO cho tới khi V0.2 pass.
+
+
 > DISPATCH 2026-07-02 #25 (BOOS, qua Lane B điều phối): **CURRENT_NEXT_TASK = `MIKAGE_STANDING_HERO_TURNAROUND_V0_1` — turnaround 360° reference sheet quay quanh hero V0.14 ĐÃ LOCK. CAMERA RIG + neutral cold light rig trong derivative MỚI ONLY.**
 > Build-log video (bước A) = **HOLD** theo ruling BOOS 2026-07-02 — không làm, không đụng GATHER_REEL. Hướng đi tiếp = phát triển nhân vật: khóa reference đa góc trước khi mở pose mới / rig / close-up.
 > 8 camera azimuth đúng 45°/bước (000 front · 045 · 090 right · 135 · 180 back · 225 · 270 left · 315), CÙNG lens (85–135mm equiv) / height / distance / framing full-body cả 8. Light: even trung tính LẠNH (key+fill+rim) chỉ trong derivative — đọc form mọi góc kể cả lưng; không warm, halo không sáng hơn helmet.

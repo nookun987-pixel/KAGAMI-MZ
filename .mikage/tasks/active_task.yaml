@@ -1,33 +1,31 @@
-task_id: MIKAGE_STANDING_HERO_TURNAROUND_V0_1
+task_id: MIKAGE_STANDING_HERO_TURNAROUND_V0_2
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_STANDING_HERO_TURNAROUND_V0_1
-# Dispatched by operator (BOOS) 2026-07-02 #25, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Thirty-fourth controlled exception (MIKAGE_STANDING_HERO_TURNAROUND_V0_1 = OPEN).
-# Standing hero V0.14 = ASSET-LOCKED official; Canvas motion V0.2 = APPROVED; build-log video = HOLD.
-# This task = 360-degree turnaround reference sheet from the LOCKED V0.14 still. CAMERA rig + neutral light rig in a NEW derivative ONLY.
-# NO geometry / material / object-transform change of any kind.
+current_step: MIKAGE_STANDING_HERO_TURNAROUND_V0_2
+# Dispatched by operator (BOOS) 2026-07-02 #26, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Thirty-fifth controlled exception (MIKAGE_STANDING_HERO_TURNAROUND_V0_2 = OPEN).
+# V0.1 = TECHNICAL_VALIDATION PASS, VISUAL_REFERENCE_GATE = HOLD_FOR_FIX (too small + 180/225/270 under-lit).
+# This task = camera reframe (fill -> 78-82%) + fill/back light on 180/225/270 ONLY, on a NEW derivative from V0.1.
+# NO geometry / material / object-transform / camera-angle change of any kind.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_TURNAROUND_V0_1.md
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_TURNAROUND_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STANDING_HERO_TURNAROUND_V0_2.md
+  - production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_1_PROOF.md
   - design_system/mikage-cine-color-contract.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_standing_hero_turnaround_v0_1_gate
+output_folder_allowed: _tmp/mikage_standing_hero_turnaround_v0_2_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_TURNAROUND_V0_1.blend
+  - production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_1_PROOF.md
   - design_system/mikage-cine-color-contract.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -35,60 +33,66 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_TURNAROUND_V0_1.blend
-  - production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_1_SHEET.png
-  - production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_1_PROOF.md
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_000.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_045.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_090.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_135.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_180.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_225.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_270.png
-  - production/character/reference/turnaround_v0_1/MIKAGE_TURNAROUND_315.png
+  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_TURNAROUND_V0_2.blend
+  - production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_SHEET.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_TURNAROUND_V0_2_PROOF.md
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_000.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_045.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_090.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_135.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_180.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_225.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_270.png
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_315.png
 
 allowed_actions:
-  - create a new derivative blend from MIKAGE_STANDING_HERO_POLISH_V0_14.blend (do not overwrite the locked base)
+  - create a new derivative blend from MIKAGE_STANDING_HERO_TURNAROUND_V0_1.blend (do not overwrite V0.1)
   - report BASE_SELECTED and BODY_HASH_BEFORE and BODY_HASH_AFTER (must be identical - no geometry edit)
-  - build a turnaround camera rig - 8 azimuth views at exactly 45-degree steps (000 front, 045, 090 right, 135, 180 back, 225, 270 left, 315), SAME lens, height, distance, and full-body framing for all 8; long lens 85-135mm equivalent; chest-level elevation; even margins
-  - replace the hero single-key with a neutral COLD even light rig (key+fill+rim) inside this derivative only, so the form reads at every angle including the back; no warm light; halo must not read brighter than the helmet
-  - render 8 portrait views (each at least 900x1600, identical size) and assemble a 4x2 turnaround sheet with small angle labels (internal review artifact, not a public asset)
+  - reframe all 8 cameras (distance or orthographic scale only, per existing camera type) so full-figure height goes from ~26-27% to 78-82% of panel height (target 80%), identical scale/vertical alignment across all 8, keeping helmet + full body + blade + lowest geometry inside frame; do not change camera rotation, view angle, or focal perspective
+  - add or adjust a neutral fill/back light so views 180, 225, 270 clearly show shoulder contour, torso volume, coat edges, lower silhouette, and blade separation, while keeping void background #050508, not raising global exposure, not clipping the helmet, and not shifting slit hue
+  - report figure-fill percentage before/after for all 8 views in the proof
+  - render 8 portrait views (each at least 900x1600, identical size) and assemble a 4x2 turnaround sheet with small angle labels
   - write the two verify artifacts into the gate folder - contact_sheet.png (= the turnaround sheet) and contact_sheet_review_report.md; the gate folder must contain ONLY these two files
   - write the real deliverables (derivative blend, sheet PNG, proof, 8 individual view PNGs) into the paths listed under real_deliverables
-  - run deterministic verification (Blender reopen, geometry + transform + material hashes unchanged vs V0.14, base blend and locked PNG untouched, slit pixel sample on view 000)
+  - run deterministic verification (Blender reopen, geometry + transform + material hashes unchanged vs V0.1, base blend untouched, slit pixel sample on view 000)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not change ANY geometry - BODY_HASH must be UNCHANGED versus V0.14
+  - do not change ANY geometry - BODY_HASH must be UNCHANGED versus V0.1
   - do not move, rotate, or scale any object, including the blade and the halo
-  - do not change any material hue or structure; do not animate emission; slits stay #8F00FF static as in V0.14
-  - do not modify or overwrite the locked V0.14 blend or its locked renders
-  - do not fix any mesh issue discovered at a new angle - render all 8 views anyway and write a detailed FLAG in the proof for the operator to rule on
+  - do not change camera rotation, view angle, or focal perspective on any of the 8 views
+  - do not change any material hue or structure; slits stay #8F00FF static as in V0.1
+  - do not modify or overwrite the V0.1 blend or its renders
+  - do not fix any mesh issue - if a new mesh problem is spotted, FLAG it in the proof only, do not touch geometry
   - do not add text, lyrics, logo, or watermark to the individual reference views (small angle labels allowed on the assembled sheet only)
   - do not use warm colors, neon fill, full-screen violet wash, anime styling, human face or skin, or fake UI
   - do not put violet anywhere except the two slits
-  - do not claim canon lock, asset lock, final pass, production ready, or public ready (label CANDIDATE / NOT CANON-LOCKED)
+  - do not raise global scene exposure to fix the dark views (fill/back light only)
+  - do not claim canon lock, asset lock, final pass, production ready, or verified (label CANDIDATE / NOT CANON-LOCKED)
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - new derivative blend reopens cleanly; the locked V0.14 base (blend + renders) is byte-identical / unmodified
-  - BODY_HASH (geometry), all object transforms, and all material hashes are UNCHANGED versus V0.14
-  - exactly 8 views at 45-degree steps, identical lens/framing/size, silhouette height varies no more than 2 percent across views
-  - lighting is neutral cold and even enough that the form reads at every angle including the back; no warm tint; halo not brighter than helmet
-  - SLIT_HUE_PIXEL_SAMPLE on view 000 reads violet near #8F00FF, not magenta; violet appears only in the two slits
+  - new derivative blend reopens cleanly; the V0.1 base (blend) is byte-identical / unmodified
+  - BODY_HASH (geometry), all object transforms, and all material hashes are UNCHANGED versus V0.1
+  - figure fill is 75-85% of panel height (target 80%) on all 8 views, identical scale/alignment, no cropping of helmet/blade/feet
+  - views 180, 225, 270 read shoulder contour, torso volume, coat edges, lower silhouette, blade separation (not flat black silhouette)
+  - views 000, 045, 315 do not clip/blow out the helmet
+  - SLIT_HUE_PIXEL_SAMPLE on view 000 reads violet near #8F00FF, not magenta
+  - NEW_ANGLE_MESH_FLAG = NONE (or explicit FLAG entries if any mesh issue is spotted, without being fixed)
   - sheet + proof + 8 individual views written to the real_deliverables paths; output remains CANDIDATE only
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage\tools\verify_output.py prints PASS
 
 stop_conditions:
-  - geometry, transform, or material would have to change to complete the task (report BLOCKER = TURNAROUND_DRIFT)
+  - geometry, transform, camera-angle, or material would have to change to complete the task (report BLOCKER = TURNAROUND_DRIFT)
   - the slits read magenta or violet spills outside the slits (report BLOCKER = SLIT_HUE_FAIL)
+  - figure fill or 180/225/270 legibility still fails after this pass (report BLOCKER = FRAMING_LIGHT_FAIL, stay HOLD_FOR_FIX, do not expand scope)
   - validator or verification command cannot run
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (hash unchanged? 8 views consistent? hue clean? any new-angle mesh FLAG?) plus operator review; if approved, the sheet becomes the official multi-angle reference for later pose / rig / close-up work.
-next_step_if_fail: stop and report BLOCKER reason only (V0.14 stays untouched; e.g. TURNAROUND_DRIFT / SLIT_HUE_FAIL). Mesh issues found at new angles are FLAGS in the proof, not fixes.
+next_step_if_pass: Lane B drift-check (hash unchanged? figure-fill in range? 180/225/270 legible? hue clean? any new-angle mesh FLAG?) plus operator review; if approved, VISUAL_REFERENCE_GATE = PASS and the sheet becomes the official multi-angle master reference.
+next_step_if_fail: stop and report BLOCKER reason only (V0.1 stays untouched; e.g. TURNAROUND_DRIFT / SLIT_HUE_FAIL / FRAMING_LIGHT_FAIL). Stay HOLD_FOR_FIX, do not open a new geometry round.
