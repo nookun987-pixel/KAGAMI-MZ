@@ -37,6 +37,34 @@ community vote. The Rin/Koharu/Hana shortlist is closed; Hana is canon.
   later (e.g. mid-campaign lore drop, tied to a beat/MV). Flagged for a follow-up operator decision —
   Cowork will ask before any public asset references the name.
 
+## RULING 3 — "Hana" stays withheld; reserved for a later reveal moment
+
+**LOCKED: do NOT reveal the name "Hana" publicly yet.** Operator confirmed (2026-07-03) the name is
+canon-locked internally (Ruling 2) but held back for a deliberate future reveal beat, not stated in any
+public asset now.
+
+- Applies to: website, social captions, MV/lyric-video text, pitch deck external copy, the new visual
+  archive (Ruling 4) — none of these may print, caption, or imply "Hana" until operator explicitly lifts
+  this hold.
+- Internal/production files (Story Bible, this ruling doc, task briefs) may keep using "Hana" as the
+  working name — the hold is on public-facing surfaces only.
+
+## RULING 4 — "Kho ảnh" (visual archive) = public character/world art gallery
+
+**LOCKED: scope of the new priority is a public gallery of character and world art** (not a lore text
+page, not a social drip-feed campaign — operator picked the gallery option explicitly). Purpose: give
+fans a visual entry point into the IP to build interest ahead of the release peak.
+
+- In scope: character art (Mikage renders, turnarounds, Zenith Blade, helmet/halo lookdev stills),
+  world/environment art (e.g. the hallway set once frames are approved), any other approved-for-public
+  2D/3D still.
+- Must respect Ruling 3 — no "Hana" text/caption anywhere in the gallery.
+- Must respect existing brand canon (palette lock, no fake "3D" labeling per
+  [[mikage-render-ops-and-honesty]], no un-ruled/un-approved candidate art presented as final).
+- Not yet scoped: where it lives (new page on the existing site vs. a new section), which specific
+  assets are cleared for public use vs. still CANDIDATE/unapproved, and whether this is a Lane B task
+  dispatched to Codex or built directly. Cowork to propose a concrete plan before building anything.
+
 ## Ruling status of remaining open items (NOT yet decided — carried forward, unchanged)
 
 These were presented alongside Rulings 1–2 but not yet addressed by the operator; they stay open:

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MIKAGE ZENITH — Visual Archive (candidate)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508; --void-mid:#0d0d14; --void-light:#1a1a28; --void-line:#242436;
+  --porcelain:#f2eeea; --porcelain-dim:#c8c4be; --silver:#a0a0b0; --silver-dim:#6b6b78;
+  --violet:#8f00ff; --violet-ui:#7b2fff; --violet-glow:#9d7fd0; --violet-dim:#3d2e55;
+  --hairline:rgba(160,160,176,0.14); --hairline-accent:rgba(143,0,255,0.30);
+  --font-wordmark:'Cinzel','Shippori Mincho',serif;
+  --font-serif:'Shippori Mincho','Cinzel',serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --track-wordmark:0.42em; --track-label:0.34em; --track-title:0.14em;
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--porcelain);font-family:var(--font-serif);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.grain::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+.label{font-family:var(--font-mono);font-size:11px;letter-spacing:var(--track-label);text-transform:uppercase;color:var(--silver)}
+.label-xs{font-family:var(--font-mono);font-size:10px;letter-spacing:var(--track-label);text-transform:uppercase;color:var(--silver-dim)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;background:linear-gradient(180deg,rgba(5,5,8,.94),rgba(5,5,8,0));backdrop-filter:blur(2px)}
+.wordmark{font-family:var(--font-wordmark);font-weight:600;letter-spacing:var(--track-wordmark);
+  text-transform:uppercase;font-size:14px;color:var(--porcelain)}
+.wordmark .dot{display:inline-block;width:5px;height:5px;border-radius:999px;background:var(--violet);
+  box-shadow:0 0 12px rgba(143,0,255,.8);margin:0 2px 2px 4px;vertical-align:middle}
+.flag-chip{font-family:var(--font-mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--silver-dim);border:1px solid var(--hairline);padding:5px 10px}
+
+section{position:relative;max-width:1240px;margin:0 auto;padding:96px 32px 0}
+section:last-of-type{padding-bottom:96px}
+.rule{max-width:1240px;margin:0 auto;height:1px;background:var(--hairline)}
+
+.hero{padding-top:150px;padding-bottom:64px}
+.hero .label{margin-bottom:24px}
+.hero h1{font-family:var(--font-serif);font-weight:700;letter-spacing:var(--track-title);
+  font-size:clamp(34px,5.6vw,64px);line-height:1.08;color:var(--porcelain);max-width:16ch}
+.hero h1 .em{color:var(--violet-glow)}
+.hero p{font-size:clamp(15px,1.4vw,18px);color:var(--porcelain-dim);max-width:56ch;margin-top:24px;line-height:1.75}
+.hero .note{margin-top:32px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--silver-dim)}
+
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.section-head h2{font-family:var(--font-serif);font-weight:600;letter-spacing:var(--track-title);
+  font-size:clamp(22px,3vw,32px);color:var(--porcelain)}
+
+.frame{position:relative}
+.frame::before,.frame::after{content:'';position:absolute;width:14px;height:14px;pointer-events:none}
+.frame::before{top:8px;left:8px;border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+.frame::after{bottom:8px;right:8px;border-bottom:1px solid var(--hairline);border-right:1px solid var(--hairline)}
+
+.card{background:var(--void-mid);border:1px solid var(--hairline);overflow:hidden}
+.card img,.card video{display:block;width:100%;height:100%;object-fit:cover;background:var(--void)}
+.cap{padding:14px 16px;border-top:1px solid var(--hairline)}
+.cap .t{font-family:var(--font-serif);font-size:14px;color:var(--porcelain-dim)}
+.cap .m{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim);margin-top:4px}
+
+.hero-figure{display:grid;grid-template-columns:1fr;gap:20px;margin-top:16px}
+.hero-figure .card{max-width:640px}
+.hero-figure .halo::before{content:'';position:absolute;inset:-8%;background:radial-gradient(circle at 50% 32%,rgba(143,0,255,.14),transparent 65%);z-index:0;pointer-events:none}
+
+.strip{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:22px}
+.strip .card{aspect-ratio:3/4}
+@media (max-width:900px){.strip{grid-template-columns:repeat(4,1fr)}}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+@media (max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.candidate-badge{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--violet-glow);border:1px solid var(--hairline-accent);padding:4px 10px;margin-bottom:10px}
+
+footer{border-top:1px solid var(--hairline);margin-top:80px;padding:40px 32px;text-align:center}
+footer .label-xs{display:block;margin-bottom:8px}
+</style>
+</head>
+<body class="grain">
+
+<nav>
+  <span class="wordmark">MIKAGE ZENITH<span class="dot"></span></span>
+  <span class="flag-chip">VISUAL ARCHIVE · CANDIDATE V0.1</span>
+</nav>
+
+<section class="hero">
+  <div class="label">THE SIGNAL ARCHIVE</div>
+  <h1>Character and world,<br/><span class="em">gathered.</span></h1>
+  <p>A record of the form as it has been built: the porcelain helmet, the sensor slits,
+     the draped mass that carries no visible limb. Some frames are settled. Others are
+     still becoming.</p>
+  <div class="note">CANDIDATE V0.1 — GALLERY, NOT CANON DOCUMENTATION. NOT ASSET-LOCKED.</div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <div class="section-head">
+    <h2>Character</h2>
+    <span class="label">01 / REFERENCE</span>
+  </div>
+  <div class="hero-figure">
+    <div class="card frame">
+      <img src="../../production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png" alt="Mikage character reference sheet"/>
+      <div class="cap"><div class="t">Character reference — master sheet</div>
+        <div class="m">Faceless porcelain helmet · two sensor slits · void body mass</div></div>
+    </div>
+  </div>
+
+  <div class="section-head" style="margin-top:56px">
+    <h2>Turnaround</h2>
+    <span class="label">V0.2 — approved reference</span>
+  </div>
+  <div class="strip">
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_000.png" alt="0°"/><div class="cap"><div class="m">000°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_045.png" alt="45°"/><div class="cap"><div class="m">045°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_090.png" alt="90°"/><div class="cap"><div class="m">090°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_135.png" alt="135°"/><div class="cap"><div class="m">135°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_180.png" alt="180°"/><div class="cap"><div class="m">180°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_225.png" alt="225°"/><div class="cap"><div class="m">225°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_270.png" alt="270°"/><div class="cap"><div class="m">270°</div></div></div>
+    <div class="card"><img src="../../production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_315.png" alt="315°"/><div class="cap"><div class="m">315°</div></div></div>
+  </div>
+</section>
+
+<div class="rule" style="margin-top:80px"></div>
+
+<section>
+  <div class="section-head">
+    <h2>The Blade</h2>
+    <span class="label">02 / ZENITH BLADE — LOCKED</span>
+  </div>
+  <div class="grid2">
+    <div class="card frame">
+      <img src="../../assets/keyart/blade/MIKAGE_ZENITH_BLADE_LOCKED_4x5.png" alt="Zenith Blade locked keyart"/>
+      <div class="cap"><div class="t">Zenith Blade — locked spec</div>
+        <div class="m">Rest: clings to the back · Combat: held in hand</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule" style="margin-top:80px"></div>
+
+<section>
+  <div class="section-head">
+    <h2>Motion</h2>
+    <span class="label">03 / BUILD LOG — PUBLISHED</span>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <video controls poster="../../production/character/build_log/FORMATION_REEL_V0_1/MIKAGE_FORMATION_REEL_V0_1_POSTER.png">
+        <source src="../../production/character/build_log/FORMATION_REEL_V0_1/MIKAGE_FORMATION_REEL_V0_3_SOCIAL.mp4" type="video/mp4">
+      </video>
+      <div class="cap"><div class="t">Formation Reel</div><div class="m">V0.3 — social cut</div></div>
+    </div>
+    <div class="card">
+      <video controls poster="../../production/character/build_log/IP_TEASER_V0_1/MIKAGE_IP_TEASER_V0_1_POSTER.jpg">
+        <source src="../../production/character/build_log/IP_TEASER_V0_1/MIKAGE_IP_TEASER_V0_1.mp4" type="video/mp4">
+      </video>
+      <div class="cap"><div class="t">IP Teaser</div><div class="m">V0.1</div></div>
+    </div>
+    <div class="card">
+      <video controls>
+        <source src="../../production/character/build_log/HERO_REVEAL_MOTION_V0_2/MIKAGE_HERO_REVEAL_MOTION_V0_2_PORCELAIN.mp4" type="video/mp4">
+      </video>
+      <div class="cap"><div class="t">Hero Reveal</div><div class="m">V0.2 — porcelain</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule" style="margin-top:80px"></div>
+
+<section>
+  <div class="section-head">
+    <h2>World</h2>
+    <span class="label">04 / ENVIRONMENT</span>
+  </div>
+  <div class="candidate-badge">CANDIDATE — NOT YET APPROVED FOR PUBLIC CANON</div>
+  <div class="grid2">
+    <div class="card frame">
+      <img src="../../production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_CONTACT_SHEET.png" alt="Hallway environment contact sheet"/>
+      <div class="cap"><div class="t">Hallway environment</div>
+        <div class="m">V0.1 — technical pass only, awaiting operator approval to publish</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="label-xs">MIKAGE ZENITH STUDIO</span>
+  <span class="label-xs">VISUAL ARCHIVE — CANDIDATE V0.1 — NOT ASSET-LOCKED — 2026-07-03</span>
+</footer>
+
+</body>
+</html>
