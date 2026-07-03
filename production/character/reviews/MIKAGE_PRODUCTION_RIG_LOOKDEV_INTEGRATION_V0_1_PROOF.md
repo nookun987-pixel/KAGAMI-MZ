@@ -1,0 +1,85 @@
+# MIKAGE PRODUCTION RIG LOOKDEV INTEGRATION V0.1 — Proof
+
+TASK: `MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1`
+STATUS: CANDIDATE / NOT CANON-LOCKED
+RESULT: PASS
+BLOCKER: NONE
+
+## Deliverables and sources
+
+- GEOMETRY_SOURCE: `production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend`
+- MATERIAL_SOURCE: `production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend`
+- OUTPUT_BLEND: `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend`
+- CONTACT_SHEET: `production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_CONTACT_SHEET.png`
+- BASE_SELECTED: BOTH
+- V0.14_SHA256: `c0d8a9785c794683004561ceffa59f378f629ec83b2a498c1f42e20b9394239a`
+- V0.8.1_SHA256: `c2c3ade3741d6c01b805fdd9f63721bfa421c51f6216cb62943269107bdc5d29`
+- SOURCE_FILES_MODIFIED: NO
+
+## Integration performed
+
+Exact V0.8.1 datablocks were appended and assigned without node edits:
+
+- `V0_8_PREMIUM_PORCELAIN` → master faceless helmet.
+- `V0_8_DEEP_GRAPHITE` → master cloak and neck underlayer.
+- `V0_8_COLD_METAL` → crisp front plane, dark edge, and vertical slab of the Zenith Blade.
+- `V0_8_TWO_SLITS_ONLY` → exactly the left and right slit meshes.
+- `V0_8_RESTRAINED_WHITE_HALO` → white halo ring.
+
+MATERIAL_RECIPE_RETUNED: NO
+MATERIAL_TRANSPLANT_INCOMPATIBLE: NO
+
+Material recipe hashes, in the order above:
+
+- `AA05721C9C055F51AEA9B3624C81AB9EB088DFEA32D056AEBAEA3B88FCBE99C9`
+- `82D4A71D9ACABEF94B547F7D9AE2591E64543F89958966C4912BB764316018A1`
+- `102ABAEE80D50D1770B4569CA32FAE6D42BAC726FA07053B9A3ED2E52F690754`
+- `C5BFDD5085B4125AB937B18527791C3E52CC89229021761AB8136718D8300E43`
+- `F436C25FB9CFFBF3F98B40D316274E37A45C2509726F413AF29331D1C11BE072`
+
+## Reopen and drift verification
+
+- BODY_HASH_BEFORE: `195A361C72D39520FE8E11C882A50B61850755BA80F6F611B3F6D37917F5DCA3`
+- BODY_HASH_AFTER: `195A361C72D39520FE8E11C882A50B61850755BA80F6F611B3F6D37917F5DCA3`
+- BODY_HASH_UNCHANGED: YES
+- REOPEN_FULL_STATE_HASH_BASE/OUTPUT: `500B4B0349767AA9B77258F3FDDB87949EE1B5C5FF878EFD8853D7034A9FAC4D`
+- TRANSFORMS_UNCHANGED: YES
+- POSE_UNCHANGED: YES
+- CAMERA_HASH_BASE/OUTPUT: `4BF8384D90298E56F7B9672B55716F525BD76631E5C6C84CB5B7AB845F30526D`
+- BLADE_POSITION_AND_GEOMETRY_HASH_BASE/OUTPUT: `3A9A9C50110DA112E4FCDAF7EE44049C9C0ABD0193B8C46FC93A69FCE3D7C4BB`
+- HALO_GEOMETRY_HASH_BASE/OUTPUT: `C6725BE2C7A75A09144218B41310DC938F32DF9CA9622F4238800AA3ECCAFC55`
+- INTEGRATION_GEOMETRY_DRIFT: NO
+
+## Render evidence
+
+- CONTACT_SHEET_DIMENSIONS: `3600x900`
+- PANELS: front / three-quarter / strict side / helmet close-up
+- FRONT_SLIT_PIXEL_SAMPLES: `#870DFF`, `#880DFF`
+- HELMET_CLOSE_SLIT_PIXEL_SAMPLES: `#8709FF`, `#8709FF`
+- SLIT_HUE_PIXEL_SAMPLE: BLUE-DOMINANT VIOLET / NOT MAGENTA
+- VIOLET_OUTSIDE_TWO_SLITS: NO
+- HALO_COLOR_CHECK: WHITE on front and helmet close-up
+- BLADE_INTACT_AND_ATTACHED: YES
+- ACTUAL_RENDER_OPENED_AND_INSPECTED: YES
+
+## Files changed
+
+- `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend`
+- `production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_CONTACT_SHEET.png`
+- `production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_PROOF.md`
+- `_tmp/mikage_production_rig_lookdev_integration_v0_1_gate/contact_sheet.png`
+- `_tmp/mikage_production_rig_lookdev_integration_v0_1_gate/contact_sheet_review_report.md`
+
+## Commands and evidence
+
+- Reliable local PowerShell/Git preflight; Blender 5.1.2 background inspection, append, render, save, and reopen verification; Pillow pixel sampling; deterministic output validator.
+- EVIDENCE_SOURCE: LOCAL_COMMAND_VERIFIED + ACTUAL_RENDER_INSPECTED
+- GATE_SCHEMA: exactly two allowed files
+- `.blend1`: NONE
+- REPOSITORY_STATUS: clean before task; only whitelisted outputs changed before commit
+- COMMIT_STATUS: local commit required after proof/validator completion
+- COMMIT_HASH: reported in final task status after commit
+- PUSH_STATUS: NOT PUSHED
+- NEXT_SAFE_ACTION: operator/Lane B review; no Stage B authorization inferred
+
+No visual approval, production-ready, canon-lock, asset-lock, push, or deploy claim is made.
