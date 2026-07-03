@@ -1,5 +1,20 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#35, exception #43): `MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1` = PASS - first
+> combined rig+environment+sensor-anim+camera proof shot. H.264/yuv420p/1280x720/24fps/7.000s/no-audio
+> (Lane B independently ffprobe-confirmed). Both source files hash-unchanged (Lane B independently
+> recomputed/confirmed, not just trusted). Slit hue locked `#8F00FF` (strength-only: dormant 2% ->
+> ignite ~4.17-4.67s -> awakened hold); small 1-4 deg axial performance (spine_02/chest/neck/head), no
+> new bones/mesh, no locomotion; blade unanimated/rigid-to-root; environment violet-free; halo white
+> throughout. Lane B visually inspected the actual 5-frame keyframe sheet: dormant->ignite->awakened->
+> cut-to-black all read correctly, no anomalies. Commit local `dd703a4` (per Codex), not pushed.
+> Exception #43 CLOSED.
+> CURRENT STATE: rig + Gate B (axial) + hallway environment + Exit 1 cinematic proof shot ALL PASS.
+> This is the first end-to-end proof combining every Lane A rig-pipeline deliverable so far. Next
+> decisions (all pending operator, none authorized yet): use this proof shot as a template for a real
+> cinematic; open Exit 2 (full locomotion, needs limb bones/mesh - big undertaking); or open the
+> blade two-state (back-mount/hand-grip) task noted earlier.
+
 > DISPATCH 2026-07-03 #35 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1` - ket hop nhan vat + hanh lang, lam canh proof shot EXIT 1 (khong locomotion).**
 > Ly do: rig (#40) + Gate B axial-only (#41) + hanh lang (#42) deu PASS. BOOS chon EXIT 1: bo qua di
 > bo, chi con dung + khe dormant->ignite + nghieng dau/dich trong luong nhe (bone truc co san) + blade
