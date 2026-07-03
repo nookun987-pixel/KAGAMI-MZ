@@ -1,5 +1,17 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#36, exception #44): `MIKAGE_STAGE_E_CINEMATIC_V0_1` = PASS - real cinematic,
+> extended directly from the #43 proof template (no rebuild from raw sources). H.264/yuv420p/
+> 1920x1080/16:9/24fps/7.000s/no-audio (Lane B independently ffprobe-confirmed). Template hash + both
+> original source hashes all independently confirmed unchanged. Choreography signature (slit/camera/
+> all axial-bone poses) matched exactly vs the template at every sampled frame; still 7 bones, no new
+> bones/mesh, no locomotion, blades unanimated/rigid-to-root, environment violet-free, halo white.
+> Lane B visually inspected the actual keyframe sheet: same choreography as #43, visibly sharper at
+> 1080p, no anomalies. Commit local `a7446bb` (per Codex), not pushed. Exception #44 CLOSED.
+> CURRENT STATE: this is now the primary cinematic CANDIDATE (NOT final/canon-locked). Pending
+> operator decision: use as main publishing candidate as-is, open a further polish round (color
+> grade / audio), or open Exit 2 (full locomotion, needs limb bones/mesh).
+
 > DISPATCH 2026-07-03 #36 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_STAGE_E_CINEMATIC_V0_1` - dung proof #43 LAM TEMPLATE, nang do phan giai len ban cinematic that.**
 > Ly do: BOOS ruling 2026-07-03: dung proof shot Exit 1 (#43) lam template, giu NGUYEN choreography
 > (dormant->ignite->awakened->cut to black, cung camera, cung dien xuat truc), CHI nang do phan giai
