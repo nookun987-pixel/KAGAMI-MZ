@@ -1,5 +1,18 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#33, exception #41): `MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1` = PASS. All 6 axial
+> poses (neutral/quarter_turn/forward_bend/side_pose/head_turn/backward_lean) PASS individually; rig
+> stayed 7/7 bones, no forbidden limb/hand poses attempted, all preservation hashes unchanged, halo
+> white + slits near #8F00FF at every pose. Lane B independently verified gate/hashes/validator, then
+> visually inspected the contact sheet directly: 5/6 panels clean; `side_pose` shows an unexplained
+> smaller head/halo inset in the top-left corner (vs. top-center framing on the other 5) plus a more
+> pronounced S-curve than "15° lateral bend" alone suggests. BOOS ruling 2026-07-03: ACCEPT AS-IS -
+> technical pass conditions all satisfied, framing quirk noted but not treated as failure; revisit if
+> it recurs/worsens in a later pass. Commit local `411b3d7` (per Codex), not pushed. Exception #41 CLOSED.
+> CURRENT STATE: axial-only rig foundation + scoped-down Gate B both PASS. Roadmap Stage B (full 8-pose
+> with arms/legs) and the blade two-state (back-mount/hand-grip) task remain UNOPENED, pending operator
+> decision on next priority.
+
 > DISPATCH 2026-07-03 #33 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1` - Stage B RUT GON (axial-only), tren `MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend`.**
 > Ly do: roadmap Stage B goc can 8 pose gom tay/chan (arms raised, left/right step, blade hold cam tay) -
 > rig moi chi co 7 bone truc, KHONG co bone tay/chan (audit #39: mesh khong co hinh tay/chan rieng). BOOS
