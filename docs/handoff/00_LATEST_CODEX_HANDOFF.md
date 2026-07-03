@@ -1,5 +1,13 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #28 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1` - Stage A ("Integration") cua `MIKAGE_LANE_A_ROADMAP.html`.**
+> Ly do: 2 dong rieng chua hop nhat - `MIKAGE_STANDING_HERO_POLISH_V0_14` (ASSET-LOCKED, geometry chinh thuc) va `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` (ACTIVE_PREMIUM_LOOKDEV_REFERENCE, material da duyet). CHUA XAC NHAN V0.14 hien co dung material premium nay chua. Task nay hop nhat: LAY geometry tu V0.14 (khong doi), AP material da duyet tu V0.8.1 (khong tu che lai cong thuc), ra 1 file production hop nhat.
+> Scope: chi ap dung material (porcelain/graphite/blade/2 khe emission) tu V0.8.1 len geometry V0.14. KHONG doi geometry/pose/camera/blade-position/halo-geometry cua V0.14. KHONG tu tune lai material V0.8.1. Halo PHAI render TRANG theo `docs/handoff/HALO_RING_RULING_2026-07-03.md` (mark thu 4, khoa 2026-07-03) - neu 1 trong 2 file nguon co halo khong trang, FLAG, khong tu sua.
+> LOCKED: toan bo geometry/transform/pose/camera/blade-position/halo-geometry (nguon V0.14) + cong thuc material V0.8.1 (ap y het, khong tune lai).
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.md`. Gate: `_tmp/mikage_production_rig_lookdev_integration_v0_1_gate/` - DUNG 2 file (contact_sheet.png + contact_sheet_review_report.md). AGENTS.md exception #36 (Thirty-sixth) OPEN.
+> FAIL: geometry/pose/camera/blade/halo-geometry drift vs V0.14 -> INTEGRATION_GEOMETRY_DRIFT · khe van magenta/violet lan ra ngoai -> SLIT_HUE_FAIL · halo doc ra khong-trang -> HALO_COLOR_VIOLATION (vi pham ruling) · material V0.8.1 khong ghep duoc len V0.14 vi ly do ky thuat -> MATERIAL_TRANSPLANT_INCOMPATIBLE · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: day chinh la Gate A trong Lane A Roadmap - Lane B drift-check (hash unchanged? hue+halo sach tren pixel that?) + BOOS review -> quyet dinh co mo Stage B (deformation test, 8 pose) khong.
+
 > APPROVAL RECORD 2026-07-03 (BOOS ruling, qua Lane B): **`MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` = ACTIVE_PREMIUM_LOOKDEV_REFERENCE.** PREMIUM_LOOKDEV_GATE = PASS · BOOS_APPROVAL = YES · COLOR_TARGET_APPROVED = YES · SENSOR_COLOR_TARGET = blue-dominant violet (samples `#9D0CEB` front / `#9203E9` helmet close-up) · MAGENTA_DRIFT = NO.
 > V0_8_STATUS = SUPERSEDED (giu tren dia, khong xoa, khong sua lai lich su). RE_RENDER_REQUIRED = NO · ASSET_LOCK = NO · PRODUCTION_CANON_LOCK = NO · PUBLIC_DEPLOYMENT_AUTHORIZED = NO · PUSH_DONE = NO.
 > Record: `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_APPROVAL.md` · Proof: `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_PROOF.md` · Contact sheet: `production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_CONTACT_SHEET.png`. Candidate creation commit (theo Codex): `5b4d7c4`.
@@ -2198,4 +2206,4 @@ STATUS = CANON_LOCK=NO · ASSET_LOCK=NO · RENDER_ALLOWED(Claude)=NO · OUTPUT=C
  
 ## V0.13 MATERIAL ACCEPTED + V0.14 VIOLET QUEUED — 2026-06-23 (Lane B)
 V0.13_RESULT = material lookdev DONE (Codex commit b68d721). Porcelain #f2eeea soft / graphite matte / cold-steel Z-Blue #4B5866 non-emissive = ĐẠT; geometry giữ (315 mesh match); exposure fixed.
-LANE_B_DRIFT_CHECK_V0_13 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md (cờ v�
+LANE_B_DRIFT_CHECK_V0_13 = production/character/keyart_candidates/MIKAGE_HERO_MOUNT_MATERIAL_V0_13_DRIFT_CHECK.md (cờ v�
