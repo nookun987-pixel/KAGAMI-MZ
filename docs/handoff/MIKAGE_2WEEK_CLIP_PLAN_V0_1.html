@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mikage — 2-Week Clip Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#050508; --void-card:#12121c; --line:rgba(160,160,176,.14);
+    --porcelain:#f2eeea; --dim:#c8c4be; --silver:#a0a0b0; --faint:#6b6b78;
+    --violet:#8f00ff; --violet-glow:#9d7fd0; --amber:#c2a85a; --ready:#9d7fd0;
+    --mono:'Space Mono',ui-monospace,monospace; --serif:'Shippori Mincho',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--void);color:var(--porcelain);font-family:var(--serif);padding:40px 20px;line-height:1.5;
+    background-image:radial-gradient(circle at 50% -5%, rgba(143,0,255,.05), transparent 55%);}
+  .wrap{max-width:900px;margin:0 auto}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--silver)}
+  h1{font-family:var(--serif);font-weight:700;font-size:28px;letter-spacing:.05em;margin:10px 0 4px}
+  .sub{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em}
+  .legend{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:12px}
+  .badge{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-right:6px}
+  .b-ready{color:var(--ready);border:1px solid rgba(157,127,208,.5)}
+  .b-dep{color:var(--amber);border:1px solid rgba(194,168,90,.5)}
+  .weekhead{font-family:var(--mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);margin:34px 0 4px;border-bottom:1px solid var(--line);padding-bottom:8px}
+
+  .clip{background:var(--void-card);border:1px solid var(--line);border-radius:2px;padding:18px 20px;margin:14px 0;position:relative;overflow:hidden}
+  .clip::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--violet);opacity:.5}
+  .clip.dep::before{background:var(--amber)}
+  .clip-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .clip-id{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--porcelain)}
+  .clip-id .day{color:var(--faint)}
+  .pillar{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet-glow)}
+  .row{font-family:var(--mono);font-size:12px;color:var(--dim);margin:7px 0;line-height:1.65}
+  .row .k{color:var(--silver);text-transform:uppercase;letter-spacing:.12em;font-size:10px;margin-right:6px}
+  .cap{font-family:var(--serif);font-size:14px;color:var(--porcelain);background:var(--void);border:1px solid var(--line);border-left:2px solid var(--violet);border-radius:2px;padding:10px 12px;margin:8px 0;white-space:pre-wrap;line-height:1.6}
+  .cta{color:var(--amber)}
+  .fill{color:var(--violet-glow)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">MIKAGE ZENITH · EXECUTION</div>
+  <h1>2 tuần · 8 clip — cắt &amp; schedule</h1>
+  <div class="sub">Anchor 08:00 ICT · stagger nền tảng 30–60′ · EN only · no emoji · IP voice.</div>
+  <div class="legend">
+    <span class="badge b-ready">READY</span> asset có sẵn, làm ngay &nbsp;
+    <span class="badge b-dep">DEPENDS</span> chờ render — có fallback nếu chưa kịp<br>
+    <span class="fill">[…]</span> = ô operator điền (track / smartlink) — fetch smartlink trước để set CTA.
+  </div>
+
+  <!-- WEEK 1 -->
+  <div class="weekhead">Tuần 1</div>
+
+  <div class="clip">
+    <div class="clip-top"><span class="clip-id">CLIP 1 <span class="day">· Thứ 2</span></span><span class="pillar">Build Log · EP.01</span></div>
+    <div class="row"><span class="badge b-ready">READY</span></div>
+    <div class="row"><span class="k">Asset</span>Video standing hero (bản vừa duyệt caption). Post đầu tiên.</div>
+    <div class="row"><span class="k">Hook 1.5s</span>hard cut từ khối xám blocking → hero porcelain hoàn thiện dưới một luồng sáng. "block → hero" giật một phát.</div>
+    <div class="row"><span class="k">On-screen</span>"It began as a block." → góc: EP.01</div>
+    <div class="cap">BUILD LOG — STANDING HERO. (dùng caption bản cuối đã chốt)</div>
+    <div class="row"><span class="k">CTA</span><span class="cta">PORCELAIN ASCENSION — eyeball smartlink trong browser TRƯỚC.</span> Live → "Listen now"; Coming Soon → "Follow for the drop."</div>
+    <div class="row"><span class="k">Link</span>FB/IG inline · Shorts pinned comment · TikTok bio</div>
+  </div>
+
+  <div class="clip">
+    <div class="clip-top"><span class="clip-id">CLIP 2 <span class="day">· Thứ 4</span></span><span class="pillar">Transmission</span></div>
+    <div class="row"><span class="badge b-ready">READY</span></div>
+    <div class="row"><span class="k">Asset</span>1 track LIVE trong catalogue + Canvas loop của nó. <span class="fill">[TRACK — operator chọn, đề xuất bài "nặng đô" nhất đang live]</span></div>
+    <div class="row"><span class="k">Hook 1.5s</span>bắt đầu NGAY trên hook/drop (lead-melody), không mở bằng intro. Canvas thở đúng nhịp beat.</div>
+    <div class="row"><span class="k">On-screen</span>tên track, tối giản</div>
+    <div class="cap">Transmission: [TITLE].
+Dark, and it never apologizes for it.</div>
+    <div class="row"><span class="k">CTA</span><span class="cta">fetch [SMARTLINK]</span> → live "Listen now" / chưa live "Follow for the drop"</div>
+    <div class="row"><span class="k">Link</span>theo nền tảng</div>
+  </div>
+
+  <div class="clip">
+    <div class="clip-top"><span class="clip-id">CLIP 3 <span class="day">· Thứ 6</span></span><span class="pillar">Signal · lore</span></div>
+    <div class="row"><span class="badge b-ready">READY</span></div>
+    <div class="row"><span class="k">Asset</span>Zenith Blade (public — zenith-blade.html / 2D blade drop). Reveal chậm thanh blade trong void.</div>
+    <div class="row"><span class="k">Hook 1.5s</span>violet core của blade ló sáng trong bóng tối.</div>
+    <div class="row"><span class="k">On-screen</span>"The execution core."</div>
+    <div class="cap">Straight slab. Point down. One violet core.
+It was never a sword.</div>
+    <div class="row"><span class="k">CTA</span>không bán nhạc — soft: "Archive → link in bio" (trỏ site). Post nuôi thế giới.</div>
+  </div>
+
+  <div class="clip">
+    <div class="clip-top"><span class="clip-id">CLIP 4 <span class="day">· CN</span></span><span class="pillar">Motion</span></div>
+    <div class="row"><span class="badge b-ready">READY</span></div>
+    <div class="row"><span class="k">Asset</span>Canvas Motion V0.2 / cú ignition cuối build-log, cắt standalone thành loop. (S0→S1)</div>
+    <div class="row"><span class="k">Hook 1.5s</span>void thuần → hai khe violet bật mở.</div>
+    <div class="row"><span class="k">On-screen</span>không có (để hình thở) hoặc góc nhỏ "S0 → S1"</div>
+    <div class="cap">Dormant. Then not.</div>
+    <div class="row"><span class="k">CTA</span>track bed bên dưới → smartlink; không thì để trống, đây là miếng aesthetic.</div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="weekhead">Tuần 2</div>
+
+  <div class="clip dep">
+    <div class="clip-top"><span class="clip-id">CLIP 5 <span class="day">· Thứ 2</span></span><span class="pillar">Build Log · EP.02</span></div>
+    <div class="row"><span class="badge b-dep">DEPENDS</span> chờ Cowork render Gate B (deformation)</div>
+    <div class="row"><span class="k">Asset</span>clip deformation test (figure lần đầu cử động). <b style="color:var(--porcelain)">Fallback nếu chưa kịp:</b> cắt BTS từ footage đã có — montage "5 helmet passes" hoặc "block → cloak".</div>
+    <div class="row"><span class="k">Hook 1.5s</span>figure bend/cử động lần đầu — HOẶC rapid-cut 5 helmet.</div>
+    <div class="row"><span class="k">On-screen</span>"EP.02 — It bends" (hoặc fallback: "5 helmets. One crown.")</div>
+    <div class="cap">EP.02. It bends.
+First time the body moves. Watching for what breaks.</div>
+    <div class="row"><span class="k">CTA</span>track như EP.01 hoặc để trống</div>
+  </div>
+
+  <div class="clip">
+    <div class="clip-top"><span class="clip-id">CLIP 6 <span class="day">· Thứ 4</span></span><span class="pillar">Transmission</span></div>
+    <div class="row"><span class="badge b-ready">READY</span></div>
+    <div class="row"><span class="k">Asset</span>track LIVE thứ 2, vibe KHÁC clip 2. <span class="fill">[TRACK — vd 1 bài nightcore lane nếu đang live]</span></div>
+    <div class="row"><span class="k">Hook 1.5s</span>vào thẳng hook.</div>
+    <div class="cap">Transmission: [TITLE].
+Play it once. It stays.</div>
+    <div class="row"><span class="k">CTA</span><span class="cta">fetch [SMARTLINK]</span> → CTA đúng trạng thái</div>
+  </div>
+
+  <div class="clip">
+    <div class="clip-top"><span class="clip-id">CLIP 7 <span class="day">· Thứ 6</span></span><span class="pillar">Signal · lore</span></div>
+    <div class="row"><span class="badge b-ready">READY</span></div>
+    <div class="row"><span class="k">Asset</span>helmet close-up (từ build-log/turnaround). Khung bí ẩn: hai khe + halo trắng.</div>
+    <div class="row"><span class="k">Hook 1.5s</span>cận cực gắt hai khe violet trong bóng tối.</div>
+    <div class="row"><span class="k">On-screen</span>"Two slits. Never one."</div>
+    <div class="cap">Everything else stays dark.
+Only the eyes carry the signal.</div>
+    <div class="row"><span class="k">CTA</span>không sell — archive link bio</div>
+  </div>
+
+  <div class="clip dep">
+    <div class="clip-top"><span class="clip-id">CLIP 8 <span class="day">· CN</span></span><span class="pillar">Motion · teaser</span></div>
+    <div class="row"><span class="badge b-dep">DEPENDS</span> THE AWAKENING / DIGITAL ASH teaser (đang production)</div>
+    <div class="row"><span class="k">Asset</span>slice 5–8s teaser nếu có bản QC. <b style="color:var(--porcelain)">Fallback:</b> push-in cinematic trên hero (dormant, một sáng) cắt từ render sẵn.</div>
+    <div class="row"><span class="k">Hook 1.5s</span>push-in chậm trong gần-đen, khe ló ember.</div>
+    <div class="row"><span class="k">On-screen</span>"THE AWAKENING — soon" (hoặc không)</div>
+    <div class="cap">Something is about to open its eyes.</div>
+    <div class="row"><span class="k">CTA</span><span class="cta">"Follow for the drop."</span> (teaser, chưa live)</div>
+  </div>
+
+  <div class="sub" style="margin-top:26px">Draft — chưa lock. Điền [TRACK]/[SMARTLINK] · verify smartlink trước mỗi CTA · clip 5 &amp; 8 có cờ DEPENDS + fallback nếu render chưa kịp.</div>
+</div>
+</body>
+</html>

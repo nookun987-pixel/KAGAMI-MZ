@@ -65,6 +65,8 @@ ARC = [
    "clay validation before any material", "the form must hold with nothing on it", 3.6),
   ("MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_CONTACT_SHEET.png", "LOOKDEV V0.8 · PORCELAIN",
    "porcelain hero lookdev", "FLAG logged: slit hue reads pink - not resolved yet", 4.8),
+  ("MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_CONTACT_SHEET.png", "LOOKDEV V0.8.1 · HUE FIX",
+   "slit emission corrected to true violet", "OPERATOR APPROVED - supersedes V0.8 as the reference", 4.8),
  ]),
  ("05  ·  THE BODY", "FROM BLOCK TO CLOAK", "three rounds against the latex read", [
   ("MIKAGE_BODY_FORM_DEBLOCKOUT_V0_9_CONTACT_SHEET.png", "BODY V0.9",
@@ -190,7 +192,7 @@ def main():
                 clip_pan(P(f),ver,n1,n2,secs,w,sc); seg.append(sc)
         title_card("08  ·  IT WAKES","FIRST CANVAS","V0.1 refused - too soft · V0.2 re-curved · APPROVED")
         sc=os.path.join(w,"m_mot.mp4")
-        clip_motion_ungraded(MOT,"CANVAS V0.2 · APPROVED","dormant 2% → ignition → dormant","V0.1 REFUSED: contrast too soft → re-curve",1,w,sc); seg.append(sc)
+        clip_motion_ungraded(MOT,"CANVAS V0.2 · APPROVED","dormant 2% -> ignition -> dormant","V0.1 REFUSED: contrast too soft -> re-curve",1,w,sc); seg.append(sc)
         title_card("MIKAGE ZENITH","IT STANDS","Listen now  —  PORCELAIN ASCENSION",3.0)
         cl=os.path.join(w,"cl.txt"); open(cl,"w").write("".join("file '%s'\n"%x for x in seg))
         vid=os.path.join(w,"vid.mp4")
