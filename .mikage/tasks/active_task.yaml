@@ -1,36 +1,35 @@
-task_id: MIKAGE_PRODUCTION_RIG_REBUILD_V0_1
+task_id: MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_PRODUCTION_RIG_REBUILD_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #32, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Fortieth controlled exception (MIKAGE_PRODUCTION_RIG_REBUILD_V0_1 = OPEN).
-# Audits #37 and #39 (both PASS) established: the visible body/cloak is one continuous volume with no
-# separate limb meshes; the old 23-bone armature only binds 29 hidden legacy meshes and does not
-# spatially match current geometry (head bone ~2.062 units off). This task builds a NEW 7-bone axial
-# armature positioned per the topology audit's real coordinates, binds the cloak with soft deformation,
-# and rigidly attaches helmet/slits/halo to head and the blade to root/pelvis (no hand-grip - audit
-# confirmed no hand mesh exists). The old armature and its 29 legacy meshes are left completely untouched.
+current_step: MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #33, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Forty-first controlled exception (MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1 = OPEN).
+# Rebuild #40 (PASS) produced a 7-bone axial-only rig (no limb bones - mesh has no separate arm/leg
+# geometry per audit #39). Roadmap Stage B's original 8-pose list needs arms/legs (arms raised, left
+# step, right step) which are physically impossible on this rig. This task scopes Stage B DOWN to 6
+# poses achievable purely with the 7 axial bones, to sanity-check deformation before any locomotion/
+# limb work is even considered.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_REBUILD_V0_1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STAGE_B_AXIAL_DEFORMATION_V0_1.md
   - docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md
-  - docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_production_rig_rebuild_v0_1_gate
+output_folder_allowed: _tmp/mikage_stage_b_axial_deformation_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
   - docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md
-  - docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -38,31 +37,29 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1.blend
+  - production/character/reviews/MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1_PROOF.md
 
 allowed_actions:
-  - create a NEW Armature object named MIKAGE_axial_rig_v0_1 (do not reuse the old armature's name)
-  - build exactly 7 bones (root, pelvis, spine_01, spine_02, chest, neck, head) positioned per the real coordinates in the topology audit (docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md section 5), with head centered on the actual helmet bounding box from section 1/6 of that audit
-  - bind MASTER_MATCH_single_closed_draped_void_cloak to the new armature with soft, blended vertex-group weights across the root/pelvis/spine_01/spine_02/chest/neck transitions
-  - rigidly attach (single weight=1.0 group or Child-Of constraint) the helmet, both sensor-slit blocks, and the halo ring to the head bone, preserving the halo's white material
-  - rigidly attach the three blade slab meshes to root or pelvis (choose based on the real world-space position data in the audit, report the choice and reasoning) - not to a hand, since no hand mesh exists
-  - run one light test pose (10-15 degrees on chest or spine_02) to confirm the cloak deforms smoothly without tearing, and that helmet/halo/blade move correctly with their bone
-  - render a simple 2-view contact sheet (neutral + light test pose) demonstrating the binding works
-  - write full binding details, bone positions achieved, test results, and hash comparisons into the proof and gate report
-  - write the real deliverables (new derivative blend, contact sheet, proof) into the paths listed under real_deliverables
-  - run deterministic verification (geometry/material of all visible meshes unchanged except added binding data, halo color check, old armature and 29 legacy meshes untouched)
+  - open MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend and save a new derivative under the real_deliverables blend path
+  - pose the 7 existing bones of MIKAGE_axial_rig_v0_1 only (root, pelvis, spine_01, spine_02, chest, neck, head) - no new bones, no bone repositioning
+  - create exactly 6 poses - neutral, quarter_turn, forward_bend, side_pose, head_turn, backward_lean - each using only rotations on the existing axial bones as described in the brief
+  - render a contact sheet showing all 6 poses clearly labeled
+  - write full per-pose findings (tearing/clipping presence and location, helmet/halo/blade attachment integrity, halo color sample, slit color sample) into the proof and gate report
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification (geometry/material hashes unchanged outside pose data, bone count of new rig still 7, old armature and 29 legacy meshes untouched)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
+  - do not create any new bone (limb or otherwise) on MIKAGE_axial_rig_v0_1
+  - do not reposition, add, or remove any of the 7 existing bones
+  - do not attempt arms_raised, left_step, right_step, or a hand-gripped blade_hold pose - no bone/mesh exists for these; if this seems to require new geometry, stop and report instead of improvising
   - do not use, modify, or delete the old armature MIKAGE_initial_armature_scaffold or any of its 29 bound legacy meshes
-  - do not create any of the 16 limb bones (clavicle/upper_arm/forearm/hand/thigh/shin/foot/toe, either side) - the topology audit confirmed no corresponding mesh exists
   - do not change the geometry, silhouette, or proportions of any visible mesh
-  - do not change any material or color, including the halo (must remain white) or the two slit emission materials (must remain violet)
-  - do not perform the full 8-pose Stage B deformation test in this task - only a single light test pose
-  - do not do any final/marketing render
+  - do not change any material or color, including the halo (must remain white at every pose) or the two slit emission materials (must remain violet near #8F00FF at every pose)
+  - do not perform any final/marketing render
   - do not claim canon lock, asset lock, or production-rig-ready (label CANDIDATE / NOT CANON-LOCKED)
   - do not push
   - do not modify unrelated files
@@ -70,24 +67,24 @@ forbidden_actions:
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - new armature MIKAGE_axial_rig_v0_1 exists with exactly 7 bones, positioned per the audit's real coordinates
-  - the old armature and its 29 legacy meshes are completely untouched
-  - cloak mesh shows genuine blended multi-bone weights across the axial chain
-  - helmet, slits, and halo move correctly and rigidly with the head bone; halo remains white
-  - blade meshes move correctly and rigidly with root or pelvis, with the choice and reasoning reported
-  - geometry, silhouette, and materials of all visible meshes are unchanged except for added binding data
-  - light test pose (10-15 degrees) shows no severe tearing/clipping
+  - all 6 poses (neutral, quarter_turn, forward_bend, side_pose, head_turn, backward_lean) are rendered and each is individually reported PASS or FAIL
+  - no severe tearing/clipping at any pose, or any such issue is clearly flagged with its location rather than silently ignored
+  - helmet, halo, and blade remain rigidly attached to their parent bone (head for helmet/halo, root for blade) at every pose with no visible separation or drift
+  - halo renders white and slit color samples near #8F00FF at every pose
+  - new rig MIKAGE_axial_rig_v0_1 still has exactly 7 bones, unchanged positions
+  - old armature and its 29 legacy meshes are completely untouched
+  - geometry and materials of all visible meshes are unchanged outside pose/keyframe data
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - geometry or material changes beyond binding are required (report BLOCKER = REBUILD_SIDE_EFFECT_DRIFT)
-  - the light test pose still shows severe tearing/clipping unresolved within binding-only scope (report BLOCKER = REBUILD_BIND_INSUFFICIENT, do not expand into mesh/geometry edits)
+  - one or more poses show severe tearing/clipping that cannot be resolved within pose/weight-only scope (report BLOCKER = STAGE_B_DEFORMATION_FAIL, name the pose and region, do not alter geometry to compensate)
+  - helmet, halo, or blade separates or drifts from its parent bone at any pose (report BLOCKER = RIGID_ATTACH_FAIL)
   - the halo changes color (report BLOCKER = HALO_COLOR_VIOLATION)
-  - the old armature or any of its 29 legacy meshes is touched in any way (report BLOCKER = LEGACY_TOUCHED)
+  - the old armature or any of its 29 legacy meshes is touched, or the new rig's bone count/positions change (report BLOCKER = SCOPE_VIOLATION)
   - validator or verification command cannot run (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B reviews the rebuild proof; if approved, Lane B drafts the real Stage B task (full 8-pose deformation contact sheet) on MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend.
+next_step_if_pass: Lane B reviews the proof; operator decides whether to open a future limb-bone/mesh task (for the full 8-pose roadmap Stage B) or proceed to Exit 1/Exit 2 of the Lane A Roadmap constrained to axial-only motion.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.

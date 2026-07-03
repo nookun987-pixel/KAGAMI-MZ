@@ -1,5 +1,34 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #33 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1` - Stage B RUT GON (axial-only), tren `MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend`.**
+> Ly do: roadmap Stage B goc can 8 pose gom tay/chan (arms raised, left/right step, blade hold cam tay) -
+> rig moi chi co 7 bone truc, KHONG co bone tay/chan (audit #39: mesh khong co hinh tay/chan rieng). BOOS
+> ruling 2026-07-03: thu gon lan nay CHI 6 pose lam duoc bang bone truc: neutral / quarter_turn /
+> forward_bend / side_pose / head_turn / backward_lean. Cac pose tay/chan bi hoan lai toi khi co task
+> rieng xay them hinh tay/chan (chua mo, chua dat ten).
+> Scope: chi pose 7 bone truc san co (khong tao/doi bone), khong doi geometry/material. Soi loi tung
+> pose: rach/xuyen, helmet/halo/blade co giu dung vi tri khong, halo/slit mau gi.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STAGE_B_AXIAL_DEFORMATION_V0_1.md`. Gate:
+> `_tmp/mikage_stage_b_axial_deformation_v0_1_gate/` - DUNG 2 file. AGENTS.md exception #41 (Forty-first) OPEN.
+> FAIL: pose rach/xuyen khong sua duoc -> STAGE_B_DEFORMATION_FAIL · helmet/halo/blade tach roi khoi
+> bone cha -> RIGID_ATTACH_FAIL · halo doi mau -> HALO_COLOR_VIOLATION · dung cham bo xuong cu/mesh
+> legacy hoac doi so bone rig moi -> SCOPE_VIOLATION · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH.
+> NO push/lock/canon/final claim. NO tao bone/mesh tay chan trong task nay.
+> Sau PASS: Lane B bao cao, operator quyet mo task xay tay/chan (cho Stage B day du 8-pose) hay di
+> tiep Exit 1/Exit 2 cua roadmap gioi han trong dong tac truc (khong tay/chan).
+
+> RESULT 2026-07-03 (#32, exception #40): `MIKAGE_PRODUCTION_RIG_REBUILD_V0_1` = PASS. New armature
+> `MIKAGE_axial_rig_v0_1`, exactly 7 bones (root/pelvis/spine_01/spine_02/chest/neck/head), 0 limb
+> bones, head Z=3.9618101 matching audited helmet bbox center. Cloak soft-bound (max 2 groups/vertex);
+> helmet/slits/halo rigid-to-head; blade rigid-to-root (no hand/grip mesh exists per audit #39).
+> Lane B independently verified: gate 2 files, verify_output.py PASS, no .blend1, hashes unchanged
+> (geometry/material/old-armature-plus-29-legacy), contact sheet visually inspected (halo white,
+> slits violet near #8F00FF, no tearing/clipping on the spine_02 12° test, old rig/legacy untouched).
+> Commit local `3c10dc8` (per Codex), not pushed. Exception #40 CLOSED.
+> CURRENT STATE: rig foundation candidate ready; operator has NOT yet authorized Stage B (8-pose
+> deformation test) or the separate blade two-state (back-mount/hand-grip) task — both pending
+> operator decision, see BOOS ruling in chat 2026-07-03.
+
 > RESULT 2026-07-03 (#31, exception #39): `MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1` = PASS (audit read-only,
 > file unmodified). KEY FINDING: 8 visible non-legacy meshes; body/cloak is ONE continuous volume with
 > no separate limb meshes at all - the old armature's 16 limb bones have no corresponding geometry.
