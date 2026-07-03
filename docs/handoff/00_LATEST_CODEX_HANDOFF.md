@@ -1,5 +1,20 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#30, exception #38): `MIKAGE_PRODUCTION_RIG_BIND_V0_1` = STOPPED, `BLOCKER =
+> BIND_SIDE_EFFECT_DRIFT`. Skeleton space cua `MIKAGE_initial_armature_scaffold` (23 bone, dung cho
+> hinh khoi CU) khong khop khong gian voi hinh dang THAT dang hien thi - ngay neutral pose, gan
+> binding lam helmet/ao/blade tach/xoay lech nghiem trong. KHONG the sua trong pham vi binding-only
+> (can doi vi tri bone hoac hinh, ca hai deu ngoai scope #38). Codex xu ly dung: xoa candidate loi,
+> base SHA-256 khong doi, repo sach, khong commit/push, khong mo rong scope. Exception #38 CLOSED.
+> BOOS ruling 2026-07-03: audit topology mesh THAT truoc khi quyet sua bone cu hay lam bone moi.
+> DISPATCH 2026-07-03 #31 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1` - AUDIT READ-ONLY.**
+> Muc dich: biet hinh dang/topology THAT dang hien thi (ao la 1 khoi lien tuc hay co tay/chan tach
+> rieng?), so sanh vi tri world-space cua 23 bone hien co voi vi tri mesh thuc te, uoc luong so bone
+> can thiet cho hinh hien tai. Chi doc va bao cao - KHONG sua/pose/render moi.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_MESH_TOPOLOGY_AUDIT_V0_1.md`. Gate: `_tmp/mikage_mesh_topology_audit_v0_1_gate/` - DUNG 2 file. Output that: `docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md`. AGENTS.md exception #39 (Thirty-ninth) OPEN.
+> FAIL: file bi sua -> MESH_AUDIT_FILE_MODIFIED · khong mo doc duoc -> FILE_UNREADABLE · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B + BOOS quyet dua tren so lieu that: sua vi tri 23 bone cu, hay lam bo xuong moi vua voi hinh hien tai. Sau do moi soan task rig thuc su.
+
 > RESULT 2026-07-03 (#29, exception #37): `MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1` = PASS (audit
 > read-only, file unmodified, SHA-256 before/after identical). KEY FINDING: armature
 > `MIKAGE_initial_armature_scaffold` (23 bones) is bound ONLY to 29 hidden legacy blockout meshes
