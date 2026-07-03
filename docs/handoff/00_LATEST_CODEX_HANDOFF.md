@@ -1,5 +1,22 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#29, exception #37): `MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1` = PASS (audit
+> read-only, file unmodified, SHA-256 before/after identical). KEY FINDING: armature
+> `MIKAGE_initial_armature_scaffold` (23 bones) is bound ONLY to 29 hidden legacy blockout meshes
+> (from the OLD rig-repair pass) - the VISIBLE current production geometry (helmet/cloak/blade/halo,
+> the actual thing rendered in every contact sheet so far) has ZERO armature/parent binding at all.
+> It is pure static mesh. This is bigger than a "rigid-to-soft upgrade" - it requires binding the
+> visible mesh to the skeleton for the FIRST TIME. BOOS ruling 2026-07-03: proceed with a real
+> from-scratch bind task now (exception #38 below), rather than pausing to re-plan.
+> DISPATCH 2026-07-03 #30 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_PRODUCTION_RIG_BIND_V0_1` - gan LAN DAU hinh dang dang hien thi vao bo xuong co san.**
+> Scope: khao sat toan bo mesh visible chua duoc gan (khong dung 29 mesh legacy da audit), phan loai
+> deform-mem (than/ao co the cong) vs gan-cung (helmet/blade/halo - phu kien cung). Dung DUNG 23 bone
+> co san, KHONG tao/doi bone. KHONG doi geometry/material (halo van phai trang theo ruling, khe van tim).
+> Chi lam 1 pose test nhe (10-15 do) de kiem tra binding, CHUA lam Stage B day du (8 pose).
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_BIND_V0_1.md`. Gate: `_tmp/mikage_production_rig_bind_v0_1_gate/` - DUNG 2 file. AGENTS.md exception #38 (Thirty-eighth) OPEN.
+> FAIL: can doi geometry/material ngoai binding -> BIND_SIDE_EFFECT_DRIFT · pose test van rach/xuyen nghiem trong -> BIND_INSUFFICIENT (khong tu mo rong sang sua mesh) · halo doi mau -> HALO_COLOR_VIOLATION · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: day la dieu kien can, CHUA phai Stage B. Lane B se soan RIENG task Stage B (8-pose deformation test day du) tren file MIKAGE_PRODUCTION_RIG_BIND_V0_1.blend nay.
+
 > RESULT 2026-07-03 (#28, exception #36): `MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1` = PASS.
 > Lane B doc lap kiem tra: gate dung 2 file, verify_output.py = PASS, khong con .blend1, hash
 > geometry/pose/camera/blade/halo truoc-sau giong het nhau, contact sheet nhin truc tiep xac nhan

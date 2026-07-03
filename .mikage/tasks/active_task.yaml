@@ -1,76 +1,92 @@
-task_id: MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1
+task_id: MIKAGE_PRODUCTION_RIG_BIND_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #29, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Thirty-seventh controlled exception (MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1 = OPEN).
-# READ-ONLY AUDIT before Stage B (8-pose deformation test) of MIKAGE_LANE_A_ROADMAP.html. Prior rig-repair
-# report (LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md) ran on a DIFFERENT, older blend with entirely
-# different mesh names. Unknown whether the CURRENT production file (MIKAGE_PRODUCTION_RIG_LOOKDEV_
-# INTEGRATION_V0_1.blend, from exception #36) inherits any armature at all. This task only inspects and
-# reports - no edits, no pose, no render, no new blend.
+current_step: MIKAGE_PRODUCTION_RIG_BIND_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #30, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Thirty-eighth controlled exception (MIKAGE_PRODUCTION_RIG_BIND_V0_1 = OPEN).
+# Armature audit (exception #37, PASS) found the existing armature MIKAGE_initial_armature_scaffold
+# (23 bones) is bound only to 29 hidden legacy blockout meshes - the VISIBLE current production
+# geometry (helmet/cloak/blade/halo) has zero armature/parent binding at all. This task performs the
+# first real bind of the visible mesh to the existing skeleton: soft deformation for flexible body/
+# cloak mesh, rigid parent-only for hard accessories (helmet/blade/halo). No new bones, no geometry
+# change, no material change - binding only.
 
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
-  - docs/reports/LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_PROOF.md
+  - production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_BIND_V0_1.md
+  - docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - docs/handoff/HALO_RING_RULING_2026-07-03.md
+  - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_production_rig_armature_audit_v0_1_gate
+output_folder_allowed: _tmp/mikage_production_rig_bind_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
-  - docs/reports/LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_PROOF.md
+  - docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - docs/handoff/HALO_RING_RULING_2026-07-03.md
+  - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_BIND_V0_1.blend
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_BIND_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_BIND_V0_1_PROOF.md
 
 allowed_actions:
-  - open MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend read-only (in memory) to inspect its armature/rig state
-  - report whether an Armature object exists, its name, and whether it matches MIKAGE_initial_armature_scaffold or is different/new
-  - list every deforming mesh, its Armature-modifier target, and its vertex groups (count and names) to determine rigid-single-bone vs soft-multi-bone binding
-  - report whether joint-equivalent bones exist for shoulder/elbow/hip/knee/spine (by name or functional equivalent)
-  - report how the blade and halo are bound (bone, or direct parent without armature)
-  - write the full audit answers into docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
-  - use an existing image (e.g. from the V0.1 proof/contact sheet) for the gate's contact_sheet.png if no new render is needed - do not render anything new
-  - write contact_sheet_review_report.md summarizing the audit findings for the gate
-  - clean any .blend1 that Blender creates while opening the file for inspection
-  - commit local changes only (new report file only - no blend changes)
+  - open MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend and survey every visible, render-enabled mesh object not already listed as legacy in the armature audit; report each mesh's name, general shape, and which body region it corresponds to
+  - based on that survey, classify each visible mesh as needing soft deformation (flexible body/cloak mesh that must bend at joints) or rigid attachment (hard accessories - helmet, blade, halo)
+  - bind soft-deformation meshes to the existing MIKAGE_initial_armature_scaffold using Armature modifier + vertex groups, with blended weights across adjacent bones at the joint regions actually present in the mesh (e.g. waist/hip area spanning pelvis-spine_01-spine_02-chest if the cloak is one continuous volume)
+  - bind rigid-accessory meshes (helmet, blade, halo) using either a Child-Of constraint or an Armature modifier with a single weight=1.0 group to the appropriate bone (head for helmet/halo; hand.R or root/pelvis for the blade depending on what the actual geometry shows - report the choice and reasoning)
+  - use only the 23 existing bones - no new bones, no bone repositioning
+  - run one light test pose (approx 10-15 degrees on a relevant bone, e.g. chest) to confirm the new bindings deform without obvious tearing/clipping - this is a binding sanity check, NOT the full 8-pose Stage B test
+  - render a simple contact sheet showing at least one neutral-pose view and one light-test-pose view to demonstrate the binding works
+  - write the survey results, binding choices, and test results into contact_sheet_review_report.md and the full proof
+  - write the real deliverables (new derivative blend, contact sheet, proof) into the paths listed under real_deliverables
+  - run deterministic verification (geometry/material hashes unchanged except for the added binding data, halo color check, bone count/position unchanged)
+  - clean .blend1 backups
+  - commit local changes only
 
 forbidden_actions:
-  - do not create, delete, or modify any object, mesh, armature, bone, vertex group, or material in the audited blend
-  - do not pose or render anything new
-  - do not save the audited blend under any name (open read-only / discard on close)
-  - do not begin any rig-upgrade or weight-paint work in this task - audit and report only
+  - do not add, remove, or reposition any bone in the armature
+  - do not change the geometry, silhouette, or proportions of any mesh
+  - do not change any material or color, including the halo (must remain white) or the two slit emission materials
+  - do not create any new mesh
+  - do not perform the full 8-pose Stage B deformation test in this task - only a single light test pose to confirm binding sanity
+  - do not do any final/marketing render - test-purpose render only
+  - do not modify or reference the 29 hidden legacy meshes from the armature audit - leave them untouched
+  - do not claim canon lock, asset lock, or production-rig-ready (label CANDIDATE / NOT CANON-LOCKED)
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - the audited blend is byte-identical before and after (ARMATURE_AUDIT_FILE_MODIFIED = NO)
-  - all 7 audit questions in the brief are answered with specifics (names, counts) in docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - every visible mesh is surveyed and classified (soft-deform vs rigid-attach) with reasoning reported
+  - soft-deformation meshes have blended vertex-group weights across more than one bone at the actual joint regions present
+  - rigid-accessory meshes (helmet/blade/halo) are attached via constraint or single-group rigid binding, moving correctly with their parent bone
+  - only the 23 existing bones are used - bone count and positions unchanged
+  - geometry, silhouette, and all materials (including halo white and slit violet) are unchanged except for the added binding data
+  - the light test pose (10-15 degrees) shows no severe tearing/clipping
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - the audited blend cannot be opened/read (report BLOCKER = FILE_UNREADABLE with details)
-  - the audited blend was modified in any way (report BLOCKER = AUDIT_FILE_MODIFIED)
+  - geometry or material changes beyond binding are required to make this work (report BLOCKER = BIND_SIDE_EFFECT_DRIFT)
+  - the light test pose still shows severe tearing/clipping that cannot be resolved within binding-only scope (report BLOCKER = BIND_INSUFFICIENT, do not expand into mesh/geometry edits)
+  - the halo changes color (report BLOCKER = HALO_COLOR_VIOLATION)
   - validator or verification command cannot run (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B reads the audit report and drafts a scoped rig-upgrade task (soft weight-paint at the joints found in this audit) based on the actual findings, not assumptions.
+next_step_if_pass: Lane B reviews the binding survey/proof; if approved, Lane B drafts the actual Stage B task (full 8-pose deformation contact sheet) on this newly bound file.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.
