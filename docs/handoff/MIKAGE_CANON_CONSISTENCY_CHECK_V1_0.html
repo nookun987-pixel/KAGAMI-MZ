@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIKAGE ZENITH — CANON CONSISTENCY CHECK V1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508; --void-mid:#0d0d14; --void-light:#1a1a28; --void-line:#242436;
+  --porcelain:#f2eeea; --porcelain-dim:#c8c4be; --silver:#a0a0b0; --silver-dim:#6b6b78;
+  --violet:#8f00ff; --violet-glow:#9d7fd0; --violet-dim:#3d2e55;
+  --hairline:rgba(160,160,176,0.14); --hairline-accent:rgba(143,0,255,0.30);
+  --live:#9d7fd0; --pending:#c2a85a; --fail:#c8536b; --unconf:#6b6b78;
+  --font-wordmark:'Cinzel','Shippori Mincho',serif;
+  --font-serif:'Shippori Mincho','Cinzel',serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--void);color:var(--porcelain);font-family:var(--font-serif);font-size:16px;line-height:1.75;letter-spacing:0.01em}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+header{padding:88px 0 56px;border-bottom:1px solid var(--hairline)}
+.wordmark{font-family:var(--font-wordmark);font-size:14px;letter-spacing:0.42em;color:var(--silver);text-transform:uppercase}
+h1{font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,5vw,46px);letter-spacing:0.12em;margin-top:22px;line-height:1.3}
+.sub{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--silver);margin-top:18px;line-height:2}
+.status-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--hairline);border-radius:2px;color:var(--silver)}
+.chip.pass{border-color:rgba(157,127,208,0.5);color:var(--live)}
+.chip.warn{border-color:var(--pending);color:var(--pending)}
+.chip.unconf{border-color:var(--unconf);color:var(--unconf)}
+section{padding:64px 0;border-bottom:1px solid var(--hairline)}
+.sec-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:var(--violet-glow);margin-bottom:14px}
+.sec-label::before{content:"";display:inline-block;width:6px;height:6px;border-radius:999px;background:var(--violet);box-shadow:0 0 8px rgba(143,0,255,0.6);margin-right:12px;vertical-align:middle}
+h2{font-family:var(--font-serif);font-weight:600;font-size:28px;letter-spacing:0.1em;margin-bottom:24px}
+h3{font-family:var(--font-serif);font-weight:600;font-size:19px;letter-spacing:0.06em;margin:32px 0 10px}
+p{color:var(--porcelain-dim);margin-bottom:14px}
+strong{color:var(--porcelain);font-weight:600}
+em{color:var(--violet-glow);font-style:normal}
+code{font-family:var(--font-mono);font-size:13px;color:var(--porcelain-dim)}
+
+/* summary tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0}
+.tile{background:var(--void-mid);border:1px solid var(--void-line);padding:20px}
+.tile .n{font-family:var(--font-serif);font-size:34px;font-weight:600;line-height:1}
+.tile .l{font-family:var(--font-mono);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--silver-dim);margin-top:10px;line-height:1.8}
+
+/* findings */
+.finding{display:grid;grid-template-columns:110px 90px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--hairline)}
+.finding:last-of-type{border-bottom:1px solid var(--hairline)}
+@media(max-width:680px){.finding{grid-template-columns:1fr;gap:6px}}
+.f-id{font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;color:var(--silver)}
+.f-sev{font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase}
+.sev-pass{color:var(--live)} .sev-warn{color:var(--pending)} .sev-fail{color:var(--fail)} .sev-info{color:var(--silver-dim)}
+.finding p{margin:0;font-size:15px}
+.finding .f-title{color:var(--porcelain);font-weight:600;display:block;margin-bottom:4px;letter-spacing:0.03em}
+
+/* beat map */
+.bmap{padding:18px 0;border-top:1px solid var(--hairline)}
+.bmap:last-of-type{border-bottom:1px solid var(--hairline)}
+.bmap .b-id{font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet-glow)}
+.bmap .b-name{font-family:var(--font-serif);font-weight:600;font-size:16px;letter-spacing:0.04em;margin:4px 0 8px}
+.bmap .tracks{font-family:var(--font-mono);font-size:12.5px;line-height:2;color:var(--porcelain-dim)}
+.unconf-box{border:1px dashed var(--unconf);padding:18px 22px;margin:22px 0}
+.unconf-box .mono-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--unconf);display:block;margin-bottom:8px}
+.unconf-box p{font-size:14px;margin-bottom:6px;color:var(--silver)}
+ul.clean{list-style:none;margin:14px 0}
+ul.clean li{padding:9px 0 9px 22px;border-top:1px solid var(--hairline);color:var(--porcelain-dim);position:relative;font-size:15px}
+ul.clean li::before{content:"";position:absolute;left:2px;top:19px;width:5px;height:5px;background:var(--violet-dim);border-radius:999px}
+footer{padding:56px 0 88px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--silver-dim);line-height:2.2}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="wordmark">Mikage Zenith Studio</div>
+  <h1>CANON CONSISTENCY CHECK<br>CATALOG × LORE × STORY SPINE</h1>
+  <div class="sub">Run date 2026-07-03 · Input: TooLost CSV Catalog_Overview179665 (55 rows) + MIKAGE_RELEASE_REGISTRY (55 rows) + Story Bible V0.1</div>
+  <div class="status-row">
+    <span class="chip pass">DATA INTEGRITY: 0 HARD_FAIL</span>
+    <span class="chip warn">5 WARN — CẦN OPERATOR</span>
+    <span class="chip pass">2 REGISTRY UPDATE TRIGGER</span>
+    <span class="chip unconf">BEAT MAPPING = ĐỀ XUẤT · CHUA_XAC_NHAN</span>
+  </div>
+</header>
+
+<!-- ============ 01 SUMMARY ============ -->
+<section>
+  <div class="sec-label">01 / Kết quả kiểm tra dữ liệu (computed từ CSV)</div>
+  <h2>Data integrity — PASS toàn bộ</h2>
+  <div class="tiles">
+    <div class="tile"><div class="n">55/55</div><div class="l">Track khớp Registry<br>(title · date · ISRC · UPC)</div></div>
+    <div class="tile"><div class="n">0</div><div class="l">ISRC trùng lặp</div></div>
+    <div class="tile"><div class="n">0</div><div class="l">UPC trùng lặp</div></div>
+    <div class="tile"><div class="n">1</div><div class="l">Primary Artist duy nhất<br>"Mikage Zenith"</div></div>
+    <div class="tile"><div class="n">0</div><div class="l">Field thiếu<br>(ISRC/UPC/date/link/artwork)</div></div>
+    <div class="tile"><div class="n">0</div><div class="l">Leak "do-not-distribute"<br>(IN THE STATIC không có trong catalog)</div></div>
+  </div>
+  <p>Ngôn ngữ khớp registry: EN 35 · ZH 8 · JA 6 · KO 4 · VI 2. Window 2026-05-21 → 2026-08-14. Không có mâu thuẫn ngày/ISRC/UPC nào giữa export TooLost mới nhất và registry — <strong>0 mismatch trên 55 title chung</strong>. Không phát hiện phân mảnh artist entity trong export này.</p>
+</section>
+
+<!-- ============ 02 FINDINGS ============ -->
+<section>
+  <div class="sec-label">02 / Findings</div>
+  <h2>Phát hiện &amp; hành động</h2>
+
+  <div class="finding">
+    <span class="f-id">F-01</span><span class="f-sev sev-pass">TRIGGER</span>
+    <p><span class="f-title">Smartlink backfill trigger ĐÃ KÍCH HOẠT — 4 track</span>
+    CSV mới đã có smartlink cho 4 row registry đang ghi PENDING: PHANTOM → <code>too.fm/jbyjbpv</code> · FUSE → <code>too.fm/ajmav3k</code> · WAKE → <code>too.fm/1wapnlr</code> · FREEFALL → <code>too.fm/mbvbdqz</code>. Theo backfill trigger trong registry: replace PENDING → <strong>caption packs unblock</strong>. Cần regenerate registry.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-02</span><span class="f-sev sev-warn">WARN</span>
+    <p><span class="f-title">DÙ BẦU TRỜI TẮT NẮNG — release date là HÔM NAY (2026-07-03)</span>
+    Registry đang ghi PRE-SAVE. Trạng thái chuyển PRE-SAVE → LIVE <em>chỉ sau khi live-confirm trên DSP</em>. CTA grammar khóa: giữ nguyên <code>Pre-save</code> cho đến khi có LIVE_CONFIRMED — không tự flip. Owner: BOOS check DSP rồi update registry.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-03</span><span class="f-sev sev-warn">WARN</span>
+    <p><span class="f-title">Label Name tách 2 casing trên TooLost</span>
+    35 row cũ = <code>Mikage Zenith STUDIO</code> · 20 row mới (từ 墨雨 INK RAIN trở đi) = <code>Mikage Zenith Studio</code>. Cùng một pháp nhân nhưng 2 chuỗi khác nhau — rủi ro DSP tách thành 2 label entity (đúng kiểu lỗi từng dính với Musixmatch artist 90486497). Đề xuất: chuẩn hóa 1 casing cho mọi submission mới + ticket TooLost sửa batch cũ nếu portal cho phép.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-04</span><span class="f-sev sev-warn">WARN</span>
+    <p><span class="f-title">Title format lệch chuẩn — GOODBYE FREQUENCY</span>
+    TooLost: <code>サヨナラ周波数 / GOODBYE FREQUENCY</code> (dấu gạch chéo) · Registry: <code>サヨナラ周波数 (GOODBYE FREQUENCY)</code> (ngoặc đơn). Toàn bộ 19 title non-EN còn lại đều dùng convention ngoặc đơn. Chọn 1: sửa portal về ngoặc đơn (khuyến nghị, giữ convention) hoặc sửa registry theo portal.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-05</span><span class="f-sev sev-warn">WARN</span>
+    <p><span class="f-title">Track Version field trống trên TOÀN BỘ 55 row</span>
+    Các bản version (Japanese / Anime / Nightcore ×2 / Cinematic / Reprise — 6 track) đang nhét version vào Release Title thay vì field <code>Track Version</code> chuẩn. DSP matching (Spotify/Apple/Musixmatch) dựa vào field này để nhóm version — để trống làm tăng rủi ro tách entity / duplicate metadata, đúng vết thương Musixmatch cũ. Đề xuất: từ release mới trở đi điền Track Version đúng field; cân nhắc sửa 6 row cũ qua TooLost support.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-06</span><span class="f-sev sev-warn">WARN</span>
+    <p><span class="f-title">3 genre portal sai — carry-over, chưa đóng</span>
+    Từ registry (owner BOOS, CSV không có cột genre nên chưa verify được từ export này): PORCELAIN ASCENSION (Rock → Electronic/Industrial-Noise) · THE ROOT ARCHITECT (Hip-Hop/Rap → Electronic/Industrial-Noise) · GLASS SKIN Anime Version (Rock → Pop/Electronic). Vẫn mở.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-07</span><span class="f-sev sev-info">INFO</span>
+    <p><span class="f-title">11 cặp same-day release</span>
+    2026-05-26, 06-05, 06-16, 06-19, 06-28, 07-07, 07-08, 07-14, 07-15, 07-17, 07-18. Không phải lỗi — nhưng là input cho task 4 (pipeline plan): mỗi ngày đôi cần ×2 asset chain (canvas, caption, artwork QC) cùng deadline.</p>
+  </div>
+
+  <div class="finding">
+    <span class="f-id">F-08</span><span class="f-sev sev-pass">PASS</span>
+    <p><span class="f-title">Do-not-confuse set — không phát hiện nhầm lẫn</span>
+    STATIC ≠ IN THE STATIC (held, không có trong catalog — đúng) · BLACK GLASS gốc ≠ Nightcore (2 ISRC/UPC riêng) · 墨雨 ≠ 残雨 ≠ 默雨 (3 ISRC riêng) · REMNANT RAIN en ≠ zh · SILENT RAIN standard ≠ Cinematic. Tất cả tách bạch sạch.</p>
+  </div>
+</section>
+
+<!-- ============ 03 LORE CONSISTENCY ============ -->
+<section>
+  <div class="sec-label">03 / Canon × Lore consistency</div>
+  <h2>Đối chiếu catalog với Story Bible V0.1</h2>
+
+  <h3>Ruling đề xuất — Launch Arc ≠ story chronology</h3>
+  <p>Thứ tự phát hành (transmissions) <strong>không phải</strong> thứ tự thời gian trong truyện. Ví dụ: THE ROOT ARCHITECT (phát hành #7, rất sớm) thuộc beat B-10 The Convergence (điểm đáy Hồi II). Nếu không ruling rõ, mọi mapping track↔beat sau này sẽ tự mâu thuẫn với lịch phát hành. <em>Đề xuất khóa ruling: "Launch Arc là archive tín hiệu, phi tuyến tính với timeline truyện."</em> — CHUA_XAC_NHAN, cần operator duyệt.</p>
+
+  <h3>Điểm khớp mạnh (không mâu thuẫn)</h3>
+  <ul class="clean">
+    <li><strong>Cụm nhiệt động lực học</strong> — THE LANDAUER PARADOX · SECOND LAW (+ Reprise) · THE THEOREM · DIGITAL ASH: thẳng trục premise Landauer. SECOND LAW = định luật 2 nhiệt động (entropy chỉ tăng) — đúng luật vật lý của thế giới truyện.</li>
+    <li><strong>Cụm porcelain/glass</strong> — PORCELAIN ASCENSION · PORCELAIN NIGHT WALK · PORCELAIN ECHO · GLASS SKIN ×5 · SHARD-513: motif vỏ sứ/thủy tinh nứt, khớp thân phận Vessel B4C.</li>
+    <li><strong>Cụm Neon Grid</strong> — NEON HEARTBEAT · EVEN WHEN THE NEON DIES · NIGHT BITE · BLACK SAND FEVER: đúng Layer 2.</li>
+    <li><strong>Cụm mưa (7 track)</strong> — BLACK RAIN SIGNAL · RAIN AFTERIMAGE · REMNANT RAIN en/zh · SILENT RAIN ×2 · INK RAIN: mưa là khí quyển Neon Grid, nhất quán. Do-not-confuse đã sạch (F-08).</li>
+    <li><strong>Cụm danh tính</strong> — CALL MY REAL NAME · REAL NAME · UNWRITE · SECONDHAND · COMES BACK COLD: đúng trục "danh tính bị xóa / đồ analog cũ", ăn thẳng beat B-03/B-08.</li>
+  </ul>
+
+  <h3>Điểm căng cần theo dõi</h3>
+  <div class="unconf-box">
+    <span class="mono-tag">TENSION — T-01 · DEPENDENCY TÊN THẬT</span>
+    <p>2 track xoay quanh "tên thật" (呼んでくれる CALL MY REAL NAME · 本当の名前 REAL NAME) đã LIVE / sắp phát hành, trong khi tên pre-Vessel <strong>chưa chốt</strong> (vote Rin/Koharu/Hana còn mở). Rule đề xuất: mọi MV, lyric video, caption của 2 track này <em>không được nêu hoặc ám chỉ một cái tên cụ thể</em> cho đến khi vote đóng. Nếu vi phạm → canon fork.</p>
+  </div>
+  <div class="unconf-box">
+    <span class="mono-tag">TENSION — T-02 · KINTSUGI × PALETTE BAN</span>
+    <p>KINTSUGI (金継ぎ) mang motif vá vàng — khớp đẹp với closing image B-15 (mặt nạ nứt nhưng không vỡ), NHƯNG vàng kim là warm color, thuộc lớp film-canon cũ đã bị brand canon cấm. Chủ đề dùng được; visual phải xử lý vá vết nứt bằng <em>violet signal</em> hoặc porcelain-on-porcelain, không dùng vàng. Cần ruling khi làm asset cho track này.</p>
+  </div>
+  <div class="unconf-box">
+    <span class="mono-tag">TENSION — T-03 · NIGHTCORE LANE × TONE CANON</span>
+    <p>3 track Nightcore (GLASS SKIN NC · BLACK GLASS NC · lane đang mở rộng) có năng lượng tempo-up, đối lập tông "slow motion / sacred-tech" của brand. Không mâu thuẫn lore — nhưng cần ruling định vị: Nightcore = derivative lane thương mại, không phải giọng canon chính. Tránh để asset Nightcore định nghĩa lại visual identity.</p>
+  </div>
+  <p>Không phát hiện mâu thuẫn timeline hay nhân vật nào giữa 55 title và lore đã xác lập. Không title nào tham chiếu lore mượn ngoài (đã quét vết Genshin/Criminal Girls/GenEi từ sự cố doc cũ — sạch).</p>
+</section>
+
+<!-- ============ 04 TRACK → BEAT MAP ============ -->
+<section>
+  <div class="sec-label">04 / Track → Beat mapping — ĐỀ XUẤT · CHUA_XAC_NHAN</div>
+  <h2>Gán 55 transmissions vào 15 beat</h2>
+  <p>Mapping dựa trên ngữ nghĩa title + motif cluster, <strong>chưa đối chiếu lyrics</strong> — coi đây là layer đề xuất để operator duyệt/sửa. Track có thể phục vụ nhiều beat; dưới đây gán beat chính. Version phái sinh (Nightcore, Cinematic, Reprise, Anime, JP) kế thừa beat của bản gốc.</p>
+
+  <div class="bmap"><div class="b-id">HỒI I · B-01 — Sứ trắng và máu</div><div class="b-name">Opening Image</div><div class="tracks">PORCELAIN ASCENSION · GLASS SKIN (+ JP / Anime / Nightcore) · SHARD-513</div></div>
+  <div class="bmap"><div class="b-id">HỒI I · B-02 — Trại nuôi entropy</div><div class="b-name">Thế giới thường / Neon Grid</div><div class="tracks">ネオン心拍 NEON HEARTBEAT · NIGHT BITE · BLACK SAND FEVER · 黑雨信號 BLACK RAIN SIGNAL · 墨雨 INK RAIN</div></div>
+  <div class="bmap"><div class="b-id">HỒI I · B-03 — Tiếng tích tắc</div><div class="b-name">Inciting Incident</div><div class="tracks">呼んでくれる CALL MY REAL NAME · SECONDHAND · COMES BACK COLD</div></div>
+  <div class="bmap"><div class="b-id">HỒI I · B-04 — Safehouse analog</div><div class="b-name">Gặp Dr. Aris / nợ nhiệt</div><div class="tracks">THE LANDAUER PARADOX · THE THEOREM · SECOND LAW (+ Reprise)</div></div>
+  <div class="bmap"><div class="b-id">HỒI I · B-05 — Lựa chọn truy vết</div><div class="b-name">Break into Two</div><div class="tracks">THE BREACH · SIGNAL THIEF · TỈNH (STAY AWAKE)</div></div>
+  <div class="bmap"><div class="b-id">HỒI II · B-06 — Tấm gương đầu hàng</div><div class="b-name">Đối đầu Lyre</div><div class="tracks">HUSH / SAY LESS · 触れたらアウト TOUCH AND YOU LOSE · 검은 유리 BLACK GLASS (+ Nightcore) · STATIC</div></div>
+  <div class="bmap"><div class="b-id">HỒI II · B-07 — Mã độc có lương tâm</div><div class="b-name">Lyra-0 xuất hiện</div><div class="tracks">PHANTOM · FUSE · SOFT IN THE WIRE</div></div>
+  <div class="bmap"><div class="b-id">HỒI II · B-08 — Sự thật về Vessel</div><div class="b-name">Midpoint</div><div class="tracks">SINGULAR HEART · 本当の名前 REAL NAME · UNWRITE</div></div>
+  <div class="bmap"><div class="b-id">HỒI II · B-09 — Phương trình Lanchester</div><div class="b-name">Vane siết vòng</div><div class="tracks">ALIGN · THIRD AXIS · NO TOUCHDOWN</div></div>
+  <div class="bmap"><div class="b-id">HỒI II · B-10 — Hot-fix, điểm đáy</div><div class="b-name">The Convergence</div><div class="tracks">THE ROOT ARCHITECT · DIGITAL ASH · FREEFALL</div></div>
+  <div class="bmap"><div class="b-id">HỒI III · B-11 — Tích tắc trong Clean Code</div><div class="b-name">Âm thanh không bị refactor</div><div class="tracks">WAKE · HOLD</div></div>
+  <div class="bmap"><div class="b-id">HỒI III · B-12 — Trật tự cần hỗn loạn</div><div class="b-name">Đòn bẩy Model Collapse</div><div class="tracks">SLOW ORBIT · 别回头 DON'T LOOK BACK · DÙ BẦU TRỜI TẮT NẮNG</div></div>
+  <div class="bmap"><div class="b-id">HỒI III · B-13 — Trả nợ nhiệt</div><div class="b-name">Climax</div><div class="tracks">REMNANT RAIN (+ 残雨 zh) · BLACK SAND FEVER (reprise vị trí — tùy chọn)</div></div>
+  <div class="bmap"><div class="b-id">HỒI III · B-14 — Điểm kỳ dị</div><div class="b-name">Ngã rẽ Lyra-∞</div><div class="tracks">AFTER THE SIGNAL · サヨナラ周波数 GOODBYE FREQUENCY</div></div>
+  <div class="bmap"><div class="b-id">HỒI III · B-15 — Đồng hồ vẫn chạy sai</div><div class="b-name">Closing Image</div><div class="tracks">KINTSUGI 金継ぎ · 夜瓷回声 PORCELAIN ECHO · 默雨 SILENT RAIN (+ Cinematic) · 비의 잔상 RAIN AFTERIMAGE · 네온이 꺼져도 EVEN WHEN THE NEON DIES · THE ROAD TO HERE · 白瓷夜行 PORCELAIN NIGHT WALK</div></div>
+
+  <p style="margin-top:24px"><strong>Coverage: 55/55 track đã gán</strong> (version phái sinh kế thừa bản gốc). Beat mỏng nhất: B-11 (2 track) — nếu cần cân bằng, HOLD (confessional rap-rock, lane mới) là ứng viên anchor cho B-11 vì tông "giữ lấy" khớp motif bám vào tiếng tích tắc.</p>
+</section>
+
+<!-- ============ 05 ACTIONS ============ -->
+<section style="border-bottom:none">
+  <div class="sec-label">05 / Action queue — owner BOOS</div>
+  <h2>Việc cần chốt</h2>
+  <ul class="clean">
+    <li><strong>[NOW]</strong> Regenerate registry: backfill 4 smartlink (F-01) → unblock caption packs PHANTOM / FUSE / WAKE / FREEFALL.</li>
+    <li><strong>[NOW]</strong> Check DSP live status DÙ BẦU TRỜI TẮT NẮNG (release hôm nay) → flip LIVE + đổi CTA khi confirmed (F-02).</li>
+    <li><strong>[TICKET]</strong> TooLost: chuẩn hóa Label Name 1 casing (F-03) + sửa title GOODBYE FREQUENCY về convention ngoặc đơn (F-04) + 3 genre portal (F-06).</li>
+    <li><strong>[PROCESS]</strong> Từ release mới: điền Track Version đúng field, không nhét vào title (F-05).</li>
+    <li><strong>[RULING]</strong> Duyệt 3 ruling canon: Launch Arc phi tuyến tính · lệnh cấm nêu tên thật trước khi vote đóng (T-01) · kintsugi không vàng (T-02) · vị trí Nightcore lane (T-03).</li>
+    <li><strong>[REVIEW]</strong> Duyệt / sửa track→beat map ở mục 04 → khi duyệt xong mới được dùng làm input cho MV, visual field, pitch deck.</li>
+  </ul>
+</section>
+
+<footer>
+  MIKAGE ZENITH STUDIO · CANON CONSISTENCY CHECK V1.0 · 2026-07-03<br>
+  INPUT: TOOLOST CSV 179665 (55) + RELEASE REGISTRY (55) + STORY BIBLE V0.1<br>
+  TRUTH &gt; LOGIC &gt; AESTHETIC
+</footer>
+
+</div>
+</body>
+</html>

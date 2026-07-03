@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIKAGE ZENITH — INVESTOR / STUDIO PITCH · V0.1 DRAFT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508; --void-mid:#0d0d14; --void-light:#1a1a28; --void-line:#242436;
+  --porcelain:#f2eeea; --porcelain-dim:#c8c4be; --silver:#a0a0b0; --silver-dim:#6b6b78;
+  --violet:#8f00ff; --violet-glow:#9d7fd0; --violet-dim:#3d2e55;
+  --hairline:rgba(160,160,176,0.14); --hairline-accent:rgba(143,0,255,0.30);
+  --pending:#c2a85a; --unconf:#6b6b78;
+  --font-wordmark:'Cinzel','Shippori Mincho',serif;
+  --font-serif:'Shippori Mincho','Cinzel',serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{background:var(--void);color:var(--porcelain);font-family:var(--font-serif);line-height:1.7}
+.slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:72px clamp(24px,7vw,110px);position:relative;border-bottom:1px solid var(--hairline)}
+.slide-num{position:absolute;top:36px;right:clamp(24px,7vw,110px);font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;color:var(--silver-dim)}
+.slide-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:var(--violet-glow);margin-bottom:22px}
+.slide-tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:999px;background:var(--violet);box-shadow:0 0 8px rgba(143,0,255,0.6);margin-right:12px;vertical-align:middle}
+h1{font-family:var(--font-serif);font-weight:600;font-size:clamp(34px,5.4vw,64px);letter-spacing:0.12em;line-height:1.25;max-width:900px}
+h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,4vw,44px);letter-spacing:0.1em;line-height:1.3;margin-bottom:28px;max-width:860px}
+p{color:var(--porcelain-dim);font-size:clamp(15px,1.4vw,18px);max-width:760px;margin-bottom:16px}
+strong{color:var(--porcelain)} em{color:var(--violet-glow);font-style:normal}
+.lead{font-size:clamp(17px,1.7vw,21px);color:var(--porcelain)}
+.mono{font-family:var(--font-mono);font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--silver)}
+.wordmark{font-family:var(--font-wordmark);letter-spacing:0.42em;text-transform:uppercase}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:34px 0;max-width:900px}
+.tile{background:var(--void-mid);border:1px solid var(--void-line);padding:24px 20px}
+.tile .n{font-family:var(--font-serif);font-size:clamp(30px,3.4vw,44px);font-weight:600;line-height:1}
+.tile .l{font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--silver-dim);margin-top:12px;line-height:1.9}
+
+.rows{margin:26px 0;max-width:860px}
+.row{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--hairline)}
+.row:last-child{border-bottom:1px solid var(--hairline)}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:6px}}
+.row .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--silver);padding-top:4px}
+.row p{margin:0;font-size:15px}
+.row .t{color:var(--porcelain);font-weight:600;display:block;margin-bottom:4px}
+
+.unconf{border:1px dashed var(--unconf);padding:18px 22px;margin:24px 0;max-width:760px}
+.unconf .mono-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--pending);display:block;margin-bottom:8px}
+.unconf p{font-size:14px;color:var(--silver);margin-bottom:4px}
+
+.big-quote{font-family:var(--font-serif);font-size:clamp(22px,3vw,34px);font-weight:500;letter-spacing:0.06em;line-height:1.6;max-width:840px;color:var(--porcelain)}
+.hairline-v{width:1px;height:64px;background:var(--hairline-accent);margin:32px 0}
+footer-note{display:block}
+.foot{position:absolute;bottom:32px;left:clamp(24px,7vw,110px);font-family:var(--font-mono);font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--silver-dim)}
+</style>
+</head>
+<body>
+
+<!-- S01 COVER -->
+<section class="slide">
+  <span class="slide-num">01 / 12</span>
+  <div class="wordmark" style="font-size:15px;color:var(--silver)">Mikage Zenith Studio</div>
+  <div class="hairline-v"></div>
+  <h1>A MUSIC-BORN IP UNIVERSE,<br>BUILT AT MACHINE SPEED.<br>READY FOR THE SCREEN.</h1>
+  <p class="mono" style="margin-top:36px">Investor &amp; Co-Production Briefing · 2026-07 · Confidential</p>
+  <span class="foot">DRAFT V0.1 — INTERNAL REVIEW · NOT FOR CIRCULATION UNTIL OPERATOR APPROVAL</span>
+</section>
+
+<!-- S02 THESIS -->
+<section class="slide">
+  <span class="slide-num">02 / 12</span>
+  <div class="slide-tag">The Thesis</div>
+  <h2>The most valuable entertainment assets are not songs or films. They are universes.</h2>
+  <p class="lead">Franchise IP compounds: every song, video, and character asset raises the value of every other asset in the catalog. Historically, building a universe required a studio's headcount and a studio's budget.</p>
+  <p><strong>That constraint just broke.</strong> An AI-assisted production stack lets a single operator run the full chain — composition, visual identity, lore, distribution, and rights documentation — at a marginal cost per release approaching zero.</p>
+  <p><em>Mikage Zenith is the proof of that model, already live.</em></p>
+</section>
+
+<!-- S03 WHAT IT IS -->
+<section class="slide">
+  <span class="slide-num">03 / 12</span>
+  <div class="slide-tag">The Studio</div>
+  <h2>One registered company. One operator. A full-stack IP studio.</h2>
+  <div class="rows">
+    <div class="row"><span class="k">Entity</span><p><span class="t">CÔNG TY TNHH MIKAGE ZENITH STUDIO</span>Registered Vietnamese company — invoicing, tax registration, and international banking (SWIFT) in place.</p></div>
+    <div class="row"><span class="k">Operations</span><p><span class="t">Solo, AI-assisted, fully vertical</span>Music production, visual canon, worldbuilding, web, distribution, and marketing run by a single operator with an agentic AI pipeline.</p></div>
+    <div class="row"><span class="k">Distribution</span><p><span class="t">Global DSP coverage via TooLost</span>Spotify, Apple Music and all major platforms, under one protected artist entity: <em>Mikage Zenith</em>.</p></div>
+    <div class="row"><span class="k">Presence</span><p><span class="t">mikagezenith.com + 5 social channels</span>Website live since 2026-05-21. TikTok, Instagram, YouTube, Facebook active under one visual canon.</p></div>
+  </div>
+</section>
+
+<!-- S04 TRACTION -->
+<section class="slide">
+  <span class="slide-num">04 / 12</span>
+  <div class="slide-tag">Execution Velocity — verified from catalog, 2026-07-03</div>
+  <h2>55 singles. 5 languages. 86 days.</h2>
+  <div class="tiles">
+    <div class="tile"><div class="n">55</div><div class="l">Singles catalogued<br>2026-05-21 → 08-14</div></div>
+    <div class="tile"><div class="n">26</div><div class="l">Live on DSPs today</div></div>
+    <div class="tile"><div class="n">29</div><div class="l">Scheduled &amp; pre-save ready</div></div>
+    <div class="tile"><div class="n">5</div><div class="l">Languages<br>EN 35 · ZH 8 · JA 6 · KO 4 · VI 2</div></div>
+    <div class="tile"><div class="n">~1.6</div><div class="l">Releases every<br>2.5 days, sustained</div></div>
+    <div class="tile"><div class="n">100%</div><div class="l">Metadata integrity<br>0 duplicate ISRC / UPC</div></div>
+  </div>
+  <p>This cadence is not a content dump — every release ships inside a governed canon: locked palette, locked character rules, locked CTA grammar, and audited metadata. <em>Velocity with discipline is the moat.</em></p>
+</section>
+
+<!-- S05 THE IP -->
+<section class="slide">
+  <span class="slide-num">05 / 12</span>
+  <div class="slide-tag">The IP</div>
+  <h2>Mikage — the sealed one 鏡</h2>
+  <p class="lead">A faceless porcelain-helmeted Vessel carrying a consciousness her empire tried to erase, in a world where perfect order farms human chaos to keep its own AI alive.</p>
+  <div class="rows">
+    <div class="row"><span class="k">Foundation</span><p><span class="t">Hard sci-fi premise — Landauer's Principle</span>Every erasure has a physical cost. The theme runs through the physics of the world, the heroine's body, and the empire's fatal flaw.</p></div>
+    <div class="row"><span class="k">World</span><p><span class="t">Three layers, built for screen</span>The White Monolith (sterile order) · The Neon Grid (an entropy farm) · post-collapse Earth. Cast in place: Root Architect LORA, Arbiter Vane, Dr. Aris, Lyra-0.</p></div>
+    <div class="row"><span class="k">Visual canon</span><p><span class="t">Protected, instantly recognizable identity</span>Void black · porcelain white · a single electric-violet signal. Enforced by written production rules across every asset since day one.</p></div>
+    <div class="row"><span class="k">Narrative status</span><p><span class="t">Three-act story bible drafted</span>15-beat feature spine derived from the established lore; all 55 tracks mapped to story beats. In operator review.</p></div>
+  </div>
+</section>
+
+<!-- S06 WHY MUSIC FIRST -->
+<section class="slide">
+  <span class="slide-num">06 / 12</span>
+  <div class="slide-tag">Strategy</div>
+  <h2>Music-first is the cheapest audience test a screen IP can run.</h2>
+  <p>Every transmission is a market probe: which motifs, languages, and moods pull audience — measured weekly on DSP data, at a fraction of the cost of a pilot or a trailer.</p>
+  <p><strong>By the time this universe reaches a screen, its themes will have been A/B-tested across 55+ releases in 5 languages.</strong> The soundtrack, the fanbase seed, and the visual language all exist before the first frame is shot.</p>
+  <p class="mono" style="margin-top:22px">Music catalog → audience data → screen adaptation, in that order.</p>
+</section>
+
+<!-- S07 MOAT -->
+<section class="slide">
+  <span class="slide-num">07 / 12</span>
+  <div class="slide-tag">The Moat</div>
+  <h2>Canon governance — the part competitors can't copy overnight.</h2>
+  <div class="rows">
+    <div class="row"><span class="k">Rights provenance</span><p><span class="t">AI Rights Proof Packs per release</span>Each track ships with documented provenance, loudness compliance, hashes, and participant credits — built for a licensing market that increasingly demands AI transparency.</p></div>
+    <div class="row"><span class="k">Hard gates</span><p><span class="t">Automated validation before anything ships</span>Duplicate-ISRC/UPC checks, entity-fragmentation audits, canon-drift gates. Truth &gt; Logic &gt; Aesthetic — nothing is marked done without evidence.</p></div>
+    <div class="row"><span class="k">Single source of truth</span><p><span class="t">One registry drives every downstream asset</span>Release registry → captions, canvases, web pages, story mapping. No orphaned metadata, no forked canon.</p></div>
+    <div class="row"><span class="k">Cost structure</span><p><span class="t">Near-zero marginal production cost</span>The stack that produced 55 releases scales to hundreds without new headcount.</p></div>
+  </div>
+</section>
+
+<!-- S08 BUSINESS MODEL -->
+<section class="slide">
+  <span class="slide-num">08 / 12</span>
+  <div class="slide-tag">Business Model</div>
+  <h2>Three revenue channels live or scoped. Screen is the multiplier.</h2>
+  <div class="rows">
+    <div class="row"><span class="k">01 · Streaming</span><p><span class="t">Global DSP royalties</span>26 tracks live, catalog compounding weekly across 5 language markets.</p></div>
+    <div class="row"><span class="k">02 · B2B licensing</span><p><span class="t">Café &amp; venue background-music licensing</span>Packaged playlists from the catalog; three-channel model scoped: direct contracts · organic streaming · VCPMC performance royalties.</p></div>
+    <div class="row"><span class="k">03 · Studio services</span><p><span class="t">Sonic branding for creators &amp; games</span>Productized packages for indie creators, VTubers, and game developers under the studio brand.</p></div>
+    <div class="row"><span class="k">04 · Screen</span><p><span class="t">Adaptation, sync &amp; co-production — the ask</span>Feature / series / animation built on the story bible, with the catalog as a pre-cleared soundtrack library.</p></div>
+  </div>
+  <div class="unconf">
+    <span class="mono-tag">FINANCIAL DATA — UNCONFIRMED · OPERATOR TO SUPPLY</span>
+    <p>Revenue to date, stream counts, licensing pipeline value, cost base, and the specific investment ask are intentionally omitted from this draft. No figures on this slide may be filled by anyone but the operator, from source records.</p>
+  </div>
+</section>
+
+<!-- S09 ROADMAP -->
+<section class="slide">
+  <span class="slide-num">09 / 12</span>
+  <div class="slide-tag">Roadmap to Screen</div>
+  <h2>From catalog to camera.</h2>
+  <div class="rows">
+    <div class="row"><span class="k">Phase 1 · Done</span><p><span class="t">Universe + catalog + canon system</span>55 releases, protected visual identity, governed metadata, story bible V0.1 drafted.</p></div>
+    <div class="row"><span class="k">Phase 2 · Now</span><p><span class="t">Canon lock + pitch materials</span>Operator review of the 15-beat spine and track-to-beat map; consistency audit complete (2026-07-03, zero hard fails).</p></div>
+    <div class="row"><span class="k">Phase 3</span><p><span class="t">Proof-of-concept visual</span>Short-form cinematic piece in the locked canon — the screen test for the universe's look, funded by this round.</p></div>
+    <div class="row"><span class="k">Phase 4</span><p><span class="t">Co-production partnership</span>Series / feature / animation development with a studio partner; catalog attached as soundtrack and marketing engine.</p></div>
+  </div>
+  <div class="unconf">
+    <span class="mono-tag">TIMELINE — UNCONFIRMED</span>
+    <p>Phase 3–4 dates and budgets pending operator input. Do not present externally with placeholder dates.</p>
+  </div>
+</section>
+
+<!-- S10 WHY NOW -->
+<section class="slide">
+  <span class="slide-num">10 / 12</span>
+  <div class="slide-tag">Why Now</div>
+  <p class="big-quote">"The cost of building a universe just collapsed. The value of owning one didn't."</p>
+  <p style="margin-top:32px">AI production capability is commoditizing; <strong>governed IP is not</strong>. The studios that win the next cycle will be the ones holding coherent, rights-clean, audience-tested universes when adaptation budgets arrive. Mikage Zenith is already one of them — at a fraction of the historical cost basis.</p>
+</section>
+
+<!-- S11 FOUNDER -->
+<section class="slide">
+  <span class="slide-num">11 / 12</span>
+  <div class="slide-tag">Founder</div>
+  <h2>Built by one operator. Governed like a studio.</h2>
+  <p class="lead">BOOS BỚP (Voòng Phí Hùng) — founder and sole operator, Mikage Zenith Studio.</p>
+  <p>Designed and runs the entire stack: composition and mastering pipeline, visual canon and character system, worldbuilding, distribution operations, rights documentation, web, and the validation tooling that keeps 55 releases consistent. The studio's operating doctrine — single source of truth, hard evidence gates, no unverified claims — is itself part of the pitch: <em>this is what disciplined AI-native production looks like.</em></p>
+</section>
+
+<!-- S12 CONTACT -->
+<section class="slide" style="border-bottom:none">
+  <span class="slide-num">12 / 12</span>
+  <div class="wordmark" style="font-size:15px;color:var(--silver)">Mikage Zenith Studio</div>
+  <div class="hairline-v"></div>
+  <h2 style="margin-bottom:36px">The next transmission can be a frame.</h2>
+  <div class="rows" style="max-width:640px">
+    <div class="row"><span class="k">Email</span><p>hello@mikagezenith.com</p></div>
+    <div class="row"><span class="k">Web</span><p>mikagezenith.com</p></div>
+    <div class="row"><span class="k">Catalog</span><p>Mikage Zenith on all major DSPs</p></div>
+  </div>
+  <span class="foot">MIKAGE ZENITH STUDIO · PITCH DRAFT V0.1 · 2026-07-03 · TRUTH &gt; LOGIC &gt; AESTHETIC</span>
+</section>
+
+</body>
+</html>

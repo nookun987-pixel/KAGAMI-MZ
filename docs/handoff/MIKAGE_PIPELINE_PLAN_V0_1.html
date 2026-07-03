@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIKAGE ZENITH — PIPELINE PLAN 07/03 → 08/14 · V0.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508; --void-mid:#0d0d14; --void-light:#1a1a28; --void-line:#242436;
+  --porcelain:#f2eeea; --porcelain-dim:#c8c4be; --silver:#a0a0b0; --silver-dim:#6b6b78;
+  --violet:#8f00ff; --violet-glow:#9d7fd0; --violet-dim:#3d2e55;
+  --hairline:rgba(160,160,176,0.14); --hairline-accent:rgba(143,0,255,0.30);
+  --pending:#c2a85a; --fail:#c8536b; --unconf:#6b6b78; --live:#9d7fd0;
+  --font-wordmark:'Cinzel','Shippori Mincho',serif;
+  --font-serif:'Shippori Mincho','Cinzel',serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--void);color:var(--porcelain);font-family:var(--font-serif);font-size:16px;line-height:1.75}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+header{padding:88px 0 56px;border-bottom:1px solid var(--hairline)}
+.wordmark{font-family:var(--font-wordmark);font-size:14px;letter-spacing:0.42em;color:var(--silver);text-transform:uppercase}
+h1{font-weight:600;font-size:clamp(30px,5vw,46px);letter-spacing:0.12em;margin-top:22px;line-height:1.3}
+.sub{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--silver);margin-top:18px;line-height:2}
+.status-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--hairline);border-radius:2px;color:var(--silver)}
+.chip.warn{border-color:var(--pending);color:var(--pending)}
+.chip.violet{border-color:var(--hairline-accent);color:var(--violet-glow)}
+.chip.unconf{border-color:var(--unconf);color:var(--unconf)}
+section{padding:60px 0;border-bottom:1px solid var(--hairline)}
+.sec-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:var(--violet-glow);margin-bottom:14px}
+.sec-label::before{content:"";display:inline-block;width:6px;height:6px;border-radius:999px;background:var(--violet);box-shadow:0 0 8px rgba(143,0,255,0.6);margin-right:12px;vertical-align:middle}
+h2{font-weight:600;font-size:27px;letter-spacing:0.1em;margin-bottom:24px}
+h3{font-weight:600;font-size:19px;letter-spacing:0.06em;margin:30px 0 10px}
+p{color:var(--porcelain-dim);margin-bottom:14px}
+strong{color:var(--porcelain)} em{color:var(--violet-glow);font-style:normal}
+code{font-family:var(--font-mono);font-size:13px;color:var(--porcelain-dim)}
+
+/* week load bars */
+.wk{display:grid;grid-template-columns:150px 1fr 60px;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--hairline)}
+.wk:last-of-type{border-bottom:1px solid var(--hairline)}
+.wk .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--silver)}
+.wk .bar{height:14px;background:var(--void-light);position:relative}
+.wk .bar i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--violet-dim),rgba(143,0,255,0.55));display:block}
+.wk.peak .bar i{background:linear-gradient(90deg,rgba(200,83,107,0.4),var(--fail))}
+.wk .n{font-family:var(--font-mono);font-size:13px;color:var(--porcelain);text-align:right}
+.wk-note{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--silver-dim);margin-top:14px;line-height:2}
+
+/* dependency chain */
+.chain{display:flex;flex-wrap:wrap;gap:0;align-items:stretch;margin:24px 0;font-family:var(--font-mono)}
+.node{border:1px solid var(--void-line);background:var(--void-mid);padding:14px 16px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--porcelain-dim);display:flex;flex-direction:column;justify-content:center;min-width:130px}
+.node .g{font-size:9px;letter-spacing:0.2em;color:var(--pending);margin-top:6px}
+.node.human{border-color:var(--pending)}
+.arrow{display:flex;align-items:center;padding:0 8px;color:var(--violet-glow);font-size:14px}
+@media(max-width:760px){.chain{flex-direction:column}.arrow{padding:4px 0 4px 16px;transform:rotate(90deg);width:20px}}
+
+/* rows */
+.rows{margin:20px 0}
+.row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--hairline)}
+.row:last-child{border-bottom:1px solid var(--hairline)}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:6px}}
+.row .k{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);padding-top:3px}
+.row .k.now{color:var(--fail)}
+.row .k.hi{color:var(--pending)}
+.row p{margin:0;font-size:15px}
+.row .t{color:var(--porcelain);font-weight:600;display:block;margin-bottom:4px}
+
+.unconf{border:1px dashed var(--unconf);padding:18px 22px;margin:22px 0}
+.unconf .mono-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--pending);display:block;margin-bottom:8px}
+.unconf p{font-size:14px;color:var(--silver);margin-bottom:4px}
+ul.clean{list-style:none;margin:14px 0}
+ul.clean li{padding:9px 0 9px 22px;border-top:1px solid var(--hairline);color:var(--porcelain-dim);position:relative;font-size:15px}
+ul.clean li::before{content:"";position:absolute;left:2px;top:19px;width:5px;height:5px;background:var(--violet-dim);border-radius:999px}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+th{font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--silver-dim);text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--hairline)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--hairline);color:var(--porcelain-dim);vertical-align:top}
+td.mono{font-family:var(--font-mono);font-size:12px}
+footer{padding:56px 0 88px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--silver-dim);line-height:2.2}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="wordmark">Mikage Zenith Studio</div>
+  <h1>PIPELINE PLAN<br>2026-07-03 → 2026-08-14</h1>
+  <div class="sub">29 release còn lại · 43 ngày · 1 operator · 3 human gate · 2 lane song song (Release Ops × Screen)</div>
+  <div class="status-row">
+    <span class="chip warn">PEAK LOAD: TUẦN 07-13 → 07-19 · 11 RELEASE</span>
+    <span class="chip violet">CHIẾN LƯỢC: FRONT-LOAD ASSET TRƯỚC 07-07</span>
+    <span class="chip unconf">NGÂN SÁCH: KHUNG — SỐ CHƯA ĐIỀN</span>
+  </div>
+</header>
+
+<!-- ====== 01 LOAD ====== -->
+<section>
+  <div class="sec-label">01 / Tải theo tuần (computed từ catalog 2026-07-03)</div>
+  <h2>Bức tranh tải: dốc đứng rồi thoát hiểm</h2>
+
+  <div class="wk"><span class="lbl">06-29 → 07-05</span><div class="bar"><i style="width:27%"></i></div><span class="n">3</span></div>
+  <div class="wk"><span class="lbl">07-06 → 07-12</span><div class="bar"><i style="width:73%"></i></div><span class="n">8</span></div>
+  <div class="wk peak"><span class="lbl">07-13 → 07-19</span><div class="bar"><i style="width:100%"></i></div><span class="n">11</span></div>
+  <div class="wk"><span class="lbl">07-20 → 07-26</span><div class="bar"><i style="width:27%"></i></div><span class="n">3</span></div>
+  <div class="wk"><span class="lbl">07-27 → 08-02</span><div class="bar"><i style="width:18%"></i></div><span class="n">2</span></div>
+  <div class="wk"><span class="lbl">08-03 → 08-09</span><div class="bar"><i style="width:9%"></i></div><span class="n">1</span></div>
+  <div class="wk"><span class="lbl">08-10 → 08-16</span><div class="bar"><i style="width:9%"></i></div><span class="n">1</span></div>
+  <div class="wk-note">CẶP SAME-DAY CÒN LẠI: 07-07 ×2 · 07-08 ×2 · 07-14 ×2 · 07-15 ×2 · 07-17 ×2 · 07-18 ×2 — 6 ngày đôi, tất cả rơi vào 2 tuần cao điểm.</div>
+
+  <p style="margin-top:24px"><strong>Đọc số liệu:</strong> 19/29 release (66%) dồn vào 13 ngày 07-07 → 07-19. Sau 07-20 tải rơi xuống 7 release / 26 ngày. Kết luận vận hành: <em>07-03 → 07-06 là cửa sổ vàng để front-load toàn bộ asset cho 2 tuần cao điểm; 07-20 trở đi là cửa sổ capacity cho Screen lane.</em></p>
+</section>
+
+<!-- ====== 02 DEPENDENCY CHAIN ====== -->
+<section>
+  <div class="sec-label">02 / Chuỗi phụ thuộc asset — per release</div>
+  <h2>Causal chain &amp; 3 nút cổ chai người</h2>
+  <div class="chain">
+    <div class="node">Master + Metadata<br>+ Proof Pack</div><div class="arrow">→</div>
+    <div class="node human">Cover QC<div class="g">HUMAN GATE 1</div></div><div class="arrow">→</div>
+    <div class="node">Canvas Render<br>(batch Python/FFmpeg)</div><div class="arrow">→</div>
+    <div class="node human">Contact Sheet Review<div class="g">HUMAN GATE 2</div></div><div class="arrow">→</div>
+    <div class="node">Caption Pack<br>(cần smartlink)</div><div class="arrow">→</div>
+    <div class="node human">Push / Schedule<div class="g">HUMAN GATE 3</div></div><div class="arrow">→</div>
+    <div class="node">Live Confirm<br>→ CTA flip</div>
+  </div>
+  <p>Máy render song song không giới hạn — nhưng <strong>3 gate người là serial</strong>. Với 1 operator, throughput trần = tốc độ review, không phải tốc độ render. Do đó luật xếp lịch:</p>
+  <ul class="clean">
+    <li><strong>Batch review, không review lẻ.</strong> Gom cover QC của cả tuần thành 1 phiên; contact sheet cả tuần thành 1 phiên. 6 phiên review thay vì 29 lần ngắt quãng.</li>
+    <li><strong>Caption pack chỉ phụ thuộc smartlink</strong> — toàn bộ 29 track đã có smartlink (F-01 đã unblock 4 track cuối) → caption có thể sản xuất 100% ngay hôm nay, không chờ ngày phát hành.</li>
+    <li><strong>Push/schedule dồn về 2 khung cố định/tuần</strong> (vd. tối T2 + tối T5) thay vì theo từng release date.</li>
+  </ul>
+</section>
+
+<!-- ====== 03 SCHEDULE ====== -->
+<section>
+  <div class="sec-label">03 / Lịch thi hành — Release Ops lane</div>
+  <h2>Kế hoạch 43 ngày</h2>
+
+  <div class="rows">
+    <div class="row"><span class="k now">NOW · 07-03</span><p><span class="t">Đóng nợ vận hành trong ngày</span>Regenerate registry (4 smartlink mới: PHANTOM jbyjbpv · FUSE ajmav3k · WAKE 1wapnlr · FREEFALL mbvbdqz) · check DSP live DÙ BẦU TRỜI TẮT NẮNG → flip CTA khi confirmed · mở 1 ticket TooLost gộp: label casing + title GOODBYE FREQUENCY + 3 genre portal.</p></div>
+    <div class="row"><span class="k hi">07-03 → 07-06</span><p><span class="t">FRONT-LOAD SPRINT — sản xuất trước 100% asset của 19 release cao điểm</span>Render toàn bộ canvas + caption pack cho mọi release 07-07 → 07-19. Chốt bằng 2 phiên gate: Cover QC batch (07-05) · Contact sheet batch (07-06). Mọi thứ sau đó chỉ còn push theo lịch.</p></div>
+    <div class="row"><span class="k">07-07 → 07-19</span><p><span class="t">PEAK — chế độ push-only</span>Không sản xuất mới trong 13 ngày này. Chỉ: push theo 2 khung/tuần · live-confirm từng release · CTA flip · post caption đã đóng gói sẵn. Ngày đôi (6 cặp) đã được hấp thụ từ sprint nên không tăng tải ngày.</p></div>
+    <div class="row"><span class="k">07-20 → 08-02</span><p><span class="t">HẠ TẢI — 5 release + chuyển trọng tâm sang Screen lane</span>FUSE · WAKE · REAL NAME · BLACK GLASS NC · FREEFALL. Asset làm theo nhịp thường. 70% capacity chuyển sang Screen lane (mục 04).</p></div>
+    <div class="row"><span class="k">08-03 → 08-14</span><p><span class="t">ĐUÔI — 2 release + đóng sổ window</span>GOODBYE FREQUENCY (08-07) · HOLD (08-14). Sau HOLD: tổng kết window 05-21 → 08-14, xuất báo cáo catalog hoàn chỉnh làm phụ lục pitch deck.</p></div>
+  </div>
+
+  <h3>Ràng buộc cứng kế thừa từ Canon Check</h3>
+  <ul class="clean">
+    <li>REAL NAME (07-24) &amp; mọi asset CALL MY REAL NAME: <strong>cấm nêu/ám chỉ tên cụ thể</strong> cho tới khi vote Rin/Koharu/Hana đóng (T-01).</li>
+    <li>KINTSUGI asset mới (nếu có trong window): vá vết nứt bằng violet signal, <strong>không vàng</strong> (T-02).</li>
+    <li>Nightcore releases (07-07, 07-29): asset theo lane derivative, không định nghĩa lại visual identity (T-03).</li>
+    <li>CTA grammar khóa: <code>Pre-save</code> → <code>Listen now</code> chỉ sau LIVE_CONFIRMED.</li>
+  </ul>
+</section>
+
+<!-- ====== 04 SCREEN LANE ====== -->
+<section>
+  <div class="sec-label">04 / Screen lane — chạy song song, cross-dependency</div>
+  <h2>Từ canon lock đến proof-of-concept</h2>
+  <table>
+    <tr><th style="width:120px">Cửa sổ</th><th>Milestone</th><th style="width:220px">Phụ thuộc chéo</th></tr>
+    <tr><td class="mono">07-03 → 07-06</td><td><strong>Operator review Story Bible V0.1</strong> — duyệt 15 beat + 4 open thread (tên pre-Vessel, tông kết, Lyre↔Lyra-0, ruling Launch Arc phi tuyến).</td><td class="mono">Không chặn Release Ops — review xen giữa 2 phiên gate</td></tr>
+    <tr><td class="mono">07-07 → 07-19</td><td><strong>Canon lock V1.0</strong> — chốt story bible + track→beat map. Việc nhẹ, làm trong peak được vì không cần render.</td><td class="mono">← Cần review xong ở bước trên</td></tr>
+    <tr><td class="mono">07-20 → 08-02</td><td><strong>PoC visual pre-production</strong> — chọn beat demo (đề xuất: B-01 hoặc B-11, ít nhân vật, 1 bối cảnh), viết treatment + shotlist, khóa spec render.</td><td class="mono">← Cần Canon lock V1.0 · capacity giải phóng sau peak</td></tr>
+    <tr><td class="mono">08-03 → 08-14</td><td><strong>Pitch Deck V1.0 final</strong> — điền tài chính từ số liệu gốc, gắn kết quả window 86 ngày hoàn chỉnh (55/55 released) làm slide traction cuối.</td><td class="mono">← Cần HOLD live (08-14) + số liệu operator</td></tr>
+  </table>
+  <p><em>Logic chuỗi: window phát hành kết thúc đúng lúc pitch deck cần con số đẹp nhất — "55 releases, 5 languages, 86 days, 100% metadata integrity" chỉ verify được trọn vẹn sau 08-14. Đừng gửi deck cho investor trước ngày đó trừ khi có deadline ngoài.</em></p>
+</section>
+
+<!-- ====== 05 RISK ====== -->
+<section>
+  <div class="sec-label">05 / Risk register</div>
+  <h2>Rủi ro &amp; phương án đỡ</h2>
+  <table>
+    <tr><th style="width:70px">ID</th><th>Rủi ro</th><th>Đỡ bằng</th></tr>
+    <tr><td class="mono">R-01</td><td>Operator ốm / sự cố máy trong peak 07-07 → 07-19 (tiền sử: GPU reseating → BSOD → reinstall)</td><td>Front-load sprint biến peak thành push-only; mọi asset nằm sẵn trên D: + repo. Nếu mất máy, push được từ phone qua Dispatch.</td></tr>
+    <tr><td class="mono">R-02</td><td>TooLost delay live 1 track trong ngày đôi → dồn toa</td><td>CTA không flip khi chưa confirm; caption pack có 2 biến thể Pre-save/Listen-now đóng gói sẵn, đổi trong 1 phút.</td></tr>
+    <tr><td class="mono">R-03</td><td>Ticket portal (casing/genre/title) không được xử lý trước peak</td><td>Không chặn release — chỉ ảnh hưởng hygiene. Deadline mềm: trước 08-14 để catalog report sạch cho pitch.</td></tr>
+    <tr><td class="mono">R-04</td><td>Vote tên pre-Vessel đóng giữa chừng → asset REAL NAME đã sản xuất bị lệch</td><td>Rule T-01 đang cấm nêu tên trong mọi asset → vote đóng lúc nào cũng không phải redo.</td></tr>
+    <tr><td class="mono">R-05</td><td>Screen lane nuốt capacity trong peak</td><td>Hard rule: 07-07 → 07-19 Screen lane chỉ được làm việc không-render (review, viết). Mọi render PoC sau 07-20.</td></tr>
+  </table>
+</section>
+
+<!-- ====== 06 BUDGET ====== -->
+<section style="border-bottom:none">
+  <div class="sec-label">06 / Khung ngân sách chéo — SỐ CHƯA ĐIỀN</div>
+  <h2>Cấu trúc chi phí 2 lane</h2>
+  <table>
+    <tr><th style="width:200px">Hạng mục</th><th>Ghi chú phân bổ</th><th style="width:140px">Số</th></tr>
+    <tr><td><strong>Distribution</strong></td><td>TooLost — phí theo mô hình hiện tại, phủ cả 29 release còn lại</td><td class="mono">UNCONFIRMED</td></tr>
+    <tr><td><strong>Tool stack</strong></td><td>AI subscription (music gen, Claude, khác) + hosting Cloudflare + Google Workspace</td><td class="mono">UNCONFIRMED</td></tr>
+    <tr><td><strong>Marketing</strong></td><td>Nếu chạy ads cho release chủ lực trong peak — đề xuất chọn tối đa 2–3 track anchor thay vì rải 19</td><td class="mono">UNCONFIRMED</td></tr>
+    <tr><td><strong>Screen lane / PoC</strong></td><td>Chi phí render + asset PoC visual (07-20 → 08-02) — hạng mục duy nhất có thể co giãn theo vốn</td><td class="mono">UNCONFIRMED</td></tr>
+    <tr><td><strong>Legal / hành chính</strong></td><td>VCPMC, hợp đồng café licensing nếu ký trong window</td><td class="mono">UNCONFIRMED</td></tr>
+  </table>
+  <div class="unconf">
+    <span class="mono-tag">QUY TẮC — KHÔNG BỊA SỐ</span>
+    <p>Mọi con số ngân sách do operator điền từ sổ sách gốc. Khung này chỉ khóa cấu trúc phân bổ và điểm co giãn duy nhất (PoC visual). Điền xong → bảng này trở thành phụ lục tài chính của Pitch Deck V1.0.</p>
+  </div>
+</section>
+
+<footer>
+  MIKAGE ZENITH STUDIO · PIPELINE PLAN V0.1 · 2026-07-03<br>
+  INPUT: CATALOG CSV 179665 · CANON CHECK V1.0 · STORY BIBLE V0.1<br>
+  TRUTH &gt; LOGIC &gt; AESTHETIC
+</footer>
+
+</div>
+</body>
+</html>
