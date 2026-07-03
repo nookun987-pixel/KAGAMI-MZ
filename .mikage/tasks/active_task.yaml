@@ -1,28 +1,27 @@
-task_id: MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1
+task_id: MIKAGE_STAGE_E_CINEMATIC_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #35, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-third controlled exception (MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1 = OPEN).
-# Rig (#40), Gate B axial-only (#41), and hallway environment (#42) are all PASS. This task combines
-# character + environment into a single derivative scene for the roadmap's Stage E cinematic proof shot
-# via EXIT 1 (no locomotion): slit dormant-to-ignite, subtle head-tilt/weight-shift on the existing 7
-# axial bones, blade unchanged (rigid on root), slow camera push-in, cut to black. Proof shot only, not
-# final/marketing.
+current_step: MIKAGE_STAGE_E_CINEMATIC_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #36, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Forty-fourth controlled exception (MIKAGE_STAGE_E_CINEMATIC_V0_1 = OPEN).
+# Exception #43's proof shot validated the full rig+environment+sensor-anim+camera choreography at
+# low resolution (1280x720). This task extends that SAME derivative as a template for the real
+# cinematic: same choreography, same camera framing, only resolution/render-quality raised (>=1920x1080,
+# 16:9, no audio). Do not rebuild from the raw sources, do not change aspect ratio, do not add audio.
 
 input_files_allowed:
+  - production/environment/rig_derivatives/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.blend
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
   - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.md
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
-  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_PROOF.md
+  - production/character/build_log/LANEA_CODEX_TASK_STAGE_E_CINEMATIC_V0_1.md
+  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_stage_e_exit1_cinematic_proof_v0_1_gate
+output_folder_allowed: _tmp/mikage_stage_e_cinematic_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
@@ -30,8 +29,7 @@ output_files_allowed:
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
   - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
-  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_PROOF.md
+  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -39,34 +37,34 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/environment/rig_derivatives/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.blend
-  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.mp4
-  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_KEYFRAMES.png
-  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_PROOF.md
+  - production/environment/rig_derivatives/MIKAGE_STAGE_E_CINEMATIC_V0_1.blend
+  - production/environment/reviews/MIKAGE_STAGE_E_CINEMATIC_V0_1.mp4
+  - production/environment/reviews/MIKAGE_STAGE_E_CINEMATIC_V0_1_KEYFRAMES.png
+  - production/environment/reviews/MIKAGE_STAGE_E_CINEMATIC_V0_1_PROOF.md
 
 allowed_actions:
-  - create a new derivative blend combining the character (neutral pose, from MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend) and the environment (from MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend) into one scene, character placed at the confirmed marker (0,8,0)
-  - animate the two slit emission materials' STRENGTH only (dormant ~2% of peak, fast ignite around 60-75% of the clip, hold awakened) - hue stays locked #8F00FF
-  - animate a subtle rotation on neck/head and optionally chest/spine_02 for a small head-tilt/weight-shift (smaller magnitude than the Gate B test poses)
-  - animate the camera with a slow push-in along the hallway axis from the confirmed camera position, ending at a reasonable closer position chosen and reported by Codex
-  - add a simple cut-to-black fade at the end of the clip
-  - choose and report a reasonable resolution, fps, and duration for this proof shot (not required to match the Spotify Canvas spec)
-  - render the clip and a keyframe contact sheet
-  - write full findings (slit strength curve description, camera start/end position and duration, pose angles used, halo/slit color checks, confirmation both source files unchanged) into the proof and gate report
+  - extend the exception #43 proof derivative (MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.blend) into a new derivative, keeping the same choreography (dormant to ignite to awakened to cut-to-black), same camera framing/angle, same axial performance
+  - raise render resolution to at least 1920x1080, 16:9 aspect, same framing/angle as the proof (upres only, no recrop)
+  - raise render quality (samples/anti-aliasing/denoise) without changing approved lighting/materials/colors
+  - make a minor duration adjustment (a second or two of breathing room) only if the choreography order stays intact, and report the actual final numbers
+  - render the clip and a keyframe contact sheet at the new resolution
+  - write full findings (resolution/fps/duration via ffprobe, choreography order confirmation, color checks, confirmation both original source files unchanged) into the proof and gate report
   - write the real deliverables into the paths listed under real_deliverables
-  - run deterministic verification (both source file hashes unchanged, no new bones/mesh, no violet in environment, ffprobe-confirmed technical spec)
+  - run deterministic verification (both original source file hashes unchanged, no violet in environment, halo/slit colors correct, no new bones/mesh, no locomotion, blade unanimated)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not modify either source file (character or environment) - work only in a new derivative
-  - do not create any new bone (limb or otherwise) on the character rig, or any new mesh
-  - do not attempt any walk/locomotion/stepping motion - this is EXIT 1, no locomotion at all
-  - do not move, re-parent, or animate the blade separately from its existing rigid root attachment
+  - do not modify either original source file (character or environment)
+  - do not rebuild the combined scene from scratch - extend the exception #43 derivative
+  - do not switch aspect ratio to vertical/9:16/Canvas format - stay 16:9 landscape
+  - do not add any audio track
+  - do not create any new bone (limb or otherwise) or any new mesh
+  - do not attempt any walk/locomotion/stepping motion
+  - do not animate the blade separately from its existing rigid root attachment
   - do not change slit hue - only emission strength may animate, hue stays #8F00FF
-  - do not change the halo's color at any frame - must stay white throughout
+  - do not change the halo's color at any frame - must stay white and unanimated
   - do not introduce violet anywhere in the environment's materials or lighting
-  - do not apply or assume the Spotify Canvas spec (1080x1920 loop) - this is an unrelated proof shot, not a Canvas deliverable
   - do not do any final/marketing render or claim production-ready/canon-lock/asset-lock status
   - do not push
   - do not modify unrelated files
@@ -74,25 +72,25 @@ forbidden_actions:
   - do not place the .mp4 or any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - both source files (character, environment) are hash-unchanged
-  - slit hue remains #8F00FF at every sampled frame; only emission strength animates per a dormant-to-ignite-to-awakened curve
-  - halo remains white at every sampled frame
+  - ffprobe confirms resolution >= 1920x1080, 16:9 aspect ratio, no audio stream
+  - both original source files (character, environment) are hash-unchanged
+  - slit hue remains #8F00FF at every sampled frame; halo remains white and unanimated
   - no violet appears anywhere in the environment
-  - no new bones or mesh were created; no locomotion/walk was attempted
-  - camera push-in and a cut-to-black fade are both present and read smoothly
-  - ffprobe confirms the resolution/fps/duration Codex reports
-  - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md (mp4 stays outside the gate folder) and python .mikage/tools/verify_output.py prints PASS
+  - no new bones/mesh created; no locomotion attempted; blade remains unanimated/rigid-to-root
+  - choreography order preserved (dormant, ignite, awakened, cut-to-black)
+  - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md (mp4 stays outside) and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - either source file is modified in any way (report BLOCKER = SOURCE_FILE_MODIFIED)
+  - either original source file is modified in any way (report BLOCKER = SOURCE_FILE_MODIFIED)
   - slit hue drifts from #8F00FF or reads magenta (report BLOCKER = SLIT_HUE_FAIL)
   - the halo changes color at any frame (report BLOCKER = HALO_COLOR_VIOLATION)
   - violet appears anywhere in the environment (report BLOCKER = VIOLET_IN_ENVIRONMENT)
-  - any new limb bone/mesh is created, or any locomotion/walk motion is attempted (report BLOCKER = SCOPE_VIOLATION)
+  - any new bone/mesh is created, locomotion is attempted, or the blade is animated independently (report BLOCKER = SCOPE_VIOLATION)
+  - aspect ratio is switched to vertical or an audio track is added (report BLOCKER = SPEC_DEVIATION)
   - validator or verification command cannot run, or the mp4 ends up inside the gate folder (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B and operator review the proof shot together to decide whether it serves as a template for a real cinematic, whether Exit 2 (full locomotion) is still wanted later, or whether another round is needed.
+next_step_if_pass: Lane B and operator review the cinematic together to decide whether it serves as the main candidate for publishing, needs a further polish round (color grade, audio), or whether Exit 2 (full locomotion) is still wanted later.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.

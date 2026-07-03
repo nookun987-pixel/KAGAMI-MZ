@@ -1,5 +1,21 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #36 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_STAGE_E_CINEMATIC_V0_1` - dung proof #43 LAM TEMPLATE, nang do phan giai len ban cinematic that.**
+> Ly do: BOOS ruling 2026-07-03: dung proof shot Exit 1 (#43) lam template, giu NGUYEN choreography
+> (dormant->ignite->awakened->cut to black, cung camera, cung dien xuat truc), CHI nang do phan giai
+> (>=1920x1080, giu 16:9 ngang, KHONG doi sang doc). KHONG audio o vong nay.
+> Scope: mo rong tu derivative #43 (KHONG lam lai tu 2 file nguon), upres + nang chat luong render,
+> KHONG doi choreography/goc camera/anh sang/mau sac da duyet.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STAGE_E_CINEMATIC_V0_1.md`. Gate:
+> `_tmp/mikage_stage_e_cinematic_v0_1_gate/` - DUNG 2 file (mp4 KHONG nam trong gate). AGENTS.md
+> exception #44 (Forty-fourth) OPEN.
+> FAIL: sua file nguon -> SOURCE_FILE_MODIFIED · khe doi mau -> SLIT_HUE_FAIL · halo doi mau ->
+> HALO_COLOR_VIOLATION · violet trong moi truong -> VIOLET_IN_ENVIRONMENT · tao bone/mesh/locomotion/
+> dong blade rieng -> SCOPE_VIOLATION · doi sang doc hoac them audio -> SPEC_DEVIATION · gate sai
+> schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B + operator xem xet, quyet dinh dung lam ban chinh publishing, can polish them
+> (color grade/audio rieng), hay mo Exit 2 (locomotion).
+
 > RESULT 2026-07-03 (#35, exception #43): `MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1` = PASS - first
 > combined rig+environment+sensor-anim+camera proof shot. H.264/yuv420p/1280x720/24fps/7.000s/no-audio
 > (Lane B independently ffprobe-confirmed). Both source files hash-unchanged (Lane B independently
