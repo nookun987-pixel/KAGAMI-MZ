@@ -1,5 +1,20 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#37, exception #45): `MIKAGE_ROBE_LOCOMOTION_TEST_V0_1` = PASS - first Exit 2
+> locomotion feasibility test, canon-safe (no visible limbs). Exactly 2 new bones
+> (`drape_secondary_lower`/`_upper`, horizontal cloth-sway helpers on root, not limb-shaped); cloak
+> topology unchanged (288 verts, 0 boundary/non-manifold edges) confirming VOID_BODY_MASS_INTACT = YES;
+> root advanced 1.5m with bob+lean, no legs/steps ever shown. H.264/720x1280/24fps/5.000s/no-audio
+> (Lane B independently ffprobe-confirmed); source hash unchanged (independently confirmed). Lane B
+> visually inspected the actual 5-frame keyframe sheet: frames 1-4 clean, frame 5 (closest camera
+> approach) shows an unexplained dark wedge above the halo not addressed in the proof - likely a
+> perspective/FOV artifact, not confirmed. BOOS ruling 2026-07-03: ACCEPT AS-IS, technical pass
+> conditions all satisfied; noted for future awareness if a close-camera approach is used again.
+> Commit local `65b9b97` (per Codex), not pushed. Exception #45 CLOSED.
+> CURRENT STATE: robe-glide locomotion feasibility CONFIRMED canon-safe and technically clean. Pending
+> operator decision: tune further, build a full walk cycle (Stage D), or recombine with the hallway
+> environment for a walking cinematic.
+
 > DISPATCH 2026-07-03 #37 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_ROBE_LOCOMOTION_TEST_V0_1` - Exit 2 bat dau, TEST robe-glide (lac khoi ao), KHONG lo tay/chan.**
 > Ly do: Exit 1 (#43/#44) da xong. Lane B kiem tra lai master reference goc, phat hien "VOID BODY MASS
 > / DRAPED ROBE" la 1 trong 5 Immutable Identity Marks da khoa - Mikage KHONG duoc lo tay/chan rieng.
