@@ -1,5 +1,25 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RULING REVISED 2026-07-03 (BOOS): exception #45's earlier "ACCEPT AS-IS" was premature. Closer review:
+> the frame-120 wedge above the halo likely reflects a real mesh-region problem (collar/neck-connector
+> pulled wrong by `drape_secondary_upper` reaching too high), not pure camera distortion; motion also
+> reads ambiguous between gliding and shrinking. REVISED STATUS: #45 stays feasibility-PASS but VISUAL
+> state = `HOLD FOR CLEANUP` - NOT a valid Stage D base yet.
+> DISPATCH 2026-07-03 #38 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2` - xac dinh dung nguyen nhan hinh nem + sua chuyen dong, KHONG phai Stage D.**
+> Scope: xac dinh CHINH XAC object/vung vertex gay hinh nem o frame 96-120 (bao cao nguyen nhan da xac
+> nhan, khong phong doan); giu helmet/halo/neck connector/collar coherent xuyen suot; gioi han secondary
+> deformation o vung giua/duoi cloak; giam bob 0.028->~0.018m, lean ±1.4->~±0.8°; giu nguyen quang duong
+> 1.5m/5s. Neu van con hinh nem sau khi giam anh huong helper: tat `drape_secondary_upper`, chi giu
+> root + `drape_secondary_lower`, khoa vertex tu vai tro len, kiem tra parent inverse/constraint space
+> cua halo/helmet/neck connector.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_ROBE_LOCOMOTION_CLEANUP_V0_2.md`. Gate:
+> `_tmp/mikage_robe_locomotion_cleanup_v0_2_gate/` - DUNG 2 file (mp4 khong nam trong gate; contact
+> sheet frame 0/30/60/90/120). AGENTS.md exception #46 (Forty-sixth) OPEN.
+> FAIL: nguyen nhan hinh nem chua xac dinh -> WEDGE_CAUSE_UNCONFIRMED · sua bang crop camera thay vi
+> sua goc -> COSMETIC_FIX_ONLY · halo/helmet/blade/slit/topology doi -> SCOPE_VIOLATION · gate sai
+> schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/Stage-D claim.
+> Sau PASS: Lane B + operator xem xet co du sach de lam nen cho Stage D walk cycle chinh thuc khong.
+
 > RESULT 2026-07-03 (#37, exception #45): `MIKAGE_ROBE_LOCOMOTION_TEST_V0_1` = PASS - first Exit 2
 > locomotion feasibility test, canon-safe (no visible limbs). Exactly 2 new bones
 > (`drape_secondary_lower`/`_upper`, horizontal cloth-sway helpers on root, not limb-shaped); cloak
