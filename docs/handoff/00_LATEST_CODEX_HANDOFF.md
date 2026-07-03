@@ -1,5 +1,28 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#31, exception #39): `MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1` = PASS (audit read-only,
+> file unmodified). KEY FINDING: 8 visible non-legacy meshes; body/cloak is ONE continuous volume with
+> no separate limb meshes at all - the old armature's 16 limb bones have no corresponding geometry.
+> Existing `head` bone sits ~2.062 units below the actual helmet bbox center (decisive vertical
+> mismatch). Blade slabs sit beside the body (no hand-grip mesh) - root/pelvis attachment more
+> spatially defensible than a hand bone. Reasoned estimate: ~7 axial bones (root/pelvis/spine_01/
+> spine_02/chest/neck/head) cover the current shape. BOOS ruling 2026-07-03: build a NEW 7-bone axial
+> armature (not 8, no dedicated blade-control bone), blade rigidly attached to root/pelvis. Exception
+> #39 CLOSED.
+> DISPATCH 2026-07-03 #32 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_PRODUCTION_RIG_REBUILD_V0_1` - xay bo xuong MOI (7 bone truc) + gan mesh THAT vao do.**
+> Muc dich: giai quyet truc tiep BLOCKER cua #38 - tao Armature moi ten `MIKAGE_axial_rig_v0_1` (7 bone:
+> root/pelvis/spine_01/spine_02/chest/neck/head) dat dung vi tri theo so lieu audit #39, gan cloak mem
+> (multi-bone blend), gan helmet/2 khe/halo cung vao head (halo giu TRANG), gan 3 mieng blade cung vao
+> root/pelvis (bao ro chon bone nao va ly do). Bo xuong cu + 29 mesh legacy GIU NGUYEN, khong dung
+> khong xoa. Chi 1 pose test nhe (10-15 do), CHUA phai Stage B day du.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_REBUILD_V0_1.md`. Gate:
+> `_tmp/mikage_production_rig_rebuild_v0_1_gate/` - DUNG 2 file. AGENTS.md exception #40 (Fortieth) OPEN.
+> FAIL: doi geometry/material ngoai binding -> REBUILD_SIDE_EFFECT_DRIFT · pose test van rach/xuyen ->
+> REBUILD_BIND_INSUFFICIENT · halo doi mau -> HALO_COLOR_VIOLATION · dung cham bo xuong cu/mesh legacy
+> -> LEGACY_TOUCHED · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B review proof; neu duyet, soan task Stage B that (8-pose deformation test day du)
+> tren file MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend nay.
+
 > RESULT 2026-07-03 (#30, exception #38): `MIKAGE_PRODUCTION_RIG_BIND_V0_1` = STOPPED, `BLOCKER =
 > BIND_SIDE_EFFECT_DRIFT`. Skeleton space cua `MIKAGE_initial_armature_scaffold` (23 bone, dung cho
 > hinh khoi CU) khong khop khong gian voi hinh dang THAT dang hien thi - ngay neutral pose, gan
