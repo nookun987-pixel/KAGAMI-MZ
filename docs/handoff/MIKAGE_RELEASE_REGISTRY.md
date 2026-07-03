@@ -73,7 +73,7 @@
 | 52 | PRE-SAVE | 검은 유리 (BLACK GLASS) [Nightcore Version] | ko | Electronic / Electronic-Dance | 2026-07-29 | QT62U2620570 | 0672896794549 | https://too.fm/x1p4max |
 | 53 | PRE-SAVE | FREEFALL | en | Electronic / Electronic-Dance | 2026-07-31 | QT62U2639136 | 0672896841618 | https://too.fm/mbvbdqz |
 | 54 | PRE-SAVE | サヨナラ周波数 (GOODBYE FREQUENCY) | ja | Pop / Electronic | 2026-08-07 | QT62U2659335 | 0672896885490 | https://too.fm/beqdare |
-| 55 | PRE-SAVE | HOLD | en | Hip-Hop·Rap / Alternative | 2026-08-14 | PENDING | PENDING | PENDING |
+| 55 | PRE-SAVE | HOLD | en | Hip-Hop·Rap / Alternative | 2026-08-14 | QT62U2679933 | 0672896945125 | https://too.fm/le7qkv |
 
 ---
 
@@ -82,7 +82,9 @@
 - **SMARTLINK BACKFILL (2026-07-03):** PHANTOM → `too.fm/jbyjbpv` · FUSE → `too.fm/ajmav3k` · WAKE →
   `too.fm/1wapnlr` · FREEFALL → `too.fm/mbvbdqz`. All 4 replace prior `PENDING` Link values. Per the
   registry's own backfill trigger rule, this **unblocks caption packs** for these 4 tracks.
-- HOLD remains fully PENDING (UPC/ISRC/smartlink) — TooLost has not assigned these yet.
+- **RESOLVED 2026-07-03 (later same day):** HOLD's UPC/ISRC/smartlink confirmed from TooLost release
+  page (operator screenshot) — ISRC `QT62U2679933`, UPC `0672896945125`, smartlink `too.fm/le7qkv`.
+  TooLost shows HOLD status "Delivered." Replaces the earlier PENDING values below.
 - DÙ BẦU TRỜI TẮT NẮNG (row 27) releases 2026-07-03 (today, per this regeneration date) — still shown
   PRE-SAVE here; flip to LIVE only after operator confirms it is actually live on DSP (do not auto-flip).
 - Canon rulings 2026-07-03 affecting this catalog (see `STORY_CANON_RULING_2026-07-03.md`): release
@@ -96,9 +98,9 @@
 
 ### From 2026-06-29 base (carried, unchanged)
 - **GOODBYE FREQUENCY** (ja) · 2026-08-07 · smartlink https://too.fm/beqdare. JA count 5 → 6.
-- **HOLD** (en) · confessional rap-rock · 2026-08-14 (operator-locked) · submitted to TooLost (Pending) ·
+- **HOLD** (en) · confessional rap-rock · 2026-08-14 (operator-locked) · TooLost status: Delivered ·
   Hip-Hop·Rap / Alternative · master 2:55 · WAV 48k/16-bit · Suno song id `1ca003b9-b69f-4cd0-891f-dbf0e5d70d52` ·
-  Catalog# TOOLOST3001204982 · UPC "Not set" / ISRC / smartlink PENDING.
+  Catalog# TOOLOST3001204982 · UPC `0672896945125` / ISRC `QT62U2679933` / smartlink `too.fm/le7qkv`.
 
 **Do-not-confuse:** STATIC (releasable) ≠ "IN THE STATIC" (held, do-not-distribute) · BLACK GLASS (ko
 original, vodnk8p) ≠ BLACK GLASS [Nightcore] (x1p4max) · 默雨 (SILENT RAIN) ×2 = standard + Cinematic ·
@@ -108,4 +110,4 @@ original, vodnk8p) ≠ BLACK GLASS [Nightcore] (x1p4max) · 默雨 (SILENT RAIN)
 ---
 *CTA grammar: `Listen now` (LIVE) / `Pre-save` (PRE-SAVE) — never mixed.*
 *NO-PACK (generate trước khi submit): PHANTOM · IN THE STATIC (held, không distribute).*
-*Backfill trigger CLOSED for PHANTOM/FUSE/WAKE/FREEFALL (2026-07-03). Still open: HOLD (assign UPC + ISRC + smartlink when TooLost publishes).*
+*Backfill trigger CLOSED for PHANTOM/FUSE/WAKE/FREEFALL (2026-07-03) and HOLD (2026-07-03, later same day). All 55 rows now carry confirmed UPC/ISRC/smartlink — no PENDING identifiers remain.*
