@@ -1,35 +1,33 @@
-task_id: MIKAGE_STAGE_E_CINEMATIC_V0_1
+task_id: MIKAGE_ROBE_LOCOMOTION_TEST_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_STAGE_E_CINEMATIC_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #36, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-fourth controlled exception (MIKAGE_STAGE_E_CINEMATIC_V0_1 = OPEN).
-# Exception #43's proof shot validated the full rig+environment+sensor-anim+camera choreography at
-# low resolution (1280x720). This task extends that SAME derivative as a template for the real
-# cinematic: same choreography, same camera framing, only resolution/render-quality raised (>=1920x1080,
-# 16:9, no audio). Do not rebuild from the raw sources, do not change aspect ratio, do not add audio.
+current_step: MIKAGE_ROBE_LOCOMOTION_TEST_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #37, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Forty-fifth controlled exception (MIKAGE_ROBE_LOCOMOTION_TEST_V0_1 = OPEN).
+# Exit 1 (#43/#44) is complete. The only remaining roadmap branch is Exit 2 (Stage C locomotion), but
+# the master 2D reference locks "VOID BODY MASS / DRAPED ROBE" as an immutable identity mark - Mikage
+# must never show separate visible arms/legs. This task tests locomotion via swaying the SAME single
+# continuous cloak volume (a "robe-glide"), never by building visible limb geometry. Feasibility test
+# only, character alone (not yet recombined with the hallway environment).
 
 input_files_allowed:
-  - production/environment/rig_derivatives/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.blend
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
-  - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STAGE_E_CINEMATIC_V0_1.md
-  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_PROOF.md
+  - production/character/build_log/LANEA_CODEX_TASK_ROBE_LOCOMOTION_TEST_V0_1.md
+  - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_stage_e_cinematic_v0_1_gate
+output_folder_allowed: _tmp/mikage_robe_locomotion_test_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
-  - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
-  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_PROOF.md
+  - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -37,60 +35,53 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/environment/rig_derivatives/MIKAGE_STAGE_E_CINEMATIC_V0_1.blend
-  - production/environment/reviews/MIKAGE_STAGE_E_CINEMATIC_V0_1.mp4
-  - production/environment/reviews/MIKAGE_STAGE_E_CINEMATIC_V0_1_KEYFRAMES.png
-  - production/environment/reviews/MIKAGE_STAGE_E_CINEMATIC_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1.blend
+  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1.mp4
+  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1_PROOF.md
 
 allowed_actions:
-  - extend the exception #43 proof derivative (MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.blend) into a new derivative, keeping the same choreography (dormant to ignite to awakened to cut-to-black), same camera framing/angle, same axial performance
-  - raise render resolution to at least 1920x1080, 16:9 aspect, same framing/angle as the proof (upres only, no recrop)
-  - raise render quality (samples/anti-aliasing/denoise) without changing approved lighting/materials/colors
-  - make a minor duration adjustment (a second or two of breathing room) only if the choreography order stays intact, and report the actual final numbers
-  - render the clip and a keyframe contact sheet at the new resolution
-  - write full findings (resolution/fps/duration via ffprobe, choreography order confirmation, color checks, confirmation both original source files unchanged) into the proof and gate report
+  - add at most 2 new bones as children of root, used only as secondary cloth-sway helpers for the lower cloak hem, with neutral names (not limb-named/shaped/positioned)
+  - animate root translating forward a short distance (~1-2m) with a subtle vertical bob and slight alternating side lean/weight-shift
+  - animate the 2 hem-sway bones oscillating for secondary cloth motion at the lower cloak
+  - render a short test clip and keyframe contact sheet showing the cloak swaying/gliding without any gap implying legs
+  - write full findings (new bone names/positions/purpose, motion description, void-body-mass-intact confirmation, halo/slit color checks) into the proof and gate report
   - write the real deliverables into the paths listed under real_deliverables
-  - run deterministic verification (both original source file hashes unchanged, no violet in environment, halo/slit colors correct, no new bones/mesh, no locomotion, blade unanimated)
+  - run deterministic verification (cloak remains one closed volume at every sampled frame, no new limb-shaped geometry, halo/slit colors correct, blade unanimated)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not modify either original source file (character or environment)
-  - do not rebuild the combined scene from scratch - extend the exception #43 derivative
-  - do not switch aspect ratio to vertical/9:16/Canvas format - stay 16:9 landscape
-  - do not add any audio track
-  - do not create any new bone (limb or otherwise) or any new mesh
-  - do not attempt any walk/locomotion/stepping motion
-  - do not animate the blade separately from its existing rigid root attachment
-  - do not change slit hue - only emission strength may animate, hue stays #8F00FF
-  - do not change the halo's color at any frame - must stay white and unanimated
-  - do not introduce violet anywhere in the environment's materials or lighting
-  - do not do any final/marketing render or claim production-ready/canon-lock/asset-lock status
+  - do not create any mesh of any kind, especially nothing limb-shaped (arm, leg, hand, foot)
+  - do not name, shape, or position any new bone like a limb (arm/leg/hand/foot/thigh/shin/knee/elbow/shoulder)
+  - do not let the cloak show any gap or split at the hem that implies legs underneath, at any frame
+  - do not change the cloak's base geometry/silhouette - only add deformation via the new bones
+  - do not change slit hue or halo color - both stay locked (#8F00FF slits, white halo)
+  - do not animate the blade independently - it stays rigid to root
+  - do not do any final/marketing render or claim a finished walk cycle/production-ready/canon-lock status
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
   - do not place the .mp4 or any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - ffprobe confirms resolution >= 1920x1080, 16:9 aspect ratio, no audio stream
-  - both original source files (character, environment) are hash-unchanged
-  - slit hue remains #8F00FF at every sampled frame; halo remains white and unanimated
-  - no violet appears anywhere in the environment
-  - no new bones/mesh created; no locomotion attempted; blade remains unanimated/rigid-to-root
-  - choreography order preserved (dormant, ignite, awakened, cut-to-black)
+  - at most 2 new bones added, none limb-named/shaped/positioned
+  - the cloak remains a single closed volume at every sampled frame (no gap/split implying legs)
+  - root translates forward with a bob/lean-only robe-glide motion; hem-sway bones add secondary cloth motion
+  - halo remains white; slit hue remains #8F00FF
+  - blade remains unanimated and rigid to root
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md (mp4 stays outside) and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - either original source file is modified in any way (report BLOCKER = SOURCE_FILE_MODIFIED)
-  - slit hue drifts from #8F00FF or reads magenta (report BLOCKER = SLIT_HUE_FAIL)
-  - the halo changes color at any frame (report BLOCKER = HALO_COLOR_VIOLATION)
-  - violet appears anywhere in the environment (report BLOCKER = VIOLET_IN_ENVIRONMENT)
-  - any new bone/mesh is created, locomotion is attempted, or the blade is animated independently (report BLOCKER = SCOPE_VIOLATION)
-  - aspect ratio is switched to vertical or an audio track is added (report BLOCKER = SPEC_DEVIATION)
+  - the cloak shows any gap or split implying legs underneath at any frame (report BLOCKER = VOID_BODY_MASS_VIOLATION)
+  - any limb-shaped mesh or limb-named/positioned bone is created (report BLOCKER = LIMB_GEOMETRY_VIOLATION)
+  - the halo or slit color changes (report BLOCKER = HALO_COLOR_VIOLATION or BLOCKER = SLIT_HUE_FAIL as applicable)
+  - the blade is animated independently of root (report BLOCKER = SCOPE_VIOLATION)
   - validator or verification command cannot run, or the mp4 ends up inside the gate folder (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
+  - if convincing locomotion seems to require showing legs, STOP and report rather than resolving unilaterally - this is a canon decision for the operator
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B and operator review the cinematic together to decide whether it serves as the main candidate for publishing, needs a further polish round (color grade, audio), or whether Exit 2 (full locomotion) is still wanted later.
+next_step_if_pass: Lane B and operator review whether the robe-glide reads as convincing motion without legs, decide on further tuning, a full walk cycle (Stage D), or recombining with the hallway environment.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.

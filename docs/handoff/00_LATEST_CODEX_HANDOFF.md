@@ -1,5 +1,25 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #37 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_ROBE_LOCOMOTION_TEST_V0_1` - Exit 2 bat dau, TEST robe-glide (lac khoi ao), KHONG lo tay/chan.**
+> Ly do: Exit 1 (#43/#44) da xong. Lane B kiem tra lai master reference goc, phat hien "VOID BODY MASS
+> / DRAPED ROBE" la 1 trong 5 Immutable Identity Marks da khoa - Mikage KHONG duoc lo tay/chan rieng.
+> BOOS ruling 2026-07-03: locomotion phai lam bang cach lac CA KHOI AO lien tuc (robe-glide), KHONG xay
+> mesh tay/chan duoi bat ky hinh thuc nao.
+> Scope: them TOI DA 2 bone phu tro (hem-sway, ten trung tinh, KHONG giong tay/chan) lam con cua `root`;
+> `root` di chuyen tien 1-2m + bob nhe + lac trong luong luan phien; khoi ao PHAI luon la 1 mesh kin
+> lien tuc, KHONG ho/tach o bat ky khung hinh nao. Day la TEST kha thi tren nhan vat rieng, chua ket
+> hop moi truong.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_ROBE_LOCOMOTION_TEST_V0_1.md`. Gate:
+> `_tmp/mikage_robe_locomotion_test_v0_1_gate/` - DUNG 2 file (mp4 khong nam trong gate). AGENTS.md
+> exception #45 (Forty-fifth) OPEN.
+> FAIL: khoi ao ho/lo khoang trong goi y chan -> VOID_BODY_MASS_VIOLATION · tao mesh/bone dang tay
+> chan -> LIMB_GEOMETRY_VIOLATION · halo/slit doi mau -> HALO_COLOR_VIOLATION/SLIT_HUE_FAIL · blade
+> animate rieng -> SCOPE_VIOLATION · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. Neu can lo chan moi
+> di chuyen thuyet phuc duoc: DUNG va bao cao, day la quyet dinh canon cua operator, khong tu y giai
+> quyet. NO push/lock/canon/final claim.
+> Sau PASS: Lane B + operator xem xet co thuyet phuc nhu di chuyen khong lo chan khong, quyet dinh
+> tinh chinh them, lam walk cycle chinh thuc (Stage D), hay ket hop lai voi moi truong.
+
 > RESULT 2026-07-03 (#36, exception #44): `MIKAGE_STAGE_E_CINEMATIC_V0_1` = PASS - real cinematic,
 > extended directly from the #43 proof template (no rebuild from raw sources). H.264/yuv420p/
 > 1920x1080/16:9/24fps/7.000s/no-audio (Lane B independently ffprobe-confirmed). Template hash + both
