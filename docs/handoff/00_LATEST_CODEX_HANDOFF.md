@@ -16,26 +16,32 @@
 > as a base for a full Stage D walk cycle later, or proceed with the cinematic lighting pass now queued
 > as exception #47 (see DISPATCH below).
 
-> DISPATCH 2026-07-04 #40 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1` - nang reference/lookdev hien tai tu "mau turntable" len "canh dien anh" bang 6 lop anh sang/vat lieu/camera/grade, KHONG doi hinh khoi/canon mau.**
-> Ly do: BOOS nhan xet reference sheet + hero lookdev dang doc nhu "mau" (turntable, den deu, violet la
-> mau son) chu chua phai "canh". BOOS cung cap spec 6 lop (anh sang / violet emission / khi quyen / vat
-> lieu / may quay / grade). Ruling 2026-07-04: halo TUYET DOI TRANG - zero violet ke ca tu bounce/GI/
-> rim, day la hard constraint khong duoc tu dien giai theo y rieng.
-> Scope: 1 derivative MOI tu `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend` (active premium lookdev
-> reference, duyet 2026-07-03). Key xien + rim lanh + negative fill; khe mat emission that (cho phep
-> bounce nhe len go ma, KHONG duoc cham halo); volumetric haze mat do thap; helmet SSS/roughness-
-> variation/clearcoat; ao choang sheen/fresnel; camera 85mm DOF nong; grade AgX/Filmic crush black +
-> tach rieng dai violet.
-> Brief: `production/character/build_log/LANEA_CODEX_TASK_CINEMATIC_LIGHTING_PASS_V0_1.md`. Spec goc:
-> `production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html`. Gate:
-> `_tmp/mikage_cinematic_lighting_pass_v0_1_gate/` - DUNG 2 file (contact_sheet.png +
-> contact_sheet_review_report.md). AGENTS.md exception #47 (Forty-seventh) OPEN.
-> FAIL: halo bat violet o bat ky diem/frame nao -> HALO_COLOR_VIOLATION · violet wash ca canh hoac dung
-> lam key/fill -> VIOLET_IN_ENVIRONMENT · geometry/rig/topology doi -> SCOPE_VIOLATION · mau canon nen
-> (helmet/ao/slit) drift -> CANON_COLOR_DRIFT · gate sai schema hoac thieu so lieu do mau halo ->
-> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
-> Sau PASS: Lane B + operator xem contact sheet BEFORE/AFTER, quyet dinh dung lam premium cinematic
-> reference moi hay can chinh them 1 vong.
+> DISPATCH 2026-07-04 #40 (BOOS, qua Lane B dieu phoi) - REVISED SAME DAY qua shotlist
+> `MZ-SHOTLIST-THIRDAXIS-S2.html`: **CURRENT_NEXT_TASK = `MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1` - 3-STATE
+> ignition sequence (S0 DORMANT / S1 AWARE / S2 COMBAT) cho short THIRD AXIS S2 COMBAT REVEAL, xuat 3
+> KHUC RIENG (KHONG phai 1 clip lien), KHONG doi hinh khoi/canon mau.**
+> Ly do: reference sheet + hero lookdev dang doc nhu "mau" turntable, chua phai "canh". BOOS cung cap
+> spec ky thuat 6 lop (anh sang / violet emission / khi quyen / vat lieu / may quay / grade) LAM NEN
+> TANG, sau do shotlist THIRD AXIS (ISRC `QT62U2610012`, release 2026-07-09) yeu cau 3 state rieng thay
+> vi 1 cap BEFORE/AFTER: S0 = khe toi + halo matte; S1 = khe full tim + halo VAN matte; S2 = khe full
+> tim + halo GLOW trang (nguon sang thu 2 DUY NHAT duoc phep). Ruling 2026-07-04: halo TUYET DOI TRANG
+> o CA 3 state - zero violet ke ca bounce/GI/rim/glow; halo glow CHI duoc phep dung 1 state (S2).
+> Scope: 1 derivative MOI tu `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend` chua ca 3 state, xuat 3 clip
+> ngan rieng dat ten `_S0_DORMANT` / `_S1_AWARE` / `_S2_COMBAT`, cung 1 goc camera/light-rig/vat lieu/
+> grade (chi khac cuong do emission khe+halo theo state). Void >=70% khung hinh, khong anime/cel/
+> neon-HUD. Lane A CHI render - KHONG cat/ghep/caption/cover-card (thuoc pipeline khac, BOOS tu lam).
+> Brief (authoritative, 3-state): `production/character/build_log/LANEA_CODEX_TASK_CINEMATIC_LIGHTING_PASS_V0_1.md`.
+> Spec ky thuat goc: `production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html`. Shotlist
+> boi canh: `production/character/build_log/MZ-SHOTLIST-THIRDAXIS-S2_REFERENCE_V0_1.html`. Gate:
+> `_tmp/mikage_cinematic_lighting_pass_v0_1_gate/` - DUNG 2 file (contact_sheet.png >=3 frame nhan ro
+> state + contact_sheet_review_report.md). AGENTS.md exception #47 (Forty-seventh) OPEN.
+> FAIL: halo bat violet o bat ky diem/frame/state nao -> HALO_COLOR_VIOLATION · halo glow sai state
+> (S0/S1 glow, hoac S2 khong glow) hoac khe khong dung cuong do theo state -> STATE_MACHINE_VIOLATION ·
+> violet wash ca canh hoac dung lam key/fill -> VIOLET_IN_ENVIRONMENT · geometry/rig/topology doi ->
+> SCOPE_VIOLATION · mau canon nen drift -> CANON_COLOR_DRIFT · anime/cel/speed-line/neon-HUD xuat hien
+> -> STYLE_VIOLATION · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B + operator xem 3 clip S0/S1/S2 truc tiep xac nhan state machine dung thu tu, sau do
+> BOOS tu cat nhip ignition trong edit rieng cho short THIRD AXIS S2 (ngoai scope task nay).
 
 
 > RULING REVISED 2026-07-03 (BOOS): exception #45's earlier "ACCEPT AS-IS" was premature. Closer review:

@@ -1,14 +1,15 @@
 task_id: MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
+task_type: MP4_RENDER_ONLY
 current_step: MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1
 # Dispatched by operator (BOOS) 2026-07-04 #40, via Lane B (Cowork) coordination.
 # Governed by AGENTS.md Forty-seventh controlled exception (MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1 = OPEN).
-# Context: reference sheet + hero lookdev currently read as flat turntable-lit "sample," not cinematic.
-# BOOS supplied a 6-layer lighting/material/camera/grade spec. Applies as a NEW derivative only -
-# geometry/rig/topology and canon base colors (helmet/cloak/slit hue) must not change. Halo is a hard
-# constraint: absolute white/near-white/cool-neutral at every sampled pixel of every frame, zero violet
-# even from bounce/GI/rim.
+# REVISED 2026-07-04 (same day) via shotlist MZ-SHOTLIST-THIRDAXIS-S2.html for track THIRD AXIS:
+# scope is now a 3-STATE ignition sequence (S0 DORMANT / S1 AWARE / S2 COMBAT), output as 3 SEPARATE
+# short clips (not one continuous transitioning clip), each named clearly by state. Halo is a hard
+# constraint at all 3 states: absolute white/near-white/cool-neutral, zero violet even from bounce/GI/
+# rim/glow. Halo glow itself is REQUIRED at S2 only and FORBIDDEN at S0/S1. This task is render-only -
+# no cutting/captions/cover-card/export (that is a separate, later, non-Lane-A pipeline step).
 
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend
@@ -37,20 +38,21 @@ read_only_files:
 
 real_deliverables:
   - production/character/production_actor/rig_derivatives/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1.blend
-  - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_S0_DORMANT.mp4
+  - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_S1_AWARE.mp4
+  - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_S2_COMBAT.mp4
   - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_PROOF.md
 
 allowed_actions:
-  - replace flat/even lighting with a single angled key (~40-50 degrees) plus low fill plus negative fill plus a cool rim/back light separating the cloak from the void background
-  - make the two slits true emission (#8F00FF), strength driven HIGH so slits read FULL violet (near-clip, strongly saturated) - half of the BOOS 2026-07-04 wow-target ("khe full tim + halo glow trang"), allowed to bounce a soft violet hint onto the porcelain cheeks only
-  - make the halo itself glow white strongly: raise the halo material's own emission strength (color stays white/near-white/cool-neutral, never violet) plus selective bloom in grade so it visibly blooms - the other half of the wow-target
-  - add a very low-density volumetric haze appropriate to the render engine in use, and report which engine and why
-  - give the porcelain helmet subtle subsurface scattering plus non-uniform roughness plus a thin clearcoat, and give the cloak a faint sheen/fresnel so the rim catches its edge
-  - set the camera to roughly 85mm with shallow depth of field (f/1.4-2.8) focused on the slits, a slight low angle, and upper-third head placement
-  - grade with AgX or Filmic (report which), crush blacks toward #050508, lift only the violet band's saturation/luminance, add selective bloom on the slits, very light chromatic aberration on violet edges, fine grain, light vignette
-  - render a contact sheet with BEFORE (unmodified turntable render) and AFTER (cinematic) pairs at the same angle(s)
-  - sample halo pixel color at 4 or more points per frame across the contact sheet and report the numeric RGB/hex values
-  - write full findings into the proof and gate report
+  - build one new derivative blend containing all 3 lighting states (S0 DORMANT, S1 AWARE, S2 COMBAT), organized as separate scenes or frame ranges or light-state variants, Codex chooses and reports the approach
+  - apply the shared 6-layer lighting/material/camera/grade base identically across all 3 states (angled key plus low fill plus negative fill plus cool rim, volumetric haze, porcelain SSS/roughness-variation/clearcoat, cloak sheen/fresnel, 85mm shallow DOF camera focused on the slits with void at least 70 percent of frame, AgX or Filmic grade with crushed blacks and an isolated violet band)
+  - set slit emission (#8F00FF) near-off/low-ember at S0, and full/near-clip strongly saturated at S1 and S2, allowing a soft violet bounce onto the porcelain cheeks at S1 and S2 only
+  - keep halo emission at passive matte level at S0 and S1, and raise the halo material's own emission strength only at S2 so it visibly glows white, plus selective bloom on the halo at S2 in the grade step
+  - render 3 separate short clips, one per state, sharing the same camera angle and framing so they can be cut together later
+  - name the 3 clips exactly MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_S0_DORMANT.mp4, _S1_AWARE.mp4, _S2_COMBAT.mp4
+  - render a contact sheet with at least 3 frames, one representative frame per state at the same camera angle, clearly labeled by state
+  - sample halo pixel color at 4 or more points per frame across all 3 states and report the numeric RGB/hex values, and report slit and halo emission strength values separately per state
+  - write full findings into the proof and gate report, with each state's numbers reported separately
   - write the real deliverables into the paths listed under real_deliverables
   - run deterministic verification appropriate to this task type
   - clean .blend1 backups
@@ -59,10 +61,13 @@ allowed_actions:
 forbidden_actions:
   - do not change geometry, rig, bones, or topology of the character in any way
   - do not change canon base colors (helmet stays #F2EEEA, cloak stays void black, slit hue stays #8F00FF)
-  - do not let violet touch, bounce onto, or tint the halo under any circumstance, including physically based bounce/GI/rim lighting
-  - do not wash violet across the whole scene or use violet as a key or fill light
+  - do not let violet touch, bounce onto, or tint the halo under any circumstance or at any state, including physically based bounce/GI/rim/glow/bloom
+  - do not let the halo glow at S0 or S1, and do not leave the halo without glow at S2 - the state order is a hard requirement
+  - do not wash violet across the whole scene or use violet as a key or fill light, at any state
   - do not use teal-orange or any grade direction other than cool-mono plus a separated violet band
   - do not animate the blade, add new mesh or bones, or add an environment/set in this task
+  - do not use anime, cel-shading, speed-line, or neon-HUD styling at any state
+  - do not cut, edit, add captions, add a cover-card, or export a final short - deliverables are the 3 raw state clips only, that work belongs to a separate later pipeline step
   - do not do any final/marketing render or claim production-ready/canon-lock/final status
   - do not push
   - do not modify unrelated files
@@ -71,24 +76,28 @@ forbidden_actions:
 
 pass_conditions:
   - geometry/rig/topology unchanged from source
-  - halo pixel-sampled at 4 or more points per frame shows no violet drift, reported numerically
-  - at least one AFTER frame/angle clearly shows the wow-target together: slits reading strongly saturated/near-full violet AND the halo visibly glowing/blooming white
-  - violet appears only at the slits, soft cheek bounce, and optionally background bokeh
-  - directional lighting with a working rim separates the cloak from the void
-  - porcelain reads subsurface/roughness-variation rather than plastic
-  - grade is cool-mono plus separated violet, not teal-orange
-  - contact sheet includes BEFORE and AFTER pairs at the same angle for direct comparison
-  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
+  - halo pixel-sampled at 4 or more points per frame across all 3 states shows no violet drift, reported numerically
+  - state machine reads correctly: S0 has dim/near-off slits and a matte halo, S1 has full violet slits and a still-matte halo, S2 has full violet slits and a visibly glowing white halo, in clearly ascending intensity order
+  - violet appears only at the slits, soft cheek bounce at S1/S2, and optionally background bokeh
+  - directional lighting with a working rim separates the cloak from the void in all 3 states
+  - porcelain reads subsurface/roughness-variation rather than plastic, consistent across states
+  - grade is cool-mono plus separated violet, not teal-orange, consistent across states
+  - void occupies at least 70 percent of frame in all 3 states, no anime/cel/neon-HUD styling
+  - the 3 clips are named with the exact S0_DORMANT/S1_AWARE/S2_COMBAT suffixes and share the same camera framing
+  - gate folder holds ONLY contact_sheet.png (at least 3 labeled frames, one per state) and contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - any violet pixel is detected on the halo at any sampled point or frame
-  - violet is used as key or fill light or washed across the environment
+  - any violet pixel is detected on the halo at any sampled point, frame, or state
+  - the halo glows at S0 or S1, or fails to glow at S2
+  - slits are not correctly dim at S0 or not correctly full at S1/S2
+  - violet is used as key or fill light or washed across the environment at any state
   - geometry/rig/topology changes outside lighting/material/camera/grade
   - canon base color (helmet/cloak/slit hue) drifts from the locked values
+  - anime/cel-shading/speed-line/neon-HUD styling appears at any state
   - validator or verification command cannot run, or the gate folder contains files other than the two allowed
   - halo violet-bounce cannot be avoided through normal light-rig/material adjustment (report and stop, this is an operator canon decision)
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B and operator review the BEFORE/AFTER contact sheet and decide whether to adopt this as the new premium cinematic reference or open another refinement round.
+next_step_if_pass: Lane B and operator review the 3 state clips directly, confirm the dormant to aware to combat progression reads correctly, then hand off to BOOS's own edit pass to cut the ignition rhythm for the THIRD AXIS S2 short (outside this task's scope).
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.
