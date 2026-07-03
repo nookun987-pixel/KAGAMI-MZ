@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIKAGE ZENITH · CINEMATIC PASS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508; --void-mid:#0d0d14; --void-light:#1a1a28; --void-line:#242436;
+  --porcelain:#f2eeea; --porcelain-dim:#c8c4be; --silver:#a0a0b0; --silver-dim:#6b6b78;
+  --violet:#8f00ff; --violet-ui:#7b2fff; --violet-glow:#9d7fd0; --violet-dim:#3d2e55;
+  --hairline:rgba(160,160,176,0.14); --hairline-accent:rgba(143,0,255,0.30);
+  --font-wordmark:'Cinzel','Shippori Mincho',serif;
+  --font-serif:'Shippori Mincho','Cinzel',serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --track-wordmark:0.42em; --track-label:0.34em; --track-title:0.14em;
+  --glow-violet:0 0 24px rgba(143,0,255,0.35),0 0 4px rgba(157,127,208,0.5);
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--void); color:var(--porcelain-dim);
+  font-family:var(--font-serif); line-height:1.75;
+  -webkit-font-smoothing:antialiased; position:relative;
+  padding:0 0 128px;
+}
+body::after{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:999; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+.wrap{max-width:920px; margin:0 auto; padding:0 32px}
+
+/* ---------- HERO ---------- */
+header{
+  padding:96px 0 48px; text-align:center; position:relative; overflow:hidden;
+}
+.halo{
+  position:absolute; top:-40px; left:50%; transform:translateX(-50%);
+  width:520px; height:520px; pointer-events:none;
+  background:radial-gradient(circle, rgba(143,0,255,0.16) 0%, rgba(157,127,208,0.05) 40%, transparent 70%);
+}
+.wordmark{
+  font-family:var(--font-wordmark); font-weight:600; letter-spacing:var(--track-wordmark);
+  text-transform:uppercase; color:var(--porcelain); font-size:15px; position:relative;
+}
+.kanji{ font-family:var(--font-serif); letter-spacing:.4em; color:var(--silver); font-size:13px; display:block; margin-top:10px }
+.hero-title{
+  font-family:var(--font-serif); font-weight:700; color:var(--porcelain);
+  font-size:clamp(34px,6vw,58px); letter-spacing:var(--track-title); line-height:1.05;
+  margin:40px 0 14px; position:relative;
+}
+.hero-sub{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:var(--track-label);
+  text-transform:uppercase; color:var(--silver); position:relative;
+}
+.hero-sub .sig{ color:var(--violet-glow) }
+
+/* ---------- INTRO ---------- */
+.intro{
+  border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+  padding:32px 0; margin:40px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:32px;
+}
+.intro .col h4{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label);
+  text-transform:uppercase; margin-bottom:12px;
+}
+.intro .now h4{ color:var(--silver-dim) }
+.intro .next h4{ color:var(--violet-glow) }
+.intro p{ font-size:15px; line-height:1.7 }
+.intro .now p{ color:var(--silver) }
+
+/* ---------- SECTION ---------- */
+section{ margin-top:72px }
+.sec-head{ display:flex; align-items:baseline; gap:18px; margin-bottom:8px }
+.sec-num{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.2em; color:var(--violet-glow);
+}
+.sec-title{
+  font-family:var(--font-serif); font-weight:600; color:var(--porcelain);
+  font-size:28px; letter-spacing:var(--track-title);
+}
+.sec-tag{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label);
+  text-transform:uppercase; color:var(--silver-dim); margin-left:auto; white-space:nowrap;
+}
+.sec-lead{ font-size:15px; color:var(--porcelain-dim); margin:2px 0 24px; max-width:70ch }
+
+/* impact meter */
+.impact{ display:inline-flex; gap:3px; margin-left:8px; vertical-align:middle }
+.impact i{ width:16px; height:3px; background:var(--void-line); display:inline-block }
+.impact i.on{ background:var(--violet); box-shadow:0 0 8px rgba(143,0,255,.5) }
+
+/* card list */
+.card{
+  border:1px solid var(--hairline); background:var(--void-mid);
+  padding:22px 24px; margin-bottom:14px; position:relative;
+}
+.card::before{
+  content:''; position:absolute; top:0; left:0; width:2px; height:100%;
+  background:linear-gradient(180deg,var(--violet),transparent);
+}
+.card h5{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--porcelain); margin-bottom:8px;
+}
+.card p{ font-size:14.5px; color:var(--porcelain-dim); line-height:1.7 }
+.card p + p{ margin-top:8px }
+.card .spec{
+  font-family:var(--font-mono); font-size:12px; color:var(--silver);
+  background:var(--void); border:1px solid var(--void-line); padding:2px 8px;
+  display:inline-block; margin:8px 6px 0 0; letter-spacing:.03em;
+}
+.card .spec b{ color:var(--violet-glow); font-weight:400 }
+.warn{ color:var(--porcelain); }
+.warn::before{ content:'! '; color:#c2a85a }
+
+/* grade swatches */
+.grade{ display:flex; flex-wrap:wrap; gap:12px; margin-top:8px }
+.sw{ flex:1; min-width:120px; border:1px solid var(--hairline) }
+.sw .chip{ height:56px }
+.sw .lbl{ padding:8px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:.1em; color:var(--silver) }
+.sw .lbl b{ display:block; color:var(--porcelain); font-size:11px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:2px }
+
+/* checklist */
+.check{ margin-top:16px; border-top:1px solid var(--hairline); padding-top:20px }
+.check .row{
+  display:flex; align-items:flex-start; gap:14px; padding:11px 0;
+  border-bottom:1px solid var(--hairline); font-size:14.5px; color:var(--porcelain-dim);
+}
+.check .box{
+  flex-shrink:0; width:15px; height:15px; border:1px solid var(--silver-dim);
+  margin-top:4px; position:relative;
+}
+.check .row.key .box{ border-color:var(--violet) }
+.check .row.key .box::after{ content:''; position:absolute; inset:3px; background:var(--violet); box-shadow:0 0 6px rgba(143,0,255,.6) }
+.check .n{ font-family:var(--font-mono); font-size:11px; color:var(--silver-dim); flex-shrink:0; width:22px; padding-top:2px }
+
+footer{
+  margin-top:80px; padding-top:28px; border-top:1px solid var(--hairline); text-align:center;
+}
+footer .mz-label{ font-family:var(--font-mono); font-size:10px; letter-spacing:var(--track-label); text-transform:uppercase; color:var(--silver-dim) }
+footer .sig-dot{ display:inline-block; width:5px; height:5px; border-radius:999px; background:var(--violet); box-shadow:var(--glow-violet); margin:0 8px; vertical-align:middle }
+
+@media(max-width:640px){
+  .intro{ grid-template-columns:1fr; gap:24px }
+  .sec-tag{ display:none }
+  .wrap{ padding:0 20px }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="halo"></div>
+  <div class="wordmark">MIKAGE ZENITH<span class="kanji">鏡 · 天頂</span></div>
+  <h1 class="hero-title">CINEMATIC PASS</h1>
+  <div class="hero-sub">SETUP SHEET · KHUNG → ĐIỆN ẢNH · <span class="sig">SIGNAL = ÁNH SÁNG</span></div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <div class="col now">
+      <h4>ĐANG CÓ — KHUNG</h4>
+      <p>Reference sheet sạch: helmet sứ, 2 khe tín hiệu, vành halo, áo choàng void. Đèn đều kiểu turntable — đọc là "mẫu", chưa phải "cảnh". Violet đang là màu sơn, nền đen đang trống.</p>
+    </div>
+    <div class="col next">
+      <h4>CẦN THÊM — 3 LỚP</h4>
+      <p>Tương phản có hướng · Violet phát sáng thật · Khí quyển cho void có chiều sâu. Cộng grade + hậu kỳ. Không đổi hình khối nhân vật — chỉ thêm ánh sáng lên cái đã đúng.</p>
+    </div>
+  </div>
+
+  <!-- 01 LIGHTING -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <span class="sec-title">ÁNH SÁNG</span>
+      <span class="sec-tag">tác động<span class="impact"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+    </div>
+    <p class="sec-lead">Đòn lớn nhất. Điện ảnh = tỉ lệ sáng/tối mạnh và có hướng, không phải soi đều. Cho thân chìm vào đen là được phép — mắt người tự lấp phần tối.</p>
+
+    <div class="card">
+      <h5>KEY — một nguồn, xiên, quyết đoán</h5>
+      <p>Area light xiên ~40–50° một bên, hơi cao hơn đầu. Đây là nguồn kể chuyện. Bỏ HDRI phủ đều; nếu giữ HDRI thì kéo strength xuống rất thấp chỉ để giữ chút bounce.</p>
+      <span class="spec">Key ratio <b>~1</b></span><span class="spec">Fill <b>1/8 – 1/16</b></span><span class="spec">size lớn = mềm, nhỏ = gắt</span>
+    </div>
+    <div class="card">
+      <h5>RIM — tách bóng khỏi void</h5>
+      <p>Nhân vật áo choàng đen trên nền đen sẽ biến mất nếu thiếu rim. Đặt 1–2 đèn phía sau lệch, màu lạnh (trắng hơi xanh hoặc pha tím) để viền porcelain + vành halo bật ra khỏi bóng tối.</p>
+      <span class="spec">màu rim <b>lạnh</b> ≠ màu key</span><span class="spec">rim mạnh hơn fill</span>
+    </div>
+    <div class="card">
+      <h5>NEGATIVE FILL — nhớ đòn ngược</h5>
+      <p>Thêm mảng đen (flag/plane tối) phía đối diện key để hút sáng, làm một bên mặt sứ tối hẳn. Đây là thứ tạo khối 3D cho porcelain — không có nó, mặt phẳng lì.</p>
+    </div>
+  </section>
+
+  <!-- 02 VIOLET EMISSION -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <span class="sec-title">VIOLET = NGUỒN SÁNG</span>
+      <span class="sec-tag">tác động<span class="impact"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+    </div>
+    <p class="sec-lead">Chữ ký brand. Canon: violet là <b style="color:var(--violet-glow);font-weight:400">signal</b>, không bao giờ fill. Cách "điện ảnh hoá" đúng nhất = cho tín hiệu tự phát sáng và hắt ra môi trường, chứ không tô màu lên bề mặt.</p>
+
+    <div class="card">
+      <h5>KHE MẮT — emission thật</h5>
+      <p>2 khe = Emission shader màu <span style="font-family:var(--font-mono);color:var(--violet-glow)">#8f00ff</span>, strength cao đủ để clip trắng ở lõi. Bật để nó hắt tím lên gò má sứ và mặt trong vành halo — ánh phản chiếu mới là thứ bán được cảm giác "sống".</p>
+      <span class="spec">emission <b>10–50</b> tùy exposure</span><span class="spec">lõi clip → bloom đẹp</span>
+    </div>
+    <div class="card">
+      <h5>VÀNH HALO — để nó bắt sáng</h5>
+      <p>Vành halo là hình khối chữ ký. Cho nó emissive rất nhẹ hoặc để rim quét qua để có một đường sáng mảnh. Đừng cho sáng đều cả vòng — chỉ một cung bắt sáng, phần còn lại chìm.</p>
+    </div>
+    <div class="card">
+      <h5>KỶ LUẬT MÀU</h5>
+      <p class="warn">Violet chỉ ở khe mắt + phản chiếu + hint trên halo. Không wash tím cả cảnh, không đèn tím làm key. Sai điểm này là rơi ra khỏi canon, thành "neon" — thứ brand cấm.</p>
+    </div>
+  </section>
+
+  <!-- 03 ATMOSPHERE -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <span class="sec-title">KHÍ QUYỂN</span>
+      <span class="sec-tag">tác động<span class="impact"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+    </div>
+    <p class="sec-lead">Biến void từ "trống" thành "không gian". Không khí bám ánh sáng = chiều sâu điện ảnh tức thì.</p>
+
+    <div class="card">
+      <h5>HAZE MỎNG — volumetric</h5>
+      <p>Volume Scatter rất loãng phủ scene (Cycles: World volume hoặc box bao cảnh; Eevee: bật Volumetric + Volumetric Shadows). Rim và glow tím sẽ bám vào không khí — đây là thứ làm ảnh "thở".</p>
+      <span class="spec">density <b>rất thấp</b></span><span class="spec">Eevee: bật Volumetric Shadows</span>
+    </div>
+    <div class="card">
+      <h5>GOD RAY QUA HALO</h5>
+      <p>Cho một chùm sáng lạnh xuyên từ sau qua vành halo vào lớp haze → tia sáng cắt ngang khung. Vừa đẹp vừa đúng ngôn ngữ "sacred-tech" của IP.</p>
+    </div>
+    <div class="card">
+      <h5>ĐỔ SÀN — grounding</h5>
+      <p>Nếu vẫn để nền thuần đen, thêm một mảng phản chiếu mờ dưới chân (floor roughness cao, reflect nhẹ) để nhân vật có "đứng ở đâu đó" thay vì trôi. Tuỳ chọn — giữ nếu muốn cảm giác đài/bệ.</p>
+    </div>
+  </section>
+
+  <!-- 04 MATERIAL -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <span class="sec-title">VẬT LIỆU</span>
+      <span class="sec-tag">tác động<span class="impact"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+    </div>
+    <p class="sec-lead">Sứ phải ra sứ, đừng ra nhựa. Nhựa = roughness đều + không SSS. Chi tiết cực nhỏ mới lên "máy quay thật".</p>
+
+    <div class="card">
+      <h5>PORCELAIN — helmet</h5>
+      <p>Base <span style="font-family:var(--font-mono);color:var(--porcelain)">#f2eeea</span>. Thêm Subsurface nhẹ (radius nhỏ, tint hơi ấm) cho cạnh mỏng "ăn" sáng. Roughness KHÔNG phẳng — noise/map để có vân, vệt tay, xước cực nhỏ. Clearcoat mỏng cho lớp men.</p>
+      <span class="spec">SSS <b>nhẹ</b></span><span class="spec">roughness <b>có biến thiên</b></span><span class="spec">clearcoat mỏng</span>
+    </div>
+    <div class="card">
+      <h5>ÁO CHOÀNG — void fabric</h5>
+      <p>Đen tuyệt đối = mất khối. Cho sheen/velvet nhẹ + fresnel để mép vải bắt rim, giữ nếp gấp đọc được mà thân vẫn chìm. Vải là nơi rim làm việc nhiều nhất.</p>
+    </div>
+  </section>
+
+  <!-- 05 CAMERA -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <span class="sec-title">MÁY QUAY</span>
+      <span class="sec-tag">tác động<span class="impact"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+    </div>
+    <p class="sec-lead">Ống kính + góc + DOF định cảm xúc. Straight-on = catalog. Lệch một chút = điện ảnh.</p>
+
+    <div class="card">
+      <h5>ỐNG KÍNH & DOF</h5>
+      <p>~85mm cho chất chân dung nén, ít méo. Khẩu mở (f/1.4–2.8) → DOF nông, focus chốt vào khe mắt, vành halo và nền tan mềm. Bokeh của điểm sáng tím phía sau là điểm cộng.</p>
+      <span class="spec">focal <b>85mm</b></span><span class="spec">f/<b>1.4–2.8</b></span><span class="spec">focus → khe mắt</span>
+    </div>
+    <div class="card">
+      <h5>GÓC & BỐ CỤC</h5>
+      <p>Hơi low-angle → uy nghi, "đài tưởng niệm", hợp White Monolith Empire (Order/Stasis). Muốn bất an thì dutch nhẹ 2–4°. Đặt đầu ở upper-third, chừa void thở phía đối diện hướng nhìn.</p>
+      <span class="spec">low-angle nhẹ</span><span class="spec">rule of thirds</span><span class="spec">negative space</span>
+    </div>
+  </section>
+
+  <!-- 06 GRADE -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <span class="sec-title">GRADE + HẬU KỲ</span>
+      <span class="sec-tag">tác động<span class="impact"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+    </div>
+    <p class="sec-lead">Lớp phủ cuối. KHÔNG teal-orange — brand là mono lạnh + một dải tím. View transform Filmic/AgX để highlight không cháy gắt.</p>
+
+    <div class="grade">
+      <div class="sw"><div class="chip" style="background:#050508"></div><div class="lbl"><b>VOID</b>#050508 · crush black về đây</div></div>
+      <div class="sw"><div class="chip" style="background:#f2eeea"></div><div class="lbl"><b>PORCELAIN</b>#f2eeea · điểm sáng nhất</div></div>
+      <div class="sw"><div class="chip" style="background:#8f00ff"></div><div class="lbl"><b>SIGNAL</b>#8f00ff · chỉ nhấc dải này</div></div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h5>DỰNG GRADE</h5>
+      <p>Crush black kéo bóng tối về sát <span style="font-family:var(--font-mono)">#050508</span> — giữ vùng "không nhìn thấu được", đó là chất điện ảnh. Nền mono lạnh, chỉ nhấc riêng saturation/luminance của dải tím để signal nổi mà cảnh vẫn kiềm chế.</p>
+      <span class="spec">view <b>AgX / Filmic</b></span><span class="spec">crush blacks</span><span class="spec">mono + tím tách</span>
+    </div>
+    <div class="card">
+      <h5>HẬU KỲ — mỏng thôi</h5>
+      <p>Bloom vào khe mắt + halo (thấp threshold, bán kính vừa). Chromatic aberration cực nhẹ, ưu tiên rìa tím. Film grain mịn (khớp mz-grain của web). Vignette nhẹ dồn mắt vào helmet. Lens distortion tí ti cho "kính thật".</p>
+      <span class="spec">bloom <b>chọn lọc</b></span><span class="spec">CA <b>subtle</b></span><span class="spec">grain mịn</span><span class="spec">vignette</span>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">✓</span>
+      <span class="sec-title">CHECKLIST BẬT CẢNH</span>
+    </div>
+    <p class="sec-lead">Theo thứ tự. <span style="color:var(--violet-glow)">Ô tím</span> = đòn mang lại nhiều "điện ảnh" nhất — làm trước.</p>
+    <div class="check">
+      <div class="row key"><span class="n">01</span><span class="box"></span><span>Bỏ đèn đều → 1 key xiên + fill rất thấp + negative fill</span></div>
+      <div class="row key"><span class="n">02</span><span class="box"></span><span>Rim lạnh sau lưng tách áo choàng khỏi nền void</span></div>
+      <div class="row key"><span class="n">03</span><span class="box"></span><span>Khe mắt = Emission #8f00ff, hắt tím lên sứ + halo</span></div>
+      <div class="row"><span class="n">04</span><span class="box"></span><span>Volumetric haze loãng phủ scene</span></div>
+      <div class="row"><span class="n">05</span><span class="box"></span><span>God ray lạnh xuyên vành halo</span></div>
+      <div class="row"><span class="n">06</span><span class="box"></span><span>Porcelain: SSS nhẹ + roughness có biến thiên + clearcoat</span></div>
+      <div class="row"><span class="n">07</span><span class="box"></span><span>Áo choàng: sheen + fresnel bắt rim</span></div>
+      <div class="row key"><span class="n">08</span><span class="box"></span><span>Camera 85mm, f/1.4–2.8, focus khe mắt, low-angle nhẹ</span></div>
+      <div class="row"><span class="n">09</span><span class="box"></span><span>Bố cục upper-third + negative space</span></div>
+      <div class="row key"><span class="n">10</span><span class="box"></span><span>Grade: AgX + crush black + tách dải tím</span></div>
+      <div class="row"><span class="n">11</span><span class="box"></span><span>Post: bloom + CA nhẹ + grain + vignette</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="mz-label">MIKAGE ZENITH STUDIO<span class="sig-dot"></span>CINEMATIC PASS<span class="sig-dot"></span>KHÔNG ĐỔI CANON · CHỈ THÊM ÁNH SÁNG</div>
+  </footer>
+
+</div>
+</body>
+</html>
