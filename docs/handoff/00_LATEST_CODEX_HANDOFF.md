@@ -1,5 +1,21 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #34 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_HALLWAY_ENVIRONMENT_V0_1` - xay MOI 1 environment hanh lang toi (loai asset MOI, chua tung co).**
+> Ly do: Stage E can canh "hanh lang toi" nhung repo CHUA TUNG co asset moi truong nao - moi render tu
+> truoc gio chi dung nen void-black phang. BOOS ruling 2026-07-03: mo task rieng xay hanh lang TRUOC khi
+> lam Exit 1 (cinematic that).
+> Scope: 1 file .blend MOI, doc lap (production/environment/sets/), hanh lang toi don gian, vat lieu
+> void-black/graphite, KHONG duoc co violet o bat ky dau trong moi truong. Test ty le TINH (khong
+> animation): 2 goc - hanh lang trong / hanh lang + nhan vat (tham chieu doc-only tu
+> MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend, khong sua file do).
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_HALLWAY_ENVIRONMENT_V0_1.md`. Gate:
+> `_tmp/mikage_hallway_environment_v0_1_gate/` - DUNG 2 file. AGENTS.md exception #42 (Forty-second) OPEN.
+> FAIL: sua file nhan vat goc -> CHARACTER_FILE_MODIFIED · violet xuat hien trong moi truong ->
+> VIOLET_IN_ENVIRONMENT · set khong doc lap duoc -> SET_NOT_STANDALONE · gate sai schema ->
+> VALIDATOR_SCHEMA_MISMATCH. NO animation/camera push-in/slit-ignite trong task nay. NO push/lock/canon.
+> Sau PASS: Lane B soan task Exit 1 that (slit dormant->ignite, camera push-in cham, nghieng dau/dich
+> trong luong, cut to black) tren set nay.
+
 > RESULT 2026-07-03 (#33, exception #41): `MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1` = PASS. All 6 axial
 > poses (neutral/quarter_turn/forward_bend/side_pose/head_turn/backward_lean) PASS individually; rig
 > stayed 7/7 bones, no forbidden limb/hand poses attempted, all preservation hashes unchanged, halo

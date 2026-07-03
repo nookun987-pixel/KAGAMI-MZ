@@ -1232,3 +1232,34 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - No canon-lock. No asset-lock. No production-rig-ready claim (label CANDIDATE / NOT CANON-LOCKED). No push. No deploy. No limb-bone/mesh creation in this task. Stop after proof delivery for owner review.
   - On SSOT conflict or scope drift: stop and report.
   - RESULT 2026-07-03: PASS. Lane B independently verified: gate exactly 2 files, `python .mikage/tools/verify_output.py` = PASS, no `.blend1`, geometry/material/new-rig-rest/old-armature-plus-29-legacy hashes all reported unchanged, rig bone count unchanged (7/7, 0 new/repositioned/removed), no forbidden limb/hand poses attempted. All 6 poses (neutral, quarter_turn, forward_bend, side_pose, head_turn, backward_lean) rendered and individually PASS per Codex's report; halo achromatic/white and slit near `#8F00FF` sampled at every pose. Contact sheet visually inspected directly: 5/6 panels read clean and match the report. `side_pose` shows an unexplained compositing difference — the head/halo appears as a smaller partial inset in the top-left corner rather than the top-center full-size framing used in the other 5 panels, and the cloak reads as a more pronounced S-curve than the reported "15° lateral bend" alone would suggest. Operator reviewed this directly and ruled 2026-07-03: ACCEPT AS-IS — technical pass conditions (hashes, rigid attachment, halo/slit color) are all satisfied; the framing difference is noted for awareness but not treated as a deformation failure. No Codex follow-up requested. Commit local `411b3d7` (per Codex report, not independently git-verified — sandbox cannot reach D:). Not pushed. This exception is now CLOSED / delivered. OPEN NOTE for future work: if `side_pose` framing/S-curve recurs or worsens in a later rig pass, revisit before trusting it blindly.
+
+- Forty-second controlled exception is open:
+  - `MIKAGE_HALLWAY_ENVIRONMENT_V0_1 = OPEN`
+  - Roadmap Stage E's cinematic proof shot describes Mikage standing in a dark hallway, but a full repo
+    audit found NO environment/set asset has ever been built — every character render to date uses only
+    a plain void-black `#050508` backdrop (the locked lookdev recipe). BOOS ruling 2026-07-03: open a
+    SEPARATE task to build a simple, minimal, void-black corridor environment FIRST, before attempting
+    Exit 1 (the actual cinematic proof shot). This is a NEW asset category (environment/set), distinct
+    from all prior character-rig work, and must stay standalone (reusable without depending on the
+    character file).
+  - Allowed inputs: create new environment files under `production/environment/` (new tree, does not
+    exist yet). Read-only reference (scale/compatibility check ONLY, no modification): `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend` (neutral pose).
+  - REQUIRED BUILD: one new standalone environment `.blend` — a simple, dark, elongated corridor with
+    perspective convergence, minimal wall/floor/ceiling geometry, tonal void-black/graphite materials
+    (no porcelain-bright surfaces), one dim cold key light along the corridor axis plus optional rim/
+    fill for depth legibility. HARD BAN: no violet anywhere in the environment's materials or lighting
+    (violet stays reserved exclusively for the character's two sensor slits per the halo/violet canon
+    ruling); no neon, no colored wash, no cyberpunk lighting, no clutter/fantasy/gaming-HUD elements.
+  - REQUIRED COMPATIBILITY CHECK (static only, NOT the cinematic itself): in a separate working
+    scene/file (not modifying either source), place the reference character (neutral pose) at a marked
+    position in the corridor and render two static views — empty corridor, and corridor with the
+    character — same camera, no animation, no push-in, to confirm scale and framing read correctly.
+  - LOCKED: the character reference file is read-only in this task (report CHARACTER_FILE_MODIFIED = NO);
+    the new environment set must be fully standalone (usable without the character file being present).
+  - SUCCESS: environment set exists as a standalone file; no violet anywhere in its materials/lighting;
+    character reference file hash unchanged; two-view compatibility contact sheet renders clean with
+    plausible character scale/framing; gate folder holds exactly `contact_sheet.png` + `contact_sheet_review_report.md`; `python .mikage\tools\verify_output.py` prints PASS; no `.blend1` remains.
+  - Allowed outputs (candidate only): `production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend` + `production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_CONTACT_SHEET.png` + `..._PROOF.md`; gate folder `_tmp/mikage_hallway_environment_v0_1_gate/` holds ONLY the two allowed files.
+  - FAIL: character reference file modified in any way → `BLOCKER = CHARACTER_FILE_MODIFIED`; violet appears anywhere in the environment's materials or lighting → `BLOCKER = VIOLET_IN_ENVIRONMENT`; the set cannot stand alone without the character file → `BLOCKER = SET_NOT_STANDALONE`; gate mis-schema'd → `BLOCKER = VALIDATOR_SCHEMA_MISMATCH`.
+  - No canon-lock. No asset-lock. No production-ready or canon-location claim (label CANDIDATE / NOT CANON-LOCKED). No animation, no camera push-in, no slit-ignite animation in this task (that is Exit 1, a separate future task). No push. No deploy. Stop after proof delivery for owner review.
+  - On SSOT conflict or scope drift: stop and report.

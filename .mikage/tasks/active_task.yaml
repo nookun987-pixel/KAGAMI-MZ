@@ -1,35 +1,31 @@
-task_id: MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1
+task_id: MIKAGE_HALLWAY_ENVIRONMENT_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #33, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-first controlled exception (MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1 = OPEN).
-# Rebuild #40 (PASS) produced a 7-bone axial-only rig (no limb bones - mesh has no separate arm/leg
-# geometry per audit #39). Roadmap Stage B's original 8-pose list needs arms/legs (arms raised, left
-# step, right step) which are physically impossible on this rig. This task scopes Stage B DOWN to 6
-# poses achievable purely with the 7 axial bones, to sanity-check deformation before any locomotion/
-# limb work is even considered.
+current_step: MIKAGE_HALLWAY_ENVIRONMENT_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #34, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Forty-second controlled exception (MIKAGE_HALLWAY_ENVIRONMENT_V0_1 = OPEN).
+# Roadmap Stage E's cinematic proof shot needs a dark hallway, but no environment/set asset has ever
+# been built in this repo (every character render so far is void-black backdrop only). This task
+# builds a standalone corridor environment set and does a static scale/compatibility check against
+# the rebuilt character rig (read-only reference, no character file modification). Animation/camera
+# push-in/slit-ignite for the actual Exit 1 cinematic proof shot is explicitly out of scope here.
 
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_STAGE_B_AXIAL_DEFORMATION_V0_1.md
-  - docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
+  - production/character/build_log/LANEA_CODEX_TASK_HALLWAY_ENVIRONMENT_V0_1.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_stage_b_axial_deformation_v0_1_gate
+output_folder_allowed: _tmp/mikage_hallway_environment_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
-  - docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -37,54 +33,49 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1.blend
-  - production/character/reviews/MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_STAGE_B_AXIAL_DEFORMATION_V0_1_PROOF.md
+  - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
+  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_CONTACT_SHEET.png
+  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_PROOF.md
 
 allowed_actions:
-  - open MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend and save a new derivative under the real_deliverables blend path
-  - pose the 7 existing bones of MIKAGE_axial_rig_v0_1 only (root, pelvis, spine_01, spine_02, chest, neck, head) - no new bones, no bone repositioning
-  - create exactly 6 poses - neutral, quarter_turn, forward_bend, side_pose, head_turn, backward_lean - each using only rotations on the existing axial bones as described in the brief
-  - render a contact sheet showing all 6 poses clearly labeled
-  - write full per-pose findings (tearing/clipping presence and location, helmet/halo/blade attachment integrity, halo color sample, slit color sample) into the proof and gate report
+  - create a new standalone environment blend file under production/environment/sets/ containing a simple, dark, elongated corridor (walls/floor/optional ceiling) with perspective convergence, tonal void-black/graphite materials, and a minimal cold key light plus optional rim/fill
+  - reference (read-only, in a separate working scene) the character file solely to check scale and framing - no modification of the character file
+  - render exactly two static views: empty corridor, and corridor with the character placed at a marked position, same camera, no animation
+  - write full findings (set geometry description, materials/colors used, confirmation of no violet anywhere, character scale/framing assessment) into the proof and gate report
   - write the real deliverables into the paths listed under real_deliverables
-  - run deterministic verification (geometry/material hashes unchanged outside pose data, bone count of new rig still 7, old armature and 29 legacy meshes untouched)
+  - run deterministic verification (character reference file hash unchanged, no violet in environment materials/lighting, set is standalone)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not create any new bone (limb or otherwise) on MIKAGE_axial_rig_v0_1
-  - do not reposition, add, or remove any of the 7 existing bones
-  - do not attempt arms_raised, left_step, right_step, or a hand-gripped blade_hold pose - no bone/mesh exists for these; if this seems to require new geometry, stop and report instead of improvising
-  - do not use, modify, or delete the old armature MIKAGE_initial_armature_scaffold or any of its 29 bound legacy meshes
-  - do not change the geometry, silhouette, or proportions of any visible mesh
-  - do not change any material or color, including the halo (must remain white at every pose) or the two slit emission materials (must remain violet near #8F00FF at every pose)
-  - do not perform any final/marketing render
-  - do not claim canon lock, asset lock, or production-rig-ready (label CANDIDATE / NOT CANON-LOCKED)
+  - do not modify the character reference file MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend in any way
+  - do not use violet (or any color near #8F00FF/#7B2FFF) anywhere in the environment's materials or lighting
+  - do not use neon, colored wash, cyberpunk lighting, gaming-HUD elements, or clutter in the environment
+  - do not animate anything - no camera push-in, no slit-ignite animation, no character motion (that is a separate future Exit 1 task)
+  - do not make the environment set dependent on the character file to open/render standalone
+  - do not do any final/marketing render
+  - do not claim canon-lock, asset-lock, production-ready, or canon-location status (label CANDIDATE / NOT CANON-LOCKED)
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - all 6 poses (neutral, quarter_turn, forward_bend, side_pose, head_turn, backward_lean) are rendered and each is individually reported PASS or FAIL
-  - no severe tearing/clipping at any pose, or any such issue is clearly flagged with its location rather than silently ignored
-  - helmet, halo, and blade remain rigidly attached to their parent bone (head for helmet/halo, root for blade) at every pose with no visible separation or drift
-  - halo renders white and slit color samples near #8F00FF at every pose
-  - new rig MIKAGE_axial_rig_v0_1 still has exactly 7 bones, unchanged positions
-  - old armature and its 29 legacy meshes are completely untouched
-  - geometry and materials of all visible meshes are unchanged outside pose/keyframe data
+  - a standalone environment blend file exists under production/environment/sets/ with a simple dark corridor set
+  - no violet appears anywhere in the environment's materials or lighting
+  - the character reference file hash is unchanged
+  - two static views (empty corridor, corridor with character) are rendered and show plausible character scale and framing
+  - the environment set can stand alone without the character file present
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - one or more poses show severe tearing/clipping that cannot be resolved within pose/weight-only scope (report BLOCKER = STAGE_B_DEFORMATION_FAIL, name the pose and region, do not alter geometry to compensate)
-  - helmet, halo, or blade separates or drifts from its parent bone at any pose (report BLOCKER = RIGID_ATTACH_FAIL)
-  - the halo changes color (report BLOCKER = HALO_COLOR_VIOLATION)
-  - the old armature or any of its 29 legacy meshes is touched, or the new rig's bone count/positions change (report BLOCKER = SCOPE_VIOLATION)
+  - the character reference file is modified in any way (report BLOCKER = CHARACTER_FILE_MODIFIED)
+  - violet appears anywhere in the environment's materials or lighting (report BLOCKER = VIOLET_IN_ENVIRONMENT)
+  - the set cannot function as a standalone file without the character file (report BLOCKER = SET_NOT_STANDALONE)
   - validator or verification command cannot run (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B reviews the proof; operator decides whether to open a future limb-bone/mesh task (for the full 8-pose roadmap Stage B) or proceed to Exit 1/Exit 2 of the Lane A Roadmap constrained to axial-only motion.
+next_step_if_pass: Lane B reviews the proof; if approved, Lane B drafts the Exit 1 cinematic proof shot task (slit dormant-to-ignite animation, slow camera push-in, subtle head tilt/weight shift, cut to black) using this environment set.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.
