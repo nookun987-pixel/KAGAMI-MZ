@@ -1,98 +1,76 @@
-task_id: MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1
+task_id: MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #28, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Thirty-sixth controlled exception (MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1 = OPEN).
-# Stage A ("Integration") of MIKAGE_LANE_A_ROADMAP.html: apply the APPROVED V0.8.1 premium lookdev
-# material set onto the ASSET-LOCKED V0.14 geometry, producing ONE unified production file. No geometry
-# change from V0.14. No re-tuning of the V0.8.1 material recipe (transplant as approved).
+current_step: MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #29, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Thirty-seventh controlled exception (MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1 = OPEN).
+# READ-ONLY AUDIT before Stage B (8-pose deformation test) of MIKAGE_LANE_A_ROADMAP.html. Prior rig-repair
+# report (LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md) ran on a DIFFERENT, older blend with entirely
+# different mesh names. Unknown whether the CURRENT production file (MIKAGE_PRODUCTION_RIG_LOOKDEV_
+# INTEGRATION_V0_1.blend, from exception #36) inherits any armature at all. This task only inspects and
+# reports - no edits, no pose, no render, no new blend.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend
-  - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.md
-  - production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_APPROVAL.md
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md
-  - docs/handoff/HALO_RING_RULING_2026-07-03.md
-  - design_system/mikage-cine-color-contract.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - docs/reports/LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_production_rig_lookdev_integration_v0_1_gate
+output_folder_allowed: _tmp/mikage_production_rig_armature_audit_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_STANDING_HERO_POLISH_V0_14.blend
-  - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend
-  - production/character/reviews/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1_APPROVAL.md
-  - production/character/reviews/MIKAGE_STANDING_HERO_POLISH_V0_14_ASSET_LOCK.md
-  - docs/handoff/HALO_RING_RULING_2026-07-03.md
-  - design_system/mikage-cine-color-contract.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
+  - docs/reports/LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_PROOF.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1_PROOF.md
+  - docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
 
 allowed_actions:
-  - create a new derivative blend using MIKAGE_STANDING_HERO_POLISH_V0_14.blend as the geometry source (do not overwrite V0.14)
-  - report BASE_SELECTED (both source files) and BODY_HASH_BEFORE/AFTER for V0.14 (must be identical - no geometry edit)
-  - apply the approved V0.8.1 material set (porcelain shell, graphite underlayer, blade material, two slit emission materials) onto the V0.14 geometry, node-for-node as approved, with no re-tuning of the material recipe
-  - report which V0.8.1 materials were applied to which V0.14 objects/slots
-  - if any V0.8.1 material cannot be transplanted due to a technical incompatibility (different topology, missing slot, different node names), keep the corresponding V0.14 material unchanged for that part and FLAG it explicitly in the proof rather than inventing new material
-  - report SLIT_HUE_PIXEL_SAMPLE and HALO_COLOR_CHECK on the front view and the helmet close-up view
-  - render a 4-panel contact sheet (front, three-quarter, strict side, helmet close-up), 3600x900, matching the existing V0.14/turnaround framing conventions, with the integrated material
-  - write the two verify artifacts into the gate folder - contact_sheet.png and contact_sheet_review_report.md; the gate folder must contain ONLY these two files
-  - write the real deliverables (derivative blend, contact sheet PNG, proof) into the paths listed under real_deliverables
-  - run deterministic verification (Blender reopen, geometry + transform + pose + camera + blade-position + halo-geometry hashes unchanged vs V0.14, pixel sample on rendered output for both slit hue and halo color)
-  - clean .blend1 backups
-  - commit local changes only
+  - open MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend read-only (in memory) to inspect its armature/rig state
+  - report whether an Armature object exists, its name, and whether it matches MIKAGE_initial_armature_scaffold or is different/new
+  - list every deforming mesh, its Armature-modifier target, and its vertex groups (count and names) to determine rigid-single-bone vs soft-multi-bone binding
+  - report whether joint-equivalent bones exist for shoulder/elbow/hip/knee/spine (by name or functional equivalent)
+  - report how the blade and halo are bound (bone, or direct parent without armature)
+  - write the full audit answers into docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
+  - use an existing image (e.g. from the V0.1 proof/contact sheet) for the gate's contact_sheet.png if no new render is needed - do not render anything new
+  - write contact_sheet_review_report.md summarizing the audit findings for the gate
+  - clean any .blend1 that Blender creates while opening the file for inspection
+  - commit local changes only (new report file only - no blend changes)
 
 forbidden_actions:
-  - do not change ANY geometry, pose, camera angle, blade position, or halo geometry - BODY_HASH must be UNCHANGED versus V0.14
-  - do not move, rotate, or scale any object, camera, or light
-  - do not re-tune or re-author the V0.8.1 material recipe - apply it as already approved
-  - do not modify or overwrite the V0.14 or V0.8.1 source blends or their renders
-  - do not invent a new material for any part where V0.8.1 has no equivalent - flag it instead
-  - do not fix any mesh or lighting issue unrelated to this material-integration task - if spotted, FLAG it in the proof only
-  - do not add text, lyrics, logo, or watermark
-  - do not use warm colors, neon fill, full-screen violet wash, anime styling, human face or skin, or fake UI
-  - do not put violet anywhere except the two slits
-  - do not render the halo ring as anything other than white (per HALO_RING_RULING_2026-07-03)
-  - do not raise global scene exposure
-  - do not claim canon lock, asset lock, final pass, production ready, or verified (label CANDIDATE / NOT CANON-LOCKED)
+  - do not create, delete, or modify any object, mesh, armature, bone, vertex group, or material in the audited blend
+  - do not pose or render anything new
+  - do not save the audited blend under any name (open read-only / discard on close)
+  - do not begin any rig-upgrade or weight-paint work in this task - audit and report only
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - new derivative blend reopens cleanly; both V0.14 and V0.8.1 source blends are byte-identical / unmodified
-  - BODY_HASH, all object transforms, pose, camera, blade position, and halo geometry are UNCHANGED versus V0.14
-  - SLIT_HUE_PIXEL_SAMPLE on the front view and helmet close-up reads violet near #8F00FF (target blue-dominant #9D0CEB/#9203E9 per V0.8.1 approval), not magenta, on the actual rendered pixels
-  - VIOLET_OUTSIDE_TWO_SLITS = NO
-  - HALO_COLOR_CHECK = WHITE on both views
-  - blade renders intact and attached, not detached or missing
-  - contact sheet + proof written to the real_deliverables paths; output remains CANDIDATE only
+  - the audited blend is byte-identical before and after (ARMATURE_AUDIT_FILE_MODIFIED = NO)
+  - all 7 audit questions in the brief are answered with specifics (names, counts) in docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md
   - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
+  - no .blend1 remains
 
 stop_conditions:
-  - geometry, pose, camera, blade position, or halo geometry would have to change to complete the task (report BLOCKER = INTEGRATION_GEOMETRY_DRIFT)
-  - the slits still read magenta or violet spills outside the slits after integration (report BLOCKER = SLIT_HUE_FAIL)
-  - the halo renders as anything other than white (report BLOCKER = HALO_COLOR_VIOLATION)
-  - the V0.8.1 material cannot be technically transplanted onto V0.14 geometry (report BLOCKER = MATERIAL_TRANSPLANT_INCOMPATIBLE, with details)
+  - the audited blend cannot be opened/read (report BLOCKER = FILE_UNREADABLE with details)
+  - the audited blend was modified in any way (report BLOCKER = AUDIT_FILE_MODIFIED)
   - validator or verification command cannot run (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B drift-check (hashes unchanged? hue + halo clean on actual pixels? no drift?) plus operator review; if approved, this becomes the unified production rig for Stage B (deformation test).
-next_step_if_fail: stop and report BLOCKER reason only (V0.14 and V0.8.1 stay untouched; e.g. INTEGRATION_GEOMETRY_DRIFT / SLIT_HUE_FAIL / HALO_COLOR_VIOLATION / MATERIAL_TRANSPLANT_INCOMPATIBLE / VALIDATOR_SCHEMA_MISMATCH). Do not open a new scope.
+next_step_if_pass: Lane B reads the audit report and drafts a scoped rig-upgrade task (soft weight-paint at the joints found in this audit) based on the actual findings, not assumptions.
+next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.

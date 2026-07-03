@@ -1,5 +1,24 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#28, exception #36): `MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1` = PASS.
+> Lane B doc lap kiem tra: gate dung 2 file, verify_output.py = PASS, khong con .blend1, hash
+> geometry/pose/camera/blade/halo truoc-sau giong het nhau, contact sheet nhin truc tiep xac nhan
+> halo trang o 4 goc, khe tim sach khong lan, blade nguyen ven. GPT review (BOOS gui) cung PASS
+> hinh anh nhung de xuat buoc ke tiep la "locomotion smoke test" (di lien tuc) - BOOS RULING: KHONG
+> theo de xuat do, giu dung Stage B cua roadmap (8 pose TINH, de chi dung vung loi hon).
+> Truoc khi dispatch Stage B: phat hien `LANE_A_RIG_REPAIR_EXECUTION_RESULT_V0_1.md` (PASS cu,
+> 2026-06-13) chay tren MOT FILE KHAC HAN (`..._RIG_REPAIR_PASS_V0_1_FROM_FIRST_MOTION_TEST_V0_1.blend`,
+> ten mesh hoan toan khac vd `arm_left_simple_black_column`) so voi file production hien tai
+> (`MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend`, ten mesh kieu "master faceless helmet").
+> CHUA RO file moi co ke thua armature nao khong. Exception #37 duoi day = audit doc-only truoc khi
+> quyet dinh scope task rig-upgrade that.
+
+> DISPATCH 2026-07-03 #29 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1` - AUDIT READ-ONLY, khong sua gi.**
+> Muc dich: biet chinh xac file `MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1.blend` co armature khong, ten gi, moi mesh gan bao nhieu vertex group (rigid 1-group hay soft multi-group), co bone tuong duong vai/khuyu/hong/goi/cot song khong, blade/halo bind vao dau. Chi doc va bao cao - KHONG pose, KHONG render moi, KHONG sua bat ky object nao.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md`. Gate: `_tmp/mikage_production_rig_armature_audit_v0_1_gate/` - DUNG 2 file (contact_sheet.png + contact_sheet_review_report.md; anh gate co the la anh co san, khong bat buoc render moi). Output that: `docs/reports/MIKAGE_PRODUCTION_RIG_ARMATURE_AUDIT_V0_1.md`. AGENTS.md exception #37 (Thirty-seventh) OPEN.
+> FAIL: file audit bi sua du 1 byte -> AUDIT_FILE_MODIFIED · khong mo doc duoc -> FILE_UNREADABLE · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B doc bao cao audit, soan RIENG 1 task rig-upgrade (weight-paint mem tai cac khop tim thay) dua tren ket qua that, khong doan truoc. Sau do moi quay lai Stage B (8 pose tinh).
+
 > DISPATCH 2026-07-03 #28 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_PRODUCTION_RIG_LOOKDEV_INTEGRATION_V0_1` - Stage A ("Integration") cua `MIKAGE_LANE_A_ROADMAP.html`.**
 > Ly do: 2 dong rieng chua hop nhat - `MIKAGE_STANDING_HERO_POLISH_V0_14` (ASSET-LOCKED, geometry chinh thuc) va `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1` (ACTIVE_PREMIUM_LOOKDEV_REFERENCE, material da duyet). CHUA XAC NHAN V0.14 hien co dung material premium nay chua. Task nay hop nhat: LAY geometry tu V0.14 (khong doi), AP material da duyet tu V0.8.1 (khong tu che lai cong thuc), ra 1 file production hop nhat.
 > Scope: chi ap dung material (porcelain/graphite/blade/2 khe emission) tu V0.8.1 len geometry V0.14. KHONG doi geometry/pose/camera/blade-position/halo-geometry cua V0.14. KHONG tu tune lai material V0.8.1. Halo PHAI render TRANG theo `docs/handoff/HALO_RING_RULING_2026-07-03.md` (mark thu 4, khoa 2026-07-03) - neu 1 trong 2 file nguon co halo khong trang, FLAG, khong tu sua.
