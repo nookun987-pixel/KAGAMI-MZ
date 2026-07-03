@@ -1,5 +1,17 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-03 (#34, exception #42): `MIKAGE_HALLWAY_ENVIRONMENT_V0_1` = PASS. Standalone corridor
+> set (`6.4×5.6×34.0` units, 21 `ENV_` objects, void-black/cool-graphite only, two dim cold lights),
+> zero violet anywhere (deterministic scan empty), zero character objects/animation on reopen. Lane B
+> independently recomputed the character reference file's SHA-256 (`f5f17e2e...ec0c5`) - matches
+> Codex's report exactly, confirming CHARACTER_FILE_MODIFIED = NO for real. Static 2-view compatibility
+> check (empty corridor / corridor+character) visually confirmed: character scale/framing plausible,
+> halo white, only the two slits carry violet. Commit local `c4ac950` (per Codex), not pushed.
+> Exception #42 CLOSED.
+> CURRENT STATE: environment foundation ready. Exit 1 (actual cinematic proof shot: slit dormant->
+> ignite, slow camera push-in, subtle head-tilt/weight-shift, blade already resting in frame, cut to
+> black) is the next candidate task on this set - NOT YET authorized, pending operator go.
+
 > DISPATCH 2026-07-03 #34 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_HALLWAY_ENVIRONMENT_V0_1` - xay MOI 1 environment hanh lang toi (loai asset MOI, chua tung co).**
 > Ly do: Stage E can canh "hanh lang toi" nhung repo CHUA TUNG co asset moi truong nao - moi render tu
 > truoc gio chi dung nen void-black phang. BOOS ruling 2026-07-03: mo task rieng xay hanh lang TRUOC khi
