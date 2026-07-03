@@ -1,5 +1,25 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-04 (#41, exception #47): `MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1` = PASS - 3-state ignition
+> sequence delivered as 3 separate 2s clips (`_S0_DORMANT`, `_S1_AWARE`, `_S2_COMBAT`), same camera/
+> light-rig/materials/grade, only slit+halo emission strength state-keyed: S0 slit 0.18/halo 0.0, S1
+> slit 28.0/halo 0.0, S2 slit 28.0/halo 18.0 (halo emission exactly zero until S2). H.264/yuv420p/
+> 720x1280/24fps/2.000s/no-audio on all 3 clips (Lane B independently ffprobe-confirmed each). Source
+> hash unchanged (Lane B independently recomputed, matches proof). Halo color check: 4 sample points
+> per state, all neutral/cool-white, no violet drift at any state (Lane B independently read the actual
+> numeric RGB values, not just the PASS label). Void occupancy 82.85%/82.42%/74.26% (S0/S1/S2), all
+> above the 70% floor. Geometry/mesh/armature counts unchanged. Lane B visually inspected the actual
+> contact sheet directly: S0 reads as a faint ember with a thin passive halo, S1 as fully saturated
+> violet slits with the halo still passive, S2 as the same full slits plus a strongly glowing white
+> halo - state order correct and clearly ascending, matching the BOOS "khe full tim + halo glow trang =
+> frame wow" target exactly at S2 only. Commit local `96cf8e3` (per Codex), not pushed. Exception #47
+> CLOSED.
+> CURRENT STATE: 3 raw state clips ready for BOOS's own edit pass (cutting the THIRD AXIS S2 ignition
+> rhythm is outside Lane A scope). `.mikage/tasks/active_task.yaml` still points at this now-CLOSED #47
+> task (harmless - its gate/deliverables already exist and PASS); no new Lane A task is dispatched until
+> the operator authorizes the next one and Lane B re-points the active task file.
+
+
 > RESULT 2026-07-04 (#39, exception #46): `MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2` = PASS - confirmed wedge
 > cause (`neck_matte_black_underlayer` still bound to the legacy scaffold armature while helmet/halo/
 > cloak use the axial rig; root travel's local-Y was mapped to world-Z vertical descent instead of
