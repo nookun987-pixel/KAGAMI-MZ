@@ -1,31 +1,37 @@
-task_id: MIKAGE_HALLWAY_ENVIRONMENT_V0_1
+task_id: MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_HALLWAY_ENVIRONMENT_V0_1
-# Dispatched by operator (BOOS) 2026-07-03 #34, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-second controlled exception (MIKAGE_HALLWAY_ENVIRONMENT_V0_1 = OPEN).
-# Roadmap Stage E's cinematic proof shot needs a dark hallway, but no environment/set asset has ever
-# been built in this repo (every character render so far is void-black backdrop only). This task
-# builds a standalone corridor environment set and does a static scale/compatibility check against
-# the rebuilt character rig (read-only reference, no character file modification). Animation/camera
-# push-in/slit-ignite for the actual Exit 1 cinematic proof shot is explicitly out of scope here.
+task_type: MP4_RENDER_ONLY
+current_step: MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1
+# Dispatched by operator (BOOS) 2026-07-03 #35, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Forty-third controlled exception (MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1 = OPEN).
+# Rig (#40), Gate B axial-only (#41), and hallway environment (#42) are all PASS. This task combines
+# character + environment into a single derivative scene for the roadmap's Stage E cinematic proof shot
+# via EXIT 1 (no locomotion): slit dormant-to-ignite, subtle head-tilt/weight-shift on the existing 7
+# axial bones, blade unchanged (rigid on root), slow camera push-in, cut to black. Proof shot only, not
+# final/marketing.
 
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_HALLWAY_ENVIRONMENT_V0_1.md
+  - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.md
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
+  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_hallway_environment_v0_1_gate
+output_folder_allowed: _tmp/mikage_stage_e_exit1_cinematic_proof_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
   - production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend
+  - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
+  - production/character/reviews/MIKAGE_PRODUCTION_RIG_REBUILD_V0_1_PROOF.md
+  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_PROOF.md
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
@@ -33,49 +39,60 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/environment/sets/MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend
-  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_CONTACT_SHEET.png
-  - production/environment/reviews/MIKAGE_HALLWAY_ENVIRONMENT_V0_1_PROOF.md
+  - production/environment/rig_derivatives/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.blend
+  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.mp4
+  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_KEYFRAMES.png
+  - production/environment/reviews/MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1_PROOF.md
 
 allowed_actions:
-  - create a new standalone environment blend file under production/environment/sets/ containing a simple, dark, elongated corridor (walls/floor/optional ceiling) with perspective convergence, tonal void-black/graphite materials, and a minimal cold key light plus optional rim/fill
-  - reference (read-only, in a separate working scene) the character file solely to check scale and framing - no modification of the character file
-  - render exactly two static views: empty corridor, and corridor with the character placed at a marked position, same camera, no animation
-  - write full findings (set geometry description, materials/colors used, confirmation of no violet anywhere, character scale/framing assessment) into the proof and gate report
+  - create a new derivative blend combining the character (neutral pose, from MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend) and the environment (from MIKAGE_HALLWAY_ENVIRONMENT_V0_1.blend) into one scene, character placed at the confirmed marker (0,8,0)
+  - animate the two slit emission materials' STRENGTH only (dormant ~2% of peak, fast ignite around 60-75% of the clip, hold awakened) - hue stays locked #8F00FF
+  - animate a subtle rotation on neck/head and optionally chest/spine_02 for a small head-tilt/weight-shift (smaller magnitude than the Gate B test poses)
+  - animate the camera with a slow push-in along the hallway axis from the confirmed camera position, ending at a reasonable closer position chosen and reported by Codex
+  - add a simple cut-to-black fade at the end of the clip
+  - choose and report a reasonable resolution, fps, and duration for this proof shot (not required to match the Spotify Canvas spec)
+  - render the clip and a keyframe contact sheet
+  - write full findings (slit strength curve description, camera start/end position and duration, pose angles used, halo/slit color checks, confirmation both source files unchanged) into the proof and gate report
   - write the real deliverables into the paths listed under real_deliverables
-  - run deterministic verification (character reference file hash unchanged, no violet in environment materials/lighting, set is standalone)
+  - run deterministic verification (both source file hashes unchanged, no new bones/mesh, no violet in environment, ffprobe-confirmed technical spec)
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not modify the character reference file MIKAGE_PRODUCTION_RIG_REBUILD_V0_1.blend in any way
-  - do not use violet (or any color near #8F00FF/#7B2FFF) anywhere in the environment's materials or lighting
-  - do not use neon, colored wash, cyberpunk lighting, gaming-HUD elements, or clutter in the environment
-  - do not animate anything - no camera push-in, no slit-ignite animation, no character motion (that is a separate future Exit 1 task)
-  - do not make the environment set dependent on the character file to open/render standalone
-  - do not do any final/marketing render
-  - do not claim canon-lock, asset-lock, production-ready, or canon-location status (label CANDIDATE / NOT CANON-LOCKED)
+  - do not modify either source file (character or environment) - work only in a new derivative
+  - do not create any new bone (limb or otherwise) on the character rig, or any new mesh
+  - do not attempt any walk/locomotion/stepping motion - this is EXIT 1, no locomotion at all
+  - do not move, re-parent, or animate the blade separately from its existing rigid root attachment
+  - do not change slit hue - only emission strength may animate, hue stays #8F00FF
+  - do not change the halo's color at any frame - must stay white throughout
+  - do not introduce violet anywhere in the environment's materials or lighting
+  - do not apply or assume the Spotify Canvas spec (1080x1920 loop) - this is an unrelated proof shot, not a Canvas deliverable
+  - do not do any final/marketing render or claim production-ready/canon-lock/asset-lock status
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
-  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not place the .mp4 or any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - a standalone environment blend file exists under production/environment/sets/ with a simple dark corridor set
-  - no violet appears anywhere in the environment's materials or lighting
-  - the character reference file hash is unchanged
-  - two static views (empty corridor, corridor with character) are rendered and show plausible character scale and framing
-  - the environment set can stand alone without the character file present
-  - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
+  - both source files (character, environment) are hash-unchanged
+  - slit hue remains #8F00FF at every sampled frame; only emission strength animates per a dormant-to-ignite-to-awakened curve
+  - halo remains white at every sampled frame
+  - no violet appears anywhere in the environment
+  - no new bones or mesh were created; no locomotion/walk was attempted
+  - camera push-in and a cut-to-black fade are both present and read smoothly
+  - ffprobe confirms the resolution/fps/duration Codex reports
+  - gate folder holds ONLY contact_sheet.png + contact_sheet_review_report.md (mp4 stays outside the gate folder) and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - the character reference file is modified in any way (report BLOCKER = CHARACTER_FILE_MODIFIED)
-  - violet appears anywhere in the environment's materials or lighting (report BLOCKER = VIOLET_IN_ENVIRONMENT)
-  - the set cannot function as a standalone file without the character file (report BLOCKER = SET_NOT_STANDALONE)
-  - validator or verification command cannot run (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
+  - either source file is modified in any way (report BLOCKER = SOURCE_FILE_MODIFIED)
+  - slit hue drifts from #8F00FF or reads magenta (report BLOCKER = SLIT_HUE_FAIL)
+  - the halo changes color at any frame (report BLOCKER = HALO_COLOR_VIOLATION)
+  - violet appears anywhere in the environment (report BLOCKER = VIOLET_IN_ENVIRONMENT)
+  - any new limb bone/mesh is created, or any locomotion/walk motion is attempted (report BLOCKER = SCOPE_VIOLATION)
+  - validator or verification command cannot run, or the mp4 ends up inside the gate folder (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
   - .blend1 backup remains after cleanup
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B reviews the proof; if approved, Lane B drafts the Exit 1 cinematic proof shot task (slit dormant-to-ignite animation, slow camera push-in, subtle head tilt/weight shift, cut to black) using this environment set.
+next_step_if_pass: Lane B and operator review the proof shot together to decide whether it serves as a template for a real cinematic, whether Exit 2 (full locomotion) is still wanted later, or whether another round is needed.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.

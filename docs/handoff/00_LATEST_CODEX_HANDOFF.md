@@ -1,5 +1,21 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-03 #35 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1` - ket hop nhan vat + hanh lang, lam canh proof shot EXIT 1 (khong locomotion).**
+> Ly do: rig (#40) + Gate B axial-only (#41) + hanh lang (#42) deu PASS. BOOS chon EXIT 1: bo qua di
+> bo, chi con dung + khe dormant->ignite + nghieng dau/dich trong luong nhe (bone truc co san) + blade
+> giu nguyen (rigid root) + camera push-in cham + cut to black.
+> Scope: 1 derivative MOI ket hop 2 file goc (KHONG sua ca 2). Khe CHI doi strength (hue giu #8F00FF).
+> Halo giu trang. Moi truong khong duoc co violet. KHONG bone/mesh tay chan, KHONG di bo. Do phan giai/
+> fps/thoi luong Codex tu chon va bao cao (KHONG theo Spotify Canvas spec).
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_STAGE_E_EXIT1_CINEMATIC_PROOF_V0_1.md`. Gate:
+> `_tmp/mikage_stage_e_exit1_cinematic_proof_v0_1_gate/` - DUNG 2 file (mp4 KHONG duoc nam trong gate).
+> AGENTS.md exception #43 (Forty-third) OPEN.
+> FAIL: sua file nguon -> SOURCE_FILE_MODIFIED · khe doi mau -> SLIT_HUE_FAIL · halo doi mau ->
+> HALO_COLOR_VIOLATION · violet trong moi truong -> VIOLET_IN_ENVIRONMENT · tao bone/mesh tay chan hoac
+> di bo -> SCOPE_VIOLATION · gate sai schema -> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B + operator xem xet proof shot, quyet dinh buoc tiep theo (template cho cinematic
+> that, co can Exit 2/locomotion khong, hay sua tiep round nua).
+
 > RESULT 2026-07-03 (#34, exception #42): `MIKAGE_HALLWAY_ENVIRONMENT_V0_1` = PASS. Standalone corridor
 > set (`6.4×5.6×34.0` units, 21 `ENV_` objects, void-black/cool-graphite only, two dim cold lights),
 > zero violet anywhere (deterministic scan empty), zero character objects/animation on reopen. Lane B
