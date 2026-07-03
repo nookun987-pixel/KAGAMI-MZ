@@ -1,18 +1,19 @@
-task_id: MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2
+task_id: MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2
-# Dispatched by operator (BOOS) 2026-07-03 #38, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-sixth controlled exception (MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2 = OPEN).
-# Exception #45's revised ruling: the frame-120 dark wedge above the halo likely reflects a real
-# mesh-region problem (collar/neck-connector pulled wrong by drape_secondary_upper reaching too high),
-# not pure camera distortion. This task isolates the CONFIRMED root cause and refines the motion
-# (reduced bob/lean) - it is a cleanup pass, NOT a Stage D (full walk cycle) promotion.
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1
+# Dispatched by operator (BOOS) 2026-07-04 #40, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Forty-seventh controlled exception (MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1 = OPEN).
+# Context: reference sheet + hero lookdev currently read as flat turntable-lit "sample," not cinematic.
+# BOOS supplied a 6-layer lighting/material/camera/grade spec. Applies as a NEW derivative only -
+# geometry/rig/topology and canon base colors (helmet/cloak/slit hue) must not change. Halo is a hard
+# constraint: absolute white/near-white/cool-neutral at every sampled pixel of every frame, zero violet
+# even from bounce/GI/rim.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ROBE_LOCOMOTION_CLEANUP_V0_2.md
-  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_CINEMATIC_LIGHTING_PASS_V0_1.md
+  - production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
@@ -20,13 +21,13 @@ input_files_allowed:
   - AGENTS.md
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_robe_locomotion_cleanup_v0_2_gate
+output_folder_allowed: _tmp/mikage_cinematic_lighting_pass_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_TEST_V0_1_PROOF.md
+  - production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
   - docs/handoff/HALO_RING_RULING_2026-07-03.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
@@ -35,57 +36,59 @@ read_only_files:
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2.blend
-  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2.mp4
-  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1.blend
+  - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1_PROOF.md
 
 allowed_actions:
-  - identify the exact object/vertex region creating the dark wedge in frames 96-120 and report the confirmed cause
-  - adjust the influence/weighting of the existing drape_secondary_lower and drape_secondary_upper helpers so helmet, halo, neck connector, and upper collar stay visually coherent throughout root movement
-  - restrict secondary robe deformation primarily to the middle/lower cloak
-  - reduce vertical bob from 0.028m to approximately 0.018m
-  - reduce alternating lean from +/-1.4 degrees to approximately +/-0.8 degrees
-  - if still wedged after reducing helper influence, disable drape_secondary_upper entirely and keep only root motion plus drape_secondary_lower, lock vertices from shoulder-up out of secondary deformation, and check parent-inverse/constraint space of halo, helmet, and neck connector
-  - preserve the same 1.5m root travel and 5-second duration
-  - render the clip and a keyframe contact sheet (frames 0, 30, 60, 90, 120)
-  - write full findings (confirmed wedge cause, remedy applied, new bob/lean values, coherence confirmation) into the proof and gate report
+  - replace flat/even lighting with a single angled key (~40-50 degrees) plus low fill plus negative fill plus a cool rim/back light separating the cloak from the void background
+  - make the two slits true emission (#8F00FF), strength driven HIGH so slits read FULL violet (near-clip, strongly saturated) - half of the BOOS 2026-07-04 wow-target ("khe full tim + halo glow trang"), allowed to bounce a soft violet hint onto the porcelain cheeks only
+  - make the halo itself glow white strongly: raise the halo material's own emission strength (color stays white/near-white/cool-neutral, never violet) plus selective bloom in grade so it visibly blooms - the other half of the wow-target
+  - add a very low-density volumetric haze appropriate to the render engine in use, and report which engine and why
+  - give the porcelain helmet subtle subsurface scattering plus non-uniform roughness plus a thin clearcoat, and give the cloak a faint sheen/fresnel so the rim catches its edge
+  - set the camera to roughly 85mm with shallow depth of field (f/1.4-2.8) focused on the slits, a slight low angle, and upper-third head placement
+  - grade with AgX or Filmic (report which), crush blacks toward #050508, lift only the violet band's saturation/luminance, add selective bloom on the slits, very light chromatic aberration on violet edges, fine grain, light vignette
+  - render a contact sheet with BEFORE (unmodified turntable render) and AFTER (cinematic) pairs at the same angle(s)
+  - sample halo pixel color at 4 or more points per frame across the contact sheet and report the numeric RGB/hex values
+  - write full findings into the proof and gate report
   - write the real deliverables into the paths listed under real_deliverables
-  - run deterministic verification (cloak remains one closed mesh, no new mesh/limb bones, halo/slit colors correct)
+  - run deterministic verification appropriate to this task type
   - clean .blend1 backups
   - commit local changes only
 
 forbidden_actions:
-  - do not add any new mesh, limb geometry, or bones beyond adjusting the existing 2 helpers (drape_secondary_lower/upper)
-  - do not animate the blade or change any material/color (halo stays white, slits stay #8F00FF)
-  - do not add an environment or combine with the hallway set
-  - do not fix the wedge by cropping/hiding it with camera framing - the root cause must be identified and fixed
-  - do not attempt a full Stage D walk cycle in this task
-  - do not let the cloak show any gap/split implying legs underneath
-  - do not change the 1.5m root travel distance or 5-second duration
-  - do not do any final/marketing render or claim production-ready/canon-lock/Stage-D status
+  - do not change geometry, rig, bones, or topology of the character in any way
+  - do not change canon base colors (helmet stays #F2EEEA, cloak stays void black, slit hue stays #8F00FF)
+  - do not let violet touch, bounce onto, or tint the halo under any circumstance, including physically based bounce/GI/rim lighting
+  - do not wash violet across the whole scene or use violet as a key or fill light
+  - do not use teal-orange or any grade direction other than cool-mono plus a separated violet band
+  - do not animate the blade, add new mesh or bones, or add an environment/set in this task
+  - do not do any final/marketing render or claim production-ready/canon-lock/final status
   - do not push
   - do not modify unrelated files
   - do not leave any .blend1 backup
-  - do not place the .mp4 or any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
 
 pass_conditions:
-  - no wedge, detached collar, or object crossing outside the halo at any frame
-  - halo is a clean circle in every frame
-  - helmet and upper body show no visible scale/detach/drift
-  - cloak remains one closed mesh with 0 boundary edges and 0 non-manifold edges
-  - no visible or implied legs at any frame
-  - root travel remains 1.5m over 5 seconds
-  - gate folder holds ONLY contact_sheet.png (frames 0/30/60/90/120) + contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
+  - geometry/rig/topology unchanged from source
+  - halo pixel-sampled at 4 or more points per frame shows no violet drift, reported numerically
+  - at least one AFTER frame/angle clearly shows the wow-target together: slits reading strongly saturated/near-full violet AND the halo visibly glowing/blooming white
+  - violet appears only at the slits, soft cheek bounce, and optionally background bokeh
+  - directional lighting with a working rim separates the cloak from the void
+  - porcelain reads subsurface/roughness-variation rather than plastic
+  - grade is cool-mono plus separated violet, not teal-orange
+  - contact sheet includes BEFORE and AFTER pairs at the same angle for direct comparison
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md and python .mikage/tools/verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - the wedge cause remains unidentified or unconfirmed (report BLOCKER = WEDGE_CAUSE_UNCONFIRMED)
-  - the fix only hides the artifact via camera cropping rather than addressing the root cause (report BLOCKER = COSMETIC_FIX_ONLY)
-  - halo/helmet/blade/slit color or cloak topology changes (report BLOCKER = SCOPE_VIOLATION, state exactly what changed)
-  - validator or verification command cannot run, or the mp4 ends up inside the gate folder (report BLOCKER = VALIDATOR_SCHEMA_MISMATCH)
-  - .blend1 backup remains after cleanup
+  - any violet pixel is detected on the halo at any sampled point or frame
+  - violet is used as key or fill light or washed across the environment
+  - geometry/rig/topology changes outside lighting/material/camera/grade
+  - canon base color (helmet/cloak/slit hue) drifts from the locked values
+  - validator or verification command cannot run, or the gate folder contains files other than the two allowed
+  - halo violet-bounce cannot be avoided through normal light-rig/material adjustment (report and stop, this is an operator canon decision)
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B and operator review whether the robe-glide now reads as a clean, weighted advance suitable as a base for a real Stage D walk cycle.
+next_step_if_pass: Lane B and operator review the BEFORE/AFTER contact sheet and decide whether to adopt this as the new premium cinematic reference or open another refinement round.
 next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.

@@ -1,5 +1,43 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-04 (#39, exception #46): `MIKAGE_ROBE_LOCOMOTION_CLEANUP_V0_2` = PASS - confirmed wedge
+> cause (`neck_matte_black_underlayer` still bound to the legacy scaffold armature while helmet/halo/
+> cloak use the axial rig; root travel's local-Y was mapped to world-Z vertical descent instead of
+> forward depth). Remedy: neck connector rigid-bound to axial `neck`; root remapped to the depth axis;
+> bob 0.028->0.018m, lean ±1.4->±0.8°, 1.5m/5s travel preserved. No new mesh/object/bone (101/139
+> unchanged, 9 bones total = original 7 + existing 2 helpers). Cloak still 1 closed mesh (288 verts, 0
+> boundary/non-manifold edges). H.264/yuv420p/720x1280/24fps/5.000s/no-audio (Lane B independently
+> ffprobe-confirmed). Source hash unchanged (Lane B independently recomputed, matches record). Lane B
+> visually inspected the actual 5-frame keyframe sheet directly: halo reads as a clean complete circle
+> in every frame, no wedge/detachment/crossing, motion reads as a controlled approach rather than
+> vertical sinking or scaling. Commit local `b405bd1` (per Codex), not pushed. Exception #46 CLOSED.
+> CURRENT STATE: robe-glide locomotion cleanup PASS and visually clean - the #45 wedge artifact is fully
+> resolved with its root cause identified and fixed (not cropped/hidden). Pending operator decision: use
+> as a base for a full Stage D walk cycle later, or proceed with the cinematic lighting pass now queued
+> as exception #47 (see DISPATCH below).
+
+> DISPATCH 2026-07-04 #40 (BOOS, qua Lane B dieu phoi): **CURRENT_NEXT_TASK = `MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1` - nang reference/lookdev hien tai tu "mau turntable" len "canh dien anh" bang 6 lop anh sang/vat lieu/camera/grade, KHONG doi hinh khoi/canon mau.**
+> Ly do: BOOS nhan xet reference sheet + hero lookdev dang doc nhu "mau" (turntable, den deu, violet la
+> mau son) chu chua phai "canh". BOOS cung cap spec 6 lop (anh sang / violet emission / khi quyen / vat
+> lieu / may quay / grade). Ruling 2026-07-04: halo TUYET DOI TRANG - zero violet ke ca tu bounce/GI/
+> rim, day la hard constraint khong duoc tu dien giai theo y rieng.
+> Scope: 1 derivative MOI tu `MIKAGE_HERO_LOOKDEV_PREMIUM_V0_8_1.blend` (active premium lookdev
+> reference, duyet 2026-07-03). Key xien + rim lanh + negative fill; khe mat emission that (cho phep
+> bounce nhe len go ma, KHONG duoc cham halo); volumetric haze mat do thap; helmet SSS/roughness-
+> variation/clearcoat; ao choang sheen/fresnel; camera 85mm DOF nong; grade AgX/Filmic crush black +
+> tach rieng dai violet.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_CINEMATIC_LIGHTING_PASS_V0_1.md`. Spec goc:
+> `production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html`. Gate:
+> `_tmp/mikage_cinematic_lighting_pass_v0_1_gate/` - DUNG 2 file (contact_sheet.png +
+> contact_sheet_review_report.md). AGENTS.md exception #47 (Forty-seventh) OPEN.
+> FAIL: halo bat violet o bat ky diem/frame nao -> HALO_COLOR_VIOLATION · violet wash ca canh hoac dung
+> lam key/fill -> VIOLET_IN_ENVIRONMENT · geometry/rig/topology doi -> SCOPE_VIOLATION · mau canon nen
+> (helmet/ao/slit) drift -> CANON_COLOR_DRIFT · gate sai schema hoac thieu so lieu do mau halo ->
+> VALIDATOR_SCHEMA_MISMATCH. NO push/lock/canon/final claim.
+> Sau PASS: Lane B + operator xem contact sheet BEFORE/AFTER, quyet dinh dung lam premium cinematic
+> reference moi hay can chinh them 1 vong.
+
+
 > RULING REVISED 2026-07-03 (BOOS): exception #45's earlier "ACCEPT AS-IS" was premature. Closer review:
 > the frame-120 wedge above the halo likely reflects a real mesh-region problem (collar/neck-connector
 > pulled wrong by `drape_secondary_upper` reaching too high), not pure camera distortion; motion also
