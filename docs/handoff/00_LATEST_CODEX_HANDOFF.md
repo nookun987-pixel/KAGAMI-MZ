@@ -1,5 +1,33 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH AMENDMENT 2026-07-04 (#47, exception #49): operator explicitly authorized swapping ONLY the
+> UNET file from `flux1-dev-fp8.safetensors` (crashes on this 6GB card, see RESULT #46 above) to a
+> GGUF-quantized Flux.1-dev checkpoint (e.g. `city96/FLUX.1-dev-gguf`, Q4_K_S or Q3_K_S recommended,
+> lower if still unstable), loaded via the ComfyUI-GGUF custom node (`UnetLoaderGGUF`). Installing that
+> custom node (`pip install gguf` + clone into `custom_nodes/`) is authorized as part of this same
+> amendment. Everything else unchanged: same Flux.1-dev identity, same ControlNet Union-Pro, same
+> Redux/SigCLIP, same text encoders, same prompt, same canon gate, same FAIL codes, same gate
+> requirements from the original exception #49 brief. See AGENTS.md exception #49 "OPERATOR
+> AUTHORIZATION" line for the exact wording. Any further tool/model change beyond this specific GGUF
+> swap still requires asking first. No files changed in this repo by this amendment beyond AGENTS.md +
+> this handoff entry - nothing new to commit besides those two.
+
+> RESULT 2026-07-04 (#46, exception #49): `MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1` = BLOCKED (hardware/runtime,
+> not canon) - all 3 configurations Codex tried (normal VRAM fp8; low-VRAM + CPU VAE + disable smart
+> memory; low-VRAM with default weight dtype) crashed at `load_diffusion_model` with a Windows fatal
+> access violation before reaching the sampler. Safetensors header read fine (1,442 tensor keys), but
+> PyTorch 2.6/CUDA 12.4 on the GTX 1660 SUPER 6GB cannot materialize the 17.2GB flux1-dev-fp8 UNET even
+> with offload. Correctly did not switch model/tool, did not touch `.blend`/source stills/video, repo
+> stays clean, no candidate/proof/gate created, validator not run (task never reached a completed
+> state). This is the second BLOCKED report for #49 (first was missing models entirely, now installed;
+> this one is a genuine hardware/runtime ceiling). Exception #49 stays OPEN, not closed/failed on canon
+> grounds, pending an operator decision on how to proceed — options discussed with operator: (a) switch
+> to a GGUF-quantized Flux.1-dev checkpoint (e.g. Q4_K_S/Q5_K_S, ~7-9GB, needs the ComfyUI-GGUF custom
+> node) which is the standard low-VRAM path for 6-8GB cards, (b) some other lower-memory approach, or (c)
+> defer the AI-enhance pass and keep using the #48 raw Blender S2 still for Lane B post-production.
+> `.mikage/tasks/active_task.yaml` still points at this not-yet-run task (harmless). No files changed by
+> Codex; nothing to commit for this report.
+
 > RESULT 2026-07-04 (#45, exception #49): `MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1` = BLOCKED (infra, not canon) -
 > Codex reports no ComfyUI runtime/process and no Flux.1-dev/ControlNet(Depth+Canny)/Redux model cache
 > found on C:/D:/G:. Correctly refused to install or substitute tooling per the brief's own hard rule
