@@ -81,12 +81,16 @@ HUE-SAFETY: MOTION V0.2 goes in UNGRADED. Do NOT re-include published chapters.
   `HERO_compare`, `S2_cine`, `S2_compare`, a contact sheet, and `MZ-ANIMATIC-THIRDAXIS-S2-TIMINGPROOF`)
   in his own Downloads — these are operator-side reference material, not yet reviewed/verified by
   Cowork and not part of the governed `reviews/` deliverable set.
-→ entry name reserved: `MIKAGE_BUILDLOG_CINE_THRESHOLD_V0_1` — **NOT YET BUILT.** No script/.bat
-exists for this entry yet; no footage has been selected/graded into `GATHER_REEL_V0_1/`. This is a
-documentation checkpoint only, gating on: (1) exception #49 actually PASSing, (2) operator picking
-which state/hero clips are the public-facing ones, (3) an explicit go-ahead to build the chapter
-(per Lane B discipline — Claude does not invent film/edit tasks). Do NOT re-include published
-chapters. Not canon-locked, not asset-locked, not final.
+→ entry `MIKAGE_BUILDLOG_CINE_THRESHOLD_V0_1` — **BUILT 2026-07-04** (36.2s + `_HOOK.mp4` 18.0s),
+per operator's explicit go-ahead. Script `build_buildlog_cine_threshold.py` in `GATHER_REEL_V0_1/`
+(stage-based: setup/ch1/ch2/ch34/final/cleanup, `MIKAGE_AUDIO_ROOT` env override for portability).
+4 chapters: 01 THE LIGHT (#47 S0/S1/S2) · 02 THE STAGE (#48 restaged S0/S1/S2) · 03 THE APPROACH
+(#48 hero camera-move clip) · 04 WHAT'S NEXT (the #48 S2 still, captioned "AI-enhance dial-in
+queued — not yet run", honest about #49 still being unrun). Title "IT ENTERS THE FRAME" is a
+Cowork draft, easy to swap — not operator-confirmed copy. Music PORCELAIN ASCENSION from 0:00.
+1080x1920/24fps/h264+aac, verified via ffprobe + frame extraction. NOT yet appended to
+`MIKAGE_BUILDLOG_FILM_FULL_V0_3` (that's a separate operator call — see workflow §6 step 3). Not
+canon-locked, not asset-locked, not final, no push.
 
 ## 5. CLEANUP of the dump (do this, then stop scattering)
 - The ad-hoc `MIKAGE_FORMATION_LOG` folder in the external audio root (see CLAUDE.md "Local folder
