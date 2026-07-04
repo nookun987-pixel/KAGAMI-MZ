@@ -1,5 +1,18 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-04 (#45, exception #49): `MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1` = BLOCKED (infra, not canon) -
+> Codex reports no ComfyUI runtime/process and no Flux.1-dev/ControlNet(Depth+Canny)/Redux model cache
+> found on C:/D:/G:. Correctly refused to install or substitute tooling per the brief's own hard rule
+> (no self-install, no model/tool switching without asking). No candidate generated; no output/gate
+> created; `.blend` untouched; S0/S1 and all video/clips untouched; validator not run (task never reached
+> a completed state to check). This is expected/acceptable behavior, not a canon violation — the blocker
+> is that this machine does not yet have the ComfyUI + Flux + ControlNet + Redux stack installed/pointed
+> at. Exception #49 stays OPEN (not closed, not failed on canon grounds) pending an operator decision:
+> either (a) install/point Codex at the required ComfyUI + Flux.1-dev + Depth ControlNet + Canny ControlNet
+> + Redux model stack, or (b) defer this AI-enhance pass indefinitely and keep using the #48 raw Blender
+> S2 still for Lane B post-production instead. `.mikage/tasks/active_task.yaml` still points at this
+> not-yet-run task (harmless). No files changed by Codex; nothing to commit for this report.
+
 > DISPATCH 2026-07-04 (#44, exception #49): `MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1` = QUEUED (DRAFT, blocked
 > on operator commit) - ComfyUI Flux.1-dev img2img + Depth ControlNet + Canny/Line ControlNet + Redux,
 > dial-in on exactly 1 frame. Operator uploaded new brief `MZ-BRIEF-AI-ENHANCE.html`: use AI img2img on the
