@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX BRIEF · AI-ENHANCE — RENDER → CINE FRAME</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Shippori+Mincho:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508;--void-mid:#0d0d14;--void-line:#242436;
+  --porcelain:#f2eeea;--porcelain-dim:#c8c4be;--silver:#a0a0b0;--silver-dim:#6b6b78;
+  --violet:#8f00ff;--violet-glow:#9d7fd0;--violet-dim:#3d2e55;--amber:#c2a85a;--good:#6bbf8a;--red:#c8536b;
+  --hairline:rgba(160,160,176,0.14);
+  --fw:'Cinzel',serif;--fs:'Shippori Mincho',serif;--fm:'Space Mono',monospace;
+  --glow:0 0 24px rgba(143,0,255,0.35),0 0 4px rgba(157,127,208,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--void);color:var(--porcelain-dim);font-family:var(--fs);line-height:1.7;-webkit-font-smoothing:antialiased;padding:0 0 90px;position:relative}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+.wrap{max-width:860px;margin:0 auto;padding:0 30px}
+header{padding:60px 0 18px;position:relative;overflow:hidden}
+.halo{position:absolute;top:-50px;right:-30px;width:360px;height:360px;pointer-events:none;background:radial-gradient(circle,rgba(143,0,255,0.12) 0%,transparent 68%)}
+.wm{font-family:var(--fw);font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--porcelain);font-size:12px;position:relative}
+h1{font-family:var(--fs);font-weight:700;color:var(--porcelain);font-size:clamp(24px,4.2vw,36px);letter-spacing:.08em;margin:18px 0 6px;position:relative;line-height:1.14}
+.tagline{font-family:var(--fs);color:var(--violet-glow);font-size:14.5px;position:relative;font-style:italic}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px;position:relative}
+.meta span{font-family:var(--fm);font-size:10.5px;letter-spacing:.05em;color:var(--silver);border:1px solid var(--void-line);background:var(--void-mid);padding:4px 10px}
+.meta span b{color:var(--violet-glow);font-weight:400}
+
+.intent{border:1px solid var(--hairline);background:var(--void-mid);padding:16px 20px;margin:26px 0 0;position:relative}
+.intent::before{content:'';position:absolute;left:0;top:0;width:2px;height:100%;background:linear-gradient(180deg,var(--violet),transparent)}
+.intent p{font-size:14px;color:var(--porcelain-dim)}
+.intent b{color:var(--porcelain);font-weight:400}
+.intent .k{color:var(--violet-glow)}
+
+h2{font-family:var(--fm);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet-glow);margin:36px 0 4px;display:flex;gap:12px;align-items:baseline}
+h2 .n{color:var(--silver-dim)}
+.lead{font-size:13px;color:var(--silver);margin-bottom:13px}
+
+/* node chain */
+.chain{border:1px solid var(--hairline);background:var(--void-mid);padding:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center}
+.node{border:1px solid var(--void-line);background:var(--void);padding:8px 12px;font-family:var(--fm);font-size:11px;color:var(--porcelain);letter-spacing:.03em;text-align:center;line-height:1.4}
+.node b{color:var(--violet-glow);font-weight:400;display:block;font-size:9px;letter-spacing:.12em;margin-bottom:2px}
+.node.ctrl{border-color:var(--violet-dim)}
+.arrow{color:var(--silver-dim);font-family:var(--fm)}
+
+.card{border:1px solid var(--hairline);background:var(--void-mid);padding:15px 19px;margin-bottom:10px}
+.card h5{font-family:var(--fm);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--porcelain);margin-bottom:6px}
+.card p{font-size:13.5px;color:var(--porcelain-dim);line-height:1.62}
+.spec{font-family:var(--fm);font-size:11px;color:var(--silver);background:var(--void);border:1px solid var(--void-line);padding:2px 8px;display:inline-block;margin:7px 6px 0 0;letter-spacing:.02em}
+.spec b{color:var(--violet-glow);font-weight:400}
+
+/* dial ladder */
+.ladder{border:1px solid var(--hairline)}
+.ladder .r{display:grid;grid-template-columns:110px 1fr;gap:1px;background:var(--hairline)}
+.ladder .r .c{background:var(--void-mid);padding:11px 14px;font-size:13px}
+.ladder .r .d{font-family:var(--fm);font-size:12px;letter-spacing:.04em}
+.ladder .r.safe .d{color:var(--good)}
+.ladder .r.sweet .d{color:var(--violet-glow)}
+.ladder .r.risk .d{color:var(--red)}
+.ladder .r .t{color:var(--porcelain-dim);line-height:1.5}
+
+/* prompt */
+.prompt{border:1px solid var(--hairline);background:var(--void);padding:15px 18px;margin-bottom:10px;position:relative}
+.prompt .pl{font-family:var(--fm);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.prompt.pos .pl{color:var(--good)}
+.prompt.neg .pl{color:var(--red)}
+.prompt .tx{font-family:var(--fm);font-size:12px;color:var(--porcelain-dim);line-height:1.66;letter-spacing:.01em}
+
+.qa{border:1px solid var(--red);background:linear-gradient(180deg,rgba(200,83,107,0.05),transparent);padding:17px 20px;position:relative;margin-top:4px}
+.qa::before{content:'CANON QA — REJECT NẾU';position:absolute;top:-8px;left:16px;background:var(--void);padding:0 8px;font-family:var(--fm);font-size:9px;letter-spacing:.2em;color:var(--red)}
+.qa li{list-style:none;font-size:13.5px;padding:4px 0 4px 18px;position:relative;color:var(--porcelain-dim);line-height:1.55}
+.qa li::before{content:'✕';position:absolute;left:0;color:var(--red);font-size:11px}
+.qa b{color:var(--porcelain);font-weight:400}
+
+.out{border:1px solid var(--amber);background:linear-gradient(180deg,rgba(194,168,90,0.05),transparent);padding:17px 20px;margin-top:4px;position:relative}
+.out::before{content:'CODEX TRẢ VỀ';position:absolute;top:-8px;left:16px;background:var(--void);padding:0 8px;font-family:var(--fm);font-size:9px;letter-spacing:.2em;color:var(--amber)}
+.out li{list-style:none;font-size:13.5px;padding:5px 0 5px 20px;position:relative;color:var(--porcelain-dim);line-height:1.55}
+.out li::before{content:'▸';position:absolute;left:0;color:var(--amber)}
+.out b{color:var(--porcelain);font-weight:400}
+
+.warn{font-family:var(--fm);font-size:11.5px;color:var(--silver);background:var(--void-mid);border:1px solid var(--void-line);padding:12px 15px;margin-top:20px;line-height:1.7}
+.warn b{color:var(--amber);font-weight:400}
+
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--hairline);text-align:center}
+footer .m{font-family:var(--fm);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--silver-dim)}
+footer .dt{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--violet);box-shadow:var(--glow);margin:0 8px;vertical-align:middle}
+@media(max-width:640px){.wrap{padding:0 18px}.ladder .r{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="halo"></div>
+  <div class="wm">MIKAGE ZENITH · CODEX BRIEF</div>
+  <h1>AI-ENHANCE PASS — RENDER → CINE FRAME</h1>
+  <div class="tagline">ComfyUI img2img · Flux + ControlNet + Redux · khoá canon, vẽ đè điện ảnh</div>
+  <div class="meta">
+    <span>LANE <b>A · AI enhance</b></span>
+    <span>TOOL <b>ComfyUI (local)</b></span>
+    <span>INPUT <b>render Blender S2/hero</b></span>
+    <span>OUTPUT <b>cine frame giữ canon</b></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intent">
+    <p><b>Làm gì:</b> lấy render Blender làm <span class="k">khung xương</span>, cho AI vẽ đè chất liệu sứ thật / khí quyển / ánh sáng điện ảnh / độ "phim". <b>ControlNet khoá silhouette + 2 khe + halo</b> để không drift canon. Đây là bước biến "model" → "frame cine" mà đèn/grade không làm được. <span class="k">Hướng = cinematic REALISM (official layer), không anime.</span></p>
+  </div>
+
+  <!-- NODE CHAIN -->
+  <h2><span class="n">01</span> NODE STACK</h2>
+  <div class="lead">Flux img2img, hai ControlNet giữ hình, Redux giữ nhận diện.</div>
+  <div class="chain">
+    <div class="node"><b>BASE</b>Flux.1-dev<br>(img2img)</div>
+    <span class="arrow">+</span>
+    <div class="node ctrl"><b>CTRL 1</b>Depth<br>(giữ khối/pose)</div>
+    <span class="arrow">+</span>
+    <div class="node ctrl"><b>CTRL 2</b>Canny/Line<br>(giữ khe+halo+viền)</div>
+    <span class="arrow">+</span>
+    <div class="node ctrl"><b>REDUX</b>canon ref sheet<br>(giữ porcelain/violet)</div>
+    <span class="arrow">→</span>
+    <div class="node"><b>SAMPLER</b>→ VAE →<br>cine frame</div>
+  </div>
+
+  <!-- INPUTS -->
+  <h2><span class="n">02</span> INPUT</h2>
+  <div class="card">
+    <h5>4 nguồn nạp</h5>
+    <p><b>1. Base image</b> = render S2/hero (VAE encode → latent, img2img). <b>2. Depth</b> = xuất trực tiếp từ Blender (Z/mist AOV) — chuẩn hơn depth-estimate. <b>3. Canny/Line</b> = từ chính render, giữ đúng 2 khe + vòng halo + đường viền cloak. <b>4. Redux ref</b> = master character sheet (porcelain helmet, halo trắng, khe violet) để khoá nhận diện.</p>
+    <span class="spec">depth <b>từ Blender AOV</b></span><span class="spec">canny từ render</span><span class="spec">redux = canon sheet</span>
+  </div>
+
+  <!-- DIAL -->
+  <h2><span class="n">03</span> DIAL CHÍNH — DENOISE</h2>
+  <div class="lead">Đây là núm quyết định. Cao = AI biến đổi nhiều (cine hơn nhưng dễ lệch canon). Bắt đầu giữa, ControlNet mạnh, leo dần khi soi khe/halo.</div>
+  <div class="ladder">
+    <div class="r safe"><div class="c d">0.35–0.45</div><div class="c t">An toàn. Thêm chất liệu + khí quyển, bám sát render. Canon chắc.</div></div>
+    <div class="r sweet"><div class="c d">0.50–0.60 ★</div><div class="c t">Sweet spot. Biến đổi điện ảnh thật, canon vẫn giữ được nếu ControlNet mạnh. <b>Bắt đầu ở đây.</b></div></div>
+    <div class="r risk"><div class="c d">0.65–0.75</div><div class="c t">Reinterpret mạnh — cine nhất nhưng dễ mọc mặt / đổi helmet / ám tím halo. Chỉ đẩy nếu ControlNet+Redux giữ được.</div></div>
+  </div>
+  <div class="card" style="margin-top:10px">
+    <h5>Setting khác</h5>
+    <p>CtrlNet Canny strength <b>0.8–1.0</b> (giữ khe+halo — quan trọng nhất). Depth <b>0.5–0.7</b>. Redux weight <b>0.4–0.6</b>. Flux guidance <b>~3.5</b>. Steps <b>24–30</b>. Fix seed khi dial để so sánh 1 biến.</p>
+    <span class="spec">canny <b>0.8–1.0</b></span><span class="spec">depth 0.5–0.7</span><span class="spec">redux 0.4–0.6</span><span class="spec">guidance 3.5</span><span class="spec">seed fix</span>
+  </div>
+
+  <!-- PROMPT -->
+  <h2><span class="n">04</span> PROMPT (copy-ready)</h2>
+  <div class="prompt pos">
+    <div class="pl">POSITIVE</div>
+    <div class="tx">cinematic film still, a faceless figure in a smooth porcelain-white helmet with two thin horizontal glowing violet sensor slits, a thin glowing white halo ring behind the head, draped in a heavy matte black cloak, standing in a dark void, volumetric haze, dramatic cold rim lighting, deep chiaroscuro shadows, subsurface porcelain material with fine surface imperfections, shallow depth of field, 85mm, moody, sacred and ominous, highly detailed, photographic, film grain</div>
+  </div>
+  <div class="prompt neg">
+    <div class="pl">NEGATIVE</div>
+    <div class="tx">human face, eyes, mouth, nose, skin, facial features, anime, cel shading, cartoon, warm colors, orange, yellow, teal, neon, extra light sources, cluttered background, text, watermark, logo, plastic, deformed, blurry, low quality, oversaturated</div>
+  </div>
+
+  <!-- QA -->
+  <h2><span class="n">05</span> CANON GATE</h2>
+  <div class="qa">
+    <li>AI mọc <b>mặt / mắt / miệng</b> lên helmet → reject (faceless bất biến).</li>
+    <li>Số khe <b>≠ 2</b>, hoặc khe đổi hình/vị trí → reject.</li>
+    <li>Halo <b>ám tím</b> hoặc đổi trắng → reject (halo luôn trắng).</li>
+    <li>Violet <b>leak</b> ra cloak/nền/sàn → reject (chỉ ở khe).</li>
+    <li>Đổi silhouette / lộ tay chân / thêm giáp → reject (giữ draped robe).</li>
+    <li>→ Dính bất kỳ dòng nào: <b>hạ denoise hoặc tăng ControlNet canny</b>, regen.</li>
+  </div>
+
+  <!-- OUTPUT -->
+  <h2><span class="n">→</span> OUTPUT</h2>
+  <div class="out">
+    <li><b>Bước 1 — dial-in trên 1 frame S2/hero:</b> chạy vài seed × 3 mức denoise (0.45/0.55/0.65), chọn bản qua canon gate + cine nhất.</li>
+    <li><b>Bước 2 — chốt setting</b> → apply cho S0/S1/S2 còn lại.</li>
+    <li>Giao: frame enhanced full-res + ghi lại đúng workflow/seed/denoise đã chốt.</li>
+  </div>
+
+  <div class="warn"><b>Cờ về video clip:</b> img2img per-frame sẽ <b>nhấp nháy (flicker)</b> — không dùng thẳng cho clip camera-move được. Cho clip: hoặc enhance vài keyframe rồi nội suy, hoặc dùng đường temporal-stable (AnimateDiff / video-model). <b>Làm still trước, chốt look, rồi mới tính clip.</b> Đừng batch cả clip ngay.</div>
+  <div class="warn"><b>Sau khi Codex ra frame:</b> Claude nhận still → grade/comp finish + ráp shotlist THIRD AXIS. Codex chạy ComfyUI; Claude hậu kỳ + copy. Operator soi canon gate + lock.</div>
+
+  <footer>
+    <div class="m">MIKAGE ZENITH STUDIO<span class="dt"></span>AI-ENHANCE PASS<span class="dt"></span>KHOÁ CANON · VẼ ĐÈ CINE</div>
+  </footer>
+
+</div>
+</body>
+</html>

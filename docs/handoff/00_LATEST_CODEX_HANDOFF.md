@@ -1,5 +1,31 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-04 (#44, exception #49): `MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1` = QUEUED (DRAFT, blocked
+> on operator commit) - ComfyUI Flux.1-dev img2img + Depth ControlNet + Canny/Line ControlNet + Redux,
+> dial-in on exactly 1 frame. Operator uploaded new brief `MZ-BRIEF-AI-ENHANCE.html`: use AI img2img on the
+> Blender render itself to add real porcelain material/atmosphere/cinematic degree that lighting/grade
+> alone can't reach, while ControlNet locks silhouette + the 2 slits + halo so canon cannot drift. Scope
+> = Step 1 only (dial-in), not Step 2 (apply to S0/S1) and NOT the hero clip/video - brief's own warning:
+> img2img-per-frame flickers on video, must not be batched onto a clip. Base image (fixed): exception #48's
+> verified `production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_STILL.png`. Depth AOV from
+> the #48 .blend at the same camera/frame; Canny/Line from the same S2 still; Redux ref =
+> `production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png`. Brief:
+> `production/character/build_log/LANEA_CODEX_TASK_AI_ENHANCE_S2_DIALIN_V0_1.md`. Reference spec:
+> `production/character/build_log/MZ-BRIEF-AI-ENHANCE_REFERENCE_V0_1.html`. Governance: AGENTS.md
+> Forty-ninth controlled exception. `.mikage/tasks/active_task.yaml` updated + validated PASS (task_id
+> MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1, task_type MP4_RENDER_ONLY). Gate folder created:
+> `_tmp/mikage_ai_enhance_s2_dialin_v0_1_gate/` (empty, awaiting contact_sheet.png +
+> contact_sheet_review_report.md only). Hard constraints: faceless helmet (AI must not paint a face);
+> exactly 2 slits, same shape/position as base; halo absolute white/neutral, zero violet tint; violet
+> confined to slits only, no leak; silhouette unchanged (no armor/limb reveal); cinematic realism only, no
+> anime; no .blend/geometry/rig change; NO video/clip processing in this task (still-image only). Codex
+> must self-screen every candidate against the canon gate before it reaches the contact sheet. FAIL codes
+> FACE_GEOMETRY_VIOLATION / SLIT_COUNT_VIOLATION / HALO_COLOR_VIOLATION / VIOLET_LEAK_VIOLATION /
+> SILHOUETTE_VIOLATION / STYLE_VIOLATION / SCOPE_VIOLATION / VALIDATOR_SCHEMA_MISMATCH. BLOCKED until
+> operator commits new/modified files (AGENTS.md, this handoff, active_task.yaml, the two new build_log
+> files) in PowerShell on D:, then pastes the Codex dispatch message. No push, no canon-lock, no
+> asset-lock. Cowork (Lane B) does not commit/push/invoke Codex - operator only.
+
 > RESULT 2026-07-04 (#43, exception #48): `MIKAGE_ROBE_HERO_CINE_STAGING_V0_1` = PASS (independently
 > verified by Cowork) - staged environment added (reflective graphite floor roughness 0.34, two monoliths,
 > two Z-Blue depth layers, neutral haze density 0.0004) around the unmodified #47 character; halo/slit

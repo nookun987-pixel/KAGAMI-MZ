@@ -1,111 +1,89 @@
-task_id: MIKAGE_ROBE_HERO_CINE_STAGING_V0_1
+task_id: MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_ROBE_HERO_CINE_STAGING_V0_1
+current_step: MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1
 # Dispatched by operator (BOOS) 2026-07-04, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-eighth controlled exception (MIKAGE_ROBE_HERO_CINE_STAGING_V0_1 = OPEN).
-# "Towering Cloaked Shadow" - extends exception #47 (PASS) with staged environment (reflective floor,
-# monolith depth layers, thin haze), refined cine lighting (Z-Blue rim, halo/slit as practical lights
-# that cast onto floor/haze), a moving camera (crane-up or push-in, ignition at closest point = S2),
-# and minimal blocking (cloak drift, head-lift S0-S1, halo bloom S2). Route A ruling: keep the draped
-# robe exactly as-is - no armor, no limb reveal in any form, per Immutable Identity Marks and the
-# same-day read-only audit confirming no body-armor mesh exists and canon forbids adding one without
-# a separate operator ruling. Halo stays a hard constraint: absolute white/near-white/cool-neutral at
-# every state/frame, zero violet even from bounce/GI/rim/haze/god-ray; glow only at S2.
+# Governed by AGENTS.md Forty-ninth controlled exception (MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1 = OPEN).
+# ComfyUI Flux.1-dev img2img + Depth ControlNet + Canny/Line ControlNet + Redux, dial-in on exactly
+# 1 still frame (exception #48's verified S2 still). Scope = Step 1 of the operator's AI-enhance
+# brief only: find and lock a denoise/ControlNet recipe that clears the canon gate. Does NOT touch
+# S0/S1, the hero clip, or any video/clip file (img2img-per-frame flickers on video - explicitly
+# out of scope here, flagged by the operator's own brief). Does NOT modify any .blend/geometry/rig.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ROBE_HERO_CINE_STAGING_V0_1.md
-  - production/character/build_log/MZ-BRIEF-ROBE-HERO-CINE_REFERENCE_V0_1.html
-  - production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html
+  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_STILL.png
+  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
-  - docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md
-  - docs/handoff/HALO_RING_RULING_2026-07-03.md
+  - production/character/build_log/LANEA_CODEX_TASK_AI_ENHANCE_S2_DIALIN_V0_1.md
+  - production/character/build_log/MZ-BRIEF-AI-ENHANCE_REFERENCE_V0_1.html
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
-  - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
   - AGENTS.md
-  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
-output_folder_allowed: _tmp/mikage_robe_hero_cine_staging_v0_1_gate
+output_folder_allowed: _tmp/mikage_ai_enhance_s2_dialin_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/build_log/MZ-BRIEF-ROBE-HERO-CINE_REFERENCE_V0_1.html
-  - production/character/build_log/MZ-CINEMATIC-PASS_REFERENCE_V0_1.html
+  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_STILL.png
+  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
   - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
-  - docs/reports/MIKAGE_MESH_TOPOLOGY_AUDIT_V0_1.md
-  - docs/handoff/HALO_RING_RULING_2026-07-03.md
+  - production/character/build_log/LANEA_CODEX_TASK_AI_ENHANCE_S2_DIALIN_V0_1.md
+  - production/character/build_log/MZ-BRIEF-AI-ENHANCE_REFERENCE_V0_1.html
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
-  - docs/handoff/MIKAGE_AGENT_GOVERNANCE_LAYER_V1.md
-  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S0_DORMANT.mp4
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S1_AWARE.mp4
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_COMBAT.mp4
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_HERO_CLIP.mp4
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_STILL.png
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_PROOF.md
+  - production/character/reviews/MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1_CANDIDATE.png
+  - production/character/reviews/MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1_PROOF.md
 
 allowed_actions:
-  - build a staged environment around the existing character: a soft reflective floor (roughness about 0.25 to 0.4) catching halo, slit, and figure reflections, the existing dark slab(s) repositioned as offset foreground/background monoliths casting long shadows, and 1 to 2 distant planes fading into Z-Blue #4B5866 for atmospheric depth, while keeping void at least 70 percent of frame
-  - add a thin, low-density volumetric haze so rim light, halo glow, and god-rays are visible in the air
-  - refine lighting into cine staging: angled cool key light around 40 to 50 degrees, a Z-Blue rim light separating the cloak from the void, and negative fill opposite the key
-  - make the S2-only halo glow and the slit emission behave as practical lights that cast onto the floor and haze and produce god-rays through the halo ring, not just self-emission with no environmental interaction
-  - keep the existing porcelain and cloak material recipe from the source file; optionally add very restrained matte kintsugi-gold accents on cloak seams that only catch raking light, and restrained crimson only at seam or core accents, both optional
-  - give the camera genuine movement, a slow crane-up or a slow push-in, with the closest camera point landing exactly on the S2 halo ignition moment
-  - add only minimal blocking: gentle cloak drift, a slow head-lift transition from S0 to S1, and halo bloom plus settle at S2
-  - render 3 restaged state clips (S0, S1, S2) in the new environment, plus 1 hero clip with the camera move, plus 1 full-resolution still at S2
-  - render a contact sheet with at least 3 state frames plus at least 1 frame from the hero clip at its closest point, all labeled
-  - sample halo pixel color at 4 or more points per frame across all 3 states and the hero clip and report numeric RGB or hex values, and measure and report void occupancy percentage on every checked frame
-  - write full findings into the proof and gate report, with each item and state reported separately
+  - build the ComfyUI node stack: Flux.1-dev base (img2img) plus Depth ControlNet plus Canny/Line ControlNet plus Redux, feeding into sampler then VAE
+  - export a Depth AOV (Z or mist pass) directly from the source blend at the same camera and frame used for the S2 still, for use as the Depth ControlNet input
+  - derive a Canny/Line map directly from the S2 still image for use as the second ControlNet input, to hold the slit, halo, and cloak edges
+  - use the master character reference sheet as the Redux input to anchor identity
+  - run multiple seeds across denoise levels 0.45, 0.55, and 0.65, holding seed fixed while comparing denoise levels
+  - set ControlNet strengths in the ranges given (canny 0.8 to 1.0, depth 0.5 to 0.7, redux weight 0.4 to 0.6), guidance around 3.5, steps 24 to 30
+  - use the exact positive and negative prompt text supplied in the reference brief
+  - self-screen every generated candidate against the canon gate before including it in the contact sheet, discarding any that fail
+  - select exactly one recommended candidate that clears the canon gate and reads the most cinematic
+  - sample the chosen candidate's halo color at 4 or more points and report numeric values
+  - record the exact seed, denoise, ControlNet strengths, guidance, and steps used for the chosen candidate
   - write the real deliverables into the paths listed under real_deliverables
   - run deterministic verification appropriate to this task type
-  - clean .blend1 backups
-  - commit local changes only
 
 forbidden_actions:
-  - do not change geometry, rig, bones, or topology of the character in any way
-  - do not add armor of any kind, and do not separate or reveal arms or legs in any way, including implying limb shapes through lighting or shadow tricks
-  - do not let violet touch, bounce onto, or tint the halo under any circumstance or at any state, including through haze or god-rays
-  - do not let the halo glow at S0 or S1, and do not leave the halo without glow at S2
-  - do not let void occupancy drop below 70 percent on any checked frame
-  - do not wash violet into the environment, floor, or haze, or use violet as a key or fill light
-  - do not introduce a warm ambient wash, a flat pure black or white look, or any strong color besides the cool palette plus Z-Blue and violet
-  - do not animate the blade independently, or add new mesh or bones outside the lighting, material, environment, and camera scope of this task
-  - do not leave the camera static, and do not let the ignition moment land anywhere except the closest camera point
-  - do not do any final or marketing render, or claim production-ready, canon-lock, or final status
+  - do not paint in or allow a face, eyes, nose, or mouth to appear on the helmet on any candidate shown
+  - do not change the number or shape of the two sensor slits from the base image
+  - do not let the halo read as tinted violet or any color other than neutral white on the chosen candidate
+  - do not let violet leak outside the two slits onto the cloak, floor, background, or halo
+  - do not change the draped-robe silhouette, add armor, or reveal limbs in any way
+  - do not produce a result that reads as anime or cel-shaded instead of cinematic realism
+  - do not create or modify any .blend file, or change geometry, rig, or topology
+  - do not process, batch, or touch any video or clip file in this task
+  - do not rewrite the supplied positive/negative prompt text
+  - do not switch to a different base model or ControlNet/Redux setup than specified without stopping to ask first
   - do not push
   - do not modify unrelated files
-  - do not leave any .blend1 backup
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
 
 pass_conditions:
-  - geometry/rig/topology unchanged from the exception 47 source
-  - halo pixel-sampled at 4 or more points per frame across all 3 states and the hero clip shows no violet drift, reported numerically
-  - the new environment and lighting are visibly distinct from the flat exception 47 set, with a reflective floor, monolith depth layers, and haze catching rim light and god-rays all present
-  - the hero clip has genuine camera movement with the closest frame landing on the S2 ignition moment
-  - void occupancy is at least 70 percent on every checked frame
-  - no armor or limb geometry or lighting-implied limb shapes appear anywhere
-  - the palette stays cool with Z-Blue as the only secondary accent besides violet, no warm wash
-  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, the report includes a halo color check section and a void occupancy section with real numbers, and python .mikage/tools/verify_output.py prints PASS
-  - no .blend1 remains
+  - at least one candidate clears every canon-gate line (no face, exactly 2 correctly shaped slits, halo neutral/white with numeric samples, no violet leak, silhouette intact, no anime drift)
+  - the gate report contains CANON GATE CHECK, HALO COLOR CHECK, WORKFLOW RECORD, and RECOMMENDATION sections with real measured data
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage/tools/verify_output.py prints PASS
+  - no .blend file created or modified, no video/clip file produced or touched
 
 stop_conditions:
-  - any violet pixel is detected on the halo at any sampled point, frame, state, or in the hero clip
-  - the halo glows outside S2, or fails to glow at S2
-  - any armor or limb shape appears, including one implied through lighting or shadow
-  - void occupancy drops below 70 percent on any checked frame
-  - violet is washed into the environment, floor, or haze, or used as key or fill light
-  - a warm ambient wash or a strong non-Z-Blue/violet color appears
-  - geometry/rig/topology changes outside the lighting, material, environment, or camera scope
-  - the camera does not move, or the ignition moment does not land on the closest point
-  - halo or violet drift from haze/god-ray bounce cannot be avoided through normal light-rig or haze-density adjustment (report and stop, this is an operator canon decision)
+  - a face, eyes, nose, or mouth appears on the helmet on any candidate shown in the contact sheet
+  - the slit count or shape is wrong on the chosen candidate
+  - the halo reads tinted or off-white on the chosen candidate
+  - violet leaks outside the two slits
+  - the silhouette changes, armor appears, or a limb is revealed in any form
+  - the result reads anime or cel-shaded rather than cinematic realism
+  - any video/clip file is touched, or any .blend file is created or modified
+  - no candidate across all attempted seeds and denoise levels clears the canon gate
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Lane B (Cowork) takes the full-resolution S2 still for separate post (bloom, crush black, grain, vignette) and assembles it into the THIRD AXIS S2 COMBAT REVEAL shotlist; Codex does not do post/cutting/editing. No one PASSes canon or asset-locks except the operator.
-next_step_if_fail: stop and report BLOCKER reason only. Do not open a new scope.
+next_step_if_pass: Operator reviews the gate contact sheet and candidate for final canon judgment. If approved, Lane B (Cowork) takes the candidate PNG for any remaining post (bloom/crush-black/grain/vignette if needed) and THIRD AXIS shotlist assembly. Step 2 (apply the locked recipe to S0/S1, and a temporal-stable approach for video) is a separate future exception, not automatic.
+next_step_if_fail: stop and report BLOCKER reason only, including which candidates were tried and why each failed. Do not lower the canon-gate bar or switch tools/models without asking first.
