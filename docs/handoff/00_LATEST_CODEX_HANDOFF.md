@@ -1,5 +1,44 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-04 (#50, exception #50): `MIKAGE_HAIR_ADD_V0_1` = QUEUED (DRAFT, blocked on
+> operator commit) - add long/thick/dense black hair to the production rig, closing a confirmed
+> gap between the locked SSOT lore line ("toc den dai day", MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md
+> line 27) and the current hairless production asset. Lane B (Cowork) finding 2026-07-04: neither
+> the current production rig (MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend, exception #48 PASS) nor the
+> approved MIKAGE_STANDING_HERO_TURNAROUND_V0_2 reference has any hair geometry, despite this being
+> locked lore - the missing-hair problem seen in this week's txt2img batch (separately rejected by
+> the operator as unusable) traces back to this rig gap, not prompt wording. Operator ruling
+> 2026-07-04: fix the rig directly, do not paper over it with prompt text, do not use the current
+> hairless turnaround as an identity reference until resolved. Extends
+> production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
+> (101 mesh objects, 1 armature MIKAGE_axial_rig_v0_1 with 9 bones, S0/S1/S2 lighting baked in).
+> Build: one heavy dense long black hair mass (low-poly/sculpted, NOT fine-strand particle/groom,
+> NOT anime bangs/twin-tails) from the back/sides of the helmet only, never crossing the face plane
+> or either sensor slit at any of 8 turnaround angles, at least shoulder-length, flat matte
+> black/near-black only. Rig: rigid-attach to the existing head bone, or add up to 2 new hair-sway
+> bones parented to head (precedent: drape_secondary_upper/lower from exception #45/#46) - no more
+> than 2 new bones, no changes to the existing 9. LOCKED (unchanged): helmet geometry/material; both
+> slits (shape/count/violet color family); the white Enso halo and its S0/S1 unanimated/S2-glow
+> material; the closed 288-vertex cloak (no implied limbs); all 3 blade slabs and their rigid-to-root
+> attachment; S0/S1/S2 lighting values; void #050508. Required proof: a NEW 8-angle turnaround at the
+> same azimuth convention as MIKAGE_STANDING_HERO_TURNAROUND_V0_2 (000/045/090/135/180/225/270/315),
+> per-angle confirmation of no slit coverage and legible helmet silhouette, with the 180-degree back
+> view specifically showing length/density. This new turnaround may state it supersedes V0_2 "for
+> reference purposes pending operator review" only - it does not carry approval automatically. Full
+> brief: production/character/build_log/LANEA_CODEX_TASK_MIKAGE_HAIR_ADD_V0_1.md. Governance:
+> AGENTS.md Fiftieth controlled exception. .mikage/tasks/active_task.yaml updated + validated PASS
+> (task_id MIKAGE_HAIR_ADD_V0_1, task_type CONTACT_SHEET_ONLY). Gate folder created:
+> _tmp/mikage_hair_add_v0_1_gate/ (empty, awaiting contact_sheet.png +
+> contact_sheet_review_report.md only). FAIL codes HAIR_SLIT_COVERAGE / HAIR_STYLE_VIOLATION /
+> HELMET_SILHOUETTE_VIOLATION / LOCKED_ASSET_MODIFIED / RIG_SCOPE_VIOLATION / COLOR_VIOLATION /
+> VALIDATOR_SCHEMA_MISMATCH. BLOCKED until operator commits new/modified files (AGENTS.md, this
+> handoff, active_task.yaml, the new build_log brief) in PowerShell on D:, then pastes the Codex
+> dispatch message. No push, no canon-lock, no asset-lock. Cowork (Lane B) does not commit/push/
+> invoke Codex - operator only. Next per the divine-form R&D thread: once this passes and the
+> operator rules on the new turnaround, Lane B resumes the paused reference_image_url
+> identity-conditioning brief using the hair-inclusive turnaround as the reference source.
+
+
 > DISPATCH AMENDMENT 2026-07-04 (#49, exception #49): operator authorized moving execution from local
 > ComfyUI to the fal.ai hosted API (`fal-ai/flux-general/image-to-image`) after 3 consecutive local
 > BLOCKED reports (missing models -> hardware crash -> ~2h37m/candidate impractical). Full mapping:

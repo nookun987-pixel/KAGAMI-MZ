@@ -1,89 +1,89 @@
-task_id: MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1
+task_id: MIKAGE_HAIR_ADD_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: MP4_RENDER_ONLY
-current_step: MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_HAIR_ADD_V0_1
 # Dispatched by operator (BOOS) 2026-07-04, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Forty-ninth controlled exception (MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1 = OPEN).
-# ComfyUI Flux.1-dev img2img + Depth ControlNet + Canny/Line ControlNet + Redux, dial-in on exactly
-# 1 still frame (exception #48's verified S2 still). Scope = Step 1 of the operator's AI-enhance
-# brief only: find and lock a denoise/ControlNet recipe that clears the canon gate. Does NOT touch
-# S0/S1, the hero clip, or any video/clip file (img2img-per-frame flickers on video - explicitly
-# out of scope here, flagged by the operator's own brief). Does NOT modify any .blend/geometry/rig.
+# Governed by AGENTS.md Fiftieth controlled exception (MIKAGE_HAIR_ADD_V0_1 = OPEN).
+# Adds long/thick/dense black hair to the production rig, closing a confirmed gap between the
+# locked SSOT lore line ("toc den dai day") and the current hairless production asset. Extends
+# MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend (exception #48's PASS derivative). Does NOT touch
+# helmet, slits, halo, cloak, blades, existing rig bones, or lighting states.
 
 input_files_allowed:
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_STILL.png
   - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
-  - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
-  - production/character/build_log/LANEA_CODEX_TASK_AI_ENHANCE_S2_DIALIN_V0_1.md
-  - production/character/build_log/MZ-BRIEF-AI-ENHANCE_REFERENCE_V0_1.html
+  - docs/world/MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_000.png
+  - production/character/build_log/LANEA_CODEX_TASK_MIKAGE_HAIR_ADD_V0_1.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
 
-output_folder_allowed: _tmp/mikage_ai_enhance_s2_dialin_v0_1_gate
+output_folder_allowed: _tmp/mikage_hair_add_v0_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/reviews/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1_S2_STILL.png
-  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
-  - production/character/reference/MIKAGE_CHARACTER_REFERENCE_16x9.png
-  - production/character/build_log/LANEA_CODEX_TASK_AI_ENHANCE_S2_DIALIN_V0_1.md
-  - production/character/build_log/MZ-BRIEF-AI-ENHANCE_REFERENCE_V0_1.html
+  - docs/world/MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_000.png
+  - production/character/build_log/LANEA_CODEX_TASK_MIKAGE_HAIR_ADD_V0_1.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
 
 real_deliverables:
-  - production/character/reviews/MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1_CANDIDATE.png
-  - production/character/reviews/MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_HAIR_ADD_V0_1.blend
+  - production/character/reference/turnaround_hair_v0_1
+  - production/character/reviews/MIKAGE_HAIR_ADD_V0_1_SHEET.png
+  - production/character/reviews/MIKAGE_HAIR_ADD_V0_1_PROOF.md
 
 allowed_actions:
-  - build the ComfyUI node stack: Flux.1-dev base (img2img) plus Depth ControlNet plus Canny/Line ControlNet plus Redux, feeding into sampler then VAE
-  - export a Depth AOV (Z or mist pass) directly from the source blend at the same camera and frame used for the S2 still, for use as the Depth ControlNet input
-  - derive a Canny/Line map directly from the S2 still image for use as the second ControlNet input, to hold the slit, halo, and cloak edges
-  - use the master character reference sheet as the Redux input to anchor identity
-  - run multiple seeds across denoise levels 0.45, 0.55, and 0.65, holding seed fixed while comparing denoise levels
-  - set ControlNet strengths in the ranges given (canny 0.8 to 1.0, depth 0.5 to 0.7, redux weight 0.4 to 0.6), guidance around 3.5, steps 24 to 30
-  - use the exact positive and negative prompt text supplied in the reference brief
-  - self-screen every generated candidate against the canon gate before including it in the contact sheet, discarding any that fail
-  - select exactly one recommended candidate that clears the canon gate and reads the most cinematic
-  - sample the chosen candidate's halo color at 4 or more points and report numeric values
-  - record the exact seed, denoise, ControlNet strengths, guidance, and steps used for the chosen candidate
+  - survey the base file for any existing hair mesh/particle/curve object and report findings
+  - report helmet mesh world-space bounding box and both sensor-slit mesh positions
+  - build one new hair-mass mesh (or small grouped set) reading as a single heavy dense long black volume, low-poly/sculpted style matching the existing asset
+  - attach the hair mass to the head bone rigidly, or add up to 2 new hair-sway bones parented to head
+  - render a new 8-angle turnaround at the same azimuth convention as MIKAGE_STANDING_HERO_TURNAROUND_V0_2
+  - report per-angle confirmation of no slit coverage and legible helmet silhouette
+  - verify every locked item (helmet, slits, halo, cloak, blades, existing 9 bones, lighting states, void) unchanged by hash or direct measurement
   - write the real deliverables into the paths listed under real_deliverables
   - run deterministic verification appropriate to this task type
 
 forbidden_actions:
-  - do not paint in or allow a face, eyes, nose, or mouth to appear on the helmet on any candidate shown
-  - do not change the number or shape of the two sensor slits from the base image
-  - do not let the halo read as tinted violet or any color other than neutral white on the chosen candidate
-  - do not let violet leak outside the two slits onto the cloak, floor, background, or halo
-  - do not change the draped-robe silhouette, add armor, or reveal limbs in any way
-  - do not produce a result that reads as anime or cel-shaded instead of cinematic realism
-  - do not create or modify any .blend file, or change geometry, rig, or topology
-  - do not process, batch, or touch any video or clip file in this task
-  - do not rewrite the supplied positive/negative prompt text
-  - do not switch to a different base model or ControlNet/Redux setup than specified without stopping to ask first
+  - do not modify helmet geometry or material
+  - do not change slit count, shape, or violet color family
+  - do not change halo geometry or its unanimated white-only material at S0/S1
+  - do not modify the cloak mesh, introduce boundary/non-manifold edges, or imply limb geometry via hair shaping
+  - do not modify or reposition any of the 3 blade slab objects or their rigid-to-root attachment
+  - do not reposition or reweight any of the existing 9 bones
+  - do not add more than 2 new bones
+  - do not change S0/S1/S2 lighting state values
+  - do not build hair as fine particle/groom strands or anime-style bangs/twin-tails
+  - do not introduce any hair color outside flat black/near-black
+  - do not let hair cross or shadow-obscure either sensor slit at any of the 8 angles
+  - do not rebuild the base file from scratch or open/save any older rig_derivatives file
   - do not push
   - do not modify unrelated files
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
   - do not claim canon-lock, asset-lock, or production-ready/final status
+  - do not claim the new turnaround supersedes MIKAGE_STANDING_HERO_TURNAROUND_V0_2 as operator-approved; only "pending operator review"
 
 pass_conditions:
-  - at least one candidate clears every canon-gate line (no face, exactly 2 correctly shaped slits, halo neutral/white with numeric samples, no violet leak, silhouette intact, no anime drift)
-  - the gate report contains CANON GATE CHECK, HALO COLOR CHECK, WORKFLOW RECORD, and RECOMMENDATION sections with real measured data
+  - hair mesh present, reads as one heavy dense long black mass, not fine strands, not anime
+  - no slit coverage at any of the 8 turnaround angles, reported per-angle
+  - helmet silhouette clearly legible at every angle
+  - no more than 2 new bones, both hair-specific, both parented to head
+  - every locked item verified unchanged by hash or direct measurement, not just asserted
+  - 8-angle turnaround produced and visually clean, back (180) view clearly shows length/density
   - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage/tools/verify_output.py prints PASS
-  - no .blend file created or modified, no video/clip file produced or touched
+  - no .blend1 remains
 
 stop_conditions:
-  - a face, eyes, nose, or mouth appears on the helmet on any candidate shown in the contact sheet
-  - the slit count or shape is wrong on the chosen candidate
-  - the halo reads tinted or off-white on the chosen candidate
-  - violet leaks outside the two slits
-  - the silhouette changes, armor appears, or a limb is revealed in any form
-  - the result reads anime or cel-shaded rather than cinematic realism
-  - any video/clip file is touched, or any .blend file is created or modified
-  - no candidate across all attempted seeds and denoise levels clears the canon gate
+  - hair crosses or shadows either slit at any angle
+  - hair reads as fine anime strands/twin-tails instead of one heavy mass
+  - helmet silhouette becomes unclear or hidden
+  - any locked geometry/material/rig item is modified
+  - more than 2 new bones added, or an existing bone repositioned/reweighted
+  - hair introduces a color outside flat black/near-black
+  - SSOT hair spec is ambiguous beyond length/density/color and a specific hairstyle would have to be invented
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Operator reviews the gate contact sheet and candidate for final canon judgment. If approved, Lane B (Cowork) takes the candidate PNG for any remaining post (bloom/crush-black/grain/vignette if needed) and THIRD AXIS shotlist assembly. Step 2 (apply the locked recipe to S0/S1, and a temporal-stable approach for video) is a separate future exception, not automatic.
-next_step_if_fail: stop and report BLOCKER reason only, including which candidates were tried and why each failed. Do not lower the canon-gate bar or switch tools/models without asking first.
+next_step_if_pass: Operator reviews the new 8-angle turnaround and rules whether it supersedes MIKAGE_STANDING_HERO_TURNAROUND_V0_2 as the reference. If approved, Lane B (Cowork) may then use the hair-inclusive turnaround as the reference_image_url source for the divine-form txt2img identity-conditioning brief, which was paused pending this fix.
+next_step_if_fail: stop and report BLOCKER reason only, including what was tried. Do not lower the hair/slit/silhouette gate or invent canon not stated in the SSOT.
