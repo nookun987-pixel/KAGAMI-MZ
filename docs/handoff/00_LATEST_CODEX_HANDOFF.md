@@ -1,5 +1,32 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> RESULT 2026-07-04 (#43, exception #48): `MIKAGE_ROBE_HERO_CINE_STAGING_V0_1` = PASS (independently
+> verified by Cowork) - staged environment added (reflective graphite floor roughness 0.34, two monoliths,
+> two Z-Blue depth layers, neutral haze density 0.0004) around the unmodified #47 character; halo/slit
+> practical light (S2-only, 18/260W) casts onto floor/haze; hero clip = genuine 4.0s push-in+crane camera
+> move (confirmed by direct frame comparison, frame 0 vs frame 95 - figure clearly closer at the end),
+> ignition/halo-glow-on at source frame 80/96 (confirmed by direct frame extraction: frame 70 = matte,
+> frame 80 = glowing, matching the reported void-ratio drop 88.2% -> ~80.9% at ignition). Independent
+> re-verification performed: ffprobe on all 3 state clips + hero clip (720x1280/h264/24fps, states 2.0s,
+> hero 4.0s, no audio - matches claims) and the S2 still (1440x2560); recomputed void occupancy at void
+> threshold <=24 all channels on 5 extracted frames - S0 88.29%, S1 88.22%, S2 80.94%, hero start 89.19%,
+> hero end 81.71% - matches Codex's reported numbers to 2 decimal places exactly; independently sampled
+> halo ring pixel colors around the ring circumference on S0/S1/S2/hero frames - all lit halo pixels
+> neutral/near-neutral (e.g. S2 `#FAFAFA`-range, R=G=B or within a few points), zero violet detected,
+> matte at S0/S1 and glowing only at S2 as required; visually inspected every extracted frame plus the
+> gate contact sheet - single robe mass throughout, no armor, no limb geometry or limb-implying
+> lighting/shadow at any state or in the hero clip; brightened/cropped the floor region of an S2 frame and
+> confirmed the reflective floor + monolith staging elements are genuinely present (cool/neutral tones,
+> no violet or warm wash). Gate folder holds exactly contact_sheet.png + contact_sheet_review_report.md;
+> `python .mikage/tools/verify_output.py` re-run independently = PASS; no `.blend1` found in
+> production/character. NOT independently verified (sandbox cannot reach D: git or open .blend in
+> Blender): commit hash `8a407cf` (per Codex report only) and the internal mesh/rig SHA-256 diff claim in
+> the proof - both low-risk, consistent with the same known sandbox limitation noted for #46/#47. AGENTS.md
+> exception #48 marked CLOSED. `.mikage/tasks/active_task.yaml` still points at this now-CLOSED task
+> (harmless, mirrors #46/#47 handling). Not pushed. No canon-lock/asset-lock/production-ready claim made,
+> per Codex's own proof. Next per brief: Lane B (Cowork) takes the S2 still for post (bloom/crush-black/
+> grain/vignette) and THIRD AXIS shotlist assembly - not started.
+
 > DISPATCH 2026-07-04 (#42, exception #48): `MIKAGE_ROBE_HERO_CINE_STAGING_V0_1` = QUEUED (DRAFT, blocked
 > on operator commit) - "Towering Cloaked Shadow" cine staging, extends exception #47 (PASS). BOOS ruling
 > 2026-07-04 after read-only body-armor audit (Verdict B: no armor bible/2D/3D/blade mesh exists, and
