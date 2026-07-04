@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEX BRIEF · ROBE HERO — TOWERING CLOAKED SHADOW</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Shippori+Mincho:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508;--void-mid:#0d0d14;--void-line:#242436;
+  --porcelain:#f2eeea;--porcelain-dim:#c8c4be;--silver:#a0a0b0;--silver-dim:#6b6b78;
+  --violet:#8f00ff;--violet-glow:#9d7fd0;--violet-dim:#3d2e55;
+  --zblue:#4b5866;--gold:#c39a52;--crimson:#a24759;--amber:#c2a85a;
+  --hairline:rgba(160,160,176,0.14);
+  --fw:'Cinzel',serif;--fs:'Shippori Mincho',serif;--fm:'Space Mono',monospace;
+  --glow:0 0 24px rgba(143,0,255,0.35),0 0 4px rgba(157,127,208,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--void);color:var(--porcelain-dim);font-family:var(--fs);line-height:1.7;-webkit-font-smoothing:antialiased;padding:0 0 90px;position:relative}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+.wrap{max-width:860px;margin:0 auto;padding:0 30px}
+header{padding:64px 0 20px;position:relative;overflow:hidden}
+.halo{position:absolute;top:-50px;right:-30px;width:380px;height:380px;pointer-events:none;background:radial-gradient(circle,rgba(143,0,255,0.12) 0%,transparent 68%)}
+.wm{font-family:var(--fw);font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--porcelain);font-size:12px;position:relative}
+h1{font-family:var(--fs);font-weight:700;color:var(--porcelain);font-size:clamp(25px,4.4vw,38px);letter-spacing:.09em;margin:20px 0 6px;position:relative;line-height:1.12}
+.tagline{font-family:var(--fs);color:var(--violet-glow);font-size:15px;letter-spacing:.06em;position:relative;font-style:italic}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative}
+.meta span{font-family:var(--fm);font-size:10.5px;letter-spacing:.05em;color:var(--silver);border:1px solid var(--void-line);background:var(--void-mid);padding:4px 10px}
+.meta span b{color:var(--violet-glow);font-weight:400}
+
+.intent{border:1px solid var(--hairline);background:var(--void-mid);padding:17px 21px;margin:28px 0 0;position:relative}
+.intent::before{content:'';position:absolute;left:0;top:0;width:2px;height:100%;background:linear-gradient(180deg,var(--violet),transparent)}
+.intent p{font-size:14.5px;color:var(--porcelain-dim)}
+.intent b{color:var(--porcelain);font-weight:400}
+.intent .keep{color:var(--violet-glow)}
+
+h2{font-family:var(--fm);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet-glow);margin:38px 0 4px;display:flex;align-items:baseline;gap:12px}
+h2 .n{color:var(--silver-dim)}
+.lead{font-size:13.5px;color:var(--silver);margin-bottom:14px}
+
+.card{border:1px solid var(--hairline);background:var(--void-mid);padding:16px 20px;margin-bottom:11px}
+.card h5{font-family:var(--fm);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--porcelain);margin-bottom:7px}
+.card p{font-size:14px;color:var(--porcelain-dim);line-height:1.66}
+.card p+p{margin-top:6px}
+.spec{font-family:var(--fm);font-size:11.5px;color:var(--silver);background:var(--void);border:1px solid var(--void-line);padding:2px 8px;display:inline-block;margin:8px 6px 0 0;letter-spacing:.02em}
+.spec b{color:var(--violet-glow);font-weight:400}
+
+.pal{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+.sw{border:1px solid var(--hairline);min-width:96px;flex:1}
+.sw .chip{height:34px}
+.sw .l{padding:6px 9px;font-family:var(--fm);font-size:9px;letter-spacing:.06em;color:var(--silver);line-height:1.4}
+.sw .l b{display:block;color:var(--porcelain);font-size:10px;letter-spacing:.1em}
+
+.guard{border:1px solid var(--violet-dim);background:linear-gradient(180deg,rgba(143,0,255,0.05),transparent);padding:18px 20px;position:relative;margin-top:6px}
+.guard::before{content:'CANON — KHÔNG PHẠM';position:absolute;top:-8px;left:16px;background:var(--void);padding:0 8px;font-family:var(--fm);font-size:9px;letter-spacing:.2em;color:var(--violet-glow)}
+.guard li{list-style:none;font-size:13.5px;padding:4px 0 4px 18px;position:relative;color:var(--porcelain-dim);line-height:1.6}
+.guard li::before{content:'—';position:absolute;left:0;color:var(--violet)}
+.guard b{color:var(--porcelain);font-weight:400}
+
+.out{border:1px solid var(--amber);background:linear-gradient(180deg,rgba(194,168,90,0.05),transparent);padding:18px 21px;margin-top:6px;position:relative}
+.out::before{content:'CODEX TRẢ VỀ';position:absolute;top:-8px;left:16px;background:var(--void);padding:0 8px;font-family:var(--fm);font-size:9px;letter-spacing:.2em;color:var(--amber)}
+.out li{list-style:none;font-size:14px;padding:5px 0 5px 20px;position:relative;color:var(--porcelain-dim);line-height:1.6}
+.out li::before{content:'▸';position:absolute;left:0;color:var(--amber)}
+.out b{color:var(--porcelain);font-weight:400}
+
+.rule{font-family:var(--fm);font-size:11.5px;color:var(--silver);background:var(--void-mid);border:1px solid var(--void-line);padding:12px 15px;margin-top:22px;line-height:1.7}
+.rule b{color:var(--amber);font-weight:400}
+
+footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--hairline);text-align:center}
+footer .m{font-family:var(--fm);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--silver-dim)}
+footer .d{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--violet);box-shadow:var(--glow);margin:0 8px;vertical-align:middle}
+@media(max-width:640px){.wrap{padding:0 18px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="halo"></div>
+  <div class="wm">MIKAGE ZENITH · CODEX BRIEF</div>
+  <h1>ROBE HERO — DÀN CẢNH + ÁNH SÁNG CINE</h1>
+  <div class="tagline">"Towering Cloaked Shadow" — bóng choàng áp đảo, không phải mô hình</div>
+  <div class="meta">
+    <span>LANE <b>A · cine staging</b></span>
+    <span>AGENT <b>Codex · Blender</b></span>
+    <span>CANON <b>ĐƯỜNG A — giữ draped robe</b></span>
+    <span>LAYER <b>cine/film (không phải brand-UI)</b></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intent">
+    <p><b>Vấn đề đang chữa:</b> render hiện tại trông "chỉ là mô hình" vì đèn phẳng + không bối cảnh — KHÔNG phải vì thiếu giáp. Brief này thêm <b>sân khấu + ánh sáng cảnh + máy quay</b> lên con robe hiện có. <span class="keep">Giữ nguyên draped robe (identity mark bất biến) — KHÔNG thêm giáp, KHÔNG lộ tay/chân.</span> Mục tiêu: từ "tượng trong hộp đen" → "bóng choàng nguyệt thạch áp đảo".</p>
+  </div>
+
+  <!-- 1 ENV -->
+  <h2><span class="n">01</span> SÂN KHẤU (environment)</h2>
+  <div class="lead">Void thôi trống — thành không gian có chiều sâu. Tối giản, vẫn void-dominant.</div>
+  <div class="card">
+    <h5>Sàn phản chiếu</h5>
+    <p>Sàn tối bóng mờ (wet/polished, roughness ~0.25–0.4) hắt lại halo + khe violet + bóng figure. Cho nhân vật "đứng ở đâu đó" thay vì trôi. Không gương hoàn hảo — phản chiếu mờ, có keshiki.</p>
+    <span class="spec">reflect <b>mờ</b></span><span class="spec">grounding bóng đổ</span>
+  </div>
+  <div class="card">
+    <h5>Chiều sâu + monolith</h5>
+    <p>Dùng slab tối đang có cạnh figure như <b>tiền/hậu cảnh monolith</b> — đặt lệch, đổ bóng dài. Thêm 1–2 mặt phẳng xa mờ dần vào Z-Blue <b>#4B5866</b> để tạo lớp khí quyển sâu. Không lấp đầy — giữ ≥70% void.</p>
+    <span class="spec">distance falloff <b>Z-Blue #4B5866</b></span><span class="spec">void ≥70%</span>
+  </div>
+  <div class="card">
+    <h5>Khí quyển</h5>
+    <p>Volumetric haze mỏng (density thấp) để rim + halo + god-ray bám vào không khí. Đây là thứ biến ảnh phẳng thành "có không khí". Không khói dày — mỏng, lạnh.</p>
+    <span class="spec">haze <b>loãng</b></span><span class="spec">bắt god-ray</span>
+  </div>
+
+  <!-- 2 LIGHT -->
+  <h2><span class="n">02</span> ÁNH SÁNG CẢNH (cine lighting)</h2>
+  <div class="lead">Cú lớn nhất. Sáng có hướng + từ trong cảnh, không phải đèn studio đều.</div>
+  <div class="card">
+    <h5>Key + Rim + Negative fill</h5>
+    <p>Key xiên ~40–50° một bên, cao hơn đầu, lạnh. Rim Z-Blue phía sau tách khối choàng đen khỏi void (thiếu rim = cloak biến mất vào nền). Negative fill (mảng đen) đối diện key để một bên chìm hẳn — đây là thứ tạo khối cho vải + sứ.</p>
+    <span class="spec">key <b>xiên, lạnh</b></span><span class="spec">rim <b>Z-Blue</b></span><span class="spec">negative fill</span>
+  </div>
+  <div class="card">
+    <h5>Halo + khe = practical light</h5>
+    <p>Halo (S2) glow trắng = nguồn sáng thật, hắt xuống sàn + bám haze + god-ray xuyên vòng. Khe violet emission hắt tím lên gò má sứ + mặt trong halo. Đây là ánh sáng "trong cảnh" — bán cảm giác sống.</p>
+    <span class="spec">halo cast xuống sàn</span><span class="spec">god-ray qua vòng</span>
+  </div>
+  <div class="card">
+    <h5>Vật liệu</h5>
+    <p>Porcelain: SSS nhẹ + roughness biến thiên (keshiki, không phẳng) + clearcoat mỏng — ra sứ, không nhựa. Cloak: matte + sheen/fresnel mép để rim bắt viền, nếp gấp đọc được mà thân vẫn chìm. Tuỳ chọn: kintsugi gold <b>#C39A52</b> matte trên seam vải (raking light only), crimson <b>#A24759</b> chỉ ở seam/core — restrained.</p>
+    <span class="spec">SSS + keshiki</span><span class="spec">seam gold/crimson <b>tuỳ chọn, matte</b></span>
+  </div>
+
+  <!-- 3 CAM -->
+  <h2><span class="n">03</span> MÁY QUAY (camera)</h2>
+  <div class="lead">Đứng im = ảnh. Chuyển động = phim.</div>
+  <div class="card">
+    <h5>Ống kính + move + DOF</h5>
+    <p>~85mm, DOF nông focus khe mắt. <b>Low-angle</b> nhìn lên → chất đài tưởng niệm/áp đảo. Move: <b>crane chậm từ dưới lên</b> hoặc push-in chậm, tới điểm gần nhất thì trùng ignition halo (S2). Micro-parallax cho có chiều.</p>
+    <span class="spec">85mm · low-angle</span><span class="spec">crane-up / push-in chậm</span><span class="spec">ignition = camera gần nhất</span>
+  </div>
+
+  <!-- 4 MOTION -->
+  <h2><span class="n">04</span> DIỄN (motion — tối giản)</h2>
+  <div class="lead">Có chủ đích, không múa. KHÔNG bước đi, KHÔNG lộ tay/chân (canon).</div>
+  <div class="card">
+    <h5>Blocking</h5>
+    <p>Cloak <b>drift nhẹ</b> theo luồng khí (không bay lố). Ngẩng đầu chậm ở S0→S1. Halo bung + settle ở S2. Hết. Nhân vật tĩnh-mà-sống, đúng chất monolith.</p>
+    <span class="spec">cloak drift nhẹ</span><span class="spec">head lift S0→S1</span><span class="spec">halo bloom S2</span>
+  </div>
+
+  <!-- GUARD -->
+  <h2><span class="n">✦</span> GUARDRAIL CANON</h2>
+  <div class="guard">
+    <li><b>Giữ draped robe.</b> KHÔNG thêm giáp, KHÔNG tách/ lộ tay/chân. Void body mass = bất biến.</li>
+    <li><b>Violet CHỈ ở 2 khe</b> (+ P3 core nếu có). Không lên halo/cloak/sàn/nền.</li>
+    <li><b>Halo trắng:</b> matte ở S0/S1, glow trắng CHỈ ở S2. Không ám tím.</li>
+    <li><b>Void ≥70%</b> khung. Bóng tối là bạn — cho thân chìm bớt.</li>
+    <li><b>Cine palette:</b> lạnh, subtractive mineral, keshiki mọi bề mặt. <b>KHÔNG warm ambient wash.</b> Không pure #000/#fff. Z-Blue là màu lạnh duy nhất.</li>
+  </div>
+  <div class="pal">
+    <div class="sw"><div class="chip" style="background:#050508"></div><div class="l"><b>VOID</b>#050508</div></div>
+    <div class="sw"><div class="chip" style="background:#f2eeea"></div><div class="l"><b>PORCELAIN</b>#F2EEEA</div></div>
+    <div class="sw"><div class="chip" style="background:#8f00ff"></div><div class="l"><b>VIOLET slit</b>#8F00FF</div></div>
+    <div class="sw"><div class="chip" style="background:#4b5866"></div><div class="l"><b>Z-BLUE rim</b>#4B5866</div></div>
+    <div class="sw"><div class="chip" style="background:#c39a52"></div><div class="l"><b>GOLD seam</b>#C39A52 opt</div></div>
+    <div class="sw"><div class="chip" style="background:#a24759"></div><div class="l"><b>CRIMSON core</b>opt</div></div>
+  </div>
+
+  <!-- OUT -->
+  <h2><span class="n">→</span> OUTPUT</h2>
+  <div class="out">
+    <li>Re-render <b>3 state (S0/S1/S2)</b> trong environment đã dàn + lit — thay bộ #47 phẳng cũ.</li>
+    <li>1 <b>hero clip có camera move</b> (crane/push-in), ignition halo rơi đúng điểm camera gần nhất.</li>
+    <li>Giao frame + clip + 1 still S2 full-res (ứng viên thumbnail/hero).</li>
+    <li>Gate như SOP: validator, không .blend1, commit không push tới khi operator duyệt.</li>
+  </div>
+
+  <div class="rule"><b>Sau khi Codex xong:</b> Claude nhận still S2 → chồng comp/grade (bloom, crush black, grain, vignette) + ráp shotlist THIRD AXIS. Codex dựng ánh sáng thật; Claude làm hậu kỳ + copy. Không ai PASS canon trừ operator.</div>
+
+  <footer>
+    <div class="m">MIKAGE ZENITH STUDIO<span class="d"></span>ROBE HERO CINE<span class="d"></span>ĐƯỜNG A · GIỮ CANON</div>
+  </footer>
+
+</div>
+</body>
+</html>

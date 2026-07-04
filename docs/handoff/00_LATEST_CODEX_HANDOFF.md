@@ -1,5 +1,30 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-04 (#42, exception #48): `MIKAGE_ROBE_HERO_CINE_STAGING_V0_1` = QUEUED (DRAFT, blocked
+> on operator commit) - "Towering Cloaked Shadow" cine staging, extends exception #47 (PASS). BOOS ruling
+> 2026-07-04 after read-only body-armor audit (Verdict B: no armor bible/2D/3D/blade mesh exists, and
+> adding one would violate the locked Immutable Identity Marks / VOID BODY MASS rule) = ROUTE A: keep the
+> draped robe exactly as-is, do NOT add armor or reveal limbs. Upgrade only via staged environment
+> (reflective floor, monolith depth layers, thin haze), refined cine lighting (Z-Blue rim, halo/slit as
+> practical lights casting onto floor/haze/god-rays, S2-only glow), optional restrained gold/crimson seam
+> accents, camera MOVEMENT (crane-up or push-in, ignition at closest point = S2), and minimal blocking
+> (cloak drift, head-lift S0-S1, halo bloom S2). Source input (extend, do not rebuild):
+> `production/character/production_actor/rig_derivatives/MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1.blend`.
+> Brief: `production/character/build_log/LANEA_CODEX_TASK_ROBE_HERO_CINE_STAGING_V0_1.md`. Reference spec:
+> `production/character/build_log/MZ-BRIEF-ROBE-HERO-CINE_REFERENCE_V0_1.html`. Governance: AGENTS.md
+> Forty-eighth controlled exception. `.mikage/tasks/active_task.yaml` updated + validated PASS
+> (task_id MIKAGE_ROBE_HERO_CINE_STAGING_V0_1, task_type MP4_RENDER_ONLY). Gate folder created:
+> `_tmp/mikage_robe_hero_cine_staging_v0_1_gate/` (empty, awaiting Codex output: contact_sheet.png +
+> contact_sheet_review_report.md only). Hard constraints unchanged from #47 plus new ones: halo zero-violet
+> at every pixel/frame/state/hero-clip; halo glow S2-only; void >=70% every checked frame including hero
+> clip; NO armor/limb reveal in any form, including via lighting or shadow; camera must move with ignition
+> at closest point; FAIL codes HALO_COLOR_VIOLATION / STATE_MACHINE_VIOLATION / LIMB_GEOMETRY_VIOLATION /
+> ARMOR_SCOPE_VIOLATION / VOID_RATIO_VIOLATION / VIOLET_IN_ENVIRONMENT / PALETTE_VIOLATION / SCOPE_VIOLATION
+> / CAMERA_STAGING_INCOMPLETE / VALIDATOR_SCHEMA_MISMATCH. BLOCKED until operator commits new/modified
+> files (AGENTS.md, this handoff, active_task.yaml, the two new build_log files) in PowerShell on D:, then
+> pastes the Codex dispatch message. No push, no canon-lock, no asset-lock. Cowork (Lane B) does not
+> commit/push/invoke Codex - operator only.
+
 > RESULT 2026-07-04 (#41, exception #47): `MIKAGE_CINEMATIC_LIGHTING_PASS_V0_1` = PASS - 3-state ignition
 > sequence delivered as 3 separate 2s clips (`_S0_DORMANT`, `_S1_AWARE`, `_S2_COMBAT`), same camera/
 > light-rig/materials/grade, only slit+halo emission strength state-keyed: S0 slit 0.18/halo 0.0, S1
