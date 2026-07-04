@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MZ · CINE REVIEW FRAME — P1 TARGET</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Shippori+Mincho:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508;--void-mid:#0d0d14;--void-card:#12121c;
+  --porcelain:#f2eeea;--porcelain-dim:#c8c4be;--silver:#a0a0b0;--silver-dim:#6b6b78;--silver-faint:#43434e;
+  --violet:#8f00ff;--violet-glow:#9d7fd0;
+  --crimson:#9d2933;--crimson-hi:#d11033;--amber:#c2a85a;
+  --mono:'Space Mono',monospace;--serif:'Shippori Mincho',serif;--word:'Cinzel',serif;
+  --hair:rgba(160,160,176,0.14);--hair-v:rgba(143,0,255,0.30);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--void);color:var(--porcelain-dim);font-family:var(--serif);
+  padding:40px 20px 100px;max-width:1180px;margin:0 auto;line-height:1.7;
+  background-image:radial-gradient(circle at 15% -5%,rgba(143,0,255,.045),transparent 55%);}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:99;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wm{font-family:var(--word);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--porcelain);font-size:13px}
+.meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--silver-dim)}
+.label{font-family:var(--mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--silver)}
+.tick{display:inline-block;width:6px;height:6px;background:var(--crimson-hi);margin-right:8px;transform:translateY(-1px)}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,5vw,40px);color:var(--porcelain);letter-spacing:.02em;line-height:1.06;margin:12px 0 6px}
+h2{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--porcelain);letter-spacing:.03em}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--hair);padding-bottom:22px;margin-bottom:26px}
+.lead{font-size:16px;color:var(--porcelain);margin-top:14px}
+.lead b{color:var(--violet-glow)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:48px 0 16px}
+.sec-num{font-family:var(--mono);font-size:12px;color:var(--violet);letter-spacing:.1em}
+
+/* stage toggle */
+.toggle{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
+.tg{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);
+  background:transparent;border:1px solid var(--hair);padding:8px 15px;cursor:pointer;transition:.25s}
+.tg:hover{color:var(--porcelain)}
+.tg.on{color:var(--porcelain);border-color:var(--hair-v);background:rgba(143,0,255,.08)}
+.tg .st{font-family:var(--mono);font-size:9px;color:var(--silver-dim);letter-spacing:.12em;display:block;margin-top:3px}
+
+.frame-wrap{border:1px solid var(--hair);background:#000;position:relative;line-height:0}
+.frame-wrap svg{width:100%;height:auto;display:block}
+.cap{font-family:var(--mono);font-size:11px;color:var(--silver-dim);letter-spacing:.05em;margin-top:10px;text-align:center}
+
+.spec{border:1px solid var(--hair-v);background:linear-gradient(180deg,rgba(143,0,255,.04),transparent 40%),var(--void-mid);margin-top:18px}
+.spec-hd{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--hair);gap:12px}
+.spec-hd h3{color:var(--porcelain);font-family:var(--serif);font-weight:600;font-size:18px}
+.spec-bd{padding:18px 22px}
+.copybtn{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet-glow);background:transparent;border:1px solid var(--hair-v);padding:7px 14px;cursor:pointer;transition:.25s;white-space:nowrap}
+.copybtn:hover{background:rgba(143,0,255,.12);color:var(--porcelain)}
+.copybtn.done{color:var(--amber);border-color:rgba(194,168,90,.4)}
+pre{font-family:var(--mono);font-size:12.5px;line-height:1.65;color:var(--porcelain-dim);white-space:pre-wrap;word-break:break-word;background:var(--void);border:1px solid var(--hair);padding:18px;margin-top:14px;overflow-x:auto}
+ul{list-style:none;margin:10px 0 0}
+li{position:relative;padding-left:20px;margin:9px 0;font-size:14.5px;color:var(--porcelain-dim)}
+li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;background:var(--silver-dim)}
+li.ban::before{background:var(--crimson-hi)}
+li.ok::before{background:var(--violet-glow)}
+.note{font-family:var(--mono);font-size:11px;color:var(--silver-dim);letter-spacing:.03em;margin-top:30px;border-top:1px solid var(--hair);padding-top:16px}
+.foot{margin-top:56px;text-align:center}
+.kanji{font-family:var(--serif);letter-spacing:.3em;color:var(--silver-dim);font-size:20px}
+b.p{color:var(--porcelain)}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<div class="topbar">
+  <span class="wm">MIKAGE&nbsp;ZENITH</span>
+  <span class="meta">MZ-P1-CINE-REVIEW-FRAME · v1 · 2026-07-04</span>
+</div>
+
+<span class="label"><span class="tick"></span>PHASE 1 DELIVERABLE · CINE LAYER · TARGET FOR CODEX</span>
+<h1>Cinematic Review Frame — bản đích</h1>
+<p class="lead">Đây là <b>đích pixel</b> Codex phải match, không phải mô tả chữ. Chrome tĩnh, tâm để trống cho render. Bấm stage để xem nhãn đổi theo data (một template, nhiều stage).</p>
+<p class="cap" style="text-align:left;margin-top:14px;color:var(--amber)">v2 patch 2026-07-04 (operator ruling): crimson tick đổi thành silver (mâu thuẫn Canon Guard) · FORMAT ghi rõ 16:9 = review-master, portrait/Canvas là derivative riêng · 2 chuỗi readout giả không còn gần-trùng nhau.</p>
+
+<!-- STAGE TOGGLE -->
+<div class="toggle" id="toggle">
+  <button class="tg on" data-stage="WIREFRAME" data-code="ADN">WIREFRAME<span class="st">S1 · geometry</span></button>
+  <button class="tg" data-stage="ALBEDO" data-code="ADN">ALBEDO<span class="st">S1 · base color</span></button>
+  <button class="tg" data-stage="FULL SHADER" data-code="ADN">FULL SHADER<span class="st">S2 · material</span></button>
+  <button class="tg" data-stage="CINE" data-code="ADN">CINE<span class="st">S2 · lit pass</span></button>
+</div>
+
+<!-- THE FRAME (SVG 1920x1080) -->
+<div class="frame-wrap">
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" font-family="'Space Mono',monospace">
+  <defs>
+    <radialGradient id="vig" cx="50%" cy="46%" r="72%">
+      <stop offset="0%" stop-color="#0a0a10"/>
+      <stop offset="62%" stop-color="#060608"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="0.4"/></filter>
+  </defs>
+
+  <!-- render field (void placeholder) -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vig)"/>
+
+  <!-- faint centered placeholder for the render/subject -->
+  <g opacity="0.5" text-anchor="middle">
+    <line x1="960" y1="470" x2="960" y2="610" stroke="#20202c" stroke-width="1"/>
+    <text x="960" y="640" fill="#2c2c38" font-size="15" letter-spacing="6">SUBJECT · RENDER OUTPUT LAYER</text>
+    <text x="960" y="666" fill="#20202c" font-size="11" letter-spacing="4">CODEX FILLS THIS · CHROME STAYS FIXED</text>
+  </g>
+
+  <!-- ===== TOP MENU BAR ===== -->
+  <g fill="#6b6b78" font-size="15" letter-spacing="1.5">
+    <text x="40" y="34">File</text><text x="108" y="34">Edit</text><text x="176" y="34">View</text>
+    <text x="248" y="34">Launch</text><text x="352" y="34">Errors</text><text x="440" y="34">Code</text><text x="512" y="34">Help</text>
+  </g>
+  <!-- faint readout strips -->
+  <text x="40" y="54" fill="#33333e" font-size="10" letter-spacing="1">2.2 / 5.56 / 3.04 26   8005    69 / 125 / 35.5    7.35    501</text>
+  <text x="1420" y="34" fill="#5f5f6b" font-size="13" letter-spacing="2" text-anchor="end">PROJECT&nbsp;SEM · UNTIL&nbsp;DAWN</text>
+  <text x="1880" y="34" fill="#6b6b78" font-size="13" letter-spacing="2" text-anchor="end">[&nbsp;ADN&nbsp;]</text>
+  <text x="1880" y="54" fill="#33333e" font-size="10" letter-spacing="1" text-anchor="end">1.8 / 4.02 / 2.61 14   6120    41 / 96 / 22.7    318</text>
+  <line x1="40" y1="66" x2="1880" y2="66" stroke="rgba(160,160,176,0.12)" stroke-width="1"/>
+
+  <!-- ===== STAGE LABEL BLOCK (top-left) ===== -->
+  <rect id="accentTick" x="70" y="150" width="8" height="34" fill="#a0a0b0"/>
+  <text id="stageText" x="92" y="180" fill="#f2eeea" font-size="34" font-weight="700" letter-spacing="1.5">WIREFRAME</text>
+  <text id="assetText" x="72" y="212" fill="#a0a0b0" font-size="15" letter-spacing="3">001 CHARACTER</text>
+  <text x="72" y="234" fill="#6b6b78" font-size="12" letter-spacing="2">26 . 07 . 04</text>
+  <text id="codeText" x="196" y="234" fill="#6b6b78" font-size="12" letter-spacing="2">ADN</text>
+
+  <!-- ===== CORNER TICKS (L-shaped hairlines) ===== -->
+  <g stroke="rgba(242,238,234,0.22)" stroke-width="1.4" fill="none">
+    <!-- TL --><path d="M48 92 h30 M48 92 v30"/>
+    <!-- TR --><path d="M1872 92 h-30 M1872 92 v30"/>
+    <!-- BL --><path d="M48 988 h30 M48 988 v-30"/>
+    <!-- BR --><path d="M1872 988 h-30 M1872 988 v-30"/>
+  </g>
+
+  <!-- ===== RETICLE (right-mid) ===== -->
+  <g stroke="#6b6b78" stroke-width="1.2" fill="none" opacity="0.9">
+    <text x="1655" y="536" fill="#6b6b78" font-size="12" letter-spacing="2" stroke="none">1/8 20</text>
+    <line x1="1720" y1="548" x2="1748" y2="548"/>
+    <circle cx="1766" cy="548" r="8"/>
+    <circle cx="1766" cy="548" r="2" fill="#6b6b78" stroke="none"/>
+    <line x1="1784" y1="548" x2="1806" y2="548"/>
+    <text x="1815" y="552" fill="#6b6b78" font-size="12" letter-spacing="2" stroke="none">4/9-7</text>
+  </g>
+
+  <!-- ===== BOTTOM READOUTS ===== -->
+  <text x="70" y="1008" fill="#6b6b78" font-size="13" letter-spacing="3">00 46&nbsp;&nbsp;·&nbsp;&nbsp;24 11</text>
+  <text x="1850" y="1008" fill="#6b6b78" font-size="13" letter-spacing="3" text-anchor="end">00 46&nbsp;&nbsp;·&nbsp;&nbsp;24 11</text>
+  <!-- scrub bar -->
+  <line x1="70" y1="1040" x2="1850" y2="1040" stroke="rgba(160,160,176,0.12)" stroke-width="1"/>
+  <line x1="70" y1="1040" x2="1258" y2="1040" stroke="#6b6b78" stroke-width="1.4"/>
+  <circle cx="1258" cy="1040" r="3" fill="#a0a0b0"/>
+  <text x="70" y="1064" fill="#43434e" font-size="10" letter-spacing="2">66.67X</text>
+  <text x="960" y="1064" fill="#43434e" font-size="10" letter-spacing="3" text-anchor="middle">PROJECT&nbsp;SEM · REVIEW</text>
+  <text x="1850" y="1064" fill="#43434e" font-size="10" letter-spacing="2" text-anchor="end">0215</text>
+</svg>
+</div>
+<p class="cap" id="cap">STAGE: WIREFRAME — nhãn + tick data-driven · chrome giữ nguyên vị trí mọi stage</p>
+
+<!-- BUILD BRIEF -->
+<div class="sec-head"><span class="sec-num">§P1</span><h2>Build brief cho Codex</h2></div>
+
+<div class="spec">
+  <div class="spec-hd">
+    <h3>Toạ độ + method (bê thẳng)</h3>
+    <button class="copybtn" data-t="brief">COPY BRIEF</button>
+  </div>
+  <div class="spec-bd">
+<pre id="brief">CODEX BUILD BRIEF — MZ CINE REVIEW FRAME  [CINE LAYER · reusable overlay]
+
+CANVAS       : 1920×1080 (16:9) — REVIEW-MASTER format. Toạ độ dưới là gốc; scale tuyến tính cho 4K.
+               Portrait/Canvas export (9:16, Phase 4) là derivative RIÊNG, KHÔNG tự mang chrome này -
+               nếu cần chrome cho portrait thì đó là layout variant mới, không phải crop/stretch frame 16:9.
+LAYER MODEL  : 2 tầng —
+  (1) CHROME  = tĩnh, không đổi giữa các shot (menu, ticks, reticle, scrub, readouts).
+  (2) DATA    = text đổi theo shot (STAGE, ASSET_ID, ASSET_NAME, DATE, CODENAME).
+BUILD OPTION :
+  A. Blender compositor node-group: chrome = image overlay PNG (alpha) ở trên render layer;
+     DATA = Text objects hoặc driven text node, nối vào scene properties.
+  B. PNG overlay 1920×1080 (chrome, nền trong suốt) + text layer render riêng rồi comp.
+  → Ưu tiên A để 1 lần setup, mọi shot tự gắn.
+
+FIELDS (data-driven):
+  STAGE       ∈ { LOW-POLY, WIREFRAME, ALBEDO, FULL SHADER, CINE }
+  ASSET_ID    = "001", "002"...   ASSET_NAME = "CHARACTER", "ZENITH-BLADE"...
+  DATE        = "YY . MM . DD"     CODENAME = "ADN"
+
+TYPE         : Space Mono TOÀN BỘ chrome. (không serif, không sans trong chrome)
+
+COORDINATES (x,y = baseline; origin top-left):
+  MENU ROW    : y=34, x=40 → "File Edit View Launch Errors Code Help", size 15, fill #6b6b78, ls 1.5px
+  READOUT L   : x=40  y=54, size 10, fill #33333e  (fake numeric strip)
+  PROJECT TAG : x=1420 y=34 (anchor end), size 13, fill #5f5f6b → "PROJECT SEM · UNTIL DAWN"
+  CODE TAG    : x=1880 y=34 (anchor end), size 13, fill #6b6b78 → "[ ADN ]"
+  READOUT R   : x=1880 y=54 (anchor end), size 10, fill #33333e
+  HAIRLINE    : x1=40 x2=1880 y=66, stroke rgba(160,160,176,0.12) 1px
+
+  STAGE BLOCK (top-left):
+    ACCENT TICK : rect x=70 y=150 w=8 h=34, fill #a0a0b0 (silver)   ← KHÔNG crimson trong chrome
+                  (crimson khoá riêng cho seam/sacred TRÊN MODEL, dùng trong UI sẽ mâu thuẫn Canon Guard)
+    STAGE TEXT  : x=92 y=180, size 34, weight 700, fill #f2eeea, ls 1.5px
+    ASSET TEXT  : x=72 y=212, size 15, fill #a0a0b0, ls 3px → "001 CHARACTER"
+    DATE TEXT   : x=72 y=234, size 12, fill #6b6b78, ls 2px
+    CODE TEXT   : x=196 y=234, size 12, fill #6b6b78 → "ADN"
+
+  CORNER TICKS : L-shape, length 30px, inset 48px mỗi góc, stroke rgba(242,238,234,0.22) 1.4px
+  RETICLE (R-mid): tâm (1766,548), circle r=8 + dot r=2 + gạch 2 bên,
+                   text trái "1/8 20" (x=1655), text phải "4/9-7" (x=1815), fill #6b6b78, size 12
+  BOTTOM READOUT: "00 46 · 24 11" — trái x=70 y=1008, phải x=1850 y=1008 (end), size 13, fill #6b6b78
+  SCRUB BAR    : line x1=70 x2=1850 y=1040 (base rgba .12); progress x1=70→x2=1258 fill #6b6b78;
+                 node circle (1258,1040) r=3 #a0a0b0; nhãn "66.67X" x=70 y=1064,
+                 "PROJECT SEM · REVIEW" center x=960 y=1064, "0215" x=1850 y=1064 — size 10 fill #43434e
+
+COLOR LOCK (cine layer):
+  chrome text  = #a0a0b0 / #6b6b78 / #43434e (silver → faint)
+  HIGHLIGHT    = #f2eeea porcelain — CHỈ ở STAGE text
+  KHÔNG crimson trong chrome (crimson = seam/sacred TRÊN MODEL, cine contract - không bao giờ trong UI).
+                 Accent tick trong STAGE block = silver #a0a0b0 thay vì crimson.
+  VIOLET #8f00ff : KHÔNG có trong chrome. Violet chỉ sống trong render layer (slit/ZENITH_BLADE_CORE).
+  radius 0 khắp nơi. grain nền ≥4%. không #000/#fff thuần.
+
+STAGE→S MAPPING (gợi ý, operator có thể chỉnh):
+  WIREFRAME/ALBEDO thường ở S1 · FULL SHADER/CINE ở S2. Nhãn chỉ mô tả stage, không ép state.
+
+ACCEPT (Cowork gate):
+  [ ] đè lên 1 render CŨ → đọc như asset-review, KHÔNG phải gaming HUD
+  [ ] 0 crimson trong chrome (accent tick = silver) · 0 violet trong chrome · type mono toàn bộ
+  [ ] fields đổi được qua data, chrome đứng yên
+  [ ] radius 0 · grain hiện diện · không màu warm/neon lạ
+  [ ] versioned trong repo làm template tái dùng
+</pre>
+  </div>
+</div>
+
+<!-- CANON GUARD -->
+<div class="sec-head"><span class="sec-num">§</span><h2>Chốt nhanh</h2></div>
+<ul>
+  <li class="ok"><b class="p">Đây là frame rỗng</b> — Codex chỉ dựng chrome cho khớp, phần render là layer riêng nằm dưới.</li>
+  <li class="ban"><b class="p">0 violet trong chrome.</b> Violet chỉ được xuất hiện trong render (2 slit / P3), không bao giờ trong khung.</li>
+  <li class="ban"><b class="p">Không có tick crimson trong chrome.</b> Accent tick = silver #a0a0b0. Crimson chỉ tồn tại trên model (seam/sacred), không bao giờ trong khung - dùng crimson ở đây từng mâu thuẫn Canon Guard, đã patch.</li>
+  <li class="ban"><b class="p">Không rơi vào gaming-HUD.</b> Nếu bắt đầu thấy neon/glow/icon màu → sai layer, kéo về studio review-chrome.</li>
+  <li><b class="p">Metadata giả</b> (số readout, timecode) để trang trí "screen realism" — giữ mờ (#33333e), không nổi hơn STAGE.</li>
+</ul>
+
+<p class="note">P1 độc lập với câu hỏi full-body armor — chạy được ngay. Sau khi Codex khớp frame + Cowork PASS gate, template này khoá lại và dùng cho P2 (lighting pass) + P3 (stage matrix). Chưa item nào PASS/lock tới khi operator duyệt. Frame thuộc CINE layer, tách khỏi brand-UI.</p>
+
+<div class="foot">
+  <span class="kanji">鏡</span>
+  <p class="meta" style="margin-top:10px">MZ-P1-CINE-REVIEW-FRAME · Claude: spec/target · execute: Cowork → Codex</p>
+</div>
+
+<script>
+var stageMap = {
+  "WIREFRAME":  {s:"S1 · geometry"},
+  "ALBEDO":     {s:"S1 · base color"},
+  "FULL SHADER":{s:"S2 · material"},
+  "CINE":       {s:"S2 · lit pass"}
+};
+document.querySelectorAll('.tg').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tg').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    var st=b.getAttribute('data-stage');
+    document.getElementById('stageText').textContent=st;
+    document.getElementById('cap').textContent="STAGE: "+st+" — nhãn + tick data-driven · chrome giữ nguyên vị trí mọi stage";
+  });
+});
+function legacyCopy(text){
+  var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand('copy');}catch(e){}
+  document.body.removeChild(ta);
+}
+document.querySelectorAll('.copybtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.getAttribute('data-t'));
+    legacyCopy(t.innerText);
+    var old=b.textContent;b.textContent='COPIED';b.classList.add('done');
+    setTimeout(function(){b.textContent=old;b.classList.remove('done')},1600);
+  });
+});
+</script>
+</body>
+</html>

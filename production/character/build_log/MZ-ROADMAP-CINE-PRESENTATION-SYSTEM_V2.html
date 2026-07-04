@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MZ · CINE PRESENTATION SYSTEM — ROADMAP</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050508; --void-mid:#0d0d14; --void-card:#12121c; --void-line:#242436;
+  --porcelain:#f2eeea; --porcelain-dim:#c8c4be; --silver:#a0a0b0; --silver-dim:#6b6b78;
+  --violet:#8f00ff; --violet-glow:#9d7fd0; --violet-dim:#3d2e55;
+  --crimson:#9d2933; --crimson-hi:#d11033;
+  --amber:#c2a85a;
+  --font-word:'Cinzel',serif; --font-serif:'Shippori Mincho',serif; --font-mono:'Space Mono',monospace;
+  --hair:rgba(160,160,176,0.14); --hair-v:rgba(143,0,255,0.30);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--void); color:var(--porcelain-dim);
+  font-family:var(--font-serif); line-height:1.7;
+  padding:48px 22px 120px; max-width:920px; margin:0 auto;
+  background-image:radial-gradient(circle at 20% 0%, rgba(143,0,255,0.05), transparent 55%);
+}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:99;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.label{font-family:var(--font-mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--silver)}
+.label-v{color:var(--violet-glow)}
+.meta{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:var(--silver-dim)}
+h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(30px,6vw,50px);letter-spacing:.02em;color:var(--porcelain);line-height:1.04;margin:14px 0 6px}
+h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(22px,4vw,30px);letter-spacing:.03em;color:var(--porcelain);margin:0}
+h3{font-family:var(--font-serif);font-weight:600;font-size:19px;color:var(--porcelain);letter-spacing:.02em}
+.wm{font-family:var(--font-word);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--porcelain);font-size:13px}
+.kanji{font-family:var(--font-serif);letter-spacing:.3em;color:var(--silver-dim)}
+.hr{height:1px;background:var(--hair);border:0;margin:34px 0}
+.hr-v{height:1px;background:linear-gradient(90deg,var(--hair-v),transparent);border:0;margin:34px 0}
+
+header{border-bottom:1px solid var(--hair);padding-bottom:26px;margin-bottom:8px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tick{display:inline-block;width:6px;height:6px;background:var(--crimson-hi);border-radius:0;margin-right:8px;transform:translateY(-1px)}
+.lead{font-size:18px;color:var(--porcelain);line-height:1.6;margin-top:18px;font-weight:400}
+.lead b{color:var(--violet-glow);font-weight:600}
+
+.sec{margin:52px 0 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.sec-num{font-family:var(--font-mono);font-size:12px;color:var(--violet);letter-spacing:.1em}
+
+.goal{background:var(--void-mid);border:1px solid var(--hair);border-left:2px solid var(--violet);padding:22px 24px;margin-top:20px}
+.goal p{color:var(--porcelain);font-size:16px}
+
+.pillars{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.pillar{background:var(--void-card);border:1px solid var(--hair);padding:20px 22px;position:relative}
+.pillar .n{font-family:var(--font-mono);font-size:11px;color:var(--silver-dim);letter-spacing:.2em}
+.pillar h3{margin:6px 0 8px}
+.pillar p{font-size:15px;color:var(--porcelain-dim)}
+.pillar .why{font-family:var(--font-mono);font-size:11px;color:var(--amber);letter-spacing:.05em;margin-top:12px;text-transform:uppercase}
+
+.phase{border:1px solid var(--hair);border-top:2px solid var(--void-line);margin-top:16px;background:var(--void-card)}
+.phase.block{border-top-color:var(--crimson)}
+.phase.core{border-top-color:var(--violet)}
+.phase-hd{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid var(--hair);flex-wrap:wrap}
+.phase-hd .pid{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;color:var(--porcelain)}
+.phase-hd .ptag{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;padding:3px 9px;border:1px solid var(--hair);color:var(--silver);text-transform:uppercase}
+.ptag.blk{color:var(--crimson-hi);border-color:rgba(209,16,51,.35)}
+.ptag.now{color:var(--violet-glow);border-color:var(--hair-v)}
+.phase-bd{padding:18px 22px}
+.phase-bd .obj{color:var(--porcelain);font-size:15.5px;margin-bottom:16px}
+.rows{display:grid;grid-template-columns:92px 1fr;gap:10px 16px;align-items:start}
+.rows .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-dim);padding-top:3px}
+.rows .val{font-size:14.5px;color:var(--porcelain-dim)}
+.rows .val.gate{color:var(--amber)}
+.who{color:var(--violet-glow);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em}
+
+.spec{border:1px solid var(--hair-v);background:linear-gradient(180deg,rgba(143,0,255,.04),transparent 40%),var(--void-mid);margin-top:18px}
+.spec-hd{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--hair);gap:12px}
+.spec-hd h3{color:var(--porcelain)}
+.spec-bd{padding:20px 22px}
+.copybtn{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet-glow);background:transparent;border:1px solid var(--hair-v);padding:7px 14px;cursor:pointer;transition:.25s;white-space:nowrap}
+.copybtn:hover{background:rgba(143,0,255,.12);color:var(--porcelain)}
+.copybtn.done{color:var(--amber);border-color:rgba(194,168,90,.4)}
+pre{font-family:var(--font-mono);font-size:12.5px;line-height:1.65;color:var(--porcelain-dim);white-space:pre-wrap;word-break:break-word;background:var(--void);border:1px solid var(--hair);padding:18px;margin-top:14px;overflow-x:auto}
+.dot{color:var(--violet)}
+ul{list-style:none;margin:8px 0 0}
+li{position:relative;padding-left:20px;margin:8px 0;font-size:14.5px;color:var(--porcelain-dim)}
+li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;background:var(--silver-dim)}
+li.ban::before{background:var(--crimson-hi)}
+li.ok::before{background:var(--violet-glow)}
+.note{font-family:var(--font-mono);font-size:11px;color:var(--silver-dim);letter-spacing:.03em;margin-top:26px;border-top:1px solid var(--hair);padding-top:16px}
+.foot{margin-top:60px;text-align:center}
+.foot .kanji{font-size:20px}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header>
+  <div class="topbar">
+    <span class="wm">MIKAGE&nbsp;ZENITH</span>
+    <span class="meta">MZ-ROADMAP-CINE-PRES · v1 · 2026-07-04</span>
+  </div>
+  <span class="label" style="display:block;margin-top:24px"><span class="tick"></span>INTERNAL BRIEF · MODEL → CINE · HAND-OFF: COWORK → CODEX</span>
+  <h1>Cỗ máy trình bày Cine</h1>
+  <p class="meta" style="margin-top:4px">The presentation system — reference-grade output as a repeatable pipeline, not a one-off render.</p>
+  <p class="lead">Mục tiêu operator: mọi asset Mikage hoàn chỉnh ra lò đạt mức <b>studio-grade "chất chơi"</b> của reference. Thứ tạo ra cảm giác đó không phải model — mà là <b>một hệ thống trình bày lặp lại được</b>. Roadmap này thu thập quy trình + lộ trình để Cowork áp vào và giao Codex thực hiện.</p>
+</header>
+
+<!-- GOAL -->
+<div class="sec">
+  <div class="sec-head"><span class="sec-num">§00</span><h2>Mục tiêu (operator-set)</h2></div>
+  <div class="goal">
+    <p>Khi Mikage complete, mỗi lần xuất bản asset (nhân vật, Zenith Blade, key art) phải trông như một <b style="color:var(--violet-glow)">asset-review của studio thật</b>: có khung chrome nhất quán, chuỗi stage (wireframe → albedo → shader → cine), và một cinematic lighting pass đủ để model trông đắt gấp nhiều lần. Đây là <b style="color:var(--porcelain)">tiêu chuẩn xuất bản</b>, không phải một sản phẩm đơn lẻ.</p>
+  </div>
+</div>
+
+<hr class="hr-v">
+
+<!-- DIAGNOSIS -->
+<div class="sec">
+  <div class="sec-head"><span class="sec-num">§01</span><h2>Reference tách làm 3 trụ</h2></div>
+  <p style="font-size:15px">Bóc reference (Arena Multimedia — Character Design đồ án) ra thành cái <i>bê được</i>. Không copy nội dung (katana / mặt người / đỏ tự do) — chỉ lấy <b style="color:var(--porcelain)">phương pháp</b>.</p>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="n">TRỤ 01</span>
+      <h3>Presentation Frame</h3>
+      <p>Khung "asset-review chrome" bọc mọi shot: thanh menu giả, timecode, reticle, tick góc, nhãn stage + metadata. Một template <b style="color:var(--porcelain)">nhất quán</b> đè lên từng frame.</p>
+      <p class="why">→ 50% cảm giác pro · rẻ nhất · dựng 1 lần xài mãi · nâng ngay render flat đang có</p>
+    </div>
+    <div class="pillar">
+      <span class="n">TRỤ 02</span>
+      <h3>Stage-sequenced reveal</h3>
+      <p>Show đúng thứ tự pipeline: LOW-POLY → WIREFRAME → ALBEDO → FULL SHADER → HERO CINE. Người xem thấy được công đằng sau bản final.</p>
+      <p class="why">→ credibility của studio thật · biến 1 render thành 1 câu chuyện quy trình</p>
+    </div>
+    <div class="pillar">
+      <span class="n">TRỤ 03</span>
+      <h3>Cinematic Lighting Pass</h3>
+      <p>1 key light + rim viền + ground contact + atmosphere + DOF nông. Chính xác cái đang treo khiến S0/S1/S2 trông flat/model-like.</p>
+      <p class="why">→ vấn đề không phải model, là lighting + framing · fix đây là fix gốc</p>
+    </div>
+  </div>
+</div>
+
+<hr class="hr">
+
+<!-- ROADMAP -->
+<div class="sec">
+  <div class="sec-head"><span class="sec-num">§02</span><h2>Lộ trình — 6 phase</h2></div>
+  <p style="font-size:14px;color:var(--silver)">Xếp theo rủi ro thấp trước / đòn bẩy cao trước. Mỗi phase có gate; không PASS gate thì không sang phase sau. Claude = spec/brief · Codex = dựng/render · Cowork = repo + briefing + gate-check. Không có PASS canon nào tự chốt — chờ operator.</p>
+
+  <!-- P0 -->
+  <div class="phase block">
+    <div class="phase-hd"><span class="pid">PHASE 0 · CANON RECONCILE</span><span class="ptag blk">BLOCKING</span></div>
+    <div class="phase-bd">
+      <p class="obj">Gỡ 3 điểm mờ trước khi Codex chạm tay, tránh render sai canon rồi phải làm lại.</p>
+      <div class="rows">
+        <span class="k">Claude</span><span class="val">RULING 2026-07-04 (patch, tách 3 loại quyết định đang bị trộn - canon / asset-readiness / presentation):<br>
+          <b style="color:var(--porcelain)">ARMOR</b> = OUT_OF_SCOPE / NOT REQUIRED cho track cine hiện tại. Production subject vẫn là cloak/mantle canon đang có; KHÔNG thêm armor modular/full-body từ reference ngoài. Armor mới muốn thêm phải qua spec + operator approval riêng, ngoài track này. Việc bible/registry có từng định nghĩa armor hay chưa vẫn <b style="color:var(--amber)">CHƯA XÁC NHẬN</b> tới khi Cowork đối chiếu xong tài liệu - im lặng của mesh hiện tại (288 vertex, không limb) không tự chứng minh bible cũng trống.<br>
+          <b style="color:var(--porcelain)">WEAPON_CANON</b> = LOCKED: Zenith Blade - slab thẳng, mũi chúc xuống, grip ring, KHÔNG katana, KHÔNG đổi crossguard. <b style="color:var(--porcelain)">WEAPON_INTERACTION_READINESS</b> = UNCONFIRMED: gắn lưng lúc nghỉ / cầm tay lúc combat, mesh tay, grip socket, và constraint đều cần kiểm tra tách riêng - đây là vấn đề production readiness, không phải hình dạng canon. Phase 1-3 chạy được mà không cần giải quyết cái này; Phase 4 (combat handling) BLOCKED tới khi readiness được xác nhận.<br>
+          <b style="color:var(--porcelain)">LAYER</b> = CONFIRMED: toàn bộ frame/stage-sequence/lighting thuộc CINE layer, dùng cine color contract, không dùng brand-UI budget.</span>
+        <span class="k">Cowork</span><span class="val">Đối chiếu bible + registry cho câu hỏi armor, trả về gap list kèm nguồn trích dẫn cụ thể (không tự suy diễn). Nếu tìm thấy armor spec thật → KHÔNG tự áp dụng, báo lại nguyên văn nguồn + trạng thái approval cho operator quyết định giữ OUT_OF_SCOPE hay mở canon-change riêng. Đồng thời kiểm tra rig hiện tại có back-socket cho Zenith Blade hay hand-socket/constraint nào đã tồn tại nhưng chưa render chưa.</span>
+        <span class="k">Gate</span><span class="val gate">Armor: EXISTS | SPEC'D | OUT_OF_SCOPE (mặc định OUT_OF_SCOPE cho track này) · Weapon: WEAPON_CANON=LOCKED, WEAPON_INTERACTION_READINESS=UNCONFIRMED (không chặn Phase 1-3, chặn Phase 4 combat-handling) · Layer: CONFIRMED (CINE).</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P1 -->
+  <div class="phase core">
+    <div class="phase-hd"><span class="pid">PHASE 1 · PRESENTATION FRAME</span><span class="ptag now">HIGHEST LEVERAGE</span></div>
+    <div class="phase-bd">
+      <p class="obj">Dựng khung review-chrome tái dùng (SPEC A bên dưới). Đây là phase nâng cả những render đang có mà chưa cần đụng model.</p>
+      <div class="rows">
+        <span class="k">Claude</span><span class="val">SPEC A hoàn chỉnh (đã có bên dưới) — layout, taxonomy nhãn, type, màu, ban-list.</span>
+        <span class="k">Codex</span><span class="val">Dựng frame làm <b style="color:var(--porcelain)">overlay template tái dùng</b> (Blender compositor node group hoặc PNG overlay 2 tầng + text data-driven). Render thử đè lên 1 shot cũ để nghiệm thu.</span>
+        <span class="k">Cowork</span><span class="val">Lưu template vào repo, versioned. Viết brief data-fields (stage / asset-id / date / codename).</span>
+        <span class="k">Gate</span><span class="val gate">Frame đè lên render cũ → đọc như asset-review, không phải gaming HUD. Pre-flight cine PASS.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div class="phase core">
+    <div class="phase-hd"><span class="pid">PHASE 2 · CINEMATIC LIGHTING PASS</span><span class="ptag now">UNBLOCKS STUCK ITEM</span></div>
+    <div class="phase-bd">
+      <p class="obj">Dựng rig ánh sáng cine cho từng state S0/S1/S2 (SPEC B bên dưới). Gỡ đúng cái pipeline failure đang treo.</p>
+      <div class="rows">
+        <span class="k">Claude</span><span class="val">SPEC B — tỉ lệ key/rim/fill, DOF, ground contact, atmosphere, grain, luật violet theo state machine.</span>
+        <span class="k">Codex</span><span class="val">Set 3-light rig + volumetric + DOF trong Blender. Re-light lại S0/S1/S2 hero still (chưa cần motion).</span>
+        <span class="k">Cowork</span><span class="val">Lưu light rig .blend làm preset. So sánh before/after với render flat cũ.</span>
+        <span class="k">Gate</span><span class="val gate">Shadow ≥70% frame · slit violet đúng state · S2 halo WHITE · model đọc "đắt" rõ rệt vs flat.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div class="phase">
+    <div class="phase-hd"><span class="pid">PHASE 3 · STAGE-SEQUENCE MATRIX</span><span class="ptag">SYSTEMIZE</span></div>
+    <div class="phase-bd">
+      <p class="obj">Chạy nhân vật + Zenith Blade qua đủ chuỗi stage, đóng khung Phase 1. Đây là lúc "cỗ máy" thành hình.</p>
+      <div class="rows">
+        <span class="k">Claude</span><span class="val">Ma trận shot: [asset] × [WIREFRAME · ALBEDO · FULL SHADER · CINE] — góc máy + label cho từng ô.</span>
+        <span class="k">Codex</span><span class="val">Render từng ô theo matrix, dùng light rig P2 + frame P1. Đồng nhất góc/khoảng cách camera.</span>
+        <span class="k">Cowork</span><span class="val">Đặt tên file theo convention, gom vào review sheet.</span>
+        <span class="k">Gate</span><span class="val gate">Mỗi asset đủ chuỗi stage, cùng camera, cùng frame · không lệch canon vũ khí.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P4 -->
+  <div class="phase">
+    <div class="phase-hd"><span class="pid">PHASE 4 · HERO / MOTION</span><span class="ptag">CANVAS-READY</span></div>
+    <div class="phase-bd">
+      <p class="obj">Beauty shot combat pose (như ảnh 13–15 reference) + turntable/reveal ngắn. Xuất được cho Canvas + short-form.</p>
+      <div class="rows">
+        <span class="k">Claude</span><span class="val">Shotlist hero: pose, camera move (slow only — theo MOTION dial), điểm S1→S2 slit ignite.</span>
+        <span class="k">Codex</span><span class="val">Render hero still + clip turntable/orbit chậm. Xuất bản Canvas-loop (portrait) nếu cần.</span>
+        <span class="k">Cowork</span><span class="val">Đưa vào asset library, gắn track/release liên quan.</span>
+        <span class="k">Gate</span><span class="val gate">Motion chậm, không bounce · violet ≤5% · đọc foreground/attention-commanding, không ambient.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P5 -->
+  <div class="phase">
+    <div class="phase-hd"><span class="pid">PHASE 5 · ASSEMBLY + QC GATE</span><span class="ptag">SHIP</span></div>
+    <div class="phase-bd">
+      <p class="obj">Ráp chuỗi reveal hoàn chỉnh + chạy pre-flight cine. Chốt tiêu chuẩn xuất bản.</p>
+      <div class="rows">
+        <span class="k">Claude</span><span class="val">Cấu trúc sequence reveal (thứ tự stage → hero) + checklist pre-flight cine per shot.</span>
+        <span class="k">Codex</span><span class="val">Assemble sequence, grade thống nhất, xuất master.</span>
+        <span class="k">Cowork</span><span class="val">Chạy pre-flight PASS/FAIL từng dòng, đóng gói, chờ operator approve lock.</span>
+        <span class="k">Gate</span><span class="val gate">Toàn bộ cine pre-flight PASS · operator sign-off → thành template xuất bản chuẩn.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-v">
+
+<!-- SPEC A -->
+<div class="sec">
+  <div class="sec-head"><span class="sec-num">§03</span><h2>Lift-ready specs</h2></div>
+  <p style="font-size:14px;color:var(--silver)">Hai khối này Cowork bê thẳng làm brief cho Codex. Bấm COPY.</p>
+
+  <div class="spec">
+    <div class="spec-hd">
+      <h3>SPEC A · Mikage Cinematic Review Frame</h3>
+      <button class="copybtn" data-t="specA">COPY SPEC A</button>
+    </div>
+    <div class="spec-bd">
+      <p style="font-size:14px">Khung chrome đè lên mọi cine render. Đọc như <b style="color:var(--porcelain)">viewport review của phần mềm studio</b>, KHÔNG phải HUD game.</p>
+      <pre id="specA">SPEC A — MIKAGE CINEMATIC REVIEW FRAME  [CINE LAYER]
+
+LAYER        : CINE (dùng mikage-cine-color-contract). KHÔNG dùng brand-UI budget.
+FORMAT       : overlay 2 tầng — chrome tĩnh + text data-driven. Reusable template.
+GRID         : 16:9 REVIEW-MASTER format. Chrome bám 4 mép, chừa "gutter" tối ~6% mỗi cạnh cho render.
+               Portrait/Canvas exports (9:16, Phase 4) là derivative RIÊNG, KHÔNG tự động mang chrome này -
+               nếu cần chrome cho portrait, đó là một layout variant mới, không phải crop/stretch của frame 16:9.
+
+TOP BAR (giả menu):
+  - trái  : "File  Edit  View  Launch  Errors  Code  Help" — Space Mono, silver-dim, 10px.
+  - phải  : timecode giả + codename dự án (vd "PROJECT SEM · UNTIL DAWN · [ADN]").
+  - line  : hairline porcelain 1px dưới bar, opacity ~0.14.
+
+STAGE LABEL BLOCK (góc trên-trái, ngay trong khung render):
+  - dòng 1 : STAGE — WIREFRAME | ALBEDO | FULL SHADER | LOW-POLY | CINE
+             Space Mono BOLD, porcelain, ~18px, tracking .06em.
+  - dòng 2 : "00X  ASSET-NAME" (vd "001 CHARACTER" / "00X ZENITH-BLADE") — silver.
+  - dòng 3 : "YY.MM.DD    ADN" — silver-dim, 10px.
+  - accent : MỘT tick silver (#a0a0b0) đầu dòng stage. KHÔNG dùng crimson ở đây - crimson bị khoá
+             riêng cho seam/sacred TRÊN MODEL (cine contract), dùng trong chrome sẽ mâu thuẫn với chính luật đó.
+
+CORNER TICKS + RETICLE:
+  - 4 góc  : L-shaped hairline ticks, porcelain opacity ~0.2.
+  - phải-giữa: reticle ngắm nhỏ + chỉ số giả ("1/8 20  —(o)  4/9-7") — silver-dim.
+  - dưới   : "00 46 · 24 11" cả hai đáy · thanh scrub giả "PROJECT SEM ·66.67%".
+
+TYPE         : Space Mono only cho toàn bộ chrome. Không serif, không sans.
+COLOR RULE   :
+  - chrome text  = silver / silver-dim (#a0a0b0 / #6b6b78).
+  - highlight    = porcelain #f2eeea (chỉ ở STAGE label).
+  - KHÔNG crimson trong chrome (crimson chỉ tồn tại trên model, seam/sacred, không bao giờ trong khung review).
+    Accent tick trong STAGE block dùng silver #a0a0b0.
+  - violet #8f00ff : KHÔNG xuất hiện trong chrome. Violet chỉ sống trong render (slit/P3).
+  - tuyệt đối không màu warm/neon khác trong chrome.
+
+BAN (fail nếu vi phạm):
+  - Không neon, không glow, không màu mè kiểu gaming HUD.
+  - Không bo góc (radius 0). Không icon cute. Không emoji.
+  - Không có crimson trong chrome ở bất kỳ đâu (kể cả accent tick). Không violet trong chrome.
+  - Chrome không được che subject; giữ mật độ thấp, nhiều negative space.
+
+DELIVERABLE  : Blender compositor node-group HOẶC PNG overlay + text layer data-driven
+               (fields: STAGE, ASSET_ID, ASSET_NAME, DATE, CODENAME). Versioned trong repo.</pre>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-hd">
+      <h3>SPEC B · Cinematic Lighting Pass (per state)</h3>
+      <button class="copybtn" data-t="specB">COPY SPEC B</button>
+    </div>
+    <div class="spec-bd">
+      <p style="font-size:14px">Rig ánh sáng gỡ flat. Tuân cine color contract 70/30 + state machine S0→S1→S2.</p>
+      <pre id="specB">SPEC B — CINEMATIC LIGHTING PASS  [CINE LAYER]
+
+DOCTRINE     : color = evidence of material, never decoration. Reflected light only,
+               trừ ngoại lệ violet (slit halo / ZENITH_BLADE_CORE). Shadow ≥70% frame.
+               (Đổi tên từ "P3" - dễ nhầm với Phase 3 của roadmap - sang ZENITH_BLADE_CORE cho rõ.)
+
+LIGHT RIG (3 nguồn + môi trường):
+  KEY        : 1 nguồn duy nhất, lệch ~35–45° một bên, cao vừa. Soft-ish (không hard đổ bóng gắt).
+               Temp trung tính-lạnh. Đây là nguồn kể hình khối chính.
+  RIM        : 1 rim sau-bên, viền sáng tách subject khỏi void. Porcelain-warm nhẹ, KHÔNG violet.
+  FILL       : rất yếu hoặc bounce card. Chỉ để bóng không chết đen tuyệt đối (blacks carry ink-depth,
+               không dùng #000 tuyệt đối).
+  AMBIENT    : gần 0. Không washlight. Không second light source màu.
+
+GROUND / ATMOSPHERE:
+  - ground contact shadow rõ (subject "đứng trên" mặt đất, không lơ lửng).
+  - nền đất/bề mặt có keshiki: grain, ash, không phẳng. Noise floor ≥4% khắp frame.
+  - haze/volumetric mỏng để tách depth. DOF nông: subject nét, hậu cảnh tan.
+
+STATE MACHINE (violet = single locus, ≤5%, CHỈ ở 2 slit / ZENITH_BLADE_CORE):
+  S0 DORMANT : slits TỐI. halo matte white. void-dominant. KHÔNG nguồn sáng thứ 2. Không violet.
+  S1 AWARE   : slits IGNITE violet (#8f00ff). halo vẫn matte white. violet chỉ ở 2 slit.
+  S2 COMBAT  : slits full violet + halo GLOWS WHITE (nguồn sáng thứ 2 DUY NHẤT được phép — TRẮNG,
+               không bao giờ violet). violet vẫn chỉ locus slit/P3.
+
+MATERIAL     : specular chỉ trên metal + urushi lacquer. Porcelain/plaster/graphene = matte.
+               Crimson chỉ ở seam/sacred nếu asset có. Kintsugi gold #c39a52 chỉ ở seam, matte.
+
+CAMERA/GRADE : chậm, controlled. Grade giữ 70/30 shadow. Whites carry shell-warmth (không #fff thuần).
+
+PRE-FLIGHT (Codex tự chấm PASS/FAIL):
+  [ ] shadow ≥70% frame?          [ ] slit violet đúng theo state?
+  [ ] S2 halo WHITE (không violet)?[ ] rim tách subject khỏi void?
+  [ ] ground contact + grain ≥4%?  [ ] DOF nông, depth tách?
+  [ ] không nguồn sáng màu thứ 2 (trừ S2 halo trắng)?
+  [ ] không #000/#fff thuần?       [ ] mọi màu có lý do vật liệu?
+
+DELIVERABLE  : light rig .blend làm preset per-state + re-lit hero stills S0/S1/S2 (before/after
+               vs render flat cũ). Chưa cần motion ở phase này.</pre>
+    </div>
+  </div>
+</div>
+
+<hr class="hr">
+
+<!-- CANON GUARD -->
+<div class="sec">
+  <div class="sec-head"><span class="sec-num">§04</span><h2>Chốt canon — chỗ dễ đạp mìn</h2></div>
+  <ul>
+    <li class="ban"><b style="color:var(--porcelain)">Vũ khí:</b> reference là katana + dao. Mikage = Zenith Blade (slab thẳng, mũi xuống, 1 lõi violet, grip ring giữa thân). KHÔNG katana lọt vào.</li>
+    <li class="ban"><b style="color:var(--porcelain)">Mặt:</b> reference có mặt người tóc trắng. Mikage = faceless porcelain helmet, đúng 2 sensor slit + graphene + halo ring trắng. Không mặt người.</li>
+    <li class="ban"><b style="color:var(--porcelain)">Màu:</b> reference xài đỏ/cam tự do. Mikage cine = crimson chỉ ở seam/sacred, violet ≤5% chỉ ở slit/P3, halo luôn TRẮNG.</li>
+    <li class="ban"><b style="color:var(--porcelain)">Frame:</b> phải đọc như studio review-chrome. Rơi vào gaming-HUD neon = FAIL.</li>
+    <li class="ok"><b style="color:var(--violet-glow)">Lấy được:</b> hệ thống frame + chuỗi stage + lighting pass. Đó là toàn bộ giá trị chuyển giao.</li>
+  </ul>
+  <p class="note">v2 patch 2026-07-04 (operator ruling): Phase 0 tách 3 loại quyết định (canon / asset-readiness / presentation) - armor OUT_OF_SCOPE mặc định, weapon canon/interaction-readiness tách lớp, layer confirmed. SPEC A: bỏ crimson tick (mâu thuẫn nội bộ với Canon Guard), tick giờ silver; GRID ghi rõ là review-master, Canvas portrait là derivative riêng. SPEC B: "P3 core" đổi thành ZENITH_BLADE_CORE để không lẫn Phase 3. Dispatch tách rời: Phase 1 (frame) trước, Phase 2 (lighting/SPEC B) sau khi Phase 1 PASS operator gate - không gửi cùng lúc. Roadmap này cắm vào MZ-ROADMAP-MODEL-TO-CINE hiện có (Cowork giữ) — reconcile số phase khi áp. Không item nào PASS/lock cho tới khi operator duyệt. Mọi thứ chưa xác nhận = UNCONFIRMED. Frame & lighting đều thuộc CINE layer, tách khỏi brand-UI.</p>
+</div>
+
+<div class="foot">
+  <span class="kanji">鏡</span>
+  <p class="meta" style="margin-top:10px">MZ-ROADMAP-CINE-PRES · Claude lane: spec/brief only · execute: Cowork → Codex</p>
+</div>
+
+<script>
+function legacyCopy(text){
+  var ta=document.createElement('textarea');
+  ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{document.execCommand('copy');}catch(e){}
+  document.body.removeChild(ta);
+}
+document.querySelectorAll('.copybtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.getAttribute('data-t'));
+    legacyCopy(t.innerText);
+    var old=b.textContent; b.textContent='COPIED'; b.classList.add('done');
+    setTimeout(function(){b.textContent=old; b.classList.remove('done');},1600);
+  });
+});
+</script>
+</body>
+</html>
