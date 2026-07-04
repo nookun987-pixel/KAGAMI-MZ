@@ -1,5 +1,34 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH AMENDMENT 2026-07-04 (#49, exception #49): operator authorized moving execution from local
+> ComfyUI to the fal.ai hosted API (`fal-ai/flux-general/image-to-image`) after 3 consecutive local
+> BLOCKED reports (missing models -> hardware crash -> ~2h37m/candidate impractical). Full mapping:
+> `production/character/build_log/LANEA_CODEX_TASK_AI_ENHANCE_S2_DIALIN_V0_1_FAL_ADDENDUM.md`. Canon
+> gate, denoise ladder (0.45/0.55/0.65 -> fal `strength`), prompt, gate/report requirements, and FAIL
+> codes all UNCHANGED from the original brief - only the execution mechanism changes. Operator creates
+> the fal.ai account + API key himself (`FAL_KEY` env var); nobody else handles the key. Estimated cost
+> ~$0.28/image at the S2 still's ~3.7MP resolution (fal.ai ControlNet-tier pricing, confirmed via
+> websearch 2026-07-04) - start with a handful of candidates, report actual spend before a larger
+> batch. See AGENTS.md exception #49 "OPERATOR AUTHORIZATION #2" line for exact wording. Nothing new
+> to commit besides AGENTS.md + this handoff entry + the addendum file.
+
+> RESULT 2026-07-04 (#48, exception #49): `MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1` = BLOCKED (performance, not
+> canon, not crash) - the GGUF swap worked: Q4_K_S installed, loaded successfully, reached the sampler
+> with no crash/OOM. But measured speed is ~363 sec/step; at 26 steps that is ~2h37m per single
+> candidate image at the brief's 1440x2560 target resolution. Codex correctly did not escalate to
+> Q3_K_S (only authorized if Q4 crashes/OOMs - it did neither, so out of the authorized scope) and
+> stopped the sampler before producing an output rather than silently eating hours of GPU time on an
+> unapproved deviation. No candidate/gate created, no `.blend`/video touched, temp workflow cleaned up,
+> repo clean, validator not run (no deliverables to claim PASS against). Exception #49 stays OPEN,
+> third BLOCKED report in a row for this exception (missing models -> hardware crash -> now a real but
+> impractical runtime). Pending operator decision on how to proceed, options raised: (a) accept the
+> ~2h37m/candidate cost and let it run long/unattended for however many candidates the dial-in needs,
+> (b) drop the dial-in resolution well below the full 1440x2560 (e.g. matching the source render's
+> native 720x1280) to explore denoise/ControlNet settings cheaply, then run only the final chosen
+> recipe once at full res, (c) reduce steps for the exploration pass, (d) drop AI-enhance and use the
+> #48 raw Blender S2 still directly for Lane B post. `.mikage/tasks/active_task.yaml` still points at
+> this not-yet-run task (harmless). Nothing new to commit besides this handoff entry + AGENTS.md note.
+
 > DISPATCH AMENDMENT 2026-07-04 (#47, exception #49): operator explicitly authorized swapping ONLY the
 > UNET file from `flux1-dev-fp8.safetensors` (crashes on this 6GB card, see RESULT #46 above) to a
 > GGUF-quantized Flux.1-dev checkpoint (e.g. `city96/FLUX.1-dev-gguf`, Q4_K_S or Q3_K_S recommended,
