@@ -59,6 +59,35 @@ A build-log entry covers **ONLY the NEW milestones produced in that session/day.
 HUE-SAFETY: MOTION V0.2 goes in UNGRADED. Do NOT re-include published chapters.
 (Previous queue — rider V0.8 + gait V1.4/V1.5 — was built as MIKAGE_BUILDLOG_LOCOMOTION_V0_1.)
 
+### Queued now (today's NEW milestones only — 2026-07-04)
+- CINE STAGING + AI-ENHANCE THRESHOLD: the render pipeline moved from a flat lookdev "sample"
+  toward an actual cinematic frame. Arc this session: exception #46 (robe locomotion cleanup,
+  PASS) → exception #47 (3-state S0/S1/S2 ignition lighting pass, PASS, independently verified —
+  halo neutral-white/no-violet, void ≥70%) → exception #48 (`MIKAGE_ROBE_HERO_CINE_STAGING_V0_1`,
+  staged environment: reflective floor, monoliths, Z-Blue depth layers, haze; hero clip with a
+  genuine push-in/crane camera move, ignition landing on S2; PASS, independently verified — void
+  80.85–89.19% across all 96 hero frames, halo pixel-sampled neutral at every state) → same day,
+  operator installed the full local AI-enhance stack (ComfyUI + Flux.1-dev fp8 + ControlNet
+  Union-Pro [Depth+Canny] + Redux + SigLIP vision encoder, `D:\workspace\ComfyUI\models`) →
+  exception #49 (`MIKAGE_AI_ENHANCE_S2_DIALIN_V0_1`, ComfyUI img2img dial-in on the #48 S2 still,
+  canon-gated, still-frame only) dispatched, **awaiting Codex run — no AI-enhanced candidate
+  exists yet.**
+- Operator framing (2026-07-04): this is the step "trước khi có da có thịt" — before the
+  character reads as a real cinematic frame instead of a model/sample. NOT a canon change: the
+  character stays faceless / two-slit / white-halo / draped-robe exactly per the 5 Immutable
+  Identity Marks; this arc only upgrades staging, lighting, camera, and (once #49 passes) surface
+  material read.
+- Operator also holds his own reference/compare exports from today for this arc (`HERO_cine`,
+  `HERO_compare`, `S2_cine`, `S2_compare`, a contact sheet, and `MZ-ANIMATIC-THIRDAXIS-S2-TIMINGPROOF`)
+  in his own Downloads — these are operator-side reference material, not yet reviewed/verified by
+  Cowork and not part of the governed `reviews/` deliverable set.
+→ entry name reserved: `MIKAGE_BUILDLOG_CINE_THRESHOLD_V0_1` — **NOT YET BUILT.** No script/.bat
+exists for this entry yet; no footage has been selected/graded into `GATHER_REEL_V0_1/`. This is a
+documentation checkpoint only, gating on: (1) exception #49 actually PASSing, (2) operator picking
+which state/hero clips are the public-facing ones, (3) an explicit go-ahead to build the chapter
+(per Lane B discipline — Claude does not invent film/edit tasks). Do NOT re-include published
+chapters. Not canon-locked, not asset-locked, not final.
+
 ## 5. CLEANUP of the dump (do this, then stop scattering)
 - The ad-hoc `MIKAGE_FORMATION_LOG` folder in the external audio root (see CLAUDE.md "Local folder
   truth") is **WRONG / to be removed by the operator.** It used the wrong track (ROOT ARCHITECT,
