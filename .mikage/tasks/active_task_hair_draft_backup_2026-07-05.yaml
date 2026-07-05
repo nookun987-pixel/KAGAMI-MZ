@@ -1,0 +1,89 @@
+task_id: MIKAGE_HAIR_ADD_V0_1
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_HAIR_ADD_V0_1
+# Dispatched by operator (BOOS) 2026-07-04, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Fiftieth controlled exception (MIKAGE_HAIR_ADD_V0_1 = OPEN).
+# Adds long/thick/dense black hair to the production rig, closing a confirmed gap between the
+# locked SSOT lore line ("toc den dai day") and the current hairless production asset. Extends
+# MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend (exception #48's PASS derivative). Does NOT touch
+# helmet, slits, halo, cloak, blades, existing rig bones, or lighting states.
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
+  - docs/world/MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_000.png
+  - production/character/build_log/LANEA_CODEX_TASK_MIKAGE_HAIR_ADD_V0_1.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_hair_add_v0_1_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - docs/world/MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md
+  - production/character/reference/turnaround_v0_2/MIKAGE_TURNAROUND_000.png
+  - production/character/build_log/LANEA_CODEX_TASK_MIKAGE_HAIR_ADD_V0_1.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_HAIR_ADD_V0_1.blend
+  - production/character/reference/turnaround_hair_v0_1
+  - production/character/reviews/MIKAGE_HAIR_ADD_V0_1_SHEET.png
+  - production/character/reviews/MIKAGE_HAIR_ADD_V0_1_PROOF.md
+
+allowed_actions:
+  - survey the base file for any existing hair mesh/particle/curve object and report findings
+  - report helmet mesh world-space bounding box and both sensor-slit mesh positions
+  - build one new hair-mass mesh (or small grouped set) reading as a single heavy dense long black volume, low-poly/sculpted style matching the existing asset
+  - attach the hair mass to the head bone rigidly, or add up to 2 new hair-sway bones parented to head
+  - render a new 8-angle turnaround at the same azimuth convention as MIKAGE_STANDING_HERO_TURNAROUND_V0_2
+  - report per-angle confirmation of no slit coverage and legible helmet silhouette
+  - verify every locked item (helmet, slits, halo, cloak, blades, existing 9 bones, lighting states, void) unchanged by hash or direct measurement
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not modify helmet geometry or material
+  - do not change slit count, shape, or violet color family
+  - do not change halo geometry or its unanimated white-only material at S0/S1
+  - do not modify the cloak mesh, introduce boundary/non-manifold edges, or imply limb geometry via hair shaping
+  - do not modify or reposition any of the 3 blade slab objects or their rigid-to-root attachment
+  - do not reposition or reweight any of the existing 9 bones
+  - do not add more than 2 new bones
+  - do not change S0/S1/S2 lighting state values
+  - do not build hair as fine particle/groom strands or anime-style bangs/twin-tails
+  - do not introduce any hair color outside flat black/near-black
+  - do not let hair cross or shadow-obscure either sensor slit at any of the 8 angles
+  - do not rebuild the base file from scratch or open/save any older rig_derivatives file
+  - do not push
+  - do not modify unrelated files
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+  - do not claim the new turnaround supersedes MIKAGE_STANDING_HERO_TURNAROUND_V0_2 as operator-approved; only "pending operator review"
+
+pass_conditions:
+  - hair mesh present, reads as one heavy dense long black mass, not fine strands, not anime
+  - no slit coverage at any of the 8 turnaround angles, reported per-angle
+  - helmet silhouette clearly legible at every angle
+  - no more than 2 new bones, both hair-specific, both parented to head
+  - every locked item verified unchanged by hash or direct measurement, not just asserted
+  - 8-angle turnaround produced and visually clean, back (180) view clearly shows length/density
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage/tools/verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - hair crosses or shadows either slit at any angle
+  - hair reads as fine anime strands/twin-tails instead of one heavy mass
+  - helmet silhouette becomes unclear or hidden
+  - any locked geometry/material/rig item is modified
+  - more than 2 new bones added, or an existing bone repositioned/reweighted
+  - hair introduces a color outside flat black/near-black
+  - SSOT hair spec is ambiguous beyond length/density/color and a specific hairstyle would have to be invented
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews the new 8-angle turnaround and rules whether it supersedes MIKAGE_STANDING_HERO_TURNAROUND_V0_2 as the reference. If approved, Lane B (Cowork) may then use the hair-inclusive turnaround as the reference_image_url source for the divine-form txt2img identity-conditioning brief, which was paused pending this fix.
+next_step_if_fail: stop and report BLOCKER reason only, including what was tried. Do not lower the hair/slit/silhouette gate or invent canon not stated in the SSOT.

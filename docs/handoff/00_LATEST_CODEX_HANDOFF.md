@@ -1,5 +1,20 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-05 (#52, exception #52): `MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1` = QUEUED (DRAFT,
+> blocked on operator commit) - rebuild the Zenith Blade mesh to canon slab proportions (broad
+> parallel-edge slab, chisel tip last 13%, centered violet seam #8F00FF, mid-shaft grip ring) -
+> confirmed gap: no prior exception (#40-#51) ever changed blade shape, only its rigid-to-root
+> attachment. Base: production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
+> (exception #48 PASS). Brief: production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_SLAB_REMODEL_V0_1.md
+> + ZENITH_BLADE_SLAB_REFERENCE.svg (same folder). Scope: blade mesh/material ONLY, attachment point
+> unchanged, everything else (helmet/slits/halo/cloak/rig/lighting/void) hash-locked. Cross-check
+> before PASS: width/length ratio 0.22-0.26 on render; silhouette matches locked comic KF05; no
+> taper except last ~13%; seam single centered line; ring at exact mid-shaft. Queued by Lane B
+> (Cowork) 2026-07-05, pending operator commit of this dispatch + AGENTS.md exception #52 +
+> .mikage/tasks/active_task.yaml re-point (hair dispatch #50 backed up at
+> .mikage/tasks/active_task_hair_draft_backup_2026-07-05.yaml, not lost, still QUEUED behind this).
+
+
 > DISPATCH 2026-07-04 (#50, exception #50): `MIKAGE_HAIR_ADD_V0_1` = QUEUED (DRAFT, blocked on
 > operator commit) - add long/thick/dense black hair to the production rig, closing a confirmed
 > gap between the locked SSOT lore line ("toc den dai day", MIKAGE_LORE_WORLD_CANON_V0_6_SSOT.md
