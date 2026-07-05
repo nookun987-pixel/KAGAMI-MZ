@@ -1,5 +1,36 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+---
+
+## DISPATCH: Fifty-fourth controlled exception (2026-07-06)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1 = OPEN` (real 3-phase Zenith Blade rebuild, REPLACES #52/#53)
+
+Operator BOOS caught that exceptions #52/#53 (single-state violet slab blade remodel) were built
+from a brief that conflicts with canon already locked 2026-06-02
+(`docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md` + `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` section 0.5).
+The real weapon canon is a SYNCED 3-PHASE B4C ceramic / black Titanium block:
+
+- P1 `Compact-Idle` - closed brutalist monolith, no blade silhouette, flux-pinned to back, core dim/idle.
+- P2 `Brutal Industrial Activation` - shell cracks (Kintsugi), Titanium frame + mid-red glow through cracks.
+- P3 `Tri-Phase Final / Overdrive` - full split, Titanium frame exposed, core blazing `#E60000` RED (not violet).
+
+#52/#53 candidate `.blend`/render outputs stay on disk as an audit trail only (each PROOF.md now
+carries a superseded banner) - they are NOT the production blade. This dispatch replaces them
+entirely with the correct 3-phase build.
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend`
+(exception #48's PASS derivative - the version BEFORE #52/#53 touched the blade). Full brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_1.md`. Full spec:
+AGENTS.md Fifty-fourth controlled exception. Active task file: `.mikage/tasks/active_task.yaml`
+(re-pointed 2026-07-06; prior pointer preserved at
+`.mikage/tasks/active_task_blade_v0_1_1_backup_2026-07-06.yaml`).
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 > DISPATCH 2026-07-05 (#53, exception #53): `MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1` = QUEUED (DRAFT,
 > blocked on operator commit) - narrow material-only follow-up to exception #52. Geometry confirmed
 > correct by Lane B (W/L=0.240, in range) but the rendered seam pixel-samples pink/lavender (#DBB1F5

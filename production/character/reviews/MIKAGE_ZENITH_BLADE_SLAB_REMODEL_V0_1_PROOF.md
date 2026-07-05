@@ -1,3 +1,14 @@
+> ⚠️ SUPERSEDED / WRONG CANON BASIS (flagged 2026-07-06, operator BOOS): this V0.1 slab remodel was
+> built from `CODEX_ZENITH_BLADE_REMODEL_BRIEF.md`, a single-state violet-seam premise that conflicts
+> with the already-locked `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md` +
+> `MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` (locked 2026-06-02): the real canon weapon is a SYNCED
+> 3-PHASE B4C-ceramic/Titanium block (P1 Compact-Idle closed monolith / P2 Brutal Industrial
+> Activation cracked-open / P3 Overdrive core blazing `#E60000` RED, not violet). This candidate's
+> geometry ratio (W/L=0.240) is not necessarily wrong in isolation but the whole single-state-blade
+> shape premise is. See AGENTS.md "Fifty-fourth controlled exception" for the real rebuild. Kept on
+> disk only as an audit trail — do not pull into public site/deck, do not treat as CANDIDATE for the
+> real blade.
+
 # MIKAGE Zenith Blade Slab Remodel V0.1 — Proof
 
 TASK: `MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1`
