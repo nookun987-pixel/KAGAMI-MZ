@@ -1,88 +1,73 @@
-task_id: MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1
+task_id: MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1
+current_step: MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1
 # Dispatched by operator (BOOS) 2026-07-05, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Fifty-second controlled exception (MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1 = OPEN).
-# Rebuilds the Zenith Blade mesh to canon slab proportions (broad parallel-edge slab, chisel tip,
-# centered violet seam, mid-shaft grip ring) - a confirmed geometry gap, never fixed by any prior
-# exception. Base = MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend (#48's PASS derivative). Does NOT touch
-# helmet, slits, halo, cloak, existing rig bones, lighting states, or the blade's rigid-to-root
-# attachment point - mesh shape/material only.
-# NOTE: this re-points active_task.yaml away from MIKAGE_HAIR_ADD_V0_1 (exception #50, still QUEUED,
-# never committed/run) - the hair draft is preserved untouched at
-# .mikage/tasks/active_task_hair_draft_backup_2026-07-05.yaml, nothing was lost.
+# Governed by AGENTS.md Fifty-third controlled exception (MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1 = OPEN).
+# Narrow follow-up to exception #52: the blade slab geometry is confirmed correct (W/L=0.240), but
+# Lane B independently pixel-sampled the rendered seam and found it reads pink/lavender (#DBB1F5),
+# not the required blue-dominant violet - same class of drift as the V0.8 -> V0.8.1 helmet slit fix.
+# This task is MATERIAL/COLOR ON THE SEAM EMISSION ONLY - geometry stays locked from #52's output.
+# NOTE: this re-points active_task.yaml away from MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1 (exception #52,
+# candidate produced but not yet committed) - #52's own active_task.yaml is preserved untouched at
+# .mikage/tasks/active_task_blade_v0_1_backup_2026-07-05.yaml. BOOS must commit #52's produced files
+# (the .blend + 3 renders + proof.md under production/character/...) before this task's base file
+# is valid on disk from git's perspective - it already exists on disk now, so Codex can read it, but
+# commit it before or alongside this dispatch to keep history clean.
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_SLAB_REMODEL_V0_1.md
-  - production/character/build_log/ZENITH_BLADE_SLAB_REFERENCE.svg
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_SLAB_REMODEL_V0_1_1.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
 
-output_folder_allowed: _tmp/mikage_zenith_blade_slab_remodel_v0_1_gate
+output_folder_allowed: _tmp/mikage_zenith_blade_slab_remodel_v0_1_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
 read_only_files:
-  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_SLAB_REMODEL_V0_1.md
-  - production/character/build_log/ZENITH_BLADE_SLAB_REFERENCE.svg
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_SLAB_REMODEL_V0_1_1.md
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
 
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_WIREFRAME.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_TURNTABLE.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_KEYART.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1_WIREFRAME.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1_TURNTABLE.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1_KEYART.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1_PROOF.md
 
 allowed_actions:
-  - rebuild the three blade slab mesh objects to the spec's slab/tip/seam/ring/grip proportions
-  - measure and report the width-to-length ratio on the actual render
-  - render a build-log wireframe view, a 360 turntable (or 8-angle set), and a hero key-art still
-  - verify every locked item (helmet, slits, halo, cloak, existing bones, lighting states, void,
-    blade attachment point) unchanged by hash or direct measurement
+  - adjust the blade seam emissive material only (linear emission color and/or bloom/exposure)
+  - re-render the wireframe, turntable, and key art from the corrected material
+  - pixel-sample the actual rendered seam at 2+ points and report real RGB/hex values
+  - verify geometry measurements (W/L ratio, parallel/tip fractions) unchanged from V0_1
   - write the real deliverables into the paths listed under real_deliverables
   - run deterministic verification appropriate to this task type
 
 forbidden_actions:
-  - do not modify helmet geometry or material
-  - do not change slit count, shape, or violet color family
-  - do not change halo geometry or its unanimated white-only material at S0/S1
-  - do not modify the cloak mesh
-  - do not move the blade's rigid-to-root attachment point (mesh shape/material only)
-  - do not reposition or reweight any existing bone, or add new bones
-  - do not change S0/S1/S2 lighting state values
-  - do not add a curve, crossguard, fuller, or any needle/katana taper anywhere on the blade
-  - do not pull or replace the public-facing build cards on site/deck (Lane B's job after operator review)
+  - do not modify blade mesh, geometry, or transform in any way
+  - do not modify ring, grip, or slab body materials
+  - do not modify helmet, slits, halo, cloak, rig, or lighting
   - do not push
   - do not modify unrelated files
   - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
   - do not claim canon-lock, asset-lock, or production-ready/final status
-  - do not pull or replace the public-facing build cards on site/deck
+  - do not block on the KF05 comic-panel comparison (dropped, see brief)
 
 pass_conditions:
-  - width-to-length ratio measured on the actual render lands in 0.22-0.26
-  - silhouette matches the already-locked slab in comic panel KF05
-  - no taper anywhere except the last ~13% of blade length
-  - core seam is a single centered emissive line, #8F00FF, only emissive part of the weapon
-  - grip ring sits at exact mid-shaft (0.50 of blade length)
-  - edge-on turntable frame is the only angle where the blade reads thin; front/45 read broad
-  - every locked item (helmet, slits, halo, cloak, existing 9 bones, lighting states, void, blade attachment point) verified unchanged by hash or direct measurement, not just asserted
-  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage/tools/verify_output.py prints PASS
+  - rendered seam pixel-sampled at 2+ points reads blue-dominant violet (red channel clearly below blue), real hex/RGB values reported, not asserted
+  - geometry measurements (W/L=0.240, parallel/tip fractions) identical to V0_1
+  - ring/grip/slab body materials unchanged
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
   - no .blend1 remains
 
 stop_conditions:
-  - width/length ratio falls outside 0.22-0.26
-  - any taper appears before the last 13% of blade length
-  - the blade curves anywhere along its length
-  - seam is not single/centered, or ring is not at exact mid-shaft
-  - any locked geometry/material/rig item is modified
-  - the blade's rigid-to-root attachment point moves
-  - silhouette diverges from the locked comic KF05 slab
+  - rendered pixel still reads pink/magenta after the fix attempt
+  - any blade geometry or transform change is made
+  - ring/grip/slab body material accidentally changed
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: Operator reviews the wireframe/turntable/key-art proof and rules whether the remodel is approved as the new production blade. If approved, Lane B (Cowork) pulls and replaces the 3 wrong build cards currently on the public site/deck.
-next_step_if_fail: stop and report BLOCKER reason only, including what was tried. Do not lower the slab-proportion/silhouette gate or approximate the numbers.
+next_step_if_pass: Operator reviews the corrected renders and rules whether the blade remodel (geometry + fixed color) is approved as the new production blade. If approved, Lane B (Cowork) pulls and replaces the 3 wrong build cards currently on the public site/deck.
+next_step_if_fail: stop and report BLOCKER reason only, including what was tried (e.g. the exact linear emission values changed). Do not lower the hue-verification gate or approximate the sampled values.

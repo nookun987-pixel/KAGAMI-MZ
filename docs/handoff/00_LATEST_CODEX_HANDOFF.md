@@ -1,5 +1,16 @@
 # MIKAGE / CHARACTER RIG PIPELINE - CURRENT HANDOFF
 
+> DISPATCH 2026-07-05 (#53, exception #53): `MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1_1` = QUEUED (DRAFT,
+> blocked on operator commit) - narrow material-only follow-up to exception #52. Geometry confirmed
+> correct by Lane B (W/L=0.240, in range) but the rendered seam pixel-samples pink/lavender (#DBB1F5
+> core, #A36BCC falloff), not blue-dominant violet - same drift class as the V0.8->V0.8.1 helmet slit
+> fix. Base: production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1.blend
+> (exception #52's candidate, NOT YET COMMITTED - commit it alongside this dispatch). Brief:
+> production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_SLAB_REMODEL_V0_1_1.md. Scope: seam
+> emission material/color ONLY, geometry stays locked. KF05 comic-panel comparison from #52's brief
+> dropped - no such file found in either repo by Lane B. Queued by Lane B (Cowork) 2026-07-05.
+
+
 > DISPATCH 2026-07-05 (#52, exception #52): `MIKAGE_ZENITH_BLADE_SLAB_REMODEL_V0_1` = QUEUED (DRAFT,
 > blocked on operator commit) - rebuild the Zenith Blade mesh to canon slab proportions (broad
 > parallel-edge slab, chisel tip last 13%, centered violet seam #8F00FF, mid-shaft grip ring) -
