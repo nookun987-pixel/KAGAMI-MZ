@@ -1476,3 +1476,24 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - On ambiguity in exact proportions not pinned down numerically by the brief or `ZENITH_BLADE_SLAB_REFERENCE.svg`: make a reasonable modeling choice, state it explicitly in the proof, do not block on it. On any OTHER SSOT conflict beyond the color/silhouette override already stated, or scope drift: stop and report - operator decision, not to be resolved unilaterally.
   - Queued by Lane B (Cowork) 2026-07-06, blocked on operator commit.
+
+- RULED 2026-07-06 (operator BOOS, direct visual review of the V0_2 contact sheet): silhouette/shape =
+  PASS (blade reads correctly at all 3 phases, keep it exactly as-is, this part is approved). Core COLOR
+  = FAIL - independent pixel scan (Lane B, Cowork) of the actual rendered contact sheet found the true
+  brightest core pixels clipped to RGB(255,~30-120,255) (R equals B, i.e. magenta), not blue-dominant
+  violet, even though V0_2's own proof sampled off-peak seam points that did measure blue-dominant. Root
+  cause: emission/bloom strong enough to clip R up to meet B at the hottest pixel. This is a narrow
+  material/render-only revision - V0_2's geometry/silhouette is not touched.
+
+- Fifty-sixth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3 = OPEN` (fix core color/bloom clipping only, reuse V0_2's shape byte-identical)
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2.blend` (V0_2's own PASS-shape candidate; do NOT touch geometry, rig, or attachment). Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_3.md`.
+  - REQUIRED: identify the actual brightest core pixel (not an arbitrary seam point) for P2 and P3; adjust emission strength and/or bloom threshold/intensity until that peak pixel measures clearly blue-dominant (B minus R >= 40) in the beauty render; also render a no-bloom diagnostic pass at the same coordinates to isolate base material color from bloom clipping; re-export the front contact sheet at more readable exposure. Full detail in the brief.
+  - SCOPE LOCK: no mesh/geometry/proportion/rig/attachment change of any kind versus V0_2 - material and render settings only.
+  - HARD BANS: red/crimson anywhere on the weapon, seam thickened/washed to mask the fix, sampling only an off-peak point instead of the true brightest pixel, any geometry change.
+  - REQUIRED PROOF: re-exported contact sheet; beauty-vs-no-bloom comparison sheet for P2/P3; pixel-sample table at the peak pixel for both passes with B-R/B-G deltas; explicit zero-red confirmation; V0_2 geometry/rig/attachment verified unchanged.
+  - SUCCESS: peak-pixel B minus R >= 40 in beauty render for P2 and P3; no-bloom pass also blue-dominant at that coordinate; zero red/crimson; seam still thin; V0_2 shape byte-identical; gate exactly 2 files; `verify_output.py` PASS; no `.blend1`.
+  - FAIL: peak pixel still clips (R within 39 of B or above) -> `BLOCKER = HUE_VIOLATION`; no-bloom pass also non-blue-dominant -> `BLOCKER = HUE_VIOLATION`; any geometry/rig/attachment change -> `BLOCKER = SCOPE_VIOLATION`; seam thickened/washed -> `BLOCKER = SIGNAL_DISCIPLINE_VIOLATION`; gate mis-schema'd -> `BLOCKER = VALIDATOR_SCHEMA_MISMATCH`.
+  - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3.blend` + `..._CONTACTSHEET_FRONT_P1P2P3.png` + `..._BEAUTY_VS_NOBLOOM_P2P3.png` + `..._KEYART_P3.png` + `..._PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_3_gate/` = ONLY the 2 gate files.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-06, blocked on operator commit.

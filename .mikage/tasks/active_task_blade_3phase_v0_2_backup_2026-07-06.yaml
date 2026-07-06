@@ -1,0 +1,96 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2
+# Dispatched by operator (BOOS) 2026-07-06, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Fifty-fifth controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2 = OPEN).
+# REVISES exception #54 (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1 = FAIL VISUAL/CANON, operator ruling
+# 2026-07-06: technical validators passed but result read as armor/shield/energy-module, not a blade;
+# core color reversed from red #E60000 to electric violet #8F00FF; silhouette reverts to the vetted
+# slab shape from exception #52's ZENITH_BLADE_SLAB_REFERENCE.svg, reused for SHAPE ONLY.
+# Prior yaml preserved untouched at .mikage/tasks/active_task_blade_3phase_v0_1_backup_2026-07-06.yaml.
+# Base file for THIS task = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1.blend
+# (V0_1's own candidate - reuse its rig/attachment/phase-driver system, revise geometry+material only).
+# Open SSOT note: docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md + MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+# section 0.5 still read RED core/closed-block silhouette on disk - NOT edited by this task. This
+# operator ruling overrides those two files on weapon color+silhouette ONLY, pending a formal spec
+# update. Do not treat them as current for that specific question until BOOS updates or approves V0_2.
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_2.md
+  - production/character/build_log/ZENITH_BLADE_SLAB_REFERENCE.svg
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_2_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_2.md
+  - production/character/build_log/ZENITH_BLADE_SLAB_REFERENCE.svg
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2_WIREFRAME.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2_CONTACTSHEET_FRONT_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2_SIDEVIEW_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2_SILHOUETTE_THUMBNAILS.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2_PROOF.md
+
+allowed_actions:
+  - reuse the V0_1 phase-driver system (ZB3_PHASE_CONTROL custom property, visibility drivers) unchanged
+  - rebuild P1/P2/P3 mesh + material so the weapon reads as a slab blade (point tip, straight body, grip ring) at every phase
+  - reinstate the vetted slab proportions from ZENITH_BLADE_SLAB_REFERENCE.svg for shape only (not color, not the #52/#53 blend files)
+  - switch the core/seam emissive color from red #E60000 family to violet #8F00FF family, as a thin controlled seam (not a wash)
+  - increase the P2 shell-separation gap versus V0_1
+  - rebalance P3 proportions so the central blade element outweighs the two outer panels in the silhouette read
+  - render a black/white silhouette self-check thumbnail per phase and report YES/NO readability
+  - pixel-sample the actual rendered core/seam at 2+ points per phase and report real RGB/hex values with a blue-dominance channel test
+  - verify every LOCKED item (helmet/slits/halo/cloak/rig/attachment) unchanged by hash or measurement
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not base this on the #52 or #53 candidate .blend files, or on MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend directly
+  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
+  - do not let violet read as a full-surface wash/flood instead of a thin seam
+  - do not leave P2 reading as three isolated status-light dots instead of one structural crack seam
+  - do not let P3's two outer panels outweigh the central blade in the silhouette
+  - do not modify helmet, slits, halo, cloak, rig bones, or the existing weapon attachment point/location
+  - do not edit docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md or MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md (read-only inputs; flag conflicts, do not resolve by editing them)
+  - do not push
+  - do not modify unrelated files
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - P1/P2/P3 each independently pass the black/white silhouette self-check as reading like a slab blade
+  - P2 shows a clearly larger structural gap than V0_1 with one continuous violet seam, blade silhouette still dominant
+  - P3 shows a single straight central blade with legible point as the primary read, outer panels clearly secondary, violet core at full strength blue-dominant
+  - zero red/crimson pixels found on the weapon at any phase
+  - weapon attachment point unchanged from V0_1's rig
+  - every LOCKED item verified unchanged
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - any phase's silhouette self-check reads NO and is not corrected before finishing shading
+  - any red/crimson pixel found on the weapon at any phase
+  - violet reads as a wash/flood rather than a thin controlled seam
+  - P2 still reads as status-light dots rather than a structural crack
+  - P3's outer panels outweigh the central blade
+  - attachment point moved or any LOCKED item changed
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews the revised P1/P2/P3 renders (front, side, silhouette thumbnails) and rules whether this reads as the production Zenith Blade. If still failing the blade read, escalate to a silhouette-only grayscale pass (no material/lighting) per the operator's stated fallback before attempting a V0_3.
+next_step_if_fail: stop and report BLOCKER reason only, including what was tried and why. Do not lower the silhouette or hue-verification gate, do not approximate sampled values, do not silently skip a phase or the silhouette self-check.

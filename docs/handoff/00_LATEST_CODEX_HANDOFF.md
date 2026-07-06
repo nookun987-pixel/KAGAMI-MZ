@@ -2,6 +2,42 @@
 
 ---
 
+## DISPATCH: Fifty-sixth controlled exception (2026-07-06)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3 = OPEN` (color-only fix, revision of #55)
+
+Operator BOOS reviewed V0_2's contact sheet directly and ruled: silhouette/shape = PASS (blade reads
+correctly at all 3 phases — keep it exactly as-is, approved). Core COLOR = FAIL. Lane B (Cowork)
+independently pixel-scanned the actual rendered contact sheet (not just V0_2's own proof samples) and
+found the true brightest core pixels clipped to `RGB(255,~30-120,255)` — R equals B, which is magenta,
+not blue-dominant violet — even though V0_2's proof sampled off-peak seam points that did measure
+blue-dominant. Root cause: emission/bloom strong enough to clip R up to meet B at the hottest pixel, the
+same pink-drift failure class as #52/#53, this time from bloom clipping rather than base hue selection.
+
+This is a narrow material/render-settings-only revision. V0_2's geometry, proportions, ring, tip, panel
+hierarchy, rig, and attachment are NOT touched — reused byte-identical. Base file:
+`production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2.blend`.
+Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_3.md`. Full
+spec: AGENTS.md Fifty-sixth controlled exception. Active task file: `.mikage/tasks/active_task.yaml`
+(re-pointed 2026-07-06; prior pointer preserved at
+`.mikage/tasks/active_task_blade_3phase_v0_2_backup_2026-07-06.yaml`).
+
+Required this round: identify the ACTUAL brightest core pixel (not an arbitrary seam point) for P2 and
+P3; adjust emission strength and/or bloom threshold/intensity until that peak pixel measures clearly
+blue-dominant (B minus R >= 40) in the beauty render; render a no-bloom diagnostic pass at the same
+coordinates to isolate base material color from bloom clipping; re-export the front contact sheet at a
+more readable exposure (V0_2's robe/helmet read fully blown-out white).
+
+Operator's stated fallback if V0_3 still drifts pink at the peak: (1) reduce/disable bloom further, (2)
+reduce emission strength another notch, (3) if still drifting, correct in the render/compositor so the
+highlight doesn't clip R up to meet B, keeping the base hex unchanged. Also export a beauty render and a
+core-only/no-bloom pass to isolate exactly which stage is responsible.
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Fifty-fifth controlled exception (2026-07-06)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2 = OPEN` (revision of #54, replaces it as the active target)
