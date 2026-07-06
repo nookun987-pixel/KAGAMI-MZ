@@ -1,0 +1,80 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1
+# Dispatched by operator (BOOS) 2026-07-06, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Fifty-fourth controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1 = OPEN).
+# REPLACES exceptions #52/#53 entirely. Those were dispatched from a single-state violet-seam brief
+# that conflicts with canon already locked 2026-06-02 (docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md +
+# MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md section 0.5): the real weapon is a SYNCED 3-PHASE B4C/Titanium
+# block (P1 Compact-Idle closed monolith / P2 Brutal Industrial Activation cracked-open / P3 Overdrive
+# core #E60000 RED - not a bladed slab, not violet). #52/#53 candidate files stay on disk as an audit
+# trail only (each PROOF.md now carries a superseded banner) and are explicitly NOT the base for this
+# task. Prior yaml preserved untouched at .mikage/tasks/active_task_blade_v0_1_1_backup_2026-07-06.yaml.
+# Base file for THIS task = production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
+# (exception #48's PASS derivative, the last version before #52/#53 touched the blade).
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_1.md
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_1_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_1.md
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1_WIREFRAME.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1_CONTACTSHEET_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1_PROOF.md
+
+allowed_actions:
+  - build the P1 Compact-Idle closed B4C monolith block replacing the old blade slab meshes at the same attachment point
+  - add P2 (cracked shell + Titanium frame + mid-red glow) and P3 (full split + max red core) as driven states (shape-key or driver)
+  - pixel-sample the actual rendered core/crack at 2+ points per phase and report real RGB/hex values with a red-dominance channel test
+  - verify every LOCKED item (helmet/slits/halo/cloak/rig/attachment point) unchanged by hash or measurement
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not base this on the #52 or #53 candidate .blend files
+  - do not give P1 any blade silhouette feature (point, crossguard, wrapped grip)
+  - do not use violet/#8F00FF anywhere on this weapon at any phase
+  - do not modify helmet, slits, halo, cloak, rig bones, or the existing weapon attachment point/location
+  - do not push
+  - do not modify unrelated files
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - P1 reads as a closed brutalist block with no blade silhouette features, verified by wireframe + visual inspection
+  - P2 shows real crack/split geometry with Titanium frame visible and mid-strength red glow
+  - P3 shows full split, Titanium frame fully visible, core pixel-sampled red-dominant (#E60000 family), real RGB/hex values reported for all 3 phases
+  - weapon attachment point unchanged from the current rig
+  - every LOCKED item verified unchanged
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - any blade/sword silhouette feature appears at P1
+  - any violet/#8F00FF pixel found on the weapon at any phase
+  - core reads orange/pink/magenta instead of red-dominant at P3
+  - P1 core already glows/bright instead of dim/idle
+  - attachment point moved or any LOCKED item changed
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews the P1/P2/P3 renders and rules whether this 3-phase rebuild is approved as the new production blade. If approved, Lane B (Cowork) retires the #52/#53 candidate files from any reference use and prepares the real build cards for public site/deck.
+next_step_if_fail: stop and report BLOCKER reason only, including what was tried (exact geometry/material choices made and why). Do not lower the hue-verification gate, do not approximate sampled values, do not silently skip a phase.

@@ -2,6 +2,48 @@
 
 ---
 
+## DISPATCH: Fifty-fifth controlled exception (2026-07-06)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2 = OPEN` (revision of #54, replaces it as the active target)
+
+Operator BOOS ruled `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1` (exception #54, directly below) FAIL
+VISUAL/CANON: both validators passed but the rendered result reads as a transforming armor plate /
+shield / energy module, not a **blade**. P1 has no point or grip and reads as a block; P2's three glow
+segments read as status lights, not a structural crack; P3's two flat panels around a rod read as two
+doors around a power core, not a sword. Separately, the operator reverses the core-color premise #54
+itself was built on: the Zenith Blade core is now ruled **electric violet `#8F00FF`** (thin controlled
+seam, same hue family as the helmet slits) — not red `#E60000`.
+
+This reverses part of the table in `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md` and
+`MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md` section 0.5 (both locked 2026-06-02) on weapon color and
+silhouette specifically. Neither file is edited by this dispatch — both still read RED core / closed-
+block silhouette on disk and are now stale on that specific question pending a formal spec update. Do
+not treat them as current for weapon color/silhouette until the operator updates them or approves the
+V0_2 candidate below.
+
+Revision keeps V0_1's rig, attachment, and 3-phase driver system (`ZB3_PHASE_CONTROL["blade_phase"]`
++ visibility drivers) — only the geometry/material visual hierarchy is rebuilt. Silhouette reinstates
+the vetted slab proportions from exception #52's `ZENITH_BLADE_SLAB_REFERENCE.svg` (shape reference
+only — not the #52/#53 candidate `.blend` files, not their color). Base file for this task:
+`production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1.blend`.
+Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_2.md`. Full
+spec: AGENTS.md Fifty-fifth controlled exception. Active task file: `.mikage/tasks/active_task.yaml`
+(re-pointed 2026-07-06; prior pointer preserved at
+`.mikage/tasks/active_task_blade_3phase_v0_1_backup_2026-07-06.yaml`).
+
+New requirement this round: a black/white silhouette self-check thumbnail per phase (P1/P2/P3) with a
+YES/NO blade-read call recorded in the proof, plus a new side-view render of P3. P2's shell-separation
+gap must be 2-3x wider than V0_1's. P3's central blade element must outweigh the two outer panels in
+the silhouette read. Zero red/crimson pixels permitted on the weapon at any phase.
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1` candidate files (blend/renders/proof) stay on disk as an
+audit trail only — not the production base, not to be pulled into any deck/site/public asset.
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Fifty-fourth controlled exception (2026-07-06)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_1 = OPEN` (real 3-phase Zenith Blade rebuild, REPLACES #52/#53)
