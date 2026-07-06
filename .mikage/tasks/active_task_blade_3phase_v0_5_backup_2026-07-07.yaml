@@ -1,0 +1,92 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5
+# Dispatched by operator (BOOS) 2026-07-07, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Fifty-eighth controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5 = OPEN).
+# REVISES exception #57 (V0_4). V0_4 result: TECHNICAL_STATUS = CANDIDATE_PASS, BOOS VISUAL RULING =
+# FAIL_VISUAL (production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md).
+# Reason 1: core body reads cobalt/indigo (median hue 243.9deg/245.1deg, R/B 0.19/0.15) not electric
+# violet #8F00FF (hue 273.6deg, R/B 0.56). Peak values #B9B2FF/#C0BAFF were bloom-clipped highlights,
+# not core-body evidence. Reason 2: P2/P3 strengths both 0.05 -> no readable MID->MAX separation
+# (P3 per-pixel luminance ~12% LOWER than P2, total energy only ~3-4% higher).
+# THIS TASK LIFTS the previous "base hex unchanged" lock: the emission COLOR must gain red toward
+# #8F00FF. Color gate now measures MEDIAN CORE-BODY pixels of the final PNG (bloom/clipped/edge
+# excluded), never the peak pixel.
+# Prior yaml preserved untouched at .mikage/tasks/active_task_blade_3phase_v0_4_backup_2026-07-07.yaml.
+# Base file for THIS task = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend
+# (shape is V0_2's approved shape, byte-identical through V0_3/V0_4; only material/render settings differ).
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_5.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_5_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_5.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_CONTACTSHEET_FRONT_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_SAMPLING_REGIONS_P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_PROOF.md
+
+allowed_actions:
+  - report the core/seam material's current emission color and per-phase strengths before changing anything
+  - change the core/seam emission COLOR to gain red toward #8F00FF (this is the point of the task - the previous "base hex unchanged" lock is lifted by the operator ruling)
+  - set DIFFERENT per-phase emission strengths so P3 median linear luminance >= 1.5x P2 at the core body
+  - adjust bloom/compositor settings and proof-render exposure for readability (render settings, not geometry)
+  - build a core-body sampling mask on the final PNG excluding bloom, clipped (any channel 255) and edge/antialias pixels, and report median RGB / HSV hue / R-to-B ratio / median linear luminance for P2 and P3
+  - produce a marked sampling-regions image proving what was measured
+  - verify every V0_2-V0_4 geometry/silhouette/rig/attachment element unchanged by hash or measurement
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not change any mesh geometry, proportions, ring, tip, panel spacing/hierarchy, seam geometry/position/width versus V0_2-V0_4
+  - do not modify the ZB3_PHASE_CONTROL driver system, rig bones, camera, pose, or weapon attachment (1.08, -0.02, 1.75)
+  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
+  - do not add a second seam, duplicate the line, thicken the seam, or wash violet onto the blade body
+  - do not differentiate P3 from P2 by shifting hue toward blue
+  - do not gate on the peak pixel - the color gate is the median of the core-body mask only
+  - do not modify helmet, slits, halo, cloak, or unrelated files
+  - do not push
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - P2 core-body median hue 268-280 deg AND R/B ratio 0.45-0.65 on the final PNG
+  - P3 core-body median hue 268-280 deg AND R/B ratio 0.45-0.65 on the final PNG, same hue band as P2
+  - P3 core-body median linear luminance >= 1.5x P2
+  - P1 renders zero emissive core pixels
+  - exactly one thin straight core line in P2 and P3, physical width identical, no wash
+  - zero red/crimson pixels found on the weapon at any phase
+  - sampling-regions image shows bloom/clipped/edge pixels excluded from the measurement
+  - all V0_2-V0_4 geometry/silhouette/rig/attachment verified byte-identical
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - median core-body hue below 260 deg or R/B below 0.40 after the authorized adjustments
+  - P3 luminance below 1.5x P2, or P3 differs from P2 only by being bluer
+  - the validator measured peak/bloom pixels instead of the core body (report FAIL_VALIDATION_METHOD)
+  - any geometry, proportion, rig, camera, or attachment change versus V0_2-V0_4
+  - a second seam appears, the seam thickens, or violet washes onto the blade body
+  - any red/crimson pixel found
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews contact sheet, sampling-regions proof, key art and the median metrics, and rules whether the core now reads as Mikage electric violet with an unmistakable MID->MAX separation.
+next_step_if_fail: stop and report BLOCKER reason only, including measured median RGB / hue / R-to-B / luminance for both phases and the sampling mask. Do not approximate or round the measured gap favorably. If the measurement method itself was wrong, report FAIL_VALIDATION_METHOD.

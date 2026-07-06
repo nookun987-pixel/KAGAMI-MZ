@@ -2,6 +2,37 @@
 
 ---
 
+## DISPATCH: Fifty-ninth controlled exception (2026-07-07)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6 = OPEN` (measurable gates: EXR energy + P2 de-clip + hue nudge; revision of #58)
+
+V0_5 came back an honest STOP: `BLOCKER = COLOR_AND_PHASE_GATE_FAIL` - correct behavior, no retry, no
+PASS claim. Lane B independently confirmed every number and found the ROOT CAUSE IS THE GATE STRUCTURE,
+not execution (`production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_BLOCKER_ANALYSIS.md`):
+
+- ~80% of core-line pixels CLIP in the tonemapped PNG. A clipped pixel shows 255 at 1x or 4x radiance,
+  so the 1.5x luminance gate was physically unmeasurable on the PNG: excluding clipped pixels leaves the
+  dim fringe (P3 measured DIMMER than P2 despite 4x strength); including them measures +2%. Codex's 4x
+  strength increase was invisible to the PNG - and therefore to the eye. More strength can never pass.
+- Hue landed 264-265 deg (V0_4 was 244) - direction right, ~5-10 deg short of the 268-280 band.
+
+V0_6 changes (full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_6.md`):
+1. HUE: one more red nudge, iterate against the PNG core-body median until 270-276 deg. Gate unchanged.
+2. P2 DE-CLIP (new): P2 core-line clipped fraction <= 40% - lower P2 strength until MID has a readable body.
+3. ENERGY: moves to scene-linear EXR (pre-tonemap, unclipped), same mask, P3 >= 1.5x P2 median luminance.
+4. VISUAL MAX (new): P3 glow envelope area >= 1.3x P2 on the PNG - MAX must read at thumbnail scale.
+5. Sampling mask must cover the FULL seam length (V0_5's mask only covered below the grip ring).
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend`
+(geometry byte-identical chain V0_2 -> V0_5). Active task: `.mikage/tasks/active_task.yaml` (re-pointed
+2026-07-07, validate_task.py = PASS; prior yaml at `.mikage/tasks/active_task_blade_3phase_v0_5_backup_2026-07-07.yaml`).
+Gate folder created: `_tmp/mikage_zenith_blade_3phase_rebuild_v0_6_gate` (CONTACT_SHEET_ONLY - exactly 2 files).
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Fifty-eighth controlled exception (2026-07-07)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5 = OPEN` (color + phase-separation fix, revision of #57)

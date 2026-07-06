@@ -1541,3 +1541,21 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend` + `..._CONTACTSHEET_FRONT_P1P2P3.png` + `..._SAMPLING_REGIONS_P2P3.png` + `..._KEYART_P3.png` + `..._PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_5_gate/` = ONLY the 2 gate files.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-07, blocked on operator commit.
+
+- V0_5 RESULT (recorded 2026-07-07): honest STOP, `BLOCKER = COLOR_AND_PHASE_GATE_FAIL`. Codex execution
+  correct. Lane B analysis: ~80% of core pixels clip in the tonemapped PNG, making the 1.5x luminance gate
+  physically unmeasurable there (P3 measured dimmer at 4x strength because only the dim fringe survives the
+  clip exclusion); hue 264-265 deg, ~5-10 deg short. Analysis file:
+  `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_BLOCKER_ANALYSIS.md`.
+
+- Fifty-ninth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6 = OPEN` (measurable gate set; reuse V0_5's shape byte-identical)
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_6.md`.
+  - GATES: (A) PNG core-body median hue 268-280 deg + R/B 0.45-0.65, both phases, auto-FAIL <260/<0.40; (B) P2 core-line clipped fraction <= 40% (NEW - P2 strength comes DOWN); (C) ENERGY in scene-linear EXR only: P3 >= 1.5x P2 median luminance over the same full-seam mask (NEVER on the PNG); (D) P3 glow envelope area >= 1.3x P2 on the PNG (NEW - visual MAX read).
+  - Sampling mask must cover the FULL seam length, above and below the grip ring.
+  - HARD BANS: red/crimson; second seam; physical seam thickening; violet wash; hue-shifting P3 bluer; measuring energy on the PNG; partial-seam masks; any geometry/rig/camera/attachment change.
+  - REQUIRED PROOF: contact sheet (phases readable at thumbnail size); GATE_TABLE.md with every number; full-seam sampling-regions image; EXR medians + ratio; envelope areas + threshold; zero-red scan; P1 zero-emissive; hash audit vs V0_5; blend reopen audit.
+  - FAIL codes: HUE_VIOLATION / P2_CLIP_VIOLATION / PHASE_SEPARATION_VIOLATION / FAIL_VALIDATION_METHOD / SCOPE_VIOLATION / SIGNAL_DISCIPLINE_VIOLATION.
+  - Allowed outputs: `..._V0_6.blend` + `..._V0_6_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_6_SAMPLING_REGIONS_P2P3.png` + `..._V0_6_GATE_TABLE.md` + `..._V0_6_KEYART_P3.png` + `..._V0_6_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_6_gate/` = ONLY the 2 gate files.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-07, blocked on operator commit.
