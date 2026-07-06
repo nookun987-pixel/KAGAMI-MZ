@@ -1,0 +1,83 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4
+# Dispatched by operator (BOOS) 2026-07-06, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Fifty-seventh controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4 = OPEN).
+# REVISES exception #56 (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3). V0_3 result: BLOCKER = HUE_VIOLATION.
+# Peak pixel P2(596,210)/P3(595,210) read pure white RGB(255,254,255)/(255,255,255) in BOTH beauty and
+# no-bloom passes - this rules out bloom as the cause (V0_3's fix target) and points to emission strength
+# being high enough that the view transform (Filmic/AgX) desaturates the highlight to white regardless of
+# bloom. This task cuts emission strength substantially (not a small notch) and requires reporting the
+# scene-linear pre-tonemap value to confirm the real cause before/after.
+# Prior yaml preserved untouched at .mikage/tasks/active_task_blade_3phase_v0_3_backup_2026-07-06.yaml.
+# Base file for THIS task = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3.blend
+# (shape still V0_2's approved shape, byte-identical; only material/render settings differ).
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_4.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_4_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_4.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_CONTACTSHEET_FRONT_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_BEAUTY_VS_NOBLOOM_P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_PROOF.md
+
+allowed_actions:
+  - report the core/seam material's emission strength, base color, and scene-linear pre-tonemap peak radiance before changing anything
+  - substantially reduce the core/seam material's emission strength (not a small notch) and/or scene bloom threshold/intensity/radius
+  - apply a compositor-level highlight-desaturation correction if strength reduction alone hurts readability, keeping the base hex unchanged
+  - adjust the proof render camera's exposure/view-transform for readability (render setting, not a locked material edit)
+  - identify the actual brightest rendered pixel of the core signal (not an arbitrary seam point) for P2 and P3
+  - render a no-bloom / bloom-disabled diagnostic pass isolating base emissive color at the same coordinates
+  - pixel-sample both beauty and no-bloom passes at the peak pixel and report real RGB/hex with B-R/B-G deltas plus the scene-linear value
+  - verify every V0_2/V0_3 geometry/silhouette/rig/attachment element unchanged by hash or measurement
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not change any mesh geometry, proportions, ring, tip, panel spacing/hierarchy versus V0_2/V0_3
+  - do not modify the ZB3_PHASE_CONTROL driver system, rig bones, or weapon attachment point/transform
+  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
+  - do not thicken or wash the seam to mask the color fix
+  - do not sample only an off-peak seam point and skip the actual brightest pixel
+  - do not modify helmet, slits, halo, cloak, or unrelated files
+  - do not push
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - at the single brightest core pixel, beauty render, B minus R >= 40 for both P2 and P3, and neither channel a flat 255/255/255
+  - no-bloom pass at the same coordinate also reads blue-dominant, confirming base material correctness
+  - zero red/crimson pixels found on the weapon at any phase
+  - seam remains a thin controlled line, not thickened or washed
+  - all V0_2/V0_3 geometry/silhouette/rig/attachment verified byte-identical
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - brightest pixel still clips to white or with R within 39 of B or above it in the beauty render
+  - no-bloom pass also reads non-blue-dominant
+  - any geometry, proportion, rig, or attachment change versus V0_2/V0_3
+  - seam noticeably thickened or washed
+  - any red/crimson pixel found
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews the re-exported contact sheet, beauty-vs-no-bloom comparison, and key art, and rules whether the color now reads as clean cold violet.
+next_step_if_fail: stop and report BLOCKER reason only, including the exact measured RGB and scene-linear value at the peak pixel for both beauty and no-bloom passes. Do not approximate or round the measured gap favorably.

@@ -1519,3 +1519,25 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend` + `..._CONTACTSHEET_FRONT_P1P2P3.png` + `..._BEAUTY_VS_NOBLOOM_P2P3.png` + `..._KEYART_P3.png` + `..._PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_4_gate/` = ONLY the 2 gate files.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-06, blocked on operator commit.
+
+- V0_4 RESULT (recorded 2026-07-07): TECHNICAL_STATUS = CANDIDATE_PASS, BOOS VISUAL RULING = FAIL_VISUAL.
+  Codex execution and honesty were correct. Failure was in what was measured/targeted: (1) the peak-pixel
+  gate sampled bloom-clipped near-white highlights (#B9B2FF/#C0BAFF), while the core BODY median reads
+  cobalt/indigo (P2 hue 243.9deg R/B 0.19, P3 hue 245.1deg R/B 0.15) versus brand #8F00FF (273.6deg, 0.56) -
+  the emission base color (0.015, 0.0, 0.800) has almost no red and can never render violet at any strength;
+  (2) strengths cut to equal 0.05/0.05 erased the MID->MAX separation (P3 per-pixel luminance ~12% LOWER
+  than P2). Full ruling: `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md`.
+
+- Fifty-eighth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5 = OPEN` (one combined pass: correct core hue to electric violet AND restore MID->MAX phase separation; reuse V0_4's shape byte-identical)
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_5.md`.
+  - LOCK LIFTED BY OPERATOR RULING: the emission base COLOR may (must) change - gain red toward #8F00FF. Everything else stays locked: geometry, silhouette, seam geometry/position/width, ZB3_PHASE_CONTROL drivers, rig, camera, pose, attachment (1.08, -0.02, 1.75).
+  - METHOD CHANGE (binding): color gate = MEDIAN of solid core-body pixels in the final PNG, excluding bloom, clipped (any channel 255) and edge/antialias pixels. Never the peak pixel. Marked sampling-regions image is a required deliverable.
+  - COLOR GATE: P2 and P3 core-body median hue 268-280deg, R/B 0.45-0.65, reference center #8F00FF. AUTO-FAIL below 260deg or R/B < 0.40.
+  - PHASE GATE: P3 core-body median linear luminance >= 1.5x P2; P3 same hue band as P2 (differentiating by shifting P3 bluer is a FAIL); physical seam width identical; P3 bloom envelope may expand around the same single line.
+  - HARD BANS: red/crimson anywhere; second seam / duplicated line; seam thickening; violet wash onto the blade body; gating on the peak pixel; any geometry/rig/camera/attachment change.
+  - REQUIRED PROOF: P1/P2/P3 contact sheet (phases distinguishable at thumbnail size); median RGB / HSV hue / R-to-B / linear luminance table for P2+P3; sampling-regions image; initial+final validator reports; zero-red scan; P1 zero-emissive check; geometry/rig hash audit vs V0_4; blend reopen audit of final color+strengths.
+  - FAIL: median hue < 260deg or R/B < 0.40 -> `BLOCKER = HUE_VIOLATION`; P3 < 1.5x P2 luminance or P3 only bluer -> `BLOCKER = PHASE_SEPARATION_VIOLATION`; validator measured peak/bloom instead of core body -> `BLOCKER = FAIL_VALIDATION_METHOD`; geometry change -> `BLOCKER = SCOPE_VIOLATION`; seam thickened/washed/second line -> `BLOCKER = SIGNAL_DISCIPLINE_VIOLATION`; gate mis-schema'd -> `BLOCKER = VALIDATOR_SCHEMA_MISMATCH`.
+  - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend` + `..._CONTACTSHEET_FRONT_P1P2P3.png` + `..._SAMPLING_REGIONS_P2P3.png` + `..._KEYART_P3.png` + `..._PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_5_gate/` = ONLY the 2 gate files.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-07, blocked on operator commit.

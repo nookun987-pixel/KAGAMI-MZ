@@ -2,6 +2,44 @@
 
 ---
 
+## DISPATCH: Fifty-eighth controlled exception (2026-07-07)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5 = OPEN` (color + phase-separation fix, revision of #57)
+
+V0_4 came back TECHNICAL_STATUS = CANDIDATE_PASS but BOOS VISUAL RULING = FAIL_VISUAL (full ruling:
+`production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md`). Two reasons:
+
+1. HUE. The core BODY reads cobalt/indigo - measured medians P2 (48,33,255) hue 243.9deg R/B 0.19,
+   P3 (38,19,255) hue 245.1deg R/B 0.15 - versus brand electric violet #8F00FF at hue 273.6deg,
+   R/B 0.56. The V0_4 gate values #B9B2FF/#C0BAFF were bloom-clipped near-white PEAK samples and do
+   not represent the core body. Root cause: the emission base color (0.015, 0.0, 0.800) has almost no
+   red channel - no strength value can ever make it violet. The "base hex unchanged" lock is therefore
+   EXPLICITLY LIFTED for V0_5: the emission color must gain red toward #8F00FF.
+
+2. PHASE SEPARATION. V0_4 cut both strengths to the same 0.05/0.05. P3 is ~1px wider and slightly
+   more saturated but per-pixel luminance is ~12% LOWER than P2 and total energy only ~3-4% higher -
+   at contact-sheet scale P2 reads equivalent to P3. MID -> MAX must be re-established by ENERGY:
+   P3 core-body median linear luminance >= 1.5x P2, same hue as P2, same physical seam width.
+
+METHOD CHANGE (binding from V0_5 on): the color gate measures the MEDIAN of solid core-body pixels
+in the final PNG, excluding bloom, clipped highlights (any channel 255) and edge/antialias pixels.
+Never the peak pixel. A marked sampling-regions image is a required deliverable. Gates: median hue
+268-280deg, R/B 0.45-0.65, auto-FAIL below 260deg or R/B < 0.40. If the validation method itself
+measures the wrong region, report FAIL_VALIDATION_METHOD and stop.
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend`
+(shape byte-identical to V0_2's approved shape through V0_3/V0_4). Full brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_5.md`. Active task file:
+`.mikage/tasks/active_task.yaml` (re-pointed 2026-07-07, validate_task.py = PASS; prior pointer preserved
+at `.mikage/tasks/active_task_blade_3phase_v0_4_backup_2026-07-07.yaml`). Gate folder created:
+`_tmp/mikage_zenith_blade_3phase_rebuild_v0_5_gate` (CONTACT_SHEET_ONLY - exactly contact_sheet.png +
+contact_sheet_review_report.md).
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Fifty-seventh controlled exception (2026-07-06)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4 = OPEN` (color-only fix, revision of #56)
