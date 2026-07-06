@@ -16,6 +16,7 @@ current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3
 input_files_allowed:
   - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_2.blend
   - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_3.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
 
@@ -26,6 +27,7 @@ output_files_allowed:
 
 read_only_files:
   - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_3.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
   - docs/handoff/00_LATEST_CODEX_HANDOFF.md
   - AGENTS.md
 

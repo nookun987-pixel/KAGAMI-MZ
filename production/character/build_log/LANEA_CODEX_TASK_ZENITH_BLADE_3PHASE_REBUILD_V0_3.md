@@ -21,6 +21,23 @@ measured blue-dominant. This is a narrow, material/render-only revision — no g
   white, making color judgment harder. If useful, adjust ONLY the proof render's camera exposure / view
   transform for this output — do not change any locked material's base value to do this.
 
+## 0.1 NEW visual reference found 2026-07-06 (fan-layer comic, not official canon, but confirms the color target)
+
+`production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png` (added this round) is the "BLADE
+PLANT" hero frame from an earlier fan-layer combat-comic pack (`MIKAGE_COMIC_HANDOFF`) — this is the
+source that `ZENITH_BLADE_SLAB_REFERENCE.svg` and the original (retired) remodel brief were drawn from.
+It is FAN LAYER / UNOFFICIAL, not official canon, but it independently confirms the operator's slab +
+violet ruling (its own internal QC note says "if promoting to official: slab, not thin; violet only in
+slit + core") and — more usefully for THIS task — it shows exactly how to keep a bloomed violet line from
+drifting to magenta. Pixel-sampled at its own brightest point: peak pixel `(954,1491)` in that PNG reads
+`RGB(23, 0, 253)` — `hex #1700FD`. Note R stays near-zero even at the single brightest point; only B
+(and a touch of nothing else) carries the bloom. That is the target behavior: as the emission blooms
+brighter, do not let R climb — R should stay low/flat while B carries the glow. V0_2's failure mode was
+the opposite: R climbed to meet B at the peak. Use this reference file as an additional visual check
+(compare silhouette AND how the line holds color under bloom) alongside the numeric pass condition below;
+do not copy its exact geometry photo-for-photo (it's a 2D illustration, not a 3D proportions spec — the
+SVG stays the geometry source).
+
 ## 1. SCOPE — MATERIAL/LIGHT/RENDER SETTINGS ONLY
 
 Do not touch: mesh geometry, proportions, ring, point-down tip, panel spacing/hierarchy, the
@@ -69,7 +86,9 @@ delivery:
 ## 5. PASS CONDITION (color)
 
 - At the single brightest pixel of the core signal, in the BEAUTY (bloom-on) render, for both P2 and P3:
-  `B - R >= 40` (clearly blue-dominant, no clip-to-magenta).
+  `B - R >= 40` (clearly blue-dominant, no clip-to-magenta). For reference, the comic hero frame in
+  section 0.1 holds `R` near-zero even at its single brightest pixel (`RGB(23,0,253)`) — that is the
+  quality bar to aim toward, not just the minimum `40` gap to scrape past.
 - The no-bloom pass at the same coordinate must also read blue-dominant (confirms the base material is
   correct, independent of bloom).
 - Zero red/crimson pixels anywhere on the weapon at any phase (same test as V0_2, re-confirm).
