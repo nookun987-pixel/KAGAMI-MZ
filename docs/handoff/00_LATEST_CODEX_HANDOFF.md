@@ -2,6 +2,41 @@
 
 ---
 
+## DISPATCH: Fifty-seventh controlled exception (2026-07-06)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4 = OPEN` (color-only fix, revision of #56)
+
+V0_3's result came back `BLOCKER = HUE_VIOLATION`: at the true brightest core pixel, P2 `(596,210)` and
+P3 `(595,210)`, BOTH the beauty render AND the no-bloom diagnostic pass read pure white -
+`RGB(255,254,255)` / `RGB(255,255,255)`, `B-R=0`. Codex reported this honestly with no retry, no gate, no
+push, no PASS claim - correct behavior.
+
+This changes the diagnosis. V0_3 assumed bloom (a post-process glow) was clipping R up to meet B, which
+would predict the no-bloom pass should still read blue-dominant even if the beauty pass didn't - it did
+not. That rules out bloom as the primary cause. The likely real cause: emission strength on the core/seam
+material is high enough that the scene-linear radiance at that pixel is so far outside 0-1 range that the
+view transform (Filmic/AgX) desaturates the highlight to white to preserve detail - a built-in property of
+those tone curves, not a bug, and something that happens with or without bloom. This matches the operator's
+own stated fallback order: step (1) bloom off/reduced was V0_3, proven insufficient; this task is step (2),
+reduce emission strength - substantially, not a small notch - plus step (3) if needed (a compositor-level
+highlight-desaturation correction, base hex unchanged).
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3.blend`
+(shape is still V0_2's approved shape, byte-identical; only material/render settings differ). Full brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_4.md`. Active task file:
+`.mikage/tasks/active_task.yaml` (re-pointed 2026-07-06; prior pointer preserved at
+`.mikage/tasks/active_task_blade_3phase_v0_3_backup_2026-07-06.yaml`).
+
+New requirement this round: before changing anything, report the material's actual emission strength,
+base emission color, and the scene-linear (pre-tonemap) radiance at the P2/P3 peak pixel if the render
+pipeline can expose it - this confirms whether the base color is still correct and how far over-driven the
+strength actually is, instead of guessing at a new number blind.
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Fifty-sixth controlled exception (2026-07-06)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3 = OPEN` (color-only fix, revision of #55)

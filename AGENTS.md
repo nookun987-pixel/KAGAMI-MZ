@@ -1497,3 +1497,25 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3.blend` + `..._CONTACTSHEET_FRONT_P1P2P3.png` + `..._BEAUTY_VS_NOBLOOM_P2P3.png` + `..._KEYART_P3.png` + `..._PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_3_gate/` = ONLY the 2 gate files.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-06, blocked on operator commit.
+
+- RULED 2026-07-06 (Codex run result, `BLOCKER = HUE_VIOLATION`): `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3`
+  (Fifty-sixth controlled exception, directly above) = FAIL. At the true brightest core pixel, P2
+  `(596,210)` and P3 `(595,210)`, BOTH the beauty render AND the no-bloom diagnostic pass read pure white -
+  `RGB(255,254,255)` / `RGB(255,255,255)`, `B-R=0`. Reported honestly, no retry, no gate, no push, no PASS
+  claim. This rules out bloom as the primary cause (V0_3's fix target) - the no-bloom pass should have
+  stayed blue-dominant if bloom were the culprit, and it did not. Likely real cause: emission strength high
+  enough that the view transform (Filmic/AgX) desaturates the highlight to white regardless of bloom, per
+  the operator's own stated fallback order step (2).
+
+- Fifty-seventh controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4 = OPEN` (fix core color via emission-strength reduction, reuse V0_2/V0_3's shape byte-identical)
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_3.blend` (shape still V0_2's approved shape; do NOT touch geometry, rig, or attachment). Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_4.md`.
+  - REQUIRED: before changing anything, report the core/seam material's emission strength, base emission color, and the scene-linear pre-tonemap radiance at the P2/P3 peak pixel if exposable; then substantially reduce emission strength (not a small notch) and/or apply a compositor-level highlight-desaturation correction, re-measure the peak pixel in both beauty and no-bloom passes. Full detail in the brief.
+  - SCOPE LOCK: no mesh/geometry/proportion/rig/attachment change of any kind versus V0_2/V0_3 - material and render settings only.
+  - HARD BANS: red/crimson anywhere on the weapon, seam thickened/washed to mask the fix, sampling only an off-peak point instead of the true brightest pixel, any geometry change.
+  - REQUIRED PROOF: re-exported contact sheet; beauty-vs-no-bloom comparison sheet for P2/P3; pixel-sample table at the peak pixel for both passes with B-R/B-G deltas plus the scene-linear value; explicit zero-red confirmation; V0_2/V0_3 geometry/rig/attachment verified unchanged.
+  - SUCCESS: peak-pixel B minus R >= 40 in beauty render for P2 and P3 with neither channel a flat 255/255/255; no-bloom pass also blue-dominant at that coordinate; zero red/crimson; seam still thin; shape byte-identical; gate exactly 2 files; `verify_output.py` PASS; no `.blend1`.
+  - FAIL: peak pixel still clips to white or (R within 39 of B or above) -> `BLOCKER = HUE_VIOLATION`; no-bloom pass also non-blue-dominant -> `BLOCKER = HUE_VIOLATION`; any geometry/rig/attachment change -> `BLOCKER = SCOPE_VIOLATION`; seam thickened/washed -> `BLOCKER = SIGNAL_DISCIPLINE_VIOLATION`; gate mis-schema'd -> `BLOCKER = VALIDATOR_SCHEMA_MISMATCH`.
+  - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4.blend` + `..._CONTACTSHEET_FRONT_P1P2P3.png` + `..._BEAUTY_VS_NOBLOOM_P2P3.png` + `..._KEYART_P3.png` + `..._PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_4_gate/` = ONLY the 2 gate files.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-06, blocked on operator commit.
