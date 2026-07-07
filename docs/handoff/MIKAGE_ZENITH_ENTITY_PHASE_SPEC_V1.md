@@ -1,6 +1,15 @@
 # MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1
 
 STATUS: 🔒 STRUCTURE CANON LOCKED 2026-06-02 (operator command "lock") — "MIKAGE ZENITH V2.5". Synced 3-phase model (§0.5) + mask ruling option (c) (§2) are ABSOLUTE INVARIANT. Source-of-truth from operator master (Master Bible V2.0). Rendered/3D assets remain review-candidate (not covered by lock).
+
+> ## ⚠️ SCOPE NOTE — WEAPON CORE COLOR (added 2026-07-07)
+> This doc's red canon (`#E60000` quantum blood, kintsugi cracks, Ensō ring) applies to the
+> **ENTITY Mikage** and is unchanged. However, wherever this doc is read as driving the **ZENITH
+> BLADE weapon's rendered core color** (e.g. the §0.5 P3 row "core #E60000 max"): that mapping is
+> **SUPERSEDED** — operator rulings #54→#58 set the weapon core/seam to **electric violet `#8F00FF`
+> family**, red banned on the weapon at every phase. See `MIKAGE_ZENITH_BLADE_SPEC_V1.md` header
+> banner and `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md`.
+
 LANE: CHARACTER_CAST_LANE / Mikage
 SCOPE: the 03 appearance phases of the ENTITY Mikage Zenith + the mask canon ruling. (The weapon is specified separately in `MIKAGE_ZENITH_BLADE_SPEC_V1.md`.)
 SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT HỆ THỐNG MIKAGE ZENITH V2.5" (2026-06-02), cross-checked against `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `Mikage Zenith Core`, `Mikage Copywriter`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO`.

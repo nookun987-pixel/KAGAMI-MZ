@@ -1,6 +1,18 @@
 # MIKAGE_ZENITH_BLADE_SPEC_V1
 
 STATUS: 🔒 STRUCTURE CANON LOCKED 2026-06-02 (operator command "lock"). The synced 3-phase model + B4C-outer/Titan-inner two-layer materials + Compact-Idle REST block form are now ABSOLUTE INVARIANT — do not alter without an explicit operator unlock. SCOPE OF LOCK: structural / 2D design canon only. Rendered images / 3D builds remain REVIEW-CANDIDATE until they pass their own render gate (NOT production-ready; not covered by this lock).
+
+> ## ⚠️ COLOR SUPERSEDED — OPERATOR RULING 2026-07-06/07 (read before using this doc)
+> Every reference in this document to a **red / crimson / `#E60000` weapon core, red heat-mirage,
+> or red Orbital-Logic UI on the ZENITH BLADE is SUPERSEDED**. Operator visual rulings (#54 → #58)
+> reversed the weapon-core color premise: the Zenith Blade core/seam signal is **electric violet,
+> `#8F00FF` family** (rendered core-body median gate: hue 268–280°, R/B 0.45–0.65). Red/crimson is
+> **BANNED on this weapon at every phase**. Current authoritative color + phase-energy gates:
+> `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md` and the
+> latest `LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_*.md` brief.
+> The 🔒 STRUCTURE lock below (3-phase model, B4C/Titan two-layer, Compact-Idle block, mass,
+> flux-pinning) remains VALID — only the weapon-core COLOR layer is superseded.
+
 DATE: 2026-06-01 (ruling §0b added 2026-06-01b; Drive master audit §0 added 2026-06-01c)
 SOURCES: operator Drive master files — `Mikage Copywriter`, `Mikage Zenith Core`, `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO` (operator audit 2026-06-01c — AUTHORITATIVE); `character_workflow/proposals/zenith_blade.json` (DRAFT_PROPOSAL_NOT_CANON); `docs/canon_proposals/MIKAGE_V2_5_vs_V1_LOCK_CONFLICT_REPORT.md` §1.6/§3; `docs/automation/render_briefs/GOOGLE_DRIVE_MIKAGE_AUDIT_V0_1.md`; operator MidJourney reference set in Drive `MIKAGE/zenith` and `MIKAGE/zenith V2`.
 
