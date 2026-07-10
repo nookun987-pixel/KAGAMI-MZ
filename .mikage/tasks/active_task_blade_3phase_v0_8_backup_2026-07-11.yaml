@@ -1,0 +1,104 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8
+# Dispatched by operator (BOOS) 2026-07-11, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Sixty-first controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8 = OPEN).
+# REVISES exception #60 (V0_7). V0_7 proved: (1) COLOR is a perfect #8F00FF - gate B failed only because
+# it measured hue on scene-linear EXR but compared to the DISPLAY-space band; EXR body 256.3/0.278 ==
+# #8F00FF linear, = 271.4/0.564 in sRGB == #8F00FF display. Color is DONE. (2) PHASE SEPARATION is the
+# real problem: EXR energy P2 0.730 vs P3 0.718 = ratio 0.983 (~equal) despite MAX strength 4.5x MID -
+# strength not reaching the core; suspect glare Maximum=4.0 clamp or the ZB3_PHASE driver not swapping.
+# V0_8 = fix the color gate (measure in DISPLAY space), DIAGNOSE the phase wiring before tuning MAX,
+# and redefine the clip gate to a physics-real body-integrity check. Base color LOCKED at (0.33,0,1.0).
+# Full analysis: production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_BLOCKER_ANALYSIS.md
+# Prior yaml preserved at .mikage/tasks/active_task_blade_3phase_v0_7_backup_2026-07-10.yaml.
+# Base file = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7.blend
+# (geometry byte-identical chain V0_2 -> V0_7; only glare/bloom/strength/exposure/measurement-method differ).
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_8.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_BLOCKER_ANALYSIS.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_GATE_TABLE.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_8_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_8.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_BLOCKER_ANALYSIS.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_GATE_TABLE.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_CONTACTSHEET_FRONT_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_SAMPLING_REGIONS_P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_GATE_TABLE.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_PROOF.md
+
+allowed_actions:
+  - measure the color gate in DISPLAY/sRGB space (unclipped PNG body, or EXR body converted linear->sRGB) against the 268-280 deg / R/B 0.45-0.65 band
+  - report per-phase SOURCE emitter radiance and confirm the ZB3_PHASE driver swaps MID->MAX between P2 and P3
+  - measure the EXR core with glare Maximum raised or disabled to confirm whether glare is clamping the core to a shared ceiling
+  - after the wiring is understood, set MAX strength and/or glare so EXR core energy P3 >= 1.5x P2 over a phase-aware mask that excludes the P3 gap
+  - tame or shape per-phase glare/bloom so a solid unclipped in-band violet body exists along the full seam with controlled bloom
+  - set per-phase bloom so P3 glow envelope area >= 1.3x P2 area around the same single line
+  - build the sampling mask over the FULL seam length (above and below the grip ring) with clip/edge exclusions shown
+  - adjust proof-render exposure for readability (render setting, not geometry)
+  - verify every V0_2-V0_7 geometry/silhouette/rig/attachment element unchanged by hash or measurement, and the emission base color unchanged
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not change the emission base color / hex (locked at linear 0.33,0.0,1.0)
+  - do not change any mesh geometry, proportions, ring, tip, panel spacing/hierarchy, seam geometry/position/width versus V0_2-V0_7
+  - do not modify the ZB3_PHASE_CONTROL driver system, rig bones, camera, pose, or weapon attachment (1.08, -0.02, 1.75)
+  - do not compare a color measurement in one color space to a target defined in another
+  - do not fake MID->MAX separation without first diagnosing and fixing the emitter/glare wiring
+  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
+  - do not add a second seam, duplicate the line, thicken the physical seam, or wash violet onto the blade body
+  - do not differentiate P3 from P2 by shifting hue toward blue
+  - do not sample only part of the seam - the mask covers the full seam length
+  - do not modify helmet, slits, halo, cloak, or unrelated files
+  - do not push
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - a solid unclipped in-band violet body exists along the full seam for both phases (unclipped in-band body pixel count reported; every sampled cross-section has >= 1 unclipped in-band pixel)
+  - DISPLAY/sRGB body hue 268-280 deg AND R/B 0.45-0.65 for both phases, with the measurement method stated (no cross-space comparison)
+  - per-phase source emitter radiance reported AND ZB3_PHASE driver MID->MAX swap confirmed AND glare-clamp check reported
+  - EXR core energy over a phase-aware mask (excludes P3 gap), P3 >= 1.5x P2, both medians, ratio, and mask definition reported
+  - P3 glow envelope area >= 1.3x P2 on the display PNG, same threshold definition both phases, threshold reported
+  - P1 renders zero emissive core pixels
+  - exactly one thin straight core line in P2 and P3, physical width identical, no wash
+  - zero red/crimson pixels found on the weapon at any phase
+  - emission base color verified unchanged at linear (0.33, 0.0, 1.0)
+  - sampling-regions image covers the full seam length with exclusions marked
+  - all V0_2-V0_7 geometry/silhouette/rig/attachment verified byte-identical
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - the ZB3_PHASE driver does not swap MID->MAX, or glare clamps the core to a shared ceiling (PHASE_WIRING_BLOCKER)
+  - EXR core energy ratio below 1.5x after the wiring is fixed, or envelope ratio below 1.3x (PHASE_SEPARATION_VIOLATION)
+  - DISPLAY-space body hue below 260 deg or R/B below 0.40 after authorized adjustments (HUE_VIOLATION)
+  - no solid unclipped in-band body exists along the seam (BODY_INTEGRITY_VIOLATION)
+  - a color measurement was compared across color spaces, or the mask covers only part of the seam / includes the P3 gap (FAIL_VALIDATION_METHOD)
+  - any geometry, proportion, rig, camera, attachment, or emission base color change versus V0_2-V0_7 (SCOPE_VIOLATION)
+  - a second seam appears, the physical seam thickens, or violet washes onto the blade body (SIGNAL_DISCIPLINE_VIOLATION)
+  - any red/crimson pixel found
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews contact sheet, gate table, sampling proof and key art, and rules whether P2 reads controlled MID violet and P3 reads unmistakable MAX at thumbnail scale.
+next_step_if_fail: stop and report the blocker code plus every measured number (display-space body hue/R-B, source emitter radiance, driver-swap + glare-clamp findings, EXR core energy medians and ratio + mask definition, unclipped-body counts, envelope areas). Do not approximate or round favorably.

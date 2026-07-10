@@ -1609,3 +1609,29 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `..._V0_8.blend` + `..._V0_8_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_8_SAMPLING_REGIONS_P2P3.png` + `..._V0_8_GATE_TABLE.md` + `..._V0_8_KEYART_P3.png` + `..._V0_8_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_8_gate/` = ONLY the 2 gate files.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-11, blocked on operator commit.
+
+- V0_8 RESULT (recorded 2026-07-11): honest STOP at the diagnosis-first gate, `PHASE_WIRING_BLOCKER` -
+  Codex execution correct. ROOT CAUSE of the whole 8-round phase-separation failure FOUND:
+  `ZB3_PHASE_CONTROL["blade_phase"]` does not swap phase visibility. In every requested phase
+  (P1/P2/P3), `ZB3_P3_CONTINUOUS_VIOLET_SEAM` (MAX, strength 0.09) stays VISIBLE and
+  `ZB3_P2_CONTINUOUS_VIOLET_SEAM` (MID, strength 0.02) stays HIDDEN - so every "P2"/"P3" render showed
+  the SAME object (EXR energy ratio 1.0013 despite a real 4.5x source-strength difference on the hidden
+  object). Also CONFIRMED: the display-space color gate PASSES (P2 269.17 / P3 269.42 deg, R/B 0.51/0.50)
+  and body-integrity PASSES - color is DONE. Analysis:
+  `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_BLOCKER_ANALYSIS.md`.
+
+- Sixty-second controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9 = OPEN` (VISIBILITY-DRIVER REPAIR ONLY; reuse V0_8 shape byte-identical). Operator BOOS ruling 2026-07-11: repair the driver in isolation, no glare/strength/color tuning this round.
+  - SCOPE EXPANSION AUTHORIZED: the standing lock "do not modify the ZB3_PHASE_CONTROL driver system" is LIFTED for this task, LIMITED to the phase-VISIBILITY wiring/expression of the two seam objects. Everything else stays locked.
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8.blend`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_9.md`.
+  - MAY CHANGE: only the phase-visibility driver/wiring so `blade_phase` swaps correctly. MUST NOT CHANGE: mesh geometry, proportions, seam geometry/position/width, rig BONES, camera, pose, attachment (1.08,-0.02,1.75), emission base color (linear 0.33,0,1.0), material strengths (MID 0.02 / MAX 0.09), glare/bloom settings, exposure.
+  - TARGET BEHAVIOR: P1 = both violet seams hidden/emissive-off (P1 zero-emissive stays true); P2 = `ZB3_P2_CONTINUOUS_VIOLET_SEAM` visible+emissive, `ZB3_P3_CONTINUOUS_VIOLET_SEAM` hidden; P3 = `ZB3_P3_CONTINUOUS_VIOLET_SEAM` visible+emissive, `ZB3_P2_CONTINUOUS_VIOLET_SEAM` hidden. Both hide_viewport AND hide_render must be driven consistently.
+  - GATE (visibility audit): from the reopened blend, driver-evaluated, report per-phase visible/hidden + emissive state of BOTH seam objects; all three phases must match target. Corroborate with EXR core energy P2 vs P3 (should now reflect the ~4.5x difference) - REPORTED as evidence the swap works, NOT tuned to a target this round.
+  - NON-REGRESSION: geometry/silhouette/rig-bones/camera/pose/attachment byte-identical vs V0_8; emission base color + material strengths + glare settings unchanged; display-space color still passes; zero red; one line.
+  - HARD BANS: touching mesh geometry / rig bones / camera / pose / attachment; changing base color, strengths, or glare; tuning MAX for the >=1.5x energy target (that is V0_10); second seam; seam thickening; violet wash.
+  - FAIL codes: DRIVER_REPAIR_FAILED (swap still wrong after edit) / SCOPE_VIOLATION / SIGNAL_DISCIPLINE_VIOLATION / FAIL_VALIDATION_METHOD.
+  - REQUIRED PROOF: contact sheet (P1/P2/P3 now visibly distinct); GATE_TABLE.md (per-phase seam-object visibility+emissive audit, target vs actual; EXR core energy P2/P3/ratio as corroboration; display color confirm; geometry hash audit vs V0_8; base color/strengths/glare unchanged audit; driver expression before/after); full-seam sampling-regions image; zero-red; P1 zero-emissive.
+  - Allowed outputs: `..._V0_9.blend` + `..._V0_9_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_9_SAMPLING_REGIONS_P2P3.png` + `..._V0_9_GATE_TABLE.md` + `..._V0_9_KEYART_P3.png` + `..._V0_9_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_9_gate/` = ONLY the 2 gate files.
+  - next-if-pass = V0_10 re-runs the full color+energy+envelope battery on the now-correct phases.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-11, blocked on operator commit.

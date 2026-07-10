@@ -2,6 +2,38 @@
 
 ---
 
+## DISPATCH: Sixty-second controlled exception (2026-07-11)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9 = OPEN` (VISIBILITY-DRIVER REPAIR ONLY; revision of #61)
+
+V0_8 stopped at the diagnosis-first gate with `PHASE_WIRING_BLOCKER` and FOUND the 8-round root cause:
+`ZB3_PHASE_CONTROL["blade_phase"]` does not swap phase visibility. In every requested phase (P1/P2/P3)
+`ZB3_P3_CONTINUOUS_VIOLET_SEAM` (MAX, strength 0.09) stays VISIBLE and `ZB3_P2_CONTINUOUS_VIOLET_SEAM`
+(MID, strength 0.02) stays HIDDEN - so every "P2"/"P3" render showed the SAME object (EXR energy ratio
+1.0013 despite a real 4.5x source-strength difference on the hidden object). No amount of downstream
+strength/glare tuning could have separated MID->MAX with the switch broken. Also CONFIRMED: the
+display-space color gate PASSES (P2 269.17 / P3 269.42 deg, R/B 0.51/0.50) and body-integrity passes -
+color is DONE. Analysis: `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_BLOCKER_ANALYSIS.md`.
+
+Operator BOOS ruling 2026-07-11: repair the driver in ISOLATION, no glare/strength/color tuning.
+SCOPE EXPANSION AUTHORIZED - the standing "do not modify ZB3_PHASE_CONTROL" lock is LIFTED for this
+task, LIMITED to the phase-visibility wiring of the two seam objects. Full brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_9.md`.
+Target: P1 = both seams hidden (zero emissive); P2 = MID seam visible, P3 seam hidden; P3 = MAX seam
+visible, P2 seam hidden (drive both hide_viewport and hide_render). Gate = per-phase visibility audit
+matches target. MUST NOT change geometry / rig bones / camera / pose / attachment / base color /
+strengths / glare, and MUST NOT tune for the >=1.5x energy target (that is V0_10).
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8.blend`
+(geometry byte-identical chain V0_2 -> V0_8). Active task: `.mikage/tasks/active_task.yaml` (re-pointed
+2026-07-11, validate_task.py = PASS; prior yaml at `.mikage/tasks/active_task_blade_3phase_v0_8_backup_2026-07-11.yaml`).
+Gate folder created: `_tmp/mikage_zenith_blade_3phase_rebuild_v0_9_gate` (CONTACT_SHEET_ONLY - exactly 2 files).
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Sixty-first controlled exception (2026-07-11)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8 = OPEN` (gate-fix + phase-wiring diagnosis; revision of #60)
