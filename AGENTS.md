@@ -1581,3 +1581,31 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `..._V0_7.blend` + `..._V0_7_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_7_SAMPLING_REGIONS_P2P3.png` + `..._V0_7_GATE_TABLE.md` + `..._V0_7_KEYART_P3.png` + `..._V0_7_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_7_gate/` = ONLY the 2 gate files.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-10, blocked on operator commit.
+
+- V0_7 RESULT (recorded 2026-07-11): honest STOP, all three gates FAIL, no retry - Codex execution
+  correct. Glare tamed (clip 0.69->0.58); MID strength 0.02, MAX 0.09; base color linear (0.33,0,1.0)
+  audited unchanged. Lane B verified the numbers and proved TWO things: (1) the COLOR is a perfect
+  #8F00FF - gate B failed only because it measures on scene-linear EXR (where #8F00FF = hue 256.5 /
+  R/B 0.275) but compares to the DISPLAY-space band 268-280 / 0.45-0.65 (#8F00FF's sRGB values). EXR
+  body measured 256.3 / 0.278 == #8F00FF linear; converted linear->sRGB = 271.4 / 0.564 == #8F00FF
+  display; PNG cross-check + Lane B scan = ~268-269 / 0.50 (in the display band). A correct blade
+  CANNOT pass gate B as written = FAIL_VALIDATION_METHOD. (2) PHASE SEPARATION is the one real
+  unsolved problem: EXR energy P2 0.7302 vs P3 0.7179 = ratio 0.983 (~equal) despite MAX strength
+  4.5x MID; EXR body medians near-identical. Strength is not reaching the core - suspect glare
+  Maximum=4.0 clamping, or the phase driver not swapping MID->MAX. Analysis:
+  `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_BLOCKER_ANALYSIS.md`.
+
+- Sixty-first controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8 = OPEN` (gate-fix + phase-wiring diagnosis; reuse V0_7 shape byte-identical). Operator BOOS ruling 2026-07-11: color #8F00FF is verified correct; fix the mis-specified gates and DIAGNOSE the phase wiring before tuning.
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7.blend`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_8.md`.
+  - EMISSION BASE COLOR LOCKED at linear (0.33,0.0,1.0). May change ONLY: per-phase glare/bloom, per-phase emission strengths, proof exposure, and the MEASUREMENT METHOD for the color gate.
+  - GATE B (COLOR) FIXED: measure hue/R-B in DISPLAY/sRGB space (unclipped PNG body, or EXR body converted linear->sRGB), band 268-280 deg + R/B 0.45-0.65, ref #8F00FF, auto-FAIL <260/<0.40. Never compare a linear measurement to the display band. (V0_7 color already passes ~271 deg / R/B 0.56 under this method - this is now a confirm gate.)
+  - GATE C (PHASE) DIAGNOSIS-FIRST: before choosing any MAX strength, Codex MUST report per-phase SOURCE emitter radiance, confirm the ZB3_PHASE driver actually swaps MID->MAX between P2 and P3, and confirm glare "Maximum" is not clamping the core to a shared ceiling (measure core with glare Maximum raised/disabled). If the driver does not swap or glare clamps, report PHASE_WIRING_BLOCKER with the finding and STOP. Only after wiring is understood, set MAX so EXR core energy P3 >= 1.5x P2 over the phase-aware mask.
+  - GATE A (BODY INTEGRITY) REDEFINED: replace clip-fraction<=40% with: a solid unclipped in-band violet body must EXIST along the full seam (report unclipped in-band body pixel count + that every sampled cross-section has >=1 unclipped in-band pixel), with controlled bloom. Report clip fraction as INFO only.
+  - GATE D (envelope): P3 glow envelope area >= 1.3x P2 on the display PNG, same threshold both phases (secondary to gate C energy).
+  - HARD BANS: changing emission base color/hex; red/crimson; second seam; seam thickening; violet wash; hue-shifting P3 bluer; comparing color measurements across color spaces; faking phase separation without fixing the wiring; any geometry/rig/camera/attachment change.
+  - REQUIRED PROOF: contact sheet; GATE_TABLE.md (display-space body hue/R-B P2+P3 + method, per-phase source emitter radiance, driver-swap confirmation, glare-clamp check, EXR core energy P2/P3/ratio + mask def, unclipped-body pixel counts, envelope areas+threshold); full-seam sampling-regions image; zero-red; P1 zero-emissive; hash audit vs V0_7; blend reopen audit (base color unchanged + strengths + glare settings).
+  - FAIL codes: PHASE_WIRING_BLOCKER / PHASE_SEPARATION_VIOLATION / HUE_VIOLATION / BODY_INTEGRITY_VIOLATION / FAIL_VALIDATION_METHOD / SCOPE_VIOLATION / SIGNAL_DISCIPLINE_VIOLATION.
+  - Allowed outputs: `..._V0_8.blend` + `..._V0_8_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_8_SAMPLING_REGIONS_P2P3.png` + `..._V0_8_GATE_TABLE.md` + `..._V0_8_KEYART_P3.png` + `..._V0_8_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_8_gate/` = ONLY the 2 gate files.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-11, blocked on operator commit.

@@ -1,0 +1,101 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7
+# Dispatched by operator (BOOS) 2026-07-10, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Sixtieth controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7 = OPEN).
+# REVISES exception #59 (V0_6). V0_6 result: honest STOP, all three gates FAIL. Lane B confirmed the
+# numbers and found the root cause is a CLIPPER/measurement artifact: the hot core body already reads
+# ~274 deg (#8F00FF) but ~71% clips to B=255, so the unclipped-body hue gate samples only the green
+# bloom fringe (266 deg). Strength 0.014 still clips 0.69 => the clipper is GLARE/BLOOM, not emission.
+# Fix: tame glare/bloom to de-clip the body (PRIMARY gate), measure hue on scene-linear EXR body
+# (pre-tonemap), and use a phase-aware energy mask. EMISSION BASE COLOR LOCKED at linear (0.33,0.0,1.0).
+# Full analysis: production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_BLOCKER_ANALYSIS.md
+# Prior yaml preserved at .mikage/tasks/active_task_blade_3phase_v0_6_backup_2026-07-10.yaml.
+# Base file = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6.blend
+# (geometry byte-identical chain V0_2 -> V0_6; only glare/bloom/strength/exposure settings differ).
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_7.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_BLOCKER_ANALYSIS.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_GATE_TABLE.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_7_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_7.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_BLOCKER_ANALYSIS.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_GATE_TABLE.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_CONTACTSHEET_FRONT_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_SAMPLING_REGIONS_P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_GATE_TABLE.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_PROOF.md
+
+allowed_actions:
+  - tame per-phase glare/bloom (threshold up, intensity down, size down) until P2 AND P3 core-line clipped fraction <= 40% on the final PNG, keeping the body a solid saturated violet line
+  - adjust per-phase emission strengths only as needed to keep the body visible while de-clipping (not below a visible level)
+  - render P2/P3 to scene-linear EXR and measure the core-body median hue there (pre-tonemap, unclipped); cross-check on the now-unclipped PNG body
+  - render P2/P3 to scene-linear EXR and measure median linear luminance over a PHASE-AWARE core mask that excludes the P3 split-gap (P3 >= 1.5x P2)
+  - set per-phase bloom so P3 glow envelope area >= 1.3x P2 area around the same single line
+  - build the sampling mask over the FULL seam length (above and below the grip ring) with clip/edge exclusions shown
+  - adjust proof-render exposure for readability (render setting, not geometry)
+  - verify every V0_2-V0_6 geometry/silhouette/rig/attachment element unchanged by hash or measurement, and the emission base color unchanged
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not change the emission base color / hex (locked at linear 0.33,0.0,1.0 this round)
+  - do not change any mesh geometry, proportions, ring, tip, panel spacing/hierarchy, seam geometry/position/width versus V0_2-V0_6
+  - do not modify the ZB3_PHASE_CONTROL driver system, rig bones, camera, pose, or weapon attachment (1.08, -0.02, 1.75)
+  - do not de-clip by pushing emission strength below a visible level (the body must stay a solid violet line)
+  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
+  - do not add a second seam, duplicate the line, thicken the physical seam, or wash violet onto the blade body
+  - do not differentiate P3 from P2 by shifting hue toward blue
+  - do not measure the hue or energy gate on clipped PNG pixels - hue is EXR body, energy is EXR with a phase-aware mask
+  - do not sample only part of the seam - the mask covers the full seam length
+  - do not modify helmet, slits, halo, cloak, or unrelated files
+  - do not push
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - P2 AND P3 core-line clipped fraction <= 40% on the final PNG (any channel >= 250)
+  - EXR core-body median hue 268-280 deg AND R/B 0.45-0.65 for both phases, measured pre-tonemap on unclipped body pixels
+  - PNG body hue cross-check reported and consistent with the EXR body hue
+  - EXR median linear luminance over a phase-aware core mask, P3 >= 1.5x P2, both medians, ratio, and mask definition reported
+  - P3 glow envelope area >= 1.3x P2 on the final PNG, same threshold definition both phases, threshold reported
+  - P1 renders zero emissive core pixels
+  - exactly one thin straight core line in P2 and P3, physical width identical, no wash
+  - zero red/crimson pixels found on the weapon at any phase
+  - emission base color verified unchanged at linear (0.33, 0.0, 1.0)
+  - sampling-regions image covers the full seam length with exclusions marked
+  - all V0_2-V0_6 geometry/silhouette/rig/attachment verified byte-identical
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - P2 or P3 clipped fraction cannot reach <= 40% inside scope (P2_CLIP_VIOLATION)
+  - EXR body hue below 260 deg or R/B below 0.40 after authorized adjustments (HUE_VIOLATION)
+  - EXR energy ratio below 1.5x or envelope ratio below 1.3x after authorized adjustments (PHASE_SEPARATION_VIOLATION)
+  - the hue or energy gate was measured on clipped pixels, or the mask covers only part of the seam / includes the P3 gap (FAIL_VALIDATION_METHOD)
+  - any geometry, proportion, rig, camera, attachment, or emission base color change versus V0_2-V0_6 (SCOPE_VIOLATION)
+  - a second seam appears, the physical seam thickens, or violet washes onto the blade body (SIGNAL_DISCIPLINE_VIOLATION)
+  - any red/crimson pixel found
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews contact sheet, gate table, sampling proof and key art, and rules whether the de-clipped body reads controlled MID violet (P2) and unmistakable MAX (P3) at thumbnail scale.
+next_step_if_fail: stop and report the blocker code plus every measured number (PNG clip fractions, EXR body hue/R-B, EXR energy medians and ratio + mask definition, envelope areas). Do not approximate or round favorably.

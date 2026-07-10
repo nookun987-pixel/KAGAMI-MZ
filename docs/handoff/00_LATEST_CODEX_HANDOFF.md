@@ -2,6 +2,44 @@
 
 ---
 
+## DISPATCH: Sixty-first controlled exception (2026-07-11)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8 = OPEN` (gate-fix + phase-wiring diagnosis; revision of #60)
+
+V0_7 came back an honest STOP: all three gates FAIL, no retry - correct behavior. Lane B (Cowork)
+verified the numbers and proved two things
+(`production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7_BLOCKER_ANALYSIS.md`):
+
+1. THE COLOR IS A PERFECT #8F00FF. Gate B failed ONLY because it measured hue/R-B on the scene-linear
+   EXR and compared to the DISPLAY-space band 268-280 deg / 0.45-0.65. In linear space #8F00FF is
+   256.5 deg / R/B 0.275 - the EXR body measured 256.3 / 0.278 (exact). Converted linear->sRGB the same
+   body is 271.4 / 0.564 (== #8F00FF display); PNG cross-check + Lane B scan read ~268-269 / 0.50 (in
+   the display band). A correct blade cannot pass gate B as written = FAIL_VALIDATION_METHOD. Color is DONE.
+2. PHASE SEPARATION is the one real problem. EXR energy P2 0.7302 vs P3 0.7179 = ratio 0.983 (~equal)
+   although MAX strength (0.09) is 4.5x MID (0.02). Strength is not reaching the core - suspect glare
+   Maximum=4.0 clamping, or the ZB3_PHASE driver not swapping MID->MAX.
+
+Operator BOOS ruling 2026-07-11: color verified correct; fix the mis-specified gates and DIAGNOSE the
+wiring before tuning. V0_8 changes (full brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_8.md`):
+1. GATE B (COLOR) measured in DISPLAY/sRGB space (V0_7 color already passes ~271 deg / 0.56) - a confirm gate.
+2. GATE C (PHASE) DIAGNOSIS-FIRST: report per-phase source emitter radiance, confirm the driver swaps
+   MID->MAX, confirm glare Maximum is not clamping; if wiring is broken report PHASE_WIRING_BLOCKER and
+   STOP. Only then set MAX so EXR core energy P3 >= 1.5x P2.
+3. GATE A (BODY INTEGRITY) replaces clip-fraction<=40% with: a solid unclipped in-band violet body must
+   EXIST along the full seam (clip fraction becomes INFO only).
+4. EMISSION BASE COLOR LOCKED at linear (0.33,0,1.0).
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7.blend`
+(geometry byte-identical chain V0_2 -> V0_7). Active task: `.mikage/tasks/active_task.yaml` (re-pointed
+2026-07-11, validate_task.py = PASS; prior yaml at `.mikage/tasks/active_task_blade_3phase_v0_7_backup_2026-07-10.yaml`).
+Gate folder created: `_tmp/mikage_zenith_blade_3phase_rebuild_v0_8_gate` (CONTACT_SHEET_ONLY - exactly 2 files).
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Sixtieth controlled exception (2026-07-10)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7 = OPEN` (bloom-discipline + EXR-hue gate; revision of #59)
