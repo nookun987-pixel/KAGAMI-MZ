@@ -1559,3 +1559,25 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `..._V0_6.blend` + `..._V0_6_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_6_SAMPLING_REGIONS_P2P3.png` + `..._V0_6_GATE_TABLE.md` + `..._V0_6_KEYART_P3.png` + `..._V0_6_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_6_gate/` = ONLY the 2 gate files.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-07, blocked on operator commit.
+
+- V0_6 RESULT (recorded 2026-07-10): honest STOP, all three gates FAIL, no retry - Codex execution
+  correct. Emission color linear (0.33,0.0,1.0); P2 strength 0.014, P3 0.145. Measured: P2 hue 265.85 /
+  P3 267.27 deg; P2 clip fraction 0.6937; EXR ratio 0.6012 (P3 dimmer); envelope ratio 1.2039. Lane B
+  independent scan confirmed the numbers AND found the root cause is a MEASUREMENT/CLIPPER artifact, not
+  base color: the hot core body already reads ~274 deg (on-brand #8F00FF) but ~71% of it clips to B=255,
+  so the unclipped-body hue gate only samples the dim green-contaminated bloom fringe (G ~33-43) and reads
+  266 deg. Strength 0.014 still clips 0.69 => the CLIPPER is glare/bloom, not emission strength. Analysis:
+  `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_BLOCKER_ANALYSIS.md`.
+
+- Sixtieth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7 = OPEN` (bloom-discipline + EXR-hue gate; reuse V0_6 shape byte-identical). Operator BOOS ruling 2026-07-10: attack the clipper, measure hue pre-tonemap, do NOT nudge base color again.
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6.blend`. Full brief: `production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_7.md`.
+  - EMISSION BASE COLOR LOCKED this round at linear (0.33,0.0,1.0) - isolate the bloom variable. May change ONLY: per-phase glare/bloom (threshold/intensity/size), per-phase emission strengths, proof exposure.
+  - GATES: (A) PRIMARY - P2 AND P3 core-line clipped fraction <= 40% on the final PNG (de-clip the body via glare/bloom, not by killing emission); (B) HUE measured on SCENE-LINEAR EXR core-body (pre-tonemap, unclipped), both phases: hue 268-280 deg + R/B 0.45-0.65, ref #8F00FF, auto-FAIL <260/<0.40 (also report PNG body hue on the now-unclipped body as cross-check); (C) ENERGY in EXR with a mask that TRACKS P3 phase geometry and EXCLUDES the split-gap/background: P3 >= 1.5x P2 median linear luminance, report mask definition + both medians + ratio; (D) P3 glow envelope area >= 1.3x P2 on the PNG, same threshold both phases, report threshold.
+  - Sampling mask covers the FULL seam length, above and below the grip ring, with clip/edge exclusions marked per region.
+  - HARD BANS: changing the emission base color/hex; red/crimson; second seam; physical seam thickening; violet wash; hue-shifting P3 bluer; measuring the hue or energy gate on clipped PNG pixels; partial-seam masks; any geometry/rig/camera/attachment change.
+  - REQUIRED PROOF: contact sheet (phases readable at thumbnail); GATE_TABLE.md with every number (PNG clip fractions P2+P3, EXR body hue/R-B per phase, EXR energy medians+ratio+mask definition, envelope areas+threshold); full-seam sampling-regions image; EXR-body sampling proof; zero-red scan; P1 zero-emissive; hash audit vs V0_6; blend reopen audit (color unchanged + strengths + bloom settings).
+  - FAIL codes: P2_CLIP_VIOLATION / HUE_VIOLATION / PHASE_SEPARATION_VIOLATION / FAIL_VALIDATION_METHOD / SCOPE_VIOLATION / SIGNAL_DISCIPLINE_VIOLATION.
+  - Allowed outputs: `..._V0_7.blend` + `..._V0_7_CONTACTSHEET_FRONT_P1P2P3.png` + `..._V0_7_SAMPLING_REGIONS_P2P3.png` + `..._V0_7_GATE_TABLE.md` + `..._V0_7_KEYART_P3.png` + `..._V0_7_PROOF.md`; gate `_tmp/mikage_zenith_blade_3phase_rebuild_v0_7_gate/` = ONLY the 2 gate files.
+  - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
+  - Queued by Lane B (Cowork) 2026-07-10, blocked on operator commit.

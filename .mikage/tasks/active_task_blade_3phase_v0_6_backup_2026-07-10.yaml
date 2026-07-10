@@ -1,0 +1,96 @@
+task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6
+track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6
+# Dispatched by operator (BOOS) 2026-07-07, via Lane B (Cowork) coordination.
+# Governed by AGENTS.md Fifty-ninth controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6 = OPEN).
+# REVISES exception #58 (V0_5). V0_5 result: honest STOP, BLOCKER = COLOR_AND_PHASE_GATE_FAIL.
+# Lane B confirmed: ~80% of core pixels CLIP in the tonemapped PNG, so the 1.5x luminance gate was
+# physically unmeasurable there (clipped px show 255 at 1x or 4x radiance; the unclipped remainder is
+# the dim fringe, so P3 measured DIMMER). Fix: energy gate moves to scene-linear EXR; P2 must come DOWN
+# out of clipping (readable MID body); P3 must grow its bloom envelope (visual MAX). Hue was 264-265
+# deg - direction right, one more red nudge closes the gap to the 268-280 band.
+# Full analysis: production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_BLOCKER_ANALYSIS.md
+# Prior yaml preserved at .mikage/tasks/active_task_blade_3phase_v0_5_backup_2026-07-07.yaml.
+# Base file = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend
+# (geometry byte-identical chain V0_2 -> V0_5; only material/render settings differ).
+
+input_files_allowed:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_6.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_BLOCKER_ANALYSIS.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_6_gate
+output_files_allowed:
+  - contact_sheet.png
+  - contact_sheet_review_report.md
+
+read_only_files:
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_6.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_5_BLOCKER_ANALYSIS.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md
+  - production/character/build_log/ZENITH_BLADE_COMIC_KF05_REFERENCE.png
+  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - AGENTS.md
+
+real_deliverables:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_CONTACTSHEET_FRONT_P1P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_SAMPLING_REGIONS_P2P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_GATE_TABLE.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_KEYART_P3.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_PROOF.md
+
+allowed_actions:
+  - nudge the emission color red-ward and iterate render->measure until the PNG core-body median hue lands 270-276 deg
+  - LOWER P2 emission strength until P2 core-line clipped fraction <= 40% (P2 = readable MID body)
+  - set P3 strength and per-phase bloom/glare settings so P3 reads unmistakably stronger (bloom envelope >= 1.3x P2 area) around the same single line
+  - render P2/P3 to scene-linear EXR with identical settings and measure median linear luminance over the same core-line mask (P3 >= 1.5x P2)
+  - build the sampling mask over the FULL seam length (above and below the grip ring) with clipped/edge exclusions shown
+  - adjust proof-render exposure for readability (render setting, not geometry)
+  - verify every V0_2-V0_5 geometry/silhouette/rig/attachment element unchanged by hash or measurement
+  - write the real deliverables into the paths listed under real_deliverables
+  - run deterministic verification appropriate to this task type
+
+forbidden_actions:
+  - do not change any mesh geometry, proportions, ring, tip, panel spacing/hierarchy, seam geometry/position/width versus V0_2-V0_5
+  - do not modify the ZB3_PHASE_CONTROL driver system, rig bones, camera, pose, or weapon attachment (1.08, -0.02, 1.75)
+  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
+  - do not add a second seam, duplicate the line, thicken the physical seam, or wash violet onto the blade body
+  - do not differentiate P3 from P2 by shifting hue toward blue
+  - do not measure the energy gate on the tonemapped PNG - it is EXR scene-linear only
+  - do not sample only part of the seam - the mask covers the full seam length
+  - do not modify helmet, slits, halo, cloak, or unrelated files
+  - do not push
+  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
+  - do not claim canon-lock, asset-lock, or production-ready/final status
+
+pass_conditions:
+  - P2 and P3 PNG core-body median hue 268-280 deg AND R/B 0.45-0.65 (same band both phases)
+  - P2 core-line clipped fraction <= 40% on the final PNG
+  - EXR scene-linear median luminance over the same core-line mask, P3 >= 1.5x P2, both medians and ratio reported
+  - P3 glow envelope area >= 1.3x P2 on the final PNG, same threshold definition both phases, threshold reported
+  - P1 renders zero emissive core pixels
+  - exactly one thin straight core line in P2 and P3, physical width identical, no wash
+  - zero red/crimson pixels found on the weapon at any phase
+  - sampling-regions image covers the full seam length with exclusions marked
+  - all V0_2-V0_5 geometry/silhouette/rig/attachment verified byte-identical
+  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - no .blend1 remains
+
+stop_conditions:
+  - PNG median hue below 260 deg or R/B below 0.40 after authorized adjustments (HUE_VIOLATION)
+  - P2 clipped fraction cannot reach <= 40% inside scope (P2_CLIP_VIOLATION)
+  - EXR ratio below 1.5x or envelope ratio below 1.3x after authorized adjustments (PHASE_SEPARATION_VIOLATION)
+  - the energy gate was measured on the PNG or the mask covers only part of the seam (FAIL_VALIDATION_METHOD)
+  - any geometry, proportion, rig, camera, or attachment change versus V0_2-V0_5 (SCOPE_VIOLATION)
+  - a second seam appears, the physical seam thickens, or violet washes onto the blade body (SIGNAL_DISCIPLINE_VIOLATION)
+  - any red/crimson pixel found
+
+verify_command: python .mikage\tools\verify_output.py
+next_step_if_pass: Operator reviews contact sheet, gate table, sampling proof and key art, and rules whether P2 reads controlled MID violet and P3 reads unmistakable MAX at thumbnail scale.
+next_step_if_fail: stop and report the blocker code plus every measured number (PNG medians, clip fractions, EXR medians and ratio, envelope areas). Do not approximate or round favorably.

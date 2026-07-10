@@ -2,6 +2,42 @@
 
 ---
 
+## DISPATCH: Sixtieth controlled exception (2026-07-10)
+
+`MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7 = OPEN` (bloom-discipline + EXR-hue gate; revision of #59)
+
+V0_6 came back an honest STOP: all three gates FAIL, no retry - correct behavior. Lane B (Cowork)
+independently pixel-scanned the V0_6 contact sheet, confirmed every number, and found the failure is
+a MEASUREMENT/CLIPPER artifact, not a base-color error
+(`production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6_BLOCKER_ANALYSIS.md`):
+
+- The hot core BODY already reads ~274 deg (on-brand `#8F00FF`, R/B 0.62) when clipped pixels are
+  INCLUDED - but ~71% of the core clips to B=255. The unclipped-body hue gate therefore samples only
+  the dim green-contaminated bloom FRINGE (G ~33-43) and reads 266 deg -> HUE_VIOLATION.
+- P2 strength was already dropped to 0.014 yet clip stayed 0.69 -> the CLIPPER is glare/bloom, not
+  emission strength. Lowering strength further makes P2 greener, not better. Six color/strength
+  nudges (V0_1->V0_6) have not converged; the gate was fighting physics.
+
+Operator BOOS ruling 2026-07-10: stop nudging base color. V0_7 changes (full brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_7.md`):
+1. EMISSION BASE COLOR LOCKED at linear (0.33,0.0,1.0) - isolate the bloom variable.
+2. PRIMARY gate = DE-CLIP: P2 AND P3 core-line clipped fraction <= 40% via glare/bloom discipline
+   (threshold up / intensity down / size down), NOT by killing emission.
+3. HUE moves to the scene-linear EXR core-body (pre-tonemap, unclipped): 268-280 deg, R/B 0.45-0.65,
+   with a PNG cross-check on the now-unclipped body.
+4. ENERGY uses a PHASE-AWARE EXR mask that excludes the P3 split-gap (fixes V0_6's 0.60 ratio),
+   P3 >= 1.5x P2. Envelope gate D unchanged (P3 >= 1.3x P2 area).
+
+Base file: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6.blend`
+(geometry byte-identical chain V0_2 -> V0_6). Active task: `.mikage/tasks/active_task.yaml` (re-pointed
+2026-07-10, validate_task.py = PASS; prior yaml at `.mikage/tasks/active_task_blade_3phase_v0_6_backup_2026-07-10.yaml`).
+Gate folder created: `_tmp/mikage_zenith_blade_3phase_rebuild_v0_7_gate` (CONTACT_SHEET_ONLY - exactly 2 files).
+
+CURRENT_NEXT_TASK = `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_7`. No canon-lock, no asset-lock, no
+production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Fifty-ninth controlled exception (2026-07-07)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_6 = OPEN` (measurable gates: EXR energy + P2 de-clip + hue nudge; revision of #58)
