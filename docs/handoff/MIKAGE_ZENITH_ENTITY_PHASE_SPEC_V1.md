@@ -10,6 +10,16 @@ STATUS: 🔒 STRUCTURE CANON LOCKED 2026-06-02 (operator command "lock") — "MI
 > family**, red banned on the weapon at every phase. See `MIKAGE_ZENITH_BLADE_SPEC_V1.md` header
 > banner and `production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_4_VISUAL_RULING.md`.
 
+> ## ⚠️ SCOPE NOTE — SHELL COLOR (added 2026-07-21)
+> Wherever this doc states the entity shell color as matte white **`#FAFAFA`** (§1 Pha 1 row; §2
+> brand-vs-film paragraph): that value is **SUPERSEDED** — operator ruling 2026-07-21 (Episode 1
+> treatment review, Arc 1 lane) sets the Mikage shell to **porcelain `#F2EEEA`** — ivory-white,
+> matte mineral-ceramic surface; NOT technical/pure white, NOT plastic-gloss. `#FAFAFA` must no
+> longer be used for the entity shell in any render, keyframe, or image-agent prompt. See
+> `docs/handoff/LORE_AUDIT_V3_COWORK_HANDOFF/MIKAGE_ARC_1_EPISODE_01_CONTENT_v1_1_RULED.md` §0/§4
+> for the ruling record. All other color canon in this doc (crimson `#E60000` quantum blood /
+> kintsugi cracks / Ensō ring on the ENTITY; violet weapon rule above) is unchanged.
+
 LANE: CHARACTER_CAST_LANE / Mikage
 SCOPE: the 03 appearance phases of the ENTITY Mikage Zenith + the mask canon ruling. (The weapon is specified separately in `MIKAGE_ZENITH_BLADE_SPEC_V1.md`.)
 SOURCE: operator master spec "ĐẶC TẢ KỸ THUẬT HỆ THỐNG MIKAGE ZENITH V2.5" (2026-06-02), cross-checked against `BÁCH KHOA TOÀN THƯ MASTER BIBLE V2.0`, `Mikage Zenith Core`, `Mikage Copywriter`, `TÀI LIỆU HUẤN LUYỆN VẬN HÀNH STUDIO`.
