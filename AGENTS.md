@@ -2064,3 +2064,26 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed real output:
     `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT.md`.
   - No `.blend` edit, render, SSOT edit, lock/status promotion, push, or deploy.
+
+- V0_16 COLLISION AUDIT RESULT: commit `fdb511b`; phase, symmetry, color, and
+  shell collision pass, but six V0.16 load-path details have a depth gap from
+  the intended V0.15 bridge/tongue.
+- Seventy-seventh controlled exception is open:
+  - `ZENITH_BLADE_V0_16_1_ATTACHMENT_DEPTH_CORRECTION = OPEN`.
+  - Base only:
+    `production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend`.
+  - Move only the six `ZB16_GUARD_*` and `ZB16_DOCK_*` objects along local/world
+    Y depth enough to establish direct AABB contact with
+    `ZB15_GUARD_LOAD_BRIDGE` and `ZB15_DOCKING_LOAD_TONGUE`.
+  - Preserve every object X/Z value, dimension, mesh, material, phase, shell,
+    rider, steed, rig, light, camera integration, and SSOT.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_1.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_1_ATTACHMENT_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_1_ATTACHMENT_PROOF.md`
+    - standard contact-sheet gate under
+      `_tmp/mikage_zenith_blade_v0_16_1_attachment_gate/`.
+  - Review sheet: exact `3200 x 900`, four panels: guard front/side and docking
+    front/side.
+  - Reopen and rerun the collision/attachment/phase audit. Candidate correction
+    only; no lock/status promotion, SSOT edit, push, or deploy.

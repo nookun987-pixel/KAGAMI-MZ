@@ -1,7 +1,7 @@
-task_id: ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT
+task_id: ZENITH_BLADE_V0_16_1_ATTACHMENT_DEPTH_CORRECTION
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: VERIFY_REPORT_ONLY
-current_step: ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT
+task_type: CONTACT_SHEET_ONLY
+current_step: ZENITH_BLADE_V0_16_1_ATTACHMENT_DEPTH_CORRECTION
 input_files_allowed:
   - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
@@ -16,25 +16,28 @@ read_only_files:
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_v0_16_collision_audit_gate
-output_files_allowed: [collision_attachment_phase_audit.md]
+output_folder_allowed: _tmp/mikage_zenith_blade_v0_16_1_attachment_gate
+output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
 real_deliverables:
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT.md
+  - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_1.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_1_ATTACHMENT_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_1_ATTACHMENT_PROOF.md
 allowed_actions:
-  - reopen and inspect V0.16 metadata and evaluated geometry
-  - audit phase boundaries symmetry visibility contact and collision
-  - write a read-only evidence report
+  - save V0.16 as a V0.16.1 derivative
+  - move only six approved load-path objects along Y depth
+  - render four attachment evidence views
+  - reopen and rerun attachment collision phase checks
 forbidden_actions:
-  - no blend render geometry material rig SSOT status push or deploy change
+  - no X Z mesh dimension material phase shell rider steed rig SSOT push or deploy change
 pass_conditions:
-  - phase boundaries and panel symmetry pass at all five frames
-  - expected guard and docking contacts remain registered
-  - no unexpected shell collision is found outside approved attachment zones
-  - V0.16 source hash remains unchanged
+  - direct guard-bridge and docking-tongue contacts pass
+  - only six approved Y values differ from V0.16
+  - phase symmetry color and shell collision remain passing
+  - exact 3200x900 review sheet visually inspected
   - tools PASS and repo clean after commit
 stop_conditions:
-  - source mutation or inconclusive evaluated-geometry evidence
-  - unexpected collision attachment phase or color-rule failure
+  - source mutation or any non-approved property difference
+  - remaining attachment gap or new collision phase color failure
 verify_command: python .mikage\tools\verify_output.py
 next_step_if_pass: phase animation polish and final-render candidate task
-next_step_if_fail: open a bounded V0.16 correction only for the failing item
+next_step_if_fail: return to V0.16 and correct only the measured depth values
