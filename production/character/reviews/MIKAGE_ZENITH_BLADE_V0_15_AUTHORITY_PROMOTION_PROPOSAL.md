@@ -1,6 +1,6 @@
 # ZENITH BLADE V0.15 — AUTHORITY PROMOTION PROPOSAL
 
-STATUS: `DRAFT_FOR_OPERATOR_DECISION`
+STATUS: `OPERATOR_VISUAL_APPROVAL_RECORDED_AWAITING_SSOT_PROMOTION`
 SOURCE_ASSET: `MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15`
 SOURCE_ASSET_STATUS: `CANDIDATE_ONLY`
 SSOT_EDITED: `NO`
@@ -9,6 +9,32 @@ CANON_LOCK: `NO`
 ASSET_LOCK: `NO`
 PRODUCTION_READY: `NO`
 PUSH_DONE: `NO`
+
+## Operator visual ruling — 2026-07-24
+
+The operator accepted the recommended V0.15 direction and instructed the agent
+to continue autonomously.
+
+```text
+DETAILED_PANEL_VISUAL_APPROVAL: YES
+V0_15_SHELL_FORM: OPERATOR_VISUALLY_APPROVED
+SHELL_COHESION_OBJECTIVE: PASS
+P1_CLOSED_SHELL_FORM: APPROVED
+P2_INDUSTRIAL_SPLIT_FORM: APPROVED
+P3_OVERDRIVE_SPLIT_FORM: APPROVED
+P3_SINGLE_VIOLET_CORE: APPROVED
+GRIP_HOLSTER_BASELINE_REGISTRATION: APPROVED_AT_VISUAL_LEVEL
+
+OUTPUT_STATUS: CANDIDATE_ONLY
+CANON_LOCK: NO
+ASSET_LOCK: NO
+PRODUCTION_READY: NO
+PUSH_DONE: NO
+```
+
+This visual ruling does not select an SSOT destination and does not authorize
+an agent to edit an SSOT. Rules 1–8 below remain a promotion proposal until the
+operator hand-writes the accepted subset into an SSOT with a changelog entry.
 
 ## Purpose
 
@@ -55,9 +81,9 @@ ASSET_LOCK: NO
 PRODUCTION_READY: NO
 ```
 
-The phrase `DETAILED_PANEL_VISUAL_APPROVAL: YES` becomes an operator ruling
-only when the operator explicitly adopts it. Evidence alone cannot self-issue
-operator approval.
+The operator has now explicitly adopted
+`DETAILED_PANEL_VISUAL_APPROVAL: YES`. Evidence and operator ruling remain
+separate from canon promotion and asset lock.
 
 ## Candidate rules suitable for operator promotion
 
