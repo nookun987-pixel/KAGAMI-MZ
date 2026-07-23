@@ -1912,3 +1912,12 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Required review: exact `3600x1800`, P1/P2/P3 front panels; P2 split must read at thumbnail without violet; P3 wider split plus one violet core.
   - Required validation: reopen derivative; verify phase driver states; verify pre-existing mesh/material/camera/rig/attachment hashes unchanged; inspect actual contact sheet; no red; no violet in P1/P2; no `.blend1`; tools PASS.
   - No canon-lock, asset-lock, production-ready claim, push, or deploy. Stop after local commit.
+
+- V0_10 RESULT: completed in commit `4733bbd`; phase mechanics read passes, panel refinement required.
+- Sixty-sixth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11 = OPEN`.
+  - Base: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10.blend`.
+  - May refine only `ZB10_*` candidate panels and add minimal dark-Titanium support struts driven by phase. P1 closed; P2 split/no violet; P3 wider split/one violet core.
+  - Preserve every pre-V0.10 object, material, rig, camera, pose, attachment, light, and signal setting.
+  - Outputs: V0.11 blend, `...V0_11_CONTACT_SHEET.png`, `...V0_11_PROOF.md`, and `_tmp/mikage_zenith_blade_overdrive_v0_11_gate/` with only the two standard gate files.
+  - Candidate only; no SSOT edit, gate promotion, push, or deploy.
