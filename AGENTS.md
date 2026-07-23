@@ -1937,3 +1937,12 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Read-only Blender metadata audit comparing hero-mount V0.12 baseline to material candidate V0.12.
   - Allowed output: `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md` plus task/governance files.
   - No blend edit/render/push/status promotion.
+
+- INTEGRATION AUDIT RESULT: commit `01f4e16`; direct transfer forbidden.
+- Sixty-ninth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13 = OPEN`.
+  - Base only: `production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend`; save new derivative, never overwrite.
+  - Preserve all baseline objects. Add only scale-matched candidate shell panels around `v12_zenith_blade_slab_vertical_close_to_hip_not_horizontal`, one P3-only core signal, and a phase control.
+  - P1 closed/no Blade violet; P2 small split/no Blade violet; P3 wider split/one violet core. Grip, gauntlet and holster remain unchanged.
+  - Outputs: V0.13 blend, contact sheet, proof, and standard two-file gate `_tmp/mikage_zenith_blade_native_v0_13_gate/`.
+  - Candidate only; no lock/push/deploy.

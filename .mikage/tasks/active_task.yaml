@@ -1,31 +1,36 @@
-task_id: MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1
+task_id: MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1
+task_type: CONTACT_SHEET_ONLY
+current_step: MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13
 input_files_allowed:
   - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md
   - AGENTS.md
 read_only_files:
   - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12.blend
-  - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_integration_audit_v0_1_gate
-output_files_allowed: [integration_audit.md]
-real_deliverables:
   - production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md
+  - AGENTS.md
+output_folder_allowed: _tmp/mikage_zenith_blade_native_v0_13_gate
+output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
+real_deliverables:
+  - production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_PROOF.md
 allowed_actions:
-  - inspect metadata and calculate integration mapping
-  - write audit report
+  - add scale-matched phase panels core and control around baseline slab
+  - render inspect and verify P1 P2 P3
 forbidden_actions:
-  - no blend edit render push or promotion
+  - no baseline object material rig camera pose grip gauntlet holster or steed edit
+  - no P1 P2 Blade violet red second core push deploy or promotion
 pass_conditions:
-  - baseline and candidate transforms dimensions and hashes recorded
-  - direct-copy ruling explicit
-  - next safe rebuild action defined
+  - baseline hashes unchanged
+  - P1 closed P2 split P3 wider split
+  - grip gauntlet holster unchanged
+  - actual sheet inspected and tools PASS
 stop_conditions:
-  - source modification
-  - inconclusive metadata
+  - baseline drift
+  - integration or signal failure
+  - unexpected file
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: rebuild mechanics natively on a V0.12 derivative
-next_step_if_fail: stop and preserve both sources
+next_step_if_pass: three-phase animation and close-up validation
+next_step_if_fail: discard derivative and preserve V0.12
