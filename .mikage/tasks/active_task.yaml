@@ -1,96 +1,71 @@
-task_id: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9
+task_id: MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9
-# Dispatched by operator (BOOS) 2026-07-11, via Lane B (Cowork) coordination.
-# Governed by AGENTS.md Sixty-second controlled exception (MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9 = OPEN).
-# REVISES exception #61 (V0_8). V0_8 diagnosis-first STOP found the 8-round root cause:
-# ZB3_PHASE_CONTROL["blade_phase"] does not swap visibility - in every phase the P3/MAX seam stays
-# visible and the P2/MID seam stays hidden, so every "P2"/"P3" render showed the same object (energy
-# ratio 1.0 despite a real 4.5x source-strength difference on the hidden object). Color is DONE
-# (display gate passes 269 deg / 0.51). THIS TASK REPAIRS THE VISIBILITY DRIVER ONLY - no glare/
-# strength/color tuning. SCOPE EXPANSION AUTHORIZED by operator: the standing "do not modify
-# ZB3_PHASE_CONTROL" lock is LIFTED, limited to phase-visibility wiring of the two seam objects.
-# Full analysis: production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_BLOCKER_ANALYSIS.md
-# Prior yaml preserved at .mikage/tasks/active_task_blade_3phase_v0_8_backup_2026-07-11.yaml.
-# Base file = production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8.blend
-# (geometry byte-identical chain V0_2 -> V0_8; only the phase-visibility driver changes).
+current_step: MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1
+
+canon_sources:
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - design_system/mikage-cine-color-contract.md
+
+draft_inputs:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_9.md
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_BLOCKER_ANALYSIS.md
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_GATE_TABLE.md
-  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - design_system/mikage-cine-color-contract.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - AGENTS.md
 
-output_folder_allowed: _tmp/mikage_zenith_blade_3phase_rebuild_v0_9_gate
+read_only_files:
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
+  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - design_system/mikage-cine-color-contract.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
+  - AGENTS.md
+
+output_folder_allowed: _tmp/mikage_zenith_blade_p3_only_signal_correction_v0_9_1_gate
 output_files_allowed:
   - contact_sheet.png
   - contact_sheet_review_report.md
 
-read_only_files:
-  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_3PHASE_REBUILD_V0_9.md
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_BLOCKER_ANALYSIS.md
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_8_GATE_TABLE.md
-  - docs/handoff/00_LATEST_CODEX_HANDOFF.md
-  - AGENTS.md
-
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9_CONTACTSHEET_FRONT_P1P2P3.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9_SAMPLING_REGIONS_P2P3.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9_GATE_TABLE.md
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9_KEYART_P3.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_PROOF.md
 
 allowed_actions:
-  - repair ONLY the phase-visibility driver / expression / wiring so blade_phase swaps correctly (drive both hide_viewport and hide_render consistently on the two seam objects)
-  - render/inspect P1, P2, P3 from the reopened blend and audit the driver-evaluated visibility + emissive state of both seam objects per phase
-  - measure and REPORT EXR core energy P2 vs P3 as corroboration that the swap now works (do not tune to any energy target)
-  - measure and REPORT display-space color to confirm it still passes
-  - build the sampling mask over the FULL seam length with clip/edge exclusions shown
-  - verify geometry/silhouette/rig-bones/camera/pose/attachment byte-identical vs V0_8, and base color / strengths / glare unchanged
-  - write the real deliverables into the paths listed under real_deliverables
-  - run deterministic verification appropriate to this task type
+  - change only the two existing seam-object visibility drivers
+  - render and inspect P1, P2, and P3
+  - verify locked data against V0_9
+  - write only the declared deliverables
 
 forbidden_actions:
-  - do not change any mesh geometry, proportions, seam geometry/position/width versus V0_2-V0_8
-  - do not modify rig bones, camera, pose, or weapon attachment (1.08, -0.02, 1.75)
-  - do not change the emission base color (linear 0.33,0,1.0)
-  - do not change material emission strengths (MID 0.02 / MAX 0.09)
-  - do not change glare/bloom settings or exposure
-  - do not tune MAX strength or glare for the >=1.5x energy target (that is V0_10)
-  - do not modify any part of ZB3_PHASE_CONTROL other than the phase-visibility wiring of the two seam objects
-  - do not use red/crimson/#E60000 family anywhere on this weapon at any phase
-  - do not add a second seam, thicken the seam, or wash violet onto the blade body
-  - do not modify helmet, slits, halo, cloak, or unrelated files
-  - do not push
-  - do not place any file other than contact_sheet.png and contact_sheet_review_report.md in the gate folder
-  - do not claim canon-lock, asset-lock, or production-ready/final status
+  - no geometry, rig, camera, pose, transform, attachment, material, emission strength, glare, or exposure changes
+  - no mechanics or material invention
+  - no red or crimson on the weapon
+  - no violet fill, wash, ambient, halo, decoration, or second seam
+  - no push or deploy
+  - no canon-lock, asset-lock, or production-ready claim
 
 pass_conditions:
-  - P1 renders both violet seams hidden/emissive-off and zero emissive violet pixels
-  - P2 renders ZB3_P2_CONTINUOUS_VIOLET_SEAM visible+emissive and ZB3_P3_CONTINUOUS_VIOLET_SEAM hidden
-  - P3 renders ZB3_P3_CONTINUOUS_VIOLET_SEAM visible+emissive and ZB3_P2_CONTINUOUS_VIOLET_SEAM hidden
-  - per-phase seam-object visibility+emissive audit reported (target vs actual) for both seams, all three phases match target
-  - EXR core energy P2 vs P3 reported as corroboration (ratio now reflects the source difference)
-  - display-space body hue 268-280 deg and R/B 0.45-0.65 still holds for the visible phase(s)
-  - geometry/silhouette/rig-bones/camera/pose/attachment verified byte-identical vs V0_8
-  - emission base color, material strengths (MID 0.02 / MAX 0.09), and glare settings verified unchanged
-  - zero red/crimson pixels found; exactly one thin straight core line, physical width unchanged
-  - gate folder holds ONLY contact_sheet.png and contact_sheet_review_report.md, and python .mikage\tools\verify_output.py prints PASS
+  - P1 has zero Blade violet
+  - P2 has zero Blade violet
+  - P3 shows exactly one violet core signal
+  - geometry, material, camera, rig, pose, and attachment remain unchanged versus V0_9
+  - actual contact sheet inspected
+  - validation tools PASS
   - no .blend1 remains
-  - the driver expression before and after the repair is recorded
 
 stop_conditions:
-  - the phase-visibility swap is still wrong after the driver edit (DRIVER_REPAIR_FAILED)
-  - any geometry, rig-bone, camera, pose, attachment, base color, strength, or glare change versus V0_8 (SCOPE_VIOLATION)
-  - MAX strength or glare was tuned toward the energy target (SCOPE_VIOLATION)
-  - a second seam appears, the seam thickens, or violet washes onto the blade body (SIGNAL_DISCIPLINE_VIOLATION)
-  - the visibility audit measured the wrong objects or the mask covers only part of the seam (FAIL_VALIDATION_METHOD)
-  - any red/crimson pixel found
+  - any locked geometry, material, camera, rig, pose, transform, or attachment changes
+  - any Blade violet appears in P1 or P2
+  - more than one violet Blade core appears in P3
+  - any weapon red or violet wash appears
+  - any unexpected file is created
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: V0_10 re-runs the full color + EXR energy (P3 >= 1.5x P2) + envelope battery on the now-correct phases; operator reviews the V0_9 contact sheet to confirm P1/P2/P3 are visibly distinct.
-next_step_if_fail: stop and report DRIVER_REPAIR_FAILED plus the driver expression and the per-phase visibility audit. Do not approximate.
+next_step_if_pass: operator reviews the canon-aligned P3-only signal candidate
+next_step_if_fail: stop and report the first failed gate without approximating

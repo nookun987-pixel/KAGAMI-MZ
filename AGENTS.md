@@ -1843,3 +1843,36 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - next-if-pass = V0_10 re-runs the full color+energy+envelope battery on the now-correct phases.
   - No canon-lock. No asset-lock. No production-ready claim (CANDIDATE). No push. No deploy. Stop after proof for operator review.
   - Queued by Lane B (Cowork) 2026-07-11, blocked on operator commit.
+
+- V0_9 RESULT AND CANON CORRECTION (operator ruling 2026-07-24):
+  - Driver repair completed in commit `8efb01b`; P1/P2/P3 visibility wiring now evaluates deterministically.
+  - The former P2 violet target conflicts with the authoritative cine color contract and is retired as an implementation target.
+  - V0_9 remains `CANDIDATE_ONLY` and may be used only as driver-implementation evidence.
+  - Canon-aligned weapon mapping is now mandatory for all subsequent candidates:
+    - P1 `Compact-Idle`: Blade violet OFF.
+    - P2 `Brutal Industrial Activation`: Blade violet OFF.
+    - P3 `Tri-Phase Final / Overdrive`: exactly one violet core signal allowed.
+  - Violet remains forbidden as fill, wash, ambient, halo, decorative surface color, or a second seam.
+  - V0_9 does not authorize detailed mechanics, material, surface, or geometry design.
+
+- Sixty-third controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1 = OPEN`.
+  - Only allowed next task: `MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1`.
+  - CANON_SOURCE:
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Allowed base input: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend`.
+  - MAY CHANGE: only visibility-driver expressions/wiring for the two existing seam objects so P1 and P2 hide both seams and P3 shows only `ZB3_P3_CONTINUOUS_VIOLET_SEAM`.
+  - MUST NOT CHANGE: all geometry, transforms, rig bones, camera, pose, attachment, materials, emission colors/strengths, glare, exposure, helmet slits, and all unrelated objects.
+  - Required behavior:
+    - P1: P2 seam hidden; P3 seam hidden.
+    - P2: P2 seam hidden; P3 seam hidden.
+    - P3: P2 seam hidden; P3 seam visible.
+  - Allowed outputs:
+    - `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_PROOF.md`
+    - gate `_tmp/mikage_zenith_blade_p3_only_signal_correction_v0_9_1_gate/` containing only `contact_sheet.png` and `contact_sheet_review_report.md`.
+  - Required validation: reopen derivative; verify the three phase states; verify locked geometry/material/camera/attachment hashes against V0_9; inspect actual contact sheet; zero weapon violet in P1/P2; exactly one P3 violet core; zero weapon red; no `.blend1`; validation tools PASS.
+  - No mechanics/material/geometry invention. No canon-lock, asset-lock, production-ready claim, push, or deploy.
+  - Stop after local commit and operator-review evidence.
