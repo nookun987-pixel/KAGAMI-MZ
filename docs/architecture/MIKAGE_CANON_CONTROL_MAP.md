@@ -16,7 +16,7 @@
 | `KAGAMI/docs/mikage_character_visual_spec.md` | Spec hình nhân vật (silhouette, material, forbidden) | canon |
 | `KAGAMI/docs/mikage_universe_visual_system.md` | Hệ hình vũ trụ / world | canon |
 | `mikage-zenith-design` skill | BRAND/UI canon (web, release page) | 🔒 wins for UI |
-
+| `KAGAMI/docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md` | Zenith Blade form, mechanics, phase expression và material authority | 🔒 24/07 |
 > Lane B làm việc form V0.2 = **derived từ SSOT**, chưa phải SSOT cho tới khi operator khoá.
 
 ## DRAFT / REFERENCE — KHÔNG phải canon

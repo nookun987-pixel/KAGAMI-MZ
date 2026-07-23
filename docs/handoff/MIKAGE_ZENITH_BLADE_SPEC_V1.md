@@ -101,3 +101,21 @@ Remaining to supply / decide: (a) ✅ DONE — synced 3-phase + materials operat
 ## 6. Prohibited Actions Confirmed
 
 STRUCTURE_CANON_LOCKED: YES (operator command 2026-06-02; structural/2D design only) · RENDER/3D_PRODUCTION_READY: NO (still review-candidate) · RENDER_DONE_BY_CLAUDE: NO · LANE_CHANGED: NO · LOCK_STAMPED_ON_OPERATOR_COMMAND: YES
+## OPERATOR RULING — V0.15 SHELL FORM — 2026-07-24
+
+STATUS: OPERATOR_CANON_PROMOTED
+
+1. Zenith Blade sử dụng bốn outer shell plate có liên kết cơ khí: upper/lower bên trái và upper/lower bên phải.
+2. P1: bốn plate khép thành một outer-shell silhouette liên tục ở kích thước đầy đủ. Được thấy seam, nhưng không được đọc như bốn thanh rời.
+3. P2: shell mở ngang quanh một central load-bearing structure. Blade không có violet emission.
+4. P3: cùng cơ cấu mở rộng hơn và lộ đúng một electric-violet weapon core ở trung tâm.
+5. Cơ cấu gồm một central spine tối, paired recessed functional rails và upper/lower structural joints tối giản; tất cả phải đọc như load path, không phải trang trí.
+6. Blade giữ vị trí dọc sát hông Mikage; gauntlet giữ handle; holster/docking chịu phần đáy.
+7. Weapon không dùng red/crimson ở mọi phase. Violet bị cấm làm fill, wash, ambient, halo, secondary core hoặc decorative lighting.
+8. Form language: monolithic brutalist, shared contour, controlled chamfer, functional segmentation, no wasted ornament.
+
+IMPLEMENTATION NOTE:
+Các offset, frame number, object name, topology, driver, bevel width, transform, emission strength và render setting không phải canon.
+
+CHANGELOG:
+2026-07-24 — Operator promoted the V0.15 Zenith Blade shell-form and phase-expression rules 1–8 into canon authority.
