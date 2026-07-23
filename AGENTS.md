@@ -1921,3 +1921,12 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Preserve every pre-V0.10 object, material, rig, camera, pose, attachment, light, and signal setting.
   - Outputs: V0.11 blend, `...V0_11_CONTACT_SHEET.png`, `...V0_11_PROOF.md`, and `_tmp/mikage_zenith_blade_overdrive_v0_11_gate/` with only the two standard gate files.
   - Candidate only; no SSOT edit, gate promotion, push, or deploy.
+
+- V0_11 RESULT: completed in commit `551db38`; refined mechanics candidate passes.
+- Sixty-seventh controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12 = OPEN`.
+  - Base: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11.blend`.
+  - May assign new candidate-only materials to `ZB10_*` shell panels and `ZB11_*` struts only: matte porcelain `#F2EEEA` family and dark neutral titanium. No pre-existing material edits.
+  - Preserve geometry, drivers, phase states, rider, camera, lights, attachment and signal mapping.
+  - Outputs: V0.12 lookdev blend, contact sheet, proof, and `_tmp/mikage_zenith_blade_material_v0_12_gate/` standard two files.
+  - Candidate only; no status promotion, push, or deploy.

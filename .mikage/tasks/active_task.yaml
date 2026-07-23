@@ -1,42 +1,37 @@
-task_id: MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11
+task_id: MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11
+current_step: MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10.blend
-  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11.blend
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10.blend
-  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11.blend
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_overdrive_v0_11_gate
-output_files_allowed:
-  - contact_sheet.png
-  - contact_sheet_review_report.md
+output_folder_allowed: _tmp/mikage_zenith_blade_material_v0_12_gate
+output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
 real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12_PROOF.md
 allowed_actions:
-  - refine ZB10 panel proportions and add minimal phase-driven support struts
-  - render inspect and verify P1 P2 P3
+  - create and assign candidate materials only to ZB10 and ZB11 objects
+  - render inspect and verify phases
 forbidden_actions:
-  - no change to pre-V0.10 data
-  - no P1 or P2 Blade violet
-  - no second P3 core
+  - no geometry driver camera light rig attachment or pre-existing material edits
+  - no warm color red or P1 P2 Blade violet
   - no push deploy or status promotion
 pass_conditions:
-  - panels read as a coherent shell rather than four floating bars
-  - P2 split reads without violet
-  - P3 full split reads with one core
-  - locked hashes unchanged and tools PASS
+  - shell reads matte mineral porcelain not blown plastic
+  - struts read dark neutral metal
+  - phase and signal mapping unchanged
+  - source hashes unchanged and tools PASS
 stop_conditions:
-  - locked data drift
-  - decorative clutter or signal violation
+  - pre-existing material or geometry drift
+  - palette or signal violation
   - unexpected file
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: material and surface lookdev candidate
-next_step_if_fail: revert to V0.10 and report
+next_step_if_pass: grip and holster integration audit against V0.12 baseline
+next_step_if_fail: revert to V0.11 and report
