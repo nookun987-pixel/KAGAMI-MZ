@@ -1,44 +1,44 @@
-task_id: ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18
+task_id: ZENITH_BLADE_DEVELOPMENT_FILM_V0_19
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: MP4_RENDER_ONLY
-current_step: ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18
+current_step: ZENITH_BLADE_DEVELOPMENT_FILM_V0_19
 input_files_allowed:
-  - production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend
-  - C:/Users/nt/Claude/Projects/Mikage Zenith — Studio OS/BLADE_V0.1/MIKAGE_BLADE_BUILD_2D_to_3D.mp4
-  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
-  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
-  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
-  - design_system/mikage-cine-color-contract.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2.mp4
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_PROOF.mp4
+  - production/character/build_log/FORGING_THE_MARK_V0_1/src/track.wav
   - AGENTS.md
 read_only_files:
-  - production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend
-  - C:/Users/nt/Claude/Projects/Mikage Zenith — Studio OS/BLADE_V0.1/MIKAGE_BLADE_BUILD_2D_to_3D.mp4
-  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
-  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
-  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
-  - design_system/mikage-cine-color-contract.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2.mp4
+  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_PROOF.mp4
+  - production/character/build_log/FORGING_THE_MARK_V0_1/src/track.wav
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_buildlog_v0_18_gate
+output_folder_allowed: _tmp/mikage_zenith_blade_development_film_v0_19_gate
 output_files_allowed: [motion.mp4, motion_report.md]
 real_deliverables:
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18_PROOF.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19.mp4
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19_PROOF.md
 allowed_actions:
-  - read V0.17 and render six canon-correct build-log chapter stills
-  - compose typography transitions and silent 4:5 motion
-  - create a six-chapter keyframe sheet and proof
-  - inspect encoded media and validate exact spec
+  - composite approved/candidate source media into a 75-second narrative
+  - crop/pad typography color-grade and transition source media without source edits
+  - add the approved local project music cue with fades
+  - create keyframe sheet proof and exact media QA
 forbidden_actions:
-  - no source blend geometry material rig SSOT audio locked final push or deploy claim
+  - no source media blend geometry material rig SSOT status push deploy or release change
 pass_conditions:
-  - six required chapters are present and visually inspected
-  - canon geometry and phase color rules pass
-  - exact 1080x1350 24fps H264 yuv420p 12.5s no-audio media passes
-  - source V0.17 remains unchanged
+  - full narrative includes Blade build standing hero and mounted hero
+  - all source status labels and canon color rules remain accurate
+  - exact 1920x1080 24fps H264 yuv420p 75s AAC stereo 48k media passes
+  - every source hash remains unchanged
   - tools PASS and repo clean after commit
 stop_conditions:
-  - source mutation or canon geometry color status or media-spec failure
+  - source mutation status misclaim canon color or media-spec failure
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: operator build-log review and separate release decision
-next_step_if_fail: correct only the failing V0.18 presentation item
+next_step_if_pass: operator development-film review and separate release decision
+next_step_if_fail: correct only the failing V0.19 edit/composite item

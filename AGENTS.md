@@ -2155,3 +2155,45 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     temp drift; validators PASS.
   - Review candidate only. No asset-lock, production-ready claim, audio, push,
     deploy, release, website, or SSOT edit.
+
+- V0_18 CANON BUILDLOG RESULT: completed in commit `318466d`; six chapters and
+  exact silent 4:5 media spec pass.
+- Eightieth controlled exception is open:
+  - `ZENITH_BLADE_DEVELOPMENT_FILM_V0_19 = OPEN`.
+  - Build one long-form development-film candidate combining:
+    1. Zenith Blade V0.18 build-log and V0.17 phase motion;
+    2. operator-approved standing Mikage motion V0.2;
+    3. Hero Mount V1.5 continuous-gait candidate.
+  - Local music source:
+    `production/character/build_log/FORGING_THE_MARK_V0_1/src/track.wav`
+    (`THE LANDAUER PARADOX`, existing project-local AI-music source). Use the
+    established build-log cue beginning at `00:01:27`; fade in/out. No external
+    audio or network action.
+  - Required narrative: title/development premise, 2D→3D Blade construction,
+    phase progression, standing Mikage with Zenith Blade, mounted Mikage with
+    Zenith Blade, and review-candidate finale.
+  - Media spec: exact `1920 x 1080`, 24 fps, H.264/yuv420p, target/exact duration
+    `75.0` seconds, AAC stereo 48 kHz. Text must distinguish approved standing
+    canvas from candidate Blade/mount material and must not claim asset-lock or
+    production-ready.
+  - Preserve source media; edit/composite only. No source `.blend`, MP4, PNG,
+    proof, SSOT, geometry, material, rig, or animation edits.
+  - Allowed sources:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png`
+    - `production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2.mp4`
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_PROOF.mp4`
+    - `production/character/build_log/FORGING_THE_MARK_V0_1/src/track.wav`
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19.mp4`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19_KEYFRAMES.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19_PROOF.md`
+    - `_tmp/mikage_zenith_blade_development_film_v0_19_gate/` with
+      `motion.mp4` and `motion_report.md` only.
+  - Required QA: hash every source before/after; inspect a narrative keyframe
+    sheet and final MP4; ffprobe exact video/audio/duration spec; validators
+    PASS; no temp/source/repo drift.
+  - Development-film review candidate only. No source status promotion,
+    asset-lock, production-ready, push, deploy, public release, website, or SSOT
+    action.
