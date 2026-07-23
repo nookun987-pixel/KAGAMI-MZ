@@ -2123,3 +2123,35 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     spec; no V0.17 `.blend1`; validators PASS.
   - Finalization candidate only. No automatic asset-lock, production-ready
     claim, push, deploy, website, release, audio, or SSOT edit.
+
+- V0_17 FINALIZATION RESULT: ten checkpoints completed in commit `714fac7`;
+  finalization motion candidate passes technical/media QA.
+- Seventy-ninth controlled exception is open:
+  - `ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18 = OPEN`.
+  - Build a canon-aligned 4:5 build-log video from the read-only V0.17 asset.
+  - External reference
+    `C:/Users/nt/Claude/Projects/Mikage Zenith — Studio OS/BLADE_V0.1/MIKAGE_BLADE_BUILD_2D_to_3D.mp4`
+    is DRAFT presentation/storyboard reference only. Do not copy its geometry,
+    pointed tip, glowing ring, red seam, violet halo/wash, or `LOCKED` claim.
+  - Allowed source:
+    `production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend`.
+    It must remain unchanged.
+  - Required chapters: canon silhouette, four-panel wireframe, P1 closed solid,
+    P2 industrial split, P3 single-core reveal, and hero attachment context.
+  - Color/form lock: no pointed tip, no crossguard-like emissive ring, no weapon
+    red/crimson, no violet fill/wash/ambient/halo; P1/P2 Blade violet off; P3
+    exactly one central violet core.
+  - Media spec: exact `1080 x 1350`, 24 fps, H.264/yuv420p, `12.5` seconds,
+    no audio. Text may identify chapters and `REVIEW CANDIDATE`; it must not
+    claim locked, final, asset-ready, or production-ready.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18_KEYFRAMES.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18_PROOF.md`
+    - `_tmp/mikage_zenith_blade_buildlog_v0_18_gate/` with `motion.mp4` and
+      `motion_report.md` only.
+  - Required QA: V0.17 source hash/size/timestamp unchanged; inspect the
+    six-chapter keyframe sheet and encoded MP4; ffprobe exact spec; no repo or
+    temp drift; validators PASS.
+  - Review candidate only. No asset-lock, production-ready claim, audio, push,
+    deploy, release, website, or SSOT edit.

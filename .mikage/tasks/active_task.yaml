@@ -1,46 +1,44 @@
-task_id: ZENITH_BLADE_CONTROLLED_FINALIZATION_V0_17
+task_id: ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: MP4_RENDER_ONLY
-current_step: ZENITH_BLADE_CONTROLLED_FINALIZATION_V0_17
+current_step: ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18
 input_files_allowed:
-  - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_1.blend
+  - production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend
+  - C:/Users/nt/Claude/Projects/Mikage Zenith — Studio OS/BLADE_V0.1/MIKAGE_BLADE_BUILD_2D_to_3D.mp4
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
 read_only_files:
-  - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_1.blend
+  - production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend
+  - C:/Users/nt/Claude/Projects/Mikage Zenith — Studio OS/BLADE_V0.1/MIKAGE_BLADE_BUILD_2D_to_3D.mp4
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_finalization_v0_17_gate
+output_folder_allowed: _tmp/mikage_zenith_blade_buildlog_v0_18_gate
 output_files_allowed: [motion.mp4, motion_report.md]
 real_deliverables:
-  - production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_PROOF.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18_PROOF.md
 allowed_actions:
-  - save V0.16.1 as a V0.17 derivative
-  - animate only four shell-panel X positions in two bounded transition windows
-  - add review-only camera and Blade lights
-  - render keyframes and exact silent motion candidate
-  - reopen and run geometry attachment collision phase and media QA
+  - read V0.17 and render six canon-correct build-log chapter stills
+  - compose typography transitions and silent 4:5 motion
+  - create a six-chapter keyframe sheet and proof
+  - inspect encoded media and validate exact spec
 forbidden_actions:
-  - no mesh dimension material attachment rider steed rig SSOT audio push or deploy change
+  - no source blend geometry material rig SSOT audio locked final push or deploy claim
 pass_conditions:
-  - all ten checkpoints evidenced
-  - settled phase states and P3 single-core rule pass
-  - attachment collision material and color regressions pass
-  - exact 1080x1920 30fps H264 yuv420p 3s no-audio media passes
-  - keyframe sheet and motion visually inspected
+  - six required chapters are present and visually inspected
+  - canon geometry and phase color rules pass
+  - exact 1080x1350 24fps H264 yuv420p 12.5s no-audio media passes
+  - source V0.17 remains unchanged
   - tools PASS and repo clean after commit
 stop_conditions:
-  - source mutation or non-approved object geometry material transform change
-  - phase attachment collision color or media-spec failure
+  - source mutation or canon geometry color status or media-spec failure
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: operator final-render review and separate asset-lock decision
-next_step_if_fail: return to V0.16.1 and correct only the failing finalization item
+next_step_if_pass: operator build-log review and separate release decision
+next_step_if_fail: correct only the failing V0.18 presentation item
