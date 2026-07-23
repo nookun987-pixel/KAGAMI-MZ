@@ -1898,3 +1898,17 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - The promotion packet must be a proposal only. It must not modify an SSOT or claim operator approval.
   - No `.blend`, render, asset status, canon-lock, asset-lock, push, or deploy changes.
   - Stop after local commit.
+
+- AUTHORITY ENVELOPE RESULT (2026-07-24): completed in commit `f8f2855`.
+
+- Sixty-fifth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10 = OPEN`.
+  - Only allowed next task: `MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10`.
+  - Base: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.blend`.
+  - Candidate geometry scope: add reversible outer shell panels around the existing Blade body; P1 contracted/closed, P2 visibly split outward, P3 split farther. The existing core/body, rider, attachment, camera, rig, pose, materials, lights, and helmet remain unchanged.
+  - Signal lock: P1/P2 Blade violet OFF; P3 exactly one violet core signal.
+  - No detailed-mechanics canon claim. Exact panel count/travel is `CANDIDATE_ONLY`.
+  - Allowed outputs: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10.blend`, `production/character/reviews/MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10_CONTACT_SHEET.png`, `production/character/reviews/MIKAGE_ZENITH_BLADE_MECHANICS_CANDIDATE_V0_10_PROOF.md`, and gate `_tmp/mikage_zenith_blade_mechanics_v0_10_gate/` with only `contact_sheet.png` and `contact_sheet_review_report.md`.
+  - Required review: exact `3600x1800`, P1/P2/P3 front panels; P2 split must read at thumbnail without violet; P3 wider split plus one violet core.
+  - Required validation: reopen derivative; verify phase driver states; verify pre-existing mesh/material/camera/rig/attachment hashes unchanged; inspect actual contact sheet; no red; no violet in P1/P2; no `.blend1`; tools PASS.
+  - No canon-lock, asset-lock, production-ready claim, push, or deploy. Stop after local commit.
