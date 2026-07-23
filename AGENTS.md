@@ -660,6 +660,85 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     - Source hash/size/timestamp drift: stop, do not commit, and report `FAIL: SOURCE_V0_12_CHANGED`.
     - Unexpected file or scope drift: stop before commit and report the exact path.
   - Final Gate A output remains audit evidence only. No visual approval, canon-lock, asset-lock, production-ready or public-render-ready claim.
+- Additional controlled exception is open:
+  - `ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1 = OPEN`
+  - Purpose: create one bounded visual-review contact sheet from the untouched V0.12 Blade so the operator can see and judge the existing geometry/integration baseline. This is not the blocked hero-detail mechanics/material Gate B.
+  - ACTIVE_LANE: `LANE_A / ZENITH_BLADE_V0_12_VISIBILITY_REVIEW`
+  - RESPONSE_MODE: `RENDER_REVIEW_ONLY_FROM_EXISTING_GEOMETRY`
+  - TASK_TYPE: `Local Blender Eevee review render; camera/light/collection visibility in memory only`
+  - EXACT_TARGET_FILE: `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1_CONTACT_SHEET.png`
+  - ALLOWED_FILES:
+    - `AGENTS.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1_PROOF.md`
+    - Temporary panel files only under `_tmp/zenith_blade_visibility_review_v0_1/`; remove the directory before commit.
+  - FORBIDDEN_FILES:
+    - Source V0.12 `.blend` and every other `.blend` file.
+    - Geometry manifest, Gate A audit, V0.12 proof/drift/current-status and all SSOT/canon files.
+    - Website, roster, queue, archive, audio, animation, motion, runtime service, sync, deploy, `.env`, secret and credential files.
+    - Any permanent output not explicitly listed under ALLOWED_FILES.
+  - TIME_LIMIT: `30 minutes`
+  - COMMAND_LIMIT: `20`
+  - STATUS_WRITEBACK_TARGET: `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1_PROOF.md`
+  - SUCCESS_CHECK:
+    - Source SHA-256, size and timestamp remain unchanged.
+    - Protected geometry matches the committed Gate A manifest.
+    - Contact sheet is exactly `4800x1200`, RGB, and visually inspected.
+    - Four panels clearly show the existing Blade, integration, grip and holster.
+    - Only the PNG and proof are committed locally; temporary files and `.blend1` are absent; repo clean; no push.
+  - CANON_SOURCE:
+    - `docs/architecture/MIKAGE_CANON_CONTROL_MAP.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `docs/mikage_character_visual_spec.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - DRAFT_INPUTS:
+    - V0.12 proof, drift-check and current-status plus Gate A audit/manifest are review evidence only.
+  - Source:
+    - `production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend`
+  - Permanent outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1_PROOF.md`
+  - Render permission:
+    - Local Blender `5.1.2` + Eevee is allowed for this task only.
+    - Source opens read-only in practice: no save call, no source overwrite and no derivative `.blend`.
+    - Camera, neutral review lights, render settings and object/collection visibility may change in memory only.
+    - Use the existing source materials. No new mechanics, geometry, material design, surface design or phase-effect design.
+  - Protected baseline:
+    - Preserve and validate the six protected V0.12 Blade objects from `MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_GEOMETRY_MANIFEST_V0_1.json`.
+    - No mesh, transform, parent, dimension, silhouette, hip position, gauntlet-grip, bridge or holster/docking change.
+  - Contact sheet:
+    - Exact resolution: `4800x1200`.
+    - Exact layout: `4 columns x 1 row`; each panel `1200x1200`.
+    - Panel 1: full isolated existing Blade, neutral three-quarter view.
+    - Panel 2: existing Blade integrated at the hip with enough rider/steed context to judge placement and head clearance.
+    - Panel 3: gauntlet-grip and graphite-bridge close-up.
+    - Panel 4: lower holster/docking close-up.
+    - This task has no phase panels. The detailed phase/mechanics/material Gate B remains blocked.
+  - Visual constraints:
+    - Existing clay/source materials only.
+    - Neutral/cool reflected review light; no invented decorative color.
+    - No crimson/red weapon treatment.
+    - No violet fill, wash, halo or ambient light.
+    - Do not use render quality to infer canon-lock, asset-lock or production readiness.
+  - Required proof:
+    - Task/status headers, source/output paths and Blender version.
+    - Before/after source SHA-256, size and timestamp.
+    - Protected-object geometry comparison against the Gate A manifest.
+    - Exact contact-sheet dimensions/panel order and direct visual-inspection result.
+    - Confirmation of no save, geometry edit, material invention, mechanics invention, phase-effect work or `.blend1`.
+    - Commands, files changed, evidence, repo status, local commit/hash, no-push status and next safe action.
+    - Required result: `PASS_FOR_VISIBILITY_REVIEW_CANDIDATE_CREATION_ONLY`.
+  - Status ruling:
+    - `OUTPUT_STATUS = VISUAL_REVIEW_CANDIDATE_ONLY`
+    - `GATE_B_AUTHORIZATION = BLOCKED`
+    - `AUTO_LOCK = NO`
+    - `CANON_LOCK = NO`
+    - `ASSET_LOCK = NO`
+    - `PRODUCTION_READY = NO`
+    - `PUSH_DONE = NO`
+  - Stop/fail:
+    - Geometry mismatch, source fingerprint drift, unsupported material/mechanics addition, unexpected file or render-scope drift: stop before commit and report the exact blocker.
+    - Final visual approval belongs to the operator.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -735,6 +814,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Execute the controlled exception `MIKAGE_RIDER_SOLO_EEVEE_V0_3 = OPEN` only when the task is exactly `MIKAGE_RIDER_SOLO_EEVEE_V0_3` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved rider geometry-upgrade scope (blade grip wrap, de-blocky/taper, hair, mantle) plus correct-exposure render (no blown porcelain, cool controlled-violet slits, subtle rim, void black); solo isolation, no steed, no pose change, palette/violet-signal locked.
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION` and outputs are exactly the four listed candidate files (+ new motion blend), with changes limited to assembling the V0.3 rider onto the steed (no geometry redesign) and a camera/light/violet motion render (correct exposure, cool slits, rim, void black; 1080x1920 H.264 yuv420p 30fps no audio; no burned text).
 - Execute the controlled exception `ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1 = OPEN` only when the task is exactly `ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1`; allow SSOT/candidate-evidence reads, local non-render Blender metadata inspection of source V0.12, and creation of only the bounded audit report plus geometry manifest (and `.mikage/tasks/active_task.yaml` only if required by validation). Gate B, `.blend` creation/edit, rendering, mechanics/material invention, status upgrade and push remain blocked.
+- Execute the controlled exception `ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1 = OPEN` only when the task is exactly `ZENITH_BLADE_V0_12_VISIBILITY_REVIEW_RENDER_V0_1`; allow local Blender 5.1.2 Eevee render from the untouched V0.12 source using in-memory camera/light/visibility changes and existing materials only; create exactly the bounded `4800x1200` contact sheet plus proof; no `.blend` save, geometry/material/mechanics/phase-effect design, gate upgrade or push.
 - Report next safe action.
 - Write structured status back to the requested target.
 
