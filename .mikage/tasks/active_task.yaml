@@ -1,71 +1,68 @@
-task_id: MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1
+task_id: ZENITH_BLADE_AUTHORITY_ENVELOPE_AUDIT_V0_2
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1
+task_type: VERIFY_REPORT_ONLY
+current_step: ZENITH_BLADE_AUTHORITY_ENVELOPE_AUDIT_V0_2
 
 canon_sources:
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
 
 draft_inputs:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/pipeline/01_CANON_ASSET_REGISTRY.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_PROOF.md
 
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
-  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/pipeline/01_CANON_ASSET_REGISTRY.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_PROOF.md
   - AGENTS.md
 
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9.blend
-  - production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
-  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
-  - AGENTS.md
-
-output_folder_allowed: _tmp/mikage_zenith_blade_p3_only_signal_correction_v0_9_1_gate
-output_files_allowed:
-  - contact_sheet.png
-  - contact_sheet_review_report.md
-
-real_deliverables:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_CONTACT_SHEET.png
+  - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
+  - docs/pipeline/01_CANON_ASSET_REGISTRY.md
   - production/character/reviews/MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1_PROOF.md
 
+output_folder_allowed: _tmp/mikage_zenith_blade_authority_envelope_v0_2_gate
+output_files_allowed:
+  - authority_envelope.md
+  - operator_promotion_packet.md
+
+real_deliverables:
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_AUTHORITY_ENVELOPE_V0_2.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1.md
+
 allowed_actions:
-  - change only the two existing seam-object visibility drivers
-  - render and inspect P1, P2, and P3
-  - verify locked data against V0_9
-  - write only the declared deliverables
+  - cross-reference authority and conflicts
+  - define a candidate-build envelope without promoting canon
+  - write the two declared audit documents
 
 forbidden_actions:
-  - no geometry, rig, camera, pose, transform, attachment, material, emission strength, glare, or exposure changes
-  - no mechanics or material invention
-  - no red or crimson on the weapon
-  - no violet fill, wash, ambient, halo, decoration, or second seam
+  - no SSOT edits
+  - no Blender edit or render
+  - no asset, canon, or production status promotion
   - no push or deploy
-  - no canon-lock, asset-lock, or production-ready claim
 
 pass_conditions:
-  - P1 has zero Blade violet
-  - P2 has zero Blade violet
-  - P3 shows exactly one violet core signal
-  - geometry, material, camera, rig, pose, and attachment remain unchanged versus V0_9
-  - actual contact sheet inspected
+  - every proposed mechanic or material point has an authority classification
+  - superseded red weapon statements are explicitly excluded
+  - P3-only violet rule is preserved
+  - unresolved Canon Control Map omission is explicit
   - validation tools PASS
-  - no .blend1 remains
 
 stop_conditions:
-  - any locked geometry, material, camera, rig, pose, transform, or attachment changes
-  - any Blade violet appears in P1 or P2
-  - more than one violet Blade core appears in P3
-  - any weapon red or violet wash appears
+  - an unlisted source is treated as SSOT
+  - an SSOT is modified
+  - a candidate decision is represented as locked canon
   - any unexpected file is created
 
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: operator reviews the canon-aligned P3-only signal candidate
-next_step_if_fail: stop and report the first failed gate without approximating
+next_step_if_pass: operator reviews the promotion packet before mechanics build
+next_step_if_fail: stop and report the first authority conflict

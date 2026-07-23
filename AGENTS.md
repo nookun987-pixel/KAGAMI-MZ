@@ -1876,3 +1876,25 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Required validation: reopen derivative; verify the three phase states; verify locked geometry/material/camera/attachment hashes against V0_9; inspect actual contact sheet; zero weapon violet in P1/P2; exactly one P3 violet core; zero weapon red; no `.blend1`; validation tools PASS.
   - No mechanics/material/geometry invention. No canon-lock, asset-lock, production-ready claim, push, or deploy.
   - Stop after local commit and operator-review evidence.
+
+- V0_9_1 RESULT (recorded 2026-07-24):
+  - `MIKAGE_ZENITH_BLADE_P3_ONLY_SIGNAL_CORRECTION_V0_9_1` completed in commit `e5ee0d9`.
+  - Reopened derivative verifies P1/P2 Blade violet OFF and exactly one P3 violet core signal.
+  - Geometry and material hashes remained unchanged; candidate only, no gate promotion.
+
+- Sixty-fourth controlled exception is open:
+  - `ZENITH_BLADE_AUTHORITY_ENVELOPE_AUDIT_V0_2 = OPEN`.
+  - Only allowed next task: `ZENITH_BLADE_AUTHORITY_ENVELOPE_AUDIT_V0_2`.
+  - TASK_TYPE: governance/canon cross-reference audit only; no Blender edit or render.
+  - Allowed reads: Canon Control Map, the listed SSOT files, `MIKAGE_ZENITH_BLADE_SPEC_V1.md` as a self-declared locked but control-map-unlisted source, Canon Asset Registry A-04, and existing V0.9.1 proof.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_AUTHORITY_ENVELOPE_V0_2.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1.md`
+    - `_tmp/mikage_zenith_blade_authority_envelope_v0_2_gate/authority_envelope.md`
+    - `_tmp/mikage_zenith_blade_authority_envelope_v0_2_gate/operator_promotion_packet.md`
+    - `.mikage/tasks/active_task.yaml`
+    - `AGENTS.md`
+  - The audit must separate: directly authorized invariants; superseded color statements; candidate-only implementation choices; unresolved authority conflicts.
+  - The promotion packet must be a proposal only. It must not modify an SSOT or claim operator approval.
+  - No `.blend`, render, asset status, canon-lock, asset-lock, push, or deploy changes.
+  - Stop after local commit.
