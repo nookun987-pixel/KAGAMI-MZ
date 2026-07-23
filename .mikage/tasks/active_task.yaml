@@ -1,32 +1,35 @@
-task_id: MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14
+task_id: MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14
+task_type: VERIFY_REPORT_ONLY
+current_step: MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1
 input_files_allowed:
-  - production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend
+  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
+  - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_PROOF.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
   - AGENTS.md
 read_only_files:
-  - production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend
-  - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_phase_v0_14_gate
-output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
-real_deliverables:
+  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
   - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_PROOF.md
   - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_PROOF.md
+  - AGENTS.md
+output_folder_allowed: _tmp/mikage_zenith_blade_final_drift_v0_1_gate
+output_files_allowed: [drift_review.md]
+real_deliverables:
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1.md
 allowed_actions:
-  - keyframe blade_phase at frames 1 31 61 with constant interpolation
-  - render inspect and reopen validate those frames
+  - inspect hashes metadata drivers timeline and actual review images
+  - write final drift report
 forbidden_actions:
-  - no geometry material camera rig pose attachment light or driver expression edit
-  - no push lock deploy or signal drift
+  - no blend render SSOT status push or deploy change
 pass_conditions:
-  - reopened frames evaluate P1 P2 P3 exactly
-  - locked hashes unchanged
-  - keyframe sheet inspected and tools PASS
+  - every baseline lock phase signal and timeline item has evidence
+  - remaining blockers are explicit
+  - tools PASS
 stop_conditions:
-  - phase evaluation or locked hash failure
-  - unexpected file
+  - missing or contradictory evidence
+  - source modification
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: final drift and contact-sheet review
-next_step_if_fail: preserve V0.13 and report
+next_step_if_pass: completion package and gate audit
+next_step_if_fail: return to the first failed pass

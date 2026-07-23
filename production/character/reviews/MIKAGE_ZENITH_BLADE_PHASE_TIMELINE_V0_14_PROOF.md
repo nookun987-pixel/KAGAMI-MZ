@@ -14,3 +14,8 @@ Locked geometry/transform hash before save and in the saved derivative:
 The evidence camera was temporary and created after saving. The actual
 3600x1800 keyframe sheet was inspected. P1/P2/P3 evaluate with the required
 P3-only violet signal.
+
+Reopen boundary audit after Blender 5.1 layered-action correction:
+frame 30 remains P1, frame 31 enters P2, frame 60 remains P2, and frame 61
+enters P3. This proves CONSTANT interpolation rather than an early Bezier
+transition.
