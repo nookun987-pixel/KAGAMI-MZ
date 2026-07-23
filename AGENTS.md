@@ -536,6 +536,130 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+- Fifteenth controlled exception is open:
+  - `ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1 = OPEN`
+  - ACTIVE_LANE: `LANE_A / ZENITH_BLADE_HERO_DETAIL_GATE_A`
+  - RESPONSE_MODE: `AUDIT_ONLY_WITH_BOUNDED_OUTPUTS`
+  - TASK_TYPE: `Blender metadata/geometry audit plus canon-authority gap report; no build and no render`
+  - EXACT_TARGET_FILE: `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1.md`
+  - ALLOWED_FILES:
+    - `AGENTS.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_GEOMETRY_MANIFEST_V0_1.json`
+    - `.mikage/tasks/active_task.yaml`
+  - FORBIDDEN_FILES:
+    - Every canon/SSOT file.
+    - `production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend` (source; read/inspect only, never save or overwrite).
+    - Every other `.blend`, image, proof, drift-check, current-status, website, roster, queue, archive, audio, runtime, sync, deploy, external-service, `.env`, secret or credential file.
+    - Any file not explicitly listed under ALLOWED_FILES.
+  - TIME_LIMIT: `30 minutes`
+  - COMMAND_LIMIT: `20`
+  - STATUS_WRITEBACK_TARGET: `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1.md`
+  - SUCCESS_CHECK:
+    - Required governance files are present and read before audit.
+    - Source V0.12 SHA-256, size and timestamp are captured before and after inspection and remain identical.
+    - Protected V0.12 Blade objects are confirmed and recorded in the geometry manifest.
+    - The phase matrix uses only authorized SSOT terminology.
+    - Missing detailed mechanics/material authority is recorded without inference.
+    - Gate B remains blocked.
+    - Only allowed files are staged and committed locally; repo is clean after commit; no push.
+  - CANON_SOURCE:
+    - Phase relationship: `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - Character form: `docs/mikage_character_visual_spec.md`
+    - Cine color: `design_system/mikage-cine-color-contract.md`
+    - Canon authority map: `docs/architecture/MIKAGE_CANON_CONTROL_MAP.md`
+  - DRAFT_INPUTS:
+    - `production/character/reviews/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12_PROOF.md`
+    - `production/character/keyart_candidates/MIKAGE_HERO_MOUNT_BLADE_HEAD_V0_12_DRIFT_CHECK.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_12_CURRENT_STATUS.md`
+    - All three are candidate/audit evidence only and must not override SSOT.
+  - Only allowed next task for this exception: `ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1`.
+  - Source input:
+    - `production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend`
+  - Required bounded outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_GEOMETRY_MANIFEST_V0_1.json`
+  - Gate ruling:
+    - `TASK_SPEC_STATUS = PASS_AS_GOVERNANCE_RULING`
+    - `GATE_A_AUTHORIZATION = OPEN_AUDIT_ONLY_WITH_BOUNDED_OUTPUTS`
+    - `GATE_B_AUTHORIZATION = BLOCKED`
+    - `BLOCKER = BLADE_MECHANICS_AND_MATERIAL_CANON_SOURCE_UNCONFIRMED`
+    - `OUTPUT_STATUS = AUDIT_EVIDENCE_ONLY`
+    - `AUTO_LOCK = NO`
+    - `CANON_LOCK = NO`
+    - `ASSET_LOCK = NO`
+    - `PRODUCTION_READY = NO`
+    - `PUSH_DONE = NO`
+  - Gate A permissions:
+    - Read the authorized SSOT files and the candidate evidence inputs.
+    - Run local, non-render Blender metadata inspection against source V0.12.
+    - Record source hash/size/timestamp and protected-object geometry metadata.
+    - Create only the audit report and geometry manifest listed above.
+    - Update `.mikage/tasks/active_task.yaml` only as required by the repository task validator.
+  - Gate A prohibitions:
+    - No source or output `.blend` save.
+    - No geometry, transform, parenting, material, shader, light, camera, world or render-setting change.
+    - No render, animation, motion output or visual candidate creation.
+    - No mechanics/material invention and no use of `MIKAGE_ZENITH_BLADE_SPEC_V1.md` as canon while it remains outside the Canon Control Map SSOT list.
+    - No Gate B work and no `ZENITH_BLADE_HERO_DETAIL_LOOKDEV_V0_1.blend` creation.
+  - Protected V0.12 relationships:
+    - Blade silhouette.
+    - Vertical position close to the hip.
+    - Gauntlet-grip relationship.
+    - Graphite bridge to the existing gauntlet.
+    - Lower holster/docking support.
+    - Blade clearance from the steed head.
+  - Protected V0.12 object names to confirm during audit:
+    - `v12_blade_graphite_handle_inside_gauntlet_grip`
+    - `v12_blade_porcelain_gauntlet_clamp_wrapping_handle`
+    - `v12_blade_graphite_bridge_to_existing_gauntlet`
+    - `v12_zenith_blade_slab_vertical_close_to_hip_not_horizontal`
+    - `v12_zenith_blade_graphite_centerline_inset`
+    - `v12_zenith_blade_lower_holster_docking_foot`
+  - Geometry manifest requirements for every protected object:
+    - Object name and type.
+    - Parent relationship.
+    - Local and world transforms.
+    - Mesh vertex, edge and polygon counts when applicable.
+    - Deterministic hash of vertex coordinates and topology when applicable.
+    - Bounding-box dimensions.
+    - Relative position to the gauntlet and holster.
+  - Phase/color audit ruling:
+    - P1: `Compact-Idle`.
+    - P2: `Brutal Industrial Activation`.
+    - P3: `Tri-Phase Final / Overdrive`.
+    - `WEAPON_RED = FORBIDDEN_ALL_PHASES`
+    - `P1_VIOLET_CORE = NO`
+    - `P2_VIOLET_CORE = NO`
+    - `P3_VIOLET_CORE = ALLOWED_SIGNAL_ONLY`
+    - `VIOLET_FILL_WASH_HALO = FORBIDDEN`
+  - Required audit report content:
+    - Task/status headers, source/output paths and evidence-source classification.
+    - SSOT authority table and explicit Blade-mechanics/material authority gap.
+    - Exact phase matrix and superseding weapon-color ruling.
+    - Protected-object audit and manifest summary.
+    - Source before/after SHA-256, size and timestamp.
+    - Commands run, files changed, validation results and repository status.
+    - `GATE_A_RESULT`, `GATE_B_AUTHORIZATION`, blocker and one next safe action.
+    - Explicit statement that no Blender asset candidate was created or modified.
+  - Required validation before local commit:
+    - Source V0.12 hash, size and timestamp remain unchanged.
+    - Both bounded outputs exist and parse/read successfully.
+    - Geometry manifest contains all confirmed protected objects or records a missing/renamed-object blocker.
+    - `git diff --check` and `git diff --cached --check` pass.
+    - Only ALLOWED_FILES are staged.
+    - `validate_task.py` / `verify_output.py`, if run, are supporting evidence only; direct source and manifest checks remain mandatory.
+    - No `.blend1` or unexpected temporary/untracked file remains.
+  - Commit ruling:
+    - One local commit allowed after all validation passes.
+    - Suggested message: `docs: audit Zenith Blade V0.12 hero-detail Gate A`
+    - No push, amend, merge, tag, PR or remote update.
+  - Failback/stop:
+    - Missing or renamed protected object: stop and record `BLOCKED: PROTECTED_OBJECT_SET_MISMATCH`.
+    - Canon-source conflict or missing authority: record the gap; do not infer and do not open Gate B.
+    - Source hash/size/timestamp drift: stop, do not commit, and report `FAIL: SOURCE_V0_12_CHANGED`.
+    - Unexpected file or scope drift: stop before commit and report the exact path.
+  - Final Gate A output remains audit evidence only. No visual approval, canon-lock, asset-lock, production-ready or public-render-ready claim.
 - `RENT` / `GARA` / `Image` / `Call` runtime must not run during this phase.
 - Dirty original repo `D:\KAGAMI-MZ` is HOLD only.
 - Clean workspace is `D:\KAGAMI-MZ_SYNC_PUSH_V2`.
@@ -610,6 +734,7 @@ During `GOVERNANCE / OPERATOR_REST_MODE_V0`, allowed actions are limited to:
 - Execute the controlled exception `MIKAGE_RIDER_SOLO_EEVEE_V0_2 = OPEN` only when the task is exactly `MIKAGE_RIDER_SOLO_EEVEE_V0_2` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved rider detail-build scope (hair mass, mantle, layered armor, helmet facets, blade-in-gauntlet, proportion refine to the V0.4 spec; solo isolation + void black + palette/violet-signal locked; no steed).
 - Execute the controlled exception `MIKAGE_RIDER_SOLO_EEVEE_V0_3 = OPEN` only when the task is exactly `MIKAGE_RIDER_SOLO_EEVEE_V0_3` and outputs are exactly the three listed candidate files (+ new blend), with changes limited to the approved rider geometry-upgrade scope (blade grip wrap, de-blocky/taper, hair, mantle) plus correct-exposure render (no blown porcelain, cool controlled-violet slits, subtle rim, void black); solo isolation, no steed, no pose change, palette/violet-signal locked.
 - Execute the controlled exception `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION = OPEN` only when the task is exactly `MIKAGE_HERO_MOUNT_EEVEE_V0_9_MOTION` and outputs are exactly the four listed candidate files (+ new motion blend), with changes limited to assembling the V0.3 rider onto the steed (no geometry redesign) and a camera/light/violet motion render (correct exposure, cool slits, rim, void black; 1080x1920 H.264 yuv420p 30fps no audio; no burned text).
+- Execute the controlled exception `ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1 = OPEN` only when the task is exactly `ZENITH_BLADE_HERO_DETAIL_GATE_A_AUDIT_V0_1`; allow SSOT/candidate-evidence reads, local non-render Blender metadata inspection of source V0.12, and creation of only the bounded audit report plus geometry manifest (and `.mikage/tasks/active_task.yaml` only if required by validation). Gate B, `.blend` creation/edit, rendering, mechanics/material invention, status upgrade and push remain blocked.
 - Report next safe action.
 - Write structured status back to the requested target.
 
