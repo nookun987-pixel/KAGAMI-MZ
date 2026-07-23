@@ -1,45 +1,42 @@
-task_id: ZENITH_BLADE_SHELL_COHESION_REFINEMENT_V0_15
+task_id: ZENITH_BLADE_V0_15_AUTHORITY_PROMOTION_PROPOSAL
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
-current_step: ZENITH_BLADE_SHELL_COHESION_REFINEMENT_V0_15
+task_type: VERIFY_REPORT_ONLY
+current_step: ZENITH_BLADE_V0_15_AUTHORITY_PROMOTION_PROPOSAL
 input_files_allowed:
-  - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_AUTHORITY_ENVELOPE_V0_2.md
-  - AGENTS.md
-read_only_files:
-  - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_AUTHORITY_ENVELOPE_V0_2.md
-  - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_shell_v0_15_gate
-output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
-real_deliverables:
   - production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend
   - production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_CONTACT_SHEET.png
   - production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_PROOF.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - design_system/mikage-cine-color-contract.md
+  - AGENTS.md
+read_only_files:
+  - production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_PROOF.md
+  - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
+  - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
+  - design_system/mikage-cine-color-contract.md
+  - AGENTS.md
+output_folder_allowed: _tmp/mikage_zenith_blade_authority_proposal_gate
+output_files_allowed: [authority_proposal.md]
+real_deliverables:
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_V0_15_AUTHORITY_PROMOTION_PROPOSAL.md
 allowed_actions:
-  - save source as V0.15 derivative
-  - refine candidate shell cohesion and minimal load-bearing connections
-  - adjust review lighting exposure only
-  - render exact 6400x1800 contact sheet
-  - reopen and validate phase boundaries source integrity and output evidence
+  - verify V0.15 evidence
+  - classify canon-worthy rules and implementation-only details
+  - write a draft authority promotion proposal for operator review
 forbidden_actions:
-  - no overwrite of V0.12 V0.13 or V0.14
-  - no rider steed rig camera-integration or SSOT change
-  - no canon lock asset lock production-ready push or deploy
+  - no blend render SSOT or Canon Control Map edit
+  - no automatic canon lock asset lock production-ready push or deploy
 pass_conditions:
-  - P1 reads as one continuous closed shell
-  - P2 and P3 read as the same shell opening from a shared central frame
-  - P1 and P2 Blade violet off and P3 exactly one violet core
-  - source hash size and timestamp unchanged
-  - contact sheet is exactly 6400x1800 and visually inspected
-  - phase boundaries reopen-verified at 1 30 31 60 61
+  - visual-ruling evidence summarized accurately
+  - canon-worthy and implementation-only details separated
+  - operator actions and remaining blocked gates explicit
   - tools PASS and repo clean after commit
 stop_conditions:
-  - source mutation
-  - silhouette grip holster rider steed rig or phase drift
-  - color-rule violation
+  - proposal attempts to edit or supersede SSOT
+  - unsupported visual canon or asset-lock claim
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: operator visual ruling for detailed panel form
-next_step_if_fail: return to V0.14 technical candidate and remove drifting refinement
+next_step_if_pass: operator chooses and hand-promotes accepted rules into an SSOT
+next_step_if_fail: correct the proposal without changing V0.15

@@ -1989,3 +1989,28 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Required contact sheet: exact `6400 x 1800`, exact `4 x 2`: P1/P2/P3 front close-ups, P1/P2/P3 three-quarter close-ups, grip/guard close-up, and holster/docking close-up.
   - Required validation: record source SHA-256/size/timestamp before and after; reopen V0.15; verify frames 1/30=P1, 31/60=P2, 61=P3; inspect the rendered PNG; confirm exact dimensions; confirm no `.blend1`; run task/output validation.
   - Candidate only. No visual-approval claim, canon promotion, canon-lock, asset-lock, production-ready claim, push, deploy, or SSOT edit.
+
+- V0_15 SHELL COHESION RESULT: completed in commit `d7527bd`; technical
+  evidence supports operator visual ruling, while canon and asset gates remain
+  closed.
+- Seventy-fourth controlled exception is open:
+  - `ZENITH_BLADE_V0_15_AUTHORITY_PROMOTION_PROPOSAL = OPEN`.
+  - Operator requested the safe next step after independent V0.15 verification
+    on 2026-07-24.
+  - Read-only authority packaging task. No Blender edit or render.
+  - Allowed inputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_PROOF.md`
+    - `docs/architecture/MIKAGE_CANON_CONTROL_MAP.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Allowed real output:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_15_AUTHORITY_PROMOTION_PROPOSAL.md`
+  - The proposal must separate canon-worthy design rules from implementation-only
+    values such as exact driver offsets, object names, frame numbers, hashes, and
+    Blender topology.
+  - Proposal status is DRAFT only. It must not edit or claim promotion into an
+    SSOT or Canon Control Map.
+  - No `.blend` edit, render, SSOT edit, canon-lock, asset-lock, production-ready
+    claim, push, or deploy.
