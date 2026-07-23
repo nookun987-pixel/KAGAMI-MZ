@@ -1,35 +1,39 @@
-task_id: MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1
+task_id: MIKAGE_ZENITH_BLADE_COMPLETION_AUDIT_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: VERIFY_REPORT_ONLY
-current_step: MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1
+current_step: MIKAGE_ZENITH_BLADE_COMPLETION_AUDIT_V0_1
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
   - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_PROOF.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_CONTACT_SHEET.png
   - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_AUTHORITY_ENVELOPE_V0_2.md
   - AGENTS.md
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
   - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_PROOF.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_CONTACT_SHEET.png
   - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
-  - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_final_drift_v0_1_gate
-output_files_allowed: [drift_review.md]
-real_deliverables:
   - production/character/reviews/MIKAGE_ZENITH_BLADE_FINAL_DRIFT_REVIEW_V0_1.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_AUTHORITY_ENVELOPE_V0_2.md
+  - AGENTS.md
+output_folder_allowed: _tmp/mikage_zenith_blade_completion_v0_1_gate
+output_files_allowed: [completion_package.md, completion_audit.md]
+real_deliverables:
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_COMPLETION_PACKAGE_V0_1.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_COMPLETION_AUDIT_V0_1.md
 allowed_actions:
-  - inspect hashes metadata drivers timeline and actual review images
-  - write final drift report
+  - verify artifacts hashes commits repo state and gate coverage
+  - write package and completion audit
 forbidden_actions:
   - no blend render SSOT status push or deploy change
 pass_conditions:
-  - every baseline lock phase signal and timeline item has evidence
-  - remaining blockers are explicit
-  - tools PASS
+  - ten-pass evidence mapped
+  - final artifact hashes recorded
+  - achieved and pending gates separated
+  - tools PASS and repo clean after commit
 stop_conditions:
-  - missing or contradictory evidence
-  - source modification
+  - missing final artifact
+  - unsupported final status claim
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: completion package and gate audit
-next_step_if_fail: return to the first failed pass
+next_step_if_pass: operator visual ruling and asset-lock decision
+next_step_if_fail: return to first missing evidence item
