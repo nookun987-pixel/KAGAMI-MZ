@@ -1946,3 +1946,11 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - P1 closed/no Blade violet; P2 small split/no Blade violet; P3 wider split/one violet core. Grip, gauntlet and holster remain unchanged.
   - Outputs: V0.13 blend, contact sheet, proof, and standard two-file gate `_tmp/mikage_zenith_blade_native_v0_13_gate/`.
   - Candidate only; no lock/push/deploy.
+
+- V0_13 NATIVE RESULT: completed in commit `84294f1`.
+- Seventieth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14 = OPEN`.
+  - Base: `production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend`.
+  - May keyframe only `ZB13_PHASE_CONTROL["blade_phase"]`: frame 1=P1, 31=P2, 61=P3, CONSTANT interpolation. No other edits.
+  - Outputs: V0.14 blend, keyframe sheet, proof, and `_tmp/mikage_zenith_blade_phase_v0_14_gate/` standard two files.
+  - Reopen validation mandatory; candidate only, no push/lock/deploy.

@@ -1,36 +1,32 @@
-task_id: MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13
+task_id: MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
 task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13
+current_step: MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14
 input_files_allowed:
-  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md
+  - production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend
   - AGENTS.md
 read_only_files:
-  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md
+  - production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_native_v0_13_gate
+output_folder_allowed: _tmp/mikage_zenith_blade_phase_v0_14_gate
 output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
 real_deliverables:
-  - production/character/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_INTEGRATION_V0_13_PROOF.md
+  - production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_KEYFRAMES.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14_PROOF.md
 allowed_actions:
-  - add scale-matched phase panels core and control around baseline slab
-  - render inspect and verify P1 P2 P3
+  - keyframe blade_phase at frames 1 31 61 with constant interpolation
+  - render inspect and reopen validate those frames
 forbidden_actions:
-  - no baseline object material rig camera pose grip gauntlet holster or steed edit
-  - no P1 P2 Blade violet red second core push deploy or promotion
+  - no geometry material camera rig pose attachment light or driver expression edit
+  - no push lock deploy or signal drift
 pass_conditions:
-  - baseline hashes unchanged
-  - P1 closed P2 split P3 wider split
-  - grip gauntlet holster unchanged
-  - actual sheet inspected and tools PASS
+  - reopened frames evaluate P1 P2 P3 exactly
+  - locked hashes unchanged
+  - keyframe sheet inspected and tools PASS
 stop_conditions:
-  - baseline drift
-  - integration or signal failure
+  - phase evaluation or locked hash failure
   - unexpected file
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: three-phase animation and close-up validation
-next_step_if_fail: discard derivative and preserve V0.12
+next_step_if_pass: final drift and contact-sheet review
+next_step_if_fail: preserve V0.13 and report
