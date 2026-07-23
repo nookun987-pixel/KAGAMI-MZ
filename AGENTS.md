@@ -2087,3 +2087,39 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     front/side.
   - Reopen and rerun the collision/attachment/phase audit. Candidate correction
     only; no lock/status promotion, SSOT edit, push, or deploy.
+
+- V0_16_1 ATTACHMENT RESULT: completed in commit `0add537`; only the six
+  approved Y-depth values changed, direct guard/docking contact passes, and
+  phase regression remains clean.
+- Seventy-eighth controlled exception is open:
+  - `ZENITH_BLADE_CONTROLLED_FINALIZATION_V0_17 = OPEN`.
+  - Base only:
+    `production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_1.blend`.
+    Save a derivative; never overwrite V0.16.1 or earlier assets.
+  - Execute ten evidenced checkpoints: source/repo baseline, derivative save,
+    shell transition polish, attachment/collision regression, material/color
+    lock, light choreography, camera choreography, keyframe/motion render,
+    reopen/media QA, and proof/package commit.
+  - Mechanical motion may alter only the four approved shell-panel X values
+    during transition windows. Required settled states remain:
+    frame 1/24 P1 closed, frame 31/54 P2 split, frame 61/90 P3 wider split.
+    P1→P2 transition is limited to frames 25–31; P2→P3 to frames 55–61.
+  - Preserve every mesh, dimension, material, approved attachment, rider,
+    steed, rig, and P3 single-core visibility rule. No deformation or locomotion.
+  - Camera, Blade-review lights, and shell-panel X animation only. No unrelated
+    scene/light/material edits.
+  - Motion spec: exact `1080 x 1920`, 30 fps, H.264/yuv420p, 3 seconds,
+    no audio. Full Blade and its attachment context must remain readable.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_PROOF.md`
+    - `_tmp/mikage_zenith_blade_finalization_v0_17_gate/` with
+      `motion.mp4` and `motion_report.md` only.
+  - Required QA: source SHA-256/size/timestamp before/after; only four panel X
+    animation plus new review camera/lights; reopen frame values; collision and
+    attachment regression; inspect keyframe sheet and mp4; ffprobe exact media
+    spec; no V0.17 `.blend1`; validators PASS.
+  - Finalization candidate only. No automatic asset-lock, production-ready
+    claim, push, deploy, website, release, audio, or SSOT edit.
