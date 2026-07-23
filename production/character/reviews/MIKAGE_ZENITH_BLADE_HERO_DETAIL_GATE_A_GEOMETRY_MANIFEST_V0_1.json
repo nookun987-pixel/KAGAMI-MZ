@@ -1,0 +1,458 @@
+{
+  "schema": "MIKAGE_ZENITH_BLADE_HERO_DETAIL_GATE_A_GEOMETRY_MANIFEST_V0_1",
+  "status": "AUDIT_EVIDENCE_ONLY",
+  "source_blend": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend",
+  "source_size_bytes": 362558,
+  "source_mtime_epoch": 1782234565.264455,
+  "blender_version": "5.1.2",
+  "protected_object_count_expected": 6,
+  "protected_object_count_found": 6,
+  "missing_objects": [],
+  "objects": [
+    {
+      "name": "v12_blade_graphite_handle_inside_gauntlet_grip",
+      "type": "MESH",
+      "parent": null,
+      "local_location": [
+        -1.129999995,
+        -0.479999989,
+        2.140000105
+      ],
+      "local_rotation_euler": [
+        0.0,
+        0.0,
+        -0.059999999
+      ],
+      "local_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_matrix": [
+        [
+          0.998200536,
+          0.059964005,
+          0.0,
+          -1.129999995
+        ],
+        [
+          -0.059964005,
+          0.998200536,
+          0.0,
+          -0.479999989
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          2.140000105
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_location": [
+        -1.129999995,
+        -0.479999989,
+        2.140000105
+      ],
+      "bounding_box_dimensions": [
+        0.100000001,
+        0.075000003,
+        0.379999995
+      ],
+      "relative_to_gauntlet_vector": [
+        -0.090000033,
+        -0.049999982,
+        -0.069999933
+      ],
+      "relative_to_holster_vector": [
+        0.049999952,
+        -0.049999982,
+        1.110000134
+      ],
+      "distance_to_gauntlet": 0.124498975,
+      "distance_to_holster": 1.112250081,
+      "mesh": {
+        "vertex_count": 8,
+        "edge_count": 12,
+        "polygon_count": 6,
+        "vertex_topology_sha256": "AEC9B5201307ED341A023A3D31BCA699B7C1018A90AB0D0FE9140EE22F56725B"
+      }
+    },
+    {
+      "name": "v12_blade_porcelain_gauntlet_clamp_wrapping_handle",
+      "type": "MESH",
+      "parent": null,
+      "local_location": [
+        -1.039999962,
+        -0.430000007,
+        2.210000038
+      ],
+      "local_rotation_euler": [
+        0.0,
+        0.0,
+        -0.039999999
+      ],
+      "local_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_matrix": [
+        [
+          0.999200106,
+          0.039989334,
+          0.0,
+          -1.039999962
+        ],
+        [
+          -0.039989334,
+          0.999200106,
+          0.0,
+          -0.430000007
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          2.210000038
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_location": [
+        -1.039999962,
+        -0.430000007,
+        2.210000038
+      ],
+      "bounding_box_dimensions": [
+        0.219999999,
+        0.129999995,
+        0.180000007
+      ],
+      "relative_to_gauntlet_vector": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "relative_to_holster_vector": [
+        0.139999986,
+        0.0,
+        1.180000067
+      ],
+      "distance_to_gauntlet": 0.0,
+      "distance_to_holster": 1.188276122,
+      "mesh": {
+        "vertex_count": 8,
+        "edge_count": 12,
+        "polygon_count": 6,
+        "vertex_topology_sha256": "1E5F2233F725A12E2D48C8204D63C2DC70C0ADCC23E9B0001C35A5A7E7BC2EB5"
+      }
+    },
+    {
+      "name": "v12_blade_graphite_bridge_to_existing_gauntlet",
+      "type": "MESH",
+      "parent": null,
+      "local_location": [
+        -1.080000043,
+        -0.354999989,
+        2.170000076
+      ],
+      "local_rotation_euler": [
+        0.0,
+        0.0,
+        -0.039999999
+      ],
+      "local_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_matrix": [
+        [
+          0.999200106,
+          0.039989334,
+          0.0,
+          -1.080000043
+        ],
+        [
+          -0.039989334,
+          0.999200106,
+          0.0,
+          -0.354999989
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          2.170000076
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_location": [
+        -1.080000043,
+        -0.354999989,
+        2.170000076
+      ],
+      "bounding_box_dimensions": [
+        0.180000007,
+        0.075000003,
+        0.090000004
+      ],
+      "relative_to_gauntlet_vector": [
+        -0.040000081,
+        0.075000018,
+        -0.039999962
+      ],
+      "relative_to_holster_vector": [
+        0.099999905,
+        0.075000018,
+        1.140000105
+      ],
+      "distance_to_gauntlet": 0.093941503,
+      "distance_to_holster": 1.146832694,
+      "mesh": {
+        "vertex_count": 8,
+        "edge_count": 12,
+        "polygon_count": 6,
+        "vertex_topology_sha256": "A671ACF7EB03B055C8B9D76A43F0E44FAF7D1A55632FAAF2BE22128B9A3A4562"
+      }
+    },
+    {
+      "name": "v12_zenith_blade_slab_vertical_close_to_hip_not_horizontal",
+      "type": "MESH",
+      "parent": null,
+      "local_location": [
+        -1.269999981,
+        -0.479999989,
+        1.620000005
+      ],
+      "local_rotation_euler": [
+        0.0,
+        0.0,
+        -0.050000001
+      ],
+      "local_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_matrix": [
+        [
+          0.998750269,
+          0.049979169,
+          0.0,
+          -1.269999981
+        ],
+        [
+          -0.049979169,
+          0.998750269,
+          0.0,
+          -0.479999989
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.620000005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_location": [
+        -1.269999981,
+        -0.479999989,
+        1.620000005
+      ],
+      "bounding_box_dimensions": [
+        0.180000007,
+        0.085000001,
+        1.24000001
+      ],
+      "relative_to_gauntlet_vector": [
+        -0.230000019,
+        -0.049999982,
+        -0.590000033
+      ],
+      "relative_to_holster_vector": [
+        -0.090000033,
+        -0.049999982,
+        0.590000033
+      ],
+      "distance_to_gauntlet": 0.635216533,
+      "distance_to_holster": 0.598915721,
+      "mesh": {
+        "vertex_count": 8,
+        "edge_count": 12,
+        "polygon_count": 6,
+        "vertex_topology_sha256": "8B43AF138A4291F0FD35BF597B3588864347C50D18745F9C75ECD0D40B3A7530"
+      }
+    },
+    {
+      "name": "v12_zenith_blade_graphite_centerline_inset",
+      "type": "MESH",
+      "parent": null,
+      "local_location": [
+        -1.269999981,
+        -0.532999992,
+        1.620000005
+      ],
+      "local_rotation_euler": [
+        0.0,
+        0.0,
+        -0.050000001
+      ],
+      "local_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_matrix": [
+        [
+          0.998750269,
+          0.049979169,
+          0.0,
+          -1.269999981
+        ],
+        [
+          -0.049979169,
+          0.998750269,
+          0.0,
+          -0.532999992
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.620000005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_location": [
+        -1.269999981,
+        -0.532999992,
+        1.620000005
+      ],
+      "bounding_box_dimensions": [
+        0.022,
+        0.017999999,
+        1.080000043
+      ],
+      "relative_to_gauntlet_vector": [
+        -0.230000019,
+        -0.102999985,
+        -0.590000033
+      ],
+      "relative_to_holster_vector": [
+        -0.090000033,
+        -0.102999985,
+        0.590000033
+      ],
+      "distance_to_gauntlet": 0.641567644,
+      "distance_to_holster": 0.60564762,
+      "mesh": {
+        "vertex_count": 8,
+        "edge_count": 12,
+        "polygon_count": 6,
+        "vertex_topology_sha256": "90A4F6362B874ED7B8D535339CC7135EB067A029DF1E91A23F67690BB1D73FCB"
+      }
+    },
+    {
+      "name": "v12_zenith_blade_lower_holster_docking_foot",
+      "type": "MESH",
+      "parent": null,
+      "local_location": [
+        -1.179999948,
+        -0.430000007,
+        1.029999971
+      ],
+      "local_rotation_euler": [
+        0.0,
+        0.0,
+        -0.050000001
+      ],
+      "local_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "world_matrix": [
+        [
+          0.998750269,
+          0.049979169,
+          0.0,
+          -1.179999948
+        ],
+        [
+          -0.049979169,
+          0.998750269,
+          0.0,
+          -0.430000007
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.029999971
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_location": [
+        -1.179999948,
+        -0.430000007,
+        1.029999971
+      ],
+      "bounding_box_dimensions": [
+        0.25999999,
+        0.109999999,
+        0.159999996
+      ],
+      "relative_to_gauntlet_vector": [
+        -0.139999986,
+        0.0,
+        -1.180000067
+      ],
+      "relative_to_holster_vector": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "distance_to_gauntlet": 1.188276122,
+      "distance_to_holster": 0.0,
+      "mesh": {
+        "vertex_count": 8,
+        "edge_count": 12,
+        "polygon_count": 6,
+        "vertex_topology_sha256": "D053EC5AC084D0EAAE6FB9D8E93DF878F2624AC8488CE62F8C241B19317F8680"
+      }
+    }
+  ],
+  "gate_b_authorization": "BLOCKED"
+}
