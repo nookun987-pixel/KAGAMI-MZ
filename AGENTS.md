@@ -2014,3 +2014,39 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     SSOT or Canon Control Map.
   - No `.blend` edit, render, SSOT edit, canon-lock, asset-lock, production-ready
     claim, push, or deploy.
+
+- V0_15 AUTHORITY RESULT: operator visual approval recorded in commit `4ec4903`;
+  operator promoted rules 1–8 into SSOT and Canon Control Map in commit
+  `1343308`.
+- Seventy-fifth controlled exception is open:
+  - `ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16 = OPEN`.
+  - Base only:
+    `production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend`.
+    Save a new derivative and never overwrite V0.15 or earlier files.
+  - Preserve the operator-approved V0.15 four-panel contour, closed/open phase
+    spacing, central spine/rails/joints, vertical hip placement, gauntlet grip,
+    holster location, rider, steed, rig, and constant phase boundaries.
+  - Refine only Blade production-surface treatment and the guard/docking load
+    path:
+    1. porcelain B4C shell with matte mineral variation and controlled edge wear;
+    2. dark neutral central frame/rails with restrained cold-steel edge response;
+    3. minimal functional guard clamp and docking cradle/tongue detail;
+    4. no decorative clutter or unrelated geometry.
+  - Phase/color lock: P1/P2 Blade violet off; P3 exactly one electric-violet
+    central core; weapon red/crimson forbidden; no violet fill, wash, ambient,
+    halo, secondary core, or decorative lighting.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_PROOF.md`
+    - `_tmp/mikage_zenith_blade_surface_v0_16_gate/` with the standard two
+      contact-sheet gate files only.
+  - Review sheet: exact `6400 x 1800`, `4 x 2`: P1/P2/P3 front, P3
+    three-quarter, shell surface close-up, central-frame close-up, grip/guard
+    close-up, and holster/docking close-up.
+  - Required validation: source SHA-256/size/timestamp before and after; protected
+    geometry/transform digest for all objects outside the allowed load-path set;
+    reopen frames 1/30/31/60/61; inspect final PNG; exact dimensions; no V0.16
+    `.blend1`; task/output validators PASS.
+  - Candidate only. No automatic canon-lock, asset-lock, production-ready claim,
+    push, deploy, or SSOT edit.
