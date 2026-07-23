@@ -1969,3 +1969,23 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Allowed outputs: `production/character/reviews/MIKAGE_ZENITH_BLADE_COMPLETION_PACKAGE_V0_1.md`, `production/character/reviews/MIKAGE_ZENITH_BLADE_COMPLETION_AUDIT_V0_1.md`, plus a two-file audit gate.
   - Must not claim canon-lock, asset-lock or production-ready without explicit operator evidence.
   - No push/deploy.
+
+- COMPLETION AUDIT RESULT: completed in commit `79d7f0b`; operator requested panel-form refinement.
+- Seventy-third controlled exception is open:
+  - `ZENITH_BLADE_SHELL_COHESION_REFINEMENT_V0_15 = OPEN`.
+  - Operator authorization recorded 2026-07-24.
+  - Base only: `production/character/MIKAGE_ZENITH_BLADE_PHASE_TIMELINE_V0_14.blend`; save a new derivative and never overwrite V0.12, V0.13, or V0.14.
+  - The existing four-panel layout, direction, and phase spacing are a DRAFT implementation baseline only, not canon.
+  - Refine only the four `ZB13_*` shell panels, their minimal shared load-bearing frame/joints, and the Blade grip/guard/holster visual connection.
+  - P1 must read as one continuous closed outer shell with panel seams; P2/P3 must read as that same shell opening from one central load-bearing mechanism.
+  - Preserve V0.12 overall Blade silhouette, vertical hip placement, gauntlet-to-grip relation, holster/docking location, rider, steed, rig, camera integration, and constant phase boundaries at frames 1/31/61.
+  - Color lock: P1 and P2 have no Blade violet; P3 has exactly one violet core; no weapon red/crimson; no violet fill, wash, ambient, halo, or decorative lighting.
+  - Lighting/exposure may be adjusted only for review readability; no unrelated material or scene redesign.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15_PROOF.md`
+    - `_tmp/mikage_zenith_blade_shell_v0_15_gate/` with the standard task/output gate files.
+  - Required contact sheet: exact `6400 x 1800`, exact `4 x 2`: P1/P2/P3 front close-ups, P1/P2/P3 three-quarter close-ups, grip/guard close-up, and holster/docking close-up.
+  - Required validation: record source SHA-256/size/timestamp before and after; reopen V0.15; verify frames 1/30=P1, 31/60=P2, 61=P3; inspect the rendered PNG; confirm exact dimensions; confirm no `.blend1`; run task/output validation.
+  - Candidate only. No visual-approval claim, canon promotion, canon-lock, asset-lock, production-ready claim, push, deploy, or SSOT edit.
