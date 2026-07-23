@@ -2050,3 +2050,17 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     `.blend1`; task/output validators PASS.
   - Candidate only. No automatic canon-lock, asset-lock, production-ready claim,
     push, deploy, or SSOT edit.
+
+- V0_16 SURFACE/LOAD-PATH RESULT: completed in commit `9bfe2cf`; candidate
+  surface and functional load-path refinement passes technical review.
+- Seventy-sixth controlled exception is open:
+  - `ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT = OPEN`.
+  - Read-only Blender audit of
+    `production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend`.
+  - Inspect frames 1, 30, 31, 60, and 61; verify constant phase state, single
+    P3 core, panel symmetry, expected grip/guard and holster/docking contact,
+    and absence of new shell collision with the rider/steed outside approved
+    attachment zones.
+  - Allowed real output:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT.md`.
+  - No `.blend` edit, render, SSOT edit, lock/status promotion, push, or deploy.

@@ -1,47 +1,40 @@
-task_id: ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16
+task_id: ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
-current_step: ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16
+task_type: VERIFY_REPORT_ONLY
+current_step: ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT
 input_files_allowed:
-  - production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend
+  - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
 read_only_files:
-  - production/character/MIKAGE_ZENITH_BLADE_SHELL_COHESION_V0_15.blend
+  - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend
   - docs/architecture/MIKAGE_CANON_CONTROL_MAP.md
   - docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md
   - docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md
   - design_system/mikage-cine-color-contract.md
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_surface_v0_16_gate
-output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
+output_folder_allowed: _tmp/mikage_zenith_blade_v0_16_collision_audit_gate
+output_files_allowed: [collision_attachment_phase_audit.md]
 real_deliverables:
-  - production/character/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_SURFACE_LOADPATH_V0_16_PROOF.md
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_V0_16_COLLISION_ATTACHMENT_PHASE_AUDIT.md
 allowed_actions:
-  - save V0.15 as a V0.16 derivative
-  - refine Blade-only production surface materials
-  - refine minimal guard and docking load-path details
-  - render and inspect the exact review contact sheet
-  - reopen and verify phase color source and protected-scene integrity
+  - reopen and inspect V0.16 metadata and evaluated geometry
+  - audit phase boundaries symmetry visibility contact and collision
+  - write a read-only evidence report
 forbidden_actions:
-  - no approved outer-shell phase rider steed rig or SSOT change
-  - no weapon red or non-core violet
-  - no canon lock asset lock production-ready push or deploy
+  - no blend render geometry material rig SSOT status push or deploy change
 pass_conditions:
-  - approved V0.15 shell and phase behavior preserved
-  - surface and load-path details visibly improve without decorative drift
-  - P1 P2 violet off and P3 exactly one violet core
-  - source unchanged and protected-scene digest passes
-  - contact sheet is exactly 6400x1800 and visually inspected
+  - phase boundaries and panel symmetry pass at all five frames
+  - expected guard and docking contacts remain registered
+  - no unexpected shell collision is found outside approved attachment zones
+  - V0.16 source hash remains unchanged
   - tools PASS and repo clean after commit
 stop_conditions:
-  - source mutation or protected geometry drift
-  - color phase attachment or approved-shell violation
+  - source mutation or inconclusive evaluated-geometry evidence
+  - unexpected collision attachment phase or color-rule failure
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: collision attachment and phase-animation audit
-next_step_if_fail: return to V0.15 and remove the failing V0.16 refinement
+next_step_if_pass: phase animation polish and final-render candidate task
+next_step_if_fail: open a bounded V0.16 correction only for the failing item
