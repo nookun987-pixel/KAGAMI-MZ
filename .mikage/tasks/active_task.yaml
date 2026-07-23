@@ -1,37 +1,31 @@
-task_id: MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12
+task_id: MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: CONTACT_SHEET_ONLY
-current_step: MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12
+task_type: VERIFY_REPORT_ONLY
+current_step: MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1
 input_files_allowed:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11.blend
-  - design_system/mikage-cine-color-contract.md
+  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12.blend
   - AGENTS.md
 read_only_files:
-  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_OVERDRIVE_REFINEMENT_V0_11.blend
-  - design_system/mikage-cine-color-contract.md
-  - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_material_v0_12_gate
-output_files_allowed: [contact_sheet.png, contact_sheet_review_report.md]
-real_deliverables:
+  - production/character/MIKAGE_HERO_MOUNT_BLADE_HEAD_EEVEE_V0_12.blend
   - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12.blend
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12_CONTACT_SHEET.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_LOOKDEV_V0_12_PROOF.md
+  - AGENTS.md
+output_folder_allowed: _tmp/mikage_zenith_blade_integration_audit_v0_1_gate
+output_files_allowed: [integration_audit.md]
+real_deliverables:
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md
 allowed_actions:
-  - create and assign candidate materials only to ZB10 and ZB11 objects
-  - render inspect and verify phases
+  - inspect metadata and calculate integration mapping
+  - write audit report
 forbidden_actions:
-  - no geometry driver camera light rig attachment or pre-existing material edits
-  - no warm color red or P1 P2 Blade violet
-  - no push deploy or status promotion
+  - no blend edit render push or promotion
 pass_conditions:
-  - shell reads matte mineral porcelain not blown plastic
-  - struts read dark neutral metal
-  - phase and signal mapping unchanged
-  - source hashes unchanged and tools PASS
+  - baseline and candidate transforms dimensions and hashes recorded
+  - direct-copy ruling explicit
+  - next safe rebuild action defined
 stop_conditions:
-  - pre-existing material or geometry drift
-  - palette or signal violation
-  - unexpected file
+  - source modification
+  - inconclusive metadata
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: grip and holster integration audit against V0.12 baseline
-next_step_if_fail: revert to V0.11 and report
+next_step_if_pass: rebuild mechanics natively on a V0.12 derivative
+next_step_if_fail: stop and preserve both sources

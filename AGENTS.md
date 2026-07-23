@@ -1930,3 +1930,10 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Preserve geometry, drivers, phase states, rider, camera, lights, attachment and signal mapping.
   - Outputs: V0.12 lookdev blend, contact sheet, proof, and `_tmp/mikage_zenith_blade_material_v0_12_gate/` standard two files.
   - Candidate only; no status promotion, push, or deploy.
+
+- V0_12 MATERIAL RESULT: completed in commit `5bb6bd8`.
+- Sixty-eighth controlled exception is open:
+  - `MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1 = OPEN`.
+  - Read-only Blender metadata audit comparing hero-mount V0.12 baseline to material candidate V0.12.
+  - Allowed output: `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_AUDIT_V0_1.md` plus task/governance files.
+  - No blend edit/render/push/status promotion.
