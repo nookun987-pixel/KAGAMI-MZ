@@ -166,8 +166,10 @@ ignored whitelisted V0.22 gate directory.
 
 - PASS/FAIL: `PASS_FOR_OPERATOR_VISUAL_REVIEW`
 - Blocker: `NONE`
-- Commit status/hash: `PENDING_AT_PROOF_WRITE`
+- Candidate commit status/hash:
+  `COMMITTED — 901f03f blade: create standalone Zenith Blade V0.22`
+- Proof-finalization commit: recorded by the following local documentation
+  commit so this report can name the immutable candidate commit.
 - Push status: `NOT PUSHED`
 - Next safe action: operator reviews the standalone V0.22 form independently
   and requests any weapon-only correction before a separate integration task.
-
