@@ -81,8 +81,8 @@ No mesh vertex, polygon topology, front X/Z silhouette, phase X spacing or objec
 - Commands: Git baseline/status/branch/log; Blender build/render; Python contact-sheet composition; Blender reopen QA; file hashing; exact `.blend1` deletion/absence check; whitelist status audit; local commits.
 - Files changed: the four approved V0.24 outputs only. `AGENTS.md` was committed separately for the controlled exception.
 - Governance commit: `380ed96 governance: open Zenith Blade canon convergence V0.24`.
-- Candidate commit: `PENDING`.
-- Proof-finalization commit: `PENDING`.
+- Candidate commit: `0c86e51 feat: converge standalone Zenith Blade V0.24 to canon`.
+- Proof-finalization commit: this proof-only follow-up commit.
 - Repository baseline: clean `main`.
 - Blocker: none.
 - Next safe action: continue only from V0.24 under a new SSOT-bounded exception; no return to superseded V0.9 geometry.
