@@ -148,7 +148,8 @@ numbers and emission strengths are not canon.
 - Geometry, transforms, modifiers, ownership and phase behavior match V0.25.
 - Output SHA-256:
   `741023E6F3A220128E5D11BE222EB45D2AEA814DCA5A3A97D5EAED5B1D4B9123`.
-- Candidate/proof commits are recorded in the V0.26 proof after commit.
+- Candidate commit: `3a37796`.
+- Final proof/build-log commit is recorded by the repository history.
 
 ## 4. Rejected directions and lessons
 

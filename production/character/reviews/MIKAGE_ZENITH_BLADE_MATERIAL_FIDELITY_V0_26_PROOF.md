@@ -61,8 +61,9 @@ panels; the saved asset material values remain unchanged.
 
 - Governance commit:
   `695d2d9 governance: open Zenith Blade material fidelity V0.26`.
-- Candidate commit: `PENDING`.
-- Proof/build-log finalization commit: `PENDING`.
+- Candidate commit:
+  `3a37796 feat: complete Zenith Blade material fidelity V0.26`.
+- Proof/build-log finalization commit: this documentation-only follow-up commit.
 - Evidence source: PowerShell, Blender build/reopen stdout, SHA-256, image
   metadata and direct visual inspection.
 - Blocker: none.
