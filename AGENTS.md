@@ -2577,3 +2577,63 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Stop after producing and committing V0.23 and evidence. Final visual ruling
     remains with the operator. No automatic canon-lock, asset-lock,
     production-ready or integration-ready claim.
+
+- Eighty-fifth controlled exception is open:
+  - `ZENITH_BLADE_CANON_CONVERGENCE_V0_24 = OPEN`.
+  - Operator directed autonomous development from SSOT without further
+    preference questions. This task corrects presentation toward the promoted
+    V0.15 rules; the V0.9 sampling image is DRAFT visual context only.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23.blend`.
+    Save a derivative and do not overwrite V0.23 or earlier files.
+  - Refinement target:
+    1. Preserve the four connected shell plates and full-size monolithic
+       brutalist silhouette promoted from V0.15.
+    2. Improve B4C porcelain, dark Titanium load path, recessed paired rails,
+       upper hydraulic drive hub and lower Flux-Pinning base readability.
+    3. Preserve flat-cut ends, shared contour, controlled chamfers and
+       functional segmentation with no decorative mechanism.
+    4. Preserve P1 closed / P2 split / P3 wider split; P1/P2 violet off and P3
+       exactly one recessed electric-violet `#8F00FF` core.
+    5. Improve standalone hero framing and scale without importing rider,
+       steed, mount, rig, gauntlet, holster or attachment fixtures.
+  - Permitted changes are limited to existing V0.23 weapon-owned object
+    materials, bevels, normals, local Y-depth and review camera/light/world.
+    Front X/Z silhouette, phase X spacing, topology and object ownership remain
+    protected.
+  - Explicitly prohibited:
+    - No V0.9 geometry import, P2 violet, red/crimson weapon signal, violet
+      wash/halo/ambient, pointed tip, cutting edge, crossguard ring, thin
+      elegant sword read, fantasy ornament, text/logo or new component family.
+    - No character/mount integration, rigging, animation, film, audio, SSOT
+      edit, website, public release, push or deploy.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_CANON_CONVERGENCE_V0_24.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_CONVERGENCE_V0_24_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_CONVERGENCE_V0_24_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_CONVERGENCE_V0_24_PROOF.md`
+    - `_tmp/mikage_zenith_blade_canon_convergence_v0_24_gate/` for task-local
+      scripts, raw renders and QA evidence only.
+  - Required render evidence:
+    - Contact sheet exact `3600 x 1800`, `3 x 2`: P1 front, P1 side, P1
+      three-quarter, P2 front, P3 front and P3 three-quarter; complete Blade,
+      no silhouette-critical crop.
+    - Clean crop exact `1800 x 2400`, full P3 three-quarter, no labels/overlay.
+  - Required validation before PASS:
+    - Reopen V0.24; confirm source hash/size/timestamp unchanged.
+    - Confirm exact V0.23 ownership, topology, front X/Z envelope and phase X
+      spacing; record all permitted differences.
+    - Confirm actual PNG dimensions and directly inspect both final PNGs.
+    - Confirm P1/P2 core off, P3 exactly one core, no forbidden integration
+      objects, no `.blend1`, whitelist-only changes and local commit.
+  - Required proof must record canon checklist, source/output hashes, materials,
+    lights, permitted changes, protected comparisons, phase/color results,
+    render dimensions, direct inspection, files/commands/evidence, repository
+    status, PASS/FAIL, blocker, next safe action, commit hashes and no-push.
+  - Stop after producing and committing V0.24 plus evidence. No automatic
+    visual approval, asset-lock, production-ready or integration-ready claim.
