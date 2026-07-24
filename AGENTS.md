@@ -2269,3 +2269,104 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Stop after producing and committing the V0.20 review candidate and evidence.
     Final visual approval remains with the operator. No automatic canon-lock,
     asset-lock, production-ready, or public-render-ready claim.
+
+- Eighty-second controlled exception is open:
+  - `ZENITH_BLADE_CONTROLLED_GEOMETRY_FINISH_V0_21 = OPEN`.
+  - Continue from the completed V0.20 hero-read candidate through multiple
+    internal render-inspect-correct rounds. This task refines the Blade asset
+    itself; it does not authorize any film or release edit.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Base only:
+    `production/character/MIKAGE_ZENITH_BLADE_HERO_READ_REFINEMENT_V0_20.blend`.
+    Save a new derivative; never overwrite V0.20 or any earlier asset.
+  - Geometry-finish scope is limited to:
+    1. Shell-plane articulation: refine the existing four shell meshes within
+       their current outer envelope so each plate has intentional broad planes,
+       controlled chamfers, and a dense ceramic read instead of a flat white
+       slab.
+    2. Seam construction: make the existing four-plate division readable in P1
+       as connected mechanical seams, not four detached bars; preserve the
+       shared closed contour.
+    3. Edge continuity: normalize implementation-level bevel/chamfer widths and
+       shading continuity across corresponding left/right and upper/lower shell
+       edges.
+    4. Joint construction: refine the existing upper/lower collars, guard load
+       bridge, docking tongue, clamps, crosspin, cradle and base pad so their
+       contact hierarchy reads as engineered load transfer rather than stacked
+       primitives.
+    5. Rail/spine depth: tune only the recessed depth/read of the existing
+       central spine and paired rails. Do not add a second core, ornamental
+       groove, cable, ring, or decorative surface system.
+  - Geometry implementation permission:
+    - Mesh topology, bevel modifiers, normals and local vertex positions may be
+      adjusted only on the existing `ZB13_*_SHELL`, `ZB15_*` and `ZB16_*`
+      Blade objects named in the V0.20 protected snapshot.
+    - Every edited object must remain within its V0.20 world-space outer AABB;
+      its object location, rotation, scale and canonical overall dimensions must
+      remain unchanged.
+    - Left/right shell counterparts must remain mirrored in settled P1, P2 and
+      P3 states. Phase X offsets and animation keyframes remain unchanged.
+  - Locked preservation:
+    - Preserve the four-plate shell, monolithic brutalist mass, flat-cut ends,
+      shared contour, full-size P1 closed state, P2 industrial split, P3 wider
+      split, handle/gauntlet registration and docking support.
+    - Preserve rider, steed, rig, attachment placement, phase timing, camera
+      animation and all non-Blade scene geometry.
+    - Preserve V0.20 material palette and review-light intent.
+    - P1/P2 Blade violet off; P3 exactly one central electric-violet core.
+      No red/crimson and no violet fill, wash, ambient, halo, seam emission,
+      secondary core or decorative lighting.
+  - Explicitly prohibited:
+    - No silhouette/proportion/plate-count/phase-mechanism redesign.
+    - No pointed tip, crossguard-like ring, sword edge, thin/elegant read,
+      fantasy ornament, text, logo, loose cable, new color or new emission.
+    - No rider, steed, rig, animation, SSOT, film, audio, website, release,
+      push or deploy action.
+  - Controlled iteration:
+    - Run up to four internal geometry/render correction rounds.
+    - After each round, render and open an actual comparison sheet; record the
+      observed problem and the narrow correction made.
+    - Do not advance to the next round when the current render has
+      silhouette-critical cropping, detached P1 plates, asymmetric phase
+      spacing, featureless clipped shell planes, unreadable load-path contacts,
+      extra violet, red/crimson, or apparent fantasy ornament.
+    - Stop early when all review gates pass; do not add detail merely to consume
+      the available rounds.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_CONTROLLED_GEOMETRY_FINISH_V0_21.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CONTROLLED_GEOMETRY_FINISH_V0_21_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CONTROLLED_GEOMETRY_FINISH_V0_21_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CONTROLLED_GEOMETRY_FINISH_V0_21_PROOF.md`
+    - `_tmp/mikage_zenith_blade_geometry_finish_v0_21_gate/` containing build,
+      snapshot, comparison, render and QA evidence only.
+  - Required final review render:
+    - Contact sheet exact `3600 x 1800`, six panels: P1 front, P1 three-quarter,
+      P2 front, P3 front, upper guard/joint detail, and lower docking/joint
+      detail.
+    - Clean review crop exact `1800 x 1800`, no labels/overlay, showing the full
+      P3 Blade in three-quarter view.
+  - Required validation before PASS:
+    - Reopen the saved V0.21 `.blend`.
+    - Confirm V0.20 hash, size and timestamp are unchanged.
+    - Compare protected transforms, phase keyframes, non-Blade geometry and
+      object AABBs against V0.20; only explicitly permitted mesh/topology,
+      normals and bevel implementation may differ.
+    - Confirm the four P1 plates share one continuous closed silhouette; phase
+      spacing remains symmetric; P1/P2 violet off; P3 exactly one central core.
+    - Confirm exact PNG dimensions; open and inspect both actual final PNGs;
+      confirm no silhouette-critical crop and no `.blend1`.
+    - Confirm only whitelisted V0.21 outputs and this approved `AGENTS.md`
+      exception changed.
+  - Required proof must record the source/output hashes, every internal
+    correction round, objects/topology/modifiers changed, AABB and protected
+    value comparison, phase/color results, actual image dimensions, visual
+    inspection, `.blend1` result, files changed, commands run, evidence source,
+    repository status, PASS/FAIL, blocker, next safe action, commit status/hash
+    and no-push status.
+  - Stop after producing and committing the V0.21 candidate and evidence.
+    Final visual approval remains with the operator. No automatic canon-lock,
+    asset-lock, production-ready, or public-render-ready claim.
