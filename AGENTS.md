@@ -2475,3 +2475,105 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Stop after producing and committing the standalone V0.22 candidate and
     evidence. Final visual approval remains with the operator. No automatic
     canon-lock, asset-lock, production-ready or integration-ready claim.
+
+- Eighty-fourth controlled exception is open:
+  - `ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23 = OPEN`.
+  - Operator explicitly authorized a ten-pass controlled standalone refinement.
+    No character, steed or mount integration is authorized.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_STANDALONE_ASSET_V0_22.blend`.
+    Save a derivative; never overwrite V0.22 or any earlier asset.
+  - Ten required passes:
+    1. Source hash, ownership, origin and phase baseline.
+    2. P1 four-plate seam study and protected-envelope plan.
+    3. Controlled shell-plane/seam implementation.
+    4. Side-depth and layered B4C/Titanium readability.
+    5. Upper hydraulic drive-hub/load-transition refinement.
+    6. Lower Flux-Pinning base/load-transition refinement.
+    7. P3 core depth, color and emission refinement.
+    8. Silhouette, mechanical and phase review renders.
+    9. Direct visual inspection, correction and reopen regression.
+    10. Proof, scope audit, `.blend1` cleanup and local commit.
+  - Form-refinement permission is limited to the standalone weapon-owned
+    V0.22 objects:
+    - four `ZB13_*_SHELL` objects;
+    - `ZB13_P3_SINGLE_VIOLET_CORE`;
+    - `ZB15_CENTRAL_LOAD_SPINE`;
+    - paired `ZB15_RECESSED_RAIL_L/R`;
+    - upper/lower `ZB15_*_JOINT_COLLAR`;
+    - `ZB15_GUARD_LOAD_BRIDGE`;
+    - `ZB15_DOCKING_LOAD_TONGUE`.
+  - Permitted implementation changes:
+    1. Add shallow connected mechanical seams directly into the existing shell
+       meshes or through non-destructive modifiers. P1 must remain one closed
+       outer contour; seams may not become open gaps or four detached bars.
+    2. Refine local Y-depth, bevels, normals and broad shell planes inside a
+       protected front/side silhouette envelope. Front X/Z extrema and the
+       full-size monolithic proportions remain locked.
+    3. Refine existing upper drive-hub, collars, spine, rails and lower
+       Flux-Pinning connector through local mesh/modifier work only. Do not add
+       a crossguard, grip hole, ornamental mechanism or mount hardware.
+    4. Recess the existing P3 core visually inside the central frame and tune
+       its existing material/emission so it reads electric violet `#8F00FF`
+       rather than flat magenta. Exactly one core remains.
+  - Protected preservation:
+    - Preserve the standalone scene ownership and world-origin root from V0.22.
+    - Preserve four plates, flat-cut ends, P1 closed mass, P2 split, P3 wider
+      split, phase timing and component left/right symmetry.
+    - Preserve all non-whitelisted objects, control/camera/light ownership and
+      V0.22 relative phase samples unless a shared evidenced local-depth change
+      is explicitly within the permitted object set.
+    - P1/P2 core off. P3 exactly one core. No red/crimson, violet wash, ambient,
+      halo, seam lighting, secondary core or decorative emission.
+  - Explicitly prohibited:
+    - No pointed tip, sword edge, thin/elegant silhouette, crossguard ring,
+      fantasy ornament, loose cable, logo/text, new plate, mount connector,
+      gauntlet, holster, rider, steed, rig or environment.
+    - No film, audio, animation redesign, SSOT, website, release, push or deploy.
+  - Controlled correction:
+    - Every mesh/form correction must be followed by an actual render inspection.
+    - Reject and roll back any correction producing detached P1 plates,
+      silhouette drift, excess side thickness, asymmetry, ornamental noise,
+      flat external LED-core read or additional emission.
+    - Stop adding detail once all three final review gates pass.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23_SILHOUETTE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23_MECHANICAL_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23_PHASE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_FORM_REFINEMENT_V0_23_PROOF.md`
+    - `_tmp/mikage_zenith_blade_standalone_v0_23_gate/` containing build,
+      baseline, correction, render and QA evidence only.
+  - Required review gates:
+    - Silhouette gate exact `3000 x 1200`: P1 front, side and three-quarter;
+      complete Blade, identical scale, no crop.
+    - Mechanical gate exact `3000 x 1200`: shell seam/plane detail, upper
+      drive-hub/spine detail and lower Flux-Pinning base detail.
+    - Phase gate exact `3000 x 1200`: P1, P2 and P3 front at identical scale and
+      lighting; complete Blade, no crop.
+    - Clean crop exact `1800 x 2400`: full P3 three-quarter, no labels/overlay.
+  - Required validation before PASS:
+    - Reopen V0.23 and confirm V0.22 hash/size/timestamp unchanged.
+    - Confirm exact standalone ownership and no forbidden integration object.
+    - Confirm visible P1 center remains at world origin.
+    - Confirm front X/Z envelope and flat-cut silhouette remain within V0.22;
+      record every permitted Y-depth, topology or modifier difference.
+    - Confirm P1 seams read connected, phase spacing remains symmetric, P1/P2
+      core off and P3 has one recessed `#8F00FF`-family core.
+    - Confirm exact image dimensions, open and inspect all four final images,
+      no `.blend1`, and only whitelisted V0.23 outputs changed.
+  - Required proof must record all ten passes, source/output hashes, object and
+    topology/modifier changes, origin/envelope/phase comparison, color/core
+    result, exact image dimensions, direct visual inspection, rejected/rolled
+    back corrections, `.blend1` result, files changed, commands run, evidence
+    source, repository status, PASS/FAIL, blocker, next safe action, commit
+    status/hash and no-push status.
+  - Stop after producing and committing V0.23 and evidence. Final visual ruling
+    remains with the operator. No automatic canon-lock, asset-lock,
+    production-ready or integration-ready claim.
