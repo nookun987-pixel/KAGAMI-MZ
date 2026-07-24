@@ -71,8 +71,8 @@
 - Commands used: Git status/branch/log checks; Blender background build; Python gate composition; Blender reopen QA; SHA-256 hashing; exact `.blend1` removal and absence check.
 - Repository branch at verification: `main`.
 - Governance commit: `8cc1236 governance: open standalone Blade refinement V0.23`.
-- Candidate commit: PENDING at proof creation.
-- Proof finalization commit: PENDING at proof creation.
+- Candidate commit: `268e961 feat: refine standalone Zenith Blade V0.23`.
+- Proof finalization commit: this proof-only follow-up commit.
 
 ## Scope and next safe action
 
