@@ -79,8 +79,8 @@ object ownership or component family changed.
 - SHA-256: `479ADE2507102FEB9EED220DBCC27053AE857D6AE2145EA4EAA75D9640887760`
 - Evidence: PowerShell, Blender build/reopen stdout, hashes, metadata and direct image inspection.
 - Governance commit: `503bf66 governance: open Zenith Blade mechanical definition V0.25`.
-- Candidate commit: `PENDING`.
-- Proof-finalization commit: `PENDING`.
+- Candidate commit: `65a1010 feat: define Zenith Blade mechanics V0.25`.
+- Proof-finalization commit: this proof-only follow-up commit.
 - Blocker: none.
 - Next safe action: V0.26 material-fidelity candidate from V0.25 under a new exception.
 - Final visual approval remains with the operator. No push/deploy performed.
