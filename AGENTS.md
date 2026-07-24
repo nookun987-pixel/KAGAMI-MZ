@@ -2703,3 +2703,66 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     status, PASS/FAIL, blocker, next safe action, commit hashes and no-push.
   - Stop after producing and committing V0.25 plus evidence. No automatic
     visual approval, asset-lock, production-ready or integration-ready claim.
+
+- Eighty-seventh controlled exception is open:
+  - `ZENITH_BLADE_MATERIAL_FIDELITY_AND_BUILD_LOG_V0_26 = OPEN`.
+  - Operator authorized completion of the current standalone Blade milestone
+    followed by one Blade-only development build log.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25.blend`.
+    Save a derivative; never overwrite V0.25 or earlier files.
+  - Material-fidelity scope only:
+    1. Refine existing B4C porcelain shell material into a matte mineral
+       ceramic read without changing shell geometry or adding texture objects.
+    2. Refine existing dark Titanium load-path material into restrained
+       load-bearing metal with readable edges but no decorative gloss.
+    3. Refine existing paired cold-steel rail material with cool neutral,
+       non-emissive specular separation.
+    4. Preserve existing P3 core geometry and electric-violet signal; material
+       tuning may only prevent clipping or magenta drift.
+    5. Refine local review lights/world/camera only for material evidence.
+  - Protected preservation:
+    - Exact V0.25 object ownership, mesh topology, transforms, modifiers,
+      front/side silhouette and phase timing/spacing.
+    - P1/P2 core off; P3 exactly one recessed `#8F00FF` core.
+  - Explicitly prohibited:
+    - No geometry/modifier/transform/driver edit, new object/component,
+      V0.9 import, red/crimson signal, violet wash/halo/ambient, warm/gold
+      weapon color, text/logo or decorative emission.
+    - No rider, gauntlet, holster, steed, mount, ZB16 fixture, rig, animation,
+      film, audio, SSOT edit, website, push or deploy.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FIDELITY_V0_26.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FIDELITY_V0_26_MATERIAL_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FIDELITY_V0_26_PHASE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FIDELITY_V0_26_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FIDELITY_V0_26_PROOF.md`
+    - `production/character/build_log/MIKAGE_ZENITH_BLADE_DEVELOPMENT_BUILD_LOG_V0_1.md`
+    - `_tmp/mikage_zenith_blade_material_v0_26_gate/` for task-local scripts,
+      raw renders and QA evidence only.
+  - Required evidence:
+    - Material gate exact `3600 x 1800`, `3 x 2`: P1 front/side/three-quarter
+      plus tight shell, load-path and rail inspections.
+    - Phase gate exact `3000 x 1200`: P1/P2/P3 front at identical scale.
+    - Clean crop exact `1800 x 2400`: full P3 three-quarter, no overlay.
+  - Required validation before PASS:
+    - Reopen V0.26; confirm V0.25 hash/size/timestamp unchanged.
+    - Confirm exact object ownership, topology, transforms, modifiers and phase
+      samples match V0.25.
+    - Confirm P1/P2 core off, P3 one core, no forbidden object/color.
+    - Open and inspect every final PNG; exact dimensions; no critical crop.
+    - Confirm no `.blend1`, whitelist-only changes and local commit.
+  - Blade-only build log requirements:
+    - Cover authoritative rules and the implementation lineage through V0.26.
+    - Separate superseded experiments from the current lineage.
+    - Record major passes, failures/rejections, corrections, artifacts, hashes,
+      commits, current limitations and next safe action.
+    - Discuss Zenith Blade only. Do not document rider, steed, mount, film,
+      website, audio or unrelated character development.
+  - Stop after producing and committing V0.26, proof and build log. No automatic
+    visual approval, asset-lock, production-ready or integration-ready claim.
