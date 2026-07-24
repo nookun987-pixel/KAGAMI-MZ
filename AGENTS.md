@@ -2370,3 +2370,108 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Stop after producing and committing the V0.21 candidate and evidence.
     Final visual approval remains with the operator. No automatic canon-lock,
     asset-lock, production-ready, or public-render-ready claim.
+
+- Eighty-third controlled exception is open:
+  - `ZENITH_BLADE_STANDALONE_ASSET_V0_22 = OPEN`.
+  - Correct the development order by creating and reviewing the Zenith Blade as
+    a standalone weapon before any further rider, steed or mount integration.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_CONTROLLED_GEOMETRY_FINISH_V0_21.blend`.
+    It is implementation evidence, not new canon, and must remain unchanged.
+  - Build a fresh standalone Blender scene containing only the weapon-owned
+    Blade components:
+    - four `ZB13_*_SHELL` objects;
+    - `ZB13_P3_SINGLE_VIOLET_CORE`;
+    - `ZB15_CENTRAL_LOAD_SPINE`;
+    - paired `ZB15_RECESSED_RAIL_L/R`;
+    - `ZB15_UPPER_JOINT_COLLAR` and `ZB15_LOWER_JOINT_COLLAR`;
+    - `ZB15_GUARD_LOAD_BRIDGE` as the weapon-side hydraulic drive hub;
+    - `ZB15_DOCKING_LOAD_TONGUE` as the weapon-side Flux-Pinning base connector.
+  - Explicit scene exclusion:
+    - No rider, steed, mount body, gauntlet, holster, mount cradle, mount base
+      pad, integration clamp/crosspin, character rig, animation rig, legacy
+      Blade proxy, production actor, environment or prior review camera/light.
+    - All `ZB16_*` attachment fixtures are integration evidence and must not be
+      present in the standalone file.
+  - Standalone assembly:
+    1. Copy only the whitelisted weapon-owned objects and their used materials,
+       meshes, phase animation data and required driver dependencies into a new
+       empty scene.
+    2. Preserve their relative geometry and phase offsets, then translate the
+       complete weapon assembly so its settled P1 world-space center is at the
+       world origin. No component may be independently re-seated.
+    3. Add a standalone root empty, three-phase control if required, neutral
+       void world, dedicated review cameras and cool neutral review lights.
+    4. Refine only standalone presentation and weapon-owned form readability:
+       shared P1 contour, shell chamfers, spine/rail depth, upper drive hub and
+       lower Flux-Pinning base connector.
+    5. Do not reintroduce any rider/mount attachment geometry to make the weapon
+       appear mechanically complete.
+  - Locked preservation:
+    - Preserve four shell plates, monolithic brutalist mass, flat-cut ends,
+      full-size P1 closed state, P2 industrial split and P3 wider split.
+    - Preserve V0.21 weapon-owned mesh topology and chamfer implementation
+      unless a later internal correction is explicitly evidenced and remains
+      inside the V0.21 weapon AABB.
+    - P1/P2 Blade violet off; P3 exactly one central electric-violet core.
+      No red/crimson, violet fill/wash/ambient/halo/seam lighting, secondary
+      core or decorative emission.
+  - Explicitly prohibited:
+    - No pointed tip, crossguard-like ring, sword edge, thin/elegant silhouette,
+      fantasy ornament, new plate, loose cable, logo/text, new color or added
+      decorative mechanism.
+    - No character/mount integration, rigging, locomotion, film, audio, SSOT,
+      website, public release, push or deploy.
+  - Controlled workflow:
+    - Run a minimum of three and maximum of five internal steps:
+      ownership extraction, origin/phase assembly, standalone form refinement,
+      multi-angle render correction, and reopen/package QA.
+    - Open and inspect actual render evidence after the first standalone render
+      and after every correction.
+    - Reject and roll back any correction that causes P1 plate separation,
+      silhouette drift, asymmetric phase spacing, ornamental drift, additional
+      emission or loss of the 350 kg industrial mass read.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_STANDALONE_ASSET_V0_22.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_ASSET_V0_22_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_ASSET_V0_22_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_STANDALONE_ASSET_V0_22_PROOF.md`
+    - `_tmp/mikage_zenith_blade_standalone_v0_22_gate/` containing extraction,
+      ownership, origin, phase, render and QA evidence only.
+  - Required final review render:
+    - Contact sheet exact `3600 x 2400`, six panels in a `3 x 2` layout:
+      P1 front, P1 side, P1 three-quarter, P2 front, P3 front and P3
+      three-quarter.
+    - Every panel shows the complete standalone Blade with no character/mount
+      geometry and no silhouette-critical crop.
+    - Clean review crop exact `1800 x 2400`, no labels/overlay, showing the full
+      standalone P3 Blade in three-quarter view.
+  - Required validation before PASS:
+    - Reopen the standalone V0.22 `.blend`.
+    - Confirm V0.21 hash, size and timestamp are unchanged.
+    - Confirm scene object ownership equals the exact standalone whitelist plus
+      standalone root/control/cameras/lights only.
+    - Confirm no `ZB16_*`, rider, steed, mount, gauntlet, holster, rig or legacy
+      proxy object exists.
+    - Confirm relative weapon-component transforms and phase samples match
+      V0.21 after removing one shared world-origin translation.
+    - Confirm settled P1 weapon center is at world origin; P1 contour remains
+      closed; phase spacing remains symmetric.
+    - Confirm P1/P2 violet off, P3 exactly one central core, exact PNG
+      dimensions, direct inspection of both final PNGs, no `.blend1`, and only
+      whitelisted V0.22 outputs changed.
+  - Required proof must record source/output hashes, extracted and excluded
+    object lists, shared origin translation, relative-transform and phase
+    comparison, internal steps/corrections, materials/lights, object ownership,
+    phase/color results, exact image dimensions, direct visual inspection,
+    `.blend1` result, files changed, commands run, evidence source, repository
+    status, PASS/FAIL, blocker, next safe action, commit status/hash and no-push
+    status.
+  - Stop after producing and committing the standalone V0.22 candidate and
+    evidence. Final visual approval remains with the operator. No automatic
+    canon-lock, asset-lock, production-ready or integration-ready claim.
