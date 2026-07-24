@@ -153,9 +153,11 @@ The actual final contact sheet and clean crop were opened and inspected.
 
 - PASS/FAIL: `PASS_FOR_OPERATOR_VISUAL_REVIEW`
 - Blocker: `NONE`
-- Commit status/hash: `PENDING_AT_PROOF_WRITE`
+- Candidate commit status/hash:
+  `COMMITTED — 39fed4e blade: finish controlled Zenith Blade geometry V0.21`
+- Proof-finalization commit: recorded by the following local documentation
+  commit so this report can name the immutable candidate commit.
 - Push status: `NOT PUSHED`
 - Next safe action: operator reviews the final V0.21 contact sheet and clean
   crop and rules whether this controlled geometry finish should be accepted or
   receive one narrowly scoped correction.
-
