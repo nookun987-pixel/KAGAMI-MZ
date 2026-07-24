@@ -2197,3 +2197,75 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Development-film review candidate only. No source status promotion,
     asset-lock, production-ready, push, deploy, public release, website, or SSOT
     action.
+
+- Eighty-first controlled exception is open:
+  - `ZENITH_BLADE_HERO_READ_REFINEMENT_V0_20 = OPEN`.
+  - This resumes refinement of the Zenith Blade asset itself. It does not
+    authorize any revision, extension, or replacement of the V0.19 development
+    film.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Base only:
+    `production/character/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17.blend`.
+    Save a new derivative; never overwrite V0.17 or any earlier asset.
+  - Refinement scope is limited to Blade hero-read implementation:
+    1. Correct Blade-review exposure and light placement so the porcelain shell
+       retains readable planes instead of clipping to featureless white.
+    2. Strengthen value/roughness separation between the B4C porcelain outer
+       shell and the dark Titanium central load-bearing structure.
+    3. Improve the readability of the existing four-plate seams, paired
+       recessed rails, central spine, upper/lower structural joints, handle,
+       gauntlet registration, and docking support.
+    4. Use restrained implementation-level bevel/chamfer tuning only where
+       needed to catch controlled highlights. Object dimensions, shared outer
+       contour, phase offsets, mechanical layout, and silhouette must remain
+       unchanged.
+  - Locked preservation:
+    - Preserve the canon four-plate shell, monolithic brutalist mass, flat-cut
+      ends, shared contour, central load path, full-size P1 closed state, P2
+      industrial split, and P3 wider split with exactly one central core.
+    - Preserve all rider, steed, rig, attachment, phase timing, and shell-panel
+      transforms from V0.17.
+    - P1 and P2 Blade violet remain off. P3 uses only the single electric-violet
+      central core. No red/crimson and no violet fill, wash, ambient, halo,
+      secondary core, seam lighting, or decorative emission.
+  - Explicitly prohibited:
+    - No silhouette, proportion, plate count, topology, phase-mechanism, handle,
+      docking-layout, rider, steed, rig, or animation redesign.
+    - No pointed tip, crossguard-like ring, thin/elegant sword read, ornament,
+      new color, audio, film edit, SSOT edit, push, deploy, website, release, or
+      status promotion.
+  - Render permission is granted for local Blender/Eevee review stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_HERO_READ_REFINEMENT_V0_20.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_READ_REFINEMENT_V0_20_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_READ_REFINEMENT_V0_20_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_READ_REFINEMENT_V0_20_PROOF.md`
+    - `_tmp/mikage_zenith_blade_hero_read_v0_20_gate/` containing review-gate
+      evidence only.
+  - Required review render:
+    - Contact sheet exact `3200 x 1600`, four panels: P1 closed, P2 settled,
+      P3 settled, and tight attachment/load-path detail.
+    - Clean review crop exact `1600 x 1600`, no labels or overlay, showing the
+      full Blade with readable porcelain planes and central structure.
+  - Required validation before PASS:
+    - Reopen the saved V0.20 `.blend`.
+    - Confirm V0.17 hash, size, and timestamp are unchanged.
+    - Confirm protected silhouette/object dimensions, phase transforms, rider,
+      steed, rig, attachment, and animation values match V0.17.
+    - Confirm P1/P2 violet off, P3 exactly one central violet core, and no
+      red/crimson or ambient/decorative violet.
+    - Confirm exact PNG dimensions, open and inspect both actual PNG outputs,
+      confirm no silhouette-critical crop, and confirm no `.blend1` remains.
+    - Confirm only the whitelisted V0.20 outputs and this approved `AGENTS.md`
+      exception changed.
+  - Required proof must record source/output hashes, the four refinement groups
+    performed, exposure/material/readability result, protected-value comparison,
+    phase/color result, image dimensions, `.blend1` result, files changed,
+    commands run, evidence source, repository status, PASS/FAIL, blocker, next
+    safe action, commit status/hash, and no-push status.
+  - Stop after producing and committing the V0.20 review candidate and evidence.
+    Final visual approval remains with the operator. No automatic canon-lock,
+    asset-lock, production-ready, or public-render-ready claim.
