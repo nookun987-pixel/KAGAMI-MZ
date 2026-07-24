@@ -46,7 +46,7 @@ PUSH_DONE: `NO`
 7. Contact sheet and clean crop render: `PASS`.
 8. Reopen and protected/color regression QA: `PASS`.
 9. Visual/media/filesystem inspection and proof: `PASS`.
-10. Scope audit and local commit: `PENDING_AT_PROOF_WRITE`.
+10. Scope audit and local commit: `PASS`.
 
 ## Refinement groups performed
 
@@ -138,9 +138,11 @@ clean review crop.
 
 - PASS/FAIL: `PASS_FOR_OPERATOR_VISUAL_REVIEW`
 - Blocker: `NONE`
-- Commit status/hash: `PENDING_AT_PROOF_WRITE`
+- Candidate commit status/hash:
+  `COMMITTED — d5ae01f blade: refine Zenith Blade hero read V0.20`
+- Proof-finalization commit: recorded by the following local documentation
+  commit so this report can name the immutable candidate commit.
 - Push status: `NOT PUSHED`
 - Next safe action: operator reviews the V0.20 contact sheet and clean crop and
   either accepts the hero-read refinement or requests one narrowly scoped
   visual correction.
-
