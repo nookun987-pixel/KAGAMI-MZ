@@ -2637,3 +2637,69 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     status, PASS/FAIL, blocker, next safe action, commit hashes and no-push.
   - Stop after producing and committing V0.24 plus evidence. No automatic
     visual approval, asset-lock, production-ready or integration-ready claim.
+
+- Eighty-sixth controlled exception is open:
+  - `ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25 = OPEN`.
+  - Operator authorized ten controlled passes on the standalone V0.24 Blade.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`
+    - `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`
+    - `design_system/mikage-cine-color-contract.md`
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_CANON_CONVERGENCE_V0_24.blend`.
+    Save a derivative; do not overwrite V0.24 or earlier files.
+  - Ten required passes:
+    1. Source/ownership/phase/material baseline.
+    2. Protected silhouette and mechanical hierarchy plan.
+    3. Four-shell connected-seam definition.
+    4. Central spine and paired recessed-rail depth definition.
+    5. Upper hydraulic drive-hub definition.
+    6. Lower Flux-Pinning base definition.
+    7. Joint-collar/load-transition definition.
+    8. Silhouette, mechanical, phase and hero review renders.
+    9. Direct visual inspection, correction and reopen regression.
+    10. Proof, scope audit, `.blend1` cleanup and local commit.
+  - Permitted changes are restricted to existing V0.24 weapon objects:
+    material value/roughness, bevel width/segments, weighted normals and local
+    Y-depth inside the existing side envelope. Review camera/light/world may be
+    refined. No new mesh object or component family may be added.
+  - Protected preservation:
+    - Exact object ownership, vertex/polygon topology, front X/Z silhouette,
+      full-size monolithic proportions and phase X spacing.
+    - Four connected shell plates, flat-cut ends, P1 closed, P2 split and P3
+      wider split.
+    - P1/P2 core off; P3 exactly one recessed electric-violet `#8F00FF` core.
+  - Explicitly prohibited:
+    - No pointed tip, cutting edge, crossguard ring, grip hole, thin/elegant
+      sword read, ornament, cable, text/logo, new plate, V0.9 import, P2 violet,
+      red/crimson signal, violet wash/halo/ambient or secondary core.
+    - No rider, gauntlet, holster, steed, mount, ZB16 integration fixture, rig,
+      animation, film, audio, SSOT edit, website, push or deploy.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25_SILHOUETTE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25_MECHANICAL_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25_PHASE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_MECHANICAL_DEFINITION_V0_25_PROOF.md`
+    - `_tmp/mikage_zenith_blade_canon_mechanical_v0_25_gate/` for scripts, raw
+      renders and QA evidence only.
+  - Required render evidence:
+    - Silhouette gate exact `3000 x 1200`: P1 front/side/three-quarter.
+    - Mechanical gate exact `3000 x 1200`: connected shell, upper hub and lower
+      base close inspections.
+    - Phase gate exact `3000 x 1200`: P1/P2/P3 front at identical scale.
+    - Clean crop exact `1800 x 2400`: full P3 three-quarter, no overlay.
+  - Required validation before PASS:
+    - Reopen V0.25; confirm source unchanged.
+    - Confirm exact ownership/topology/front X-Z envelope/phase X spacing.
+    - Confirm P1/P2 core off, P3 one core, no forbidden objects.
+    - Open and inspect every final PNG; confirm exact dimensions and no critical
+      crop; confirm no `.blend1`, whitelist-only changes and local commit.
+  - Required proof must record all ten passes, source/output hashes, every
+    permitted difference, protected comparisons, phase/color results, direct
+    image inspection, rejected corrections, files/commands/evidence, repo
+    status, PASS/FAIL, blocker, next safe action, commit hashes and no-push.
+  - Stop after producing and committing V0.25 plus evidence. No automatic
+    visual approval, asset-lock, production-ready or integration-ready claim.
