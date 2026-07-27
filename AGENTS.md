@@ -2766,3 +2766,79 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
       website, audio or unrelated character development.
   - Stop after producing and committing V0.26, proof and build log. No automatic
     visual approval, asset-lock, production-ready or integration-ready claim.
+
+- Eighty-eighth controlled exception is open:
+  - `ZENITH_BLADE_V0_27_HERO_CONTEXT_VALIDATION = OPEN_FOR_IMPLEMENTATION`.
+  - Operator ruling: V0.26 is an immutable controlled-derivation baseline only:
+    `REVIEW_CANDIDATE_ONLY`, `V0.26_BASELINE_FROZEN`, `ASSET_LOCK: NO`,
+    `PRODUCTION_READY: NO`.
+  - Purpose: validate hero context, scale, carry position, handle-to-gauntlet
+    registration, docking support, silhouette and P1/P2/P3 clearance without
+    changing the Blade or actor sources.
+  - Blade source only:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FIDELITY_V0_26.blend`.
+  - Actor source only:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ROBE_HERO_CINE_STAGING_V0_1.blend`.
+    This is the recorded PASS derivative immediately before the retired Blade
+    remodel branches. Both sources are read-only and must remain unchanged.
+  - Ten controlled passes:
+    1. Verify clean repo, source hashes and source lineage.
+    2. Inspect source ownership, actor bounds, Blade bounds and phase controls.
+    3. Create a separate derivative scene; never save into either source.
+    4. Import/link actor and Blade without mesh, topology or material mutation.
+    5. Register P1 carry, gauntlet/handle and lower docking relationships using
+       context-scene transforms/empties only.
+    6. Sample P1/P2/P3 and inspect body, armor, gauntlet and docking clearance.
+    7. Render front, side, back and three-quarter neutral context evidence.
+    8. Render P1/P2/P3 clearance evidence and black/white thumbnail silhouettes.
+    9. Directly inspect all PNGs; reopen derivative and compare protected source
+       hashes, Blade data and actor rig/deforming meshes.
+    10. Write proof, remove `.blend1`, audit whitelist and create one local
+        commit; no push.
+  - Allowed context-scene changes only:
+    - Create a separate derivative review scene.
+    - Append or link the two approved source assets.
+    - Position whole-asset instances relative to actor, gauntlet and docking.
+    - Add review-only empties, cameras, neutral lights, world and compositor.
+    - Sample existing P1/P2/P3 controls for clearance inspection.
+  - Explicitly prohibited:
+    - No overwrite or modification of either source.
+    - No Blade mesh, topology, modifier, material, transform bake, phase driver,
+      shell spacing or component edit.
+    - No actor rig, deforming-mesh, pose-rest, armor or proportion edit to fit
+      the Blade.
+    - No new Blade detail, ornament, cable, color, red/crimson, P2 violet,
+      violet wash/halo/ambient or additional core.
+    - No asset-lock, integration-ready, production-ready or visual-approval
+      claim; no SSOT edit, animation, audio, website, push or deploy.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27_CONTEXT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27_CLEARANCE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27_SILHOUETTE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27_PROOF.md`
+    - `_tmp/zenith_blade_v0_27_hero_context/` for task-local scripts, raw
+      renders and QA evidence only.
+  - Required evidence:
+    - Context sheet: front, side, back and three-quarter views with complete
+      Mikage and Blade, identical scale, neutral lighting and no critical crop.
+    - Clearance gate: P1/P2/P3 with handle/gauntlet, docking and body-clearance
+      inspection views.
+    - Silhouette gate: black/white thumbnails for the complete hero plus Blade.
+  - Required proof:
+    - Record source paths/hashes, actor-baseline selection evidence, all ten
+      passes, context-only transforms, phase samples, every inspected view,
+      source-integrity comparisons, files/commands/evidence, repo status,
+      `.blend1` result, PASS/FAIL, blocker, next safe action, commit hash and
+      no-push.
+  - Exit is exactly one of:
+    - `HERO_CONTEXT_PASS`: no geometry edit; V0.28 may be marked
+      `SKIPPED_BY_OPERATOR_RULING`, and any V0.29 must declare
+      `PARENT_ASSET: V0.26` plus `CONTEXT_EVIDENCE_SOURCE: V0.27`.
+    - `HERO_CONTEXT_FAIL_GEOMETRY_CAUSE_CONFIRMED`: proof must name the failed
+      angle, phase, component, error class and minimum bounded correction before
+      any V0.28 exception may open.
+  - Generic conclusions such as "not beautiful" or "needs more detail" are
+    invalid. Stop after producing and committing V0.27 evidence. Final visual
+    ruling remains with the operator.
