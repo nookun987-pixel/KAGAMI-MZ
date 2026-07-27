@@ -2842,3 +2842,64 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Generic conclusions such as "not beautiful" or "needs more detail" are
     invalid. Stop after producing and committing V0.27 evidence. Final visual
     ruling remains with the operator.
+
+- Eighty-ninth controlled exception is open:
+  - `ZENITH_BLADE_V0_28_INTERFACE_REGISTRATION = OPEN_FOR_IMPLEMENTATION`.
+  - Authorized by the V0.27 exit
+    `HERO_CONTEXT_FAIL_GEOMETRY_CAUSE_CONFIRMED`.
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27.blend`.
+    Preserve V0.26, V0.27 and the actor source unchanged.
+  - Context evidence authority:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_CONTEXT_VALIDATION_V0_27_PROOF.md`.
+  - Correction scope is limited to:
+    1. vertical/horizontal registration of the existing
+       `ZB15_GUARD_LOAD_BRIDGE` to the right-hand hold marker;
+    2. ground/holster clearance of the existing
+       `ZB15_DOCKING_LOAD_TONGUE`;
+    3. minimum whole-Blade context offset required to keep P2/P3 shell opening
+       clear of the cloak without changing shell spacing or phase drivers.
+  - Ten controlled passes:
+    1. Verify clean repo, source hashes and V0.27 failure evidence.
+    2. Reopen V0.27 and measure marker, bridge, docking and shell/cloak bounds.
+    3. Duplicate to a new V0.28 derivative; never overwrite a source.
+    4. Apply minimum bridge registration transform only.
+    5. Apply minimum docking clearance transform only.
+    6. Apply minimum whole-Blade context offset only if P2/P3 needs clearance.
+    7. Render corrected context and P1/P2/P3 clearance evidence.
+    8. Render mechanical close evidence for hand/bridge and ground/docking.
+    9. Directly inspect all PNGs; reopen and compare protected topology,
+       materials, drivers, shell transforms and actor data.
+    10. Write proof, remove V0.28 `.blend1`, whitelist audit and local commit;
+        no push.
+  - Permitted transforms:
+    - local location only on `ZB15_GUARD_LOAD_BRIDGE`;
+    - local location only on `ZB15_DOCKING_LOAD_TONGUE`;
+    - context-scene location only on `ZB22_STANDALONE_ROOT`.
+  - Explicitly prohibited:
+    - No vertex, edge, polygon, topology, dimension, scale, rotation, modifier,
+      material, driver or phase-spacing edit.
+    - No shell, central spine, rail, collar, violet core, actor rig, actor mesh,
+      gauntlet, cloak, armor or pose edit.
+    - No new component/detail, red/crimson, P2 violet, violet wash/halo/ambient,
+      secondary core, animation, audio, SSOT edit, push or deploy.
+    - No asset-lock, integration-ready, production-ready or visual-approval
+      claim.
+  - Render permission is granted for local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_CONTEXT_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_CLEARANCE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_MECHANICAL_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_PROOF.md`
+    - `_tmp/zenith_blade_v0_28_interface/` for task-local scripts, raw renders
+      and QA evidence only.
+  - PASS requires:
+    - Bridge overlaps the right-hand marker envelope without editing actor data.
+    - Docking tongue lowest point is at least `0.20 m` above context ground.
+    - P2/P3 shell remains visibly clear of cloak in front and three-quarter
+      evidence.
+    - Blade and actor topology differences remain zero; protected shell,
+      material and phase-driver values remain unchanged.
+  - Stop after producing and committing V0.28 plus evidence. V0.29 may open
+    only after operator review of the V0.28 gates.
