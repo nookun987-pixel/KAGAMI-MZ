@@ -2939,3 +2939,43 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - Confirm no `.blend1`, whitelist-only changes and local commit.
   - Stop after committing the two gates and addendum. Final V0.28 acceptance
     remains an operator ruling; V0.29 stays closed.
+
+- Operator ruling — V0.28 accepted:
+  - `OPERATOR_RULING: PASS`.
+  - `MILESTONE: ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28`.
+  - `STATUS: ACCEPTED`.
+  - `HERO_REGISTRATION`, `BRIDGE_MARKER_XYZ`, `DOCKING_CLEARANCE` and
+    `P1_P2_P3_CLOAK_CLEARANCE`: `PASS`.
+  - `ASSET_LOCK`, `PRODUCTION_READY`, `INTEGRATION_READY`: `NO`.
+  - Ruling record:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_OPERATOR_RULING.md`.
+
+- Ninety-first controlled exception is open:
+  - `ZENITH_BLADE_V0_29_MATERIAL_FINALING = AUTHORIZED_TO_OPEN`.
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28.blend`.
+    V0.28 is the accepted immutable baseline; save a new derivative and never
+    overwrite it.
+  - Geometry, object dimensions, topology, modifiers, registration/attachment
+    transforms, actor data, shell spacing, phase drivers and P1/P2/P3 timing
+    are locked.
+  - Permitted material scope only:
+    1. refine existing B4C into readable matte mineral ceramic without
+       geometry displacement;
+    2. refine existing dark Titanium into restrained load-bearing metal;
+    3. refine existing cold-steel rails into cool neutral specular separation;
+    4. refine P3-core depth/read through existing material values only while
+       preserving its existing geometry, location and single-core rule;
+    5. use neutral review lighting only; material quality may not be simulated
+       by dramatic lighting.
+  - Explicitly prohibited:
+    - No bridge, docking, root scale/location, registration, attachment,
+      shell, spacing, driver, actor, rig, pose or geometry change.
+    - No new component, texture object, ornament, color family, red/crimson,
+      P2 violet, violet wash/halo/ambient or secondary core.
+    - No asset-lock, integration-ready, production-ready or visual-approval
+      claim; no animation, audio, website, push or deploy.
+  - Execution outputs, render specifications, ten-pass procedure and validation
+    whitelist must be declared in a dedicated V0.29 task entry before Blender
+    execution begins.
+  - If V0.29 fails, return to accepted V0.28 and correct material only.
