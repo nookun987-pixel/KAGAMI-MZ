@@ -3092,3 +3092,54 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     before Blender execution.
   - If V0.30 fails, return to accepted V0.29 and open a repair exception limited
     to the proven phase driver or transform fault.
+
+- Ninety-fourth controlled exception is open:
+  - `ZENITH_BLADE_V0_30_PHASE_MECHANISM_VALIDATION_EXECUTION = OPEN`.
+  - Read-only source:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    Open and validate in memory only; do not save any `.blend`.
+  - Ten diagnostic passes:
+    1. Verify clean repo and source SHA-256.
+    2. Inventory every Blade driver, variable, target and driven data path.
+    3. Record protected object/material/registration fingerprints.
+    4. Sample locked phase frames `1`, `31`, `61`.
+    5. Sample transition frames `25`, `28`, `55`, `58`.
+    6. Measure every frame `1–61` for transform continuity and visibility/core
+       state; report maximum per-frame deltas and their objects/frames.
+    7. Run P1 -> P2 -> P3 -> P1 three times and byte-compare normalized phase
+       snapshots for deterministic repeatability.
+    8. Test Blade shell/core against actor cloak/body meshes for evaluated
+       overlap at all seven diagnostic frames.
+    9. Render and directly inspect the seven-frame timeline gate plus a
+       continuity/repeatability diagnostic gate.
+    10. Write proof, exact whitelist audit and local commit; no push.
+  - Diagnostic frame set:
+    - P1: `1`.
+    - P1-to-P2: `25`, `28`, `31`.
+    - P2-to-P3: `55`, `58`, `61`.
+  - PASS criteria:
+    - No missing/broken driver target, invalid expression or unsupported data
+      path.
+    - No discontinuous single-frame transform jump outside the authored
+      transition curve.
+    - Three repeatability cycles produce identical normalized snapshots.
+    - P1/P2 core off and P3 exactly one core.
+    - No evaluated Blade shell/core intersection with cloak/body at the seven
+      diagnostic frames.
+    - Source hash unchanged and no `.blend`/`.blend1` output.
+  - Render permission: in-memory local Blender/Eevee stills only with the
+    accepted V0.29 material, camera-independent neutral lighting and no saved
+    scene changes.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_TIMELINE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_CONTINUITY_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_REPEATABILITY_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_PROOF.md`
+    - `_tmp/zenith_blade_v0_30_validation/` for scripts and raw evidence only.
+  - Explicitly prohibited:
+    - No source save, derivative `.blend`, driver repair, transform correction,
+      geometry/material/core/registration/attachment/actor edit.
+    - No asset-lock, integration-ready, production-ready or visual-approval
+      claim; no animation-production output, audio, website, push or deploy.
+  - On any validation failure, stop with exact evidence. Repairs require a new
+    operator-authorized exception.
