@@ -2903,3 +2903,39 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
       material and phase-driver values remain unchanged.
   - Stop after producing and committing V0.28 plus evidence. V0.29 may open
     only after operator review of the V0.28 gates.
+
+- Ninetieth controlled exception is open:
+  - `ZENITH_BLADE_V0_28_OPERATOR_EVIDENCE_SUPPLEMENT = OPEN`.
+  - Operator ruling:
+    `V0.28 FULL OPERATOR RULING: HOLD_FOR_EVIDENCE`;
+    `V0.29 MATERIAL FINALING: NOT AUTHORIZED`.
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28.blend`.
+    Open and render in memory only; do not save or overwrite the source.
+  - Scope is limited to two missing evidence gates:
+    1. bridge-to-hand-marker close inspection from front, side and top with
+       explicit marker/bridge X/Y/Z values or neutral diagnostic overlay;
+    2. side/back P1/P2/P3 clearance inspection showing docking, the measured
+       `0.2166 m` minimum ground clearance and cloak separation.
+  - Render-only permissions:
+    - Review camera/light/world changes.
+    - Temporary cloak visibility changes and neutral diagnostic marker/axis
+      objects in memory only; no diagnostic object may be saved.
+    - Text/measurement overlay in the final evidence PNGs.
+  - Explicitly prohibited:
+    - No `.blend` save, geometry, topology, transform, dimension, material,
+      modifier, driver, phase-spacing, actor rig/mesh or source edit.
+    - No asset-lock, V0.28 acceptance, V0.29 work, production-ready claim,
+      SSOT edit, push or deploy.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_BRIDGE_MARKER_XYZ_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_SIDE_BACK_CLEARANCE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28_EVIDENCE_ADDENDUM.md`
+    - `_tmp/zenith_blade_v0_28_evidence/` for task-local scripts and raw
+      renders only.
+  - Required validation:
+    - Record source SHA-256 before and after rendering; hashes must match.
+    - Directly inspect both final PNGs and record exact dimensions.
+    - Confirm no `.blend1`, whitelist-only changes and local commit.
+  - Stop after committing the two gates and addendum. Final V0.28 acceptance
+    remains an operator ruling; V0.29 stays closed.
