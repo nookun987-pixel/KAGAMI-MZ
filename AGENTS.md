@@ -3143,3 +3143,28 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
       claim; no animation-production output, audio, website, push or deploy.
   - On any validation failure, stop with exact evidence. Repairs require a new
     operator-authorized exception.
+
+- Ninety-fifth controlled exception is open:
+  - `ZENITH_BLADE_V0_30_COLLISION_TARGET_DIAGNOSIS = OPEN`.
+  - Read-only source:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    Open and inspect in memory only; do not save any `.blend`.
+  - Purpose: classify the V0.30 collision target
+    `MASTER_MATCH_single_closed_draped_void_cloak` before any repair decision.
+  - Allowed diagnostics:
+    - Inspect object, collection, viewport/render visibility, instance/library,
+      parent, modifiers, dimensions, bounds and mesh-data sharing.
+    - Inventory all cloak/body candidates and identify duplicate/reference
+      geometry.
+    - Compare evaluated BVH overlap against active renderable cloak/body meshes
+      at frames `1`, `31` and `61`.
+    - Produce a console-only operator report.
+  - No repository output is authorized except this `AGENTS.md` exception and its
+    local governance commit.
+  - Explicitly prohibited:
+    - No source or derivative save; no geometry, transform, driver, material,
+      registration, actor, visibility or collection edit.
+    - No render, repair, asset-lock, integration-ready, production-ready, push
+      or deploy.
+  - Stop after classifying the collision target. Any repair requires a separate
+    operator-authorized exception.
