@@ -3049,3 +3049,46 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
       whitelist-only changes and no V0.29 `.blend1`.
   - Stop after producing and committing V0.29 plus evidence. Final material
     ruling remains with the operator.
+
+- Operator ruling — V0.29 accepted:
+  - `OPERATOR_RULING: PASS`.
+  - `MILESTONE: ZENITH_BLADE_MATERIAL_FINALING_V0_29`.
+  - `STATUS: ACCEPTED`.
+  - `B4C_MATERIAL_READ`, `DARK_TITANIUM_READ`,
+    `COLD_STEEL_RAIL_READ`, `GRAYSCALE_SEPARATION`,
+    `P3_CORE_DEPTH`, `P1_P2_BLADE_SIGNAL_OFF` and
+    `P3_SINGLE_CORE_ONLY`: `PASS`.
+  - `ASSET_LOCK`, `PRODUCTION_READY`, `INTEGRATION_READY`: `NO`.
+  - Ruling record:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29_OPERATOR_RULING.md`.
+
+- Ninety-third controlled exception is open:
+  - `ZENITH_BLADE_V0_30_PHASE_MECHANISM_VALIDATION = AUTHORIZED_TO_OPEN`.
+  - Baseline:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    V0.29 is operator-accepted and immutable.
+  - Locked without exception:
+    - all geometry, topology, modifiers and object dimensions;
+    - every material assignment, node/default value, core material and
+      emission value;
+    - actor registration, bridge, docking and attachment/root transforms;
+    - actor rig, mesh, pose and visibility.
+  - Permitted scope only:
+    - inspect timeline, driver targets/expressions and phase samples;
+    - test transform continuity and repeatability P1 -> P2 -> P3 -> P1;
+    - inspect shell/core/body intersections at representative and transition
+      frames;
+    - render neutral diagnostic evidence without changing the accepted asset.
+  - No correction is pre-authorized. If validation finds a failure, stop and
+    name the exact driver/data path, transform and frame range. A separate
+    bounded repair exception is required before editing.
+  - Explicitly prohibited:
+    - No geometry, material, core appearance/emission, registration,
+      attachment, bridge, docking, shell form or actor change.
+    - No asset-lock, integration-ready, production-ready or visual-approval
+      claim; no animation-production pass, audio, website, push or deploy.
+  - Execution outputs, diagnostic frame set, repeatability procedure and exact
+    validation whitelist must be declared in a dedicated V0.30 task entry
+    before Blender execution.
+  - If V0.30 fails, return to accepted V0.29 and open a repair exception limited
+    to the proven phase driver or transform fault.
