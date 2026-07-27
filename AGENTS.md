@@ -3193,3 +3193,48 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     material, transform, registration, driver, actor or SSOT edit; no push or
     deploy; no asset-lock, integration-ready or production-ready claim.
   - Stop on any corrected validation failure with exact evidence.
+
+- Operator ruling — V0.30 accepted:
+  - `OPERATOR_RULING: PASS`.
+  - `MILESTONE: ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30`.
+  - `STATUS: ACCEPTED`.
+  - Drivers, phase signal, transform continuity, three-cycle repeatability and
+    evaluated world-space collision gates: `PASS`.
+  - The initial local-space BVH false positive is superseded by corrected
+    world-space evidence in commit `4236167`.
+  - `ASSET_LOCK`, `PRODUCTION_READY`, `INTEGRATION_READY`: `NO`.
+
+- Ninety-seventh controlled exception is open:
+  - `ZENITH_BLADE_V0_31_INTEGRATION_VALIDATION = OPEN`.
+  - Read-only baseline:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    Accepted V0.28 registration, V0.29 materials and V0.30 phase mechanism are
+    immutable; open in memory only and do not save a `.blend`.
+  - Ten controlled passes:
+    1. Verify clean entry state and source SHA-256.
+    2. Inventory actor, Blade, bridge, marker and docking dependencies.
+    3. Verify attachment/registration transforms remain unchanged.
+    4. Verify material assignments and P3 emission remain unchanged.
+    5. Verify P1/P2/P3 signal state and shell spacing.
+    6. Verify world-space cloak/body clearance at the seven V0.30 frames.
+    7. Verify full actor-plus-Blade bounds and camera-safe framing.
+    8. Render front, side, back and three-quarter integration views at P1/P2/P3.
+    9. Directly inspect contact sheet and machine-readable gate summary.
+    10. Write proof, whitelist audit and local commit; no push.
+  - Allowed outputs only:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_VALIDATION_V0_31_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_VALIDATION_V0_31_GATE_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_VALIDATION_V0_31_PROOF.md`
+    - `_tmp/zenith_blade_v0_31_integration/` for task-local scripts and raw
+      evidence.
+  - PASS requires dependency completeness, unchanged protected fingerprints,
+    correct phase signal, zero evaluated world-space cloak/body intersection,
+    readable full integration framing and direct evidence inspection.
+  - Explicitly prohibited:
+    - No source or derivative save; no geometry, topology, material, emission,
+      driver, transform, registration, attachment, bridge, docking, actor, rig,
+      pose, camera-in-source or SSOT edit.
+    - No asset-lock, production-ready or operator-lock claim; no animation
+      production, audio, website, push or deploy.
+  - V0.31 may establish `INTEGRATION_VALIDATION_PASS` only. Production gate
+    remains closed until V0.31 proof passes.

@@ -1,0 +1,881 @@
+{
+  "source": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend",
+  "source_sha256_before": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5",
+  "source_sha256_after": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5",
+  "required_missing": [],
+  "dependency_count": 35,
+  "dependencies": {
+    "hand_right_sword_hold_marker": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        1.05499995,
+        -0.025,
+        2.11999989
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_glazed_sacred_porcelain"
+      ]
+    },
+    "inspection_marker_full_body_actor_v0_2_refined_candidate": {
+      "type": "EMPTY",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.0,
+        -0.64999998,
+        3.95000005
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    "inspection_marker_two_separate_helmet_void_bands": {
+      "type": "EMPTY",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.0,
+        -0.55000001,
+        3.3599999
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    "LOOKDEV_V0_1_left_shoulder_body_transition_clean_bridge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        -0.3696,
+        -0.50999999,
+        2.27999997
+      ],
+      "rotation": [
+        0.0,
+        -0.16,
+        0.0
+      ],
+      "scale": [
+        0.17,
+        0.045,
+        0.06
+      ],
+      "materials": [
+        "HERO_FINISH_deep_matte_graphite"
+      ]
+    },
+    "LOOKDEV_V0_1_right_shoulder_body_transition_clean_bridge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.3696,
+        -0.50999999,
+        2.27999997
+      ],
+      "rotation": [
+        0.0,
+        0.16,
+        0.0
+      ],
+      "scale": [
+        0.17,
+        0.045,
+        0.06
+      ],
+      "materials": [
+        "HERO_FINISH_deep_matte_graphite"
+      ]
+    },
+    "LOOKDEV_V0_2_left_integrated_shoulder_to_arm_sumi_bridge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        -0.38999999,
+        -0.52499998,
+        2.16000009
+      ],
+      "rotation": [
+        0.0,
+        -0.18000001,
+        0.0
+      ],
+      "scale": [
+        0.19,
+        0.045,
+        0.07
+      ],
+      "materials": [
+        "HERO_FINISH_deep_matte_graphite"
+      ]
+    },
+    "LOOKDEV_V0_2_right_integrated_shoulder_to_arm_sumi_bridge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.38999999,
+        -0.52499998,
+        2.16000009
+      ],
+      "rotation": [
+        0.0,
+        0.18000001,
+        0.0
+      ],
+      "scale": [
+        0.19,
+        0.045,
+        0.07
+      ],
+      "materials": [
+        "HERO_FINISH_deep_matte_graphite"
+      ]
+    },
+    "PUBLIC_BLOCK_blade_lower_dark_counterweight": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        1.08000004,
+        -0.02,
+        0.34999999
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "PUBLIC_BLOCK_right_hand_blade_grip": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.77999997,
+        -0.05,
+        2.04999995
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "PUBLIC_BLOCK_V02_right_forearm_to_blade": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.80000001,
+        -0.08,
+        2.03999996
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "PUBLIC_BLOCK_V02_right_hand_blade_contact": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.93000001,
+        -0.13,
+        1.82000005
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "PUBLIC_BLOCK_V03_left_shoulder_soft_angular_bridge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        -0.46000001,
+        -0.025,
+        2.96000004
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        -0.13962634
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_glazed_sacred_porcelain"
+      ]
+    },
+    "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.82999998,
+        -0.08,
+        2.04999995
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.08726646
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "PUBLIC_BLOCK_V03_right_hand_blade_contact_small": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.94,
+        -0.13,
+        1.84000003
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.06981317
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "PUBLIC_BLOCK_V03_right_shoulder_soft_angular_bridge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.46000001,
+        -0.025,
+        2.96000004
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.13962634
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_glazed_sacred_porcelain"
+      ]
+    },
+    "PUBLIC_BLOCK_V03_zenith_blade_crisp_front_plane": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        1.08500004,
+        -0.155,
+        1.72000003
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "V0_8_COLD_METAL"
+      ]
+    },
+    "PUBLIC_BLOCK_zenith_blade_dark_edge": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        0.88999999,
+        -0.03,
+        1.75
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "V0_8_COLD_METAL"
+      ]
+    },
+    "PUBLIC_BLOCK_zenith_blade_vertical_slab": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        1.08000004,
+        -0.02,
+        1.75
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "V0_8_COLD_METAL"
+      ]
+    },
+    "PUBLIC_BLOCK_zenith_blade_violet_signal": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        1.13999999,
+        -0.12,
+        1.79999995
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "HERO_FINISH_cold_zenith_metal"
+      ]
+    },
+    "STAGE_ZBLUE_DEPTH_LEFT": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        -6.5,
+        10.0,
+        4.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "STAGE_ZBLUE_DEPTH"
+      ]
+    },
+    "STAGE_ZBLUE_DEPTH_RIGHT": {
+      "type": "MESH",
+      "parent": null,
+      "hide_render": true,
+      "location": [
+        6.80000019,
+        12.0,
+        5.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "STAGE_ZBLUE_DEPTH"
+      ]
+    },
+    "ZB13_L_LOW_SHELL": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.33000004,
+        -0.53600001,
+        1.37
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_B4C_PORCELAIN"
+      ]
+    },
+    "ZB13_L_UP_SHELL": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.33000004,
+        -0.537,
+        1.88
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_B4C_PORCELAIN"
+      ]
+    },
+    "ZB13_P3_SINGLE_VIOLET_CORE": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": true,
+      "location": [
+        -1.26999998,
+        -0.59000003,
+        1.62
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB15_P3_SINGLE_CORE_VIOLET"
+      ]
+    },
+    "ZB13_PHASE_CONTROL": {
+      "type": "EMPTY",
+      "parent": null,
+      "hide_render": false,
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    "ZB13_R_LOW_SHELL": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.21000004,
+        -0.53400004,
+        1.37
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_B4C_PORCELAIN"
+      ]
+    },
+    "ZB13_R_UP_SHELL": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.21000004,
+        -0.53300005,
+        1.88
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_B4C_PORCELAIN"
+      ]
+    },
+    "ZB15_CENTRAL_LOAD_SPINE": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.26999998,
+        -0.54449999,
+        1.62
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_DARK_TITANIUM"
+      ]
+    },
+    "ZB15_DOCKING_LOAD_TONGUE": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.20000005,
+        -0.45950001,
+        1.14499998
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_DARK_TITANIUM"
+      ]
+    },
+    "ZB15_GUARD_LOAD_BRIDGE": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.32599998,
+        -0.45950001,
+        1.87
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_DARK_TITANIUM"
+      ]
+    },
+    "ZB15_LOWER_JOINT_COLLAR": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.26999998,
+        -0.54800004,
+        1.14499998
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_DARK_TITANIUM"
+      ]
+    },
+    "ZB15_RECESSED_RAIL_L": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.32500005,
+        -0.54250002,
+        1.62
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_COLD_STEEL_RAIL"
+      ]
+    },
+    "ZB15_RECESSED_RAIL_R": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.21500003,
+        -0.54250002,
+        1.62
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_COLD_STEEL_RAIL"
+      ]
+    },
+    "ZB15_UPPER_JOINT_COLLAR": {
+      "type": "MESH",
+      "parent": "ZB22_STANDALONE_ROOT",
+      "hide_render": false,
+      "location": [
+        -1.26999998,
+        -0.54800004,
+        2.09500003
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "ZB24_DARK_TITANIUM"
+      ]
+    },
+    "ZB22_STANDALONE_ROOT": {
+      "type": "EMPTY",
+      "parent": null,
+      "hide_render": false,
+      "location": [
+        4.54403782,
+        1.10377502,
+        -2.46103525
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        2.45000005,
+        2.45000005,
+        2.45000005
+      ],
+      "materials": []
+    }
+  },
+  "phase_signal": {
+    "1": {
+      "phase": 0,
+      "core_on": false
+    },
+    "25": {
+      "phase": 0,
+      "core_on": false
+    },
+    "28": {
+      "phase": 0,
+      "core_on": false
+    },
+    "31": {
+      "phase": 1,
+      "core_on": false
+    },
+    "55": {
+      "phase": 1,
+      "core_on": false
+    },
+    "58": {
+      "phase": 1,
+      "core_on": false
+    },
+    "61": {
+      "phase": 2,
+      "core_on": true
+    }
+  },
+  "phase_signal_pass": true,
+  "world_space_intersections": {
+    "1": [],
+    "25": [],
+    "28": [],
+    "31": [],
+    "55": [],
+    "58": [],
+    "61": []
+  },
+  "collision_pass": true,
+  "render_bounds": {
+    "min": [
+      -0.8579705953598022,
+      -0.4710831046104431,
+      0.12557029724121094
+    ],
+    "max": [
+      1.9886877536773682,
+      0.5069169998168945,
+      4.423619747161865
+    ],
+    "center": [
+      0.565358579158783,
+      0.017916947603225708,
+      2.274595022201538
+    ],
+    "span": 4.298049449920654
+  },
+  "rendered_views": [
+    "P1_front.png",
+    "P1_side.png",
+    "P1_back.png",
+    "P1_three_quarter.png",
+    "P2_front.png",
+    "P2_side.png",
+    "P2_back.png",
+    "P2_three_quarter.png",
+    "P3_front.png",
+    "P3_side.png",
+    "P3_back.png",
+    "P3_three_quarter.png"
+  ],
+  "source_unchanged": true,
+  "blend_saved": false
+}
