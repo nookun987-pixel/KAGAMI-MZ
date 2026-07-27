@@ -2979,3 +2979,73 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     whitelist must be declared in a dedicated V0.29 task entry before Blender
     execution begins.
   - If V0.29 fails, return to accepted V0.28 and correct material only.
+
+- Ninety-second controlled exception is open:
+  - `ZENITH_BLADE_V0_29_MATERIAL_FINALING_EXECUTION = OPEN`.
+  - Source only:
+    `production/character/MIKAGE_ZENITH_BLADE_INTERFACE_REGISTRATION_V0_28.blend`.
+    V0.28 is operator-accepted and immutable; save a new derivative.
+  - Ten controlled passes:
+    1. Verify clean repo, source hash, material assignments and protected
+       geometry/registration/phase fingerprints.
+    2. Create a separate V0.29 derivative; never overwrite V0.28.
+    3. Refine existing B4C material to matte mineral ceramic and prevent
+       blown-white loss under neutral exposure.
+    4. Refine existing dark-Titanium material to restrained load-bearing metal
+       with readable but non-decorative edge response.
+    5. Refine existing cold-steel rail material to cool neutral specular
+       separation from dark Titanium.
+    6. Refine only existing P3-core material values for recessed/depth read;
+       preserve core geometry, location, signal area and single-core rule.
+    7. Establish neutral review lighting with no dramatic rim, bloom-dependent
+       material read or colored environmental light.
+    8. Render material gate, P1/P2/P3 phase gate and clean neutral review crop.
+    9. Directly inspect all PNGs; correct material-only failures; reopen the
+       derivative and compare protected fingerprints with V0.28.
+    10. Write proof, remove V0.29 `.blend1`, whitelist audit and local commit;
+        no push.
+  - Permitted changes:
+    - Existing Blade material node/default values for B4C, dark Titanium, cold
+      steel and the one P3 violet core only.
+    - Review-only camera, neutral white/grey lights, world strength, exposure
+      and render settings.
+  - Protected invariants:
+    - Every object, mesh, vertex/polygon count, dimension, transform, modifier,
+      parent, registration/attachment transform, shell spacing, phase driver,
+      actor object and visibility state from accepted V0.28.
+    - P1/P2 core off; P3 exactly one electric-violet core.
+  - Explicitly prohibited:
+    - No geometry, topology, transform, modifier, driver, phase timing/spacing,
+      registration, bridge, docking, actor, rig, pose or visibility edit.
+    - No new material slot, texture object, component, ornament, red/crimson,
+      warm/gold weapon color, P2 violet, ambient violet, wash, halo, secondary
+      core or material read dependent on dramatic lighting.
+    - No asset-lock, integration-ready, production-ready or visual-approval
+      claim; no animation, audio, website, push or deploy.
+  - Render permission: local Blender/Eevee stills only.
+  - Allowed outputs:
+    - `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29_MATERIAL_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29_PHASE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29_NEUTRAL_REVIEW_CROP.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29_PROOF.md`
+    - `_tmp/zenith_blade_v0_29_material/` for task-local scripts, raw renders
+      and QA evidence only.
+  - Evidence specification:
+    - Material gate exact `3600 x 1800`, `3 x 2`: B4C full/front, B4C close,
+      dark-Titanium load path, cold-steel rails, P3-core depth and grayscale
+      separation.
+    - Phase gate exact `3000 x 1200`: P1/P2/P3 at identical camera/scale under
+      the same neutral lighting.
+    - Neutral review crop exact `1800 x 2400`: complete P3 three-quarter, no
+      overlay, no critical crop.
+  - PASS requires:
+    - B4C retains highlight detail and matte/mineral read.
+    - Dark Titanium and cold steel separate by value/roughness in color and
+      grayscale.
+    - P3 core appears recessed without extra signal area or glow dependence.
+    - Protected structural/transform/driver fingerprint difference is zero.
+    - Source hash unchanged, exact PNG dimensions, direct inspection,
+      whitelist-only changes and no V0.29 `.blend1`.
+  - Stop after producing and committing V0.29 plus evidence. Final material
+    ruling remains with the operator.
