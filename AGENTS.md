@@ -3168,3 +3168,28 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
       or deploy.
   - Stop after classifying the collision target. Any repair requires a separate
     operator-authorized exception.
+
+- Ninety-sixth controlled exception is open:
+  - `ZENITH_BLADE_V0_30_PHASE_MECHANISM_VALIDATION_RERUN = OPEN`.
+  - Read-only source:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    Open and validate in memory only; do not save any `.blend`.
+  - Rerun the ninety-fourth exception's ten diagnostic passes, replacing only
+    the invalid local-space collision calculation with evaluated world-space
+    BVH comparison.
+  - Collision validation must transform evaluated mesh vertices by each
+    object's `matrix_world` before BVH construction and test frames
+    `1`, `25`, `28`, `31`, `55`, `58`, `61`.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_TIMELINE_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_CONTINUITY_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_REPEATABILITY_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_VALIDATION_V0_30_PROOF.md`
+    - `_tmp/zenith_blade_v0_30_validation/` for task scripts/raw evidence only.
+  - PASS requires all original V0.30 gates to pass, source hash unchanged,
+    direct image inspection, no `.blend`/`.blend1` output, exact whitelist and a
+    local commit.
+  - Explicitly prohibited: source/derivative save, asset repair, geometry,
+    material, transform, registration, driver, actor or SSOT edit; no push or
+    deploy; no asset-lock, integration-ready or production-ready claim.
+  - Stop on any corrected validation failure with exact evidence.
