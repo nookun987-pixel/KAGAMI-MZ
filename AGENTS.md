@@ -3274,3 +3274,55 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - V0.32 may establish `PRODUCTION_READINESS_VALIDATION_PASS` only. Final
     production-ready/asset-lock status remains reserved for the operator-lock
     gate.
+
+- Ninety-ninth controlled exception is open:
+  - `ZENITH_BLADE_V0_33_OPERATOR_LOCK_REVIEW = OPEN`.
+  - Operator authorization: explicit continuation instruction after V0.32
+    production-readiness PASS.
+  - Immutable asset candidate:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    Do not open for editing and do not save or rename it.
+  - Ten controlled passes:
+    1. Verify clean repo and current branch/HEAD.
+    2. Verify immutable candidate SHA-256.
+    3. Verify V0.28 interface-registration acceptance.
+    4. Verify V0.29 material-finaling acceptance.
+    5. Verify corrected V0.30 phase/mechanism acceptance.
+    6. Verify V0.31 integration-validation PASS.
+    7. Verify V0.32 production-readiness-validation PASS.
+    8. Audit phase/collision/material/canon status for contradictions.
+    9. Produce immutable hash manifest and final gate sheet.
+    10. Directly inspect evidence, write operator ruling and local commit.
+  - Allowed outputs only:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_LOCK_V0_33_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_LOCK_V0_33_MANIFEST.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_LOCK_V0_33_RULING.md`
+    - `_tmp/zenith_blade_v0_33_lock/` for task-local generation only.
+  - PASS may stamp:
+    - `V0.29_ASSET_BASELINE: IMMUTABLE`;
+    - `ASSET_LOCK: YES`;
+    - `INTEGRATION_READY: YES`;
+    - `PRODUCTION_READY: YES`;
+    - only for the Zenith Blade V0.29 lineage covered by V0.28–V0.32 evidence.
+  - Lock does not grant public deployment, website release, animation shot
+    approval, audio work, push or deploy.
+  - Explicitly prohibited: any `.blend`, SSOT, geometry, material, driver,
+    transform, registration, actor, rig or evidence-history edit; no push or
+    deploy.
+
+- Operator ruling — V0.33 accepted and locked:
+  - `OPERATOR_RULING: PASS`.
+  - `MILESTONE: ZENITH_BLADE_OPERATOR_LOCK_V0_33`.
+  - Immutable production baseline:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+  - Baseline SHA-256:
+    `317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5`.
+  - `ASSET_LOCK: YES`.
+  - `INTEGRATION_READY: YES`.
+  - `PRODUCTION_READY: YES`.
+  - Lock scope is the Zenith Blade V0.29 lineage validated by V0.28–V0.32
+    evidence only.
+  - Any future change requires a new derivative version and a new controlled
+    exception. The locked V0.29 baseline must never be overwritten.
+  - Push, deploy, public release, website use and animation-shot authorization
+    remain `NO`.
