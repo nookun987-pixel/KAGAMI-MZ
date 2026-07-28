@@ -4254,3 +4254,60 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   if static ownership is fully classified, close V0.87;
   if mitten overlap remains above zero, keep INTEGRATION_READY = NO and authorize only a separate V0.88 mitten-interface geometry audit.
 - No asset-lock, production-ready or integration-ready claim unless all physical penetration is independently zero.
+
+- ZENITH_BLADE_V0_88_MITTEN_INTERFACE_GEOMETRY_AUDIT = OPEN
+- Source:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend
+- Required inputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87_PROOF.md
+- Allowed outputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_CONTACT_SHEET.png
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_PROOF.md
+- Purpose:
+  perform a read-only geometry audit of the nine physical Blade-to-mitten collision records;
+  identify the exact penetration region and the minimum bounded repair scope;
+  do not perform geometry correction in V0.88.
+- Physical target:
+  A2_right_porcelain_mitten_hand_attached_read.
+- Blade collision participants:
+  ZB45_SHELL_UL;
+  ZB45_SHELL_UR;
+  ZB46_RECESSED_RAIL_R.
+- Required audit:
+  reproduce P1/P2/P3;
+  confirm 18 + 18 + 36 triangle overlaps per phase;
+  identify intersecting triangle indices on both Blade and mitten;
+  record world-space overlap bounds and penetration region;
+  classify each record as mitten-shell, wrist-interface, cuff, shell-envelope or rail-envelope;
+  produce close-up front, side and three-quarter overlays;
+  include isolated Blade, isolated mitten and combined collision views;
+  inspect the rendered contact sheet directly.
+- Locked:
+  collision ownership metadata from V0.87;
+  docking-primary architecture;
+  secondary-grip architecture;
+  Blade geometry, material, phase system and transforms;
+  actor geometry, rig hierarchy and pose controls;
+  marker, IK target, pole and docking transforms.
+- Forbidden:
+  no geometry edit;
+  no modifier edit;
+  no material or phase edit;
+  no transform correction;
+  no source overwrite;
+  no derivative blend required;
+  no integration-ready, asset-lock or production-ready claim;
+  no push or deploy.
+- Required validation:
+  source V0.87 SHA-256 before and after unchanged;
+  exact nine records and 216 triangle overlaps reproduced;
+  all nine records classified with machine and visual evidence;
+  contact sheet opened and inspected;
+  no .blend1;
+  only whitelisted outputs changed;
+  repo clean after commit.
+- Exit:
+  if the minimum repair scope is proven, close V0.88 and authorize only a separate V0.89 bounded mitten-interface correction;
+  if evidence is inconclusive, keep HOLD and do not authorize geometry repair.
