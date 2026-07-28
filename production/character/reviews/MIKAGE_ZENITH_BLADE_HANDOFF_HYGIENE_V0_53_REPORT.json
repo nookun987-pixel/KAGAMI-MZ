@@ -1,0 +1,29 @@
+{
+  "milestone": "ZENITH_BLADE_V0_53_HANDOFF_HYGIENE_REPAIR",
+  "result": "FAIL_WORLD_SHAPE_EQUIVALENCE",
+  "source": "production/character/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend",
+  "source_sha256_before": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "source_sha256_after": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "source_unchanged": true,
+  "attempted_derivative_sha256": "40E703AB9E253923A91CC9E6D34DA6AB82069E482DB5881410046361382312DE",
+  "attempted_derivative_retained": false,
+  "frames_compared": [1, 13, 19, 25, 31, 55, 61],
+  "objects_compared": [
+    "ZB45_SHELL_UL",
+    "ZB45_SHELL_UR",
+    "ZB45_SHELL_LL",
+    "ZB45_SHELL_LR"
+  ],
+  "world_shape_equivalence_pass": false,
+  "changed_evaluated_objects": [
+    "ZB45_SHELL_UL",
+    "ZB45_SHELL_UR",
+    "ZB45_SHELL_LL",
+    "ZB45_SHELL_LR"
+  ],
+  "cause": "Applying object Y scale changes evaluated bevel geometry because the bevel modifier is evaluated before object scale.",
+  "cleanup_committed": false,
+  "v048_remains_candidate": true,
+  "asset_lock": false,
+  "production_ready": false
+}

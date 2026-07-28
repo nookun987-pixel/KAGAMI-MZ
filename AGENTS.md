@@ -3659,3 +3659,24 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_HYGIENE_V0_52_PROOF.md`
     - `_tmp/zenith_blade_v0_52_hygiene/` for scripts.
   - No Blender save, cleanup, rename, delete, promotion, push or deploy.
+
+- One-hundred-seventeenth controlled exception is open:
+  - `ZENITH_BLADE_V0_53_HANDOFF_HYGIENE_REPAIR = OPEN`.
+  - Source:
+    `production/character/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend`.
+    Do not overwrite it.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_HANDOFF_HYGIENE_V0_53.blend`.
+  - Apply scale only on the four V0.45 shell objects while preserving evaluated
+    world geometry and animation.
+  - Remove only the six retired hidden objects enumerated by V0.52.
+  - Relink retained objects safely, then remove only the three legacy
+    collections enumerated by V0.52.
+  - Run world-shape equivalence, full phase/attachment validation and V0.52
+    hygiene audit again.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HANDOFF_HYGIENE_V0_53_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HANDOFF_HYGIENE_V0_53_PROOF.md`
+    - `_tmp/zenith_blade_v0_53_hygiene/` for scripts.
+  - No visual redesign, material/animation change, asset promotion, push or
+    deploy.
