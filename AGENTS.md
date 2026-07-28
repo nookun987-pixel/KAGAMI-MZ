@@ -3560,3 +3560,28 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Render permission: neutral Eevee structural review.
   - No ornament, silhouette redesign, core/material/color change, actor edit,
     asset-lock, production-ready, push, deploy or public claim.
+
+- Operator ruling — V0.46:
+  - `ZENITH_BLADE_MECHANICAL_DEPTH_V0_46: PASS`.
+  - Status: `ACCEPTED_MECHANICAL_CANDIDATE`.
+  - Front contour, four-plate read, 350 kg depth, paired rails, seam joints,
+    hub/base hierarchy, P1 closure, P2 signal-off and P3 single core: `PASS`.
+  - Geometry and material editing are locked.
+  - Asset promotion, asset lock, integration-ready and production-ready remain
+    `NO`.
+
+- One-hundred-eleventh controlled exception is open:
+  - `ZENITH_BLADE_PHASE_ATTACHMENT_VALIDATION_V0_47 = OPEN`.
+  - Read-only source:
+    `production/character/MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46.blend`.
+  - Validate frames 1–61 for phase continuity, shell/body/cloak intersection,
+    deterministic P1→P2→P3→P1 repeatability, hand-marker/handle registration,
+    docking/clearance, attachment transforms, reopen and dependency health.
+  - Validation failure must identify the exact frame, object and failure type.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_46_OPERATOR_RULING.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_ATTACHMENT_V0_47_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_ATTACHMENT_V0_47_PROOF.md`
+    - `_tmp/zenith_blade_v0_47_validation/` for audit scripts.
+  - No save, geometry/material/driver/transform repair, redesign, asset
+    promotion, asset-lock, production-ready, push or deploy.

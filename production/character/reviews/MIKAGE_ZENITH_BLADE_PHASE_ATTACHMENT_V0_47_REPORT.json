@@ -1,0 +1,646 @@
+{
+  "milestone": "ZENITH_BLADE_PHASE_ATTACHMENT_VALIDATION_V0_47",
+  "source_sha256_before": "97630E228EEE6CCEDBE151470A5F8EBAA992D169BBBD779FE84DCCE2FB317DE6",
+  "source_sha256_after": "97630E228EEE6CCEDBE151470A5F8EBAA992D169BBBD779FE84DCCE2FB317DE6",
+  "reopen_pass": true,
+  "frames_tested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "signal_pass": true,
+  "max_per_frame_shell_delta": {
+    "value": 0.028888939999999863,
+    "object": "ZB45_SHELL_UL",
+    "from": 27,
+    "to": 28
+  },
+  "continuity_pass": true,
+  "repeatability_cycles": [
+    [
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": true,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": true,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": true,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ]
+  ],
+  "repeatability_pass": true,
+  "collision_hits": {
+    "28": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 14
+      }
+    ],
+    "29": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 18
+      }
+    ],
+    "30": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 18
+      }
+    ],
+    "31": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "32": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "33": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "34": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "35": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "36": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "37": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "38": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "39": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "40": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "41": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "42": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "43": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "44": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "45": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "46": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "47": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "48": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "49": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "50": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "51": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "52": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "53": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "54": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "55": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "56": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "57": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 20
+      }
+    ],
+    "58": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 22
+      }
+    ],
+    "59": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 24
+      }
+    ],
+    "60": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 24
+      }
+    ],
+    "61": [
+      {
+        "blade": "ZB45_SHELL_LL",
+        "target": "MASTER_MATCH_single_closed_draped_void_cloak",
+        "pairs": 24
+      }
+    ]
+  },
+  "collision_pass": false,
+  "marker_object": "hand_right_sword_hold_marker",
+  "marker_envelope_overlap_pass": false,
+  "handle_candidates": [],
+  "handle_geometry_present": false,
+  "handle_gauntlet_registration_pass": false,
+  "docking_objects": [
+    "ZB46_FLUX_BASE",
+    "ZB42_LOWER_DOCKING_LOAD_FOOT"
+  ],
+  "docking_envelope_overlap_pass": true,
+  "attachment_transform_pass": false,
+  "missing_libraries": [],
+  "missing_images": [],
+  "dependency_pass": true,
+  "source_unchanged": true,
+  "blend_saved": false,
+  "phase_validation_pass": false,
+  "attachment_validation_pass": false,
+  "validation_pass": false
+}
