@@ -3936,3 +3936,23 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_DOCKING_GRIP_COLLISION_V0_66_REPORT.json`
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_DOCKING_GRIP_COLLISION_V0_66_PROOF.md`
     - `_tmp/zenith_blade_v0_61_pose/` reused as ignored audit tooling.
+
+- One-hundred-thirty-first controlled exception is open:
+  - `ZENITH_BLADE_V0_67_SECONDARY_GRIP_IK_CANDIDATE = OPEN`.
+  - Source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DOCKING_LOAD_PATH_V0_65.blend`.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_SECONDARY_GRIP_IK_V0_67.blend`.
+  - Preserve docking anchor as the sole Blade-root parent.
+  - Add one non-rendering grip IK target as a child of the registered handle,
+    initialized at the neutral `forearm.R` tail.
+  - Add one IK constraint to `forearm.R`, chain length 2, targeting that grip
+    target. The solver moves the arm toward the handle; it must never move or
+    constrain the Blade.
+  - No mesh, material, modifier, rig-bone, docking, marker or phase edit.
+  - Reopen and verify neutral marker/handle delta and docking parent.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SECONDARY_GRIP_IK_V0_67_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SECONDARY_GRIP_IK_V0_67_VALIDATION_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_SECONDARY_GRIP_IK_V0_67_PROOF.md`
+    - `_tmp/zenith_blade_v0_67_ik/`.

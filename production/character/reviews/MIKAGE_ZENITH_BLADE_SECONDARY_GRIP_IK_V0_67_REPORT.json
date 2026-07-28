@@ -1,0 +1,20 @@
+{
+  "milestone": "ZENITH_BLADE_V0_67_SECONDARY_GRIP_IK_CANDIDATE",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_preserved": true,
+  "blade_root_parent": "ZB65_ACTOR_DOCKING_LOAD_ANCHOR",
+  "docking_anchor": "ZB65_ACTOR_DOCKING_LOAD_ANCHOR",
+  "ik_bone": "forearm.R",
+  "ik_target": "ZB67_SECONDARY_GRIP_IK_TARGET",
+  "ik_chain_count": 2,
+  "neutral_delta_before_m": 2.421438694000244e-08,
+  "neutral_delta_after_m": 2.78233301096294e-07,
+  "build_pass": true,
+  "output_sha256": "81C70D77D33916BCCC01400ECAC4049E378DB29B822B9817B45B7A4DC168DA4D",
+  "reopen_docking_pass": true,
+  "reopen_ik_pass": true,
+  "source_sha256_final": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "output_sha256_final": "81C70D77D33916BCCC01400ECAC4049E378DB29B822B9817B45B7A4DC168DA4D",
+  "verify_pass": true
+}

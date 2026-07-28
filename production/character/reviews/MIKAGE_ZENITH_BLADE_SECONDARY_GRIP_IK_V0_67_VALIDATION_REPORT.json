@@ -1,0 +1,4145 @@
+{
+  "milestone": "ZENITH_BLADE_V0_67_SECONDARY_GRIP_IK_VALIDATION",
+  "source_sha256_before": "81C70D77D33916BCCC01400ECAC4049E378DB29B822B9817B45B7A4DC168DA4D",
+  "source_sha256_after": "81C70D77D33916BCCC01400ECAC4049E378DB29B822B9817B45B7A4DC168DA4D",
+  "poses": {
+    "neutral": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.5540731,
+          -0.01967961,
+          -0.00904775
+        ],
+        "hand_center_distance": 0.59232696,
+        "hand_distance_drift_from_neutral": -0.22364313
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      }
+    },
+    "hand_hold": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          -1.2e-07,
+          1.4e-07,
+          0.0
+        ],
+        "hand_center_distance": 0.81597012,
+        "hand_distance_drift_from_neutral": 3e-08
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.55407315,
+          -0.01967985,
+          -0.00904751
+        ],
+        "hand_center_distance": 0.59232727,
+        "hand_distance_drift_from_neutral": -0.22364282
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          -1.2e-07,
+          1.4e-07,
+          0.0
+        ],
+        "hand_center_distance": 0.81597012,
+        "hand_distance_drift_from_neutral": 3e-08
+      }
+    },
+    "torso_left": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 10
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 8
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 18
+          }
+        ],
+        "marker_delta": [
+          -0.1076833,
+          0.06331279,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.69643649,
+        "hand_distance_drift_from_neutral": -0.1195336
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 33
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 45
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 23
+          }
+        ],
+        "marker_delta": [
+          -0.65035433,
+          0.02524548,
+          -0.01265264
+        ],
+        "hand_center_distance": 0.55829939,
+        "hand_distance_drift_from_neutral": -0.25767069
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 18
+          }
+        ],
+        "marker_delta": [
+          -0.1076833,
+          0.06331279,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.69643649,
+        "hand_distance_drift_from_neutral": -0.1195336
+      }
+    },
+    "torso_right": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          2.742e-05,
+          -3.288e-05,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81601073,
+        "hand_distance_drift_from_neutral": 4.064e-05
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.55405629,
+          -0.01969571,
+          -0.00904536
+        ],
+        "hand_center_distance": 0.59234215,
+        "hand_distance_drift_from_neutral": -0.22362794
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          2.742e-05,
+          -3.288e-05,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81601073,
+        "hand_distance_drift_from_neutral": 4.064e-05
+      }
+    },
+    "wide_stance": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.5540731,
+          -0.01967961,
+          -0.00904775
+        ],
+        "hand_center_distance": 0.59232696,
+        "hand_distance_drift_from_neutral": -0.22364313
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      }
+    },
+    "crouch": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.5540731,
+          -0.01967961,
+          -0.00904775
+        ],
+        "hand_center_distance": 0.59232696,
+        "hand_distance_drift_from_neutral": -0.22364313
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      }
+    },
+    "shoulder_elbow_limit": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          -0.00306916,
+          0.00234928,
+          0.00019026
+        ],
+        "hand_center_distance": 0.81227096,
+        "hand_distance_drift_from_neutral": -0.00369913
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.55407298,
+          -0.0196789,
+          -0.00904822
+        ],
+        "hand_center_distance": 0.59232599,
+        "hand_distance_drift_from_neutral": -0.2236441
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          -0.00306916,
+          0.00234928,
+          0.00019026
+        ],
+        "hand_center_distance": 0.81227096,
+        "hand_distance_drift_from_neutral": -0.00369913
+      }
+    },
+    "cloak_left": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 21
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.5540731,
+          -0.01967961,
+          -0.00904775
+        ],
+        "hand_center_distance": 0.59232696,
+        "hand_distance_drift_from_neutral": -0.22364313
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      }
+    },
+    "cloak_right": {
+      "P1": {
+        "frame": 1,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      },
+      "P2": {
+        "frame": 31,
+        "collision_hits": [
+          {
+            "blade": "ZB42_CENTRAL_LOAD_SPINE",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 7
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 13
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 5
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 9
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 30
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 19
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_L",
+            "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+            "pairs": 22
+          }
+        ],
+        "marker_delta": [
+          -0.5540731,
+          -0.01967961,
+          -0.00904775
+        ],
+        "hand_center_distance": 0.59232696,
+        "hand_distance_drift_from_neutral": -0.22364313
+      },
+      "P3": {
+        "frame": 61,
+        "collision_hits": [
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "hand_right_sword_hold_marker",
+            "pairs": 4
+          },
+          {
+            "blade": "ZB45_SHELL_UL",
+            "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+            "pairs": 24
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 16
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 14
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_porcelain_mitten_hand_attached_read",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB45_SHELL_UR",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_DRIVE_HUB",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 12
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 23
+          },
+          {
+            "blade": "ZB46_HUB_SHOULDER_R",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 20
+          },
+          {
+            "blade": "ZB46_HUB_SPINE_KEY",
+            "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+            "pairs": 18
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_continuous_black_upper_arm_attached_plane",
+            "pairs": 22
+          },
+          {
+            "blade": "ZB46_RECESSED_RAIL_R",
+            "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+            "pairs": 16
+          }
+        ],
+        "marker_delta": [
+          0.0,
+          1.4e-07,
+          -2.4e-07
+        ],
+        "hand_center_distance": 0.81597009,
+        "hand_distance_drift_from_neutral": 0.0
+      }
+    }
+  },
+  "collision_hits": [
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "neutral",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 19
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "neutral",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "neutral",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 19
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "hand_hold",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 10
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 8
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 21
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 14
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 33
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 45
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 20
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "torso_left",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 4
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "torso_right",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 19
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "wide_stance",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "crouch",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 19
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "crouch",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "crouch",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 19
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "shoulder_elbow_limit",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 19
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 21
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_left",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 12
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P1",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB42_CENTRAL_LOAD_SPINE",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 7
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 13
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 24
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB45_SHELL_UR",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 5
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 9
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 30
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 19
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_L",
+      "target": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "PUBLIC_BLOCK_V03_right_hand_blade_contact_small",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P2",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "PUBLIC_BLOCK_V03_right_forearm_porcelain_to_blade",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "pairs": 4
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "pairs": 24
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 16
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 14
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 23
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 12
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 23
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 20
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "pairs": 18
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "pairs": 22
+    },
+    {
+      "pose": "cloak_right",
+      "phase": "P3",
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "pairs": 16
+    }
+  ],
+  "collision_pass": false,
+  "max_marker_delta": 0.65035433,
+  "marker_registration_pass": false,
+  "baseline_hand_center_distance": 0.8159700875840549,
+  "max_actual_hand_distance_drift": 0.25767069,
+  "actual_hand_follow_pass": false,
+  "cloak_object": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+  "cloak_rig_bound": true,
+  "cloak_spread_control_available": true,
+  "cloak_spread_coverage_pass": true,
+  "pose_restore_pass": true,
+  "source_unchanged": true,
+  "blend_saved": false,
+  "validation_pass": false
+}
