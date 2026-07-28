@@ -3585,3 +3585,26 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_47_validation/` for audit scripts.
   - No save, geometry/material/driver/transform repair, redesign, asset
     promotion, asset-lock, production-ready, push or deploy.
+
+- One-hundred-twelfth controlled exception is open:
+  - `ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48 = OPEN`.
+  - Source:
+    `production/character/MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46.blend`.
+    Do not overwrite it.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend`.
+  - Repair only:
+    - the transform/driver of `ZB45_SHELL_LL` required to clear
+      `MASTER_MATCH_single_closed_draped_void_cloak` at frames 28–61;
+    - a minimal functional handle and bridge registered to
+      `hand_right_sword_hold_marker`.
+  - Preserve accepted V0.46 silhouette, depth, hub, base, rails, joints,
+    materials, core appearance and passing phase signal behavior.
+  - Re-run the complete V0.47 validation against the derivative.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48_PROOF.md`
+    - `_tmp/zenith_blade_v0_48_repair/` for scripts/raw renders.
+  - No shell/hub/base/core redesign, actor/cloak deformation, material change,
+    asset-lock, production-ready, push or deploy.

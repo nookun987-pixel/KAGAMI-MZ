@@ -1,0 +1,408 @@
+{
+  "milestone": "ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48",
+  "source_sha256_before": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "source_sha256_after": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "reopen_pass": true,
+  "frames_tested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "signal_pass": true,
+  "max_per_frame_shell_delta": {
+    "value": 0.028888939999999863,
+    "object": "ZB45_SHELL_UL",
+    "axis": "X",
+    "from": 27,
+    "to": 28
+  },
+  "continuity_pass": true,
+  "repeatability_cycles": [
+    [
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": true,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": true,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": true,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "core_on": false,
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ]
+  ],
+  "repeatability_pass": true,
+  "collision_hits": {},
+  "collision_pass": true,
+  "handle_object": "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+  "bridge_object": "ZB48_GAUNTLET_LOAD_BRIDGE",
+  "marker_object": "hand_right_sword_hold_marker",
+  "handle_center_delta_xyz": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "marker_handle_overlap_pass": true,
+  "handle_bridge_present": true,
+  "handle_gauntlet_registration_pass": true,
+  "docking_envelope_overlap_pass": true,
+  "attachment_transform_pass": true,
+  "missing_libraries": [],
+  "missing_images": [],
+  "dependency_pass": true,
+  "source_unchanged": true,
+  "blend_saved_during_validation": false,
+  "validation_pass": true
+}
