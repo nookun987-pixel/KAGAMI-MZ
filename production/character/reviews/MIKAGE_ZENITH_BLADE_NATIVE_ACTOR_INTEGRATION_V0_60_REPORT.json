@@ -1,0 +1,37 @@
+{
+  "milestone": "ZENITH_BLADE_V0_60_NATIVE_ACTOR_INTEGRATION",
+  "actor_source": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\production_actor\\rig_derivatives\\MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend",
+  "actor_sha256_before": "743F8E98E325626220093ADEDE466E84C0E542D8C698C4319EFC994FB4486C5B",
+  "actor_sha256_after": "743F8E98E325626220093ADEDE466E84C0E542D8C698C4319EFC994FB4486C5B",
+  "blade_source": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+  "blade_sha256_before": "77519F978FA05F5351DA83C27A8A47957C1FD0A9A41FF1633D58B3B98987DCEE",
+  "blade_sha256_after": "77519F978FA05F5351DA83C27A8A47957C1FD0A9A41FF1633D58B3B98987DCEE",
+  "output_sha256": "4B28DAD02A879FD9956E3D5F1B6BFB7B24BD2BD48B548A47847A1ABED454425E",
+  "reopen_pass": true,
+  "appended_collection": "ZENITH_BLADE_V056_CLEAN_HANDOFF",
+  "appended_member_count": 28,
+  "attachment_root": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+  "attachment_parent": "MESH_PREP_ZENITH_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+  "registration_delta_applied": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "handle_marker_delta_after": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "retired_proxy_objects": [
+    "A2_blade_material_dark_front_weight_refinement",
+    "PUBLIC_BLOCK_V03_zenith_blade_crisp_front_plane",
+    "PUBLIC_BLOCK_zenith_blade_dark_edge",
+    "PUBLIC_BLOCK_zenith_blade_vertical_slab"
+  ],
+  "collision_hits": {},
+  "collision_pass": true,
+  "source_preservation_pass": true,
+  "asset_lock": false,
+  "production_ready": false,
+  "integration_pass": true
+}

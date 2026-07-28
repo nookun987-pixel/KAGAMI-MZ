@@ -3754,3 +3754,41 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_MANIFEST_V0_58.md`.
   - Status may be only `READY_FOR_OPERATOR_INTEGRATION_RULING`; no asset-lock,
     production-ready, push or deploy.
+
+- Operator ruling — V0.59:
+  - `ZENITH_BLADE_HANDOFF_PACKAGE_V0_56: PASS`.
+  - Status: `ACCEPTED_INTEGRATION_BASELINE`.
+  - Source SHA-256:
+    `77519F978FA05F5351DA83C27A8A47957C1FD0A9A41FF1633D58B3B98987DCEE`.
+  - Append and library-link consumption: `PASS`.
+  - Geometry and material editing are locked.
+  - Asset lock and production-ready remain `NO`.
+
+- One-hundred-twenty-third controlled exception is open:
+  - `ZENITH_BLADE_V0_60_NATIVE_ACTOR_INTEGRATION = OPEN`.
+  - Blade source:
+    `production/character/MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend`.
+  - Actor input candidate:
+    `production/character/production_actor/rig_derivatives/MIKAGE_PRODUCTION_ACTOR_DEFORMATION_SMOKE_TEST_V0_1.blend`.
+  - Actor status: latest valid production derivative candidate, not canonical
+    final actor and not production-rig-ready.
+  - Allowed derivative:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60.blend`.
+  - Append `ZENITH_BLADE_V056_CLEAN_HANDOFF`, register the Blade handle to
+    `hand_right_sword_hold_marker`, parent through the existing Blade
+    attachment-intent empty, and hide only superseded visible Blade proxy
+    presentation objects in the derivative.
+  - Preserve both sources, actor mesh/rig, Blade geometry/material/phase
+    animation and all attachment transforms except the single root
+    registration transform.
+  - Required evidence: P1/P2/P3 front/side/back/3-4 contact sheet, source
+    hashes, marker delta, docking/clearance audit, reopen and `.blend1` check.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_59_OPERATOR_RULING.md`
+    - `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60.blend`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60_PROOF.md`
+    - `_tmp/zenith_blade_v0_60_actor_integration/` for scripts/raw renders.
+  - No actor geometry/rig edit, no Blade form/material edit, no asset-lock,
+    production-ready, push or deploy.
