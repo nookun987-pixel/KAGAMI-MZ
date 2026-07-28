@@ -4098,3 +4098,27 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_CONTACT_SHEET.png`
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_PROOF.md`
     - `_tmp/zenith_blade_v0_84/`.
+- ZENITH_BLADE_V0_84_BASELINE_CONTACT_AUDIT = OPEN
+- Task: read-only Blender metadata and BVH ownership audit.
+- Source:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend
+- Allowed outputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_BASELINE_CONTACT_ADDENDUM.md
+  production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_BASELINE_CONTACT_REPORT.json
+- Allowed:
+  reopen source read-only;
+  inspect object ownership, visibility, renderability and collision eligibility;
+  reproduce neutral P1/P2/P3 BVH pairs;
+  classify reference/proxy, intentional contact and real penetration.
+- Forbidden:
+  no Blend save;
+  no geometry, material, rig, driver, action or transform edits;
+  no source overwrite;
+  no render, push or deploy;
+  no integration-ready claim unless real penetration count is zero.
+- Required:
+  source hash before/after identical;
+  exact pair and triangle counts;
+  classification reason for every baseline pair;
+  repo clean before and after;
+  no .blend1.
