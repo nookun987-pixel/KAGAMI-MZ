@@ -3923,3 +3923,16 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_DOCKING_LOAD_PATH_V0_65_REPORT.json`
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_DOCKING_LOAD_PATH_V0_65_PROOF.md`
     - `_tmp/zenith_blade_v0_65_docking/`.
+
+- One-hundred-thirtieth controlled exception is open:
+  - `ZENITH_BLADE_V0_66_DOCKING_GRIP_COLLISION_VALIDATION = OPEN`.
+  - Read-only source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DOCKING_LOAD_PATH_V0_65.blend`.
+  - Measure independent hand-marker/handle evaluated world delta and BVH
+    overlap at P1/P2/P3 across neutral, hand hold, torso left/right, wide
+    stance, crouch, shoulder/elbow limit and cloak-left/right samples.
+  - No save and no edit of any Blender datablock.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DOCKING_GRIP_COLLISION_V0_66_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DOCKING_GRIP_COLLISION_V0_66_PROOF.md`
+    - `_tmp/zenith_blade_v0_61_pose/` reused as ignored audit tooling.
