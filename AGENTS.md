@@ -3818,3 +3818,29 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_61_pose/` for scripts/raw renders.
   - No Blade/actor geometry, material, rig hierarchy, attachment-root or phase
     edit; no save, asset-lock, production-ready, push or deploy.
+
+- Operator continuation authorization — 2026-07-28:
+  - Operator authorized multiple controlled passes while unavailable.
+  - This authorization does not permit canon/SSOT edits, redesign, push, deploy,
+    asset-lock or production-ready claims.
+
+- One-hundred-twenty-fifth controlled exception is open:
+  - `ZENITH_BLADE_V0_62_BOUNDED_ATTACHMENT_RIG_COVERAGE_REPAIR = OPEN`.
+  - Source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60.blend`.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_ATTACHMENT_RIG_COVERAGE_V0_62.blend`.
+  - Allowed hierarchy-only repair:
+    - bind the accepted Blade attachment intent and hold marker to `hand.R`
+      while preserving their V0.60 neutral world transforms;
+    - bind the existing right mitten review mesh to `hand.R` without mesh edit;
+    - bind the existing static cloak mass to `chest` for deterministic
+      transform-only clearance coverage.
+  - No mesh, material, modifier, rig-bone, phase-driver or Blade-form edit.
+  - V0.60 must remain hash-identical.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ATTACHMENT_RIG_COVERAGE_V0_62_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ATTACHMENT_RIG_COVERAGE_V0_62_PROOF.md`
+    - `_tmp/zenith_blade_v0_62_*`.
+  - Reopen output, verify hierarchy and source preservation, remove `.blend1`,
+    commit locally, then stop or proceed only to read-only V0.63 validation.

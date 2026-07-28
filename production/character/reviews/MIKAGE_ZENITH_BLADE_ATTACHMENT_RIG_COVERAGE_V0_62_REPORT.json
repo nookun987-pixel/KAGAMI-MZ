@@ -1,0 +1,53 @@
+{
+  "milestone": "ZENITH_BLADE_V0_62_BOUNDED_ATTACHMENT_RIG_COVERAGE_REPAIR",
+  "source": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_ATTACHMENT_RIG_COVERAGE_V0_62.blend",
+  "source_sha256_before": "4B28DAD02A879FD9956E3D5F1B6BFB7B24BD2BD48B548A47847A1ABED454425E",
+  "source_sha256_after": "4B28DAD02A879FD9956E3D5F1B6BFB7B24BD2BD48B548A47847A1ABED454425E",
+  "source_preserved": true,
+  "repairs": {
+    "blade_intent": {
+      "object": "MESH_PREP_ZENITH_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "parent_bone": "hand.R",
+      "neutral_world_matrix_max_error": 1.1920928955078125e-07
+    },
+    "hold_marker": {
+      "object": "hand_right_sword_hold_marker",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "parent_bone": "hand.R",
+      "neutral_world_matrix_max_error": 0.0
+    },
+    "right_mitten": {
+      "object": "A2_right_porcelain_mitten_hand_attached_read",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "parent_bone": "hand.R",
+      "neutral_world_matrix_max_error": 0.0
+    },
+    "cloak_mass": {
+      "object": "PUBLIC_BLOCK_cloak_vertical_black_mass",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "parent_bone": "chest",
+      "neutral_world_matrix_max_error": 0.0
+    }
+  },
+  "neutral_preservation_pass": true,
+  "hierarchy_pass": true,
+  "output_sha256": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "build_pass": true,
+  "reopen_checks": {
+    "blade_intent": true,
+    "hold_marker": true,
+    "right_mitten": true,
+    "cloak_mass": true
+  },
+  "reopen_pass": true,
+  "source_sha256_final": "4B28DAD02A879FD9956E3D5F1B6BFB7B24BD2BD48B548A47847A1ABED454425E",
+  "output_sha256_final": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "source_preserved_final": true,
+  "verify_pass": true
+}
