@@ -3703,3 +3703,15 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_54_bake/` for scripts/raw comparison renders.
   - No material/animation/registration redesign, actor/cloak edit, asset lock,
     push or deploy.
+
+- One-hundred-nineteenth controlled exception is open:
+  - `ZENITH_BLADE_V0_55_APPEND_INTEGRATION_SMOKE_TEST = OPEN`.
+  - From Blender factory-empty, append
+    `ZENITH_BLADE_V054_CLEAN_HANDOFF` from the V0.54 source.
+  - Verify required shells, hub/base, rails, core, handle/bridge, materials and
+    P1/P2/P3 animation survive as a consumer would receive them.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_APPEND_INTEGRATION_V0_55_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_APPEND_INTEGRATION_V0_55_PROOF.md`
+    - `_tmp/zenith_blade_v0_55_append/` for scripts.
+  - No consumer `.blend` save, source edit, repair, promotion, push or deploy.
