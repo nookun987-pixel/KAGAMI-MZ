@@ -3492,3 +3492,39 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_43_validation/` for scripts.
   - No save, repair, material finaling, asset-lock, production-ready, push or
     deploy claim. Visual approval remains V0.44 operator-owned.
+
+- Operator ruling — V0.44:
+  - `V0.42_VISUAL_RULING: FAIL_CANON_CONVERGENCE`.
+  - `CORE_COUNT` and `GENERAL_COHESION`: `PASS`.
+  - `MONOLITHIC_BRUTALISM`, `P1_CLOSED_READ`,
+    `FOUR_PLATE_MECHANISM_READ`, `350KG_MASS_READ` and `POINTED_TIP_RULE`:
+    `FAIL`.
+  - V0.42/V0.43 remain candidate/technical evidence only and may not be
+    promoted.
+  - Ruling authority: SSOT operator ruling
+    `ZENITH BLADE BRUTALIST CONVERGENCE — 2026-07-28`.
+
+- One-hundred-ninth controlled exception is open:
+  - `ZENITH_BLADE_V0_45_BOUNDED_BRUTALIST_CORRECTION = OPEN`.
+  - Source candidate:
+    `production/character/MIKAGE_ZENITH_BLADE_ORIGINAL_DESIGN_REBUILD_V0_42.blend`.
+    Do not overwrite it.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_BRUTALIST_CORRECTION_V0_45.blend`.
+  - Bounded correction only:
+    - replace pointed termination with flat-cut/blunt mechanical termination;
+    - widen and increase lower-body mass;
+    - create four mechanically distinct shell plates: upper/lower left/right;
+    - P1 plates close over spine/rails/core as one B4C monolith;
+    - P2 opens horizontally enough to expose dark spine/rails, core off;
+    - P3 uses the same shared contour and reveals one recessed violet core;
+    - integrate upper drive hub with visible structural supports.
+  - Preserve V0.42 central-spine clarity, recessed-core treatment, clean
+    contour discipline, actor context and no-violet-ring rule.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_BRUTALIST_CORRECTION_V0_45_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_BRUTALIST_CORRECTION_V0_45_PROOF.md`
+    - `_tmp/zenith_blade_v0_45_correction/` for scripts/raw renders.
+  - Render permission: neutral Eevee structural review.
+  - No material lock, asset-lock, production-ready, push, deploy or public
+    claim.
