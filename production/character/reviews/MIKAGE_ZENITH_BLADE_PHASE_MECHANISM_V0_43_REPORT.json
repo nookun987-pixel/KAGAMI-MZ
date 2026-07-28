@@ -1,0 +1,1260 @@
+{
+  "milestone": "ZENITH_BLADE_PHASE_MECHANISM_V0_43",
+  "source_sha256_before": "4AC50749041D3F587C2698D32FF06471952CDE7BBB75FB4A605BB942961B6927",
+  "source_sha256_after": "4AC50749041D3F587C2698D32FF06471952CDE7BBB75FB4A605BB942961B6927",
+  "frames_tested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "timeline": {
+    "1": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "2": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "3": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "4": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "5": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "6": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "7": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "8": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "9": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "10": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "11": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "12": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "13": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "14": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "15": {
+      "phase_value": 0.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "16": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "17": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "18": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "19": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "20": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "21": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "22": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "23": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "24": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "25": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.42999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "26": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.4251852,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.43481469,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "27": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.41314816,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.44685173,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "28": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.39750004,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.46249998,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "29": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.38185179,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.4781481,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "30": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36981487,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.49018514,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "31": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "32": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "33": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "34": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "35": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "36": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "37": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "38": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "39": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "40": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "41": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "42": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "43": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "44": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "45": {
+      "phase_value": 1.0,
+      "core_on": false,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "46": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "47": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "48": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "49": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "50": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "51": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "52": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "53": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "54": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "55": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36500001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.495,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "56": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.36092591,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.4990741,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "57": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.35074079,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.50925922,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "58": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.3375001,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.52250004,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "59": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.32425928,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.53574073,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "60": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.31407404,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.54592586,
+          -0.23,
+          1.45000005
+        ]
+      }
+    },
+    "61": {
+      "phase_value": 2.0,
+      "core_on": true,
+      "shell_locations": {
+        "ZB42_OUTER_SHELL_L": [
+          1.30999994,
+          -0.23,
+          1.45000005
+        ],
+        "ZB42_OUTER_SHELL_R": [
+          1.54999995,
+          -0.23,
+          1.45000005
+        ]
+      }
+    }
+  },
+  "signal_pass": true,
+  "max_per_frame_shell_delta": {
+    "value": 0.01564825000000014,
+    "object": "ZB42_OUTER_SHELL_R",
+    "from": 27,
+    "to": 28
+  },
+  "continuity_pass": true,
+  "repeatability_cycles": [
+    [
+      {
+        "phase": 0.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 1.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.36500001,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.495,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 2.0,
+        "core_on": true,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 0.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "phase": 0.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 1.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.36500001,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.495,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 2.0,
+        "core_on": true,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 0.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "phase": 0.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 1.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.36500001,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.495,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 2.0,
+        "core_on": true,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      },
+      {
+        "phase": 0.0,
+        "core_on": false,
+        "shells": {
+          "ZB42_OUTER_SHELL_L": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB42_OUTER_SHELL_R": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        }
+      }
+    ]
+  ],
+  "repeatability_pass": true,
+  "collision_hits": {},
+  "collision_pass": true,
+  "source_unchanged": true,
+  "blend_saved": false,
+  "validation_pass": true
+}

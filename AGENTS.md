@@ -3476,3 +3476,19 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Render permission: local Blender/Eevee neutral structural review only.
   - No material-final lock, asset-lock, production-ready, public, push or
     deploy claim.
+
+- One-hundred-eighth controlled exception is open:
+  - `ZENITH_BLADE_V0_43_PHASE_MECHANISM_REAUTHOR_VALIDATION = OPEN`.
+  - Read-only source:
+    `production/character/MIKAGE_ZENITH_BLADE_ORIGINAL_DESIGN_REBUILD_V0_42.blend`.
+  - Inspect every frame `1–61`: phase property, P1/P2 signal-off, P3 one-core
+    visibility, shell transform continuity, unified silhouette bounds and
+    evaluated world-space shell/core vs actor cloak/body clearance.
+  - Run three P1→P2→P3→P1 snapshot cycles.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_V0_43_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_V0_43_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_MECHANISM_V0_43_PROOF.md`
+    - `_tmp/zenith_blade_v0_43_validation/` for scripts.
+  - No save, repair, material finaling, asset-lock, production-ready, push or
+    deploy claim. Visual approval remains V0.44 operator-owned.
