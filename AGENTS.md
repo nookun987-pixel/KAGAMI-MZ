@@ -3415,3 +3415,26 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     three-quarter view; no dramatic light or violet contamination.
   - No Blender runtime, `.blend`, render, asset/SSOT edit, push, deploy or
     public/shot approval.
+
+- One-hundred-fifth controlled exception is open:
+  - `ZENITH_BLADE_V0_39_ZB_TECH_001_SHOT_BUILD = OPEN`.
+  - Source:
+    `production/character/shots/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35.blend`.
+    Source and locked V0.29 parent must remain byte-identical.
+  - Allowed derivative:
+    `production/character/shots/ZB_TECH_001/MIKAGE_ZB_TECH_001_SHOT_BUILD_V0_39.blend`.
+  - Allowed evidence:
+    - `production/character/shots/ZB_TECH_001/MIKAGE_ZB_TECH_001_KEYFRAMES_V0_39.png`
+    - `production/character/shots/ZB_TECH_001/MIKAGE_ZB_TECH_001_SHOT_BUILD_V0_39_PROOF.md`
+    - `_tmp/zenith_blade_v0_39_shot/` for scripts/raw frames.
+  - Build exactly from the V0.38 brief: `1080 x 1920`, 30 fps, frames `1–61`,
+    internal review, no audio/text/logo.
+  - Permitted changes in the new derivative only: rename/create shot-only
+    camera/light/helper objects under `ZB_TECH_001_SHOT_*`; set shot render
+    settings and metadata; restrained camera-only framing adjustment.
+  - Protected Blade/actor mesh, material, driver, phase, transform,
+    registration, rig and pose fingerprints must remain unchanged.
+  - Required validation: source/parent hashes unchanged, fingerprint diff zero,
+    derivative reopen, exact shot settings, inspected P1/P2/P3 keyframes and no
+    `.blend1`.
+  - No MP4 encoding, asset repair, shot/public approval, push or deploy.
