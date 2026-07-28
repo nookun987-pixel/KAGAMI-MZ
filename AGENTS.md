@@ -3956,3 +3956,37 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_SECONDARY_GRIP_IK_V0_67_VALIDATION_REPORT.json`
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_SECONDARY_GRIP_IK_V0_67_PROOF.md`
     - `_tmp/zenith_blade_v0_67_ik/`.
+
+- Ten-pass controlled exception is open:
+  - `ZENITH_BLADE_V0_68_TO_V0_77_SECONDARY_GRIP_SOLVER_SWEEP = OPEN`.
+  - Read-only source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DOCKING_LOAD_PATH_V0_65.blend`.
+  - Run exactly ten isolated in-memory passes: baseline, no-pole IK, six
+    world-axis pole directions, and two three-bone pole variants.
+  - Reset pose bones and remove temporary constraints/targets between passes.
+  - Score evaluated independent marker/handle world delta at neutral, hand
+    hold, torso left/right and shoulder/elbow-limit.
+  - No Blender save during sweep; no source edit.
+  - A winner may proceed only if it improves the V0.66 worst-case grip delta
+    without violating neutral tolerance. Building a winner requires a separate
+    versioned derivative and reopen/full-collision proof.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_GRIP_SOLVER_SWEEP_V0_68_TO_V0_77_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_GRIP_SOLVER_SWEEP_V0_68_TO_V0_77_PROOF.md`
+    - `_tmp/zenith_blade_v0_68_77_sweep/`.
+
+- Winner-build controlled exception is open:
+  - `ZENITH_BLADE_V0_78_IK3_POLE_WINNER_CANDIDATE = OPEN`.
+  - Source remains accepted technical baseline V0.65.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_IK3_POLE_WINNER_V0_78.blend`.
+  - Build only V0.76 sweep configuration: handle-following IK target,
+    world +X pole target and IK chain length 3 on `forearm.R`.
+  - Preserve docking ownership and independent hand marker.
+  - Reopen, then run full P1/P2/P3 pose/collision audit.
+  - No mesh, material, modifier, rig-bone, docking, marker or phase edit.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_IK3_POLE_WINNER_V0_78_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_IK3_POLE_WINNER_V0_78_VALIDATION_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_IK3_POLE_WINNER_V0_78_PROOF.md`
+    - `_tmp/zenith_blade_v0_78_winner/`.

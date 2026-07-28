@@ -1,0 +1,16 @@
+{
+  "milestone": "ZENITH_BLADE_V0_78_IK3_POLE_WINNER_CANDIDATE",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_preserved": true,
+  "blade_root_parent": "ZB65_ACTOR_DOCKING_LOAD_ANCHOR",
+  "docking_preserved": true,
+  "marker_independent": true,
+  "ik_bone": "forearm.R",
+  "ik_chain_count": 3,
+  "ik_target": "ZB78_SECONDARY_GRIP_IK_TARGET",
+  "pole_target": "ZB78_SECONDARY_GRIP_POLE_POS_X",
+  "neutral_delta_m": 1.434236764907837e-07,
+  "build_pass": true,
+  "output_sha256": "544A4C663BC4BC63C7AE6652F6F7BBF9C7B469015636DFBA72128E542EA335D4"
+}

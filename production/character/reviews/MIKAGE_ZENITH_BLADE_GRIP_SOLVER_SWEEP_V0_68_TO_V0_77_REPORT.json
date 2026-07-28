@@ -1,0 +1,293 @@
+{
+  "milestone": "ZENITH_BLADE_V0_68_TO_V0_77_TEN_PASS_GRIP_SOLVER_SWEEP",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_unchanged": true,
+  "pass_count": 10,
+  "results": [
+    {
+      "version": "V0.68",
+      "name": "baseline_no_solver",
+      "ik": false,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "hand_hold": 2.421438694000244e-08,
+        "torso_left": 0.1646674396017536,
+        "torso_right": 0.1646674396017536,
+        "shoulder_elbow_limit": 0.14609204732522962
+      },
+      "max_delta_m": 0.1646674396017536,
+      "rms_delta_m": 0.12294195184856359,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.69",
+      "name": "ik2_no_pole",
+      "ik": true,
+      "chain": 2,
+      "pose_deltas_m": {
+        "neutral": 2.78233301096294e-07,
+        "hand_hold": 3.026955971832808e-07,
+        "torso_left": 0.124916784706077,
+        "torso_right": 4.2810562828171796e-05,
+        "shoulder_elbow_limit": 0.0038686351120957095
+      },
+      "max_delta_m": 0.124916784706077,
+      "rms_delta_m": 0.05589127171902293,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.70",
+      "name": "ik2_pole_pos_x",
+      "ik": true,
+      "chain": 2,
+      "pole": [
+        1,
+        0,
+        0
+      ],
+      "pose_deltas_m": {
+        "neutral": 2.8298110378264017e-07,
+        "hand_hold": 2.566465475763104e-07,
+        "torso_left": 0.12491758177030116,
+        "torso_right": 1.6735978507097833e-05,
+        "shoulder_elbow_limit": 0.003869094077426463
+      },
+      "max_delta_m": 0.12491758177030116,
+      "rms_delta_m": 0.055891631582122875,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.71",
+      "name": "ik2_pole_neg_x",
+      "ik": true,
+      "chain": 2,
+      "pole": [
+        -1,
+        0,
+        0
+      ],
+      "pose_deltas_m": {
+        "neutral": 3.7420629127234063e-07,
+        "hand_hold": 5.443801523705855e-07,
+        "torso_left": 0.12491752747676572,
+        "torso_right": 1.6778407261715296e-05,
+        "shoulder_elbow_limit": 0.003869418925799096
+      },
+      "max_delta_m": 0.12491752747676572,
+      "rms_delta_m": 0.055891611813729584,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.72",
+      "name": "ik2_pole_pos_y",
+      "ik": true,
+      "chain": 2,
+      "pole": [
+        0,
+        1,
+        0
+      ],
+      "pose_deltas_m": {
+        "neutral": 2.3964506127956855e-07,
+        "hand_hold": 4.862074731688761e-07,
+        "torso_left": 0.12491758177030116,
+        "torso_right": 1.6735978507097833e-05,
+        "shoulder_elbow_limit": 0.0038691048978197157
+      },
+      "max_delta_m": 0.12491758177030116,
+      "rms_delta_m": 0.05589163173219586,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.73",
+      "name": "ik2_pole_neg_y",
+      "ik": true,
+      "chain": 2,
+      "pole": [
+        0,
+        -1,
+        0
+      ],
+      "pose_deltas_m": {
+        "neutral": 3.7420629127234063e-07,
+        "hand_hold": 5.443801523705855e-07,
+        "torso_left": 0.12491752747676572,
+        "torso_right": 1.6699200387083382e-05,
+        "shoulder_elbow_limit": 0.0038694082972600785
+      },
+      "max_delta_m": 0.12491752747676572,
+      "rms_delta_m": 0.05589161166182113,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.74",
+      "name": "ik2_pole_pos_z",
+      "ik": true,
+      "chain": 2,
+      "pole": [
+        0,
+        0,
+        1
+      ],
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "hand_hold": 2.3964506127956855e-07,
+        "torso_left": 0.12491751177967086,
+        "torso_right": 1.6662874125260772e-05,
+        "shoulder_elbow_limit": 0.0038693796140149505
+      },
+      "max_delta_m": 0.12491751177967086,
+      "rms_delta_m": 0.05589160424523697,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.75",
+      "name": "ik2_pole_neg_z",
+      "ik": true,
+      "chain": 2,
+      "pole": [
+        0,
+        0,
+        -1
+      ],
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "hand_hold": 2.566465475763104e-07,
+        "torso_left": 0.1249174728137079,
+        "torso_right": 1.6826707827200855e-05,
+        "shoulder_elbow_limit": 0.0038693852037754322
+      },
+      "max_delta_m": 0.1249174728137079,
+      "rms_delta_m": 0.05589158691471051,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.76",
+      "name": "ik3_pole_pos_x",
+      "ik": true,
+      "chain": 3,
+      "pole": [
+        1,
+        0,
+        0
+      ],
+      "pose_deltas_m": {
+        "neutral": 1.434236764907837e-07,
+        "hand_hold": 1.434236764907837e-07,
+        "torso_left": 0.10416787782341229,
+        "torso_right": 2.2282177364519987e-05,
+        "shoulder_elbow_limit": 7.599067180451239e-07
+      },
+      "max_delta_m": 0.10416787782341229,
+      "rms_delta_m": 0.04658529224411365,
+      "neutral_pass": true
+    },
+    {
+      "version": "V0.77",
+      "name": "ik3_pole_neg_x",
+      "ik": true,
+      "chain": 3,
+      "pole": [
+        -1,
+        0,
+        0
+      ],
+      "pose_deltas_m": {
+        "neutral": 8.10798543352862e-07,
+        "hand_hold": 9.89176817674534e-07,
+        "torso_left": 0.10416793734649389,
+        "torso_right": 2.246390762146006e-05,
+        "shoulder_elbow_limit": 5.439721142532693e-07
+      },
+      "max_delta_m": 0.10416793734649389,
+      "rms_delta_m": 0.046585318883918765,
+      "neutral_pass": true
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "version": "V0.76",
+      "name": "ik3_pole_pos_x",
+      "max_delta_m": 0.10416787782341229,
+      "rms_delta_m": 0.04658529224411365,
+      "neutral_pass": true
+    },
+    {
+      "rank": 2,
+      "version": "V0.77",
+      "name": "ik3_pole_neg_x",
+      "max_delta_m": 0.10416793734649389,
+      "rms_delta_m": 0.046585318883918765,
+      "neutral_pass": true
+    },
+    {
+      "rank": 3,
+      "version": "V0.69",
+      "name": "ik2_no_pole",
+      "max_delta_m": 0.124916784706077,
+      "rms_delta_m": 0.05589127171902293,
+      "neutral_pass": true
+    },
+    {
+      "rank": 4,
+      "version": "V0.75",
+      "name": "ik2_pole_neg_z",
+      "max_delta_m": 0.1249174728137079,
+      "rms_delta_m": 0.05589158691471051,
+      "neutral_pass": true
+    },
+    {
+      "rank": 5,
+      "version": "V0.74",
+      "name": "ik2_pole_pos_z",
+      "max_delta_m": 0.12491751177967086,
+      "rms_delta_m": 0.05589160424523697,
+      "neutral_pass": true
+    },
+    {
+      "rank": 6,
+      "version": "V0.73",
+      "name": "ik2_pole_neg_y",
+      "max_delta_m": 0.12491752747676572,
+      "rms_delta_m": 0.05589161166182113,
+      "neutral_pass": true
+    },
+    {
+      "rank": 7,
+      "version": "V0.71",
+      "name": "ik2_pole_neg_x",
+      "max_delta_m": 0.12491752747676572,
+      "rms_delta_m": 0.055891611813729584,
+      "neutral_pass": true
+    },
+    {
+      "rank": 8,
+      "version": "V0.70",
+      "name": "ik2_pole_pos_x",
+      "max_delta_m": 0.12491758177030116,
+      "rms_delta_m": 0.055891631582122875,
+      "neutral_pass": true
+    },
+    {
+      "rank": 9,
+      "version": "V0.72",
+      "name": "ik2_pole_pos_y",
+      "max_delta_m": 0.12491758177030116,
+      "rms_delta_m": 0.05589163173219586,
+      "neutral_pass": true
+    },
+    {
+      "rank": 10,
+      "version": "V0.68",
+      "name": "baseline_no_solver",
+      "max_delta_m": 0.1646674396017536,
+      "rms_delta_m": 0.12294195184856359,
+      "neutral_pass": true
+    }
+  ],
+  "winner": "V0.76",
+  "winner_name": "ik3_pole_pos_x",
+  "winner_qualifies": true
+}
