@@ -4201,3 +4201,56 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   no .blend1;
   repo clean after commit.
 - Integration-ready may be claimed only if every validation requirement passes.
+
+- ZENITH_BLADE_V0_87_STATIC_COLLISION_OWNERSHIP_CLEANUP = OPEN
+- Source:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend
+- Required inputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_BASELINE_CONTACT_ADDENDUM.md
+  production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_BASELINE_CONTACT_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_PROOF.md
+- Allowed outputs:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend
+  production/character/reviews/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87_PROOF.md
+- Purpose:
+  classify collision ownership and exclude only proven non-physical marker, visual-helper, attachment-intent and blockout meshes from BVH validation;
+  preserve the separate Blade-to-mitten physical collision result.
+- Allowed:
+  inspect object collections, parents, modifiers, visibility, render role and custom properties;
+  add explicit collision-ownership metadata only in a new V0.87 derivative;
+  mark proven reference, helper or blockout meshes as excluded from physical BVH validation;
+  rerun neutral P1/P2/P3 and the existing eight poses.
+- Initial exclusion candidates:
+  hand_right_sword_hold_marker;
+  A2_right_graphite_wrist_to_body_contact_shadow;
+  A2_right_continuous_black_upper_arm_attached_plane;
+  A2_right_shoulder_to_arm_continuity_graphite_bridge;
+  PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical.
+- Locked physical target:
+  A2_right_porcelain_mitten_hand_attached_read must remain physical;
+  its overlaps must be reported separately and must not be hidden through ownership exclusion.
+- Forbidden:
+  no deletion of scene objects;
+  no Blade geometry, material, phase, driver or transform change;
+  no actor geometry or rig hierarchy change;
+  no grip, marker, IK target, pole or docking transform change;
+  no source V0.84 overwrite;
+  no claim that static ownership cleanup resolves mitten penetration;
+  no push or deploy.
+- Required validation:
+  verify each exclusion candidate independently before exclusion;
+  record exact exclusion reason and metadata;
+  reproduce P1/P2/P3 and eight existing poses;
+  report static/proxy pairs separately from Blade-to-mitten pairs;
+  preserve MITTEN_PHYSICAL_OVERLAPS and MITTEN_PHASE_RECORDS as independently measured values;
+  source V0.84 SHA-256 unchanged;
+  reopen the V0.87 derivative;
+  no .blend1;
+  only whitelisted files changed;
+  repo clean after commit.
+- Exit:
+  if static ownership is fully classified, close V0.87;
+  if mitten overlap remains above zero, keep INTEGRATION_READY = NO and authorize only a separate V0.88 mitten-interface geometry audit.
+- No asset-lock, production-ready or integration-ready claim unless all physical penetration is independently zero.
