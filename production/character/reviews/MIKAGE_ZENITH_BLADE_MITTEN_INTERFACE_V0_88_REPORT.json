@@ -1,0 +1,438 @@
+{
+  "milestone": "ZENITH_BLADE_V0_88_MITTEN_INTERFACE_GEOMETRY_AUDIT",
+  "source": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend",
+  "source_sha256": "B9A4C05CD6EEF28CCC1F98D0F929D69E2F1C93097EE6C7A206C2538DB74CE8DF",
+  "records": [
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB45_SHELL_UL",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 18,
+      "blade_triangle_indices": [
+        44,
+        45,
+        51,
+        52
+      ],
+      "mitten_triangle_indices": [
+        26,
+        27,
+        30,
+        31,
+        34,
+        35,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          0.927778422832489,
+          -0.544999897480011,
+          1.4530000686645508
+        ],
+        "max": [
+          1.7675999402999878,
+          0.0210999995470047,
+          3.492000102996826
+        ]
+      },
+      "classification": "SHELL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB45_SHELL_UR",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 18,
+      "blade_triangle_indices": [
+        46,
+        47,
+        48,
+        52
+      ],
+      "mitten_triangle_indices": [
+        34,
+        35,
+        36,
+        37,
+        42,
+        43,
+        46,
+        47,
+        50,
+        51,
+        52,
+        53
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          1.408000111579895,
+          -0.544999897480011,
+          1.4685564041137695
+        ],
+        "max": [
+          1.911780595779419,
+          0.010661259293556213,
+          3.492000102996826
+        ]
+      },
+      "classification": "SHELL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 36,
+      "blade_triangle_indices": [
+        49,
+        53
+      ],
+      "mitten_triangle_indices": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        19,
+        21,
+        23,
+        24,
+        26,
+        28,
+        30,
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        40,
+        42,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          1.5865148305892944,
+          -0.544999897480011,
+          -0.26999998092651367
+        ],
+        "max": [
+          1.7675999402999878,
+          -0.06700000166893005,
+          3.1579999923706055
+        ]
+      },
+      "classification": "RAIL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB45_SHELL_UL",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 18,
+      "blade_triangle_indices": [
+        44,
+        45,
+        51,
+        52
+      ],
+      "mitten_triangle_indices": [
+        26,
+        27,
+        30,
+        31,
+        34,
+        35,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          0.8077784180641174,
+          -0.544999897480011,
+          1.4530000686645508
+        ],
+        "max": [
+          1.7675999402999878,
+          0.0210999995470047,
+          3.492000102996826
+        ]
+      },
+      "classification": "SHELL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB45_SHELL_UR",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 18,
+      "blade_triangle_indices": [
+        46,
+        47,
+        48,
+        52
+      ],
+      "mitten_triangle_indices": [
+        34,
+        35,
+        36,
+        37,
+        42,
+        43,
+        46,
+        47,
+        50,
+        51,
+        52,
+        53
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          1.5280001163482666,
+          -0.544999897480011,
+          1.4685564041137695
+        ],
+        "max": [
+          2.03178071975708,
+          0.010661259293556213,
+          3.492000102996826
+        ]
+      },
+      "classification": "SHELL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 36,
+      "blade_triangle_indices": [
+        49,
+        53
+      ],
+      "mitten_triangle_indices": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        19,
+        21,
+        23,
+        24,
+        26,
+        28,
+        30,
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        40,
+        42,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          1.5865148305892944,
+          -0.544999897480011,
+          -0.26999998092651367
+        ],
+        "max": [
+          1.7675999402999878,
+          -0.06700000166893005,
+          3.1579999923706055
+        ]
+      },
+      "classification": "RAIL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UL",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 18,
+      "blade_triangle_indices": [
+        44,
+        45,
+        51,
+        52
+      ],
+      "mitten_triangle_indices": [
+        26,
+        27,
+        30,
+        31,
+        34,
+        35,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          0.7277784943580627,
+          -0.544999897480011,
+          1.4530000686645508
+        ],
+        "max": [
+          1.7675999402999878,
+          0.0210999995470047,
+          3.492000102996826
+        ]
+      },
+      "classification": "SHELL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UR",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 18,
+      "blade_triangle_indices": [
+        46,
+        47,
+        48,
+        52
+      ],
+      "mitten_triangle_indices": [
+        34,
+        35,
+        36,
+        37,
+        42,
+        43,
+        46,
+        47,
+        50,
+        51,
+        52,
+        53
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          1.6075998544692993,
+          -0.544999897480011,
+          1.4685564041137695
+        ],
+        "max": [
+          2.1117806434631348,
+          0.010661259293556213,
+          3.492000102996826
+        ]
+      },
+      "classification": "SHELL_ENVELOPE_TO_MITTEN_SHELL"
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "mitten": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_pair_count": 36,
+      "blade_triangle_indices": [
+        49,
+        53
+      ],
+      "mitten_triangle_indices": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        19,
+        21,
+        23,
+        24,
+        26,
+        28,
+        30,
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        40,
+        42,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51
+      ],
+      "world_overlap_bounds_m": {
+        "min": [
+          1.5865148305892944,
+          -0.544999897480011,
+          -0.26999998092651367
+        ],
+        "max": [
+          1.7675999402999878,
+          -0.06700000166893005,
+          3.1579999923706055
+        ]
+      },
+      "classification": "RAIL_ENVELOPE_TO_MITTEN_SHELL"
+    }
+  ],
+  "record_count": 9,
+  "triangle_overlap_total": 216,
+  "classification_summary": {
+    "SHELL_ENVELOPE_TO_MITTEN_SHELL": 6,
+    "RAIL_ENVELOPE_TO_MITTEN_SHELL": 3
+  },
+  "geometry_modified": false,
+  "status": "MINIMUM_REPAIR_SCOPE_PROVEN",
+  "minimum_repair_scope": "Actor-side mitten shell / wrist interface only; preserve Blade shell and rail geometry.",
+  "integration_ready": false,
+  "next_gate": "V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION"
+}
