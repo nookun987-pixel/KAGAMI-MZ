@@ -3379,3 +3379,23 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     state, deterministic three-cycle snapshots, zero corrected world-space
     cloak/body intersection and unchanged parent/derivative hashes.
   - No save, repair, asset edit, push, deploy, public or shot-approval claim.
+
+- One-hundred-third controlled exception is open:
+  - `ZENITH_BLADE_V0_37_INTEGRATION_PATTERN_LOCK = OPEN`.
+  - Read-only inputs:
+    - locked V0.29 parent;
+    - V0.34 handoff package;
+    - V0.35 diagnostic derivative/proof;
+    - V0.36 motion-stress report/proof.
+  - Purpose: lock the validated technical integration pattern for reuse by
+    future separately authorized shot derivatives.
+  - Allowed outputs only:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_PATTERN_V0_37.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_PATTERN_V0_37.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_PATTERN_V0_37_GATE.png`
+    - `_tmp/zenith_blade_v0_37_pattern/` for generation only.
+  - PASS may establish `TECHNICAL_INTEGRATION_PATTERN_LOCK: YES`; it may not
+    approve a cinematic shot, animation performance, public output, push or
+    deploy.
+  - No Blender runtime, `.blend` save, SSOT/asset/evidence-history edit, push
+    or deploy.

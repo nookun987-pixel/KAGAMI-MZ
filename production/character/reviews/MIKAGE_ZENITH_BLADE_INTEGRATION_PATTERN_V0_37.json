@@ -1,0 +1,42 @@
+{
+  "milestone": "ZENITH_BLADE_INTEGRATION_PATTERN_V0_37",
+  "status": "TECHNICAL_PATTERN_LOCKED",
+  "technical_integration_pattern_lock": true,
+  "locked_parent": {
+    "path": "production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend",
+    "sha256": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5"
+  },
+  "diagnostic_implementation": {
+    "path": "production/character/shots/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35.blend",
+    "sha256": "268F5248A95A3411E413F72594370ED9614B41042AE0F89AA29820BF695819A9",
+    "integration_pass": true,
+    "motion_stress_pass": true,
+    "approved_cinematic_shot": false
+  },
+  "required_namespace_pattern": "<SHOT_ID>_SHOT_*",
+  "phase_control": "ZB13_PHASE_CONTROL[\"blade_phase\"]",
+  "required_validations": [
+    "parent_hash",
+    "protected_fingerprint",
+    "phase_signal",
+    "world_space_collision_full_range",
+    "camera_containment_full_range",
+    "derivative_reopen",
+    "operator_shot_approval"
+  ],
+  "shot_brief_required_fields": [
+    "shot_id",
+    "duration",
+    "aspect_ratio",
+    "resolution",
+    "frame_rate",
+    "actor_animation_source",
+    "phase_timing",
+    "camera_intent",
+    "delivery_type",
+    "operator_approval_boundary"
+  ],
+  "push_authorized": false,
+  "deploy_authorized": false,
+  "public_release_authorized": false
+}
