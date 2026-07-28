@@ -1,0 +1,40 @@
+{
+  "milestone": "ZENITH_BLADE_V0_38_ZB_TECH_001_SHOT_BRIEF",
+  "shot_id": "ZB_TECH_001",
+  "status": "BRIEF_LOCKED_FOR_CONTROLLED_BUILD",
+  "purpose": "INTERNAL_TECHNICAL_SHOWCASE",
+  "sources": {
+    "locked_parent": {
+      "path": "production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend",
+      "sha256": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5"
+    },
+    "validated_pattern": {
+      "path": "production/character/shots/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35.blend",
+      "sha256": "268F5248A95A3411E413F72594370ED9614B41042AE0F89AA29820BF695819A9"
+    }
+  },
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frame_start": 1,
+    "frame_end": 61,
+    "duration_seconds": 2.0333333333,
+    "pixel_format_target": "yuv420p",
+    "audio": false
+  },
+  "phase_references": {
+    "P1": 1,
+    "P2": 31,
+    "P3": 61
+  },
+  "phase_control": "ZB13_PHASE_CONTROL[\"blade_phase\"]",
+  "shot_namespace": "ZB_TECH_001_SHOT_*",
+  "camera_intent": "VERTICAL_FULL_BODY_TECHNICAL_THREE_QUARTER",
+  "lighting_intent": "NEUTRAL_COOL_TECHNICAL",
+  "text_logo_lyrics": false,
+  "public_release": false,
+  "push_authorized": false,
+  "deploy_authorized": false,
+  "next_gate": "ZENITH_BLADE_V0_39_ZB_TECH_001_SHOT_BUILD"
+}

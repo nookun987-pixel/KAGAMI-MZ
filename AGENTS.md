@@ -3399,3 +3399,19 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     deploy.
   - No Blender runtime, `.blend` save, SSOT/asset/evidence-history edit, push
     or deploy.
+
+- One-hundred-fourth controlled exception is open:
+  - `ZENITH_BLADE_V0_38_ZB_TECH_001_SHOT_BRIEF_LOCK = OPEN`.
+  - Shot ID: `ZB_TECH_001`.
+  - Purpose: internal technical showcase of the locked phase behavior; no
+    narrative, dialogue, audio, text, logo or public delivery.
+  - Allowed outputs only:
+    - `production/character/shots/ZB_TECH_001/MIKAGE_ZB_TECH_001_SHOT_BRIEF_V0_38.md`
+    - `production/character/shots/ZB_TECH_001/MIKAGE_ZB_TECH_001_SHOT_BRIEF_V0_38.json`
+  - Exact format: vertical `1080 x 1920`, 30 fps, frames `1–61`, no audio.
+  - Locked phase references: P1 frame 1, P2 frame 31, P3 frame 61. No retiming
+    or asset-driver edit is authorized in this planning gate.
+  - Camera intent: full actor and Blade remain contained; restrained technical
+    three-quarter view; no dramatic light or violet contamination.
+  - No Blender runtime, `.blend`, render, asset/SSOT edit, push, deploy or
+    public/shot approval.
