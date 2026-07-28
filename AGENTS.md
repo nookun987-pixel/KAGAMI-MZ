@@ -4122,3 +4122,38 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   classification reason for every baseline pair;
   repo clean before and after;
   no .blend1.
+
+- ZENITH_BLADE_V0_85_COLLISION_OVERLAY_AND_BOUNDED_CLEARANCE = OPEN
+- Source:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend
+- Required inputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_BASELINE_CONTACT_ADDENDUM.md
+  production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_BASELINE_CONTACT_REPORT.json
+- Allowed outputs:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85.blend
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_OVERLAY.png
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_PROOF.md
+- Pass 1: reproduce and visually classify all 25 unresolved baseline records.
+- Pass 2: define exclusions only for proven non-physical reference/helper objects.
+- Pass 3: if physical penetration exists, create a new derivative; do not overwrite V0.84.
+- Allowed repair:
+  minimal attachment-root or secondary-grip offset only.
+- Forbidden repair:
+  no Blade geometry/material/phase change;
+  no actor mesh or rig hierarchy change;
+  no hand-parented Blade;
+  no pose-limit workaround;
+  no source overwrite;
+  no push or deploy.
+- Required validation:
+  P1/P2/P3 neutral and eight existing poses;
+  zero novel collision pairs;
+  zero unclassified physical penetration;
+  marker/handle world delta <= 0.00001 m;
+  docking-primary and secondary-grip architecture preserved;
+  source V0.84 hash unchanged;
+  reopen output;
+  no .blend1;
+  repo clean after commit.
+- Integration-ready may be claimed only if all required validation passes.
