@@ -4311,3 +4311,72 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
 - Exit:
   if the minimum repair scope is proven, close V0.88 and authorize only a separate V0.89 bounded mitten-interface correction;
   if evidence is inconclusive, keep HOLD and do not authorize geometry repair.
+
+- ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION = OPEN
+- Source:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend
+- Required inputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_CONTACT_SHEET.png
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_PROOF.md
+- Allowed outputs:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89.blend
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_CONTACT_SHEET.png
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_PROOF.md
+- Purpose:
+  create one bounded actor-side mitten-shell and wrist-interface geometry correction;
+  eliminate the nine proven Blade-to-mitten collision records without changing the Blade or attachment architecture.
+- Allowed geometry target:
+  A2_right_porcelain_mitten_hand_attached_read only.
+- Allowed correction:
+  locally reshape, inset, taper or trim only the mitten vertices proven by the V0.88 intersecting triangle indices;
+  preserve the accepted hand hold point;
+  preserve the visible gauntlet identity and grip silhouette;
+  use the minimum geometry displacement required for clearance.
+- Locked:
+  all Blade geometry including ZB45_SHELL_UL, ZB45_SHELL_UR and ZB46_RECESSED_RAIL_R;
+  Blade handle geometry and world registration;
+  P1/P2/P3 geometry, drivers and transforms;
+  docking-primary and secondary-grip architecture;
+  actor rig hierarchy and bones;
+  collision-ownership metadata from V0.87;
+  actor meshes other than the approved mitten target;
+  materials and lighting.
+- Forbidden:
+  no Blade geometry, modifier, material or transform edit;
+  no actor mesh edit outside A2_right_porcelain_mitten_hand_attached_read;
+  no whole-mitten uniform scale used to hide the collision;
+  no rig-bone creation, deletion, reparenting or hierarchy change;
+  no marker, IK target, pole, handle, docking or attachment-root transform change;
+  no pose-limit workaround;
+  no source V0.87 overwrite;
+  no push or deploy.
+- Required repair passes:
+  Pass 1: duplicate V0.87 into the approved V0.89 derivative.
+  Pass 2: use V0.88 triangle indices and overlap bounds to identify only the affected mitten vertices.
+  Pass 3: apply the minimum local mitten-shell or wrist-interface correction.
+  Pass 4: rerun P1/P2/P3 physical BVH validation.
+  Pass 5: rerun neutral plus the existing eight poses.
+  Pass 6: render and inspect close-up front, side and three-quarter evidence.
+  Pass 7: reopen the saved V0.89 derivative and repeat the final validation.
+- Required validation:
+  MITTEN_PHASE_RECORDS = 0;
+  MITTEN_PHYSICAL_OVERLAPS = 0;
+  zero unclassified physical penetration;
+  zero novel collision pairs across neutral plus eight poses;
+  marker/handle world translation delta <= 0.00001 m;
+  docking-primary and secondary-grip architecture preserved;
+  Blade structural fingerprint unchanged;
+  all non-approved actor mesh fingerprints unchanged;
+  source V0.87 SHA-256 unchanged;
+  output derivative reopens successfully;
+  contact sheet opened and inspected;
+  no .blend1;
+  only whitelisted files changed;
+  repo clean after commit.
+- Exit:
+  if every required validation passes, mark V0.89 as ACCEPTED_BOUNDED_MITTEN_INTERFACE_CANDIDATE and authorize production integration validation;
+  if any physical overlap remains, keep INTEGRATION_READY = NO and report the exact remaining object pair, phase, triangle count and blocker.
+- No asset-lock or production-ready claim.
+- Integration-ready may be claimed only when every required physical validation equals zero.
