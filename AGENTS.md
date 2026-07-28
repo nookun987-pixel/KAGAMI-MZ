@@ -3238,3 +3238,39 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
       production, audio, website, push or deploy.
   - V0.31 may establish `INTEGRATION_VALIDATION_PASS` only. Production gate
     remains closed until V0.31 proof passes.
+
+- Ninety-eighth controlled exception is open:
+  - `ZENITH_BLADE_V0_32_PRODUCTION_READINESS_VALIDATION = OPEN`.
+  - Read-only baseline:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    V0.31 integration proof passed in commit `2abd826`; all accepted geometry,
+    material, registration and phase behavior remain immutable.
+  - Ten controlled passes:
+    1. Verify clean repo and baseline SHA-256.
+    2. Reopen the baseline headlessly and inventory Blender/version metadata.
+    3. Audit linked libraries, external images/fonts/caches and missing paths.
+    4. Audit packed/generated resources and portability risk.
+    5. Recheck required actor/Blade/bridge/docking/phase dependencies.
+    6. Recheck P1/P2/P3 signal, drivers and world-space collision regression.
+    7. Render the same neutral diagnostic frame twice from a fresh reopen.
+    8. Byte-compare deterministic render outputs and record hashes.
+    9. Produce and directly inspect a production-readiness gate sheet.
+    10. Write proof, whitelist audit and local commit; no push.
+  - Allowed outputs only:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_READINESS_V0_32_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_READINESS_V0_32_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_READINESS_V0_32_PROOF.md`
+    - `_tmp/zenith_blade_v0_32_production/` for scripts/raw diagnostics.
+  - PASS requires no missing dependency, successful reopen, correct phase
+    signal, valid driver targets, zero corrected world-space collision,
+    identical deterministic render hashes, unchanged source hash, inspected
+    evidence and no task-created `.blend`/`.blend1`.
+  - Explicitly prohibited:
+    - No source/derivative save; no asset, visibility, render-camera-in-source,
+      dependency, path, packing, geometry, material, driver, transform,
+      registration, actor, rig, pose or SSOT edit.
+    - No asset-lock or operator-lock claim; no animation/audio/public output,
+      website, push or deploy.
+  - V0.32 may establish `PRODUCTION_READINESS_VALIDATION_PASS` only. Final
+    production-ready/asset-lock status remains reserved for the operator-lock
+    gate.
