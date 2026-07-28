@@ -3844,3 +3844,17 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_62_*`.
   - Reopen output, verify hierarchy and source preservation, remove `.blend1`,
     commit locally, then stop or proceed only to read-only V0.63 validation.
+
+- One-hundred-twenty-sixth controlled exception is open:
+  - `ZENITH_BLADE_V0_63_POSE_CLEARANCE_RETEST = OPEN`.
+  - Read-only source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_ATTACHMENT_RIG_COVERAGE_V0_62.blend`.
+  - Repeat the V0.61 bone-pose/phase matrix and add deterministic cloak-left
+    and cloak-right transform-only coverage.
+  - No save and no geometry, material, modifier, hierarchy, bone, attachment
+    or phase edit.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_63_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_63_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_63_PROOF.md`
+    - `_tmp/zenith_blade_v0_61_pose/` reused only as ignored audit tooling.
