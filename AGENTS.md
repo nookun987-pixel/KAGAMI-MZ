@@ -3438,3 +3438,41 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     derivative reopen, exact shot settings, inspected P1/P2/P3 keyframes and no
     `.blend1`.
   - No MP4 encoding, asset repair, shot/public approval, push or deploy.
+
+- One-hundred-sixth controlled exception is open:
+  - `ZENITH_BLADE_V0_41_POST_LOCK_VISUAL_NONCONFORMANCE_RESET = OPEN`.
+  - Operator canon ruling `ORIGINAL ZENITH BLADE FORM — 2026-07-28` supersedes
+    the brutal-box outer silhouette.
+  - Record V0.29–V0.40 as `TECHNICAL_ARCHIVE_ONLY`; their material, phase,
+    registration and validation evidence may be reused, but their outer weapon
+    form is not production-ready and their prior asset/production lock is
+    revoked for visual-form purposes.
+  - Allowed reset output:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_VISUAL_NONCONFORMANCE_RESET_V0_41.md`.
+  - No existing evidence or `.blend` may be deleted or overwritten.
+
+- One-hundred-seventh controlled exception is open:
+  - `ZENITH_BLADE_V0_42_ORIGINAL_DESIGN_STRUCTURAL_REBUILD = OPEN`.
+  - Technical context source, immutable:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+  - DRAFT art-direction reference: operator-provided original Zenith Blade
+    image/folder. SSOT ruling dated 2026-07-28 controls conflicts.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_ORIGINAL_DESIGN_REBUILD_V0_42.blend`.
+  - Required structural target:
+    - one long unified tapered silhouette with pointed tip;
+    - dark central load-bearing spine;
+    - close integrated B4C outer structures and cold-steel rails;
+    - compact upper drive cap and registered lower docking/load path;
+    - no box-open outer read;
+    - P1/P2/P3 retain continuous blade identity;
+    - P1/P2 weapon violet off; P3 exactly one recessed central core.
+  - Old V0.29 Blade objects may be hidden only in the new derivative. Actor,
+    rig, pose and registration context must not be remodeled.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ORIGINAL_DESIGN_REBUILD_V0_42_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ORIGINAL_DESIGN_REBUILD_V0_42_PROOF.md`
+    - `_tmp/zenith_blade_v0_42_rebuild/` for scripts/raw renders.
+  - Render permission: local Blender/Eevee neutral structural review only.
+  - No material-final lock, asset-lock, production-ready, public, push or
+    deploy claim.
