@@ -1,0 +1,150 @@
+{
+  "milestone": "ZENITH_BLADE_V0_52_PRODUCTION_HYGIENE_AUDIT",
+  "source": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend",
+  "source_sha256_before": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "source_sha256_after": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "reopen_pass": true,
+  "blender_version": "5.1.2",
+  "units": {
+    "system": "METRIC",
+    "scale_length": 1.0,
+    "length_unit": "METERS"
+  },
+  "frame_range": [
+    1,
+    61
+  ],
+  "fps": 24,
+  "object_count": 169,
+  "object_types": {
+    "MESH": 149,
+    "EMPTY": 13,
+    "ARMATURE": 1,
+    "CAMERA": 2,
+    "LIGHT": 4
+  },
+  "collection_count": 8,
+  "collections": [
+    "Collection",
+    "MIKAGE_PRODUCTION_ACTOR_V0_2_REFINED_CANDIDATE",
+    "MIKAGE_first_pass_controls",
+    "V027_BLADE_V026_INSTANCE",
+    "ZENITH_BLADE_V042_REBUILD",
+    "ZENITH_BLADE_V045_BRUTALIST",
+    "ZENITH_BLADE_V046_MECHANICAL_DEPTH",
+    "ZENITH_BLADE_V048_ATTACHMENT_REPAIR"
+  ],
+  "blade_object_count": 32,
+  "active_blade_objects": [
+    "ZB42_CENTRAL_LOAD_SPINE",
+    "ZB42_FUNCTIONAL_RAIL_L",
+    "ZB42_FUNCTIONAL_RAIL_R",
+    "ZB42_LOWER_DOCKING_LOAD_FOOT",
+    "ZB42_P3_SINGLE_RECESSED_CORE",
+    "ZB42_PHASE_CONTROL",
+    "ZB45_SHELL_LL",
+    "ZB45_SHELL_LR",
+    "ZB45_SHELL_UL",
+    "ZB45_SHELL_UR",
+    "ZB46_BASE_CHEEK_L",
+    "ZB46_BASE_CHEEK_R",
+    "ZB46_BASE_SPINE_RECEIVER",
+    "ZB46_DRIVE_HUB",
+    "ZB46_FLUX_BASE",
+    "ZB46_HUB_SHOULDER_L",
+    "ZB46_HUB_SHOULDER_R",
+    "ZB46_HUB_SPINE_KEY",
+    "ZB46_LOAD_JOINT_L_L",
+    "ZB46_LOAD_JOINT_L_R",
+    "ZB46_LOAD_JOINT_U_L",
+    "ZB46_LOAD_JOINT_U_R",
+    "ZB46_RECESSED_RAIL_L",
+    "ZB46_RECESSED_RAIL_R",
+    "ZB48_GAUNTLET_LOAD_BRIDGE",
+    "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER"
+  ],
+  "retired_hidden_blade_objects": [
+    "ZB42_OUTER_SHELL_L",
+    "ZB42_OUTER_SHELL_R",
+    "ZB42_UPPER_DRIVE_CAP",
+    "ZB45_HUB_SUPPORT_L",
+    "ZB45_HUB_SUPPORT_R",
+    "ZB45_INTEGRATED_DRIVE_HUB"
+  ],
+  "retired_hidden_blade_count": 6,
+  "legacy_collections": [
+    "ZENITH_BLADE_V042_REBUILD",
+    "ZENITH_BLADE_V045_BRUTALIST",
+    "ZENITH_BLADE_V046_MECHANICAL_DEPTH"
+  ],
+  "missing_required_active_objects": [],
+  "unapplied_active_blade_transforms": [
+    {
+      "object": "ZB45_SHELL_LL",
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.62,
+        1.0
+      ]
+    },
+    {
+      "object": "ZB45_SHELL_LR",
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.62,
+        1.0
+      ]
+    },
+    {
+      "object": "ZB45_SHELL_UL",
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.62,
+        1.0
+      ]
+    },
+    {
+      "object": "ZB45_SHELL_UR",
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.62,
+        1.0
+      ]
+    }
+  ],
+  "numeric_suffix_object_names": [],
+  "missing_libraries": [],
+  "missing_images": [],
+  "orphan_datablocks": {
+    "meshes": 0,
+    "materials": 0,
+    "images": 0,
+    "actions": 0
+  },
+  "source_unchanged": true,
+  "blend_saved": false,
+  "dependency_pass": true,
+  "required_inventory_pass": true,
+  "naming_pass": true,
+  "handoff_hygiene_pass": false
+}

@@ -3646,3 +3646,16 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     `production/character/reviews/MIKAGE_ZENITH_BLADE_CANDIDATE_MANIFEST_V0_51.md`.
   - Status may be only `READY_FOR_OPERATOR_RULING`; no self-promotion,
     asset-lock, production-ready, push or deploy.
+
+- One-hundred-sixteenth controlled exception is open:
+  - `ZENITH_BLADE_V0_52_PRODUCTION_HYGIENE_AUDIT = OPEN`.
+  - Read-only source:
+    `production/character/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend`.
+  - Audit scene units, frame range, object/collection inventory, active and
+    retired Blade objects, unapplied transforms, naming collisions, external
+    dependencies, orphan datablocks and handoff cleanliness.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_HYGIENE_V0_52_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_HYGIENE_V0_52_PROOF.md`
+    - `_tmp/zenith_blade_v0_52_hygiene/` for scripts.
+  - No Blender save, cleanup, rename, delete, promotion, push or deploy.
