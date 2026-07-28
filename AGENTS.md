@@ -3341,3 +3341,41 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     validation requirements.
   - No Blender runtime or `.blend` open/save is authorized. No asset, evidence
     history, SSOT, push, deploy or public-release change.
+
+- One-hundred-first controlled exception is open:
+  - `ZENITH_BLADE_V0_35_DIAGNOSTIC_SHOT_INTEGRATION = OPEN`.
+  - Locked parent:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+    Parent must remain byte-identical.
+  - Allowed derivative:
+    `production/character/shots/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35.blend`.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35_PROOF.md`
+    - `_tmp/zenith_blade_v0_35_shot/` for scripts/raw renders.
+  - Create a neutral internal diagnostic shot derivative by opening the locked
+    parent, preserving all existing asset/actor data, adding only namespaced
+    `V035_SHOT_*` camera/light objects and shot render settings, and saving only
+    the derivative.
+  - Required validation: parent hash unchanged; protected Blade object,
+    transform, mesh/material/driver fingerprints unchanged; derivative reopens;
+    P1/P2/P3 neutral shot evidence; no `.blend1`.
+  - No asset geometry/material/driver/registration/actor edit, animation shot
+    approval, public claim, push or deploy.
+
+- One-hundred-second controlled exception is conditionally open:
+  - `ZENITH_BLADE_V0_36_MOTION_STRESS_VALIDATION = OPEN_AFTER_V0_35_PASS`.
+  - Read-only source:
+    `production/character/shots/MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35.blend`.
+  - Inspect frames `1–61`, phase transitions, camera framing, driver
+    repeatability and evaluated world-space shell/core clearance without
+    saving any `.blend`.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MOTION_STRESS_V0_36_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MOTION_STRESS_V0_36_GATE.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MOTION_STRESS_V0_36_PROOF.md`
+    - `_tmp/zenith_blade_v0_36_stress/` for scripts/raw evidence.
+  - PASS requires V0.35 proof PASS, full-frame camera containment, valid phase
+    state, deterministic three-cycle snapshots, zero corrected world-space
+    cloak/body intersection and unchanged parent/derivative hashes.
+  - No save, repair, asset edit, push, deploy, public or shot-approval claim.
