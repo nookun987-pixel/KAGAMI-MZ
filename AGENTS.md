@@ -4157,3 +4157,47 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   no .blend1;
   repo clean after commit.
 - Integration-ready may be claimed only if all required validation passes.
+
+- ZENITH_BLADE_V0_86_GRIP_INTERFACE_CORRECTION = OPEN
+- Source:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend
+- Required inputs:
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_PROOF.md
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_OVERLAY.png
+- Allowed outputs:
+  production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_GRIP_INTERFACE_CORRECTION_V0_86.blend
+  production/character/reviews/MIKAGE_ZENITH_BLADE_GRIP_INTERFACE_CORRECTION_V0_86_CONTACT_SHEET.png
+  production/character/reviews/MIKAGE_ZENITH_BLADE_GRIP_INTERFACE_CORRECTION_V0_86_REPORT.json
+  production/character/reviews/MIKAGE_ZENITH_BLADE_GRIP_INTERFACE_CORRECTION_V0_86_PROOF.md
+- Allowed correction:
+  adjust actor-side grip pose controls;
+  adjust independent hand-marker orientation;
+  adjust secondary-grip IK target and pole;
+  adjust handle-registration orientation around the accepted hold point;
+  preserve handle world translation within 0.00001 m.
+- Locked:
+  docking-primary architecture;
+  Blade geometry, material and phase mechanism;
+  actor mesh and rig hierarchy;
+  pelvis docking anchor;
+  source V0.84.
+- Forbidden:
+  no shell, hub, rail, spine or handle geometry edits;
+  no actor mesh edits;
+  no rig-bone creation, deletion or reparenting;
+  no hand-parented Blade;
+  no pose-limit workaround;
+  no source overwrite;
+  no push or deploy.
+- Required validation:
+  P1/P2/P3 neutral plus eight existing poses;
+  zero unclassified physical penetration;
+  zero novel collision pairs;
+  marker/handle world translation delta <= 0.00001 m;
+  docking-primary and secondary-grip architecture preserved;
+  source hash unchanged;
+  reopen output;
+  no .blend1;
+  repo clean after commit.
+- Integration-ready may be claimed only if every validation requirement passes.
