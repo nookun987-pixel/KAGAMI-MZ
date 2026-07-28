@@ -1,0 +1,65 @@
+{
+  "milestone": "ZENITH_BLADE_V0_85_COLLISION_OVERLAY_AND_BOUNDED_CLEARANCE",
+  "source": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend",
+  "source_sha256": "F1B74214EDE009684625F3E6358E17F4014BFD38070CE7011BE09678F10270B4",
+  "passes": {
+    "baseline_reproduction": {
+      "status": "PASS",
+      "neutral_phase_records": 32,
+      "non_physical_marker_records": 3,
+      "visual_helper_candidate_records": 4,
+      "physical_or_unresolved_records": 25
+    },
+    "ownership_exclusion": {
+      "status": "PARTIAL",
+      "excluded": [
+        "hand_right_sword_hold_marker"
+      ],
+      "not_yet_excluded": [
+        "A2_right_graphite_wrist_to_body_contact_shadow"
+      ],
+      "reason": "The marker is an independent measurement reference. The contact-shadow mesh has no explicit collision-ownership property."
+    },
+    "translation_sweep": {
+      "status": "NO_VALID_REPAIR",
+      "axes": ["X", "Y", "Z"],
+      "tested_absolute_offsets_m": [0.002, 0.005, 0.01, 0.02, 0.03, 0.05],
+      "baseline_physical_triangle_overlaps": 1302,
+      "best_physical_triangle_overlaps": 1302,
+      "baseline_pair_records_across_p1_p2_p3": 54,
+      "best_pair_records_across_p1_p2_p3": 54,
+      "marker_delta_max_m": 6.224050436125053e-7,
+      "interpretation": "Secondary-grip IK follows the translated Blade and preserves the same arm/Blade overlap topology."
+    },
+    "rotation_about_handle_sweep": {
+      "status": "NO_VALID_REPAIR",
+      "axes": ["X", "Y", "Z"],
+      "tested_degrees": [-8, -5, -3, -2, -1, 1, 2, 3, 5, 8],
+      "baseline_physical_triangle_overlaps": 1302,
+      "best_physical_triangle_overlaps": 1302,
+      "smallest_nonzero_marker_delta_m": 0.017867323718875817,
+      "marker_tolerance_m": 0.00001,
+      "interpretation": "Every tested rotation failed registration tolerance and did not reduce the physical overlap score."
+    },
+    "p3_overlay": {
+      "status": "GENERATED_AND_INSPECTED",
+      "frame": 61,
+      "output": "production/character/reviews/MIKAGE_ZENITH_BLADE_BOUNDED_CLEARANCE_V0_85_OVERLAY.png",
+      "visual_result": "The Blade shell/hub envelope visibly occupies the actor arm/grip region. The overlay does not support classifying all remaining records as harmless grip or docking contact."
+    }
+  },
+  "derivative_created": false,
+  "derivative_reason": "No attachment-root translation or permitted rotation candidate reduced BVH overlap while preserving marker registration. Saving an unchanged or invalid derivative would be misleading.",
+  "validation": {
+    "p1_p2_p3_reproduced": true,
+    "eight_pose_prior_novel_pair_result_preserved_by_source": true,
+    "zero_unclassified_physical_penetration": false,
+    "marker_handle_world_delta_pass_for_accepted_candidate": false,
+    "docking_primary_architecture_preserved": true,
+    "secondary_grip_architecture_preserved": true,
+    "source_overwritten": false,
+    "integration_ready": false
+  },
+  "status": "BLOCKED_BY_REPAIR_SCOPE",
+  "next_safe_action": "Open a new bounded gate permitting grip-pose/handle-registration orientation correction or actor-side attachment-interface correction. Preserve docking-primary architecture and do not redesign the Blade shell."
+}
