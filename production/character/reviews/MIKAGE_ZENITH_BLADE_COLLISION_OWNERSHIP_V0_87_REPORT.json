@@ -1,0 +1,112 @@
+{
+  "milestone": "ZENITH_BLADE_V0_87_STATIC_COLLISION_OWNERSHIP_CLEANUP",
+  "source_sha256": "F1B74214EDE009684625F3E6358E17F4014BFD38070CE7011BE09678F10270B4",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend",
+  "excluded_objects": {
+    "hand_right_sword_hold_marker": {
+      "role": "REGISTRATION_REFERENCE",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "modifiers": []
+    },
+    "A2_right_graphite_wrist_to_body_contact_shadow": {
+      "role": "VISUAL_CONTACT_SHADOW_HELPER",
+      "parent": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent_type": "OBJECT",
+      "modifiers": []
+    },
+    "A2_right_continuous_black_upper_arm_attached_plane": {
+      "role": "STATIC_ATTACHMENT_INTENT_PROXY",
+      "parent": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent_type": "OBJECT",
+      "modifiers": []
+    },
+    "A2_right_shoulder_to_arm_continuity_graphite_bridge": {
+      "role": "STATIC_ATTACHMENT_INTENT_PROXY",
+      "parent": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent_type": "OBJECT",
+      "modifiers": []
+    },
+    "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical": {
+      "role": "PUBLIC_BLOCKOUT_PROXY",
+      "parent": null,
+      "parent_type": "OBJECT",
+      "modifiers": [
+        "BEVEL",
+        "WEIGHTED_NORMAL",
+        "WEIGHTED_NORMAL",
+        "BEVEL",
+        "WEIGHTED_NORMAL",
+        "BEVEL"
+      ]
+    }
+  },
+  "physical_mitten": {
+    "name": "A2_right_porcelain_mitten_hand_attached_read",
+    "ownership": "PHYSICAL_INCLUDED",
+    "records": [
+      {
+        "phase": "P1",
+        "blade": "ZB45_SHELL_UL",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 18
+      },
+      {
+        "phase": "P1",
+        "blade": "ZB45_SHELL_UR",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 18
+      },
+      {
+        "phase": "P1",
+        "blade": "ZB46_RECESSED_RAIL_R",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 36
+      },
+      {
+        "phase": "P2",
+        "blade": "ZB45_SHELL_UL",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 18
+      },
+      {
+        "phase": "P2",
+        "blade": "ZB45_SHELL_UR",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 18
+      },
+      {
+        "phase": "P2",
+        "blade": "ZB46_RECESSED_RAIL_R",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 36
+      },
+      {
+        "phase": "P3",
+        "blade": "ZB45_SHELL_UL",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 18
+      },
+      {
+        "phase": "P3",
+        "blade": "ZB45_SHELL_UR",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 18
+      },
+      {
+        "phase": "P3",
+        "blade": "ZB46_RECESSED_RAIL_R",
+        "target": "A2_right_porcelain_mitten_hand_attached_read",
+        "triangle_pairs": 36
+      }
+    ],
+    "record_count": 9,
+    "triangle_overlap_total": 216
+  },
+  "prior_eight_pose_novel_pairs": 0,
+  "geometry_changed": false,
+  "transform_changed": false,
+  "status": "PASS_OWNERSHIP_CLEANUP_MITTEN_BLOCKER_REMAINS",
+  "integration_ready": false,
+  "next_gate": "V0_88_MITTEN_INTERFACE_GEOMETRY_AUDIT"
+}
