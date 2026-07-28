@@ -1,0 +1,46 @@
+{
+  "milestone": "ZENITH_BLADE_PRODUCTION_HANDOFF_V0_34",
+  "parent_asset": "production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend",
+  "parent_sha256": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5",
+  "asset_lock": true,
+  "integration_ready": true,
+  "production_ready": true,
+  "phase_control": {
+    "object": "ZB13_PHASE_CONTROL",
+    "property": "blade_phase",
+    "reference_frames": {
+      "P1": 1,
+      "P2": 31,
+      "P3": 61
+    },
+    "transition_diagnostic_frames": [25, 28, 55, 58]
+  },
+  "signal_contract": {
+    "P1_blade_violet": false,
+    "P2_blade_violet": false,
+    "P3_core_count": 1,
+    "ambient_violet_allowed": false,
+    "violet_wash_allowed": false,
+    "violet_halo_allowed": false
+  },
+  "interface_objects": [
+    "hand_right_sword_hold_marker",
+    "ZB15_GUARD_LOAD_BRIDGE",
+    "ZB15_DOCKING_LOAD_TONGUE"
+  ],
+  "protected_blade_objects": [
+    "ZB13_L_LOW_SHELL",
+    "ZB13_L_UP_SHELL",
+    "ZB13_R_LOW_SHELL",
+    "ZB13_R_UP_SHELL",
+    "ZB13_P3_SINGLE_VIOLET_CORE"
+  ],
+  "docking_clearance_m": 0.2166,
+  "minimum_clearance_gate_m": 0.2,
+  "preferred_consumption": "LINK",
+  "overwrite_parent_allowed": false,
+  "push_authorized": false,
+  "deploy_authorized": false,
+  "public_release_authorized": false,
+  "next_gate": "SHOT_INTEGRATION_DERIVATIVE_V0_35"
+}

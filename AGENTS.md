@@ -3326,3 +3326,18 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     exception. The locked V0.29 baseline must never be overwritten.
   - Push, deploy, public release, website use and animation-shot authorization
     remain `NO`.
+
+- One-hundredth controlled exception is open:
+  - `ZENITH_BLADE_V0_34_PRODUCTION_HANDOFF = OPEN`.
+  - Read-only locked baseline:
+    `production/character/MIKAGE_ZENITH_BLADE_MATERIAL_FINALING_V0_29.blend`.
+  - Purpose: document safe downstream consumption of the V0.33-locked asset.
+  - Allowed outputs only:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_HANDOFF_V0_34.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PRODUCTION_HANDOFF_V0_34.json`
+  - Required content: immutable path/hash, lineage status, P1/P2/P3 frame map,
+    phase-control object, attachment/docking object names, material/signal
+    restrictions, link/append policy, derivative naming and downstream
+    validation requirements.
+  - No Blender runtime or `.blend` open/save is authorized. No asset, evidence
+    history, SSOT, push, deploy or public-release change.
