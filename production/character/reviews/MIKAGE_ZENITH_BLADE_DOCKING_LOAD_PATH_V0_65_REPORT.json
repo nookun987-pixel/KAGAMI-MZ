@@ -1,0 +1,23 @@
+{
+  "milestone": "ZENITH_BLADE_V0_65_DOCKING_LOAD_PATH_ARCHITECTURE",
+  "source_sha256_before": "8F21811AF856BFD849069FA0505728367C346AB4794BC47BA9EDA1581D6BDBD3",
+  "source_sha256_after": "8F21811AF856BFD849069FA0505728367C346AB4794BC47BA9EDA1581D6BDBD3",
+  "source_preserved": true,
+  "anchor": "ZB65_ACTOR_DOCKING_LOAD_ANCHOR",
+  "anchor_parent": "MIKAGE_initial_armature_scaffold",
+  "anchor_parent_type": "BONE",
+  "anchor_parent_bone": "pelvis",
+  "blade_root_parent": "ZB65_ACTOR_DOCKING_LOAD_ANCHOR",
+  "anchor_foot_delta_m": 1.4901161193847656e-08,
+  "blade_root_neutral_matrix_max_error": 0.0,
+  "marker_parent": "MIKAGE_initial_armature_scaffold",
+  "marker_parent_bone": "hand.R",
+  "build_pass": true,
+  "output_sha256": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "reopen_anchor_pass": true,
+  "reopen_root_pass": true,
+  "reopen_marker_independent_pass": true,
+  "source_sha256_final": "8F21811AF856BFD849069FA0505728367C346AB4794BC47BA9EDA1581D6BDBD3",
+  "output_sha256_final": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "verify_pass": true
+}
