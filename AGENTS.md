@@ -3528,3 +3528,35 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   - Render permission: neutral Eevee structural review.
   - No material lock, asset-lock, production-ready, push, deploy or public
     claim.
+
+- Operator ruling — V0.45:
+  - `V0.45_CANON_CONVERGENCE`, pointed-tip correction, four-plate read,
+    P1 monolith, P2 signal-off and P3 single-core: `PASS`.
+  - `350KG_MASS_READ` and `LOAD_PATH_READ`: `PARTIAL`.
+  - `DRIVE_HUB_INTEGRATION` and `FLUX_BASE_INTEGRATION`: `FAIL`.
+  - `ASSET_PROMOTION: HOLD`.
+  - Preserve V0.45 outer silhouette, flat termination, core and materials.
+
+- One-hundred-tenth controlled exception is open:
+  - `ZENITH_BLADE_V0_46_MECHANICAL_DEPTH = OPEN`.
+  - Source candidate:
+    `production/character/MIKAGE_ZENITH_BLADE_BRUTALIST_CORRECTION_V0_45.blend`.
+    Do not overwrite it.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46.blend`.
+  - Mechanical-depth correction only:
+    - increase body depth for the 3/4 350 kg read without changing the front contour;
+    - integrate the drive hub into the spine and upper plates;
+    - widen and integrate the Flux-Pinning base;
+    - add paired recessed rails beside the spine;
+    - add minimal upper/lower load joints at the horizontal seam.
+  - Preserve P1 closure, P2 violet-off, P3 one recessed core, four-plate
+    transforms, material assignments, actor registration and flat termination.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_45_OPERATOR_RULING.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46_PROOF.md`
+    - `_tmp/zenith_blade_v0_46_mechanical/` for scripts/raw renders.
+  - Render permission: neutral Eevee structural review.
+  - No ornament, silhouette redesign, core/material/color change, actor edit,
+    asset-lock, production-ready, push, deploy or public claim.
