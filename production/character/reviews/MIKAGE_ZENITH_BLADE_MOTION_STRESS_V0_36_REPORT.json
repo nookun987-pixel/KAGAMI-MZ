@@ -1,0 +1,414 @@
+{
+  "milestone": "ZENITH_BLADE_MOTION_STRESS_V0_36",
+  "source": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\shots\\MIKAGE_ZENITH_BLADE_DIAGNOSTIC_SHOT_V0_35.blend",
+  "source_sha256_before": "268F5248A95A3411E413F72594370ED9614B41042AE0F89AA29820BF695819A9",
+  "source_sha256_after": "268F5248A95A3411E413F72594370ED9614B41042AE0F89AA29820BF695819A9",
+  "parent_sha256_before": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5",
+  "parent_sha256_after": "317678F6173D1FED3789DCA68FEC7B880D8E7955A45E2495BC7EC2D08C863BE5",
+  "frames_tested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "frame_count": 61,
+  "phase_pass": true,
+  "repeatability_cycles": [
+    [
+      {
+        "frame": 1,
+        "phase": 0,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.33000004,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.33000004,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.21000004,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.21000004,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 31,
+        "phase": 1,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.38499999,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.38499999,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.15499997,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.15499997,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 61,
+        "phase": 2,
+        "core_on": true,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.42499995,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.42499995,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.11500001,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.11500001,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 1,
+        "phase": 0,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.33000004,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.33000004,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.21000004,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.21000004,
+            -0.53300005,
+            1.88
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "frame": 1,
+        "phase": 0,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.33000004,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.33000004,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.21000004,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.21000004,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 31,
+        "phase": 1,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.38499999,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.38499999,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.15499997,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.15499997,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 61,
+        "phase": 2,
+        "core_on": true,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.42499995,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.42499995,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.11500001,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.11500001,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 1,
+        "phase": 0,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.33000004,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.33000004,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.21000004,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.21000004,
+            -0.53300005,
+            1.88
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "frame": 1,
+        "phase": 0,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.33000004,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.33000004,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.21000004,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.21000004,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 31,
+        "phase": 1,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.38499999,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.38499999,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.15499997,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.15499997,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 61,
+        "phase": 2,
+        "core_on": true,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.42499995,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.42499995,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.11500001,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.11500001,
+            -0.53300005,
+            1.88
+          ]
+        }
+      },
+      {
+        "frame": 1,
+        "phase": 0,
+        "core_on": false,
+        "shell_locations": {
+          "ZB13_L_LOW_SHELL": [
+            -1.33000004,
+            -0.53600001,
+            1.37
+          ],
+          "ZB13_L_UP_SHELL": [
+            -1.33000004,
+            -0.537,
+            1.88
+          ],
+          "ZB13_R_LOW_SHELL": [
+            -1.21000004,
+            -0.53400004,
+            1.37
+          ],
+          "ZB13_R_UP_SHELL": [
+            -1.21000004,
+            -0.53300005,
+            1.88
+          ]
+        }
+      }
+    ]
+  ],
+  "repeatability_pass": true,
+  "collision_hits": {},
+  "collision_pass": true,
+  "framing_violations": {},
+  "framing_pass": true,
+  "source_unchanged": true,
+  "parent_unchanged": true,
+  "blend_saved": false,
+  "stress_validation_pass": true
+}
