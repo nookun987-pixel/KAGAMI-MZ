@@ -3626,3 +3626,23 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_CHANGE_SCOPE_V0_49_PROOF.md`
     - `_tmp/zenith_blade_v0_49_scope_audit/` for scripts/snapshots.
   - No Blender save, repair, promotion, asset-lock, push or deploy.
+
+- One-hundred-fourteenth controlled exception is open:
+  - `ZENITH_BLADE_V0_50_INTERFACE_EVIDENCE = OPEN`.
+  - Read-only source evidence: accepted V0.48 contact sheet and machine report.
+  - Produce a diagnostic sheet showing P1/P2/P3 rendered context, exact
+    marker-handle registration, phase continuity and collision timeline.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_EVIDENCE_V0_50.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_INTERFACE_EVIDENCE_V0_50_PROOF.md`
+    - `_tmp/zenith_blade_v0_50_evidence/` for scripts.
+  - No `.blend` open/save is required. No repair or promotion.
+
+- One-hundred-fifteenth controlled exception is open:
+  - `ZENITH_BLADE_V0_51_CANDIDATE_MANIFEST = OPEN`.
+  - Consolidate V0.45–V0.50 lineage, hashes, commits, passed/failed/resolved
+    gates and remaining operator-owned decisions.
+  - Allowed output:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_CANDIDATE_MANIFEST_V0_51.md`.
+  - Status may be only `READY_FOR_OPERATOR_RULING`; no self-promotion,
+    asset-lock, production-ready, push or deploy.
