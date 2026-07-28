@@ -1,0 +1,26 @@
+{
+  "milestone": "ZENITH_BLADE_V0_64_1_INDEPENDENT_MARKER_CORRECTION",
+  "source_sha256_before": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "source_sha256_after": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "source_preserved": true,
+  "marker_parent": "MIKAGE_initial_armature_scaffold",
+  "marker_parent_type": "BONE",
+  "marker_parent_bone": "hand.R",
+  "marker_constraints": 0,
+  "neutral_delta_m": 2.421438694000244e-08,
+  "handle_matrix_max_change": 0.0,
+  "build_pass": true,
+  "output_sha256": "8F21811AF856BFD849069FA0505728367C346AB4794BC47BA9EDA1581D6BDBD3",
+  "pose_deltas_m": {
+    "neutral": 2.421438694000244e-08,
+    "hand_hold": 2.421438694000244e-08,
+    "torso_left": 2.2351741790771484e-08,
+    "torso_right": 2.2351741790771484e-08,
+    "shoulder_elbow_limit": 1.216437061671592e-07
+  },
+  "max_pose_delta_m": 1.216437061671592e-07,
+  "independent_parent_pass": true,
+  "source_sha256_final": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "output_sha256_final": "8F21811AF856BFD849069FA0505728367C346AB4794BC47BA9EDA1581D6BDBD3",
+  "verify_pass": true
+}
