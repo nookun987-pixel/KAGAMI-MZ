@@ -1,0 +1,192 @@
+{
+  "milestone": "ZENITH_BLADE_V0_57_LIBRARY_LINK_SMOKE_TEST",
+  "source_sha256_before": "77519F978FA05F5351DA83C27A8A47957C1FD0A9A41FF1633D58B3B98987DCEE",
+  "source_sha256_after": "77519F978FA05F5351DA83C27A8A47957C1FD0A9A41FF1633D58B3B98987DCEE",
+  "requested_collection": "ZENITH_BLADE_V056_CLEAN_HANDOFF",
+  "collection_link_pass": true,
+  "linked_object_count": 28,
+  "linked_objects": [
+    "V042_REVIEW_CAMERA",
+    "V042_REVIEW_KEY",
+    "ZB42_CENTRAL_LOAD_SPINE",
+    "ZB42_FUNCTIONAL_RAIL_L",
+    "ZB42_FUNCTIONAL_RAIL_R",
+    "ZB42_LOWER_DOCKING_LOAD_FOOT",
+    "ZB42_P3_SINGLE_RECESSED_CORE",
+    "ZB42_PHASE_CONTROL",
+    "ZB45_SHELL_LL",
+    "ZB45_SHELL_LR",
+    "ZB45_SHELL_UL",
+    "ZB45_SHELL_UR",
+    "ZB46_BASE_CHEEK_L",
+    "ZB46_BASE_CHEEK_R",
+    "ZB46_BASE_SPINE_RECEIVER",
+    "ZB46_DRIVE_HUB",
+    "ZB46_FLUX_BASE",
+    "ZB46_HUB_SHOULDER_L",
+    "ZB46_HUB_SHOULDER_R",
+    "ZB46_HUB_SPINE_KEY",
+    "ZB46_LOAD_JOINT_L_L",
+    "ZB46_LOAD_JOINT_L_R",
+    "ZB46_LOAD_JOINT_U_L",
+    "ZB46_LOAD_JOINT_U_R",
+    "ZB46_RECESSED_RAIL_L",
+    "ZB46_RECESSED_RAIL_R",
+    "ZB48_GAUNTLET_LOAD_BRIDGE",
+    "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER"
+  ],
+  "missing_required_objects": [],
+  "required_inventory_pass": true,
+  "library_provenance": {
+    "ZB42_CENTRAL_LOAD_SPINE": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB42_FUNCTIONAL_RAIL_L": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB42_FUNCTIONAL_RAIL_R": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB42_P3_SINGLE_RECESSED_CORE": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB42_LOWER_DOCKING_LOAD_FOOT": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB42_PHASE_CONTROL": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "V042_REVIEW_CAMERA": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "V042_REVIEW_KEY": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB45_SHELL_UL": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB45_SHELL_UR": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB45_SHELL_LL": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB45_SHELL_LR": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_DRIVE_HUB": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_HUB_SPINE_KEY": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_HUB_SHOULDER_L": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_HUB_SHOULDER_R": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_FLUX_BASE": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_BASE_SPINE_RECEIVER": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_BASE_CHEEK_L": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_BASE_CHEEK_R": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_RECESSED_RAIL_L": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_LOAD_JOINT_U_L": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_LOAD_JOINT_L_L": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_RECESSED_RAIL_R": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_LOAD_JOINT_U_R": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB46_LOAD_JOINT_L_R": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend",
+    "ZB48_GAUNTLET_LOAD_BRIDGE": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend"
+  },
+  "library_provenance_pass": true,
+  "linked_read_only_pass": true,
+  "materials": [
+    "ZB42_B4C_PORCELAIN",
+    "ZB42_COLD_STEEL",
+    "ZB42_DARK_TITANIUM",
+    "ZB42_P3_CORE_VIOLET"
+  ],
+  "material_presence_pass": true,
+  "timeline": {
+    "1": [
+      {
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        },
+        "core_on": false
+      },
+      {
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.42999995,
+            -0.23,
+            1.45000005
+          ]
+        },
+        "core_on": false
+      }
+    ],
+    "31": [
+      {
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.30999994,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.30999994,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.54999995,
+            -0.23,
+            1.45000005
+          ]
+        },
+        "core_on": false
+      }
+    ],
+    "61": [
+      {
+        "shells": {
+          "ZB45_SHELL_UL": [
+            1.23000002,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_UR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ],
+          "ZB45_SHELL_LL": [
+            1.23000002,
+            -0.52999997,
+            1.45000005
+          ],
+          "ZB45_SHELL_LR": [
+            1.63,
+            -0.23,
+            1.45000005
+          ]
+        },
+        "core_on": true
+      }
+    ]
+  },
+  "phase_snapshot_pass": true,
+  "source_unchanged": true,
+  "consumer_blend_saved": false,
+  "library_override_created": false,
+  "library_link_integration_pass": true
+}

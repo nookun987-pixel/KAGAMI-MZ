@@ -3733,3 +3733,24 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56_PROOF.md`
     - `_tmp/zenith_blade_v0_56_package/` for scripts.
   - No geometry/material/animation edit, promotion, asset-lock, push or deploy.
+
+- One-hundred-twenty-first controlled exception is open:
+  - `ZENITH_BLADE_V0_57_LIBRARY_LINK_SMOKE_TEST = OPEN`.
+  - From Blender factory-empty, library-link
+    `ZENITH_BLADE_V056_CLEAN_HANDOFF` from V0.56.
+  - Verify complete inventory, library provenance, read-only linked state,
+    materials and P1/P2/P3 phase snapshots.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_LIBRARY_LINK_V0_57_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_LIBRARY_LINK_V0_57_PROOF.md`
+    - `_tmp/zenith_blade_v0_57_link/` for scripts.
+  - No consumer save, library override, source edit, promotion, push or deploy.
+
+- One-hundred-twenty-second controlled exception is open:
+  - `ZENITH_BLADE_V0_58_INTEGRATION_MANIFEST = OPEN`.
+  - Consolidate V0.54 evaluated bake, V0.56 append package and V0.57 linked
+    consumer evidence.
+  - Allowed output:
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_INTEGRATION_MANIFEST_V0_58.md`.
+  - Status may be only `READY_FOR_OPERATOR_INTEGRATION_RULING`; no asset-lock,
+    production-ready, push or deploy.
