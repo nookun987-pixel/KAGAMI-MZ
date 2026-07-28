@@ -119,3 +119,21 @@ Các offset, frame number, object name, topology, driver, bevel width, transform
 
 CHANGELOG:
 2026-07-24 — Operator promoted the V0.15 Zenith Blade shell-form and phase-expression rules 1–8 into canon authority.
+
+## OPERATOR RULING - ORIGINAL ZENITH BLADE FORM - 2026-07-28
+
+STATUS: OPERATOR_CANON_PROMOTED
+
+1. Original slender Zenith Blade design is promoted as the new structural target.
+2. Long unified tapered silhouette and pointed tip are allowed.
+3. The P1 brutal closed-box requirement is superseded.
+4. The four-shell implementation may remain only as internal mechanism; it must not define the outer box silhouette.
+5. P1/P2/P3 must preserve one continuous blade identity.
+6. P1 and P2 have no weapon violet emission.
+7. P3 retains exactly one recessed electric-violet central core.
+8. Any violet ring shown in old presentation artwork is presentation-only and is not asset geometry, ambient light, wash or halo.
+9. Materials remain B4C outer structure, dark Titanium load path and cold-steel functional rails.
+10. No fantasy ornament, decorative clutter or secondary core.
+
+CHANGELOG:
+2026-07-28 - Operator superseded the brutal-box outer silhouette and promoted the original tapered Zenith Blade design as the structural rebuild target.
