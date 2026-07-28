@@ -137,3 +137,24 @@ STATUS: OPERATOR_CANON_PROMOTED
 
 CHANGELOG:
 2026-07-28 - Operator superseded the brutal-box outer silhouette and promoted the original tapered Zenith Blade design as the structural rebuild target.
+
+## OPERATOR RULING — ZENITH BLADE BRUTALIST CONVERGENCE — 2026-07-28
+
+STATUS: OPERATOR_CANON_PROMOTED
+
+This ruling supersedes the earlier 2026-07-28 ORIGINAL ZENITH BLADE FORM ruling.
+
+1. The pointed tapered V0.42 silhouette is rejected as the Zenith Blade production target.
+2. Pointed tip and fantasy-greatsword read are forbidden.
+3. The weapon must retain a massive 350 kg brutalist industrial identity.
+4. The lower termination must be flat-cut or blunt mechanical, not pointed.
+5. P1 must read as a fully closed B4C monolith; central spine, rails and core remain concealed.
+6. The outer structure uses four mechanically linked shell plates: upper/lower left and upper/lower right.
+7. P2 opens horizontally enough to expose the dark load-bearing spine and functional rails, while the weapon core remains off.
+8. P3 preserves the same shared brutalist contour and reveals exactly one recessed electric-violet central core.
+9. Every seam, joint, drive hub and structural division must explain a functional load path.
+10. Preserve from V0.42 only the recessed-core treatment, central-spine clarity and clean outer-silhouette discipline.
+11. V0.42 visual ruling is FAIL_CANON_CONVERGENCE and it must not be promoted.
+
+CHANGELOG:
+2026-07-28 — Operator rejected the pointed-taper V0.42 direction, restored the four-plate brutalist 350 kg identity, and authorized one bounded structural correction pass.
