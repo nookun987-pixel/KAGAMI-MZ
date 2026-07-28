@@ -1,0 +1,629 @@
+{
+  "milestone": "ZENITH_BLADE_V0_84_BASELINE_CONTACT_OWNERSHIP_AUDIT",
+  "source": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend",
+  "source_sha256_open": "F1B74214EDE009684625F3E6358E17F4014BFD38070CE7011BE09678F10270B4",
+  "blender_version": "5.1.2",
+  "saved": false,
+  "neutral_pair_records": [
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "triangle_overlap_count": 4,
+      "classification": "NON_PHYSICAL_REFERENCE",
+      "reason": "Independent actor-side registration marker; measurement reference, not actor surface."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 14,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_overlap_count": 12,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 18,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 12,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 23,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 20,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 18,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 22,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P1",
+      "frame": 1,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "triangle_overlap_count": 16,
+      "classification": "NON_PHYSICAL_VISUAL_HELPER_CANDIDATE",
+      "reason": "Named contact-shadow visual helper; exclusion requires explicit collision ownership policy."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "triangle_overlap_count": 4,
+      "classification": "NON_PHYSICAL_REFERENCE",
+      "reason": "Independent actor-side registration marker; measurement reference, not actor surface."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 14,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_overlap_count": 12,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 20,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 12,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 23,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 20,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 18,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 22,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P2",
+      "frame": 31,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "triangle_overlap_count": 16,
+      "classification": "NON_PHYSICAL_VISUAL_HELPER_CANDIDATE",
+      "reason": "Named contact-shadow visual helper; exclusion requires explicit collision ownership policy."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UL",
+      "target": "hand_right_sword_hold_marker",
+      "triangle_overlap_count": 4,
+      "classification": "NON_PHYSICAL_REFERENCE",
+      "reason": "Independent actor-side registration marker; measurement reference, not actor surface."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UL",
+      "target": "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical",
+      "triangle_overlap_count": 24,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 16,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "triangle_overlap_count": 14,
+      "classification": "NON_PHYSICAL_VISUAL_HELPER_CANDIDATE",
+      "reason": "Named contact-shadow visual helper; exclusion requires explicit collision ownership policy."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_porcelain_mitten_hand_attached_read",
+      "triangle_overlap_count": 22,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB45_SHELL_UR",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 23,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_DRIVE_HUB",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 12,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 23,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_HUB_SHOULDER_R",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 20,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_HUB_SPINE_KEY",
+      "target": "A2_right_shoulder_to_arm_continuity_graphite_bridge",
+      "triangle_overlap_count": 18,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_continuous_black_upper_arm_attached_plane",
+      "triangle_overlap_count": 22,
+      "classification": "PHYSICAL_OR_UNRESOLVED_GEOMETRY",
+      "reason": "Renderable actor/body component or no explicit non-physical ownership evidence."
+    },
+    {
+      "phase": "P3",
+      "frame": 61,
+      "blade": "ZB46_RECESSED_RAIL_R",
+      "target": "A2_right_graphite_wrist_to_body_contact_shadow",
+      "triangle_overlap_count": 16,
+      "classification": "NON_PHYSICAL_VISUAL_HELPER_CANDIDATE",
+      "reason": "Named contact-shadow visual helper; exclusion requires explicit collision ownership policy."
+    }
+  ],
+  "pair_record_count": 32,
+  "classification_counts": {
+    "NON_PHYSICAL_REFERENCE": 3,
+    "NON_PHYSICAL_VISUAL_HELPER_CANDIDATE": 4,
+    "PHYSICAL_OR_UNRESOLVED_GEOMETRY": 25
+  },
+  "object_metadata": {
+    "A2_right_continuous_black_upper_arm_attached_plane": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "Collection",
+        "MESH_PREP_deform_candidate_groups"
+      ],
+      "dimensions_m": [
+        0.129999995,
+        0.079999998,
+        0.980000019
+      ],
+      "vertices": 56,
+      "polygons": 54,
+      "material_slots": [
+        "A2_void_black_body_real_material_depth"
+      ],
+      "custom_properties": {
+        "mesh_prep_v0_1_role": "deform_candidate_right_arm_hand_attachment",
+        "mesh_prep_v0_1_note": "Audit target: arm/hand connection, wrist transition, shoulder bridge continuity, blade-side contact.",
+        "mesh_prep_v0_1_modifier_stack_frozen_for_test_duplicate": true,
+        "mesh_prep_v0_1_parented_to_non_rig_intent_empty": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+        "smoke_test_v0_1_probe": "shoulder",
+        "smoke_test_v0_1_probe_shape_key": "SMOKE_TEST_V0_1_LIMITED_DEFORM_PROBE"
+      }
+    },
+    "A2_right_graphite_wrist_to_body_contact_shadow": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "Collection",
+        "MESH_PREP_deform_candidate_groups"
+      ],
+      "dimensions_m": [
+        0.159999996,
+        0.045000002,
+        0.219999999
+      ],
+      "vertices": 56,
+      "polygons": 54,
+      "material_slots": [
+        "A2_graphite_joint_shadow_attachment"
+      ],
+      "custom_properties": {
+        "mesh_prep_v0_1_role": "deform_candidate_right_arm_hand_attachment",
+        "mesh_prep_v0_1_note": "Audit target: arm/hand connection, wrist transition, shoulder bridge continuity, blade-side contact.",
+        "mesh_prep_v0_1_modifier_stack_frozen_for_test_duplicate": true,
+        "mesh_prep_v0_1_parented_to_non_rig_intent_empty": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+        "smoke_test_v0_1_probe": "hand",
+        "smoke_test_v0_1_probe_shape_key": "SMOKE_TEST_V0_1_LIMITED_DEFORM_PROBE"
+      }
+    },
+    "A2_right_porcelain_mitten_hand_attached_read": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "Collection",
+        "MESH_PREP_deform_candidate_groups"
+      ],
+      "dimensions_m": [
+        0.159999982,
+        0.089999981,
+        0.25
+      ],
+      "vertices": 56,
+      "polygons": 54,
+      "material_slots": [
+        "A2_premium_matte_faceted_porcelaingofun"
+      ],
+      "custom_properties": {
+        "mesh_prep_v0_1_role": "deform_candidate_right_arm_hand_attachment",
+        "mesh_prep_v0_1_note": "Audit target: arm/hand connection, wrist transition, shoulder bridge continuity, blade-side contact.",
+        "mesh_prep_v0_1_modifier_stack_frozen_for_test_duplicate": true,
+        "mesh_prep_v0_1_parented_to_non_rig_intent_empty": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+        "smoke_test_v0_1_probe": "hand",
+        "smoke_test_v0_1_probe_shape_key": "SMOKE_TEST_V0_1_LIMITED_DEFORM_PROBE"
+      }
+    },
+    "A2_right_shoulder_to_arm_continuity_graphite_bridge": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "Collection",
+        "MESH_PREP_deform_candidate_groups"
+      ],
+      "dimensions_m": [
+        0.25999999,
+        0.075000003,
+        0.129999995
+      ],
+      "vertices": 56,
+      "polygons": 54,
+      "material_slots": [
+        "A2_graphite_joint_shadow_attachment"
+      ],
+      "custom_properties": {
+        "mesh_prep_v0_1_role": "deform_candidate_right_arm_hand_attachment",
+        "mesh_prep_v0_1_note": "Audit target: arm/hand connection, wrist transition, shoulder bridge continuity, blade-side contact.",
+        "mesh_prep_v0_1_modifier_stack_frozen_for_test_duplicate": true,
+        "mesh_prep_v0_1_parented_to_non_rig_intent_empty": "MESH_PREP_RIGHT_ARM_HAND_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG",
+        "smoke_test_v0_1_probe": "shoulder",
+        "smoke_test_v0_1_probe_shape_key": "SMOKE_TEST_V0_1_LIMITED_DEFORM_PROBE"
+      }
+    },
+    "PUBLIC_BLOCK_V03_right_upper_sleeve_clean_vertical": {
+      "exists": true,
+      "type": "MESH",
+      "parent": null,
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "Collection"
+      ],
+      "dimensions_m": [
+        0.25,
+        0.25999999,
+        0.699999988
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "material_slots": [
+        "LOOKDEV_V0_2_void_black_sumi_body_refined"
+      ],
+      "custom_properties": {}
+    },
+    "ZB45_SHELL_UL": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "ZENITH_BLADE_V056_CLEAN_HANDOFF"
+      ],
+      "dimensions_m": [
+        0.524221659,
+        0.502200007,
+        2.039000034
+      ],
+      "vertices": 56,
+      "polygons": 54,
+      "material_slots": [
+        "ZB42_B4C_PORCELAIN"
+      ],
+      "custom_properties": {}
+    },
+    "ZB45_SHELL_UR": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "ZENITH_BLADE_V056_CLEAN_HANDOFF"
+      ],
+      "dimensions_m": [
+        0.524221659,
+        0.502200007,
+        2.039000034
+      ],
+      "vertices": 56,
+      "polygons": 54,
+      "material_slots": [
+        "ZB42_B4C_PORCELAIN"
+      ],
+      "custom_properties": {}
+    },
+    "ZB46_DRIVE_HUB": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "ZENITH_BLADE_V056_CLEAN_HANDOFF"
+      ],
+      "dimensions_m": [
+        1.100000024,
+        0.560000002,
+        0.319999993
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "material_slots": [
+        "ZB42_DARK_TITANIUM"
+      ],
+      "custom_properties": {}
+    },
+    "ZB46_HUB_SHOULDER_R": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "ZENITH_BLADE_V056_CLEAN_HANDOFF"
+      ],
+      "dimensions_m": [
+        0.319999993,
+        0.479999989,
+        0.419999987
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "material_slots": [
+        "ZB42_DARK_TITANIUM"
+      ],
+      "custom_properties": {}
+    },
+    "ZB46_HUB_SPINE_KEY": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "ZENITH_BLADE_V056_CLEAN_HANDOFF"
+      ],
+      "dimensions_m": [
+        0.300000012,
+        0.460000008,
+        0.439999998
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "material_slots": [
+        "ZB42_DARK_TITANIUM"
+      ],
+      "custom_properties": {}
+    },
+    "ZB46_RECESSED_RAIL_R": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "ZB60_NATIVE_ACTOR_ATTACHMENT_ROOT",
+      "parent_type": "OBJECT",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "ZENITH_BLADE_V056_CLEAN_HANDOFF"
+      ],
+      "dimensions_m": [
+        0.104000002,
+        0.379999995,
+        3.440000057
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "material_slots": [
+        "ZB42_COLD_STEEL"
+      ],
+      "custom_properties": {}
+    },
+    "hand_right_sword_hold_marker": {
+      "exists": true,
+      "type": "MESH",
+      "parent": "MIKAGE_initial_armature_scaffold",
+      "parent_type": "BONE",
+      "hide_render": false,
+      "hide_viewport": false,
+      "hide_get": false,
+      "display_type": "TEXTURED",
+      "collections": [
+        "Collection",
+        "MIKAGE_PRODUCTION_ACTOR_V0_2_REFINED_CANDIDATE"
+      ],
+      "dimensions_m": [
+        0.159999982,
+        0.179999962,
+        0.219999999
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "material_slots": [
+        "LOOKDEV_V0_2_matte_premium_porcelaingofun_white"
+      ],
+      "custom_properties": {}
+    }
+  },
+  "real_penetration_count": "UNRESOLVED",
+  "conclusion": "HOLD",
+  "required_next_action": "Define collision ownership for visual helpers and visually inspect all PHYSICAL_OR_UNRESOLVED_GEOMETRY pairs before any integration-ready claim."
+}
