@@ -1,0 +1,13 @@
+{
+  "milestone": "ZENITH_BLADE_V0_80_CHAIN5_GRIP_CONVERGENCE_CANDIDATE",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_preserved": true,
+  "docking_preserved": true,
+  "marker_independent": true,
+  "ik_chain_count": 5,
+  "pole_angle_deg": 90,
+  "neutral_delta_m": 2.421438694000244e-08,
+  "build_pass": true,
+  "output_sha256": "0CBE4D234738F68E883D15DB6E6A276D3E6731631490C9E552E11D667D78030D"
+}

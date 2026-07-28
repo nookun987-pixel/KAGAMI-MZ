@@ -1,0 +1,29 @@
+{
+  "milestone": "ZENITH_BLADE_V0_84_DECOUPLED_CHAIN5_INTEGRATION_CANDIDATE",
+  "source_sha256_before": "F65CA39CC7C4A40AD9F1C649E04326C05E2E641ADE98D3A6DB312E718D2A1108",
+  "source_sha256_after": "F65CA39CC7C4A40AD9F1C649E04326C05E2E641ADE98D3A6DB312E718D2A1108",
+  "source_preserved": true,
+  "docking_preserved": true,
+  "marker_independent": true,
+  "active_actor_actions": {
+    "chest_ctrl": null,
+    "foot.L_ctrl": null,
+    "foot.R_ctrl": null,
+    "global_ctrl": null,
+    "hand.L_ctrl": null,
+    "hand.R_ctrl": null,
+    "head_ctrl": null,
+    "MIKAGE_initial_armature_scaffold": null,
+    "pelvis_ctrl": null
+  },
+  "action_decoupling_preserved": true,
+  "ik_chain_count": 5,
+  "pole_angle_deg": 90,
+  "frame_deltas_m": {
+    "1": 2.421438694000244e-08,
+    "31": 2.421438694000244e-08,
+    "61": 2.421438694000244e-08
+  },
+  "build_pass": true,
+  "output_sha256": "F1B74214EDE009684625F3E6358E17F4014BFD38070CE7011BE09678F10270B4"
+}

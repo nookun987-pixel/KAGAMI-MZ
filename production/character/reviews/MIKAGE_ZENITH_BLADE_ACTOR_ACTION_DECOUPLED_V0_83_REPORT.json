@@ -1,0 +1,38 @@
+{
+  "milestone": "ZENITH_BLADE_V0_83_ACTOR_ACTION_DECOUPLING",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_preserved": true,
+  "retained_actor_actions": {
+    "chest_ctrl": "chest_ctrlAction",
+    "foot.L_ctrl": "foot.L_ctrlAction",
+    "foot.R_ctrl": "foot.R_ctrlAction",
+    "global_ctrl": "global_ctrlAction",
+    "hand.L_ctrl": "hand.L_ctrlAction",
+    "hand.R_ctrl": "hand.R_ctrlAction",
+    "head_ctrl": "head_ctrlAction",
+    "MIKAGE_initial_armature_scaffold": "MIKAGE_initial_armature_scaffoldAction",
+    "pelvis_ctrl": "pelvis_ctrlAction"
+  },
+  "retained_action_count": 9,
+  "active_actor_actions_after": {
+    "chest_ctrl": null,
+    "foot.L_ctrl": null,
+    "foot.R_ctrl": null,
+    "global_ctrl": null,
+    "hand.L_ctrl": null,
+    "hand.R_ctrl": null,
+    "head_ctrl": null,
+    "MIKAGE_initial_armature_scaffold": null,
+    "pelvis_ctrl": null
+  },
+  "docking_preserved": true,
+  "marker_independent": true,
+  "frame_deltas_m": {
+    "1": 2.421438694000244e-08,
+    "31": 2.421438694000244e-08,
+    "61": 2.421438694000244e-08
+  },
+  "build_pass": true,
+  "output_sha256": "F65CA39CC7C4A40AD9F1C649E04326C05E2E641ADE98D3A6DB312E718D2A1108"
+}

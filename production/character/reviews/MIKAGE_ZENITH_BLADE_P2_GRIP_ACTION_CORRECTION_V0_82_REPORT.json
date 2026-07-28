@@ -1,0 +1,31 @@
+{
+  "milestone": "ZENITH_BLADE_V0_82_P2_GRIP_ACTION_CORRECTION",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_preserved": true,
+  "action": "MIKAGE_initial_armature_scaffoldAction",
+  "baked_bones": [
+    "spine_02",
+    "chest",
+    "clavicle.R",
+    "upper_arm.R",
+    "forearm.R"
+  ],
+  "baked_frame": 31,
+  "delta_before_m": {
+    "1": 2.421438694000244e-08,
+    "31": 0.7693455657855239,
+    "61": 2.421438694000244e-08
+  },
+  "ik_active_delta_m": 0.5544962906809519,
+  "delta_after_m": {
+    "1": 2.421438694000244e-08,
+    "31": 0.5544962524966794,
+    "61": 2.421438694000244e-08
+  },
+  "docking_preserved": true,
+  "temporary_constraints_remaining": 0,
+  "temporary_objects_remaining": 0,
+  "build_pass": false,
+  "output_sha256": "951C2250DF4AEE038DDA5CFA49D36CA2610DB094DD2047AF6FAF54D0E9AD8C5F"
+}

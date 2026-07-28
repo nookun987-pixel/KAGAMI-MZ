@@ -3990,3 +3990,111 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_IK3_POLE_WINNER_V0_78_VALIDATION_REPORT.json`
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_IK3_POLE_WINNER_V0_78_PROOF.md`
     - `_tmp/zenith_blade_v0_78_winner/`.
+
+- Torso-left convergence controlled exception is open:
+  - `ZENITH_BLADE_V0_79_TORSO_LEFT_REACH_SOLVER_SWEEP = OPEN`.
+  - Read-only source: accepted technical baseline V0.65.
+  - Sweep IK chain lengths 3–6 and pole angles
+    `-180/-90/0/+90/+180` degrees, with a +X pole derived from the neutral
+    right elbow.
+  - Evaluate neutral, torso-left, torso-right and shoulder/elbow-limit
+    marker/handle world delta; reset all pose/constraint state between trials.
+  - No save, source edit, mesh edit or rig-bone edit.
+  - A configuration qualifies for a derivative only if neutral and
+    torso-left are both `<= 0.00001 m` and it improves the full risk-pose
+    maximum over V0.78.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_TORSO_LEFT_REACH_SWEEP_V0_79_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_TORSO_LEFT_REACH_SWEEP_V0_79_PROOF.md`
+    - `_tmp/zenith_blade_v0_79_reach/`.
+
+- Torso-left winner-build controlled exception is open:
+  - `ZENITH_BLADE_V0_80_CHAIN5_GRIP_CONVERGENCE_CANDIDATE = OPEN`.
+  - Source: accepted technical baseline V0.65.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_CHAIN5_GRIP_CONVERGENCE_V0_80.blend`.
+  - Build exactly the V0.79 winner: `forearm.R` IK chain 5, handle-following
+    target, +X pole and pole angle +90 degrees.
+  - Preserve docking ownership and independent marker.
+  - Reopen and run the complete nine-pose P1/P2/P3 BVH/registration audit.
+  - No mesh, material, modifier, rig-bone, docking, marker or phase edit.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CHAIN5_GRIP_CONVERGENCE_V0_80_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CHAIN5_GRIP_CONVERGENCE_V0_80_VALIDATION_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CHAIN5_GRIP_CONVERGENCE_V0_80_PROOF.md`
+    - `_tmp/zenith_blade_v0_80_chain5/`.
+
+- Phase/action convergence controlled exception is open:
+  - `ZENITH_BLADE_V0_81_PHASE_ACTION_GRIP_SWEEP = OPEN`.
+  - Read-only source: V0.65.
+  - Preserve the actor action; do not mute animation to obtain a pass.
+  - Sweep IK chain lengths 5–9 and pole angles
+    `-180/-90/0/+90/+180` degrees.
+  - Score marker/handle world delta at frames 1/31/61 under neutral,
+    torso-left, torso-right and shoulder/elbow-limit overlays.
+  - Reset state and remove temporary targets/constraints between trials; no
+    Blender save.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_ACTION_GRIP_SWEEP_V0_81_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_PHASE_ACTION_GRIP_SWEEP_V0_81_PROOF.md`
+    - `_tmp/zenith_blade_v0_81_phase_action/`.
+
+- P2 action-correction controlled exception is open:
+  - `ZENITH_BLADE_V0_82_P2_GRIP_ACTION_CORRECTION = OPEN`.
+  - Source: accepted technical baseline V0.65.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_P2_GRIP_ACTION_CORRECTION_V0_82.blend`.
+  - At frame 31 only, use a temporary independent world-space handle target
+    and +X pole to solve the five-bone chain
+    `forearm.R -> upper_arm.R -> clavicle.R -> chest -> spine_02`.
+  - Bake the evaluated result into the existing actor action at frame 31,
+    remove all temporary constraints/targets, and preserve frames 1/61.
+  - No rig-bone structure, mesh, material, docking, marker, Blade or phase
+    mechanism edit.
+  - Reopen and require no temporary IK objects/constraints, marker/handle
+    delta `<= 0.00001 m` at frames 1/31/61, source preservation, and full
+    pose/collision audit before promotion.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_P2_GRIP_ACTION_CORRECTION_V0_82_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_P2_GRIP_ACTION_CORRECTION_V0_82_VALIDATION_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_P2_GRIP_ACTION_CORRECTION_V0_82_PROOF.md`
+    - `_tmp/zenith_blade_v0_82_action/`.
+
+- Actor/phase decoupling controlled exception is open:
+  - `ZENITH_BLADE_V0_83_ACTOR_ACTION_DECOUPLING = OPEN`.
+  - Source: accepted technical baseline V0.65.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_ACTOR_ACTION_DECOUPLED_V0_83.blend`.
+  - The source actor is a deformation-smoke candidate. Preserve its action
+    datablock and mark it for retention, but clear it from the armature's
+    active action in the integration derivative.
+  - Preserve the evaluated frame-1 neutral pose as the derivative's editable
+    pose basis so Blade phase frames do not also advance the smoke-test action.
+  - No action deletion, key edit, rig-bone structure, mesh, material, docking,
+    marker, Blade or phase edit.
+  - Require marker/handle world delta `<= 0.00001 m` at frames 1/31/61 before
+    proceeding.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ACTOR_ACTION_DECOUPLED_V0_83_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_ACTOR_ACTION_DECOUPLED_V0_83_PROOF.md`
+    - `_tmp/zenith_blade_v0_83_decouple/`.
+
+- Decoupled grip-convergence controlled exception is open:
+  - `ZENITH_BLADE_V0_84_DECOUPLED_CHAIN5_INTEGRATION_CANDIDATE = OPEN`.
+  - Source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_ACTOR_ACTION_DECOUPLED_V0_83.blend`.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84.blend`.
+  - Add the V0.79 winner solver: handle-following target, +X pole, +90°
+    pole angle and IK chain length 5 on `forearm.R`.
+  - Preserve action decoupling, action datablocks, docking ownership,
+    independent marker and Blade phases.
+  - Reopen and run complete nine-pose P1/P2/P3 registration/BVH audit.
+  - No mesh, material, rig-bone structure, docking, marker, Blade or phase
+    mechanism edit.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_VALIDATION_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_DECOUPLED_CHAIN5_INTEGRATION_V0_84_PROOF.md`
+    - `_tmp/zenith_blade_v0_84/`.

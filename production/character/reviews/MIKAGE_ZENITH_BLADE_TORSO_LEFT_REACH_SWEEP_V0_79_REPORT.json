@@ -1,0 +1,504 @@
+{
+  "milestone": "ZENITH_BLADE_V0_79_TORSO_LEFT_REACH_SOLVER_SWEEP",
+  "source_sha256_before": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_sha256_after": "AF2E8B129069E511478DD7A989BF69B16D6EC48B2982DB9A187551C5BF8D94E1",
+  "source_unchanged": true,
+  "trial_count": 20,
+  "results": [
+    {
+      "chain": 3,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 3.5471043643033374e-07,
+        "torso_left": 0.1041678859381022,
+        "torso_right": 2.255116659258707e-05,
+        "shoulder_elbow_limit": 6.744550379465589e-07
+      },
+      "max_delta_m": 0.1041678859381022,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 4.2739081947721553e-07,
+        "torso_left": 0.10416795458129778,
+        "torso_right": 2.214553518444015e-05,
+        "shoulder_elbow_limit": 5.443801523705855e-07
+      },
+      "max_delta_m": 0.10416795458129778,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 1.434236764907837e-07,
+        "torso_left": 0.10416787782341229,
+        "torso_right": 2.2282177364519987e-05,
+        "shoulder_elbow_limit": 7.599067180451239e-07
+      },
+      "max_delta_m": 0.10416787782341229,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "torso_left": 0.10416813224582924,
+        "torso_right": 2.2359601392336802e-05,
+        "shoulder_elbow_limit": 6.910413503646851e-07
+      },
+      "max_delta_m": 0.10416813224582924,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 3.7420629127234063e-07,
+        "torso_left": 0.1041678859381022,
+        "torso_right": 2.246390762146006e-05,
+        "shoulder_elbow_limit": 8.278719092490557e-07
+      },
+      "max_delta_m": 0.1041678859381022,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 4.000179531859197e-07,
+        "torso_left": 1.7994585993410325e-05,
+        "torso_right": 8.417033545352424e-07,
+        "shoulder_elbow_limit": 5.749300996238383e-07
+      },
+      "max_delta_m": 1.7994585993410325e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 2.6263296604156494e-07,
+        "torso_left": 1.7702370282650598e-05,
+        "torso_right": 9.717386003788588e-07,
+        "shoulder_elbow_limit": 3.994624809180489e-07
+      },
+      "max_delta_m": 1.7702370282650598e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "torso_left": 1.7844366942630012e-05,
+        "torso_right": 7.981016064700158e-07,
+        "shoulder_elbow_limit": 8.529714960415927e-07
+      },
+      "max_delta_m": 1.7844366942630012e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.3964506127956855e-07,
+        "torso_left": 1.795164257055048e-05,
+        "torso_right": 4.921085923790746e-07,
+        "shoulder_elbow_limit": 1.0060922207100713e-06
+      },
+      "max_delta_m": 1.795164257055048e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 4.656799133867174e-07,
+        "torso_left": 1.791511674010925e-05,
+        "torso_right": 8.124400366563819e-07,
+        "shoulder_elbow_limit": 7.236873812208237e-07
+      },
+      "max_delta_m": 1.791511674010925e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 2.88421444360491e-07,
+        "torso_left": 5.548838344654883e-07,
+        "torso_right": 4.862074731688761e-07,
+        "shoulder_elbow_limit": 5.818403777934097e-07
+      },
+      "max_delta_m": 5.818403777934097e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 3.818422555923462e-07,
+        "torso_left": 9.052551239835075e-07,
+        "torso_right": 7.156654988765018e-07,
+        "shoulder_elbow_limit": 8.464385050393095e-07
+      },
+      "max_delta_m": 9.052551239835075e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 4.5016322263892086e-07,
+        "torso_left": 5.120106259996632e-07,
+        "torso_right": 5.150373827262614e-07,
+        "shoulder_elbow_limit": 6.287938009328542e-07
+      },
+      "max_delta_m": 6.287938009328542e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "torso_left": 2.421438694000244e-08,
+        "torso_right": 6.224050436125053e-07,
+        "shoulder_elbow_limit": 5.64406069056247e-07
+      },
+      "max_delta_m": 6.224050436125053e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 3.7420629127234063e-07,
+        "torso_left": 5.548838344654883e-07,
+        "torso_right": 5.361603921384166e-07,
+        "shoulder_elbow_limit": 5.006081917832202e-07
+      },
+      "max_delta_m": 5.548838344654883e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 3.5471043643033374e-07,
+        "torso_left": 3.026955971832808e-07,
+        "torso_right": 2.3964506127956855e-07,
+        "shoulder_elbow_limit": 4.304967454377631e-07
+      },
+      "max_delta_m": 4.304967454377631e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 5.415174289217951e-07,
+        "torso_left": 2.566465475763104e-07,
+        "torso_right": 5.572796470446627e-07,
+        "shoulder_elbow_limit": 1.0060922207100713e-06
+      },
+      "max_delta_m": 1.0060922207100713e-06,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 4.979397819228396e-07,
+        "torso_left": 8.19515181444691e-07,
+        "torso_right": 5.443801523705855e-07,
+        "shoulder_elbow_limit": 1.1764030878987972e-06
+      },
+      "max_delta_m": 1.1764030878987972e-06,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.88421444360491e-07,
+        "torso_left": 3.7420629127234063e-07,
+        "torso_right": 2.78233301096294e-07,
+        "shoulder_elbow_limit": 8.480110129428045e-07
+      },
+      "max_delta_m": 8.480110129428045e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 4.2739081947721553e-07,
+        "torso_left": 3.50301112250086e-07,
+        "torso_right": 2.676576360033283e-07,
+        "shoulder_elbow_limit": 3.50301112250086e-07
+      },
+      "max_delta_m": 4.2739081947721553e-07,
+      "qualifies": true
+    }
+  ],
+  "ranking": [
+    {
+      "chain": 5,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "torso_left": 2.421438694000244e-08,
+        "torso_right": 6.224050436125053e-07,
+        "shoulder_elbow_limit": 5.64406069056247e-07
+      },
+      "max_delta_m": 6.224050436125053e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 5.415174289217951e-07,
+        "torso_left": 2.566465475763104e-07,
+        "torso_right": 5.572796470446627e-07,
+        "shoulder_elbow_limit": 1.0060922207100713e-06
+      },
+      "max_delta_m": 1.0060922207100713e-06,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 3.5471043643033374e-07,
+        "torso_left": 3.026955971832808e-07,
+        "torso_right": 2.3964506127956855e-07,
+        "shoulder_elbow_limit": 4.304967454377631e-07
+      },
+      "max_delta_m": 4.304967454377631e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 4.2739081947721553e-07,
+        "torso_left": 3.50301112250086e-07,
+        "torso_right": 2.676576360033283e-07,
+        "shoulder_elbow_limit": 3.50301112250086e-07
+      },
+      "max_delta_m": 4.2739081947721553e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.88421444360491e-07,
+        "torso_left": 3.7420629127234063e-07,
+        "torso_right": 2.78233301096294e-07,
+        "shoulder_elbow_limit": 8.480110129428045e-07
+      },
+      "max_delta_m": 8.480110129428045e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 4.5016322263892086e-07,
+        "torso_left": 5.120106259996632e-07,
+        "torso_right": 5.150373827262614e-07,
+        "shoulder_elbow_limit": 6.287938009328542e-07
+      },
+      "max_delta_m": 6.287938009328542e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 3.7420629127234063e-07,
+        "torso_left": 5.548838344654883e-07,
+        "torso_right": 5.361603921384166e-07,
+        "shoulder_elbow_limit": 5.006081917832202e-07
+      },
+      "max_delta_m": 5.548838344654883e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 2.88421444360491e-07,
+        "torso_left": 5.548838344654883e-07,
+        "torso_right": 4.862074731688761e-07,
+        "shoulder_elbow_limit": 5.818403777934097e-07
+      },
+      "max_delta_m": 5.818403777934097e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 6,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 4.979397819228396e-07,
+        "torso_left": 8.19515181444691e-07,
+        "torso_right": 5.443801523705855e-07,
+        "shoulder_elbow_limit": 1.1764030878987972e-06
+      },
+      "max_delta_m": 1.1764030878987972e-06,
+      "qualifies": true
+    },
+    {
+      "chain": 5,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 3.818422555923462e-07,
+        "torso_left": 9.052551239835075e-07,
+        "torso_right": 7.156654988765018e-07,
+        "shoulder_elbow_limit": 8.464385050393095e-07
+      },
+      "max_delta_m": 9.052551239835075e-07,
+      "qualifies": true
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 2.6263296604156494e-07,
+        "torso_left": 1.7702370282650598e-05,
+        "torso_right": 9.717386003788588e-07,
+        "shoulder_elbow_limit": 3.994624809180489e-07
+      },
+      "max_delta_m": 1.7702370282650598e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "torso_left": 1.7844366942630012e-05,
+        "torso_right": 7.981016064700158e-07,
+        "shoulder_elbow_limit": 8.529714960415927e-07
+      },
+      "max_delta_m": 1.7844366942630012e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 4.656799133867174e-07,
+        "torso_left": 1.791511674010925e-05,
+        "torso_right": 8.124400366563819e-07,
+        "shoulder_elbow_limit": 7.236873812208237e-07
+      },
+      "max_delta_m": 1.791511674010925e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.3964506127956855e-07,
+        "torso_left": 1.795164257055048e-05,
+        "torso_right": 4.921085923790746e-07,
+        "shoulder_elbow_limit": 1.0060922207100713e-06
+      },
+      "max_delta_m": 1.795164257055048e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 4,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 4.000179531859197e-07,
+        "torso_left": 1.7994585993410325e-05,
+        "torso_right": 8.417033545352424e-07,
+        "shoulder_elbow_limit": 5.749300996238383e-07
+      },
+      "max_delta_m": 1.7994585993410325e-05,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": 0,
+      "pose_deltas_m": {
+        "neutral": 1.434236764907837e-07,
+        "torso_left": 0.10416787782341229,
+        "torso_right": 2.2282177364519987e-05,
+        "shoulder_elbow_limit": 7.599067180451239e-07
+      },
+      "max_delta_m": 0.10416787782341229,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": -180,
+      "pose_deltas_m": {
+        "neutral": 3.5471043643033374e-07,
+        "torso_left": 0.1041678859381022,
+        "torso_right": 2.255116659258707e-05,
+        "shoulder_elbow_limit": 6.744550379465589e-07
+      },
+      "max_delta_m": 0.1041678859381022,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": 180,
+      "pose_deltas_m": {
+        "neutral": 3.7420629127234063e-07,
+        "torso_left": 0.1041678859381022,
+        "torso_right": 2.246390762146006e-05,
+        "shoulder_elbow_limit": 8.278719092490557e-07
+      },
+      "max_delta_m": 0.1041678859381022,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": -90,
+      "pose_deltas_m": {
+        "neutral": 4.2739081947721553e-07,
+        "torso_left": 0.10416795458129778,
+        "torso_right": 2.214553518444015e-05,
+        "shoulder_elbow_limit": 5.443801523705855e-07
+      },
+      "max_delta_m": 0.10416795458129778,
+      "qualifies": false
+    },
+    {
+      "chain": 3,
+      "pole_angle_deg": 90,
+      "pose_deltas_m": {
+        "neutral": 2.421438694000244e-08,
+        "torso_left": 0.10416813224582924,
+        "torso_right": 2.2359601392336802e-05,
+        "shoulder_elbow_limit": 6.910413503646851e-07
+      },
+      "max_delta_m": 0.10416813224582924,
+      "qualifies": false
+    }
+  ],
+  "winner": {
+    "chain": 5,
+    "pole_angle_deg": 90,
+    "pose_deltas_m": {
+      "neutral": 2.421438694000244e-08,
+      "torso_left": 2.421438694000244e-08,
+      "torso_right": 6.224050436125053e-07,
+      "shoulder_elbow_limit": 5.64406069056247e-07
+    },
+    "max_delta_m": 6.224050436125053e-07,
+    "qualifies": true
+  },
+  "qualified_count": 10
+}
