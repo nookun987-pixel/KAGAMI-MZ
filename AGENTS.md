@@ -3715,3 +3715,21 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_APPEND_INTEGRATION_V0_55_PROOF.md`
     - `_tmp/zenith_blade_v0_55_append/` for scripts.
   - No consumer `.blend` save, source edit, repair, promotion, push or deploy.
+
+- One-hundred-twentieth controlled exception is open:
+  - `ZENITH_BLADE_V0_56_HANDOFF_COLLECTION_REPAIR = OPEN`.
+  - Source:
+    `production/character/MIKAGE_ZENITH_BLADE_EVALUATED_BAKE_V0_54.blend`.
+    Do not overwrite it.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56.blend`.
+  - Create `ZENITH_BLADE_V056_CLEAN_HANDOFF` containing all V0.54 handoff
+    members plus the existing registered handle and load bridge.
+  - Collection membership only; all object mesh, material, transform,
+    animation and visibility data must remain unchanged.
+  - Re-run factory-empty append smoke test against the V0.56 collection.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_HANDOFF_PACKAGE_V0_56_PROOF.md`
+    - `_tmp/zenith_blade_v0_56_package/` for scripts.
+  - No geometry/material/animation edit, promotion, asset-lock, push or deploy.
