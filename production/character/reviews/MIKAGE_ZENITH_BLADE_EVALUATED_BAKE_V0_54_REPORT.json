@@ -1,0 +1,142 @@
+{
+  "render_metrics": {
+    "P1_front.png": {
+      "mean_abs_rgb": [
+        9.26e-06,
+        7.41e-06,
+        1.019e-05
+      ],
+      "max_abs_rgb": [
+        1,
+        1,
+        1
+      ],
+      "bbox": [
+        173,
+        1,
+        756,
+        1071
+      ],
+      "pixel_identical": false
+    },
+    "P1_three_quarter.png": {
+      "mean_abs_rgb": [
+        0.00094352,
+        0.00095093,
+        0.00089537
+      ],
+      "max_abs_rgb": [
+        1,
+        1,
+        1
+      ],
+      "bbox": [
+        245,
+        9,
+        897,
+        1194
+      ],
+      "pixel_identical": false
+    },
+    "P2_front.png": {
+      "mean_abs_rgb": [
+        2.037e-05,
+        1.481e-05,
+        1.574e-05
+      ],
+      "max_abs_rgb": [
+        2,
+        3,
+        3
+      ],
+      "bbox": [
+        69,
+        65,
+        864,
+        1031
+      ],
+      "pixel_identical": false
+    },
+    "P2_three_quarter.png": {
+      "mean_abs_rgb": [
+        0.00116204,
+        0.00113611,
+        0.0011787
+      ],
+      "max_abs_rgb": [
+        1,
+        1,
+        1
+      ],
+      "bbox": [
+        99,
+        3,
+        900,
+        1200
+      ],
+      "pixel_identical": false
+    },
+    "P3_front.png": {
+      "mean_abs_rgb": [
+        2.037e-05,
+        1.759e-05,
+        2.037e-05
+      ],
+      "max_abs_rgb": [
+        3,
+        3,
+        3
+      ],
+      "bbox": [
+        240,
+        43,
+        861,
+        1160
+      ],
+      "pixel_identical": false
+    },
+    "P3_three_quarter.png": {
+      "mean_abs_rgb": [
+        0.00112037,
+        0.00115648,
+        0.00111759
+      ],
+      "max_abs_rgb": [
+        1,
+        1,
+        1
+      ],
+      "bbox": [
+        0,
+        1,
+        900,
+        1197
+      ],
+      "pixel_identical": false
+    }
+  },
+  "all_pixel_identical": false,
+  "tolerance": {
+    "max_mean_abs_rgb": 0.002,
+    "max_channel_abs": 3
+  },
+  "visual_equivalence_tolerance_pass": true,
+  "source_sha256": "C475E7797635E04D2DA0F9D85A86C73C4720CA72330305252668DC548C377CCB",
+  "output_sha256": "293704422D07992DAB2F3A098F801925EBACA9C43A90654CDE0488EBE52734B0",
+  "reopen_pass": true,
+  "world_shape_equivalence_pass": true,
+  "full_phase_attachment_validation_pass": true,
+  "handoff_hygiene_pass": true,
+  "unapplied_active_blade_transform_count": 0,
+  "retired_hidden_blade_object_count": 0,
+  "legacy_collection_count": 0,
+  "orphan_datablock_counts": {
+    "meshes": 0,
+    "materials": 0,
+    "images": 0,
+    "actions": 0
+  },
+  "source_unchanged": true,
+  "asset_lock": false,
+  "production_ready": false
+}

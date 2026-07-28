@@ -3680,3 +3680,26 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_53_hygiene/` for scripts.
   - No visual redesign, material/animation change, asset promotion, push or
     deploy.
+
+- One-hundred-eighteenth controlled exception is open:
+  - `ZENITH_BLADE_V0_54_EVALUATED_GEOMETRY_BAKE = OPEN`.
+  - Operator authorizes modifier/geometry bake and visual comparison to resolve
+    V0.52 handoff debt after V0.53 neutral apply-scale rejection.
+  - Source:
+    `production/character/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend`.
+    Do not overwrite it.
+  - Allowed derivative:
+    `production/character/MIKAGE_ZENITH_BLADE_EVALUATED_BAKE_V0_54.blend`.
+  - Bake each shell's evaluated bevel result into mesh data, normalize shell
+    scale to 1, remove only the baked shell modifiers, remove only the six
+    retired objects and three legacy collections enumerated in V0.52.
+  - Required gates: evaluated world-shape hash equivalence at seven frames,
+    before/after render comparison, full phase/attachment validation, V0.52
+    hygiene re-audit, reopen, source preservation and no `.blend1`.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_EVALUATED_BAKE_V0_54_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_EVALUATED_BAKE_V0_54_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_EVALUATED_BAKE_V0_54_PROOF.md`
+    - `_tmp/zenith_blade_v0_54_bake/` for scripts/raw comparison renders.
+  - No material/animation/registration redesign, actor/cloak edit, asset lock,
+    push or deploy.
