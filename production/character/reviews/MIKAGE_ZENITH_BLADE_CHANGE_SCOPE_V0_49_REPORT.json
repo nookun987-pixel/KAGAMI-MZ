@@ -1,0 +1,74 @@
+{
+  "milestone": "ZENITH_BLADE_V0_49_CHANGE_SCOPE_AUDIT",
+  "before": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46.blend",
+  "after": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\production\\character\\MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend",
+  "added_objects": [
+    "ZB48_GAUNTLET_LOAD_BRIDGE",
+    "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER"
+  ],
+  "removed_objects": [],
+  "geometry_diffs_common_objects": [],
+  "material_slot_diffs_common_objects": [],
+  "modifier_diffs_common_objects": [],
+  "object_metadata_diffs": [],
+  "sampled_transform_diffs": [
+    {
+      "frame": 13,
+      "object": "ZB45_SHELL_LL",
+      "property": "location",
+      "axis": "Y",
+      "before": -0.23,
+      "after": -0.45222223
+    },
+    {
+      "frame": 19,
+      "object": "ZB45_SHELL_LL",
+      "property": "location",
+      "axis": "Y",
+      "before": -0.23,
+      "after": -0.52999997
+    },
+    {
+      "frame": 25,
+      "object": "ZB45_SHELL_LL",
+      "property": "location",
+      "axis": "Y",
+      "before": -0.23,
+      "after": -0.52999997
+    },
+    {
+      "frame": 31,
+      "object": "ZB45_SHELL_LL",
+      "property": "location",
+      "axis": "Y",
+      "before": -0.23,
+      "after": -0.52999997
+    },
+    {
+      "frame": 55,
+      "object": "ZB45_SHELL_LL",
+      "property": "location",
+      "axis": "Y",
+      "before": -0.23,
+      "after": -0.52999997
+    },
+    {
+      "frame": 61,
+      "object": "ZB45_SHELL_LL",
+      "property": "location",
+      "axis": "Y",
+      "before": -0.23,
+      "after": -0.52999997
+    }
+  ],
+  "unexpected_transform_diffs": [],
+  "material_datablocks_equal": true,
+  "added_objects_pass": true,
+  "removed_objects_pass": true,
+  "common_geometry_pass": true,
+  "common_material_slots_pass": true,
+  "common_modifiers_pass": true,
+  "common_metadata_pass": true,
+  "transform_scope_pass": true,
+  "scope_audit_pass": true
+}

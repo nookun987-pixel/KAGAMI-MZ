@@ -3608,3 +3608,21 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_48_repair/` for scripts/raw renders.
   - No shell/hub/base/core redesign, actor/cloak deformation, material change,
     asset-lock, production-ready, push or deploy.
+
+- One-hundred-thirteenth controlled exception is open:
+  - `ZENITH_BLADE_V0_49_CHANGE_SCOPE_AUDIT = OPEN`.
+  - Read-only compare:
+    - `production/character/MIKAGE_ZENITH_BLADE_MECHANICAL_DEPTH_V0_46.blend`
+    - `production/character/MIKAGE_ZENITH_BLADE_ATTACHMENT_CLEARANCE_REPAIR_V0_48.blend`
+  - Verify that all common mesh geometry, material slots, modifiers and
+    non-whitelisted sampled transforms are unchanged.
+  - Only allowed structural additions:
+    - `ZB48_HANDLE_REGISTERED_TO_HAND_MARKER`
+    - `ZB48_GAUNTLET_LOAD_BRIDGE`
+  - Only allowed common-object transform difference:
+    `ZB45_SHELL_LL.location.Y`.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CHANGE_SCOPE_V0_49_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_CHANGE_SCOPE_V0_49_PROOF.md`
+    - `_tmp/zenith_blade_v0_49_scope_audit/` for scripts/snapshots.
+  - No Blender save, repair, promotion, asset-lock, push or deploy.
