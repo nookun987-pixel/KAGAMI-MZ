@@ -3792,3 +3792,29 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `_tmp/zenith_blade_v0_60_actor_integration/` for scripts/raw renders.
   - No actor geometry/rig edit, no Blade form/material edit, no asset-lock,
     production-ready, push or deploy.
+
+- Operator ruling — V0.60:
+  - `ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60: PASS`.
+  - Status: `ACCEPTED_NATIVE_INTEGRATION_CANDIDATE`.
+  - Placement, marker registration, attachment path, proxy retirement,
+    P1/P2/P3 signal behavior, static clearance and source preservation: `PASS`.
+  - Integration-ready, asset-lock, production-ready and final actor approval
+    remain `NO`.
+
+- One-hundred-twenty-fourth controlled exception is open:
+  - `ZENITH_BLADE_V0_61_POSE_DEFORMATION_CLEARANCE = OPEN`.
+  - Read-only source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_NATIVE_ACTOR_INTEGRATION_V0_60.blend`.
+  - Use existing rig pose bones only for neutral, hand, torso-left/right,
+    wide-stance, crouch and shoulder/elbow risk poses.
+  - Test P1/P2/P3 clearance, marker registration, actual right-hand follow,
+    attachment-root stability and cloak-control availability.
+  - Restore every pose transform before exit. No Blender save.
+  - Allowed outputs:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_V0_60_OPERATOR_RULING.md`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_61_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_61_CONTACT_SHEET.png`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_61_PROOF.md`
+    - `_tmp/zenith_blade_v0_61_pose/` for scripts/raw renders.
+  - No Blade/actor geometry, material, rig hierarchy, attachment-root or phase
+    edit; no save, asset-lock, production-ready, push or deploy.
