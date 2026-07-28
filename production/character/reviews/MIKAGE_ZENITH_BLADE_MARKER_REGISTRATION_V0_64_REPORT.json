@@ -1,0 +1,36 @@
+{
+  "milestone": "ZENITH_BLADE_V0_64_MARKER_REGISTRATION_CORRECTION",
+  "source_sha256_before": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "source_sha256_after": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "source_preserved": true,
+  "marker": "hand_right_sword_hold_marker",
+  "handle": "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+  "marker_parent": "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+  "marker_parent_type": "OBJECT",
+  "marker_parent_bone": "",
+  "registration_method": "direct_child_of_registered_handle",
+  "translation_delta_m": 0.0,
+  "marker_local_location": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "marker_world_translation": [
+    1.0550000667572021,
+    -0.02500000037252903,
+    2.119999885559082
+  ],
+  "handle_world_translation": [
+    1.0550000667572021,
+    -0.02500000037252903,
+    2.119999885559082
+  ],
+  "handle_matrix_max_change": 0.0,
+  "output_sha256": "532B8DFBA2E3D6CA1B6A5C53729B84626835F8DDA1D466D36233B4CD78C5C554",
+  "build_pass": true,
+  "reopen_translation_delta_m": 0.0,
+  "reopen_parent_pass": true,
+  "source_sha256_final": "48E653562295DBC64FB14C05166D12403334CF05F9A47E3F0159252276D8F5AA",
+  "output_sha256_final": "532B8DFBA2E3D6CA1B6A5C53729B84626835F8DDA1D466D36233B4CD78C5C554",
+  "verify_pass": true
+}

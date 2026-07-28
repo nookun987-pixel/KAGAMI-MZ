@@ -3858,3 +3858,21 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_63_CONTACT_SHEET.png`
     - `production/character/reviews/MIKAGE_ZENITH_BLADE_POSE_CLEARANCE_V0_63_PROOF.md`
     - `_tmp/zenith_blade_v0_61_pose/` reused only as ignored audit tooling.
+
+- One-hundred-twenty-seventh controlled exception is open:
+  - `ZENITH_BLADE_V0_64_MARKER_REGISTRATION_CORRECTION = OPEN`.
+  - Source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_ATTACHMENT_RIG_COVERAGE_V0_62.blend`.
+  - Output:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MARKER_REGISTRATION_V0_64.blend`.
+  - Move only `hand_right_sword_hold_marker` to the actual
+    `ZB48_HANDLE_REGISTERED_TO_HAND_MARKER` transform; direct parenting to that
+    registered handle is allowed because the handle already follows the
+    approved `hand.R` attachment chain.
+  - Blade, handle, actor, rig, cloak, materials and phases are immutable.
+  - Reopen and verify marker/handle translation delta <= `1e-6 m`, source
+    preservation and no `.blend1`.
+  - Allowed evidence:
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MARKER_REGISTRATION_V0_64_REPORT.json`
+    - `production/character/reviews/MIKAGE_ZENITH_BLADE_MARKER_REGISTRATION_V0_64_PROOF.md`
+    - `_tmp/zenith_blade_v0_64_marker/`.
