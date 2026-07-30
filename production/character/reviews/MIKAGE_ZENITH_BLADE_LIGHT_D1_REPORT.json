@@ -1,0 +1,103 @@
+{
+  "task": "ZENITH_BLADE_LIGHT_D1",
+  "mat_c3_operator_ruling": "VISUAL_PASS_WITH_HUB_METRIC_EXCEPTION",
+  "base": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MAT_C3.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_LIGHT_D1.blend",
+  "base_sha256": "C98982493979B20C38D6828ED511E35294AC1A4718798F5C1C7D174D0B196B30",
+  "output_sha256": "8EAF27B2106FE38AA864CC8D1067A9357182F991EB54D487EE5A0519F73E8FA2",
+  "renderer": "BLENDER_EEVEE",
+  "color_management": {
+    "view_transform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.3499999940395355,
+    "gamma": 1.0
+  },
+  "lighting": {
+    "key": {
+      "name": "LIGHT_D1_KEY_COLD",
+      "energy": 520.0,
+      "size": 1.649999976158142,
+      "color": [
+        0.7200000286102295,
+        0.8399999737739563,
+        1.0
+      ]
+    },
+    "fill": {
+      "name": "LIGHT_D1_FILL_RESTRAINED",
+      "energy": 105.0,
+      "size": 1.5499999523162842,
+      "color": [
+        0.47999998927116394,
+        0.5799999833106995,
+        0.7200000286102295
+      ]
+    },
+    "rim": {
+      "name": "LIGHT_D1_RIM_ZBLUE",
+      "energy": 430.0,
+      "size": 1.100000023841858,
+      "color": [
+        0.20000000298023224,
+        0.41999998688697815,
+        0.7200000286102295
+      ]
+    },
+    "top": {
+      "name": "LIGHT_D1_TOP_EDGE",
+      "energy": 145.0,
+      "size": 1.2000000476837158,
+      "color": [
+        0.6200000047683716,
+        0.7200000286102295,
+        0.8799999952316284
+      ]
+    },
+    "isolated_hub_corrective_light": false
+  },
+  "violet_signal": {
+    "object": "ZB42_P3_SINGLE_RECESSED_CORE",
+    "phase": "P3_ONLY",
+    "hex": "#8F00FF",
+    "strength": 1.25,
+    "all_other_inset_objects_emission_zero": true
+  },
+  "locks": {
+    "geometry_bevel_normal_transform_fingerprint_unchanged": true,
+    "approved_mat_c3_materials_unchanged": true,
+    "marker_delta_m": 0.0,
+    "handle_delta_m": 0.0,
+    "phase_collision": {
+      "P1": {
+        "frame": 1,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P2": {
+        "frame": 31,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P3": {
+        "frame": 61,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      }
+    }
+  },
+  "deliverables": {
+    "images_opened_and_inspected": true,
+    "contact_sheet": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_CONTACT_SHEET.png",
+    "hero_front": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_HERO_FRONT.png",
+    "hero_34": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_HERO_34.png",
+    "side_silhouette": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_SIDE_SILHOUETTE.png",
+    "material_proofs": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_MATERIAL_PROOFS.png",
+    "emission_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_EMISSION_COMPARE.png",
+    "neutral_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D1_NEUTRAL_COMPARE.png"
+  },
+  "operator_visual_ruling_required": true,
+  "integration_ready": "NO_OPERATOR_REVIEW_REQUIRED"
+}
