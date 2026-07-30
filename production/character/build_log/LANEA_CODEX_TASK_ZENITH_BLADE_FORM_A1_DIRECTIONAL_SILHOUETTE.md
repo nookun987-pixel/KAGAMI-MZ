@@ -5,8 +5,12 @@ Chuẩn áp dụng: `production/character/build_log/MZ_BLADE_HERO_LOOK_GATE_V2.m
 
 ```text
 FORM_A1_TASK_DIRECTION: APPROVED IN PRINCIPLE
-FORM_A1_DISPATCH:       BLOCKED
-BLOCKERS:               V0.89 PASS · SCALE LOCK · SCOPE PATCH · REVIEW OUTPUT PATCH
+FORM_A1_DISPATCH:       BLOCKED — 1 blocker con lai
+SCOPE_PATCH:            DONE (2026-07-30)
+REVIEW_OUTPUT_PATCH:    DONE (2026-07-30)
+SCALE_LOCK:             DONE (2026-07-30) — relative: blade = 0.684 x actor height (+/-2%)
+V0.89_TECHNICAL_GATES:  PASS (verified by Lane B against report.json)
+REMAINING_BLOCKER:      operator PASS ruling on V0.89
 ```
 
 **Vá lần 1 sửa 5 lỗi do BOOS bắt:** (1) phiếu tự dời việc chốt scale sang sau — nay scale chặn ngay task này theo V2.2; (2) phiếu tự làm nhẹ định nghĩa cửa 2 — nay trả về nguyên văn chuẩn; (3) thiếu ảnh so sánh theo camera hero khoá — nay bắt buộc; (4) thiếu danh sách object được sửa — nay có; (5) marker dịch = 0 không bảo vệ được hình học quanh marker — nay đóng băng cả vùng.
@@ -38,9 +42,11 @@ Task này **KHÔNG** nối vào dãy nào ở trên. Nó mở dãy mới, đặt
 - Nếu V0.89 chưa chạy hoặc chưa PASS: **DỪNG, không tự chọn base khác.** Không lấy V0.87, V0.88 hay bất kỳ derivative nào khác để "chạy tạm".
 
 ```text
-FORM_A1_BASE_READY: CHƯA XÁC NHẬN
-V0.89_PASS:         CHƯA XÁC NHẬN
-DISPATCH_ALLOWED:   NO
+FORM_A1_BASE_READY: có file — MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89.blend
+V0.89_TECH_GATES:   PASS (0 phase records · 0 overlaps · 0 novel pairs ·
+                    marker delta 0.000000024 m · chỉ mesh mitten bị sửa)
+V0.89_OPERATOR_PASS: CHƯA — chờ BOOS
+DISPATCH_ALLOWED:   NO cho tới khi có dòng trên
 ```
 
 ---
@@ -125,6 +131,11 @@ SIGNAL_SLOT_LOCK:
 - ❌ **Retopo, UV, bake** — đã khoá vĩnh viễn theo quyết định render-only ngày 30/07.
 - ❌ Texture, dirt, wear.
 
+### 📏 Tỉ lệ đã khoá (30/07)
+- **Dao = 68,4% chiều cao actor.** Được thon, được đổi tiết diện, được thêm điểm nhô — **nhưng chiều dài tổng phải giữ trong 0,670–0,698 lần chiều cao actor.**
+- **KHÔNG dùng bàn tay làm mốc tỉ lệ.** Hai số đo tay trong report V0.89 đã bị loại (xem chuẩn V2.3, mục 0).
+- **KHÔNG đổi scene scale, KHÔNG scale object.** Chuẩn hoá mét thật là task riêng, chặng EDGE_B1.
+
 ### 🔒 Canon phải giữ
 - **Dao là khối thẳng (slab), KHÔNG phải katana.** Được thon, được có mũi — **không được cong lưỡi**.
 - Vị trí cán và điểm đăng ký (registration) giữ nguyên.
@@ -173,6 +184,7 @@ Kiểm giữ nguyên (máy đo, ghi vào REPORT.json):
 | Cơ chế P1/P2/P3 | vẫn đổi trạng thái đúng |
 | Khe tín hiệu | còn nguyên, chạy suốt chiều dài |
 | Lưỡi cong | **KHÔNG** — kiểm bằng độ lệch trục sống dao |
+| **Tỉ lệ dao / chiều cao actor** | **0,684 ± 2% (0,670–0,698)** — đo lại sau khi sửa hình, cùng phương pháp với V0.89 (actor = union Z của mesh actor có render, loại hết `ZB*` và proxy ẩn) |
 
 ---
 

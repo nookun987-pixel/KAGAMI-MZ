@@ -1,6 +1,6 @@
-# ZENITH BLADE — CHUẨN "HERO LOOK" V2.2
+# ZENITH BLADE — CHUẨN "HERO LOOK" V2.3
 
-**2026-07-30 · V2.2 · thay thế V1 · ĐỀ XUẤT, chưa duyệt, chưa canon-lock.**
+**2026-07-30 · V2.3 · thay thế V1 · ĐỀ XUẤT, chưa duyệt, chưa canon-lock.**
 
 > ✅ **BOOS CHỐT 30/07: Zenith Blade dùng cho MV / phim trước ⇒ FILM / RENDER-ONLY.**
 > **Chặng 5 (low-poly/retopo) và chặng 6 (UV + bake) KHOÁ LẠI — không làm, không mở lại trừ khi có quyết định mới.**
@@ -19,13 +19,20 @@ Gộp research Lane B + bản research BOOS đưa 30/07. Thông số Marmoset đ
 | # | Quyết định | Chặn trước chặng | Trạng thái |
 |---|---|---|---|
 | 1 | Film hay game | **toàn bộ pipeline** | ✅ CHỐT 30/07 — render-only, chặng 5–6 khoá |
-| 4 | **Chiều dài thật (m) + scene scale** | **FORM_A1** | ⛔ CHƯA CHỐT — chặn FORM_A1 |
+| 4a | **Tỉ lệ dao / chiều cao actor** | **FORM_A1** | ✅ CHỐT 30/07 — **0,684 (±2% → 0,670–0,698)** |
+| 4b | **Đơn vị mét thật (chuẩn hoá scene)** | **EDGE_B1** | ⛔ CHƯA CHỐT — chưa chặn FORM_A1 |
 | 6 | Người ký duyệt cuối | **mọi vòng review** | mặc định BOOS, cần xác nhận |
 | 2 | Renderer (Cycles / Eevee) | LIGHT_D1 · lookdev | không chặn FORM_A1 |
 | 3 | Hero shot có tay cầm không | LIGHT_D1 · hero shot | không chặn FORM_A1 |
 | 5 | Viền bù màu ấm hay lạnh | LIGHT_D1 · hero shot | không chặn FORM_A1 |
 
-**Vì sao chiều dài thật chặn ngay từ chặng hình:** tỉ lệ đầu dao so với bàn tay, vị trí trọng lượng thị giác, độ dài đoạn thon, kích thước khối chính so với khối phụ, khoảng cách từ điểm nhô về chuôi — tất cả đều tính theo chiều dài thật. Chốt scale sau khi duyệt silhouette nghĩa là phải cắt lại silhouette vừa duyệt.
+**Khoá tương đối, không khoá tuyệt đối (chốt 30/07).** Đo được: dao = **68,4% chiều cao actor**. Cắt hình chỉ cần tỉ lệ, không cần mét tuyệt đối — nên FORM_A1 chạy được ngay với ràng buộc giữ 0,684 ±2%. Đơn vị mét thật lùi về chặng EDGE_B1, vì chỉ tới đó (bevel tính bằng mm) mới thật sự cần.
+
+**⚠ Hai tỉ lệ theo BÀN TAY bị loại — không dùng làm mốc.** Report V0.89 ghi dao = 19,57× chiều cao bàn tay và 30,58× bề rộng bàn tay; suy ra dao dài ~3,7 m nếu người cao 1,75 m — vô lý. Tỉ lệ tay/thân trong scene là 0,035 trong khi người thật ~0,109, và hai số đo tay tròn bất thường (0,25 và 0,16) trên một object tên `..._hand_attached_read` — nhiều khả năng là tấm phẳng tham chiếu, không phải khối tay. **Mốc tỉ lệ duy nhất được dùng là dao / chiều cao actor.**
+
+**Ghi nhận thực trạng scene:** actor cao 7,15 m ở unit scale 1.0 — scene đang lớn ~4× người thật. Với render-only thì gần như vô hại (camera và khoảng cách co giãn cùng nhau); nó chỉ cắn khi dùng DOF, volumetric, physics, hoặc đưa file sang công cụ khác. Đó là lý do 4b vẫn phải chốt, chỉ là chưa phải bây giờ.
+
+**Vì sao tỉ lệ chặn ngay từ chặng hình:** tỉ lệ đầu dao so với bàn tay, vị trí trọng lượng thị giác, độ dài đoạn thon, kích thước khối chính so với khối phụ, khoảng cách từ điểm nhô về chuôi — tất cả đều tính theo chiều dài thật. Chốt scale sau khi duyệt silhouette nghĩa là phải cắt lại silhouette vừa duyệt.
 
 ---
 

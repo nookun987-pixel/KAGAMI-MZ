@@ -503,11 +503,34 @@
       0.841099963,
       4.892554045
     ],
+    "blade_bounding_box_xyz_extents_m": {
+      "x": 1.484891176,
+      "y": 0.841099963,
+      "z": 4.892554045
+    },
     "actor_hand_width_m": 0.159999982,
     "actor_hand_height_m": 0.25,
     "blade_length_to_actor_hand_width_ratio": 30.57846622,
     "blade_length_to_actor_hand_height_ratio": 19.570216179,
-    "method": "World-space union bounding box of ZB-prefixed mesh objects; longest extent reported as total length."
+    "blade_length_to_actor_hand_ratio": {
+      "hand_width": 30.57846622,
+      "hand_height": 19.570216179
+    },
+    "actor_total_height_m": 7.149999842,
+    "actor_world_height_bounds_m": {
+      "min_z": -0.239999995,
+      "max_z": 6.909999847
+    },
+    "blade_length_to_actor_height_ratio": 0.684273308,
+    "method": "Blade: world-space union bounding box of ZB-prefixed mesh objects; longest extent reported as total length. Actor: world-space Z union of render-enabled actor meshes, excluding all ZB-prefixed Blade objects and hidden legacy Blade proxy/reference meshes.",
+    "measurement_amendment": {
+      "date": "2026-07-31",
+      "measurement_only": true,
+      "geometry_changed": false,
+      "object_transform_changed": false,
+      "scene_scale_changed": false,
+      "operator_scale_lock_pending": true
+    }
   },
   "contact_sheet": {
     "path": "production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_CONTACT_SHEET.png",
