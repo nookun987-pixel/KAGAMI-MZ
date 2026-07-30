@@ -1,0 +1,50 @@
+{
+  "task": "ZENITH_BLADE_LIGHT_D2",
+  "base": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_LIGHT_D1.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_LIGHT_D2.blend",
+  "operator_ruling": "LIGHT_D1_FAIL_LIGHT; OPEN_LIGHT_D2_LOWER_FILL_RIM_ONLY",
+  "changes": {
+    "lower_fill_ev_increase": 0.35,
+    "lower_fill_energy_before": 105.0,
+    "lower_fill_energy_after": 133.82887268066406,
+    "rim_energy_unchanged": 430.0,
+    "rim_location_z": 0.5799999833106995,
+    "rim_shape": "RECTANGLE",
+    "rim_size_x_m": 1.100000023841858,
+    "rim_size_y_m": 2.3499999046325684,
+    "dedicated_tip_light": false
+  },
+  "locks": {
+    "mesh_transform_geometry_fingerprint_unchanged": true,
+    "materials_unchanged": true,
+    "key_energy_unchanged": true,
+    "exposure_unchanged": true,
+    "background_unchanged": true,
+    "violet_core_material_unchanged": true,
+    "camera_objects_unchanged": true,
+    "phase_collision_unchanged_geometry_basis": {
+      "method": "D1 physical audit remains applicable because complete mesh/transform fingerprint is unchanged",
+      "P1": {
+        "records": 0,
+        "triangle_overlaps": 0
+      },
+      "P2": {
+        "records": 0,
+        "triangle_overlaps": 0
+      },
+      "P3": {
+        "records": 0,
+        "triangle_overlaps": 0
+      }
+    }
+  },
+  "operator_visual_ruling_required": true,
+  "integration_ready": "NO_OPERATOR_REVIEW_REQUIRED",
+  "deliverables": {
+    "images_opened_and_inspected": true,
+    "contact_sheet": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D2_CONTACT_SHEET.png",
+    "hero_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D2_D1_D2_HERO_COMPARE.png",
+    "side_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D2_D1_D2_SIDE_COMPARE.png",
+    "attack_tip_closeup": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D2_ATTACK_TIP_CLOSEUP.png"
+  }
+}
