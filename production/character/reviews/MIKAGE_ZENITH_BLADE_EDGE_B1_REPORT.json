@@ -1,0 +1,195 @@
+{
+  "task": "ZENITH_BLADE_EDGE_B1",
+  "operator_visual_edge_approval_required": true,
+  "form_lock": "FORM_A3_OPERATOR_PASS_LOCKED",
+  "mat_c1_dispatch": "BLOCKED_PENDING_EDGE_APPROVAL",
+  "base": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_FORM_A3.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_EDGE_B1.blend",
+  "base_sha256": "14CC0E4DF3C74E9677C64DCD629D387835BF88FC822355F54D6C2245935B3D65",
+  "output_sha256": "5579C714F61226C49BBBFF06C40D7DA700840B7D151EFE03F27EB0C4E25151AC",
+  "human_scale_lock": {
+    "uniform_root": "MIKAGE_HUMAN_SCALE_ROOT_EDGE_B1",
+    "uniform_scale_factor": 0.2452706705,
+    "scene_unit_system": "METRIC",
+    "scene_scale_length": 1.0,
+    "length_unit": "METERS",
+    "blade_length_before_m": 4.892554044723511,
+    "blade_length_after_m": 1.2000000178813934,
+    "blade_target_m": 1.2,
+    "actor_height_before_m": 7.149999842047691,
+    "actor_height_after_m": 1.7536852434277534,
+    "actor_target_m": 1.753685,
+    "blade_actor_ratio": 0.6842733166505257,
+    "zb_object_scales_all_unit": true,
+    "root_strategy": "One common non-ZB root preserves hierarchy, animation, drivers and local ZB transforms.",
+    "light_energy_compensation_factor": 0.06015770180751957
+  },
+  "form_preservation": {
+    "base_mesh_body_fingerprints_unchanged": true,
+    "macro_vertices_edited": false,
+    "directional_cut_degrees": 10.0,
+    "collar_dimensions_edited": false,
+    "camera_relative_transform_locked": true
+  },
+  "edge_hierarchy": {
+    "bevel_records": [
+      {
+        "object": "ZB45_SHELL_LL",
+        "category": "porcelain_shell",
+        "effective_world_width_mm": 2.0,
+        "local_modifier_width_m": 0.008154256666412138,
+        "segments": 3,
+        "interface_vertex_group": "EDGE_B1_NON_INTERFACE",
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      },
+      {
+        "object": "ZB45_SHELL_LR",
+        "category": "porcelain_shell",
+        "effective_world_width_mm": 2.0,
+        "local_modifier_width_m": 0.008154256666412138,
+        "segments": 3,
+        "interface_vertex_group": "EDGE_B1_NON_INTERFACE",
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      },
+      {
+        "object": "ZB45_SHELL_UL",
+        "category": "porcelain_shell",
+        "effective_world_width_mm": 2.0,
+        "local_modifier_width_m": 0.008154256666412138,
+        "segments": 3,
+        "interface_vertex_group": "EDGE_B1_NON_INTERFACE",
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      },
+      {
+        "object": "ZB45_SHELL_UR",
+        "category": "porcelain_shell",
+        "effective_world_width_mm": 0.0,
+        "local_modifier_width_m": 0.0,
+        "segments": 0,
+        "interface_vertex_group": "EDGE_B1_NON_INTERFACE",
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": "zero-clearance mitten interface; normals-only"
+      },
+      {
+        "object": "ZB46_DRIVE_HUB",
+        "category": "hub_shoulders",
+        "effective_world_width_mm": 1.0,
+        "local_modifier_width_m": 0.004077128333206069,
+        "segments": 3,
+        "interface_vertex_group": null,
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      },
+      {
+        "object": "ZB46_HUB_SHOULDER_L",
+        "category": "hub_shoulders",
+        "effective_world_width_mm": 1.0,
+        "local_modifier_width_m": 0.004077128333206069,
+        "segments": 3,
+        "interface_vertex_group": null,
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      },
+      {
+        "object": "ZB46_HUB_SHOULDER_R",
+        "category": "hub_shoulders",
+        "effective_world_width_mm": 1.0,
+        "local_modifier_width_m": 0.004077128333206069,
+        "segments": 3,
+        "interface_vertex_group": null,
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      },
+      {
+        "object": "ZB_FORM_A3_ATTACK_COLLAR_WEDGE",
+        "category": "attack_collar",
+        "effective_world_width_mm": 1.2,
+        "local_modifier_width_m": 0.004892553999847282,
+        "segments": 3,
+        "interface_vertex_group": null,
+        "weighted_normal_modifier": true,
+        "bevel_skip_reason": null
+      }
+    ],
+    "official_material_assignment": false,
+    "decorative_detail_added": false
+  },
+  "technical_locks": {
+    "marker_expected_world_m": [
+      0.25876057147979736,
+      -0.006131760776042938,
+      0.5199738144874573
+    ],
+    "marker_actual_world_m": [
+      0.25876057147979736,
+      -0.0061317384243011475,
+      0.5199738144874573
+    ],
+    "marker_delta_m": 2.2351741790771484e-08,
+    "handle_expected_world_m": [
+      0.25876057147979736,
+      -0.006131766829639673,
+      0.5199738144874573
+    ],
+    "handle_actual_world_m": [
+      0.25876057147979736,
+      -0.00613177428022027,
+      0.5199738144874573
+    ],
+    "handle_delta_m": 7.450580596923828e-09,
+    "tolerance_m": 1e-05,
+    "spine_axis_deviation_m": 0.0
+  },
+  "phase_validation": {
+    "collision": {
+      "P1": {
+        "frame": 1,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P2": {
+        "frame": 31,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P3": {
+        "frame": 61,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      }
+    },
+    "mitten_phase_records": 0,
+    "mitten_physical_overlaps": 0
+  },
+  "silhouette_comparison": {
+    "source_resolution_px": [2048, 2048],
+    "front_bbox_form_a3_px": [815, 95, 1233, 1949],
+    "front_bbox_edge_b1_px": [815, 95, 1232, 1949],
+    "front_bbox_max_abs_delta_px": 1,
+    "front_different_pixels": 2201,
+    "side_bbox_form_a3_px": [912, 95, 1136, 1949],
+    "side_bbox_edge_b1_px": [911, 95, 1136, 1949],
+    "side_bbox_max_abs_delta_px": 1,
+    "side_different_pixels": 352,
+    "macro_silhouette_preserved_at_locked_review_camera": true
+  },
+  "deliverables": {
+    "contact_sheet": "production/character/reviews/MIKAGE_ZENITH_BLADE_EDGE_B1_CONTACT_SHEET.png",
+    "edge_closeups": "production/character/reviews/MIKAGE_ZENITH_BLADE_EDGE_B1_EDGE_CLOSEUPS.png",
+    "silhouette_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_EDGE_B1_SILHOUETTE_COMPARE.png",
+    "image_dimensions_px": {
+      "contact_sheet": [2880, 1080],
+      "edge_closeups": [2880, 1080],
+      "silhouette_compare": [2048, 1080]
+    },
+    "images_opened_and_inspected": true,
+    "inspection_scope": "Locked P1 review framing, continuous edge highlights, flat-face shading, collar/taper/projection closeups and FORM_A3 versus EDGE_B1 silhouette only; final edge approval remains operator-only."
+  },
+  "integration_ready": true
+}
