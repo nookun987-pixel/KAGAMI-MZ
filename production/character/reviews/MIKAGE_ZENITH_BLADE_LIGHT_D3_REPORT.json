@@ -1,0 +1,50 @@
+{
+  "task": "ZENITH_BLADE_LIGHT_D3_BACKGROUND_ONLY",
+  "base": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_LIGHT_D2.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_LIGHT_D3.blend",
+  "operator_ruling": "LIGHT_D2_FAIL_LIGHT; FINAL_LIGHT_D3_BACKGROUND_ONLY",
+  "single_change": {
+    "world_background_before": {
+      "color": [
+        0.00800000037997961,
+        0.009999999776482582,
+        0.01600000075995922,
+        1.0
+      ],
+      "strength": 0.18000000715255737
+    },
+    "canonical_visible_background_srgb_hex": "#050508",
+    "world_background_linear_input_calibrated_for_locked_color_management": [
+      0.00800000037997961,
+      0.00800000037997961,
+      0.010999999940395355,
+      1.0
+    ],
+    "world_background_strength": 1.0,
+    "gradient_fog_halo": false,
+    "measured_render_background_pixel_srgb_hex": "#050508",
+    "measurement_location_px": [
+      100,
+      100
+    ]
+  },
+  "locks": {
+    "all_objects_geometry_pose_camera_and_lights_unchanged": true,
+    "materials_unchanged": true,
+    "color_management_unchanged": true,
+    "fill_energy_w": 133.82887268066406,
+    "rim_energy_w": 430.0,
+    "dedicated_tip_light": false,
+    "technical_collision_basis": "unchanged complete object fingerprint; D2/D1 physical audit remains 0 records and 0 triangle overlaps at P1/P2/P3"
+  },
+  "operator_visual_ruling_required": true,
+  "integration_ready": "NO_OPERATOR_REVIEW_REQUIRED",
+  "deliverables": {
+    "images_opened_and_inspected": true,
+    "contact_sheet": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D3_CONTACT_SHEET.png",
+    "hero_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D3_D2_D3_HERO_COMPARE.png",
+    "side_compare": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D3_D2_D3_SIDE_COMPARE.png",
+    "attack_tip_closeup": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D3_ATTACK_TIP_CLOSEUP.png",
+    "background_value_proof": "production/character/reviews/MIKAGE_ZENITH_BLADE_LIGHT_D3_BACKGROUND_VALUE_PROOF.png"
+  }
+}
