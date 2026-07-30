@@ -1,0 +1,149 @@
+{
+  "task": "ZENITH_BLADE_MAT_C1",
+  "edge_lock": "EDGE_B1_OPERATOR_PASS_LOCKED",
+  "light_d1_dispatch": "BLOCKED_PENDING_MATERIAL_VISUAL_APPROVAL",
+  "base": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_EDGE_B1.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MAT_C1.blend",
+  "base_sha256": "5579C714F61226C49BBBFF06C40D7DA700840B7D151EFE03F27EB0C4E25151AC",
+  "output_sha256": "0C67127329F68CAF4DD588830816D40DF61048C5B793031F945D3CF0B5D8B788",
+  "material_system": {
+    "porcelain": {
+      "hex": "#F2EEEA",
+      "metallic": 0.0,
+      "roughness_target": 0.52,
+      "roughness_range": [
+        0.48,
+        0.56
+      ],
+      "ior": 1.46,
+      "micro_roughness": "procedural subtle only",
+      "objects": [
+        "ZB45_SHELL_LL",
+        "ZB45_SHELL_LR",
+        "ZB45_SHELL_UL",
+        "ZB45_SHELL_UR"
+      ]
+    },
+    "graphite": {
+      "hex": "#4B5866",
+      "metallic": 0.62,
+      "roughness": 0.34,
+      "objects": [
+        "ZB42_FUNCTIONAL_RAIL_L",
+        "ZB42_FUNCTIONAL_RAIL_R",
+        "ZB46_DRIVE_HUB",
+        "ZB46_HUB_SHOULDER_L",
+        "ZB46_HUB_SHOULDER_R",
+        "ZB46_HUB_SPINE_KEY",
+        "ZB46_RECESSED_RAIL_L",
+        "ZB46_RECESSED_RAIL_R"
+      ]
+    },
+    "sumi": {
+      "hex": "#252321",
+      "metallic": 0.68,
+      "roughness": 0.3,
+      "objects": [
+        "ZB42_CENTRAL_LOAD_SPINE",
+        "ZB42_LOWER_DOCKING_LOAD_FOOT",
+        "ZB46_BASE_CHEEK_L",
+        "ZB46_BASE_CHEEK_R",
+        "ZB46_BASE_SPINE_RECEIVER",
+        "ZB46_FLUX_BASE",
+        "ZB48_GAUNTLET_LOAD_BRIDGE",
+        "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+        "ZB_FORM_A3_ATTACK_COLLAR_WEDGE"
+      ]
+    },
+    "inset": {
+      "hex": "#120A18",
+      "metallic": 0.22,
+      "roughness": 0.24,
+      "emission_strength": 0.0,
+      "objects": [
+        "ZB42_P3_SINGLE_RECESSED_CORE",
+        "ZB46_LOAD_JOINT_L_L",
+        "ZB46_LOAD_JOINT_L_R",
+        "ZB46_LOAD_JOINT_U_L",
+        "ZB46_LOAD_JOINT_U_R"
+      ]
+    },
+    "all_mesh_objects_classified": true,
+    "unclassified": [],
+    "emission_zero": true
+  },
+  "technical_locks": {
+    "geometry_modifier_normal_transform_fingerprints_unchanged": true,
+    "marker_delta_m": 0.0,
+    "handle_delta_m": 0.0,
+    "human_scale_root_unchanged": true,
+    "zb_object_scales_unchanged": true,
+    "blade_length_m": 1.2000000178813934,
+    "actor_height_m": 1.7536852434277534,
+    "blade_actor_ratio": 0.6842733166505257
+  },
+  "phase_validation": {
+    "collision": {
+      "P1": {
+        "frame": 1,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P2": {
+        "frame": 31,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P3": {
+        "frame": 61,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      }
+    },
+    "mitten_phase_records": 0,
+    "mitten_physical_overlaps": 0
+  },
+  "review_setup": {
+    "neutral_temporary_unsaved": true,
+    "official_light_d1_started": false,
+    "existing_scene_lights_not_modified_in_saved_blend": true
+  },
+  "deliverables": {
+    "contact_sheet": "MIKAGE_ZENITH_BLADE_MAT_C1_CONTACT_SHEET.png",
+    "neutral_render": "MIKAGE_ZENITH_BLADE_MAT_C1_NEUTRAL_RENDER.png",
+    "material_closeups": "MIKAGE_ZENITH_BLADE_MAT_C1_MATERIAL_CLOSEUPS.png",
+    "roughness_specular_compare": "MIKAGE_ZENITH_BLADE_MAT_C1_ROUGHNESS_SPECULAR_COMPARE.png",
+    "material_id": "MIKAGE_ZENITH_BLADE_MAT_C1_MATERIAL_ID.png",
+    "silhouette_compare": "MIKAGE_ZENITH_BLADE_MAT_C1_SILHOUETTE_COMPARE.png",
+    "images_opened_and_inspected": true
+  },
+  "integration_ready": true,
+  "silhouette_pixel_comparison": {
+    "front": {
+      "changed_pixels": 0,
+      "difference_bbox": null
+    },
+    "side": {
+      "changed_pixels": 0,
+      "difference_bbox": null
+    }
+  },
+  "reopen_validation": {
+    "passed": true,
+    "object_count": 199,
+    "zb_mesh_count": 26,
+    "material_object_counts": {
+      "MAT_C1_TECHNICAL_PORCELAIN": 4,
+      "MAT_C1_ZBLUE_GRAPHITE": 8,
+      "MAT_C1_SUMI_COATED_METAL": 9,
+      "MAT_C1_VIOLET_BLACK_INSET": 5
+    },
+    "zb_scales_all_unit": true,
+    "human_scale_root": "MIKAGE_HUMAN_SCALE_ROOT_EDGE_B1",
+    "human_scale_root_value": 0.24527066946029663,
+    "emission_zero": true
+  }
+}
