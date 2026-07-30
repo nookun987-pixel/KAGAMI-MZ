@@ -1,44 +1,61 @@
-task_id: ZENITH_BLADE_DEVELOPMENT_FILM_V0_19
+task_id: ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION
 track_id: LANE_A_IP_TO_SCREEN_RENDER_LINE
-task_type: MP4_RENDER_ONLY
-current_step: ZENITH_BLADE_DEVELOPMENT_FILM_V0_19
+task_type: CONTACT_SHEET_ONLY
+current_step: ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION
+# Re-pointed 2026-07-30 by Lane B (Cowork) on operator (BOOS) instruction.
+# PRIOR STATE WAS STALE: this file still pointed at ZENITH_BLADE_DEVELOPMENT_FILM_V0_19,
+# which was delivered 2026-07-23 22:54. Backup of that state:
+#   .mikage/tasks/active_task_blade_development_film_v0_19_backup_2026-07-30.yaml
+# Governed by AGENTS.md: ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION = OPEN (2026-07-28).
+# Context: V0.88 audit proved 9 phase records / 216 triangle overlaps between the Blade
+# shell+rail envelope and the actor mitten, reproduced identically across P1/P2/P3.
+# GEOMETRY_EDITED was NO at V0.88; INTEGRATION_READY remains NO until this task passes.
+# Repair is ACTOR-SIDE ONLY. The Blade is not touched.
 input_files_allowed:
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2.mp4
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_PROOF.mp4
-  - production/character/build_log/FORGING_THE_MARK_V0_1/src/track.wav
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_REPORT.json
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_PROOF.md
   - AGENTS.md
 read_only_files:
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_CANON_BUILD_2D_TO_3D_V0_18.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_MOTION.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_FINALIZATION_V0_17_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_STANDING_HERO_MOTION_V0_2.mp4
-  - production/character/reviews/MIKAGE_HERO_MOUNT_V1_5_CONTINUOUS_GAIT_PROOF.mp4
-  - production/character/build_log/FORGING_THE_MARK_V0_1/src/track.wav
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_REPORT.json
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_V0_88_PROOF.md
   - AGENTS.md
-output_folder_allowed: _tmp/mikage_zenith_blade_development_film_v0_19_gate
-output_files_allowed: [motion.mp4, motion_report.md]
+output_folder_allowed: _tmp/mikage_zenith_blade_mitten_interface_correction_v0_89_gate
+output_files_allowed: [contact_sheet.png, report.json]
 real_deliverables:
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19.mp4
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19_KEYFRAMES.png
-  - production/character/reviews/MIKAGE_ZENITH_BLADE_DEVELOPMENT_FILM_V0_19_PROOF.md
+  - production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89.blend
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_CONTACT_SHEET.png
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_REPORT.json
+  - production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_PROOF.md
 allowed_actions:
-  - composite approved/candidate source media into a 75-second narrative
-  - crop/pad typography color-grade and transition source media without source edits
-  - add the approved local project music cue with fades
-  - create keyframe sheet proof and exact media QA
+  - duplicate V0.87 into the approved V0.89 derivative
+  - use V0.88 triangle indices and overlap bounds to identify only the affected mitten vertices
+  - apply the minimum local mitten-shell or wrist-interface correction on A2_right_porcelain_mitten_hand_attached_read only
+  - rerun P1/P2/P3 physical BVH validation
+  - rerun neutral plus the existing eight poses
+  - render and inspect close-up front side and three-quarter evidence
+  - reopen the saved V0.89 derivative and repeat the final validation
+  - measure and report blade length scene unit scale and blade-to-hand ratio into report.json under scale_audit
 forbidden_actions:
-  - no source media blend geometry material rig SSOT status push deploy or release change
+  - no edit to Blade shell or rail geometry
+  - no change to handle position or registration geometry
+  - no change to docking-primary or secondary-grip architecture
+  - no change to actor rig hierarchy armature drivers or P1/P2/P3 mechanism and materials
+  - no scale change of any kind - scale_audit is measurement only
+  - no retopo no UV no bake - locked 2026-07-30 by render-only decision
+  - no push no deploy no canon-lock no asset-lock no production-ready claim
 pass_conditions:
-  - full narrative includes Blade build standing hero and mounted hero
-  - all source status labels and canon color rules remain accurate
-  - exact 1920x1080 24fps H264 yuv420p 75s AAC stereo 48k media passes
-  - every source hash remains unchanged
-  - tools PASS and repo clean after commit
+  - MITTEN_PHASE_RECORDS equals 0
+  - MITTEN_PHYSICAL_OVERLAPS equals 0
+  - zero unclassified physical penetration
+  - zero novel collision pairs across neutral plus the existing eight poses
+  - marker and handle world translation delta less than or equal to 0.00001 m
+  - scale_audit present in report.json with blade length scene unit scale and blade-to-hand ratio
 stop_conditions:
-  - source mutation status misclaim canon color or media-spec failure
+  - any remaining physical overlap - keep INTEGRATION_READY NO and report exact object pair phase triangle count and blocker
+  - any required change falling outside the allowed geometry target - stop and report do not widen scope
 verify_command: python .mikage\tools\verify_output.py
-next_step_if_pass: operator development-film review and separate release decision
-next_step_if_fail: correct only the failing V0.19 edit/composite item
+next_step_if_pass: operator marks V0.89 ACCEPTED_BOUNDED_MITTEN_INTERFACE_CANDIDATE, then production integration validation; FORM_A1 stays blocked until operator also locks real-world scale
+next_step_if_fail: correct only the failing V0.89 validation item, maximum one revision, then stop and report

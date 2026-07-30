@@ -2,6 +2,57 @@
 
 ---
 
+## POINTER SYNC + DISPATCH (2026-07-30)
+
+`ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION = OPEN`
+
+**This file was STALE.** Its top entry was the 2026-07-11 V0_9 dispatch while work had already moved
+through V0.80 -> V0.88 (grip / action / collision-ownership / mitten-interface chain, latest artifacts
+2026-07-28 10:37) without handoff entries being written. `.mikage/tasks/active_task.yaml` was likewise
+still pointing at `ZENITH_BLADE_DEVELOPMENT_FILM_V0_19`, delivered 2026-07-23 22:54. Both are now
+re-pointed to V0.89. Prior yaml backed up at
+`.mikage/tasks/active_task_blade_development_film_v0_19_backup_2026-07-30.yaml`.
+AGENTS.md was already correct - it opened V0.89 on 2026-07-28; only these two pointers lagged.
+
+**Why V0.89 exists.** V0.88 (mitten interface geometry audit) reproduced 9 phase records and 216
+Blade-to-mitten triangle overlaps, identical across P1/P2/P3: `ZB45_SHELL_UL` 18 pairs, `ZB45_SHELL_UR`
+18 pairs, `ZB46_RECESSED_RAIL_R` 36 pairs. The mitten occupies the shell/rail envelope instead of
+contacting only the handle - a real ACTOR-side interface incompatibility. V0.88 edited no geometry;
+`INTEGRATION_READY` stays NO until V0.89 passes.
+
+**Scope.** Actor-side only. Allowed geometry target: `A2_right_porcelain_mitten_hand_attached_read`
+ONLY. Preserve Blade shell and rail geometry, handle position and registration, docking-primary and
+secondary-grip architecture, actor rig hierarchy, and the P1/P2/P3 mechanism and materials.
+Base: `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_COLLISION_OWNERSHIP_V0_87.blend`.
+Full spec: AGENTS.md, `ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION` block (7 passes).
+Gate folder: `_tmp/mikage_zenith_blade_mitten_interface_correction_v0_89_gate` (CONTACT_SHEET_ONLY).
+`validate_task.py` = PASS (2026-07-30).
+
+**Required validation.** `MITTEN_PHASE_RECORDS = 0`; `MITTEN_PHYSICAL_OVERLAPS = 0`; zero unclassified
+physical penetration; zero novel collision pairs across neutral plus the existing eight poses;
+marker/handle world translation delta <= 0.00001 m.
+
+**Added this dispatch - READ-ONLY measurement, no edits.** Report into `report.json` under `scale_audit`:
+blade total length in metres, scene unit scale and unit system, blade bounding box, and blade length as
+a ratio of the actor hand width/height. The operator must lock real-world scale before the next stage.
+Do not change scale - measure only.
+
+**Operator decision logged 2026-07-30: Zenith Blade is FILM / RENDER-ONLY (MV and film first).**
+Pipeline stages 5 (retopo/low-poly) and 6 (UV + bake) are LOCKED - not to be performed, not to be
+reopened without a new operator decision. Bevels are to be real geometry, not a bevel shader.
+
+**Next stage is NOT dispatched.** `ZENITH_BLADE_FORM_A1_DIRECTIONAL_SILHOUETTE` (mid-poly form pass -
+new FORM_A* naming series, it does not continue V0.x) is written and reviewed but **DISPATCH: BLOCKED**
+pending (a) V0.89 marked PASS by the operator and (b) real-world scale locked. Brief:
+`production/character/build_log/LANEA_CODEX_TASK_ZENITH_BLADE_FORM_A1_DIRECTIONAL_SILHOUETTE.md`.
+Governing visual standard (proposal, not yet approved):
+`production/character/build_log/MZ_BLADE_HERO_LOOK_GATE_V2.md` (V2.2).
+
+CURRENT_NEXT_TASK = `ZENITH_BLADE_V0_89_BOUNDED_MITTEN_INTERFACE_CORRECTION`. No canon-lock, no
+asset-lock, no production-ready claim. No push, no deploy. Stop after proof for operator review.
+
+---
+
 ## DISPATCH: Sixty-second controlled exception (2026-07-11)
 
 `MIKAGE_ZENITH_BLADE_3PHASE_REBUILD_V0_9 = OPEN` (VISIBILITY-DRIVER REPAIR ONLY; revision of #61)
