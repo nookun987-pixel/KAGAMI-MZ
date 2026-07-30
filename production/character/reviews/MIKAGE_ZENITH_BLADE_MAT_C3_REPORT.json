@@ -1,0 +1,215 @@
+{
+  "task": "ZENITH_BLADE_MAT_C3",
+  "edge_lock": "EDGE_B1_OPERATOR_PASS_LOCKED",
+  "mat_c2_visual_ruling": "FAIL",
+  "light_d1_dispatch": "BLOCKED_PENDING_MATERIAL_VISUAL_APPROVAL",
+  "base": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MAT_C2.blend",
+  "output": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_MAT_C3.blend",
+  "base_sha256": "44CA1403A5EE3BBF760394DEA95240FA6A96E3431DB58B989FE6ADC227A94882",
+  "output_sha256": "C98982493979B20C38D6828ED511E35294AC1A4718798F5C1C7D174D0B196B30",
+  "material_system": {
+    "porcelain": {
+      "hex": "#F2EEEA",
+      "metallic": 0.0,
+      "roughness_target": 0.46,
+      "roughness_range": [
+        0.445,
+        0.475
+      ],
+      "ior": 1.46,
+      "coat_weight": 0.1,
+      "coat_roughness": 0.3,
+      "micro_roughness": "roughness only; no bump or color noise",
+      "objects": [
+        "ZB45_SHELL_LL",
+        "ZB45_SHELL_LR",
+        "ZB45_SHELL_UL",
+        "ZB45_SHELL_UR"
+      ]
+    },
+    "graphite": {
+      "design_hex": "#4B5866",
+      "linear_rgb_multiplier": 0.25675,
+      "effective_linear_rgb": [
+        0.01806495457010099,
+        0.025055551378673185,
+        0.03411394155894276
+      ],
+      "approximate_srgb": "#3D4954",
+      "metallic": 0.65,
+      "roughness": 0.34,
+      "objects": [
+        "ZB42_FUNCTIONAL_RAIL_L",
+        "ZB42_FUNCTIONAL_RAIL_R",
+        "ZB46_DRIVE_HUB",
+        "ZB46_HUB_SHOULDER_L",
+        "ZB46_HUB_SHOULDER_R"
+      ],
+      "assignment_verified": true
+    },
+    "sumi": {
+      "hex": "#252321",
+      "metallic": 0.68,
+      "roughness": 0.31,
+      "objects": [
+        "ZB42_CENTRAL_LOAD_SPINE",
+        "ZB42_LOWER_DOCKING_LOAD_FOOT",
+        "ZB46_BASE_CHEEK_L",
+        "ZB46_BASE_CHEEK_R",
+        "ZB46_BASE_SPINE_RECEIVER",
+        "ZB46_FLUX_BASE",
+        "ZB48_GAUNTLET_LOAD_BRIDGE",
+        "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+        "ZB_FORM_A3_ATTACK_COLLAR_WEDGE"
+      ]
+    },
+    "projection": {
+      "hex": "#23211F",
+      "relation": "approximately 6% darker than collar",
+      "metallic": 0.68,
+      "roughness": 0.31,
+      "object": "ZB_FORM_A3_ATTACK_COLLAR_WEDGE",
+      "face_count": 1
+    },
+    "inset": {
+      "hex": "#120A18",
+      "metallic": 0.05,
+      "roughness": 0.34,
+      "specular_ior_level": 0.25,
+      "coat_weight": 0.0,
+      "emission_strength": 0.0,
+      "objects": [
+        "ZB42_P3_SINGLE_RECESSED_CORE",
+        "ZB46_HUB_SPINE_KEY",
+        "ZB46_LOAD_JOINT_L_L",
+        "ZB46_LOAD_JOINT_L_R",
+        "ZB46_LOAD_JOINT_U_L",
+        "ZB46_LOAD_JOINT_U_R",
+        "ZB46_RECESSED_RAIL_L",
+        "ZB46_RECESSED_RAIL_R"
+      ]
+    },
+    "all_mesh_objects_classified": true,
+    "unclassified": [],
+    "emission_zero": true
+  },
+  "technical_locks": {
+    "geometry_modifier_normal_transform_fingerprints_unchanged": true,
+    "marker_delta_m": 0.0,
+    "handle_delta_m": 0.0,
+    "human_scale_root_unchanged": true,
+    "zb_object_scales_unchanged": true,
+    "blade_length_m": 1.2000000178813934,
+    "actor_height_m": 1.7536852434277534,
+    "blade_actor_ratio": 0.6842733166505257
+  },
+  "phase_validation": {
+    "collision": {
+      "P1": {
+        "frame": 1,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P2": {
+        "frame": 31,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      },
+      "P3": {
+        "frame": 61,
+        "records": [],
+        "record_count": 0,
+        "triangle_overlap_total": 0
+      }
+    },
+    "mitten_phase_records": 0,
+    "mitten_physical_overlaps": 0
+  },
+  "review_setup": {
+    "neutral_temporary_unsaved": true,
+    "official_light_d1_started": false,
+    "existing_scene_lights_not_modified_in_saved_blend": true,
+    "camera_and_light_positions_identical_to_mat_c2": true,
+    "view_transform": "Filmic",
+    "look": "Medium High Contrast",
+    "exposure": 0.0,
+    "gamma": 1.0
+  },
+  "deliverables": {
+    "contact_sheet": "MIKAGE_ZENITH_BLADE_MAT_C3_CONTACT_SHEET.png",
+    "neutral_render": "MIKAGE_ZENITH_BLADE_MAT_C3_NEUTRAL_RENDER.png",
+    "material_closeups": "MIKAGE_ZENITH_BLADE_MAT_C3_MATERIAL_CLOSEUPS.png",
+    "roughness_specular_compare": "MIKAGE_ZENITH_BLADE_MAT_C3_ROUGHNESS_SPECULAR_COMPARE.png",
+    "material_id": "MIKAGE_ZENITH_BLADE_MAT_C3_MATERIAL_ID.png",
+    "inset_closeup": "MIKAGE_ZENITH_BLADE_MAT_C3_INSET_CLOSEUP.png",
+    "silhouette_compare": "MIKAGE_ZENITH_BLADE_MAT_C3_SILHOUETTE_COMPARE.png",
+    "luminance_pixel_mask_proof": "MIKAGE_ZENITH_BLADE_MAT_C3_LUMINANCE_PIXEL_MASK_PROOF.png",
+    "images_opened_and_inspected": true
+  },
+  "integration_ready": true,
+  "silhouette_pixel_comparison": {
+    "front": {
+      "changed_pixels": 0,
+      "difference_bbox": null
+    },
+    "side": {
+      "changed_pixels": 0,
+      "difference_bbox": null
+    }
+  },
+  "reopen_validation": {
+    "passed": true,
+    "object_count": 199,
+    "zb_mesh_count": 26,
+    "material_object_counts": {
+      "MAT_C3_TECHNICAL_PORCELAIN_LOCKED_FROM_C2": 4,
+      "MAT_C3_ZBLUE_GRAPHITE_CALIBRATED": 5,
+      "MAT_C3_SUMI_COATED_METAL_LOCKED_FROM_C2": 9,
+      "MAT_C3_VIOLET_BLACK_INSET": 8
+    },
+    "zb_scales_all_unit": true,
+    "emission_zero": true
+  },
+  "luminance_pixel_measurement": {
+    "method": "Occlusion-aware object masks under the locked MAT_C2 hero camera and neutral rig",
+    "porcelain_pixels": 235432,
+    "porcelain_mean_luma": 245.0178947636685,
+    "hub_pixels": 30341,
+    "hub_mean_luma": 167.76823440229393,
+    "hub_to_porcelain_ratio": 0.6847182919603257,
+    "hub_pass_range": [
+      0.47,
+      0.53
+    ],
+    "hub_range_met": false,
+    "inset_pixels": 4513,
+    "inset_mean_luma": 44.82517172612453,
+    "inset_to_porcelain_ratio": 0.18294652220957394,
+    "inset_target_max_approximate": 0.18,
+    "inset_target_met_strictly": false
+  },
+  "calibration_history": [
+    {
+      "linear_multiplier": 0.6734,
+      "fixed_roi_ratio": 0.714641409251749
+    },
+    {
+      "linear_multiplier": 0.47113,
+      "fixed_roi_ratio": 0.6889303408370734
+    },
+    {
+      "linear_multiplier": 0.34193,
+      "fixed_roi_ratio": 0.6658894567215804
+    },
+    {
+      "linear_multiplier": 0.25675,
+      "fixed_roi_ratio": 0.647846336394303
+    }
+  ],
+  "blocker": "Hub remains above the 0.47–0.53 gate because the locked metallic 0.65 / roughness 0.34 response creates a specular floor under the unchanged neutral rig. MAT_C3 may not change those values, lighting, exposure, or color management.",
+  "operator_visual_ruling_required": true,
+  "light_d1_remains_blocked": true,
+  "mat_c4_prohibited": true
+}
