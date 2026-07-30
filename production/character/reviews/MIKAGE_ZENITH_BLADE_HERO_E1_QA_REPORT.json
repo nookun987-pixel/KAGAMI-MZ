@@ -1,0 +1,293 @@
+{
+  "task": "MIKAGE_ZENITH_BLADE_HERO_E1",
+  "base_commit": "10daff2",
+  "source": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_LIGHT_D3.blend",
+  "derivative": "production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_HERO_E1.blend",
+  "source_object_count": 208,
+  "derivative_object_count": 210,
+  "allowed_output_objects": [
+    "CAM_HERO_E1_TURNTABLE",
+    "EMPTY_HERO_E1_TURNTABLE_TARGET"
+  ],
+  "locks": {
+    "approved_scene_objects_unchanged": true,
+    "materials_unchanged": true,
+    "hero_camera_lens_mm": 85.0,
+    "background_visible_target": "#050508",
+    "exposure_ev": -0.3499999940395355,
+    "view_transform": "AgX",
+    "look": "AgX - Medium High Contrast"
+  },
+  "bloom_glare_audit": {
+    "present": false,
+    "nodes": [],
+    "gate_8_status": "N/A",
+    "statement": "No bloom/glare system was added during HERO_E1."
+  },
+  "collision_method": {
+    "identifier": "LIGHT_D1 accepted validator: world-space base-mesh mitten; ZB45_SHELL_UR base mesh; other physical targets evaluated mesh",
+    "source_script": "C:/Users/nt/AppData/Local/Temp/light_d1_build.py lines 175-193",
+    "targets": [
+      "ZB45_SHELL_LL",
+      "ZB45_SHELL_LR",
+      "ZB45_SHELL_UL",
+      "ZB45_SHELL_UR",
+      "ZB_FORM_A3_ATTACK_COLLAR_WEDGE"
+    ],
+    "raw_BVH_all_ZB_not_used": true,
+    "phases": {
+      "P1": {
+        "frame": 1,
+        "raw_candidate_records": [],
+        "classified_valid_contact": [],
+        "classified_physical_overlap": [],
+        "physical_triangle_penetration": 0
+      },
+      "P2": {
+        "frame": 31,
+        "raw_candidate_records": [],
+        "classified_valid_contact": [],
+        "classified_physical_overlap": [],
+        "physical_triangle_penetration": 0
+      },
+      "P3": {
+        "frame": 61,
+        "raw_candidate_records": [],
+        "classified_valid_contact": [],
+        "classified_physical_overlap": [],
+        "physical_triangle_penetration": 0
+      }
+    }
+  },
+  "technical_clean": {
+    "faceting": "PASS_VISUAL_4K_AND_CLOSEUPS",
+    "pinching": "PASS_VISUAL_4K_AND_CLOSEUPS",
+    "twisted_n_gons": "PASS",
+    "reversed_normals": "PASS",
+    "flipped_faces": "PASS",
+    "z_fighting": "PASS_VISUAL_4K_AND_CLOSEUPS",
+    "physical_penetration": "PASS",
+    "duplicate_geometry": "PASS",
+    "duplicate_coplanar_faces": "PASS",
+    "duplicate_surfaces": "PASS"
+  },
+  "operator_waiver": "Standard V2.3 Gate 6 wear: WAIVED by operator for this clean-material Blade candidate.",
+  "operator_visual_approval_required": true,
+  "integration_ready": "NO_OPERATOR_REVIEW_REQUIRED",
+  "n_gon_planarity_evidence": [
+    {
+      "object": "ZB42_CENTRAL_LOAD_SPINE",
+      "vertices": 5,
+      "max_planarity_deviation": 0.0
+    },
+    {
+      "object": "ZB42_CENTRAL_LOAD_SPINE",
+      "vertices": 5,
+      "max_planarity_deviation": 0.0
+    }
+  ],
+  "reopen_validation": {
+    "success": true,
+    "frame": 61,
+    "object_count": 210,
+    "blend1_exists": false,
+    "hero_camera_lens_mm": 85.0,
+    "bloom_glare_present": false
+  },
+  "png_metadata": {
+    "MIKAGE_ZENITH_BLADE_HERO_E1_HERO_3Q_4K.png": {
+      "width": 3840,
+      "height": 2160,
+      "bit_depth": 16,
+      "color_type": 6,
+      "icc_present": false,
+      "color_related_chunks": [
+        "sRGB",
+        "gAMA",
+        "cHRM"
+      ],
+      "idat_chunk_count": 391
+    },
+    "MIKAGE_ZENITH_BLADE_HERO_E1_FRONT_QA_4K.png": {
+      "width": 3840,
+      "height": 2160,
+      "bit_depth": 16,
+      "color_type": 6,
+      "icc_present": false,
+      "color_related_chunks": [
+        "sRGB",
+        "gAMA",
+        "cHRM"
+      ],
+      "idat_chunk_count": 345
+    },
+    "MIKAGE_ZENITH_BLADE_HERO_E1_SIDE_QA_4K.png": {
+      "width": 3840,
+      "height": 2160,
+      "bit_depth": 16,
+      "color_type": 6,
+      "icc_present": false,
+      "color_related_chunks": [
+        "sRGB",
+        "gAMA",
+        "cHRM"
+      ],
+      "idat_chunk_count": 267
+    },
+    "MIKAGE_ZENITH_BLADE_HERO_E1_CLOSEUP_PORCELAIN_HUB_2048.png": {
+      "width": 2048,
+      "height": 2048,
+      "bit_depth": 16,
+      "color_type": 6,
+      "icc_present": false,
+      "color_related_chunks": [
+        "sRGB",
+        "gAMA",
+        "cHRM"
+      ],
+      "idat_chunk_count": 684
+    },
+    "MIKAGE_ZENITH_BLADE_HERO_E1_CLOSEUP_ATTACK_TIP_CORE_2048.png": {
+      "width": 2048,
+      "height": 2048,
+      "bit_depth": 16,
+      "color_type": 6,
+      "icc_present": false,
+      "color_related_chunks": [
+        "sRGB",
+        "gAMA",
+        "cHRM"
+      ],
+      "idat_chunk_count": 566
+    }
+  },
+  "background_corner_pixels_8bit": [
+    [
+      4,
+      5,
+      8,
+      255
+    ],
+    [
+      4,
+      5,
+      8,
+      255
+    ],
+    [
+      4,
+      5,
+      8,
+      255
+    ],
+    [
+      4,
+      5,
+      8,
+      255
+    ]
+  ],
+  "background_target": "#050508 ±1 8-bit code value",
+  "edge_highlight_measurement_px": 3,
+  "ten_gate_review": [
+    {
+      "index": 1,
+      "name": "Silhouette đen",
+      "status": "PASS",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_GATE_PROOF_SHEET.png"
+    },
+    {
+      "index": 2,
+      "name": "Đọc trong 1 giây",
+      "status": "PASS_OPERATOR_FORM_RULING",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_FINAL_CONTACT_SHEET.png"
+    },
+    {
+      "index": 3,
+      "name": "Hình có hướng",
+      "status": "PASS_OPERATOR_FORM_RULING",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_FINAL_CONTACT_SHEET.png"
+    },
+    {
+      "index": 4,
+      "name": "Cạnh bắt sáng",
+      "status": "PASS",
+      "measurement_px": 3,
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_GATE_PROOF_SHEET.png"
+    },
+    {
+      "index": 5,
+      "name": "Tách vật liệu",
+      "status": "PASS_OPERATOR_MAT_RULING",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_GATE_PROOF_SHEET.png"
+    },
+    {
+      "index": 6,
+      "name": "Wear có lý",
+      "status": "WAIVED_BY_OPERATOR",
+      "statement": "Standard V2.3 Gate 6 wear: WAIVED by operator for this clean-material Blade candidate."
+    },
+    {
+      "index": 7,
+      "name": "Sáng khi TẮT bloom",
+      "status": "PASS",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_HERO_3Q_4K.png"
+    },
+    {
+      "index": 8,
+      "name": "Sáng khi BẬT bloom",
+      "status": "N/A",
+      "statement": "approved LIGHT_D3 pipeline contains no bloom/glare. No bloom/glare system was added during HERO_E1."
+    },
+    {
+      "index": 9,
+      "name": "Phân bậc điểm nhìn",
+      "status": "PASS_OPERATOR_LIGHT_RULING",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_FINAL_CONTACT_SHEET.png"
+    },
+    {
+      "index": 10,
+      "name": "Sạch kỹ thuật",
+      "status": "PASS",
+      "evidence": "MIKAGE_ZENITH_BLADE_HERO_E1_GATE_PROOF_SHEET.png"
+    }
+  ],
+  "summary": {
+    "evaluated_pass": 8,
+    "waived_by_operator": 1,
+    "not_applicable": 1,
+    "final_visual_approval": "PENDING_OPERATOR"
+  },
+  "turntable_media_qa": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "pixel_format": "yuv420p",
+    "frame_rate": "30/1",
+    "frame_count": 180,
+    "duration_seconds": 6.0,
+    "audio_streams": 0,
+    "rotation_degrees": [
+      0,
+      358
+    ],
+    "step_degrees_per_frame": 2,
+    "first_frame_not_duplicated_at_end": true,
+    "opened_and_inspected": true
+  },
+  "image_visual_qa": {
+    "hero_4k_opened_and_inspected": true,
+    "closeups_2048_opened_at_100_percent": true,
+    "contact_sheet_opened_and_inspected": true,
+    "gate_proof_opened_and_inspected": true,
+    "noise_firefly_banding_aliasing": "NO_PROMINENT_DEFECT_OBSERVED",
+    "violet_clipping_or_porcelain_spill": "NONE_OBSERVED",
+    "attack_tip_readable_at_hero_scale": true
+  },
+  "final_status": "TECHNICAL_QA_COMPLETE_VISUAL_APPROVAL_PENDING_OPERATOR",
+  "source_integrity": {
+    "base_current_git_blob": "41920cc4dcb5237572e7762ccdc7bfe87222190b",
+    "base_commit_10daff2_git_blob": "41920cc4dcb5237572e7762ccdc7bfe87222190b",
+    "unchanged": true
+  }
+}
