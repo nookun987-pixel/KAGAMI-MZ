@@ -280,8 +280,9 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     open another form pass, material/light work, full-res, turntable, promotion or commit.
   - `CE_ZENITH_BLADE_INTERFACE_01 = CLOSED_SUPERSEDED_BY_FORM_02` by explicit operator authorization.
   - `CE_ZENITH_BLADE_FORM_02 = OPEN`.
-  - Purpose: one new controlled ten-pass shell-form convergence cycle informed by the completed
-    CE01/Form01 review, without promoting any prior DRAFT report to canon.
+  - Purpose: one new controlled ten-pass shell-form and bounded mechanical-interface convergence
+    cycle informed by the completed CE01/Form01 review and Interface01 diagnostic, without
+    promoting any prior DRAFT report to canon.
   - Canon authority:
     - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`.
     - The latest operator-promoted `ZENITH BLADE BRUTALIST CONVERGENCE` ruling in that SSOT wins
@@ -299,15 +300,33 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     - `ZB45_SHELL_LR`.
     - `ZB45_SHELL_UL`.
     - `ZB45_SHELL_UR`.
+    - `ZB42_FUNCTIONAL_RAIL_L`.
+    - `ZB42_FUNCTIONAL_RAIL_R`.
+    - `ZB46_RECESSED_RAIL_L`.
+    - `ZB46_RECESSED_RAIL_R`.
+    - `ZB46_LOAD_JOINT_L_L`.
+    - `ZB46_LOAD_JOINT_L_R`.
+    - `ZB46_LOAD_JOINT_U_L`.
+    - `ZB46_LOAD_JOINT_U_R`.
+    - `ZB46_HUB_SHOULDER_L`.
+    - `ZB46_HUB_SHOULDER_R`.
+    - `ZB46_HUB_SPINE_KEY`.
+    - `ZB48_GAUNTLET_LOAD_BRIDGE`.
   - Allowed form operations:
     - local topology and cross-section correction;
     - local shell thickness, taper, chamfer, seam and flat/blunt termination correction;
     - local vertex/edge/face edits required to recover a massive 350 kg brutalist read;
     - exact mirrored or paired edits where required to preserve four-plate mechanical logic.
+    - minimum local rail, joint, hub-interface, bridge-envelope and shell hinge/pivot-path
+      correction required to create real clearance for the approved shell form;
+    - local object-space mesh edits on whitelisted interface objects; object transforms remain locked.
   - Locked preservation:
     - source file and source SHA-256;
     - object names, parents, origins and object-level transforms;
-    - central spine, paired rails, joints, hub, grip, attack interface, core and docking architecture;
+    - central spine identity and centerline, drive-hub body, grip, attack interface, core and
+      docking-primary architecture;
+    - functional identity and paired symmetry of rails, joints and hub shoulders even when their
+      local interface geometry is corrected;
     - actor, mitten, marker/human-scale contract and attachment registration;
     - materials, lighting, cameras and phase drivers;
     - P1 closed monolith, P2 signal off and P3 exactly one recessed electric-violet core;
@@ -315,8 +334,9 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - Explicitly prohibited:
     - pointed tip, fantasy-greatsword read, ornament or decorative clutter;
     - object-level scale or transform correction;
-    - edits outside the four whitelisted shell objects;
-    - actor, mitten, rig, marker, attachment, material, light, camera or driver edits;
+    - edits outside the expanded shell-and-interface whitelist above;
+    - actor, mitten, rig, marker, grip, central-spine, drive-hub-body, attachment-root, docking,
+      material, light, camera or driver edits;
     - source overwrite, production promotion, full-resolution render, turntable, commit, push or deploy;
     - asset-lock, integration-ready or production-ready claims.
   - Controlled ten-pass protocol:
@@ -325,6 +345,8 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     - after every mutation run P1/P2/P3 state, collision and intersection audits;
     - after every mutation verify core OFF/OFF/ON, core recess, transform locks, marker registration,
       four-shell ownership and exact-side plus three-quarter previews;
+    - after every mutation verify rail pairing, joint ownership, hub/bridge load-path continuity and
+      zero shell-to-mitten physical penetration using evaluated geometry;
     - reject and discard a pass on any lock, collision, mechanism or canon regression;
     - save no failed pass and never overwrite the immutable source;
     - stop on the first full technical-and-visual pass, exhaustion of ten passes, or inability to preserve a lock;
