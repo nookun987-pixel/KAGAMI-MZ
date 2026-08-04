@@ -251,6 +251,33 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - No visual approval claim. No production-ready claim. No canon-lock. No asset-lock. No public-render-ready claim. No push. No deploy.
   - Final visual ruling belongs to the operator.
   - On SSOT conflict or scope drift: stop and report.
+
+- Operator-authorized form review exception is open:
+  - `CE_ZENITH_BLADE_FORM_01 = OPEN`.
+  - Source is the immutable temp technical baseline
+    `_tmp/zenith_blade_hero_e1_ce01/clean_replay02/MIKAGE_ZENITH_BLADE_HERO_E1_CORRECTION_CE01_REPLAY02.blend`
+    at SHA-256 `5E4FA170111E9D1764122954618E02FAE46F8CEA9B743A58A3FA0EE7BB368BAC`.
+  - Outputs remain temporary under `_tmp/zenith_blade_hero_e1_ce01/form01/`; no production promotion.
+  - Editable geometry is limited to exactly `ZB45_SHELL_LL`, `ZB45_SHELL_LR`,
+    `ZB45_SHELL_UL`, and `ZB45_SHELL_UR`.
+  - Topology and local cross-section changes are allowed; object-level scaling is prohibited.
+  - Preserve parents, origins, transforms, marker/human-scale contract, central spine, grip,
+    hub, core, attack tip, actor/mitten, materials, lighting and cameras.
+  - Required after every form mutation: P1/P2/P3 collision and state audit, core OFF/OFF/ON
+    and recess audit, transform locks, exact-side preview; stop on first collision or mechanism regression.
+  - Full-resolution render, turntable, production promotion, commit, push and deploy are prohibited.
+  - Controlled Iteration Amendment: up to ten independent form passes are authorized.
+    Every pass must restart from immutable REPLAY02; failed passes are discarded without save.
+    A failed experimental pass does not stop later independent passes. Stop only on the first
+    full technical+visual pass, exhaustion of ten passes, or inability to preserve a lock.
+    Save only the first fully passing temp candidate; save no failed pass.
+  - `CE_ZENITH_BLADE_FORM_01 = CLOSED_EXHAUSTED_10_PASSES`; no additional shell-only form pass.
+  - `CE_ZENITH_BLADE_INTERFACE_01 = OPEN_DIAGNOSTIC_ONLY`.
+  - Interface01 may measure P1/P2/P3 clearance among shells, mitten, spine, rails,
+    joints, hub and grip interface; create temporary in-memory diagnostic geometry;
+    ray-cast/isolate rear-view components; and write temporary JSON/diagram evidence.
+  - Interface01 may not save or modify any blend or production geometry and may not
+    open another form pass, material/light work, full-res, turntable, promotion or commit.
 - Sixth controlled exception is open:
   - `MIKAGE_HERO_MOUNT_EEVEE_V0_4 = OPEN`
   - Lane B restriction waived for THIS task only. This is a STEED BODY + HEAD RE-MASS candidate (larger than a correction: the steed torso/head geometry MAY be rebuilt). Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins.
@@ -4380,3 +4407,44 @@ raising global exposure, not clipping the helmet, and not shifting slit hue.
   if any physical overlap remains, keep INTEGRATION_READY = NO and report the exact remaining object pair, phase, triangle count and blocker.
 - No asset-lock or production-ready claim.
 - Integration-ready may be claimed only when every required physical validation equals zero.
+
+- Operator-authorized controlled correction is open:
+  - `CE_ZENITH_BLADE_HERO_E1_01 = OPEN`.
+  - Operator ruling: `HERO_E1 — VISUAL REJECTED / BOUNDED CORRECTION REQUIRED`.
+  - Only allowed next task for this exception: `CE_ZENITH_BLADE_HERO_E1_01`.
+  - Immutable source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_HERO_E1.blend`
+    at SHA-256 `79289503EC7F063690882A87F61A8609C381A22C07E0469F290CC3FE985F5CCB`.
+  - Only allowed derivative blend:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_HERO_E1_CORRECTION_CE01.blend`.
+  - Only allowed review outputs are new files prefixed
+    `production/character/reviews/MIKAGE_ZENITH_BLADE_HERO_E1_CORRECTION_CE01_`.
+  - Temporary tooling is allowed only under `_tmp/zenith_blade_hero_e1_ce01/`
+    and must be removed before final status.
+  - Allowed correction scope:
+    local attack-termination geometry; local hub/grip/rail/spine load-path integration;
+    local four-plate depth/profile correction required for split-shell readability;
+    P3 core recess/containment; B4C/titanium roughness, edge response, value separation,
+    local occlusion and restrained accepted-pipeline lighting response.
+  - Preservation locks:
+    overall Blade length and human-scale ratio; four-plate count and mechanical identity;
+    marker positions/tolerances; collision locks; P1 closed with violet OFF; P2 open with
+    violet OFF; P3 open wider with exactly one recessed violet core ON; void-background
+    presentation pipeline; bloom/glare OFF; no additional violet source.
+  - Required outputs:
+    3840x2160 hero three-quarter, front QA, side QA and rear three-quarter QA;
+    2048x2048 hub/load-path and attack-termination close-ups; P1/P2/P3 state proof sheet;
+    updated gate-proof/contact sheet; 1920x1080 H.264 yuv420p 30 fps 180-frame silent turntable;
+    JSON verification report and Markdown proof.
+  - Required validation:
+    source SHA-256 unchanged; derivative reopens; no source or old-output overwrite;
+    P1/P2/P3 state rules preserved; exactly one recessed violet source in P3 only;
+    attack termination reads blunt/mechanical; side view preserves four-plate depth;
+    hub/grip/rails/spine read as one load path; no new penetration, reversed normals,
+    duplicate surfaces or z-fighting; metadata verified by successful commands;
+    actual rendered images and video inspected; no `.blend1`; only whitelisted files changed.
+  - Technical status wording is fixed:
+    technical gates PASS except Gate 6 `WAIVED BY OPERATOR` and Gate 8 `NOT APPLICABLE`.
+  - Do not open `HERO_E2`, `FINAL_F1`, `MAT_C4` or `LIGHT_D4`.
+  - Do not claim final approval, production-ready, asset-lock or lane closure.
+  - Commit bounded candidate and evidence only; no push or deploy.
