@@ -337,6 +337,66 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     temporary Architecture01 candidate. Reopen and repeat the final audit before PASS.
   - Stop after the first full candidate, ten exhausted passes, or any inability to
     preserve a locked interface. Final visual approval remains with the operator.
+  - `CE_ZENITH_BLADE_ARCHITECTURE_01 = CLOSED_VISUAL_FAIL_TECHNICAL_CHECKPOINT_RETAINED`.
+  - Architecture01 Pass 09 at SHA-256
+    `364A966FB4A5F11988CEC8432A90E41B4694C53BF18BF91C55B07B12DDB5461B`
+    may be retained only as temporary technical evidence. It is not an approved
+    architecture source and may not be promoted.
+  - `CE_ZENITH_BLADE_ARCHITECTURE_02 = OPEN`.
+  - Operator visual ruling: Architecture02 must use a monolithic-first topology
+    process. Build and approve one complete blade body before cutting it into four
+    complementary plates. Do not design four plates independently and then assemble
+    them into a weapon silhouette.
+  - Immutable technical source remains the Form02 candidate:
+    `_tmp/zenith_blade_hero_e1_ce02/form02/MIKAGE_ZENITH_BLADE_FORM_02_FIRST_PASSING_CANDIDATE.blend`
+    at SHA-256 `250352AB89C72AB2716E8E9CA595B1E86557F7720A1F0156C42519BF539FAE29`.
+  - Architecture01 may be inspected as DRAFT technical evidence only; its plate and
+    carrier topology must not be reused as the Architecture02 construction base.
+  - Temporary outputs only under
+    `_tmp/zenith_blade_hero_e1_ce05/architecture02/`; no production promotion.
+  - Architecture02 authorized rebuild sequence:
+    1. Build one complete closed monolithic blade volume with a straight spine side,
+       one dominant cutting-side break/curve, asymmetric lower mass and blunt end.
+    2. Pass standalone P1 front, exact-side, three-quarter and 256 px silhouette gates.
+    3. Establish real wedge/body depth and integrated hub-neck transition.
+    4. Build a hierarchical titanium chassis with shoulder, central spine and lower
+       load block; it must read as structural body rather than a uniform support pole.
+    5. Boolean/cut the approved monolith into exactly four complementary functional
+       plates with interlocking three-dimensional seams.
+    6. Transfer the existing source P1/P2/P3 plate actions without changing accepted
+       phase timing, registration or attachment architecture.
+    7. Preserve one restrained recessed electric-violet core, OFF in P1/P2 and clearly
+       readable at P3 contact-sheet scale without wash, halo or secondary emission.
+  - Editable Architecture02 geometry:
+    - a new monolithic construction mesh used only to derive the four final plates;
+    - the resulting four plate mesh data and their plate-boundary topology;
+    - a new carrier/chassis mesh and bounded hub-neck/lower-load transition geometry;
+    - local bevels and wedge cross-sections required for thick armored-shell read.
+  - Locked without exception:
+    - source central spine, drive hub body, rails, grip, handle, marker and core object;
+    - actor, mitten, rig, docking-primary and secondary-grip architecture;
+    - existing object actions, phase frame timing, parents, origins and accepted world
+      registration transforms;
+    - source materials and color authority.
+  - Mandatory visual rejection conditions:
+    - cabinet, stacked-box, paddle or four-door read at 256 px;
+    - thin rectangular exact-side profile;
+    - carrier reading as a uniform pole;
+    - hub reading as an external clamp;
+    - P3 core not readable, or violet used as wash/halo/fill.
+  - Mandatory technical validation before candidate save:
+    - source hash unchanged; protected fingerprints/transforms unchanged;
+    - zero novel physical collision pairs at P1/P2/P3;
+    - marker, grip and docking registration preserved;
+    - exactly four final plates; carrier/chassis independently collision-clear;
+    - core OFF/OFF/ON and carrier phase behavior deterministic;
+    - reopen audit and no `.blend1`.
+  - One controlled cycle of up to ten independent passes is authorized. Each pass
+    restarts from the immutable Form02 source. Save only the first pass clearing both
+    the monolithic-first visual gate and every technical gate. Stop at first full pass,
+    ten-pass exhaustion or inability to preserve a lock. Final visual ruling remains
+    with the operator. No commit of temp assets, push, deploy, asset lock or
+    production-ready claim.
   - `CE_ZENITH_BLADE_INTERFACE_01 = CLOSED_SUPERSEDED_BY_FORM_02` by explicit operator authorization.
   - `CE_ZENITH_BLADE_FORM_02 = CLOSED_PASS_CANDIDATE_SAVED`.
   - Purpose: one new controlled ten-pass shell-form and bounded mechanical-interface convergence
