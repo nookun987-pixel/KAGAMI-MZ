@@ -279,7 +279,7 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
   - Interface01 may not save or modify any blend or production geometry and may not
     open another form pass, material/light work, full-res, turntable, promotion or commit.
   - `CE_ZENITH_BLADE_INTERFACE_01 = CLOSED_SUPERSEDED_BY_FORM_02` by explicit operator authorization.
-  - `CE_ZENITH_BLADE_FORM_02 = OPEN`.
+  - `CE_ZENITH_BLADE_FORM_02 = CLOSED_PASS_CANDIDATE_SAVED`.
   - Purpose: one new controlled ten-pass shell-form and bounded mechanical-interface convergence
     cycle informed by the completed CE01/Form01 review and Interface01 diagnostic, without
     promoting any prior DRAFT report to canon.
@@ -365,6 +365,72 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     - ten rejected passes -> `CE_ZENITH_BLADE_FORM_02 = CLOSED_EXHAUSTED_10_PASSES`;
     - lock cannot be preserved -> `CE_ZENITH_BLADE_FORM_02 = CLOSED_BLOCKED_LOCK_REGRESSION`;
     - all outputs remain temporary review candidates; final visual ruling belongs to the operator.
+  - `CE_ZENITH_BLADE_FORM_03 = OPEN` by explicit operator authorization.
+  - Purpose: up to ten independent standalone silhouette-architecture passes that convert the
+    technically passing Form02 box/panel read into one coherent industrial dai-dao contour.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`.
+    - The latest operator-promoted `ZENITH BLADE BRUTALIST CONVERGENCE` ruling wins.
+  - Immutable source:
+    `_tmp/zenith_blade_hero_e1_ce02/form02/MIKAGE_ZENITH_BLADE_FORM_02_FIRST_PASSING_CANDIDATE.blend`
+    at SHA-256 `250352AB89C72AB2716E8E9CA595B1E86557F7720A1F0156C42519BF539FAE29`.
+  - Allowed temporary outputs only:
+    - `_tmp/zenith_blade_hero_e1_ce03/form03/`;
+    - per-pass JSON and low-resolution standalone preview evidence;
+    - one first fully passing temporary candidate `.blend`;
+    - one final proof/result package.
+  - Editable geometry whitelist:
+    - `ZB45_SHELL_LL`, `ZB45_SHELL_LR`, `ZB45_SHELL_UL`, `ZB45_SHELL_UR`;
+    - `ZB42_FUNCTIONAL_RAIL_L`, `ZB42_FUNCTIONAL_RAIL_R`;
+    - `ZB46_RECESSED_RAIL_L`, `ZB46_RECESSED_RAIL_R`;
+    - `ZB46_LOAD_JOINT_L_L`, `ZB46_LOAD_JOINT_L_R`, `ZB46_LOAD_JOINT_U_L`, `ZB46_LOAD_JOINT_U_R`;
+    - `ZB46_HUB_SHOULDER_L`, `ZB46_HUB_SHOULDER_R`, `ZB46_HUB_SPINE_KEY`;
+    - `ZB46_BASE_CHEEK_L`, `ZB46_BASE_CHEEK_R`, `ZB46_BASE_SPINE_RECEIVER`, `ZB46_FLUX_BASE`.
+  - Allowed form operations:
+    - local topology and vertex/edge/face correction within the whitelist;
+    - establish one shared outer contour across upper/lower shell groups;
+    - establish a straight structural-spine side and a controlled functional cutting-side wedge;
+    - reduce the stacked-box waist without erasing the functional horizontal seam;
+    - locally integrate hub shoulders and Flux-base outer interfaces into the shared load path;
+    - preserve flat-cut or blunt mechanical termination; no pointed tip;
+    - use temporary in-memory standalone isolation cameras/lights and low-resolution previews;
+      restore visibility and remove temporary objects before any candidate save.
+  - Locked preservation:
+    - source file and SHA-256;
+    - central-spine identity and centerline, drive-hub body, grip, marker, core, attack interface,
+      docking-primary architecture and Form02 mitten-clearance notch;
+    - actor, mitten, rig, attachment registration, object-level transforms and phase drivers;
+    - materials and emission contract: P1/P2 OFF, P3 exactly one recessed electric-violet core;
+    - no violet fill, wash, ambient, halo, secondary core or decorative light.
+  - Explicitly prohibited:
+    - actor/mitten/rig edits or hiding them in a saved candidate;
+    - central-spine, drive-hub-body, grip, marker, core, docking-root, material or driver edits;
+    - object-level scaling or transform correction;
+    - pointed/fantasy-greatsword contour, decorative ornament, loose panel, cable or secondary blade;
+    - source overwrite, production promotion, full-resolution render, turntable, commit of candidate,
+      push, deploy, asset-lock, integration-ready or production-ready claim.
+  - Controlled ten-pass protocol:
+    - every pass restarts from the immutable Form02 source;
+    - failed passes are discarded without saving a blend;
+    - after every mutation run P1/P2/P3 state, evaluated collision, marker, transform and lock audits;
+    - render front, exact-side, three-quarter and black/white thumbnail silhouette previews with the
+      actor temporarily isolated from review, then restore all source visibility;
+    - stop at the first full technical-and-visual candidate, exhaustion of ten passes, or lock failure;
+    - save only the first fully passing temporary candidate and reopen it for final validation.
+  - Form03 acceptance gates:
+    - front and exact-side read as one industrial dai-dao, not two stacked boxes;
+    - one shared outer contour with a functional spine side and controlled cutting-side wedge;
+    - four plate ownership and P1 closed-monolith identity remain legible;
+    - P2 opens along a mechanical load path with Blade signal off;
+    - P3 preserves the contour and exposes exactly one recessed violet core;
+    - flat/blunt termination, zero pointed-tip/fantasy/loose-panel read;
+    - shell-to-mitten physical overlaps remain `0/0/0` and no novel collision object pair appears;
+    - source hash unchanged, candidate reopens, no `.blend1`, repo clean.
+  - Exit:
+    - first full pass -> `CE_ZENITH_BLADE_FORM_03 = CLOSED_PASS_CANDIDATE_SAVED`;
+    - ten rejected passes -> `CE_ZENITH_BLADE_FORM_03 = CLOSED_EXHAUSTED_10_PASSES`;
+    - lock regression -> `CE_ZENITH_BLADE_FORM_03 = CLOSED_BLOCKED_LOCK_REGRESSION`;
+    - final visual ruling belongs to the operator; no production promotion is implied.
 - Sixth controlled exception is open:
   - `MIKAGE_HERO_MOUNT_EEVEE_V0_4 = OPEN`
   - Lane B restriction waived for THIS task only. This is a STEED BODY + HEAD RE-MASS candidate (larger than a correction: the steed torso/head geometry MAY be rebuilt). Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins.
