@@ -278,6 +278,65 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     ray-cast/isolate rear-view components; and write temporary JSON/diagram evidence.
   - Interface01 may not save or modify any blend or production geometry and may not
     open another form pass, material/light work, full-res, turntable, promotion or commit.
+  - `CE_ZENITH_BLADE_ARCHITECTURE_01 = OPEN`.
+  - Operator authorization: rebuild the carrier and plate boundaries to replace the
+    persistent open-box/paddle read with one continuous industrial da-dao silhouette.
+  - Canon authority remains `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md` plus the
+    phase authority `docs/handoff/MIKAGE_ZENITH_ENTITY_PHASE_SPEC_V1.md`.
+  - Immutable source:
+    `_tmp/zenith_blade_hero_e1_ce02/form02/MIKAGE_ZENITH_BLADE_FORM_02_FIRST_PASSING_CANDIDATE.blend`
+    at SHA-256 `250352AB89C72AB2716E8E9CA595B1E86557F7720A1F0156C42519BF539FAE29`.
+  - Form03 evidence is DRAFT evidence only. Form03 is closed exhausted and no Form03
+    candidate blend exists or may be used as the Architecture01 source.
+  - Temporary outputs only under
+    `_tmp/zenith_blade_hero_e1_ce04/architecture01/`; no production promotion.
+  - Architecture01 may rebuild:
+    - one unified outer blade carrier/skin defining the shared P1 contour;
+    - the boundaries, topology and local cross-sections of exactly four functional
+      shell plates within that shared contour;
+    - plate-to-carrier seams and bounded mechanical joints required to explain the
+      plate load path;
+    - the local carrier interfaces surrounding the existing upper hub and lower Flux
+      base, without modifying those locked source components.
+  - Required form result:
+    - one straight, thick load-bearing spine side;
+    - one controlled cutting-side wedge with weight biased toward the lower third;
+    - flat-cut, chisel-cut or blunt mechanical termination; no pointed tip;
+    - P1 reads as one closed 350 kg industrial da-dao at full view and thumbnail;
+    - P2 exposes rails and load path without reading as four doors around a hollow box;
+    - P3 retains one weapon silhouette and reveals exactly one recessed violet core.
+  - Locked without exception:
+    - central load spine, drive hub body, rails, grip, handle, independent hand marker,
+      core object and core material;
+    - actor, mitten, rig, docking-primary and secondary-grip architecture;
+    - accepted registration transforms, parents, origins, phase drivers and timing;
+    - material palette, lighting and source cameras;
+    - P1/P2 core OFF and P3 single-core ON signal contract.
+  - Forbidden:
+    - actor, mitten, rig, handle, marker, docking or attachment repair;
+    - source overwrite, production write, material/lookdev work, full-resolution render,
+      turntable, asset-lock, production-ready claim, push or deploy;
+    - pointed/fantasy-greatsword form, four freestanding slab silhouette, decorative
+      greeble, secondary core, violet wash, halo or ambient violet.
+  - Controlled iteration: up to ten independent architecture passes are authorized.
+    Every pass must restart from the immutable source until a candidate passes the
+    standalone silhouette gate. Failed passes are discarded without saving a blend.
+  - Mandatory early silhouette gate for every pass:
+    - low-resolution P1 front, exact-side, three-quarter and 128-256 px thumbnail;
+    - complete weapon visible with no silhouette-critical crop;
+    - reject immediately if it reads as a box, paddle, four open doors, thin fantasy
+      sword or pointed greatsword.
+  - Mandatory technical gate before any candidate save:
+    - P1/P2/P3 collision and state audit;
+    - zero novel physical collision pairs;
+    - marker/handle and docking registration preserved;
+    - protected structural fingerprints and object transforms unchanged;
+    - P1/P2 core OFF, P3 exactly one recessed core ON;
+    - source hash unchanged and no `.blend1`.
+  - Save only the first pass that clears both silhouette and technical gates as a
+    temporary Architecture01 candidate. Reopen and repeat the final audit before PASS.
+  - Stop after the first full candidate, ten exhausted passes, or any inability to
+    preserve a locked interface. Final visual approval remains with the operator.
   - `CE_ZENITH_BLADE_INTERFACE_01 = CLOSED_SUPERSEDED_BY_FORM_02` by explicit operator authorization.
   - `CE_ZENITH_BLADE_FORM_02 = CLOSED_PASS_CANDIDATE_SAVED`.
   - Purpose: one new controlled ten-pass shell-form and bounded mechanical-interface convergence
