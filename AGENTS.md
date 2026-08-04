@@ -278,6 +278,71 @@ Read `docs\architecture\MIKAGE_CANON_CONTROL_MAP.md` BEFORE any canon-touching t
     ray-cast/isolate rear-view components; and write temporary JSON/diagram evidence.
   - Interface01 may not save or modify any blend or production geometry and may not
     open another form pass, material/light work, full-res, turntable, promotion or commit.
+  - `CE_ZENITH_BLADE_INTERFACE_01 = CLOSED_SUPERSEDED_BY_FORM_02` by explicit operator authorization.
+  - `CE_ZENITH_BLADE_FORM_02 = OPEN`.
+  - Purpose: one new controlled ten-pass shell-form convergence cycle informed by the completed
+    CE01/Form01 review, without promoting any prior DRAFT report to canon.
+  - Canon authority:
+    - `docs/handoff/MIKAGE_ZENITH_BLADE_SPEC_V1.md`.
+    - The latest operator-promoted `ZENITH BLADE BRUTALIST CONVERGENCE` ruling in that SSOT wins
+      over earlier contradictory form rulings.
+  - Immutable source:
+    `production/character/production_actor/rig_derivatives/MIKAGE_ZENITH_BLADE_HERO_E1_CORRECTION_CE01.blend`
+    at SHA-256 `DEE257CDA947F1DB2D2BC6A893619DBECAB5A0178F6F930A6F6F6F87DBDCB762`.
+  - Allowed temporary outputs only:
+    - `_tmp/zenith_blade_hero_e1_ce02/form02/`.
+    - One first fully passing candidate `.blend`.
+    - Per-pass temporary JSON, preview and diagram evidence.
+    - One final proof report under the same temporary directory.
+  - Editable geometry is limited to exactly:
+    - `ZB45_SHELL_LL`.
+    - `ZB45_SHELL_LR`.
+    - `ZB45_SHELL_UL`.
+    - `ZB45_SHELL_UR`.
+  - Allowed form operations:
+    - local topology and cross-section correction;
+    - local shell thickness, taper, chamfer, seam and flat/blunt termination correction;
+    - local vertex/edge/face edits required to recover a massive 350 kg brutalist read;
+    - exact mirrored or paired edits where required to preserve four-plate mechanical logic.
+  - Locked preservation:
+    - source file and source SHA-256;
+    - object names, parents, origins and object-level transforms;
+    - central spine, paired rails, joints, hub, grip, attack interface, core and docking architecture;
+    - actor, mitten, marker/human-scale contract and attachment registration;
+    - materials, lighting, cameras and phase drivers;
+    - P1 closed monolith, P2 signal off and P3 exactly one recessed electric-violet core;
+    - no violet fill, wash, ambient, halo, secondary core or decorative light.
+  - Explicitly prohibited:
+    - pointed tip, fantasy-greatsword read, ornament or decorative clutter;
+    - object-level scale or transform correction;
+    - edits outside the four whitelisted shell objects;
+    - actor, mitten, rig, marker, attachment, material, light, camera or driver edits;
+    - source overwrite, production promotion, full-resolution render, turntable, commit, push or deploy;
+    - asset-lock, integration-ready or production-ready claims.
+  - Controlled ten-pass protocol:
+    - up to ten independent passes are authorized;
+    - every pass must restart from the immutable source, never from a failed pass;
+    - after every mutation run P1/P2/P3 state, collision and intersection audits;
+    - after every mutation verify core OFF/OFF/ON, core recess, transform locks, marker registration,
+      four-shell ownership and exact-side plus three-quarter previews;
+    - reject and discard a pass on any lock, collision, mechanism or canon regression;
+    - save no failed pass and never overwrite the immutable source;
+    - stop on the first full technical-and-visual pass, exhaustion of ten passes, or inability to preserve a lock;
+    - save only the first fully passing temporary candidate.
+  - Form acceptance gates:
+    - massive 350 kg brutalist industrial read;
+    - flat-cut or blunt mechanical lower termination;
+    - P1 reads as one fully closed B4C monolith;
+    - four mechanically linked shell plates remain legible without reading as four loose bars;
+    - P2 exposes a functional load path and rails with zero Blade violet;
+    - P3 preserves the shared contour and exposes exactly one recessed violet core;
+    - zero new physical collision or mechanism regression in P1/P2/P3;
+    - immutable-source hash unchanged and saved candidate reopens successfully.
+  - Exit:
+    - first fully passing candidate -> `CE_ZENITH_BLADE_FORM_02 = CLOSED_PASS_CANDIDATE_SAVED`;
+    - ten rejected passes -> `CE_ZENITH_BLADE_FORM_02 = CLOSED_EXHAUSTED_10_PASSES`;
+    - lock cannot be preserved -> `CE_ZENITH_BLADE_FORM_02 = CLOSED_BLOCKED_LOCK_REGRESSION`;
+    - all outputs remain temporary review candidates; final visual ruling belongs to the operator.
 - Sixth controlled exception is open:
   - `MIKAGE_HERO_MOUNT_EEVEE_V0_4 = OPEN`
   - Lane B restriction waived for THIS task only. This is a STEED BODY + HEAD RE-MASS candidate (larger than a correction: the steed torso/head geometry MAY be rebuilt). Inputs below are DRAFT art-direction reference only and do not override SSOT. On conflict, `docs/mikage_character_visual_spec.md` wins.
