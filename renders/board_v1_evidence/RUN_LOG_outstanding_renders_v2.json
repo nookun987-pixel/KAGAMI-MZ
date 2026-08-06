@@ -1,0 +1,526 @@
+{
+ "temp_objects": [
+  "TMP_HERO_85 (camera)",
+  "TMPSECT_ZB42_P3_SINGLE_RECESSED_CORE",
+  "TMPSECT_ZB42_FUNCTIONAL_RAIL_L",
+  "TMPSECT_ZB46_RECESSED_RAIL_R",
+  "TMPSECT_CE01_BLUNT_MECHANICAL_ATTACK_TERMINATION",
+  "TMPSECT_ZB45_SHELL_UL",
+  "TMPSECT_ZB46_BASE_SPINE_RECEIVER",
+  "TMPSECT_ZB46_DRIVE_HUB",
+  "TMPSECT_ZB45_SHELL_LR",
+  "TMPSECT_ZB48_GAUNTLET_LOAD_BRIDGE",
+  "TMPSECT_ZB45_SHELL_LL",
+  "TMPSECT_ZB45_SHELL_UR",
+  "TMPSECT_ZB_FORM_A3_ATTACK_COLLAR_WEDGE",
+  "TMPSECT_ZB46_HUB_SPINE_KEY",
+  "TMPSECT_ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+  "TMPSECT_ZB46_BASE_CHEEK_R",
+  "TMPSECT_ZB_LP_CHANNEL_L",
+  "TMPSECT_ZB42_CENTRAL_LOAD_SPINE",
+  "TMPSECT_ZB46_LOAD_JOINT_U_L",
+  "TMPSECT_ZB46_BASE_CHEEK_L",
+  "TMPSECT_ZB46_FLUX_BASE",
+  "TMPSECT_ZB46_HUB_SHOULDER_R",
+  "TMPSECT_ZB_ARCH03R_HUB_NECK",
+  "TMPSECT_ZB46_LOAD_JOINT_U_R",
+  "TMPSECT_ZB_ARCH03R_CHASSIS",
+  "TMPSECT_ZB46_HUB_SHOULDER_L",
+  "TMPSECT_ZB_LP_CHANNEL_R",
+  "TMPSECT_ZB46_LOAD_JOINT_L_R",
+  "TMPSECT_CE01_HUB_SPINE_LOAD_PATH_BRIDGE",
+  "TMPSECT_ZB46_LOAD_JOINT_L_L",
+  "TMPSECT_ZB42_LOWER_DOCKING_LOAD_FOOT",
+  "TMPSECT_ZB42_FUNCTIONAL_RAIL_R",
+  "TMPSECT_ZB46_RECESSED_RAIL_L",
+  "TMPSECT_CUTTER",
+  "TMP_SECT_CAM (camera)",
+  "TMPEXP_ZB45_SHELL_LL",
+  "TMPEXP_ZB45_SHELL_UL",
+  "TMPEXP_ZB45_SHELL_LR",
+  "TMPEXP_ZB45_SHELL_UR",
+  "TMPEXP_ZB_LP_CHANNEL_L",
+  "TMPEXP_ZB_LP_CHANNEL_R",
+  "TMPEXP_ZB42_FUNCTIONAL_RAIL_L",
+  "TMPEXP_ZB42_FUNCTIONAL_RAIL_R",
+  "TMPEXP_ZB46_RECESSED_RAIL_L",
+  "TMPEXP_ZB46_RECESSED_RAIL_R",
+  "TMPEXP_ZB_ARCH03R_CHASSIS",
+  "TMPEXP_ZB_ARCH03R_HUB_NECK",
+  "TMPEXP_ZB42_CENTRAL_LOAD_SPINE",
+  "TMPEXP_ZB46_DRIVE_HUB",
+  "TMPEXP_ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+  "TMPEXP_ZB46_HUB_SHOULDER_L",
+  "TMPEXP_ZB46_HUB_SHOULDER_R",
+  "TMPEXP_ZB46_HUB_SPINE_KEY",
+  "TMP_EXP_CAM (camera)",
+  "TMP_PROXY_GREY (material)",
+  "TMP_PROXY_HEAD",
+  "TMP_PROXY_TORSO",
+  "TMP_PROXY_HIPS",
+  "TMP_PROXY_ARM_L",
+  "TMP_PROXY_ARM_R",
+  "TMP_PROXY_LEG_L",
+  "TMP_PROXY_LEG_R",
+  "TMP_SCALE_CAM (camera)"
+ ],
+ "temp_modifiers": [
+  "TMPSECT_ZB42_P3_SINGLE_RECESSED_CORE: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB42_FUNCTIONAL_RAIL_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_RECESSED_RAIL_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_CE01_BLUNT_MECHANICAL_ATTACK_TERMINATION: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB45_SHELL_UL: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_BASE_SPINE_RECEIVER: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_DRIVE_HUB: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB45_SHELL_LR: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB48_GAUNTLET_LOAD_BRIDGE: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB45_SHELL_LL: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB45_SHELL_UR: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB_FORM_A3_ATTACK_COLLAR_WEDGE: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_HUB_SPINE_KEY: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB48_HANDLE_REGISTERED_TO_HAND_MARKER: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_BASE_CHEEK_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB_LP_CHANNEL_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB42_CENTRAL_LOAD_SPINE: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_LOAD_JOINT_U_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_BASE_CHEEK_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_FLUX_BASE: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_HUB_SHOULDER_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB_ARCH03R_HUB_NECK: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_LOAD_JOINT_U_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB_ARCH03R_CHASSIS: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_HUB_SHOULDER_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB_LP_CHANNEL_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_LOAD_JOINT_L_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_CE01_HUB_SPINE_LOAD_PATH_BRIDGE: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_LOAD_JOINT_L_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB42_LOWER_DOCKING_LOAD_FOOT: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB42_FUNCTIONAL_RAIL_R: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)",
+  "TMPSECT_ZB46_RECESSED_RAIL_L: BOOLEAN DIFFERENCE -> TMPSECT_CUTTER (NOT applied)"
+ ],
+ "temp_transforms": [
+  "TMPEXP_ZB45_SHELL_LL: translate (0,-0.227219,0)  layer='porcelain cutting mass'",
+  "TMPEXP_ZB45_SHELL_UL: translate (0,-0.227219,0)  layer='porcelain cutting mass'",
+  "TMPEXP_ZB45_SHELL_LR: translate (0,-0.170414,0)  layer='root transitions / bearing roots'",
+  "TMPEXP_ZB45_SHELL_UR: translate (0,-0.170414,0)  layer='root transitions / bearing roots'",
+  "TMPEXP_ZB_LP_CHANNEL_L: translate (0,-0.113609,0)  layer='wedge followers'",
+  "TMPEXP_ZB_LP_CHANNEL_R: translate (0,-0.113609,0)  layer='wedge followers'",
+  "TMPEXP_ZB42_FUNCTIONAL_RAIL_L: translate (0,-0.056805,0)  layer='keyed channels / rails'",
+  "TMPEXP_ZB42_FUNCTIONAL_RAIL_R: translate (0,-0.056805,0)  layer='keyed channels / rails'",
+  "TMPEXP_ZB46_RECESSED_RAIL_L: translate (0,-0.056805,0)  layer='keyed channels / rails'",
+  "TMPEXP_ZB46_RECESSED_RAIL_R: translate (0,-0.056805,0)  layer='keyed channels / rails'"
+ ],
+ "outputs": {
+  "OUT1": {
+   "path": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\_tmp\\zenith_blade_outstanding_renders_01\\OUT1_HERO_P3_85MM.png",
+   "resolution": [
+    1800,
+    2400
+   ],
+   "camera": {
+    "name": "TMP_HERO_85",
+    "type": "PERSP",
+    "lens_mm": 85.0,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "AUTO",
+    "location": [
+     1.683182,
+     -2.083201,
+     0.601452
+    ],
+    "rotation_euler": [
+     1.46019,
+     -0.0,
+     0.613207
+    ]
+   },
+   "scene": {
+    "engine": "BLENDER_EEVEE",
+    "view_transform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.35,
+    "gamma": 1.0,
+    "world": {
+     "color_linear": [
+      0.008,
+      0.008,
+      0.011,
+      1.0
+     ],
+     "strength": 1.0
+    },
+    "compositor_nodes": []
+   },
+   "frame": 61,
+   "lighting": "historical LIGHT_D rig reused (present & verified in source; energies/sizes unchanged) \u2014 NOT recovered",
+   "direction_note": "hero 3/4 direction matched to the CE15 authored-hero camera vector (0.57,-0.81,0.11). The historical LIGHT_D1_HERO_34 direction was tested first and OCCLUDES the P3 core behind the chassis for CE15 geometry (it was framed for the pre-CE15 form) \u2014 reported, not concealed. No material, emission or glare change was made.",
+   "core_roi_px": [
+    949,
+    485,
+    1229,
+    1705
+   ]
+  },
+  "OUT2": {
+   "path": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\_tmp\\zenith_blade_outstanding_renders_01\\OUT2_CORE_SPINE_SECTION.png",
+   "resolution": [
+    2000,
+    1500
+   ],
+   "camera": {
+    "name": "TMP_SECT_CAM",
+    "type": "PERSP",
+    "lens_mm": 85.0,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "AUTO",
+    "location": [
+     1.037004,
+     -1.936413,
+     1.905578
+    ],
+    "rotation_euler": [
+     0.89919,
+     0.0,
+     0.394791
+    ]
+   },
+   "scene": {
+    "engine": "BLENDER_EEVEE",
+    "view_transform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.35,
+    "gamma": 1.0,
+    "world": {
+     "color_linear": [
+      0.008,
+      0.008,
+      0.011,
+      1.0
+     ],
+     "strength": 1.0
+    },
+    "compositor_nodes": []
+   },
+   "plane": {
+    "axis": "Z (horizontal, world)",
+    "coordinate_world_z": 0.376932,
+    "rationale": "passes through the P3 core centre; the plan slice exposes the corrected spine window, core, central spine, adjacent rails/chassis and porcelain shell together"
+   },
+   "cutter_bounds": {
+    "min": [
+     -1.987736,
+     -2.184326,
+     0.376932
+    ],
+    "max": [
+     2.485636,
+     2.094163,
+     2.92467
+    ]
+   },
+   "duplicated_object_list": [
+    "TMPSECT_ZB42_P3_SINGLE_RECESSED_CORE",
+    "TMPSECT_ZB42_FUNCTIONAL_RAIL_L",
+    "TMPSECT_ZB46_RECESSED_RAIL_R",
+    "TMPSECT_CE01_BLUNT_MECHANICAL_ATTACK_TERMINATION",
+    "TMPSECT_ZB45_SHELL_UL",
+    "TMPSECT_ZB46_BASE_SPINE_RECEIVER",
+    "TMPSECT_ZB46_DRIVE_HUB",
+    "TMPSECT_ZB45_SHELL_LR",
+    "TMPSECT_ZB48_GAUNTLET_LOAD_BRIDGE",
+    "TMPSECT_ZB45_SHELL_LL",
+    "TMPSECT_ZB45_SHELL_UR",
+    "TMPSECT_ZB_FORM_A3_ATTACK_COLLAR_WEDGE",
+    "TMPSECT_ZB46_HUB_SPINE_KEY",
+    "TMPSECT_ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+    "TMPSECT_ZB46_BASE_CHEEK_R",
+    "TMPSECT_ZB_LP_CHANNEL_L",
+    "TMPSECT_ZB42_CENTRAL_LOAD_SPINE",
+    "TMPSECT_ZB46_LOAD_JOINT_U_L",
+    "TMPSECT_ZB46_BASE_CHEEK_L",
+    "TMPSECT_ZB46_FLUX_BASE",
+    "TMPSECT_ZB46_HUB_SHOULDER_R",
+    "TMPSECT_ZB_ARCH03R_HUB_NECK",
+    "TMPSECT_ZB46_LOAD_JOINT_U_R",
+    "TMPSECT_ZB_ARCH03R_CHASSIS",
+    "TMPSECT_ZB46_HUB_SHOULDER_L",
+    "TMPSECT_ZB_LP_CHANNEL_R",
+    "TMPSECT_ZB46_LOAD_JOINT_L_R",
+    "TMPSECT_CE01_HUB_SPINE_LOAD_PATH_BRIDGE",
+    "TMPSECT_ZB46_LOAD_JOINT_L_L",
+    "TMPSECT_ZB42_LOWER_DOCKING_LOAD_FOOT",
+    "TMPSECT_ZB42_FUNCTIONAL_RAIL_R",
+    "TMPSECT_ZB46_RECESSED_RAIL_L"
+   ],
+   "method": "non-destructive BOOLEAN DIFFERENCE on duplicates; modifier NOT applied; originals untouched and hidden from this render",
+   "viewport_clipping_used": false
+  },
+  "OUT3_axis_mapping": {
+   "measured_layer_centroids_world_Y_BEFORE_transform": {
+    "porcelain": -0.123358,
+    "spine": -0.056412,
+    "chassis": -0.069049
+   },
+   "chosen_primary_axis": "world -Y  (lateral assembly axis: layers stack front-to-back along Y \u2014 porcelain in front of the spine, chassis behind)",
+   "blade_width_reference_world_X_extent_m": 0.473372
+  },
+  "OUT3_offsets": {
+   "step_m": 0.056805,
+   "step_as_blade_width": 0.12,
+   "max_total_offset_m": 0.227219,
+   "max_total_as_blade_width": 0.48,
+   "budget_blade_width": 0.55
+  },
+  "OUT3": {
+   "path": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\_tmp\\zenith_blade_outstanding_renders_01\\OUT3_EXPLODED_LOADPATH.png",
+   "resolution": [
+    2400,
+    1800
+   ],
+   "camera": {
+    "name": "TMP_EXP_CAM",
+    "type": "PERSP",
+    "lens_mm": 85.0,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "AUTO",
+    "location": [
+     4.387859,
+     -1.045078,
+     1.659803
+    ],
+    "rotation_euler": [
+     1.266621,
+     0.0,
+     1.338507
+    ]
+   },
+   "scene": {
+    "engine": "BLENDER_EEVEE",
+    "view_transform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.35,
+    "gamma": 1.0,
+    "world": {
+     "color_linear": [
+      0.008,
+      0.008,
+      0.011,
+      1.0
+     ],
+     "strength": 1.0
+    },
+    "compositor_nodes": []
+   },
+   "method": "translation-only on duplicates; NO rotation; no geometry edit; originals untouched",
+   "rotation_used": false,
+   "camera_note": "viewed across the explode axis (mostly +X) so the Y separation is legible; first attempt viewed near-parallel to the axis and was rejected",
+   "layers": [
+    {
+     "label": "porcelain cutting mass",
+     "objects": [
+      "ZB45_SHELL_LL",
+      "ZB45_SHELL_UL"
+     ],
+     "offset_multiplier": 4,
+     "offset_m": -0.227219
+    },
+    {
+     "label": "root transitions / bearing roots",
+     "objects": [
+      "ZB45_SHELL_LR",
+      "ZB45_SHELL_UR"
+     ],
+     "offset_multiplier": 3,
+     "offset_m": -0.170414
+    },
+    {
+     "label": "wedge followers",
+     "objects": [
+      "ZB_LP_CHANNEL_L",
+      "ZB_LP_CHANNEL_R"
+     ],
+     "offset_multiplier": 2,
+     "offset_m": -0.113609
+    },
+    {
+     "label": "keyed channels / rails",
+     "objects": [
+      "ZB42_FUNCTIONAL_RAIL_L",
+      "ZB42_FUNCTIONAL_RAIL_R",
+      "ZB46_RECESSED_RAIL_L",
+      "ZB46_RECESSED_RAIL_R"
+     ],
+     "offset_multiplier": 1,
+     "offset_m": -0.056805
+    },
+    {
+     "label": "chassis / spine  (ANCHOR - stays)",
+     "objects": [
+      "ZB_ARCH03R_CHASSIS",
+      "ZB_ARCH03R_HUB_NECK",
+      "ZB42_CENTRAL_LOAD_SPINE"
+     ],
+     "offset_multiplier": 0,
+     "offset_m": -0.0
+    },
+    {
+     "label": "hub / handle axis",
+     "objects": [
+      "ZB46_DRIVE_HUB",
+      "ZB48_HANDLE_REGISTERED_TO_HAND_MARKER",
+      "ZB46_HUB_SHOULDER_L",
+      "ZB46_HUB_SHOULDER_R",
+      "ZB46_HUB_SPINE_KEY"
+     ],
+     "offset_multiplier": 0,
+     "offset_m": -0.0
+    }
+   ]
+  },
+  "OUT4_actor_measurement": {
+   "non_blade_mesh_count": 126,
+   "armatures": [
+    "MIKAGE_initial_armature_scaffold"
+   ],
+   "measured_bbox_min": [
+    -1.165,
+    -0.5,
+    -1.725
+   ],
+   "measured_bbox_max": [
+    0.644833,
+    1.19,
+    1.725
+   ],
+   "measured_height_m": 3.45,
+   "tallest_meshes": [
+    [
+     "PUBLIC_BLOCK_zenith_blade_vertical_slab",
+     3.45
+    ],
+    [
+     "PUBLIC_BLOCK_zenith_blade_dark_edge",
+     3.25
+    ],
+    [
+     "sword_right_heavy_rectangular_slab",
+     2.92
+    ],
+    [
+     "PUBLIC_BLOCK_V03_zenith_blade_crisp_front_plane",
+     2.75
+    ],
+    [
+     "PUBLIC_BLOCK_zenith_blade_violet_signal",
+     2.65
+    ],
+    [
+     "body_black_underlayer_full_body_base",
+     2.62
+    ],
+    [
+     "A2_blade_material_dark_front_weight_refinement",
+     2.56
+    ],
+    [
+     "reference_anchor_v1_plane_hidden_from_render",
+     1.6
+    ],
+    [
+     "hair_left_side_black_mass_shell",
+     1.52
+    ],
+    [
+     "leg_left_columnar_black",
+     1.32
+    ],
+    [
+     "leg_right_columnar_black",
+     1.32
+    ],
+    [
+     "torso_tapered_black_core",
+     1.3
+    ]
+   ]
+  },
+  "OUT4_blade_measurement": {
+   "length_Z_m": 1.2,
+   "length_in": 47.2441,
+   "width_X_m": 0.473372,
+   "depth_Y_m": 0.278489,
+   "canon_range_in": [
+    35,
+    58
+   ],
+   "canon_range_m": [
+    0.889,
+    1.4732
+   ],
+   "inside_canon_range": true
+  },
+  "OUT4_reference_decision": "TEMP_PRIMITIVE_PROXY (no in-scene reference of plausible human height)",
+  "OUT4": {
+   "path": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\_tmp\\zenith_blade_outstanding_renders_01\\OUT4_SCALE_VS_HUMAN.png",
+   "resolution": [
+    1800,
+    2200
+   ],
+   "camera": {
+    "name": "TMP_SCALE_CAM",
+    "type": "ORTHO",
+    "lens_mm": 85.0,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "AUTO",
+    "location": [
+     0.149292,
+     -4.013077,
+     0.680239
+    ],
+    "rotation_euler": [
+     1.550598,
+     -0.0,
+     0.101176
+    ]
+   },
+   "scene": {
+    "engine": "BLENDER_EEVEE",
+    "view_transform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": -0.35,
+    "gamma": 1.0,
+    "world": {
+     "color_linear": [
+      0.008,
+      0.008,
+      0.011,
+      1.0
+     ],
+     "strength": 1.0
+    },
+    "compositor_nodes": []
+   },
+   "reference_used": "SCALE PROXY - NOT CHARACTER ASSET",
+   "reference_height_m": 1.75,
+   "reference_bbox_min": [
+    -0.992737,
+    -0.210082,
+    -0.27533
+   ],
+   "reference_bbox_max": [
+    -0.482736,
+    0.119918,
+    1.47467
+   ],
+   "blade_length_m": 1.2,
+   "blade_length_in": 47.2441,
+   "blade_to_reference_ratio": 0.685714,
+   "same_ground_plane_z": -0.27533,
+   "blade_resized": false
+  }
+ }
+}

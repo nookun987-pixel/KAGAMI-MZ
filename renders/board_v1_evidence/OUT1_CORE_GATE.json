@@ -1,0 +1,29 @@
+{
+ "image": "D:\\KAGAMI-MZ_SYNC_PUSH_V2\\_tmp\\zenith_blade_outstanding_renders_01\\OUT1_HERO_P3_85MM.png",
+ "resolution": [
+  1800,
+  2400
+ ],
+ "roi_px": [
+  949,
+  485,
+  1229,
+  1705
+ ],
+ "roi_area_px": 341600,
+ "violet_roi_count": 21621,
+ "violet_roi_density": 0.063293,
+ "reference_density": 0.035105,
+ "gate_threshold_80pct": 0.028084,
+ "gate_a_density_pass": true,
+ "density_vs_reference_pct": 180.3,
+ "violet_global_count": 21621,
+ "violet_global_pct": 0.5005,
+ "gate_global_pass_le_5pct": true,
+ "thumb_128_violet_px": 112,
+ "gate_b_thumbnail_readable": true,
+ "thumb_size": [
+  128,
+  170
+ ]
+}

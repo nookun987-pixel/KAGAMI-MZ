@@ -1,0 +1,711 @@
+{
+  "schema_version": "1.0",
+  "board_version": "V1",
+  "candidate_id": "CE15",
+  "candidate_status": "CE15_CANON_LOCKED",
+  "technical_actor_clearance": "NOT_VERIFIED",
+  "actor_collision_state": "BLOCKED_PENDING_OPERATOR_VISUAL_ACCEPTANCE",
+  "production_asset_lock": "NOT_ISSUED",
+  "canon_lock": {
+    "status": "APPROVED",
+    "document": "ZENITH_BLADE_CANON_LOCK_V1.md",
+    "sha256": "a2f340678aa27725c3f09b6fd42c4ebc3017946425ffcdd4832575bf2541427c",
+    "frozen_sha256": "a2f340678aa27725c3f09b6fd42c4ebc3017946425ffcdd4832575bf2541427c",
+    "byte_frozen": true,
+    "approved_by": "Operator (BOOS BOP)",
+    "date": "2026-08-06",
+    "errata": [
+      "ZENITH_BLADE_CANON_LOCK_V1_ERRATA_01.md"
+    ]
+  },
+  "canon_lock_errata": {
+    "status": "APPROVED",
+    "document": "ZENITH_BLADE_CANON_LOCK_V1_ERRATA_01.md",
+    "sha256": "ad30196a92cd7003e1381b3a5325a27a495b30784aa67a072bd70452b96448a2",
+    "corrects": "ZENITH_BLADE_CANON_LOCK_V1.md",
+    "corrects_sha256": "a2f340678aa27725c3f09b6fd42c4ebc3017946425ffcdd4832575bf2541427c",
+    "original_document_edited": false,
+    "correction": {
+      "section": "LOCKED (visual / geometry / behaviour)",
+      "from": "Four porcelain outer shell plates (porcelain #F2EEEA per ruling D3)",
+      "to": "Shell plates: porcelain LL/UL (#F2EEEA per ruling D3) · Z-Blue graphite LR/UR — deliberate asymmetry (operator ruling D3-mat, 2026-08-06)"
+    },
+    "basis": "measured CE15 scene data (ZENITH_BLADE_MATERIAL_RECONCILE_VERIFY_01) + operator acceptance of Board V1, which shows the asymmetry",
+    "approved_by": "Operator (BOOS BOP)",
+    "date": "2026-08-06",
+    "scope": "wording only — no geometry, material, asset or candidate hash changes"
+  },
+  "material_canon": {
+    "status": "RECONCILED",
+    "document": "ZENITH_BLADE_MATERIAL_CANON_V1.md",
+    "sha256": "5b4c04f3777fa3685c5d47134b016a957f48bcd56f5e4ed00d874f5d926e2d20",
+    "approved_by": "Operator (BOOS BOP)",
+    "date": "2026-08-06",
+    "model": "ONE FAMILY — hue anchors with recorded brightness factors",
+    "rulings": {
+      "D1_emission_strength": {
+        "canon": 1.25,
+        "matches": [
+          "measured CE15",
+          "Form02"
+        ],
+        "superseded": {
+          "V0.29": 0.9
+        }
+      },
+      "D2_pbr": {
+        "canon": "measured CE15 values",
+        "values": {
+          "zblue_graphite": [
+            0.72,
+            0.45
+          ],
+          "sumi": [
+            0.8,
+            0.4
+          ],
+          "violet_black_inset": [
+            0.46,
+            0.55
+          ],
+          "p3_core": [
+            0.05,
+            0.34
+          ]
+        },
+        "superseded": {
+          "V0.29_dark_titanium": [
+            0.82,
+            0.4
+          ],
+          "V0.29_cold_steel": [
+            0.95,
+            0.2
+          ]
+        },
+        "note": "V0.29 PBR set is historical — never built"
+      },
+      "D3_shell_asymmetry": {
+        "ruling": "DELIBERATE",
+        "porcelain": [
+          "ZB45_SHELL_LL",
+          "ZB45_SHELL_UL"
+        ],
+        "zblue_graphite": [
+          "ZB45_SHELL_LR",
+          "ZB45_SHELL_UR"
+        ],
+        "canon_lock_corrected_by": "ZENITH_BLADE_CANON_LOCK_V1_ERRATA_01.md"
+      },
+      "D4_zblue_anchor": {
+        "ruling": "pure hue anchor — used at factor 1.0 nowhere",
+        "hex": "#4B5866",
+        "provenance": "design_system/mikage-cine-color-contract.md, locked 2026-06-04"
+      },
+      "D5_helmet_violet": {
+        "ruling": "OUT OF SCOPE",
+        "material": "LOOKDEV_V0_2_restrained_violet_slit_halo_only",
+        "emission": [
+          0.42,
+          0.0,
+          0.82
+        ],
+        "strength": 0.72,
+        "applied_to_blade": false
+      }
+    },
+    "verification_task": "ZENITH_BLADE_MATERIAL_RECONCILE_VERIFY_01",
+    "issue_task": "ZENITH_BLADE_MATERIAL_CANON_V1_ISSUE",
+    "asset_lock": "NOT_ISSUED",
+    "production_ready": "NOT_ISSUED"
+  },
+  "authorized_next_step": "ACTOR_REFERENCE_CLEANUP_THEN_CE15_ACTOR_COLLISION_REPROOF (pose matrix pending OPERATION_DOCTRINE_V1 signature)",
+  "not_authorized": [
+    "ACTOR_COLLISION_PASS",
+    "MATERIAL_RECONCILIATION",
+    "PRODUCTION_ASSET_LOCK"
+  ],
+  "board_png": {
+    "path": "ZENITH_BLADE_FINAL_DESIGN_BOARD_V1.png",
+    "width": 3400,
+    "height": 5980,
+    "sha256": "62deec95df990893324ef376719c026ad14a8ce86b64fd213c58e439be9dd8d5",
+    "bytes": 5074012
+  },
+  "board_markdown": {
+    "path": "ZENITH_BLADE_FINAL_DESIGN_BOARD_V1.md",
+    "sha256": "30471b4e61a70513e2cc64eb0149ddd7770c61b4236193d27159f77f8e273179",
+    "bytes": 11608
+  },
+  "source_manifest_md": {
+    "path": "ZENITH_BLADE_FINAL_DESIGN_BOARD_V1_SOURCE_MANIFEST.md",
+    "sha256": null,
+    "sha256_status": "NOT_RECORDED_BY_DESIGN",
+    "reason": "the source manifest is written after this file and records this file's post-issue sha256; recording its hash here would be circular",
+    "verify_instead": "recompute sha256 of the source manifest directly from disk"
+  },
+  "regeneration_order": [
+    "1. this manifest (JSON) is written first",
+    "2. its sha256 is computed",
+    "3. the source manifest (markdown) is written last, recording that post-issue sha256"
+  ],
+  "panel_mapping": {
+    "OUT1": 1,
+    "OUT2": 7,
+    "OUT3": 8,
+    "OUT4": 11,
+    "OUT5": 9
+  },
+  "panel_mapping_verified_against": "ZENITH_BLADE_FINAL_DESIGN_BOARD_BUILD_SPEC.md panel index",
+  "panel_sources": [
+    {
+      "panel": 1,
+      "name": "Main hero (85 mm perspective)",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/OUT1_HERO_P3_85MM_ANNOTATED.png",
+          "sha256": "588d8f8aaca507bd082c91c6103305d5ac06a27b6f9cea94cba07d120c08db27"
+        }
+      ]
+    },
+    {
+      "panel": 2,
+      "name": "Front orthographic",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_front_P3.png",
+          "sha256": "2490282bce746efd0cf96a0051a6a4c54bc5883de443f5e8bbcc172f0023da4c"
+        }
+      ]
+    },
+    {
+      "panel": 3,
+      "name": "Side orthographic",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_side_P3.png",
+          "sha256": "b131374ed587b487af8e7a3c002efc85dea03ef79bdcf4bad5adc12d2321bf24"
+        }
+      ]
+    },
+    {
+      "panel": 4,
+      "name": "Rear 3/4",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_rear34_P3.png",
+          "sha256": "a295c9b75863fe0f0d88964cbd462c2b948b9654f4f6af1721a5b917142efd32"
+        }
+      ]
+    },
+    {
+      "panel": 5,
+      "name": "Silhouette 64 / 128 px",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/pass_03/SIL_ce15_128.png",
+          "sha256": "cca61575e31bab2edda9051525a9b0d56c522e9fe75ec5d319804b956f127807"
+        },
+        {
+          "path": "renders/board_v1_evidence/pass_03/SIL_ce15_064.png",
+          "sha256": "e89543004814a18dd8e7001beace03a2340cdc8f681c52e4c2ba1aaf9d6d08b4"
+        }
+      ]
+    },
+    {
+      "panel": 6,
+      "name": "P1 / P2 / P3 state strip",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_authored_P1.png",
+          "sha256": "9c0d7d4d584131279df4f6f5900f376ca4a6f2227cfd386f72865b410e81885a"
+        },
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_authored_P2.png",
+          "sha256": "2021592ef7aed5a96e37d9bde4ba672d27c4ae31c362e335f275cdba13a43a34"
+        },
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_authored_P3.png",
+          "sha256": "8a9d2522a5788a5728c2125881f973c6e3beb0479a1cfe652a77f95011a024d4"
+        }
+      ]
+    },
+    {
+      "panel": 7,
+      "name": "Core / spine section",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/OUT2_CORE_SPINE_SECTION_ANNOTATED.png",
+          "sha256": "8a9a78881275b2b2d4664af64f3277c570c71e8057984da8991b9fd14ad89195"
+        }
+      ]
+    },
+    {
+      "panel": 8,
+      "name": "Exploded load-path",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/OUT3_EXPLODED_LOADPATH_ANNOTATED.png",
+          "sha256": "573aecc5a7eb3444f16ac3e4c8daff78c434490ca2f8a04a774abfb76acb86c3"
+        }
+      ]
+    },
+    {
+      "panel": 9,
+      "name": "Material palette",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/OUT5_MATERIAL_SWATCH_CARD.png",
+          "sha256": "5f419f47d4a6e1c6434e1e7d2c4a3ed1754d2af8f071be7cce2a56a0dc5bf52d"
+        }
+      ]
+    },
+    {
+      "panel": 10,
+      "name": "Chassis callout",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/pass_03/HC_wireframe_material_proof.png",
+          "sha256": "e90e5ff28fe6e4940d80da85cc32b0bdf19d2428745cc462802f79d65bcbfa0d"
+        }
+      ]
+    },
+    {
+      "panel": 11,
+      "name": "Scale / dimension",
+      "sources": [
+        {
+          "path": "renders/board_v1_evidence/OUT4_SCALE_VS_HUMAN_ANNOTATED.png",
+          "sha256": "025ca12cba3b2f065e6186c86394b10081d939f61379524d5294a1c5e20a51f8"
+        }
+      ]
+    },
+    {
+      "panel": 12,
+      "name": "Rig integration handoff",
+      "sources": [
+        {
+          "path": "production/character/reviews/MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89_CONTACT_SHEET.png",
+          "sha256": "fcba66f35ad36994a7352c6fe535b3b6f6c56fed65142606de8ef4bad8eed7ad"
+        }
+      ]
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "renders/board_v1_evidence/BASELINE_METHOD.md",
+      "sha256": "a01a0973daff6ad4df7f93a42fdb3c4ca36527c8a3f84b30f71c2c2c781f5891",
+      "bytes": 4866
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT1_CORE_GATE.json",
+      "sha256": "60cc44e78e090f604de9006d615fdd3ef26e9ebdc672b46e7910b14a571ebe89",
+      "bytes": 631
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT1_HERO_P3_85MM.png",
+      "sha256": "e1fd1772bcaa76f0478599fa122604ea0e03ba1ffeabbbac0cfaf3424d1dcde4",
+      "bytes": 4583822
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT1_HERO_P3_85MM_ANNOTATED.png",
+      "sha256": "588d8f8aaca507bd082c91c6103305d5ac06a27b6f9cea94cba07d120c08db27",
+      "bytes": 3211774
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT2_CORE_SPINE_SECTION.png",
+      "sha256": "93056f7c9615aa0413af0801dd1d48fd93612822e6545322231403f10afc70ac",
+      "bytes": 3044861
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT2_CORE_SPINE_SECTION_ANNOTATED.png",
+      "sha256": "8a9a78881275b2b2d4664af64f3277c570c71e8057984da8991b9fd14ad89195",
+      "bytes": 2103651
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT3_EXPLODED_LOADPATH.png",
+      "sha256": "efdf966dde053f62be23ebfa1faeea4e122de016778c5ab33ed1e76a673f0842",
+      "bytes": 4065321
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT3_EXPLODED_LOADPATH_ANNOTATED.png",
+      "sha256": "573aecc5a7eb3444f16ac3e4c8daff78c434490ca2f8a04a774abfb76acb86c3",
+      "bytes": 2810417
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT4_SCALE_VS_HUMAN.png",
+      "sha256": "6c57d01635718228901c25f3fb90b2418380aa4dfa7a5cfa18ced089e5895e99",
+      "bytes": 3907320
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT4_SCALE_VS_HUMAN_ANNOTATED.png",
+      "sha256": "025ca12cba3b2f065e6186c86394b10081d939f61379524d5294a1c5e20a51f8",
+      "bytes": 2705554
+    },
+    {
+      "path": "renders/board_v1_evidence/OUT5_MATERIAL_SWATCH_CARD.png",
+      "sha256": "5f419f47d4a6e1c6434e1e7d2c4a3ed1754d2af8f071be7cce2a56a0dc5bf52d",
+      "bytes": 123806
+    },
+    {
+      "path": "renders/board_v1_evidence/RUN_LOG_out3_v3.log",
+      "sha256": "be9eeafa57bf3fc4a37993167a3377a489f50a33470e02bac30276ca3797979d",
+      "bytes": 4241
+    },
+    {
+      "path": "renders/board_v1_evidence/RUN_LOG_outstanding_renders_v2.json",
+      "sha256": "6879fe6e74fc2dc26b04dc992d34c97732bb313a97542ebc995c1ad73274a9ff",
+      "bytes": 15861
+    },
+    {
+      "path": "renders/board_v1_evidence/ZENITH_BLADE_CE15_SOURCE.blend",
+      "sha256": "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129",
+      "bytes": 342281
+    },
+    {
+      "path": "renders/board_v1_evidence/build_board_v1.py",
+      "sha256": "dd4e08430290b83260ad7de5fbd32be784856544bb42e8cb2f65d04dd11e58f0",
+      "bytes": 20604
+    },
+    {
+      "path": "renders/board_v1_evidence/run_out3_v3.py",
+      "sha256": "b0e61cfa3af8623e89296b44e05442bfa28bccea75d55e727b03fbcc297b5094",
+      "bytes": 5138
+    },
+    {
+      "path": "renders/board_v1_evidence/run_outstanding_renders.py",
+      "sha256": "30f5dabde9db96bf1440b21a92d338882ae978633c0cdfd0036a6145835df5a2",
+      "bytes": 16211
+    },
+    {
+      "path": "renders/board_v1_evidence/run_outstanding_renders_v2.py",
+      "sha256": "b0105b86d7857300d167360e0b77a3127bea9a9bfbd78800681173a260137fe4",
+      "bytes": 16221
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_authored_P1.png",
+      "sha256": "9c0d7d4d584131279df4f6f5900f376ca4a6f2227cfd386f72865b410e81885a",
+      "bytes": 1963888,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_authored_P1.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_authored_P2.png",
+      "sha256": "2021592ef7aed5a96e37d9bde4ba672d27c4ae31c362e335f275cdba13a43a34",
+      "bytes": 1963343,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_authored_P2.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_authored_P3.png",
+      "sha256": "8a9d2522a5788a5728c2125881f973c6e3beb0479a1cfe652a77f95011a024d4",
+      "bytes": 1973793,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_authored_P3.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_front_P3.png",
+      "sha256": "2490282bce746efd0cf96a0051a6a4c54bc5883de443f5e8bbcc172f0023da4c",
+      "bytes": 1926549,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_front_P3.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_rear34_P3.png",
+      "sha256": "a295c9b75863fe0f0d88964cbd462c2b948b9654f4f6af1721a5b917142efd32",
+      "bytes": 1937228,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_rear34_P3.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_side_P3.png",
+      "sha256": "b131374ed587b487af8e7a3c002efc85dea03ef79bdcf4bad5adc12d2321bf24",
+      "bytes": 1843290,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_side_P3.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/HC_wireframe_material_proof.png",
+      "sha256": "e90e5ff28fe6e4940d80da85cc32b0bdf19d2428745cc462802f79d65bcbfa0d",
+      "bytes": 2001426,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/HC_wireframe_material_proof.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/SIL_ce15_064.png",
+      "sha256": "e89543004814a18dd8e7001beace03a2340cdc8f681c52e4c2ba1aaf9d6d08b4",
+      "bytes": 4772,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/SIL_ce15_064.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    },
+    {
+      "path": "renders/board_v1_evidence/pass_03/SIL_ce15_128.png",
+      "sha256": "cca61575e31bab2edda9051525a9b0d56c522e9fe75ec5d319804b956f127807",
+      "bytes": 13500,
+      "relocated_from": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/pass_03/SIL_ce15_128.png",
+      "relocation_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01"
+    }
+  ],
+  "source_blend": {
+    "path": "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/MIKAGE_ZENITH_BLADE_HERO_COHESION_CORRECTION_01_FIRST_PASSING_CANDIDATE.blend",
+    "sha256": "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129",
+    "comparison_basis": "byte-identical to pre-render capture",
+    "pre_render_capture_sha256": "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129",
+    "matches_pre_render_capture": true,
+    "durable_path": "renders/board_v1_evidence/ZENITH_BLADE_CE15_SOURCE.blend",
+    "durable_path_sha256": "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129",
+    "copies_byte_identical": true,
+    "original_retained": true,
+    "legacy_workstation_baseline": {
+      "value": "3a62ac63849609a37ee3282bcb10259061039db76133ee3623d2ed279bcc44c9",
+      "status": "REPRODUCIBLE_VERIFIED",
+      "baseline_version": "v2",
+      "expected_count": 79,
+      "method": "find . -name \"*.blend\" 2>/dev/null | grep -vi node_modules \\\n  | grep -i \"zenith\\|blade\" | sort \\\n  | xargs -I{} stat -c \"%Y %n\" {} 2>/dev/null | sha256sum",
+      "count_command": "find . -name \"*.blend\" 2>/dev/null | grep -vi node_modules \\\n  | grep -i \"zenith\\|blade\" | sort | wc -l",
+      "semantics": "mtime+path tripwire over filename-matched blade .blend files — detects any Blender write (even byte-identical re-save); does NOT detect content changes that preserve mtime; pair with direct sha256 of specific assets for content integrity",
+      "preconditions": "repo root CWD; GNU stat -c; scope = filenames matching zenith|blade excluding node_modules; count must equal 79 (78 under v1); includes .blend files under _tmp/ — cleaning _tmp changes the baseline; the durable copy renders/board_v1_evidence/ZENITH_BLADE_CE15_SOURCE.blend is now inside the scope",
+      "observed_value": "3a62ac63849609a37ee3282bcb10259061039db76133ee3623d2ed279bcc44c9",
+      "observed_count": 79,
+      "verified_at_generation": true,
+      "method_of_record": "renders/board_v1_evidence/BASELINE_METHOD.md",
+      "rebaseline_reason": "durability relocation, NOT a Blender write — the durable CE15 copy's filename matches the baseline scope, moving the count 78 -> 79; captured immediately after the copy",
+      "rebaseline_task": "ZENITH_BLADE_BOARD_V1_CLOSEOUT_01",
+      "rebaseline_date": "2026-08-06",
+      "supersedes": {
+        "baseline_version": "v1",
+        "value": "cfbda51002397b39dafc1aff52d98d357826c9af1877cd4e0e478bf4dfa8895e",
+        "expected_count": 78,
+        "status": "HISTORICAL — valid until the CE15 durable copy",
+        "last_verified_matching": "2026-08-06, immediately before the copy"
+      },
+      "history_note": "an earlier status of LEGACY_BASELINE_UNREPRODUCIBLE was withdrawn 2026-08-06 when the method was recovered"
+    }
+  },
+  "unresolved": [
+    "CE15 <-> actor collision/clearance not verified",
+    "CE12 alpha silhouette mask missing",
+    "CE12/CE13 standalone written rulings missing",
+    "PHYSICAL_VOLUME_EXACT_VALUE not verified",
+    "in-scene actor height unconfirmed (overlaid variants)",
+    "DESIGN_DNA.md line ~83 stale (doc-sync issue, not edited here)",
+    "Orbital-Logic UI / acid pH1.2 vapor / thermal mirage authorisation for the weapon render UNCONFIRMED (never ruled; absent from CE15)",
+    "external BLADE_V0.1 17-file set publication status UNCONFIRMED (incl. WAKE lyric videos EN/JP)"
+  ],
+  "resolved_in_addendum": [
+    {
+      "item": "legacy cfbda510 baseline definition unavailable",
+      "status": "RESOLVED — method recovered and verified; status REPRODUCIBLE_VERIFIED",
+      "date": "2026-08-06",
+      "provenance_task": "ZENITH_BLADE_BOARD_V1_HARDENING_01 (addendum)",
+      "record": "renders/board_v1_evidence/BASELINE_METHOD.md"
+    },
+    {
+      "item": "MAT_C and V0.29 not reconciled",
+      "status": "RECONCILED — unified as ONE FAMILY; operator rulings D1-D5",
+      "date": "2026-08-06",
+      "provenance_task": "ZENITH_BLADE_MATERIAL_RECONCILE_VERIFY_01 (measurement) -> ZENITH_BLADE_MATERIAL_CANON_V1_ISSUE (ruling)",
+      "record": "ZENITH_BLADE_MATERIAL_CANON_V1.md",
+      "record_sha256": "5b4c04f3777fa3685c5d47134b016a957f48bcd56f5e4ed00d874f5d926e2d20",
+      "approved_by": "Operator (BOOS BOP)"
+    },
+    {
+      "item": "canon-authority promotion packet open/pending",
+      "status": "CLOSED — see canon_authority_promotion_packet",
+      "date": "2026-08-06",
+      "provenance_task": "ZENITH_BLADE_PAPERWORK_CLOSEOUT_01 (draft) -> ZENITH_BLADE_PAPERWORK_ISSUE_01 (issue)",
+      "record": "ZENITH_BLADE_V0_1_DISPOSITION.md",
+      "record_sha256": "4dc9e327088f1922cf6102ed557cdb538bb78bc7e3a8c54fed8942d32c76dd83",
+      "approved_by": "Operator (BOOS BOP)"
+    }
+  ],
+  "resolved_since_v0": [
+    {
+      "item": "85 mm perspective hero on CE15 form",
+      "output": "OUT1_HERO_P3_85MM_ANNOTATED.png",
+      "provenance_task": "ZENITH_BLADE_OUTSTANDING_RENDERS_01",
+      "date": "2026-08-06"
+    },
+    {
+      "item": "core/spine section render",
+      "output": "OUT2_CORE_SPINE_SECTION_ANNOTATED.png",
+      "provenance_task": "ZENITH_BLADE_OUTSTANDING_RENDERS_01",
+      "date": "2026-08-06"
+    },
+    {
+      "item": "exploded load-path diagram",
+      "output": "OUT3_EXPLODED_LOADPATH_ANNOTATED.png",
+      "provenance_task": "ZENITH_BLADE_OUTSTANDING_RENDERS_01",
+      "date": "2026-08-06"
+    },
+    {
+      "item": "scale-vs-human image",
+      "output": "OUT4_SCALE_VS_HUMAN_ANNOTATED.png",
+      "provenance_task": "ZENITH_BLADE_OUTSTANDING_RENDERS_01",
+      "date": "2026-08-06"
+    },
+    {
+      "item": "scale/dimension: measured 1.200000 m = 47.2441 in is INSIDE canon 35-58 in (0.889-1.4732 m); prior conflict withdrawn as an un-converted unit check",
+      "output": "OUT4_SCALE_VS_HUMAN_ANNOTATED.png",
+      "provenance_task": "ZENITH_BLADE_OUTSTANDING_RENDERS_01",
+      "date": "2026-08-06"
+    }
+  ],
+  "durable_path_status": {
+    "all_cited_sources_on_durable_paths": true,
+    "unresolved_durable_paths": [],
+    "note": "board PNG was assembled from the byte-identical _tmp originals before relocation; citation update is documentation-only and the PNG is byte-unchanged"
+  },
+  "generation_timestamp": "2026-08-07T12:00:00+07:00",
+  "generated_by": "ZENITH_BLADE_PAPERWORK_TIDY_01",
+  "canon_authority_promotion_packet": {
+    "status": "CLOSED",
+    "document": "production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1.md",
+    "document_self_state": "STATUS: PROPOSAL_ONLY / OPERATOR_APPROVAL: PENDING (unedited on disk)",
+    "closed_date": "2026-08-06",
+    "provenance": [
+      "ZENITH_BLADE_V0_1_DISPOSITION.md (signed 2026-08-06) — closes packet point 6, the 2D-anchor question, by ruling V0.1 is not a geometry source or comparison target",
+      "docs/architecture/MIKAGE_CANON_CONTROL_MAP.md line 19 — SSOT entry for MIKAGE_ZENITH_BLADE_SPEC_V1.md, locked 2026-07-24, which resolved the packet's headline Control-Map premise"
+    ],
+    "packet_points_status": {
+      "1_b4c_shell_titanium_frame": "RULED — SPEC_V1 §1 (2026-06-02); MATERIAL_CANON_V1 (2026-08-06)",
+      "2_ferrocalcium_core_colour_separate": "RULED — #54->#58 (2026-07-06/07); D7 (2026-08-06)",
+      "3_p1_closed_block_flux_pinning": "RULED — V0.15 ruling (2026-07-24); D6 (2026-08-06)",
+      "4_p2_shell_split_envelope": "RULED — V0.15 ruling; BRUTALIST CONVERGENCE (2026-07-28); CANON_LOCK_V1",
+      "5_p3_envelope": "RULED — CANON_LOCK_V1 (2026-08-06)",
+      "5b_orbital_logic_ui_acid_vapor": "UNCONFIRMED — never ruled; absent from CE15; tracked as its own unresolved line",
+      "6_mandatory_2d_anchor": "CLOSED — ZENITH_BLADE_V0_1_DISPOSITION.md §3.2 / §3.4"
+    },
+    "original_document_edited": false,
+    "note": "The packet file is unedited on disk and still self-states OPERATOR_APPROVAL: PENDING. The marker of record is MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1_SUPERSEDED_NOTE.md. Editing the packet header is an operator action, not performed by any task.",
+    "packet_sha256": "05f85f567eeebf838a3a215e0e0fd8ee11f638e57f0205f854d74b228b5b68f7",
+    "control_map_sha256": "08dc280ffcde72238ef9b25d71e4cfb755080798dcb102a48eff76892363aad7",
+    "superseded_note": "MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1_SUPERSEDED_NOTE.md",
+    "superseded_note_sha256": "d8fba0124d7b8312f790a7db2f4867dad3cd3103a567068438735e504d5b02f6"
+  },
+  "paperwork_registry": {
+    "issued_date": "2026-08-07",
+    "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+    "count": 8,
+    "enforcement": "byte-frozen — any future edit without a further errata fails validation",
+    "documents": [
+      {
+        "path": "ZENITH_BLADE_WARM_COLOUR_RULING_V1.md",
+        "sha256": "42902f81a98145c6dff3fb1e54bae5ce66763befc2f65237f082317f9a39bcbd",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "operator ruling — warm/gold banned on the Zenith Blade, all phases; asset-scoped",
+        "byte_frozen": true,
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "MIKAGE_CINE_COLOR_CONTRACT_ERRATA_01.md",
+        "sha256": "e1d95f22952662c1a9365ed1c393ff61cbaec9d7b839718676e1311461841263",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "errata — crimson-seam REQUIRED ANCHOR scoped out for the Zenith Blade",
+        "byte_frozen": true,
+        "corrects": "design_system/mikage-cine-color-contract.md",
+        "corrects_sha256": "5c2b73a35890df0a92a8e72a0b4257d71be41ca0092e9b9d4e0075b82a18ab2b",
+        "original_document_edited": false,
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "MIKAGE_ZENITH_CANON_V2_ERRATA_01.md",
+        "sha256": "1ab8a593f6dcc1b07640ce6666ac1e7c75ac32e223d03384c26cbf99878a6fad",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "errata — §2.4 crimson core #E60000 superseded by ruled violet #8F00FF",
+        "byte_frozen": true,
+        "corrects": "MIKAGE_ZENITH_CANON_V2.md",
+        "corrects_sha256": "4bafe29a2d8a60c4c54a6de4dd6920b003ddf56679f72bc79c405a7e7b1d5e9c",
+        "original_document_edited": false,
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "ZENITH_BLADE_V0_1_DISPOSITION.md",
+        "sha256": "e1cb77a8d9669b74f9d60a58bda086b0f47b7fc98a2c205e3a8348ddd8d4be56",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "disposition — V0.1 = CINE ICON REFERENCE; self-declared locks void; CE15 sole production canon",
+        "byte_frozen": true,
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "ZENITH_BLADE_DELTA_TABLE_01_ERRATA_01.md",
+        "sha256": "830a0ab52c80712be22d5d9a3f3996b042ab76977844e3484ca22b287a937151",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "errata — delta-table row (f) + composite line f': porcelain LL/UL + Z-Blue graphite LR/UR",
+        "byte_frozen": true,
+        "corrects": "ZENITH_BLADE_DELTA_TABLE_01.md",
+        "corrects_sha256": "bbdc5823ad671808e3e270f8f3b2c5748d4ce40c1fd3df30200ea6bb45084a8a",
+        "original_document_edited": false,
+        "corrects_secondary": "ZENITH_BLADE_MOCK_VS_CE15_SIDEBYSIDE.png",
+        "corrects_secondary_sha256": "e050acf0351942669e5ab6f5ab7a065c88898cb86559be3cf263e5144d7f75ba",
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "ZENITH_BLADE_OPERATOR_RULING_GAP7_ERRATA_01.md",
+        "sha256": "1c427884165e383abef2afd27de68fdd11323383302ed28e1c8a11d7f8640e89",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "errata — unresolved-gap #7 was stale; Control Map lists the Blade SSOT, locked 2026-07-24",
+        "byte_frozen": true,
+        "corrects": "ZENITH_BLADE_FINAL_DESIGN_OPERATOR_RULING.md",
+        "corrects_sha256": "033858de1214e1427c3c3b9ee5548c765d275d382c1230c9b465033752affadd",
+        "original_document_edited": false,
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "MIKAGE_ZENITH_STRUCTURE_APPROVAL_ERRATA_01.md",
+        "sha256": "dc0bbeffdb310c49d10c3416e32844283fa69551f7bf891940118ecd3514753d",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
+        "role": "errata — P3 core colour #E60000 -> #8F00FF under the 2026-06-02 ABSOLUTE INVARIANT stamp",
+        "byte_frozen": true,
+        "corrects": "docs/handoff/MIKAGE_ZENITH_STRUCTURE_APPROVAL_AND_LOCK_READINESS_20260602.md",
+        "corrects_sha256": "e48335bb83663a37acb1728c4c944e0f6359e3a193ced8dc816eb5105b3b629c",
+        "original_document_edited": false,
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07"
+      },
+      {
+        "path": "MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1_SUPERSEDED_NOTE.md",
+        "sha256": "d8fba0124d7b8312f790a7db2f4867dad3cd3103a567068438735e504d5b02f6",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled 2026-08-06 (Cowork session); signed 2026-08-07",
+        "ruled_date": "2026-08-06",
+        "signed_date": "2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_PAPERWORK_TIDY_01",
+        "role": "superseded marker — promotion packet CLOSED, surviving sub-item 5b UNCONFIRMED",
+        "byte_frozen": true,
+        "marks": "production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1.md",
+        "marks_sha256": "05f85f567eeebf838a3a215e0e0fd8ee11f638e57f0205f854d74b228b5b68f7",
+        "original_document_edited": false
+      }
+    ],
+    "signature_convention": "dual-date — ruled in the Cowork session 2026-08-06, signed on issue 2026-08-07 (operator convention confirmed 2026-08-07)"
+  }
+}
