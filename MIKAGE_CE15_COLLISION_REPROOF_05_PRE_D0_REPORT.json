@@ -1,0 +1,161 @@
+{
+ "task": "CE15_ACTOR_COLLISION_REPROOF_05",
+ "step": "PRE_D0_PREFLIGHT",
+ "authorised_surface": "pose_bone.matrix_basis only",
+ "saved": false,
+ "eps_m": 1e-06,
+ "articulation_threshold_m": 0.005,
+ "angle_deg": 30.0,
+ "checks": {
+  "1_append": {
+   "v089_linked_objects": 45,
+   "appended_local": 45,
+   "all_local": true,
+   "canon_factor_reapplied": 0.2452706705,
+   "instancer_unlinked": true,
+   "actor_meshes": 26,
+   "duplicate_guard_pass": true,
+   "actor_meshes_already_attached_to_armature_in_V089": {
+    "A2_blade_material_dark_front_weight_refinement": [
+     "MESH_PREP_ZENITH_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG(BONE/hand.R)",
+     "MIKAGE_initial_armature_scaffold(OBJECT)"
+    ],
+    "A2_right_porcelain_mitten_hand_attached_read": [
+     "MIKAGE_initial_armature_scaffold(OBJECT)"
+    ]
+   }
+  },
+  "2_geometry": {
+   "actor_instances": 25,
+   "expected_instances": 25,
+   "bbox": [
+    0.871986,
+    0.230554,
+    1.753685
+   ],
+   "canon_bbox": [
+    0.871986,
+    0.230554,
+    1.753685
+   ],
+   "height_m": 1.753685,
+   "canon_height_m": 1.753685,
+   "height_deviation_m": 0.0,
+   "pass": true
+  },
+  "3_mute": {
+   "constraints_muted": 15,
+   "expected": 15,
+   "includes_IK": true,
+   "list": [
+    "root/COPY_LOCATION",
+    "root/COPY_ROTATION",
+    "pelvis/COPY_LOCATION",
+    "pelvis/COPY_ROTATION",
+    "chest/COPY_ROTATION",
+    "head/COPY_ROTATION",
+    "hand.L/COPY_LOCATION",
+    "hand.L/COPY_ROTATION",
+    "forearm.R/IK",
+    "hand.R/COPY_LOCATION",
+    "hand.R/COPY_ROTATION",
+    "foot.L/COPY_LOCATION",
+    "foot.L/COPY_ROTATION",
+    "foot.R/COPY_LOCATION",
+    "foot.R/COPY_ROTATION"
+   ],
+   "pass": true
+  },
+  "4_reset_to_rest": {
+   "method": "pose_bone.matrix_basis.identity() - rest data untouched",
+   "max_bone_deviation_from_rest_m": 7.5e-08,
+   "bones_off_rest": [],
+   "pass": true
+  },
+  "5_actor_neutral_after_reset": {
+   "max_mesh_drift_m": 0.492471337,
+   "meshes_that_moved": {
+    "A2_right_porcelain_mitten_hand_attached_read": 0.492471337
+   },
+   "meshes_that_did_not_move": 25,
+   "pass": false
+  },
+  "6_bind": {
+   "bound": 26,
+   "expected": 26,
+   "failed": [],
+   "map": {
+    "A2_blade_material_dark_front_weight_refinement": "hand.R",
+    "A2_body_muted_zblue_4B5866_non_emissive_left_edge": "spine_01",
+    "A2_body_muted_zblue_4B5866_non_emissive_right_edge": "spine_01",
+    "A2_hair_back_mass_hidden_behind_faceted_helmet": "head",
+    "A2_hair_left_vertical_flow_behind_mask": "head",
+    "A2_hair_lower_weight_black_vertical_tail": "head",
+    "A2_hair_right_vertical_flow_behind_mask": "head",
+    "A2_hair_subtle_vertical_strand_01": "head",
+    "A2_hair_subtle_vertical_strand_02": "head",
+    "A2_hair_subtle_vertical_strand_03": "head",
+    "A2_hair_subtle_vertical_strand_04": "head",
+    "A2_helmet_soft_porcelaingofun_upper_facet_light_catch": "head",
+    "A2_left_continuous_black_upper_arm_attached_plane": "upper_arm.L",
+    "A2_left_graphite_wrist_to_body_contact_shadow": "hand.L",
+    "A2_left_porcelain_mitten_hand_attached_read": "hand.L",
+    "A2_left_shoulder_to_arm_continuity_graphite_bridge": "clavicle.L",
+    "A2_left_small_thumb_mass_non_human": "hand.L",
+    "A2_proportion_center_spine_sumi_vertical_weight": "spine_01",
+    "A2_proportion_left_side_shadow_taper": "spine_01",
+    "A2_proportion_longline_lower_void_mass_extension": "pelvis",
+    "A2_proportion_right_side_shadow_taper": "spine_01",
+    "A2_right_continuous_black_upper_arm_attached_plane": "upper_arm.R",
+    "A2_right_graphite_wrist_to_body_contact_shadow": "hand.R",
+    "A2_right_porcelain_mitten_hand_attached_read": "hand.R",
+    "A2_right_shoulder_to_arm_continuity_graphite_bridge": "clavicle.R",
+    "A2_right_small_thumb_mass_non_human": "hand.R"
+   },
+   "max_mesh_drift_from_baseline_m": 0.492471348,
+   "pass": false
+  },
+  "7_direct_pose_bone": {
+   "bone": "hand.R",
+   "surface": "matrix_basis",
+   "angle_deg": 30.0,
+   "hide_render_excluded_per_METHOD_V1_2_1": [
+    "A2_blade_material_dark_front_weight_refinement"
+   ],
+   "driven_meshes": {
+    "A2_right_graphite_wrist_to_body_contact_shadow": 0.170332,
+    "A2_right_porcelain_mitten_hand_attached_read": 0.638713,
+    "A2_right_small_thumb_mass_non_human": 0.147283
+   },
+   "driven_min_m": 0.147283,
+   "driven_pass": true,
+   "unrelated_max_m": 1.79e-07,
+   "unrelated_over_eps": {},
+   "isolation_pass": true,
+   "pass": true
+  },
+  "8_reset_reproducible": {
+   "max_mesh_drift_from_baseline_m": 0.492471348,
+   "pass": false
+  },
+  "M_rejected_step_order": {
+   "what": "constraints un-muted while meshes are bound - equivalent to the dispatch's bind-before-mute order",
+   "max_mesh_displacement_from_baseline_m": 2.285531,
+   "note": "this is the drift the dispatch order would have baked in; acceptance criterion 5 cannot hold under it"
+  }
+ },
+ "gates": {
+  "2_geometry": true,
+  "3_mute": true,
+  "4_reset_to_rest": true,
+  "5_actor_neutral_after_reset": false,
+  "6_bind": false,
+  "7_direct_pose_bone": true,
+  "8_reset_reproducible": false
+ },
+ "PREFLIGHT_PASS": false,
+ "verdict": "PRE_D0_FAIL - see failing gates",
+ "poses_defined": false,
+ "matrix_run": false,
+ "note": "No pose was invented. The 5 doctrine poses remain undefined and require an operator ruling before any matrix run."
+}

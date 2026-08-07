@@ -1,0 +1,46 @@
+{
+ "task": "CE15_ACTOR_COLLISION_REPROOF_05",
+ "step": "PRE_D0b_BAKED_NEUTRAL_DIAGNOSTIC",
+ "authorised_surface": "pose_bone.matrix_basis only",
+ "saved": false,
+ "checks": {
+  "A_bake_neutral": {
+   "constraints_muted": 15,
+   "max_bone_reproduction_error_m": 5.67e-07,
+   "max_mesh_drift_from_baseline_m": 4.89e-07,
+   "rest_data_touched": false,
+   "pass": true
+  },
+  "B_bind": {
+   "bound": 26,
+   "max_mesh_drift_from_baseline_m": 4.85e-07,
+   "pass": true
+  },
+  "C_pose_on_baked_neutral": {
+   "bone": "hand.R",
+   "angle_deg": 30.0,
+   "driven": {
+    "A2_right_graphite_wrist_to_body_contact_shadow": 0.364243,
+    "A2_right_porcelain_mitten_hand_attached_read": 0.349382,
+    "A2_right_small_thumb_mass_non_human": 0.342973
+   },
+   "driven_min_m": 0.342973,
+   "unrelated_max_m": 3.58e-07,
+   "pass": true
+  },
+  "D_reset_reproducible": {
+   "max_mesh_drift_from_baseline_m": 4.87e-07,
+   "pass": true
+  }
+ },
+ "gates": {
+  "A_bake_neutral": true,
+  "B_bind": true,
+  "C_pose_on_baked_neutral": true,
+  "D_reset_reproducible": true
+ },
+ "DIAGNOSTIC_PASS": true,
+ "poses_defined": false,
+ "matrix_run": false,
+ "note": "Diagnostic only - NOT a PRE-D0 pass. Establishes whether O2 is salvageable by baking the constrained-neutral into matrix_basis instead of resetting to rest. No pose invented; the 5 doctrine poses still require an operator ruling."
+}

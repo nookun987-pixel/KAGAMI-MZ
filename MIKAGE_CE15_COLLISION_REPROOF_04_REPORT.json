@@ -1,0 +1,146 @@
+{
+ "task": "CE15_ACTOR_COLLISION_REPROOF_04",
+ "date": "2026-08-07",
+ "blender": "5.1.2 (hash ec6e62d40fa9)",
+ "verdict": "D1_SOLVED_D3_STOPPED_AT_SEMANTICS_BOUNDARY_D4_NOT_RUN",
+ "technical_actor_clearance": "BLOCKED_SEE_REPORT",
+ "asset_lock": "NOT ISSUED",
+ "production_ready": "NOT ISSUED",
+ "collision_tested": false,
+ "fix_applied": false,
+ "staging_saved": false,
+
+ "D1_diagnosis": {
+  "root_cause": "use_connect=True on every COPY_LOCATION-driven bone makes translation a no-op; root (use_connect=False) is the sole exception. Correct Blender behaviour, not a defect.",
+  "candidates": {
+   "a_dependency_cycle": {"result": "NOT_THE_EXPLANATION", "evidence": "0 occurrences of 'Dependency cycle detected' in stdout/stderr across 5 headless runs", "strength": "absence of a stdout warning is not a formal cycle detector; a cycle is no longer NEEDED to explain the symptom and there is no evidence it is the cause. NOT claimed as proven absent."},
+   "b_constraint_spaces": {"result": "POSITIVE", "evidence": "all 15 pose-bone constraints target_space=WORLD owner_space=WORLD influence 1.0 unmuted"},
+   "c_bone_locks": {"result": "NEGATIVE", "evidence": "lock_location/rotation/rotation_w/scale all False on all 23 bones"},
+   "d_control_parenting": {"result": "NEGATIVE", "evidence": "all 8 *_ctrl have no parent; hand.R_ctrl own evaluated world matrix moved 0.500000 m when translated 0.50 m"},
+   "e_eval_order_duplicates_drivers": {"result": "NEGATIVE", "evidence": "0 drivers on armature; no duplicate constraints; 15 total"},
+   "f_use_connect": {"result": "POSITIVE", "evidence": "see translate_vs_rotate"}
+  },
+  "translate_vs_rotate_CAVEAT": "bone_head_delta_rotate_30deg reads bone.head ONLY. A bone rotating about its own head leaves that coordinate invariant, so 0.0 is the EXPECTED reading for a successful rotation - it is not evidence the bone failed to rotate. Rotation is proved separately by mesh-centroid displacement in gate_2_7_rotation_30deg_canon_scale_m, which PASSES on all three chains. This column is the correct discriminator for the TRANSLATION question only.",
+  "translate_vs_rotate": [
+   {"ctrl": "global_ctrl", "bone": "root",    "use_connect": false, "bone_head_delta_translate_0_5m": 0.5, "bone_head_delta_rotate_30deg": 0.0},
+   {"ctrl": "pelvis_ctrl", "bone": "pelvis",  "use_connect": true,  "bone_head_delta_translate_0_5m": 0.0, "bone_head_delta_rotate_30deg": 0.0},
+   {"ctrl": "hand.R_ctrl", "bone": "hand.R",  "use_connect": true,  "bone_head_delta_translate_0_5m": 0.0, "bone_head_delta_rotate_30deg": 0.0},
+   {"ctrl": "hand.L_ctrl", "bone": "hand.L",  "use_connect": true,  "bone_head_delta_translate_0_5m": 0.0, "bone_head_delta_rotate_30deg": 0.0}
+  ],
+  "ik_ruled_out_again": {"hand.R_ctrl_translate_0_5m_IK_muted_hand.R": 0.0, "same_forearm.R": 0.0}
+ },
+
+ "correction_to_REPROOF_03": {
+  "withdrawn_claim": "hand.R chain does not respond / cause UNCONFIRMED",
+  "why_wrong": "the chain was driven by a LOCATION delta; METHOD_V1 2.7 step 1 specifies a ROTATION of >= 25 deg. Driven by rotation all three chains move.",
+  "confirmed_correct_from_REPROOF_03": ["IK ruled out", "library overrides ruled out", "harness ruled out", "append mechanism ruled out"],
+  "head_figure_independently_reproduced": {"reproof_03": 0.893287, "reproof_04_canon_scale": 0.897446, "delta_pct": 0.47}
+ },
+
+ "gate_2_7_rotation_30deg_canon_scale_m": {
+  "head_chain": {"min": 0.756222, "max": 0.897446},
+  "hand_R_chain": {"min": 0.342973, "max": 0.349382},
+  "hand_L_chain": {"min": 0.345264, "max": 0.351865},
+  "threshold_m": 0.005,
+  "numeric_threshold_cleared": true,
+  "accepted_as_pass": false,
+  "why_not_accepted": "the displacements are produced while the skeleton is up to 37 pct of body height out of its rest pose; clearing the threshold does not make the pose anatomically valid"
+ },
+
+ "D2_head_magnitude": {
+  "conclusion": "not a rotation error; geometrically exact rotation about a misregistered pivot",
+  "measured_equals_expected_arc": true,
+  "per_hair_mesh_raw_units": {
+   "A2_hair_back_mass_hidden_behind_faceted_helmet": {"radius": 7.0687, "expected_arc_30deg": 3.659, "measured": 3.659},
+   "A2_hair_left_vertical_flow_behind_mask": {"radius": 6.5674, "expected_arc_30deg": 3.3996, "measured": 3.3937},
+   "A2_hair_lower_weight_black_vertical_tail": {"radius": 5.9564, "expected_arc_30deg": 3.0832, "measured": 3.0832}
+  },
+  "head_pivot_neutral_world_raw": [0.026828, 0.950936, -0.769532],
+  "actor_mesh_z_range_raw": [-0.24, 6.91],
+  "shares_root_cause_with_D1": true
+ },
+
+ "D3_real_blocker": {
+  "statement": "COPY_ROTATION owner_space=WORLD forces every constrained bone to identity world rotation at neutral, laying the skeleton 90 deg about X out of its rest pose",
+  "bones_displaced_over_1cm_canon": 22,
+  "bones_total": 23,
+  "max_neutral_deviation_canon_m": 0.653671,
+  "actor_height_m": 1.753685,
+  "max_deviation_pct_of_height": 37.3,
+  "calibration_test": {
+   "method": "each of the 8 ctrls set to the world rotation and location its bone holds at rest",
+   "max_deviation_before_canon_m": 0.653671,
+   "max_deviation_after_canon_m": 0.355536,
+   "recovered_exactly": ["root", "pelvis", "spine_01", "spine_02", "thigh.L", "thigh.R", "shin.L", "shin.R", "foot.L", "foot.R", "toe.L", "toe.R", "hand.R"],
+   "still_off": {"chest": 0.161607, "neck": 0.277041, "head": 0.355536, "clavicle.L": 0.24472, "clavicle.R": 0.24472, "upper_arm.L": 0.243646, "upper_arm.R": 0.236559, "forearm.L": 0.134011, "forearm.R": 0.115326, "hand.L": 0.027704},
+   "sufficient": false
+  },
+  "fix_required": "re-author the 15 FIRST_PASS_* constraints out of WORLD/WORLD space",
+  "in_scope": false,
+  "reason": "dispatch places rig semantic redesign out of scope -> stop and report options"
+ },
+
+ "D4": {"run": false, "required_checks": 15, "executed": 0,
+        "reason": "METHOD_V1 2.7 cannot be honestly passed; A2_ meshes have 0 armature modifiers and 0 vertex groups so only rigid bone-parenting is possible onto a misregistered skeleton"},
+ "contact_sheet": "NOT PRODUCED - no matrix run",
+
+ "geometry_precheck_instance_aware": {
+  "method": "depsgraph.object_instances per METHOD_V1 2.3",
+  "actor_height_m": 1.753685, "actor_height_canon": 1.753685, "deviation": 0.0,
+  "actor_bbox": [0.871986, 0.230554, 1.753685],
+  "actor_render_enabled_meshes": 25,
+  "blade_z_extent_m": 1.2, "blade_z_canon": 1.2, "blade_bbox": [0.473372, 0.26132, 1.2],
+  "blade_render_enabled_meshes": 29,
+  "blade_actor_ratio": 0.684273401, "blade_actor_ratio_canon": 0.684273,
+  "blade_bbox_dy_discrepancy": {"measured": 0.26132, "stage_build_01_report": 0.278489, "status": "UNCONFIRMED - not investigated"}
+ },
+
+ "self_correction": {
+  "error": "an earlier pass in this task reported the staging actor as mis-scaled at 7.15 m",
+  "cause": "iterated bpy.data.objects instead of depsgraph.object_instances; the actor is a collection instance through ACTOR_CANON_SCALE_ROOT (scale 0.245271, 0 parented children)",
+  "corrected": true,
+  "staging_file_is_correct": true,
+  "arithmetic": "7.150000 x 0.2452706705 = 1.753688"
+ },
+
+ "staging_composition_finding": {
+  "note": "the staging file links TWO libraries that share 14 object names, including all 8 *_ctrl empties, both armatures and the IK target",
+  "name_collisions": 14,
+  "consequence": "bpy.data.objects[name] is ambiguous; every lookup in this task was library-aware",
+  "libraries": {"MIKAGE_ZENITH_BLADE_MITTEN_INTERFACE_CORRECTION_V0_89.blend": 45, "ZENITH_BLADE_CE15_SOURCE.blend": 45}
+ },
+
+ "rulings": {
+  "R1_prime": "RE-EXECUTED, works - 45 objects appended fully local, duplicate guard PASS. Append bypasses the ACTOR_CANON_SCALE_ROOT instancer; canon factor 0.2452706705 must be re-applied by hand (verified restores 1.753685 exactly).",
+  "R2": "DISCHARGED - unaffected",
+  "R3": "RE-VERIFIED - blade Z extent 1.200000 m instance-aware",
+  "R4": "DISCHARGED - 2.3 caught an error in this task, 2.7 blocked the run"
+ },
+
+ "next_options_operator_decision_required": {
+  "O1": "re-author the 15 control constraints to LOCAL / LOCAL_WITH_PARENT with rest-relative ctrl offsets, staging only - RECOMMENDED",
+  "O2": "mute all 15 constraints and author the 5 doctrine poses directly as bone data - smallest, no rig semantics touched",
+  "O3": "rebuild the control rig as a new-rig project - out of scope of every current dispatch",
+  "O4": "run the matrix on a rigid-chunk actor anyway - DO NOT, produces the false-pass shape 2.7 exists to stop"
+ },
+ "still_open_regardless_of_option": [
+  "the 5 doctrine poses have no definitions (R2 retired the 8 historical ones)",
+  "A2_ meshes have 0 vertex groups - rigid attachment only until a soft rig exists (operator backlog)"
+ ],
+
+ "integrity": {
+  "staging_anchor": "229c727f516b3653943c03ea687f796bd5101dd1ce30be1579d9ba4248c17e01",
+  "staging_anchor_v2_declared": false,
+  "staging_saved": false,
+  "v089_source": "15e61aa961d4bfe10a0217f6a2ddf36373622744554564411c4c58a178c94b89",
+  "ce15_source": "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129",
+  "tripwire_v2": "3a62ac63849609a37ee3282bcb10259061039db76133ee3623d2ed279bcc44c9",
+  "tripwire_count": 79,
+  "source_files_edited": 0,
+  "blend_files_saved": 0,
+  "pass_forced": false,
+  "git_tracked_files_modified": 0
+ },
+
+ "harness_on_disk": "_tmp/ce15_actor_collision_reproof_04/"
+}
