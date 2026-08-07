@@ -1,0 +1,103 @@
+{
+ "task": "CE15_ACTOR_COLLISION_REPROOF_03",
+ "date": "2026-08-07",
+ "verdict": "BLOCKED_ARTICULATION_GATE_FAILED_MATRIX_NOT_RUN",
+ "technical_actor_clearance": "BLOCKED_SEE_REPORT",
+ "asset_lock": "NOT ISSUED",
+ "production_ready": "NOT ISSUED",
+ "collision_tested": false,
+ "correction_to_REPROOF_02": {
+  "withdrawn_claim": "bone-parenting on library-override objects is not evaluated; R1 technically infeasible",
+  "why_wrong": "actor appended as fully local objects (no overrides) still measured zero articulation",
+  "actual_cause": "the rig is CONTROL-DRIVEN: 15 pose-bone constraints copy transforms from 8 *_ctrl empties; setting pose_bone.rotation_euler is a no-op (pose_bone.matrix delta measured 0.0)",
+  "harness_ruled_out": {
+   "primitive_object_parent_translate_m": 5.0,
+   "primitive_bone_parent_rotate_m": 0.765367
+  }
+ },
+ "step1_append": {
+  "linked_actor_objects_removed": 33,
+  "appended": 49,
+  "appended_local_all": true,
+  "duplicate_guard": {
+   "actor_meshes_in_scene": 26,
+   "expected": 26,
+   "linked_actor_originals_remaining": 0,
+   "pass": true
+  }
+ },
+ "step2_binding": {
+  "bound": 26,
+  "failed": [],
+  "map_obvious": 20,
+  "map_proposed": {
+   "A2_proportion_center_spine_sumi_vertical_weight": "generic vertical torso mass",
+   "A2_proportion_left_side_shadow_taper": "generic torso side mass",
+   "A2_proportion_right_side_shadow_taper": "generic torso side mass",
+   "A2_body_muted_zblue_4B5866_non_emissive_left_edge": "lower-body edge volume",
+   "A2_body_muted_zblue_4B5866_non_emissive_right_edge": "lower-body edge volume",
+   "A2_proportion_longline_lower_void_mass_extension": "lowest void mass"
+  },
+  "articulation_gate": {
+   "head_ctrl_moves_hair_m": 0.893287,
+   "hand.R_ctrl_moves_mitten_R_m": 0.0,
+   "threshold_m": 0.005,
+   "pass": false
+  }
+ },
+ "bone_constraints_found": {
+  "total": 15,
+  "head": "COPY_ROTATION <- head_ctrl",
+  "hand.R": "COPY_LOCATION + COPY_ROTATION <- hand.R_ctrl",
+  "forearm.R": "IK chain 5 -> ZB84_SECONDARY_GRIP_IK_TARGET influence 1.0"
+ },
+ "blocker": {
+  "symptom": "hand.R chain does not respond to hand.R_ctrl",
+  "measurements_m": {
+   "head_ctrl_+30deg_moves_hair": 0.893287,
+   "hand.R_ctrl_+0.10m_moves_mitten": 0.0,
+   "hand.R_ctrl_+0.50m_moves_hand.R_bone_IK_active": 0.0,
+   "hand.R_ctrl_+0.50m_moves_hand.R_bone_IK_muted": 0.0,
+   "hand.R_ctrl_+0.50m_moves_forearm.R_bone": 0.0
+  },
+  "ruled_out": [
+   "IK constraint",
+   "library overrides",
+   "harness",
+   "append mechanism"
+  ],
+  "cause": "UNCONFIRMED"
+ },
+ "flagged_unconfirmed": {
+  "head_displacement_magnitude": "0.893287 m for a 30deg head rotation on a 1.753685 m actor is larger than expected; reported verbatim, not investigated (gate aborted first)"
+ },
+ "matrix": {
+  "required_checks": 15,
+  "run": 0,
+  "reason": "METHOD_V1 section 2.7 articulation gate failed -> abort"
+ },
+ "contact_sheet": "NOT PRODUCED - no matrix run",
+ "rulings": {
+  "R1_prime": "EXECUTED - and shown unnecessary; overrides were not the blocker",
+  "R2": "DISCHARGED - unaffected, finding independent",
+  "R3": "NOT RE-VERIFIED this run (abort before Step 3); previously 1.200000 m in REPROOF_02",
+  "R4": "DISCHARGED - section 2.7 gate fired correctly and prevented a false PASS"
+ },
+ "next": [
+  "N1 diagnose why hand.R ignores COPY_LOCATION/COPY_ROTATION at influence 1.0",
+  "N2 re-verify head-chain displacement magnitude",
+  "N3 re-run 5x3 matrix only after section 2.7 passes on both chains",
+  "N4 consider authoring doctrine poses on the control layer permanently"
+ ],
+ "integrity": {
+  "staging_anchor": "229c727f516b3653943c03ea687f796bd5101dd1ce30be1579d9ba4248c17e01",
+  "staging_anchor_v2_declared": false,
+  "staging_saved": false,
+  "v089_source": "15e61aa961d4bfe10a0217f6a2ddf36373622744554564411c4c58a178c94b89",
+  "ce15_source": "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129",
+  "tripwire_v2": "3a62ac63849609a37ee3282bcb10259061039db76133ee3623d2ed279bcc44c9",
+  "tripwire_count": 79,
+  "source_files_edited": 0,
+  "pass_forced": false
+ }
+}

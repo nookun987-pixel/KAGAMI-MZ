@@ -71,11 +71,38 @@ CORE_FROZEN = {
         "e48335bb83663a37acb1728c4c944e0f6359e3a193ced8dc816eb5105b3b629c",
     "docs/MIKAGE_OFFICIAL_VISUAL_BOUNDARY_V1.md":
         "285acc72321b5ad44341278a3b70d8f5db34f47bb54d4d01cc5763a5e29b7274",
+    # --- actor reference programme, 2026-08-07 (MIKAGE_ACTOR_STAGE_BUILD_01) ---
+    "MIKAGE_ACTOR_REFERENCE_AUDIT_01.md":
+        "d19aa8f404691d961a50a08a0f047beeea000f5e3d19de2bcb1491003c07680a",
+    "MIKAGE_ACTOR_VARIANT_INVENTORY_01.md":
+        "7c5ab67a9ea5756f9e5e54d13a93e88d1786bcb5c80c70da2e9e7b366a3edef1",
+    "MIKAGE_ACTOR_STAGE_BUILD_01_REPORT.md":
+        "b8a1013ef312d9f19fb9a08249e024f693185b73c8f20c2a4db3ca3128fd866c",
+    # --- collision re-proof, 2026-08-07 (verdict BLOCKED) ---
+    "MIKAGE_CE15_COLLISION_REPROOF_01.md":
+        "745f1f2f08b861980d6436d286e068b388a9dcc44a45bdb78ba4a2781945b90a",
+    "MIKAGE_CE15_COLLISION_REPROOF_01_REPORT.json":
+        "f3b96746591d3a20ed38daafe5151a612f9db39f55208f8f83db068c73a514bd",
+    # --- collision re-proof 02, 2026-08-07 (verdict BLOCKED, R1 infeasible) ---
+    "MIKAGE_CE15_COLLISION_REPROOF_02.md":
+        "70ad3024d48604d009ded088934b4dc1f043197c64a0595024cc8a304e69f4f3",
+    "MIKAGE_CE15_COLLISION_REPROOF_02_REPORT.json":
+        "29201a7bf4af555d4a67f734d8147400a7af004ef4e442c948efd81b376a2dc9",
+    # --- collision re-proof 03, 2026-08-07 (BLOCKED; corrects REPROOF_02 diagnosis) ---
+    "MIKAGE_CE15_COLLISION_REPROOF_03.md":
+        "702a11f62f8f808632e30bc59f0028fbea82e7588ef9594a3077ed1d28ede9ca",
+    "MIKAGE_CE15_COLLISION_REPROOF_03_REPORT.json":
+        "d04ef234deb618a4b496b0ad16b640dea07b05236a8990dc441efefc89e4c81b",
 }
 
 TRIPWIRE_V2 = "3a62ac63849609a37ee3282bcb10259061039db76133ee3623d2ed279bcc44c9"
 TRIPWIRE_COUNT = 79
 CE15_ANCHOR = "465b212ef49a4b8ad3eacd682757d9fe0512fa5d242c1b09611439b9c76c3129"
+# Collision staging anchor -- OUTSIDE the tripwire scope by design (filename carries
+# neither "zenith" nor "blade"). Recorded so an unexpected change is visible.
+STAGING_BLEND = "production/character/staging/MIKAGE_COLLISION_STAGE_01.blend"
+STAGING_ANCHOR = "229c727f516b3653943c03ea687f796bd5101dd1ce30be1579d9ba4248c17e01"
+
 CE15_PATHS = [
     "_tmp/zenith_blade_hero_e1_ce15/hero_cohesion_correction01/"
     "MIKAGE_ZENITH_BLADE_HERO_COHESION_CORRECTION_01_FIRST_PASSING_CANDIDATE.blend",
@@ -92,6 +119,11 @@ PACKAGE_MD = [
     "ZENITH_BLADE_OPERATOR_RULING_GAP7_ERRATA_01.md",
     "MIKAGE_ZENITH_STRUCTURE_APPROVAL_ERRATA_01.md",
     "MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1_SUPERSEDED_NOTE.md",
+    "ZENITH_BLADE_OPERATION_DOCTRINE_V1.md",
+    "ZENITH_BLADE_BOARD_V1_MD_ERRATA_01.md",
+    "MIKAGE_ACTOR_DESIGNATION_RULING_V1.md",
+    "ZENITH_BLADE_OPERATION_DOCTRINE_V1_ERRATA_01.md",
+    "MIKAGE_COLLISION_METHOD_V1.md",
 ]
 
 fails = []
@@ -181,6 +213,16 @@ try:
         print("  OK  tripwire v2 %s" % TRIPWIRE_V2[:16])
 except Exception as exc:  # noqa: BLE001
     warns.append("tripwire check could not run: %s" % exc)
+
+a = sha(STAGING_BLEND)
+if a is None:
+    warns.append("staging blend missing: " + STAGING_BLEND)
+elif a != STAGING_ANCHOR:
+    warns.append("staging anchor CHANGED at %s\n    expected %s\n    observed %s\n"
+                 "    -> the collision stage was rebuilt; re-verify its measurements "
+                 "before using it." % (STAGING_BLEND, STAGING_ANCHOR, a))
+else:
+    print("  OK  staging anchor %s" % STAGING_BLEND)
 
 for p in CE15_PATHS:
     a = sha(p)

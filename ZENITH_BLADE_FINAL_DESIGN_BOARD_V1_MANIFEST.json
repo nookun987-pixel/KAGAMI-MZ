@@ -3,7 +3,7 @@
   "board_version": "V1",
   "candidate_id": "CE15",
   "candidate_status": "CE15_CANON_LOCKED",
-  "technical_actor_clearance": "NOT_VERIFIED",
+  "technical_actor_clearance": "BLOCKED_SEE_REPORT",
   "actor_collision_state": "BLOCKED_PENDING_OPERATOR_VISUAL_ACCEPTANCE",
   "production_asset_lock": "NOT_ISSUED",
   "canon_lock": {
@@ -119,7 +119,7 @@
     "asset_lock": "NOT_ISSUED",
     "production_ready": "NOT_ISSUED"
   },
-  "authorized_next_step": "ACTOR_REFERENCE_CLEANUP_THEN_CE15_ACTOR_COLLISION_REPROOF (pose matrix pending OPERATION_DOCTRINE_V1 signature)",
+  "authorized_next_step": "OPERATOR_BOUNDED_FIX_DECISION - diagnose the hand.R control chain (N1) before any further gate attempt",
   "not_authorized": [
     "ACTOR_COLLISION_PASS",
     "MATERIAL_RECONCILIATION",
@@ -483,14 +483,19 @@
     }
   },
   "unresolved": [
-    "CE15 <-> actor collision/clearance not verified",
     "CE12 alpha silhouette mask missing",
     "CE12/CE13 standalone written rulings missing",
     "PHYSICAL_VOLUME_EXACT_VALUE not verified",
-    "in-scene actor height unconfirmed (overlaid variants)",
+    "in-scene actor height in the CE15 SOURCE blend still unmeasurable (no render-enabled actor there, audit F3/U7) - superseded operationally by MIKAGE_COLLISION_STAGE_01.blend, where the actor measures 1.753685 m",
     "DESIGN_DNA.md line ~83 stale (doc-sync issue, not edited here)",
     "Orbital-Logic UI / acid pH1.2 vapor / thermal mirage authorisation for the weapon render UNCONFIRMED (never ruled; absent from CE15)",
-    "external BLADE_V0.1 17-file set publication status UNCONFIRMED (incl. WAKE lyric videos EN/JP)"
+    "external BLADE_V0.1 17-file set publication status UNCONFIRMED (incl. WAKE lyric videos EN/JP)",
+    "soft-deformation rig ABSENT - PRODUCTION BACKLOG per ruling D-c, not an asset-lock blocker",
+    "S1 registration assumptions A1-A3 still PROPOSED (A4 scale-inherit RESOLVED via CHILD_OF with scale disabled) (R3')",
+    "historical collision numbers are permanently non-comparable - the V0.89 routine was never recorded (MIKAGE_COLLISION_METHOD_V1 section 1)",
+    "CE15<->actor collision BLOCKED - hand.R chain does not respond to hand.R_ctrl (COPY_LOCATION/COPY_ROTATION influence 1.0, IK ruled out); cause UNCONFIRMED (N1)",
+    "head-chain articulation magnitude 0.893287 m for a 30deg rotation is larger than expected - possible bind artifact, UNCONFIRMED (N2)",
+    "the actor rig is CONTROL-DRIVEN (8 *_ctrl empties, 15 bone constraints) - doctrine poses should likely be authored on the control layer permanently (N4)"
   ],
   "resolved_in_addendum": [
     {
@@ -517,6 +522,63 @@
       "record": "ZENITH_BLADE_V0_1_DISPOSITION.md",
       "record_sha256": "4dc9e327088f1922cf6102ed557cdb538bb78bc7e3a8c54fed8942d32c76dd83",
       "approved_by": "Operator (BOOS BOP)"
+    },
+    {
+      "item": "hub/handle axis ANCHOR designation — divergence between OUT3 legend and BOARD_V1.md:84",
+      "status": "RESOLVED — operator ruling R3: ANCHOR = chassis/spine only",
+      "date": "2026-08-07",
+      "provenance_task": "ZENITH_BLADE_OPERATION_DOCTRINE_DRAFT_VERIFY_01 (found) -> ZENITH_BLADE_DOCTRINE_ISSUE_01 (ruled)",
+      "record": "ZENITH_BLADE_BOARD_V1_MD_ERRATA_01.md",
+      "record_sha256": "e81771962ae5bd6c6543614ce38c2489d65289d84ceee4f3c2ad5ee140e822da",
+      "approved_by": "Operator (BOOS BOP)"
+    },
+    {
+      "item": "no measurable verified actor (collision blocker)",
+      "status": "RESOLVED - A2_ designated (D-a), isolated by O1 (D-b), staged at canon scale; measurements reproduce canon exactly",
+      "date": "2026-08-07",
+      "provenance_task": "MIKAGE_ACTOR_REFERENCE_AUDIT_01 (investigation) -> MIKAGE_ACTOR_STAGE_BUILD_01 (build)",
+      "record": "MIKAGE_ACTOR_STAGE_BUILD_01_REPORT.md",
+      "record_sha256": "b8a1013ef312d9f19fb9a08249e024f693185b73c8f20c2a4db3ca3128fd866c",
+      "approved_by": "Operator (BOOS BOP)"
+    },
+    {
+      "item": "CE15<->actor blade docking/registration UNCONFIRMED-by-design",
+      "status": "DERIVED as PROPOSED (target: MESH_PREP_ZENITH_BLADE_ATTACHMENT_INTENT_EMPTY_NON_RIG, bone-parented to hand.R) - NOT RULED, not applied",
+      "date": "2026-08-07",
+      "provenance_task": "CE15_ACTOR_COLLISION_REPROOF_01",
+      "record": "MIKAGE_CE15_COLLISION_REPROOF_01.md",
+      "record_sha256": "745f1f2f08b861980d6436d286e068b388a9dcc44a45bdb78ba4a2781945b90a"
+    },
+    {
+      "item": "8 historical V0.89 poses UNRECONSTRUCTIBLE",
+      "status": "RESOLVED - RETIRED AS FICTION by ruling R2; doctrine matrix corrected 13 -> 5 rows",
+      "date": "2026-08-07",
+      "provenance_task": "CE15_ACTOR_COLLISION_REPROOF_02",
+      "record": "ZENITH_BLADE_OPERATION_DOCTRINE_V1_ERRATA_01.md",
+      "record_sha256": "1821d02017a811b9e79ecc641261f076945c60189fd116170372a9b8753062be"
+    },
+    {
+      "item": "collision routine never recorded",
+      "status": "RESOLVED going forward - MIKAGE_COLLISION_METHOD_V1 issued (ruling R4). Historical comparability remains UNCONFIRMED permanently",
+      "date": "2026-08-07",
+      "provenance_task": "CE15_ACTOR_COLLISION_REPROOF_02",
+      "record": "MIKAGE_COLLISION_METHOD_V1.md",
+      "record_sha256": "8b0e010cdfdfcfa2398b401f3c3df7650d945e3c3460d0990a33b499fa602996"
+    },
+    {
+      "item": "A4 blade scale inheritance through the bone",
+      "status": "RESOLVED - CHILD_OF constraint with use_scale XYZ disabled; blade measures 1.200000 m after docking",
+      "date": "2026-08-07",
+      "provenance_task": "CE15_ACTOR_COLLISION_REPROOF_02",
+      "record": "MIKAGE_CE15_COLLISION_REPROOF_02.md"
+    },
+    {
+      "item": "REPROOF_02 diagnosis: 'library overrides not evaluated / R1 infeasible'",
+      "status": "WITHDRAWN AS INCORRECT - the rig is control-driven; overrides were never the cause",
+      "date": "2026-08-07",
+      "provenance_task": "CE15_ACTOR_COLLISION_REPROOF_03",
+      "record": "MIKAGE_CE15_COLLISION_REPROOF_03.md",
+      "record_sha256": "702a11f62f8f808632e30bc59f0028fbea82e7588ef9594a3077ed1d28ede9ca"
     }
   ],
   "resolved_since_v0": [
@@ -556,8 +618,8 @@
     "unresolved_durable_paths": [],
     "note": "board PNG was assembled from the byte-identical _tmp originals before relocation; citation update is documentation-only and the PNG is byte-unchanged"
   },
-  "generation_timestamp": "2026-08-07T12:00:00+07:00",
-  "generated_by": "ZENITH_BLADE_PAPERWORK_TIDY_01",
+  "generation_timestamp": "2026-08-08T05:00:00+07:00",
+  "generated_by": "CE15_ACTOR_COLLISION_REPROOF_03",
   "canon_authority_promotion_packet": {
     "status": "CLOSED",
     "document": "production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1.md",
@@ -586,7 +648,7 @@
   "paperwork_registry": {
     "issued_date": "2026-08-07",
     "issued_by_task": "ZENITH_BLADE_PAPERWORK_ISSUE_01",
-    "count": 8,
+    "count": 13,
     "enforcement": "byte-frozen — any future edit without a further errata fails validation",
     "documents": [
       {
@@ -704,8 +766,177 @@
         "marks": "production/character/reviews/MIKAGE_ZENITH_BLADE_OPERATOR_PROMOTION_PACKET_V0_1.md",
         "marks_sha256": "05f85f567eeebf838a3a215e0e0fd8ee11f638e57f0205f854d74b228b5b68f7",
         "original_document_edited": false
+      },
+      {
+        "path": "ZENITH_BLADE_OPERATION_DOCTRINE_V1.md",
+        "sha256": "963e70108c329cc6fd4d7c15d47044a6c87b9e04f4478f2d47deb1dc7adc36e1",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled & signed 2026-08-07 (Cowork session)",
+        "ruled_date": "2026-08-07",
+        "signed_date": "2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_DOCTRINE_ISSUE_01",
+        "role": "operation doctrine — animation law + collision-gate input, P3 only; rulings R1/R2/R3 applied",
+        "byte_frozen": true
+      },
+      {
+        "path": "ZENITH_BLADE_BOARD_V1_MD_ERRATA_01.md",
+        "sha256": "e81771962ae5bd6c6543614ce38c2489d65289d84ceee4f3c2ad5ee140e822da",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled & signed 2026-08-07 (Cowork session)",
+        "ruled_date": "2026-08-07",
+        "signed_date": "2026-08-07",
+        "issued_by_task": "ZENITH_BLADE_DOCTRINE_ISSUE_01",
+        "role": "errata — panel-8 'Anchors' row: sole ANCHOR = chassis/spine (operator ruling R3)",
+        "byte_frozen": true,
+        "corrects": "ZENITH_BLADE_FINAL_DESIGN_BOARD_V1.md",
+        "corrects_sha256": "30471b4e61a70513e2cc64eb0149ddd7770c61b4236193d27159f77f8e273179",
+        "original_document_edited": false
+      },
+      {
+        "path": "MIKAGE_ACTOR_DESIGNATION_RULING_V1.md",
+        "sha256": "9172a678c0a1c1b5de7d15fee035478ea2e3af9c00bb51288b07b2d4a3c0d23f",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled & signed 2026-08-07 (Cowork session)",
+        "ruled_date": "2026-08-07",
+        "signed_date": "2026-08-07",
+        "issued_by_task": "MIKAGE_ACTOR_STAGE_BUILD_01",
+        "role": "actor designation — A2_ = production actor (D-a); isolation O1 (D-b); rigid-attachment collision standard, soft rig backlogged (D-c)",
+        "byte_frozen": true
+      },
+      {
+        "path": "ZENITH_BLADE_OPERATION_DOCTRINE_V1_ERRATA_01.md",
+        "sha256": "1821d02017a811b9e79ecc641261f076945c60189fd116170372a9b8753062be",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled & signed 2026-08-07 (Cowork session)",
+        "ruled_date": "2026-08-07",
+        "signed_date": "2026-08-07",
+        "issued_by_task": "CE15_ACTOR_COLLISION_REPROOF_02",
+        "role": "errata - doctrine §4.1 matrix 13 -> 5 rows; 8 historical poses RETIRED AS FICTION (ruling R2)",
+        "byte_frozen": true,
+        "corrects": "ZENITH_BLADE_OPERATION_DOCTRINE_V1.md",
+        "corrects_sha256": "963e70108c329cc6fd4d7c15d47044a6c87b9e04f4478f2d47deb1dc7adc36e1",
+        "original_document_edited": false
+      },
+      {
+        "path": "MIKAGE_COLLISION_METHOD_V1.md",
+        "sha256": "8b0e010cdfdfcfa2398b401f3c3df7650d945e3c3460d0990a33b499fa602996",
+        "status": "APPROVED",
+        "approved_by": "Operator (BOOS BOP)",
+        "date": "ruled & signed 2026-08-07 (Cowork session)",
+        "ruled_date": "2026-08-07",
+        "signed_date": "2026-08-07",
+        "issued_by_task": "CE15_ACTOR_COLLISION_REPROOF_02",
+        "role": "permanent collision standard (ruling R4) - BVH triangle-pair, tolerance 0, world space, duplicate guard, articulation pre-condition",
+        "byte_frozen": true
       }
     ],
-    "signature_convention": "dual-date — ruled in the Cowork session 2026-08-06, signed on issue 2026-08-07 (operator convention confirmed 2026-08-07)"
+    "signature_convention": "dual-date — ruled in the Cowork session 2026-08-06, signed on issue 2026-08-07 (operator convention confirmed 2026-08-07)",
+    "signature_conventions": [
+      "2026-08-06 round: dual-date — ruled 2026-08-06 (Cowork session), signed 2026-08-07",
+      "2026-08-07 doctrine round: ruled & signed same day, 2026-08-07 (Cowork session)"
+    ]
+  },
+  "operation_doctrine": {
+    "document": "ZENITH_BLADE_OPERATION_DOCTRINE_V1.md",
+    "sha256": "963e70108c329cc6fd4d7c15d47044a6c87b9e04f4478f2d47deb1dc7adc36e1",
+    "status": "APPROVED",
+    "approved_by": "Operator (BOOS BOP)",
+    "date": "2026-08-07",
+    "scope": "animation law + collision-gate input, P3 only",
+    "rulings": {
+      "R1": "§2.1 = 'Vertical carry, termination down'. 'point-down' wording RETIRED PERMANENTLY. Basis SPEC_V1:113.",
+      "R2": "§2.3 force division ADOPTED as ruled operational law: porcelain cutting mass takes impact; chassis/graphite bears structure. Basis: OUT3 run-log explode groups.",
+      "R3": "ANCHOR = chassis/spine ONLY (OUT3 legend governs over BOARD_V1.md:84). hub/handle axis = primary grip + load-path terminating member."
+    },
+    "combat_pose_matrix": "SIGNED and AVAILABLE as collision-test input — 13 rows (neutral + 8 historical V0.89 poses + 4 doctrine poses POSE_01..04). See §4.1.",
+    "collision_tested": false,
+    "collision_status": "BLOCKED — pending actor-reference cleanup (no measurable verified actor)",
+    "grants": [
+      "NO canon lock",
+      "NO asset lock",
+      "NO production-ready status"
+    ]
+  },
+  "actor_reference": {
+    "designated_production_actor": "A2_",
+    "ruling": "MIKAGE_ACTOR_DESIGNATION_RULING_V1.md",
+    "ruling_sha256": "9172a678c0a1c1b5de7d15fee035478ea2e3af9c00bb51288b07b2d4a3c0d23f",
+    "date": "2026-08-07",
+    "approved_by": "Operator (BOOS BOP)",
+    "audit": "MIKAGE_ACTOR_REFERENCE_AUDIT_01.md",
+    "audit_sha256": "d19aa8f404691d961a50a08a0f047beeea000f5e3d19de2bcb1491003c07680a",
+    "inventory": "MIKAGE_ACTOR_VARIANT_INVENTORY_01.md",
+    "inventory_sha256": "7c5ab67a9ea5756f9e5e54d13a93e88d1786bcb5c80c70da2e9e7b366a3edef1",
+    "staging_file": "production/character/staging/MIKAGE_COLLISION_STAGE_01.blend",
+    "staging_anchor_sha256": "229c727f516b3653943c03ea687f796bd5101dd1ce30be1579d9ba4248c17e01",
+    "staging_build_report": "MIKAGE_ACTOR_STAGE_BUILD_01_REPORT.md",
+    "staging_build_report_sha256": "b8a1013ef312d9f19fb9a08249e024f693185b73c8f20c2a4db3ca3128fd866c",
+    "staging_in_tripwire_scope": false,
+    "canon_scale_factor": 0.2452706705,
+    "measured": {
+      "actor_height_m": 1.753685,
+      "blade_length_m": 1.2,
+      "armature_rest_height_m": 0.853542,
+      "blade_actor_ratio": 0.684273401,
+      "deviation_note": "ratio deviates 4.01e-7 from 0.684273 by float rounding of two extents; inside +/-2% tolerance; reported not adjusted"
+    },
+    "collision_method": "RIGID ATTACHMENT ONLY (D-c) - like-for-like with the V0.89 proof",
+    "collision_tested": false,
+    "audit_findings_rescoped": {
+      "F1": "clean measurable actor exists in V0.89 (A2_, 7.15 m pre-scale) - RESOLVED, staged at canon scale",
+      "F2": "3.45 m 'contamination' was a measurement artifact (hidden meshes counted) - RESOLVED, not a scene defect",
+      "F3": "CE15 has no render-enabled actor - RESOLVED by staging file (actor now present at canon scale)",
+      "F4": "two lineages are one uniform scale, proven to 6 dp - CONFIRMED, scale factor applied",
+      "F5": "cross-variant links: 33 in V0.89, all parent-type; 20 A2_-side all followed, 0 broken - RESOLVED",
+      "F6": "no soft-deformation rig - BACKLOGGED per ruling D-c; NOT an asset-lock blocker; still limits non-rigid pose authoring"
+    },
+    "collision_gate_status": "BLOCKED - see collision_reproof",
+    "ruling_D_c_tension": "D-c backlogged the soft-deformation rig as NOT an asset-lock blocker. CE15_ACTOR_COLLISION_REPROOF_01 finds it blocks the collision gate that asset lock depends on. The two positions require operator reconciliation."
+  },
+  "collision_reproof": {
+    "task": "CE15_ACTOR_COLLISION_REPROOF_03",
+    "date": "2026-08-07",
+    "verdict": "BLOCKED_ARTICULATION_GATE_FAILED_MATRIX_NOT_RUN",
+    "report": "MIKAGE_CE15_COLLISION_REPROOF_03.md",
+    "report_sha256": "702a11f62f8f808632e30bc59f0028fbea82e7588ef9594a3077ed1d28ede9ca",
+    "json": "MIKAGE_CE15_COLLISION_REPROOF_03_REPORT.json",
+    "json_sha256": "d04ef234deb618a4b496b0ad16b640dea07b05236a8990dc441efefc89e4c81b",
+    "contact_sheet": "NOT PRODUCED - matrix not run",
+    "matrix": {
+      "required": 15,
+      "run": 0,
+      "reason": "MIKAGE_COLLISION_METHOD_V1 section 2.7 articulation gate failed -> abort"
+    },
+    "correction_to_REPROOF_02": "WITHDRAWN: 'library overrides not evaluated / R1 infeasible' was an INCORRECT diagnosis. Actor appended as fully local objects still measured zero articulation. Actual cause: the rig is CONTROL-DRIVEN (15 pose-bone constraints from 8 *_ctrl empties); setting pose_bone rotations is a no-op.",
+    "succeeded": {
+      "append_O_A": "33 linked removed, 49 appended fully local",
+      "duplicate_guard": "PASS - 26 actor meshes, 0 linked originals",
+      "binding": "26/26 bone-parented, 0 failures",
+      "articulation_head_chain_m": 0.893287
+    },
+    "blocker": {
+      "symptom": "hand.R chain does not respond to hand.R_ctrl",
+      "hand_R_ctrl_moves_mitten_m": 0.0,
+      "hand_R_ctrl_moves_hand_R_bone_IK_active_m": 0.0,
+      "hand_R_ctrl_moves_hand_R_bone_IK_muted_m": 0.0,
+      "ruled_out": [
+        "IK constraint",
+        "library overrides",
+        "harness",
+        "append mechanism"
+      ],
+      "cause": "UNCONFIRMED"
+    },
+    "flagged": "head displacement 0.893287 m for 30deg is larger than expected - reported verbatim, UNCONFIRMED, not investigated (gate aborted first)",
+    "staging_anchor_unchanged": "229c727f516b3653943c03ea687f796bd5101dd1ce30be1579d9ba4248c17e01",
+    "anchor_v2_declared": false,
+    "staging_saved": false,
+    "gate_value_note": "This is the first firing of the METHOD_V1 section 2.7 gate. Without it this task would have reported a false PASS from a partly-frozen actor.",
+    "asset_lock": "NOT ISSUED",
+    "production_ready": "NOT ISSUED"
   }
 }
